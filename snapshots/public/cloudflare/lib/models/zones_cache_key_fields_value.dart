@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (queryString != null) 'query_string': queryString?.toJson(),
   if (user != null) 'user': user?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cookie', 'header', 'host', 'query_string', 'user'}.contains(key)); } 
 ZonesCacheKeyFieldsValue copyWith({ZonesCacheKeyFieldsValueCookie Function()? cookie, ZonesCacheKeyFieldsValueHeader Function()? header, ZonesCacheKeyFieldsValueHost Function()? host, ZonesCacheKeyFieldsValueQueryString Function()? queryString, ZonesCacheKeyFieldsValueUser Function()? user, }) { return ZonesCacheKeyFieldsValue(
   cookie: cookie != null ? cookie() : this.cookie,
   header: header != null ? header() : this.header,

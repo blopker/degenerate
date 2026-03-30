@@ -66,11 +66,21 @@ return execute(
 /// `GET /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes.json`
 Future<ApiResult<ListShortCodeResponse, Never>> listShortCode({required String accountSid, String? friendlyName, String? shortCode, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
-if (shortCode != null) queryParameters['ShortCode'] = shortCode;
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (friendlyName != null) {
+  queryParameters['FriendlyName'] = friendlyName;
+}
+if (shortCode != null) {
+  queryParameters['ShortCode'] = shortCode;
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

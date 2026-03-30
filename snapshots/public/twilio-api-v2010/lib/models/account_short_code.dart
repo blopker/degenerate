@@ -117,7 +117,7 @@ Map<String, dynamic> toJson() { return {
   if (smsUrl != null) 'sms_url': smsUrl?.toString(),
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'date_created', 'date_updated', 'friendly_name', 'short_code', 'sid', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_url', 'uri'}.contains(key)); } 
 AccountShortCode copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? shortCode, String? Function()? sid, AccountShortCodeSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, AccountShortCodeSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, String? Function()? uri, }) { return AccountShortCode(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

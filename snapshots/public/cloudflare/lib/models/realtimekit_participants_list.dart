@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   'updated_at': ?updatedAt,
   'user_id': ?userId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'custom_participant_id', 'display_name', 'duration', 'id', 'joined_at', 'left_at', 'preset_name', 'updated_at', 'user_id'}.contains(key)); } 
 RealtimekitParticipantsList copyWith({String Function()? createdAt, String Function()? customParticipantId, String Function()? displayName, double Function()? duration, String Function()? id, String Function()? joinedAt, String Function()? leftAt, String Function()? presetName, String Function()? updatedAt, String Function()? userId, }) { return RealtimekitParticipantsList(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   customParticipantId: customParticipantId != null ? customParticipantId() : this.customParticipantId,

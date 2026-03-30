@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (countries != null) 'countries': countries?.map((e) => e.toJson()).toList(),
   if (uri != null) 'uri': uri?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'countries', 'uri'}.contains(key)); } 
 ListAvailablePhoneNumberCountryResponse copyWith({List<AccountAvailablePhoneNumberCountry> Function()? countries, Uri? Function()? uri, }) { return ListAvailablePhoneNumberCountryResponse(
   countries: countries != null ? countries() : this.countries,
   uri: uri != null ? uri() : this.uri,

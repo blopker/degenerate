@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'param': ?param,
   'line': ?line,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message', 'param', 'line'}.contains(key)); } 
 BatchErrorsData copyWith({String Function()? code, String Function()? message, String? Function()? param, int? Function()? line, }) { return BatchErrorsData(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,

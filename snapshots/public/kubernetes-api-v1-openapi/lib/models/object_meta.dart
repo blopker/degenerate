@@ -97,7 +97,7 @@ Map<String, dynamic> toJson() { return {
   'selfLink': ?selfLink,
   'uid': ?uid,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annotations', 'creationTimestamp', 'deletionGracePeriodSeconds', 'deletionTimestamp', 'finalizers', 'generateName', 'generation', 'labels', 'managedFields', 'name', 'namespace', 'ownerReferences', 'resourceVersion', 'selfLink', 'uid'}.contains(key)); } 
 ObjectMeta copyWith({Map<String, String> Function()? annotations, Time Function()? creationTimestamp, int Function()? deletionGracePeriodSeconds, Time Function()? deletionTimestamp, List<String> Function()? finalizers, String Function()? generateName, int Function()? generation, Map<String, String> Function()? labels, List<ManagedFieldsEntry> Function()? managedFields, String Function()? name, String Function()? namespace, List<OwnerReference> Function()? ownerReferences, String Function()? resourceVersion, String Function()? selfLink, String Function()? uid, }) { return ObjectMeta(
   annotations: annotations != null ? annotations() : this.annotations,
   creationTimestamp: creationTimestamp != null ? creationTimestamp() : this.creationTimestamp,

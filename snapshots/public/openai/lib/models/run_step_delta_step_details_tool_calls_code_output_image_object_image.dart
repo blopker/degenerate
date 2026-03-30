@@ -12,7 +12,7 @@ final String? fileId;
 Map<String, dynamic> toJson() { return {
   'file_id': ?fileId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id'}.contains(key)); } 
 RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage copyWith({String Function()? fileId}) { return RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage(
   fileId: fileId != null ? fileId() : this.fileId,
 ); } 

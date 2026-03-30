@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'payload': ?payload,
   'tags': ?tags,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payload', 'tags'}.contains(key)); } 
 Container copyWith({dynamic Function()? payload, List<dynamic> Function()? tags, }) { return Container(
   payload: payload != null ? payload() : this.payload,
   tags: tags != null ? tags() : this.tags,

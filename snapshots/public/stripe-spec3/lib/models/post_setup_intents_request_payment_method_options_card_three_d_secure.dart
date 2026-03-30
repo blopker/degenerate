@@ -140,7 +140,7 @@ Map<String, dynamic> toJson() { return {
   'transaction_id': ?transactionId,
   if (version != null) 'version': version?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ares_trans_status', 'cryptogram', 'electronic_commerce_indicator', 'network_options', 'requestor_challenge_indicator', 'transaction_id', 'version'}.contains(key)); } 
 PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure copyWith({PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus Function()? aresTransStatus, String Function()? cryptogram, PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator Function()? electronicCommerceIndicator, PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions Function()? networkOptions, String Function()? requestorChallengeIndicator, String Function()? transactionId, PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion Function()? version, }) { return PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure(
   aresTransStatus: aresTransStatus != null ? aresTransStatus() : this.aresTransStatus,
   cryptogram: cryptogram != null ? cryptogram() : this.cryptogram,

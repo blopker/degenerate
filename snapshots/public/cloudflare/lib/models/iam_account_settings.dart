@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'abuse_contact_email': ?abuseContactEmail,
   'enforce_twofactor': enforceTwofactor,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'abuse_contact_email', 'enforce_twofactor'}.contains(key)); } 
 IamAccountSettings copyWith({String Function()? abuseContactEmail, bool Function()? enforceTwofactor, }) { return IamAccountSettings(
   abuseContactEmail: abuseContactEmail != null ? abuseContactEmail() : this.abuseContactEmail,
   enforceTwofactor: enforceTwofactor != null ? enforceTwofactor() : this.enforceTwofactor,

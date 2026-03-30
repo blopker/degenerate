@@ -1,12 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_ide_code_completions_editors.dart';import 'copilot_ide_code_completions_languages.dart';/// Usage metrics for Copilot editor code completions in the IDE.
-final class CopilotIdeCodeCompletions {const CopilotIdeCodeCompletions({this.totalEngagedUsers, this.languages, this.editors, });
+final class CopilotIdeCodeCompletions {const CopilotIdeCodeCompletions({this.totalEngagedUsers, this.languages, this.editors, this.additionalProperties = const {}, });
 
 factory CopilotIdeCodeCompletions.fromJson(Map<String, dynamic> json) { return CopilotIdeCodeCompletions(
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,
   languages: (json['languages'] as List<dynamic>?)?.map((e) => CopilotIdeCodeCompletionsLanguages.fromJson(e as Map<String, dynamic>)).toList(),
   editors: (json['editors'] as List<dynamic>?)?.map((e) => CopilotIdeCodeCompletionsEditors.fromJson(e as Map<String, dynamic>)).toList(),
+  additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'total_engaged_users', 'languages', 'editors'}.contains(e.key))),
 ); }
 
 /// Number of users who accepted at least one Copilot code suggestion, across all active editors. Includes both full and partial acceptances.
@@ -17,22 +18,27 @@ final List<CopilotIdeCodeCompletionsLanguages>? languages;
 
 final List<CopilotIdeCodeCompletionsEditors>? editors;
 
+final Map<String,dynamic> additionalProperties;
+
 Map<String, dynamic> toJson() { return {
   'total_engaged_users': ?totalEngagedUsers,
   if (languages != null) 'languages': languages?.map((e) => e.toJson()).toList(),
   if (editors != null) 'editors': editors?.map((e) => e.toJson()).toList(),
+  ...additionalProperties,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-CopilotIdeCodeCompletions copyWith({int Function()? totalEngagedUsers, List<CopilotIdeCodeCompletionsLanguages> Function()? languages, List<CopilotIdeCodeCompletionsEditors> Function()? editors, }) { return CopilotIdeCodeCompletions(
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_engaged_users', 'languages', 'editors'}.contains(key)); } 
+CopilotIdeCodeCompletions copyWith({int Function()? totalEngagedUsers, List<CopilotIdeCodeCompletionsLanguages> Function()? languages, List<CopilotIdeCodeCompletionsEditors> Function()? editors, Map<String, dynamic>? additionalProperties, }) { return CopilotIdeCodeCompletions(
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   languages: languages != null ? languages() : this.languages,
   editors: editors != null ? editors() : this.editors,
+  additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CopilotIdeCodeCompletions &&
           totalEngagedUsers == other.totalEngagedUsers &&
           listEquals(languages, other.languages) &&
-          listEquals(editors, other.editors); } 
-@override int get hashCode { return Object.hash(totalEngagedUsers, Object.hashAll(languages ?? const []), Object.hashAll(editors ?? const [])); } 
-@override String toString() { return 'CopilotIdeCodeCompletions(totalEngagedUsers: $totalEngagedUsers, languages: $languages, editors: $editors)'; } 
+          listEquals(editors, other.editors) &&
+          mapEquals(additionalProperties, other.additionalProperties); } 
+@override int get hashCode { return Object.hash(totalEngagedUsers, Object.hashAll(languages ?? const []), Object.hashAll(editors ?? const []), Object.hashAll(additionalProperties.entries)); } 
+@override String toString() { return 'CopilotIdeCodeCompletions(totalEngagedUsers: $totalEngagedUsers, languages: $languages, editors: $editors, additionalProperties: $additionalProperties)'; } 
  }

@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'created_at': ?createdAt,
   'updated_at': ?updatedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'digest', 'artifact_url', 'registry_url', 'repository', 'status', 'created_at', 'updated_at'}.contains(key)); } 
 OrgsListArtifactStorageRecordsResponseStorageRecords copyWith({int Function()? id, String Function()? name, String Function()? digest, String Function()? artifactUrl, String Function()? registryUrl, String Function()? repository, String Function()? status, String Function()? createdAt, String Function()? updatedAt, }) { return OrgsListArtifactStorageRecordsResponseStorageRecords(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

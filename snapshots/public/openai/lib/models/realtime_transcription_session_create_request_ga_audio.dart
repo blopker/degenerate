@@ -13,7 +13,7 @@ final RealtimeTranscriptionSessionCreateRequestGaAudioInput? input;
 Map<String, dynamic> toJson() { return {
   if (input != null) 'input': input?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'input'}.contains(key)); } 
 RealtimeTranscriptionSessionCreateRequestGaAudio copyWith({RealtimeTranscriptionSessionCreateRequestGaAudioInput Function()? input}) { return RealtimeTranscriptionSessionCreateRequestGaAudio(
   input: input != null ? input() : this.input,
 ); } 

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (created != null) 'created': created?.toIso8601String(),
   if (lastModified != null) 'lastModified': lastModified?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'lastModified'}.contains(key)); } 
 AccessMeta copyWith({DateTime Function()? created, DateTime Function()? lastModified, }) { return AccessMeta(
   created: created != null ? created() : this.created,
   lastModified: lastModified != null ? lastModified() : this.lastModified,

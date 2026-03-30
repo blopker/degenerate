@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (document != null) 'document': document?.toJson(),
   if (idNumber != null) 'id_number': idNumber?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'document', 'id_number'}.contains(key)); } 
 GelatoVerificationReportOptions copyWith({GelatoReportDocumentOptions Function()? document, GelatoReportIdNumberOptions Function()? idNumber, }) { return GelatoVerificationReportOptions(
   document: document != null ? document() : this.document,
   idNumber: idNumber != null ? idNumber() : this.idNumber,

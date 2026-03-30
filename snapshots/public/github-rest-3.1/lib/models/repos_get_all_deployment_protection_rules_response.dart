@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'total_count': ?totalCount,
   if (customDeploymentProtectionRules != null) 'custom_deployment_protection_rules': customDeploymentProtectionRules?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_count', 'custom_deployment_protection_rules'}.contains(key)); } 
 ReposGetAllDeploymentProtectionRulesResponse copyWith({int Function()? totalCount, List<DeploymentProtectionRule> Function()? customDeploymentProtectionRules, }) { return ReposGetAllDeploymentProtectionRulesResponse(
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   customDeploymentProtectionRules: customDeploymentProtectionRules != null ? customDeploymentProtectionRules() : this.customDeploymentProtectionRules,

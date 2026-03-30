@@ -19,7 +19,7 @@ final TlsCertificatesAndHostnamesUuid? uuid;
 Map<String, dynamic> toJson() { return {
   if (uuid != null) 'uuid': uuid?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'uuid'}.contains(key)); } 
 TlsCertificatesAndHostnamesUuidObject copyWith({TlsCertificatesAndHostnamesUuid Function()? uuid}) { return TlsCertificatesAndHostnamesUuidObject(
   uuid: uuid != null ? uuid() : this.uuid,
 ); } 

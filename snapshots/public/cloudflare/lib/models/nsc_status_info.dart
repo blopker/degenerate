@@ -24,7 +24,7 @@ factory NscStatusInfoPending.fromJson(Map<String, dynamic> json) { return NscSta
 final NscStatusInfoVariant1 nscStatusInfoVariant1;
 
 @override String get state { return 'Pending'; } 
-@override Map<String, dynamic> toJson() { return {'state': state, ...nscStatusInfoVariant1.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...nscStatusInfoVariant1.toJson(), 'state': state}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfoPending && nscStatusInfoVariant1 == other.nscStatusInfoVariant1; } 
 @override int get hashCode { return nscStatusInfoVariant1.hashCode; } 
@@ -37,7 +37,7 @@ factory NscStatusInfoDown.fromJson(Map<String, dynamic> json) { return NscStatus
 final NscStatusInfoVariant2 nscStatusInfoVariant2;
 
 @override String get state { return 'Down'; } 
-@override Map<String, dynamic> toJson() { return {'state': state, ...nscStatusInfoVariant2.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...nscStatusInfoVariant2.toJson(), 'state': state}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfoDown && nscStatusInfoVariant2 == other.nscStatusInfoVariant2; } 
 @override int get hashCode { return nscStatusInfoVariant2.hashCode; } 
@@ -50,7 +50,7 @@ factory NscStatusInfoUnhealthy.fromJson(Map<String, dynamic> json) { return NscS
 final NscStatusInfoVariant3 nscStatusInfoVariant3;
 
 @override String get state { return 'Unhealthy'; } 
-@override Map<String, dynamic> toJson() { return {'state': state, ...nscStatusInfoVariant3.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...nscStatusInfoVariant3.toJson(), 'state': state}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfoUnhealthy && nscStatusInfoVariant3 == other.nscStatusInfoVariant3; } 
 @override int get hashCode { return nscStatusInfoVariant3.hashCode; } 
@@ -63,7 +63,7 @@ factory NscStatusInfoHealthy.fromJson(Map<String, dynamic> json) { return NscSta
 final NscStatusInfoVariant4 nscStatusInfoVariant4;
 
 @override String get state { return 'Healthy'; } 
-@override Map<String, dynamic> toJson() { return {'state': state, ...nscStatusInfoVariant4.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...nscStatusInfoVariant4.toJson(), 'state': state}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscStatusInfoHealthy && nscStatusInfoVariant4 == other.nscStatusInfoVariant4; } 
 @override int get hashCode { return nscStatusInfoVariant4.hashCode; } 

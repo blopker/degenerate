@@ -15,7 +15,7 @@ final int? totalTaxAmount;
 Map<String, dynamic> toJson() { return {
   'total_tax_amount': ?totalTaxAmount,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_tax_amount'}.contains(key)); } 
 PaymentFlowsAmountDetailsResourceTax copyWith({int? Function()? totalTaxAmount}) { return PaymentFlowsAmountDetailsResourceTax(
   totalTaxAmount: totalTaxAmount != null ? totalTaxAmount() : this.totalTaxAmount,
 ); } 

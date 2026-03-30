@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'host': ?host,
   'path': path,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'path'}.contains(key)); } 
 WaitingroomAdditionalRoutes2 copyWith({String Function()? host, String Function()? path, }) { return WaitingroomAdditionalRoutes2(
   host: host != null ? host() : this.host,
   path: path != null ? path() : this.path,

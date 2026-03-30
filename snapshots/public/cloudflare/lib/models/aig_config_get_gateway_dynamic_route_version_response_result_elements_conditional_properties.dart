@@ -11,7 +11,7 @@ final Map<String,dynamic>? conditions;
 Map<String, dynamic> toJson() { return {
   'conditions': ?conditions,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'conditions'}.contains(key)); } 
 AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalProperties copyWith({Map<String, dynamic> Function()? conditions}) { return AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalProperties(
   conditions: conditions != null ? conditions() : this.conditions,
 ); } 

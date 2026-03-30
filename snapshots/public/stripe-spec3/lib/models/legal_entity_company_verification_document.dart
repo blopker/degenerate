@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'details_code': ?detailsCode,
   if (front != null) 'front': front?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'back', 'details', 'details_code', 'front'}.contains(key)); } 
 LegalEntityCompanyVerificationDocument copyWith({LegalEntityCompanyVerificationDocumentBack? Function()? back, String? Function()? details, String? Function()? detailsCode, LegalEntityCompanyVerificationDocumentFront? Function()? front, }) { return LegalEntityCompanyVerificationDocument(
   back: back != null ? back() : this.back,
   details: details != null ? details() : this.details,

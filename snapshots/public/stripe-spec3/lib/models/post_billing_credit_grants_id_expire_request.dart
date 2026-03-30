@@ -12,7 +12,7 @@ final List<String>? expand;
 Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand'}.contains(key)); } 
 PostBillingCreditGrantsIdExpireRequest copyWith({List<String> Function()? expand}) { return PostBillingCreditGrantsIdExpireRequest(
   expand: expand != null ? expand() : this.expand,
 ); } 

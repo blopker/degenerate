@@ -13,9 +13,15 @@ final class GroupUsersApi with ApiExecutor {const GroupUsersApi(this.apiConfig);
 /// `GET /organization/groups/{group_id}/users`
 Future<ApiResult<UserListResource, Never>> listGroupUsers({required String groupId, int? limit, String? after, ListGroupUsersOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
-if (order != null) queryParameters['order'] = order.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

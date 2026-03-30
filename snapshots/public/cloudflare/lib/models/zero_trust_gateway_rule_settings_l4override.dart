@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'ip': ?ip,
   'port': ?port,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ip', 'port'}.contains(key)); } 
 ZeroTrustGatewayRuleSettingsL4override copyWith({String Function()? ip, int Function()? port, }) { return ZeroTrustGatewayRuleSettingsL4override(
   ip: ip != null ? ip() : this.ip,
   port: port != null ? port() : this.port,

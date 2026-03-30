@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_entities_ip_format.dart';import '../models/radar_get_entities_ip_response.dart';import '../models/radar_get_entities_ip_response404.dart';/// RadarIpApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_entities_ip_format.dart';import '../models/radar_get_entities_ip_response404.dart';import '../models/radar_get_entities_ip_response_result.dart';/// RadarIpApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,10 +13,12 @@ final class RadarIpApi with ApiExecutor {const RadarIpApi(this.apiConfig);
 /// Retrieves IP address information.
 ///
 /// `GET /radar/entities/ip`
-Future<ApiResult<RadarGetEntitiesIpResponse, RadarGetEntitiesIpResponse404>> radarGetEntitiesIp({required String ip, RadarGetEntitiesIpFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEntitiesIpResponseResult, RadarGetEntitiesIpResponse404>> radarGetEntitiesIp({required String ip, RadarGetEntitiesIpFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['ip'] = ip;
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -32,7 +34,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetEntitiesIpResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetEntitiesIpResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetEntitiesIpResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'mandate_reference': ?mandateReference,
   'mandate_url': ?mandateUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'branch_code', 'country', 'fingerprint', 'last4', 'mandate_reference', 'mandate_url'}.contains(key)); } 
 SourceTypeSepaDebit copyWith({String? Function()? bankCode, String? Function()? branchCode, String? Function()? country, String? Function()? fingerprint, String? Function()? last4, String? Function()? mandateReference, String? Function()? mandateUrl, }) { return SourceTypeSepaDebit(
   bankCode: bankCode != null ? bankCode() : this.bankCode,
   branchCode: branchCode != null ? branchCode() : this.branchCode,

@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'ips': ?ips,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ips', 'type'}.contains(key)); } 
 SpectrumConfigEdgeIpsStatic copyWith({List<String> Function()? ips, SpectrumConfigEdgeIpsStaticType Function()? type, }) { return SpectrumConfigEdgeIpsStatic(
   ips: ips != null ? ips() : this.ips,
   type: type != null ? type() : this.type,

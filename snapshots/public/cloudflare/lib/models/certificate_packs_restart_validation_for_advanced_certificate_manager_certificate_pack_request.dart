@@ -12,7 +12,7 @@ final TlsCertificatesAndHostnamesCloudflareBranding? cloudflareBranding;
 Map<String, dynamic> toJson() { return {
   if (cloudflareBranding != null) 'cloudflare_branding': cloudflareBranding?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cloudflare_branding'}.contains(key)); } 
 CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest copyWith({TlsCertificatesAndHostnamesCloudflareBranding Function()? cloudflareBranding}) { return CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest(
   cloudflareBranding: cloudflareBranding != null ? cloudflareBranding() : this.cloudflareBranding,
 ); } 

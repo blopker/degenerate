@@ -1838,7 +1838,7 @@ Map<String, dynamic> toJson() { return {
   if (spendingLimits != null) 'spending_limits': spendingLimits?.map((e) => e.toJson()).toList(),
   'spending_limits_currency': ?spendingLimitsCurrency,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_categories', 'allowed_merchant_countries', 'blocked_categories', 'blocked_merchant_countries', 'spending_limits', 'spending_limits_currency'}.contains(key)); } 
 PostIssuingCardholdersCardholderRequestSpendingControls copyWith({List<PostIssuingCardholdersCardholderRequestSpendingControlsAllowedCategories> Function()? allowedCategories, List<String> Function()? allowedMerchantCountries, List<PostIssuingCardholdersCardholderRequestSpendingControlsBlockedCategories> Function()? blockedCategories, List<String> Function()? blockedMerchantCountries, List<PostIssuingCardholdersCardholderRequestSpendingControlsSpendingLimits> Function()? spendingLimits, String Function()? spendingLimitsCurrency, }) { return PostIssuingCardholdersCardholderRequestSpendingControls(
   allowedCategories: allowedCategories != null ? allowedCategories() : this.allowedCategories,
   allowedMerchantCountries: allowedMerchantCountries != null ? allowedMerchantCountries() : this.allowedMerchantCountries,

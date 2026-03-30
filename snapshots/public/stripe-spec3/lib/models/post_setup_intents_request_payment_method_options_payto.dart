@@ -11,7 +11,7 @@ final PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptions? mandateOpt
 Map<String, dynamic> toJson() { return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options'}.contains(key)); } 
 PostSetupIntentsRequestPaymentMethodOptionsPayto copyWith({PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptions Function()? mandateOptions}) { return PostSetupIntentsRequestPaymentMethodOptionsPayto(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
 ); } 

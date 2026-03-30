@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'reader': ?reader,
   'transaction_id': ?transactionId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fingerprint', 'location', 'reader', 'transaction_id'}.contains(key)); } 
 PaymentMethodDetailsWechatPay copyWith({String? Function()? fingerprint, String Function()? location, String Function()? reader, String? Function()? transactionId, }) { return PaymentMethodDetailsWechatPay(
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
   location: location != null ? location() : this.location,

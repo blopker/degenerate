@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'reason': ?reason,
   'status': ?status,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'code', 'details', 'kind', 'message', 'metadata', 'reason', 'status'}.contains(key)); } 
 Status copyWith({String Function()? apiVersion, int Function()? code, StatusDetails Function()? details, String Function()? kind, String Function()? message, ListMeta Function()? metadata, String Function()? reason, String Function()? status, }) { return Status(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   code: code != null ? code() : this.code,

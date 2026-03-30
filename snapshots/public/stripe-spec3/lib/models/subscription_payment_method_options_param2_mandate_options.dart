@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (amountType != null) 'amount_type': amountType?.toJson(),
   'description': ?description,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'description'}.contains(key)); } 
 SubscriptionPaymentMethodOptionsParam2MandateOptions copyWith({int Function()? amount, SubscriptionPaymentMethodOptionsParam2MandateOptionsAmountType Function()? amountType, String Function()? description, }) { return SubscriptionPaymentMethodOptionsParam2MandateOptions(
   amount: amount != null ? amount() : this.amount,
   amountType: amountType != null ? amountType() : this.amountType,

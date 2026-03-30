@@ -15,12 +15,24 @@ final class TendertransactionApi with ApiExecutor {const TendertransactionApi(th
 /// `GET /admin/api/2020-01/tender_transactions.json`
 Future<ApiResult<void, Never>> deprecated202001GetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin.toString();
-if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax.toString();
-if (processedAt != null) queryParameters['processed_at'] = processedAt.toString();
-if (order != null) queryParameters['order'] = order.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (processedAtMin != null) {
+  queryParameters['processed_at_min'] = processedAtMin.toString();
+}
+if (processedAtMax != null) {
+  queryParameters['processed_at_max'] = processedAtMax.toString();
+}
+if (processedAt != null) {
+  queryParameters['processed_at'] = processedAt.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -45,12 +57,24 @@ return execute(
 /// `GET /admin/api/2020-04/tender_transactions.json`
 Future<ApiResult<void, Never>> deprecated202004GetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin.toString();
-if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax.toString();
-if (processedAt != null) queryParameters['processed_at'] = processedAt.toString();
-if (order != null) queryParameters['order'] = order.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (processedAtMin != null) {
+  queryParameters['processed_at_min'] = processedAtMin.toString();
+}
+if (processedAtMax != null) {
+  queryParameters['processed_at_max'] = processedAtMax.toString();
+}
+if (processedAt != null) {
+  queryParameters['processed_at'] = processedAt.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -75,12 +99,24 @@ return execute(
 /// `GET /admin/api/2020-07/tender_transactions.json`
 Future<ApiResult<void, Never>> deprecated202007GetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin.toString();
-if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax.toString();
-if (processedAt != null) queryParameters['processed_at'] = processedAt.toString();
-if (order != null) queryParameters['order'] = order.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (processedAtMin != null) {
+  queryParameters['processed_at_min'] = processedAtMin.toString();
+}
+if (processedAtMax != null) {
+  queryParameters['processed_at_max'] = processedAtMax.toString();
+}
+if (processedAt != null) {
+  queryParameters['processed_at'] = processedAt.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -105,12 +141,24 @@ return execute(
 /// `GET /admin/api/2020-10/tender_transactions.json`
 Future<ApiResult<void, Never>> getTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin.toString();
-if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax.toString();
-if (processedAt != null) queryParameters['processed_at'] = processedAt.toString();
-if (order != null) queryParameters['order'] = order.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (processedAtMin != null) {
+  queryParameters['processed_at_min'] = processedAtMin.toString();
+}
+if (processedAtMax != null) {
+  queryParameters['processed_at_max'] = processedAtMax.toString();
+}
+if (processedAt != null) {
+  queryParameters['processed_at'] = processedAt.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -135,12 +183,24 @@ return execute(
 /// `GET /admin/api/2021-01/tender_transactions.json`
 Future<ApiResult<void, Never>> deprecated202101GetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin.toString();
-if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax.toString();
-if (processedAt != null) queryParameters['processed_at'] = processedAt.toString();
-if (order != null) queryParameters['order'] = order.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (processedAtMin != null) {
+  queryParameters['processed_at_min'] = processedAtMin.toString();
+}
+if (processedAtMax != null) {
+  queryParameters['processed_at_max'] = processedAtMax.toString();
+}
+if (processedAt != null) {
+  queryParameters['processed_at'] = processedAt.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -165,12 +225,24 @@ return execute(
 /// `GET /admin/api/unstable/tender_transactions.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetTenderTransactions({dynamic limit, dynamic sinceId, dynamic processedAtMin, dynamic processedAtMax, dynamic processedAt, dynamic order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (processedAtMin != null) queryParameters['processed_at_min'] = processedAtMin.toString();
-if (processedAtMax != null) queryParameters['processed_at_max'] = processedAtMax.toString();
-if (processedAt != null) queryParameters['processed_at'] = processedAt.toString();
-if (order != null) queryParameters['order'] = order.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (processedAtMin != null) {
+  queryParameters['processed_at_min'] = processedAtMin.toString();
+}
+if (processedAtMax != null) {
+  queryParameters['processed_at_max'] = processedAtMax.toString();
+}
+if (processedAt != null) {
+  queryParameters['processed_at'] = processedAt.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (keyRotationIntervalDays != null) 'key_rotation_interval_days': keyRotationIntervalDays?.toJson(),
   if (lastKeyRotationAt != null) 'last_key_rotation_at': lastKeyRotationAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'days_until_next_rotation', 'key_rotation_interval_days', 'last_key_rotation_at'}.contains(key)); } 
 AccessKeyConfig copyWith({AccessDaysUntilNextRotation Function()? daysUntilNextRotation, AccessKeyRotationIntervalDays Function()? keyRotationIntervalDays, AccessLastKeyRotationAt Function()? lastKeyRotationAt, }) { return AccessKeyConfig(
   daysUntilNextRotation: daysUntilNextRotation != null ? daysUntilNextRotation() : this.daysUntilNextRotation,
   keyRotationIntervalDays: keyRotationIntervalDays != null ? keyRotationIntervalDays() : this.keyRotationIntervalDays,

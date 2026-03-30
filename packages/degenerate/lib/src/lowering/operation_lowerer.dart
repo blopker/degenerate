@@ -72,6 +72,32 @@ class OperationLowerer {
         final tag = _primaryTag(opMap);
         grouped.putIfAbsent(tag, () => []).add(operation);
       }
+
+      // OAS 3.2: additionalOperations — custom HTTP methods.
+      final additionalOps =
+          pathItem['additionalOperations'] as Map<String, dynamic>?;
+      if (additionalOps != null) {
+        for (final entry in additionalOps.entries) {
+          var opMap = entry.value;
+          if (opMap is! Map<String, dynamic>) continue;
+          if (opMap.containsKey(r'$ref') && _doc != null) {
+            final resolved = _doc.resolveRef(opMap[r'$ref'] as String);
+            if (resolved is Map<String, dynamic>) {
+              opMap = resolved;
+            } else {
+              continue;
+            }
+          }
+          final operation = lowerOperation(
+            path,
+            entry.key, // raw method name like "HAUNT", "PURGE"
+            opMap,
+            pathParameters: pathParameters,
+          );
+          final tag = _primaryTag(opMap);
+          grouped.putIfAbsent(tag, () => []).add(operation);
+        }
+      }
     }
 
     return grouped.entries.map((e) {
@@ -127,7 +153,7 @@ class OperationLowerer {
     _currentOperationId = operationId;
     _currentOpPascal = toPascalCase(operationId);
     _usedParamNames.clear();
-    final dartMethod = sanitizeDartName(operationMethodName(operationId));
+    final dartMethod = sanitizeFieldName(operationMethodName(operationId));
     final httpMethod = _parseHttpMethod(method);
     final summary = op['summary'] as String?;
     final description = op['description'] as String?;
@@ -184,6 +210,7 @@ class OperationLowerer {
       dartMethod,
       httpMethod,
       path,
+      customMethod: httpMethod == HttpMethod.custom ? method.toUpperCase() : null,
       summary: summary,
       description: description,
       parameters: parameters,
@@ -234,7 +261,18 @@ class OperationLowerer {
     final explode = param['explode'] as bool?;
     final allowReserved = param['allowReserved'] == true;
 
-    final rawSchema = param['schema'];
+    // OAS 3.x parameters can define their type via `schema` (simple) or
+    // `content` (single media-type entry with a schema). Try both.
+    var rawSchema = param['schema'];
+    if (rawSchema == null) {
+      final content = param['content'] as Map<String, dynamic>?;
+      if (content != null && content.isNotEmpty) {
+        final mediaEntry = content.values.first;
+        if (mediaEntry is Map<String, dynamic>) {
+          rawSchema = mediaEntry['schema'];
+        }
+      }
+    }
     // Generate a name hint for inline parameter schemas.
     String? paramNameHint;
     if (_currentOperationId != null) {
@@ -375,7 +413,8 @@ class OperationLowerer {
         if (mediaMap is! Map<String, dynamic>) continue;
 
         final rawSchema = mediaMap['schema'];
-        if (rawSchema == null) continue;
+        final rawItemSchema = mediaMap['itemSchema'];
+        if (rawSchema == null && rawItemSchema == null) continue;
 
         // Generate a name hint for inline schemas based on the operation
         String? nameHint;
@@ -388,11 +427,23 @@ class OperationLowerer {
           }
         }
 
-        final irSchema = irMapper.lowerUntypedInlineSchema(
-          rawSchema,
-          nameHint: nameHint,
-        );
-        irContent[mediaType] = IrMediaType(irSchema);
+        // Lower itemSchema for streaming media types (SSE, JSONL).
+        IrType? irItemSchema;
+        if (rawItemSchema != null) {
+          final itemHint = _currentOperationId != null
+              ? '${_currentOpPascal!}Event'
+              : null;
+          irItemSchema = irMapper.lowerUntypedInlineSchema(
+            rawItemSchema,
+            nameHint: itemHint,
+          );
+        }
+
+        // schema may be null for streaming-only media types — use itemSchema.
+        final irSchema = rawSchema != null
+            ? irMapper.lowerUntypedInlineSchema(rawSchema, nameHint: nameHint)
+            : irItemSchema!;
+        irContent[mediaType] = IrMediaType(irSchema, itemSchema: irItemSchema);
       }
     }
 
@@ -451,7 +502,8 @@ class OperationLowerer {
       'head' => HttpMethod.head,
       'options' => HttpMethod.options,
       'trace' => HttpMethod.trace,
-      _ => HttpMethod.get,
+      'query' => HttpMethod.query,
+      _ => HttpMethod.custom,
     };
   }
 
@@ -474,5 +526,6 @@ class OperationLowerer {
     'head',
     'options',
     'trace',
+    'query',
   ];
 }

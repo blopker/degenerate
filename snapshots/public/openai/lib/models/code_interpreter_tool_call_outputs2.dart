@@ -22,7 +22,7 @@ factory CodeInterpreterToolCallOutputs2CodeInterpreterOutputLogs.fromJson(Map<St
 final CodeInterpreterOutputLogs codeInterpreterOutputLogs;
 
 @override String get type { return 'CodeInterpreterOutputLogs'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...codeInterpreterOutputLogs.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...codeInterpreterOutputLogs.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CodeInterpreterToolCallOutputs2CodeInterpreterOutputLogs && codeInterpreterOutputLogs == other.codeInterpreterOutputLogs; } 
 @override int get hashCode { return codeInterpreterOutputLogs.hashCode; } 
@@ -35,7 +35,7 @@ factory CodeInterpreterToolCallOutputs2CodeInterpreterOutputImage.fromJson(Map<S
 final CodeInterpreterOutputImage codeInterpreterOutputImage;
 
 @override String get type { return 'CodeInterpreterOutputImage'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...codeInterpreterOutputImage.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...codeInterpreterOutputImage.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CodeInterpreterToolCallOutputs2CodeInterpreterOutputImage && codeInterpreterOutputImage == other.codeInterpreterOutputImage; } 
 @override int get hashCode { return codeInterpreterOutputImage.hashCode; } 

@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'refund': ?refund,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_refunded', 'payment_record_refund', 'refund', 'type'}.contains(key)); } 
 GetCreditNotesPreviewRefunds copyWith({int Function()? amountRefunded, GetCreditNotesPreviewRefundsPaymentRecordRefund Function()? paymentRecordRefund, String Function()? refund, GetCreditNotesPreviewRefundsType Function()? type, }) { return GetCreditNotesPreviewRefunds(
   amountRefunded: amountRefunded != null ? amountRefunded() : this.amountRefunded,
   paymentRecordRefund: paymentRecordRefund != null ? paymentRecordRefund() : this.paymentRecordRefund,

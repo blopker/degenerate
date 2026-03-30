@@ -15,8 +15,12 @@ final class StorePropertiesApi with ApiExecutor {const StorePropertiesApi(this.a
 /// `GET /admin/api/2020-01/countries.json`
 Future<ApiResult<void, Never>> deprecated202001GetCountries({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -84,7 +88,9 @@ return execute(
 /// `GET /admin/api/2020-01/countries/{country_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetCountriesParamCountryId({required String countryId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -152,8 +158,12 @@ return execute(
 /// `GET /admin/api/2020-04/countries.json`
 Future<ApiResult<void, Never>> deprecated202004GetCountries({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -221,7 +231,9 @@ return execute(
 /// `GET /admin/api/2020-04/countries/{country_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetCountriesParamCountryId({required String countryId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -289,8 +301,12 @@ return execute(
 /// `GET /admin/api/2020-07/countries.json`
 Future<ApiResult<void, Never>> deprecated202007GetCountries({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -358,7 +374,9 @@ return execute(
 /// `GET /admin/api/2020-07/countries/{country_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetCountriesParamCountryId({required String countryId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -426,8 +444,12 @@ return execute(
 /// `GET /admin/api/2020-10/countries.json`
 Future<ApiResult<void, Never>> getCountries({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -495,7 +517,9 @@ return execute(
 /// `GET /admin/api/2020-10/countries/{country_id}.json`
 Future<ApiResult<void, Never>> getCountriesParamCountryId({required String countryId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -563,8 +587,12 @@ return execute(
 /// `GET /admin/api/2021-01/countries.json`
 Future<ApiResult<void, Never>> deprecated202101GetCountries({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -632,7 +660,9 @@ return execute(
 /// `GET /admin/api/2021-01/countries/{country_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetCountriesParamCountryId({required String countryId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -700,8 +730,12 @@ return execute(
 /// `GET /admin/api/unstable/countries.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCountries({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -769,7 +803,9 @@ return execute(
 /// `GET /admin/api/unstable/countries/{country_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCountriesParamCountryId({required String countryId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1065,8 +1101,12 @@ return execute(
 /// `GET /admin/api/2020-01/countries/{country_id}/provinces.json`
 Future<ApiResult<void, Never>> deprecated202001GetCountriesParamCountryIdProvinces({required String countryId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1110,7 +1150,9 @@ return execute(
 /// `GET /admin/api/2020-01/countries/{country_id}/provinces/{province_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1159,8 +1201,12 @@ return execute(
 /// `GET /admin/api/2020-04/countries/{country_id}/provinces.json`
 Future<ApiResult<void, Never>> deprecated202004GetCountriesParamCountryIdProvinces({required String countryId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1204,7 +1250,9 @@ return execute(
 /// `GET /admin/api/2020-04/countries/{country_id}/provinces/{province_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1253,8 +1301,12 @@ return execute(
 /// `GET /admin/api/2020-07/countries/{country_id}/provinces.json`
 Future<ApiResult<void, Never>> deprecated202007GetCountriesParamCountryIdProvinces({required String countryId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1298,7 +1350,9 @@ return execute(
 /// `GET /admin/api/2020-07/countries/{country_id}/provinces/{province_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1347,8 +1401,12 @@ return execute(
 /// `GET /admin/api/2020-10/countries/{country_id}/provinces.json`
 Future<ApiResult<void, Never>> getCountriesParamCountryIdProvinces({required String countryId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1392,7 +1450,9 @@ return execute(
 /// `GET /admin/api/2020-10/countries/{country_id}/provinces/{province_id}.json`
 Future<ApiResult<void, Never>> getCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1441,8 +1501,12 @@ return execute(
 /// `GET /admin/api/2021-01/countries/{country_id}/provinces.json`
 Future<ApiResult<void, Never>> deprecated202101GetCountriesParamCountryIdProvinces({required String countryId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1486,7 +1550,9 @@ return execute(
 /// `GET /admin/api/2021-01/countries/{country_id}/provinces/{province_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1535,8 +1601,12 @@ return execute(
 /// `GET /admin/api/unstable/countries/{country_id}/provinces.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCountriesParamCountryIdProvinces({required String countryId, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1580,7 +1650,9 @@ return execute(
 /// `GET /admin/api/unstable/countries/{country_id}/provinces/{province_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetCountriesParamCountryIdProvincesParamProvinceId({required String countryId, required String provinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1629,7 +1701,9 @@ return execute(
 /// `GET /admin/api/2020-01/shipping_zones.json`
 Future<ApiResult<void, Never>> deprecated202001GetShippingZones({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1654,7 +1728,9 @@ return execute(
 /// `GET /admin/api/2020-04/shipping_zones.json`
 Future<ApiResult<void, Never>> deprecated202004GetShippingZones({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1679,7 +1755,9 @@ return execute(
 /// `GET /admin/api/2020-07/shipping_zones.json`
 Future<ApiResult<void, Never>> deprecated202007GetShippingZones({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1704,7 +1782,9 @@ return execute(
 /// `GET /admin/api/2020-10/shipping_zones.json`
 Future<ApiResult<void, Never>> getShippingZones({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1729,7 +1809,9 @@ return execute(
 /// `GET /admin/api/2021-01/shipping_zones.json`
 Future<ApiResult<void, Never>> deprecated202101GetShippingZones({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1754,7 +1836,9 @@ return execute(
 /// `GET /admin/api/unstable/shipping_zones.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetShippingZones({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1779,7 +1863,9 @@ return execute(
 /// `GET /admin/api/2020-01/shop.json`
 Future<ApiResult<void, Never>> deprecated202001GetShop({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1804,7 +1890,9 @@ return execute(
 /// `GET /admin/api/2020-04/shop.json`
 Future<ApiResult<void, Never>> deprecated202004GetShop({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1829,7 +1917,9 @@ return execute(
 /// `GET /admin/api/2020-07/shop.json`
 Future<ApiResult<void, Never>> deprecated202007GetShop({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1854,7 +1944,9 @@ return execute(
 /// `GET /admin/api/2020-10/shop.json`
 Future<ApiResult<void, Never>> getShop({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1879,7 +1971,9 @@ return execute(
 /// `GET /admin/api/2021-01/shop.json`
 Future<ApiResult<void, Never>> deprecated202101GetShop({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1904,7 +1998,9 @@ return execute(
 /// `GET /admin/api/unstable/shop.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetShop({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

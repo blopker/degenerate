@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (additionalDocument != null) 'additional_document': additionalDocument?.toJson(),
   if (document != null) 'document': document?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_document', 'document'}.contains(key)); } 
 PostAccountsAccountPersonsRequestVerification copyWith({PostAccountsAccountPersonsRequestVerificationAdditionalDocument Function()? additionalDocument, PostAccountsAccountPersonsRequestVerificationDocument Function()? document, }) { return PostAccountsAccountPersonsRequestVerification(
   additionalDocument: additionalDocument != null ? additionalDocument() : this.additionalDocument,
   document: document != null ? document() : this.document,

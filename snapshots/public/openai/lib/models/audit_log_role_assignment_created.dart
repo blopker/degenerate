@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'resource_id': ?resourceId,
   'resource_type': ?resourceType,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'principal_id', 'principal_type', 'resource_id', 'resource_type'}.contains(key)); } 
 AuditLogRoleAssignmentCreated copyWith({String Function()? id, String Function()? principalId, String Function()? principalType, String Function()? resourceId, String Function()? resourceType, }) { return AuditLogRoleAssignmentCreated(
   id: id != null ? id() : this.id,
   principalId: principalId != null ? principalId() : this.principalId,

@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   if (sepaDebit != null) 'sepa_debit': sepaDebit?.toJson(),
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acss_debit', 'amazon_pay', 'bacs_debit', 'card', 'card_present', 'klarna', 'link', 'paypal', 'payto', 'sepa_debit', 'us_bank_account'}.contains(key)); } 
 PostSetupIntentsIntentRequestPaymentMethodOptions copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit Function()? acssDebit, PostSetupIntentsIntentRequestPaymentMethodOptionsAmazonPay Function()? amazonPay, PostSetupIntentsIntentRequestPaymentMethodOptionsBacsDebit Function()? bacsDebit, PostSetupIntentsIntentRequestPaymentMethodOptionsCard Function()? card, PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent Function()? cardPresent, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna Function()? klarna, PostSetupIntentsIntentRequestPaymentMethodOptionsLink Function()? link, PostSetupIntentsIntentRequestPaymentMethodOptionsPaypal Function()? paypal, PostSetupIntentsIntentRequestPaymentMethodOptionsPayto Function()? payto, PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebit Function()? sepaDebit, PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccount Function()? usBankAccount, }) { return PostSetupIntentsIntentRequestPaymentMethodOptions(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   amazonPay: amazonPay != null ? amazonPay() : this.amazonPay,

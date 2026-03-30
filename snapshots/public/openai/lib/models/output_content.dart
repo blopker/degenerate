@@ -23,7 +23,7 @@ factory OutputContentOutputTextContent.fromJson(Map<String, dynamic> json) { ret
 final OutputTextContent outputTextContent;
 
 @override String get type { return 'OutputTextContent'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...outputTextContent.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...outputTextContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputContentOutputTextContent && outputTextContent == other.outputTextContent; } 
 @override int get hashCode { return outputTextContent.hashCode; } 
@@ -36,7 +36,7 @@ factory OutputContentRefusalContent.fromJson(Map<String, dynamic> json) { return
 final RefusalContent refusalContent;
 
 @override String get type { return 'RefusalContent'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...refusalContent.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...refusalContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputContentRefusalContent && refusalContent == other.refusalContent; } 
 @override int get hashCode { return refusalContent.hashCode; } 
@@ -49,7 +49,7 @@ factory OutputContentReasoningTextContent.fromJson(Map<String, dynamic> json) { 
 final ReasoningTextContent reasoningTextContent;
 
 @override String get type { return 'ReasoningTextContent'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...reasoningTextContent.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...reasoningTextContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputContentReasoningTextContent && reasoningTextContent == other.reasoningTextContent; } 
 @override int get hashCode { return reasoningTextContent.hashCode; } 

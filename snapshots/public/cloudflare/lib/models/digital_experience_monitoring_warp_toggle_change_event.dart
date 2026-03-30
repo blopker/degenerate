@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   if (toggle != null) 'toggle': toggle?.toJson(),
   'user_email': ?userEmail,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_name', 'account_tag', 'device_id', 'device_registration', 'hostname', 'serial_number', 'timestamp', 'toggle', 'user_email'}.contains(key)); } 
 DigitalExperienceMonitoringWarpToggleChangeEvent copyWith({String Function()? accountName, String Function()? accountTag, DigitalExperienceMonitoringUuid Function()? deviceId, DigitalExperienceMonitoringUuid Function()? deviceRegistration, String Function()? hostname, String Function()? serialNumber, DigitalExperienceMonitoringTimestamp Function()? timestamp, DigitalExperienceMonitoringWarpToggleChangeEventToggle Function()? toggle, String Function()? userEmail, }) { return DigitalExperienceMonitoringWarpToggleChangeEvent(
   accountName: accountName != null ? accountName() : this.accountName,
   accountTag: accountTag != null ? accountTag() : this.accountTag,

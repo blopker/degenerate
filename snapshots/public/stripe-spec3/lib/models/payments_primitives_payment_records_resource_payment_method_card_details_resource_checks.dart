@@ -116,7 +116,7 @@ Map<String, dynamic> toJson() { return {
   if (addressPostalCodeCheck != null) 'address_postal_code_check': addressPostalCodeCheck?.toJson(),
   if (cvcCheck != null) 'cvc_check': cvcCheck?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address_line1_check', 'address_postal_code_check', 'cvc_check'}.contains(key)); } 
 PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks copyWith({PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressLine1Check? Function()? addressLine1Check, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksAddressPostalCodeCheck? Function()? addressPostalCodeCheck, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecksCvcCheck? Function()? cvcCheck, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks(
   addressLine1Check: addressLine1Check != null ? addressLine1Check() : this.addressLine1Check,
   addressPostalCodeCheck: addressPostalCodeCheck != null ? addressPostalCodeCheck() : this.addressPostalCodeCheck,

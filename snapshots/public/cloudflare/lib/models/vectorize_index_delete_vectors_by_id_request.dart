@@ -12,7 +12,7 @@ final List<VectorizeVectorIdentifier>? ids;
 Map<String, dynamic> toJson() { return {
   if (ids != null) 'ids': ids?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ids'}.contains(key)); } 
 VectorizeIndexDeleteVectorsByIdRequest copyWith({List<VectorizeVectorIdentifier> Function()? ids}) { return VectorizeIndexDeleteVectorsByIdRequest(
   ids: ids != null ? ids() : this.ids,
 ); } 

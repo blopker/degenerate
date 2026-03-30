@@ -35,10 +35,18 @@ final class SearchApi with ApiExecutor {const SearchApi(this.apiConfig);
 Future<ApiResult<SearchCodeResponse, SearchCodeResponse503>> searchCode({required String q, SearchCodeSort? sort, SearchCodeOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (order != null) queryParameters['order'] = order.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -76,10 +84,18 @@ return execute(
 Future<ApiResult<SearchCommitsResponse, Never>> searchCommits({required String q, SearchCommitsSort? sort, SearchCommitsOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (order != null) queryParameters['order'] = order.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -119,11 +135,21 @@ return execute(
 Future<ApiResult<SearchIssuesAndPullRequestsResponse, SearchIssuesAndPullRequestsResponse503>> searchIssuesAndPullRequests({required String q, SearchIssuesAndPullRequestsSort? sort, SearchIssuesAndPullRequestsOrder? order, int? perPage, int? page, String? advancedSearch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (order != null) queryParameters['order'] = order.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (advancedSearch != null) queryParameters['advanced_search'] = advancedSearch;
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (advancedSearch != null) {
+  queryParameters['advanced_search'] = advancedSearch;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -163,10 +189,18 @@ Future<ApiResult<SearchLabelsResponse, BasicError>> searchLabels({required int r
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['repository_id'] = repositoryId.toString();
 queryParameters['q'] = q;
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (order != null) queryParameters['order'] = order.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -205,10 +239,18 @@ return execute(
 Future<ApiResult<SearchReposResponse, SearchReposResponse503>> searchRepos({required String q, SearchReposSort? sort, SearchReposOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (order != null) queryParameters['order'] = order.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -247,8 +289,12 @@ return execute(
 Future<ApiResult<SearchTopicsResponse, Never>> searchTopics({required String q, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -286,10 +332,18 @@ return execute(
 Future<ApiResult<SearchUsersResponse, SearchUsersResponse503>> searchUsers({required String q, SearchUsersSort? sort, SearchUsersOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (order != null) queryParameters['order'] = order.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

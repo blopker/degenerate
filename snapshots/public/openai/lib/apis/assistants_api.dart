@@ -114,11 +114,21 @@ return execute(
 /// `GET /threads/{thread_id}/messages`
 Future<ApiResult<ListMessagesResponse, Never>> listMessages({required String threadId, int? limit, ListMessagesOrder? order, String? after, String? before, String? runId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
-if (before != null) queryParameters['before'] = before;
-if (runId != null) queryParameters['run_id'] = runId;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (runId != null) {
+  queryParameters['run_id'] = runId;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -223,10 +233,18 @@ return execute(
 /// `GET /threads/{thread_id}/runs`
 Future<ApiResult<ListRunsResponse, Never>> listRuns({required String threadId, int? limit, ListRunsOrder? order, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
-if (before != null) queryParameters['before'] = before;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -341,10 +359,18 @@ return execute(
 /// `GET /threads/{thread_id}/runs/{run_id}/steps`
 Future<ApiResult<ListRunStepsResponse, Never>> listRunSteps({required String threadId, required String runId, int? limit, ListRunStepsOrder? order, String? after, String? before, List<ListRunStepsInclude>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
-if (before != null) queryParameters['before'] = before;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
 if (include != null) {
 for (final item in include) {
   queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson(), allowReserved: false));

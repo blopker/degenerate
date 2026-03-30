@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   if (streamKey != null) 'streamKey': streamKey?.toJson(),
   if (url != null) 'url': url?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'streamKey', 'url'}.contains(key)); } 
 StreamPlaybackRtmps copyWith({StreamPlaybackRtmpsStreamKey Function()? streamKey, StreamPlaybackRtmpsUrl Function()? url, }) { return StreamPlaybackRtmps(
   streamKey: streamKey != null ? streamKey() : this.streamKey,
   url: url != null ? url() : this.url,

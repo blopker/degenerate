@@ -11,7 +11,7 @@ final RealtimekitParticipantsList? participant;
 Map<String, dynamic> toJson() { return {
   if (participant != null) 'participant': participant?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'participant'}.contains(key)); } 
 GetParticipantDetailsResponseData copyWith({RealtimekitParticipantsList Function()? participant}) { return GetParticipantDetailsResponseData(
   participant: participant != null ? participant() : this.participant,
 ); } 

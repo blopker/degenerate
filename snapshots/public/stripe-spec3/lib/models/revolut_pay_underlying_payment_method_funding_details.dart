@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (card != null) 'card': card?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card', 'type'}.contains(key)); } 
 RevolutPayUnderlyingPaymentMethodFundingDetails copyWith({PaymentMethodDetailsPassthroughCard Function()? card, RevolutPayUnderlyingPaymentMethodFundingDetailsType? Function()? type, }) { return RevolutPayUnderlyingPaymentMethodFundingDetails(
   card: card != null ? card() : this.card,
   type: type != null ? type() : this.type,

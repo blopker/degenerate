@@ -6,8 +6,8 @@ sealed class RealtimeCreateClientSecretResponseSession {const RealtimeCreateClie
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory RealtimeCreateClientSecretResponseSession.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'RealtimeSessionCreateResponseGa' => RealtimeCreateClientSecretResponseSessionRealtimeSessionCreateResponseGa.fromJson(json),
-  'RealtimeTranscriptionSessionCreateResponseGa' => RealtimeCreateClientSecretResponseSessionRealtimeTranscriptionSessionCreateResponseGa.fromJson(json),
+  'RealtimeSessionCreateResponseGA' => RealtimeCreateClientSecretResponseSessionRealtimeSessionCreateResponseGa.fromJson(json),
+  'RealtimeTranscriptionSessionCreateResponseGA' => RealtimeCreateClientSecretResponseSessionRealtimeTranscriptionSessionCreateResponseGa.fromJson(json),
   _ => RealtimeCreateClientSecretResponseSession$Unknown(json),
 }; }
 
@@ -23,8 +23,8 @@ factory RealtimeCreateClientSecretResponseSessionRealtimeSessionCreateResponseGa
 
 final RealtimeSessionCreateResponseGa realtimeSessionCreateResponseGa;
 
-@override String get type { return 'RealtimeSessionCreateResponseGa'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...realtimeSessionCreateResponseGa.toJson()}; } 
+@override String get type { return 'RealtimeSessionCreateResponseGA'; } 
+@override Map<String, dynamic> toJson() { return {...realtimeSessionCreateResponseGa.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeCreateClientSecretResponseSessionRealtimeSessionCreateResponseGa && realtimeSessionCreateResponseGa == other.realtimeSessionCreateResponseGa; } 
 @override int get hashCode { return realtimeSessionCreateResponseGa.hashCode; } 
@@ -36,8 +36,8 @@ factory RealtimeCreateClientSecretResponseSessionRealtimeTranscriptionSessionCre
 
 final RealtimeTranscriptionSessionCreateResponseGa realtimeTranscriptionSessionCreateResponseGa;
 
-@override String get type { return 'RealtimeTranscriptionSessionCreateResponseGa'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...realtimeTranscriptionSessionCreateResponseGa.toJson()}; } 
+@override String get type { return 'RealtimeTranscriptionSessionCreateResponseGA'; } 
+@override Map<String, dynamic> toJson() { return {...realtimeTranscriptionSessionCreateResponseGa.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeCreateClientSecretResponseSessionRealtimeTranscriptionSessionCreateResponseGa && realtimeTranscriptionSessionCreateResponseGa == other.realtimeTranscriptionSessionCreateResponseGa; } 
 @override int get hashCode { return realtimeTranscriptionSessionCreateResponseGa.hashCode; } 

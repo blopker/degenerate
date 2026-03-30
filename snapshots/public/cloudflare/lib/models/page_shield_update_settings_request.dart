@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (useCloudflareReportingEndpoint != null) 'use_cloudflare_reporting_endpoint': useCloudflareReportingEndpoint?.toJson(),
   if (useConnectionUrlPath != null) 'use_connection_url_path': useConnectionUrlPath?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'use_cloudflare_reporting_endpoint', 'use_connection_url_path'}.contains(key)); } 
 PageShieldUpdateSettingsRequest copyWith({PageShieldEnabled Function()? enabled, PageShieldUseCloudflareReportingEndpoint Function()? useCloudflareReportingEndpoint, PageShieldUseConnectionUrlPath Function()? useConnectionUrlPath, }) { return PageShieldUpdateSettingsRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   useCloudflareReportingEndpoint: useCloudflareReportingEndpoint != null ? useCloudflareReportingEndpoint() : this.useCloudflareReportingEndpoint,

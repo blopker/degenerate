@@ -1,104 +1,181 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'public_user_schema.dart';final class KeeperProfileSchema {const KeeperProfileSchema({required this.user, required this.circleCount, required this.monthJoined, this.bioHtml, this.username, this.title = 'Keeper', this.bio, this.location = 'Earth', this.languages = 'English', this.instagramUsername, this.website, this.xUsername, this.blueskyUsername, });
+import 'public_user_schema.dart';
 
-factory KeeperProfileSchema.fromJson(Map<String, dynamic> json) { return KeeperProfileSchema(
-  user: PublicUserSchema.fromJson(json['user'] as Map<String, dynamic>),
-  circleCount: (json['circle_count'] as num).toInt(),
-  monthJoined: json['month_joined'] as String,
-  bioHtml: json['bio_html'] as String?,
-  username: json['username'] as String?,
-  title: json.containsKey('title') ? json['title'] as String : 'Keeper',
-  bio: json['bio'] as String?,
-  location: json.containsKey('location') ? json['location'] as String : 'Earth',
-  languages: json.containsKey('languages') ? json['languages'] as String : 'English',
-  instagramUsername: json['instagram_username'] as String?,
-  website: json['website'] as String?,
-  xUsername: json['x_username'] as String?,
-  blueskyUsername: json['bluesky_username'] as String?,
-); }
+final class KeeperProfileSchema {
+  const KeeperProfileSchema({
+    required this.user,
+    required this.circleCount,
+    required this.monthJoined,
+    this.bioHtml,
+    this.username,
+    this.title = 'Keeper',
+    this.bio,
+    this.location = 'Earth',
+    this.languages = 'English',
+    this.instagramUsername,
+    this.website,
+    this.xUsername,
+    this.blueskyUsername,
+  });
 
-final PublicUserSchema user;
+  factory KeeperProfileSchema.fromJson(Map<String, dynamic> json) {
+    return KeeperProfileSchema(
+      user: PublicUserSchema.fromJson(json['user'] as Map<String, dynamic>),
+      circleCount: (json['circle_count'] as num).toInt(),
+      monthJoined: json['month_joined'] as String,
+      bioHtml: json['bio_html'] as String?,
+      username: json['username'] as String?,
+      title: json.containsKey('title') ? json['title'] as String : 'Keeper',
+      bio: json['bio'] as String?,
+      location: json.containsKey('location')
+          ? json['location'] as String
+          : 'Earth',
+      languages: json.containsKey('languages')
+          ? json['languages'] as String
+          : 'English',
+      instagramUsername: json['instagram_username'] as String?,
+      website: json['website'] as String?,
+      xUsername: json['x_username'] as String?,
+      blueskyUsername: json['bluesky_username'] as String?,
+    );
+  }
 
-final int circleCount;
+  final PublicUserSchema user;
 
-final String monthJoined;
+  final int circleCount;
 
-final String? bioHtml;
+  final String monthJoined;
 
-/// Your unique username.
-final String? username;
+  final String? bioHtml;
 
-final String title;
+  /// Your unique username.
+  final String? username;
 
-final String? bio;
+  final String title;
 
-/// Where are you located? (City, State, Country)
-final String location;
+  final String? bio;
 
-/// What languages do you speak? (English, Spanish, etc.)
-final String languages;
+  /// Where are you located? (City, State, Country)
+  final String location;
 
-/// Your Instagram username, no @ symbol
-final String? instagramUsername;
+  /// What languages do you speak? (English, Spanish, etc.)
+  final String languages;
 
-/// Your personal website.
-final String? website;
+  /// Your Instagram username, no @ symbol
+  final String? instagramUsername;
 
-/// Your X username, no @ symbol
-final String? xUsername;
+  /// Your personal website.
+  final String? website;
 
-/// Your Bluesky username, no @ symbol
-final String? blueskyUsername;
+  /// Your X username, no @ symbol
+  final String? xUsername;
 
-Map<String, dynamic> toJson() { return {
-  'user': user.toJson(),
-  'circle_count': circleCount,
-  'month_joined': monthJoined,
-  'bio_html': ?bioHtml,
-  'username': ?username,
-  'title': title,
-  'bio': ?bio,
-  'location': location,
-  'languages': languages,
-  'instagram_username': ?instagramUsername,
-  'website': ?website,
-  'x_username': ?xUsername,
-  'bluesky_username': ?blueskyUsername,
-}; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('user') &&
-      json.containsKey('circle_count') && json['circle_count'] is num &&
-      json.containsKey('month_joined') && json['month_joined'] is String; } 
-KeeperProfileSchema copyWith({PublicUserSchema? user, int? circleCount, String? monthJoined, String? Function()? bioHtml, String? Function()? username, String Function()? title, String? Function()? bio, String Function()? location, String Function()? languages, String? Function()? instagramUsername, String? Function()? website, String? Function()? xUsername, String? Function()? blueskyUsername, }) { return KeeperProfileSchema(
-  user: user ?? this.user,
-  circleCount: circleCount ?? this.circleCount,
-  monthJoined: monthJoined ?? this.monthJoined,
-  bioHtml: bioHtml != null ? bioHtml() : this.bioHtml,
-  username: username != null ? username() : this.username,
-  title: title != null ? title() : this.title,
-  bio: bio != null ? bio() : this.bio,
-  location: location != null ? location() : this.location,
-  languages: languages != null ? languages() : this.languages,
-  instagramUsername: instagramUsername != null ? instagramUsername() : this.instagramUsername,
-  website: website != null ? website() : this.website,
-  xUsername: xUsername != null ? xUsername() : this.xUsername,
-  blueskyUsername: blueskyUsername != null ? blueskyUsername() : this.blueskyUsername,
-); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-      other is KeeperProfileSchema &&
-          user == other.user &&
-          circleCount == other.circleCount &&
-          monthJoined == other.monthJoined &&
-          bioHtml == other.bioHtml &&
-          username == other.username &&
-          title == other.title &&
-          bio == other.bio &&
-          location == other.location &&
-          languages == other.languages &&
-          instagramUsername == other.instagramUsername &&
-          website == other.website &&
-          xUsername == other.xUsername &&
-          blueskyUsername == other.blueskyUsername; } 
-@override int get hashCode { return Object.hash(user, circleCount, monthJoined, bioHtml, username, title, bio, location, languages, instagramUsername, website, xUsername, blueskyUsername); } 
-@override String toString() { return 'KeeperProfileSchema(user: $user, circleCount: $circleCount, monthJoined: $monthJoined, bioHtml: $bioHtml, username: $username, title: $title, bio: $bio, location: $location, languages: $languages, instagramUsername: $instagramUsername, website: $website, xUsername: $xUsername, blueskyUsername: $blueskyUsername)'; } 
- }
+  /// Your Bluesky username, no @ symbol
+  final String? blueskyUsername;
+
+  Map<String, dynamic> toJson() {
+    return {
+      'user': user.toJson(),
+      'circle_count': circleCount,
+      'month_joined': monthJoined,
+      'bio_html': ?bioHtml,
+      'username': ?username,
+      'title': title,
+      'bio': ?bio,
+      'location': location,
+      'languages': languages,
+      'instagram_username': ?instagramUsername,
+      'website': ?website,
+      'x_username': ?xUsername,
+      'bluesky_username': ?blueskyUsername,
+    };
+  }
+
+  static bool canParse(Map<String, dynamic> json) {
+    return json.containsKey('user') &&
+        json.containsKey('circle_count') &&
+        json['circle_count'] is num &&
+        json.containsKey('month_joined') &&
+        json['month_joined'] is String;
+  }
+
+  KeeperProfileSchema copyWith({
+    PublicUserSchema? user,
+    int? circleCount,
+    String? monthJoined,
+    String? Function()? bioHtml,
+    String? Function()? username,
+    String Function()? title,
+    String? Function()? bio,
+    String Function()? location,
+    String Function()? languages,
+    String? Function()? instagramUsername,
+    String? Function()? website,
+    String? Function()? xUsername,
+    String? Function()? blueskyUsername,
+  }) {
+    return KeeperProfileSchema(
+      user: user ?? this.user,
+      circleCount: circleCount ?? this.circleCount,
+      monthJoined: monthJoined ?? this.monthJoined,
+      bioHtml: bioHtml != null ? bioHtml() : this.bioHtml,
+      username: username != null ? username() : this.username,
+      title: title != null ? title() : this.title,
+      bio: bio != null ? bio() : this.bio,
+      location: location != null ? location() : this.location,
+      languages: languages != null ? languages() : this.languages,
+      instagramUsername: instagramUsername != null
+          ? instagramUsername()
+          : this.instagramUsername,
+      website: website != null ? website() : this.website,
+      xUsername: xUsername != null ? xUsername() : this.xUsername,
+      blueskyUsername: blueskyUsername != null
+          ? blueskyUsername()
+          : this.blueskyUsername,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is KeeperProfileSchema &&
+            user == other.user &&
+            circleCount == other.circleCount &&
+            monthJoined == other.monthJoined &&
+            bioHtml == other.bioHtml &&
+            username == other.username &&
+            title == other.title &&
+            bio == other.bio &&
+            location == other.location &&
+            languages == other.languages &&
+            instagramUsername == other.instagramUsername &&
+            website == other.website &&
+            xUsername == other.xUsername &&
+            blueskyUsername == other.blueskyUsername;
+  }
+
+  @override
+  int get hashCode {
+    return Object.hash(
+      user,
+      circleCount,
+      monthJoined,
+      bioHtml,
+      username,
+      title,
+      bio,
+      location,
+      languages,
+      instagramUsername,
+      website,
+      xUsername,
+      blueskyUsername,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'KeeperProfileSchema(user: $user, circleCount: $circleCount, monthJoined: $monthJoined, bioHtml: $bioHtml, username: $username, title: $title, bio: $bio, location: $location, languages: $languages, instagramUsername: $instagramUsername, website: $website, xUsername: $xUsername, blueskyUsername: $blueskyUsername)';
+  }
+}

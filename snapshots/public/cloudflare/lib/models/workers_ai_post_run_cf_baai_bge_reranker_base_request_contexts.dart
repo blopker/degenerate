@@ -12,7 +12,7 @@ final String? text;
 Map<String, dynamic> toJson() { return {
   'text': ?text,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text'}.contains(key)); } 
 WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts copyWith({String Function()? text}) { return WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts(
   text: text != null ? text() : this.text,
 ); } 

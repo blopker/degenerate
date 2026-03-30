@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   if (links != null) '_links': links?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'path', 'sha', 'size', 'url', 'html_url', 'git_url', 'download_url', 'type', '_links'}.contains(key)); } 
 FileCommitContent copyWith({String Function()? name, String Function()? path, String Function()? sha, int Function()? size, String Function()? url, String Function()? htmlUrl, String Function()? gitUrl, String Function()? downloadUrl, String Function()? type, FileCommitContentLinks Function()? links, }) { return FileCommitContent(
   name: name != null ? name() : this.name,
   path: path != null ? path() : this.path,

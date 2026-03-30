@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'inactivity_seconds': ?inactivitySeconds,
   'interval_seconds': ?intervalSeconds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_size_bytes', 'inactivity_seconds', 'interval_seconds'}.contains(key)); } 
 CloudflarePipelinesR2DataCatalogTablePublicRollingPolicy copyWith({int Function()? fileSizeBytes, int Function()? inactivitySeconds, int Function()? intervalSeconds, }) { return CloudflarePipelinesR2DataCatalogTablePublicRollingPolicy(
   fileSizeBytes: fileSizeBytes != null ? fileSizeBytes() : this.fileSizeBytes,
   inactivitySeconds: inactivitySeconds != null ? inactivitySeconds() : this.inactivitySeconds,

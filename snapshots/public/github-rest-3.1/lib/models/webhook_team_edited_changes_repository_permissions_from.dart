@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'pull': ?pull,
   'push': ?push,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'admin', 'pull', 'push'}.contains(key)); } 
 WebhookTeamEditedChangesRepositoryPermissionsFrom copyWith({bool Function()? admin, bool Function()? pull, bool Function()? push, }) { return WebhookTeamEditedChangesRepositoryPermissionsFrom(
   admin: admin != null ? admin() : this.admin,
   pull: pull != null ? pull() : this.pull,

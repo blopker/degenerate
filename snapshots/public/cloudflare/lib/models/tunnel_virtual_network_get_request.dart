@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (isDefaultNetwork != null) 'is_default_network': isDefaultNetwork?.toJson(),
   if (name != null) 'name': name?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'is_default_network', 'name'}.contains(key)); } 
 TunnelVirtualNetworkGetRequest copyWith({TunnelVirtualNetworkComment Function()? comment, TunnelIsDefaultNetwork Function()? isDefaultNetwork, TunnelVirtualNetworkName Function()? name, }) { return TunnelVirtualNetworkGetRequest(
   comment: comment != null ? comment() : this.comment,
   isDefaultNetwork: isDefaultNetwork != null ? isDefaultNetwork() : this.isDefaultNetwork,

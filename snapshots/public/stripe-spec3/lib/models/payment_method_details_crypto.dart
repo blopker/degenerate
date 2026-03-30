@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   if (tokenCurrency != null) 'token_currency': tokenCurrency?.toJson(),
   'transaction_hash': ?transactionHash,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_address', 'network', 'token_currency', 'transaction_hash'}.contains(key)); } 
 PaymentMethodDetailsCrypto copyWith({String Function()? buyerAddress, PaymentMethodDetailsCryptoNetwork Function()? network, PaymentMethodDetailsCryptoTokenCurrency Function()? tokenCurrency, String Function()? transactionHash, }) { return PaymentMethodDetailsCrypto(
   buyerAddress: buyerAddress != null ? buyerAddress() : this.buyerAddress,
   network: network != null ? network() : this.network,

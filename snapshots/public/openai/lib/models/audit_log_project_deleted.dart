@@ -13,7 +13,7 @@ final String? id;
 Map<String, dynamic> toJson() { return {
   'id': ?id,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
 AuditLogProjectDeleted copyWith({String Function()? id}) { return AuditLogProjectDeleted(
   id: id != null ? id() : this.id,
 ); } 

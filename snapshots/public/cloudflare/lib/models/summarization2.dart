@@ -12,7 +12,7 @@ final String? summary;
 Map<String, dynamic> toJson() { return {
   'summary': ?summary,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'summary'}.contains(key)); } 
 Summarization2 copyWith({String Function()? summary}) { return Summarization2(
   summary: summary != null ? summary() : this.summary,
 ); } 

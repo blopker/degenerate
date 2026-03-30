@@ -22,7 +22,7 @@ factory AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding.fromJson(Map<
 final CloudflarePipelinesWorkersPipelinesBindingSource cloudflarePipelinesWorkersPipelinesBindingSource;
 
 @override String get type { return 'binding'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...cloudflarePipelinesWorkersPipelinesBindingSource.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...cloudflarePipelinesWorkersPipelinesBindingSource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding && cloudflarePipelinesWorkersPipelinesBindingSource == other.cloudflarePipelinesWorkersPipelinesBindingSource; } 
 @override int get hashCode { return cloudflarePipelinesWorkersPipelinesBindingSource.hashCode; } 
@@ -35,7 +35,7 @@ factory AccountsByAccountIdPipelinesDeprecatedRequestSourceHttp.fromJson(Map<Str
 final CloudflarePipelinesWorkersPipelinesHttpSource cloudflarePipelinesWorkersPipelinesHttpSource;
 
 @override String get type { return 'http'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...cloudflarePipelinesWorkersPipelinesHttpSource.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...cloudflarePipelinesWorkersPipelinesHttpSource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AccountsByAccountIdPipelinesDeprecatedRequestSourceHttp && cloudflarePipelinesWorkersPipelinesHttpSource == other.cloudflarePipelinesWorkersPipelinesHttpSource; } 
 @override int get hashCode { return cloudflarePipelinesWorkersPipelinesHttpSource.hashCode; } 

@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'error_retention': ?errorRetention,
   'success_retention': ?successRetention,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'error_retention', 'success_retention'}.contains(key)); } 
 WorCreateNewWorkflowInstanceRequestInstanceRetention copyWith({dynamic Function()? errorRetention, dynamic Function()? successRetention, }) { return WorCreateNewWorkflowInstanceRequestInstanceRetention(
   errorRetention: errorRetention != null ? errorRetention() : this.errorRetention,
   successRetention: successRetention != null ? successRetention() : this.successRetention,

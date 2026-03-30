@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
   if (script != null) 'script': script?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'dispatch_namespace', 'modified_on', 'script'}.contains(key)); } 
 WorkersNamespaceScriptResponse copyWith({WorkersCreatedOn Function()? createdOn, WorkersDispatchNamespaceName Function()? dispatchNamespace, WorkersModifiedOn Function()? modifiedOn, WorkersScriptResponse Function()? script, }) { return WorkersNamespaceScriptResponse(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   dispatchNamespace: dispatchNamespace != null ? dispatchNamespace() : this.dispatchNamespace,

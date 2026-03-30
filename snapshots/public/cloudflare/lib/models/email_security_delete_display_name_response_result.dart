@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class EmailSecurityDeleteDisplayNameResponseResult {const EmailSecurityDeleteDisplayNameResponseResult({required this.id});
+
+factory EmailSecurityDeleteDisplayNameResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityDeleteDisplayNameResponseResult(
+  id: (json['id'] as num).toInt(),
+); }
+
+final int id;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num; } 
+EmailSecurityDeleteDisplayNameResponseResult copyWith({int? id}) { return EmailSecurityDeleteDisplayNameResponseResult(
+  id: id ?? this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EmailSecurityDeleteDisplayNameResponseResult &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'EmailSecurityDeleteDisplayNameResponseResult(id: $id)'; } 
+ }

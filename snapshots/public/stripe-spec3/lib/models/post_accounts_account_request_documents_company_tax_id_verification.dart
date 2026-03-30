@@ -11,7 +11,7 @@ final List<String>? files;
 Map<String, dynamic> toJson() { return {
   'files': ?files,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'files'}.contains(key)); } 
 PostAccountsAccountRequestDocumentsCompanyTaxIdVerification copyWith({List<String> Function()? files}) { return PostAccountsAccountRequestDocumentsCompanyTaxIdVerification(
   files: files != null ? files() : this.files,
 ); } 

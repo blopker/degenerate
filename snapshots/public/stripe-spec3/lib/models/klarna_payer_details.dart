@@ -13,7 +13,7 @@ final KlarnaPayerDetailsAddress? address;
 Map<String, dynamic> toJson() { return {
   if (address != null) 'address': address?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address'}.contains(key)); } 
 KlarnaPayerDetails copyWith({KlarnaPayerDetailsAddress? Function()? address}) { return KlarnaPayerDetails(
   address: address != null ? address() : this.address,
 ); } 

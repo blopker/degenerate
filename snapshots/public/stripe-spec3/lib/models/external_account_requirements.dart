@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'past_due': ?pastDue,
   'pending_verification': ?pendingVerification,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currently_due', 'errors', 'past_due', 'pending_verification'}.contains(key)); } 
 ExternalAccountRequirements copyWith({List<String>? Function()? currentlyDue, List<AccountRequirementsError>? Function()? errors, List<String>? Function()? pastDue, List<String>? Function()? pendingVerification, }) { return ExternalAccountRequirements(
   currentlyDue: currentlyDue != null ? currentlyDue() : this.currentlyDue,
   errors: errors != null ? errors() : this.errors,

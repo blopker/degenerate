@@ -38,7 +38,7 @@ final CardDetailsParamsNetworksPreferred? preferred;
 Map<String, dynamic> toJson() { return {
   if (preferred != null) 'preferred': preferred?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred'}.contains(key)); } 
 CardDetailsParamsNetworks copyWith({CardDetailsParamsNetworksPreferred Function()? preferred}) { return CardDetailsParamsNetworks(
   preferred: preferred != null ? preferred() : this.preferred,
 ); } 

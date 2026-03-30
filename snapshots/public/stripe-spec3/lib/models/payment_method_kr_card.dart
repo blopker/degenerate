@@ -103,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   if (brand != null) 'brand': brand?.toJson(),
   'last4': ?last4,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brand', 'last4'}.contains(key)); } 
 PaymentMethodKrCard copyWith({PaymentMethodKrCardBrand? Function()? brand, String? Function()? last4, }) { return PaymentMethodKrCard(
   brand: brand != null ? brand() : this.brand,
   last4: last4 != null ? last4() : this.last4,

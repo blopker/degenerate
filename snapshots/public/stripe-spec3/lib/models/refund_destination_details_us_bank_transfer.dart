@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
   'reference_status': ?referenceStatus,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'reference_status'}.contains(key)); } 
 RefundDestinationDetailsUsBankTransfer copyWith({String? Function()? reference, String? Function()? referenceStatus, }) { return RefundDestinationDetailsUsBankTransfer(
   reference: reference != null ? reference() : this.reference,
   referenceStatus: referenceStatus != null ? referenceStatus() : this.referenceStatus,

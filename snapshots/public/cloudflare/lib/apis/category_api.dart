@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_category_delete_response.dart';import '../models/delete_category_delete_response400.dart';import '../models/get_category_list_complete_response.dart';import '../models/get_category_list_complete_response400.dart';import '../models/get_category_list_response.dart';import '../models/get_category_list_response400.dart';import '../models/get_category_read_response.dart';import '../models/get_category_read_response400.dart';import '../models/patch_category_update_request.dart';import '../models/patch_category_update_response.dart';import '../models/patch_category_update_response400.dart';import '../models/post_category_create_request.dart';import '../models/post_category_create_response.dart';import '../models/post_category_create_response400.dart';import '../models/post_category_update_request.dart';import '../models/post_category_update_response.dart';import '../models/post_category_update_response400.dart';import '../models/response_common5.dart';/// CategoryApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/alexandria_category.dart';import '../models/delete_category_delete_response.dart';import '../models/delete_category_delete_response400.dart';import '../models/get_category_list_complete_response.dart';import '../models/get_category_list_complete_response400.dart';import '../models/get_category_list_response.dart';import '../models/get_category_list_response400.dart';import '../models/get_category_read_response.dart';import '../models/get_category_read_response400.dart';import '../models/patch_category_update_request.dart';import '../models/patch_category_update_response.dart';import '../models/patch_category_update_response400.dart';import '../models/post_category_create_request.dart';import '../models/post_category_create_response.dart';import '../models/post_category_create_response400.dart';import '../models/post_category_update_request.dart';import '../models/post_category_update_response.dart';import '../models/post_category_update_response400.dart';/// CategoryApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -185,7 +185,7 @@ return execute(
 /// Get all application categories.
 ///
 /// `GET /accounts/{accountId}/resource-library/categories`
-Future<ApiResult<ResponseCommon5, Never>> getCategories({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AlexandriaCategory>?, Never>> getCategories({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -197,7 +197,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon5.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => AlexandriaCategory.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -206,7 +207,7 @@ return execute(
 /// Get application category by ID.
 ///
 /// `GET /accounts/{accountId}/resource-library/categories/{id}`
-Future<ApiResult<ResponseCommon5, Never>> getCategoryById({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AlexandriaCategory?, Never>> getCategoryById({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -218,7 +219,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon5.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? AlexandriaCategory.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

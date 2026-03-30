@@ -5,6 +5,7 @@ import 'api_config.dart';
 import 'api_result.dart';
 import 'cancel_token.dart';
 import 'interceptor.dart';
+import 'jsonl.dart';
 import 'request_options.dart';
 import 'sse.dart';
 
@@ -156,6 +157,73 @@ mixin ApiExecutor {
       yield* parseSseStream(
         streamedResponse.byteStream,
       ).map((event) => onEvent(event.data));
+    } on CancelledException {
+      timeoutTimer?.cancel();
+      if (timedOut) {
+        throw TimeoutException('Request timed out', effectiveTimeout);
+      }
+      rethrow;
+    }
+  }
+
+  /// JSONL streaming pipeline: send -> line parse -> deserialize.
+  Stream<T> executeJsonlStreaming<T>(
+    ApiRequest request, {
+    required T Function(String data) onEvent,
+  }) async* {
+    final userCancelToken = request.options?.cancelToken;
+    if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
+
+    final effectiveTimeout = request.options?.timeout ?? apiConfig.timeout;
+    final extraHeaders = request.options?.extraHeaders;
+
+    final adapterToken = (effectiveTimeout != null || userCancelToken != null)
+        ? CancelToken()
+        : null;
+    Timer? timeoutTimer;
+    bool timedOut = false;
+
+    if (adapterToken != null) {
+      if (userCancelToken != null) {
+        final token = adapterToken;
+        userCancelToken.whenCancelled.then((_) {
+          if (!token.isCancelled) token.cancel();
+        });
+      }
+      if (effectiveTimeout != null) {
+        final token = adapterToken;
+        timeoutTimer = Timer(effectiveTimeout, () {
+          timedOut = true;
+          if (!token.isCancelled) token.cancel();
+        });
+      }
+    }
+
+    final effectiveRequest = request.copyWith(
+      headers: extraHeaders != null
+          ? {...request.headers, ...extraHeaders}
+          : null,
+      options: RequestOptions(cancelToken: adapterToken),
+    );
+
+    try {
+      final streamedResponse = await apiConfig.client.sendStreaming(
+        effectiveRequest,
+      );
+      timeoutTimer?.cancel();
+
+      if (!streamedResponse.isSuccessful) {
+        final buffered = await streamedResponse.toApiResponse();
+        throw ApiStreamError(
+          statusCode: buffered.statusCode,
+          rawError: buffered.body,
+          headers: buffered.headers,
+        );
+      }
+
+      yield* parseJsonlStream(
+        streamedResponse.byteStream,
+      ).map((line) => onEvent(line));
     } on CancelledException {
       timeoutTimer?.cancel();
       if (timedOut) {

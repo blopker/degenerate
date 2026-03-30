@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (phone != null) 'phone': phone?.toJson(),
   'tax_id': ?taxId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'email', 'name', 'phone', 'tax_id'}.contains(key)); } 
 PostSetupIntentsIntentRequestPaymentMethodDataBillingDetails copyWith({PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddress Function()? address, PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsEmail Function()? email, PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsName Function()? name, PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsPhone Function()? phone, String Function()? taxId, }) { return PostSetupIntentsIntentRequestPaymentMethodDataBillingDetails(
   address: address != null ? address() : this.address,
   email: email != null ? email() : this.email,

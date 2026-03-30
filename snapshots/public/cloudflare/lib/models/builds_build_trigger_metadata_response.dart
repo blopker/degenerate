@@ -100,7 +100,7 @@ Map<String, dynamic> toJson() { return {
   if (repoName != null) 'repo_name': repoName?.toJson(),
   if (rootDirectory != null) 'root_directory': rootDirectory?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'author', 'branch', 'build_command', 'build_token_name', 'build_token_uuid', 'build_trigger_source', 'commit_hash', 'commit_message', 'deploy_command', 'environment_variables', 'provider_account_name', 'provider_type', 'repo_name', 'root_directory'}.contains(key)); } 
 BuildsBuildTriggerMetadataResponse copyWith({String Function()? author, BuildsBranch Function()? branch, BuildsBuildCommand Function()? buildCommand, BuildsBuildTokenName Function()? buildTokenName, BuildsBuildTokenUuid Function()? buildTokenUuid, BuildsBuildTriggerSource Function()? buildTriggerSource, BuildsCommitHash Function()? commitHash, String Function()? commitMessage, BuildsDeployCommand Function()? deployCommand, Map<String, String> Function()? environmentVariables, BuildsProviderAccountName Function()? providerAccountName, BuildsScmProviderType Function()? providerType, BuildsRepoName Function()? repoName, BuildsRootDirectory Function()? rootDirectory, }) { return BuildsBuildTriggerMetadataResponse(
   author: author != null ? author() : this.author,
   branch: branch != null ? branch() : this.branch,

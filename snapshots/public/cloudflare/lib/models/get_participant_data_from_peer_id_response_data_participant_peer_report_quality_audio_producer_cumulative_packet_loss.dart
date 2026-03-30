@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   '50_or_greater_event_fraction': ?$50OrGreaterEventFraction,
   'avg': ?avg,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'5_or_greater_event_fraction', '10_or_greater_event_fraction', '25_or_greater_event_fraction', '50_or_greater_event_fraction', 'avg'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss copyWith({int Function()? $5OrGreaterEventFraction, int Function()? $10OrGreaterEventFraction, int Function()? $25OrGreaterEventFraction, int Function()? $50OrGreaterEventFraction, int Function()? avg, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss(
   $5OrGreaterEventFraction: $5OrGreaterEventFraction != null ? $5OrGreaterEventFraction() : this.$5OrGreaterEventFraction,
   $10OrGreaterEventFraction: $10OrGreaterEventFraction != null ? $10OrGreaterEventFraction() : this.$10OrGreaterEventFraction,

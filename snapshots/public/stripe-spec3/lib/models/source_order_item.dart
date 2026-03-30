@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'description', 'parent', 'quantity', 'type'}.contains(key)); } 
 SourceOrderItem copyWith({int? Function()? amount, String? Function()? currency, String? Function()? description, String? Function()? parent, int Function()? quantity, String? Function()? type, }) { return SourceOrderItem(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,

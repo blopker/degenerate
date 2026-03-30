@@ -103,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   'site_admin': ?siteAdmin,
   'user_view_type': ?userViewType,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'login', 'id', 'node_id', 'url', 'repos_url', 'events_url', 'hooks_url', 'issues_url', 'members_url', 'public_members_url', 'avatar_url', 'description', 'gravatar_id', 'html_url', 'followers_url', 'following_url', 'gists_url', 'starred_url', 'subscriptions_url', 'organizations_url', 'received_events_url', 'type', 'site_admin', 'user_view_type'}.contains(key)); } 
 BranchRestrictionPolicyAppsOwner copyWith({String Function()? login, int Function()? id, String Function()? nodeId, String Function()? url, String Function()? reposUrl, String Function()? eventsUrl, String Function()? hooksUrl, String Function()? issuesUrl, String Function()? membersUrl, String Function()? publicMembersUrl, String Function()? avatarUrl, String Function()? description, String Function()? gravatarId, String Function()? htmlUrl, String Function()? followersUrl, String Function()? followingUrl, String Function()? gistsUrl, String Function()? starredUrl, String Function()? subscriptionsUrl, String Function()? organizationsUrl, String Function()? receivedEventsUrl, String Function()? type, bool Function()? siteAdmin, String Function()? userViewType, }) { return BranchRestrictionPolicyAppsOwner(
   login: login != null ? login() : this.login,
   id: id != null ? id() : this.id,

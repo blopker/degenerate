@@ -12,7 +12,7 @@ final RealtimeResponseCreateParamsAudioOutput? output;
 Map<String, dynamic> toJson() { return {
   if (output != null) 'output': output?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'output'}.contains(key)); } 
 RealtimeResponseCreateParamsAudio copyWith({RealtimeResponseCreateParamsAudioOutput Function()? output}) { return RealtimeResponseCreateParamsAudio(
   output: output != null ? output() : this.output,
 ); } 

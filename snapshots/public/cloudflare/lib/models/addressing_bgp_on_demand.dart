@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Last time the advertisement status was changed. This field is only not 'null' if on demand is enabled.
-extension type AddressingModifiedAtNullable(DateTime value) {
-factory AddressingModifiedAtNullable.fromJson(String json) => AddressingModifiedAtNullable(DateTime.parse(json));
-
-String toJson() => value.toIso8601String();
-
-}
-/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
+import 'addressing_modified_at_nullable.dart';/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
 extension type const AddressingSchemasAdvertised(bool value) {
 factory AddressingSchemasAdvertised.fromJson(bool json) => AddressingSchemasAdvertised(json);
 
@@ -51,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (onDemandEnabled != null) 'on_demand_enabled': onDemandEnabled?.toJson(),
   if (onDemandLocked != null) 'on_demand_locked': onDemandLocked?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'advertised', 'advertised_modified_at', 'on_demand_enabled', 'on_demand_locked'}.contains(key)); } 
 AddressingBgpOnDemand copyWith({AddressingSchemasAdvertised? Function()? advertised, AddressingModifiedAtNullable? Function()? advertisedModifiedAt, AddressingSchemasOnDemandEnabled Function()? onDemandEnabled, AddressingSchemasOnDemandLocked Function()? onDemandLocked, }) { return AddressingBgpOnDemand(
   advertised: advertised != null ? advertised() : this.advertised,
   advertisedModifiedAt: advertisedModifiedAt != null ? advertisedModifiedAt() : this.advertisedModifiedAt,

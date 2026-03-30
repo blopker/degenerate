@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_rule.dart';final class R2QueuesConfig {const R2QueuesConfig({this.queueId, this.queueName, this.rules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_queues_config_rules.dart';final class R2QueuesConfig {const R2QueuesConfig({this.queueId, this.queueName, this.rules, });
 
 factory R2QueuesConfig.fromJson(Map<String, dynamic> json) { return R2QueuesConfig(
   queueId: json['queueId'] as String?,
   queueName: json['queueName'] as String?,
-  rules: (json['rules'] as List<dynamic>?)?.map((e) => R2Rule.fromJson(e as Map<String, dynamic>)).toList(),
+  rules: (json['rules'] as List<dynamic>?)?.map((e) => R2QueuesConfigRules.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// Queue ID.
@@ -14,15 +14,15 @@ final String? queueId;
 /// Name of the queue.
 final String? queueName;
 
-final List<R2Rule>? rules;
+final List<R2QueuesConfigRules>? rules;
 
 Map<String, dynamic> toJson() { return {
   'queueId': ?queueId,
   'queueName': ?queueName,
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-R2QueuesConfig copyWith({String Function()? queueId, String Function()? queueName, List<R2Rule> Function()? rules, }) { return R2QueuesConfig(
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'queueId', 'queueName', 'rules'}.contains(key)); } 
+R2QueuesConfig copyWith({String Function()? queueId, String Function()? queueName, List<R2QueuesConfigRules> Function()? rules, }) { return R2QueuesConfig(
   queueId: queueId != null ? queueId() : this.queueId,
   queueName: queueName != null ? queueName() : this.queueName,
   rules: rules != null ? rules() : this.rules,

@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'total_engaged_users': ?totalEngagedUsers,
   if (models != null) 'models': models?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'total_engaged_users', 'models'}.contains(key)); } 
 CopilotDotcomPullRequestsRepositories copyWith({String Function()? name, int Function()? totalEngagedUsers, List<CopilotDotcomPullRequestsRepositoriesModels> Function()? models, }) { return CopilotDotcomPullRequestsRepositories(
   name: name != null ? name() : this.name,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,

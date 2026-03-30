@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (allowedUpdates != null) 'allowed_updates': allowedUpdates?.toJson(),
   'enabled': ?enabled,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_updates', 'enabled'}.contains(key)); } 
 PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate copyWith({PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates Function()? allowedUpdates, bool Function()? enabled, }) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdate(
   allowedUpdates: allowedUpdates != null ? allowedUpdates() : this.allowedUpdates,
   enabled: enabled != null ? enabled() : this.enabled,

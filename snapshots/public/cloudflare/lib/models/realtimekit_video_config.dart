@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   if (watermark != null) 'watermark': watermark?.toJson(),
   'width': width,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'codec', 'export_file', 'height', 'watermark', 'width'}.contains(key)); } 
 RealtimekitVideoConfig copyWith({RealtimekitVideoConfigCodec Function()? codec, bool Function()? exportFile, int Function()? height, RealtimekitVideoConfigWatermark Function()? watermark, int Function()? width, }) { return RealtimekitVideoConfig(
   codec: codec != null ? codec() : this.codec,
   exportFile: exportFile != null ? exportFile() : this.exportFile,

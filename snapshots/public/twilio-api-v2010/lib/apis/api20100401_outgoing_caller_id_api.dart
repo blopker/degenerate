@@ -73,11 +73,21 @@ return execute(
 /// `GET /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds.json`
 Future<ApiResult<ListOutgoingCallerIdResponse, Never>> listOutgoingCallerId({required String accountSid, String? phoneNumber, String? friendlyName, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (phoneNumber != null) queryParameters['PhoneNumber'] = phoneNumber;
-if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (phoneNumber != null) {
+  queryParameters['PhoneNumber'] = phoneNumber;
+}
+if (friendlyName != null) {
+  queryParameters['FriendlyName'] = friendlyName;
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

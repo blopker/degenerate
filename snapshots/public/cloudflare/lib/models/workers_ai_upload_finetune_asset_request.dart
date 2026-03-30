@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'file': ?file,
   'file_name': ?fileName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file', 'file_name'}.contains(key)); } 
 WorkersAiUploadFinetuneAssetRequest copyWith({Uint8List Function()? file, String Function()? fileName, }) { return WorkersAiUploadFinetuneAssetRequest(
   file: file != null ? file() : this.file,
   fileName: fileName != null ? fileName() : this.fileName,

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (modifiedAt != null) 'modified_at': modifiedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'modified_at'}.contains(key)); } 
 AddressingBgpSignalOpts copyWith({AddressingBgpSignalingEnabled Function()? enabled, AddressingBgpSignalingModifiedAt? Function()? modifiedAt, }) { return AddressingBgpSignalOpts(
   enabled: enabled != null ? enabled() : this.enabled,
   modifiedAt: modifiedAt != null ? modifiedAt() : this.modifiedAt,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'pattern': ?pattern,
   if (patternType != null) 'pattern_type': patternType?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comments', 'is_regex', 'pattern', 'pattern_type'}.contains(key)); } 
 EmailSecurityUpdateBlockedSender copyWith({String? Function()? comments, bool? Function()? isRegex, String? Function()? pattern, EmailSecurityPatternType? Function()? patternType, }) { return EmailSecurityUpdateBlockedSender(
   comments: comments != null ? comments() : this.comments,
   isRegex: isRegex != null ? isRegex() : this.isRegex,

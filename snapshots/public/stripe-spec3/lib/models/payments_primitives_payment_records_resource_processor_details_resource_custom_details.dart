@@ -15,7 +15,7 @@ final String? paymentReference;
 Map<String, dynamic> toJson() { return {
   'payment_reference': ?paymentReference,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_reference'}.contains(key)); } 
 PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails copyWith({String? Function()? paymentReference}) { return PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails(
   paymentReference: paymentReference != null ? paymentReference() : this.paymentReference,
 ); } 

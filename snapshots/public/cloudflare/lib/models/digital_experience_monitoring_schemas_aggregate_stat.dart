@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (uniqueDevicesTotal != null) 'uniqueDevicesTotal': uniqueDevicesTotal?.toJson(),
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'timestamp', 'uniqueDevicesTotal', 'value'}.contains(key)); } 
 DigitalExperienceMonitoringSchemasAggregateStat copyWith({DigitalExperienceMonitoringTimestamp Function()? timestamp, DigitalExperienceMonitoringUniqueDevicesTotal Function()? uniqueDevicesTotal, String Function()? value, }) { return DigitalExperienceMonitoringSchemasAggregateStat(
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   uniqueDevicesTotal: uniqueDevicesTotal != null ? uniqueDevicesTotal() : this.uniqueDevicesTotal,

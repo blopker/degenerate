@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   if (homepageUrl != null) 'HomepageUrl': homepageUrl?.toString(),
   if (permissions != null) 'Permissions': permissions?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'AuthorizeRedirectUrl', 'CompanyName', 'DeauthorizeCallbackMethod', 'DeauthorizeCallbackUrl', 'Description', 'FriendlyName', 'HomepageUrl', 'Permissions'}.contains(key)); } 
 UpdateConnectAppRequest copyWith({Uri Function()? authorizeRedirectUrl, String Function()? companyName, UpdateConnectAppRequestDeauthorizeCallbackMethod Function()? deauthorizeCallbackMethod, Uri Function()? deauthorizeCallbackUrl, String Function()? description, String Function()? friendlyName, Uri Function()? homepageUrl, List<ConnectAppEnumPermission> Function()? permissions, }) { return UpdateConnectAppRequest(
   authorizeRedirectUrl: authorizeRedirectUrl != null ? authorizeRedirectUrl() : this.authorizeRedirectUrl,
   companyName: companyName != null ? companyName() : this.companyName,

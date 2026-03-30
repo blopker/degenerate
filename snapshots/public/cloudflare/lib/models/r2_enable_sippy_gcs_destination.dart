@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   if (provider != null) 'provider': provider?.toJson(),
   'secretAccessKey': ?secretAccessKey,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessKeyId', 'provider', 'secretAccessKey'}.contains(key)); } 
 R2EnableSippyGcsDestination copyWith({String Function()? accessKeyId, R2EnableSippyGcsDestinationProvider Function()? provider, String Function()? secretAccessKey, }) { return R2EnableSippyGcsDestination(
   accessKeyId: accessKeyId != null ? accessKeyId() : this.accessKeyId,
   provider: provider != null ? provider() : this.provider,

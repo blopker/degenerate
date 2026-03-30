@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
   if (fallbackAction != null) 'fallback_action': fallbackAction?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'fallback_action'}.contains(key)); } 
 ZeroTrustGatewaySandbox copyWith({bool? Function()? enabled, ZeroTrustGatewaySandboxFallbackAction Function()? fallbackAction, }) { return ZeroTrustGatewaySandbox(
   enabled: enabled != null ? enabled() : this.enabled,
   fallbackAction: fallbackAction != null ? fallbackAction() : this.fallbackAction,

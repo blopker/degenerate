@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (shipping != null) 'shipping': shipping?.toJson(),
   'transfer_group': ?transferGroup,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer', 'description', 'expand', 'fraud_details', 'metadata', 'receipt_email', 'shipping', 'transfer_group'}.contains(key)); } 
 PostChargesChargeRequest copyWith({String Function()? customer, String Function()? description, List<String> Function()? expand, PostChargesChargeRequestFraudDetails Function()? fraudDetails, PostChargesChargeRequestMetadata Function()? metadata, String Function()? receiptEmail, PostChargesChargeRequestShipping Function()? shipping, String Function()? transferGroup, }) { return PostChargesChargeRequest(
   customer: customer != null ? customer() : this.customer,
   description: description != null ? description() : this.description,

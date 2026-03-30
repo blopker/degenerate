@@ -12,7 +12,7 @@ final Map<String,PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOpt
 Map<String, dynamic> toJson() { return {
   if (currencyOptions != null) 'currency_options': currencyOptions?.map((k, v) => MapEntry(k, v.toJson())),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency_options'}.contains(key)); } 
 PostShippingRatesShippingRateTokenRequestFixedAmount copyWith({Map<String, PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue> Function()? currencyOptions}) { return PostShippingRatesShippingRateTokenRequestFixedAmount(
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
 ); } 

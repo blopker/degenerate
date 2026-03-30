@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (accountTaxIds != null) 'account_tax_ids': accountTaxIds?.toJson(),
   if (issuer != null) 'issuer': issuer?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'issuer'}.contains(key)); } 
 PostSubscriptionsRequestInvoiceSettings copyWith({PostSubscriptionsRequestInvoiceSettingsAccountTaxIds Function()? accountTaxIds, PostSubscriptionsRequestInvoiceSettingsIssuer Function()? issuer, }) { return PostSubscriptionsRequestInvoiceSettings(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   issuer: issuer != null ? issuer() : this.issuer,

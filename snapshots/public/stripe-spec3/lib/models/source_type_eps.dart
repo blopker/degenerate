@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
   'statement_descriptor': ?statementDescriptor,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'statement_descriptor'}.contains(key)); } 
 SourceTypeEps copyWith({String? Function()? reference, String? Function()? statementDescriptor, }) { return SourceTypeEps(
   reference: reference != null ? reference() : this.reference,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,

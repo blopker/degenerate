@@ -13,10 +13,18 @@ final class InterconnectsApi with ApiExecutor {const InterconnectsApi(this.apiCo
 /// `GET /accounts/{account_id}/cni/interconnects`
 Future<ApiResult<NscInterconnectList, Never>> listInterconnects({required NscAccountTag accountId, String? site, String? type, int? cursor, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (site != null) queryParameters['site'] = site;
-if (type != null) queryParameters['type'] = type;
-if (cursor != null) queryParameters['cursor'] = cursor.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (site != null) {
+  queryParameters['site'] = site;
+}
+if (type != null) {
+  queryParameters['type'] = type;
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

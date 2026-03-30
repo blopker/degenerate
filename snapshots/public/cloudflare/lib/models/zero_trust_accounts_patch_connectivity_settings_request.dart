@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (icmpProxyEnabled != null) 'icmp_proxy_enabled': icmpProxyEnabled?.toJson(),
   if (offrampWarpEnabled != null) 'offramp_warp_enabled': offrampWarpEnabled?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'icmp_proxy_enabled', 'offramp_warp_enabled'}.contains(key)); } 
 ZeroTrustAccountsPatchConnectivitySettingsRequest copyWith({TunnelIcmpProxyEnabled Function()? icmpProxyEnabled, TunnelOfframpWarpEnabled Function()? offrampWarpEnabled, }) { return ZeroTrustAccountsPatchConnectivitySettingsRequest(
   icmpProxyEnabled: icmpProxyEnabled != null ? icmpProxyEnabled() : this.icmpProxyEnabled,
   offrampWarpEnabled: offrampWarpEnabled != null ? offrampWarpEnabled() : this.offrampWarpEnabled,

@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'full_valid_loss': ?fullValidLoss,
   'full_valid_mean_token_accuracy': ?fullValidMeanTokenAccuracy,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'step', 'train_loss', 'train_mean_token_accuracy', 'valid_loss', 'valid_mean_token_accuracy', 'full_valid_loss', 'full_valid_mean_token_accuracy'}.contains(key)); } 
 FineTuningJobCheckpointMetrics copyWith({double Function()? step, double Function()? trainLoss, double Function()? trainMeanTokenAccuracy, double Function()? validLoss, double Function()? validMeanTokenAccuracy, double Function()? fullValidLoss, double Function()? fullValidMeanTokenAccuracy, }) { return FineTuningJobCheckpointMetrics(
   step: step != null ? step() : this.step,
   trainLoss: trainLoss != null ? trainLoss() : this.trainLoss,

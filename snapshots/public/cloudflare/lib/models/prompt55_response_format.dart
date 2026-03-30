@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'json_schema': ?jsonSchema,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'json_schema', 'type'}.contains(key)); } 
 Prompt55ResponseFormat copyWith({dynamic Function()? jsonSchema, Prompt55ResponseFormatType Function()? type, }) { return Prompt55ResponseFormat(
   jsonSchema: jsonSchema != null ? jsonSchema() : this.jsonSchema,
   type: type != null ? type() : this.type,

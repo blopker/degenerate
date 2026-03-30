@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common8.dart';import '../models/schemas_identifier.dart';import '../models/subscription2.dart';import '../models/user_subscription_delete_user_subscription_response.dart';/// UserSubscriptionApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/schemas_identifier.dart';import '../models/subscription2.dart';import '../models/user_subscription_delete_user_subscription_response.dart';/// UserSubscriptionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class UserSubscriptionApi with ApiExecutor {const UserSubscriptionApi(this
 /// Lists all of a user's subscriptions.
 ///
 /// `GET /user/subscriptions`
-Future<ApiResult<ResponseCommon8, Never>> userSubscriptionGetUserSubscriptions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Subscription2>?, Never>> userSubscriptionGetUserSubscriptions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon8.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => Subscription2.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -34,7 +35,7 @@ return execute(
 /// Updates a user's subscriptions.
 ///
 /// `PUT /user/subscriptions/{identifier}`
-Future<ApiResult<ResponseCommon8, Never>> userSubscriptionUpdateUserSubscription({required SchemasIdentifier identifier, required Subscription2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, Never>> userSubscriptionUpdateUserSubscription({required SchemasIdentifier identifier, required Subscription2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon8.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
 );
  } 

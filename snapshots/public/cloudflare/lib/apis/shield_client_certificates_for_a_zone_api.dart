@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/client_certificate_for_a_zone_create_client_certificate_request.dart';import '../models/client_certificate_for_a_zone_edit_client_certificate_request.dart';import '../models/response_common68.dart';import '../models/tls_certificates_and_hostnames_hostname_association.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// ShieldClientCertificatesForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/client_certificate_for_a_zone_create_client_certificate_request.dart';import '../models/client_certificate_for_a_zone_edit_client_certificate_request.dart';import '../models/tls_certificates_and_hostnames_client_certificate.dart';import '../models/tls_certificates_and_hostnames_hostname_association.dart';import '../models/tls_certificates_and_hostnames_hostname_associations_response_result.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// ShieldClientCertificatesForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,9 +11,11 @@ final class ShieldClientCertificatesForAZoneApi with ApiExecutor {const ShieldCl
 /// List Hostname Associations
 ///
 /// `GET /zones/{zone_id}/certificate_authorities/hostname_associations`
-Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneListHostnameAssociations({required TlsCertificatesAndHostnamesIdentifier zoneId, String? mtlsCertificateId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TlsCertificatesAndHostnamesHostnameAssociationsResponseResult?, Never>> clientCertificateForAZoneListHostnameAssociations({required TlsCertificatesAndHostnamesIdentifier zoneId, String? mtlsCertificateId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (mtlsCertificateId != null) queryParameters['mtls_certificate_id'] = mtlsCertificateId;
+if (mtlsCertificateId != null) {
+  queryParameters['mtls_certificate_id'] = mtlsCertificateId;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -29,14 +31,15 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TlsCertificatesAndHostnamesHostnameAssociationsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
 /// Replace Hostname Associations
 ///
 /// `PUT /zones/{zone_id}/certificate_authorities/hostname_associations`
-Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZonePutHostnameAssociations({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesHostnameAssociation body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesHostnameAssociationsResponseResult?, Never>> clientCertificateForAZonePutHostnameAssociations({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesHostnameAssociation body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -50,7 +53,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TlsCertificatesAndHostnamesHostnameAssociationsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -59,13 +63,23 @@ return execute(
 /// List all of your Zone's API Shield mTLS Client Certificates by Status and/or using Pagination
 ///
 /// `GET /zones/{zone_id}/client_certificates`
-Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneListClientCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, dynamic status, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TlsCertificatesAndHostnamesClientCertificate>?, Never>> clientCertificateForAZoneListClientCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, dynamic status, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -81,7 +95,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesClientCertificate.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -90,7 +105,7 @@ return execute(
 /// Create a new API Shield mTLS Client Certificate
 ///
 /// `POST /zones/{zone_id}/client_certificates`
-Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneCreateClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required ClientCertificateForAZoneCreateClientCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, Never>> clientCertificateForAZoneCreateClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required ClientCertificateForAZoneCreateClientCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -104,7 +119,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TlsCertificatesAndHostnamesClientCertificate.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -113,7 +129,7 @@ return execute(
 /// Get Details for a single mTLS API Shield Client Certificate
 ///
 /// `GET /zones/{zone_id}/client_certificates/{client_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneClientCertificateDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesIdentifier clientCertificateId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, Never>> clientCertificateForAZoneClientCertificateDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesIdentifier clientCertificateId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -125,7 +141,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TlsCertificatesAndHostnamesClientCertificate.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -134,7 +151,7 @@ return execute(
 /// If a API Shield mTLS Client Certificate is in a pending_revocation state, you may reactivate it with this endpoint.
 ///
 /// `PATCH /zones/{zone_id}/client_certificates/{client_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneEditClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesIdentifier clientCertificateId, required ClientCertificateForAZoneEditClientCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, Never>> clientCertificateForAZoneEditClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesIdentifier clientCertificateId, required ClientCertificateForAZoneEditClientCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -148,7 +165,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TlsCertificatesAndHostnamesClientCertificate.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -157,7 +175,7 @@ return execute(
 /// Set a API Shield mTLS Client Certificate to pending_revocation status for processing to revoked status.
 ///
 /// `DELETE /zones/{zone_id}/client_certificates/{client_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> clientCertificateForAZoneDeleteClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesIdentifier clientCertificateId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, Never>> clientCertificateForAZoneDeleteClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesIdentifier clientCertificateId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -169,7 +187,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TlsCertificatesAndHostnamesClientCertificate.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

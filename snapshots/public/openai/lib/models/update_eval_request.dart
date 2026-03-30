@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'metadata': ?metadata,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'metadata'}.contains(key)); } 
 UpdateEvalRequest copyWith({String Function()? name, Map<String, String>? Function()? metadata, }) { return UpdateEvalRequest(
   name: name != null ? name() : this.name,
   metadata: metadata != null ? metadata() : this.metadata,

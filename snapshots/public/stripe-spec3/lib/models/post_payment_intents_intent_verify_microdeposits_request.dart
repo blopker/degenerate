@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'descriptor_code': ?descriptorCode,
   'expand': ?expand,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amounts', 'client_secret', 'descriptor_code', 'expand'}.contains(key)); } 
 PostPaymentIntentsIntentVerifyMicrodepositsRequest copyWith({List<int> Function()? amounts, String Function()? clientSecret, String Function()? descriptorCode, List<String> Function()? expand, }) { return PostPaymentIntentsIntentVerifyMicrodepositsRequest(
   amounts: amounts != null ? amounts() : this.amounts,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,

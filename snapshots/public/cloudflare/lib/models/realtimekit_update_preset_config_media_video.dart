@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'frame_rate': ?frameRate,
   if (quality != null) 'quality': quality?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'frame_rate', 'quality'}.contains(key)); } 
 RealtimekitUpdatePresetConfigMediaVideo copyWith({int Function()? frameRate, RealtimekitUpdatePresetConfigMediaVideoQuality Function()? quality, }) { return RealtimekitUpdatePresetConfigMediaVideo(
   frameRate: frameRate != null ? frameRate() : this.frameRate,
   quality: quality != null ? quality() : this.quality,

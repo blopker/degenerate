@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (exclude != null) 'exclude': exclude?.toJson(),
   if (include != null) 'include': include?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exclude', 'include'}.contains(key)); } 
 ZonesCacheKeyFieldsValueQueryString copyWith({ZonesCacheKeyFieldsValueQueryStringExclude Function()? exclude, ZonesCacheKeyFieldsValueQueryStringInclude Function()? include, }) { return ZonesCacheKeyFieldsValueQueryString(
   exclude: exclude != null ? exclude() : this.exclude,
   include: include != null ? include() : this.include,

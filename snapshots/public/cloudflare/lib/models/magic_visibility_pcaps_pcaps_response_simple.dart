@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (timeLimit != null) 'time_limit': timeLimit?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filter_v1', 'id', 'offset_time', 'status', 'submitted', 'system', 'time_limit', 'type'}.contains(key)); } 
 MagicVisibilityPcapsPcapsResponseSimple copyWith({MagicVisibilityPcapsPcapsFilter Function()? filterV1, MagicVisibilityPcapsPcapsId Function()? id, MagicVisibilityPcapsPcapsOffsetTime Function()? offsetTime, MagicVisibilityPcapsPcapsStatus Function()? status, MagicVisibilityPcapsPcapsSubmitted Function()? submitted, MagicVisibilityPcapsPcapsSystem Function()? system, MagicVisibilityPcapsPcapsTimeLimitSampled Function()? timeLimit, MagicVisibilityPcapsPcapsType Function()? type, }) { return MagicVisibilityPcapsPcapsResponseSimple(
   filterV1: filterV1 != null ? filterV1() : this.filterV1,
   id: id != null ? id() : this.id,

@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (maxWaitTimeMs != null) 'max_wait_time_ms': maxWaitTimeMs?.toJson(),
   if (retryDelay != null) 'retry_delay': retryDelay?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'max_concurrency', 'max_retries', 'max_wait_time_ms', 'retry_delay'}.contains(key)); } 
 MqWorkerConsumerResponseSettings copyWith({MqBatchSize Function()? batchSize, MqMaxConcurrency Function()? maxConcurrency, MqMaxRetries Function()? maxRetries, MqMaxWaitTime Function()? maxWaitTimeMs, MqRetryDelay Function()? retryDelay, }) { return MqWorkerConsumerResponseSettings(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   maxConcurrency: maxConcurrency != null ? maxConcurrency() : this.maxConcurrency,

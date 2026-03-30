@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (from != null) 'from': from?.toIso8601String(),
   if (to != null) 'to': to?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from', 'to'}.contains(key)); } 
 WebhooksProjectChangesArchivedAt copyWith({DateTime? Function()? from, DateTime? Function()? to, }) { return WebhooksProjectChangesArchivedAt(
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,

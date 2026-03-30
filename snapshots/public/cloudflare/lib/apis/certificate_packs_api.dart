@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/certificate_packs_order_advanced_certificate_manager_certificate_pack_request.dart';import '../models/certificate_packs_restart_validation_for_advanced_certificate_manager_certificate_pack_request.dart';import '../models/response_common68.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// CertificatePacksApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/certificate_packs_order_advanced_certificate_manager_certificate_pack_request.dart';import '../models/certificate_packs_restart_validation_for_advanced_certificate_manager_certificate_pack_request.dart';import '../models/tls_certificates_and_hostnames_certificate_pack.dart';import '../models/tls_certificates_and_hostnames_certificate_pack_quota_response_result.dart';import '../models/tls_certificates_and_hostnames_delete_advanced_certificate_pack_response_single_result.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// CertificatePacksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,12 +13,20 @@ final class CertificatePacksApi with ApiExecutor {const CertificatePacksApi(this
 /// For a given zone, list all active certificate packs.
 ///
 /// `GET /zones/{zone_id}/ssl/certificate_packs`
-Future<ApiResult<ResponseCommon68, Never>> certificatePacksListCertificatePacks({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, dynamic status, dynamic deploy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TlsCertificatesAndHostnamesCertificatePack>?, Never>> certificatePacksListCertificatePacks({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, dynamic status, dynamic deploy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (status != null) queryParameters['status'] = status.toString();
-if (deploy != null) queryParameters['deploy'] = deploy.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (deploy != null) {
+  queryParameters['deploy'] = deploy.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -34,7 +42,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesCertificatePack.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -43,7 +52,7 @@ return execute(
 /// For a given zone, get a certificate pack.
 ///
 /// `GET /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}`
-Future<ApiResult<ResponseCommon68, Never>> certificatePacksGetCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificatePack?, Never>> certificatePacksGetCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -55,7 +64,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TlsCertificatesAndHostnamesCertificatePack.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -64,7 +74,7 @@ return execute(
 /// For a given zone, restart validation or add cloudflare branding for an advanced certificate pack.  The former is only a validation operation for a Certificate Pack in a validation_timed_out status.
 ///
 /// `PATCH /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}`
-Future<ApiResult<ResponseCommon68, Never>> certificatePacksRestartValidationForAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, required CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificatePack?, Never>> certificatePacksRestartValidationForAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, required CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -78,7 +88,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TlsCertificatesAndHostnamesCertificatePack.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -87,7 +98,7 @@ return execute(
 /// For a given zone, delete an advanced certificate pack.
 ///
 /// `DELETE /zones/{zone_id}/ssl/certificate_packs/{certificate_pack_id}`
-Future<ApiResult<ResponseCommon68, Never>> certificatePacksDeleteAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesDeleteAdvancedCertificatePackResponseSingleResult?, Never>> certificatePacksDeleteAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier certificatePackId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -99,7 +110,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TlsCertificatesAndHostnamesDeleteAdvancedCertificatePackResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -108,7 +120,7 @@ return execute(
 /// For a given zone, order an advanced certificate pack.
 ///
 /// `POST /zones/{zone_id}/ssl/certificate_packs/order`
-Future<ApiResult<ResponseCommon68, Never>> certificatePacksOrderAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier zoneId, required CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificatePack?, Never>> certificatePacksOrderAdvancedCertificateManagerCertificatePack({required TlsCertificatesAndHostnamesIdentifier zoneId, required CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -122,7 +134,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TlsCertificatesAndHostnamesCertificatePack.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -131,7 +144,7 @@ return execute(
 /// For a given zone, list certificate pack quotas.
 ///
 /// `GET /zones/{zone_id}/ssl/certificate_packs/quota`
-Future<ApiResult<ResponseCommon68, Never>> certificatePacksGetCertificatePackQuotas({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificatePackQuotaResponseResult?, Never>> certificatePacksGetCertificatePackQuotas({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -143,7 +156,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TlsCertificatesAndHostnamesCertificatePackQuotaResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'payment_reference': ?paymentReference,
   'verified_phone_last4': ?verifiedPhoneLast4,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fingerprint', 'payment_reference', 'verified_phone_last4'}.contains(key)); } 
 PaymentMethodDetailsSwish copyWith({String? Function()? fingerprint, String? Function()? paymentReference, String? Function()? verifiedPhoneLast4, }) { return PaymentMethodDetailsSwish(
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
   paymentReference: paymentReference != null ? paymentReference() : this.paymentReference,

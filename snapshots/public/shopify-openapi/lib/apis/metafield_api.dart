@@ -15,8 +15,12 @@ final class MetafieldApi with ApiExecutor {const MetafieldApi(this.apiConfig);
 /// `GET /admin/api/2020-01/metafields.json`
 Future<ApiResult<void, Never>> deprecated202001GetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (metafieldownerId != null) queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
-if (metafieldownerResource != null) queryParameters['metafield[owner_resource]'] = metafieldownerResource;
+if (metafieldownerId != null) {
+  queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
+}
+if (metafieldownerResource != null) {
+  queryParameters['metafield[owner_resource]'] = metafieldownerResource;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -81,7 +85,9 @@ return execute(
 /// `GET /admin/api/2020-01/metafields/{metafield_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -146,8 +152,12 @@ return execute(
 /// `GET /admin/api/2020-04/metafields.json`
 Future<ApiResult<void, Never>> deprecated202004GetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (metafieldownerId != null) queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
-if (metafieldownerResource != null) queryParameters['metafield[owner_resource]'] = metafieldownerResource;
+if (metafieldownerId != null) {
+  queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
+}
+if (metafieldownerResource != null) {
+  queryParameters['metafield[owner_resource]'] = metafieldownerResource;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -212,7 +222,9 @@ return execute(
 /// `GET /admin/api/2020-04/metafields/{metafield_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -277,8 +289,12 @@ return execute(
 /// `GET /admin/api/2020-07/metafields.json`
 Future<ApiResult<void, Never>> deprecated202007GetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (metafieldownerId != null) queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
-if (metafieldownerResource != null) queryParameters['metafield[owner_resource]'] = metafieldownerResource;
+if (metafieldownerId != null) {
+  queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
+}
+if (metafieldownerResource != null) {
+  queryParameters['metafield[owner_resource]'] = metafieldownerResource;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -343,7 +359,9 @@ return execute(
 /// `GET /admin/api/2020-07/metafields/{metafield_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -408,8 +426,12 @@ return execute(
 /// `GET /admin/api/2020-10/metafields.json`
 Future<ApiResult<void, Never>> getMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (metafieldownerId != null) queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
-if (metafieldownerResource != null) queryParameters['metafield[owner_resource]'] = metafieldownerResource;
+if (metafieldownerId != null) {
+  queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
+}
+if (metafieldownerResource != null) {
+  queryParameters['metafield[owner_resource]'] = metafieldownerResource;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -474,7 +496,9 @@ return execute(
 /// `GET /admin/api/2020-10/metafields/{metafield_id}.json`
 Future<ApiResult<void, Never>> getMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -539,8 +563,12 @@ return execute(
 /// `GET /admin/api/2021-01/metafields.json`
 Future<ApiResult<void, Never>> deprecated202101GetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (metafieldownerId != null) queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
-if (metafieldownerResource != null) queryParameters['metafield[owner_resource]'] = metafieldownerResource;
+if (metafieldownerId != null) {
+  queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
+}
+if (metafieldownerResource != null) {
+  queryParameters['metafield[owner_resource]'] = metafieldownerResource;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -605,7 +633,9 @@ return execute(
 /// `GET /admin/api/2021-01/metafields/{metafield_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -670,8 +700,12 @@ return execute(
 /// `GET /admin/api/unstable/metafields.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetMetafields({int? metafieldownerId, String? metafieldownerResource, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (metafieldownerId != null) queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
-if (metafieldownerResource != null) queryParameters['metafield[owner_resource]'] = metafieldownerResource;
+if (metafieldownerId != null) {
+  queryParameters['metafield[owner_id]'] = metafieldownerId.toString();
+}
+if (metafieldownerResource != null) {
+  queryParameters['metafield[owner_resource]'] = metafieldownerResource;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -736,7 +770,9 @@ return execute(
 /// `GET /admin/api/unstable/metafields/{metafield_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetMetafieldsParamMetafieldId({required String metafieldId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

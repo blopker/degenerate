@@ -15,8 +15,12 @@ final class WorkersAiObjectDetectionApi with ApiExecutor {const WorkersAiObjectD
 /// `POST /accounts/{account_id}/ai/run/@cf/facebook/nonomni-detr-resnet-50`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400>> workersAiPostRunCfFacebookNonomniDetrResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';

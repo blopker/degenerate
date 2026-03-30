@@ -13,10 +13,14 @@ final class VersionsApi with ApiExecutor {const VersionsApi(this.apiConfig);
 /// List all versions for a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<ResponseCommon80, Never>> listWorkerVersions({required WorkersIdentifier accountId, required String workerId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersVersion>, Never>> listWorkerVersions({required WorkersIdentifier accountId, required String workerId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -32,7 +36,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => WorkersVersion.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -41,9 +46,11 @@ return execute(
 /// Create a new version.
 ///
 /// `POST /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<ResponseCommon80, Never>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, bool? deploy, required WorkersVersion body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersVersion, Never>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, bool? deploy, required WorkersVersion body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (deploy != null) queryParameters['deploy'] = deploy.toString();
+if (deploy != null) {
+  queryParameters['deploy'] = deploy.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -61,7 +68,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return WorkersVersion.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -70,9 +78,11 @@ return execute(
 /// Get details about a specific version.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}`
-Future<ApiResult<ResponseCommon80, Never>> getWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersVersion, Never>> getWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (include != null) queryParameters['include'] = include.toJson();
+if (include != null) {
+  queryParameters['include'] = include.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -88,7 +98,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return WorkersVersion.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

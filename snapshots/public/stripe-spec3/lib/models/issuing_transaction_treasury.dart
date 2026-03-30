@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'received_credit': ?receivedCredit,
   'received_debit': ?receivedDebit,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'received_credit', 'received_debit'}.contains(key)); } 
 IssuingTransactionTreasury copyWith({String? Function()? receivedCredit, String? Function()? receivedDebit, }) { return IssuingTransactionTreasury(
   receivedCredit: receivedCredit != null ? receivedCredit() : this.receivedCredit,
   receivedDebit: receivedDebit != null ? receivedDebit() : this.receivedDebit,

@@ -14,10 +14,18 @@ final class EvalsApi with ApiExecutor {const EvalsApi(this.apiConfig);
 /// `GET /evals`
 Future<ApiResult<EvalList, Never>> listEvals({String? after, int? limit, ListEvalsOrder? order, ListEvalsOrderBy? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -132,10 +140,18 @@ return execute(
 /// `GET /evals/{eval_id}/runs`
 Future<ApiResult<EvalRunList, Never>> getEvalRuns({required String evalId, String? after, int? limit, GetEvalRunsOrder? order, GetEvalRunsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (status != null) queryParameters['status'] = status.toJson();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -249,10 +265,18 @@ return execute(
 /// `GET /evals/{eval_id}/runs/{run_id}/output_items`
 Future<ApiResult<EvalRunOutputItemList, Never>> getEvalRunOutputItems({required String evalId, required String runId, String? after, int? limit, GetEvalRunOutputItemsStatus? status, GetEvalRunOutputItemsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (status != null) queryParameters['status'] = status.toJson();
-if (order != null) queryParameters['order'] = order.toJson();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

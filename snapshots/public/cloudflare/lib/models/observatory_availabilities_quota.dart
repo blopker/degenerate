@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'remainingTests': ?remainingTests,
   if (scheduleQuotasPerPlan != null) 'scheduleQuotasPerPlan': scheduleQuotasPerPlan?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'plan', 'quotasPerPlan', 'remainingSchedules', 'remainingTests', 'scheduleQuotasPerPlan'}.contains(key)); } 
 ObservatoryAvailabilitiesQuota copyWith({String Function()? plan, ObservatoryAvailabilitiesQuotaQuotasPerPlan Function()? quotasPerPlan, double Function()? remainingSchedules, double Function()? remainingTests, ObservatoryAvailabilitiesQuotaScheduleQuotasPerPlan Function()? scheduleQuotasPerPlan, }) { return ObservatoryAvailabilitiesQuota(
   plan: plan != null ? plan() : this.plan,
   quotasPerPlan: quotasPerPlan != null ? quotasPerPlan() : this.quotasPerPlan,

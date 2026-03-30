@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'pki_rotation_status_code': ?pkiRotationStatusCode,
   'serial_number': ?serialNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'crypt_key', 'crypt_key_rotation_finished_at', 'crypt_key_rotation_output', 'crypt_key_rotation_started_at', 'crypt_key_rotation_status_code', 'device_type', 'ek_cert', 'imaged_at', 'last_crypt_key', 'last_updated', 'metadata', 'pki_rotation_finished_at', 'pki_rotation_output', 'pki_rotation_started_at', 'pki_rotation_status_code', 'serial_number'}.contains(key)); } 
 MconnAdminDeviceFields copyWith({String Function()? cryptKey, String Function()? cryptKeyRotationFinishedAt, String Function()? cryptKeyRotationOutput, String Function()? cryptKeyRotationStartedAt, double Function()? cryptKeyRotationStatusCode, String Function()? deviceType, String Function()? ekCert, String Function()? imagedAt, String Function()? lastCryptKey, String Function()? lastUpdated, String Function()? metadata, String Function()? pkiRotationFinishedAt, String Function()? pkiRotationOutput, String Function()? pkiRotationStartedAt, double Function()? pkiRotationStatusCode, String Function()? serialNumber, }) { return MconnAdminDeviceFields(
   cryptKey: cryptKey != null ? cryptKey() : this.cryptKey,
   cryptKeyRotationFinishedAt: cryptKeyRotationFinishedAt != null ? cryptKeyRotationFinishedAt() : this.cryptKeyRotationFinishedAt,

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'workers/message': ?workersMessage,
   'workers/triggered_by': ?workersTriggeredBy,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'workers/message', 'workers/triggered_by'}.contains(key)); } 
 WorkersDeploymentAnnotations copyWith({String Function()? workersMessage, String Function()? workersTriggeredBy, }) { return WorkersDeploymentAnnotations(
   workersMessage: workersMessage != null ? workersMessage() : this.workersMessage,
   workersTriggeredBy: workersTriggeredBy != null ? workersTriggeredBy() : this.workersTriggeredBy,

@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'is_default': ?isDefault,
   'is_platform_default': ?isPlatformDefault,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'is_default', 'is_platform_default'}.contains(key)); } 
 GetIssuingPersonalizationDesignsPreferences copyWith({bool Function()? isDefault, bool Function()? isPlatformDefault, }) { return GetIssuingPersonalizationDesignsPreferences(
   isDefault: isDefault != null ? isDefault() : this.isDefault,
   isPlatformDefault: isPlatformDefault != null ? isPlatformDefault() : this.isPlatformDefault,

@@ -196,7 +196,7 @@ Map<String, dynamic> toJson() { return {
   'arguments': ?arguments,
   'output': ?output,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'type', 'object', 'status', 'role', 'content', 'call_id', 'name', 'arguments', 'output'}.contains(key)); } 
 RealtimeConversationItemWithReference copyWith({String Function()? id, RealtimeConversationItemWithReferenceType Function()? type, RealtimeConversationItemWithReferenceObject Function()? object, RealtimeConversationItemWithReferenceStatus Function()? status, RealtimeConversationItemWithReferenceRole Function()? role, List<RealtimeConversationItemWithReferenceContent> Function()? content, String Function()? callId, String Function()? name, String Function()? arguments, String Function()? output, }) { return RealtimeConversationItemWithReference(
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,

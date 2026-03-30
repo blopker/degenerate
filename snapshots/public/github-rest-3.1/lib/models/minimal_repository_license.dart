@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
   'node_id': ?nodeId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'key', 'name', 'spdx_id', 'url', 'node_id'}.contains(key)); } 
 MinimalRepositoryLicense copyWith({String Function()? key, String Function()? name, String Function()? spdxId, String? Function()? url, String Function()? nodeId, }) { return MinimalRepositoryLicense(
   key: key != null ? key() : this.key,
   name: name != null ? name() : this.name,

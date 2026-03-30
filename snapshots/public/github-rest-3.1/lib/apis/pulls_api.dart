@@ -28,13 +28,27 @@ final class PullsApi with ApiExecutor {const PullsApi(this.apiConfig);
 /// `GET /repos/{owner}/{repo}/pulls`
 Future<ApiResult<List<PullRequestSimple>, ValidationError>> pullsList({required String owner, required String repo, PullsListState? state, String? head, String? base, PullsListSort? sort, PullsListDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (state != null) queryParameters['state'] = state.toJson();
-if (head != null) queryParameters['head'] = head;
-if (base != null) queryParameters['base'] = base;
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
+if (head != null) {
+  queryParameters['head'] = head;
+}
+if (base != null) {
+  queryParameters['base'] = base;
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -110,11 +124,21 @@ return execute(
 /// `GET /repos/{owner}/{repo}/pulls/comments`
 Future<ApiResult<List<PullRequestReviewComment>, Never>> pullsListReviewCommentsForRepo({required String owner, required String repo, PullsListReviewCommentsForRepoSort? sort, PullsListReviewCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (since != null) queryParameters['since'] = since.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -314,11 +338,21 @@ return execute(
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/comments`
 Future<ApiResult<List<PullRequestReviewComment>, Never>> pullsListReviewComments({required String owner, required String repo, required int pullNumber, PullsListReviewCommentsSort? sort, PullsListReviewCommentsDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (since != null) queryParameters['since'] = since.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -431,8 +465,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/commits`
 Future<ApiResult<List<Commit>, Never>> pullsListCommits({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -470,8 +508,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/files`
 Future<ApiResult<List<DiffEntry>, ValidationError>> pullsListFiles({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -629,8 +671,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews`
 Future<ApiResult<List<PullRequestReview>, Never>> pullsListReviews({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -802,8 +848,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments`
 Future<ApiResult<List<ReviewComment>, BasicError>> pullsListCommentsForReview({required String owner, required String repo, required int pullNumber, required int reviewId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

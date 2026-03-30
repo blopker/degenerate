@@ -11,7 +11,7 @@ final WebhookPullRequestReviewEditedChangesBody? body;
 Map<String, dynamic> toJson() { return {
   if (body != null) 'body': body?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body'}.contains(key)); } 
 WebhookPullRequestReviewEditedChanges copyWith({WebhookPullRequestReviewEditedChangesBody Function()? body}) { return WebhookPullRequestReviewEditedChanges(
   body: body != null ? body() : this.body,
 ); } 

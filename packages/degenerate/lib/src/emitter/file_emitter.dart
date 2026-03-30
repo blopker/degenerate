@@ -26,6 +26,7 @@ class FileEmitter {
     bool workspace = false,
     String? defaultServerUrl,
     List<String>? warnings,
+    List<String> unwrapFields = const [],
   }) {
     final files = <String, String>{};
 
@@ -153,11 +154,12 @@ class FileEmitter {
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
       final header = _header;
-      final apiEmitter = ApiEmitter(api, typeRegistry: typeRegistry);
+      final apiEmitter = ApiEmitter(api,
+          typeRegistry: typeRegistry, unwrapFields: unwrapFields);
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
 
-      final analysis = _analyzeApi(api, typeRegistry);
+      final analysis = _analyzeApi(api, typeRegistry, unwrapFields);
 
       // Derive imports directly from referenced types using pre-built lookup
       final sortedApiFiles =
@@ -313,7 +315,8 @@ class FileEmitter {
   /// Single-pass analysis of an API: collects referenced types, and determines
   /// whether dart:convert and dart:typed_data imports are needed.
   ({Set<String> referencedTypes, bool needsConvert, bool needsTypedData})
-  _analyzeApi(IrApi api, [Map<String, IrType>? typeRegistry]) {
+  _analyzeApi(IrApi api, [Map<String, IrType>? typeRegistry,
+      List<String> unwrapFields = const []]) {
     final names = <String>{};
     var needsConvert = false;
     var needsTypedData = false;
@@ -323,6 +326,25 @@ class FileEmitter {
       IrMap(:final values) => isBytesType(values),
       _ => false,
     };
+
+    // Unwrap a response type if it matches unwrapFields config.
+    IrType maybeUnwrap(IrType type) {
+      if (unwrapFields.isEmpty || typeRegistry == null) return type;
+      IrObject? obj;
+      if (type is IrObject) {
+        obj = type;
+      } else if (type is IrTypeRef) {
+        final resolved = typeRegistry[type.name];
+        if (resolved is IrObject) obj = resolved;
+      }
+      if (obj == null) return type;
+      for (final fieldName in unwrapFields) {
+        for (final f in obj.fields) {
+          if (f.originalName == fieldName) return f.type;
+        }
+      }
+      return type;
+    }
 
     for (final op in api.operations) {
       for (final param in op.parameters) {
@@ -348,17 +370,19 @@ class FileEmitter {
           final content = preferredContent(resp.content);
           if (content != null) {
             if (isJsonLikeMediaType(content.$1)) needsConvert = true;
-            _collectTopLevelTypeName(content.$2.schema, names, typeRegistry);
-            if (isBytesType(content.$2.schema)) needsTypedData = true;
+            final schema = maybeUnwrap(content.$2.schema);
+            _collectTopLevelTypeName(schema, names, typeRegistry);
+            if (isBytesType(schema)) needsTypedData = true;
             break;
           }
         }
       }
-      // Collect types from SSE (text/event-stream) responses
-      final sseContent = eventStreamContent(op);
-      if (sseContent != null) {
+      // Collect types from streaming responses (SSE, JSONL)
+      final streaming = streamingContent(op);
+      if (streaming != null) {
         needsConvert = true;
-        _collectTopLevelTypeName(sseContent.$2.schema, names, typeRegistry);
+        final eventType = streaming.$2.itemSchema ?? streaming.$2.schema;
+        _collectTopLevelTypeName(eventType, names, typeRegistry);
       }
       // Collect error response type (matching ApiEmitter._errorResponseContent
       // logic: prefer default, then first 4xx+, only one error type per operation).
@@ -600,10 +624,14 @@ class FileEmitter {
     }
 
     switch (type) {
-      case IrObject(:final name, :final fields):
+      case IrObject(:final name, :final fields, :final additionalProperties):
         names.add(name);
         for (final field in fields) {
           checkField(field.type);
+        }
+        if (additionalProperties != null) {
+          checkField(additionalProperties);
+          needsCollection = true; // mapEquals from runtime
         }
       case IrEnum(:final name):
         names.add(name);
@@ -863,7 +891,7 @@ class FileEmitter {
     final flowLiterals = scheme.flows
         .map(
           (flow) =>
-              'ApiOAuthFlow(type: ${_oauthFlowType(flow.type)}, authorizationUrl: ${_stringOrNull(flow.authorizationUrl)}, tokenUrl: ${_stringOrNull(flow.tokenUrl)}, refreshUrl: ${_stringOrNull(flow.refreshUrl)}, scopes: ${_stringMapLiteral(flow.scopes)})',
+              'ApiOAuthFlow(type: ${_oauthFlowType(flow.type)}, authorizationUrl: ${_stringOrNull(flow.authorizationUrl)}, tokenUrl: ${_stringOrNull(flow.tokenUrl)}, refreshUrl: ${_stringOrNull(flow.refreshUrl)}, deviceAuthorizationUrl: ${_stringOrNull(flow.deviceAuthorizationUrl)}, scopes: ${_stringMapLiteral(flow.scopes)})',
         )
         .join(', ');
     return 'ApiSecurityScheme(name: ${_stringOrNull(scheme.name)}, type: $type, scheme: ${_stringOrNull(scheme.scheme)}, bearerFormat: ${_stringOrNull(scheme.bearerFormat)}, parameterName: ${_stringOrNull(scheme.parameterName)}, location: $location, openIdConnectUrl: ${_stringOrNull(scheme.openIdConnectUrl)}, flows: [$flowLiterals])';
@@ -891,6 +919,7 @@ class FileEmitter {
     'password' => 'ApiOAuthFlowType.password',
     'clientCredentials' => 'ApiOAuthFlowType.clientCredentials',
     'authorizationCode' => 'ApiOAuthFlowType.authorizationCode',
+    'deviceAuthorization' => 'ApiOAuthFlowType.deviceAuthorization',
     _ => 'ApiOAuthFlowType.authorizationCode',
   };
 

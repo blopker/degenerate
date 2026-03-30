@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'datasetName': ?datasetName,
   'datasetUUID': ?datasetUuid,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'datasetName', 'datasetUUID'}.contains(key)); } 
 FlockerVolumeSource copyWith({String Function()? datasetName, String Function()? datasetUuid, }) { return FlockerVolumeSource(
   datasetName: datasetName != null ? datasetName() : this.datasetName,
   datasetUuid: datasetUuid != null ? datasetUuid() : this.datasetUuid,

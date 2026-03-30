@@ -12,6 +12,24 @@ class ModelEmitter {
   final Map<String, IrType> typeRegistry;
   const ModelEmitter(this.model, {this.typeRegistry = const {}});
 
+  /// Field name for the overflow map, avoiding collisions with fixed fields.
+  String get _overflowFieldName {
+    final names = model.fields.map((f) => f.name).toSet();
+    var name = 'additionalProperties';
+    if (names.contains(name)) name = '\$$name';
+    return name;
+  }
+
+  /// Dart type reference for the overflow map: `Map<String, T>`.
+  Reference get _overflowMapType {
+    final valueType = model.additionalProperties!;
+    return TypeReference(
+      (b) => b
+        ..symbol = 'Map'
+        ..types.addAll([refer('String'), irTypeToReference(valueType)]),
+    );
+  }
+
   List<Spec> emit() {
     return [
       Class(
@@ -38,7 +56,7 @@ class ModelEmitter {
   }
 
   Iterable<Field> _buildFields() {
-    return model.fields.map(
+    final fields = model.fields.map(
       (f) => Field(
         (b) => b
           ..name = f.name
@@ -52,14 +70,24 @@ class ModelEmitter {
           ),
       ),
     );
+    if (model.additionalProperties == null) return fields;
+    return [
+      ...fields,
+      Field(
+        (b) => b
+          ..name = _overflowFieldName
+          ..modifier = FieldModifier.final$
+          ..type = _overflowMapType,
+      ),
+    ];
   }
 
   Constructor _buildConstructor() {
     return Constructor(
       (b) => b
         ..constant = true
-        ..optionalParameters.addAll(
-          model.fields.map((f) {
+        ..optionalParameters.addAll([
+          ...model.fields.map((f) {
             return Parameter(
               (p) => p
                 ..name = f.name
@@ -69,12 +97,20 @@ class ModelEmitter {
                 ..defaultTo = _defaultCode(f),
             );
           }),
-        ),
+          if (model.additionalProperties != null)
+            Parameter(
+              (p) => p
+                ..name = _overflowFieldName
+                ..named = true
+                ..toThis = true
+                ..defaultTo = const Code('const {}'),
+            ),
+        ]),
     );
   }
 
   Constructor _buildFromJson() {
-    final args = model.fields
+    var args = model.fields
         .map((f) {
           final accessor = "json['${escapeDartString(f.originalName)}']";
           // A field is "nullable in fromJson" if:
@@ -99,6 +135,29 @@ class ModelEmitter {
           return '  ${f.name}: $code,';
         })
         .join('\n');
+
+    // Append overflow map extraction if additionalProperties is defined.
+    if (model.additionalProperties != null) {
+      final knownKeysList = model.fields
+          .map((f) => "'${escapeDartString(f.originalName)}'")
+          .toList();
+      // Use explicit <String>{} to avoid Dart parsing empty const {} as a Map.
+      final knownKeys = knownKeysList.isEmpty
+          ? '<String>{}'
+          : '{${knownKeysList.join(', ')}}';
+      final valueType = model.additionalProperties!;
+      final isDynamic =
+          valueType is IrPrimitive && valueType.kind == PrimitiveKind.dynamic_;
+      if (isDynamic) {
+        args +=
+            '\n  $_overflowFieldName: Map.fromEntries(json.entries.where((e) => !const $knownKeys.contains(e.key))),';
+      } else {
+        final valueExpr = buildFromJsonCode(valueType, 'e.value',
+            isOptional: false, typeRegistry: typeRegistry);
+        args +=
+            '\n  $_overflowFieldName: Map.fromEntries(json.entries.where((e) => !const $knownKeys.contains(e.key)).map((e) => MapEntry(e.key, $valueExpr))),';
+      }
+    }
 
     return Constructor(
       (b) => b
@@ -141,8 +200,17 @@ class ModelEmitter {
       (m) => m
         ..name = 'toJson'
         ..returns = refer('Map<String, dynamic>')
-        ..body = Code('return {\n$entries\n};'),
+        ..body = Code('return {\n$entries\n${_overflowToJsonSpread}};'),
     );
+  }
+
+  String get _overflowToJsonSpread {
+    if (model.additionalProperties == null) return '';
+    final valueType = model.additionalProperties!;
+    if (mapValueNeedsToJson(valueType)) {
+      return '  ...$_overflowFieldName.map((k, v) => MapEntry(k, ${buildToJsonCode(valueType, 'v')})),\n';
+    }
+    return '  ...$_overflowFieldName,\n';
   }
 
   String _toJsonValueNullable(IrField f) {
@@ -195,7 +263,18 @@ class ModelEmitter {
           return keyCheck;
         })
         .join(' &&\n      ');
-    final body = checks.isEmpty ? 'return true;' : 'return $checks;';
+    final String body;
+    if (checks.isNotEmpty) {
+      body = 'return $checks;';
+    } else if (model.fields.isNotEmpty) {
+      // No required fields — check that at least one known property key exists.
+      final knownKeys = model.fields
+          .map((f) => "'${escapeDartString(f.originalName)}'")
+          .join(', ');
+      body = 'return json.keys.any((key) => const {$knownKeys}.contains(key));';
+    } else {
+      body = 'return true;';
+    }
 
     return Method(
       (m) => m
@@ -265,12 +344,26 @@ class ModelEmitter {
         })
         .join('\n');
 
+    final allParams = [...params];
+    var allAssignments = assignments;
+    if (model.additionalProperties != null) {
+      final valueTypeName = irTypeName(model.additionalProperties!);
+      allParams.add(Parameter(
+        (p) => p
+          ..name = _overflowFieldName
+          ..named = true
+          ..type = refer('Map<String, $valueTypeName>?'),
+      ));
+      allAssignments +=
+          '\n  $_overflowFieldName: $_overflowFieldName ?? this.$_overflowFieldName,';
+    }
+
     return Method(
       (m) => m
         ..name = 'copyWith'
         ..returns = refer(model.name)
-        ..optionalParameters.addAll(params)
-        ..body = Code('return ${model.name}(\n$assignments\n);'),
+        ..optionalParameters.addAll(allParams)
+        ..body = Code('return ${model.name}(\n$allAssignments\n);'),
     );
   }
 
@@ -293,30 +386,22 @@ class ModelEmitter {
         })
         .join(' &&\n          ');
 
-    final body = comparisons.isEmpty
-        ? 'return identical(this, other) || other is ${model.name};'
-        : 'return identical(this, other) ||\n      other is ${model.name} &&\n          $comparisons;';
+    var allComparisons = comparisons;
+    if (model.additionalProperties != null) {
+      final mapCmp = 'mapEquals($_overflowFieldName, other.$_overflowFieldName)';
+      allComparisons = allComparisons.isEmpty ? mapCmp : '$allComparisons &&\n          $mapCmp';
+    }
 
-    return Method(
-      (m) => m
-        ..name = 'operator =='
-        ..annotations.add(refer('override'))
-        ..returns = refer('bool')
-        ..requiredParameters.add(
-          Parameter(
-            (p) => p
-              ..name = 'other'
-              ..type = refer('Object'),
-          ),
-        )
-        ..body = Code(body),
-    );
+    final body = allComparisons.isEmpty
+        ? 'return identical(this, other) || other is ${model.name};'
+        : 'return identical(this, other) ||\n      other is ${model.name} &&\n          $allComparisons;';
+
+    return buildEqualsOverride(body);
   }
 
   Method _buildHashCode() {
     final fieldExprs = model.fields.map((f) {
       if (isListType(f.type)) {
-        // Field is nullable only if it's optional without a default value, or has a nullable type.
         final isNullable =
             (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
         if (isNullable) {
@@ -326,52 +411,41 @@ class ModelEmitter {
       }
       return f.name;
     }).toList();
+    if (model.additionalProperties != null) {
+      fieldExprs.add('Object.hashAll($_overflowFieldName.entries)');
+    }
 
     final String body;
     if (fieldExprs.isEmpty) {
       body = 'return runtimeType.hashCode;';
     } else if (fieldExprs.length == 1) {
-      // Object.hash requires at least 2 arguments; use hashCode directly.
       body = 'return ${fieldExprs.first}.hashCode;';
     } else if (fieldExprs.length <= 20) {
       body = 'return Object.hash(${fieldExprs.join(', ')});';
     } else {
-      // Object.hash only supports up to 20 positional arguments.
-      // Use Object.hashAll for models with more than 20 fields.
       body = 'return Object.hashAll([${fieldExprs.join(', ')}]);';
     }
 
-    return Method(
-      (m) => m
-        ..name = 'hashCode'
-        ..type = MethodType.getter
-        ..annotations.add(refer('override'))
-        ..returns = refer('int')
-        ..body = Code(body),
-    );
+    return buildHashCodeOverride(body);
   }
 
   Method _buildToString() {
-    final fieldStr = model.fields
+    var fieldStr = model.fields
         .map((f) {
-          // Use ${name} syntax for names with $ to avoid string interpolation issues.
           if (f.name.startsWith(r'$')) {
-            // Escape $ in both key and value to prevent interpolation
             final escaped = f.name.replaceAll(r'$', r'\$');
             return '$escaped: \${${f.name}}';
           }
           return '${f.name}: \$${f.name}';
         })
         .join(', ');
+    if (model.additionalProperties != null) {
+      if (fieldStr.isNotEmpty) fieldStr += ', ';
+      fieldStr += '$_overflowFieldName: \$$_overflowFieldName';
+    }
 
-    return Method(
-      (m) => m
-        ..name = 'toString'
-        ..annotations.add(refer('override'))
-        ..returns = refer('String')
-        ..body = Code(
-          "return '${escapeNameForString(model.name)}($fieldStr)';",
-        ),
+    return buildToStringOverride(
+      "return '${escapeNameForString(model.name)}($fieldStr)';",
     );
   }
 

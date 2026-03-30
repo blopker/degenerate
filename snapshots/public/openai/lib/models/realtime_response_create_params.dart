@@ -108,7 +108,7 @@ Map<String, dynamic> toJson() { return {
   if (prompt != null) 'prompt': prompt?.toJson(),
   if (input != null) 'input': input?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'output_modalities', 'instructions', 'audio', 'tools', 'tool_choice', 'max_output_tokens', 'conversation', 'metadata', 'prompt', 'input'}.contains(key)); } 
 RealtimeResponseCreateParams copyWith({List<RealtimeResponseCreateParamsOutputModalities> Function()? outputModalities, String Function()? instructions, RealtimeResponseCreateParamsAudio Function()? audio, List<RealtimeResponseCreateParamsTools> Function()? tools, RealtimeResponseCreateParamsToolChoice Function()? toolChoice, RealtimeResponseCreateParamsMaxOutputTokens Function()? maxOutputTokens, RealtimeResponseCreateParamsConversation Function()? conversation, Map<String, String>? Function()? metadata, Prompt Function()? prompt, List<RealtimeConversationItem> Function()? input, }) { return RealtimeResponseCreateParams(
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,
   instructions: instructions != null ? instructions() : this.instructions,

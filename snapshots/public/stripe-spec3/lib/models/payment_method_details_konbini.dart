@@ -13,7 +13,7 @@ final PaymentMethodDetailsKonbiniStore2? store;
 Map<String, dynamic> toJson() { return {
   if (store != null) 'store': store?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'store'}.contains(key)); } 
 PaymentMethodDetailsKonbini copyWith({PaymentMethodDetailsKonbiniStore2? Function()? store}) { return PaymentMethodDetailsKonbini(
   store: store != null ? store() : this.store,
 ); } 

@@ -12,7 +12,7 @@ final String? commodityCode;
 Map<String, dynamic> toJson() { return {
   'commodity_code': ?commodityCode,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'commodity_code'}.contains(key)); } 
 PaymentFlowsPrivatePaymentMethodsCardPresentAmountDetailsLineItemPaymentMethodOptions copyWith({String? Function()? commodityCode}) { return PaymentFlowsPrivatePaymentMethodsCardPresentAmountDetailsLineItemPaymentMethodOptions(
   commodityCode: commodityCode != null ? commodityCode() : this.commodityCode,
 ); } 

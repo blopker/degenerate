@@ -96,7 +96,7 @@ Map<String, dynamic> toJson() { return {
   if (uid != null) 'uid': uid?.toJson(),
   if (width != null) 'width': width?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'downloadedFrom', 'height', 'name', 'opacity', 'padding', 'position', 'scale', 'size', 'uid', 'width'}.contains(key)); } 
 StreamWatermarks copyWith({StreamWatermarkCreated Function()? created, StreamDownloadedFrom Function()? downloadedFrom, StreamHeight Function()? height, StreamName Function()? name, StreamOpacity Function()? opacity, StreamPadding Function()? padding, StreamPosition Function()? position, StreamScale Function()? scale, StreamWatermarkSize Function()? size, StreamWatermarkIdentifier Function()? uid, StreamWidth Function()? width, }) { return StreamWatermarks(
   created: created != null ? created() : this.created,
   downloadedFrom: downloadedFrom != null ? downloadedFrom() : this.downloadedFrom,

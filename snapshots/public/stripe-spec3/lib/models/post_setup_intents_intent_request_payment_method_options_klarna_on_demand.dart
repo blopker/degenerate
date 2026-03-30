@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   if (purchaseInterval != null) 'purchase_interval': purchaseInterval?.toJson(),
   'purchase_interval_count': ?purchaseIntervalCount,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'average_amount', 'maximum_amount', 'minimum_amount', 'purchase_interval', 'purchase_interval_count'}.contains(key)); } 
 PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaOnDemand copyWith({int Function()? averageAmount, int Function()? maximumAmount, int Function()? minimumAmount, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaOnDemandPurchaseInterval Function()? purchaseInterval, int Function()? purchaseIntervalCount, }) { return PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaOnDemand(
   averageAmount: averageAmount != null ? averageAmount() : this.averageAmount,
   maximumAmount: maximumAmount != null ? maximumAmount() : this.maximumAmount,

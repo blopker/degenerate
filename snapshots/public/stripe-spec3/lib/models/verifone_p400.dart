@@ -11,7 +11,7 @@ final VerifoneP400Splashscreen? splashscreen;
 Map<String, dynamic> toJson() { return {
   if (splashscreen != null) 'splashscreen': splashscreen?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'splashscreen'}.contains(key)); } 
 VerifoneP400 copyWith({VerifoneP400Splashscreen Function()? splashscreen}) { return VerifoneP400(
   splashscreen: splashscreen != null ? splashscreen() : this.splashscreen,
 ); } 

@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'refund_account_holder_name': ?refundAccountHolderName,
   'refund_iban': ?refundIban,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'entity', 'reference', 'refund_account_holder_address_city', 'refund_account_holder_address_country', 'refund_account_holder_address_line1', 'refund_account_holder_address_line2', 'refund_account_holder_address_postal_code', 'refund_account_holder_address_state', 'refund_account_holder_name', 'refund_iban'}.contains(key)); } 
 SourceTypeMultibanco copyWith({String? Function()? entity, String? Function()? reference, String? Function()? refundAccountHolderAddressCity, String? Function()? refundAccountHolderAddressCountry, String? Function()? refundAccountHolderAddressLine1, String? Function()? refundAccountHolderAddressLine2, String? Function()? refundAccountHolderAddressPostalCode, String? Function()? refundAccountHolderAddressState, String? Function()? refundAccountHolderName, String? Function()? refundIban, }) { return SourceTypeMultibanco(
   entity: entity != null ? entity() : this.entity,
   reference: reference != null ? reference() : this.reference,

@@ -11,7 +11,7 @@ final PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsC
 Map<String, dynamic> toJson() { return {
   if (cartesBancaires != null) 'cartes_bancaires': cartesBancaires?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cartes_bancaires'}.contains(key)); } 
 PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions copyWith({PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires Function()? cartesBancaires}) { return PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptions(
   cartesBancaires: cartesBancaires != null ? cartesBancaires() : this.cartesBancaires,
 ); } 

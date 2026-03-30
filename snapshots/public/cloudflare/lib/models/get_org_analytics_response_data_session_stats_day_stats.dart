@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'total_session_minutes': ?totalSessionMinutes,
   'total_sessions': ?totalSessions,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'day', 'total_session_minutes', 'total_sessions'}.contains(key)); } 
 GetOrgAnalyticsResponseDataSessionStatsDayStats copyWith({String Function()? day, double Function()? totalSessionMinutes, int Function()? totalSessions, }) { return GetOrgAnalyticsResponseDataSessionStatsDayStats(
   day: day != null ? day() : this.day,
   totalSessionMinutes: totalSessionMinutes != null ? totalSessionMinutes() : this.totalSessionMinutes,

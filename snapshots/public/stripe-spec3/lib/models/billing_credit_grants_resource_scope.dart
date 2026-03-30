@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (priceType != null) 'price_type': priceType?.toJson(),
   if (prices != null) 'prices': prices?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'price_type', 'prices'}.contains(key)); } 
 BillingCreditGrantsResourceScope copyWith({BillingCreditGrantsResourceScopePriceType Function()? priceType, List<BillingCreditGrantsResourceApplicablePrice> Function()? prices, }) { return BillingCreditGrantsResourceScope(
   priceType: priceType != null ? priceType() : this.priceType,
   prices: prices != null ? prices() : this.prices,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'model_response_properties.dart';/// The type of the event. Always `response.incomplete`.
+import 'response.dart';/// The type of the event. Always `response.incomplete`.
 /// 
 final class ResponseIncompleteEventType {const ResponseIncompleteEventType._(this.value);
 
@@ -29,7 +29,7 @@ final class ResponseIncompleteEvent {const ResponseIncompleteEvent({required thi
 
 factory ResponseIncompleteEvent.fromJson(Map<String, dynamic> json) { return ResponseIncompleteEvent(
   type: ResponseIncompleteEventType.fromJson(json['type'] as String),
-  response: ModelResponseProperties.fromJson(json['response'] as Map<String, dynamic>),
+  response: Response.fromJson(json['response'] as Map<String, dynamic>),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
 ); }
 
@@ -39,7 +39,7 @@ final ResponseIncompleteEventType type;
 
 /// The response that was incomplete.
 /// 
-final ModelResponseProperties response;
+final Response response;
 
 /// The sequence number of this event.
 final int sequenceNumber;
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('response') &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseIncompleteEvent copyWith({ResponseIncompleteEventType? type, ModelResponseProperties? response, int? sequenceNumber, }) { return ResponseIncompleteEvent(
+ResponseIncompleteEvent copyWith({ResponseIncompleteEventType? type, Response? response, int? sequenceNumber, }) { return ResponseIncompleteEvent(
   type: type ?? this.type,
   response: response ?? this.response,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,

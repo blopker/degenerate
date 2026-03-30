@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (shipping != null) 'shipping': shipping?.toJson(),
   if (tax != null) 'tax': tax?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discount_amount', 'enforce_arithmetic_validation', 'line_items', 'shipping', 'tax'}.contains(key)); } 
 PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails copyWith({PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmount Function()? discountAmount, bool Function()? enforceArithmeticValidation, PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItems Function()? lineItems, PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsShipping Function()? shipping, PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsTax Function()? tax, }) { return PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails(
   discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
   enforceArithmeticValidation: enforceArithmeticValidation != null ? enforceArithmeticValidation() : this.enforceArithmeticValidation,

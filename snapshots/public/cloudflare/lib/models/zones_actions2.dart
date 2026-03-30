@@ -4,40 +4,40 @@ import 'zones_always_use_https.dart';import 'zones_automatic_https_rewrites.dart
 
 /// Deserialize from JSON, dispatching on the `id` discriminator.
 factory ZonesActions2.fromJson(Map<String, dynamic> json) { return switch (json['id']) {
-  'ZonesAlwaysUseHttps' => ZonesActions2ZonesAlwaysUseHttps.fromJson(json),
-  'ZonesAutomaticHttpsRewrites' => ZonesActions2ZonesAutomaticHttpsRewrites.fromJson(json),
-  'ZonesBrowserCacheTtl' => ZonesActions2ZonesBrowserCacheTtl.fromJson(json),
-  'ZonesBrowserCheck' => ZonesActions2ZonesBrowserCheck.fromJson(json),
-  'ZonesBypassCacheOnCookie' => ZonesActions2ZonesBypassCacheOnCookie.fromJson(json),
-  'ZonesCacheByDeviceType' => ZonesActions2ZonesCacheByDeviceType.fromJson(json),
-  'ZonesCacheDeceptionArmor' => ZonesActions2ZonesCacheDeceptionArmor.fromJson(json),
-  'ZonesCacheKeyFields' => ZonesActions2ZonesCacheKeyFields.fromJson(json),
-  'ZonesCacheLevel' => ZonesActions2ZonesCacheLevel.fromJson(json),
-  'ZonesCacheOnCookie' => ZonesActions2ZonesCacheOnCookie.fromJson(json),
-  'ZonesCacheTtlByStatus' => ZonesActions2ZonesCacheTtlByStatus.fromJson(json),
-  'ZonesDisableApps' => ZonesActions2ZonesDisableApps.fromJson(json),
-  'ZonesDisablePerformance' => ZonesActions2ZonesDisablePerformance.fromJson(json),
-  'ZonesDisableSecurity' => ZonesActions2ZonesDisableSecurity.fromJson(json),
-  'ZonesDisableZaraz' => ZonesActions2ZonesDisableZaraz.fromJson(json),
-  'ZonesEdgeCacheTtl' => ZonesActions2ZonesEdgeCacheTtl.fromJson(json),
-  'ZonesEmailObfuscation' => ZonesActions2ZonesEmailObfuscation.fromJson(json),
-  'ZonesExplicitCacheControl' => ZonesActions2ZonesExplicitCacheControl.fromJson(json),
-  'ZonesForwardingUrl' => ZonesActions2ZonesForwardingUrl.fromJson(json),
-  'ZonesHostHeaderOverride' => ZonesActions2ZonesHostHeaderOverride.fromJson(json),
-  'ZonesIpGeolocation' => ZonesActions2ZonesIpGeolocation.fromJson(json),
-  'ZonesMirage' => ZonesActions2ZonesMirage.fromJson(json),
-  'ZonesOpportunisticEncryption' => ZonesActions2ZonesOpportunisticEncryption.fromJson(json),
-  'ZonesOriginErrorPagePassThru' => ZonesActions2ZonesOriginErrorPagePassThru.fromJson(json),
-  'ZonesPolish' => ZonesActions2ZonesPolish.fromJson(json),
-  'ZonesResolveOverride' => ZonesActions2ZonesResolveOverride.fromJson(json),
-  'ZonesRespectStrongEtag' => ZonesActions2ZonesRespectStrongEtag.fromJson(json),
-  'ZonesResponseBuffering' => ZonesActions2ZonesResponseBuffering.fromJson(json),
-  'ZonesRocketLoader' => ZonesActions2ZonesRocketLoader.fromJson(json),
-  'ZonesSecurityLevel' => ZonesActions2ZonesSecurityLevel.fromJson(json),
-  'ZonesSortQueryStringForCache' => ZonesActions2ZonesSortQueryStringForCache.fromJson(json),
-  'ZonesSsl' => ZonesActions2ZonesSsl.fromJson(json),
-  'ZonesTrueClientIpHeader' => ZonesActions2ZonesTrueClientIpHeader.fromJson(json),
-  'ZonesWaf' => ZonesActions2ZonesWaf.fromJson(json),
+  'zones_always_use_https' => ZonesActions2ZonesAlwaysUseHttps.fromJson(json),
+  'zones_automatic_https_rewrites' => ZonesActions2ZonesAutomaticHttpsRewrites.fromJson(json),
+  'zones_browser_cache_ttl' => ZonesActions2ZonesBrowserCacheTtl.fromJson(json),
+  'zones_browser_check' => ZonesActions2ZonesBrowserCheck.fromJson(json),
+  'zones_bypass_cache_on_cookie' => ZonesActions2ZonesBypassCacheOnCookie.fromJson(json),
+  'zones_cache_by_device_type' => ZonesActions2ZonesCacheByDeviceType.fromJson(json),
+  'zones_cache_deception_armor' => ZonesActions2ZonesCacheDeceptionArmor.fromJson(json),
+  'zones_cache_key_fields' => ZonesActions2ZonesCacheKeyFields.fromJson(json),
+  'zones_cache_level' => ZonesActions2ZonesCacheLevel.fromJson(json),
+  'zones_cache_on_cookie' => ZonesActions2ZonesCacheOnCookie.fromJson(json),
+  'zones_cache_ttl_by_status' => ZonesActions2ZonesCacheTtlByStatus.fromJson(json),
+  'zones_disable_apps' => ZonesActions2ZonesDisableApps.fromJson(json),
+  'zones_disable_performance' => ZonesActions2ZonesDisablePerformance.fromJson(json),
+  'zones_disable_security' => ZonesActions2ZonesDisableSecurity.fromJson(json),
+  'zones_disable_zaraz' => ZonesActions2ZonesDisableZaraz.fromJson(json),
+  'zones_edge_cache_ttl' => ZonesActions2ZonesEdgeCacheTtl.fromJson(json),
+  'zones_email_obfuscation' => ZonesActions2ZonesEmailObfuscation.fromJson(json),
+  'zones_explicit_cache_control' => ZonesActions2ZonesExplicitCacheControl.fromJson(json),
+  'zones_forwarding_url' => ZonesActions2ZonesForwardingUrl.fromJson(json),
+  'zones_host_header_override' => ZonesActions2ZonesHostHeaderOverride.fromJson(json),
+  'zones_ip_geolocation' => ZonesActions2ZonesIpGeolocation.fromJson(json),
+  'zones_mirage' => ZonesActions2ZonesMirage.fromJson(json),
+  'zones_opportunistic_encryption' => ZonesActions2ZonesOpportunisticEncryption.fromJson(json),
+  'zones_origin_error_page_pass_thru' => ZonesActions2ZonesOriginErrorPagePassThru.fromJson(json),
+  'zones_polish' => ZonesActions2ZonesPolish.fromJson(json),
+  'zones_resolve_override' => ZonesActions2ZonesResolveOverride.fromJson(json),
+  'zones_respect_strong_etag' => ZonesActions2ZonesRespectStrongEtag.fromJson(json),
+  'zones_response_buffering' => ZonesActions2ZonesResponseBuffering.fromJson(json),
+  'zones_rocket_loader' => ZonesActions2ZonesRocketLoader.fromJson(json),
+  'zones_security_level' => ZonesActions2ZonesSecurityLevel.fromJson(json),
+  'zones_sort_query_string_for_cache' => ZonesActions2ZonesSortQueryStringForCache.fromJson(json),
+  'zones_ssl' => ZonesActions2ZonesSsl.fromJson(json),
+  'zones_true_client_ip_header' => ZonesActions2ZonesTrueClientIpHeader.fromJson(json),
+  'zones_waf' => ZonesActions2ZonesWaf.fromJson(json),
   _ => ZonesActions2$Unknown(json),
 }; }
 
@@ -53,8 +53,8 @@ factory ZonesActions2ZonesAlwaysUseHttps.fromJson(Map<String, dynamic> json) { r
 
 final ZonesAlwaysUseHttps zonesAlwaysUseHttps;
 
-@override String get id { return 'ZonesAlwaysUseHttps'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesAlwaysUseHttps.toJson()}; } 
+@override String get id { return 'zones_always_use_https'; } 
+@override Map<String, dynamic> toJson() { return {...zonesAlwaysUseHttps.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesAlwaysUseHttps && zonesAlwaysUseHttps == other.zonesAlwaysUseHttps; } 
 @override int get hashCode { return zonesAlwaysUseHttps.hashCode; } 
@@ -66,8 +66,8 @@ factory ZonesActions2ZonesAutomaticHttpsRewrites.fromJson(Map<String, dynamic> j
 
 final ZonesAutomaticHttpsRewrites zonesAutomaticHttpsRewrites;
 
-@override String get id { return 'ZonesAutomaticHttpsRewrites'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesAutomaticHttpsRewrites.toJson()}; } 
+@override String get id { return 'zones_automatic_https_rewrites'; } 
+@override Map<String, dynamic> toJson() { return {...zonesAutomaticHttpsRewrites.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesAutomaticHttpsRewrites && zonesAutomaticHttpsRewrites == other.zonesAutomaticHttpsRewrites; } 
 @override int get hashCode { return zonesAutomaticHttpsRewrites.hashCode; } 
@@ -79,8 +79,8 @@ factory ZonesActions2ZonesBrowserCacheTtl.fromJson(Map<String, dynamic> json) { 
 
 final ZonesBrowserCacheTtl zonesBrowserCacheTtl;
 
-@override String get id { return 'ZonesBrowserCacheTtl'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesBrowserCacheTtl.toJson()}; } 
+@override String get id { return 'zones_browser_cache_ttl'; } 
+@override Map<String, dynamic> toJson() { return {...zonesBrowserCacheTtl.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesBrowserCacheTtl && zonesBrowserCacheTtl == other.zonesBrowserCacheTtl; } 
 @override int get hashCode { return zonesBrowserCacheTtl.hashCode; } 
@@ -92,8 +92,8 @@ factory ZonesActions2ZonesBrowserCheck.fromJson(Map<String, dynamic> json) { ret
 
 final ZonesBrowserCheck zonesBrowserCheck;
 
-@override String get id { return 'ZonesBrowserCheck'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesBrowserCheck.toJson()}; } 
+@override String get id { return 'zones_browser_check'; } 
+@override Map<String, dynamic> toJson() { return {...zonesBrowserCheck.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesBrowserCheck && zonesBrowserCheck == other.zonesBrowserCheck; } 
 @override int get hashCode { return zonesBrowserCheck.hashCode; } 
@@ -105,8 +105,8 @@ factory ZonesActions2ZonesBypassCacheOnCookie.fromJson(Map<String, dynamic> json
 
 final ZonesBypassCacheOnCookie zonesBypassCacheOnCookie;
 
-@override String get id { return 'ZonesBypassCacheOnCookie'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesBypassCacheOnCookie.toJson()}; } 
+@override String get id { return 'zones_bypass_cache_on_cookie'; } 
+@override Map<String, dynamic> toJson() { return {...zonesBypassCacheOnCookie.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesBypassCacheOnCookie && zonesBypassCacheOnCookie == other.zonesBypassCacheOnCookie; } 
 @override int get hashCode { return zonesBypassCacheOnCookie.hashCode; } 
@@ -118,8 +118,8 @@ factory ZonesActions2ZonesCacheByDeviceType.fromJson(Map<String, dynamic> json) 
 
 final ZonesCacheByDeviceType zonesCacheByDeviceType;
 
-@override String get id { return 'ZonesCacheByDeviceType'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesCacheByDeviceType.toJson()}; } 
+@override String get id { return 'zones_cache_by_device_type'; } 
+@override Map<String, dynamic> toJson() { return {...zonesCacheByDeviceType.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesCacheByDeviceType && zonesCacheByDeviceType == other.zonesCacheByDeviceType; } 
 @override int get hashCode { return zonesCacheByDeviceType.hashCode; } 
@@ -131,8 +131,8 @@ factory ZonesActions2ZonesCacheDeceptionArmor.fromJson(Map<String, dynamic> json
 
 final ZonesCacheDeceptionArmor zonesCacheDeceptionArmor;
 
-@override String get id { return 'ZonesCacheDeceptionArmor'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesCacheDeceptionArmor.toJson()}; } 
+@override String get id { return 'zones_cache_deception_armor'; } 
+@override Map<String, dynamic> toJson() { return {...zonesCacheDeceptionArmor.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesCacheDeceptionArmor && zonesCacheDeceptionArmor == other.zonesCacheDeceptionArmor; } 
 @override int get hashCode { return zonesCacheDeceptionArmor.hashCode; } 
@@ -144,8 +144,8 @@ factory ZonesActions2ZonesCacheKeyFields.fromJson(Map<String, dynamic> json) { r
 
 final ZonesCacheKeyFields zonesCacheKeyFields;
 
-@override String get id { return 'ZonesCacheKeyFields'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesCacheKeyFields.toJson()}; } 
+@override String get id { return 'zones_cache_key_fields'; } 
+@override Map<String, dynamic> toJson() { return {...zonesCacheKeyFields.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesCacheKeyFields && zonesCacheKeyFields == other.zonesCacheKeyFields; } 
 @override int get hashCode { return zonesCacheKeyFields.hashCode; } 
@@ -157,8 +157,8 @@ factory ZonesActions2ZonesCacheLevel.fromJson(Map<String, dynamic> json) { retur
 
 final ZonesCacheLevel zonesCacheLevel;
 
-@override String get id { return 'ZonesCacheLevel'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesCacheLevel.toJson()}; } 
+@override String get id { return 'zones_cache_level'; } 
+@override Map<String, dynamic> toJson() { return {...zonesCacheLevel.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesCacheLevel && zonesCacheLevel == other.zonesCacheLevel; } 
 @override int get hashCode { return zonesCacheLevel.hashCode; } 
@@ -170,8 +170,8 @@ factory ZonesActions2ZonesCacheOnCookie.fromJson(Map<String, dynamic> json) { re
 
 final ZonesCacheOnCookie zonesCacheOnCookie;
 
-@override String get id { return 'ZonesCacheOnCookie'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesCacheOnCookie.toJson()}; } 
+@override String get id { return 'zones_cache_on_cookie'; } 
+@override Map<String, dynamic> toJson() { return {...zonesCacheOnCookie.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesCacheOnCookie && zonesCacheOnCookie == other.zonesCacheOnCookie; } 
 @override int get hashCode { return zonesCacheOnCookie.hashCode; } 
@@ -183,8 +183,8 @@ factory ZonesActions2ZonesCacheTtlByStatus.fromJson(Map<String, dynamic> json) {
 
 final ZonesCacheTtlByStatus zonesCacheTtlByStatus;
 
-@override String get id { return 'ZonesCacheTtlByStatus'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesCacheTtlByStatus.toJson()}; } 
+@override String get id { return 'zones_cache_ttl_by_status'; } 
+@override Map<String, dynamic> toJson() { return {...zonesCacheTtlByStatus.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesCacheTtlByStatus && zonesCacheTtlByStatus == other.zonesCacheTtlByStatus; } 
 @override int get hashCode { return zonesCacheTtlByStatus.hashCode; } 
@@ -196,8 +196,8 @@ factory ZonesActions2ZonesDisableApps.fromJson(Map<String, dynamic> json) { retu
 
 final ZonesDisableApps zonesDisableApps;
 
-@override String get id { return 'ZonesDisableApps'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesDisableApps.toJson()}; } 
+@override String get id { return 'zones_disable_apps'; } 
+@override Map<String, dynamic> toJson() { return {...zonesDisableApps.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesDisableApps && zonesDisableApps == other.zonesDisableApps; } 
 @override int get hashCode { return zonesDisableApps.hashCode; } 
@@ -209,8 +209,8 @@ factory ZonesActions2ZonesDisablePerformance.fromJson(Map<String, dynamic> json)
 
 final ZonesDisablePerformance zonesDisablePerformance;
 
-@override String get id { return 'ZonesDisablePerformance'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesDisablePerformance.toJson()}; } 
+@override String get id { return 'zones_disable_performance'; } 
+@override Map<String, dynamic> toJson() { return {...zonesDisablePerformance.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesDisablePerformance && zonesDisablePerformance == other.zonesDisablePerformance; } 
 @override int get hashCode { return zonesDisablePerformance.hashCode; } 
@@ -222,8 +222,8 @@ factory ZonesActions2ZonesDisableSecurity.fromJson(Map<String, dynamic> json) { 
 
 final ZonesDisableSecurity zonesDisableSecurity;
 
-@override String get id { return 'ZonesDisableSecurity'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesDisableSecurity.toJson()}; } 
+@override String get id { return 'zones_disable_security'; } 
+@override Map<String, dynamic> toJson() { return {...zonesDisableSecurity.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesDisableSecurity && zonesDisableSecurity == other.zonesDisableSecurity; } 
 @override int get hashCode { return zonesDisableSecurity.hashCode; } 
@@ -235,8 +235,8 @@ factory ZonesActions2ZonesDisableZaraz.fromJson(Map<String, dynamic> json) { ret
 
 final ZonesDisableZaraz zonesDisableZaraz;
 
-@override String get id { return 'ZonesDisableZaraz'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesDisableZaraz.toJson()}; } 
+@override String get id { return 'zones_disable_zaraz'; } 
+@override Map<String, dynamic> toJson() { return {...zonesDisableZaraz.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesDisableZaraz && zonesDisableZaraz == other.zonesDisableZaraz; } 
 @override int get hashCode { return zonesDisableZaraz.hashCode; } 
@@ -248,8 +248,8 @@ factory ZonesActions2ZonesEdgeCacheTtl.fromJson(Map<String, dynamic> json) { ret
 
 final ZonesEdgeCacheTtl zonesEdgeCacheTtl;
 
-@override String get id { return 'ZonesEdgeCacheTtl'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesEdgeCacheTtl.toJson()}; } 
+@override String get id { return 'zones_edge_cache_ttl'; } 
+@override Map<String, dynamic> toJson() { return {...zonesEdgeCacheTtl.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesEdgeCacheTtl && zonesEdgeCacheTtl == other.zonesEdgeCacheTtl; } 
 @override int get hashCode { return zonesEdgeCacheTtl.hashCode; } 
@@ -261,8 +261,8 @@ factory ZonesActions2ZonesEmailObfuscation.fromJson(Map<String, dynamic> json) {
 
 final ZonesEmailObfuscation zonesEmailObfuscation;
 
-@override String get id { return 'ZonesEmailObfuscation'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesEmailObfuscation.toJson()}; } 
+@override String get id { return 'zones_email_obfuscation'; } 
+@override Map<String, dynamic> toJson() { return {...zonesEmailObfuscation.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesEmailObfuscation && zonesEmailObfuscation == other.zonesEmailObfuscation; } 
 @override int get hashCode { return zonesEmailObfuscation.hashCode; } 
@@ -274,8 +274,8 @@ factory ZonesActions2ZonesExplicitCacheControl.fromJson(Map<String, dynamic> jso
 
 final ZonesExplicitCacheControl zonesExplicitCacheControl;
 
-@override String get id { return 'ZonesExplicitCacheControl'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesExplicitCacheControl.toJson()}; } 
+@override String get id { return 'zones_explicit_cache_control'; } 
+@override Map<String, dynamic> toJson() { return {...zonesExplicitCacheControl.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesExplicitCacheControl && zonesExplicitCacheControl == other.zonesExplicitCacheControl; } 
 @override int get hashCode { return zonesExplicitCacheControl.hashCode; } 
@@ -287,8 +287,8 @@ factory ZonesActions2ZonesForwardingUrl.fromJson(Map<String, dynamic> json) { re
 
 final ZonesForwardingUrl zonesForwardingUrl;
 
-@override String get id { return 'ZonesForwardingUrl'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesForwardingUrl.toJson()}; } 
+@override String get id { return 'zones_forwarding_url'; } 
+@override Map<String, dynamic> toJson() { return {...zonesForwardingUrl.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesForwardingUrl && zonesForwardingUrl == other.zonesForwardingUrl; } 
 @override int get hashCode { return zonesForwardingUrl.hashCode; } 
@@ -300,8 +300,8 @@ factory ZonesActions2ZonesHostHeaderOverride.fromJson(Map<String, dynamic> json)
 
 final ZonesHostHeaderOverride zonesHostHeaderOverride;
 
-@override String get id { return 'ZonesHostHeaderOverride'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesHostHeaderOverride.toJson()}; } 
+@override String get id { return 'zones_host_header_override'; } 
+@override Map<String, dynamic> toJson() { return {...zonesHostHeaderOverride.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesHostHeaderOverride && zonesHostHeaderOverride == other.zonesHostHeaderOverride; } 
 @override int get hashCode { return zonesHostHeaderOverride.hashCode; } 
@@ -313,8 +313,8 @@ factory ZonesActions2ZonesIpGeolocation.fromJson(Map<String, dynamic> json) { re
 
 final ZonesIpGeolocation zonesIpGeolocation;
 
-@override String get id { return 'ZonesIpGeolocation'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesIpGeolocation.toJson()}; } 
+@override String get id { return 'zones_ip_geolocation'; } 
+@override Map<String, dynamic> toJson() { return {...zonesIpGeolocation.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesIpGeolocation && zonesIpGeolocation == other.zonesIpGeolocation; } 
 @override int get hashCode { return zonesIpGeolocation.hashCode; } 
@@ -326,8 +326,8 @@ factory ZonesActions2ZonesMirage.fromJson(Map<String, dynamic> json) { return Zo
 
 final ZonesMirage zonesMirage;
 
-@override String get id { return 'ZonesMirage'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesMirage.toJson()}; } 
+@override String get id { return 'zones_mirage'; } 
+@override Map<String, dynamic> toJson() { return {...zonesMirage.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesMirage && zonesMirage == other.zonesMirage; } 
 @override int get hashCode { return zonesMirage.hashCode; } 
@@ -339,8 +339,8 @@ factory ZonesActions2ZonesOpportunisticEncryption.fromJson(Map<String, dynamic> 
 
 final ZonesOpportunisticEncryption zonesOpportunisticEncryption;
 
-@override String get id { return 'ZonesOpportunisticEncryption'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesOpportunisticEncryption.toJson()}; } 
+@override String get id { return 'zones_opportunistic_encryption'; } 
+@override Map<String, dynamic> toJson() { return {...zonesOpportunisticEncryption.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesOpportunisticEncryption && zonesOpportunisticEncryption == other.zonesOpportunisticEncryption; } 
 @override int get hashCode { return zonesOpportunisticEncryption.hashCode; } 
@@ -352,8 +352,8 @@ factory ZonesActions2ZonesOriginErrorPagePassThru.fromJson(Map<String, dynamic> 
 
 final ZonesOriginErrorPagePassThru zonesOriginErrorPagePassThru;
 
-@override String get id { return 'ZonesOriginErrorPagePassThru'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesOriginErrorPagePassThru.toJson()}; } 
+@override String get id { return 'zones_origin_error_page_pass_thru'; } 
+@override Map<String, dynamic> toJson() { return {...zonesOriginErrorPagePassThru.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesOriginErrorPagePassThru && zonesOriginErrorPagePassThru == other.zonesOriginErrorPagePassThru; } 
 @override int get hashCode { return zonesOriginErrorPagePassThru.hashCode; } 
@@ -365,8 +365,8 @@ factory ZonesActions2ZonesPolish.fromJson(Map<String, dynamic> json) { return Zo
 
 final ZonesPolish zonesPolish;
 
-@override String get id { return 'ZonesPolish'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesPolish.toJson()}; } 
+@override String get id { return 'zones_polish'; } 
+@override Map<String, dynamic> toJson() { return {...zonesPolish.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesPolish && zonesPolish == other.zonesPolish; } 
 @override int get hashCode { return zonesPolish.hashCode; } 
@@ -378,8 +378,8 @@ factory ZonesActions2ZonesResolveOverride.fromJson(Map<String, dynamic> json) { 
 
 final ZonesResolveOverride zonesResolveOverride;
 
-@override String get id { return 'ZonesResolveOverride'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesResolveOverride.toJson()}; } 
+@override String get id { return 'zones_resolve_override'; } 
+@override Map<String, dynamic> toJson() { return {...zonesResolveOverride.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesResolveOverride && zonesResolveOverride == other.zonesResolveOverride; } 
 @override int get hashCode { return zonesResolveOverride.hashCode; } 
@@ -391,8 +391,8 @@ factory ZonesActions2ZonesRespectStrongEtag.fromJson(Map<String, dynamic> json) 
 
 final ZonesRespectStrongEtag zonesRespectStrongEtag;
 
-@override String get id { return 'ZonesRespectStrongEtag'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesRespectStrongEtag.toJson()}; } 
+@override String get id { return 'zones_respect_strong_etag'; } 
+@override Map<String, dynamic> toJson() { return {...zonesRespectStrongEtag.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesRespectStrongEtag && zonesRespectStrongEtag == other.zonesRespectStrongEtag; } 
 @override int get hashCode { return zonesRespectStrongEtag.hashCode; } 
@@ -404,8 +404,8 @@ factory ZonesActions2ZonesResponseBuffering.fromJson(Map<String, dynamic> json) 
 
 final ZonesResponseBuffering zonesResponseBuffering;
 
-@override String get id { return 'ZonesResponseBuffering'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesResponseBuffering.toJson()}; } 
+@override String get id { return 'zones_response_buffering'; } 
+@override Map<String, dynamic> toJson() { return {...zonesResponseBuffering.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesResponseBuffering && zonesResponseBuffering == other.zonesResponseBuffering; } 
 @override int get hashCode { return zonesResponseBuffering.hashCode; } 
@@ -417,8 +417,8 @@ factory ZonesActions2ZonesRocketLoader.fromJson(Map<String, dynamic> json) { ret
 
 final ZonesRocketLoader zonesRocketLoader;
 
-@override String get id { return 'ZonesRocketLoader'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesRocketLoader.toJson()}; } 
+@override String get id { return 'zones_rocket_loader'; } 
+@override Map<String, dynamic> toJson() { return {...zonesRocketLoader.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesRocketLoader && zonesRocketLoader == other.zonesRocketLoader; } 
 @override int get hashCode { return zonesRocketLoader.hashCode; } 
@@ -430,8 +430,8 @@ factory ZonesActions2ZonesSecurityLevel.fromJson(Map<String, dynamic> json) { re
 
 final ZonesSecurityLevel zonesSecurityLevel;
 
-@override String get id { return 'ZonesSecurityLevel'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesSecurityLevel.toJson()}; } 
+@override String get id { return 'zones_security_level'; } 
+@override Map<String, dynamic> toJson() { return {...zonesSecurityLevel.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesSecurityLevel && zonesSecurityLevel == other.zonesSecurityLevel; } 
 @override int get hashCode { return zonesSecurityLevel.hashCode; } 
@@ -443,8 +443,8 @@ factory ZonesActions2ZonesSortQueryStringForCache.fromJson(Map<String, dynamic> 
 
 final ZonesSortQueryStringForCache zonesSortQueryStringForCache;
 
-@override String get id { return 'ZonesSortQueryStringForCache'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesSortQueryStringForCache.toJson()}; } 
+@override String get id { return 'zones_sort_query_string_for_cache'; } 
+@override Map<String, dynamic> toJson() { return {...zonesSortQueryStringForCache.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesSortQueryStringForCache && zonesSortQueryStringForCache == other.zonesSortQueryStringForCache; } 
 @override int get hashCode { return zonesSortQueryStringForCache.hashCode; } 
@@ -456,8 +456,8 @@ factory ZonesActions2ZonesSsl.fromJson(Map<String, dynamic> json) { return Zones
 
 final ZonesSsl zonesSsl;
 
-@override String get id { return 'ZonesSsl'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesSsl.toJson()}; } 
+@override String get id { return 'zones_ssl'; } 
+@override Map<String, dynamic> toJson() { return {...zonesSsl.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesSsl && zonesSsl == other.zonesSsl; } 
 @override int get hashCode { return zonesSsl.hashCode; } 
@@ -469,8 +469,8 @@ factory ZonesActions2ZonesTrueClientIpHeader.fromJson(Map<String, dynamic> json)
 
 final ZonesTrueClientIpHeader zonesTrueClientIpHeader;
 
-@override String get id { return 'ZonesTrueClientIpHeader'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesTrueClientIpHeader.toJson()}; } 
+@override String get id { return 'zones_true_client_ip_header'; } 
+@override Map<String, dynamic> toJson() { return {...zonesTrueClientIpHeader.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesTrueClientIpHeader && zonesTrueClientIpHeader == other.zonesTrueClientIpHeader; } 
 @override int get hashCode { return zonesTrueClientIpHeader.hashCode; } 
@@ -482,8 +482,8 @@ factory ZonesActions2ZonesWaf.fromJson(Map<String, dynamic> json) { return Zones
 
 final ZonesWaf zonesWaf;
 
-@override String get id { return 'ZonesWaf'; } 
-@override Map<String, dynamic> toJson() { return {'id': id, ...zonesWaf.toJson()}; } 
+@override String get id { return 'zones_waf'; } 
+@override Map<String, dynamic> toJson() { return {...zonesWaf.toJson(), 'id': id}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZonesActions2ZonesWaf && zonesWaf == other.zonesWaf; } 
 @override int get hashCode { return zonesWaf.hashCode; } 

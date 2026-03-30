@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (changeStatus != null) 'change_status': changeStatus?.toJson(),
   if (url != null) 'url': url?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user', 'version', 'committed_at', 'change_status', 'url'}.contains(key)); } 
 GistHistory copyWith({SimpleUser? Function()? user, String Function()? version, DateTime Function()? committedAt, GistHistoryChangeStatus Function()? changeStatus, Uri Function()? url, }) { return GistHistory(
   user: user != null ? user() : this.user,
   version: version != null ? version() : this.version,

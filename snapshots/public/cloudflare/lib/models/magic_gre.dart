@@ -13,7 +13,7 @@ final String? cloudflareEndpoint;
 Map<String, dynamic> toJson() { return {
   'cloudflare_endpoint': ?cloudflareEndpoint,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cloudflare_endpoint'}.contains(key)); } 
 MagicGre copyWith({String Function()? cloudflareEndpoint}) { return MagicGre(
   cloudflareEndpoint: cloudflareEndpoint != null ? cloudflareEndpoint() : this.cloudflareEndpoint,
 ); } 

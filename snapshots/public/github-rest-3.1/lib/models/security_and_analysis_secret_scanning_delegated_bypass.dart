@@ -35,7 +35,7 @@ final SecurityAndAnalysisSecretScanningDelegatedBypassStatus? status;
 Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
 SecurityAndAnalysisSecretScanningDelegatedBypass copyWith({SecurityAndAnalysisSecretScanningDelegatedBypassStatus Function()? status}) { return SecurityAndAnalysisSecretScanningDelegatedBypass(
   status: status != null ? status() : this.status,
 ); } 

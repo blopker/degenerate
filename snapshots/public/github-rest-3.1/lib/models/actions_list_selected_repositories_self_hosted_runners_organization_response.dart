@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'total_count': ?totalCount,
   if (repositories != null) 'repositories': repositories?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_count', 'repositories'}.contains(key)); } 
 ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse copyWith({int Function()? totalCount, List<Repository> Function()? repositories, }) { return ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   repositories: repositories != null ? repositories() : this.repositories,

@@ -12,7 +12,7 @@ final bool ignored;
 Map<String, dynamic> toJson() { return {
   'ignored': ignored,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ignored'}.contains(key)); } 
 ActivitySetThreadSubscriptionRequest copyWith({bool Function()? ignored}) { return ActivitySetThreadSubscriptionRequest(
   ignored: ignored != null ? ignored() : this.ignored,
 ); } 

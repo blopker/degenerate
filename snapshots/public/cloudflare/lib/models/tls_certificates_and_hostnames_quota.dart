@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'allocated': ?allocated,
   'used': ?used,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allocated', 'used'}.contains(key)); } 
 TlsCertificatesAndHostnamesQuota copyWith({int Function()? allocated, int Function()? used, }) { return TlsCertificatesAndHostnamesQuota(
   allocated: allocated != null ? allocated() : this.allocated,
   used: used != null ? used() : this.used,

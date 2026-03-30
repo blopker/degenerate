@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (comment != null) 'comment': comment?.toJson(),
   if (feedback != null) 'feedback': feedback?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'feedback'}.contains(key)); } 
 PostSubscriptionsSubscriptionExposedIdRequestCancellationDetails copyWith({PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment Function()? comment, PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback Function()? feedback, }) { return PostSubscriptionsSubscriptionExposedIdRequestCancellationDetails(
   comment: comment != null ? comment() : this.comment,
   feedback: feedback != null ? feedback() : this.feedback,

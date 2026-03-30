@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'exclude_origin': ?excludeOrigin,
   'include': ?include,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_presence', 'contains', 'exclude_origin', 'include'}.contains(key)); } 
 RulesetsSetCacheSettingsCustomCacheKeyHeader copyWith({List<String> Function()? checkPresence, Map<String, List<String>> Function()? contains, bool Function()? excludeOrigin, List<String> Function()? include, }) { return RulesetsSetCacheSettingsCustomCacheKeyHeader(
   checkPresence: checkPresence != null ? checkPresence() : this.checkPresence,
   contains: contains != null ? contains() : this.contains,

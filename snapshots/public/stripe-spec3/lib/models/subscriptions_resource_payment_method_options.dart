@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (sepaDebit != null) 'sepa_debit': sepaDebit?.toJson(),
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acss_debit', 'bancontact', 'card', 'customer_balance', 'konbini', 'payto', 'sepa_debit', 'us_bank_account'}.contains(key)); } 
 SubscriptionsResourcePaymentMethodOptions copyWith({SubscriptionsResourcePaymentMethodOptionsAcssDebit? Function()? acssDebit, SubscriptionsResourcePaymentMethodOptionsBancontact? Function()? bancontact, SubscriptionsResourcePaymentMethodOptionsCard? Function()? card, SubscriptionsResourcePaymentMethodOptionsCustomerBalance? Function()? customerBalance, SubscriptionsResourcePaymentMethodOptionsKonbini? Function()? konbini, SubscriptionsResourcePaymentMethodOptionsPayto? Function()? payto, SubscriptionsResourcePaymentMethodOptionsSepaDebit? Function()? sepaDebit, SubscriptionsResourcePaymentMethodOptionsUsBankAccount? Function()? usBankAccount, }) { return SubscriptionsResourcePaymentMethodOptions(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   bancontact: bancontact != null ? bancontact() : this.bancontact,

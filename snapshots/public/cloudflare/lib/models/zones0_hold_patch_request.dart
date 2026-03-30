@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'hold_after': holdAfter,
   'include_subdomains': includeSubdomains,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hold_after', 'include_subdomains'}.contains(key)); } 
 Zones0HoldPatchRequest copyWith({String Function()? holdAfter, bool Function()? includeSubdomains, }) { return Zones0HoldPatchRequest(
   holdAfter: holdAfter != null ? holdAfter() : this.holdAfter,
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,

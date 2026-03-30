@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'match_percent': ?matchPercent,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'match_percent', 'name'}.contains(key)); } 
 DlpUpdateDocumentFingerprint copyWith({String? Function()? description, int? Function()? matchPercent, String? Function()? name, }) { return DlpUpdateDocumentFingerprint(
   description: description != null ? description() : this.description,
   matchPercent: matchPercent != null ? matchPercent() : this.matchPercent,

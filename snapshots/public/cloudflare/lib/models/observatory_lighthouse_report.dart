@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
   'ttfb': ?ttfb,
   'tti': ?tti,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cls', 'deviceType', 'error', 'fcp', 'jsonReportUrl', 'lcp', 'performanceScore', 'si', 'state', 'tbt', 'ttfb', 'tti'}.contains(key)); } 
 ObservatoryLighthouseReport copyWith({double Function()? cls, ObservatoryDeviceType Function()? deviceType, ObservatoryLighthouseReportError Function()? error, double Function()? fcp, String Function()? jsonReportUrl, double Function()? lcp, double Function()? performanceScore, double Function()? si, ObservatoryLighthouseState Function()? state, double Function()? tbt, double Function()? ttfb, double Function()? tti, }) { return ObservatoryLighthouseReport(
   cls: cls != null ? cls() : this.cls,
   deviceType: deviceType != null ? deviceType() : this.deviceType,

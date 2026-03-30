@@ -12,7 +12,7 @@ final DiscoveryStatePatch? state;
 Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state'}.contains(key)); } 
 DiscoveryPatchMultipleRequestEntry copyWith({DiscoveryStatePatch Function()? state}) { return DiscoveryPatchMultipleRequestEntry(
   state: state != null ? state() : this.state,
 ); } 

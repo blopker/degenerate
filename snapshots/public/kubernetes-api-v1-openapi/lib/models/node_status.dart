@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   if (volumesAttached != null) 'volumesAttached': volumesAttached?.map((e) => e.toJson()).toList(),
   'volumesInUse': ?volumesInUse,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'addresses', 'allocatable', 'capacity', 'conditions', 'config', 'daemonEndpoints', 'declaredFeatures', 'features', 'images', 'nodeInfo', 'phase', 'runtimeHandlers', 'volumesAttached', 'volumesInUse'}.contains(key)); } 
 NodeStatus copyWith({List<NodeAddress> Function()? addresses, Map<String, ResourceQuantity> Function()? allocatable, Map<String, ResourceQuantity> Function()? capacity, List<NodeCondition> Function()? conditions, NodeConfigStatus Function()? config, NodeDaemonEndpoints Function()? daemonEndpoints, List<String> Function()? declaredFeatures, NodeFeatures Function()? features, List<ContainerImage> Function()? images, NodeSystemInfo Function()? nodeInfo, String Function()? phase, List<NodeRuntimeHandler> Function()? runtimeHandlers, List<AttachedVolume> Function()? volumesAttached, List<String> Function()? volumesInUse, }) { return NodeStatus(
   addresses: addresses != null ? addresses() : this.addresses,
   allocatable: allocatable != null ? allocatable() : this.allocatable,

@@ -11,7 +11,7 @@ final String? key;
 Map<String, dynamic> toJson() { return {
   'key': ?key,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'key'}.contains(key)); } 
 LogshareFieldsResponse copyWith({String Function()? key}) { return LogshareFieldsResponse(
   key: key != null ? key() : this.key,
 ); } 

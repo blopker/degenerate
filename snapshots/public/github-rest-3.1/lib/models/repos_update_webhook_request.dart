@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'remove_events': ?removeEvents,
   'active': active,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'events', 'add_events', 'remove_events', 'active'}.contains(key)); } 
 ReposUpdateWebhookRequest copyWith({WebhookConfig Function()? config, List<String> Function()? events, List<String> Function()? addEvents, List<String> Function()? removeEvents, bool Function()? active, }) { return ReposUpdateWebhookRequest(
   config: config != null ? config() : this.config,
   events: events != null ? events() : this.events,

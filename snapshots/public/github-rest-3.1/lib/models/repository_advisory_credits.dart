@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'login': ?login,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'login', 'type'}.contains(key)); } 
 RepositoryAdvisoryCredits copyWith({String Function()? login, SecurityAdvisoryCreditTypes Function()? type, }) { return RepositoryAdvisoryCredits(
   login: login != null ? login() : this.login,
   type: type != null ? type() : this.type,

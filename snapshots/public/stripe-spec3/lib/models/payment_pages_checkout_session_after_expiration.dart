@@ -13,7 +13,7 @@ final PaymentPagesCheckoutSessionAfterExpirationRecovery2? recovery;
 Map<String, dynamic> toJson() { return {
   if (recovery != null) 'recovery': recovery?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'recovery'}.contains(key)); } 
 PaymentPagesCheckoutSessionAfterExpiration copyWith({PaymentPagesCheckoutSessionAfterExpirationRecovery2? Function()? recovery}) { return PaymentPagesCheckoutSessionAfterExpiration(
   recovery: recovery != null ? recovery() : this.recovery,
 ); } 

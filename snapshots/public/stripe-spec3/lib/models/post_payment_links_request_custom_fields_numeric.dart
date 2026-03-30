@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'maximum_length': ?maximumLength,
   'minimum_length': ?minimumLength,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_value', 'maximum_length', 'minimum_length'}.contains(key)); } 
 PostPaymentLinksRequestCustomFieldsNumeric copyWith({String Function()? defaultValue, int Function()? maximumLength, int Function()? minimumLength, }) { return PostPaymentLinksRequestCustomFieldsNumeric(
   defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
   maximumLength: maximumLength != null ? maximumLength() : this.maximumLength,

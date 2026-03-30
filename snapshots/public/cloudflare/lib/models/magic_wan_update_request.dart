@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (staticAddressing != null) 'static_addressing': staticAddressing?.toJson(),
   if (vlanTag != null) 'vlan_tag': vlanTag?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'physport', 'priority', 'static_addressing', 'vlan_tag'}.contains(key)); } 
 MagicWanUpdateRequest copyWith({String Function()? name, MagicPort Function()? physport, int Function()? priority, MagicWanStaticAddressing Function()? staticAddressing, MagicVlanTag Function()? vlanTag, }) { return MagicWanUpdateRequest(
   name: name != null ? name() : this.name,
   physport: physport != null ? physport() : this.physport,

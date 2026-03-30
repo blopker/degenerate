@@ -1,80 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_created_on.dart';import 'workers_logpush.dart';import 'workers_modified_on.dart';import 'workers_observability.dart';import 'workers_placement_info.dart';import 'workers_placement_info_smart.dart';import 'workers_placement_info_targeted.dart';import 'workers_placement_info_targeted2.dart';import 'workers_placement_info_targeted3.dart';import 'workers_placement_info_targeted4.dart';import 'workers_placement_info_variant2.dart';import 'workers_placement_info_variant3.dart';import 'workers_placement_info_variant4.dart';import 'workers_script_response_named_handlers.dart';import 'workers_tag.dart';import 'workers_tail_consumers_script.dart';import 'workers_usage_model.dart';/// Hashed script content, can be used in a If-None-Match header when updating.
-extension type const WorkersEtag(String value) {
-factory WorkersEtag.fromJson(String json) => WorkersEtag(json);
-
-String toJson() => value;
-
-}
-/// Whether a Worker contains assets.
-extension type const WorkersHasAssets(bool value) {
-factory WorkersHasAssets.fromJson(bool json) => WorkersHasAssets(json);
-
-bool toJson() => value;
-
-}
-/// Whether a Worker contains modules.
-extension type const WorkersHasModules(bool value) {
-factory WorkersHasModules.fromJson(bool json) => WorkersHasModules(json);
-
-bool toJson() => value;
-
-}
-/// Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify mode='smart' for Smart Placement, or one of region/hostname/host.
-final class WorkersPlacementMode {const WorkersPlacementMode._(this.value);
-
-factory WorkersPlacementMode.fromJson(String json) { return switch (json) {
-  'smart' => smart,
-  'targeted' => targeted,
-  _ => WorkersPlacementMode._(json),
-}; }
-
-static const WorkersPlacementMode smart = WorkersPlacementMode._('smart');
-
-static const WorkersPlacementMode targeted = WorkersPlacementMode._('targeted');
-
-static const List<WorkersPlacementMode> values = [smart, targeted];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersPlacementMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersPlacementMode($value)'; } 
- }
-/// Status of [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).
-final class WorkersPlacementStatus {const WorkersPlacementStatus._(this.value);
-
-factory WorkersPlacementStatus.fromJson(String json) { return switch (json) {
-  'SUCCESS' => success,
-  'UNSUPPORTED_APPLICATION' => unsupportedApplication,
-  'INSUFFICIENT_INVOCATIONS' => insufficientInvocations,
-  _ => WorkersPlacementStatus._(json),
-}; }
-
-static const WorkersPlacementStatus success = WorkersPlacementStatus._('SUCCESS');
-
-static const WorkersPlacementStatus unsupportedApplication = WorkersPlacementStatus._('UNSUPPORTED_APPLICATION');
-
-static const WorkersPlacementStatus insufficientInvocations = WorkersPlacementStatus._('INSUFFICIENT_INVOCATIONS');
-
-static const List<WorkersPlacementStatus> values = [success, unsupportedApplication, insufficientInvocations];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersPlacementStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersPlacementStatus($value)'; } 
- }
-final class WorkersScriptResponse {const WorkersScriptResponse({this.compatibilityDate, this.compatibilityFlags, this.createdOn, this.etag, this.handlers, this.hasAssets, this.hasModules, this.id, this.lastDeployedFrom, this.logpush, this.migrationTag, this.modifiedOn, this.namedHandlers, this.observability, this.placement, this.placementMode, this.placementStatus, this.tag, this.tags, this.tailConsumers, this.usageModel, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_created_on.dart';import 'workers_etag.dart';import 'workers_has_assets.dart';import 'workers_has_modules.dart';import 'workers_logpush.dart';import 'workers_modified_on.dart';import 'workers_observability.dart';import 'workers_placement_info.dart';import 'workers_placement_info_smart.dart';import 'workers_placement_info_targeted.dart';import 'workers_placement_info_targeted2.dart';import 'workers_placement_info_targeted3.dart';import 'workers_placement_info_targeted4.dart';import 'workers_placement_info_variant2.dart';import 'workers_placement_info_variant3.dart';import 'workers_placement_info_variant4.dart';import 'workers_placement_mode.dart';import 'workers_placement_status.dart';import 'workers_script_response_named_handlers.dart';import 'workers_tag.dart';import 'workers_tail_consumers_script.dart';import 'workers_usage_model.dart';final class WorkersScriptResponse {const WorkersScriptResponse({this.compatibilityDate, this.compatibilityFlags, this.createdOn, this.etag, this.handlers, this.hasAssets, this.hasModules, this.id, this.lastDeployedFrom, this.logpush, this.migrationTag, this.modifiedOn, this.namedHandlers, this.observability, this.placement, this.placementMode, this.placementStatus, this.tag, this.tags, this.tailConsumers, this.usageModel, });
 
 factory WorkersScriptResponse.fromJson(Map<String, dynamic> json) { return WorkersScriptResponse(
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
@@ -181,7 +107,7 @@ Map<String, dynamic> toJson() { return {
   if (tailConsumers != null) 'tail_consumers': tailConsumers?.map((e) => e.toJson()).toList(),
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'compatibility_date', 'compatibility_flags', 'created_on', 'etag', 'handlers', 'has_assets', 'has_modules', 'id', 'last_deployed_from', 'logpush', 'migration_tag', 'modified_on', 'named_handlers', 'observability', 'placement', 'placement_mode', 'placement_status', 'tag', 'tags', 'tail_consumers', 'usage_model'}.contains(key)); } 
 WorkersScriptResponse copyWith({WorkersCompatibilityDate Function()? compatibilityDate, List<WorkersCompatibilityFlag> Function()? compatibilityFlags, WorkersCreatedOn Function()? createdOn, WorkersEtag Function()? etag, List<String> Function()? handlers, WorkersHasAssets Function()? hasAssets, WorkersHasModules Function()? hasModules, String Function()? id, String Function()? lastDeployedFrom, WorkersLogpush Function()? logpush, String Function()? migrationTag, WorkersModifiedOn Function()? modifiedOn, List<WorkersScriptResponseNamedHandlers> Function()? namedHandlers, WorkersObservability Function()? observability, WorkersPlacementInfo Function()? placement, WorkersPlacementMode Function()? placementMode, WorkersPlacementStatus Function()? placementStatus, String Function()? tag, List<WorkersTag>? Function()? tags, List<WorkersTailConsumersScript>? Function()? tailConsumers, WorkersUsageModel Function()? usageModel, }) { return WorkersScriptResponse(
   compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,
   compatibilityFlags: compatibilityFlags != null ? compatibilityFlags() : this.compatibilityFlags,

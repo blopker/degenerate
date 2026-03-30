@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// DNS record type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_dns_record_ttl.dart';/// DNS record type.
 final class EmailDnsRecordType {const EmailDnsRecordType._(this.value);
 
 factory EmailDnsRecordType.fromJson(String json) { return switch (json) {
@@ -80,7 +80,7 @@ factory EmailDnsRecord.fromJson(Map<String, dynamic> json) { return EmailDnsReco
   content: json['content'] as String?,
   name: json['name'] as String?,
   priority: json['priority'] != null ? (json['priority'] as num).toDouble() : null,
-  ttl: json['ttl'],
+  ttl: json['ttl'] != null ? OneOf2.parse(json['ttl'], fromA: (v) => (v as num).toDouble(), fromB: (v) => EmailDnsRecordTtlVariant2.fromJson((v as num).toDouble()),) : null,
   type: json['type'] != null ? EmailDnsRecordType.fromJson(json['type'] as String) : null,
 ); }
 
@@ -94,11 +94,7 @@ final String? name;
 final double? priority;
 
 /// Time to live, in seconds, of the DNS record. Must be between 60 and 86400, or 1 for 'automatic'.
-/// 
-/// Time to live, in seconds, of the DNS record. Must be between 60 and 86400, or 1 for 'automatic'.
-/// 
-/// One of: double, double
-final dynamic ttl;
+final EmailDnsRecordTtl? ttl;
 
 /// DNS record type.
 final EmailDnsRecordType? type;
@@ -107,11 +103,11 @@ Map<String, dynamic> toJson() { return {
   'content': ?content,
   'name': ?name,
   'priority': ?priority,
-  'ttl': ?ttl,
+  if (ttl != null) 'ttl': ttl?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-EmailDnsRecord copyWith({String Function()? content, String Function()? name, double Function()? priority, dynamic Function()? ttl, EmailDnsRecordType Function()? type, }) { return EmailDnsRecord(
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'name', 'priority', 'ttl', 'type'}.contains(key)); } 
+EmailDnsRecord copyWith({String Function()? content, String Function()? name, double Function()? priority, EmailDnsRecordTtl Function()? ttl, EmailDnsRecordType Function()? type, }) { return EmailDnsRecord(
   content: content != null ? content() : this.content,
   name: name != null ? name() : this.name,
   priority: priority != null ? priority() : this.priority,

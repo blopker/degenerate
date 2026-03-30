@@ -23,7 +23,7 @@ factory ResponseOutputTextAnnotationsFileAnnotation.fromJson(Map<String, dynamic
 final FileAnnotation fileAnnotation;
 
 @override String get type { return 'FileAnnotation'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...fileAnnotation.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...fileAnnotation.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseOutputTextAnnotationsFileAnnotation && fileAnnotation == other.fileAnnotation; } 
 @override int get hashCode { return fileAnnotation.hashCode; } 
@@ -36,7 +36,7 @@ factory ResponseOutputTextAnnotationsUrlAnnotation.fromJson(Map<String, dynamic>
 final UrlAnnotation urlAnnotation;
 
 @override String get type { return 'UrlAnnotation'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...urlAnnotation.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...urlAnnotation.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResponseOutputTextAnnotationsUrlAnnotation && urlAnnotation == other.urlAnnotation; } 
 @override int get hashCode { return urlAnnotation.hashCode; } 

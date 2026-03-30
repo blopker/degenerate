@@ -89,7 +89,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (price != null) 'price': price?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_subscribe', 'currency', 'externally_managed', 'frequency', 'id', 'is_subscribed', 'legacy_discount', 'legacy_id', 'name', 'price'}.contains(key)); } 
 AvailableRatePlan copyWith({CanSubscribe Function()? canSubscribe, Currency Function()? currency, ExternallyManaged Function()? externallyManaged, SchemasFrequency Function()? frequency, Identifier Function()? id, IsSubscribed Function()? isSubscribed, LegacyDiscount Function()? legacyDiscount, LegacyId Function()? legacyId, SchemasName Function()? name, SchemasPrice Function()? price, }) { return AvailableRatePlan(
   canSubscribe: canSubscribe != null ? canSubscribe() : this.canSubscribe,
   currency: currency != null ? currency() : this.currency,

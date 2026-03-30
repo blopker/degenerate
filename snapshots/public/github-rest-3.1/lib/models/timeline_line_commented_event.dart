@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'node_id': ?nodeId,
   if (comments != null) 'comments': comments?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'event', 'node_id', 'comments'}.contains(key)); } 
 TimelineLineCommentedEvent copyWith({String Function()? event, String Function()? nodeId, List<PullRequestReviewComment> Function()? comments, }) { return TimelineLineCommentedEvent(
   event: event != null ? event() : this.event,
   nodeId: nodeId != null ? nodeId() : this.nodeId,

@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (reviewer != null) 'reviewer': reviewer?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reviewer', 'type'}.contains(key)); } 
 WebhooksReviewers2 copyWith({WebhooksReviewers2Reviewer? Function()? reviewer, WebhooksReviewers2Type Function()? type, }) { return WebhooksReviewers2(
   reviewer: reviewer != null ? reviewer() : this.reviewer,
   type: type != null ? type() : this.type,

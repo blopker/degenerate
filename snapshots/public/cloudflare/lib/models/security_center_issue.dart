@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   if (subject != null) 'subject': subject?.toJson(),
   if (timestamp != null) 'timestamp': timestamp?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dismissed', 'id', 'issue_class', 'issue_type', 'payload', 'resolve_link', 'resolve_text', 'severity', 'since', 'subject', 'timestamp'}.contains(key)); } 
 SecurityCenterIssue copyWith({bool Function()? dismissed, String Function()? id, SecurityCenterIssueClass Function()? issueClass, SecurityCenterIssueType Function()? issueType, SecurityCenterIssuePayload Function()? payload, String Function()? resolveLink, String Function()? resolveText, SecurityCenterIssueSeverity Function()? severity, DateTime Function()? since, SecurityCenterSubject Function()? subject, DateTime Function()? timestamp, }) { return SecurityCenterIssue(
   dismissed: dismissed != null ? dismissed() : this.dismissed,
   id: id != null ? id() : this.id,

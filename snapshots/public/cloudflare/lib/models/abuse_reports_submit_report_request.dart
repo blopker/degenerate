@@ -28,7 +28,7 @@ factory AbuseReportsSubmitReportRequestAbuseChildren.fromJson(Map<String, dynami
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_children'; } 
-@override Map<String, dynamic> toJson() { return {'act': act, ...abuseReportsBaseReportFields.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseChildren && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
@@ -41,7 +41,7 @@ factory AbuseReportsSubmitReportRequestAbuseDmca.fromJson(Map<String, dynamic> j
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_dmca'; } 
-@override Map<String, dynamic> toJson() { return {'act': act, ...abuseReportsBaseReportFields.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseDmca && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
@@ -54,7 +54,7 @@ factory AbuseReportsSubmitReportRequestAbuseGeneral.fromJson(Map<String, dynamic
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_general'; } 
-@override Map<String, dynamic> toJson() { return {'act': act, ...abuseReportsBaseReportFields.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseGeneral && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
@@ -67,7 +67,7 @@ factory AbuseReportsSubmitReportRequestAbuseNcsei.fromJson(Map<String, dynamic> 
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_ncsei'; } 
-@override Map<String, dynamic> toJson() { return {'act': act, ...abuseReportsBaseReportFields.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseNcsei && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
@@ -80,7 +80,7 @@ factory AbuseReportsSubmitReportRequestAbusePhishing.fromJson(Map<String, dynami
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_phishing'; } 
-@override Map<String, dynamic> toJson() { return {'act': act, ...abuseReportsBaseReportFields.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbusePhishing && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
@@ -93,7 +93,7 @@ factory AbuseReportsSubmitReportRequestAbuseRegistrarWhois.fromJson(Map<String, 
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_registrar_whois'; } 
-@override Map<String, dynamic> toJson() { return {'act': act, ...abuseReportsBaseReportFields.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseRegistrarWhois && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
@@ -106,7 +106,7 @@ factory AbuseReportsSubmitReportRequestAbuseThreat.fromJson(Map<String, dynamic>
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_threat'; } 
-@override Map<String, dynamic> toJson() { return {'act': act, ...abuseReportsBaseReportFields.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseThreat && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
@@ -119,7 +119,7 @@ factory AbuseReportsSubmitReportRequestAbuseTrademark.fromJson(Map<String, dynam
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act { return 'abuse_trademark'; } 
-@override Map<String, dynamic> toJson() { return {'act': act, ...abuseReportsBaseReportFields.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AbuseReportsSubmitReportRequestAbuseTrademark && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
 @override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 

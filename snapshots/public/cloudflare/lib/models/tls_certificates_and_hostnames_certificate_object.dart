@@ -1,60 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_issuer.dart';import 'tls_certificates_and_hostnames_signature.dart';import 'tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_certificate.dart';/// This is the time the certificate was uploaded.
-extension type TlsCertificatesAndHostnamesSchemasUploadedOn(DateTime value) {
-factory TlsCertificatesAndHostnamesSchemasUploadedOn.fromJson(String json) => TlsCertificatesAndHostnamesSchemasUploadedOn(DateTime.parse(json));
-
-String toJson() => value.toIso8601String();
-
-}
-/// When the certificate from the authority expires.
-extension type TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasExpiresOn(DateTime value) {
-factory TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasExpiresOn.fromJson(String json) => TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasExpiresOn(DateTime.parse(json));
-
-String toJson() => value.toIso8601String();
-
-}
-/// Status of the certificate activation.
-final class TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._(this.value);
-
-factory TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus.fromJson(String json) { return switch (json) {
-  'initializing' => initializing,
-  'pending_deployment' => pendingDeployment,
-  'pending_deletion' => pendingDeletion,
-  'active' => active,
-  'deleted' => deleted,
-  'deployment_timed_out' => deploymentTimedOut,
-  'deletion_timed_out' => deletionTimedOut,
-  _ => TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._(json),
-}; }
-
-static const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._('initializing');
-
-static const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus pendingDeployment = TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._('pending_deployment');
-
-static const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus pendingDeletion = TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._('pending_deletion');
-
-static const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus active = TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._('active');
-
-static const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus deleted = TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._('deleted');
-
-static const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus deploymentTimedOut = TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._('deployment_timed_out');
-
-static const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus deletionTimedOut = TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus._('deletion_timed_out');
-
-static const List<TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus> values = [initializing, pendingDeployment, pendingDeletion, active, deleted, deploymentTimedOut, deletionTimedOut];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus($value)'; } 
- }
-final class TlsCertificatesAndHostnamesCertificateObject {const TlsCertificatesAndHostnamesCertificateObject({this.certificate, this.expiresOn, this.id, this.issuer, this.signature, this.status, this.uploadedOn, });
+import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_issuer.dart';import 'tls_certificates_and_hostnames_schemas_uploaded_on.dart';import 'tls_certificates_and_hostnames_signature.dart';import 'tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_certificate.dart';import 'tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_expires_on.dart';import 'tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_status.dart';final class TlsCertificatesAndHostnamesCertificateObject {const TlsCertificatesAndHostnamesCertificateObject({this.certificate, this.expiresOn, this.id, this.issuer, this.signature, this.status, this.uploadedOn, });
 
 factory TlsCertificatesAndHostnamesCertificateObject.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificateObject(
   certificate: json['certificate'] != null ? TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasCertificate.fromJson(json['certificate'] as String) : null,
@@ -89,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (uploadedOn != null) 'uploaded_on': uploadedOn?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'certificate', 'expires_on', 'id', 'issuer', 'signature', 'status', 'uploaded_on'}.contains(key)); } 
 TlsCertificatesAndHostnamesCertificateObject copyWith({TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasCertificate Function()? certificate, TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasExpiresOn Function()? expiresOn, TlsCertificatesAndHostnamesIdentifier Function()? id, TlsCertificatesAndHostnamesIssuer Function()? issuer, TlsCertificatesAndHostnamesSignature Function()? signature, TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus Function()? status, TlsCertificatesAndHostnamesSchemasUploadedOn Function()? uploadedOn, }) { return TlsCertificatesAndHostnamesCertificateObject(
   certificate: certificate != null ? certificate() : this.certificate,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,

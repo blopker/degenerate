@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'target_ref': ?targetRef,
   'sha': ?sha,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target_ref', 'sha'}.contains(key)); } 
 CodeScanningAutofixCommitsResponse copyWith({String Function()? targetRef, String Function()? sha, }) { return CodeScanningAutofixCommitsResponse(
   targetRef: targetRef != null ? targetRef() : this.targetRef,
   sha: sha != null ? sha() : this.sha,

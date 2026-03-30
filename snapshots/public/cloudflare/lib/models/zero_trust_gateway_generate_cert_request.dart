@@ -12,7 +12,7 @@ final int? validityPeriodDays;
 Map<String, dynamic> toJson() { return {
   'validity_period_days': ?validityPeriodDays,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'validity_period_days'}.contains(key)); } 
 ZeroTrustGatewayGenerateCertRequest copyWith({int Function()? validityPeriodDays}) { return ZeroTrustGatewayGenerateCertRequest(
   validityPeriodDays: validityPeriodDays != null ? validityPeriodDays() : this.validityPeriodDays,
 ); } 

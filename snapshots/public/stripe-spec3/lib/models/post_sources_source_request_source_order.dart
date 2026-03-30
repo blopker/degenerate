@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
   if (shipping != null) 'shipping': shipping?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'items', 'shipping'}.contains(key)); } 
 PostSourcesSourceRequestSourceOrder copyWith({List<PostSourcesSourceRequestSourceOrderItems> Function()? items, PostSourcesSourceRequestSourceOrderShipping Function()? shipping, }) { return PostSourcesSourceRequestSourceOrder(
   items: items != null ? items() : this.items,
   shipping: shipping != null ? shipping() : this.shipping,

@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'instant_payouts': ?instantPayouts,
   'standard_payouts': ?standardPayouts,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disable_stripe_user_authentication', 'edit_payout_schedule', 'external_account_collection', 'instant_payouts', 'standard_payouts'}.contains(key)); } 
 PostAccountSessionsRequestComponentsPayoutsFeatures copyWith({bool Function()? disableStripeUserAuthentication, bool Function()? editPayoutSchedule, bool Function()? externalAccountCollection, bool Function()? instantPayouts, bool Function()? standardPayouts, }) { return PostAccountSessionsRequestComponentsPayoutsFeatures(
   disableStripeUserAuthentication: disableStripeUserAuthentication != null ? disableStripeUserAuthentication() : this.disableStripeUserAuthentication,
   editPayoutSchedule: editPayoutSchedule != null ? editPayoutSchedule() : this.editPayoutSchedule,

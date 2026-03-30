@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'price': ?price,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_subscribe', 'currency', 'externally_managed', 'frequency', 'id', 'is_subscribed', 'legacy_discount', 'legacy_id', 'name', 'price'}.contains(key)); } 
 ZonesZonePlan copyWith({bool Function()? canSubscribe, String Function()? currency, bool Function()? externallyManaged, String Function()? frequency, ZonesIdentifier Function()? id, bool Function()? isSubscribed, bool Function()? legacyDiscount, String Function()? legacyId, String Function()? name, double Function()? price, }) { return ZonesZonePlan(
   canSubscribe: canSubscribe != null ? canSubscribe() : this.canSubscribe,
   currency: currency != null ? currency() : this.currency,

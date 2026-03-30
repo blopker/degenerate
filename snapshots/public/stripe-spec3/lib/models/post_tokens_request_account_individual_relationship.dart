@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (percentOwnership != null) 'percent_ownership': percentOwnership?.toJson(),
   'title': ?title,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'director', 'executive', 'owner', 'percent_ownership', 'title'}.contains(key)); } 
 PostTokensRequestAccountIndividualRelationship copyWith({bool Function()? director, bool Function()? executive, bool Function()? owner, PostTokensRequestAccountIndividualRelationshipPercentOwnership Function()? percentOwnership, String Function()? title, }) { return PostTokensRequestAccountIndividualRelationship(
   director: director != null ? director() : this.director,
   executive: executive != null ? executive() : this.executive,

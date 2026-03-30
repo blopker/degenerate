@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'text': ?text,
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image_url', 'text', 'type'}.contains(key)); } 
 MessagesInnerMessagesContentVariant2 copyWith({MessagesInnerMessagesContentVariant2ImageUrl Function()? imageUrl, String Function()? text, String Function()? type, }) { return MessagesInnerMessagesContentVariant2(
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   text: text != null ? text() : this.text,

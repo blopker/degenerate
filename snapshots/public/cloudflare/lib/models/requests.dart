@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (sslProtocols != null) 'ssl_protocols': sslProtocols?.toJson(),
   'uncached': ?uncached,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all', 'cached', 'content_type', 'country', 'http_status', 'ssl', 'ssl_protocols', 'uncached'}.contains(key)); } 
 Requests copyWith({int Function()? all, int Function()? cached, Map<String, dynamic> Function()? contentType, Map<String, dynamic> Function()? country, Map<String, dynamic> Function()? httpStatus, RequestsSsl Function()? ssl, RequestsSslProtocols Function()? sslProtocols, int Function()? uncached, }) { return Requests(
   all: all != null ? all() : this.all,
   cached: cached != null ? cached() : this.cached,

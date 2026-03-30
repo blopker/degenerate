@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'last4': ?last4,
   'routing_number': ?routingNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'bank_name', 'country', 'fingerprint', 'last4', 'routing_number'}.contains(key)); } 
 PaymentMethodDetailsAchDebit copyWith({PaymentMethodDetailsAchDebitAccountHolderType? Function()? accountHolderType, String? Function()? bankName, String? Function()? country, String? Function()? fingerprint, String? Function()? last4, String? Function()? routingNumber, }) { return PaymentMethodDetailsAchDebit(
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   bankName: bankName != null ? bankName() : this.bankName,

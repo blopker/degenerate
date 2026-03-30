@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'stripe_report': ?stripeReport,
   'user_report': ?userReport,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'stripe_report', 'user_report'}.contains(key)); } 
 ChargeFraudDetails copyWith({String Function()? stripeReport, String Function()? userReport, }) { return ChargeFraudDetails(
   stripeReport: stripeReport != null ? stripeReport() : this.stripeReport,
   userReport: userReport != null ? userReport() : this.userReport,

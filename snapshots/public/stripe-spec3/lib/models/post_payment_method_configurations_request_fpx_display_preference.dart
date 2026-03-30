@@ -38,7 +38,7 @@ final PostPaymentMethodConfigurationsRequestFpxDisplayPreferencePreference? pref
 Map<String, dynamic> toJson() { return {
   if (preference != null) 'preference': preference?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preference'}.contains(key)); } 
 PostPaymentMethodConfigurationsRequestFpxDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestFpxDisplayPreferencePreference Function()? preference}) { return PostPaymentMethodConfigurationsRequestFpxDisplayPreference(
   preference: preference != null ? preference() : this.preference,
 ); } 

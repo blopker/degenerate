@@ -92,7 +92,7 @@ Map<String, dynamic> toJson() { return {
   if (rayId != null) 'ray_id': rayId?.toJson(),
   if (userEmail != null) 'user_email': userEmail?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'allowed', 'app_domain', 'app_uid', 'connection', 'created_at', 'ip_address', 'ray_id', 'user_email'}.contains(key)); } 
 AccessAccessRequests copyWith({AccessAction Function()? action, AccessAllowed Function()? allowed, AccessAppDomain Function()? appDomain, AccessAppUid Function()? appUid, AccessConnection Function()? connection, AccessTimestamp Function()? createdAt, AccessIp Function()? ipAddress, AccessRayId Function()? rayId, AccessComponentsSchemasEmail Function()? userEmail, }) { return AccessAccessRequests(
   action: action != null ? action() : this.action,
   allowed: allowed != null ? allowed() : this.allowed,

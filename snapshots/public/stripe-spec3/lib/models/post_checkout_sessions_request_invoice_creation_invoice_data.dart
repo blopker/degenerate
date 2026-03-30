@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   if (renderingOptions != null) 'rendering_options': renderingOptions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'custom_fields', 'description', 'footer', 'issuer', 'metadata', 'rendering_options'}.contains(key)); } 
 PostCheckoutSessionsRequestInvoiceCreationInvoiceData copyWith({PostCheckoutSessionsRequestInvoiceCreationInvoiceDataAccountTaxIds Function()? accountTaxIds, PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields Function()? customFields, String Function()? description, String Function()? footer, PostCheckoutSessionsRequestInvoiceCreationInvoiceDataIssuer Function()? issuer, Map<String, String> Function()? metadata, PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptions Function()? renderingOptions, }) { return PostCheckoutSessionsRequestInvoiceCreationInvoiceData(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   customFields: customFields != null ? customFields() : this.customFields,

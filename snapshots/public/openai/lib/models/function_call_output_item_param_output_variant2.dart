@@ -24,7 +24,7 @@ factory FunctionCallOutputItemParamOutputVariant2InputTextContentParam.fromJson(
 final InputTextContentParam inputTextContentParam;
 
 @override String get type { return 'InputTextContentParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...inputTextContentParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...inputTextContentParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionCallOutputItemParamOutputVariant2InputTextContentParam && inputTextContentParam == other.inputTextContentParam; } 
 @override int get hashCode { return inputTextContentParam.hashCode; } 
@@ -37,7 +37,7 @@ factory FunctionCallOutputItemParamOutputVariant2InputImageContentParamAutoParam
 final InputImageContentParamAutoParam inputImageContentParamAutoParam;
 
 @override String get type { return 'InputImageContentParamAutoParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...inputImageContentParamAutoParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...inputImageContentParamAutoParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionCallOutputItemParamOutputVariant2InputImageContentParamAutoParam && inputImageContentParamAutoParam == other.inputImageContentParamAutoParam; } 
 @override int get hashCode { return inputImageContentParamAutoParam.hashCode; } 
@@ -50,7 +50,7 @@ factory FunctionCallOutputItemParamOutputVariant2InputFileContentParam.fromJson(
 final InputFileContentParam inputFileContentParam;
 
 @override String get type { return 'InputFileContentParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...inputFileContentParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...inputFileContentParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionCallOutputItemParamOutputVariant2InputFileContentParam && inputFileContentParam == other.inputFileContentParam; } 
 @override int get hashCode { return inputFileContentParam.hashCode; } 

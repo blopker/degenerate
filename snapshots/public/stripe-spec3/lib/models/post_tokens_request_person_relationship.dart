@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'representative': ?representative,
   'title': ?title,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authorizer', 'director', 'executive', 'legal_guardian', 'owner', 'percent_ownership', 'representative', 'title'}.contains(key)); } 
 PostTokensRequestPersonRelationship copyWith({bool Function()? authorizer, bool Function()? director, bool Function()? executive, bool Function()? legalGuardian, bool Function()? owner, PostTokensRequestPersonRelationshipPercentOwnership Function()? percentOwnership, bool Function()? representative, String Function()? title, }) { return PostTokensRequestPersonRelationship(
   authorizer: authorizer != null ? authorizer() : this.authorizer,
   director: director != null ? director() : this.director,

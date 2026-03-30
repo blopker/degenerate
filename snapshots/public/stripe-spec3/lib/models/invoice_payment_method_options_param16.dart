@@ -41,7 +41,7 @@ final InvoicePaymentMethodOptionsParam16PreferredLanguage? preferredLanguage;
 Map<String, dynamic> toJson() { return {
   if (preferredLanguage != null) 'preferred_language': preferredLanguage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred_language'}.contains(key)); } 
 InvoicePaymentMethodOptionsParam16 copyWith({InvoicePaymentMethodOptionsParam16PreferredLanguage Function()? preferredLanguage}) { return InvoicePaymentMethodOptionsParam16(
   preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
 ); } 

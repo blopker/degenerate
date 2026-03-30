@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'all': ?all,
   'search_engine': ?searchEngine,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all', 'search_engine'}.contains(key)); } 
 Pageviews copyWith({int Function()? all, Map<String, dynamic> Function()? searchEngine, }) { return Pageviews(
   all: all != null ? all() : this.all,
   searchEngine: searchEngine != null ? searchEngine() : this.searchEngine,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'fingerprint': ?fingerprint,
   'last4': ?last4,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bsb_number', 'fingerprint', 'last4'}.contains(key)); } 
 PaymentMethodAuBecsDebit copyWith({String? Function()? bsbNumber, String? Function()? fingerprint, String? Function()? last4, }) { return PaymentMethodAuBecsDebit(
   bsbNumber: bsbNumber != null ? bsbNumber() : this.bsbNumber,
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,

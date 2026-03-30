@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'id': ?id,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'id'}.contains(key)); } 
 ReposCreateOrUpdateEnvironmentRequestReviewers copyWith({DeploymentReviewerType Function()? type, int Function()? id, }) { return ReposCreateOrUpdateEnvironmentRequestReviewers(
   type: type != null ? type() : this.type,
   id: id != null ? id() : this.id,

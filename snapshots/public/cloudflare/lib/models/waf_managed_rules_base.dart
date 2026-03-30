@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waf_managed_rules_base_group.dart';import 'waf_managed_rules_identifier.dart';/// Defines the order in which the individual WAF rule is executed within its rule group.
-extension type const WafManagedRulesPriority(String value) {
-factory WafManagedRulesPriority.fromJson(String json) => WafManagedRulesPriority(json);
-
-String toJson() => value;
-
-}
-/// Defines the unique identifier of the WAF rule.
-extension type const WafManagedRulesRuleComponentsSchemasIdentifier(String value) {
-factory WafManagedRulesRuleComponentsSchemasIdentifier.fromJson(String json) => WafManagedRulesRuleComponentsSchemasIdentifier(json);
-
-String toJson() => value;
-
-}
-/// Defines the public description of the WAF rule.
-extension type const WafManagedRulesSchemasDescription(String value) {
-factory WafManagedRulesSchemasDescription.fromJson(String json) => WafManagedRulesSchemasDescription(json);
-
-String toJson() => value;
-
-}
-final class WafManagedRulesBase {const WafManagedRulesBase({this.description, this.group, this.id, this.packageId, this.priority, });
+import 'waf_managed_rules_base_group.dart';import 'waf_managed_rules_identifier.dart';import 'waf_managed_rules_priority.dart';import 'waf_managed_rules_rule_components_schemas_identifier.dart';import 'waf_managed_rules_schemas_description.dart';final class WafManagedRulesBase {const WafManagedRulesBase({this.description, this.group, this.id, this.packageId, this.priority, });
 
 factory WafManagedRulesBase.fromJson(Map<String, dynamic> json) { return WafManagedRulesBase(
   description: json['description'] != null ? WafManagedRulesSchemasDescription.fromJson(json['description'] as String) : null,
@@ -49,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (packageId != null) 'package_id': packageId?.toJson(),
   if (priority != null) 'priority': priority?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'group', 'id', 'package_id', 'priority'}.contains(key)); } 
 WafManagedRulesBase copyWith({WafManagedRulesSchemasDescription Function()? description, WafManagedRulesBaseGroup Function()? group, WafManagedRulesRuleComponentsSchemasIdentifier Function()? id, WafManagedRulesIdentifier Function()? packageId, WafManagedRulesPriority Function()? priority, }) { return WafManagedRulesBase(
   description: description != null ? description() : this.description,
   group: group != null ? group() : this.group,

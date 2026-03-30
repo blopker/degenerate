@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'stored_at': ?storedAt,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'stored_at', 'type'}.contains(key)); } 
 PaymentMethodDetailsCardPresentOffline copyWith({int? Function()? storedAt, PaymentMethodDetailsCardPresentOfflineType? Function()? type, }) { return PaymentMethodDetailsCardPresentOffline(
   storedAt: storedAt != null ? storedAt() : this.storedAt,
   type: type != null ? type() : this.type,

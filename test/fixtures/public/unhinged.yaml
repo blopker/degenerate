@@ -1,0 +1,518 @@
+openapi: 3.2.0
+info:
+  title: "Bureau of Paranormal Livestock Management API \u200B" # zero-width space in title
+  version: "6.6.6-rc.1+build.∞"
+  description: "The official API.\r\nLine two.\rBare CR.\tTab."
+  contact:
+    name: "Dr. Henrietta Clucksworth III, PhD"
+    email: do-not-reply-the-chickens-are-listening@bplm.gov
+  license:
+    name: "Cursed Open License v1.0 🐐"
+    url: https://bplm.gov/license
+  x-zero-width-joiner-key‍: true
+  x-: "empty extension name after x-"
+  x-1: "numeric extension"
+
+servers:
+  - url: https://api.bplm.gov/v6
+    description: Production
+    variables:
+      port:
+        default: "443"
+        enum: ["443", "666", ""]
+  - url: "http://localhost:{port}/{basePath}"
+    variables:
+      port:
+        default: "666"
+      basePath:
+        default: "v6/api/../api"
+
+tags:
+  - name: "Incidents"
+    summary: Paranormal livestock events
+    kind: nav
+  - name: "class"
+    summary: "Tag named after a reserved word"
+    kind: nav
+  - name: " "
+    summary: "The nameless category"
+    kind: audience
+  - name: "𝕰𝖝𝖔𝖗𝖈𝖎𝖘𝖒𝖘"
+    summary: Spiritual remediation
+    parent: "Incidents"
+    kind: nav
+  - name: "../../etc/passwd"
+    summary: "Nothing to see here"
+    kind: nav
+
+paths:
+  /incidents:
+    get:
+      tags: ["Incidents"]
+      operationId: "list-incidents.v2~draft"
+      summary: List incidents
+      parameters:
+        - name: "class"
+          in: query
+          schema:
+            type: string
+        - name: "$filter"
+          in: query
+          schema:
+            type: string
+        - name: ""
+          in: header
+          schema:
+            type: string
+        - name: "kebab-case-param"
+          in: query
+          schema:
+            type: integer
+        - name: "param.with.dots"
+          in: query
+          schema:
+            type: string
+        - name: "🌙"
+          in: query
+          description: Moon phase as emoji
+          schema:
+            $ref: "#/components/schemas/🌙Phase"
+        - name: "Authorization"
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/True"
+          headers:
+            "X-Omen":
+              schema:
+                type: string
+            "":
+              schema:
+                type: string
+        "666":
+          description: The entity is aware
+        default:
+          description: Something else
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      tags: ["Incidents"]
+      operationId: ""
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/new"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/3Incident"
+
+  "/incidents/{id}/{id}":
+    get:
+      operationId: "get incidents by id id"
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+
+  "/incidents/{inc%69dent-id}":
+    get:
+      operationId: "getByEncodedParam"
+      parameters:
+        - name: "inc%69dent-id"
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+
+  /animals/{animalId}:
+    get:
+      tags: ["class"]
+      operationId: "get_animal"
+      parameters:
+        - name: animalId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Self"
+          description: OK
+    additionalOperations:
+      HAUNT:
+        operationId: "toString"
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/__proto__"
+        responses:
+          "202":
+            description: Accepted
+      PURGE:
+        operationId: "constructor"
+        parameters:
+          - name: animalId
+            in: path
+            required: true
+            schema:
+              type: string
+        responses:
+          "204":
+            description: No Content
+
+  /incidents/search:
+    query:
+      operationId: "NULL"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Object"
+            examples:
+              "null":
+                summary: "The null search"
+                dataValue:
+                  "return": true
+                  "NaN": "NaN"
+                  "Infinity": -1
+                serializedValue: '{"return":true,"NaN":"NaN","Infinity":-1}'
+              "":
+                summary: "The nameless example"
+                dataValue: {}
+                serializedValue: "{}"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/List"
+
+  /barn/{barnId}/events:
+    get:
+      operationId: "streamBarnEvents"
+      parameters:
+        - name: barnId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: SSE stream
+          content:
+            text/event-stream:
+              itemSchema:
+                $ref: "#/components/schemas/Type"
+
+  /prophecies:
+    get:
+      operationId: "yield"
+      parameters:
+        - name: topic
+          in: queryString
+          required: true
+          content:
+            application/x-www-form-urlencoded:
+              schema:
+                type: object
+                properties:
+                  "await":
+                    type: string
+                  "async":
+                    type: boolean
+      responses:
+        "200":
+          content:
+            application/jsonl:
+              itemSchema:
+                $ref: "#/components/schemas/String"
+          description: OK
+
+components:
+  securitySchemes:
+    ectoplasmToken:
+      type: http
+      scheme: bearer
+      bearerFormat: "ECT"
+    ectoplasmTokenLegacy:
+      type: http
+      scheme: basic
+      deprecated: true
+    goatOAuth:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://auth.bplm.gov/goat/authorize
+          tokenUrl: https://auth.bplm.gov/goat/token
+          refreshUrl: https://auth.bplm.gov/goat/refresh
+          oauth2MetadataUrl: https://auth.bplm.gov/.well-known/oauth-authorization-server
+          scopes:
+            "bleat:read": Read bleats
+            "delete": "Scope named after HTTP method"
+            "": "Empty scope name"
+            "scope with spaces": "Spaces in scope name"
+        deviceAuthorization:
+          deviceAuthorizationUrl: https://auth.bplm.gov/goat/device
+          tokenUrl: https://auth.bplm.gov/goat/token
+          scopes:
+            "bleat:read": Read bleats
+
+  schemas:
+    "True":
+      type: object
+      required: ["false", "none", "null", "0", ""]
+      properties:
+        "false":
+          type: boolean
+          default: true
+        "none":
+          type: "null"
+        "null":
+          type: string
+          default: "null"
+          enum: ["null", "Null", "NULL", "~", "", " ", "\t", "\n"]
+        "0":
+          type: integer
+          default: 0
+          enum: [0, -0, 1, -1, 2147483647, -2147483648, 9999999999999999]
+        "":
+          type: string
+        "constructor":
+          type: string
+        "__proto__":
+          type: string
+        "hasOwnProperty":
+          type: string
+        "type":
+          type: string
+          enum: ["type", "object", "array", "string", "integer", "null"]
+        "$ref":
+          type: string
+          description: "A property literally named $ref. Not a reference."
+        "$id":
+          type: string
+        "x-extension-lookalike":
+          type: string
+          description: "Looks like a vendor extension but it is a property."
+      additionalProperties:
+        $ref: "#/components/schemas/True"
+
+    "new":
+      allOf:
+        - $ref: "#/components/schemas/True"
+        - type: object
+          properties:
+            "class":
+              type: string
+            "import":
+              type: array
+              items:
+                $ref: "#/components/schemas/3Incident"
+            "return":
+              type: boolean
+              default: false
+            "void":
+              type: string
+              format: binary
+            "package":
+              type: string
+              pattern: "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*🐐)[A-Za-z\\d🐐]{8,}$"
+
+    "3Incident":
+      type: object
+      required: ["1id", "2species"]
+      properties:
+        "1id":
+          type: string
+          format: uuid
+        "2species":
+          $ref: "#/components/schemas/🌙Phase"
+        "3-dread-level":
+          type: number
+          format: double
+          minimum: 0
+          exclusiveMaximum: 13.00000000000001
+          multipleOf: 0.000001
+          default: 6.66
+        "café":
+          type: string
+        "‮gnirts":
+          type: string
+          description: "Begins with U+202E RIGHT-TO-LEFT OVERRIDE."
+        "a​b":
+          type: string
+          description: "Looks like ab but has U+200B between them."
+      discriminator:
+        propertyName: "2species"
+        mapping:
+          "🐐": "#/components/schemas/__proto__"
+          "🐔": "#/components/schemas/String"
+          "": "#/components/schemas/True"
+
+    "Self":
+      oneOf:
+        - $ref: "#/components/schemas/True"
+        - $ref: "#/components/schemas/__proto__"
+        - $ref: "#/components/schemas/String"
+      discriminator:
+        propertyName: "type"
+
+    "__proto__":
+      type: object
+      properties:
+        "constructor":
+          $ref: "#/components/schemas/new"
+        "toString":
+          type: string
+          default: "[object Object]"
+          const: "[object Object]"
+        "valueOf":
+          type: integer
+        "prototype":
+          $ref: "#/components/schemas/__proto__"
+      additionalProperties: false
+
+    "Object":
+      type: object
+      properties:
+        "return":
+          type: boolean
+        "NaN":
+          type: string
+          enum: ["NaN", "nan", "NAN", "+NaN", "-NaN"]
+        "Infinity":
+          type: number
+          enum: [0, 1, -1, 1.7976931348623157e+308, 5e-324]
+      required: ["return"]
+
+    "List":
+      type: object
+      required: ["items", "size"]
+      properties:
+        "items":
+          type: array
+          items:
+            $ref: "#/components/schemas/3Incident"
+        "size":
+          type: integer
+        "next":
+          type: string
+          format: uri
+
+    "String":
+      type: object
+      properties:
+        "length":
+          type: integer
+        "value":
+          type: string
+          minLength: 0
+          maxLength: 0
+        "charAt":
+          type: string
+        "trim":
+          type: boolean
+      required: ["value"]
+
+    "Type":
+      type: object
+      properties:
+        "event_type":
+          type: string
+          enum:
+            - "ectoplasm_spike"
+            - "null"
+            - "true"
+            - "false"
+            - "0"
+            - "NaN"
+            - ""
+            - " "
+            - "  "
+            - "ectoplasm spike"
+            - "ectoplasm_spike "
+            - "\t"
+            - "🔥"
+            - "🔥🔥"
+            - "toString"
+            - "hasOwnProperty"
+            - "__proto__"
+            - "constructor"
+        "timestamp":
+          type: string
+          format: date-time
+        "details":
+          type: string
+
+    "🌙Phase":
+      type: string
+      enum:
+        - "new"
+        - "full"
+        - "🌑"
+        - "🌕"
+        - "yes"
+        - "no"
+        - "on"
+        - "off"
+        - "true"
+        - "false"
+        - "~"
+        - ".inf"
+        - "-.inf"
+        - ".nan"
+        - "null"
+
+    "Error":
+      type: object
+      required: ["code", "message"]
+      properties:
+        "code":
+          type: string
+        "message":
+          type: string
+        "is_your_fault":
+          type: boolean
+          default: true
+        "error":
+          $ref: "#/components/schemas/Error"
+
+security:
+  - ectoplasmToken: []
+  - goatOAuth:
+      - "bleat:read"
+      - "delete"
+      - ""

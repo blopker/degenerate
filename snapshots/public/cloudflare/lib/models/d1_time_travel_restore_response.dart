@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
   if (previousBookmark != null) 'previous_bookmark': previousBookmark?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bookmark', 'message', 'previous_bookmark'}.contains(key)); } 
 D1TimeTravelRestoreResponse copyWith({D1TimeTravelBookmark Function()? bookmark, String Function()? message, D1TimeTravelBookmark Function()? previousBookmark, }) { return D1TimeTravelRestoreResponse(
   bookmark: bookmark != null ? bookmark() : this.bookmark,
   message: message != null ? message() : this.message,

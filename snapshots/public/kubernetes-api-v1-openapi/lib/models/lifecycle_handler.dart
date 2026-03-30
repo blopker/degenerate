@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (sleep != null) 'sleep': sleep?.toJson(),
   if (tcpSocket != null) 'tcpSocket': tcpSocket?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exec', 'httpGet', 'sleep', 'tcpSocket'}.contains(key)); } 
 LifecycleHandler copyWith({ExecAction Function()? exec, HttpGetAction Function()? httpGet, SleepAction Function()? sleep, TcpSocketAction Function()? tcpSocket, }) { return LifecycleHandler(
   exec: exec != null ? exec() : this.exec,
   httpGet: httpGet != null ? httpGet() : this.httpGet,

@@ -1,17 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_action.dart';import 'firewall_bypass2.dart';import 'firewall_description.dart';import 'firewall_match.dart';import 'firewall_period.dart';import 'firewall_threshold.dart';/// When true, indicates that the rate limit is currently disabled.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_action.dart';import 'firewall_bypass2.dart';import 'firewall_description.dart';import 'firewall_id.dart';import 'firewall_match.dart';import 'firewall_period.dart';import 'firewall_threshold.dart';/// When true, indicates that the rate limit is currently disabled.
 extension type const FirewallDisabled(bool value) {
 factory FirewallDisabled.fromJson(bool json) => FirewallDisabled(json);
 
 bool toJson() => value;
-
-}
-/// The unique identifier of the rate limit.
-extension type const FirewallId(String value) {
-factory FirewallId.fromJson(String json) => FirewallId(json);
-
-String toJson() => value;
 
 }
 final class FirewallRatelimit {const FirewallRatelimit({this.action, this.bypass, this.description, this.disabled, this.id, this.match, this.period, this.threshold, });
@@ -58,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (period != null) 'period': period?.toJson(),
   if (threshold != null) 'threshold': threshold?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'bypass', 'description', 'disabled', 'id', 'match', 'period', 'threshold'}.contains(key)); } 
 FirewallRatelimit copyWith({FirewallAction Function()? action, List<FirewallBypass2> Function()? bypass, FirewallDescription Function()? description, FirewallDisabled Function()? disabled, FirewallId Function()? id, FirewallMatch Function()? match, FirewallPeriod Function()? period, FirewallThreshold Function()? threshold, }) { return FirewallRatelimit(
   action: action != null ? action() : this.action,
   bypass: bypass != null ? bypass() : this.bypass,

@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (segments != null) 'segments': segments?.map((e) => e.toJson()).toList(),
   'travel_agency': ?travelAgency,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'departure_at', 'passenger_name', 'refundable', 'segments', 'travel_agency'}.contains(key)); } 
 IssuingTransactionFlightData copyWith({int? Function()? departureAt, String? Function()? passengerName, bool? Function()? refundable, List<IssuingTransactionFlightDataLeg>? Function()? segments, String? Function()? travelAgency, }) { return IssuingTransactionFlightData(
   departureAt: departureAt != null ? departureAt() : this.departureAt,
   passengerName: passengerName != null ? passengerName() : this.passengerName,

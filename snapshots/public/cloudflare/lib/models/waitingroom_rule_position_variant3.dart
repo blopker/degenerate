@@ -12,7 +12,7 @@ final String? after;
 Map<String, dynamic> toJson() { return {
   'after': ?after,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after'}.contains(key)); } 
 WaitingroomRulePositionVariant3 copyWith({String Function()? after}) { return WaitingroomRulePositionVariant3(
   after: after != null ? after() : this.after,
 ); } 

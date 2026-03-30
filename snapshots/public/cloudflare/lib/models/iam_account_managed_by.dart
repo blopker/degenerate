@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'parent_org_id': ?parentOrgId,
   'parent_org_name': ?parentOrgName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'parent_org_id', 'parent_org_name'}.contains(key)); } 
 IamAccountManagedBy copyWith({String Function()? parentOrgId, String Function()? parentOrgName, }) { return IamAccountManagedBy(
   parentOrgId: parentOrgId != null ? parentOrgId() : this.parentOrgId,
   parentOrgName: parentOrgName != null ? parentOrgName() : this.parentOrgName,

@@ -101,7 +101,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (owner != null) 'owner': owner?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_name', 'account_holder_type', 'address_city', 'address_country', 'address_line1', 'address_line2', 'address_state', 'address_zip', 'exp_month', 'exp_year', 'expand', 'metadata', 'name', 'owner'}.contains(key)); } 
 PostCustomersCustomerBankAccountsIdRequest copyWith({String Function()? accountHolderName, PostCustomersCustomerBankAccountsIdRequestAccountHolderType Function()? accountHolderType, String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, String Function()? expMonth, String Function()? expYear, List<String> Function()? expand, PostCustomersCustomerBankAccountsIdRequestMetadata Function()? metadata, String Function()? name, PostCustomersCustomerBankAccountsIdRequestOwner Function()? owner, }) { return PostCustomersCustomerBankAccountsIdRequest(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,

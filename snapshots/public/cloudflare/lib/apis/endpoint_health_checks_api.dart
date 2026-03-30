@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_transit_endpoint_health_check.dart';import '../models/magic_transit_identifier.dart';import '../models/magic_transit_uuid.dart';import '../models/response_common45.dart';/// EndpointHealthChecksApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_transit_endpoint_health_check.dart';import '../models/magic_transit_endpoint_health_check_response.dart';import '../models/magic_transit_identifier.dart';import '../models/magic_transit_uuid.dart';import '../models/response_common45.dart';/// EndpointHealthChecksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class EndpointHealthChecksApi with ApiExecutor {const EndpointHealthChecks
 /// List Endpoint Health Checks.
 ///
 /// `GET /accounts/{account_id}/diagnostics/endpoint-healthchecks`
-Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckList({required MagicTransitIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, Never>> diagnosticsEndpointHealthcheckList({required MagicTransitIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon45.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? MagicTransitEndpointHealthCheckResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -34,7 +35,7 @@ return execute(
 /// Create Endpoint Health Check.
 ///
 /// `POST /accounts/{account_id}/diagnostics/endpoint-healthchecks`
-Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckCreate({required MagicTransitIdentifier accountId, required MagicTransitEndpointHealthCheck body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, Never>> diagnosticsEndpointHealthcheckCreate({required MagicTransitIdentifier accountId, required MagicTransitEndpointHealthCheck body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon45.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? MagicTransitEndpointHealthCheckResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -57,7 +59,7 @@ return execute(
 /// Get a single Endpoint Health Check.
 ///
 /// `GET /accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}`
-Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckGet({required MagicTransitIdentifier accountId, required MagicTransitUuid id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, Never>> diagnosticsEndpointHealthcheckGet({required MagicTransitIdentifier accountId, required MagicTransitUuid id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,7 +71,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon45.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? MagicTransitEndpointHealthCheckResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -78,7 +81,7 @@ return execute(
 /// Update a Endpoint Health Check.
 ///
 /// `PUT /accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}`
-Future<ApiResult<ResponseCommon45, Never>> diagnosticsEndpointHealthcheckUpdate({required MagicTransitIdentifier accountId, required MagicTransitUuid id, required MagicTransitEndpointHealthCheck body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, Never>> diagnosticsEndpointHealthcheckUpdate({required MagicTransitIdentifier accountId, required MagicTransitUuid id, required MagicTransitEndpointHealthCheck body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,7 +95,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon45.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? MagicTransitEndpointHealthCheckResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

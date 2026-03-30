@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'environment': ?environment,
   'service': ?service,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'entrypoint', 'environment', 'service'}.contains(key)); } 
 WorkersBindingKindDispatchNamespaceOutboundWorker copyWith({String Function()? entrypoint, String Function()? environment, String Function()? service, }) { return WorkersBindingKindDispatchNamespaceOutboundWorker(
   entrypoint: entrypoint != null ? entrypoint() : this.entrypoint,
   environment: environment != null ? environment() : this.environment,

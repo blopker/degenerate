@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (include != null) 'include': include?.toJson(),
   if (exclude != null) 'exclude': exclude?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition_type', 'target', 'include', 'exclude'}.contains(key)); } 
 WebhookRepositoryRulesetEditedChangesConditionsUpdatedChanges copyWith({WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesConditionType Function()? conditionType, WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesTarget Function()? target, WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude Function()? include, WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesExclude Function()? exclude, }) { return WebhookRepositoryRulesetEditedChangesConditionsUpdatedChanges(
   conditionType: conditionType != null ? conditionType() : this.conditionType,
   target: target != null ? target() : this.target,

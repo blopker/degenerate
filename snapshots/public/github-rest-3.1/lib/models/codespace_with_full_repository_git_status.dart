@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'has_uncommitted_changes': ?hasUncommittedChanges,
   'ref': ?ref,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ahead', 'behind', 'has_unpushed_changes', 'has_uncommitted_changes', 'ref'}.contains(key)); } 
 CodespaceWithFullRepositoryGitStatus copyWith({int Function()? ahead, int Function()? behind, bool Function()? hasUnpushedChanges, bool Function()? hasUncommittedChanges, String Function()? ref, }) { return CodespaceWithFullRepositoryGitStatus(
   ahead: ahead != null ? ahead() : this.ahead,
   behind: behind != null ? behind() : this.behind,

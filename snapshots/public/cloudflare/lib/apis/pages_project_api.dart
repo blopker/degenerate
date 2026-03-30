@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/pages_identifier.dart';import '../models/pages_project_create_project_request.dart';import '../models/pages_project_name.dart';import '../models/pages_project_update_project_request.dart';import '../models/response_common51.dart';/// PagesProjectApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/pages_identifier.dart';import '../models/pages_project.dart';import '../models/pages_project_create_project_request.dart';import '../models/pages_project_name.dart';import '../models/pages_project_update_project_request.dart';/// PagesProjectApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,10 +13,14 @@ final class PagesProjectApi with ApiExecutor {const PagesProjectApi(this.apiConf
 /// Fetch a list of all user projects.
 ///
 /// `GET /accounts/{account_id}/pages/projects`
-Future<ApiResult<ResponseCommon51, Never>> pagesProjectGetProjects({required PagesIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<PagesProject>, Never>> pagesProjectGetProjects({required PagesIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -32,7 +36,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon51.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => PagesProject.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -41,7 +46,7 @@ return execute(
 /// Create a new project.
 ///
 /// `POST /accounts/{account_id}/pages/projects`
-Future<ApiResult<ResponseCommon51, Never>> pagesProjectCreateProject({required PagesIdentifier accountId, required PagesProjectCreateProjectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PagesProject, Never>> pagesProjectCreateProject({required PagesIdentifier accountId, required PagesProjectCreateProjectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,7 +60,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon51.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return PagesProject.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -64,7 +70,7 @@ return execute(
 /// Fetch a project by name.
 ///
 /// `GET /accounts/{account_id}/pages/projects/{project_name}`
-Future<ApiResult<ResponseCommon51, Never>> pagesProjectGetProject({required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PagesProject, Never>> pagesProjectGetProject({required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -76,7 +82,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon51.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return PagesProject.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -85,7 +92,7 @@ return execute(
 /// Set new attributes for an existing project. Modify environment variables. To delete an environment variable, set the key to null.
 ///
 /// `PATCH /accounts/{account_id}/pages/projects/{project_name}`
-Future<ApiResult<ResponseCommon51, Never>> pagesProjectUpdateProject({required PagesProjectName projectName, required PagesIdentifier accountId, required PagesProjectUpdateProjectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PagesProject, Never>> pagesProjectUpdateProject({required PagesProjectName projectName, required PagesIdentifier accountId, required PagesProjectUpdateProjectRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,7 +106,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon51.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return PagesProject.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -108,7 +116,7 @@ return execute(
 /// Delete a project by name.
 ///
 /// `DELETE /accounts/{account_id}/pages/projects/{project_name}`
-Future<ApiResult<ResponseCommon51, Never>> pagesProjectDeleteProject({required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, Never>> pagesProjectDeleteProject({required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -120,7 +128,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon51.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
 );
  } 

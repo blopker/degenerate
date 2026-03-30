@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'txt_name': ?txtName,
   'txt_value': ?txtValue,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cname', 'cname_target', 'emails', 'http_body', 'http_url', 'status', 'txt_name', 'txt_value'}.contains(key)); } 
 TlsCertificatesAndHostnamesValidationRecord copyWith({String Function()? cname, String Function()? cnameTarget, List<String> Function()? emails, String Function()? httpBody, String Function()? httpUrl, String Function()? status, String Function()? txtName, String Function()? txtValue, }) { return TlsCertificatesAndHostnamesValidationRecord(
   cname: cname != null ? cname() : this.cname,
   cnameTarget: cnameTarget != null ? cnameTarget() : this.cnameTarget,

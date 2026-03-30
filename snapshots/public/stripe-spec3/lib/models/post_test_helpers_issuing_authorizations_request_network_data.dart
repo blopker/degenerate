@@ -12,7 +12,7 @@ final String? acquiringInstitutionId;
 Map<String, dynamic> toJson() { return {
   'acquiring_institution_id': ?acquiringInstitutionId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acquiring_institution_id'}.contains(key)); } 
 PostTestHelpersIssuingAuthorizationsRequestNetworkData copyWith({String Function()? acquiringInstitutionId}) { return PostTestHelpersIssuingAuthorizationsRequestNetworkData(
   acquiringInstitutionId: acquiringInstitutionId != null ? acquiringInstitutionId() : this.acquiringInstitutionId,
 ); } 

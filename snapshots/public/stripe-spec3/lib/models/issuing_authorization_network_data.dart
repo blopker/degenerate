@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'system_trace_audit_number': ?systemTraceAuditNumber,
   'transaction_id': ?transactionId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acquiring_institution_id', 'system_trace_audit_number', 'transaction_id'}.contains(key)); } 
 IssuingAuthorizationNetworkData copyWith({String? Function()? acquiringInstitutionId, String? Function()? systemTraceAuditNumber, String? Function()? transactionId, }) { return IssuingAuthorizationNetworkData(
   acquiringInstitutionId: acquiringInstitutionId != null ? acquiringInstitutionId() : this.acquiringInstitutionId,
   systemTraceAuditNumber: systemTraceAuditNumber != null ? systemTraceAuditNumber() : this.systemTraceAuditNumber,

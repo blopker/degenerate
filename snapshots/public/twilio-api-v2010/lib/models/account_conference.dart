@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   if (reasonConferenceEnded != null) 'reason_conference_ended': reasonConferenceEnded?.toJson(),
   'call_sid_ending_conference': ?callSidEndingConference,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'date_created', 'date_updated', 'api_version', 'friendly_name', 'region', 'sid', 'status', 'uri', 'subresource_uris', 'reason_conference_ended', 'call_sid_ending_conference'}.contains(key)); } 
 AccountConference copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? apiVersion, String? Function()? friendlyName, String? Function()? region, String? Function()? sid, ConferenceEnumStatus Function()? status, String? Function()? uri, Map<String, dynamic>? Function()? subresourceUris, ConferenceEnumReasonConferenceEnded Function()? reasonConferenceEnded, String? Function()? callSidEndingConference, }) { return AccountConference(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,

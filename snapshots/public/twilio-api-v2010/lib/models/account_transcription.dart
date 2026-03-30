@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'date_created', 'date_updated', 'duration', 'price', 'price_unit', 'recording_sid', 'sid', 'status', 'transcription_text', 'type', 'uri'}.contains(key)); } 
 AccountTranscription copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? duration, double? Function()? price, String? Function()? priceUnit, String? Function()? recordingSid, String? Function()? sid, TranscriptionEnumStatus Function()? status, String? Function()? transcriptionText, String? Function()? type, String? Function()? uri, }) { return AccountTranscription(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

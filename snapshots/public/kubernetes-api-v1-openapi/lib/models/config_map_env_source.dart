@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'optional': ?optional,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'optional'}.contains(key)); } 
 ConfigMapEnvSource copyWith({String Function()? name, bool Function()? optional, }) { return ConfigMapEnvSource(
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,

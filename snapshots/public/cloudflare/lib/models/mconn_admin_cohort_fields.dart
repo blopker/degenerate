@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'desired_version': ?desiredVersion,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'desired_version', 'name'}.contains(key)); } 
 MconnAdminCohortFields copyWith({String Function()? desiredVersion, String Function()? name, }) { return MconnAdminCohortFields(
   desiredVersion: desiredVersion != null ? desiredVersion() : this.desiredVersion,
   name: name != null ? name() : this.name,

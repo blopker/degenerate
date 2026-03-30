@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'root_certificate_installation_enabled': ?rootCertificateInstallationEnabled,
   'use_zt_virtual_ip': ?useZtVirtualIp,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disable_for_time', 'external_emergency_signal_enabled', 'external_emergency_signal_fingerprint', 'external_emergency_signal_interval', 'external_emergency_signal_url', 'gateway_proxy_enabled', 'gateway_udp_proxy_enabled', 'root_certificate_installation_enabled', 'use_zt_virtual_ip'}.contains(key)); } 
 TeamsDevicesZeroTrustAccountDeviceSettings copyWith({double Function()? disableForTime, bool Function()? externalEmergencySignalEnabled, String Function()? externalEmergencySignalFingerprint, String Function()? externalEmergencySignalInterval, String Function()? externalEmergencySignalUrl, bool Function()? gatewayProxyEnabled, bool Function()? gatewayUdpProxyEnabled, bool Function()? rootCertificateInstallationEnabled, bool Function()? useZtVirtualIp, }) { return TeamsDevicesZeroTrustAccountDeviceSettings(
   disableForTime: disableForTime != null ? disableForTime() : this.disableForTime,
   externalEmergencySignalEnabled: externalEmergencySignalEnabled != null ? externalEmergencySignalEnabled() : this.externalEmergencySignalEnabled,

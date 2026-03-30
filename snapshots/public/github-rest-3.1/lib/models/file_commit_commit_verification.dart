@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'payload': ?payload,
   'verified_at': ?verifiedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'verified', 'reason', 'signature', 'payload', 'verified_at'}.contains(key)); } 
 FileCommitCommitVerification copyWith({bool Function()? verified, String Function()? reason, String? Function()? signature, String? Function()? payload, String? Function()? verifiedAt, }) { return FileCommitCommitVerification(
   verified: verified != null ? verified() : this.verified,
   reason: reason != null ? reason() : this.reason,

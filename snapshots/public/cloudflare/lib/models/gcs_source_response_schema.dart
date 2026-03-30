@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'pathPrefix': ?pathPrefix,
   if (vendor != null) 'vendor': vendor?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket', 'keys', 'pathPrefix', 'vendor'}.contains(key)); } 
 GcsSourceResponseSchema copyWith({String Function()? bucket, List<String>? Function()? keys, String? Function()? pathPrefix, GcsSourceResponseSchemaVendor Function()? vendor, }) { return GcsSourceResponseSchema(
   bucket: bucket != null ? bucket() : this.bucket,
   keys: keys != null ? keys() : this.keys,

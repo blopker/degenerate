@@ -11,7 +11,7 @@ final bool? feeAcknowledged;
 Map<String, dynamic> toJson() { return {
   'fee_acknowledged': ?feeAcknowledged,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fee_acknowledged'}.contains(key)); } 
 EnhancedEvidenceVisaCompliance copyWith({bool Function()? feeAcknowledged}) { return EnhancedEvidenceVisaCompliance(
   feeAcknowledged: feeAcknowledged != null ? feeAcknowledged() : this.feeAcknowledged,
 ); } 

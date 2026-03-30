@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (sample != null) 'sample': sample?.toJson(),
   if (sessionId != null) 'session_id': sessionId?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination_conf', 'fields', 'filter', 'sample', 'session_id'}.contains(key)); } 
 LogpushInstantLogsJob copyWith({LogpushSchemasDestinationConf Function()? destinationConf, LogpushFields Function()? fields, LogpushSchemasFilter Function()? filter, LogpushSample Function()? sample, LogpushSessionId Function()? sessionId, }) { return LogpushInstantLogsJob(
   destinationConf: destinationConf != null ? destinationConf() : this.destinationConf,
   fields: fields != null ? fields() : this.fields,

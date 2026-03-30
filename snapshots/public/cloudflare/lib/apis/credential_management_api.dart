@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/r2_data_catalog_account_id.dart';import '../models/r2_data_catalog_bucket_name.dart';import '../models/r2_data_catalog_catalog_credential_request.dart';import '../models/response_common_failure55.dart';import '../models/response_single39.dart';/// CredentialManagementApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/r2_data_catalog_account_id.dart';import '../models/r2_data_catalog_bucket_name.dart';import '../models/r2_data_catalog_catalog_credential_request.dart';import '../models/response_common_failure55.dart';/// CredentialManagementApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -15,7 +15,7 @@ final class CredentialManagementApi with ApiExecutor {const CredentialManagement
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/credential`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> storeCredentials({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required R2DataCatalogCatalogCredentialRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ResponseCommonFailure55>> storeCredentials({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required R2DataCatalogCatalogCredentialRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -29,7 +29,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseSingle39.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

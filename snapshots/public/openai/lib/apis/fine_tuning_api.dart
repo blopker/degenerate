@@ -60,10 +60,18 @@ return execute(
 /// `GET /fine_tuning/checkpoints/{fine_tuned_model_checkpoint}/permissions`
 Future<ApiResult<ListFineTuningCheckpointPermissionResponse, Never>> listFineTuningCheckpointPermissions({required String fineTunedModelCheckpoint, String? projectId, String? after, int? limit, ListFineTuningCheckpointPermissionsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (projectId != null) queryParameters['project_id'] = projectId;
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
+if (projectId != null) {
+  queryParameters['project_id'] = projectId;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -135,8 +143,12 @@ return execute(
 /// `GET /fine_tuning/jobs`
 Future<ApiResult<ListPaginatedFineTuningJobsResponse, Never>> listPaginatedFineTuningJobs({String? after, int? limit, Map<String,String>? metadata, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (metadata != null) {
 for (final entry in metadata.entries) {
   queryParameters['metadata[${entry.key}]'] = entry.value;
@@ -235,8 +247,12 @@ return execute(
 /// `GET /fine_tuning/jobs/{fine_tuning_job_id}/checkpoints`
 Future<ApiResult<ListFineTuningJobCheckpointsResponse, Never>> listFineTuningJobCheckpoints({required String fineTuningJobId, String? after, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -262,8 +278,12 @@ return execute(
 /// `GET /fine_tuning/jobs/{fine_tuning_job_id}/events`
 Future<ApiResult<ListFineTuningJobEventsResponse, Never>> listFineTuningEvents({required String fineTuningJobId, String? after, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

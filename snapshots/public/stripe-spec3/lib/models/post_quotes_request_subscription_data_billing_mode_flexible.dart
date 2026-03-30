@@ -35,7 +35,7 @@ final PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts? pr
 Map<String, dynamic> toJson() { return {
   if (prorationDiscounts != null) 'proration_discounts': prorationDiscounts?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'proration_discounts'}.contains(key)); } 
 PostQuotesRequestSubscriptionDataBillingModeFlexible copyWith({PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts Function()? prorationDiscounts}) { return PostQuotesRequestSubscriptionDataBillingModeFlexible(
   prorationDiscounts: prorationDiscounts != null ? prorationDiscounts() : this.prorationDiscounts,
 ); } 

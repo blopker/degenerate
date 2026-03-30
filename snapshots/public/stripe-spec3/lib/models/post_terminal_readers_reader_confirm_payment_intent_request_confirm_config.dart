@@ -12,7 +12,7 @@ final String? returnUrl;
 Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'return_url'}.contains(key)); } 
 PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig copyWith({String Function()? returnUrl}) { return PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig(
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
 ); } 

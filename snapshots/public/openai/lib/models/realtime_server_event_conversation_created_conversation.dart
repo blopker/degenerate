@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   'object': ?object,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object'}.contains(key)); } 
 RealtimeServerEventConversationCreatedConversation copyWith({String Function()? id, String Function()? object, }) { return RealtimeServerEventConversationCreatedConversation(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,

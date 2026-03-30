@@ -146,7 +146,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after', 'app', 'before', 'conclusion', 'created_at', 'head_branch', 'head_sha', 'id', 'node_id', 'pull_requests', 'repository', 'status', 'updated_at', 'url'}.contains(key)); } 
 SimpleCheckSuite copyWith({String? Function()? after, Integration Function()? app, String? Function()? before, SimpleCheckSuiteConclusion? Function()? conclusion, DateTime Function()? createdAt, String? Function()? headBranch, String Function()? headSha, int Function()? id, String Function()? nodeId, List<PullRequestMinimal> Function()? pullRequests, MinimalRepository Function()? repository, SimpleCheckSuiteStatus Function()? status, DateTime Function()? updatedAt, String Function()? url, }) { return SimpleCheckSuite(
   after: after != null ? after() : this.after,
   app: app != null ? app() : this.app,

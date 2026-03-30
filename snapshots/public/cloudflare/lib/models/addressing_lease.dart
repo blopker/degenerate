@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   if (ownerId != null) 'owner_id': ownerId?.toJson(),
   'purpose': ?purpose,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active_from', 'cidrs', 'created_at', 'id', 'modified_at', 'owner_id', 'purpose'}.contains(key)); } 
 AddressingLease copyWith({DateTime Function()? activeFrom, List<AddressingSchemasCidr> Function()? cidrs, AddressingCreatedAt Function()? createdAt, AddressingLeaseId Function()? id, AddressingModifiedAt Function()? modifiedAt, AddressingLeaseOwnerId Function()? ownerId, String Function()? purpose, }) { return AddressingLease(
   activeFrom: activeFrom != null ? activeFrom() : this.activeFrom,
   cidrs: cidrs != null ? cidrs() : this.cidrs,

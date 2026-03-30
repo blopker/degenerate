@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (domain != null) 'domain': domain?.toJson(),
   if (altDomain != null) 'alt_domain': altDomain?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'domain', 'alt_domain'}.contains(key)); } 
 PagesHealthCheck copyWith({PagesHealthCheckDomain Function()? domain, PagesHealthCheckAltDomain? Function()? altDomain, }) { return PagesHealthCheck(
   domain: domain != null ? domain() : this.domain,
   altDomain: altDomain != null ? altDomain() : this.altDomain,

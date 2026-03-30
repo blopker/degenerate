@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'super_category_id': ?superCategoryId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'super_category_id'}.contains(key)); } 
 IntelContentCategories2 copyWith({int Function()? id, String Function()? name, int Function()? superCategoryId, }) { return IntelContentCategories2(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

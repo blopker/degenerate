@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (learningRateMultiplier != null) 'learning_rate_multiplier': learningRateMultiplier?.toJson(),
   if (nEpochs != null) 'n_epochs': nEpochs?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'batch_size', 'learning_rate_multiplier', 'n_epochs'}.contains(key)); } 
 CreateFineTuningJobRequestHyperparameters copyWith({CreateFineTuningJobRequestHyperparametersBatchSize Function()? batchSize, CreateFineTuningJobRequestHyperparametersLearningRateMultiplier Function()? learningRateMultiplier, CreateFineTuningJobRequestHyperparametersNEpochs Function()? nEpochs, }) { return CreateFineTuningJobRequestHyperparameters(
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,

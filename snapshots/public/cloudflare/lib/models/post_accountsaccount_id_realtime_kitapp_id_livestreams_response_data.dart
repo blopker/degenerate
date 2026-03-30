@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   'stream_key': ?streamKey,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disabled', 'id', 'ingest_server', 'meeting_id', 'name', 'playback_url', 'status', 'stream_key'}.contains(key)); } 
 PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData copyWith({bool Function()? disabled, String Function()? id, String Function()? ingestServer, String? Function()? meetingId, String Function()? name, String Function()? playbackUrl, PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus Function()? status, String Function()? streamKey, }) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(
   disabled: disabled != null ? disabled() : this.disabled,
   id: id != null ? id() : this.id,

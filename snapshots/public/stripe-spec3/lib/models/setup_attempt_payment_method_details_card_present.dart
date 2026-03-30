@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (generatedCard != null) 'generated_card': generatedCard?.toJson(),
   if (offline != null) 'offline': offline?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'generated_card', 'offline'}.contains(key)); } 
 SetupAttemptPaymentMethodDetailsCardPresent copyWith({SetupAttemptPaymentMethodDetailsCardPresentGeneratedCard? Function()? generatedCard, SetupAttemptPaymentMethodDetailsCardPresentOffline? Function()? offline, }) { return SetupAttemptPaymentMethodDetailsCardPresent(
   generatedCard: generatedCard != null ? generatedCard() : this.generatedCard,
   offline: offline != null ? offline() : this.offline,

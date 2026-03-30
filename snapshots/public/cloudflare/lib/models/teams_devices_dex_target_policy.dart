@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default', 'id', 'name'}.contains(key)); } 
 TeamsDevicesDexTargetPolicy copyWith({bool Function()? $default, String Function()? id, String Function()? name, }) { return TeamsDevicesDexTargetPolicy(
   $default: $default != null ? $default() : this.$default,
   id: id != null ? id() : this.id,

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'ips': ?ips,
   if (name != null) 'name': name?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ips', 'name'}.contains(key)); } 
 ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest copyWith({List<String> Function()? ips, ZeroTrustGatewayProxyEndpointsComponentsSchemasName Function()? name, }) { return ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest(
   ips: ips != null ? ips() : this.ips,
   name: name != null ? name() : this.name,

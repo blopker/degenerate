@@ -17,28 +17,60 @@ final class SecurityAdvisoriesApi with ApiExecutor {const SecurityAdvisoriesApi(
 /// `GET /advisories`
 Future<ApiResult<List<GlobalAdvisory>, BasicError>> securityAdvisoriesListGlobalAdvisories({String? ghsaId, SecurityAdvisoriesListGlobalAdvisoriesType? type, String? cveId, SecurityAdvisoryEcosystems? ecosystem, SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity, SecurityAdvisoriesListGlobalAdvisoriesCwes? cwes, bool? isWithdrawn, SecurityAdvisoriesListGlobalAdvisoriesAffects? affects, String? published, String? updated, String? modified, String? epssPercentage, String? epssPercentile, String? before, String? after, SecurityAdvisoriesListGlobalAdvisoriesDirection? direction, int? perPage, SecurityAdvisoriesListGlobalAdvisoriesSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ghsaId != null) queryParameters['ghsa_id'] = ghsaId;
-if (type != null) queryParameters['type'] = type.toJson();
-if (cveId != null) queryParameters['cve_id'] = cveId;
-if (ecosystem != null) queryParameters['ecosystem'] = ecosystem.toJson();
-if (severity != null) queryParameters['severity'] = severity.toJson();
+if (ghsaId != null) {
+  queryParameters['ghsa_id'] = ghsaId;
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (cveId != null) {
+  queryParameters['cve_id'] = cveId;
+}
+if (ecosystem != null) {
+  queryParameters['ecosystem'] = ecosystem.toJson();
+}
+if (severity != null) {
+  queryParameters['severity'] = severity.toJson();
+}
 if (cwes != null) {
 queryParametersList.add(ApiQueryParameter(name: 'cwes', value: cwes.toString(), allowReserved: false));
 }
-if (isWithdrawn != null) queryParameters['is_withdrawn'] = isWithdrawn.toString();
+if (isWithdrawn != null) {
+  queryParameters['is_withdrawn'] = isWithdrawn.toString();
+}
 if (affects != null) {
 queryParametersList.add(ApiQueryParameter(name: 'affects', value: affects.toString(), allowReserved: false));
 }
-if (published != null) queryParameters['published'] = published;
-if (updated != null) queryParameters['updated'] = updated;
-if (modified != null) queryParameters['modified'] = modified;
-if (epssPercentage != null) queryParameters['epss_percentage'] = epssPercentage;
-if (epssPercentile != null) queryParameters['epss_percentile'] = epssPercentile;
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (sort != null) queryParameters['sort'] = sort.toJson();
+if (published != null) {
+  queryParameters['published'] = published;
+}
+if (updated != null) {
+  queryParameters['updated'] = updated;
+}
+if (modified != null) {
+  queryParameters['modified'] = modified;
+}
+if (epssPercentage != null) {
+  queryParameters['epss_percentage'] = epssPercentage;
+}
+if (epssPercentile != null) {
+  queryParameters['epss_percentile'] = epssPercentile;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -97,12 +129,24 @@ return execute(
 /// `GET /orgs/{org}/security-advisories`
 Future<ApiResult<List<RepositoryAdvisory>, BasicError>> securityAdvisoriesListOrgRepositoryAdvisories({required String org, SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection? direction, SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort, String? before, String? after, int? perPage, SecurityAdvisoriesListOrgRepositoryAdvisoriesState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (state != null) queryParameters['state'] = state.toJson();
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -137,12 +181,24 @@ return execute(
 /// `GET /repos/{owner}/{repo}/security-advisories`
 Future<ApiResult<List<RepositoryAdvisory>, BasicError>> securityAdvisoriesListRepositoryAdvisories({required String owner, required String repo, SecurityAdvisoriesListRepositoryAdvisoriesDirection? direction, SecurityAdvisoriesListRepositoryAdvisoriesSort? sort, String? before, String? after, int? perPage, SecurityAdvisoriesListRepositoryAdvisoriesState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (state != null) queryParameters['state'] = state.toJson();
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

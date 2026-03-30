@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'resourceVersion': ?resourceVersion,
   'uid': ?uid,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'fieldPath', 'kind', 'name', 'namespace', 'resourceVersion', 'uid'}.contains(key)); } 
 ObjectReference copyWith({String Function()? apiVersion, String Function()? fieldPath, String Function()? kind, String Function()? name, String Function()? namespace, String Function()? resourceVersion, String Function()? uid, }) { return ObjectReference(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   fieldPath: fieldPath != null ? fieldPath() : this.fieldPath,

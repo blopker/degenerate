@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'screenshot_path': ?screenshotPath,
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'categorizations', 'model_results', 'rule_matches', 'scan_status', 'screenshot_download_signature', 'screenshot_path', 'url'}.contains(key)); } 
 IntelPhishingUrlInfo copyWith({List<IntelPhishingUrlInfoCategorizations> Function()? categorizations, List<IntelPhishingUrlInfoModelResults> Function()? modelResults, List<IntelPhishingUrlInfoRuleMatches> Function()? ruleMatches, IntelPhishingUrlInfoScanStatus Function()? scanStatus, String Function()? screenshotDownloadSignature, String Function()? screenshotPath, String Function()? url, }) { return IntelPhishingUrlInfo(
   categorizations: categorizations != null ? categorizations() : this.categorizations,
   modelResults: modelResults != null ? modelResults() : this.modelResults,

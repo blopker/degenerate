@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'headers': ?headers,
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'headers', 'url'}.contains(key)); } 
 CachePurgeSingleFileWithUrlAndHeadersFiles copyWith({Map<String, String> Function()? headers, String Function()? url, }) { return CachePurgeSingleFileWithUrlAndHeadersFiles(
   headers: headers != null ? headers() : this.headers,
   url: url != null ? url() : this.url,

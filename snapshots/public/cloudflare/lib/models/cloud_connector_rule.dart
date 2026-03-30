@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   if (parameters != null) 'parameters': parameters?.toJson(),
   if (provider != null) 'provider': provider?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'enabled', 'expression', 'id', 'parameters', 'provider'}.contains(key)); } 
 CloudConnectorRule copyWith({String Function()? description, bool Function()? enabled, String Function()? expression, String Function()? id, CloudConnectorRuleParameters Function()? parameters, CloudConnectorProvider Function()? provider, }) { return CloudConnectorRule(
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,

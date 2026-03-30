@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   '500ms_or_greater_event_fraction': ?$500msOrGreaterEventFraction,
   'avg': ?avg,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'100ms_or_greater_event_fraction', '250ms_or_greater_event_fraction', '500ms_or_greater_event_fraction', 'avg'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt copyWith({double Function()? $100msOrGreaterEventFraction, double Function()? $250msOrGreaterEventFraction, double Function()? $500msOrGreaterEventFraction, double Function()? avg, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt(
   $100msOrGreaterEventFraction: $100msOrGreaterEventFraction != null ? $100msOrGreaterEventFraction() : this.$100msOrGreaterEventFraction,
   $250msOrGreaterEventFraction: $250msOrGreaterEventFraction != null ? $250msOrGreaterEventFraction() : this.$250msOrGreaterEventFraction,

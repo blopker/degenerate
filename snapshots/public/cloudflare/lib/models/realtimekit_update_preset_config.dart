@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   if (media != null) 'media': media?.toJson(),
   if (viewType != null) 'view_type': viewType?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_screenshare_count', 'max_video_streams', 'media', 'view_type'}.contains(key)); } 
 RealtimekitUpdatePresetConfig copyWith({int Function()? maxScreenshareCount, RealtimekitUpdatePresetConfigMaxVideoStreams Function()? maxVideoStreams, RealtimekitUpdatePresetConfigMedia Function()? media, RealtimekitUpdatePresetConfigViewType Function()? viewType, }) { return RealtimekitUpdatePresetConfig(
   maxScreenshareCount: maxScreenshareCount != null ? maxScreenshareCount() : this.maxScreenshareCount,
   maxVideoStreams: maxVideoStreams != null ? maxVideoStreams() : this.maxVideoStreams,

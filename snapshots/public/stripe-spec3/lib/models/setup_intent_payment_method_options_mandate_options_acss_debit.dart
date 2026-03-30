@@ -110,7 +110,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentSchedule != null) 'payment_schedule': paymentSchedule?.toJson(),
   if (transactionType != null) 'transaction_type': transactionType?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_mandate_url', 'default_for', 'interval_description', 'payment_schedule', 'transaction_type'}.contains(key)); } 
 SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit copyWith({String Function()? customMandateUrl, List<SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitDefaultFor> Function()? defaultFor, String? Function()? intervalDescription, SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule? Function()? paymentSchedule, SetupIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType? Function()? transactionType, }) { return SetupIntentPaymentMethodOptionsMandateOptionsAcssDebit(
   customMandateUrl: customMandateUrl != null ? customMandateUrl() : this.customMandateUrl,
   defaultFor: defaultFor != null ? defaultFor() : this.defaultFor,

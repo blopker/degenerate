@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'total_engaged_users': ?totalEngagedUsers,
   'total_chats': ?totalChats,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'is_custom_model', 'custom_model_training_date', 'total_engaged_users', 'total_chats'}.contains(key)); } 
 CopilotDotcomChatModels copyWith({String Function()? name, bool Function()? isCustomModel, String? Function()? customModelTrainingDate, int Function()? totalEngagedUsers, int Function()? totalChats, }) { return CopilotDotcomChatModels(
   name: name != null ? name() : this.name,
   isCustomModel: isCustomModel != null ? isCustomModel() : this.isCustomModel,

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'audio_tokens': audioTokens,
   'cached_tokens': cachedTokens,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio_tokens', 'cached_tokens'}.contains(key)); } 
 CompletionUsagePromptTokensDetails copyWith({int Function()? audioTokens, int Function()? cachedTokens, }) { return CompletionUsagePromptTokensDetails(
   audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,
   cachedTokens: cachedTokens != null ? cachedTokens() : this.cachedTokens,

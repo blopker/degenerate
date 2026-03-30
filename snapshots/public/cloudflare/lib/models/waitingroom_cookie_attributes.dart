@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   'samesite': samesite.toJson(),
   'secure': secure.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'samesite', 'secure'}.contains(key)); } 
 WaitingroomCookieAttributes copyWith({WaitingroomCookieAttributesSamesite Function()? samesite, WaitingroomCookieAttributesSecure Function()? secure, }) { return WaitingroomCookieAttributes(
   samesite: samesite != null ? samesite() : this.samesite,
   secure: secure != null ? secure() : this.secure,

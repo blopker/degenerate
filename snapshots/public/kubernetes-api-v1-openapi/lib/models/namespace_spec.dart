@@ -13,7 +13,7 @@ final List<String>? finalizers;
 Map<String, dynamic> toJson() { return {
   'finalizers': ?finalizers,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'finalizers'}.contains(key)); } 
 NamespaceSpec copyWith({List<String> Function()? finalizers}) { return NamespaceSpec(
   finalizers: finalizers != null ? finalizers() : this.finalizers,
 ); } 

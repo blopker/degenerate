@@ -112,7 +112,7 @@ Map<String, dynamic> toJson() { return {
   'trafficDistribution': ?trafficDistribution,
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allocateLoadBalancerNodePorts', 'clusterIP', 'clusterIPs', 'externalIPs', 'externalName', 'externalTrafficPolicy', 'healthCheckNodePort', 'internalTrafficPolicy', 'ipFamilies', 'ipFamilyPolicy', 'loadBalancerClass', 'loadBalancerIP', 'loadBalancerSourceRanges', 'ports', 'publishNotReadyAddresses', 'selector', 'sessionAffinity', 'sessionAffinityConfig', 'trafficDistribution', 'type'}.contains(key)); } 
 ServiceSpec copyWith({bool Function()? allocateLoadBalancerNodePorts, String Function()? clusterIp, List<String> Function()? clusterIPs, List<String> Function()? externalIPs, String Function()? externalName, String Function()? externalTrafficPolicy, int Function()? healthCheckNodePort, String Function()? internalTrafficPolicy, List<String> Function()? ipFamilies, String Function()? ipFamilyPolicy, String Function()? loadBalancerClass, String Function()? loadBalancerIp, List<String> Function()? loadBalancerSourceRanges, List<ServicePort> Function()? ports, bool Function()? publishNotReadyAddresses, Map<String, String> Function()? selector, String Function()? sessionAffinity, SessionAffinityConfig Function()? sessionAffinityConfig, String Function()? trafficDistribution, String Function()? type, }) { return ServiceSpec(
   allocateLoadBalancerNodePorts: allocateLoadBalancerNodePorts != null ? allocateLoadBalancerNodePorts() : this.allocateLoadBalancerNodePorts,
   clusterIp: clusterIp != null ? clusterIp() : this.clusterIp,

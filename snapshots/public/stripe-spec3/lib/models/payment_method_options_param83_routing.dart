@@ -35,7 +35,7 @@ final PaymentMethodOptionsParam83RoutingRequestedPriority? requestedPriority;
 Map<String, dynamic> toJson() { return {
   if (requestedPriority != null) 'requested_priority': requestedPriority?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested_priority'}.contains(key)); } 
 PaymentMethodOptionsParam83Routing copyWith({PaymentMethodOptionsParam83RoutingRequestedPriority Function()? requestedPriority}) { return PaymentMethodOptionsParam83Routing(
   requestedPriority: requestedPriority != null ? requestedPriority() : this.requestedPriority,
 ); } 

@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   if (steeringPolicy != null) 'steering_policy': steeringPolicy?.toJson(),
   if (ttl != null) 'ttl': ttl?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'adaptive_routing', 'country_pools', 'default_pools', 'fallback_pool', 'location_strategy', 'pop_pools', 'random_steering', 'region_pools', 'session_affinity', 'session_affinity_attributes', 'session_affinity_ttl', 'steering_policy', 'ttl'}.contains(key)); } 
 LoadBalancingRules2Overrides copyWith({LoadBalancingAdaptiveRouting Function()? adaptiveRouting, Map<String, List<String>> Function()? countryPools, List<String> Function()? defaultPools, LoadBalancingFallbackPool Function()? fallbackPool, LoadBalancingLocationStrategy Function()? locationStrategy, Map<String, List<String>> Function()? popPools, LoadBalancingRandomSteering Function()? randomSteering, Map<String, List<String>> Function()? regionPools, LoadBalancingSessionAffinity Function()? sessionAffinity, LoadBalancingSessionAffinityAttributes Function()? sessionAffinityAttributes, LoadBalancingSessionAffinityTtl Function()? sessionAffinityTtl, LoadBalancingSteeringPolicy Function()? steeringPolicy, LoadBalancingTtl Function()? ttl, }) { return LoadBalancingRules2Overrides(
   adaptiveRouting: adaptiveRouting != null ? adaptiveRouting() : this.adaptiveRouting,
   countryPools: countryPools != null ? countryPools() : this.countryPools,

@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'provision_license': ?provisionLicense,
   'serial_number': ?serialNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'provision_license', 'serial_number'}.contains(key)); } 
 MconnCustomerDeviceOptions copyWith({String Function()? id, bool Function()? provisionLicense, String Function()? serialNumber, }) { return MconnCustomerDeviceOptions(
   id: id != null ? id() : this.id,
   provisionLicense: provisionLicense != null ? provisionLicense() : this.provisionLicense,

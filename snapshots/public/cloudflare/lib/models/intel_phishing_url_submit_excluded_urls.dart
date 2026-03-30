@@ -12,7 +12,7 @@ final String? url;
 Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url'}.contains(key)); } 
 IntelPhishingUrlSubmitExcludedUrls copyWith({String Function()? url}) { return IntelPhishingUrlSubmitExcludedUrls(
   url: url != null ? url() : this.url,
 ); } 

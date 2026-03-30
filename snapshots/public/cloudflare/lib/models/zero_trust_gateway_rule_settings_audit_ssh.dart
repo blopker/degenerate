@@ -13,7 +13,7 @@ final bool? commandLogging;
 Map<String, dynamic> toJson() { return {
   'command_logging': ?commandLogging,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'command_logging'}.contains(key)); } 
 ZeroTrustGatewayRuleSettingsAuditSsh copyWith({bool Function()? commandLogging}) { return ZeroTrustGatewayRuleSettingsAuditSsh(
   commandLogging: commandLogging != null ? commandLogging() : this.commandLogging,
 ); } 

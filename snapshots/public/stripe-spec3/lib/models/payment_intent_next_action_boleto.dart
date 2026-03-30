@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'number': ?number,
   'pdf': ?pdf,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expires_at', 'hosted_voucher_url', 'number', 'pdf'}.contains(key)); } 
 PaymentIntentNextActionBoleto copyWith({int? Function()? expiresAt, String? Function()? hostedVoucherUrl, String? Function()? number, String? Function()? pdf, }) { return PaymentIntentNextActionBoleto(
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   hostedVoucherUrl: hostedVoucherUrl != null ? hostedVoucherUrl() : this.hostedVoucherUrl,

@@ -35,7 +35,7 @@ final PostTaxRegistrationsRequestCountryOptionsBbStandardPlaceOfSupplyScheme? pl
 Map<String, dynamic> toJson() { return {
   if (placeOfSupplyScheme != null) 'place_of_supply_scheme': placeOfSupplyScheme?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'place_of_supply_scheme'}.contains(key)); } 
 PostTaxRegistrationsRequestCountryOptionsBbStandard copyWith({PostTaxRegistrationsRequestCountryOptionsBbStandardPlaceOfSupplyScheme Function()? placeOfSupplyScheme}) { return PostTaxRegistrationsRequestCountryOptionsBbStandard(
   placeOfSupplyScheme: placeOfSupplyScheme != null ? placeOfSupplyScheme() : this.placeOfSupplyScheme,
 ); } 

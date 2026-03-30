@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   'expires_at': ?expiresAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'expires_at'}.contains(key)); } 
 PostQuotesQuoteFinalizeRequest copyWith({List<String> Function()? expand, int Function()? expiresAt, }) { return PostQuotesQuoteFinalizeRequest(
   expand: expand != null ? expand() : this.expand,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

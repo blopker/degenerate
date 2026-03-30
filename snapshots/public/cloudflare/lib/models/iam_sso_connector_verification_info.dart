@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   if (code != null) 'code': code?.toJson(),
   if (status != null) 'status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'status'}.contains(key)); } 
 IamSsoConnectorVerificationInfo copyWith({IamDnsVerificationCode Function()? code, IamSsoConnectorVerificationInfoStatus Function()? status, }) { return IamSsoConnectorVerificationInfo(
   code: code != null ? code() : this.code,
   status: status != null ? status() : this.status,

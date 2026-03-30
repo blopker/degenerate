@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'last_name': ?lastName,
   if (verification != null) 'verification': verification?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_issuing', 'dob', 'first_name', 'last_name', 'verification'}.contains(key)); } 
 PostIssuingCardholdersCardholderRequestIndividual copyWith({PostIssuingCardholdersCardholderRequestIndividualCardIssuing Function()? cardIssuing, PostIssuingCardholdersCardholderRequestIndividualDob Function()? dob, String Function()? firstName, String Function()? lastName, PostIssuingCardholdersCardholderRequestIndividualVerification Function()? verification, }) { return PostIssuingCardholdersCardholderRequestIndividual(
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
   dob: dob != null ? dob() : this.dob,

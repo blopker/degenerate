@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'delay_seconds': ?delaySeconds,
   if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delay_seconds', 'messages'}.contains(key)); } 
 MqQueueBatch copyWith({double Function()? delaySeconds, List<MqQueueMessage> Function()? messages, }) { return MqQueueBatch(
   delaySeconds: delaySeconds != null ? delaySeconds() : this.delaySeconds,
   messages: messages != null ? messages() : this.messages,

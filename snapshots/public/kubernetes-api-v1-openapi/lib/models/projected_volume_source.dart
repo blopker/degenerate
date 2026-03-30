@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'defaultMode': ?defaultMode,
   if (sources != null) 'sources': sources?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'defaultMode', 'sources'}.contains(key)); } 
 ProjectedVolumeSource copyWith({int Function()? defaultMode, List<VolumeProjection> Function()? sources, }) { return ProjectedVolumeSource(
   defaultMode: defaultMode != null ? defaultMode() : this.defaultMode,
   sources: sources != null ? sources() : this.sources,

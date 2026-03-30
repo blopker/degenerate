@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'filename': ?filename,
   'status': ?status,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'filename', 'status'}.contains(key)); } 
 CustomIndicatorFeedsUpdateFeed copyWith({int Function()? fileId, String Function()? filename, String Function()? status, }) { return CustomIndicatorFeedsUpdateFeed(
   fileId: fileId != null ? fileId() : this.fileId,
   filename: filename != null ? filename() : this.filename,

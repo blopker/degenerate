@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'count': ?count,
   'cursor': ?cursor,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'cursor'}.contains(key)); } 
 AaaResultInfo copyWith({String Function()? count, String Function()? cursor, }) { return AaaResultInfo(
   count: count != null ? count() : this.count,
   cursor: cursor != null ? cursor() : this.cursor,

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (description != null) 'description': description?.toJson(),
   if (dnslink != null) 'dnslink': dnslink?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'dnslink'}.contains(key)); } 
 Web3ModifyRequest copyWith({Web3Description Function()? description, Web3Dnslink Function()? dnslink, }) { return Web3ModifyRequest(
   description: description != null ? description() : this.description,
   dnslink: dnslink != null ? dnslink() : this.dnslink,

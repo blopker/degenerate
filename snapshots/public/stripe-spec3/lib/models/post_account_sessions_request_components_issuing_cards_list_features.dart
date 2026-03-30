@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'disable_stripe_user_authentication': ?disableStripeUserAuthentication,
   'spend_control_management': ?spendControlManagement,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_management', 'card_spend_dispute_management', 'cardholder_management', 'disable_stripe_user_authentication', 'spend_control_management'}.contains(key)); } 
 PostAccountSessionsRequestComponentsIssuingCardsListFeatures copyWith({bool Function()? cardManagement, bool Function()? cardSpendDisputeManagement, bool Function()? cardholderManagement, bool Function()? disableStripeUserAuthentication, bool Function()? spendControlManagement, }) { return PostAccountSessionsRequestComponentsIssuingCardsListFeatures(
   cardManagement: cardManagement != null ? cardManagement() : this.cardManagement,
   cardSpendDisputeManagement: cardSpendDisputeManagement != null ? cardSpendDisputeManagement() : this.cardSpendDisputeManagement,

@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (expiresAt != null) 'expires_at': expiresAt?.toJson(),
   'metadata': ?metadata,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'expires_at', 'metadata'}.contains(key)); } 
 PostBillingCreditGrantsIdRequest copyWith({List<String> Function()? expand, PostBillingCreditGrantsIdRequestExpiresAt Function()? expiresAt, Map<String, String> Function()? metadata, }) { return PostBillingCreditGrantsIdRequest(
   expand: expand != null ? expand() : this.expand,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

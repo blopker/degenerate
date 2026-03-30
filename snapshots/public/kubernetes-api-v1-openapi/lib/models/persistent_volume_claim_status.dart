@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   if (modifyVolumeStatus != null) 'modifyVolumeStatus': modifyVolumeStatus?.toJson(),
   'phase': ?phase,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessModes', 'allocatedResourceStatuses', 'allocatedResources', 'capacity', 'conditions', 'currentVolumeAttributesClassName', 'modifyVolumeStatus', 'phase'}.contains(key)); } 
 PersistentVolumeClaimStatus copyWith({List<String> Function()? accessModes, Map<String, String> Function()? allocatedResourceStatuses, Map<String, ResourceQuantity> Function()? allocatedResources, Map<String, ResourceQuantity> Function()? capacity, List<PersistentVolumeClaimCondition> Function()? conditions, String Function()? currentVolumeAttributesClassName, ModifyVolumeStatus Function()? modifyVolumeStatus, String Function()? phase, }) { return PersistentVolumeClaimStatus(
   accessModes: accessModes != null ? accessModes() : this.accessModes,
   allocatedResourceStatuses: allocatedResourceStatuses != null ? allocatedResourceStatuses() : this.allocatedResourceStatuses,

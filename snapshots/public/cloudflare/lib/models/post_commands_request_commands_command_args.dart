@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   'test-all-routes': testAllRoutes,
   'time-limit-min': timeLimitMin,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'interfaces', 'max-file-size-mb', 'packet-size-bytes', 'test-all-routes', 'time-limit-min'}.contains(key)); } 
 PostCommandsRequestCommandsCommandArgs copyWith({List<PostCommandsRequestCommandsCommandArgsInterfaces> Function()? interfaces, double Function()? maxFileSizeMb, double Function()? packetSizeBytes, bool Function()? testAllRoutes, double Function()? timeLimitMin, }) { return PostCommandsRequestCommandsCommandArgs(
   interfaces: interfaces != null ? interfaces() : this.interfaces,
   maxFileSizeMb: maxFileSizeMb != null ? maxFileSizeMb() : this.maxFileSizeMb,

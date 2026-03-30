@@ -30,7 +30,7 @@ factory CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest.fr
   hosts: (json['hosts'] as List<dynamic>).map((e) => e as String).toList(),
   type: TlsCertificatesAndHostnamesAdvancedType.fromJson(json['type'] as String),
   validationMethod: TlsCertificatesAndHostnamesValidationMethod.fromJson(json['validation_method'] as String),
-  validityDays: TlsCertificatesAndHostnamesValidityDays.fromJson(json['validity_days'] as num),
+  validityDays: TlsCertificatesAndHostnamesValidityDays.fromJson((json['validity_days'] as num).toInt()),
 ); }
 
 /// Certificate Authority selected for the order.  For information on any certificate authority specific details or restrictions [see this page for more details.](https://developers.cloudflare.com/ssl/reference/certificate-authorities)

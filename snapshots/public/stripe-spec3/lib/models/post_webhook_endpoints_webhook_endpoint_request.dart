@@ -820,7 +820,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'disabled', 'enabled_events', 'expand', 'metadata', 'url'}.contains(key)); } 
 PostWebhookEndpointsWebhookEndpointRequest copyWith({PostWebhookEndpointsWebhookEndpointRequestDescription Function()? description, bool Function()? disabled, List<PostWebhookEndpointsWebhookEndpointRequestEnabledEvents> Function()? enabledEvents, List<String> Function()? expand, PostWebhookEndpointsWebhookEndpointRequestMetadata Function()? metadata, String Function()? url, }) { return PostWebhookEndpointsWebhookEndpointRequest(
   description: description != null ? description() : this.description,
   disabled: disabled != null ? disabled() : this.disabled,

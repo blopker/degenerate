@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   if (ips != null) 'ips': ips?.map((e) => e.toJson()).toList(),
   if (memberships != null) 'memberships': memberships?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'enabled', 'ips', 'memberships'}.contains(key)); } 
 IpAddressManagementAddressMapsCreateAddressMapRequest copyWith({AddressingSchemasDescription? Function()? description, AddressingEnabled? Function()? enabled, List<AddressingIpAddress> Function()? ips, List<AddressingAddressMapsMembershipRequest> Function()? memberships, }) { return IpAddressManagementAddressMapsCreateAddressMapRequest(
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,

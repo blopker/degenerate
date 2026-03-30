@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (entries != null) 'entries': entries?.map((e) => e.toJson()).toList(),
   'ocr_enabled': ocrEnabled,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_context_enabled', 'allowed_match_count', 'confidence_threshold', 'context_awareness', 'entries', 'ocr_enabled'}.contains(key)); } 
 DlpPredefinedProfileUpdate copyWith({bool Function()? aiContextEnabled, int? Function()? allowedMatchCount, String? Function()? confidenceThreshold, DlpContextAwareness Function()? contextAwareness, List<DlpPredefinedProfileEntryUpdate> Function()? entries, bool Function()? ocrEnabled, }) { return DlpPredefinedProfileUpdate(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount != null ? allowedMatchCount() : this.allowedMatchCount,

@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'description': ?description,
   'parameters': ?parameters,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'name', 'description', 'parameters'}.contains(key)); } 
 RealtimeBetaResponseCreateParamsTools copyWith({RealtimeBetaResponseCreateParamsToolsType Function()? type, String Function()? name, String Function()? description, Map<String, dynamic> Function()? parameters, }) { return RealtimeBetaResponseCreateParamsTools(
   type: type != null ? type() : this.type,
   name: name != null ? name() : this.name,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'percentages': ?percentages,
   'smart_tip_threshold': ?smartTipThreshold,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fixed_amounts', 'percentages', 'smart_tip_threshold'}.contains(key)); } 
 Tipping2Ron copyWith({List<int> Function()? fixedAmounts, List<int> Function()? percentages, int Function()? smartTipThreshold, }) { return Tipping2Ron(
   fixedAmounts: fixedAmounts != null ? fixedAmounts() : this.fixedAmounts,
   percentages: percentages != null ? percentages() : this.percentages,

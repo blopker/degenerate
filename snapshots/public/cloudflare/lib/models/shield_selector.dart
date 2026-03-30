@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exclude', 'include'}.contains(key)); } 
 ShieldSelector copyWith({List<ShieldSelectorExclude>? Function()? exclude, List<ShieldSelectorInclude>? Function()? include, }) { return ShieldSelector(
   exclude: exclude != null ? exclude() : this.exclude,
   include: include != null ? include() : this.include,

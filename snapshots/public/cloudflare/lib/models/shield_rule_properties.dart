@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (selector != null) 'selector': selector?.toJson(),
   if (title != null) 'title': title?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'description', 'enabled', 'expression', 'selector', 'title'}.contains(key)); } 
 ShieldRuleProperties copyWith({ShieldAction Function()? action, ShieldSchemasDescription Function()? description, ShieldEnabled Function()? enabled, ShieldExpression Function()? expression, ShieldSelector Function()? selector, ShieldSchemasTitle Function()? title, }) { return ShieldRuleProperties(
   action: action != null ? action() : this.action,
   description: description != null ? description() : this.description,

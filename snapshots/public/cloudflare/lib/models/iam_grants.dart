@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'read': ?read,
   'write': ?write,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'read', 'write'}.contains(key)); } 
 IamGrants copyWith({bool Function()? read, bool Function()? write, }) { return IamGrants(
   read: read != null ? read() : this.read,
   write: write != null ? write() : this.write,

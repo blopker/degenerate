@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (shortDescription != null) 'short_description': shortDescription?.toJson(),
   if (title != null) 'title': title?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'public', 'short_description', 'title'}.contains(key)); } 
 ProjectEditedChanges copyWith({ProjectEditedChangesDescription Function()? description, ProjectEditedChangesPublic Function()? public, ProjectEditedChangesShortDescription Function()? shortDescription, ProjectEditedChangesTitle Function()? title, }) { return ProjectEditedChanges(
   description: description != null ? description() : this.description,
   public: public != null ? public() : this.public,

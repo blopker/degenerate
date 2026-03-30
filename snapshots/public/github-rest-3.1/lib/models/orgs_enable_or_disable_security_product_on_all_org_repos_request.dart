@@ -39,7 +39,7 @@ final OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite? querySui
 Map<String, dynamic> toJson() { return {
   if (querySuite != null) 'query_suite': querySuite?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'query_suite'}.contains(key)); } 
 OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest copyWith({OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite Function()? querySuite}) { return OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest(
   querySuite: querySuite != null ? querySuite() : this.querySuite,
 ); } 

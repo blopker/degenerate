@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'hasStoredData': ?hasStoredData,
   'id': ?id,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hasStoredData', 'id'}.contains(key)); } 
 WorkersObject copyWith({bool Function()? hasStoredData, String Function()? id, }) { return WorkersObject(
   hasStoredData: hasStoredData != null ? hasStoredData() : this.hasStoredData,
   id: id != null ? id() : this.id,

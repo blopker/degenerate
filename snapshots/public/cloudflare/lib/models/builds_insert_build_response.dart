@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (buildUuid != null) 'build_uuid': buildUuid?.toJson(),
   if (createdOn != null) 'created_on': createdOn?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_uuid', 'created_on'}.contains(key)); } 
 BuildsInsertBuildResponse copyWith({BuildsBuildUuid Function()? buildUuid, BuildsCreatedOn Function()? createdOn, }) { return BuildsInsertBuildResponse(
   buildUuid: buildUuid != null ? buildUuid() : this.buildUuid,
   createdOn: createdOn != null ? createdOn() : this.createdOn,

@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'approval_groups', 'approval_required', 'created_at', 'decision', 'exclude', 'id', 'include', 'isolation_required', 'name', 'precedence', 'purpose_justification_prompt', 'purpose_justification_required', 'require', 'updated_at'}.contains(key)); } 
 AccessPolicies copyWith({List<AccessSchemasApprovalGroup> Function()? approvalGroups, AccessSchemasApprovalRequired Function()? approvalRequired, AccessTimestamp Function()? createdAt, AccessSchemasDecision Function()? decision, List<AccessRule> Function()? exclude, AccessUuid Function()? id, List<AccessRule> Function()? include, AccessSchemasIsolationRequired Function()? isolationRequired, AccessPoliciesComponentsSchemasName Function()? name, AccessSchemasPrecedence Function()? precedence, AccessPurposeJustificationPrompt Function()? purposeJustificationPrompt, AccessSchemasPurposeJustificationRequired Function()? purposeJustificationRequired, List<AccessRule> Function()? require, AccessTimestamp Function()? updatedAt, }) { return AccessPolicies(
   approvalGroups: approvalGroups != null ? approvalGroups() : this.approvalGroups,
   approvalRequired: approvalRequired != null ? approvalRequired() : this.approvalRequired,

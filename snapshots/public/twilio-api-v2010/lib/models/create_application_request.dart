@@ -212,7 +212,7 @@ Map<String, dynamic> toJson() { return {
   'FriendlyName': ?friendlyName,
   'PublicApplicationConnectEnabled': ?publicApplicationConnectEnabled,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ApiVersion', 'VoiceUrl', 'VoiceMethod', 'VoiceFallbackUrl', 'VoiceFallbackMethod', 'StatusCallback', 'StatusCallbackMethod', 'VoiceCallerIdLookup', 'SmsUrl', 'SmsMethod', 'SmsFallbackUrl', 'SmsFallbackMethod', 'SmsStatusCallback', 'MessageStatusCallback', 'FriendlyName', 'PublicApplicationConnectEnabled'}.contains(key)); } 
 CreateApplicationRequest copyWith({String Function()? apiVersion, Uri Function()? voiceUrl, CreateApplicationRequestVoiceMethod Function()? voiceMethod, Uri Function()? voiceFallbackUrl, CreateApplicationRequestVoiceFallbackMethod Function()? voiceFallbackMethod, Uri Function()? statusCallback, CreateApplicationRequestStatusCallbackMethod Function()? statusCallbackMethod, bool Function()? voiceCallerIdLookup, Uri Function()? smsUrl, CreateApplicationRequestSmsMethod Function()? smsMethod, Uri Function()? smsFallbackUrl, CreateApplicationRequestSmsFallbackMethod Function()? smsFallbackMethod, Uri Function()? smsStatusCallback, Uri Function()? messageStatusCallback, String Function()? friendlyName, bool Function()? publicApplicationConnectEnabled, }) { return CreateApplicationRequest(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   voiceUrl: voiceUrl != null ? voiceUrl() : this.voiceUrl,

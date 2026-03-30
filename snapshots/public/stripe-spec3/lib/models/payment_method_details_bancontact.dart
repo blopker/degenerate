@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   if (preferredLanguage != null) 'preferred_language': preferredLanguage?.toJson(),
   'verified_name': ?verifiedName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'bank_name', 'bic', 'generated_sepa_debit', 'generated_sepa_debit_mandate', 'iban_last4', 'preferred_language', 'verified_name'}.contains(key)); } 
 PaymentMethodDetailsBancontact copyWith({String? Function()? bankCode, String? Function()? bankName, String? Function()? bic, PaymentMethodDetailsBancontactGeneratedSepaDebit? Function()? generatedSepaDebit, PaymentMethodDetailsBancontactGeneratedSepaDebitMandate? Function()? generatedSepaDebitMandate, String? Function()? ibanLast4, PaymentMethodDetailsBancontactPreferredLanguage? Function()? preferredLanguage, String? Function()? verifiedName, }) { return PaymentMethodDetailsBancontact(
   bankCode: bankCode != null ? bankCode() : this.bankCode,
   bankName: bankName != null ? bankName() : this.bankName,

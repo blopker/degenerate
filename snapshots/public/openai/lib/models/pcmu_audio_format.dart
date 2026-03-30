@@ -35,7 +35,7 @@ final PcmuAudioFormatType? type;
 Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
 PcmuAudioFormat copyWith({PcmuAudioFormatType Function()? type}) { return PcmuAudioFormat(
   type: type != null ? type() : this.type,
 ); } 

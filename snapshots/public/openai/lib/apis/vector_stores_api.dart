@@ -13,10 +13,18 @@ final class VectorStoresApi with ApiExecutor {const VectorStoresApi(this.apiConf
 /// `GET /vector_stores`
 Future<ApiResult<ListVectorStoresResponse, Never>> listVectorStores({int? limit, ListVectorStoresOrder? order, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
-if (before != null) queryParameters['before'] = before;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -182,11 +190,21 @@ return execute(
 /// `GET /vector_stores/{vector_store_id}/file_batches/{batch_id}/files`
 Future<ApiResult<ListVectorStoreFilesResponse, Never>> listFilesInVectorStoreBatch({required String vectorStoreId, required String batchId, int? limit, ListFilesInVectorStoreBatchOrder? order, String? after, String? before, ListFilesInVectorStoreBatchFilter? filter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
-if (before != null) queryParameters['before'] = before;
-if (filter != null) queryParameters['filter'] = filter.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (filter != null) {
+  queryParameters['filter'] = filter.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -211,11 +229,21 @@ return execute(
 /// `GET /vector_stores/{vector_store_id}/files`
 Future<ApiResult<ListVectorStoreFilesResponse, Never>> listVectorStoreFiles({required String vectorStoreId, int? limit, ListVectorStoreFilesOrder? order, String? after, String? before, ListVectorStoreFilesFilter? filter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
-if (before != null) queryParameters['before'] = before;
-if (filter != null) queryParameters['filter'] = filter.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (filter != null) {
+  queryParameters['filter'] = filter.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

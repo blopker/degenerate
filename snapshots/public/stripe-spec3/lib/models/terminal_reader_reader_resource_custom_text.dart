@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'submit_button': ?submitButton,
   'title': ?title,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'skip_button', 'submit_button', 'title'}.contains(key)); } 
 TerminalReaderReaderResourceCustomText copyWith({String? Function()? description, String? Function()? skipButton, String? Function()? submitButton, String? Function()? title, }) { return TerminalReaderReaderResourceCustomText(
   description: description != null ? description() : this.description,
   skipButton: skipButton != null ? skipButton() : this.skipButton,

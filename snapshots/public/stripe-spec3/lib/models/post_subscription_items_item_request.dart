@@ -138,7 +138,7 @@ Map<String, dynamic> toJson() { return {
   'quantity': ?quantity,
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_thresholds', 'discounts', 'expand', 'metadata', 'off_session', 'payment_behavior', 'price', 'price_data', 'proration_behavior', 'proration_date', 'quantity', 'tax_rates'}.contains(key)); } 
 PostSubscriptionItemsItemRequest copyWith({PostSubscriptionItemsItemRequestBillingThresholds Function()? billingThresholds, PostSubscriptionItemsItemRequestDiscounts Function()? discounts, List<String> Function()? expand, PostSubscriptionItemsItemRequestMetadata Function()? metadata, bool Function()? offSession, PostSubscriptionItemsItemRequestPaymentBehavior Function()? paymentBehavior, String Function()? price, PostSubscriptionItemsItemRequestPriceData Function()? priceData, PostSubscriptionItemsItemRequestProrationBehavior Function()? prorationBehavior, int Function()? prorationDate, int Function()? quantity, PostSubscriptionItemsItemRequestTaxRates Function()? taxRates, }) { return PostSubscriptionItemsItemRequest(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   discounts: discounts != null ? discounts() : this.discounts,

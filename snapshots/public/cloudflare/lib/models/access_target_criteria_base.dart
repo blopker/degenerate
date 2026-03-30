@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The port that the targets use for the chosen communication protocol. A port cannot be assigned to multiple protocols.
-extension type const AccessPort(int value) {
-factory AccessPort.fromJson(num json) => AccessPort(json.toInt());
-
-num toJson() => value;
-
-}
-final class AccessTargetCriteriaBase {const AccessTargetCriteriaBase({required this.port, required this.targetAttributes, });
+import 'access_port.dart';final class AccessTargetCriteriaBase {const AccessTargetCriteriaBase({required this.port, required this.targetAttributes, });
 
 factory AccessTargetCriteriaBase.fromJson(Map<String, dynamic> json) { return AccessTargetCriteriaBase(
   port: AccessPort.fromJson(json['port'] as num),

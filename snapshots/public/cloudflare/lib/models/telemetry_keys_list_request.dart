@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (needle != null) 'needle': needle?.toJson(),
   'to': ?to,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'datasets', 'filters', 'from', 'keyNeedle', 'limit', 'needle', 'to'}.contains(key)); } 
 TelemetryKeysListRequest copyWith({List<String> Function()? datasets, List<TelemetryKeysListRequestFilters> Function()? filters, double Function()? from, TelemetryKeysListRequestKeyNeedle Function()? keyNeedle, double Function()? limit, TelemetryKeysListRequestNeedle Function()? needle, double Function()? to, }) { return TelemetryKeysListRequest(
   datasets: datasets != null ? datasets() : this.datasets,
   filters: filters != null ? filters() : this.filters,

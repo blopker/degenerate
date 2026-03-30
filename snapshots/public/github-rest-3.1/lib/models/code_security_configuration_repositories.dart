@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (repository != null) 'repository': repository?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status', 'repository'}.contains(key)); } 
 CodeSecurityConfigurationRepositories copyWith({CodeSecurityConfigurationRepositoriesStatus Function()? status, SimpleRepository Function()? repository, }) { return CodeSecurityConfigurationRepositories(
   status: status != null ? status() : this.status,
   repository: repository != null ? repository() : this.repository,

@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'anchor': anchor.toJson(),
   'seconds': seconds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'anchor', 'seconds'}.contains(key)); } 
 RealtimeCreateClientSecretRequestExpiresAfter copyWith({RealtimeCreateClientSecretRequestExpiresAfterAnchor Function()? anchor, int Function()? seconds, }) { return RealtimeCreateClientSecretRequestExpiresAfter(
   anchor: anchor != null ? anchor() : this.anchor,
   seconds: seconds != null ? seconds() : this.seconds,

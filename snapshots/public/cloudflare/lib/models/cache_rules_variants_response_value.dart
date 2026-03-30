@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_base.dart';final class CacheRulesVariantsResponseValue {const CacheRulesVariantsResponseValue({this.result});
+import 'cache_rules_variants_response_value_result.dart';final class CacheRulesVariantsResponseValue {const CacheRulesVariantsResponseValue({this.result});
 
 factory CacheRulesVariantsResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesVariantsResponseValue(
-  result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? CacheRulesVariantsResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
-/// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the 'Vary: Accept' response header. If the origin server sends 'Vary: Accept' but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
-final CacheRulesBase? result;
+final CacheRulesVariantsResponseValueResult? result;
 
 Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-CacheRulesVariantsResponseValue copyWith({CacheRulesBase Function()? result}) { return CacheRulesVariantsResponseValue(
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
+CacheRulesVariantsResponseValue copyWith({CacheRulesVariantsResponseValueResult Function()? result}) { return CacheRulesVariantsResponseValue(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

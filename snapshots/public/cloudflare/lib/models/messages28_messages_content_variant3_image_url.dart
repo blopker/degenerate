@@ -12,7 +12,7 @@ final String? url;
 Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url'}.contains(key)); } 
 Messages28MessagesContentVariant3ImageUrl copyWith({String Function()? url}) { return Messages28MessagesContentVariant3ImageUrl(
   url: url != null ? url() : this.url,
 ); } 

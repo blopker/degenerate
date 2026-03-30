@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   'idempotency_key': ?idempotencyKey,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'idempotency_key'}.contains(key)); } 
 NotificationEventRequest copyWith({String? Function()? id, String? Function()? idempotencyKey, }) { return NotificationEventRequest(
   id: id != null ? id() : this.id,
   idempotencyKey: idempotencyKey != null ? idempotencyKey() : this.idempotencyKey,

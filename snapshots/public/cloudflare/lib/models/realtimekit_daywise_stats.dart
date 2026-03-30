@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'sessions_count': ?sessionsCount,
   'sessions_minutes_consumed': ?sessionsMinutesConsumed,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'recordings_minutes_consumed', 'sessions_count', 'sessions_minutes_consumed'}.contains(key)); } 
 RealtimekitDaywiseStats copyWith({String Function()? date, double Function()? recordingsMinutesConsumed, double Function()? sessionsCount, double Function()? sessionsMinutesConsumed, }) { return RealtimekitDaywiseStats(
   date: date != null ? date() : this.date,
   recordingsMinutesConsumed: recordingsMinutesConsumed != null ? recordingsMinutesConsumed() : this.recordingsMinutesConsumed,

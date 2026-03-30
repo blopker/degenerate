@@ -21,21 +21,45 @@ final class DependabotApi with ApiExecutor {const DependabotApi(this.apiConfig);
 /// `GET /enterprises/{enterprise}/dependabot/alerts`
 Future<ApiResult<List<DependabotAlertWithRepository>, BasicError>> dependabotListAlertsForEnterprise({required String enterprise, String? state, String? severity, String? ecosystem, String? package, String? epssPercentage, DependabotListAlertsForEnterpriseHas? has, String? assignee, DependabotListAlertsForEnterpriseScope? scope, DependabotListAlertsForEnterpriseSort? sort, DependabotListAlertsForEnterpriseDirection? direction, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (state != null) queryParameters['state'] = state;
-if (severity != null) queryParameters['severity'] = severity;
-if (ecosystem != null) queryParameters['ecosystem'] = ecosystem;
-if (package != null) queryParameters['package'] = package;
-if (epssPercentage != null) queryParameters['epss_percentage'] = epssPercentage;
+if (state != null) {
+  queryParameters['state'] = state;
+}
+if (severity != null) {
+  queryParameters['severity'] = severity;
+}
+if (ecosystem != null) {
+  queryParameters['ecosystem'] = ecosystem;
+}
+if (package != null) {
+  queryParameters['package'] = package;
+}
+if (epssPercentage != null) {
+  queryParameters['epss_percentage'] = epssPercentage;
+}
 if (has != null) {
 queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString(), allowReserved: false));
 }
-if (assignee != null) queryParameters['assignee'] = assignee;
-if (scope != null) queryParameters['scope'] = scope.toJson();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (assignee != null) {
+  queryParameters['assignee'] = assignee;
+}
+if (scope != null) {
+  queryParameters['scope'] = scope.toJson();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -69,8 +93,12 @@ return execute(
 /// `GET /organizations/{org}/dependabot/repository-access`
 Future<ApiResult<DependabotRepositoryAccessDetails, BasicError>> dependabotRepositoryAccessForOrg({required String org, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -170,24 +198,54 @@ return execute(
 /// `GET /orgs/{org}/dependabot/alerts`
 Future<ApiResult<List<DependabotAlertWithRepository>, BasicError>> dependabotListAlertsForOrg({required String org, String? state, String? severity, String? ecosystem, String? package, String? epssPercentage, String? artifactRegistryUrl, String? artifactRegistry, DependabotListAlertsForOrgHas? has, String? assignee, String? runtimeRisk, DependabotListAlertsForOrgScope? scope, DependabotListAlertsForOrgSort? sort, DependabotListAlertsForOrgDirection? direction, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (state != null) queryParameters['state'] = state;
-if (severity != null) queryParameters['severity'] = severity;
-if (ecosystem != null) queryParameters['ecosystem'] = ecosystem;
-if (package != null) queryParameters['package'] = package;
-if (epssPercentage != null) queryParameters['epss_percentage'] = epssPercentage;
-if (artifactRegistryUrl != null) queryParameters['artifact_registry_url'] = artifactRegistryUrl;
-if (artifactRegistry != null) queryParameters['artifact_registry'] = artifactRegistry;
+if (state != null) {
+  queryParameters['state'] = state;
+}
+if (severity != null) {
+  queryParameters['severity'] = severity;
+}
+if (ecosystem != null) {
+  queryParameters['ecosystem'] = ecosystem;
+}
+if (package != null) {
+  queryParameters['package'] = package;
+}
+if (epssPercentage != null) {
+  queryParameters['epss_percentage'] = epssPercentage;
+}
+if (artifactRegistryUrl != null) {
+  queryParameters['artifact_registry_url'] = artifactRegistryUrl;
+}
+if (artifactRegistry != null) {
+  queryParameters['artifact_registry'] = artifactRegistry;
+}
 if (has != null) {
 queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString(), allowReserved: false));
 }
-if (assignee != null) queryParameters['assignee'] = assignee;
-if (runtimeRisk != null) queryParameters['runtime_risk'] = runtimeRisk;
-if (scope != null) queryParameters['scope'] = scope.toJson();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (assignee != null) {
+  queryParameters['assignee'] = assignee;
+}
+if (runtimeRisk != null) {
+  queryParameters['runtime_risk'] = runtimeRisk;
+}
+if (scope != null) {
+  queryParameters['scope'] = scope.toJson();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -221,8 +279,12 @@ return execute(
 /// `GET /orgs/{org}/dependabot/secrets`
 Future<ApiResult<DependabotListOrgSecretsResponse, Never>> dependabotListOrgSecrets({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -346,8 +408,12 @@ return execute(
 /// `GET /orgs/{org}/dependabot/secrets/{secret_name}/repositories`
 Future<ApiResult<DependabotListSelectedReposForOrgSecretResponse, Never>> dependabotListSelectedReposForOrgSecret({required String org, required String secretName, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -445,22 +511,48 @@ return execute(
 /// `GET /repos/{owner}/{repo}/dependabot/alerts`
 Future<ApiResult<List<DependabotAlert>, BasicError>> dependabotListAlertsForRepo({required String owner, required String repo, String? state, String? severity, String? ecosystem, String? package, String? manifest, String? epssPercentage, DependabotListAlertsForRepoHas? has, String? assignee, DependabotListAlertsForRepoScope? scope, DependabotListAlertsForRepoSort? sort, DependabotListAlertsForRepoDirection? direction, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (state != null) queryParameters['state'] = state;
-if (severity != null) queryParameters['severity'] = severity;
-if (ecosystem != null) queryParameters['ecosystem'] = ecosystem;
-if (package != null) queryParameters['package'] = package;
-if (manifest != null) queryParameters['manifest'] = manifest;
-if (epssPercentage != null) queryParameters['epss_percentage'] = epssPercentage;
+if (state != null) {
+  queryParameters['state'] = state;
+}
+if (severity != null) {
+  queryParameters['severity'] = severity;
+}
+if (ecosystem != null) {
+  queryParameters['ecosystem'] = ecosystem;
+}
+if (package != null) {
+  queryParameters['package'] = package;
+}
+if (manifest != null) {
+  queryParameters['manifest'] = manifest;
+}
+if (epssPercentage != null) {
+  queryParameters['epss_percentage'] = epssPercentage;
+}
 if (has != null) {
 queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString(), allowReserved: false));
 }
-if (assignee != null) queryParameters['assignee'] = assignee;
-if (scope != null) queryParameters['scope'] = scope.toJson();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (assignee != null) {
+  queryParameters['assignee'] = assignee;
+}
+if (scope != null) {
+  queryParameters['scope'] = scope.toJson();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -546,8 +638,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/dependabot/secrets`
 Future<ApiResult<DependabotListRepoSecretsResponse, Never>> dependabotListRepoSecrets({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

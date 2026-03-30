@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'will_alert': ?willAlert,
   'alert_recipients': ?alertRecipients,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'will_alert', 'alert_recipients'}.contains(key)); } 
 BillingUpdateBudgetOrgRequestBudgetAlerting copyWith({bool Function()? willAlert, List<String> Function()? alertRecipients, }) { return BillingUpdateBudgetOrgRequestBudgetAlerting(
   willAlert: willAlert != null ? willAlert() : this.willAlert,
   alertRecipients: alertRecipients != null ? alertRecipients() : this.alertRecipients,

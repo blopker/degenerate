@@ -15,10 +15,18 @@ final class DomainSearchApi with ApiExecutor {const DomainSearchApi(this.apiConf
 /// `GET /accounts/{account_id}/brand-protection/matches`
 Future<ApiResult<QueryMatch, ErrorModel>> getAccountsBrandProtectionMatches({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (id != null) queryParameters['id'] = id;
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (includeDomainId != null) queryParameters['include_domain_id'] = includeDomainId.toString();
+if (id != null) {
+  queryParameters['id'] = id;
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (includeDomainId != null) {
+  queryParameters['include_domain_id'] = includeDomainId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -48,10 +56,18 @@ return execute(
 /// `GET /accounts/{account_id}/brand-protection/matches/download`
 Future<ApiResult<QueryMatch, ErrorModel>> getAccountsBrandProtectionMatchesDownload({required String accountId, String? id, int? offset, int? limit, bool? includeDomainId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (id != null) queryParameters['id'] = id;
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (includeDomainId != null) queryParameters['include_domain_id'] = includeDomainId.toString();
+if (id != null) {
+  queryParameters['id'] = id;
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (includeDomainId != null) {
+  queryParameters['include_domain_id'] = includeDomainId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -103,9 +119,15 @@ return execute(
 /// `POST /accounts/{account_id}/brand-protection/queries`
 Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueries({required String accountId, String? id, String? tag, bool? scan, required Query body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (id != null) queryParameters['id'] = id;
-if (tag != null) queryParameters['tag'] = tag;
-if (scan != null) queryParameters['scan'] = scan.toString();
+if (id != null) {
+  queryParameters['id'] = id;
+}
+if (tag != null) {
+  queryParameters['tag'] = tag;
+}
+if (scan != null) {
+  queryParameters['scan'] = scan.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -157,9 +179,15 @@ return execute(
 /// `DELETE /accounts/{account_id}/brand-protection/queries`
 Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionQueries({required String accountId, String? id, String? tag, bool? scan, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (id != null) queryParameters['id'] = id;
-if (tag != null) queryParameters['tag'] = tag;
-if (scan != null) queryParameters['scan'] = scan.toString();
+if (id != null) {
+  queryParameters['id'] = id;
+}
+if (tag != null) {
+  queryParameters['tag'] = tag;
+}
+if (scan != null) {
+  queryParameters['scan'] = scan.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

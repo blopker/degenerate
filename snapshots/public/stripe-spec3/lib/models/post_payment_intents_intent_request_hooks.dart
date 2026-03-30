@@ -12,7 +12,7 @@ final PostPaymentIntentsIntentRequestHooksInputs? inputs;
 Map<String, dynamic> toJson() { return {
   if (inputs != null) 'inputs': inputs?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'inputs'}.contains(key)); } 
 PostPaymentIntentsIntentRequestHooks copyWith({PostPaymentIntentsIntentRequestHooksInputs Function()? inputs}) { return PostPaymentIntentsIntentRequestHooks(
   inputs: inputs != null ? inputs() : this.inputs,
 ); } 

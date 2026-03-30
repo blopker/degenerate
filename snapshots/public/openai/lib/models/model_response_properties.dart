@@ -100,7 +100,7 @@ Map<String, dynamic> toJson() { return {
   if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
   if (promptCacheRetention != null) 'prompt_cache_retention': promptCacheRetention?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'top_logprobs', 'temperature', 'top_p', 'user', 'safety_identifier', 'prompt_cache_key', 'service_tier', 'prompt_cache_retention'}.contains(key)); } 
 ModelResponseProperties copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String Function()? user, String Function()? safetyIdentifier, String Function()? promptCacheKey, ServiceTier? Function()? serviceTier, ModelResponsePropertiesPromptCacheRetention? Function()? promptCacheRetention, }) { return ModelResponseProperties(
   metadata: metadata != null ? metadata() : this.metadata,
   topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,

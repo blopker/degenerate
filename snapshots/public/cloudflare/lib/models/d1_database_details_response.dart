@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (uuid != null) 'uuid': uuid?.toJson(),
   if (version != null) 'version': version?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'file_size', 'jurisdiction', 'name', 'num_tables', 'read_replication', 'uuid', 'version'}.contains(key)); } 
 D1DatabaseDetailsResponse copyWith({D1CreatedAt Function()? createdAt, D1FileSize Function()? fileSize, D1JurisdictionNullable? Function()? jurisdiction, D1DatabaseName Function()? name, D1TableCount Function()? numTables, D1ReadReplicationDetails Function()? readReplication, D1DatabaseIdentifier Function()? uuid, D1DatabaseVersion Function()? version, }) { return D1DatabaseDetailsResponse(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   fileSize: fileSize != null ? fileSize() : this.fileSize,

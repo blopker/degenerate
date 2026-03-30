@@ -13,7 +13,7 @@ final List<AuditLogIpAllowlistConfigDeactivatedConfigs>? configs;
 Map<String, dynamic> toJson() { return {
   if (configs != null) 'configs': configs?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configs'}.contains(key)); } 
 AuditLogIpAllowlistConfigDeactivated copyWith({List<AuditLogIpAllowlistConfigDeactivatedConfigs> Function()? configs}) { return AuditLogIpAllowlistConfigDeactivated(
   configs: configs != null ? configs() : this.configs,
 ); } 

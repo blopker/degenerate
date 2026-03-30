@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_field_type.dart';import 'cloudflare_pipelines_format.dart';final class CloudflarePipelinesConnectionSchema {const CloudflarePipelinesConnectionSchema({this.fields, this.format, this.inferred, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_format.dart';import 'cloudflare_pipelines_source_field.dart';final class CloudflarePipelinesConnectionSchema {const CloudflarePipelinesConnectionSchema({this.fields, this.format, this.inferred, });
 
 factory CloudflarePipelinesConnectionSchema.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesConnectionSchema(
-  fields: (json['fields'] as List<dynamic>?)?.map((e) => CloudflarePipelinesFieldType.fromJson(e as Map<String, dynamic>)).toList(),
+  fields: (json['fields'] as List<dynamic>?)?.map((e) => CloudflarePipelinesSourceField.fromJson(e as Map<String, dynamic>)).toList(),
   format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
   inferred: json['inferred'] as bool?,
 ); }
 
-final List<CloudflarePipelinesFieldType>? fields;
+final List<CloudflarePipelinesSourceField>? fields;
 
 final CloudflarePipelinesFormat? format;
 
@@ -19,8 +19,8 @@ Map<String, dynamic> toJson() { return {
   if (format != null) 'format': format?.toJson(),
   'inferred': ?inferred,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-CloudflarePipelinesConnectionSchema copyWith({List<CloudflarePipelinesFieldType> Function()? fields, CloudflarePipelinesFormat Function()? format, bool? Function()? inferred, }) { return CloudflarePipelinesConnectionSchema(
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fields', 'format', 'inferred'}.contains(key)); } 
+CloudflarePipelinesConnectionSchema copyWith({List<CloudflarePipelinesSourceField> Function()? fields, CloudflarePipelinesFormat Function()? format, bool? Function()? inferred, }) { return CloudflarePipelinesConnectionSchema(
   fields: fields != null ? fields() : this.fields,
   format: format != null ? format() : this.format,
   inferred: inferred != null ? inferred() : this.inferred,

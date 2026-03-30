@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'can_switch_connected_meetings': ?canSwitchConnectedMeetings,
   'can_switch_to_parent_meeting': ?canSwitchToParentMeeting,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_alter_connected_meetings', 'can_switch_connected_meetings', 'can_switch_to_parent_meeting'}.contains(key)); } 
 RealtimekitUpdatePresetPermissionsConnectedMeetings copyWith({bool Function()? canAlterConnectedMeetings, bool Function()? canSwitchConnectedMeetings, bool Function()? canSwitchToParentMeeting, }) { return RealtimekitUpdatePresetPermissionsConnectedMeetings(
   canAlterConnectedMeetings: canAlterConnectedMeetings != null ? canAlterConnectedMeetings() : this.canAlterConnectedMeetings,
   canSwitchConnectedMeetings: canSwitchConnectedMeetings != null ? canSwitchConnectedMeetings() : this.canSwitchConnectedMeetings,

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'msg': ?msg,
   'support_url': ?supportUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'include_context', 'msg', 'support_url'}.contains(key)); } 
 ZeroTrustGatewayRuleSettingsNotificationSettings copyWith({bool Function()? enabled, bool Function()? includeContext, String Function()? msg, String Function()? supportUrl, }) { return ZeroTrustGatewayRuleSettingsNotificationSettings(
   enabled: enabled != null ? enabled() : this.enabled,
   includeContext: includeContext != null ? includeContext() : this.includeContext,

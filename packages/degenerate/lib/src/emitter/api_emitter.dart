@@ -11,7 +11,9 @@ import 'media_type_utils.dart';
 class ApiEmitter {
   final IrApi api;
   final Map<String, IrType> typeRegistry;
-  const ApiEmitter(this.api, {this.typeRegistry = const {}});
+  final List<String> unwrapFields;
+  const ApiEmitter(this.api, {this.typeRegistry = const {},
+      this.unwrapFields = const []});
 
   /// Wrapper around [buildFromJsonCode] that passes the type registry.
   String _fromJson(
@@ -60,7 +62,7 @@ class ApiEmitter {
           ..methods.addAll(api.operations.map(_buildOperation))
           ..methods.addAll(
             api.operations
-                .where((op) => eventStreamContent(op) != null)
+                .where((op) => streamingContent(op) != null)
                 .map(_buildStreamingOperation),
           ),
       ),
@@ -220,10 +222,20 @@ class ApiEmitter {
 
     // Determine return type from success response
     final successResponseContent = _successResponseContent(op);
-    final returnType = successResponseContent?.$2.schema;
+    var returnType = successResponseContent?.$2.schema;
+    // Unwrap response envelope if configured.
+    final unwrapResult = _maybeUnwrapResponseType(returnType);
+    returnType = unwrapResult.type;
+    final unwrappedFieldIsOptional = unwrapResult.fieldIsOptional;
     final errorResponseContent = _errorResponseContent(op);
     final errorType = errorResponseContent?.$2.schema;
-    final returnTypeStr = returnType != null ? irTypeName(returnType) : 'void';
+    final needsNullableSuffix = unwrapResult.unwrappedField != null &&
+        returnType != null &&
+        returnType.isNullable &&
+        !(returnType is IrPrimitive && returnType.kind == PrimitiveKind.dynamic_);
+    final returnTypeStr = returnType != null
+        ? '${irTypeName(returnType)}${needsNullableSuffix ? '?' : ''}'
+        : 'void';
     final errorTypeStr = errorType != null ? irTypeName(errorType) : 'Never';
     final futureType = 'Future<ApiResult<$returnTypeStr, $errorTypeStr>>';
 
@@ -239,6 +251,8 @@ class ApiEmitter {
       queryParams: queryParams,
       headerParams: headerParams,
       cookieParams: cookieParams,
+      unwrappedField: unwrapResult.unwrappedField,
+      unwrappedFieldIsOptional: unwrappedFieldIsOptional,
     );
 
     final docs = <String>[];
@@ -249,7 +263,7 @@ class ApiEmitter {
       docs.add('///');
       docs.addAll(formatDocComment(op.description!));
     }
-    final httpMethod = op.method.name.toUpperCase();
+    final httpMethod = _httpMethodString(op);
     docs.add('///');
     docs.add('/// `$httpMethod ${op.path}`');
 
@@ -284,9 +298,11 @@ class ApiEmitter {
     required List<IrParameter> queryParams,
     required List<IrParameter> headerParams,
     required List<IrParameter> cookieParams,
+    String? unwrappedField,
+    bool unwrappedFieldIsOptional = false,
   }) {
     final buf = StringBuffer();
-    final httpMethod = op.method.name.toUpperCase();
+    final httpMethod = _httpMethodString(op);
 
     // Build path with parameter interpolation (URL-encoded)
     final pathParamsByName = {for (final p in pathParams) p.name: p};
@@ -349,9 +365,9 @@ class ApiEmitter {
         if (p.isRequired) {
           buf.writeln("cookies['$sanitizedName'] = $cookieValue;");
         } else {
-          buf.writeln(
-            "if (${p.dartName} != null) cookies['$sanitizedName'] = $cookieValue;",
-          );
+          buf.writeln("if (${p.dartName} != null) {");
+          buf.writeln("  cookies['$sanitizedName'] = $cookieValue;");
+          buf.writeln('}');
         }
       }
       buf.writeln();
@@ -371,17 +387,14 @@ class ApiEmitter {
       buf.writeln("headers['Content-Type'] = '$contentType';");
     }
     for (final p in headerParams) {
-      final sanitizedName = p.name
-          .replaceAll('\n', '')
-          .replaceAll('\r', '')
-          .trim();
+      final sanitizedName = _sanitizeParameterName(p.name);
       final headerValue = _toStringExpr(p);
       if (p.isRequired) {
         buf.writeln("headers['$sanitizedName'] = $headerValue;");
       } else {
-        buf.writeln(
-          "if (${p.dartName} != null) headers['$sanitizedName'] = $headerValue;",
-        );
+        buf.writeln("if (${p.dartName} != null) {");
+        buf.writeln("  headers['$sanitizedName'] = $headerValue;");
+        buf.writeln('}');
       }
     }
     buf.writeln();
@@ -424,14 +437,21 @@ class ApiEmitter {
 
     // Build onSuccess callback
     if (returnType != null) {
-      final deserialize = _buildDeserializeExpr(
-        successResponseContent!.$1,
-        returnType,
-      );
       buf.writeln('return execute(');
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (response) {');
-      buf.writeln('    $deserialize');
+      if (unwrappedField != null) {
+        // Unwrap: parse full JSON, extract the field, deserialize it.
+        final escaped = escapeDartString(unwrappedField);
+        buf.writeln("    final json = jsonDecode(response.body) as Map<String, dynamic>;");
+        buf.writeln("    return ${_fromJson(returnType, "json['$escaped']", isOptional: unwrappedFieldIsOptional)};");
+      } else {
+        final deserialize = _buildDeserializeExpr(
+          successResponseContent!.$1,
+          returnType,
+        );
+        buf.writeln('    $deserialize');
+      }
       buf.writeln('  },');
     } else {
       buf.writeln('return execute(');
@@ -548,9 +568,9 @@ class ApiEmitter {
     if (p.isRequired && !p.type.isNullable) {
       buf.writeln("queryParameters['$sanitizedName'] = $queryValue;");
     } else {
-      buf.writeln(
-        "if (${p.dartName} != null) queryParameters['$sanitizedName'] = $queryValue;",
-      );
+      buf.writeln("if (${p.dartName} != null) {");
+      buf.writeln("  queryParameters['$sanitizedName'] = $queryValue;");
+      buf.writeln('}');
     }
   }
 
@@ -619,7 +639,7 @@ class ApiEmitter {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} case final $localVar?) queryParameters['$key'] = $valueExpr;",
+            "if ($accessor.${field.name} case final $localVar?) { queryParameters['$key'] = $valueExpr; }",
           );
         } else {
           final valueExpr = _queryScalarExpr(
@@ -638,7 +658,7 @@ class ApiEmitter {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} case final $localVar?) queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr, allowReserved: ${p.allowReserved}));",
+            "if ($accessor.${field.name} case final $localVar?) { queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr, allowReserved: ${p.allowReserved})); }",
           );
         } else {
           final valueExpr = _queryScalarExpr(
@@ -736,7 +756,52 @@ class ApiEmitter {
       p.explode ?? (style == 'form');
 
   String _sanitizeParameterName(String value) =>
-      value.replaceAll('\n', '').replaceAll('\r', '').trim();
+      escapeDartString(value.replaceAll('\n', '').replaceAll('\r', '').trim());
+
+  /// Returns the HTTP method string for an operation (e.g. 'GET', 'HAUNT').
+  static String _httpMethodString(IrOperation op) =>
+      op.customMethod ?? op.method.name.toUpperCase();
+
+  /// If [unwrapFields] is configured and [type] is an object (or ref to one)
+  /// with a matching field, return that field's type and the JSON key used
+  /// to extract it. Otherwise returns the original type with no field name.
+  ({IrType? type, String? unwrappedField, bool fieldIsOptional})
+      _maybeUnwrapResponseType(IrType? type) {
+    if (type == null || unwrapFields.isEmpty) {
+      return (type: type, unwrappedField: null, fieldIsOptional: false);
+    }
+    final obj = _resolveToObject(type);
+    if (obj == null) {
+      return (type: type, unwrappedField: null, fieldIsOptional: false);
+    }
+    for (final fieldName in unwrapFields) {
+      for (final f in obj.fields) {
+        if (f.originalName == fieldName) {
+          final isOptional = !f.isRequired || f.type.isNullable;
+          var fieldType = f.type;
+          if (isOptional && !fieldType.isNullable) {
+            fieldType = fieldType.copyAsNullable();
+          }
+          return (
+            type: fieldType,
+            unwrappedField: fieldName,
+            fieldIsOptional: isOptional,
+          );
+        }
+      }
+    }
+    return (type: type, unwrappedField: null, fieldIsOptional: false);
+  }
+
+  /// Resolve an IrType to an IrObject if possible (through IrTypeRef).
+  IrObject? _resolveToObject(IrType type) {
+    if (type is IrObject) return type;
+    if (type is IrTypeRef) {
+      final resolved = typeRegistry[type.name];
+      if (resolved is IrObject) return resolved;
+    }
+    return null;
+  }
 
   Method _buildStreamingOperation(IrOperation op) {
     final params = <Parameter>[];
@@ -832,13 +897,16 @@ class ApiEmitter {
       ),
     );
 
-    final sseContent = eventStreamContent(op)!;
-    final eventType = sseContent.$2.schema;
+    final streaming = streamingContent(op)!;
+    final streamKind = streaming.$3;
+    // Prefer itemSchema (per-event type) over schema (full response type).
+    final eventType = streaming.$2.itemSchema ?? streaming.$2.schema;
     final eventTypeName = irTypeName(eventType);
 
     final bodyCode = _buildStreamingOperationBody(
       op,
       eventType,
+      streamKind: streamKind,
       requestBodyContent: requestBodyContent,
       bodyType: bodyType,
       pathParams: pathParams,
@@ -853,7 +921,7 @@ class ApiEmitter {
     } else {
       docs.add('/// Stream response.');
     }
-    final httpMethod = op.method.name.toUpperCase();
+    final httpMethod = _httpMethodString(op);
     docs.add('///');
     docs.add('/// `$httpMethod ${op.path}`');
 
@@ -870,6 +938,7 @@ class ApiEmitter {
   String _buildStreamingOperationBody(
     IrOperation op,
     IrType eventType, {
+    StreamKind streamKind = StreamKind.sse,
     (String, IrMediaType)? requestBodyContent,
     IrType? bodyType,
     required List<IrParameter> pathParams,
@@ -878,7 +947,7 @@ class ApiEmitter {
     required List<IrParameter> cookieParams,
   }) {
     final buf = StringBuffer();
-    final httpMethod = op.method.name.toUpperCase();
+    final httpMethod = _httpMethodString(op);
 
     // Reuse path interpolation logic
     final pathParamsByName = {for (final p in pathParams) p.name: p};
@@ -940,9 +1009,9 @@ class ApiEmitter {
         if (p.isRequired) {
           buf.writeln("cookies['$sanitizedName'] = $cookieValue;");
         } else {
-          buf.writeln(
-            "if (${p.dartName} != null) cookies['$sanitizedName'] = $cookieValue;",
-          );
+          buf.writeln("if (${p.dartName} != null) {");
+          buf.writeln("  cookies['$sanitizedName'] = $cookieValue;");
+          buf.writeln('}');
         }
       }
       buf.writeln();
@@ -961,17 +1030,14 @@ class ApiEmitter {
       buf.writeln("headers['Content-Type'] = '$contentType';");
     }
     for (final p in headerParams) {
-      final sanitizedName = p.name
-          .replaceAll('\n', '')
-          .replaceAll('\r', '')
-          .trim();
+      final sanitizedName = _sanitizeParameterName(p.name);
       final headerValue = _toStringExpr(p);
       if (p.isRequired) {
         buf.writeln("headers['$sanitizedName'] = $headerValue;");
       } else {
-        buf.writeln(
-          "if (${p.dartName} != null) headers['$sanitizedName'] = $headerValue;",
-        );
+        buf.writeln("if (${p.dartName} != null) {");
+        buf.writeln("  headers['$sanitizedName'] = $headerValue;");
+        buf.writeln('}');
       }
     }
     buf.writeln();
@@ -1007,9 +1073,13 @@ class ApiEmitter {
     buf.writeln(');');
     buf.writeln();
 
-    // Build the deserialize expression for each SSE event
+    // Build the deserialize expression for each streamed event
     final deserializeExpr = _buildSseDeserializeExpr(eventType);
-    buf.writeln('return executeStreaming(');
+    final executeMethod = switch (streamKind) {
+      StreamKind.sse => 'executeStreaming',
+      StreamKind.jsonl => 'executeJsonlStreaming',
+    };
+    buf.writeln('return $executeMethod(');
     buf.writeln('  request,');
     buf.writeln('  onEvent: (data) {');
     buf.writeln('    $deserializeExpr');
@@ -1315,7 +1385,10 @@ class ApiEmitter {
         PrimitiveKind.string => v is String,
         _ => false,
       },
-      IrEnum() => v is String,
+      IrEnum(:final valueKind) => switch (valueKind) {
+        PrimitiveKind.int || PrimitiveKind.double => v is num,
+        _ => v is String,
+      },
       _ => false,
     };
   }

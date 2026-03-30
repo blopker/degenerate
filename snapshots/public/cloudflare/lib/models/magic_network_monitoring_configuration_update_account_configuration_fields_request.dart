@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (routerIps != null) 'router_ips': routerIps?.map((e) => e.toJson()).toList(),
   if (warpDevices != null) 'warp_devices': warpDevices?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_sampling', 'name', 'router_ips', 'warp_devices'}.contains(key)); } 
 MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest copyWith({MagicVisibilityMnmMnmConfigDefaultSampling Function()? defaultSampling, MagicVisibilityMnmMnmConfigName Function()? name, List<MagicVisibilityMnmMnmConfigRouterIp> Function()? routerIps, List<MagicVisibilityMnmMnmConfigWarpDevice> Function()? warpDevices, }) { return MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest(
   defaultSampling: defaultSampling != null ? defaultSampling() : this.defaultSampling,
   name: name != null ? name() : this.name,

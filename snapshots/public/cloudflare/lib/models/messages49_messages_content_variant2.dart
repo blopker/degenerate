@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'text': ?text,
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text', 'type'}.contains(key)); } 
 Messages49MessagesContentVariant2 copyWith({String Function()? text, String Function()? type, }) { return Messages49MessagesContentVariant2(
   text: text != null ? text() : this.text,
   type: type != null ? type() : this.type,

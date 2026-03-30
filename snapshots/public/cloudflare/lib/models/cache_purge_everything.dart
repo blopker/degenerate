@@ -12,7 +12,7 @@ final bool? purgeEverything;
 Map<String, dynamic> toJson() { return {
   'purge_everything': ?purgeEverything,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'purge_everything'}.contains(key)); } 
 CachePurgeEverything copyWith({bool Function()? purgeEverything}) { return CachePurgeEverything(
   purgeEverything: purgeEverything != null ? purgeEverything() : this.purgeEverything,
 ); } 

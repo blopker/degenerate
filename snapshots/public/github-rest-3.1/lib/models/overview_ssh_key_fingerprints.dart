@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'SHA256_ECDSA': ?sha256Ecdsa,
   'SHA256_ED25519': ?sha256Ed25519,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'SHA256_RSA', 'SHA256_DSA', 'SHA256_ECDSA', 'SHA256_ED25519'}.contains(key)); } 
 OverviewSshKeyFingerprints copyWith({String Function()? sha256Rsa, String Function()? sha256Dsa, String Function()? sha256Ecdsa, String Function()? sha256Ed25519, }) { return OverviewSshKeyFingerprints(
   sha256Rsa: sha256Rsa != null ? sha256Rsa() : this.sha256Rsa,
   sha256Dsa: sha256Dsa != null ? sha256Dsa() : this.sha256Dsa,

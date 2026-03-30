@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'display_name': ?displayName,
   'expand': ?expand,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_name', 'expand'}.contains(key)); } 
 PostBillingMetersIdRequest copyWith({String Function()? displayName, List<String> Function()? expand, }) { return PostBillingMetersIdRequest(
   displayName: displayName != null ? displayName() : this.displayName,
   expand: expand != null ? expand() : this.expand,

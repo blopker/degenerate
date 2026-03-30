@@ -12,7 +12,7 @@ final DnsRecordsIdentifier? id;
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
 DnsRecordsForAZoneDeleteDnsRecordResponseResult copyWith({DnsRecordsIdentifier Function()? id}) { return DnsRecordsForAZoneDeleteDnsRecordResponseResult(
   id: id != null ? id() : this.id,
 ); } 

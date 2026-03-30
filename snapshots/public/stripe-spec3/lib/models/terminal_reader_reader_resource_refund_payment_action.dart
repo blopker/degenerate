@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   if (refundPaymentConfig != null) 'refund_payment_config': refundPaymentConfig?.toJson(),
   'reverse_transfer': ?reverseTransfer,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'metadata', 'payment_intent', 'reason', 'refund', 'refund_application_fee', 'refund_payment_config', 'reverse_transfer'}.contains(key)); } 
 TerminalReaderReaderResourceRefundPaymentAction copyWith({int Function()? amount, TerminalReaderReaderResourceRefundPaymentActionCharge Function()? charge, Map<String, String> Function()? metadata, TerminalReaderReaderResourceRefundPaymentActionPaymentIntent Function()? paymentIntent, TerminalReaderReaderResourceRefundPaymentActionReason Function()? reason, TerminalReaderReaderResourceRefundPaymentActionRefund Function()? refund, bool Function()? refundApplicationFee, TerminalReaderReaderResourceRefundPaymentConfig Function()? refundPaymentConfig, bool Function()? reverseTransfer, }) { return TerminalReaderReaderResourceRefundPaymentAction(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,

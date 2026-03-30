@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'columns': ?columns,
   if (rows != null) 'rows': rows?.map((e) => e.map((e) => e.toJson()).toList()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'columns', 'rows'}.contains(key)); } 
 D1RawResultResponseResults copyWith({List<String> Function()? columns, List<List<D1RawResultResponseResultsRows>> Function()? rows, }) { return D1RawResultResponseResults(
   columns: columns != null ? columns() : this.columns,
   rows: rows != null ? rows() : this.rows,

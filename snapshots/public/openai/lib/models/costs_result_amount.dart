@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
   'currency': ?currency,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value', 'currency'}.contains(key)); } 
 CostsResultAmount copyWith({double Function()? value, String Function()? currency, }) { return CostsResultAmount(
   value: value != null ? value() : this.value,
   currency: currency != null ? currency() : this.currency,

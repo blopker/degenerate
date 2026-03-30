@@ -41,7 +41,7 @@ final List<PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictionsBrands
 Map<String, dynamic> toJson() { return {
   if (brandsBlocked != null) 'brands_blocked': brandsBlocked?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brands_blocked'}.contains(key)); } 
 PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictions copyWith({List<PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictionsBrandsBlocked> Function()? brandsBlocked}) { return PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictions(
   brandsBlocked: brandsBlocked != null ? brandsBlocked() : this.brandsBlocked,
 ); } 

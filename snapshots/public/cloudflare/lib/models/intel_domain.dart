@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_additional_information.dart';import 'intel_application.dart';import 'intel_category_with_super_category_id.dart';import 'intel_content_categories2.dart';import 'intel_domain_name.dart';import 'intel_resolves_to_ref.dart';/// Domain from which `inherited_content_categories` and `inherited_risk_types` are inherited, if applicable.
-extension type const IntelInheritedFrom(String value) {
-factory IntelInheritedFrom.fromJson(String json) => IntelInheritedFrom(json);
-
-String toJson() => value;
-
-}
-/// Global Cloudflare 100k ranking for the last 30 days, if available for the hostname. The top ranked domain is 1, the lowest ranked domain is 100,000.
-extension type const IntelPopularityRank(int value) {
-factory IntelPopularityRank.fromJson(num json) => IntelPopularityRank(json.toInt());
-
-num toJson() => value;
-
-}
-/// Hostname risk score, which is a value between 0 (lowest risk) to 1 (highest risk).
-extension type const IntelRiskScore(double value) {
-factory IntelRiskScore.fromJson(num json) => IntelRiskScore(json.toDouble());
-
-num toJson() => value;
-
-}
-final class IntelDomain {const IntelDomain({this.additionalInformation, this.application, this.contentCategories, this.domain, this.inheritedContentCategories, this.inheritedFrom, this.inheritedRiskTypes, this.popularityRank, this.resolvesToRefs, this.riskScore, this.riskTypes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_additional_information.dart';import 'intel_application.dart';import 'intel_category_with_super_category_id.dart';import 'intel_content_categories2.dart';import 'intel_domain_name.dart';import 'intel_inherited_from.dart';import 'intel_popularity_rank.dart';import 'intel_resolves_to_ref.dart';import 'intel_risk_score.dart';final class IntelDomain {const IntelDomain({this.additionalInformation, this.application, this.contentCategories, this.domain, this.inheritedContentCategories, this.inheritedFrom, this.inheritedRiskTypes, this.popularityRank, this.resolvesToRefs, this.riskScore, this.riskTypes, });
 
 factory IntelDomain.fromJson(Map<String, dynamic> json) { return IntelDomain(
   additionalInformation: json['additional_information'] != null ? IntelAdditionalInformation.fromJson(json['additional_information'] as Map<String, dynamic>) : null,
@@ -72,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (riskScore != null) 'risk_score': riskScore?.toJson(),
   if (riskTypes != null) 'risk_types': riskTypes?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_information', 'application', 'content_categories', 'domain', 'inherited_content_categories', 'inherited_from', 'inherited_risk_types', 'popularity_rank', 'resolves_to_refs', 'risk_score', 'risk_types'}.contains(key)); } 
 IntelDomain copyWith({IntelAdditionalInformation Function()? additionalInformation, IntelApplication Function()? application, List<IntelContentCategories2> Function()? contentCategories, IntelDomainName Function()? domain, List<IntelCategoryWithSuperCategoryId> Function()? inheritedContentCategories, IntelInheritedFrom Function()? inheritedFrom, List<IntelCategoryWithSuperCategoryId> Function()? inheritedRiskTypes, IntelPopularityRank Function()? popularityRank, List<IntelResolvesToRef> Function()? resolvesToRefs, IntelRiskScore Function()? riskScore, List<IntelCategoryWithSuperCategoryId> Function()? riskTypes, }) { return IntelDomain(
   additionalInformation: additionalInformation != null ? additionalInformation() : this.additionalInformation,
   application: application != null ? application() : this.application,

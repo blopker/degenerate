@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'private': private,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'private'}.contains(key)); } 
 CodespacesPublishForAuthenticatedUserRequest copyWith({String Function()? name, bool Function()? private, }) { return CodespacesPublishForAuthenticatedUserRequest(
   name: name != null ? name() : this.name,
   private: private != null ? private() : this.private,

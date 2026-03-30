@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'verified': ?verified,
   'street_secondary': ?streetSecondary,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'city', 'customer_name', 'date_created', 'date_updated', 'friendly_name', 'iso_country', 'postal_code', 'region', 'sid', 'street', 'uri', 'emergency_enabled', 'validated', 'verified', 'street_secondary'}.contains(key)); } 
 AccountAddress copyWith({String? Function()? accountSid, String? Function()? city, String? Function()? customerName, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? isoCountry, String? Function()? postalCode, String? Function()? region, String? Function()? sid, String? Function()? street, String? Function()? uri, bool? Function()? emergencyEnabled, bool? Function()? validated, bool? Function()? verified, String? Function()? streetSecondary, }) { return AccountAddress(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   city: city != null ? city() : this.city,

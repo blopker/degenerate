@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'email': ?email,
   'website': ?website,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'website'}.contains(key)); } 
 TenantTenantContacts copyWith({String Function()? email, String Function()? website, }) { return TenantTenantContacts(
   email: email != null ? email() : this.email,
   website: website != null ? website() : this.website,

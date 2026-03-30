@@ -944,7 +944,7 @@ Map<String, dynamic> toJson() { return {
   'terminal_id': ?terminalId,
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'category', 'city', 'country', 'name', 'network_id', 'postal_code', 'state', 'terminal_id', 'url'}.contains(key)); } 
 PostTestHelpersIssuingAuthorizationsRequestMerchantData copyWith({PostTestHelpersIssuingAuthorizationsRequestMerchantDataCategory Function()? category, String Function()? city, String Function()? country, String Function()? name, String Function()? networkId, String Function()? postalCode, String Function()? state, String Function()? terminalId, String Function()? url, }) { return PostTestHelpersIssuingAuthorizationsRequestMerchantData(
   category: category != null ? category() : this.category,
   city: city != null ? city() : this.city,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'd': ?d,
   'c': ?c,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'w', 'a', 'd', 'c'}.contains(key)); } 
 ContributorActivityWeeks copyWith({int Function()? w, int Function()? a, int Function()? d, int Function()? c, }) { return ContributorActivityWeeks(
   w: w != null ? w() : this.w,
   a: a != null ? a() : this.a,

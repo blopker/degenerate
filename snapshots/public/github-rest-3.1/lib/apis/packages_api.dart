@@ -45,9 +45,15 @@ return execute(
 Future<ApiResult<List<Package>, BasicError>> packagesListPackagesForOrganization({required String org, required PackagesListPackagesForOrganizationPackageType packageType, PackagesListPackagesForOrganizationVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['package_type'] = packageType.toJson();
-if (visibility != null) queryParameters['visibility'] = visibility.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (visibility != null) {
+  queryParameters['visibility'] = visibility.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -135,7 +141,9 @@ return execute(
 /// `POST /orgs/{org}/packages/{package_type}/{package_name}/restore`
 Future<ApiResult<void, BasicError>> packagesRestorePackageForOrg({required PackagesRestorePackageForOrgPackageType packageType, required String packageName, required String org, String? token, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (token != null) queryParameters['token'] = token;
+if (token != null) {
+  queryParameters['token'] = token;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -165,9 +173,15 @@ return execute(
 /// `GET /orgs/{org}/packages/{package_type}/{package_name}/versions`
 Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByOrg({required PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType packageType, required String packageName, required String org, int? page, int? perPage, PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (state != null) queryParameters['state'] = state.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -304,9 +318,15 @@ return execute(
 Future<ApiResult<List<Package>, Never>> packagesListPackagesForAuthenticatedUser({required PackagesListPackagesForAuthenticatedUserPackageType packageType, PackagesListPackagesForAuthenticatedUserVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['package_type'] = packageType.toJson();
-if (visibility != null) queryParameters['visibility'] = visibility.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (visibility != null) {
+  queryParameters['visibility'] = visibility.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -387,7 +407,9 @@ return execute(
 /// `POST /user/packages/{package_type}/{package_name}/restore`
 Future<ApiResult<void, BasicError>> packagesRestorePackageForAuthenticatedUser({required PackagesRestorePackageForAuthenticatedUserPackageType packageType, required String packageName, String? token, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (token != null) queryParameters['token'] = token;
+if (token != null) {
+  queryParameters['token'] = token;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -417,9 +439,15 @@ return execute(
 /// `GET /user/packages/{package_type}/{package_name}/versions`
 Future<ApiResult<List<PackageVersion>, BasicError>> packagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUser({required PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType packageType, required String packageName, int? page, int? perPage, PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (state != null) queryParameters['state'] = state.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -557,9 +585,15 @@ return execute(
 Future<ApiResult<List<Package>, BasicError>> packagesListPackagesForUser({required String username, required PackagesListPackagesForUserPackageType packageType, PackagesListPackagesForUserVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['package_type'] = packageType.toJson();
-if (visibility != null) queryParameters['visibility'] = visibility.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (visibility != null) {
+  queryParameters['visibility'] = visibility.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -647,7 +681,9 @@ return execute(
 /// `POST /users/{username}/packages/{package_type}/{package_name}/restore`
 Future<ApiResult<void, BasicError>> packagesRestorePackageForUser({required PackagesRestorePackageForUserPackageType packageType, required String packageName, required String username, String? token, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (token != null) queryParameters['token'] = token;
+if (token != null) {
+  queryParameters['token'] = token;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

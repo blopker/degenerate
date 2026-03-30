@@ -12,7 +12,7 @@ final List<String>? ruleIds;
 Map<String, dynamic> toJson() { return {
   'ruleIds': ?ruleIds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ruleIds'}.contains(key)); } 
 R2EventNotificationDeleteConfigRequest copyWith({List<String> Function()? ruleIds}) { return R2EventNotificationDeleteConfigRequest(
   ruleIds: ruleIds != null ? ruleIds() : this.ruleIds,
 ); } 

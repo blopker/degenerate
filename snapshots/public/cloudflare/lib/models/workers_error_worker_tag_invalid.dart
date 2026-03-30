@@ -1,25 +1,47 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+/// Code indicating that the Worker has a tag containing invalid characters.
+final class WorkersErrorWorkerTagInvalidCode {const WorkersErrorWorkerTagInvalidCode._(this.value);
+
+factory WorkersErrorWorkerTagInvalidCode.fromJson(int json) { return switch (json) {
+  100134 => $100134,
+  _ => WorkersErrorWorkerTagInvalidCode._(json),
+}; }
+
+static const WorkersErrorWorkerTagInvalidCode $100134 = WorkersErrorWorkerTagInvalidCode._(100134);
+
+static const List<WorkersErrorWorkerTagInvalidCode> values = [$100134];
+
+final int value;
+
+int toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorkersErrorWorkerTagInvalidCode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorkersErrorWorkerTagInvalidCode($value)'; } 
+ }
 final class WorkersErrorWorkerTagInvalid {const WorkersErrorWorkerTagInvalid({required this.code, required this.message, });
 
 factory WorkersErrorWorkerTagInvalid.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerTagInvalid(
-  code: (json['code'] as num).toInt(),
+  code: WorkersErrorWorkerTagInvalidCode.fromJson((json['code'] as num).toInt()),
   message: json['message'] as String,
 ); }
 
 /// Code indicating that the Worker has a tag containing invalid characters.
-final int code;
+final WorkersErrorWorkerTagInvalidCode code;
 
 /// Message explaining that tags cannot contain certain characters like comma or ampersand.
 final String message;
 
 Map<String, dynamic> toJson() { return {
-  'code': code,
+  'code': code.toJson(),
   'message': message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
       json.containsKey('message') && json['message'] is String; } 
-WorkersErrorWorkerTagInvalid copyWith({int? code, String? message, }) { return WorkersErrorWorkerTagInvalid(
+WorkersErrorWorkerTagInvalid copyWith({WorkersErrorWorkerTagInvalidCode? code, String? message, }) { return WorkersErrorWorkerTagInvalid(
   code: code ?? this.code,
   message: message ?? this.message,
 ); } 

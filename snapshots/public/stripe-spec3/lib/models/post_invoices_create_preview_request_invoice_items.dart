@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
   'unit_amount': ?unitAmount,
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'description', 'discountable', 'discounts', 'invoiceitem', 'metadata', 'period', 'price', 'price_data', 'quantity', 'tax_behavior', 'tax_code', 'tax_rates', 'unit_amount', 'unit_amount_decimal'}.contains(key)); } 
 PostInvoicesCreatePreviewRequestInvoiceItems copyWith({int Function()? amount, String Function()? currency, String Function()? description, bool Function()? discountable, PostInvoicesCreatePreviewRequestInvoiceItemsDiscounts Function()? discounts, String Function()? invoiceitem, PostInvoicesCreatePreviewRequestInvoiceItemsMetadata Function()? metadata, PostInvoicesCreatePreviewRequestInvoiceItemsPeriod Function()? period, String Function()? price, PostInvoicesCreatePreviewRequestInvoiceItemsPriceData Function()? priceData, int Function()? quantity, PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior Function()? taxBehavior, PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode Function()? taxCode, PostInvoicesCreatePreviewRequestInvoiceItemsTaxRates Function()? taxRates, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return PostInvoicesCreatePreviewRequestInvoiceItems(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,

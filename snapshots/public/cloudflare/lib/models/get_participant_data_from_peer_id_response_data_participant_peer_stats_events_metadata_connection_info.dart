@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'throughput': ?throughput,
   'turn_connectivity': ?turnConnectivity,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'backend_r_t_t', 'connectivity', 'effective_network_type', 'fractional_loss', 'ip_details', 'jitter', 'location', 'r_t_t', 'throughput', 'turn_connectivity'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfo copyWith({double Function()? backendRTT, GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoConnectivity Function()? connectivity, String Function()? effectiveNetworkType, int Function()? fractionalLoss, GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails Function()? ipDetails, int Function()? jitter, GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoLocation Function()? location, double Function()? rTT, int Function()? throughput, bool Function()? turnConnectivity, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfo(
   backendRTT: backendRTT != null ? backendRTT() : this.backendRTT,
   connectivity: connectivity != null ? connectivity() : this.connectivity,

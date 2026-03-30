@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'is_email_regex': ?isEmailRegex,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'is_email_regex', 'name'}.contains(key)); } 
 EmailSecurityUpdateDisplayNameRequest copyWith({String? Function()? email, bool? Function()? isEmailRegex, String? Function()? name, }) { return EmailSecurityUpdateDisplayNameRequest(
   email: email != null ? email() : this.email,
   isEmailRegex: isEmailRegex != null ? isEmailRegex() : this.isEmailRegex,

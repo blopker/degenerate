@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'score': ?score,
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attachment', 'detail', 'detection', 'field', 'name', 'portion', 'reason', 'score', 'value'}.contains(key)); } 
 EmailSecurityMailsearchMessageFindings copyWith({String? Function()? attachment, String? Function()? detail, EmailSecurityDispositionLabel? Function()? detection, String? Function()? field, String? Function()? name, String? Function()? portion, String? Function()? reason, double? Function()? score, String? Function()? value, }) { return EmailSecurityMailsearchMessageFindings(
   attachment: attachment != null ? attachment() : this.attachment,
   detail: detail != null ? detail() : this.detail,

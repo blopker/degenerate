@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (preconditions != null) 'preconditions': preconditions?.toJson(),
   'propagationPolicy': ?propagationPolicy,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'dryRun', 'gracePeriodSeconds', 'ignoreStoreReadErrorWithClusterBreakingPotential', 'kind', 'orphanDependents', 'preconditions', 'propagationPolicy'}.contains(key)); } 
 DeleteOptions copyWith({String Function()? apiVersion, List<String> Function()? dryRun, int Function()? gracePeriodSeconds, bool Function()? ignoreStoreReadErrorWithClusterBreakingPotential, String Function()? kind, bool Function()? orphanDependents, Preconditions Function()? preconditions, String Function()? propagationPolicy, }) { return DeleteOptions(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   dryRun: dryRun != null ? dryRun() : this.dryRun,

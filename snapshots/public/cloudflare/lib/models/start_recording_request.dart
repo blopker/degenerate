@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toString(),
   if (videoConfig != null) 'video_config': videoConfig?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_multiple_recordings', 'audio_config', 'file_name_prefix', 'interactive_config', 'max_seconds', 'meeting_id', 'realtimekit_bucket_config', 'rtmp_out_config', 'storage_config', 'url', 'video_config'}.contains(key)); } 
 StartRecordingRequest copyWith({bool Function()? allowMultipleRecordings, RealtimekitAudioConfig Function()? audioConfig, String Function()? fileNamePrefix, RealtimekitInteractiveConfig Function()? interactiveConfig, int Function()? maxSeconds, String Function()? meetingId, RealtimekitRealtimekitBucketConfig Function()? realtimekitBucketConfig, RealtimekitLivestreamingConfig Function()? rtmpOutConfig, RealtimekitStorageConfig Function()? storageConfig, Uri Function()? url, RealtimekitVideoConfig Function()? videoConfig, }) { return StartRecordingRequest(
   allowMultipleRecordings: allowMultipleRecordings != null ? allowMultipleRecordings() : this.allowMultipleRecordings,
   audioConfig: audioConfig != null ? audioConfig() : this.audioConfig,

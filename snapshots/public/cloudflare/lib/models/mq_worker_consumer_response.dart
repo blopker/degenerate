@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (settings != null) 'settings': settings?.toJson(),
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'consumer_id', 'created_on', 'dead_letter_queue', 'queue_name', 'script_name', 'settings', 'type'}.contains(key)); } 
 MqWorkerConsumerResponse copyWith({MqIdentifier Function()? consumerId, DateTime Function()? createdOn, String Function()? deadLetterQueue, MqQueueName Function()? queueName, MqScriptName Function()? scriptName, MqWorkerConsumerResponseSettings Function()? settings, String Function()? type, }) { return MqWorkerConsumerResponse(
   consumerId: consumerId != null ? consumerId() : this.consumerId,
   createdOn: createdOn != null ? createdOn() : this.createdOn,

@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'deadline': ?deadline,
   if (restrictedReason != null) 'restricted_reason': restrictedReason?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deadline', 'restricted_reason'}.contains(key)); } 
 TreasuryReceivedDebitsResourceReversalDetails copyWith({int? Function()? deadline, TreasuryReceivedDebitsResourceReversalDetailsRestrictedReason? Function()? restrictedReason, }) { return TreasuryReceivedDebitsResourceReversalDetails(
   deadline: deadline != null ? deadline() : this.deadline,
   restrictedReason: restrictedReason != null ? restrictedReason() : this.restrictedReason,

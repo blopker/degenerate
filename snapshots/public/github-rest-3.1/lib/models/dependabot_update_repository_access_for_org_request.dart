@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'repository_ids_to_add': ?repositoryIdsToAdd,
   'repository_ids_to_remove': ?repositoryIdsToRemove,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'repository_ids_to_add', 'repository_ids_to_remove'}.contains(key)); } 
 DependabotUpdateRepositoryAccessForOrgRequest copyWith({List<int> Function()? repositoryIdsToAdd, List<int> Function()? repositoryIdsToRemove, }) { return DependabotUpdateRepositoryAccessForOrgRequest(
   repositoryIdsToAdd: repositoryIdsToAdd != null ? repositoryIdsToAdd() : this.repositoryIdsToAdd,
   repositoryIdsToRemove: repositoryIdsToRemove != null ? repositoryIdsToRemove() : this.repositoryIdsToRemove,

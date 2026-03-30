@@ -35,7 +35,7 @@ final PaymentMethodOptionsParam32CaptureMethod? captureMethod;
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
 PaymentMethodOptionsParam32 copyWith({PaymentMethodOptionsParam32CaptureMethod Function()? captureMethod}) { return PaymentMethodOptionsParam32(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
 ); } 

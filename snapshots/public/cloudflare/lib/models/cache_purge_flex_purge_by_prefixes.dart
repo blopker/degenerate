@@ -12,7 +12,7 @@ final List<String>? prefixes;
 Map<String, dynamic> toJson() { return {
   'prefixes': ?prefixes,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'prefixes'}.contains(key)); } 
 CachePurgeFlexPurgeByPrefixes copyWith({List<String> Function()? prefixes}) { return CachePurgeFlexPurgeByPrefixes(
   prefixes: prefixes != null ? prefixes() : this.prefixes,
 ); } 

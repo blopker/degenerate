@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (revokedAt != null) 'revoked_at': revokedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'revoked_at'}.contains(key)); } 
 TlsCertificatesAndHostnamesCertificateRevokeResponseResult copyWith({TlsCertificatesAndHostnamesIdentifier Function()? id, TlsCertificatesAndHostnamesRevokedAt Function()? revokedAt, }) { return TlsCertificatesAndHostnamesCertificateRevokeResponseResult(
   id: id != null ? id() : this.id,
   revokedAt: revokedAt != null ? revokedAt() : this.revokedAt,

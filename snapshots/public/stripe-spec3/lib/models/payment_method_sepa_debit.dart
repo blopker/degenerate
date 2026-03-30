@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (generatedFrom != null) 'generated_from': generatedFrom?.toJson(),
   'last4': ?last4,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'branch_code', 'country', 'fingerprint', 'generated_from', 'last4'}.contains(key)); } 
 PaymentMethodSepaDebit copyWith({String? Function()? bankCode, String? Function()? branchCode, String? Function()? country, String? Function()? fingerprint, PaymentMethodSepaDebitGeneratedFrom? Function()? generatedFrom, String? Function()? last4, }) { return PaymentMethodSepaDebit(
   bankCode: bankCode != null ? bankCode() : this.bankCode,
   branchCode: branchCode != null ? branchCode() : this.branchCode,

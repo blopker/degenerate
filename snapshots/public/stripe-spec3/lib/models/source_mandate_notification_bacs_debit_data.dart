@@ -13,7 +13,7 @@ final String? last4;
 Map<String, dynamic> toJson() { return {
   'last4': ?last4,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'last4'}.contains(key)); } 
 SourceMandateNotificationBacsDebitData copyWith({String Function()? last4}) { return SourceMandateNotificationBacsDebitData(
   last4: last4 != null ? last4() : this.last4,
 ); } 

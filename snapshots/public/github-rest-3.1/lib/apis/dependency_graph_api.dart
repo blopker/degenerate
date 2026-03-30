@@ -15,7 +15,9 @@ final class DependencyGraphApi with ApiExecutor {const DependencyGraphApi(this.a
 /// `GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}`
 Future<ApiResult<List<DependencyGraphDiff2>, BasicError>> dependencyGraphDiffRange({required String owner, required String repo, required String basehead, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
+if (name != null) {
+  queryParameters['name'] = name;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'start': ?start,
   'word': ?word,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'end', 'start', 'word'}.contains(key)); } 
 AutomaticSpeechRecognition2Words copyWith({double Function()? end, double Function()? start, String Function()? word, }) { return AutomaticSpeechRecognition2Words(
   end: end != null ? end() : this.end,
   start: start != null ? start() : this.start,

@@ -38,7 +38,7 @@ final CheckoutLinkWalletOptionsDisplay? display;
 Map<String, dynamic> toJson() { return {
   if (display != null) 'display': display?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display'}.contains(key)); } 
 CheckoutLinkWalletOptions copyWith({CheckoutLinkWalletOptionsDisplay Function()? display}) { return CheckoutLinkWalletOptions(
   display: display != null ? display() : this.display,
 ); } 

@@ -13,9 +13,15 @@ final class ConversationsApi with ApiExecutor {const ConversationsApi(this.apiCo
 /// `GET /conversations/{conversation_id}/items`
 Future<ApiResult<ConversationItemList, Never>> listConversationItems({required String conversationId, int? limit, ListConversationItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 if (include != null) {
 for (final item in include) {
   queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));

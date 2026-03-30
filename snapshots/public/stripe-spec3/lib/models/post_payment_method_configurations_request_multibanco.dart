@@ -12,7 +12,7 @@ final PostPaymentMethodConfigurationsRequestMultibancoDisplayPreference? display
 Map<String, dynamic> toJson() { return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
 PostPaymentMethodConfigurationsRequestMultibanco copyWith({PostPaymentMethodConfigurationsRequestMultibancoDisplayPreference Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestMultibanco(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
 ); } 

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'request': ?request,
   'response': ?response,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'request', 'response'}.contains(key)); } 
 AccountCallCallEvent copyWith({dynamic Function()? request, dynamic Function()? response, }) { return AccountCallCallEvent(
   request: request != null ? request() : this.request,
   response: response != null ? response() : this.response,

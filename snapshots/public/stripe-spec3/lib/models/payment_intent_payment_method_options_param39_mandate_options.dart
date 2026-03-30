@@ -157,7 +157,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentsPerPeriod != null) 'payments_per_period': paymentsPerPeriod?.toJson(),
   if (purpose != null) 'purpose': purpose?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'end_date', 'payment_schedule', 'payments_per_period', 'purpose'}.contains(key)); } 
 PaymentIntentPaymentMethodOptionsParam39MandateOptions copyWith({PaymentIntentPaymentMethodOptionsParam39MandateOptionsAmount Function()? amount, PaymentIntentPaymentMethodOptionsParam39MandateOptionsAmountType Function()? amountType, PaymentIntentPaymentMethodOptionsParam39MandateOptionsEndDate Function()? endDate, PaymentIntentPaymentMethodOptionsParam39MandateOptionsPaymentSchedule Function()? paymentSchedule, PaymentIntentPaymentMethodOptionsParam39MandateOptionsPaymentsPerPeriod Function()? paymentsPerPeriod, PaymentIntentPaymentMethodOptionsParam39MandateOptionsPurpose Function()? purpose, }) { return PaymentIntentPaymentMethodOptionsParam39MandateOptions(
   amount: amount != null ? amount() : this.amount,
   amountType: amountType != null ? amountType() : this.amountType,

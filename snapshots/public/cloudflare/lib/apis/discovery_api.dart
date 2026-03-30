@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/discovery_origin.dart';import '../models/discovery_patch_multiple_request_entry.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_direction.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_order.dart';import '../models/discovery_state.dart';import '../models/patch_discovered_operation_request.dart';import '../models/response_common6.dart';import '../models/shield_identifier.dart';import '../models/shield_uuid.dart';/// DiscoveryApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/discovery_origin.dart';import '../models/discovery_patch_multiple_request_entry.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_direction.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_order.dart';import '../models/discovery_state.dart';import '../models/patch_discovered_operation_request.dart';import '../models/shield_discovery_operation.dart';import '../models/shield_identifier.dart';import '../models/shield_patch_discovery_response_result.dart';import '../models/shield_schema_response_discovery_result.dart';import '../models/shield_uuid.dart';/// DiscoveryApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DiscoveryApi with ApiExecutor {const DiscoveryApi(this.apiConfig);
 /// Retrieve the most up to date view of discovered operations, rendered as OpenAPI schemas
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required ShieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldSchemaResponseDiscoveryResult, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required ShieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return ShieldSchemaResponseDiscoveryResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -34,10 +35,14 @@ return execute(
 /// Retrieve the most up to date view of discovered operations
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery/operations`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldDiscoveryOperation>, Never>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, List<String>? host, List<String>? method, String? endpoint, DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection? direction, DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder? order, bool? diff, DiscoveryOrigin? origin, DiscoveryState? state, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 if (host != null) {
 for (final item in host) {
   queryParametersList.add(ApiQueryParameter(name: 'host', value: item, allowReserved: false));
@@ -48,12 +53,24 @@ for (final item in method) {
   queryParametersList.add(ApiQueryParameter(name: 'method', value: item, allowReserved: false));
 }
 }
-if (endpoint != null) queryParameters['endpoint'] = endpoint;
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (order != null) queryParameters['order'] = order.toJson();
-if (diff != null) queryParameters['diff'] = diff.toString();
-if (origin != null) queryParameters['origin'] = origin.toJson();
-if (state != null) queryParameters['state'] = state.toJson();
+if (endpoint != null) {
+  queryParameters['endpoint'] = endpoint;
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (diff != null) {
+  queryParameters['diff'] = diff.toString();
+}
+if (origin != null) {
+  queryParameters['origin'] = origin.toJson();
+}
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -69,7 +86,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => ShieldDiscoveryOperation.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -78,7 +96,7 @@ return execute(
 /// Update the `state` on one or more discovered operations
 ///
 /// `PATCH /zones/{zone_id}/api_gateway/discovery/operations`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldApiPatchDiscoveredOperations({required ShieldIdentifier zoneId, required Map<String,DiscoveryPatchMultipleRequestEntry> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, DiscoveryPatchMultipleRequestEntry>, Never>> apiShieldApiPatchDiscoveredOperations({required ShieldIdentifier zoneId, required Map<String,DiscoveryPatchMultipleRequestEntry> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,7 +110,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, DiscoveryPatchMultipleRequestEntry.fromJson(v as Map<String, dynamic>)));
   },
 );
  } 
@@ -101,7 +120,7 @@ return execute(
 /// Update the `state` on a discovered operation
 ///
 /// `PATCH /zones/{zone_id}/api_gateway/discovery/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, Never>> apiShieldApiPatchDiscoveredOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, required PatchDiscoveredOperationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldPatchDiscoveryResponseResult, Never>> apiShieldApiPatchDiscoveredOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, required PatchDiscoveredOperationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,7 +134,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return ShieldPatchDiscoveryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

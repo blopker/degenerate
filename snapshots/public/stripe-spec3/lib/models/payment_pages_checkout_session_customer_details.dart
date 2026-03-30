@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   if (taxExempt != null) 'tax_exempt': taxExempt?.toJson(),
   if (taxIds != null) 'tax_ids': taxIds?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'business_name', 'email', 'individual_name', 'name', 'phone', 'tax_exempt', 'tax_ids'}.contains(key)); } 
 PaymentPagesCheckoutSessionCustomerDetails copyWith({PaymentPagesCheckoutSessionCustomerDetailsAddress? Function()? address, String? Function()? businessName, String? Function()? email, String? Function()? individualName, String? Function()? name, String? Function()? phone, PaymentPagesCheckoutSessionCustomerDetailsTaxExempt? Function()? taxExempt, List<PaymentPagesCheckoutSessionTaxId>? Function()? taxIds, }) { return PaymentPagesCheckoutSessionCustomerDetails(
   address: address != null ? address() : this.address,
   businessName: businessName != null ? businessName() : this.businessName,

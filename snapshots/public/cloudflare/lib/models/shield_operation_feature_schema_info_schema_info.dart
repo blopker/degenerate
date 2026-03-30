@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   'learned_available': ?learnedAvailable,
   if (mitigationAction != null) 'mitigation_action': mitigationAction?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active_schema', 'learned_available', 'mitigation_action'}.contains(key)); } 
 ShieldOperationFeatureSchemaInfoSchemaInfo copyWith({ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema Function()? activeSchema, bool Function()? learnedAvailable, ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction? Function()? mitigationAction, }) { return ShieldOperationFeatureSchemaInfoSchemaInfo(
   activeSchema: activeSchema != null ? activeSchema() : this.activeSchema,
   learnedAvailable: learnedAvailable != null ? learnedAvailable() : this.learnedAvailable,

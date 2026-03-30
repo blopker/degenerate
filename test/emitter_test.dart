@@ -130,6 +130,134 @@ void main() {
       });
     });
 
+    group('additionalProperties overflow map', () {
+      late String source;
+
+      setUp(() {
+        final model = IrObject(
+          'Metadata',
+          [
+            IrField(
+              'name',
+              'name',
+              const IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['name'],
+          additionalProperties: const IrPrimitive(PrimitiveKind.string),
+        );
+        final specs = ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        source = emitRaw(library);
+      });
+
+      test('emits overflow map field', () {
+        expect(source, contains('Map<String,String> additionalProperties'));
+      });
+
+      test('constructor has overflow param with const {} default', () {
+        expect(source, contains('this.additionalProperties = const {}'));
+      });
+
+      test('fromJson filters known keys into overflow', () {
+        expect(source, contains("!const {'name'}"));
+        expect(source, contains('additionalProperties:'));
+      });
+
+      test('toJson spreads overflow', () {
+        expect(source, contains('...additionalProperties'));
+      });
+
+      test('is valid Dart', () {
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+
+    group('additionalProperties with dynamic values', () {
+      test('emits Map<String, dynamic> for additionalProperties: true', () {
+        final model = IrObject(
+          'Config',
+          [
+            IrField('id', 'id', const IrPrimitive(PrimitiveKind.string),
+                isRequired: true),
+          ],
+          requiredFields: ['id'],
+          additionalProperties:
+              const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true),
+        );
+        final specs = ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        final source = emitRaw(library);
+
+        expect(source, contains('Map<String,dynamic> additionalProperties'));
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+
+    group('canParse checks known keys when no required fields', () {
+      late String source;
+
+      setUp(() {
+        final model = IrObject('Config', [
+          IrField(
+            'name',
+            'name',
+            const IrPrimitive(PrimitiveKind.string),
+          ),
+          IrField(
+            'value',
+            'value',
+            const IrPrimitive(PrimitiveKind.int),
+          ),
+        ]);
+        final specs = ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        source = emitRaw(library);
+      });
+
+      test('does not return unconditional true', () {
+        expect(source, isNot(contains('canParse(Map<String, dynamic> json) { return true;')));
+      });
+
+      test('checks for known property keys', () {
+        expect(source, contains("'name'"));
+        expect(source, contains("'value'"));
+        expect(source, contains('json.keys.any'));
+      });
+
+      test('is valid Dart', () {
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+
+    group('field named toString does not conflict with Object.toString', () {
+      late String source;
+
+      setUp(() {
+        // Field name '$toString' simulates sanitizeFieldName('toString')
+        final model = IrObject('Proto', [
+          IrField(
+            r'$toString',
+            'toString',
+            const IrPrimitive(PrimitiveKind.string),
+            defaultValue: '[object Object]',
+          ),
+        ]);
+        final specs = ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        source = emitRaw(library);
+      });
+
+      test('uses escaped field name', () {
+        expect(source, contains(r'final String $toString'));
+      });
+
+      test('is valid Dart (no conflicting_field_and_method)', () {
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+
     group('dynamic fields from PrimitiveKind.dynamic_', () {
       late String source;
 
@@ -255,6 +383,30 @@ void main() {
 
     test('enum code is valid Dart', () {
       final irEnum = IrEnum('Color', ['red', 'green', 'blue']);
+      final specs = EnumEmitter(irEnum).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      final source = emitRaw(library);
+
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('emits integer enum with int value field', () {
+      final irEnum = IrEnum('Priority', ['0', '1', '2'],
+          valueKind: PrimitiveKind.int);
+      final specs = EnumEmitter(irEnum).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      final source = emitRaw(library);
+
+      expect(source, contains('final int value;'));
+      expect(source, contains('factory Priority.fromJson(int json)'));
+      expect(source, contains('int toJson()'));
+      expect(source, contains('Priority._(0)'));
+      expect(source, contains('Priority._(1)'));
+    });
+
+    test('integer enum is valid Dart', () {
+      final irEnum = IrEnum('Priority', ['0', '-1', '42'],
+          valueKind: PrimitiveKind.int);
       final specs = EnumEmitter(irEnum).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
@@ -653,11 +805,10 @@ void main() {
       'optional header params are conditionally written into request headers',
       () {
         expect(source, contains('xRequestId'));
+        expect(source, contains("if (xRequestId != null) {"));
         expect(
           source,
-          contains(
-            "if (xRequestId != null) headers['X-Request-Id'] = xRequestId;",
-          ),
+          contains("headers['X-Request-Id'] = xRequestId;"),
         );
       },
     );
@@ -2610,6 +2761,187 @@ void main() {
         escapeDocComment('type <Foo.Bar> end'),
         'type `<Foo.Bar>` end',
       );
+    });
+  });
+
+  group('ApiEmitter - unwrapFields', () {
+    test('unwraps response envelope to result field type', () {
+      final envelopeType = IrObject('GetZoneResponse', [
+        IrField('success', 'success', const IrPrimitive(PrimitiveKind.bool),
+            isRequired: true),
+        IrField('errors', 'errors',
+            const IrList(IrPrimitive(PrimitiveKind.dynamic_)),
+            isRequired: true),
+        IrField('result', 'result', IrTypeRef('Zone')),
+      ]);
+      final api = IrApi('ZonesApi', [
+        IrOperation(
+          'getZone',
+          'getZone',
+          HttpMethod.get,
+          '/zones/{id}',
+          responses: {
+            200: IrResponse(
+              content: {
+                'application/json': IrMediaType(IrTypeRef('GetZoneResponse')),
+              },
+            ),
+          },
+        ),
+      ]);
+      final typeRegistry = <String, IrType>{
+        'GetZoneResponse': envelopeType,
+        'Zone': IrObject('Zone', [
+          IrField('id', 'id', const IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ]),
+      };
+      final specs = ApiEmitter(api,
+              typeRegistry: typeRegistry, unwrapFields: ['result'])
+          .emit();
+      final source = emitRaw(
+        Library(
+          (b) => b
+            ..directives.add(Directive.import('dart:convert'))
+            ..body.addAll(specs),
+        ),
+      );
+
+      // Return type should be Zone?, not GetZoneResponse
+      // (result field is optional so return type is nullable)
+      expect(source, contains('Future<ApiResult<Zone?, Never>>'));
+      expect(source, isNot(contains('GetZoneResponse')));
+      // Should extract 'result' from parsed JSON
+      expect(source, contains("json['result']"));
+    });
+
+    test('does not unwrap when field is not present', () {
+      final api = IrApi('PetsApi', [
+        IrOperation(
+          'listPets',
+          'listPets',
+          HttpMethod.get,
+          '/pets',
+          responses: {
+            200: IrResponse(
+              content: {
+                'application/json': IrMediaType(
+                  IrList(IrTypeRef('Pet')),
+                ),
+              },
+            ),
+          },
+        ),
+      ]);
+      final specs = ApiEmitter(api, unwrapFields: ['result']).emit();
+      final source = emitRaw(
+        Library(
+          (b) => b
+            ..directives.add(Directive.import('dart:convert'))
+            ..body.addAll(specs),
+        ),
+      );
+
+      // List<Pet> has no 'result' field — should not unwrap
+      expect(source, contains('Future<ApiResult<List<Pet>, Never>>'));
+    });
+  });
+
+  group('ApiEmitter - dollar sign in parameter names', () {
+    late String source;
+
+    setUp(() {
+      final api = IrApi('TestApi', [
+        IrOperation(
+          'listItems',
+          'listItems',
+          HttpMethod.get,
+          '/items',
+          parameters: [
+            IrParameter(
+              r'$filter',
+              r'$filter',
+              ParameterLocation.query,
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: false,
+            ),
+            IrParameter(
+              r'$top',
+              r'$top',
+              ParameterLocation.header,
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: false,
+            ),
+          ],
+          responses: {
+            200: IrResponse(
+              content: {
+                'application/json': IrMediaType(
+                  IrPrimitive(PrimitiveKind.string),
+                ),
+              },
+            ),
+          },
+        ),
+      ]);
+      final specs = ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      source = emitRaw(library);
+    });
+
+    test('escapes dollar sign in query parameter key', () {
+      expect(source, contains(r"queryParameters['\$filter']"));
+    });
+
+    test('escapes dollar sign in header parameter key', () {
+      expect(source, contains(r"headers['\$top']"));
+    });
+
+    test('is valid Dart', () {
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+  });
+
+  group('escapeDartString', () {
+    test('escapes backslash, quote, and dollar', () {
+      expect(escapeDartString(r"a\b"), r"a\\b");
+      expect(escapeDartString("a'b"), r"a\'b");
+      expect(escapeDartString(r'a$b'), r'a\$b');
+    });
+
+    test('escapes newline', () {
+      expect(escapeDartString('\n'), r'\n');
+    });
+
+    test('escapes carriage return', () {
+      expect(escapeDartString('\r'), r'\r');
+    });
+
+    test('escapes tab', () {
+      expect(escapeDartString('\t'), r'\t');
+    });
+
+    test('escapes mixed control characters', () {
+      expect(escapeDartString('a\nb\tc\r'), r'a\nb\tc\r');
+    });
+
+    test('escapes bidi override characters', () {
+      expect(escapeDartString('\u202E'), r'\u202E');
+      expect(escapeDartString('\u202D'), r'\u202D');
+    });
+
+    test('escapes zero-width characters', () {
+      expect(escapeDartString('\u200B'), r'\u200B');
+      expect(escapeDartString('\uFEFF'), r'\uFEFF');
+    });
+
+    test('escapes bidi chars embedded in text', () {
+      expect(escapeDartString('\u202Egnirts'), r'\u202Egnirts');
+      expect(escapeDartString('a\u200Bb'), r'a\u200Bb');
     });
   });
 }

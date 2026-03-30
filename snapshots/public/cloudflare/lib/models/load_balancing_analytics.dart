@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'pool': ?pool,
   if (timestamp != null) 'timestamp': timestamp?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'origins', 'pool', 'timestamp'}.contains(key)); } 
 LoadBalancingAnalytics copyWith({int Function()? id, List<LoadBalancingOriginAnalytics> Function()? origins, Map<String, dynamic> Function()? pool, DateTime Function()? timestamp, }) { return LoadBalancingAnalytics(
   id: id != null ? id() : this.id,
   origins: origins != null ? origins() : this.origins,

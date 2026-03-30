@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (uploadedOn != null) 'uploaded_on': uploadedOn?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ca', 'certificates', 'expires_on', 'id', 'issuer', 'name', 'serial_number', 'signature', 'updated_at', 'uploaded_on'}.contains(key)); } 
 TlsCertificatesAndHostnamesCertificateObjectPost copyWith({TlsCertificatesAndHostnamesCa Function()? ca, TlsCertificatesAndHostnamesSchemasCertificates Function()? certificates, TlsCertificatesAndHostnamesSchemasExpiresOn Function()? expiresOn, TlsCertificatesAndHostnamesIdentifier Function()? id, TlsCertificatesAndHostnamesSchemasIssuer Function()? issuer, TlsCertificatesAndHostnamesSchemasName Function()? name, TlsCertificatesAndHostnamesSchemasSerialNumber Function()? serialNumber, TlsCertificatesAndHostnamesSignature Function()? signature, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUpdatedAt Function()? updatedAt, TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUploadedOn Function()? uploadedOn, }) { return TlsCertificatesAndHostnamesCertificateObjectPost(
   ca: ca != null ? ca() : this.ca,
   certificates: certificates != null ? certificates() : this.certificates,

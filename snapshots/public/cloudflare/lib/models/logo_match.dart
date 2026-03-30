@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (matches != null) 'matches': matches?.map((e) => e).toList(),
   'total': ?total,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'matches', 'total'}.contains(key)); } 
 LogoMatch copyWith({List<Map<String, dynamic>> Function()? matches, int Function()? total, }) { return LogoMatch(
   matches: matches != null ? matches() : this.matches,
   total: total != null ? total() : this.total,

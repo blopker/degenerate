@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'lt': ?lt,
   'lte': ?lte,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'gt', 'gte', 'lt', 'lte'}.contains(key)); } 
 ListAuditLogsEffectiveAt copyWith({int Function()? gt, int Function()? gte, int Function()? lt, int Function()? lte, }) { return ListAuditLogsEffectiveAt(
   gt: gt != null ? gt() : this.gt,
   gte: gte != null ? gte() : this.gte,

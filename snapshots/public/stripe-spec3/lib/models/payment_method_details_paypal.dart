@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (sellerProtection != null) 'seller_protection': sellerProtection?.toJson(),
   'transaction_id': ?transactionId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country', 'payer_email', 'payer_id', 'payer_name', 'seller_protection', 'transaction_id'}.contains(key)); } 
 PaymentMethodDetailsPaypal copyWith({String? Function()? country, String? Function()? payerEmail, String? Function()? payerId, String? Function()? payerName, PaymentMethodDetailsPaypalSellerProtection? Function()? sellerProtection, String? Function()? transactionId, }) { return PaymentMethodDetailsPaypal(
   country: country != null ? country() : this.country,
   payerEmail: payerEmail != null ? payerEmail() : this.payerEmail,

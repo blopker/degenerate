@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (back != null) 'back': back?.toJson(),
   if (front != null) 'front': front?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'back', 'front'}.contains(key)); } 
 IssuingCardholderIdDocument copyWith({IssuingCardholderIdDocumentBack? Function()? back, IssuingCardholderIdDocumentFront? Function()? front, }) { return IssuingCardholderIdDocument(
   back: back != null ? back() : this.back,
   front: front != null ? front() : this.front,

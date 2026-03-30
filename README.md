@@ -20,11 +20,13 @@
 
 ## Features
 
-- **Strives for full OpenAPI 3.0 and 3.1 compatibility** including `allOf`, `oneOf`, `anyOf`, discriminated unions, nullable types, circular references, and external `$ref` file resolution. [File a bug](https://github.com/blopker/degenerate/issues) if something doesn't work
+- **Strives for full OpenAPI 3.0, 3.1, and 3.2 compatibility** including `allOf`, `oneOf`, `anyOf`, discriminated unions, `additionalProperties`, nullable types, circular references, external `$ref` file resolution, and the OAS 3.2 `query` method + `additionalOperations`. [File a bug](https://github.com/blopker/degenerate/issues) if something doesn't work
 - **Forward-compatible**: unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
 - **Lightweight unions**: `oneOf`/`anyOf` schemas emit `typedef` aliases over generic `OneOf` containers with pattern matching support, avoiding heavy sealed class hierarchies
+- **Typed streaming**: SSE (`text/event-stream`) and JSONL (`application/jsonl`) responses with `itemSchema` return `Stream<T>` with typed deserialization
+- **Response envelope unwrapping**: `--unwrap-fields=result` returns the inner type directly instead of the full envelope, matching how Stainless generates Cloudflare/OpenAI SDKs
 - **Zero analysis issues**: generated code passes default `dart analyze` with no errors, warnings, or hints
-- **Fast**: generates ~12,000 files from the Cloudflare spec in ~6 seconds (AOT compiled)
+- **Fast**: generates ~14,000 files from the Cloudflare spec in ~6 seconds (AOT compiled)
 - **Tag & path filtering**: generate only the APIs you need with `--tag` and `--path`; unused types are automatically tree-shaken
 - **Multi-format request/response**: JSON, text, binary, multipart/form-data, and form-urlencoded bodies with media-type-aware serialization
 - **Pluggable HTTP**: bring your own HTTP client via `degenerate_http` (package:http) or `degenerate_dio` (package:dio), or implement the `ApiClient` interface
@@ -105,6 +107,7 @@ Options:
       --workspace          Generate a standalone package with pubspec.yaml (for Dart workspaces)
   -v, --verbose            Print IR and diagnostics
       --dry-run            Parse and validate without writing files
+      --unwrap-fields      Unwrap response envelopes by extracting named fields (repeatable)
   -h, --help               Show help
       --version            Print the tool version
 ```
@@ -169,6 +172,10 @@ curl -s https://petstore3.swagger.io/api/v3/openapi.json | dart run degenerate -
 # Workspace mode with custom output base
 dart run degenerate -i spec.yaml -o my_packages --workspace -n my_api
 # Output: my_packages/my_api/
+
+# Unwrap Cloudflare-style response envelopes
+# Methods return T directly instead of {success, errors, messages, result: T}
+dart run degenerate -i cloudflare.yaml --unwrap-fields=result
 ```
 
 Tag matching is case-insensitive and ignores spaces, underscores, and hyphens. When tags or paths are specified, unused types are automatically tree-shaken from the output.
@@ -254,10 +261,11 @@ Each schema with `properties` generates a `final class` with:
 - `copyWith()` with nullable callbacks for optional fields
 - Value equality (`==` and `hashCode`)
 - `toString()` with all fields
+- `additionalProperties` overflow `Map<String, T>` when the schema allows extra keys
 
 ### Enums
 
-String enums generate a `final class` with static const instances. Unknown server values are preserved via the raw `value` field, enabling round-trip fidelity:
+String, integer, and number enums generate a `final class` with static const instances. Unknown server values are preserved via the raw `value` field, enabling round-trip fidelity:
 
 ```dart
 final class PetStatus {
@@ -528,10 +536,11 @@ final name = ref.watch(petProvider.select((pet) => pet.name));
 | GitHub REST 3.1 | 0 issues |
 | Cloudflare | 0 issues |
 | Stripe | 0 issues |
+| Unhinged (3.2 edge cases) | 0 issues |
 
 ## Limitations
 
-- **Swagger 2.0** is not supported; only OpenAPI 3.0 and 3.1
+- **Swagger 2.0** is not supported; only OpenAPI 3.0+ (3.0, 3.1, and 3.2 features are supported)
 - **Remote `$ref` URLs** (e.g., `$ref: 'https://...'`) are not resolved; only local filesystem refs are supported
 
 ## License

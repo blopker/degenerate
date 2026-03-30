@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   if (triggerName != null) 'trigger_name': triggerName?.toJson(),
   if (triggerUuid != null) 'trigger_uuid': triggerUuid?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'branch_excludes', 'branch_includes', 'build_caching_enabled', 'build_command', 'build_token_name', 'build_token_uuid', 'created_on', 'deleted_on', 'deploy_command', 'external_script_id', 'modified_on', 'path_excludes', 'path_includes', 'repo_connection', 'root_directory', 'trigger_name', 'trigger_uuid'}.contains(key)); } 
 BuildsTriggerResponse copyWith({List<String> Function()? branchExcludes, List<String> Function()? branchIncludes, BuildsBuildCachingEnabled Function()? buildCachingEnabled, BuildsBuildCommand Function()? buildCommand, BuildsBuildTokenName Function()? buildTokenName, BuildsBuildTokenUuid Function()? buildTokenUuid, BuildsCreatedOn Function()? createdOn, BuildsDeletedOn? Function()? deletedOn, BuildsDeployCommand Function()? deployCommand, BuildsExternalScriptId Function()? externalScriptId, BuildsModifiedOn Function()? modifiedOn, List<String> Function()? pathExcludes, List<String> Function()? pathIncludes, BuildsUpsertRepoConnectionResponse Function()? repoConnection, BuildsRootDirectory Function()? rootDirectory, BuildsTriggerName Function()? triggerName, BuildsTriggerUuid Function()? triggerUuid, }) { return BuildsTriggerResponse(
   branchExcludes: branchExcludes != null ? branchExcludes() : this.branchExcludes,
   branchIncludes: branchIncludes != null ? branchIncludes() : this.branchIncludes,

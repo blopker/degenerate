@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (installments != null) 'installments': installments?.toJson(),
   if (requestThreeDSecure != null) 'request_three_d_secure': requestThreeDSecure?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'installments', 'request_three_d_secure'}.contains(key)); } 
 InvoicePaymentMethodOptionsCard copyWith({InvoiceInstallmentsCard Function()? installments, InvoicePaymentMethodOptionsCardRequestThreeDSecure? Function()? requestThreeDSecure, }) { return InvoicePaymentMethodOptionsCard(
   installments: installments != null ? installments() : this.installments,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,

@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'privacy_policy_url': ?privacyPolicyUrl,
   'terms_of_service_url': ?termsOfServiceUrl,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'headline', 'privacy_policy_url', 'terms_of_service_url'}.contains(key)); } 
 PostBillingPortalConfigurationsRequestBusinessProfile copyWith({PostBillingPortalConfigurationsRequestBusinessProfileHeadline Function()? headline, String Function()? privacyPolicyUrl, String Function()? termsOfServiceUrl, }) { return PostBillingPortalConfigurationsRequestBusinessProfile(
   headline: headline != null ? headline() : this.headline,
   privacyPolicyUrl: privacyPolicyUrl != null ? privacyPolicyUrl() : this.privacyPolicyUrl,

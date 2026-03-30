@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   if (protocols != null) 'protocols': protocols?.map((e) => e.toJson()).toList(),
   if (unidirectional != null) 'unidirectional': unidirectional?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'forward_locally', 'id', 'lan_1', 'lan_2', 'name', 'protocols', 'unidirectional'}.contains(key)); } 
 MagicAcl copyWith({String Function()? description, MagicForwardLocally Function()? forwardLocally, MagicIdentifier Function()? id, MagicLanAclConfiguration Function()? lan1, MagicLanAclConfiguration Function()? lan2, String Function()? name, List<MagicAclProtocols> Function()? protocols, MagicUnidirectional Function()? unidirectional, }) { return MagicAcl(
   description: description != null ? description() : this.description,
   forwardLocally: forwardLocally != null ? forwardLocally() : this.forwardLocally,

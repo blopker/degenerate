@@ -165,7 +165,7 @@ Map<String, dynamic> toJson() { return {
   if (icon != null) 'icon': icon?.toJson(),
   if (logo != null) 'logo': logo?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'background_color', 'border_style', 'button_color', 'display_name', 'font_family', 'icon', 'logo'}.contains(key)); } 
 PostCheckoutSessionsRequestBrandingSettings copyWith({PostCheckoutSessionsRequestBrandingSettingsBackgroundColor Function()? backgroundColor, PostCheckoutSessionsRequestBrandingSettingsBorderStyle Function()? borderStyle, PostCheckoutSessionsRequestBrandingSettingsButtonColor Function()? buttonColor, String Function()? displayName, PostCheckoutSessionsRequestBrandingSettingsFontFamily Function()? fontFamily, PostCheckoutSessionsRequestBrandingSettingsIcon Function()? icon, PostCheckoutSessionsRequestBrandingSettingsLogo Function()? logo, }) { return PostCheckoutSessionsRequestBrandingSettings(
   backgroundColor: backgroundColor != null ? backgroundColor() : this.backgroundColor,
   borderStyle: borderStyle != null ? borderStyle() : this.borderStyle,

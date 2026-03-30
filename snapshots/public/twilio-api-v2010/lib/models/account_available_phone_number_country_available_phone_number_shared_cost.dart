@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'beta': ?beta,
   if (capabilities != null) 'capabilities': capabilities?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'friendly_name', 'phone_number', 'lata', 'locality', 'rate_center', 'latitude', 'longitude', 'region', 'postal_code', 'iso_country', 'address_requirements', 'beta', 'capabilities'}.contains(key)); } 
 AccountAvailablePhoneNumberCountryAvailablePhoneNumberSharedCost copyWith({String? Function()? friendlyName, String? Function()? phoneNumber, String? Function()? lata, String? Function()? locality, String? Function()? rateCenter, double? Function()? latitude, double? Function()? longitude, String? Function()? region, String? Function()? postalCode, String? Function()? isoCountry, String? Function()? addressRequirements, bool? Function()? beta, AccountAvailablePhoneNumberCountryAvailablePhoneNumberSharedCostCapabilities? Function()? capabilities, }) { return AccountAvailablePhoneNumberCountryAvailablePhoneNumberSharedCost(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,

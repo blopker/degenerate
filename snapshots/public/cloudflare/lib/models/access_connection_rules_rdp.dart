@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (allowedClipboardLocalToRemoteFormats != null) 'allowed_clipboard_local_to_remote_formats': allowedClipboardLocalToRemoteFormats?.map((e) => e.toJson()).toList(),
   if (allowedClipboardRemoteToLocalFormats != null) 'allowed_clipboard_remote_to_local_formats': allowedClipboardRemoteToLocalFormats?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_clipboard_local_to_remote_formats', 'allowed_clipboard_remote_to_local_formats'}.contains(key)); } 
 AccessConnectionRulesRdp copyWith({List<AccessRdpClipboardFormat> Function()? allowedClipboardLocalToRemoteFormats, List<AccessRdpClipboardFormat> Function()? allowedClipboardRemoteToLocalFormats, }) { return AccessConnectionRulesRdp(
   allowedClipboardLocalToRemoteFormats: allowedClipboardLocalToRemoteFormats != null ? allowedClipboardLocalToRemoteFormats() : this.allowedClipboardLocalToRemoteFormats,
   allowedClipboardRemoteToLocalFormats: allowedClipboardRemoteToLocalFormats != null ? allowedClipboardRemoteToLocalFormats() : this.allowedClipboardRemoteToLocalFormats,

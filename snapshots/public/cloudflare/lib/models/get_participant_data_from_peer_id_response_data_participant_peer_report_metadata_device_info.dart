@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'os': ?os,
   'os_version': ?osVersion,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cpus', 'is_mobile', 'os', 'os_version'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo copyWith({int Function()? cpus, bool Function()? isMobile, String Function()? os, String Function()? osVersion, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo(
   cpus: cpus != null ? cpus() : this.cpus,
   isMobile: isMobile != null ? isMobile() : this.isMobile,

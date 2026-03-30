@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'arguments': ?arguments,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'arguments', 'name'}.contains(key)); } 
 ChatCompletionStreamResponseDeltaFunctionCall copyWith({String Function()? arguments, String Function()? name, }) { return ChatCompletionStreamResponseDeltaFunctionCall(
   arguments: arguments != null ? arguments() : this.arguments,
   name: name != null ? name() : this.name,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/r2_data_catalog_account_id.dart';import '../models/r2_data_catalog_bucket_name.dart';import '../models/r2_data_catalog_maintenance_update_params.dart';import '../models/response_common_failure55.dart';import '../models/response_single39.dart';/// TableMaintenanceConfigurationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/r2_data_catalog_account_id.dart';import '../models/r2_data_catalog_bucket_name.dart';import '../models/r2_data_catalog_maintenance_update_params.dart';import '../models/r2_data_catalog_table_maintenance_config.dart';import '../models/r2_data_catalog_table_maintenance_config_response.dart';import '../models/response_common_failure55.dart';/// TableMaintenanceConfigurationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -15,7 +15,7 @@ final class TableMaintenanceConfigurationApi with ApiExecutor {const TableMainte
 /// 
 ///
 /// `GET /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-configs`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> getTableMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, required String tableName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogTableMaintenanceConfigResponse?, ResponseCommonFailure55>> getTableMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, required String tableName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,7 +27,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseSingle39.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? R2DataCatalogTableMaintenanceConfigResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
     return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -41,7 +42,7 @@ return execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables/{table_name}/maintenance-configs`
-Future<ApiResult<ResponseSingle39, ResponseCommonFailure55>> updateTableMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, required String tableName, required R2DataCatalogMaintenanceUpdateParams body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<R2DataCatalogTableMaintenanceConfig?, ResponseCommonFailure55>> updateTableMaintenanceConfig({required R2DataCatalogAccountId accountId, required R2DataCatalogBucketName bucketName, required String namespace, required String tableName, required R2DataCatalogMaintenanceUpdateParams body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,7 +56,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseSingle39.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? R2DataCatalogTableMaintenanceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
     return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

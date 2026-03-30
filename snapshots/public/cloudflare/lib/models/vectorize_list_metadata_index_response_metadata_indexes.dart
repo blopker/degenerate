@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (indexType != null) 'indexType': indexType?.toJson(),
   'propertyName': ?propertyName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'indexType', 'propertyName'}.contains(key)); } 
 VectorizeListMetadataIndexResponseMetadataIndexes copyWith({VectorizeListMetadataIndexResponseMetadataIndexesIndexType Function()? indexType, String Function()? propertyName, }) { return VectorizeListMetadataIndexResponseMetadataIndexes(
   indexType: indexType != null ? indexType() : this.indexType,
   propertyName: propertyName != null ? propertyName() : this.propertyName,

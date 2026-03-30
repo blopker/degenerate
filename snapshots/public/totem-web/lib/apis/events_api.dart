@@ -13,10 +13,18 @@ final class EventsApi with ApiExecutor {const EventsApi(this.apiConfig);
 /// `GET /api/v1/spaces/`
 Future<ApiResult<PagedSessionListSchema, Never>> totemSpacesApiListEvents({required String? category, required String? author, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (category != null) queryParameters['category'] = category;
-if (author != null) queryParameters['author'] = author;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
+if (category != null) {
+  queryParameters['category'] = category;
+}
+if (author != null) {
+  queryParameters['author'] = author;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -79,9 +87,15 @@ return execute(
 /// `GET /api/v1/spaces/calendar`
 Future<ApiResult<List<EventCalendarSchema>, Never>> totemSpacesApiUpcomingEvents({String? spaceSlug, int? month, int? year, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (spaceSlug != null) queryParameters['space_slug'] = spaceSlug;
-if (month != null) queryParameters['month'] = month.toString();
-if (year != null) queryParameters['year'] = year.toString();
+if (spaceSlug != null) {
+  queryParameters['space_slug'] = spaceSlug;
+}
+if (month != null) {
+  queryParameters['month'] = month.toString();
+}
+if (year != null) {
+  queryParameters['year'] = year.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

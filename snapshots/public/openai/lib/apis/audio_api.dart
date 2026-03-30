@@ -117,8 +117,12 @@ return execute(
 /// `GET /audio/voice_consents`
 Future<ApiResult<VoiceConsentListResource, Never>> listVoiceConsents({String? after, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -11,7 +11,7 @@ final SecurityAndAnalysis? securityAndAnalysis;
 Map<String, dynamic> toJson() { return {
   if (securityAndAnalysis != null) 'security_and_analysis': securityAndAnalysis?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'security_and_analysis'}.contains(key)); } 
 WebhookSecurityAndAnalysisChangesFrom copyWith({SecurityAndAnalysis Function()? securityAndAnalysis}) { return WebhookSecurityAndAnalysisChangesFrom(
   securityAndAnalysis: securityAndAnalysis != null ? securityAndAnalysis() : this.securityAndAnalysis,
 ); } 

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'next': ?next,
   'previous': ?previous,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'has_next', 'has_previous', 'next', 'previous'}.contains(key)); } 
 OrgsListAttestationsBulkResponsePageInfo copyWith({bool Function()? hasNext, bool Function()? hasPrevious, String Function()? next, String Function()? previous, }) { return OrgsListAttestationsBulkResponsePageInfo(
   hasNext: hasNext != null ? hasNext() : this.hasNext,
   hasPrevious: hasPrevious != null ? hasPrevious() : this.hasPrevious,

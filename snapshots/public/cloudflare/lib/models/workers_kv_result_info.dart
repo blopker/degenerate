@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'per_page': ?perPage,
   'total_count': ?totalCount,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count'}.contains(key)); } 
 WorkersKvResultInfo copyWith({double Function()? count, double Function()? page, double Function()? perPage, double Function()? totalCount, }) { return WorkersKvResultInfo(
   count: count != null ? count() : this.count,
   page: page != null ? page() : this.page,

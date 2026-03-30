@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'handlers': ?handlers,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'handlers', 'name'}.contains(key)); } 
 WorkersScriptResponseNamedHandlers copyWith({List<String> Function()? handlers, String Function()? name, }) { return WorkersScriptResponseNamedHandlers(
   handlers: handlers != null ? handlers() : this.handlers,
   name: name != null ? name() : this.name,

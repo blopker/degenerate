@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (uid != null) 'uid': uid?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'modified', 'name', 'uid'}.contains(key)); } 
 CallsApp copyWith({CallsCreated Function()? created, CallsModified Function()? modified, CallsName Function()? name, CallsIdentifier Function()? uid, }) { return CallsApp(
   created: created != null ? created() : this.created,
   modified: modified != null ? modified() : this.modified,

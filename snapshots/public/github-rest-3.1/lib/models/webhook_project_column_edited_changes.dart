@@ -11,7 +11,7 @@ final WebhookProjectColumnEditedChangesName? name;
 Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name'}.contains(key)); } 
 WebhookProjectColumnEditedChanges copyWith({WebhookProjectColumnEditedChangesName Function()? name}) { return WebhookProjectColumnEditedChanges(
   name: name != null ? name() : this.name,
 ); } 

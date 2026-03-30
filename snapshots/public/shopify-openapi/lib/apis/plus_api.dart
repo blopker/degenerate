@@ -15,10 +15,18 @@ final class PlusApi with ApiExecutor {const PlusApi(this.apiConfig);
 /// `GET /admin/api/2020-01/gift_cards.json`
 Future<ApiResult<void, Never>> deprecated202001GetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -105,7 +113,9 @@ return execute(
 /// `GET /admin/api/2020-01/gift_cards/count.json`
 Future<ApiResult<void, Never>> deprecated202001GetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -162,10 +172,18 @@ return execute(
 /// `GET /admin/api/2020-01/gift_cards/search.json`
 Future<ApiResult<void, Never>> deprecated202001GetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (query != null) queryParameters['query'] = query.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -190,10 +208,18 @@ return execute(
 /// `GET /admin/api/2020-04/gift_cards.json`
 Future<ApiResult<void, Never>> deprecated202004GetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -280,7 +306,9 @@ return execute(
 /// `GET /admin/api/2020-04/gift_cards/count.json`
 Future<ApiResult<void, Never>> deprecated202004GetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -337,10 +365,18 @@ return execute(
 /// `GET /admin/api/2020-04/gift_cards/search.json`
 Future<ApiResult<void, Never>> deprecated202004GetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (query != null) queryParameters['query'] = query.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -365,10 +401,18 @@ return execute(
 /// `GET /admin/api/2020-07/gift_cards.json`
 Future<ApiResult<void, Never>> deprecated202007GetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -455,7 +499,9 @@ return execute(
 /// `GET /admin/api/2020-07/gift_cards/count.json`
 Future<ApiResult<void, Never>> deprecated202007GetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -512,10 +558,18 @@ return execute(
 /// `GET /admin/api/2020-07/gift_cards/search.json`
 Future<ApiResult<void, Never>> deprecated202007GetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (query != null) queryParameters['query'] = query.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -540,10 +594,18 @@ return execute(
 /// `GET /admin/api/2020-10/gift_cards.json`
 Future<ApiResult<void, Never>> getGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -630,7 +692,9 @@ return execute(
 /// `GET /admin/api/2020-10/gift_cards/count.json`
 Future<ApiResult<void, Never>> getGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -687,10 +751,18 @@ return execute(
 /// `GET /admin/api/2020-10/gift_cards/search.json`
 Future<ApiResult<void, Never>> getGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (query != null) queryParameters['query'] = query.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -715,10 +787,18 @@ return execute(
 /// `GET /admin/api/2021-01/gift_cards.json`
 Future<ApiResult<void, Never>> deprecated202101GetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -805,7 +885,9 @@ return execute(
 /// `GET /admin/api/2021-01/gift_cards/count.json`
 Future<ApiResult<void, Never>> deprecated202101GetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -862,10 +944,18 @@ return execute(
 /// `GET /admin/api/2021-01/gift_cards/search.json`
 Future<ApiResult<void, Never>> deprecated202101GetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (query != null) queryParameters['query'] = query.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -890,10 +980,18 @@ return execute(
 /// `GET /admin/api/unstable/gift_cards.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCards({dynamic status, dynamic limit, dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -980,7 +1078,9 @@ return execute(
 /// `GET /admin/api/unstable/gift_cards/count.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCardsCount({dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toString();
+if (status != null) {
+  queryParameters['status'] = status.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1037,10 +1137,18 @@ return execute(
 /// `GET /admin/api/unstable/gift_cards/search.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetGiftCardsSearch({dynamic order, dynamic query, dynamic limit, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (order != null) queryParameters['order'] = order.toString();
-if (query != null) queryParameters['query'] = query.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (order != null) {
+  queryParameters['order'] = order.toString();
+}
+if (query != null) {
+  queryParameters['query'] = query.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1065,8 +1173,12 @@ return execute(
 /// `GET /admin/api/2020-01/users.json`
 Future<ApiResult<void, Never>> deprecated202001GetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pageInfo != null) queryParameters['page_info'] = pageInfo.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pageInfo != null) {
+  queryParameters['page_info'] = pageInfo.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1129,8 +1241,12 @@ return execute(
 /// `GET /admin/api/2020-04/users.json`
 Future<ApiResult<void, Never>> deprecated202004GetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pageInfo != null) queryParameters['page_info'] = pageInfo.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pageInfo != null) {
+  queryParameters['page_info'] = pageInfo.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1193,8 +1309,12 @@ return execute(
 /// `GET /admin/api/2020-07/users.json`
 Future<ApiResult<void, Never>> deprecated202007GetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pageInfo != null) queryParameters['page_info'] = pageInfo.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pageInfo != null) {
+  queryParameters['page_info'] = pageInfo.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1257,8 +1377,12 @@ return execute(
 /// `GET /admin/api/2020-10/users.json`
 Future<ApiResult<void, Never>> getUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pageInfo != null) queryParameters['page_info'] = pageInfo.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pageInfo != null) {
+  queryParameters['page_info'] = pageInfo.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1321,8 +1445,12 @@ return execute(
 /// `GET /admin/api/2021-01/users.json`
 Future<ApiResult<void, Never>> deprecated202101GetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pageInfo != null) queryParameters['page_info'] = pageInfo.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pageInfo != null) {
+  queryParameters['page_info'] = pageInfo.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1385,8 +1513,12 @@ return execute(
 /// `GET /admin/api/unstable/users.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetUsers({dynamic limit, dynamic pageInfo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pageInfo != null) queryParameters['page_info'] = pageInfo.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pageInfo != null) {
+  queryParameters['page_info'] = pageInfo.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

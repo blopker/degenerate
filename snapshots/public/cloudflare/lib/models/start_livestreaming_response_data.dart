@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   'stream_key': ?streamKey,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'ingest_server', 'playback_url', 'status', 'stream_key'}.contains(key)); } 
 StartLivestreamingResponseData copyWith({String Function()? id, String Function()? ingestServer, String Function()? playbackUrl, StartLivestreamingResponseDataStatus Function()? status, String Function()? streamKey, }) { return StartLivestreamingResponseData(
   id: id != null ? id() : this.id,
   ingestServer: ingestServer != null ? ingestServer() : this.ingestServer,

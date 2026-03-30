@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (failClosed != null) 'fail_closed': failClosed?.toJson(),
   if (notificationSettings != null) 'notification_settings': notificationSettings?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled_download_phase', 'enabled_upload_phase', 'fail_closed', 'notification_settings'}.contains(key)); } 
 ZeroTrustGatewayAntiVirusSettings copyWith({ZeroTrustGatewayEnabledDownloadPhase? Function()? enabledDownloadPhase, ZeroTrustGatewayEnabledUploadPhase? Function()? enabledUploadPhase, ZeroTrustGatewayFailClosed? Function()? failClosed, ZeroTrustGatewayNotificationSettings Function()? notificationSettings, }) { return ZeroTrustGatewayAntiVirusSettings(
   enabledDownloadPhase: enabledDownloadPhase != null ? enabledDownloadPhase() : this.enabledDownloadPhase,
   enabledUploadPhase: enabledUploadPhase != null ? enabledUploadPhase() : this.enabledUploadPhase,

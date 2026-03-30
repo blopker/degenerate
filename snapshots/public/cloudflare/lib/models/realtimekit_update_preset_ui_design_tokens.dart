@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
   'spacing_base': spacingBase,
   if (theme != null) 'theme': theme?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'border_radius', 'border_width', 'colors', 'logo', 'spacing_base', 'theme'}.contains(key)); } 
 RealtimekitUpdatePresetUiDesignTokens copyWith({RealtimekitUpdatePresetUiDesignTokensBorderRadius Function()? borderRadius, RealtimekitUpdatePresetUiDesignTokensBorderWidth Function()? borderWidth, RealtimekitUpdatePresetUiDesignTokensColors Function()? colors, String Function()? logo, double Function()? spacingBase, RealtimekitUpdatePresetUiDesignTokensTheme Function()? theme, }) { return RealtimekitUpdatePresetUiDesignTokens(
   borderRadius: borderRadius != null ? borderRadius() : this.borderRadius,
   borderWidth: borderWidth != null ? borderWidth() : this.borderWidth,

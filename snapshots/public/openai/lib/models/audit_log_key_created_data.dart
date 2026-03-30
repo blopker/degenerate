@@ -13,7 +13,7 @@ final List<String>? scopes;
 Map<String, dynamic> toJson() { return {
   'scopes': ?scopes,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'scopes'}.contains(key)); } 
 AuditLogKeyCreatedData copyWith({List<String> Function()? scopes}) { return AuditLogKeyCreatedData(
   scopes: scopes != null ? scopes() : this.scopes,
 ); } 

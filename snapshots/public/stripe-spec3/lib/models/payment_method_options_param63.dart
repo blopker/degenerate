@@ -35,7 +35,7 @@ final PaymentMethodOptionsParam63CaptureMethod? captureMethod;
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method'}.contains(key)); } 
 PaymentMethodOptionsParam63 copyWith({PaymentMethodOptionsParam63CaptureMethod Function()? captureMethod}) { return PaymentMethodOptionsParam63(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
 ); } 

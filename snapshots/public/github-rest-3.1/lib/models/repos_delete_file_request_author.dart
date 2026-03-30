@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'email': ?email,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'email'}.contains(key)); } 
 ReposDeleteFileRequestAuthor copyWith({String Function()? name, String Function()? email, }) { return ReposDeleteFileRequestAuthor(
   name: name != null ? name() : this.name,
   email: email != null ? email() : this.email,

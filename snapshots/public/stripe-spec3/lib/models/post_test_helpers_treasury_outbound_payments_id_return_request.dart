@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   if (returnedDetails != null) 'returned_details': returnedDetails?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'returned_details'}.contains(key)); } 
 PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest copyWith({List<String> Function()? expand, PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails Function()? returnedDetails, }) { return PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest(
   expand: expand != null ? expand() : this.expand,
   returnedDetails: returnedDetails != null ? returnedDetails() : this.returnedDetails,

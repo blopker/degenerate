@@ -13,7 +13,7 @@ final RunStepDeltaObjectDeltaStepDetails? stepDetails;
 Map<String, dynamic> toJson() { return {
   if (stepDetails != null) 'step_details': stepDetails?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'step_details'}.contains(key)); } 
 RunStepDeltaObjectDelta copyWith({RunStepDeltaObjectDeltaStepDetails Function()? stepDetails}) { return RunStepDeltaObjectDelta(
   stepDetails: stepDetails != null ? stepDetails() : this.stepDetails,
 ); } 

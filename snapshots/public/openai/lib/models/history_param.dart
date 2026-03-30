@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
   'recent_threads': ?recentThreads,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'recent_threads'}.contains(key)); } 
 HistoryParam copyWith({bool Function()? enabled, int Function()? recentThreads, }) { return HistoryParam(
   enabled: enabled != null ? enabled() : this.enabled,
   recentThreads: recentThreads != null ? recentThreads() : this.recentThreads,

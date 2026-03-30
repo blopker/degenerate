@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_context_awareness.dart';import 'dlp_new_custom_entry.dart';import 'dlp_profile_entry_update.dart';import 'dlp_shared_entry_update.dart';final class DlpCustomProfileUpdate {const DlpCustomProfileUpdate({this.aiContextEnabled = false, this.allowedMatchCount, this.confidenceThreshold = 'low', this.contextAwareness, this.dataClasses, this.dataTags, this.description, this.entries, required this.name, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_context_awareness.dart';import 'dlp_new_custom_entry.dart';import 'dlp_new_custom_entry_with_id.dart';import 'dlp_profile_entry_update.dart';import 'dlp_shared_entry_update.dart';final class DlpCustomProfileUpdate {const DlpCustomProfileUpdate({this.aiContextEnabled = false, this.allowedMatchCount, this.confidenceThreshold = 'low', this.contextAwareness, this.dataClasses, this.dataTags, this.description, this.entries, required this.name, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
 
 factory DlpCustomProfileUpdate.fromJson(Map<String, dynamic> json) { return DlpCustomProfileUpdate(
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
@@ -10,7 +10,7 @@ factory DlpCustomProfileUpdate.fromJson(Map<String, dynamic> json) { return DlpC
   dataClasses: (json['data_classes'] as List<dynamic>?)?.map((e) => e as String).toList(),
   dataTags: (json['data_tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   description: json['description'] as String?,
-  entries: (json['entries'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => DlpNewCustomEntry.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpNewCustomEntry.fromJson(v as Map<String, dynamic>),)).toList(),
+  entries: (json['entries'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => DlpNewCustomEntryWithId.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpNewCustomEntry.fromJson(v as Map<String, dynamic>),)).toList(),
   name: json['name'] as String,
   ocrEnabled: json.containsKey('ocr_enabled') ? json['ocr_enabled'] as bool : false,
   sensitivityLevels: (json['sensitivity_levels'] as List<dynamic>?)?.map((e) => (e as List<dynamic>).map((e) => e as String).toList()).toList(),

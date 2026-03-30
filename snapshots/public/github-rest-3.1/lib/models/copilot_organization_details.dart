@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'copilot_organization_seat_breakdown.dart';/// The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_organization_seat_breakdown.dart';/// The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
 final class CopilotOrganizationDetailsPublicCodeSuggestions {const CopilotOrganizationDetailsPublicCodeSuggestions._(this.value);
 
 factory CopilotOrganizationDetailsPublicCodeSuggestions.fromJson(String json) { return switch (json) {
@@ -169,7 +169,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CopilotOrganizationDetailsPlanType($value)'; } 
  }
 /// Information about the seat breakdown and policies set for an organization with a Copilot Business or Copilot Enterprise subscription.
-final class CopilotOrganizationDetails {const CopilotOrganizationDetails({required this.seatBreakdown, required this.publicCodeSuggestions, this.ideChat, this.platformChat, this.cli, required this.seatManagementSetting, this.planType, });
+final class CopilotOrganizationDetails {const CopilotOrganizationDetails({required this.seatBreakdown, required this.publicCodeSuggestions, this.ideChat, this.platformChat, this.cli, required this.seatManagementSetting, this.planType, this.additionalProperties = const {}, });
 
 factory CopilotOrganizationDetails.fromJson(Map<String, dynamic> json) { return CopilotOrganizationDetails(
   seatBreakdown: CopilotOrganizationSeatBreakdown.fromJson(json['seat_breakdown'] as Map<String, dynamic>),
@@ -179,6 +179,7 @@ factory CopilotOrganizationDetails.fromJson(Map<String, dynamic> json) { return 
   cli: json['cli'] != null ? CopilotOrganizationDetailsCli.fromJson(json['cli'] as String) : null,
   seatManagementSetting: CopilotOrganizationDetailsSeatManagementSetting.fromJson(json['seat_management_setting'] as String),
   planType: json['plan_type'] != null ? CopilotOrganizationDetailsPlanType.fromJson(json['plan_type'] as String) : null,
+  additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'seat_breakdown', 'public_code_suggestions', 'ide_chat', 'platform_chat', 'cli', 'seat_management_setting', 'plan_type'}.contains(e.key))),
 ); }
 
 final CopilotOrganizationSeatBreakdown seatBreakdown;
@@ -201,6 +202,8 @@ final CopilotOrganizationDetailsSeatManagementSetting seatManagementSetting;
 /// The Copilot plan of the organization, or the parent enterprise, when applicable.
 final CopilotOrganizationDetailsPlanType? planType;
 
+final Map<String,dynamic> additionalProperties;
+
 Map<String, dynamic> toJson() { return {
   'seat_breakdown': seatBreakdown.toJson(),
   'public_code_suggestions': publicCodeSuggestions.toJson(),
@@ -209,11 +212,12 @@ Map<String, dynamic> toJson() { return {
   if (cli != null) 'cli': cli?.toJson(),
   'seat_management_setting': seatManagementSetting.toJson(),
   if (planType != null) 'plan_type': planType?.toJson(),
+  ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('seat_breakdown') &&
       json.containsKey('public_code_suggestions') &&
       json.containsKey('seat_management_setting'); } 
-CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreakdown, CopilotOrganizationDetailsPublicCodeSuggestions? publicCodeSuggestions, CopilotOrganizationDetailsIdeChat Function()? ideChat, CopilotOrganizationDetailsPlatformChat Function()? platformChat, CopilotOrganizationDetailsCli Function()? cli, CopilotOrganizationDetailsSeatManagementSetting? seatManagementSetting, CopilotOrganizationDetailsPlanType Function()? planType, }) { return CopilotOrganizationDetails(
+CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreakdown, CopilotOrganizationDetailsPublicCodeSuggestions? publicCodeSuggestions, CopilotOrganizationDetailsIdeChat Function()? ideChat, CopilotOrganizationDetailsPlatformChat Function()? platformChat, CopilotOrganizationDetailsCli Function()? cli, CopilotOrganizationDetailsSeatManagementSetting? seatManagementSetting, CopilotOrganizationDetailsPlanType Function()? planType, Map<String, dynamic>? additionalProperties, }) { return CopilotOrganizationDetails(
   seatBreakdown: seatBreakdown ?? this.seatBreakdown,
   publicCodeSuggestions: publicCodeSuggestions ?? this.publicCodeSuggestions,
   ideChat: ideChat != null ? ideChat() : this.ideChat,
@@ -221,6 +225,7 @@ CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreak
   cli: cli != null ? cli() : this.cli,
   seatManagementSetting: seatManagementSetting ?? this.seatManagementSetting,
   planType: planType != null ? planType() : this.planType,
+  additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CopilotOrganizationDetails &&
@@ -230,7 +235,8 @@ CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreak
           platformChat == other.platformChat &&
           cli == other.cli &&
           seatManagementSetting == other.seatManagementSetting &&
-          planType == other.planType; } 
-@override int get hashCode { return Object.hash(seatBreakdown, publicCodeSuggestions, ideChat, platformChat, cli, seatManagementSetting, planType); } 
-@override String toString() { return 'CopilotOrganizationDetails(seatBreakdown: $seatBreakdown, publicCodeSuggestions: $publicCodeSuggestions, ideChat: $ideChat, platformChat: $platformChat, cli: $cli, seatManagementSetting: $seatManagementSetting, planType: $planType)'; } 
+          planType == other.planType &&
+          mapEquals(additionalProperties, other.additionalProperties); } 
+@override int get hashCode { return Object.hash(seatBreakdown, publicCodeSuggestions, ideChat, platformChat, cli, seatManagementSetting, planType, Object.hashAll(additionalProperties.entries)); } 
+@override String toString() { return 'CopilotOrganizationDetails(seatBreakdown: $seatBreakdown, publicCodeSuggestions: $publicCodeSuggestions, ideChat: $ideChat, platformChat: $platformChat, cli: $cli, seatManagementSetting: $seatManagementSetting, planType: $planType, additionalProperties: $additionalProperties)'; } 
  }

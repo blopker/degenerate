@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/bank_account.dart';import '../models/credit_card.dart';import '../models/error_model.dart';import '../models/notification.dart';import '../models/order.dart';import '../models/payment_method.dart';import '../models/pet.dart';import '../models/pet_status.dart';import '../models/send_notification_response.dart';import '../models/shape.dart';import '../models/string_or_int.dart';/// DefaultApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/bank_account.dart';import '../models/credit_card.dart';import '../models/error_model.dart';import '../models/extended_pet.dart';import '../models/notification.dart';import '../models/order.dart';import '../models/payment_method.dart';import '../models/pet_status.dart';import '../models/send_notification_response.dart';import '../models/shape.dart';import '../models/string_or_int.dart';/// DefaultApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -121,9 +121,11 @@ return execute(
 /// List pets with extended info
 ///
 /// `GET /pets`
-Future<ApiResult<List<Pet>, Never>> listPets({PetStatus? status, StringOrInt? identifier, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ExtendedPet>, Never>> listPets({PetStatus? status, StringOrInt? identifier, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (status != null) queryParameters['status'] = status.toJson();
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 if (identifier != null) {
 queryParametersList.add(ApiQueryParameter(name: 'identifier', value: identifier.toString(), allowReserved: false));
 }
@@ -143,7 +145,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
+    return json.map((e) => ExtendedPet.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

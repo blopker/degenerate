@@ -38,7 +38,7 @@ final ZeroTrustGatewayBodyScanningSettingsInspectionMode? inspectionMode;
 Map<String, dynamic> toJson() { return {
   if (inspectionMode != null) 'inspection_mode': inspectionMode?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'inspection_mode'}.contains(key)); } 
 ZeroTrustGatewayBodyScanningSettings copyWith({ZeroTrustGatewayBodyScanningSettingsInspectionMode Function()? inspectionMode}) { return ZeroTrustGatewayBodyScanningSettings(
   inspectionMode: inspectionMode != null ? inspectionMode() : this.inspectionMode,
 ); } 

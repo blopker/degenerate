@@ -11,7 +11,7 @@ final String? person;
 Map<String, dynamic> toJson() { return {
   'person': ?person,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'person'}.contains(key)); } 
 PostAccountsAccountRequestDocumentsProofOfRegistrationSigner copyWith({String Function()? person}) { return PostAccountsAccountRequestDocumentsProofOfRegistrationSigner(
   person: person != null ? person() : this.person,
 ); } 

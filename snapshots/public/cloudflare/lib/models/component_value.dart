@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (unitPrice != null) 'unit_price': unitPrice?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default', 'name', 'unit_price'}.contains(key)); } 
 ComponentValue copyWith({Default Function()? $default, ComponentsSchemasName? Function()? name, UnitPrice Function()? unitPrice, }) { return ComponentValue(
   $default: $default != null ? $default() : this.$default,
   name: name != null ? name() : this.name,

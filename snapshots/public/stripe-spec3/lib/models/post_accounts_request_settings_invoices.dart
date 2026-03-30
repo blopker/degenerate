@@ -38,7 +38,7 @@ final PostAccountsRequestSettingsInvoicesHostedPaymentMethodSave? hostedPaymentM
 Map<String, dynamic> toJson() { return {
   if (hostedPaymentMethodSave != null) 'hosted_payment_method_save': hostedPaymentMethodSave?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hosted_payment_method_save'}.contains(key)); } 
 PostAccountsRequestSettingsInvoices copyWith({PostAccountsRequestSettingsInvoicesHostedPaymentMethodSave Function()? hostedPaymentMethodSave}) { return PostAccountsRequestSettingsInvoices(
   hostedPaymentMethodSave: hostedPaymentMethodSave != null ? hostedPaymentMethodSave() : this.hostedPaymentMethodSave,
 ); } 

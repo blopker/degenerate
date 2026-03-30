@@ -11,7 +11,7 @@ final List<Map<String,dynamic>>? queries;
 Map<String, dynamic> toJson() { return {
   if (queries != null) 'queries': queries?.map((e) => e).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'queries'}.contains(key)); } 
 QueryBulk copyWith({List<Map<String, dynamic>> Function()? queries}) { return QueryBulk(
   queries: queries != null ? queries() : this.queries,
 ); } 

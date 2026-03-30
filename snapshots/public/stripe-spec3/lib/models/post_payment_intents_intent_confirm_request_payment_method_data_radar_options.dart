@@ -11,7 +11,7 @@ final String? session;
 Map<String, dynamic> toJson() { return {
   'session': ?session,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'session'}.contains(key)); } 
 PostPaymentIntentsIntentConfirmRequestPaymentMethodDataRadarOptions copyWith({String Function()? session}) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataRadarOptions(
   session: session != null ? session() : this.session,
 ); } 

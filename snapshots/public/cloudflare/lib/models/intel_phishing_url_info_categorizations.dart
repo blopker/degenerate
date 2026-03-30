@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'category': ?category,
   'verification_status': ?verificationStatus,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'category', 'verification_status'}.contains(key)); } 
 IntelPhishingUrlInfoCategorizations copyWith({String Function()? category, String Function()? verificationStatus, }) { return IntelPhishingUrlInfoCategorizations(
   category: category != null ? category() : this.category,
   verificationStatus: verificationStatus != null ? verificationStatus() : this.verificationStatus,

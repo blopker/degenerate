@@ -11,7 +11,7 @@ final List<String>? from;
 Map<String, dynamic> toJson() { return {
   'from': ?from,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from'}.contains(key)); } 
 WebhookRepositoryEditedChangesTopics copyWith({List<String>? Function()? from}) { return WebhookRepositoryEditedChangesTopics(
   from: from != null ? from() : this.from,
 ); } 

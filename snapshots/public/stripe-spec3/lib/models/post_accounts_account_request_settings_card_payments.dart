@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (statementDescriptorPrefixKana != null) 'statement_descriptor_prefix_kana': statementDescriptorPrefixKana?.toJson(),
   if (statementDescriptorPrefixKanji != null) 'statement_descriptor_prefix_kanji': statementDescriptorPrefixKanji?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'decline_on', 'statement_descriptor_prefix', 'statement_descriptor_prefix_kana', 'statement_descriptor_prefix_kanji'}.contains(key)); } 
 PostAccountsAccountRequestSettingsCardPayments copyWith({PostAccountsAccountRequestSettingsCardPaymentsDeclineOn Function()? declineOn, String Function()? statementDescriptorPrefix, PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKana Function()? statementDescriptorPrefixKana, PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanji Function()? statementDescriptorPrefixKanji, }) { return PostAccountsAccountRequestSettingsCardPayments(
   declineOn: declineOn != null ? declineOn() : this.declineOn,
   statementDescriptorPrefix: statementDescriptorPrefix != null ? statementDescriptorPrefix() : this.statementDescriptorPrefix,

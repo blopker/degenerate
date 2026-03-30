@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage'}.contains(key)); } 
 PaymentIntentPaymentMethodOptionsParam39 copyWith({PaymentIntentPaymentMethodOptionsParam39MandateOptions Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParam39SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam39(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

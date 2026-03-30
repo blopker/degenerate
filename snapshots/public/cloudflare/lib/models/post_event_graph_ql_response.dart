@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'data': ?data,
   if (errors != null) 'errors': errors?.map((e) => e).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'errors'}.contains(key)); } 
 PostEventGraphQlResponse copyWith({Map<String, dynamic>? Function()? data, List<Map<String, dynamic>>? Function()? errors, }) { return PostEventGraphQlResponse(
   data: data != null ? data() : this.data,
   errors: errors != null ? errors() : this.errors,

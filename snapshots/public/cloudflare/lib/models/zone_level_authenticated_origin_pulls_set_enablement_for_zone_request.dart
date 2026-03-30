@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates whether zone-level authenticated origin pulls is enabled.
-extension type const TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled(bool value) {
-factory TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled.fromJson(bool json) => TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled(json);
-
-bool toJson() => value;
-
-}
-final class ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest {const ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest({required this.enabled});
+import 'tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_enabled.dart';final class ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest {const ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest({required this.enabled});
 
 factory ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest(
   enabled: TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled.fromJson(json['enabled'] as bool),

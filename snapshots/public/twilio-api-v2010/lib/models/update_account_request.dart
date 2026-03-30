@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'FriendlyName': ?friendlyName,
   if (status != null) 'Status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName', 'Status'}.contains(key)); } 
 UpdateAccountRequest copyWith({String Function()? friendlyName, AccountEnumStatus Function()? status, }) { return UpdateAccountRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   status: status != null ? status() : this.status,

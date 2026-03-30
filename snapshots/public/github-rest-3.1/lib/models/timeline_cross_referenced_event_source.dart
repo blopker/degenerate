@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   if (issue != null) 'issue': issue?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'issue'}.contains(key)); } 
 TimelineCrossReferencedEventSource copyWith({String Function()? type, Issue Function()? issue, }) { return TimelineCrossReferencedEventSource(
   type: type != null ? type() : this.type,
   issue: issue != null ? issue() : this.issue,

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
   'status': ?status,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'documentation_url', 'url', 'status'}.contains(key)); } 
 BasicError copyWith({String Function()? message, String Function()? documentationUrl, String Function()? url, String Function()? status, }) { return BasicError(
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,

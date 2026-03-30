@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'max_file_size': ?maxFileSize,
   'max_files': ?maxFiles,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'max_file_size', 'max_files'}.contains(key)); } 
 FileUploadParam copyWith({bool Function()? enabled, int Function()? maxFileSize, int Function()? maxFiles, }) { return FileUploadParam(
   enabled: enabled != null ? enabled() : this.enabled,
   maxFileSize: maxFileSize != null ? maxFileSize() : this.maxFileSize,

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (completedAt != null) 'completed_at': completedAt?.toIso8601String(),
   if (startedAt != null) 'started_at': startedAt?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'status', 'completed_at', 'started_at'}.contains(key)); } 
 SecretScanningScan copyWith({String Function()? type, String Function()? status, DateTime? Function()? completedAt, DateTime? Function()? startedAt, }) { return SecretScanningScan(
   type: type != null ? type() : this.type,
   status: status != null ? status() : this.status,

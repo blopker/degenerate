@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'ipv4_cidrs': ?ipv4Cidrs,
   'ipv6_cidrs': ?ipv6Cidrs,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'etag', 'ipv4_cidrs', 'ipv6_cidrs'}.contains(key)); } 
 PublicIpIps copyWith({PublicIpEtag Function()? etag, List<String> Function()? ipv4Cidrs, List<String> Function()? ipv6Cidrs, }) { return PublicIpIps(
   etag: etag != null ? etag() : this.etag,
   ipv4Cidrs: ipv4Cidrs != null ? ipv4Cidrs() : this.ipv4Cidrs,

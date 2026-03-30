@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'longitude': ?longitude,
   'region': ?region,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'latitude', 'longitude', 'region'}.contains(key)); } 
 RadarReviewResourceLocation copyWith({String? Function()? city, String? Function()? country, double? Function()? latitude, double? Function()? longitude, String? Function()? region, }) { return RadarReviewResourceLocation(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,

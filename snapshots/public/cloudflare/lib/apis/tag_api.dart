@@ -15,9 +15,15 @@ final class TagApi with ApiExecutor {const TagApi(this.apiConfig);
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators`
 Future<ApiResult<GetTagIndicatorsListResponse, GetTagIndicatorsListResponse400>> getTagIndicatorsList({required String accountId, required String tagUuid, required String datasetId, double? page, double? pageSize, String? indicatorType, List<String>? relatedEvent, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
-if (indicatorType != null) queryParameters['indicatorType'] = indicatorType;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (pageSize != null) {
+  queryParameters['pageSize'] = pageSize.toString();
+}
+if (indicatorType != null) {
+  queryParameters['indicatorType'] = indicatorType;
+}
 if (relatedEvent != null) {
 for (final item in relatedEvent) {
   queryParametersList.add(ApiQueryParameter(name: 'relatedEvent', value: item, allowReserved: false));
@@ -52,10 +58,18 @@ return execute(
 /// `GET /accounts/{account_id}/cloudforce-one/events/tags`
 Future<ApiResult<GetTagListResponse, GetTagListResponse400>> getTagList({required String accountId, double? page, double? pageSize, String? search, String? categoryUuid, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (pageSize != null) queryParameters['pageSize'] = pageSize.toString();
-if (search != null) queryParameters['search'] = search;
-if (categoryUuid != null) queryParameters['categoryUuid'] = categoryUuid;
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (pageSize != null) {
+  queryParameters['pageSize'] = pageSize.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (categoryUuid != null) {
+  queryParameters['categoryUuid'] = categoryUuid;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

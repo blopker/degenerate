@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'sql': ?sql,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'name', 'sql'}.contains(key)); } 
 PostSigmaSavedQueriesIdRequest copyWith({List<String> Function()? expand, String Function()? name, String Function()? sql, }) { return PostSigmaSavedQueriesIdRequest(
   expand: expand != null ? expand() : this.expand,
   name: name != null ? name() : this.name,

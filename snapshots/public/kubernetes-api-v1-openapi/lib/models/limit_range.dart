@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (spec != null) 'spec': spec?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec'}.contains(key)); } 
 LimitRange copyWith({String Function()? apiVersion, String Function()? kind, ObjectMeta Function()? metadata, LimitRangeSpec Function()? spec, }) { return LimitRange(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,

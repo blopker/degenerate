@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'sender_iban': ?senderIban,
   'sender_name': ?senderName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'sender_address_country', 'sender_address_line1', 'sender_iban', 'sender_name'}.contains(key)); } 
 SourceTransactionChfCreditTransferData copyWith({String Function()? reference, String Function()? senderAddressCountry, String Function()? senderAddressLine1, String Function()? senderIban, String Function()? senderName, }) { return SourceTransactionChfCreditTransferData(
   reference: reference != null ? reference() : this.reference,
   senderAddressCountry: senderAddressCountry != null ? senderAddressCountry() : this.senderAddressCountry,

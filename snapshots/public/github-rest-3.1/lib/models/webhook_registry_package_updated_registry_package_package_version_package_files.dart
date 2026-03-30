@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'state': ?state,
   'updated_at': ?updatedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_type', 'created_at', 'download_url', 'id', 'md5', 'name', 'sha1', 'sha256', 'size', 'state', 'updated_at'}.contains(key)); } 
 WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles copyWith({String Function()? contentType, String Function()? createdAt, String Function()? downloadUrl, int Function()? id, String? Function()? md5, String Function()? name, String? Function()? sha1, String Function()? sha256, int Function()? size, String Function()? state, String Function()? updatedAt, }) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFiles(
   contentType: contentType != null ? contentType() : this.contentType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

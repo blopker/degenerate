@@ -118,7 +118,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   if (url != null) 'url': url?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'avatar_url', 'deleted', 'email', 'events_url', 'followers_url', 'following_url', 'gists_url', 'gravatar_id', 'html_url', 'id', 'login', 'name', 'node_id', 'organizations_url', 'received_events_url', 'repos_url', 'site_admin', 'starred_url', 'subscriptions_url', 'type', 'url'}.contains(key)); } 
 WebhookStatusCommitCommitter copyWith({Uri Function()? avatarUrl, bool Function()? deleted, String? Function()? email, String Function()? eventsUrl, Uri Function()? followersUrl, String Function()? followingUrl, String Function()? gistsUrl, String Function()? gravatarId, Uri Function()? htmlUrl, int Function()? id, String Function()? login, String Function()? name, String Function()? nodeId, Uri Function()? organizationsUrl, Uri Function()? receivedEventsUrl, Uri Function()? reposUrl, bool Function()? siteAdmin, String Function()? starredUrl, Uri Function()? subscriptionsUrl, WebhookStatusCommitCommitterType Function()? type, Uri Function()? url, }) { return WebhookStatusCommitCommitter(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   deleted: deleted != null ? deleted() : this.deleted,

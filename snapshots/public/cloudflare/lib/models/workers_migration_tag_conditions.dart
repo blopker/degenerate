@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'new_tag': ?newTag,
   'old_tag': ?oldTag,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'new_tag', 'old_tag'}.contains(key)); } 
 WorkersMigrationTagConditions copyWith({String Function()? newTag, String Function()? oldTag, }) { return WorkersMigrationTagConditions(
   newTag: newTag != null ? newTag() : this.newTag,
   oldTag: oldTag != null ? oldTag() : this.oldTag,

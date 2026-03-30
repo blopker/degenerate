@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (inputTokenDetails != null) 'input_token_details': inputTokenDetails?.toJson(),
   if (outputTokenDetails != null) 'output_token_details': outputTokenDetails?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_tokens', 'input_tokens', 'output_tokens', 'input_token_details', 'output_token_details'}.contains(key)); } 
 RealtimeBetaResponseUsage copyWith({int Function()? totalTokens, int Function()? inputTokens, int Function()? outputTokens, RealtimeBetaResponseUsageInputTokenDetails Function()? inputTokenDetails, RealtimeBetaResponseUsageOutputTokenDetails Function()? outputTokenDetails, }) { return RealtimeBetaResponseUsage(
   totalTokens: totalTokens != null ? totalTokens() : this.totalTokens,
   inputTokens: inputTokens != null ? inputTokens() : this.inputTokens,

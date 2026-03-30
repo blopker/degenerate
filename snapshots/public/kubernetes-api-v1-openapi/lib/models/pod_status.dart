@@ -112,7 +112,7 @@ Map<String, dynamic> toJson() { return {
   if (resources != null) 'resources': resources?.toJson(),
   if (startTime != null) 'startTime': startTime?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allocatedResources', 'conditions', 'containerStatuses', 'ephemeralContainerStatuses', 'extendedResourceClaimStatus', 'hostIP', 'hostIPs', 'initContainerStatuses', 'message', 'nominatedNodeName', 'observedGeneration', 'phase', 'podIP', 'podIPs', 'qosClass', 'reason', 'resize', 'resourceClaimStatuses', 'resources', 'startTime'}.contains(key)); } 
 PodStatus copyWith({Map<String, ResourceQuantity> Function()? allocatedResources, List<PodCondition> Function()? conditions, List<ContainerStatus> Function()? containerStatuses, List<ContainerStatus> Function()? ephemeralContainerStatuses, PodExtendedResourceClaimStatus Function()? extendedResourceClaimStatus, String Function()? hostIp, List<HostIp> Function()? hostIPs, List<ContainerStatus> Function()? initContainerStatuses, String Function()? message, String Function()? nominatedNodeName, int Function()? observedGeneration, String Function()? phase, String Function()? podIp, List<PodIp> Function()? podIPs, String Function()? qosClass, String Function()? reason, String Function()? resize, List<PodResourceClaimStatus> Function()? resourceClaimStatuses, ResourceRequirements Function()? resources, Time Function()? startTime, }) { return PodStatus(
   allocatedResources: allocatedResources != null ? allocatedResources() : this.allocatedResources,
   conditions: conditions != null ? conditions() : this.conditions,

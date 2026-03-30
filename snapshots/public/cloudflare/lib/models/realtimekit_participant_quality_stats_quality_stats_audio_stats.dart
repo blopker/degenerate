@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'quality': ?quality,
   'timestamp': ?timestamp,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'concealment_events', 'jitter', 'packets_lost', 'quality', 'timestamp'}.contains(key)); } 
 RealtimekitParticipantQualityStatsQualityStatsAudioStats copyWith({double Function()? concealmentEvents, double Function()? jitter, double Function()? packetsLost, double Function()? quality, String Function()? timestamp, }) { return RealtimekitParticipantQualityStatsQualityStatsAudioStats(
   concealmentEvents: concealmentEvents != null ? concealmentEvents() : this.concealmentEvents,
   jitter: jitter != null ? jitter() : this.jitter,

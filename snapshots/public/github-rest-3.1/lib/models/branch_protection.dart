@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   if (lockBranch != null) 'lock_branch': lockBranch?.toJson(),
   if (allowForkSyncing != null) 'allow_fork_syncing': allowForkSyncing?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url', 'enabled', 'required_status_checks', 'enforce_admins', 'required_pull_request_reviews', 'restrictions', 'required_linear_history', 'allow_force_pushes', 'allow_deletions', 'block_creations', 'required_conversation_resolution', 'name', 'protection_url', 'required_signatures', 'lock_branch', 'allow_fork_syncing'}.contains(key)); } 
 BranchProtection copyWith({String Function()? url, bool Function()? enabled, ProtectedBranchRequiredStatusCheck Function()? requiredStatusChecks, ProtectedBranchAdminEnforced Function()? enforceAdmins, ProtectedBranchPullRequestReview Function()? requiredPullRequestReviews, BranchRestrictionPolicy Function()? restrictions, BranchProtectionRequiredLinearHistory Function()? requiredLinearHistory, BranchProtectionAllowForcePushes Function()? allowForcePushes, BranchProtectionAllowDeletions Function()? allowDeletions, BranchProtectionBlockCreations Function()? blockCreations, BranchProtectionRequiredConversationResolution Function()? requiredConversationResolution, String Function()? name, String Function()? protectionUrl, BranchProtectionRequiredSignatures Function()? requiredSignatures, BranchProtectionLockBranch Function()? lockBranch, BranchProtectionAllowForkSyncing Function()? allowForkSyncing, }) { return BranchProtection(
   url: url != null ? url() : this.url,
   enabled: enabled != null ? enabled() : this.enabled,

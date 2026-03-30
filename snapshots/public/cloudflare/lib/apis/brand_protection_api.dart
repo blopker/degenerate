@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/error_model.dart';import '../models/url_info.dart';import '../models/url_submit.dart';/// BrandProtectionApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/error_model.dart';import '../models/url_submit.dart';/// BrandProtectionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -411,7 +411,7 @@ return execute(
 /// Return submitted URLs based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/url-info`
-Future<ApiResult<UrlInfo, ErrorModel>> getAccountsBrandProtectionUrlInfo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Map<String, dynamic>>?, ErrorModel>> getAccountsBrandProtectionUrlInfo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -423,7 +423,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return UrlInfo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList();
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (ipv4 != null) 'ipv4': ipv4?.toJson(),
   if (ipv6 != null) 'ipv6': ipv6?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ipv4', 'ipv6'}.contains(key)); } 
 InfraIpInfo copyWith({InfraIpInfoIpv4 Function()? ipv4, InfraIpInfoIpv6 Function()? ipv6, }) { return InfraIpInfo(
   ipv4: ipv4 != null ? ipv4() : this.ipv4,
   ipv6: ipv6 != null ? ipv6() : this.ipv6,

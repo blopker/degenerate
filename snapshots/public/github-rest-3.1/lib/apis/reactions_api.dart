@@ -15,9 +15,15 @@ final class ReactionsApi with ApiExecutor {const ReactionsApi(this.apiConfig);
 /// `GET /repos/{owner}/{repo}/comments/{comment_id}/reactions`
 Future<ApiResult<List<Reaction>, BasicError>> reactionsListForCommitComment({required String owner, required String repo, required int commentId, ReactionsListForCommitCommentContent? content, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (content != null) queryParameters['content'] = content.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (content != null) {
+  queryParameters['content'] = content.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -96,9 +102,15 @@ return execute(
 /// `GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions`
 Future<ApiResult<List<Reaction>, BasicError>> reactionsListForIssueComment({required String owner, required String repo, required int commentId, ReactionsListForIssueCommentContent? content, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (content != null) queryParameters['content'] = content.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (content != null) {
+  queryParameters['content'] = content.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -177,9 +189,15 @@ return execute(
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}/reactions`
 Future<ApiResult<List<Reaction>, BasicError>> reactionsListForIssue({required String owner, required String repo, required int issueNumber, ReactionsListForIssueContent? content, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (content != null) queryParameters['content'] = content.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (content != null) {
+  queryParameters['content'] = content.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -258,9 +276,15 @@ return execute(
 /// `GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions`
 Future<ApiResult<List<Reaction>, BasicError>> reactionsListForPullRequestReviewComment({required String owner, required String repo, required int commentId, ReactionsListForPullRequestReviewCommentContent? content, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (content != null) queryParameters['content'] = content.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (content != null) {
+  queryParameters['content'] = content.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -339,9 +363,15 @@ return execute(
 /// `GET /repos/{owner}/{repo}/releases/{release_id}/reactions`
 Future<ApiResult<List<Reaction>, BasicError>> reactionsListForRelease({required String owner, required String repo, required int releaseId, ReactionsListForReleaseContent? content, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (content != null) queryParameters['content'] = content.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (content != null) {
+  queryParameters['content'] = content.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

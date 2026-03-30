@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'text': ?text,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'text'}.contains(key)); } 
 VectorStoreFileContentResponseData copyWith({String Function()? type, String Function()? text, }) { return VectorStoreFileContentResponseData(
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,

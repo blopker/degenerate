@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'primary': ?primary,
   'secondary': ?secondary,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'primary', 'secondary'}.contains(key)); } 
 TenantTenantMetadataDnsNsPool copyWith({String Function()? primary, String Function()? secondary, }) { return TenantTenantMetadataDnsNsPool(
   primary: primary != null ? primary() : this.primary,
   secondary: secondary != null ? secondary() : this.secondary,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'delete': ?delete,
   'update': ?update,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'create', 'delete', 'update'}.contains(key)); } 
 AccessScimConfigMappingOperations copyWith({bool Function()? create, bool Function()? delete, bool Function()? update, }) { return AccessScimConfigMappingOperations(
   create: create != null ? create() : this.create,
   delete: delete != null ? delete() : this.delete,

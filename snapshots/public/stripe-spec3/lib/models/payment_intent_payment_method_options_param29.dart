@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   'target_date': ?targetDate,
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'setup_future_usage', 'target_date', 'verification_method'}.contains(key)); } 
 PaymentIntentPaymentMethodOptionsParam29 copyWith({PaymentIntentPaymentMethodOptionsParam29MandateOptions Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, PaymentIntentPaymentMethodOptionsParam29VerificationMethod Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsParam29(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

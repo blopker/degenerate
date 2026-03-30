@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (tunType != null) 'tun_type': tunType?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tag', 'connections', 'conns_active_at', 'conns_inactive_at', 'created_at', 'deleted_at', 'id', 'metadata', 'name', 'status', 'tun_type'}.contains(key)); } 
 TunnelWarpConnectorTunnel copyWith({TunnelAccountId Function()? accountTag, List<TunnelSchemasConnection> Function()? connections, TunnelConnsActiveAt Function()? connsActiveAt, TunnelConnsInactiveAt Function()? connsInactiveAt, TunnelCreatedAt Function()? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelTunnelId Function()? id, Map<String, dynamic> Function()? metadata, TunnelTunnelName Function()? name, TunnelStatus Function()? status, TunnelTunnelType Function()? tunType, }) { return TunnelWarpConnectorTunnel(
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   connections: connections != null ? connections() : this.connections,

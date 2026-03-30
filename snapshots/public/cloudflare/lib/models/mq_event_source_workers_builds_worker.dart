@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'worker_name': ?workerName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'worker_name'}.contains(key)); } 
 MqEventSourceWorkersBuildsWorker copyWith({MqEventSourceWorkersBuildsWorkerType Function()? type, String Function()? workerName, }) { return MqEventSourceWorkersBuildsWorker(
   type: type != null ? type() : this.type,
   workerName: workerName != null ? workerName() : this.workerName,

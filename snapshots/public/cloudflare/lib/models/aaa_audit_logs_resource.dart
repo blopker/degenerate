@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'type'}.contains(key)); } 
 AaaAuditLogsResource copyWith({String Function()? id, String Function()? type, }) { return AaaAuditLogsResource(
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,

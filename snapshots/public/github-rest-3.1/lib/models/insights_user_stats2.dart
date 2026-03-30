@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'last_rate_limited_timestamp': ?lastRateLimitedTimestamp,
   'last_request_timestamp': ?lastRequestTimestamp,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'actor_type', 'actor_name', 'actor_id', 'integration_id', 'oauth_application_id', 'total_request_count', 'rate_limited_request_count', 'last_rate_limited_timestamp', 'last_request_timestamp'}.contains(key)); } 
 InsightsUserStats2 copyWith({String Function()? actorType, String Function()? actorName, int Function()? actorId, int? Function()? integrationId, int? Function()? oauthApplicationId, int Function()? totalRequestCount, int Function()? rateLimitedRequestCount, String? Function()? lastRateLimitedTimestamp, String Function()? lastRequestTimestamp, }) { return InsightsUserStats2(
   actorType: actorType != null ? actorType() : this.actorType,
   actorName: actorName != null ? actorName() : this.actorName,

@@ -12,7 +12,7 @@ final String? idNumber;
 Map<String, dynamic> toJson() { return {
   'id_number': ?idNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id_number'}.contains(key)); } 
 PostTokensRequestPii copyWith({String Function()? idNumber}) { return PostTokensRequestPii(
   idNumber: idNumber != null ? idNumber() : this.idNumber,
 ); } 

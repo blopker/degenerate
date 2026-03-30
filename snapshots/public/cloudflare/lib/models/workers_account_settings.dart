@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'default_usage_model': ?defaultUsageModel,
   'green_compute': ?greenCompute,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_usage_model', 'green_compute'}.contains(key)); } 
 WorkersAccountSettings copyWith({String Function()? defaultUsageModel, bool Function()? greenCompute, }) { return WorkersAccountSettings(
   defaultUsageModel: defaultUsageModel != null ? defaultUsageModel() : this.defaultUsageModel,
   greenCompute: greenCompute != null ? greenCompute() : this.greenCompute,

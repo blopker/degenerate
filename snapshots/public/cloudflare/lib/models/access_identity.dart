@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   'user_uuid': ?userUuid,
   'version': ?version,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'auth_status', 'common_name', 'device_id', 'device_sessions', 'devicePosture', 'email', 'geo', 'iat', 'idp', 'ip', 'is_gateway', 'is_warp', 'mtls_auth', 'service_token_id', 'service_token_status', 'user_uuid', 'version'}.contains(key)); } 
 AccessIdentity copyWith({String Function()? accountId, String Function()? authStatus, String Function()? commonName, String Function()? deviceId, Map<String, AccessDeviceSession> Function()? deviceSessions, Map<String, AccessSchemasDevicePostureRule> Function()? devicePosture, String Function()? email, AccessGeo Function()? geo, double Function()? iat, AccessIdentityIdp Function()? idp, String Function()? ip, bool Function()? isGateway, bool Function()? isWarp, AccessIdentityMtlsAuth Function()? mtlsAuth, String Function()? serviceTokenId, bool Function()? serviceTokenStatus, String Function()? userUuid, double Function()? version, }) { return AccessIdentity(
   accountId: accountId != null ? accountId() : this.accountId,
   authStatus: authStatus != null ? authStatus() : this.authStatus,

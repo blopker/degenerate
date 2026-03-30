@@ -23,7 +23,7 @@ factory CreateTranscriptionResponseDiarizedJsonUsageTranscriptTextUsageTokens.fr
 final TranscriptTextUsageTokens transcriptTextUsageTokens;
 
 @override String get type { return 'TranscriptTextUsageTokens'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...transcriptTextUsageTokens.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...transcriptTextUsageTokens.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseDiarizedJsonUsageTranscriptTextUsageTokens && transcriptTextUsageTokens == other.transcriptTextUsageTokens; } 
 @override int get hashCode { return transcriptTextUsageTokens.hashCode; } 
@@ -36,7 +36,7 @@ factory CreateTranscriptionResponseDiarizedJsonUsageTranscriptTextUsageDuration.
 final TranscriptTextUsageDuration transcriptTextUsageDuration;
 
 @override String get type { return 'TranscriptTextUsageDuration'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...transcriptTextUsageDuration.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...transcriptTextUsageDuration.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CreateTranscriptionResponseDiarizedJsonUsageTranscriptTextUsageDuration && transcriptTextUsageDuration == other.transcriptTextUsageDuration; } 
 @override int get hashCode { return transcriptTextUsageDuration.hashCode; } 

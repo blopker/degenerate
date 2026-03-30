@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'full_domains': ?fullDomains,
   'wildcard_domains': ?wildcardDomains,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'full_domains', 'wildcard_domains'}.contains(key)); } 
 OverviewDomainsActionsInbound copyWith({List<String> Function()? fullDomains, List<String> Function()? wildcardDomains, }) { return OverviewDomainsActionsInbound(
   fullDomains: fullDomains != null ? fullDomains() : this.fullDomains,
   wildcardDomains: wildcardDomains != null ? wildcardDomains() : this.wildcardDomains,

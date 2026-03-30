@@ -218,21 +218,12 @@ String _buildFromJsonNonNull(
   // Resolve IrTypeRef to OneOf-eligible union before switching.
   final resolved = _resolveOneOfRef(type, typeRegistry, resolving);
   return switch (resolved) {
-    IrPrimitive(:final kind) => switch (kind) {
-      PrimitiveKind.dynamic_ => accessor,
-      PrimitiveKind.string => '$accessor as String',
-      PrimitiveKind.int => '($accessor as num).toInt()',
-      PrimitiveKind.double => '($accessor as num).toDouble()',
-      PrimitiveKind.num => '$accessor as num',
-      PrimitiveKind.bool => '$accessor as bool',
-      PrimitiveKind.dateTime => 'DateTime.parse($accessor as String)',
-      PrimitiveKind.uri => 'Uri.parse($accessor as String)',
-      PrimitiveKind.bigInt => 'BigInt.parse($accessor as String)',
-      PrimitiveKind.duration =>
-        'Duration(milliseconds: ($accessor as num).toInt())',
-      PrimitiveKind.bytes => 'base64Decode($accessor as String)',
-    },
-    IrEnum(:final name) => '$name.fromJson($accessor as String)',
+    IrPrimitive(:final kind) => primitiveFromJsonExpr(kind, accessor),
+    IrEnum(:final name, :final valueKind) => switch (valueKind) {
+        PrimitiveKind.int => '$name.fromJson(($accessor as num).toInt())',
+        PrimitiveKind.double => '$name.fromJson(($accessor as num).toDouble())',
+        _ => '$name.fromJson($accessor as String)',
+      },
     IrList(:final items) =>
       '($accessor as List<dynamic>).map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
     IrMap(:final values) =>
@@ -272,14 +263,7 @@ String _buildFromJsonNonNull(
 String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
   final q = nullable ? '?' : '';
   return switch (type) {
-    IrPrimitive(:final kind) => switch (kind) {
-      PrimitiveKind.dynamic_ => accessor,
-      PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
-      PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
-      PrimitiveKind.duration => '$accessor$q.inMilliseconds',
-      PrimitiveKind.bytes => 'base64Encode($accessor)',
-      _ => accessor,
-    },
+    IrPrimitive(:final kind) => primitiveToJsonExpr(kind, accessor, q: q),
     IrList(:final items) =>
       listItemNeedsToJson(items)
           ? '$accessor$q.map((e) => ${buildToJsonCode(items, 'e', nullable: items.isNullable)}).toList()'
@@ -417,22 +401,42 @@ String variantClassName(String baseName, String variantKey) {
   return '$baseName${toPascalCase(variantKey)}';
 }
 
+/// Unicode characters that Dart warns about in string literals
+/// (text direction overrides, zero-width joiners/spaces, bidi isolates, etc.).
+final _unicodeControlChars = RegExp(
+  '[\u200B-\u200F\u202A-\u202E\u2066-\u2069\uFEFF]',
+);
+
 /// Escape a string value for use inside a Dart single-quoted string literal.
 String escapeDartString(String value) {
   return value
       .replaceAll(r'\', r'\\')
       .replaceAll("'", r"\'")
-      .replaceAll(r'$', r'\$');
+      .replaceAll(r'$', r'\$')
+      .replaceAll('\n', r'\n')
+      .replaceAll('\r', r'\r')
+      .replaceAll('\t', r'\t')
+      .replaceAllMapped(_unicodeControlChars, (m) {
+    final code = m[0]!.codeUnitAt(0).toRadixString(16).toUpperCase();
+    return '\\u${code.padLeft(4, '0')}';
+  });
 }
 
 /// Convert an enum string value to a valid Dart enum constant name.
 final _nonIdentChars = RegExp(r'[^a-zA-Z0-9_\-.\s/+]');
+// A leading +/- before a letter (not a digit) isn't handled by _splitWords
+// and would corrupt casing. Strip it before passing to toCamelCase.
+// Only matches at the start of the string to preserve interior hyphens
+// that serve as word separators (e.g. 'google-apps' → 'googleApps').
+final _leadingSignBeforeLetter = RegExp(r'^[+-](?=[a-zA-Z])');
 
 String enumValueName(String value) {
   // Strip characters that are invalid in identifiers and not recognized as
   // word separators by _splitWords, so they don't interfere with casing.
   // e.g. "[DONE]" → "DONE" → toCamelCase → "done" (not "[Done]" → "Done").
-  var name = toCamelCase(value.replaceAll(_nonIdentChars, ''));
+  var cleaned = value.replaceAll(_nonIdentChars, '');
+  cleaned = cleaned.replaceFirst(_leadingSignBeforeLetter, '');
+  var name = toCamelCase(cleaned);
   name = sanitizeFieldName(name);
   // Also escape enum-internal reserved names (value, values, json, etc.)
   if (enumReservedNames.contains(name)) {
@@ -504,3 +508,73 @@ String toSnakeCase(String input) {
   }
   return result;
 }
+
+// ─── Shared code_builder Method helpers ──────────────────────────
+
+/// Build an `operator ==` override with the given [body].
+Method buildEqualsOverride(String body) => Method(
+      (m) => m
+        ..name = 'operator =='
+        ..annotations.add(refer('override'))
+        ..returns = refer('bool')
+        ..requiredParameters.add(
+          Parameter(
+            (p) => p
+              ..name = 'other'
+              ..type = refer('Object'),
+          ),
+        )
+        ..body = Code(body),
+    );
+
+/// Build a `hashCode` getter override with the given [body].
+Method buildHashCodeOverride(String body) => Method(
+      (m) => m
+        ..name = 'hashCode'
+        ..type = MethodType.getter
+        ..annotations.add(refer('override'))
+        ..returns = refer('int')
+        ..body = Code(body),
+    );
+
+/// Build a `toString` override with the given [body].
+Method buildToStringOverride(String body) => Method(
+      (m) => m
+        ..name = 'toString'
+        ..annotations.add(refer('override'))
+        ..returns = refer('String')
+        ..body = Code(body),
+    );
+
+// ─── PrimitiveKind codec helpers ─────────────────────────────────
+
+/// Core fromJson expression for a [PrimitiveKind] value.
+/// Returns the Dart expression that converts a JSON value to the Dart type.
+String primitiveFromJsonExpr(PrimitiveKind kind, String accessor) =>
+    switch (kind) {
+      PrimitiveKind.dynamic_ => accessor,
+      PrimitiveKind.string => '$accessor as String',
+      PrimitiveKind.int => '($accessor as num).toInt()',
+      PrimitiveKind.double => '($accessor as num).toDouble()',
+      PrimitiveKind.num => '$accessor as num',
+      PrimitiveKind.bool => '$accessor as bool',
+      PrimitiveKind.dateTime => 'DateTime.parse($accessor as String)',
+      PrimitiveKind.uri => 'Uri.parse($accessor as String)',
+      PrimitiveKind.bigInt => 'BigInt.parse($accessor as String)',
+      PrimitiveKind.duration =>
+        'Duration(milliseconds: ($accessor as num).toInt())',
+      PrimitiveKind.bytes => 'base64Decode($accessor as String)',
+    };
+
+/// Core toJson expression for a [PrimitiveKind] value.
+/// [q] is the null-aware operator (`?` or empty string).
+String primitiveToJsonExpr(PrimitiveKind kind, String accessor,
+        {String q = ''}) =>
+    switch (kind) {
+      PrimitiveKind.dynamic_ => accessor,
+      PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
+      PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
+      PrimitiveKind.duration => '$accessor$q.inMilliseconds',
+      PrimitiveKind.bytes => 'base64Encode($accessor)',
+      _ => accessor,
+    };

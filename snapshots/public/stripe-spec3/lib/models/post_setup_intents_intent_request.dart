@@ -105,7 +105,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodOptions != null) 'payment_method_options': paymentMethodOptions?.toJson(),
   'payment_method_types': ?paymentMethodTypes,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attach_to_self', 'customer', 'customer_account', 'description', 'excluded_payment_method_types', 'expand', 'flow_directions', 'metadata', 'payment_method', 'payment_method_configuration', 'payment_method_data', 'payment_method_options', 'payment_method_types'}.contains(key)); } 
 PostSetupIntentsIntentRequest copyWith({bool Function()? attachToSelf, String Function()? customer, String Function()? customerAccount, String Function()? description, PostSetupIntentsIntentRequestExcludedPaymentMethodTypes Function()? excludedPaymentMethodTypes, List<String> Function()? expand, List<PostSetupIntentsIntentRequestFlowDirections> Function()? flowDirections, PostSetupIntentsIntentRequestMetadata Function()? metadata, String Function()? paymentMethod, String Function()? paymentMethodConfiguration, PostSetupIntentsIntentRequestPaymentMethodData Function()? paymentMethodData, PostSetupIntentsIntentRequestPaymentMethodOptions Function()? paymentMethodOptions, List<String> Function()? paymentMethodTypes, }) { return PostSetupIntentsIntentRequest(
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   customer: customer != null ? customer() : this.customer,

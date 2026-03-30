@@ -34,17 +34,39 @@ return execute(
 /// `GET /api/v1/componentstatuses`
 Future<ApiResult<ComponentStatusList, Never>> listCoreV1ComponentStatus({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -70,7 +92,9 @@ return execute(
 /// `GET /api/v1/componentstatuses/{name}`
 Future<ApiResult<ComponentStatus, Never>> readCoreV1ComponentStatus({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -96,17 +120,39 @@ return execute(
 /// `GET /api/v1/configmaps`
 Future<ApiResult<ConfigMapList, Never>> listCoreV1ConfigMapForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -132,17 +178,39 @@ return execute(
 /// `GET /api/v1/endpoints`
 Future<ApiResult<EndpointsList, Never>> listCoreV1EndpointsForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -168,17 +236,39 @@ return execute(
 /// `GET /api/v1/events`
 Future<ApiResult<EventList, Never>> listCoreV1EventForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -204,17 +294,39 @@ return execute(
 /// `GET /api/v1/limitranges`
 Future<ApiResult<LimitRangeList, Never>> listCoreV1LimitRangeForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -240,17 +352,39 @@ return execute(
 /// `GET /api/v1/namespaces`
 Future<ApiResult<NamespaceList, Never>> listCoreV1Namespace({String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -276,10 +410,18 @@ return execute(
 /// `POST /api/v1/namespaces`
 Future<ApiResult<Namespace, Never>> createCoreV1Namespace({String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Namespace body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -307,10 +449,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/bindings`
 Future<ApiResult<Binding, Never>> createCoreV1NamespacedBinding({required String namespace, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, required Binding body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -338,17 +488,39 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/configmaps`
 Future<ApiResult<ConfigMapList, Never>> listCoreV1NamespacedConfigMap({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -374,10 +546,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/configmaps`
 Future<ApiResult<ConfigMap, Never>> createCoreV1NamespacedConfigMap({required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required ConfigMap body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -405,20 +585,48 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/configmaps`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedConfigMap({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -446,7 +654,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/configmaps/{name}`
 Future<ApiResult<ConfigMap, Never>> readCoreV1NamespacedConfigMap({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -472,10 +682,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/configmaps/{name}`
 Future<ApiResult<ConfigMap, Never>> replaceCoreV1NamespacedConfigMap({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required ConfigMap body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -503,11 +721,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/configmaps/{name}`
 Future<ApiResult<ConfigMap, Never>> patchCoreV1NamespacedConfigMap({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -535,12 +763,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/configmaps/{name}`
 Future<ApiResult<Status, Never>> deleteCoreV1NamespacedConfigMap({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -568,17 +808,39 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/endpoints`
 Future<ApiResult<EndpointsList, Never>> listCoreV1NamespacedEndpoints({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -604,10 +866,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/endpoints`
 Future<ApiResult<Endpoints, Never>> createCoreV1NamespacedEndpoints({required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Endpoints body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -635,20 +905,48 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/endpoints`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedEndpoints({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -676,7 +974,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/endpoints/{name}`
 Future<ApiResult<Endpoints, Never>> readCoreV1NamespacedEndpoints({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -702,10 +1002,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/endpoints/{name}`
 Future<ApiResult<Endpoints, Never>> replaceCoreV1NamespacedEndpoints({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Endpoints body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -733,11 +1041,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/endpoints/{name}`
 Future<ApiResult<Endpoints, Never>> patchCoreV1NamespacedEndpoints({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -765,12 +1083,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/endpoints/{name}`
 Future<ApiResult<Status, Never>> deleteCoreV1NamespacedEndpoints({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -798,17 +1128,39 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/events`
 Future<ApiResult<EventList, Never>> listCoreV1NamespacedEvent({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -834,10 +1186,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/events`
 Future<ApiResult<Event, Never>> createCoreV1NamespacedEvent({required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Event body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -865,20 +1225,48 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/events`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedEvent({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -906,7 +1294,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/events/{name}`
 Future<ApiResult<Event, Never>> readCoreV1NamespacedEvent({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -932,10 +1322,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/events/{name}`
 Future<ApiResult<Event, Never>> replaceCoreV1NamespacedEvent({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Event body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -963,11 +1361,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/events/{name}`
 Future<ApiResult<Event, Never>> patchCoreV1NamespacedEvent({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -995,12 +1403,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/events/{name}`
 Future<ApiResult<Status, Never>> deleteCoreV1NamespacedEvent({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1028,17 +1448,39 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/limitranges`
 Future<ApiResult<LimitRangeList, Never>> listCoreV1NamespacedLimitRange({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1064,10 +1506,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/limitranges`
 Future<ApiResult<LimitRange, Never>> createCoreV1NamespacedLimitRange({required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required LimitRange body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1095,20 +1545,48 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/limitranges`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedLimitRange({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1136,7 +1614,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/limitranges/{name}`
 Future<ApiResult<LimitRange, Never>> readCoreV1NamespacedLimitRange({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1162,10 +1642,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/limitranges/{name}`
 Future<ApiResult<LimitRange, Never>> replaceCoreV1NamespacedLimitRange({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required LimitRange body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1193,11 +1681,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/limitranges/{name}`
 Future<ApiResult<LimitRange, Never>> patchCoreV1NamespacedLimitRange({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -1225,12 +1723,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/limitranges/{name}`
 Future<ApiResult<Status, Never>> deleteCoreV1NamespacedLimitRange({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1258,17 +1768,39 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/persistentvolumeclaims`
 Future<ApiResult<PersistentVolumeClaimList, Never>> listCoreV1NamespacedPersistentVolumeClaim({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1294,10 +1826,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/persistentvolumeclaims`
 Future<ApiResult<PersistentVolumeClaim, Never>> createCoreV1NamespacedPersistentVolumeClaim({required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required PersistentVolumeClaim body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1325,20 +1865,48 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/persistentvolumeclaims`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPersistentVolumeClaim({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1366,7 +1934,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
 Future<ApiResult<PersistentVolumeClaim, Never>> readCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1392,10 +1962,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
 Future<ApiResult<PersistentVolumeClaim, Never>> replaceCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required PersistentVolumeClaim body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1423,11 +2001,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
 Future<ApiResult<PersistentVolumeClaim, Never>> patchCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -1455,12 +2043,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}`
 Future<ApiResult<PersistentVolumeClaim, Never>> deleteCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1488,7 +2088,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status`
 Future<ApiResult<PersistentVolumeClaim, Never>> readCoreV1NamespacedPersistentVolumeClaimStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1514,10 +2116,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status`
 Future<ApiResult<PersistentVolumeClaim, Never>> replaceCoreV1NamespacedPersistentVolumeClaimStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required PersistentVolumeClaim body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1545,11 +2155,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status`
 Future<ApiResult<PersistentVolumeClaim, Never>> patchCoreV1NamespacedPersistentVolumeClaimStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -1577,17 +2197,39 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/pods`
 Future<ApiResult<PodList, Never>> listCoreV1NamespacedPod({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1613,10 +2255,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/pods`
 Future<ApiResult<Pod, Never>> createCoreV1NamespacedPod({required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Pod body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1644,20 +2294,48 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/pods`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPod({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1685,7 +2363,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}`
 Future<ApiResult<Pod, Never>> readCoreV1NamespacedPod({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1711,10 +2391,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}`
 Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPod({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Pod body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1742,11 +2430,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}`
 Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPod({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -1774,12 +2472,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/pods/{name}`
 Future<ApiResult<Pod, Never>> deleteCoreV1NamespacedPod({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1807,11 +2517,21 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/attach`
 Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodAttach({required String name, required String namespace, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (container != null) queryParameters['container'] = container;
-if (stderr != null) queryParameters['stderr'] = stderr.toString();
-if (stdin != null) queryParameters['stdin'] = stdin.toString();
-if (stdout != null) queryParameters['stdout'] = stdout.toString();
-if (tty != null) queryParameters['tty'] = tty.toString();
+if (container != null) {
+  queryParameters['container'] = container;
+}
+if (stderr != null) {
+  queryParameters['stderr'] = stderr.toString();
+}
+if (stdin != null) {
+  queryParameters['stdin'] = stdin.toString();
+}
+if (stdout != null) {
+  queryParameters['stdout'] = stdout.toString();
+}
+if (tty != null) {
+  queryParameters['tty'] = tty.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1837,11 +2557,21 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/attach`
 Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodAttach({required String name, required String namespace, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (container != null) queryParameters['container'] = container;
-if (stderr != null) queryParameters['stderr'] = stderr.toString();
-if (stdin != null) queryParameters['stdin'] = stdin.toString();
-if (stdout != null) queryParameters['stdout'] = stdout.toString();
-if (tty != null) queryParameters['tty'] = tty.toString();
+if (container != null) {
+  queryParameters['container'] = container;
+}
+if (stderr != null) {
+  queryParameters['stderr'] = stderr.toString();
+}
+if (stdin != null) {
+  queryParameters['stdin'] = stdin.toString();
+}
+if (stdout != null) {
+  queryParameters['stdout'] = stdout.toString();
+}
+if (tty != null) {
+  queryParameters['tty'] = tty.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1867,10 +2597,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/binding`
 Future<ApiResult<Binding, Never>> createCoreV1NamespacedPodBinding({required String name, required String namespace, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, required Binding body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1898,7 +2636,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers`
 Future<ApiResult<Pod, Never>> readCoreV1NamespacedPodEphemeralcontainers({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1924,10 +2664,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers`
 Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodEphemeralcontainers({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Pod body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -1955,11 +2703,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/ephemeralcontainers`
 Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodEphemeralcontainers({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -1987,10 +2745,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/eviction`
 Future<ApiResult<Eviction, Never>> createCoreV1NamespacedPodEviction({required String name, required String namespace, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, required Eviction body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2018,12 +2784,24 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/exec`
 Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodExec({required String name, required String namespace, String? command, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (command != null) queryParameters['command'] = command;
-if (container != null) queryParameters['container'] = container;
-if (stderr != null) queryParameters['stderr'] = stderr.toString();
-if (stdin != null) queryParameters['stdin'] = stdin.toString();
-if (stdout != null) queryParameters['stdout'] = stdout.toString();
-if (tty != null) queryParameters['tty'] = tty.toString();
+if (command != null) {
+  queryParameters['command'] = command;
+}
+if (container != null) {
+  queryParameters['container'] = container;
+}
+if (stderr != null) {
+  queryParameters['stderr'] = stderr.toString();
+}
+if (stdin != null) {
+  queryParameters['stdin'] = stdin.toString();
+}
+if (stdout != null) {
+  queryParameters['stdout'] = stdout.toString();
+}
+if (tty != null) {
+  queryParameters['tty'] = tty.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2049,12 +2827,24 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/exec`
 Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodExec({required String name, required String namespace, String? command, String? container, bool? stderr, bool? stdin, bool? stdout, bool? tty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (command != null) queryParameters['command'] = command;
-if (container != null) queryParameters['container'] = container;
-if (stderr != null) queryParameters['stderr'] = stderr.toString();
-if (stdin != null) queryParameters['stdin'] = stdin.toString();
-if (stdout != null) queryParameters['stdout'] = stdout.toString();
-if (tty != null) queryParameters['tty'] = tty.toString();
+if (command != null) {
+  queryParameters['command'] = command;
+}
+if (container != null) {
+  queryParameters['container'] = container;
+}
+if (stderr != null) {
+  queryParameters['stderr'] = stderr.toString();
+}
+if (stdin != null) {
+  queryParameters['stdin'] = stdin.toString();
+}
+if (stdout != null) {
+  queryParameters['stdout'] = stdout.toString();
+}
+if (tty != null) {
+  queryParameters['tty'] = tty.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2080,16 +2870,36 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/log`
 Future<ApiResult<String, Never>> readCoreV1NamespacedPodLog({required String name, required String namespace, String? container, bool? follow, bool? insecureSkipTlsVerifyBackend, int? limitBytes, String? pretty, bool? previous, int? sinceSeconds, String? stream, int? tailLines, bool? timestamps, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (container != null) queryParameters['container'] = container;
-if (follow != null) queryParameters['follow'] = follow.toString();
-if (insecureSkipTlsVerifyBackend != null) queryParameters['insecureSkipTLSVerifyBackend'] = insecureSkipTlsVerifyBackend.toString();
-if (limitBytes != null) queryParameters['limitBytes'] = limitBytes.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (previous != null) queryParameters['previous'] = previous.toString();
-if (sinceSeconds != null) queryParameters['sinceSeconds'] = sinceSeconds.toString();
-if (stream != null) queryParameters['stream'] = stream;
-if (tailLines != null) queryParameters['tailLines'] = tailLines.toString();
-if (timestamps != null) queryParameters['timestamps'] = timestamps.toString();
+if (container != null) {
+  queryParameters['container'] = container;
+}
+if (follow != null) {
+  queryParameters['follow'] = follow.toString();
+}
+if (insecureSkipTlsVerifyBackend != null) {
+  queryParameters['insecureSkipTLSVerifyBackend'] = insecureSkipTlsVerifyBackend.toString();
+}
+if (limitBytes != null) {
+  queryParameters['limitBytes'] = limitBytes.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (previous != null) {
+  queryParameters['previous'] = previous.toString();
+}
+if (sinceSeconds != null) {
+  queryParameters['sinceSeconds'] = sinceSeconds.toString();
+}
+if (stream != null) {
+  queryParameters['stream'] = stream;
+}
+if (tailLines != null) {
+  queryParameters['tailLines'] = tailLines.toString();
+}
+if (timestamps != null) {
+  queryParameters['timestamps'] = timestamps.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2115,7 +2925,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/portforward`
 Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodPortforward({required String name, required String namespace, int? ports, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ports != null) queryParameters['ports'] = ports.toString();
+if (ports != null) {
+  queryParameters['ports'] = ports.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2141,7 +2953,9 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/portforward`
 Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodPortforward({required String name, required String namespace, int? ports, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ports != null) queryParameters['ports'] = ports.toString();
+if (ports != null) {
+  queryParameters['ports'] = ports.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2167,7 +2981,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2193,7 +3009,9 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2219,7 +3037,9 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1PutNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2245,7 +3065,9 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2271,7 +3093,9 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/pods/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2297,7 +3121,9 @@ return execute(
 /// `HEAD /api/v1/namespaces/{namespace}/pods/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2323,7 +3149,9 @@ return execute(
 /// `OPTIONS /api/v1/namespaces/{namespace}/pods/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedPodProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2349,7 +3177,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1GetNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2375,7 +3205,9 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1PostNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2401,7 +3233,9 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1PutNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2427,7 +3261,9 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2453,7 +3289,9 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2479,7 +3317,9 @@ return execute(
 /// `HEAD /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2505,7 +3345,9 @@ return execute(
 /// `OPTIONS /api/v1/namespaces/{namespace}/pods/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedPodProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2531,7 +3373,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/resize`
 Future<ApiResult<Pod, Never>> readCoreV1NamespacedPodResize({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2557,10 +3401,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/resize`
 Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodResize({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Pod body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2588,11 +3440,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/resize`
 Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodResize({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -2620,7 +3482,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/pods/{name}/status`
 Future<ApiResult<Pod, Never>> readCoreV1NamespacedPodStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2646,10 +3510,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/pods/{name}/status`
 Future<ApiResult<Pod, Never>> replaceCoreV1NamespacedPodStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Pod body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2677,11 +3549,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/pods/{name}/status`
 Future<ApiResult<Pod, Never>> patchCoreV1NamespacedPodStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -2709,17 +3591,39 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/podtemplates`
 Future<ApiResult<PodTemplateList, Never>> listCoreV1NamespacedPodTemplate({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2745,10 +3649,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/podtemplates`
 Future<ApiResult<PodTemplate, Never>> createCoreV1NamespacedPodTemplate({required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required PodTemplate body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2776,20 +3688,48 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/podtemplates`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedPodTemplate({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2817,7 +3757,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/podtemplates/{name}`
 Future<ApiResult<PodTemplate, Never>> readCoreV1NamespacedPodTemplate({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2843,10 +3785,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/podtemplates/{name}`
 Future<ApiResult<PodTemplate, Never>> replaceCoreV1NamespacedPodTemplate({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required PodTemplate body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2874,11 +3824,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/podtemplates/{name}`
 Future<ApiResult<PodTemplate, Never>> patchCoreV1NamespacedPodTemplate({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -2906,12 +3866,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/podtemplates/{name}`
 Future<ApiResult<PodTemplate, Never>> deleteCoreV1NamespacedPodTemplate({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -2939,17 +3911,39 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/replicationcontrollers`
 Future<ApiResult<ReplicationControllerList, Never>> listCoreV1NamespacedReplicationController({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2975,10 +3969,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/replicationcontrollers`
 Future<ApiResult<ReplicationController, Never>> createCoreV1NamespacedReplicationController({required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required ReplicationController body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3006,20 +4008,48 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/replicationcontrollers`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedReplicationController({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3047,7 +4077,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
 Future<ApiResult<ReplicationController, Never>> readCoreV1NamespacedReplicationController({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3073,10 +4105,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
 Future<ApiResult<ReplicationController, Never>> replaceCoreV1NamespacedReplicationController({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required ReplicationController body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3104,11 +4144,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
 Future<ApiResult<ReplicationController, Never>> patchCoreV1NamespacedReplicationController({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -3136,12 +4186,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/replicationcontrollers/{name}`
 Future<ApiResult<Status, Never>> deleteCoreV1NamespacedReplicationController({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3169,7 +4231,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale`
 Future<ApiResult<Scale, Never>> readCoreV1NamespacedReplicationControllerScale({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3195,10 +4259,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale`
 Future<ApiResult<Scale, Never>> replaceCoreV1NamespacedReplicationControllerScale({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Scale body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3226,11 +4298,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/scale`
 Future<ApiResult<Scale, Never>> patchCoreV1NamespacedReplicationControllerScale({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -3258,7 +4340,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status`
 Future<ApiResult<ReplicationController, Never>> readCoreV1NamespacedReplicationControllerStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3284,10 +4368,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status`
 Future<ApiResult<ReplicationController, Never>> replaceCoreV1NamespacedReplicationControllerStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required ReplicationController body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3315,11 +4407,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status`
 Future<ApiResult<ReplicationController, Never>> patchCoreV1NamespacedReplicationControllerStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -3347,17 +4449,39 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/resourcequotas`
 Future<ApiResult<ResourceQuotaList, Never>> listCoreV1NamespacedResourceQuota({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3383,10 +4507,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/resourcequotas`
 Future<ApiResult<ResourceQuota, Never>> createCoreV1NamespacedResourceQuota({required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required ResourceQuota body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3414,20 +4546,48 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/resourcequotas`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedResourceQuota({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3455,7 +4615,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/resourcequotas/{name}`
 Future<ApiResult<ResourceQuota, Never>> readCoreV1NamespacedResourceQuota({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3481,10 +4643,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/resourcequotas/{name}`
 Future<ApiResult<ResourceQuota, Never>> replaceCoreV1NamespacedResourceQuota({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required ResourceQuota body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3512,11 +4682,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/resourcequotas/{name}`
 Future<ApiResult<ResourceQuota, Never>> patchCoreV1NamespacedResourceQuota({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -3544,12 +4724,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/resourcequotas/{name}`
 Future<ApiResult<ResourceQuota, Never>> deleteCoreV1NamespacedResourceQuota({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3577,7 +4769,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/resourcequotas/{name}/status`
 Future<ApiResult<ResourceQuota, Never>> readCoreV1NamespacedResourceQuotaStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3603,10 +4797,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/resourcequotas/{name}/status`
 Future<ApiResult<ResourceQuota, Never>> replaceCoreV1NamespacedResourceQuotaStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required ResourceQuota body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3634,11 +4836,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/resourcequotas/{name}/status`
 Future<ApiResult<ResourceQuota, Never>> patchCoreV1NamespacedResourceQuotaStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -3666,17 +4878,39 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/secrets`
 Future<ApiResult<SecretList, Never>> listCoreV1NamespacedSecret({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3702,10 +4936,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/secrets`
 Future<ApiResult<Secret, Never>> createCoreV1NamespacedSecret({required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Secret body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3733,20 +4975,48 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/secrets`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedSecret({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3774,7 +5044,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/secrets/{name}`
 Future<ApiResult<Secret, Never>> readCoreV1NamespacedSecret({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3800,10 +5072,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/secrets/{name}`
 Future<ApiResult<Secret, Never>> replaceCoreV1NamespacedSecret({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Secret body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3831,11 +5111,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/secrets/{name}`
 Future<ApiResult<Secret, Never>> patchCoreV1NamespacedSecret({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -3863,12 +5153,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/secrets/{name}`
 Future<ApiResult<Status, Never>> deleteCoreV1NamespacedSecret({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3896,17 +5198,39 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/serviceaccounts`
 Future<ApiResult<ServiceAccountList, Never>> listCoreV1NamespacedServiceAccount({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3932,10 +5256,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/serviceaccounts`
 Future<ApiResult<ServiceAccount, Never>> createCoreV1NamespacedServiceAccount({required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required ServiceAccount body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -3963,20 +5295,48 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/serviceaccounts`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedServiceAccount({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4004,7 +5364,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
 Future<ApiResult<ServiceAccount, Never>> readCoreV1NamespacedServiceAccount({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4030,10 +5392,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
 Future<ApiResult<ServiceAccount, Never>> replaceCoreV1NamespacedServiceAccount({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required ServiceAccount body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4061,11 +5431,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
 Future<ApiResult<ServiceAccount, Never>> patchCoreV1NamespacedServiceAccount({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -4093,12 +5473,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/serviceaccounts/{name}`
 Future<ApiResult<ServiceAccount, Never>> deleteCoreV1NamespacedServiceAccount({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4126,10 +5518,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/serviceaccounts/{name}/token`
 Future<ApiResult<TokenRequest, Never>> createCoreV1NamespacedServiceAccountToken({required String name, required String namespace, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, required TokenRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4157,17 +5557,39 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/services`
 Future<ApiResult<ServiceList, Never>> listCoreV1NamespacedService({required String namespace, String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4193,10 +5615,18 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/services`
 Future<ApiResult<Service, Never>> createCoreV1NamespacedService({required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Service body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4224,20 +5654,48 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/services`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNamespacedService({required String namespace, String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4265,7 +5723,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/services/{name}`
 Future<ApiResult<Service, Never>> readCoreV1NamespacedService({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4291,10 +5751,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}`
 Future<ApiResult<Service, Never>> replaceCoreV1NamespacedService({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Service body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4322,11 +5790,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}`
 Future<ApiResult<Service, Never>> patchCoreV1NamespacedService({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -4354,12 +5832,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/services/{name}`
 Future<ApiResult<Service, Never>> deleteCoreV1NamespacedService({required String name, required String namespace, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4387,7 +5877,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/services/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1GetNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4413,7 +5905,9 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/services/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1PostNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4439,7 +5933,9 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1PutNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4465,7 +5961,9 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4491,7 +5989,9 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/services/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4517,7 +6017,9 @@ return execute(
 /// `HEAD /api/v1/namespaces/{namespace}/services/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4543,7 +6045,9 @@ return execute(
 /// `OPTIONS /api/v1/namespaces/{namespace}/services/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedServiceProxy({required String name, required String namespace, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4569,7 +6073,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1GetNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4595,7 +6101,9 @@ return execute(
 /// `POST /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1PostNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4621,7 +6129,9 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1PutNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4647,7 +6157,9 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1PatchNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4673,7 +6185,9 @@ return execute(
 /// `DELETE /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1DeleteNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4699,7 +6213,9 @@ return execute(
 /// `HEAD /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1HeadNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4725,7 +6241,9 @@ return execute(
 /// `OPTIONS /api/v1/namespaces/{namespace}/services/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1OptionsNamespacedServiceProxyWithPath({required String name, required String namespace, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4751,7 +6269,9 @@ return execute(
 /// `GET /api/v1/namespaces/{namespace}/services/{name}/status`
 Future<ApiResult<Service, Never>> readCoreV1NamespacedServiceStatus({required String name, required String namespace, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4777,10 +6297,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{namespace}/services/{name}/status`
 Future<ApiResult<Service, Never>> replaceCoreV1NamespacedServiceStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Service body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4808,11 +6336,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{namespace}/services/{name}/status`
 Future<ApiResult<Service, Never>> patchCoreV1NamespacedServiceStatus({required String name, required String namespace, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -4840,7 +6378,9 @@ return execute(
 /// `GET /api/v1/namespaces/{name}`
 Future<ApiResult<Namespace, Never>> readCoreV1Namespace({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4866,10 +6406,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{name}`
 Future<ApiResult<Namespace, Never>> replaceCoreV1Namespace({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Namespace body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4897,11 +6445,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{name}`
 Future<ApiResult<Namespace, Never>> patchCoreV1Namespace({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -4929,12 +6487,24 @@ return execute(
 /// `DELETE /api/v1/namespaces/{name}`
 Future<ApiResult<Status, Never>> deleteCoreV1Namespace({required String name, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4962,10 +6532,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{name}/finalize`
 Future<ApiResult<Namespace, Never>> replaceCoreV1NamespaceFinalize({required String name, String? dryRun, String? fieldManager, String? fieldValidation, String? pretty, required Namespace body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -4993,7 +6571,9 @@ return execute(
 /// `GET /api/v1/namespaces/{name}/status`
 Future<ApiResult<Namespace, Never>> readCoreV1NamespaceStatus({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5019,10 +6599,18 @@ return execute(
 /// `PUT /api/v1/namespaces/{name}/status`
 Future<ApiResult<Namespace, Never>> replaceCoreV1NamespaceStatus({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Namespace body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -5050,11 +6638,21 @@ return execute(
 /// `PATCH /api/v1/namespaces/{name}/status`
 Future<ApiResult<Namespace, Never>> patchCoreV1NamespaceStatus({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -5082,17 +6680,39 @@ return execute(
 /// `GET /api/v1/nodes`
 Future<ApiResult<NodeList, Never>> listCoreV1Node({String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5118,10 +6738,18 @@ return execute(
 /// `POST /api/v1/nodes`
 Future<ApiResult<Node, Never>> createCoreV1Node({String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Node body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -5149,20 +6777,48 @@ return execute(
 /// `DELETE /api/v1/nodes`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionNode({String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -5190,7 +6846,9 @@ return execute(
 /// `GET /api/v1/nodes/{name}`
 Future<ApiResult<Node, Never>> readCoreV1Node({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5216,10 +6874,18 @@ return execute(
 /// `PUT /api/v1/nodes/{name}`
 Future<ApiResult<Node, Never>> replaceCoreV1Node({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Node body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -5247,11 +6913,21 @@ return execute(
 /// `PATCH /api/v1/nodes/{name}`
 Future<ApiResult<Node, Never>> patchCoreV1Node({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -5279,12 +6955,24 @@ return execute(
 /// `DELETE /api/v1/nodes/{name}`
 Future<ApiResult<Status, Never>> deleteCoreV1Node({required String name, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -5312,7 +7000,9 @@ return execute(
 /// `GET /api/v1/nodes/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1GetNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5338,7 +7028,9 @@ return execute(
 /// `POST /api/v1/nodes/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1PostNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5364,7 +7056,9 @@ return execute(
 /// `PUT /api/v1/nodes/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1PutNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5390,7 +7084,9 @@ return execute(
 /// `PATCH /api/v1/nodes/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1PatchNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5416,7 +7112,9 @@ return execute(
 /// `DELETE /api/v1/nodes/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1DeleteNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5442,7 +7140,9 @@ return execute(
 /// `HEAD /api/v1/nodes/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1HeadNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5468,7 +7168,9 @@ return execute(
 /// `OPTIONS /api/v1/nodes/{name}/proxy`
 Future<ApiResult<String, Never>> connectCoreV1OptionsNodeProxy({required String name, String? path, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path != null) queryParameters['path'] = path;
+if (path != null) {
+  queryParameters['path'] = path;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5494,7 +7196,9 @@ return execute(
 /// `GET /api/v1/nodes/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1GetNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5520,7 +7224,9 @@ return execute(
 /// `POST /api/v1/nodes/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1PostNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5546,7 +7252,9 @@ return execute(
 /// `PUT /api/v1/nodes/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1PutNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5572,7 +7280,9 @@ return execute(
 /// `PATCH /api/v1/nodes/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1PatchNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5598,7 +7308,9 @@ return execute(
 /// `DELETE /api/v1/nodes/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1DeleteNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5624,7 +7336,9 @@ return execute(
 /// `HEAD /api/v1/nodes/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1HeadNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5650,7 +7364,9 @@ return execute(
 /// `OPTIONS /api/v1/nodes/{name}/proxy/{path}`
 Future<ApiResult<String, Never>> connectCoreV1OptionsNodeProxyWithPath({required String name, required String path, String? path2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (path2 != null) queryParameters['path'] = path2;
+if (path2 != null) {
+  queryParameters['path'] = path2;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5676,7 +7392,9 @@ return execute(
 /// `GET /api/v1/nodes/{name}/status`
 Future<ApiResult<Node, Never>> readCoreV1NodeStatus({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5702,10 +7420,18 @@ return execute(
 /// `PUT /api/v1/nodes/{name}/status`
 Future<ApiResult<Node, Never>> replaceCoreV1NodeStatus({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required Node body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -5733,11 +7459,21 @@ return execute(
 /// `PATCH /api/v1/nodes/{name}/status`
 Future<ApiResult<Node, Never>> patchCoreV1NodeStatus({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -5765,17 +7501,39 @@ return execute(
 /// `GET /api/v1/persistentvolumeclaims`
 Future<ApiResult<PersistentVolumeClaimList, Never>> listCoreV1PersistentVolumeClaimForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5801,17 +7559,39 @@ return execute(
 /// `GET /api/v1/persistentvolumes`
 Future<ApiResult<PersistentVolumeList, Never>> listCoreV1PersistentVolume({String? pretty, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5837,10 +7617,18 @@ return execute(
 /// `POST /api/v1/persistentvolumes`
 Future<ApiResult<PersistentVolume, Never>> createCoreV1PersistentVolume({String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required PersistentVolume body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -5868,20 +7656,48 @@ return execute(
 /// `DELETE /api/v1/persistentvolumes`
 Future<ApiResult<Status, Never>> deleteCoreV1CollectionPersistentVolume({String? pretty, String? $continue, String? dryRun, String? fieldSelector, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, String? labelSelector, int? limit, bool? orphanDependents, String? propagationPolicy, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if ($continue != null) queryParameters['continue'] = $continue;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -5909,7 +7725,9 @@ return execute(
 /// `GET /api/v1/persistentvolumes/{name}`
 Future<ApiResult<PersistentVolume, Never>> readCoreV1PersistentVolume({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5935,10 +7753,18 @@ return execute(
 /// `PUT /api/v1/persistentvolumes/{name}`
 Future<ApiResult<PersistentVolume, Never>> replaceCoreV1PersistentVolume({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required PersistentVolume body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -5966,11 +7792,21 @@ return execute(
 /// `PATCH /api/v1/persistentvolumes/{name}`
 Future<ApiResult<PersistentVolume, Never>> patchCoreV1PersistentVolume({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -5998,12 +7834,24 @@ return execute(
 /// `DELETE /api/v1/persistentvolumes/{name}`
 Future<ApiResult<PersistentVolume, Never>> deleteCoreV1PersistentVolume({required String name, String? pretty, String? dryRun, int? gracePeriodSeconds, bool? ignoreStoreReadErrorWithClusterBreakingPotential, bool? orphanDependents, String? propagationPolicy, DeleteOptions? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (gracePeriodSeconds != null) queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
-if (ignoreStoreReadErrorWithClusterBreakingPotential != null) queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
-if (orphanDependents != null) queryParameters['orphanDependents'] = orphanDependents.toString();
-if (propagationPolicy != null) queryParameters['propagationPolicy'] = propagationPolicy;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (gracePeriodSeconds != null) {
+  queryParameters['gracePeriodSeconds'] = gracePeriodSeconds.toString();
+}
+if (ignoreStoreReadErrorWithClusterBreakingPotential != null) {
+  queryParameters['ignoreStoreReadErrorWithClusterBreakingPotential'] = ignoreStoreReadErrorWithClusterBreakingPotential.toString();
+}
+if (orphanDependents != null) {
+  queryParameters['orphanDependents'] = orphanDependents.toString();
+}
+if (propagationPolicy != null) {
+  queryParameters['propagationPolicy'] = propagationPolicy;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -6031,7 +7879,9 @@ return execute(
 /// `GET /api/v1/persistentvolumes/{name}/status`
 Future<ApiResult<PersistentVolume, Never>> readCoreV1PersistentVolumeStatus({required String name, String? pretty, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6057,10 +7907,18 @@ return execute(
 /// `PUT /api/v1/persistentvolumes/{name}/status`
 Future<ApiResult<PersistentVolume, Never>> replaceCoreV1PersistentVolumeStatus({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, required PersistentVolume body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
@@ -6088,11 +7946,21 @@ return execute(
 /// `PATCH /api/v1/persistentvolumes/{name}/status`
 Future<ApiResult<PersistentVolume, Never>> patchCoreV1PersistentVolumeStatus({required String name, String? pretty, String? dryRun, String? fieldManager, String? fieldValidation, bool? force, required Map<String,dynamic> body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (dryRun != null) queryParameters['dryRun'] = dryRun;
-if (fieldManager != null) queryParameters['fieldManager'] = fieldManager;
-if (fieldValidation != null) queryParameters['fieldValidation'] = fieldValidation;
-if (force != null) queryParameters['force'] = force.toString();
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (dryRun != null) {
+  queryParameters['dryRun'] = dryRun;
+}
+if (fieldManager != null) {
+  queryParameters['fieldManager'] = fieldManager;
+}
+if (fieldValidation != null) {
+  queryParameters['fieldValidation'] = fieldValidation;
+}
+if (force != null) {
+  queryParameters['force'] = force.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json-patch+json';
@@ -6120,17 +7988,39 @@ return execute(
 /// `GET /api/v1/pods`
 Future<ApiResult<PodList, Never>> listCoreV1PodForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6156,17 +8046,39 @@ return execute(
 /// `GET /api/v1/podtemplates`
 Future<ApiResult<PodTemplateList, Never>> listCoreV1PodTemplateForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6192,17 +8104,39 @@ return execute(
 /// `GET /api/v1/replicationcontrollers`
 Future<ApiResult<ReplicationControllerList, Never>> listCoreV1ReplicationControllerForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6228,17 +8162,39 @@ return execute(
 /// `GET /api/v1/resourcequotas`
 Future<ApiResult<ResourceQuotaList, Never>> listCoreV1ResourceQuotaForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6264,17 +8220,39 @@ return execute(
 /// `GET /api/v1/secrets`
 Future<ApiResult<SecretList, Never>> listCoreV1SecretForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6300,17 +8278,39 @@ return execute(
 /// `GET /api/v1/serviceaccounts`
 Future<ApiResult<ServiceAccountList, Never>> listCoreV1ServiceAccountForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6336,17 +8336,39 @@ return execute(
 /// `GET /api/v1/services`
 Future<ApiResult<ServiceList, Never>> listCoreV1ServiceForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6372,17 +8394,39 @@ return execute(
 /// `GET /api/v1/watch/configmaps`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1ConfigMapListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6408,17 +8452,39 @@ return execute(
 /// `GET /api/v1/watch/endpoints`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1EndpointsListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6444,17 +8510,39 @@ return execute(
 /// `GET /api/v1/watch/events`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1EventListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6480,17 +8568,39 @@ return execute(
 /// `GET /api/v1/watch/limitranges`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1LimitRangeListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6516,17 +8626,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespaceList({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6552,17 +8684,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/configmaps`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedConfigMapList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6588,17 +8742,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/configmaps/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedConfigMap({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6624,17 +8800,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/endpoints`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedEndpointsList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6660,17 +8858,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/endpoints/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedEndpoints({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6696,17 +8916,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/events`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedEventList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6732,17 +8974,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/events/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedEvent({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6768,17 +9032,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/limitranges`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedLimitRangeList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6804,17 +9090,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/limitranges/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedLimitRange({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6840,17 +9148,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/persistentvolumeclaims`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPersistentVolumeClaimList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6876,17 +9206,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/persistentvolumeclaims/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPersistentVolumeClaim({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6912,17 +9264,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/pods`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPodList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6948,17 +9322,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/pods/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPod({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -6984,17 +9380,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/podtemplates`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPodTemplateList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7020,17 +9438,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/podtemplates/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedPodTemplate({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7056,17 +9496,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/replicationcontrollers`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedReplicationControllerList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7092,17 +9554,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/replicationcontrollers/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedReplicationController({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7128,17 +9612,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/resourcequotas`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedResourceQuotaList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7164,17 +9670,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/resourcequotas/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedResourceQuota({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7200,17 +9728,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/secrets`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedSecretList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7236,17 +9786,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/secrets/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedSecret({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7272,17 +9844,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/serviceaccounts`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedServiceAccountList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7308,17 +9902,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/serviceaccounts/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedServiceAccount({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7344,17 +9960,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/services`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedServiceList({required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7380,17 +10018,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{namespace}/services/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NamespacedService({required String name, required String namespace, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7416,17 +10076,39 @@ return execute(
 /// `GET /api/v1/watch/namespaces/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1Namespace({required String name, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7452,17 +10134,39 @@ return execute(
 /// `GET /api/v1/watch/nodes`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1NodeList({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7488,17 +10192,39 @@ return execute(
 /// `GET /api/v1/watch/nodes/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1Node({required String name, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7524,17 +10250,39 @@ return execute(
 /// `GET /api/v1/watch/persistentvolumeclaims`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1PersistentVolumeClaimListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7560,17 +10308,39 @@ return execute(
 /// `GET /api/v1/watch/persistentvolumes`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1PersistentVolumeList({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7596,17 +10366,39 @@ return execute(
 /// `GET /api/v1/watch/persistentvolumes/{name}`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1PersistentVolume({required String name, bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7632,17 +10424,39 @@ return execute(
 /// `GET /api/v1/watch/pods`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1PodListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7668,17 +10482,39 @@ return execute(
 /// `GET /api/v1/watch/podtemplates`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1PodTemplateListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7704,17 +10540,39 @@ return execute(
 /// `GET /api/v1/watch/replicationcontrollers`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1ReplicationControllerListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7740,17 +10598,39 @@ return execute(
 /// `GET /api/v1/watch/resourcequotas`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1ResourceQuotaListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7776,17 +10656,39 @@ return execute(
 /// `GET /api/v1/watch/secrets`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1SecretListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7812,17 +10714,39 @@ return execute(
 /// `GET /api/v1/watch/serviceaccounts`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1ServiceAccountListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -7848,17 +10772,39 @@ return execute(
 /// `GET /api/v1/watch/services`
 Future<ApiResult<WatchEvent, Never>> watchCoreV1ServiceListForAllNamespaces({bool? allowWatchBookmarks, String? $continue, String? fieldSelector, String? labelSelector, int? limit, String? pretty, String? resourceVersion, String? resourceVersionMatch, bool? sendInitialEvents, int? timeoutSeconds, bool? watch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowWatchBookmarks != null) queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
-if ($continue != null) queryParameters['continue'] = $continue;
-if (fieldSelector != null) queryParameters['fieldSelector'] = fieldSelector;
-if (labelSelector != null) queryParameters['labelSelector'] = labelSelector;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pretty != null) queryParameters['pretty'] = pretty;
-if (resourceVersion != null) queryParameters['resourceVersion'] = resourceVersion;
-if (resourceVersionMatch != null) queryParameters['resourceVersionMatch'] = resourceVersionMatch;
-if (sendInitialEvents != null) queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
-if (timeoutSeconds != null) queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
-if (watch != null) queryParameters['watch'] = watch.toString();
+if (allowWatchBookmarks != null) {
+  queryParameters['allowWatchBookmarks'] = allowWatchBookmarks.toString();
+}
+if ($continue != null) {
+  queryParameters['continue'] = $continue;
+}
+if (fieldSelector != null) {
+  queryParameters['fieldSelector'] = fieldSelector;
+}
+if (labelSelector != null) {
+  queryParameters['labelSelector'] = labelSelector;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pretty != null) {
+  queryParameters['pretty'] = pretty;
+}
+if (resourceVersion != null) {
+  queryParameters['resourceVersion'] = resourceVersion;
+}
+if (resourceVersionMatch != null) {
+  queryParameters['resourceVersionMatch'] = resourceVersionMatch;
+}
+if (sendInitialEvents != null) {
+  queryParameters['sendInitialEvents'] = sendInitialEvents.toString();
+}
+if (timeoutSeconds != null) {
+  queryParameters['timeoutSeconds'] = timeoutSeconds.toString();
+}
+if (watch != null) {
+  queryParameters['watch'] = watch.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

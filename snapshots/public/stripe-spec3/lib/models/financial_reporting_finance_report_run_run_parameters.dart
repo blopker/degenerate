@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'reporting_category': ?reportingCategory,
   'timezone': ?timezone,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'columns', 'connected_account', 'currency', 'interval_end', 'interval_start', 'payout', 'reporting_category', 'timezone'}.contains(key)); } 
 FinancialReportingFinanceReportRunRunParameters copyWith({List<String> Function()? columns, String Function()? connectedAccount, String Function()? currency, int Function()? intervalEnd, int Function()? intervalStart, String Function()? payout, String Function()? reportingCategory, String Function()? timezone, }) { return FinancialReportingFinanceReportRunRunParameters(
   columns: columns != null ? columns() : this.columns,
   connectedAccount: connectedAccount != null ? connectedAccount() : this.connectedAccount,

@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (name != null) 'name': name?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'beta', 'class', 'description', 'id', 'name'}.contains(key)); } 
 ZeroTrustGatewaySubcategory copyWith({ZeroTrustGatewayBeta Function()? beta, ZeroTrustGatewayClass Function()? $class, ZeroTrustGatewayComponentsSchemasDescription Function()? description, ZeroTrustGatewayId Function()? id, ZeroTrustGatewayCategoriesComponentsSchemasName Function()? name, }) { return ZeroTrustGatewaySubcategory(
   beta: beta != null ? beta() : this.beta,
   $class: $class != null ? $class() : this.$class,

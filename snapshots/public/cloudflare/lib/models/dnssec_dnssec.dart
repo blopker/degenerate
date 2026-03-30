@@ -144,7 +144,7 @@ Map<String, dynamic> toJson() { return {
   if (publicKey != null) 'public_key': publicKey?.toJson(),
   if (status != null) 'status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'algorithm', 'digest', 'digest_algorithm', 'digest_type', 'dnssec_multi_signer', 'dnssec_presigned', 'dnssec_use_nsec3', 'ds', 'flags', 'key_tag', 'key_type', 'modified_on', 'public_key', 'status'}.contains(key)); } 
 DnssecDnssec copyWith({DnssecAlgorithm? Function()? algorithm, DnssecDigest? Function()? digest, DnssecDigestAlgorithm? Function()? digestAlgorithm, DnssecDigestType? Function()? digestType, DnssecDnssecMultiSigner Function()? dnssecMultiSigner, DnssecDnssecPresigned Function()? dnssecPresigned, DnssecDnssecUseNsec3 Function()? dnssecUseNsec3, DnssecDs? Function()? ds, DnssecFlags? Function()? flags, DnssecKeyTag? Function()? keyTag, DnssecKeyType? Function()? keyType, DnssecModifiedOn? Function()? modifiedOn, DnssecPublicKey? Function()? publicKey, DnssecStatus? Function()? status, }) { return DnssecDnssec(
   algorithm: algorithm != null ? algorithm() : this.algorithm,
   digest: digest != null ? digest() : this.digest,

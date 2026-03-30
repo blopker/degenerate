@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'total_code_lines_suggested': ?totalCodeLinesSuggested,
   'total_code_lines_accepted': ?totalCodeLinesAccepted,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'total_engaged_users', 'total_code_suggestions', 'total_code_acceptances', 'total_code_lines_suggested', 'total_code_lines_accepted'}.contains(key)); } 
 CopilotIdeCodeCompletionsEditorsModelsLanguages copyWith({String Function()? name, int Function()? totalEngagedUsers, int Function()? totalCodeSuggestions, int Function()? totalCodeAcceptances, int Function()? totalCodeLinesSuggested, int Function()? totalCodeLinesAccepted, }) { return CopilotIdeCodeCompletionsEditorsModelsLanguages(
   name: name != null ? name() : this.name,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,

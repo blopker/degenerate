@@ -159,7 +159,7 @@ Map<String, dynamic> toJson() { return {
   'risk_correlation_id': ?riskCorrelationId,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'reference', 'risk_correlation_id', 'setup_future_usage'}.contains(key)); } 
 PaymentMethodOptionsParam28 copyWith({PaymentMethodOptionsParam28CaptureMethod Function()? captureMethod, PaymentMethodOptionsParam28PreferredLocale Function()? preferredLocale, String Function()? reference, String Function()? riskCorrelationId, PaymentMethodOptionsParam28SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam28(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,

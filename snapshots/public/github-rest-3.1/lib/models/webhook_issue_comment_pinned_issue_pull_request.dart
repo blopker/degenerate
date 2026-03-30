@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (patchUrl != null) 'patch_url': patchUrl?.toString(),
   if (url != null) 'url': url?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'diff_url', 'html_url', 'merged_at', 'patch_url', 'url'}.contains(key)); } 
 WebhookIssueCommentPinnedIssuePullRequest copyWith({Uri Function()? diffUrl, Uri Function()? htmlUrl, DateTime? Function()? mergedAt, Uri Function()? patchUrl, Uri Function()? url, }) { return WebhookIssueCommentPinnedIssuePullRequest(
   diffUrl: diffUrl != null ? diffUrl() : this.diffUrl,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,

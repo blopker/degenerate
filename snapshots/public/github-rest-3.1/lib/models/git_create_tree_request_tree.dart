@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
   'sha': ?sha,
   'content': ?content,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'path', 'mode', 'type', 'sha', 'content'}.contains(key)); } 
 GitCreateTreeRequestTree copyWith({String Function()? path, GitCreateTreeRequestTreeMode Function()? mode, GitCreateTreeRequestTreeType Function()? type, String? Function()? sha, String Function()? content, }) { return GitCreateTreeRequestTree(
   path: path != null ? path() : this.path,
   mode: mode != null ? mode() : this.mode,

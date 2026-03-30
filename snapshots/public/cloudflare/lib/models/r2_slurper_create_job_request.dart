@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
   if (target != null) 'target': target?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'overwrite', 'source', 'target'}.contains(key)); } 
 R2SlurperCreateJobRequest copyWith({bool Function()? overwrite, R2SlurperSourceJobSchema Function()? source, R2SlurperR2TargetSchema Function()? target, }) { return R2SlurperCreateJobRequest(
   overwrite: overwrite != null ? overwrite() : this.overwrite,
   source: source != null ? source() : this.source,

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'secure_web_gateway': ?secureWebGateway,
   if (servers != null) 'servers': servers?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'hostname', 'name', 'secure_web_gateway', 'servers'}.contains(key)); } 
 UpdatePortalsRequest copyWith({String Function()? description, String Function()? hostname, String Function()? name, bool Function()? secureWebGateway, List<UpdatePortalsRequestServers> Function()? servers, }) { return UpdatePortalsRequest(
   description: description != null ? description() : this.description,
   hostname: hostname != null ? hostname() : this.hostname,

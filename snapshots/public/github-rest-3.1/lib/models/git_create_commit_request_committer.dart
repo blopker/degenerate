@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'email': ?email,
   if (date != null) 'date': date?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'email', 'date'}.contains(key)); } 
 GitCreateCommitRequestCommitter copyWith({String Function()? name, String Function()? email, DateTime Function()? date, }) { return GitCreateCommitRequestCommitter(
   name: name != null ? name() : this.name,
   email: email != null ? email() : this.email,

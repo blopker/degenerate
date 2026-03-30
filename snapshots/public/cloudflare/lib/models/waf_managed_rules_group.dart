@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waf_managed_rules_components_schemas_identifier.dart';import 'waf_managed_rules_identifier.dart';import 'waf_managed_rules_name.dart';/// Defines an informative summary of what the rule group does.
-extension type const WafManagedRulesDescription(String value) {
-factory WafManagedRulesDescription.fromJson(String json) => WafManagedRulesDescription(json);
-
-String toJson() => value;
-
-}
-/// Defines the number of rules within the group that have been modified from their default configuration.
-extension type const WafManagedRulesModifiedRulesCount(double value) {
-factory WafManagedRulesModifiedRulesCount.fromJson(num json) => WafManagedRulesModifiedRulesCount(json.toDouble());
-
-num toJson() => value;
-
-}
-/// Defines the number of rules in the current rule group.
-extension type const WafManagedRulesRulesCount(double value) {
-factory WafManagedRulesRulesCount.fromJson(num json) => WafManagedRulesRulesCount(json.toDouble());
-
-num toJson() => value;
-
-}
-final class WafManagedRulesGroup {const WafManagedRulesGroup({this.description, this.id, this.modifiedRulesCount, this.name, this.packageId, this.rulesCount, });
+import 'waf_managed_rules_components_schemas_identifier.dart';import 'waf_managed_rules_description.dart';import 'waf_managed_rules_identifier.dart';import 'waf_managed_rules_modified_rules_count.dart';import 'waf_managed_rules_name.dart';import 'waf_managed_rules_rules_count.dart';final class WafManagedRulesGroup {const WafManagedRulesGroup({this.description, this.id, this.modifiedRulesCount, this.name, this.packageId, this.rulesCount, });
 
 factory WafManagedRulesGroup.fromJson(Map<String, dynamic> json) { return WafManagedRulesGroup(
   description: json['description'] != null ? WafManagedRulesDescription.fromJson(json['description'] as String) : null,
@@ -54,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (packageId != null) 'package_id': packageId?.toJson(),
   if (rulesCount != null) 'rules_count': rulesCount?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'id', 'modified_rules_count', 'name', 'package_id', 'rules_count'}.contains(key)); } 
 WafManagedRulesGroup copyWith({WafManagedRulesDescription? Function()? description, WafManagedRulesComponentsSchemasIdentifier Function()? id, WafManagedRulesModifiedRulesCount Function()? modifiedRulesCount, WafManagedRulesName Function()? name, WafManagedRulesIdentifier Function()? packageId, WafManagedRulesRulesCount Function()? rulesCount, }) { return WafManagedRulesGroup(
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

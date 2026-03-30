@@ -17,8 +17,12 @@ final class MigrationsApi with ApiExecutor {const MigrationsApi(this.apiConfig);
 /// `GET /orgs/{org}/migrations`
 Future<ApiResult<List<Migration>, Never>> migrationsListForOrg({required String org, int? perPage, int? page, List<MigrationsListForOrgExclude>? exclude, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 if (exclude != null) {
 for (final item in exclude) {
   queryParametersList.add(ApiQueryParameter(name: 'exclude', value: item.toJson(), allowReserved: false));
@@ -184,8 +188,12 @@ return execute(
 /// `GET /orgs/{org}/migrations/{migration_id}/repositories`
 Future<ApiResult<List<MinimalRepository>, BasicError>> migrationsListReposForOrg({required String org, required int migrationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -216,8 +224,12 @@ return execute(
 /// `GET /user/migrations`
 Future<ApiResult<List<Migration>, BasicError>> migrationsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -401,8 +413,12 @@ return execute(
 /// `GET /user/migrations/{migration_id}/repositories`
 Future<ApiResult<List<MinimalRepository>, BasicError>> migrationsListReposForAuthenticatedUser({required int migrationId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

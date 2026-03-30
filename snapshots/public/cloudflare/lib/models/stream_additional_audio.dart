@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (uid != null) 'uid': uid?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default', 'label', 'status', 'uid'}.contains(key)); } 
 StreamAdditionalAudio copyWith({StreamAudioDefault Function()? $default, StreamAudioLabel Function()? label, StreamAudioState Function()? status, StreamIdentifier Function()? uid, }) { return StreamAdditionalAudio(
   $default: $default != null ? $default() : this.$default,
   label: label != null ? label() : this.label,

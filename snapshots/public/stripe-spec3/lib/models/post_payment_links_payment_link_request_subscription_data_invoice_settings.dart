@@ -11,7 +11,7 @@ final PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettingsIssuer? i
 Map<String, dynamic> toJson() { return {
   if (issuer != null) 'issuer': issuer?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'issuer'}.contains(key)); } 
 PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettings copyWith({PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettingsIssuer Function()? issuer}) { return PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettings(
   issuer: issuer != null ? issuer() : this.issuer,
 ); } 

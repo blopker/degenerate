@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
   if (model != null) 'model': model?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'model'}.contains(key)); } 
 AutoragConfigSearchRequestReranking copyWith({bool Function()? enabled, AutoragConfigSearchRequestRerankingModel Function()? model, }) { return AutoragConfigSearchRequestReranking(
   enabled: enabled != null ? enabled() : this.enabled,
   model: model != null ? model() : this.model,

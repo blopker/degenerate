@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'cardholder_management': ?cardholderManagement,
   'spend_control_management': ?spendControlManagement,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_management', 'card_spend_dispute_management', 'cardholder_management', 'spend_control_management'}.contains(key)); } 
 PostAccountSessionsRequestComponentsIssuingCardFeatures copyWith({bool Function()? cardManagement, bool Function()? cardSpendDisputeManagement, bool Function()? cardholderManagement, bool Function()? spendControlManagement, }) { return PostAccountSessionsRequestComponentsIssuingCardFeatures(
   cardManagement: cardManagement != null ? cardManagement() : this.cardManagement,
   cardSpendDisputeManagement: cardSpendDisputeManagement != null ? cardSpendDisputeManagement() : this.cardSpendDisputeManagement,

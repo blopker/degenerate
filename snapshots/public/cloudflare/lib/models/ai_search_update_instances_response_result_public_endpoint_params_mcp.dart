@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'description': description,
   'disabled': disabled,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'disabled'}.contains(key)); } 
 AiSearchUpdateInstancesResponseResultPublicEndpointParamsMcp copyWith({String Function()? description, bool Function()? disabled, }) { return AiSearchUpdateInstancesResponseResultPublicEndpointParamsMcp(
   description: description != null ? description() : this.description,
   disabled: disabled != null ? disabled() : this.disabled,

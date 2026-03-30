@@ -23,10 +23,10 @@ factory ConversationItem.fromJson(Map<String, dynamic> json) { return switch (js
   'FunctionShellCallOutput' => ConversationItemFunctionShellCallOutput.fromJson(json),
   'ApplyPatchToolCall' => ConversationItemApplyPatchToolCall.fromJson(json),
   'ApplyPatchToolCallOutput' => ConversationItemApplyPatchToolCallOutput.fromJson(json),
-  'McpListTools' => ConversationItemMcpListTools.fromJson(json),
-  'McpApprovalRequest' => ConversationItemMcpApprovalRequest.fromJson(json),
-  'McpApprovalResponseResource' => ConversationItemMcpApprovalResponseResource.fromJson(json),
-  'McpToolCall' => ConversationItemMcpToolCall.fromJson(json),
+  'MCPListTools' => ConversationItemMcpListTools.fromJson(json),
+  'MCPApprovalRequest' => ConversationItemMcpApprovalRequest.fromJson(json),
+  'MCPApprovalResponseResource' => ConversationItemMcpApprovalResponseResource.fromJson(json),
+  'MCPToolCall' => ConversationItemMcpToolCall.fromJson(json),
   'CustomToolCall' => ConversationItemCustomToolCall.fromJson(json),
   'CustomToolCallOutput' => ConversationItemCustomToolCallOutput.fromJson(json),
   _ => ConversationItem$Unknown(json),
@@ -45,7 +45,7 @@ factory ConversationItemMessage.fromJson(Map<String, dynamic> json) { return Con
 final Message message;
 
 @override String get type { return 'Message'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...message.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...message.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMessage && message == other.message; } 
 @override int get hashCode { return message.hashCode; } 
@@ -58,7 +58,7 @@ factory ConversationItemFunctionToolCallResource.fromJson(Map<String, dynamic> j
 final FunctionToolCall functionToolCall;
 
 @override String get type { return 'FunctionToolCallResource'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...functionToolCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...functionToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemFunctionToolCallResource && functionToolCall == other.functionToolCall; } 
 @override int get hashCode { return functionToolCall.hashCode; } 
@@ -71,7 +71,7 @@ factory ConversationItemFunctionToolCallOutputResource.fromJson(Map<String, dyna
 final FunctionToolCallOutput functionToolCallOutput;
 
 @override String get type { return 'FunctionToolCallOutputResource'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...functionToolCallOutput.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...functionToolCallOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemFunctionToolCallOutputResource && functionToolCallOutput == other.functionToolCallOutput; } 
 @override int get hashCode { return functionToolCallOutput.hashCode; } 
@@ -84,7 +84,7 @@ factory ConversationItemFileSearchToolCall.fromJson(Map<String, dynamic> json) {
 final FileSearchToolCall fileSearchToolCall;
 
 @override String get type { return 'FileSearchToolCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...fileSearchToolCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...fileSearchToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemFileSearchToolCall && fileSearchToolCall == other.fileSearchToolCall; } 
 @override int get hashCode { return fileSearchToolCall.hashCode; } 
@@ -97,7 +97,7 @@ factory ConversationItemWebSearchToolCall.fromJson(Map<String, dynamic> json) { 
 final WebSearchToolCall webSearchToolCall;
 
 @override String get type { return 'WebSearchToolCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...webSearchToolCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...webSearchToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemWebSearchToolCall && webSearchToolCall == other.webSearchToolCall; } 
 @override int get hashCode { return webSearchToolCall.hashCode; } 
@@ -110,7 +110,7 @@ factory ConversationItemImageGenToolCall.fromJson(Map<String, dynamic> json) { r
 final ImageGenToolCall imageGenToolCall;
 
 @override String get type { return 'ImageGenToolCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...imageGenToolCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...imageGenToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemImageGenToolCall && imageGenToolCall == other.imageGenToolCall; } 
 @override int get hashCode { return imageGenToolCall.hashCode; } 
@@ -123,7 +123,7 @@ factory ConversationItemComputerToolCall.fromJson(Map<String, dynamic> json) { r
 final ComputerToolCall computerToolCall;
 
 @override String get type { return 'ComputerToolCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...computerToolCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...computerToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemComputerToolCall && computerToolCall == other.computerToolCall; } 
 @override int get hashCode { return computerToolCall.hashCode; } 
@@ -136,7 +136,7 @@ factory ConversationItemComputerToolCallOutputResource.fromJson(Map<String, dyna
 final ComputerToolCallOutput computerToolCallOutput;
 
 @override String get type { return 'ComputerToolCallOutputResource'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...computerToolCallOutput.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...computerToolCallOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemComputerToolCallOutputResource && computerToolCallOutput == other.computerToolCallOutput; } 
 @override int get hashCode { return computerToolCallOutput.hashCode; } 
@@ -149,7 +149,7 @@ factory ConversationItemToolSearchCall.fromJson(Map<String, dynamic> json) { ret
 final ToolSearchCall toolSearchCall;
 
 @override String get type { return 'ToolSearchCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...toolSearchCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...toolSearchCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemToolSearchCall && toolSearchCall == other.toolSearchCall; } 
 @override int get hashCode { return toolSearchCall.hashCode; } 
@@ -162,7 +162,7 @@ factory ConversationItemToolSearchOutput.fromJson(Map<String, dynamic> json) { r
 final ToolSearchOutput toolSearchOutput;
 
 @override String get type { return 'ToolSearchOutput'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...toolSearchOutput.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...toolSearchOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemToolSearchOutput && toolSearchOutput == other.toolSearchOutput; } 
 @override int get hashCode { return toolSearchOutput.hashCode; } 
@@ -175,7 +175,7 @@ factory ConversationItemReasoningItem.fromJson(Map<String, dynamic> json) { retu
 final ReasoningItem reasoningItem;
 
 @override String get type { return 'ReasoningItem'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...reasoningItem.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...reasoningItem.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemReasoningItem && reasoningItem == other.reasoningItem; } 
 @override int get hashCode { return reasoningItem.hashCode; } 
@@ -188,7 +188,7 @@ factory ConversationItemCodeInterpreterToolCall.fromJson(Map<String, dynamic> js
 final CodeInterpreterToolCall codeInterpreterToolCall;
 
 @override String get type { return 'CodeInterpreterToolCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...codeInterpreterToolCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...codeInterpreterToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemCodeInterpreterToolCall && codeInterpreterToolCall == other.codeInterpreterToolCall; } 
 @override int get hashCode { return codeInterpreterToolCall.hashCode; } 
@@ -201,7 +201,7 @@ factory ConversationItemLocalShellToolCall.fromJson(Map<String, dynamic> json) {
 final LocalShellToolCall localShellToolCall;
 
 @override String get type { return 'LocalShellToolCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...localShellToolCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...localShellToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemLocalShellToolCall && localShellToolCall == other.localShellToolCall; } 
 @override int get hashCode { return localShellToolCall.hashCode; } 
@@ -214,7 +214,7 @@ factory ConversationItemLocalShellToolCallOutput.fromJson(Map<String, dynamic> j
 final LocalShellToolCallOutput localShellToolCallOutput;
 
 @override String get type { return 'LocalShellToolCallOutput'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...localShellToolCallOutput.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...localShellToolCallOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemLocalShellToolCallOutput && localShellToolCallOutput == other.localShellToolCallOutput; } 
 @override int get hashCode { return localShellToolCallOutput.hashCode; } 
@@ -227,7 +227,7 @@ factory ConversationItemFunctionShellCall.fromJson(Map<String, dynamic> json) { 
 final FunctionShellCall functionShellCall;
 
 @override String get type { return 'FunctionShellCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...functionShellCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...functionShellCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemFunctionShellCall && functionShellCall == other.functionShellCall; } 
 @override int get hashCode { return functionShellCall.hashCode; } 
@@ -240,7 +240,7 @@ factory ConversationItemFunctionShellCallOutput.fromJson(Map<String, dynamic> js
 final FunctionShellCallOutput functionShellCallOutput;
 
 @override String get type { return 'FunctionShellCallOutput'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...functionShellCallOutput.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...functionShellCallOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemFunctionShellCallOutput && functionShellCallOutput == other.functionShellCallOutput; } 
 @override int get hashCode { return functionShellCallOutput.hashCode; } 
@@ -253,7 +253,7 @@ factory ConversationItemApplyPatchToolCall.fromJson(Map<String, dynamic> json) {
 final ApplyPatchToolCall applyPatchToolCall;
 
 @override String get type { return 'ApplyPatchToolCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...applyPatchToolCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...applyPatchToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemApplyPatchToolCall && applyPatchToolCall == other.applyPatchToolCall; } 
 @override int get hashCode { return applyPatchToolCall.hashCode; } 
@@ -266,7 +266,7 @@ factory ConversationItemApplyPatchToolCallOutput.fromJson(Map<String, dynamic> j
 final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 
 @override String get type { return 'ApplyPatchToolCallOutput'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...applyPatchToolCallOutput.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...applyPatchToolCallOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemApplyPatchToolCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput; } 
 @override int get hashCode { return applyPatchToolCallOutput.hashCode; } 
@@ -278,8 +278,8 @@ factory ConversationItemMcpListTools.fromJson(Map<String, dynamic> json) { retur
 
 final McpListTools mcpListTools;
 
-@override String get type { return 'McpListTools'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...mcpListTools.toJson()}; } 
+@override String get type { return 'MCPListTools'; } 
+@override Map<String, dynamic> toJson() { return {...mcpListTools.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMcpListTools && mcpListTools == other.mcpListTools; } 
 @override int get hashCode { return mcpListTools.hashCode; } 
@@ -291,8 +291,8 @@ factory ConversationItemMcpApprovalRequest.fromJson(Map<String, dynamic> json) {
 
 final McpApprovalRequest mcpApprovalRequest;
 
-@override String get type { return 'McpApprovalRequest'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...mcpApprovalRequest.toJson()}; } 
+@override String get type { return 'MCPApprovalRequest'; } 
+@override Map<String, dynamic> toJson() { return {...mcpApprovalRequest.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest; } 
 @override int get hashCode { return mcpApprovalRequest.hashCode; } 
@@ -304,8 +304,8 @@ factory ConversationItemMcpApprovalResponseResource.fromJson(Map<String, dynamic
 
 final McpApprovalResponseResource mcpApprovalResponseResource;
 
-@override String get type { return 'McpApprovalResponseResource'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...mcpApprovalResponseResource.toJson()}; } 
+@override String get type { return 'MCPApprovalResponseResource'; } 
+@override Map<String, dynamic> toJson() { return {...mcpApprovalResponseResource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMcpApprovalResponseResource && mcpApprovalResponseResource == other.mcpApprovalResponseResource; } 
 @override int get hashCode { return mcpApprovalResponseResource.hashCode; } 
@@ -317,8 +317,8 @@ factory ConversationItemMcpToolCall.fromJson(Map<String, dynamic> json) { return
 
 final McpToolCall mcpToolCall;
 
-@override String get type { return 'McpToolCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...mcpToolCall.toJson()}; } 
+@override String get type { return 'MCPToolCall'; } 
+@override Map<String, dynamic> toJson() { return {...mcpToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMcpToolCall && mcpToolCall == other.mcpToolCall; } 
 @override int get hashCode { return mcpToolCall.hashCode; } 
@@ -331,7 +331,7 @@ factory ConversationItemCustomToolCall.fromJson(Map<String, dynamic> json) { ret
 final CustomToolCall customToolCall;
 
 @override String get type { return 'CustomToolCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...customToolCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...customToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemCustomToolCall && customToolCall == other.customToolCall; } 
 @override int get hashCode { return customToolCall.hashCode; } 
@@ -344,7 +344,7 @@ factory ConversationItemCustomToolCallOutput.fromJson(Map<String, dynamic> json)
 final CustomToolCallOutput customToolCallOutput;
 
 @override String get type { return 'CustomToolCallOutput'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...customToolCallOutput.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...customToolCallOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemCustomToolCallOutput && customToolCallOutput == other.customToolCallOutput; } 
 @override int get hashCode { return customToolCallOutput.hashCode; } 

@@ -15,8 +15,12 @@ final class LiveStreamsApi with ApiExecutor {const LiveStreamsApi(this.apiConfig
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/analytics/livestreams/overall`
 Future<ApiResult<GetLivestreamAnalyticsCompleteResponse, Never>> getLivestreamAnalyticsComplete({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, DateTime? startTime, DateTime? endTime, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (startTime != null) queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
+if (startTime != null) {
+  queryParameters['start_time'] = startTime.toString();
+}
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -43,13 +47,27 @@ return execute(
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/livestreams`
 Future<ApiResult<FetchAllLivestreamsResponse, Never>> fetchAllLivestreams({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, bool? excludeMeetings, int? perPage, int? pageNo, FetchAllLivestreamsStatus? status, DateTime? startTime, DateTime? endTime, FetchAllLivestreamsSortOrder? sortOrder, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (excludeMeetings != null) queryParameters['exclude_meetings'] = excludeMeetings.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
-if (status != null) queryParameters['status'] = status.toJson();
-if (startTime != null) queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
-if (sortOrder != null) queryParameters['sort_order'] = sortOrder.toJson();
+if (excludeMeetings != null) {
+  queryParameters['exclude_meetings'] = excludeMeetings.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (pageNo != null) {
+  queryParameters['page_no'] = pageNo.toString();
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (startTime != null) {
+  queryParameters['start_time'] = startTime.toString();
+}
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
+if (sortOrder != null) {
+  queryParameters['sort_order'] = sortOrder.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -99,8 +117,12 @@ return execute(
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/livestreams/{livestream_id}`
 Future<ApiResult<LivestreamSessionLivestreamIdResponse, Never>> getV2LivestreamSessionLivestreamId({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String livestreamId, int? pageNo, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (pageNo != null) {
+  queryParameters['page_no'] = pageNo.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -211,8 +233,12 @@ return execute(
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/meetings/{meeting_id}/livestream`
 Future<ApiResult<LivestreamSessionDetailsResponse, Never>> livestreamSessionDetails({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String meetingId, int? pageNo, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (pageNo != null) {
+  queryParameters['page_no'] = pageNo.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -262,8 +288,12 @@ return execute(
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/livestream-sessions`
 Future<ApiResult<LivestreamsessionSessionMeetingIdActiveLivestreamResponse, Never>> getV2LivestreamsessionSessionMeetingIdActiveLivestream({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, double? perPage, double? pageNo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (pageNo != null) queryParameters['page_no'] = pageNo.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (pageNo != null) {
+  queryParameters['page_no'] = pageNo.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

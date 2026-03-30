@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'type', 'value'}.contains(key)); } 
 TlsCertificatesAndHostnamesOwnershipVerificationTxt copyWith({String Function()? name, TlsCertificatesAndHostnamesOwnershipVerificationTxtType Function()? type, String Function()? value, }) { return TlsCertificatesAndHostnamesOwnershipVerificationTxt(
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,

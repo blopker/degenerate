@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   if (network != null) 'network': network?.toJson(),
   if (subnetType != null) 'subnet_type': subnetType?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'created_at', 'deleted_at', 'id', 'is_default_network', 'name', 'network', 'subnet_type'}.contains(key)); } 
 TunnelSubnet copyWith({TunnelSubnetComment Function()? comment, TunnelCreatedAt Function()? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelSubnetId Function()? id, TunnelSubnetIsDefaultNetwork Function()? isDefaultNetwork, TunnelSubnetName Function()? name, TunnelSubnetIpNetwork Function()? network, TunnelSubnetType Function()? subnetType, }) { return TunnelSubnet(
   comment: comment != null ? comment() : this.comment,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

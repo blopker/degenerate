@@ -13,7 +13,9 @@ final class PetsApi with ApiExecutor {const PetsApi(this.apiConfig);
 /// `GET /pets`
 Future<ApiResult<List<Pet>, ErrorModel>> listPets({int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

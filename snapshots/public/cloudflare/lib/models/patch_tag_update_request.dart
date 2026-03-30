@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   'sophisticationLevel': ?sophisticationLevel,
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'activeDuration', 'actorCategory', 'aliasGroupNames', 'aliasGroupNamesInternal', 'analyticPriority', 'attributionConfidence', 'attributionOrganization', 'categoryUuid', 'externalReferenceLinks', 'internalDescription', 'motive', 'opsecLevel', 'originCountryISO', 'priority', 'sophisticationLevel', 'value'}.contains(key)); } 
 PatchTagUpdateRequest copyWith({String Function()? activeDuration, String Function()? actorCategory, List<String> Function()? aliasGroupNames, List<String> Function()? aliasGroupNamesInternal, double Function()? analyticPriority, String Function()? attributionConfidence, String Function()? attributionOrganization, String Function()? categoryUuid, List<String> Function()? externalReferenceLinks, String Function()? internalDescription, String Function()? motive, String Function()? opsecLevel, String Function()? originCountryIso, double Function()? priority, String Function()? sophisticationLevel, String Function()? value, }) { return PatchTagUpdateRequest(
   activeDuration: activeDuration != null ? activeDuration() : this.activeDuration,
   actorCategory: actorCategory != null ? actorCategory() : this.actorCategory,

@@ -11,7 +11,7 @@ final LoadBalancingSearch? result;
 Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
 LoadBalancingSearchResult copyWith({LoadBalancingSearch Function()? result}) { return LoadBalancingSearchResult(
   result: result != null ? result() : this.result,
 ); } 

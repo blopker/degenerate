@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'workers/tag': ?workersTag,
   'workers/triggered_by': ?workersTriggeredBy,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'workers/message', 'workers/tag', 'workers/triggered_by'}.contains(key)); } 
 WorkersScriptAndVersionSettingsItemAnnotations copyWith({String Function()? workersMessage, String Function()? workersTag, String Function()? workersTriggeredBy, }) { return WorkersScriptAndVersionSettingsItemAnnotations(
   workersMessage: workersMessage != null ? workersMessage() : this.workersMessage,
   workersTag: workersTag != null ? workersTag() : this.workersTag,

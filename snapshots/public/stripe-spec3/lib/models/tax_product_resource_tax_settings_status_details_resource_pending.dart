@@ -13,7 +13,7 @@ final List<String>? missingFields;
 Map<String, dynamic> toJson() { return {
   'missing_fields': ?missingFields,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'missing_fields'}.contains(key)); } 
 TaxProductResourceTaxSettingsStatusDetailsResourcePending copyWith({List<String>? Function()? missingFields}) { return TaxProductResourceTaxSettingsStatusDetailsResourcePending(
   missingFields: missingFields != null ? missingFields() : this.missingFields,
 ); } 

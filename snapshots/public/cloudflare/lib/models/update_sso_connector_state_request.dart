@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
   if (useFedrampLanguage != null) 'use_fedramp_language': useFedrampLanguage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'use_fedramp_language'}.contains(key)); } 
 UpdateSsoConnectorStateRequest copyWith({bool Function()? enabled, IamUseFedrampLanguage Function()? useFedrampLanguage, }) { return UpdateSsoConnectorStateRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   useFedrampLanguage: useFedrampLanguage != null ? useFedrampLanguage() : this.useFedrampLanguage,

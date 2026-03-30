@@ -17,7 +17,7 @@ final Map<String,int>? used;
 Map<String, dynamic> toJson() { return {
   'used': ?used,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'used'}.contains(key)); } 
 ResourceCreditBalance copyWith({Map<String, int>? Function()? used}) { return ResourceCreditBalance(
   used: used != null ? used() : this.used,
 ); } 

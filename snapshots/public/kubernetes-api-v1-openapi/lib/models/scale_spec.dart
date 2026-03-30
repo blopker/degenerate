@@ -13,7 +13,7 @@ final int replicas;
 Map<String, dynamic> toJson() { return {
   'replicas': replicas,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'replicas'}.contains(key)); } 
 ScaleSpec copyWith({int Function()? replicas}) { return ScaleSpec(
   replicas: replicas != null ? replicas() : this.replicas,
 ); } 

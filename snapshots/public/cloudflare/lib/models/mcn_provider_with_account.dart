@@ -1,0 +1,114 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'mcn_account_id.dart';import 'mcn_cloud_type.dart';import 'mcn_provider_discovery_status.dart';import 'mcn_provider_id.dart';import 'mcn_provider_lifecycle_state.dart';import 'mcn_provider_status.dart';final class McnProviderWithAccount {const McnProviderWithAccount({this.awsArn, this.azureSubscriptionId, this.azureTenantId, required this.cloudType, this.description, required this.friendlyName, this.gcpProjectId, this.gcpServiceAccountEmail, required this.id, required this.lastUpdated, required this.lifecycleState, required this.state, required this.stateV2, this.status, required this.accountId, });
+
+factory McnProviderWithAccount.fromJson(Map<String, dynamic> json) { return McnProviderWithAccount(
+  awsArn: json['aws_arn'] as String?,
+  azureSubscriptionId: json['azure_subscription_id'] as String?,
+  azureTenantId: json['azure_tenant_id'] as String?,
+  cloudType: McnCloudType.fromJson(json['cloud_type'] as String),
+  description: json['description'] as String?,
+  friendlyName: json['friendly_name'] as String,
+  gcpProjectId: json['gcp_project_id'] as String?,
+  gcpServiceAccountEmail: json['gcp_service_account_email'] as String?,
+  id: McnProviderId.fromJson(json['id'] as String),
+  lastUpdated: json['last_updated'] as String,
+  lifecycleState: McnProviderLifecycleState.fromJson(json['lifecycle_state'] as String),
+  state: McnProviderDiscoveryStatus.fromJson(json['state'] as String),
+  stateV2: McnProviderDiscoveryStatus.fromJson(json['state_v2'] as String),
+  status: json['status'] != null ? McnProviderStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
+  accountId: McnAccountId.fromJson(json['account_id'] as String),
+); }
+
+final String? awsArn;
+
+final String? azureSubscriptionId;
+
+final String? azureTenantId;
+
+final McnCloudType cloudType;
+
+final String? description;
+
+final String friendlyName;
+
+final String? gcpProjectId;
+
+final String? gcpServiceAccountEmail;
+
+final McnProviderId id;
+
+final String lastUpdated;
+
+final McnProviderLifecycleState lifecycleState;
+
+final McnProviderDiscoveryStatus state;
+
+final McnProviderDiscoveryStatus stateV2;
+
+final McnProviderStatus? status;
+
+final McnAccountId accountId;
+
+Map<String, dynamic> toJson() { return {
+  'aws_arn': ?awsArn,
+  'azure_subscription_id': ?azureSubscriptionId,
+  'azure_tenant_id': ?azureTenantId,
+  'cloud_type': cloudType.toJson(),
+  'description': ?description,
+  'friendly_name': friendlyName,
+  'gcp_project_id': ?gcpProjectId,
+  'gcp_service_account_email': ?gcpServiceAccountEmail,
+  'id': id.toJson(),
+  'last_updated': lastUpdated,
+  'lifecycle_state': lifecycleState.toJson(),
+  'state': state.toJson(),
+  'state_v2': stateV2.toJson(),
+  if (status != null) 'status': status?.toJson(),
+  'account_id': accountId.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloud_type') &&
+      json.containsKey('friendly_name') && json['friendly_name'] is String &&
+      json.containsKey('id') &&
+      json.containsKey('last_updated') && json['last_updated'] is String &&
+      json.containsKey('lifecycle_state') &&
+      json.containsKey('state') &&
+      json.containsKey('state_v2') &&
+      json.containsKey('account_id'); } 
+McnProviderWithAccount copyWith({String Function()? awsArn, String Function()? azureSubscriptionId, String Function()? azureTenantId, McnCloudType? cloudType, String Function()? description, String? friendlyName, String Function()? gcpProjectId, String Function()? gcpServiceAccountEmail, McnProviderId? id, String? lastUpdated, McnProviderLifecycleState? lifecycleState, McnProviderDiscoveryStatus? state, McnProviderDiscoveryStatus? stateV2, McnProviderStatus Function()? status, McnAccountId? accountId, }) { return McnProviderWithAccount(
+  awsArn: awsArn != null ? awsArn() : this.awsArn,
+  azureSubscriptionId: azureSubscriptionId != null ? azureSubscriptionId() : this.azureSubscriptionId,
+  azureTenantId: azureTenantId != null ? azureTenantId() : this.azureTenantId,
+  cloudType: cloudType ?? this.cloudType,
+  description: description != null ? description() : this.description,
+  friendlyName: friendlyName ?? this.friendlyName,
+  gcpProjectId: gcpProjectId != null ? gcpProjectId() : this.gcpProjectId,
+  gcpServiceAccountEmail: gcpServiceAccountEmail != null ? gcpServiceAccountEmail() : this.gcpServiceAccountEmail,
+  id: id ?? this.id,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  lifecycleState: lifecycleState ?? this.lifecycleState,
+  state: state ?? this.state,
+  stateV2: stateV2 ?? this.stateV2,
+  status: status != null ? status() : this.status,
+  accountId: accountId ?? this.accountId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is McnProviderWithAccount &&
+          awsArn == other.awsArn &&
+          azureSubscriptionId == other.azureSubscriptionId &&
+          azureTenantId == other.azureTenantId &&
+          cloudType == other.cloudType &&
+          description == other.description &&
+          friendlyName == other.friendlyName &&
+          gcpProjectId == other.gcpProjectId &&
+          gcpServiceAccountEmail == other.gcpServiceAccountEmail &&
+          id == other.id &&
+          lastUpdated == other.lastUpdated &&
+          lifecycleState == other.lifecycleState &&
+          state == other.state &&
+          stateV2 == other.stateV2 &&
+          status == other.status &&
+          accountId == other.accountId; } 
+@override int get hashCode { return Object.hash(awsArn, azureSubscriptionId, azureTenantId, cloudType, description, friendlyName, gcpProjectId, gcpServiceAccountEmail, id, lastUpdated, lifecycleState, state, stateV2, status, accountId); } 
+@override String toString() { return 'McnProviderWithAccount(awsArn: $awsArn, azureSubscriptionId: $azureSubscriptionId, azureTenantId: $azureTenantId, cloudType: $cloudType, description: $description, friendlyName: $friendlyName, gcpProjectId: $gcpProjectId, gcpServiceAccountEmail: $gcpServiceAccountEmail, id: $id, lastUpdated: $lastUpdated, lifecycleState: $lifecycleState, state: $state, stateV2: $stateV2, status: $status, accountId: $accountId)'; } 
+ }

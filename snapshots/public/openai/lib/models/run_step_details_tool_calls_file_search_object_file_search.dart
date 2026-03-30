@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (rankingOptions != null) 'ranking_options': rankingOptions?.toJson(),
   if (results != null) 'results': results?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ranking_options', 'results'}.contains(key)); } 
 RunStepDetailsToolCallsFileSearchObjectFileSearch copyWith({RunStepDetailsToolCallsFileSearchRankingOptionsObject Function()? rankingOptions, List<RunStepDetailsToolCallsFileSearchResultObject> Function()? results, }) { return RunStepDetailsToolCallsFileSearchObjectFileSearch(
   rankingOptions: rankingOptions != null ? rankingOptions() : this.rankingOptions,
   results: results != null ? results() : this.results,

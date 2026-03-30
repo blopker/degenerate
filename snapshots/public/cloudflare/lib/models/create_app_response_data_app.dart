@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'id', 'name'}.contains(key)); } 
 CreateAppResponseDataApp copyWith({String Function()? createdAt, String Function()? id, String Function()? name, }) { return CreateAppResponseDataApp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,

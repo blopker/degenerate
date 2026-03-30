@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (request != null) 'request': request?.toJson(),
   if (response != null) 'response': response?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'headers', 'request', 'response'}.contains(key)); } 
 FirewallMatchVariant1 copyWith({List<FirewallMatchVariant1Headers> Function()? headers, FirewallMatchVariant1Request Function()? request, FirewallMatchVariant1Response Function()? response, }) { return FirewallMatchVariant1(
   headers: headers != null ? headers() : this.headers,
   request: request != null ? request() : this.request,

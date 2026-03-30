@@ -212,7 +212,7 @@ Map<String, dynamic> toJson() { return {
   if (messageStatusCallback != null) 'MessageStatusCallback': messageStatusCallback?.toString(),
   'PublicApplicationConnectEnabled': ?publicApplicationConnectEnabled,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName', 'ApiVersion', 'VoiceUrl', 'VoiceMethod', 'VoiceFallbackUrl', 'VoiceFallbackMethod', 'StatusCallback', 'StatusCallbackMethod', 'VoiceCallerIdLookup', 'SmsUrl', 'SmsMethod', 'SmsFallbackUrl', 'SmsFallbackMethod', 'SmsStatusCallback', 'MessageStatusCallback', 'PublicApplicationConnectEnabled'}.contains(key)); } 
 UpdateApplicationRequest copyWith({String Function()? friendlyName, String Function()? apiVersion, Uri Function()? voiceUrl, UpdateApplicationRequestVoiceMethod Function()? voiceMethod, Uri Function()? voiceFallbackUrl, UpdateApplicationRequestVoiceFallbackMethod Function()? voiceFallbackMethod, Uri Function()? statusCallback, UpdateApplicationRequestStatusCallbackMethod Function()? statusCallbackMethod, bool Function()? voiceCallerIdLookup, Uri Function()? smsUrl, UpdateApplicationRequestSmsMethod Function()? smsMethod, Uri Function()? smsFallbackUrl, UpdateApplicationRequestSmsFallbackMethod Function()? smsFallbackMethod, Uri Function()? smsStatusCallback, Uri Function()? messageStatusCallback, bool Function()? publicApplicationConnectEnabled, }) { return UpdateApplicationRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

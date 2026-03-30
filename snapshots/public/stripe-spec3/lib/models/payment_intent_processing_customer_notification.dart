@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'approval_requested': ?approvalRequested,
   'completes_at': ?completesAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'approval_requested', 'completes_at'}.contains(key)); } 
 PaymentIntentProcessingCustomerNotification copyWith({bool? Function()? approvalRequested, int? Function()? completesAt, }) { return PaymentIntentProcessingCustomerNotification(
   approvalRequested: approvalRequested != null ? approvalRequested() : this.approvalRequested,
   completesAt: completesAt != null ? completesAt() : this.completesAt,

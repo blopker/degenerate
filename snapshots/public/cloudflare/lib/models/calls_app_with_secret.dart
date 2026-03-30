@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (secret != null) 'secret': secret?.toJson(),
   if (uid != null) 'uid': uid?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'modified', 'name', 'secret', 'uid'}.contains(key)); } 
 CallsAppWithSecret copyWith({CallsCreated Function()? created, CallsModified Function()? modified, CallsName Function()? name, CallsSecret Function()? secret, CallsIdentifier Function()? uid, }) { return CallsAppWithSecret(
   created: created != null ? created() : this.created,
   modified: modified != null ? modified() : this.modified,

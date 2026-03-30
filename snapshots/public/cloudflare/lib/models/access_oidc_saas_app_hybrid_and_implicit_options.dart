@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'return_access_token_from_authorization_endpoint': ?returnAccessTokenFromAuthorizationEndpoint,
   'return_id_token_from_authorization_endpoint': ?returnIdTokenFromAuthorizationEndpoint,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'return_access_token_from_authorization_endpoint', 'return_id_token_from_authorization_endpoint'}.contains(key)); } 
 AccessOidcSaasAppHybridAndImplicitOptions copyWith({bool Function()? returnAccessTokenFromAuthorizationEndpoint, bool Function()? returnIdTokenFromAuthorizationEndpoint, }) { return AccessOidcSaasAppHybridAndImplicitOptions(
   returnAccessTokenFromAuthorizationEndpoint: returnAccessTokenFromAuthorizationEndpoint != null ? returnAccessTokenFromAuthorizationEndpoint() : this.returnAccessTokenFromAuthorizationEndpoint,
   returnIdTokenFromAuthorizationEndpoint: returnIdTokenFromAuthorizationEndpoint != null ? returnIdTokenFromAuthorizationEndpoint() : this.returnIdTokenFromAuthorizationEndpoint,

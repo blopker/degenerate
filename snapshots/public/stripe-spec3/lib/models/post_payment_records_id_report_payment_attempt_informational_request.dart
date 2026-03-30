@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_details', 'description', 'expand', 'metadata', 'shipping_details'}.contains(key)); } 
 PostPaymentRecordsIdReportPaymentAttemptInformationalRequest copyWith({PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails Function()? customerDetails, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription Function()? description, List<String> Function()? expand, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadata Function()? metadata, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestShippingDetails Function()? shippingDetails, }) { return PostPaymentRecordsIdReportPaymentAttemptInformationalRequest(
   customerDetails: customerDetails != null ? customerDetails() : this.customerDetails,
   description: description != null ? description() : this.description,

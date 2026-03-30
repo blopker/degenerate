@@ -13,7 +13,7 @@ final TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashsc
 Map<String, dynamic> toJson() { return {
   if (splashscreen != null) 'splashscreen': splashscreen?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'splashscreen'}.contains(key)); } 
 TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig copyWith({TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashscreen Function()? splashscreen}) { return TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(
   splashscreen: splashscreen != null ? splashscreen() : this.splashscreen,
 ); } 

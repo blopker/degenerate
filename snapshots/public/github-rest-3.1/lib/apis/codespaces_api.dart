@@ -17,8 +17,12 @@ final class CodespacesApi with ApiExecutor {const CodespacesApi(this.apiConfig);
 /// `GET /orgs/{org}/codespaces`
 Future<ApiResult<CodespacesListInOrganizationResponse, BasicError>> codespacesListInOrganization({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -51,8 +55,12 @@ return execute(
 /// `GET /orgs/{org}/codespaces/secrets`
 Future<ApiResult<CodespacesListOrgSecretsResponse, Never>> codespacesListOrgSecrets({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -180,8 +188,12 @@ return execute(
 /// `GET /orgs/{org}/codespaces/secrets/{secret_name}/repositories`
 Future<ApiResult<CodespacesListSelectedReposForOrgSecretResponse, BasicError>> codespacesListSelectedReposForOrgSecret({required String org, required String secretName, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -290,8 +302,12 @@ return execute(
 /// `GET /orgs/{org}/members/{username}/codespaces`
 Future<ApiResult<CodespacesGetCodespacesForUserInOrgResponse, BasicError>> codespacesGetCodespacesForUserInOrg({required String org, required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -375,8 +391,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/codespaces`
 Future<ApiResult<CodespacesListInRepositoryForAuthenticatedUserResponse, BasicError>> codespacesListInRepositoryForAuthenticatedUser({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -437,8 +457,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/codespaces/devcontainers`
 Future<ApiResult<CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse, BasicError>> codespacesListDevcontainersInRepositoryForAuthenticatedUser({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -470,9 +494,15 @@ return execute(
 /// `GET /repos/{owner}/{repo}/codespaces/machines`
 Future<ApiResult<CodespacesRepoMachinesForAuthenticatedUserResponse, BasicError>> codespacesRepoMachinesForAuthenticatedUser({required String owner, required String repo, String? location, String? clientIp, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (location != null) queryParameters['location'] = location;
-if (clientIp != null) queryParameters['client_ip'] = clientIp;
-if (ref != null) queryParameters['ref'] = ref;
+if (location != null) {
+  queryParameters['location'] = location;
+}
+if (clientIp != null) {
+  queryParameters['client_ip'] = clientIp;
+}
+if (ref != null) {
+  queryParameters['ref'] = ref;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -504,8 +534,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/codespaces/new`
 Future<ApiResult<CodespacesPreFlightWithRepoForAuthenticatedUserResponse, BasicError>> codespacesPreFlightWithRepoForAuthenticatedUser({required String owner, required String repo, String? ref, String? clientIp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ref != null) queryParameters['ref'] = ref;
-if (clientIp != null) queryParameters['client_ip'] = clientIp;
+if (ref != null) {
+  queryParameters['ref'] = ref;
+}
+if (clientIp != null) {
+  queryParameters['client_ip'] = clientIp;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -571,8 +605,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/codespaces/secrets`
 Future<ApiResult<CodespacesListRepoSecretsResponse, Never>> codespacesListRepoSecrets({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -723,9 +761,15 @@ return execute(
 /// `GET /user/codespaces`
 Future<ApiResult<CodespacesListForAuthenticatedUserResponse, BasicError>> codespacesListForAuthenticatedUser({int? perPage, int? page, int? repositoryId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (repositoryId != null) queryParameters['repository_id'] = repositoryId.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (repositoryId != null) {
+  queryParameters['repository_id'] = repositoryId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -790,8 +834,12 @@ return execute(
 /// `GET /user/codespaces/secrets`
 Future<ApiResult<CodespacesListSecretsForAuthenticatedUserResponse, Never>> codespacesListSecretsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

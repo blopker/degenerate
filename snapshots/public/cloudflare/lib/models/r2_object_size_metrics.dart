@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'objects': ?objects,
   'payloadSize': ?payloadSize,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadataSize', 'objects', 'payloadSize'}.contains(key)); } 
 R2ObjectSizeMetrics copyWith({double Function()? metadataSize, double Function()? objects, double Function()? payloadSize, }) { return R2ObjectSizeMetrics(
   metadataSize: metadataSize != null ? metadataSize() : this.metadataSize,
   objects: objects != null ? objects() : this.objects,

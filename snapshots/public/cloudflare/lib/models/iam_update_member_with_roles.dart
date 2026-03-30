@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
   if (user != null) 'user': user?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'roles', 'status', 'user'}.contains(key)); } 
 IamUpdateMemberWithRoles copyWith({IamMembershipComponentsSchemasIdentifier Function()? id, List<IamRole> Function()? roles, dynamic Function()? status, IamUpdateMemberWithRolesUser Function()? user, }) { return IamUpdateMemberWithRoles(
   id: id != null ? id() : this.id,
   roles: roles != null ? roles() : this.roles,

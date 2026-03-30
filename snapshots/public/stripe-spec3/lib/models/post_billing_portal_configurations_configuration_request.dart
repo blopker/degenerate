@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (name != null) 'name': name?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'business_profile', 'default_return_url', 'expand', 'features', 'login_page', 'metadata', 'name'}.contains(key)); } 
 PostBillingPortalConfigurationsConfigurationRequest copyWith({bool Function()? active, PostBillingPortalConfigurationsConfigurationRequestBusinessProfile Function()? businessProfile, PostBillingPortalConfigurationsConfigurationRequestDefaultReturnUrl Function()? defaultReturnUrl, List<String> Function()? expand, PostBillingPortalConfigurationsConfigurationRequestFeatures Function()? features, PostBillingPortalConfigurationsConfigurationRequestLoginPage Function()? loginPage, PostBillingPortalConfigurationsConfigurationRequestMetadata Function()? metadata, PostBillingPortalConfigurationsConfigurationRequestName Function()? name, }) { return PostBillingPortalConfigurationsConfigurationRequest(
   active: active != null ? active() : this.active,
   businessProfile: businessProfile != null ? businessProfile() : this.businessProfile,

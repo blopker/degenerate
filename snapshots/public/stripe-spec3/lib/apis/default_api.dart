@@ -123,12 +123,18 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -632,13 +638,21 @@ return execute(
 /// `GET /v1/accounts/{account}/external_accounts`
 Future<ApiResult<GetAccountsAccountExternalAccountsResponse, ErrorModel>> getAccountsAccountExternalAccounts({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountExternalAccountsObject? object, String? startingAfter, GetAccountsAccountExternalAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (object != null) queryParameters['object'] = object.toJson();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (object != null) {
+  queryParameters['object'] = object.toJson();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -866,20 +880,26 @@ return execute(
 /// `GET /v1/accounts/{account}/people`
 Future<ApiResult<GetAccountsAccountPeopleResponse, ErrorModel>> getAccountsAccountPeople({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPeopleRelationship? relationship, String? startingAfter, GetAccountsAccountPeopleRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (relationship != null) {
-if (relationship.authorizer case final authorizer$?) queryParameters['relationship[authorizer]'] = authorizer$.toString();
-if (relationship.director case final director$?) queryParameters['relationship[director]'] = director$.toString();
-if (relationship.executive case final executive$?) queryParameters['relationship[executive]'] = executive$.toString();
-if (relationship.legalGuardian case final legalGuardian$?) queryParameters['relationship[legal_guardian]'] = legalGuardian$.toString();
-if (relationship.owner case final owner$?) queryParameters['relationship[owner]'] = owner$.toString();
-if (relationship.representative case final representative$?) queryParameters['relationship[representative]'] = representative$.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
 }
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (relationship != null) {
+if (relationship.authorizer case final authorizer$?) { queryParameters['relationship[authorizer]'] = authorizer$.toString(); }
+if (relationship.director case final director$?) { queryParameters['relationship[director]'] = director$.toString(); }
+if (relationship.executive case final executive$?) { queryParameters['relationship[executive]'] = executive$.toString(); }
+if (relationship.legalGuardian case final legalGuardian$?) { queryParameters['relationship[legal_guardian]'] = legalGuardian$.toString(); }
+if (relationship.owner case final owner$?) { queryParameters['relationship[owner]'] = owner$.toString(); }
+if (relationship.representative case final representative$?) { queryParameters['relationship[representative]'] = representative$.toString(); }
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -1144,20 +1164,26 @@ return execute(
 /// `GET /v1/accounts/{account}/persons`
 Future<ApiResult<GetAccountsAccountPersonsResponse, ErrorModel>> getAccountsAccountPersons({required String account, String? endingBefore, List<String>? expand, int? limit, GetAccountsAccountPersonsRelationship? relationship, String? startingAfter, GetAccountsAccountPersonsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (relationship != null) {
-if (relationship.authorizer case final authorizer$?) queryParameters['relationship[authorizer]'] = authorizer$.toString();
-if (relationship.director case final director$?) queryParameters['relationship[director]'] = director$.toString();
-if (relationship.executive case final executive$?) queryParameters['relationship[executive]'] = executive$.toString();
-if (relationship.legalGuardian case final legalGuardian$?) queryParameters['relationship[legal_guardian]'] = legalGuardian$.toString();
-if (relationship.owner case final owner$?) queryParameters['relationship[owner]'] = owner$.toString();
-if (relationship.representative case final representative$?) queryParameters['relationship[representative]'] = representative$.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
 }
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (relationship != null) {
+if (relationship.authorizer case final authorizer$?) { queryParameters['relationship[authorizer]'] = authorizer$.toString(); }
+if (relationship.director case final director$?) { queryParameters['relationship[director]'] = director$.toString(); }
+if (relationship.executive case final executive$?) { queryParameters['relationship[executive]'] = executive$.toString(); }
+if (relationship.legalGuardian case final legalGuardian$?) { queryParameters['relationship[legal_guardian]'] = legalGuardian$.toString(); }
+if (relationship.owner case final owner$?) { queryParameters['relationship[owner]'] = owner$.toString(); }
+if (relationship.representative case final representative$?) { queryParameters['relationship[representative]'] = representative$.toString(); }
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -1453,13 +1479,21 @@ return execute(
 /// `GET /v1/apple_pay/domains`
 Future<ApiResult<GetApplePayDomainsResponse, ErrorModel>> getApplePayDomains({String? domainName, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplePayDomainsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (domainName != null) queryParameters['domain_name'] = domainName;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (domainName != null) {
+  queryParameters['domain_name'] = domainName;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -1581,16 +1615,24 @@ return execute(
 /// `GET /v1/application_fees`
 Future<ApiResult<GetApplicationFeesResponse, ErrorModel>> getApplicationFees({String? charge, GetApplicationFeesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplicationFeesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (charge != null) queryParameters['charge'] = charge;
+if (charge != null) {
+  queryParameters['charge'] = charge;
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -1758,12 +1800,18 @@ return execute(
 /// `GET /v1/application_fees/{id}/refunds`
 Future<ApiResult<GetApplicationFeesIdRefundsResponse, ErrorModel>> getApplicationFeesIdRefunds({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetApplicationFeesIdRefundsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -1837,14 +1885,20 @@ return execute(
 /// `GET /v1/apps/secrets`
 Future<ApiResult<GetAppsSecretsResponse, ErrorModel>> getAppsSecrets({String? endingBefore, List<String>? expand, int? limit, required GetAppsSecretsScope scope, String? startingAfter, GetAppsSecretsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 queryParameters['scope[type]'] = scope.type.toJson();
-if (scope.user case final user$?) queryParameters['scope[user]'] = user$;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (scope.user case final user$?) { queryParameters['scope[user]'] = user$; }
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -1947,7 +2001,7 @@ queryParameters['expand'] = expand.join(',');
 }
 queryParameters['name'] = name;
 queryParameters['scope[type]'] = scope.type.toJson();
-if (scope.user case final user$?) queryParameters['scope[user]'] = user$;
+if (scope.user case final user$?) { queryParameters['scope[user]'] = user$; }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -2021,16 +2075,30 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (currency != null) queryParameters['currency'] = currency;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (currency != null) {
+  queryParameters['currency'] = currency;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (payout != null) queryParameters['payout'] = payout;
-if (source != null) queryParameters['source'] = source;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (type != null) queryParameters['type'] = type;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (payout != null) {
+  queryParameters['payout'] = payout;
+}
+if (source != null) {
+  queryParameters['source'] = source;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (type != null) {
+  queryParameters['type'] = type;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -2173,16 +2241,30 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (currency != null) queryParameters['currency'] = currency;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (currency != null) {
+  queryParameters['currency'] = currency;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (payout != null) queryParameters['payout'] = payout;
-if (source != null) queryParameters['source'] = source;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (type != null) queryParameters['type'] = type;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (payout != null) {
+  queryParameters['payout'] = payout;
+}
+if (source != null) {
+  queryParameters['source'] = source;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (type != null) {
+  queryParameters['type'] = type;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -2252,14 +2334,24 @@ return execute(
 /// `GET /v1/billing/alerts`
 Future<ApiResult<GetBillingAlertsResponse, ErrorModel>> getBillingAlerts({GetBillingAlertsAlertType? alertType, String? endingBefore, List<String>? expand, int? limit, String? meter, String? startingAfter, GetBillingAlertsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (alertType != null) queryParameters['alert_type'] = alertType.toJson();
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (alertType != null) {
+  queryParameters['alert_type'] = alertType.toJson();
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (meter != null) queryParameters['meter'] = meter;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (meter != null) {
+  queryParameters['meter'] = meter;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -2447,13 +2539,17 @@ return execute(
 /// `GET /v1/billing/credit_balance_summary`
 Future<ApiResult<BillingCreditBalanceSummary, ErrorModel>> getBillingCreditBalanceSummary({String? customer, String? customerAccount, List<String>? expand, required GetBillingCreditBalanceSummaryFilter filter, GetBillingCreditBalanceSummaryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (filter.applicabilityScope case final applicabilityScope$?) queryParameters['filter[applicability_scope]'] = applicabilityScope$.toString();
-if (filter.creditGrant case final creditGrant$?) queryParameters['filter[credit_grant]'] = creditGrant$;
+if (filter.applicabilityScope case final applicabilityScope$?) { queryParameters['filter[applicability_scope]'] = applicabilityScope$.toString(); }
+if (filter.creditGrant case final creditGrant$?) { queryParameters['filter[credit_grant]'] = creditGrant$; }
 queryParameters['filter[type]'] = filter.type.toJson();
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -2487,15 +2583,27 @@ return execute(
 /// `GET /v1/billing/credit_balance_transactions`
 Future<ApiResult<GetBillingCreditBalanceTransactionsResponse, ErrorModel>> getBillingCreditBalanceTransactions({String? creditGrant, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingCreditBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (creditGrant != null) queryParameters['credit_grant'] = creditGrant;
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (creditGrant != null) {
+  queryParameters['credit_grant'] = creditGrant;
+}
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -2563,14 +2671,24 @@ return execute(
 /// `GET /v1/billing/credit_grants`
 Future<ApiResult<GetBillingCreditGrantsResponse, ErrorModel>> getBillingCreditGrants({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingCreditGrantsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -2844,13 +2962,21 @@ return execute(
 /// `GET /v1/billing/meters`
 Future<ApiResult<GetBillingMetersResponse, ErrorModel>> getBillingMeters({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingMetersStatus? status, GetBillingMetersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -3018,14 +3144,22 @@ Future<ApiResult<GetBillingMetersIdEventSummariesResponse, ErrorModel>> getBilli
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['customer'] = customer;
 queryParameters['end_time'] = endTime.toString();
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 queryParameters['start_time'] = startTime.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (valueGroupingWindow != null) queryParameters['value_grouping_window'] = valueGroupingWindow.toJson();
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (valueGroupingWindow != null) {
+  queryParameters['value_grouping_window'] = valueGroupingWindow.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -3087,14 +3221,24 @@ return execute(
 /// `GET /v1/billing_portal/configurations`
 Future<ApiResult<GetBillingPortalConfigurationsResponse, ErrorModel>> getBillingPortalConfigurations({bool? active, String? endingBefore, List<String>? expand, bool? isDefault, int? limit, String? startingAfter, GetBillingPortalConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (active != null) queryParameters['active'] = active.toString();
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (active != null) {
+  queryParameters['active'] = active.toString();
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (isDefault != null) queryParameters['is_default'] = isDefault.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (isDefault != null) {
+  queryParameters['is_default'] = isDefault.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -3291,15 +3435,27 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (customer != null) queryParameters['customer'] = customer;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (paymentIntent != null) queryParameters['payment_intent'] = paymentIntent;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (transferGroup != null) queryParameters['transfer_group'] = transferGroup;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (paymentIntent != null) {
+  queryParameters['payment_intent'] = paymentIntent;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (transferGroup != null) {
+  queryParameters['transfer_group'] = transferGroup;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -3406,8 +3562,12 @@ final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 queryParameters['query'] = query;
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -3717,12 +3877,18 @@ return execute(
 /// `GET /v1/charges/{charge}/refunds`
 Future<ApiResult<GetChargesChargeRefundsResponse, ErrorModel>> getChargesChargeRefunds({required String charge, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetChargesChargeRefundsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -3881,21 +4047,39 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
 if (customerDetails != null) {
 queryParameters['customer_details[email]'] = customerDetails.email;
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (paymentIntent != null) queryParameters['payment_intent'] = paymentIntent;
-if (paymentLink != null) queryParameters['payment_link'] = paymentLink;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
-if (subscription != null) queryParameters['subscription'] = subscription;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (paymentIntent != null) {
+  queryParameters['payment_intent'] = paymentIntent;
+}
+if (paymentLink != null) {
+  queryParameters['payment_link'] = paymentLink;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (subscription != null) {
+  queryParameters['subscription'] = subscription;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -4158,12 +4342,18 @@ return execute(
 /// `GET /v1/checkout/sessions/{session}/line_items`
 Future<ApiResult<GetCheckoutSessionsSessionLineItemsResponse, ErrorModel>> getCheckoutSessionsSessionLineItems({required String session, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCheckoutSessionsSessionLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -4197,12 +4387,18 @@ return execute(
 /// `GET /v1/climate/orders`
 Future<ApiResult<GetClimateOrdersResponse, ErrorModel>> getClimateOrders({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateOrdersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -4376,12 +4572,18 @@ return execute(
 /// `GET /v1/climate/products`
 Future<ApiResult<GetClimateProductsResponse, ErrorModel>> getClimateProducts({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateProductsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -4449,12 +4651,18 @@ return execute(
 /// `GET /v1/climate/suppliers`
 Future<ApiResult<GetClimateSuppliersResponse, ErrorModel>> getClimateSuppliers({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetClimateSuppliersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -4557,12 +4765,18 @@ return execute(
 /// `GET /v1/country_specs`
 Future<ApiResult<GetCountrySpecsResponse, ErrorModel>> getCountrySpecs({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCountrySpecsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -4633,12 +4847,18 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -4826,15 +5046,27 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (invoice != null) queryParameters['invoice'] = invoice;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (invoice != null) {
+  queryParameters['invoice'] = invoice;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -4933,10 +5165,18 @@ return execute(
 /// `GET /v1/credit_notes/preview`
 Future<ApiResult<CreditNote, ErrorModel>> getCreditNotesPreview({int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewEmailType? emailType, List<String>? expand, required String invoice, List<GetCreditNotesPreviewLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewReason? reason, int? refundAmount, List<GetCreditNotesPreviewRefunds>? refunds, GetCreditNotesPreviewShippingCost? shippingCost, GetCreditNotesPreviewRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (amount != null) queryParameters['amount'] = amount.toString();
-if (creditAmount != null) queryParameters['credit_amount'] = creditAmount.toString();
-if (effectiveAt != null) queryParameters['effective_at'] = effectiveAt.toString();
-if (emailType != null) queryParameters['email_type'] = emailType.toJson();
+if (amount != null) {
+  queryParameters['amount'] = amount.toString();
+}
+if (creditAmount != null) {
+  queryParameters['credit_amount'] = creditAmount.toString();
+}
+if (effectiveAt != null) {
+  queryParameters['effective_at'] = effectiveAt.toString();
+}
+if (emailType != null) {
+  queryParameters['email_type'] = emailType.toJson();
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
@@ -4944,20 +5184,28 @@ queryParameters['invoice'] = invoice;
 if (lines != null) {
 queryParameters['lines'] = lines.map((item) => item.toString()).join(',');
 }
-if (memo != null) queryParameters['memo'] = memo;
+if (memo != null) {
+  queryParameters['memo'] = memo;
+}
 if (metadata != null) {
 for (final entry in metadata.entries) {
   queryParameters['metadata[${entry.key}]'] = entry.value;
 }
 }
-if (outOfBandAmount != null) queryParameters['out_of_band_amount'] = outOfBandAmount.toString();
-if (reason != null) queryParameters['reason'] = reason.toJson();
-if (refundAmount != null) queryParameters['refund_amount'] = refundAmount.toString();
+if (outOfBandAmount != null) {
+  queryParameters['out_of_band_amount'] = outOfBandAmount.toString();
+}
+if (reason != null) {
+  queryParameters['reason'] = reason.toJson();
+}
+if (refundAmount != null) {
+  queryParameters['refund_amount'] = refundAmount.toString();
+}
 if (refunds != null) {
 queryParameters['refunds'] = refunds.map((item) => item.toString()).join(',');
 }
 if (shippingCost != null) {
-if (shippingCost.shippingRate case final shippingRate$?) queryParameters['shipping_cost[shipping_rate]'] = shippingRate$;
+if (shippingCost.shippingRate case final shippingRate$?) { queryParameters['shipping_cost[shipping_rate]'] = shippingRate$; }
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -4991,35 +5239,57 @@ return execute(
 /// `GET /v1/credit_notes/preview/lines`
 Future<ApiResult<GetCreditNotesPreviewLinesResponse, ErrorModel>> getCreditNotesPreviewLines({int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewLinesEmailType? emailType, String? endingBefore, List<String>? expand, required String invoice, int? limit, List<GetCreditNotesPreviewLinesLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewLinesReason? reason, int? refundAmount, List<GetCreditNotesPreviewLinesRefunds>? refunds, GetCreditNotesPreviewLinesShippingCost? shippingCost, String? startingAfter, GetCreditNotesPreviewLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (amount != null) queryParameters['amount'] = amount.toString();
-if (creditAmount != null) queryParameters['credit_amount'] = creditAmount.toString();
-if (effectiveAt != null) queryParameters['effective_at'] = effectiveAt.toString();
-if (emailType != null) queryParameters['email_type'] = emailType.toJson();
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (amount != null) {
+  queryParameters['amount'] = amount.toString();
+}
+if (creditAmount != null) {
+  queryParameters['credit_amount'] = creditAmount.toString();
+}
+if (effectiveAt != null) {
+  queryParameters['effective_at'] = effectiveAt.toString();
+}
+if (emailType != null) {
+  queryParameters['email_type'] = emailType.toJson();
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
 queryParameters['invoice'] = invoice;
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (lines != null) {
 queryParameters['lines'] = lines.map((item) => item.toString()).join(',');
 }
-if (memo != null) queryParameters['memo'] = memo;
+if (memo != null) {
+  queryParameters['memo'] = memo;
+}
 if (metadata != null) {
 for (final entry in metadata.entries) {
   queryParameters['metadata[${entry.key}]'] = entry.value;
 }
 }
-if (outOfBandAmount != null) queryParameters['out_of_band_amount'] = outOfBandAmount.toString();
-if (reason != null) queryParameters['reason'] = reason.toJson();
-if (refundAmount != null) queryParameters['refund_amount'] = refundAmount.toString();
+if (outOfBandAmount != null) {
+  queryParameters['out_of_band_amount'] = outOfBandAmount.toString();
+}
+if (reason != null) {
+  queryParameters['reason'] = reason.toJson();
+}
+if (refundAmount != null) {
+  queryParameters['refund_amount'] = refundAmount.toString();
+}
 if (refunds != null) {
 queryParameters['refunds'] = refunds.map((item) => item.toString()).join(',');
 }
 if (shippingCost != null) {
-if (shippingCost.shippingRate case final shippingRate$?) queryParameters['shipping_cost[shipping_rate]'] = shippingRate$;
+if (shippingCost.shippingRate case final shippingRate$?) { queryParameters['shipping_cost[shipping_rate]'] = shippingRate$; }
 }
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -5052,12 +5322,18 @@ return execute(
 /// `GET /v1/credit_notes/{credit_note}/lines`
 Future<ApiResult<GetCreditNotesCreditNoteLinesResponse, ErrorModel>> getCreditNotesCreditNoteLines({required String creditNote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCreditNotesCreditNoteLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -5224,14 +5500,24 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (email != null) queryParameters['email'] = email;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (email != null) {
+  queryParameters['email'] = email;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (testClock != null) queryParameters['test_clock'] = testClock;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (testClock != null) {
+  queryParameters['test_clock'] = testClock;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -5341,8 +5627,12 @@ final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 queryParameters['query'] = query;
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -5520,13 +5810,21 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (invoice != null) queryParameters['invoice'] = invoice;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (invoice != null) {
+  queryParameters['invoice'] = invoice;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -6011,12 +6309,18 @@ return execute(
 /// `GET /v1/customers/{customer}/cash_balance_transactions`
 Future<ApiResult<GetCustomersCustomerCashBalanceTransactionsResponse, ErrorModel>> getCustomersCustomerCashBalanceTransactions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerCashBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -6179,14 +6483,24 @@ return execute(
 /// `GET /v1/customers/{customer}/payment_methods`
 Future<ApiResult<GetCustomersCustomerPaymentMethodsResponse, ErrorModel>> getCustomersCustomerPaymentMethods({required String customer, GetCustomersCustomerPaymentMethodsAllowRedisplay? allowRedisplay, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerPaymentMethodsType? type, GetCustomersCustomerPaymentMethodsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowRedisplay != null) queryParameters['allow_redisplay'] = allowRedisplay.toJson();
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (allowRedisplay != null) {
+  queryParameters['allow_redisplay'] = allowRedisplay.toJson();
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (type != null) queryParameters['type'] = type.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -6253,13 +6567,21 @@ return execute(
 /// `GET /v1/customers/{customer}/sources`
 Future<ApiResult<GetCustomersCustomerSourcesResponse, ErrorModel>> getCustomersCustomerSources({required String customer, String? endingBefore, List<String>? expand, int? limit, String? object, String? startingAfter, GetCustomersCustomerSourcesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (object != null) queryParameters['object'] = object;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (object != null) {
+  queryParameters['object'] = object;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -6483,12 +6805,18 @@ return execute(
 /// `GET /v1/customers/{customer}/subscriptions`
 Future<ApiResult<GetCustomersCustomerSubscriptionsResponse, ErrorModel>> getCustomersCustomerSubscriptions({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerSubscriptionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -6824,12 +7152,18 @@ return execute(
 /// `GET /v1/customers/{customer}/tax_ids`
 Future<ApiResult<GetCustomersCustomerTaxIdsResponse, ErrorModel>> getCustomersCustomerTaxIds({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCustomersCustomerTaxIdsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -6955,17 +7289,27 @@ return execute(
 /// `GET /v1/disputes`
 Future<ApiResult<GetDisputesResponse, ErrorModel>> getDisputes({String? charge, GetDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetDisputesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (charge != null) queryParameters['charge'] = charge;
+if (charge != null) {
+  queryParameters['charge'] = charge;
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (paymentIntent != null) queryParameters['payment_intent'] = paymentIntent;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (paymentIntent != null) {
+  queryParameters['payment_intent'] = paymentIntent;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -7102,12 +7446,18 @@ return execute(
 Future<ApiResult<GetEntitlementsActiveEntitlementsResponse, ErrorModel>> getEntitlementsActiveEntitlements({required String customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetEntitlementsActiveEntitlementsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['customer'] = customer;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -7175,14 +7525,24 @@ return execute(
 /// `GET /v1/entitlements/features`
 Future<ApiResult<GetEntitlementsFeaturesResponse, ErrorModel>> getEntitlementsFeatures({bool? archived, String? endingBefore, List<String>? expand, int? limit, String? lookupKey, String? startingAfter, GetEntitlementsFeaturesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (archived != null) queryParameters['archived'] = archived.toString();
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (archived != null) {
+  queryParameters['archived'] = archived.toString();
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (lookupKey != null) queryParameters['lookup_key'] = lookupKey;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (lookupKey != null) {
+  queryParameters['lookup_key'] = lookupKey;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -7387,14 +7747,24 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (deliverySuccess != null) queryParameters['delivery_success'] = deliverySuccess.toString();
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (deliverySuccess != null) {
+  queryParameters['delivery_success'] = deliverySuccess.toString();
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (type != null) queryParameters['type'] = type;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (type != null) {
+  queryParameters['type'] = type;
+}
 if (types != null) {
 queryParameters['types'] = types.join(',');
 }
@@ -7467,12 +7837,18 @@ return execute(
 /// `GET /v1/exchange_rates`
 Future<ApiResult<GetExchangeRatesResponse, ErrorModel>> getExchangeRates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetExchangeRatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -7610,14 +7986,24 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (expired != null) queryParameters['expired'] = expired.toString();
-if (file != null) queryParameters['file'] = file;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (expired != null) {
+  queryParameters['expired'] = expired.toString();
+}
+if (file != null) {
+  queryParameters['file'] = file;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -7755,13 +8141,21 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (purpose != null) queryParameters['purpose'] = purpose.toJson();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (purpose != null) {
+  queryParameters['purpose'] = purpose.toJson();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -7865,17 +8259,25 @@ return execute(
 Future<ApiResult<GetFinancialConnectionsAccountsResponse, ErrorModel>> getFinancialConnectionsAccounts({GetFinancialConnectionsAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, GetFinancialConnectionsAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountHolder != null) {
-if (accountHolder.account case final account$?) queryParameters['account_holder[account]'] = account$;
-if (accountHolder.customer case final customer$?) queryParameters['account_holder[customer]'] = customer$;
-if (accountHolder.customerAccount case final customerAccount$?) queryParameters['account_holder[customer_account]'] = customerAccount$;
+if (accountHolder.account case final account$?) { queryParameters['account_holder[account]'] = account$; }
+if (accountHolder.customer case final customer$?) { queryParameters['account_holder[customer]'] = customer$; }
+if (accountHolder.customerAccount case final customerAccount$?) { queryParameters['account_holder[customer_account]'] = customerAccount$; }
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (session != null) queryParameters['session'] = session;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (session != null) {
+  queryParameters['session'] = session;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -7972,13 +8374,19 @@ return execute(
 /// `GET /v1/financial_connections/accounts/{account}/owners`
 Future<ApiResult<GetFinancialConnectionsAccountsAccountOwnersResponse, ErrorModel>> getFinancialConnectionsAccountsAccountOwners({required String account, String? endingBefore, List<String>? expand, int? limit, required String ownership, String? startingAfter, GetFinancialConnectionsAccountsAccountOwnersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 queryParameters['ownership'] = ownership;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -8174,12 +8582,18 @@ return execute(
 Future<ApiResult<GetFinancialConnectionsTransactionsResponse, ErrorModel>> getFinancialConnectionsTransactions({required String account, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetFinancialConnectionsTransactionsTransactedAt? transactedAt, GetFinancialConnectionsTransactionsTransactionRefresh? transactionRefresh, GetFinancialConnectionsTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['account'] = account;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 if (transactedAt != null) {
 queryParametersList.add(ApiQueryParameter(name: 'transacted_at', value: transactedAt.toString(), allowReserved: false));
 }
@@ -8254,17 +8668,23 @@ return execute(
 Future<ApiResult<GetForwardingRequestsResponse, ErrorModel>> getForwardingRequests({GetForwardingRequestsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetForwardingRequestsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-if (created.gt case final gt$?) queryParameters['created[gt]'] = gt$.toString();
-if (created.gte case final gte$?) queryParameters['created[gte]'] = gte$.toString();
-if (created.lt case final lt$?) queryParameters['created[lt]'] = lt$.toString();
-if (created.lte case final lte$?) queryParameters['created[lte]'] = lte$.toString();
+if (created.gt case final gt$?) { queryParameters['created[gt]'] = gt$.toString(); }
+if (created.gte case final gte$?) { queryParameters['created[gte]'] = gte$.toString(); }
+if (created.lt case final lt$?) { queryParameters['created[lt]'] = lt$.toString(); }
+if (created.lte case final lte$?) { queryParameters['created[lte]'] = lte$.toString(); }
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -8368,18 +8788,30 @@ return execute(
 /// `GET /v1/identity/verification_reports`
 Future<ApiResult<GetIdentityVerificationReportsResponse, ErrorModel>> getIdentityVerificationReports({String? clientReferenceId, GetIdentityVerificationReportsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIdentityVerificationReportsType? type, String? verificationSession, GetIdentityVerificationReportsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (clientReferenceId != null) queryParameters['client_reference_id'] = clientReferenceId;
+if (clientReferenceId != null) {
+  queryParameters['client_reference_id'] = clientReferenceId;
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (type != null) queryParameters['type'] = type.toJson();
-if (verificationSession != null) queryParameters['verification_session'] = verificationSession;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (verificationSession != null) {
+  queryParameters['verification_session'] = verificationSession;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -8447,19 +8879,33 @@ return execute(
 /// `GET /v1/identity/verification_sessions`
 Future<ApiResult<GetIdentityVerificationSessionsResponse, ErrorModel>> getIdentityVerificationSessions({String? clientReferenceId, GetIdentityVerificationSessionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? relatedCustomer, String? relatedCustomerAccount, String? startingAfter, GetIdentityVerificationSessionsStatus? status, GetIdentityVerificationSessionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (clientReferenceId != null) queryParameters['client_reference_id'] = clientReferenceId;
+if (clientReferenceId != null) {
+  queryParameters['client_reference_id'] = clientReferenceId;
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (relatedCustomer != null) queryParameters['related_customer'] = relatedCustomer;
-if (relatedCustomerAccount != null) queryParameters['related_customer_account'] = relatedCustomerAccount;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (relatedCustomer != null) {
+  queryParameters['related_customer'] = relatedCustomer;
+}
+if (relatedCustomerAccount != null) {
+  queryParameters['related_customer_account'] = relatedCustomerAccount;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -8706,19 +9152,29 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (invoice != null) queryParameters['invoice'] = invoice;
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (invoice != null) {
+  queryParameters['invoice'] = invoice;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (payment != null) {
-if (payment.paymentIntent case final paymentIntent$?) queryParameters['payment[payment_intent]'] = paymentIntent$;
-if (payment.paymentRecord case final paymentRecord$?) queryParameters['payment[payment_record]'] = paymentRecord$;
+if (payment.paymentIntent case final paymentIntent$?) { queryParameters['payment[payment_intent]'] = paymentIntent$; }
+if (payment.paymentRecord case final paymentRecord$?) { queryParameters['payment[payment_record]'] = paymentRecord$; }
 queryParameters['payment[type]'] = payment.type.toJson();
 }
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -8786,13 +9242,21 @@ return execute(
 /// `GET /v1/invoice_rendering_templates`
 Future<ApiResult<GetInvoiceRenderingTemplatesResponse, ErrorModel>> getInvoiceRenderingTemplates({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoiceRenderingTemplatesStatus? status, GetInvoiceRenderingTemplatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -8828,7 +9292,9 @@ final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (version != null) queryParameters['version'] = version.toString();
+if (version != null) {
+  queryParameters['version'] = version.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -8922,16 +9388,30 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (invoice != null) queryParameters['invoice'] = invoice;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (pending != null) queryParameters['pending'] = pending.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (invoice != null) {
+  queryParameters['invoice'] = invoice;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (pending != null) {
+  queryParameters['pending'] = pending.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -9146,23 +9626,39 @@ return execute(
 /// `GET /v1/invoices`
 Future<ApiResult<GetInvoicesResponse, ErrorModel>> getInvoices({GetInvoicesCollectionMethod? collectionMethod, GetInvoicesCreated? created, String? customer, String? customerAccount, GetInvoicesDueDate? dueDate, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoicesStatus? status, String? subscription, GetInvoicesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (collectionMethod != null) queryParameters['collection_method'] = collectionMethod.toJson();
+if (collectionMethod != null) {
+  queryParameters['collection_method'] = collectionMethod.toJson();
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
 if (dueDate != null) {
 queryParametersList.add(ApiQueryParameter(name: 'due_date', value: dueDate.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
-if (subscription != null) queryParameters['subscription'] = subscription;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (subscription != null) {
+  queryParameters['subscription'] = subscription;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -9359,8 +9855,12 @@ final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 queryParameters['query'] = query;
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -9647,12 +10147,18 @@ return execute(
 /// `GET /v1/invoices/{invoice}/lines`
 Future<ApiResult<GetInvoicesInvoiceLinesResponse, ErrorModel>> getInvoicesInvoiceLines({required String invoice, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetInvoicesInvoiceLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -9935,18 +10441,30 @@ return execute(
 /// `GET /v1/issuing/authorizations`
 Future<ApiResult<GetIssuingAuthorizationsResponse, ErrorModel>> getIssuingAuthorizations({String? card, String? cardholder, GetIssuingAuthorizationsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingAuthorizationsStatus? status, GetIssuingAuthorizationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (card != null) queryParameters['card'] = card;
-if (cardholder != null) queryParameters['cardholder'] = cardholder;
+if (card != null) {
+  queryParameters['card'] = card;
+}
+if (cardholder != null) {
+  queryParameters['cardholder'] = cardholder;
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -10048,16 +10566,30 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (email != null) queryParameters['email'] = email;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (email != null) {
+  queryParameters['email'] = email;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (phoneNumber != null) queryParameters['phone_number'] = phoneNumber;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
-if (type != null) queryParameters['type'] = type.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (phoneNumber != null) {
+  queryParameters['phone_number'] = phoneNumber;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -10221,22 +10753,42 @@ return execute(
 /// `GET /v1/issuing/cards`
 Future<ApiResult<GetIssuingCardsResponse, ErrorModel>> getIssuingCards({String? cardholder, GetIssuingCardsCreated? created, String? endingBefore, int? expMonth, int? expYear, List<String>? expand, String? last4, int? limit, String? personalizationDesign, String? startingAfter, GetIssuingCardsStatus? status, GetIssuingCardsType? type, GetIssuingCardsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (cardholder != null) queryParameters['cardholder'] = cardholder;
+if (cardholder != null) {
+  queryParameters['cardholder'] = cardholder;
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
-if (expMonth != null) queryParameters['exp_month'] = expMonth.toString();
-if (expYear != null) queryParameters['exp_year'] = expYear.toString();
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
+if (expMonth != null) {
+  queryParameters['exp_month'] = expMonth.toString();
+}
+if (expYear != null) {
+  queryParameters['exp_year'] = expYear.toString();
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (last4 != null) queryParameters['last4'] = last4;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (personalizationDesign != null) queryParameters['personalization_design'] = personalizationDesign;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
-if (type != null) queryParameters['type'] = type.toJson();
+if (last4 != null) {
+  queryParameters['last4'] = last4;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (personalizationDesign != null) {
+  queryParameters['personalization_design'] = personalizationDesign;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -10407,14 +10959,24 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
-if (transaction != null) queryParameters['transaction'] = transaction;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (transaction != null) {
+  queryParameters['transaction'] = transaction;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -10587,20 +11149,28 @@ return execute(
 /// `GET /v1/issuing/personalization_designs`
 Future<ApiResult<GetIssuingPersonalizationDesignsResponse, ErrorModel>> getIssuingPersonalizationDesigns({String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, GetIssuingPersonalizationDesignsPreferences? preferences, String? startingAfter, GetIssuingPersonalizationDesignsStatus? status, GetIssuingPersonalizationDesignsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (lookupKeys != null) {
 queryParameters['lookup_keys'] = lookupKeys.join(',');
 }
 if (preferences != null) {
-if (preferences.isDefault case final isDefault$?) queryParameters['preferences[is_default]'] = isDefault$.toString();
-if (preferences.isPlatformDefault case final isPlatformDefault$?) queryParameters['preferences[is_platform_default]'] = isPlatformDefault$.toString();
+if (preferences.isDefault case final isDefault$?) { queryParameters['preferences[is_default]'] = isDefault$.toString(); }
+if (preferences.isPlatformDefault case final isPlatformDefault$?) { queryParameters['preferences[is_platform_default]'] = isPlatformDefault$.toString(); }
 }
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -10757,14 +11327,24 @@ return execute(
 /// `GET /v1/issuing/physical_bundles`
 Future<ApiResult<GetIssuingPhysicalBundlesResponse, ErrorModel>> getIssuingPhysicalBundles({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingPhysicalBundlesStatus? status, GetIssuingPhysicalBundlesType? type, GetIssuingPhysicalBundlesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
-if (type != null) queryParameters['type'] = type.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -10902,13 +11482,21 @@ queryParameters['card'] = card;
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -11006,18 +11594,30 @@ return execute(
 /// `GET /v1/issuing/transactions`
 Future<ApiResult<GetIssuingTransactionsResponse, ErrorModel>> getIssuingTransactions({String? card, String? cardholder, GetIssuingTransactionsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingTransactionsType? type, GetIssuingTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (card != null) queryParameters['card'] = card;
-if (cardholder != null) queryParameters['cardholder'] = cardholder;
+if (card != null) {
+  queryParameters['card'] = card;
+}
+if (cardholder != null) {
+  queryParameters['cardholder'] = cardholder;
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (type != null) queryParameters['type'] = type.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -11189,17 +11789,25 @@ return execute(
 Future<ApiResult<GetLinkedAccountsResponse, ErrorModel>> getLinkedAccounts({GetLinkedAccountsAccountHolder? accountHolder, String? endingBefore, List<String>? expand, int? limit, String? session, String? startingAfter, GetLinkedAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountHolder != null) {
-if (accountHolder.account case final account$?) queryParameters['account_holder[account]'] = account$;
-if (accountHolder.customer case final customer$?) queryParameters['account_holder[customer]'] = customer$;
-if (accountHolder.customerAccount case final customerAccount$?) queryParameters['account_holder[customer_account]'] = customerAccount$;
+if (accountHolder.account case final account$?) { queryParameters['account_holder[account]'] = account$; }
+if (accountHolder.customer case final customer$?) { queryParameters['account_holder[customer]'] = customer$; }
+if (accountHolder.customerAccount case final customerAccount$?) { queryParameters['account_holder[customer_account]'] = customerAccount$; }
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (session != null) queryParameters['session'] = session;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (session != null) {
+  queryParameters['session'] = session;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -11296,13 +11904,19 @@ return execute(
 /// `GET /v1/linked_accounts/{account}/owners`
 Future<ApiResult<GetLinkedAccountsAccountOwnersResponse, ErrorModel>> getLinkedAccountsAccountOwners({required String account, String? endingBefore, List<String>? expand, int? limit, required String ownership, String? startingAfter, GetLinkedAccountsAccountOwnersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 queryParameters['ownership'] = ownership;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -11403,9 +12017,13 @@ final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 queryParameters['payment_record'] = paymentRecord;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -11476,14 +12094,24 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -11630,8 +12258,12 @@ final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 queryParameters['query'] = query;
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -11669,7 +12301,9 @@ return execute(
 /// `GET /v1/payment_intents/{intent}`
 Future<ApiResult<PaymentIntent, ErrorModel>> getPaymentIntentsIntent({required String intent, String? clientSecret, List<String>? expand, GetPaymentIntentsIntentRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (clientSecret != null) queryParameters['client_secret'] = clientSecret;
+if (clientSecret != null) {
+  queryParameters['client_secret'] = clientSecret;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
@@ -11788,12 +12422,18 @@ return execute(
 /// `GET /v1/payment_intents/{intent}/amount_details_line_items`
 Future<ApiResult<GetPaymentIntentsIntentAmountDetailsLineItemsResponse, ErrorModel>> getPaymentIntentsIntentAmountDetailsLineItems({required String intent, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentIntentsIntentAmountDetailsLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -12151,13 +12791,21 @@ return execute(
 /// `GET /v1/payment_links`
 Future<ApiResult<GetPaymentLinksResponse, ErrorModel>> getPaymentLinks({bool? active, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentLinksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (active != null) queryParameters['active'] = active.toString();
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (active != null) {
+  queryParameters['active'] = active.toString();
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -12386,12 +13034,18 @@ return execute(
 /// `GET /v1/payment_links/{payment_link}/line_items`
 Future<ApiResult<GetPaymentLinksPaymentLinkLineItemsResponse, ErrorModel>> getPaymentLinksPaymentLinkLineItems({required String paymentLink, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentLinksPaymentLinkLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -12427,12 +13081,18 @@ final queryParametersList = <ApiQueryParameter>[];
 if (application != null) {
 queryParametersList.add(ApiQueryParameter(name: 'application', value: application.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -12790,14 +13450,24 @@ return execute(
 /// `GET /v1/payment_method_domains`
 Future<ApiResult<GetPaymentMethodDomainsResponse, ErrorModel>> getPaymentMethodDomains({String? domainName, bool? enabled, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodDomainsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (domainName != null) queryParameters['domain_name'] = domainName;
-if (enabled != null) queryParameters['enabled'] = enabled.toString();
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (domainName != null) {
+  queryParameters['domain_name'] = domainName;
+}
+if (enabled != null) {
+  queryParameters['enabled'] = enabled.toString();
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -12962,16 +13632,30 @@ return execute(
 /// `GET /v1/payment_methods`
 Future<ApiResult<GetPaymentMethodsResponse, ErrorModel>> getPaymentMethods({GetPaymentMethodsAllowRedisplay? allowRedisplay, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodsType? type, GetPaymentMethodsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (allowRedisplay != null) queryParameters['allow_redisplay'] = allowRedisplay.toJson();
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (allowRedisplay != null) {
+  queryParameters['allow_redisplay'] = allowRedisplay.toJson();
+}
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (type != null) queryParameters['type'] = type.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -13616,14 +14300,24 @@ queryParametersList.add(ApiQueryParameter(name: 'arrival_date', value: arrivalDa
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (destination != null) queryParameters['destination'] = destination;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (destination != null) {
+  queryParameters['destination'] = destination;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -13833,17 +14527,27 @@ return execute(
 /// `GET /v1/plans`
 Future<ApiResult<GetPlansResponse, ErrorModel>> getPlans({bool? active, GetPlansCreated? created, String? endingBefore, List<String>? expand, int? limit, String? product, String? startingAfter, GetPlansRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (active != null) queryParameters['active'] = active.toString();
+if (active != null) {
+  queryParameters['active'] = active.toString();
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (product != null) queryParameters['product'] = product;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (product != null) {
+  queryParameters['product'] = product;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -14038,27 +14742,41 @@ return execute(
 /// `GET /v1/prices`
 Future<ApiResult<GetPricesResponse, ErrorModel>> getPrices({bool? active, GetPricesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, List<String>? lookupKeys, String? product, GetPricesRecurring? recurring, String? startingAfter, GetPricesType? type, GetPricesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (active != null) queryParameters['active'] = active.toString();
+if (active != null) {
+  queryParameters['active'] = active.toString();
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (currency != null) queryParameters['currency'] = currency;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (currency != null) {
+  queryParameters['currency'] = currency;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (lookupKeys != null) {
 queryParameters['lookup_keys'] = lookupKeys.join(',');
 }
-if (product != null) queryParameters['product'] = product;
-if (recurring != null) {
-if (recurring.interval case final interval$?) queryParameters['recurring[interval]'] = interval$.toJson();
-if (recurring.meter case final meter$?) queryParameters['recurring[meter]'] = meter$;
-if (recurring.usageType case final usageType$?) queryParameters['recurring[usage_type]'] = usageType$.toJson();
+if (product != null) {
+  queryParameters['product'] = product;
 }
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (type != null) queryParameters['type'] = type.toJson();
+if (recurring != null) {
+if (recurring.interval case final interval$?) { queryParameters['recurring[interval]'] = interval$.toJson(); }
+if (recurring.meter case final meter$?) { queryParameters['recurring[meter]'] = meter$; }
+if (recurring.usageType case final usageType$?) { queryParameters['recurring[usage_type]'] = usageType$.toJson(); }
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -14161,8 +14879,12 @@ final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 queryParameters['query'] = query;
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -14274,21 +14996,33 @@ return execute(
 /// `GET /v1/products`
 Future<ApiResult<GetProductsResponse, ErrorModel>> getProducts({bool? active, GetProductsCreated? created, String? endingBefore, List<String>? expand, List<String>? ids, int? limit, bool? shippable, String? startingAfter, String? url, GetProductsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (active != null) queryParameters['active'] = active.toString();
+if (active != null) {
+  queryParameters['active'] = active.toString();
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
 if (ids != null) {
 queryParameters['ids'] = ids.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (shippable != null) queryParameters['shippable'] = shippable.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (url != null) queryParameters['url'] = url;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (shippable != null) {
+  queryParameters['shippable'] = shippable.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (url != null) {
+  queryParameters['url'] = url;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -14383,8 +15117,12 @@ final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 queryParameters['query'] = query;
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -14535,12 +15273,18 @@ return execute(
 /// `GET /v1/products/{product}/features`
 Future<ApiResult<GetProductsProductFeaturesResponse, ErrorModel>> getProductsProductFeatures({required String product, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetProductsProductFeaturesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -14665,20 +15409,36 @@ return execute(
 /// `GET /v1/promotion_codes`
 Future<ApiResult<GetPromotionCodesResponse, ErrorModel>> getPromotionCodes({bool? active, String? code, String? coupon, GetPromotionCodesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPromotionCodesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (active != null) queryParameters['active'] = active.toString();
-if (code != null) queryParameters['code'] = code;
-if (coupon != null) queryParameters['coupon'] = coupon;
+if (active != null) {
+  queryParameters['active'] = active.toString();
+}
+if (code != null) {
+  queryParameters['code'] = code;
+}
+if (coupon != null) {
+  queryParameters['coupon'] = coupon;
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -14827,16 +15587,30 @@ return execute(
 /// `GET /v1/quotes`
 Future<ApiResult<GetQuotesResponse, ErrorModel>> getQuotes({String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesStatus? status, String? testClock, GetQuotesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
-if (testClock != null) queryParameters['test_clock'] = testClock;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (testClock != null) {
+  queryParameters['test_clock'] = testClock;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -15096,12 +15870,18 @@ return execute(
 /// `GET /v1/quotes/{quote}/computed_upfront_line_items`
 Future<ApiResult<GetQuotesQuoteComputedUpfrontLineItemsResponse, ErrorModel>> getQuotesQuoteComputedUpfrontLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesQuoteComputedUpfrontLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -15165,12 +15945,18 @@ return execute(
 /// `GET /v1/quotes/{quote}/line_items`
 Future<ApiResult<GetQuotesQuoteLineItemsResponse, ErrorModel>> getQuotesQuoteLineItems({required String quote, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetQuotesQuoteLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -15238,17 +16024,27 @@ return execute(
 /// `GET /v1/radar/early_fraud_warnings`
 Future<ApiResult<GetRadarEarlyFraudWarningsResponse, ErrorModel>> getRadarEarlyFraudWarnings({String? charge, GetRadarEarlyFraudWarningsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetRadarEarlyFraudWarningsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (charge != null) queryParameters['charge'] = charge;
+if (charge != null) {
+  queryParameters['charge'] = charge;
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (paymentIntent != null) queryParameters['payment_intent'] = paymentIntent;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (paymentIntent != null) {
+  queryParameters['payment_intent'] = paymentIntent;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -15356,13 +16152,21 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (value != null) queryParameters['value'] = value;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (value != null) {
+  queryParameters['value'] = value;
+}
 queryParameters['value_list'] = valueList;
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -15489,17 +16293,27 @@ return execute(
 /// `GET /v1/radar/value_lists`
 Future<ApiResult<GetRadarValueListsResponse, ErrorModel>> getRadarValueLists({String? alias, String? contains, GetRadarValueListsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetRadarValueListsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (alias != null) queryParameters['alias'] = alias;
-if (contains != null) queryParameters['contains'] = contains;
+if (alias != null) {
+  queryParameters['alias'] = alias;
+}
+if (contains != null) {
+  queryParameters['contains'] = contains;
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -15664,17 +16478,27 @@ return execute(
 /// `GET /v1/refunds`
 Future<ApiResult<GetRefundsResponse, ErrorModel>> getRefunds({String? charge, GetRefundsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, GetRefundsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (charge != null) queryParameters['charge'] = charge;
+if (charge != null) {
+  queryParameters['charge'] = charge;
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (paymentIntent != null) queryParameters['payment_intent'] = paymentIntent;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (paymentIntent != null) {
+  queryParameters['payment_intent'] = paymentIntent;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -15870,12 +16694,18 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -16048,12 +16878,18 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -16153,13 +16989,19 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 queryParameters['setup_intent'] = setupIntent;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -16192,19 +17034,33 @@ return execute(
 /// `GET /v1/setup_intents`
 Future<ApiResult<GetSetupIntentsResponse, ErrorModel>> getSetupIntents({bool? attachToSelf, GetSetupIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? paymentMethod, String? startingAfter, GetSetupIntentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (attachToSelf != null) queryParameters['attach_to_self'] = attachToSelf.toString();
+if (attachToSelf != null) {
+  queryParameters['attach_to_self'] = attachToSelf.toString();
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (paymentMethod != null) queryParameters['payment_method'] = paymentMethod;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (paymentMethod != null) {
+  queryParameters['payment_method'] = paymentMethod;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -16315,7 +17171,9 @@ return execute(
 /// `GET /v1/setup_intents/{intent}`
 Future<ApiResult<SetupIntent, ErrorModel>> getSetupIntentsIntent({required String intent, String? clientSecret, List<String>? expand, GetSetupIntentsIntentRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (clientSecret != null) queryParameters['client_secret'] = clientSecret;
+if (clientSecret != null) {
+  queryParameters['client_secret'] = clientSecret;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
@@ -16530,17 +17388,27 @@ return execute(
 /// `GET /v1/shipping_rates`
 Future<ApiResult<GetShippingRatesResponse, ErrorModel>> getShippingRates({bool? active, GetShippingRatesCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetShippingRatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (active != null) queryParameters['active'] = active.toString();
+if (active != null) {
+  queryParameters['active'] = active.toString();
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (currency != null) queryParameters['currency'] = currency;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (currency != null) {
+  queryParameters['currency'] = currency;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -16720,12 +17588,18 @@ return execute(
 /// `GET /v1/sigma/scheduled_query_runs`
 Future<ApiResult<GetSigmaScheduledQueryRunsResponse, ErrorModel>> getSigmaScheduledQueryRuns({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSigmaScheduledQueryRunsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -16852,7 +17726,9 @@ return execute(
 /// `GET /v1/sources/{source}`
 Future<ApiResult<Source, ErrorModel>> getSourcesSource({required String source, String? clientSecret, List<String>? expand, GetSourcesSourceRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (clientSecret != null) queryParameters['client_secret'] = clientSecret;
+if (clientSecret != null) {
+  queryParameters['client_secret'] = clientSecret;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
@@ -16963,12 +17839,18 @@ return execute(
 /// `GET /v1/sources/{source}/source_transactions`
 Future<ApiResult<GetSourcesSourceSourceTransactionsResponse, ErrorModel>> getSourcesSourceSourceTransactions({required String source, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSourcesSourceSourceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -17065,12 +17947,18 @@ return execute(
 /// `GET /v1/subscription_items`
 Future<ApiResult<GetSubscriptionItemsResponse, ErrorModel>> getSubscriptionItems({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, required String subscription, GetSubscriptionItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 queryParameters['subscription'] = subscription;
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -17284,18 +18172,30 @@ queryParametersList.add(ApiQueryParameter(name: 'completed_at', value: completed
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (releasedAt != null) {
 queryParametersList.add(ApiQueryParameter(name: 'released_at', value: releasedAt.toString(), allowReserved: false));
 }
-if (scheduled != null) queryParameters['scheduled'] = scheduled.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (scheduled != null) {
+  queryParameters['scheduled'] = scheduled.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -17516,7 +18416,9 @@ final queryParametersList = <ApiQueryParameter>[];
 if (automaticTax != null) {
 queryParameters['automatic_tax[enabled]'] = automaticTax.enabled.toString();
 }
-if (collectionMethod != null) queryParameters['collection_method'] = collectionMethod.toJson();
+if (collectionMethod != null) {
+  queryParameters['collection_method'] = collectionMethod.toJson();
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
@@ -17526,17 +18428,33 @@ queryParametersList.add(ApiQueryParameter(name: 'current_period_end', value: cur
 if (currentPeriodStart != null) {
 queryParametersList.add(ApiQueryParameter(name: 'current_period_start', value: currentPeriodStart.toString(), allowReserved: false));
 }
-if (customer != null) queryParameters['customer'] = customer;
-if (customerAccount != null) queryParameters['customer_account'] = customerAccount;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (customerAccount != null) {
+  queryParameters['customer_account'] = customerAccount;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (price != null) queryParameters['price'] = price;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
-if (testClock != null) queryParameters['test_clock'] = testClock;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (price != null) {
+  queryParameters['price'] = price;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (testClock != null) {
+  queryParameters['test_clock'] = testClock;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -17678,8 +18596,12 @@ final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 queryParameters['query'] = query;
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -18100,12 +19022,18 @@ return execute(
 /// `GET /v1/tax/calculations/{calculation}/line_items`
 Future<ApiResult<GetTaxCalculationsCalculationLineItemsResponse, ErrorModel>> getTaxCalculationsCalculationLineItems({required String calculation, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxCalculationsCalculationLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -18138,13 +19066,21 @@ return execute(
 /// `GET /v1/tax/registrations`
 Future<ApiResult<GetTaxRegistrationsResponse, ErrorModel>> getTaxRegistrations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxRegistrationsStatus? status, GetTaxRegistrationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -18459,12 +19395,18 @@ return execute(
 /// `GET /v1/tax/transactions/{transaction}/line_items`
 Future<ApiResult<GetTaxTransactionsTransactionLineItemsResponse, ErrorModel>> getTaxTransactionsTransactionLineItems({required String transaction, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxTransactionsTransactionLineItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -18497,12 +19439,18 @@ return execute(
 /// `GET /v1/tax_codes`
 Future<ApiResult<GetTaxCodesResponse, ErrorModel>> getTaxCodes({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTaxCodesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -18570,18 +19518,24 @@ return execute(
 /// `GET /v1/tax_ids`
 Future<ApiResult<GetTaxIdsResponse, ErrorModel>> getTaxIds({String? endingBefore, List<String>? expand, int? limit, GetTaxIdsOwner? owner, String? startingAfter, GetTaxIdsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (owner != null) {
-if (owner.account case final account$?) queryParameters['owner[account]'] = account$;
-if (owner.customer case final customer$?) queryParameters['owner[customer]'] = customer$;
-if (owner.customerAccount case final customerAccount$?) queryParameters['owner[customer_account]'] = customerAccount$;
+if (owner.account case final account$?) { queryParameters['owner[account]'] = account$; }
+if (owner.customer case final customer$?) { queryParameters['owner[customer]'] = customer$; }
+if (owner.customerAccount case final customerAccount$?) { queryParameters['owner[customer_account]'] = customerAccount$; }
 queryParameters['owner[type]'] = owner.type.toJson();
 }
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -18709,17 +19663,27 @@ return execute(
 /// `GET /v1/tax_rates`
 Future<ApiResult<GetTaxRatesResponse, ErrorModel>> getTaxRates({bool? active, GetTaxRatesCreated? created, String? endingBefore, List<String>? expand, bool? inclusive, int? limit, String? startingAfter, GetTaxRatesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (active != null) queryParameters['active'] = active.toString();
+if (active != null) {
+  queryParameters['active'] = active.toString();
+}
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (inclusive != null) queryParameters['inclusive'] = inclusive.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (inclusive != null) {
+  queryParameters['inclusive'] = inclusive.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -18878,13 +19842,21 @@ return execute(
 /// `GET /v1/terminal/configurations`
 Future<ApiResult<GetTerminalConfigurationsResponse, ErrorModel>> getTerminalConfigurations({String? endingBefore, List<String>? expand, bool? isAccountDefault, int? limit, String? startingAfter, GetTerminalConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (isAccountDefault != null) queryParameters['is_account_default'] = isAccountDefault.toString();
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (isAccountDefault != null) {
+  queryParameters['is_account_default'] = isAccountDefault.toString();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -19112,12 +20084,18 @@ return execute(
 /// `GET /v1/terminal/locations`
 Future<ApiResult<GetTerminalLocationsResponse, ErrorModel>> getTerminalLocations({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTerminalLocationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -19340,16 +20318,30 @@ return execute(
 /// `GET /v1/terminal/readers`
 Future<ApiResult<GetTerminalReadersResponse, ErrorModel>> getTerminalReaders({GetTerminalReadersDeviceType? deviceType, String? endingBefore, List<String>? expand, int? limit, String? location, String? serialNumber, String? startingAfter, GetTerminalReadersStatus? status, GetTerminalReadersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (deviceType != null) queryParameters['device_type'] = deviceType.toJson();
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (deviceType != null) {
+  queryParameters['device_type'] = deviceType.toJson();
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (location != null) queryParameters['location'] = location;
-if (serialNumber != null) queryParameters['serial_number'] = serialNumber;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (location != null) {
+  queryParameters['location'] = location;
+}
+if (serialNumber != null) {
+  queryParameters['serial_number'] = serialNumber;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -20687,12 +21679,18 @@ return execute(
 /// `GET /v1/test_helpers/test_clocks`
 Future<ApiResult<GetTestHelpersTestClocksResponse, ErrorModel>> getTestHelpersTestClocks({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTestHelpersTestClocksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -21335,13 +22333,21 @@ queryParametersList.add(ApiQueryParameter(name: 'amount', value: amount.toString
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -21515,14 +22521,24 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (destination != null) queryParameters['destination'] = destination;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (destination != null) {
+  queryParameters['destination'] = destination;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (transferGroup != null) queryParameters['transfer_group'] = transferGroup;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (transferGroup != null) {
+  queryParameters['transfer_group'] = transferGroup;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -21598,12 +22614,18 @@ return execute(
 /// `GET /v1/transfers/{id}/reversals`
 Future<ApiResult<GetTransfersIdReversalsResponse, ErrorModel>> getTransfersIdReversals({required String id, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTransfersIdReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -21815,15 +22837,25 @@ return execute(
 /// `GET /v1/treasury/credit_reversals`
 Future<ApiResult<GetTreasuryCreditReversalsResponse, ErrorModel>> getTreasuryCreditReversals({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? receivedCredit, String? startingAfter, GetTreasuryCreditReversalsStatus? status, GetTreasuryCreditReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
 queryParameters['financial_account'] = financialAccount;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (receivedCredit != null) queryParameters['received_credit'] = receivedCredit;
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (receivedCredit != null) {
+  queryParameters['received_credit'] = receivedCredit;
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -21923,16 +22955,28 @@ return execute(
 /// `GET /v1/treasury/debit_reversals`
 Future<ApiResult<GetTreasuryDebitReversalsResponse, ErrorModel>> getTreasuryDebitReversals({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? receivedDebit, GetTreasuryDebitReversalsResolution? resolution, String? startingAfter, GetTreasuryDebitReversalsStatus? status, GetTreasuryDebitReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
 queryParameters['financial_account'] = financialAccount;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (receivedDebit != null) queryParameters['received_debit'] = receivedDebit;
-if (resolution != null) queryParameters['resolution'] = resolution.toJson();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (receivedDebit != null) {
+  queryParameters['received_debit'] = receivedDebit;
+}
+if (resolution != null) {
+  queryParameters['resolution'] = resolution.toJson();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -22035,13 +23079,21 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -22295,14 +23347,22 @@ return execute(
 /// `GET /v1/treasury/inbound_transfers`
 Future<ApiResult<GetTreasuryInboundTransfersResponse, ErrorModel>> getTreasuryInboundTransfers({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryInboundTransfersStatus? status, GetTreasuryInboundTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
 queryParameters['financial_account'] = financialAccount;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -22441,15 +23501,25 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (customer != null) queryParameters['customer'] = customer;
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (customer != null) {
+  queryParameters['customer'] = customer;
+}
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
 queryParameters['financial_account'] = financialAccount;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -22594,14 +23664,22 @@ return execute(
 /// `GET /v1/treasury/outbound_transfers`
 Future<ApiResult<GetTreasuryOutboundTransfersResponse, ErrorModel>> getTreasuryOutboundTransfers({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryOutboundTransfersStatus? status, GetTreasuryOutboundTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
 queryParameters['financial_account'] = financialAccount;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -22742,17 +23820,25 @@ return execute(
 /// `GET /v1/treasury/received_credits`
 Future<ApiResult<GetTreasuryReceivedCreditsResponse, ErrorModel>> getTreasuryReceivedCredits({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, GetTreasuryReceivedCreditsLinkedFlows? linkedFlows, String? startingAfter, GetTreasuryReceivedCreditsStatus? status, GetTreasuryReceivedCreditsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
 queryParameters['financial_account'] = financialAccount;
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 if (linkedFlows != null) {
 queryParameters['linked_flows[source_flow_type]'] = linkedFlows.sourceFlowType.toJson();
 }
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -22820,14 +23906,22 @@ return execute(
 /// `GET /v1/treasury/received_debits`
 Future<ApiResult<GetTreasuryReceivedDebitsResponse, ErrorModel>> getTreasuryReceivedDebits({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryReceivedDebitsStatus? status, GetTreasuryReceivedDebitsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
 queryParameters['financial_account'] = financialAccount;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -22901,15 +23995,25 @@ queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toStri
 if (effectiveAt != null) {
 queryParametersList.add(ApiQueryParameter(name: 'effective_at', value: effectiveAt.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
 queryParameters['financial_account'] = financialAccount;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (transaction != null) queryParameters['transaction'] = transaction;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy.toJson();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (transaction != null) {
+  queryParameters['transaction'] = transaction;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -22980,17 +24084,27 @@ final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
 queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
 }
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
 queryParameters['financial_account'] = financialAccount;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
-if (status != null) queryParameters['status'] = status.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy.toJson();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
 if (statusTransitions != null) {
-if (statusTransitions.postedAt case final postedAt$?) queryParameters['status_transitions[posted_at]'] = postedAt$.toString();
+if (statusTransitions.postedAt case final postedAt$?) { queryParameters['status_transitions[posted_at]'] = postedAt$.toString(); }
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -23059,12 +24173,18 @@ return execute(
 /// `GET /v1/webhook_endpoints`
 Future<ApiResult<GetWebhookEndpointsResponse, ErrorModel>> getWebhookEndpoints({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetWebhookEndpointsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (endingBefore != null) queryParameters['ending_before'] = endingBefore;
+if (endingBefore != null) {
+  queryParameters['ending_before'] = endingBefore;
+}
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/x-www-form-urlencoded';

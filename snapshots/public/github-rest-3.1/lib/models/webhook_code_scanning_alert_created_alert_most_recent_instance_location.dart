@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'start_column': ?startColumn,
   'start_line': ?startLine,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'end_column', 'end_line', 'path', 'start_column', 'start_line'}.contains(key)); } 
 WebhookCodeScanningAlertCreatedAlertMostRecentInstanceLocation copyWith({int Function()? endColumn, int Function()? endLine, String Function()? path, int Function()? startColumn, int Function()? startLine, }) { return WebhookCodeScanningAlertCreatedAlertMostRecentInstanceLocation(
   endColumn: endColumn != null ? endColumn() : this.endColumn,
   endLine: endLine != null ? endLine() : this.endLine,

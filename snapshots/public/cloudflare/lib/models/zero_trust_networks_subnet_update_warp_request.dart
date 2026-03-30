@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (network != null) 'network': network?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'is_default_network', 'name', 'network'}.contains(key)); } 
 ZeroTrustNetworksSubnetUpdateWarpRequest copyWith({TunnelSubnetComment Function()? comment, TunnelSubnetIsDefaultNetwork Function()? isDefaultNetwork, TunnelSubnetName Function()? name, TunnelSubnetIpNetwork Function()? network, }) { return ZeroTrustNetworksSubnetUpdateWarpRequest(
   comment: comment != null ? comment() : this.comment,
   isDefaultNetwork: isDefaultNetwork != null ? isDefaultNetwork() : this.isDefaultNetwork,

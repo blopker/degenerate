@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (receipt != null) 'receipt': receipt?.map((e) => e.toJson()).toList(),
   'reference': ?reference,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fleet', 'flight', 'fuel', 'lodging', 'receipt', 'reference'}.contains(key)); } 
 PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails copyWith({PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFleet Function()? fleet, PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight Function()? flight, PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuel Function()? fuel, PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsLodging Function()? lodging, List<PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsReceipt> Function()? receipt, String Function()? reference, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetails(
   fleet: fleet != null ? fleet() : this.fleet,
   flight: flight != null ? flight() : this.flight,

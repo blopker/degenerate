@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (tunType != null) 'tun_type': tunType?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tag', 'config_src', 'connections', 'conns_active_at', 'conns_inactive_at', 'created_at', 'deleted_at', 'id', 'metadata', 'name', 'remote_config', 'status', 'tun_type'}.contains(key)); } 
 TunnelCfdTunnel copyWith({TunnelAccountId Function()? accountTag, TunnelConfigSrc Function()? configSrc, List<TunnelSchemasConnection> Function()? connections, TunnelConnsActiveAt Function()? connsActiveAt, TunnelConnsInactiveAt Function()? connsInactiveAt, TunnelCreatedAt Function()? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelTunnelId Function()? id, Map<String, dynamic> Function()? metadata, TunnelTunnelName Function()? name, TunnelRemoteConfig Function()? remoteConfig, TunnelStatus Function()? status, TunnelTunnelType Function()? tunType, }) { return TunnelCfdTunnel(
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   configSrc: configSrc != null ? configSrc() : this.configSrc,

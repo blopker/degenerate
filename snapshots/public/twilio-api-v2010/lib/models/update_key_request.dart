@@ -12,7 +12,7 @@ final String? friendlyName;
 Map<String, dynamic> toJson() { return {
   'FriendlyName': ?friendlyName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName'}.contains(key)); } 
 UpdateKeyRequest copyWith({String Function()? friendlyName}) { return UpdateKeyRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
 ); } 

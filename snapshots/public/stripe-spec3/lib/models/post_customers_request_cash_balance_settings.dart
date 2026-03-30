@@ -38,7 +38,7 @@ final PostCustomersRequestCashBalanceSettingsReconciliationMode? reconciliationM
 Map<String, dynamic> toJson() { return {
   if (reconciliationMode != null) 'reconciliation_mode': reconciliationMode?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reconciliation_mode'}.contains(key)); } 
 PostCustomersRequestCashBalanceSettings copyWith({PostCustomersRequestCashBalanceSettingsReconciliationMode Function()? reconciliationMode}) { return PostCustomersRequestCashBalanceSettings(
   reconciliationMode: reconciliationMode != null ? reconciliationMode() : this.reconciliationMode,
 ); } 

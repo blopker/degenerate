@@ -18,7 +18,7 @@ final Map<String,String>? metadata;
 Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata'}.contains(key)); } 
 ModifyMessageRequest copyWith({Map<String, String>? Function()? metadata}) { return ModifyMessageRequest(
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 

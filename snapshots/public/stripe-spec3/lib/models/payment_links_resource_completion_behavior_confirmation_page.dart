@@ -13,7 +13,7 @@ final String? customMessage;
 Map<String, dynamic> toJson() { return {
   'custom_message': ?customMessage,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_message'}.contains(key)); } 
 PaymentLinksResourceCompletionBehaviorConfirmationPage copyWith({String? Function()? customMessage}) { return PaymentLinksResourceCompletionBehaviorConfirmationPage(
   customMessage: customMessage != null ? customMessage() : this.customMessage,
 ); } 

@@ -11,7 +11,7 @@ final String? asn;
 Map<String, dynamic> toJson() { return {
   'asn': ?asn,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformationAsn copyWith({String Function()? asn}) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformationAsn(
   asn: asn != null ? asn() : this.asn,
 ); } 

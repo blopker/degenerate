@@ -115,7 +115,7 @@ Map<String, dynamic> toJson() { return {
   'assignees': ?assignees,
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title', 'body', 'assignee', 'state', 'state_reason', 'milestone', 'labels', 'assignees', 'type'}.contains(key)); } 
 IssuesUpdateRequest copyWith({dynamic Function()? title, String? Function()? body, String? Function()? assignee, IssuesUpdateRequestState Function()? state, IssuesUpdateRequestStateReason? Function()? stateReason, dynamic Function()? milestone, List<IssuesUpdateRequestLabels> Function()? labels, List<String> Function()? assignees, String? Function()? type, }) { return IssuesUpdateRequest(
   title: title != null ? title() : this.title,
   body: body != null ? body() : this.body,

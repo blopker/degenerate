@@ -12,7 +12,7 @@ final List<String>? origins;
 Map<String, dynamic> toJson() { return {
   'origins': ?origins,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'origins'}.contains(key)); } 
 StreamsByStreamIdResponseResultHttpCors copyWith({List<String> Function()? origins}) { return StreamsByStreamIdResponseResultHttpCors(
   origins: origins != null ? origins() : this.origins,
 ); } 

@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'requests': ?requests,
   if (technique != null) 'technique': technique?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'period_ms', 'requests', 'technique'}.contains(key)); } 
 AiSearchCreateInstancesResponseResultPublicEndpointParamsRateLimit copyWith({int Function()? periodMs, int Function()? requests, AiSearchCreateInstancesResponseResultPublicEndpointParamsRateLimitTechnique Function()? technique, }) { return AiSearchCreateInstancesResponseResultPublicEndpointParamsRateLimit(
   periodMs: periodMs != null ? periodMs() : this.periodMs,
   requests: requests != null ? requests() : this.requests,

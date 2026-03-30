@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (tax != null) 'tax': tax?.toJson(),
   if (tip != null) 'tip': tip?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discount_amount', 'error', 'line_items', 'shipping', 'tax', 'tip'}.contains(key)); } 
 PaymentFlowsAmountDetails copyWith({int Function()? discountAmount, PaymentFlowsAmountDetailsResourceError Function()? error, PaymentFlowsAmountDetailsLineItems Function()? lineItems, PaymentFlowsAmountDetailsResourceShipping Function()? shipping, PaymentFlowsAmountDetailsResourceTax Function()? tax, PaymentFlowsAmountDetailsClientResourceTip Function()? tip, }) { return PaymentFlowsAmountDetails(
   discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
   error: error != null ? error() : this.error,

@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'volumeName': ?volumeName,
   'volumeNamespace': ?volumeNamespace,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fsType', 'readOnly', 'secretRef', 'volumeName', 'volumeNamespace'}.contains(key)); } 
 StorageOsPersistentVolumeSource copyWith({String Function()? fsType, bool Function()? readOnly, ObjectReference Function()? secretRef, String Function()? volumeName, String Function()? volumeNamespace, }) { return StorageOsPersistentVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   readOnly: readOnly != null ? readOnly() : this.readOnly,

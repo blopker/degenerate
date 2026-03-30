@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'topic_id': ?topicId,
   'relation_type': ?relationType,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'topic_id', 'relation_type'}.contains(key)); } 
 TopicSearchResultItemRelatedTopicRelation copyWith({int Function()? id, String Function()? name, int Function()? topicId, String Function()? relationType, }) { return TopicSearchResultItemRelatedTopicRelation(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

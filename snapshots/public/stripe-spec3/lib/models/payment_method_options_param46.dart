@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'request_incremental_authorization_support': ?requestIncrementalAuthorizationSupport,
   if (routing != null) 'routing': routing?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'request_extended_authorization', 'request_incremental_authorization_support', 'routing'}.contains(key)); } 
 PaymentMethodOptionsParam46 copyWith({PaymentMethodOptionsParam46CaptureMethod Function()? captureMethod, bool Function()? requestExtendedAuthorization, bool Function()? requestIncrementalAuthorizationSupport, PaymentMethodOptionsParam46Routing Function()? routing, }) { return PaymentMethodOptionsParam46(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   requestExtendedAuthorization: requestExtendedAuthorization != null ? requestExtendedAuthorization() : this.requestExtendedAuthorization,

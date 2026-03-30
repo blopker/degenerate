@@ -12,7 +12,7 @@ final bool $async;
 Map<String, dynamic> toJson() { return {
   'async': $async,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'async'}.contains(key)); } 
 OrgsConvertMemberToOutsideCollaboratorRequest copyWith({bool Function()? $async}) { return OrgsConvertMemberToOutsideCollaboratorRequest(
   $async: $async != null ? $async() : this.$async,
 ); } 

@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (outboundPayments != null) 'outbound_payments': outboundPayments?.toJson(),
   if (outboundTransfers != null) 'outbound_transfers': outboundTransfers?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_issuing', 'deposit_insurance', 'financial_addresses', 'inbound_transfers', 'intra_stripe_flows', 'outbound_payments', 'outbound_transfers'}.contains(key)); } 
 PostTreasuryFinancialAccountsRequestFeatures copyWith({PostTreasuryFinancialAccountsRequestFeaturesCardIssuing Function()? cardIssuing, PostTreasuryFinancialAccountsRequestFeaturesDepositInsurance Function()? depositInsurance, PostTreasuryFinancialAccountsRequestFeaturesFinancialAddresses Function()? financialAddresses, PostTreasuryFinancialAccountsRequestFeaturesInboundTransfers Function()? inboundTransfers, PostTreasuryFinancialAccountsRequestFeaturesIntraStripeFlows Function()? intraStripeFlows, PostTreasuryFinancialAccountsRequestFeaturesOutboundPayments Function()? outboundPayments, PostTreasuryFinancialAccountsRequestFeaturesOutboundTransfers Function()? outboundTransfers, }) { return PostTreasuryFinancialAccountsRequestFeatures(
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
   depositInsurance: depositInsurance != null ? depositInsurance() : this.depositInsurance,

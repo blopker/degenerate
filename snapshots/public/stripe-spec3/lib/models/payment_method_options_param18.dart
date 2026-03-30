@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (productDescription != null) 'product_description': productDescription?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'confirmation_number', 'expires_after_days', 'expires_at', 'product_description', 'setup_future_usage'}.contains(key)); } 
 PaymentMethodOptionsParam18 copyWith({PaymentMethodOptionsParam18ConfirmationNumber Function()? confirmationNumber, PaymentMethodOptionsParam18ExpiresAfterDays Function()? expiresAfterDays, PaymentMethodOptionsParam18ExpiresAt Function()? expiresAt, PaymentMethodOptionsParam18ProductDescription Function()? productDescription, PaymentMethodOptionsParam18SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam18(
   confirmationNumber: confirmationNumber != null ? confirmationNumber() : this.confirmationNumber,
   expiresAfterDays: expiresAfterDays != null ? expiresAfterDays() : this.expiresAfterDays,

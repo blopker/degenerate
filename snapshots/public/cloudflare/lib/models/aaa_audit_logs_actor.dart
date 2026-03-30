@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   'ip': ?ip,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'id', 'ip', 'type'}.contains(key)); } 
 AaaAuditLogsActor copyWith({String Function()? email, String Function()? id, String Function()? ip, AaaAuditLogsActorType Function()? type, }) { return AaaAuditLogsActor(
   email: email != null ? email() : this.email,
   id: id != null ? id() : this.id,

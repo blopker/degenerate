@@ -12,7 +12,7 @@ final List<LoadBalancingResourceReference>? resources;
 Map<String, dynamic> toJson() { return {
   if (resources != null) 'resources': resources?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'resources'}.contains(key)); } 
 LoadBalancingSearch copyWith({List<LoadBalancingResourceReference> Function()? resources}) { return LoadBalancingSearch(
   resources: resources != null ? resources() : this.resources,
 ); } 

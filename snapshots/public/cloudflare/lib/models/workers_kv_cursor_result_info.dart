@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'count': ?count,
   if (cursor != null) 'cursor': cursor?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'cursor'}.contains(key)); } 
 WorkersKvCursorResultInfo copyWith({double Function()? count, WorkersKvCursor Function()? cursor, }) { return WorkersKvCursorResultInfo(
   count: count != null ? count() : this.count,
   cursor: cursor != null ? cursor() : this.cursor,

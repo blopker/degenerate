@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   if (dob != null) 'dob': dob?.toJson(),
   if (name != null) 'name': name?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dob', 'name'}.contains(key)); } 
 GelatoSessionMatchingOptions copyWith({GelatoSessionMatchingOptionsDob Function()? dob, GelatoSessionMatchingOptionsName Function()? name, }) { return GelatoSessionMatchingOptions(
   dob: dob != null ? dob() : this.dob,
   name: name != null ? name() : this.name,

@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   if (color != null) 'color': color?.toJson(),
   'description': ?description,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'color', 'description'}.contains(key)); } 
 FieldSingleSelectOption copyWith({String Function()? name, FieldSingleSelectOptionColor Function()? color, String Function()? description, }) { return FieldSingleSelectOption(
   name: name != null ? name() : this.name,
   color: color != null ? color() : this.color,

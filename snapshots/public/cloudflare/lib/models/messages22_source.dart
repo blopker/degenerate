@@ -11,7 +11,7 @@ final String? pointer;
 Map<String, dynamic> toJson() { return {
   'pointer': ?pointer,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pointer'}.contains(key)); } 
 Messages22Source copyWith({String Function()? pointer}) { return Messages22Source(
   pointer: pointer != null ? pointer() : this.pointer,
 ); } 

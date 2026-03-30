@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
   'reason': ?reason,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'field', 'message', 'reason'}.contains(key)); } 
 StatusCause copyWith({String Function()? field, String Function()? message, String Function()? reason, }) { return StatusCause(
   field: field != null ? field() : this.field,
   message: message != null ? message() : this.message,

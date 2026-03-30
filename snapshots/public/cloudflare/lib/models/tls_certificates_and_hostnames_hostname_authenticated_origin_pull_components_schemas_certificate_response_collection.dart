@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_schemas_certificate_object.dart';final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection({this.result});
+
+factory TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection(
+  result: (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesSchemasCertificateObject.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<TlsCertificatesAndHostnamesSchemasCertificateObject>? result;
+
+Map<String, dynamic> toJson() { return {
+  if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
+TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection copyWith({List<TlsCertificatesAndHostnamesSchemasCertificateObject> Function()? result}) { return TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection(
+  result: result != null ? result() : this.result,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection &&
+          listEquals(result, other.result); } 
+@override int get hashCode { return Object.hashAll(result ?? const []).hashCode; } 
+@override String toString() { return 'TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificateResponseCollection(result: $result)'; } 
+ }

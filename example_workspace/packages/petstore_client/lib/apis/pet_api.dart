@@ -138,8 +138,12 @@ return execute(
 /// `POST /pet/{petId}`
 Future<ApiResult<Pet, Never>> updatePetWithForm({required int petId, String? name, String? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (status != null) queryParameters['status'] = status;
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (status != null) {
+  queryParameters['status'] = status;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -165,7 +169,9 @@ return execute(
 ///
 /// `DELETE /pet/{petId}`
 Future<ApiResult<void, Never>> deletePet({required int petId, String? apiKey, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-if (apiKey != null) headers['api_key'] = apiKey;
+if (apiKey != null) {
+  headers['api_key'] = apiKey;
+}
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -186,7 +192,9 @@ return execute(
 /// `POST /pet/{petId}/uploadImage`
 Future<ApiResult<Response, Never>> uploadFile({required int petId, String? additionalMetadata, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (additionalMetadata != null) queryParameters['additionalMetadata'] = additionalMetadata;
+if (additionalMetadata != null) {
+  queryParameters['additionalMetadata'] = additionalMetadata;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';

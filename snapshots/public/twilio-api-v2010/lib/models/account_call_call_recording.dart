@@ -135,7 +135,7 @@ Map<String, dynamic> toJson() { return {
   'error_code': ?errorCode,
   'track': ?track,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'conference_sid', 'date_created', 'date_updated', 'start_time', 'duration', 'sid', 'price', 'uri', 'encryption_details', 'price_unit', 'status', 'channels', 'source', 'error_code', 'track'}.contains(key)); } 
 AccountCallCallRecording copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? callSid, String? Function()? conferenceSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? startTime, String? Function()? duration, String? Function()? sid, double? Function()? price, String? Function()? uri, dynamic Function()? encryptionDetails, String? Function()? priceUnit, CallRecordingEnumStatus Function()? status, int Function()? channels, CallRecordingEnumSource Function()? source, int? Function()? errorCode, String? Function()? track, }) { return AccountCallCallRecording(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

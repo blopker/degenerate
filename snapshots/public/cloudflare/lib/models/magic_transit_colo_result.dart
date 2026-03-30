@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'target_summary': ?targetSummary,
   if (tracerouteTimeMs != null) 'traceroute_time_ms': tracerouteTimeMs?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'colo', 'error', 'hops', 'target_summary', 'traceroute_time_ms'}.contains(key)); } 
 MagicTransitColoResult copyWith({MagicTransitColo Function()? colo, MagicTransitError Function()? error, List<MagicTransitHopResult> Function()? hops, Map<String, dynamic> Function()? targetSummary, MagicTransitTracerouteTimeMs Function()? tracerouteTimeMs, }) { return MagicTransitColoResult(
   colo: colo != null ? colo() : this.colo,
   error: error != null ? error() : this.error,

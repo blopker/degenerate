@@ -15,8 +15,12 @@ final class BillingApi with ApiExecutor {const BillingApi(this.apiConfig);
 /// `GET /admin/api/2020-01/application_charges.json`
 Future<ApiResult<void, Never>> deprecated202001GetApplicationCharges({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -62,7 +66,9 @@ return execute(
 /// `GET /admin/api/2020-01/application_charges/{application_charge_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetApplicationChargesParamApplicationChargeId({required String applicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -113,8 +119,12 @@ return execute(
 /// `GET /admin/api/2020-04/application_charges.json`
 Future<ApiResult<void, Never>> deprecated202004GetApplicationCharges({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -160,7 +170,9 @@ return execute(
 /// `GET /admin/api/2020-04/application_charges/{application_charge_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetApplicationChargesParamApplicationChargeId({required String applicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -211,8 +223,12 @@ return execute(
 /// `GET /admin/api/2020-07/application_charges.json`
 Future<ApiResult<void, Never>> deprecated202007GetApplicationCharges({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -258,7 +274,9 @@ return execute(
 /// `GET /admin/api/2020-07/application_charges/{application_charge_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetApplicationChargesParamApplicationChargeId({required String applicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -309,8 +327,12 @@ return execute(
 /// `GET /admin/api/2020-10/application_charges.json`
 Future<ApiResult<void, Never>> getApplicationCharges({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -356,7 +378,9 @@ return execute(
 /// `GET /admin/api/2020-10/application_charges/{application_charge_id}.json`
 Future<ApiResult<void, Never>> getApplicationChargesParamApplicationChargeId({required String applicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -407,8 +431,12 @@ return execute(
 /// `GET /admin/api/2021-01/application_charges.json`
 Future<ApiResult<void, Never>> deprecated202101GetApplicationCharges({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -454,7 +482,9 @@ return execute(
 /// `GET /admin/api/2021-01/application_charges/{application_charge_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetApplicationChargesParamApplicationChargeId({required String applicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -479,8 +509,12 @@ return execute(
 /// `GET /admin/api/unstable/application_charges.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetApplicationCharges({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -526,7 +560,9 @@ return execute(
 /// `GET /admin/api/unstable/application_charges/{application_charge_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetApplicationChargesParamApplicationChargeId({required String applicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -551,7 +587,9 @@ return execute(
 /// `GET /admin/api/2020-01/application_credits.json`
 Future<ApiResult<void, Never>> deprecated202001GetApplicationCredits({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -597,7 +635,9 @@ return execute(
 /// `GET /admin/api/2020-01/application_credits/{application_credit_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -622,7 +662,9 @@ return execute(
 /// `GET /admin/api/2020-04/application_credits.json`
 Future<ApiResult<void, Never>> deprecated202004GetApplicationCredits({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -668,7 +710,9 @@ return execute(
 /// `GET /admin/api/2020-04/application_credits/{application_credit_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -693,7 +737,9 @@ return execute(
 /// `GET /admin/api/2020-07/application_credits.json`
 Future<ApiResult<void, Never>> deprecated202007GetApplicationCredits({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -739,7 +785,9 @@ return execute(
 /// `GET /admin/api/2020-07/application_credits/{application_credit_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -764,7 +812,9 @@ return execute(
 /// `GET /admin/api/2020-10/application_credits.json`
 Future<ApiResult<void, Never>> getApplicationCredits({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -810,7 +860,9 @@ return execute(
 /// `GET /admin/api/2020-10/application_credits/{application_credit_id}.json`
 Future<ApiResult<void, Never>> getApplicationCreditsParamApplicationCreditId({required String applicationCreditId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -835,7 +887,9 @@ return execute(
 /// `GET /admin/api/2021-01/application_credits.json`
 Future<ApiResult<void, Never>> deprecated202101GetApplicationCredits({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -881,7 +935,9 @@ return execute(
 /// `GET /admin/api/2021-01/application_credits/{application_credit_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -906,7 +962,9 @@ return execute(
 /// `GET /admin/api/unstable/application_credits.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetApplicationCredits({dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -952,7 +1010,9 @@ return execute(
 /// `GET /admin/api/unstable/application_credits/{application_credit_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetApplicationCreditsParamApplicationCreditId({required String applicationCreditId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -977,8 +1037,12 @@ return execute(
 /// `GET /admin/api/2020-01/recurring_application_charges.json`
 Future<ApiResult<void, Never>> deprecated202001GetRecurringApplicationCharges({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1024,7 +1088,9 @@ return execute(
 /// `GET /admin/api/2020-01/recurring_application_charges/{recurring_application_charge_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1094,7 +1160,9 @@ return execute(
 /// `PUT /admin/api/2020-01/recurring_application_charges/{recurring_application_charge_id}/customize.json`
 Future<ApiResult<void, Never>> deprecated202001UpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (recurringApplicationChargecappedAmount != null) queryParameters['recurring_application_charge[capped_amount]'] = recurringApplicationChargecappedAmount.toString();
+if (recurringApplicationChargecappedAmount != null) {
+  queryParameters['recurring_application_charge[capped_amount]'] = recurringApplicationChargecappedAmount.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1119,8 +1187,12 @@ return execute(
 /// `GET /admin/api/2020-04/recurring_application_charges.json`
 Future<ApiResult<void, Never>> deprecated202004GetRecurringApplicationCharges({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1166,7 +1238,9 @@ return execute(
 /// `GET /admin/api/2020-04/recurring_application_charges/{recurring_application_charge_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1236,7 +1310,9 @@ return execute(
 /// `PUT /admin/api/2020-04/recurring_application_charges/{recurring_application_charge_id}/customize.json`
 Future<ApiResult<void, Never>> deprecated202004UpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (recurringApplicationChargecappedAmount != null) queryParameters['recurring_application_charge[capped_amount]'] = recurringApplicationChargecappedAmount.toString();
+if (recurringApplicationChargecappedAmount != null) {
+  queryParameters['recurring_application_charge[capped_amount]'] = recurringApplicationChargecappedAmount.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1261,8 +1337,12 @@ return execute(
 /// `GET /admin/api/2020-07/recurring_application_charges.json`
 Future<ApiResult<void, Never>> deprecated202007GetRecurringApplicationCharges({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1308,7 +1388,9 @@ return execute(
 /// `GET /admin/api/2020-07/recurring_application_charges/{recurring_application_charge_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1378,7 +1460,9 @@ return execute(
 /// `PUT /admin/api/2020-07/recurring_application_charges/{recurring_application_charge_id}/customize.json`
 Future<ApiResult<void, Never>> deprecated202007UpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (recurringApplicationChargecappedAmount != null) queryParameters['recurring_application_charge[capped_amount]'] = recurringApplicationChargecappedAmount.toString();
+if (recurringApplicationChargecappedAmount != null) {
+  queryParameters['recurring_application_charge[capped_amount]'] = recurringApplicationChargecappedAmount.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1403,8 +1487,12 @@ return execute(
 /// `GET /admin/api/2020-10/recurring_application_charges.json`
 Future<ApiResult<void, Never>> getRecurringApplicationCharges({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1450,7 +1538,9 @@ return execute(
 /// `GET /admin/api/2020-10/recurring_application_charges/{recurring_application_charge_id}.json`
 Future<ApiResult<void, Never>> getRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1520,7 +1610,9 @@ return execute(
 /// `PUT /admin/api/2020-10/recurring_application_charges/{recurring_application_charge_id}/customize.json`
 Future<ApiResult<void, Never>> updateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (recurringApplicationChargecappedAmount != null) queryParameters['recurring_application_charge[capped_amount]'] = recurringApplicationChargecappedAmount.toString();
+if (recurringApplicationChargecappedAmount != null) {
+  queryParameters['recurring_application_charge[capped_amount]'] = recurringApplicationChargecappedAmount.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1545,8 +1637,12 @@ return execute(
 /// `GET /admin/api/2021-01/recurring_application_charges.json`
 Future<ApiResult<void, Never>> deprecated202101GetRecurringApplicationCharges({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1592,7 +1688,9 @@ return execute(
 /// `GET /admin/api/2021-01/recurring_application_charges/{recurring_application_charge_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1636,7 +1734,9 @@ return execute(
 /// `PUT /admin/api/2021-01/recurring_application_charges/{recurring_application_charge_id}/customize.json`
 Future<ApiResult<void, Never>> deprecated202101UpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (recurringApplicationChargecappedAmount != null) queryParameters['recurring_application_charge[capped_amount]'] = recurringApplicationChargecappedAmount.toString();
+if (recurringApplicationChargecappedAmount != null) {
+  queryParameters['recurring_application_charge[capped_amount]'] = recurringApplicationChargecappedAmount.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1661,8 +1761,12 @@ return execute(
 /// `GET /admin/api/unstable/recurring_application_charges.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetRecurringApplicationCharges({dynamic sinceId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sinceId != null) queryParameters['since_id'] = sinceId.toString();
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (sinceId != null) {
+  queryParameters['since_id'] = sinceId.toString();
+}
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1708,7 +1812,9 @@ return execute(
 /// `GET /admin/api/unstable/recurring_application_charges/{recurring_application_charge_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetRecurringApplicationChargesParamRecurringApplicationChargeId({required String recurringApplicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1752,7 +1858,9 @@ return execute(
 /// `PUT /admin/api/unstable/recurring_application_charges/{recurring_application_charge_id}/customize.json`
 Future<ApiResult<void, Never>> deprecatedUnstableUpdateRecurringApplicationChargesParamRecurringApplicationChargeIdCustomize({required String recurringApplicationChargeId, int? recurringApplicationChargecappedAmount, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (recurringApplicationChargecappedAmount != null) queryParameters['recurring_application_charge[capped_amount]'] = recurringApplicationChargecappedAmount.toString();
+if (recurringApplicationChargecappedAmount != null) {
+  queryParameters['recurring_application_charge[capped_amount]'] = recurringApplicationChargecappedAmount.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1777,7 +1885,9 @@ return execute(
 /// `GET /admin/api/2020-01/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
 Future<ApiResult<void, Never>> deprecated202001GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1823,7 +1933,9 @@ return execute(
 /// `GET /admin/api/2020-01/recurring_application_charges/{recurring_application_charge_id}/usage_charges/{usage_charge_id}.json`
 Future<ApiResult<void, Never>> deprecated202001GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1848,7 +1960,9 @@ return execute(
 /// `GET /admin/api/2020-04/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
 Future<ApiResult<void, Never>> deprecated202004GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1894,7 +2008,9 @@ return execute(
 /// `GET /admin/api/2020-04/recurring_application_charges/{recurring_application_charge_id}/usage_charges/{usage_charge_id}.json`
 Future<ApiResult<void, Never>> deprecated202004GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1919,7 +2035,9 @@ return execute(
 /// `GET /admin/api/2020-07/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
 Future<ApiResult<void, Never>> deprecated202007GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1965,7 +2083,9 @@ return execute(
 /// `GET /admin/api/2020-07/recurring_application_charges/{recurring_application_charge_id}/usage_charges/{usage_charge_id}.json`
 Future<ApiResult<void, Never>> deprecated202007GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1990,7 +2110,9 @@ return execute(
 /// `GET /admin/api/2020-10/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
 Future<ApiResult<void, Never>> getRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2036,7 +2158,9 @@ return execute(
 /// `GET /admin/api/2020-10/recurring_application_charges/{recurring_application_charge_id}/usage_charges/{usage_charge_id}.json`
 Future<ApiResult<void, Never>> getRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2061,7 +2185,9 @@ return execute(
 /// `GET /admin/api/2021-01/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
 Future<ApiResult<void, Never>> deprecated202101GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2107,7 +2233,9 @@ return execute(
 /// `GET /admin/api/2021-01/recurring_application_charges/{recurring_application_charge_id}/usage_charges/{usage_charge_id}.json`
 Future<ApiResult<void, Never>> deprecated202101GetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2132,7 +2260,9 @@ return execute(
 /// `GET /admin/api/unstable/recurring_application_charges/{recurring_application_charge_id}/usage_charges.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageCharges({required String recurringApplicationChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2178,7 +2308,9 @@ return execute(
 /// `GET /admin/api/unstable/recurring_application_charges/{recurring_application_charge_id}/usage_charges/{usage_charge_id}.json`
 Future<ApiResult<void, Never>> deprecatedUnstableGetRecurringApplicationChargesParamRecurringApplicationChargeIdUsageChargesParamUsageChargeId({required String recurringApplicationChargeId, required String usageChargeId, dynamic fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

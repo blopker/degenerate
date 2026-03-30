@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   if (payto != null) 'payto': payto?.toJson(),
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redisplay', 'billing_details', 'card', 'expand', 'metadata', 'payto', 'us_bank_account'}.contains(key)); } 
 PostPaymentMethodsPaymentMethodRequest copyWith({PostPaymentMethodsPaymentMethodRequestAllowRedisplay Function()? allowRedisplay, PostPaymentMethodsPaymentMethodRequestBillingDetails Function()? billingDetails, PostPaymentMethodsPaymentMethodRequestCard Function()? card, List<String> Function()? expand, PostPaymentMethodsPaymentMethodRequestMetadata Function()? metadata, PostPaymentMethodsPaymentMethodRequestPayto Function()? payto, PostPaymentMethodsPaymentMethodRequestUsBankAccount Function()? usBankAccount, }) { return PostPaymentMethodsPaymentMethodRequest(
   allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
   billingDetails: billingDetails != null ? billingDetails() : this.billingDetails,

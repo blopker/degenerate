@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.map((e) => e.toJson()).toList(),
   if (tlp != null) 'tlp': tlp?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'priority', 'status', 'tlp'}.contains(key)); } 
 CloudforceOneRequestsRequestConstants copyWith({List<CloudforceOneRequestsPriority> Function()? priority, List<CloudforceOneRequestsRequestStatus> Function()? status, List<CloudforceOneRequestsTlp> Function()? tlp, }) { return CloudforceOneRequestsRequestConstants(
   priority: priority != null ? priority() : this.priority,
   status: status != null ? status() : this.status,

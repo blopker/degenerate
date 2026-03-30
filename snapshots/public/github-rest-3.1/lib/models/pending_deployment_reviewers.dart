@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   if (reviewer != null) 'reviewer': reviewer?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'reviewer'}.contains(key)); } 
 PendingDeploymentReviewers copyWith({DeploymentReviewerType Function()? type, PendingDeploymentReviewersReviewer Function()? reviewer, }) { return PendingDeploymentReviewers(
   type: type != null ? type() : this.type,
   reviewer: reviewer != null ? reviewer() : this.reviewer,

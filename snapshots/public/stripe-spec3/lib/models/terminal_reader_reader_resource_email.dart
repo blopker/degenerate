@@ -13,7 +13,7 @@ final String? value;
 Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value'}.contains(key)); } 
 TerminalReaderReaderResourceEmail copyWith({String? Function()? value}) { return TerminalReaderReaderResourceEmail(
   value: value != null ? value() : this.value,
 ); } 

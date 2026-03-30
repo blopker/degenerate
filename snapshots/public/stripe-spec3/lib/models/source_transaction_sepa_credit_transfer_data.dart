@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'sender_iban': ?senderIban,
   'sender_name': ?senderName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'sender_iban', 'sender_name'}.contains(key)); } 
 SourceTransactionSepaCreditTransferData copyWith({String Function()? reference, String Function()? senderIban, String Function()? senderName, }) { return SourceTransactionSepaCreditTransferData(
   reference: reference != null ? reference() : this.reference,
   senderIban: senderIban != null ? senderIban() : this.senderIban,

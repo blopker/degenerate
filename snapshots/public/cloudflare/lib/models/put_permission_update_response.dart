@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
   'success': ?success,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'success'}.contains(key)); } 
 PutPermissionUpdateResponse copyWith({String Function()? message, bool Function()? success, }) { return PutPermissionUpdateResponse(
   message: message != null ? message() : this.message,
   success: success != null ? success() : this.success,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'minimum': ?minimum,
   'preset': ?preset,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'maximum', 'minimum', 'preset'}.contains(key)); } 
 CustomUnitAmount copyWith({int? Function()? maximum, int? Function()? minimum, int? Function()? preset, }) { return CustomUnitAmount(
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,

@@ -104,7 +104,7 @@ Map<String, dynamic> toJson() { return {
   'start_date': ?startDate,
   if (trialEnd != null) 'trial_end': trialEnd?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_cycle_anchor', 'billing_mode', 'cancel_at', 'cancel_at_period_end', 'cancel_now', 'default_tax_rates', 'items', 'proration_behavior', 'proration_date', 'resume_at', 'start_date', 'trial_end'}.contains(key)); } 
 PostInvoicesCreatePreviewRequestSubscriptionDetails copyWith({PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingCycleAnchor Function()? billingCycleAnchor, PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingMode Function()? billingMode, PostInvoicesCreatePreviewRequestSubscriptionDetailsCancelAt Function()? cancelAt, bool Function()? cancelAtPeriodEnd, bool Function()? cancelNow, PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRates Function()? defaultTaxRates, List<PostInvoicesCreatePreviewRequestSubscriptionDetailsItems> Function()? items, PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior Function()? prorationBehavior, int Function()? prorationDate, PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt Function()? resumeAt, int Function()? startDate, PostInvoicesCreatePreviewRequestSubscriptionDetailsTrialEnd Function()? trialEnd, }) { return PostInvoicesCreatePreviewRequestSubscriptionDetails(
   billingCycleAnchor: billingCycleAnchor != null ? billingCycleAnchor() : this.billingCycleAnchor,
   billingMode: billingMode != null ? billingMode() : this.billingMode,

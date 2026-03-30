@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'display_name': ?displayName,
   'recent_folders': ?recentFolders,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'machine', 'display_name', 'recent_folders'}.contains(key)); } 
 CodespacesUpdateForAuthenticatedUserRequest copyWith({String Function()? machine, String Function()? displayName, List<String> Function()? recentFolders, }) { return CodespacesUpdateForAuthenticatedUserRequest(
   machine: machine != null ? machine() : this.machine,
   displayName: displayName != null ? displayName() : this.displayName,

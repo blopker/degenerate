@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (rule != null) 'rule': rule?.toJson(),
   if (changes != null) 'changes': changes?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rule', 'changes'}.contains(key)); } 
 WebhookRepositoryRulesetEditedChangesRulesUpdated copyWith({RepositoryRule Function()? rule, WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges Function()? changes, }) { return WebhookRepositoryRulesetEditedChangesRulesUpdated(
   rule: rule != null ? rule() : this.rule,
   changes: changes != null ? changes() : this.changes,

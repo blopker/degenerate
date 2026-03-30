@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   if (sandbox != null) 'sandbox': sandbox?.toJson(),
   if (tlsDecrypt != null) 'tls_decrypt': tlsDecrypt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'activity_log', 'antivirus', 'block_page', 'body_scanning', 'browser_isolation', 'certificate', 'custom_certificate', 'extended_email_matching', 'fips', 'host_selector', 'inspection', 'protocol_detection', 'sandbox', 'tls_decrypt'}.contains(key)); } 
 ZeroTrustGatewayGatewayAccountSettingsSettings copyWith({ZeroTrustGatewayActivityLogSettings Function()? activityLog, ZeroTrustGatewayAntiVirusSettings Function()? antivirus, ZeroTrustGatewayBlockPageSettings Function()? blockPage, ZeroTrustGatewayBodyScanningSettings Function()? bodyScanning, ZeroTrustGatewayBrowserIsolationSettings Function()? browserIsolation, ZeroTrustGatewayCertificateSettings Function()? certificate, ZeroTrustGatewayCustomCertificateSettings Function()? customCertificate, ZeroTrustGatewayExtendedEmailMatching Function()? extendedEmailMatching, ZeroTrustGatewayFipsSettings Function()? fips, ZeroTrustGatewayHostSelectorSettings Function()? hostSelector, ZeroTrustGatewayInspectionSettings Function()? inspection, ZeroTrustGatewayProtocolDetection Function()? protocolDetection, ZeroTrustGatewaySandbox Function()? sandbox, ZeroTrustGatewayTlsSettings Function()? tlsDecrypt, }) { return ZeroTrustGatewayGatewayAccountSettingsSettings(
   activityLog: activityLog != null ? activityLog() : this.activityLog,
   antivirus: antivirus != null ? antivirus() : this.antivirus,

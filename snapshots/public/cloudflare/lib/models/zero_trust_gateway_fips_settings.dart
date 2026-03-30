@@ -13,7 +13,7 @@ final bool? tls;
 Map<String, dynamic> toJson() { return {
   'tls': ?tls,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tls'}.contains(key)); } 
 ZeroTrustGatewayFipsSettings copyWith({bool Function()? tls}) { return ZeroTrustGatewayFipsSettings(
   tls: tls != null ? tls() : this.tls,
 ); } 

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'atm_fee': ?atmFee,
   'cashback_amount': ?cashbackAmount,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'atm_fee', 'cashback_amount'}.contains(key)); } 
 IssuingAuthorizationAmountDetails copyWith({int? Function()? atmFee, int? Function()? cashbackAmount, }) { return IssuingAuthorizationAmountDetails(
   atmFee: atmFee != null ? atmFee() : this.atmFee,
   cashbackAmount: cashbackAmount != null ? cashbackAmount() : this.cashbackAmount,

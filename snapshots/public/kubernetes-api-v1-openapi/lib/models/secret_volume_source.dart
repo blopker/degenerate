@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   'optional': ?optional,
   'secretName': ?secretName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'defaultMode', 'items', 'optional', 'secretName'}.contains(key)); } 
 SecretVolumeSource copyWith({int Function()? defaultMode, List<KeyToPath> Function()? items, bool Function()? optional, String Function()? secretName, }) { return SecretVolumeSource(
   defaultMode: defaultMode != null ? defaultMode() : this.defaultMode,
   items: items != null ? items() : this.items,

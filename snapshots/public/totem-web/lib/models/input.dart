@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'limit': limit,
   'offset': offset,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'limit', 'offset'}.contains(key)); } 
 Input copyWith({int Function()? limit, int Function()? offset, }) { return Input(
   limit: limit != null ? limit() : this.limit,
   offset: offset != null ? offset() : this.offset,

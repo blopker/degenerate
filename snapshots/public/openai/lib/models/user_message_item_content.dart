@@ -23,7 +23,7 @@ factory UserMessageItemContentUserMessageInputText.fromJson(Map<String, dynamic>
 final UserMessageInputText userMessageInputText;
 
 @override String get type { return 'UserMessageInputText'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...userMessageInputText.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...userMessageInputText.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is UserMessageItemContentUserMessageInputText && userMessageInputText == other.userMessageInputText; } 
 @override int get hashCode { return userMessageInputText.hashCode; } 
@@ -36,7 +36,7 @@ factory UserMessageItemContentUserMessageQuotedText.fromJson(Map<String, dynamic
 final UserMessageQuotedText userMessageQuotedText;
 
 @override String get type { return 'UserMessageQuotedText'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...userMessageQuotedText.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...userMessageQuotedText.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is UserMessageItemContentUserMessageQuotedText && userMessageQuotedText == other.userMessageQuotedText; } 
 @override int get hashCode { return userMessageQuotedText.hashCode; } 

@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (reviewer != null) 'reviewer': reviewer?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reviewer', 'type'}.contains(key)); } 
 WebhookDeploymentReviewRequestedReviewers copyWith({WebhookDeploymentReviewRequestedReviewersReviewer? Function()? reviewer, WebhookDeploymentReviewRequestedReviewersType Function()? type, }) { return WebhookDeploymentReviewRequestedReviewers(
   reviewer: reviewer != null ? reviewer() : this.reviewer,
   type: type != null ? type() : this.type,

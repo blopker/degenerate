@@ -29,7 +29,7 @@ factory ComputerActionClickParam.fromJson(Map<String, dynamic> json) { return Co
 final ClickParam clickParam;
 
 @override String get type { return 'ClickParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...clickParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...clickParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionClickParam && clickParam == other.clickParam; } 
 @override int get hashCode { return clickParam.hashCode; } 
@@ -42,7 +42,7 @@ factory ComputerActionDoubleClickAction.fromJson(Map<String, dynamic> json) { re
 final DoubleClickAction doubleClickAction;
 
 @override String get type { return 'DoubleClickAction'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...doubleClickAction.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...doubleClickAction.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionDoubleClickAction && doubleClickAction == other.doubleClickAction; } 
 @override int get hashCode { return doubleClickAction.hashCode; } 
@@ -55,7 +55,7 @@ factory ComputerActionDragParam.fromJson(Map<String, dynamic> json) { return Com
 final DragParam dragParam;
 
 @override String get type { return 'DragParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...dragParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...dragParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionDragParam && dragParam == other.dragParam; } 
 @override int get hashCode { return dragParam.hashCode; } 
@@ -68,7 +68,7 @@ factory ComputerActionKeyPressAction.fromJson(Map<String, dynamic> json) { retur
 final KeyPressAction keyPressAction;
 
 @override String get type { return 'KeyPressAction'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...keyPressAction.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...keyPressAction.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionKeyPressAction && keyPressAction == other.keyPressAction; } 
 @override int get hashCode { return keyPressAction.hashCode; } 
@@ -81,7 +81,7 @@ factory ComputerActionMoveParam.fromJson(Map<String, dynamic> json) { return Com
 final MoveParam moveParam;
 
 @override String get type { return 'MoveParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...moveParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...moveParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionMoveParam && moveParam == other.moveParam; } 
 @override int get hashCode { return moveParam.hashCode; } 
@@ -94,7 +94,7 @@ factory ComputerActionScreenshotParam.fromJson(Map<String, dynamic> json) { retu
 final ScreenshotParam screenshotParam;
 
 @override String get type { return 'ScreenshotParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...screenshotParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...screenshotParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionScreenshotParam && screenshotParam == other.screenshotParam; } 
 @override int get hashCode { return screenshotParam.hashCode; } 
@@ -107,7 +107,7 @@ factory ComputerActionScrollParam.fromJson(Map<String, dynamic> json) { return C
 final ScrollParam scrollParam;
 
 @override String get type { return 'ScrollParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...scrollParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...scrollParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionScrollParam && scrollParam == other.scrollParam; } 
 @override int get hashCode { return scrollParam.hashCode; } 
@@ -120,7 +120,7 @@ factory ComputerActionTypeParam.fromJson(Map<String, dynamic> json) { return Com
 final TypeParam typeParam;
 
 @override String get type { return 'TypeParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...typeParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...typeParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionTypeParam && typeParam == other.typeParam; } 
 @override int get hashCode { return typeParam.hashCode; } 
@@ -133,7 +133,7 @@ factory ComputerActionWaitParam.fromJson(Map<String, dynamic> json) { return Com
 final WaitParam waitParam;
 
 @override String get type { return 'WaitParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...waitParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...waitParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ComputerActionWaitParam && waitParam == other.waitParam; } 
 @override int get hashCode { return waitParam.hashCode; } 

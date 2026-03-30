@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'failed_at': ?failedAt,
   'succeeded_at': ?succeededAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'canceled_at', 'failed_at', 'succeeded_at'}.contains(key)); } 
 TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions copyWith({int? Function()? canceledAt, int? Function()? failedAt, int? Function()? succeededAt, }) { return TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions(
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
   failedAt: failedAt != null ? failedAt() : this.failedAt,

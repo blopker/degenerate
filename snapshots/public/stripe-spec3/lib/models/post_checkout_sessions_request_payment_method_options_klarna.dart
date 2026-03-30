@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
   if (subscriptions != null) 'subscriptions': subscriptions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'setup_future_usage', 'subscriptions'}.contains(key)); } 
 PostCheckoutSessionsRequestPaymentMethodOptionsKlarna copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSetupFutureUsage Function()? setupFutureUsage, PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptions Function()? subscriptions, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsKlarna(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

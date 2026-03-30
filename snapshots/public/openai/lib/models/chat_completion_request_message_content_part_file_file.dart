@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'file_data': ?fileData,
   'file_id': ?fileId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filename', 'file_data', 'file_id'}.contains(key)); } 
 ChatCompletionRequestMessageContentPartFileFile copyWith({String Function()? filename, String Function()? fileData, String Function()? fileId, }) { return ChatCompletionRequestMessageContentPartFileFile(
   filename: filename != null ? filename() : this.filename,
   fileData: fileData != null ? fileData() : this.fileData,

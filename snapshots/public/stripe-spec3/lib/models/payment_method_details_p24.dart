@@ -122,7 +122,7 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
   'verified_name': ?verifiedName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank', 'reference', 'verified_name'}.contains(key)); } 
 PaymentMethodDetailsP24 copyWith({PaymentMethodDetailsP24Bank? Function()? bank, String? Function()? reference, String? Function()? verifiedName, }) { return PaymentMethodDetailsP24(
   bank: bank != null ? bank() : this.bank,
   reference: reference != null ? reference() : this.reference,

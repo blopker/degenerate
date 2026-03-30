@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   if (sepaDebit != null) 'sepa_debit': sepaDebit?.toJson(),
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acss_debit', 'amazon_pay', 'bacs_debit', 'card', 'card_present', 'klarna', 'link', 'paypal', 'payto', 'sepa_debit', 'us_bank_account'}.contains(key)); } 
 SetupIntentPaymentMethodOptions copyWith({SetupIntentPaymentMethodOptionsAcssDebit2 Function()? acssDebit, SetupIntentPaymentMethodOptionsAmazonPay2 Function()? amazonPay, SetupIntentPaymentMethodOptionsBacsDebit2 Function()? bacsDebit, SetupIntentPaymentMethodOptionsCard2 Function()? card, SetupIntentPaymentMethodOptionsCardPresent2 Function()? cardPresent, SetupIntentPaymentMethodOptionsKlarna2 Function()? klarna, SetupIntentPaymentMethodOptionsLink2 Function()? link, SetupIntentPaymentMethodOptionsPaypal2 Function()? paypal, SetupIntentPaymentMethodOptionsPayto2 Function()? payto, SetupIntentPaymentMethodOptionsSepaDebit2 Function()? sepaDebit, SetupIntentPaymentMethodOptionsUsBankAccount2 Function()? usBankAccount, }) { return SetupIntentPaymentMethodOptions(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   amazonPay: amazonPay != null ? amazonPay() : this.amazonPay,

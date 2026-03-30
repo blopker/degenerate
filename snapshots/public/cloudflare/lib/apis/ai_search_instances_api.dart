@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_instances_request.dart';import '../models/ai_search_create_instances_response.dart';import '../models/ai_search_create_instances_response400.dart';import '../models/ai_search_delete_instances_response.dart';import '../models/ai_search_delete_instances_response404.dart';import '../models/ai_search_fetch_instances_response.dart';import '../models/ai_search_fetch_instances_response400.dart';import '../models/ai_search_instance_chat_completion_request.dart';import '../models/ai_search_instance_chat_completion_response.dart';import '../models/ai_search_instance_chat_completion_response404.dart';import '../models/ai_search_instance_search_request.dart';import '../models/ai_search_instance_search_response.dart';import '../models/ai_search_instance_search_response404.dart';import '../models/ai_search_list_instances_order_by.dart';import '../models/ai_search_list_instances_order_by_direction.dart';import '../models/ai_search_list_instances_response.dart';import '../models/ai_search_list_instances_response400.dart';import '../models/ai_search_stats_response.dart';import '../models/ai_search_stats_response404.dart';import '../models/ai_search_update_instances_request.dart';import '../models/ai_search_update_instances_response.dart';import '../models/ai_search_update_instances_response400.dart';/// AiSearchInstancesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_instances_request.dart';import '../models/ai_search_create_instances_response400.dart';import '../models/ai_search_create_instances_response_result.dart';import '../models/ai_search_delete_instances_response404.dart';import '../models/ai_search_delete_instances_response_result.dart';import '../models/ai_search_fetch_instances_response400.dart';import '../models/ai_search_fetch_instances_response_result.dart';import '../models/ai_search_instance_chat_completion_request.dart';import '../models/ai_search_instance_chat_completion_response.dart';import '../models/ai_search_instance_chat_completion_response404.dart';import '../models/ai_search_instance_search_request.dart';import '../models/ai_search_instance_search_response404.dart';import '../models/ai_search_instance_search_response_result.dart';import '../models/ai_search_list_instances_order_by.dart';import '../models/ai_search_list_instances_order_by_direction.dart';import '../models/ai_search_list_instances_response400.dart';import '../models/ai_search_list_instances_response_result.dart';import '../models/ai_search_stats_response404.dart';import '../models/ai_search_stats_response_result.dart';import '../models/ai_search_update_instances_request.dart';import '../models/ai_search_update_instances_response400.dart';import '../models/ai_search_update_instances_response_result.dart';/// AiSearchInstancesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,13 +11,23 @@ final class AiSearchInstancesApi with ApiExecutor {const AiSearchInstancesApi(th
 /// List instances.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances`
-Future<ApiResult<AiSearchListInstancesResponse, AiSearchListInstancesResponse400>> aiSearchListInstances({required String accountId, int? page, int? perPage, String? search, AiSearchListInstancesOrderBy? orderBy, AiSearchListInstancesOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AiSearchListInstancesResponseResult>, AiSearchListInstancesResponse400>> aiSearchListInstances({required String accountId, int? page, int? perPage, String? search, AiSearchListInstancesOrderBy? orderBy, AiSearchListInstancesOrderByDirection? orderByDirection, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (search != null) queryParameters['search'] = search;
-if (orderBy != null) queryParameters['order_by'] = orderBy.toJson();
-if (orderByDirection != null) queryParameters['order_by_direction'] = orderByDirection.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (search != null) {
+  queryParameters['search'] = search;
+}
+if (orderBy != null) {
+  queryParameters['order_by'] = orderBy.toJson();
+}
+if (orderByDirection != null) {
+  queryParameters['order_by_direction'] = orderByDirection.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -33,7 +43,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AiSearchListInstancesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => AiSearchListInstancesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
     return AiSearchListInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -45,7 +56,7 @@ return execute(
 /// Create a new instances.
 ///
 /// `POST /accounts/{account_id}/ai-search/instances`
-Future<ApiResult<AiSearchCreateInstancesResponse, AiSearchCreateInstancesResponse400>> aiSearchCreateInstances({required String accountId, AiSearchCreateInstancesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchCreateInstancesResponseResult, AiSearchCreateInstancesResponse400>> aiSearchCreateInstances({required String accountId, AiSearchCreateInstancesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -59,7 +70,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AiSearchCreateInstancesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return AiSearchCreateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AiSearchCreateInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -69,7 +81,7 @@ return execute(
 /// Read instances.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchFetchInstancesResponse, AiSearchFetchInstancesResponse400>> aiSearchFetchInstances({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchFetchInstancesResponseResult, AiSearchFetchInstancesResponse400>> aiSearchFetchInstances({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -81,7 +93,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AiSearchFetchInstancesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return AiSearchFetchInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AiSearchFetchInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -91,7 +104,7 @@ return execute(
 /// Update instances.
 ///
 /// `PUT /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchUpdateInstancesResponse, AiSearchUpdateInstancesResponse400>> aiSearchUpdateInstances({required String accountId, required String id, AiSearchUpdateInstancesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchUpdateInstancesResponseResult, AiSearchUpdateInstancesResponse400>> aiSearchUpdateInstances({required String accountId, required String id, AiSearchUpdateInstancesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -105,7 +118,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AiSearchUpdateInstancesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return AiSearchUpdateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AiSearchUpdateInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -115,7 +129,7 @@ return execute(
 /// Delete instances.
 ///
 /// `DELETE /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchDeleteInstancesResponse, AiSearchDeleteInstancesResponse404>> aiSearchDeleteInstances({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchDeleteInstancesResponseResult, AiSearchDeleteInstancesResponse404>> aiSearchDeleteInstances({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,7 +141,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AiSearchDeleteInstancesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return AiSearchDeleteInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AiSearchDeleteInstancesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -165,7 +180,7 @@ return execute(
 /// Executes a semantic search query against an AI Search instance to find relevant indexed content.
 ///
 /// `POST /accounts/{account_id}/ai-search/instances/{id}/search`
-Future<ApiResult<AiSearchInstanceSearchResponse, AiSearchInstanceSearchResponse404>> aiSearchInstanceSearch({required String id, required String accountId, AiSearchInstanceSearchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchInstanceSearchResponseResult, AiSearchInstanceSearchResponse404>> aiSearchInstanceSearch({required String id, required String accountId, AiSearchInstanceSearchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -179,7 +194,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AiSearchInstanceSearchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return AiSearchInstanceSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AiSearchInstanceSearchResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -191,7 +207,7 @@ return execute(
 /// Retrieves usage statistics for AI Search instances.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}/stats`
-Future<ApiResult<AiSearchStatsResponse, AiSearchStatsResponse404>> aiSearchStats({required String id, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchStatsResponseResult, AiSearchStatsResponse404>> aiSearchStats({required String id, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -203,7 +219,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AiSearchStatsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return AiSearchStatsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AiSearchStatsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

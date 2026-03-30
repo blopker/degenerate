@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
   'param': ?param,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'code', 'message', 'param'}.contains(key)); } 
 RealtimeServerEventConversationItemInputAudioTranscriptionFailedError copyWith({String Function()? type, String Function()? code, String Function()? message, String Function()? param, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionFailedError(
   type: type != null ? type() : this.type,
   code: code != null ? code() : this.code,

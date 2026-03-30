@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_response_message.dart';/// The type of this object. It is always set to "list".
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_list_data.dart';/// The type of this object. It is always set to "list".
 /// 
 final class ChatCompletionMessageListObject {const ChatCompletionMessageListObject._(this.value);
 
@@ -29,7 +29,7 @@ final class ChatCompletionMessageList {const ChatCompletionMessageList({this.obj
 
 factory ChatCompletionMessageList.fromJson(Map<String, dynamic> json) { return ChatCompletionMessageList(
   object: ChatCompletionMessageListObject.fromJson(json['object'] as String),
-  data: (json['data'] as List<dynamic>).map((e) => ChatCompletionResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
+  data: (json['data'] as List<dynamic>).map((e) => ChatCompletionMessageListData.fromJson(e as Map<String, dynamic>)).toList(),
   firstId: json['first_id'] as String,
   lastId: json['last_id'] as String,
   hasMore: json['has_more'] as bool,
@@ -41,7 +41,7 @@ final ChatCompletionMessageListObject object;
 
 /// An array of chat completion message objects.
 /// 
-final List<ChatCompletionResponseMessage> data;
+final List<ChatCompletionMessageListData> data;
 
 /// The identifier of the first chat message in the data array.
 final String firstId;
@@ -64,7 +64,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('first_id') && json['first_id'] is String &&
       json.containsKey('last_id') && json['last_id'] is String &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
-ChatCompletionMessageList copyWith({ChatCompletionMessageListObject? object, List<ChatCompletionResponseMessage>? data, String? firstId, String? lastId, bool? hasMore, }) { return ChatCompletionMessageList(
+ChatCompletionMessageList copyWith({ChatCompletionMessageListObject? object, List<ChatCompletionMessageListData>? data, String? firstId, String? lastId, bool? hasMore, }) { return ChatCompletionMessageList(
   object: object ?? this.object,
   data: data ?? this.data,
   firstId: firstId ?? this.firstId,

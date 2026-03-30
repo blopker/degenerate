@@ -134,7 +134,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'wildcard': ?wildcard,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle_method', 'certificate_authority', 'cloudflare_branding', 'custom_cert_bundle', 'custom_certificate', 'custom_key', 'method', 'settings', 'type', 'wildcard'}.contains(key)); } 
 TlsCertificatesAndHostnamesSslpostDv copyWith({TlsCertificatesAndHostnamesSslpostDvBundleMethod Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority Function()? certificateAuthority, bool Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesCustomCertAndKey> Function()? customCertBundle, String Function()? customCertificate, String Function()? customKey, TlsCertificatesAndHostnamesSslpostDvMethod Function()? method, TlsCertificatesAndHostnamesSslsettings Function()? settings, TlsCertificatesAndHostnamesSslpostDvType Function()? type, bool Function()? wildcard, }) { return TlsCertificatesAndHostnamesSslpostDv(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,

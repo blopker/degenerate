@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (parameters != null) 'parameters': parameters?.map((e) => e).toList(),
   'responses': ?responses,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'parameters', 'responses'}.contains(key)); } 
 ShieldParameterSchemasDefinition copyWith({List<Map<String, dynamic>> Function()? parameters, Map<String, dynamic>? Function()? responses, }) { return ShieldParameterSchemasDefinition(
   parameters: parameters != null ? parameters() : this.parameters,
   responses: responses != null ? responses() : this.responses,

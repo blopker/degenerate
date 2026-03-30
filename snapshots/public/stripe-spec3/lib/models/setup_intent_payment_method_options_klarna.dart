@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'currency': ?currency,
   'preferred_locale': ?preferredLocale,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'preferred_locale'}.contains(key)); } 
 SetupIntentPaymentMethodOptionsKlarna copyWith({String? Function()? currency, String? Function()? preferredLocale, }) { return SetupIntentPaymentMethodOptionsKlarna(
   currency: currency != null ? currency() : this.currency,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,

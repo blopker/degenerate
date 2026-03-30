@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'detail': detail.toJson(),
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'detail', 'url'}.contains(key)); } 
 Messages51MessagesUserContentVariant2ImageUrl copyWith({Messages51MessagesUserContentVariant2ImageUrlDetail Function()? detail, String Function()? url, }) { return Messages51MessagesUserContentVariant2ImageUrl(
   detail: detail != null ? detail() : this.detail,
   url: url != null ? url() : this.url,

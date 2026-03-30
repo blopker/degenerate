@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'bucketName': ?bucketName,
   if (queues != null) 'queues': queues?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucketName', 'queues'}.contains(key)); } 
 R2BucketConfig copyWith({String Function()? bucketName, List<R2QueuesConfig> Function()? queues, }) { return R2BucketConfig(
   bucketName: bucketName != null ? bucketName() : this.bucketName,
   queues: queues != null ? queues() : this.queues,

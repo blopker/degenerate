@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'billing_agreement_id': ?billingAgreementId,
   'payer_id': ?payerId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_agreement_id', 'payer_id'}.contains(key)); } 
 MandatePaypal copyWith({String? Function()? billingAgreementId, String? Function()? payerId, }) { return MandatePaypal(
   billingAgreementId: billingAgreementId != null ? billingAgreementId() : this.billingAgreementId,
   payerId: payerId != null ? payerId() : this.payerId,

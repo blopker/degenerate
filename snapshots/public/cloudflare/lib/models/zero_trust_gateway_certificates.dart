@@ -117,7 +117,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   if (uploadedOn != null) 'uploaded_on': uploadedOn?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'binding_status', 'certificate', 'created_at', 'expires_on', 'fingerprint', 'id', 'in_use', 'issuer_org', 'issuer_raw', 'type', 'updated_at', 'uploaded_on'}.contains(key)); } 
 ZeroTrustGatewayCertificates copyWith({ZeroTrustGatewayBindingStatus Function()? bindingStatus, String Function()? certificate, ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayReadOnlyTimestamp Function()? expiresOn, String Function()? fingerprint, ZeroTrustGatewayUuid Function()? id, bool Function()? inUse, String Function()? issuerOrg, String Function()? issuerRaw, ZeroTrustGatewayType Function()? type, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, ZeroTrustGatewayReadOnlyTimestamp Function()? uploadedOn, }) { return ZeroTrustGatewayCertificates(
   bindingStatus: bindingStatus != null ? bindingStatus() : this.bindingStatus,
   certificate: certificate != null ? certificate() : this.certificate,

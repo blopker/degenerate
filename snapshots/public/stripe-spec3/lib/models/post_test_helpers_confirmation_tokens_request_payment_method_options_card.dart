@@ -11,7 +11,7 @@ final PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmen
 Map<String, dynamic> toJson() { return {
   if (installments != null) 'installments': installments?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'installments'}.contains(key)); } 
 PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCard copyWith({PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments Function()? installments}) { return PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCard(
   installments: installments != null ? installments() : this.installments,
 ); } 

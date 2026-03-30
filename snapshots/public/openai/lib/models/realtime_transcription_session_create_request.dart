@@ -95,7 +95,7 @@ Map<String, dynamic> toJson() { return {
   if (inputAudioTranscription != null) 'input_audio_transcription': inputAudioTranscription?.toJson(),
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'turn_detection', 'input_audio_noise_reduction', 'input_audio_format', 'input_audio_transcription', 'include'}.contains(key)); } 
 RealtimeTranscriptionSessionCreateRequest copyWith({RealtimeTranscriptionSessionCreateRequestTurnDetection Function()? turnDetection, RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction Function()? inputAudioNoiseReduction, RealtimeTranscriptionSessionCreateRequestInputAudioFormat Function()? inputAudioFormat, AudioTranscription Function()? inputAudioTranscription, List<RealtimeTranscriptionSessionCreateRequestInclude> Function()? include, }) { return RealtimeTranscriptionSessionCreateRequest(
   turnDetection: turnDetection != null ? turnDetection() : this.turnDetection,
   inputAudioNoiseReduction: inputAudioNoiseReduction != null ? inputAudioNoiseReduction() : this.inputAudioNoiseReduction,

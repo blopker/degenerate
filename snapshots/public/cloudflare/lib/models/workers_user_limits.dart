@@ -13,7 +13,7 @@ final int? cpuMs;
 Map<String, dynamic> toJson() { return {
   'cpu_ms': ?cpuMs,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cpu_ms'}.contains(key)); } 
 WorkersUserLimits copyWith({int? Function()? cpuMs}) { return WorkersUserLimits(
   cpuMs: cpuMs != null ? cpuMs() : this.cpuMs,
 ); } 

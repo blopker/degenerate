@@ -12,7 +12,7 @@ final bool enableDebugLogging;
 Map<String, dynamic> toJson() { return {
   'enable_debug_logging': enableDebugLogging,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enable_debug_logging'}.contains(key)); } 
 ActionsReRunWorkflowFailedJobsRequest copyWith({bool Function()? enableDebugLogging}) { return ActionsReRunWorkflowFailedJobsRequest(
   enableDebugLogging: enableDebugLogging != null ? enableDebugLogging() : this.enableDebugLogging,
 ); } 

@@ -60,7 +60,7 @@ final PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequestRetur
 Map<String, dynamic> toJson() { return {
   if (code != null) 'code': code?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code'}.contains(key)); } 
 PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequestReturnedDetails copyWith({PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequestReturnedDetailsCode Function()? code}) { return PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequestReturnedDetails(
   code: code != null ? code() : this.code,
 ); } 

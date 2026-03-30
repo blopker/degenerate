@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/load_balancing_origin_healthy2.dart';import '../models/load_balancing_pool_name.dart';import '../models/load_balancing_schemas_identifier.dart';import '../models/load_balancing_until.dart';import '../models/response_common42.dart';/// LoadBalancerHealthcheckEventsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/load_balancing_analytics.dart';import '../models/load_balancing_origin_healthy2.dart';import '../models/load_balancing_pool_name.dart';import '../models/load_balancing_schemas_identifier.dart';import '../models/load_balancing_until.dart';/// LoadBalancerHealthcheckEventsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,15 +13,29 @@ final class LoadBalancerHealthcheckEventsApi with ApiExecutor {const LoadBalance
 /// List origin health changes.
 ///
 /// `GET /user/load_balancing_analytics/events`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerHealthcheckEventsListHealthcheckEvents({LoadBalancingUntil? until, LoadBalancingPoolName? poolName, LoadBalancingOriginHealthy2? originHealthy, LoadBalancingSchemasIdentifier? poolId, DateTime? since, String? originName, bool? poolHealthy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<LoadBalancingAnalytics>?, Never>> loadBalancerHealthcheckEventsListHealthcheckEvents({LoadBalancingUntil? until, LoadBalancingPoolName? poolName, LoadBalancingOriginHealthy2? originHealthy, LoadBalancingSchemasIdentifier? poolId, DateTime? since, String? originName, bool? poolHealthy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (until != null) queryParameters['until'] = until.toString();
-if (poolName != null) queryParameters['pool_name'] = poolName.toString();
-if (originHealthy != null) queryParameters['origin_healthy'] = originHealthy.toString();
-if (poolId != null) queryParameters['pool_id'] = poolId.toString();
-if (since != null) queryParameters['since'] = since.toString();
-if (originName != null) queryParameters['origin_name'] = originName;
-if (poolHealthy != null) queryParameters['pool_healthy'] = poolHealthy.toString();
+if (until != null) {
+  queryParameters['until'] = until.toString();
+}
+if (poolName != null) {
+  queryParameters['pool_name'] = poolName.toString();
+}
+if (originHealthy != null) {
+  queryParameters['origin_healthy'] = originHealthy.toString();
+}
+if (poolId != null) {
+  queryParameters['pool_id'] = poolId.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (originName != null) {
+  queryParameters['origin_name'] = originName;
+}
+if (poolHealthy != null) {
+  queryParameters['pool_healthy'] = poolHealthy.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -37,7 +51,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => LoadBalancingAnalytics.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

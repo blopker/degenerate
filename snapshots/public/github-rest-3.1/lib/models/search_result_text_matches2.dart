@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'fragment': ?fragment,
   if (matches != null) 'matches': matches?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'object_url', 'object_type', 'property', 'fragment', 'matches'}.contains(key)); } 
 SearchResultTextMatches2 copyWith({String Function()? objectUrl, String? Function()? objectType, String Function()? property, String Function()? fragment, List<SearchResultTextMatches2Matches> Function()? matches, }) { return SearchResultTextMatches2(
   objectUrl: objectUrl != null ? objectUrl() : this.objectUrl,
   objectType: objectType != null ? objectType() : this.objectType,

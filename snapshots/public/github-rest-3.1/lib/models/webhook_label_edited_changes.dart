@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (description != null) 'description': description?.toJson(),
   if (name != null) 'name': name?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'color', 'description', 'name'}.contains(key)); } 
 WebhookLabelEditedChanges copyWith({WebhookLabelEditedChangesColor Function()? color, WebhookLabelEditedChangesDescription Function()? description, WebhookLabelEditedChangesName Function()? name, }) { return WebhookLabelEditedChanges(
   color: color != null ? color() : this.color,
   description: description != null ? description() : this.description,

@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'latitude': ?latitude,
   'longitude': ?longitude,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'latitude', 'longitude'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoLocationCoords copyWith({double Function()? latitude, double Function()? longitude, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoLocationCoords(
   latitude: latitude != null ? latitude() : this.latitude,
   longitude: longitude != null ? longitude() : this.longitude,

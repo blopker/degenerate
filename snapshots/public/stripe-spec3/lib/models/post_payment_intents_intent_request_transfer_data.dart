@@ -12,7 +12,7 @@ final int? amount;
 Map<String, dynamic> toJson() { return {
   'amount': ?amount,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount'}.contains(key)); } 
 PostPaymentIntentsIntentRequestTransferData copyWith({int Function()? amount}) { return PostPaymentIntentsIntentRequestTransferData(
   amount: amount != null ? amount() : this.amount,
 ); } 

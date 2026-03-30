@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
   'modified_on': ?modifiedOn,
   if (source != null) 'source': source?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'author_email', 'author_id', 'created_on', 'hasPreview', 'modified_on', 'source'}.contains(key)); } 
 WorkersVersionItemShortMetadata copyWith({String Function()? authorEmail, String Function()? authorId, String Function()? createdOn, bool Function()? hasPreview, String Function()? modifiedOn, WorkersVersionItemShortMetadataSource Function()? source, }) { return WorkersVersionItemShortMetadata(
   authorEmail: authorEmail != null ? authorEmail() : this.authorEmail,
   authorId: authorId != null ? authorId() : this.authorId,

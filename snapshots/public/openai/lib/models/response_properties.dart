@@ -105,7 +105,7 @@ Map<String, dynamic> toJson() { return {
   if (prompt != null) 'prompt': prompt?.toJson(),
   if (truncation != null) 'truncation': truncation?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'previous_response_id', 'model', 'reasoning', 'background', 'max_output_tokens', 'max_tool_calls', 'text', 'tools', 'tool_choice', 'prompt', 'truncation'}.contains(key)); } 
 ResponseProperties copyWith({String? Function()? previousResponseId, ModelIdsResponses Function()? model, Reasoning? Function()? reasoning, bool? Function()? background, int? Function()? maxOutputTokens, int? Function()? maxToolCalls, ResponseTextParam Function()? text, List<Tool> Function()? tools, ToolChoiceParam Function()? toolChoice, Prompt Function()? prompt, ResponsePropertiesTruncation? Function()? truncation, }) { return ResponseProperties(
   previousResponseId: previousResponseId != null ? previousResponseId() : this.previousResponseId,
   model: model != null ? model() : this.model,

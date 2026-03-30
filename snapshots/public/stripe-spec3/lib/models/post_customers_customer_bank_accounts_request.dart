@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
   'source': ?source,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alipay_account', 'bank_account', 'card', 'expand', 'metadata', 'source'}.contains(key)); } 
 PostCustomersCustomerBankAccountsRequest copyWith({String Function()? alipayAccount, PostCustomersCustomerBankAccountsRequestBankAccount Function()? bankAccount, PostCustomersCustomerBankAccountsRequestCard Function()? card, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? source, }) { return PostCustomersCustomerBankAccountsRequest(
   alipayAccount: alipayAccount != null ? alipayAccount() : this.alipayAccount,
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,

@@ -11,7 +11,7 @@ final List<PostAccountsAccountPeoplePersonRequestDocumentsPassportFiles>? files;
 Map<String, dynamic> toJson() { return {
   if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'files'}.contains(key)); } 
 PostAccountsAccountPeoplePersonRequestDocumentsPassport copyWith({List<PostAccountsAccountPeoplePersonRequestDocumentsPassportFiles> Function()? files}) { return PostAccountsAccountPeoplePersonRequestDocumentsPassport(
   files: files != null ? files() : this.files,
 ); } 

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'id', 'type', 'url'}.contains(key)); } 
 BrapiPostScrapeRequestVariant2AddScriptTag copyWith({String Function()? content, String Function()? id, String Function()? type, String Function()? url, }) { return BrapiPostScrapeRequestVariant2AddScriptTag(
   content: content != null ? content() : this.content,
   id: id != null ? id() : this.id,

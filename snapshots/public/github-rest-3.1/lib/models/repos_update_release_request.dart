@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   if (makeLatest != null) 'make_latest': makeLatest?.toJson(),
   'discussion_category_name': ?discussionCategoryName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tag_name', 'target_commitish', 'name', 'body', 'draft', 'prerelease', 'make_latest', 'discussion_category_name'}.contains(key)); } 
 ReposUpdateReleaseRequest copyWith({String Function()? tagName, String Function()? targetCommitish, String Function()? name, String Function()? body, bool Function()? draft, bool Function()? prerelease, ReposUpdateReleaseRequestMakeLatest Function()? makeLatest, String Function()? discussionCategoryName, }) { return ReposUpdateReleaseRequest(
   tagName: tagName != null ? tagName() : this.tagName,
   targetCommitish: targetCommitish != null ? targetCommitish() : this.targetCommitish,

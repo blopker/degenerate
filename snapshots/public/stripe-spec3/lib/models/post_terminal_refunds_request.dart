@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   'refund_application_fee': ?refundApplicationFee,
   'reverse_transfer': ?reverseTransfer,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'charge', 'expand', 'metadata', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key)); } 
 PostTerminalRefundsRequest copyWith({int Function()? amount, String Function()? charge, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? paymentIntent, PostTerminalRefundsRequestReason Function()? reason, bool Function()? refundApplicationFee, bool Function()? reverseTransfer, }) { return PostTerminalRefundsRequest(
   amount: amount != null ? amount() : this.amount,
   charge: charge != null ? charge() : this.charge,

@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   'parse_type': parseType.toJson(),
   if (storeOptions != null) 'store_options': storeOptions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'crawl_options', 'parse_options', 'parse_type', 'store_options'}.contains(key)); } 
 AiSearchCreateInstancesResponseResultSourceParamsWebCrawler copyWith({AiSearchCreateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions Function()? crawlOptions, AiSearchCreateInstancesResponseResultSourceParamsWebCrawlerParseOptions Function()? parseOptions, AiSearchCreateInstancesResponseResultSourceParamsWebCrawlerParseType Function()? parseType, AiSearchCreateInstancesResponseResultSourceParamsWebCrawlerStoreOptions Function()? storeOptions, }) { return AiSearchCreateInstancesResponseResultSourceParamsWebCrawler(
   crawlOptions: crawlOptions != null ? crawlOptions() : this.crawlOptions,
   parseOptions: parseOptions != null ? parseOptions() : this.parseOptions,

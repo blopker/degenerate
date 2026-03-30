@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'quality': ?quality,
   'timestamp': ?timestamp,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'frame_height', 'frame_width', 'frames_dropped', 'frames_per_second', 'jitter', 'packets_lost', 'quality', 'timestamp'}.contains(key)); } 
 RealtimekitParticipantQualityStatsQualityStatsVideoStats copyWith({double Function()? frameHeight, double Function()? frameWidth, double Function()? framesDropped, double Function()? framesPerSecond, double Function()? jitter, double Function()? packetsLost, double Function()? quality, String Function()? timestamp, }) { return RealtimekitParticipantQualityStatsQualityStatsVideoStats(
   frameHeight: frameHeight != null ? frameHeight() : this.frameHeight,
   frameWidth: frameWidth != null ? frameWidth() : this.frameWidth,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (paging != null) 'paging': paging?.toJson(),
   if (sessions != null) 'sessions': sessions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'livestreams', 'paging', 'sessions'}.contains(key)); } 
 LivestreamSessionDetailsResponseData copyWith({List<LivestreamSessionDetailsResponseDataLivestreams> Function()? livestreams, LivestreamSessionDetailsResponseDataPaging Function()? paging, LivestreamSessionDetailsResponseDataSessions Function()? sessions, }) { return LivestreamSessionDetailsResponseData(
   livestreams: livestreams != null ? livestreams() : this.livestreams,
   paging: paging != null ? paging() : this.paging,

@@ -127,6 +127,13 @@ void main() {
       expect(sanitizeDartName('_private'), '_private');
     });
 
+    test('transliterates accented Latin characters to ASCII', () {
+      expect(sanitizeDartName('café'), 'cafe');
+      expect(sanitizeDartName('naïve'), 'naive');
+      expect(sanitizeDartName('über'), 'uber');
+      expect(sanitizeDartName('résumé'), 'resume');
+    });
+
     test('handles all invalid characters', () {
       expect(sanitizeDartName('!!!'), r'$empty');
     });
@@ -238,6 +245,20 @@ void main() {
       expect(enumValueName('+1'), 'plus1');
     });
 
+    test('handles leading +/- before letters without corrupting casing', () {
+      // +NaN should produce lowerCamelCase, not 'NaN' (uppercase)
+      expect(enumValueName('+NaN'), 'naN');
+      expect(enumValueName('-NaN'), 'naN');
+      // +digit still works via _splitWords
+      expect(enumValueName('+1'), 'plus1');
+      expect(enumValueName('-1'), 'minus1');
+    });
+
+    test('preserves interior hyphens as word separators', () {
+      expect(enumValueName('google-apps'), 'googleApps');
+      expect(enumValueName('in-progress'), 'inProgress');
+    });
+
     test('handles values with brackets and special chars', () {
       // [DONE] should become lowerCamelCase 'done', not PascalCase 'Done'
       expect(enumValueName('[DONE]'), 'done');
@@ -259,6 +280,13 @@ void main() {
 
     test('escapes Dart reserved words', () {
       expect(sanitizeFieldName('class'), r'$class');
+    });
+
+    test('escapes Object member names that conflict with generated methods', () {
+      expect(sanitizeFieldName('toString'), r'$toString');
+      expect(sanitizeFieldName('hashCode'), r'$hashCode');
+      expect(sanitizeFieldName('runtimeType'), r'$runtimeType');
+      expect(sanitizeFieldName('noSuchMethod'), r'$noSuchMethod');
     });
   });
 

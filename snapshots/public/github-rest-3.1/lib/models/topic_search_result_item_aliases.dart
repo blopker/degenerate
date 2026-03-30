@@ -11,7 +11,7 @@ final TopicSearchResultItemAliasesTopicRelation? topicRelation;
 Map<String, dynamic> toJson() { return {
   if (topicRelation != null) 'topic_relation': topicRelation?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'topic_relation'}.contains(key)); } 
 TopicSearchResultItemAliases copyWith({TopicSearchResultItemAliasesTopicRelation Function()? topicRelation}) { return TopicSearchResultItemAliases(
   topicRelation: topicRelation != null ? topicRelation() : this.topicRelation,
 ); } 

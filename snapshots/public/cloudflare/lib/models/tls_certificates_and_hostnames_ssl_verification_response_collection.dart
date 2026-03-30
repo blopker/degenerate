@@ -11,7 +11,7 @@ final List<TlsCertificatesAndHostnamesVerification>? result;
 Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
 TlsCertificatesAndHostnamesSslVerificationResponseCollection copyWith({List<TlsCertificatesAndHostnamesVerification> Function()? result}) { return TlsCertificatesAndHostnamesSslVerificationResponseCollection(
   result: result != null ? result() : this.result,
 ); } 

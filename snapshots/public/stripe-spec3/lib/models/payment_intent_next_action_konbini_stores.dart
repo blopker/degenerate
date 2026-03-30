@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (ministop != null) 'ministop': ministop?.toJson(),
   if (seicomart != null) 'seicomart': seicomart?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'familymart', 'lawson', 'ministop', 'seicomart'}.contains(key)); } 
 PaymentIntentNextActionKonbiniStores copyWith({PaymentIntentNextActionKonbiniStoresFamilymart? Function()? familymart, PaymentIntentNextActionKonbiniStoresLawson? Function()? lawson, PaymentIntentNextActionKonbiniStoresMinistop? Function()? ministop, PaymentIntentNextActionKonbiniStoresSeicomart? Function()? seicomart, }) { return PaymentIntentNextActionKonbiniStores(
   familymart: familymart != null ? familymart() : this.familymart,
   lawson: lawson != null ? lawson() : this.lawson,

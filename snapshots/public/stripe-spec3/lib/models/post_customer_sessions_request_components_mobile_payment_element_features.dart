@@ -153,7 +153,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodSave != null) 'payment_method_save': paymentMethodSave?.toJson(),
   if (paymentMethodSaveAllowRedisplayOverride != null) 'payment_method_save_allow_redisplay_override': paymentMethodSaveAllowRedisplayOverride?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_allow_redisplay_filters', 'payment_method_redisplay', 'payment_method_remove', 'payment_method_save', 'payment_method_save_allow_redisplay_override'}.contains(key)); } 
 PostCustomerSessionsRequestComponentsMobilePaymentElementFeatures copyWith({List<PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodAllowRedisplayFilters> Function()? paymentMethodAllowRedisplayFilters, PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRedisplay Function()? paymentMethodRedisplay, PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRemove Function()? paymentMethodRemove, PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSave Function()? paymentMethodSave, PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSaveAllowRedisplayOverride Function()? paymentMethodSaveAllowRedisplayOverride, }) { return PostCustomerSessionsRequestComponentsMobilePaymentElementFeatures(
   paymentMethodAllowRedisplayFilters: paymentMethodAllowRedisplayFilters != null ? paymentMethodAllowRedisplayFilters() : this.paymentMethodAllowRedisplayFilters,
   paymentMethodRedisplay: paymentMethodRedisplay != null ? paymentMethodRedisplay() : this.paymentMethodRedisplay,

@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
   'updated_at': ?updatedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'conclusion', 'created_at', 'environment', 'html_url', 'id', 'name', 'status', 'updated_at'}.contains(key)); } 
 WebhookDeploymentReviewApprovedWorkflowJobRuns copyWith({dynamic Function()? conclusion, String Function()? createdAt, String Function()? environment, String Function()? htmlUrl, int Function()? id, String? Function()? name, String Function()? status, String Function()? updatedAt, }) { return WebhookDeploymentReviewApprovedWorkflowJobRuns(
   conclusion: conclusion != null ? conclusion() : this.conclusion,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

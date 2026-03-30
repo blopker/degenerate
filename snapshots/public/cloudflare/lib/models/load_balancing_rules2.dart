@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'priority': priority,
   'terminates': ?terminates,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition', 'disabled', 'fixed_response', 'name', 'overrides', 'priority', 'terminates'}.contains(key)); } 
 LoadBalancingRules2 copyWith({String Function()? condition, bool Function()? disabled, LoadBalancingRules2FixedResponse Function()? fixedResponse, String Function()? name, LoadBalancingRules2Overrides Function()? overrides, int Function()? priority, bool Function()? terminates, }) { return LoadBalancingRules2(
   condition: condition != null ? condition() : this.condition,
   disabled: disabled != null ? disabled() : this.disabled,

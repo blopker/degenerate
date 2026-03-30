@@ -19,7 +19,7 @@ final StreamPlaybackWebrtcUrl? url;
 Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url'}.contains(key)); } 
 StreamPlaybackWebrtc copyWith({StreamPlaybackWebrtcUrl Function()? url}) { return StreamPlaybackWebrtc(
   url: url != null ? url() : this.url,
 ); } 

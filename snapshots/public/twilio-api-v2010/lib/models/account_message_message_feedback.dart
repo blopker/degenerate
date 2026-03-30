@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'date_updated': ?dateUpdated,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'message_sid', 'outcome', 'date_created', 'date_updated', 'uri'}.contains(key)); } 
 AccountMessageMessageFeedback copyWith({String? Function()? accountSid, String? Function()? messageSid, MessageFeedbackEnumOutcome Function()? outcome, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? uri, }) { return AccountMessageMessageFeedback(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   messageSid: messageSid != null ? messageSid() : this.messageSid,

@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
   'metadata': ?metadata,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'expires_after', 'metadata'}.contains(key)); } 
 UpdateVectorStoreRequest copyWith({String? Function()? name, VectorStoreExpirationAfter? Function()? expiresAfter, Map<String, String>? Function()? metadata, }) { return UpdateVectorStoreRequest(
   name: name != null ? name() : this.name,
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,

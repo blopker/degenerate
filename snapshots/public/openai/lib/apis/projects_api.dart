@@ -13,9 +13,15 @@ final class ProjectsApi with ApiExecutor {const ProjectsApi(this.apiConfig);
 /// `GET /organization/projects`
 Future<ApiResult<ProjectListResponse, Never>> listProjects({int? limit, String? after, bool? includeArchived, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
-if (includeArchived != null) queryParameters['include_archived'] = includeArchived.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (includeArchived != null) {
+  queryParameters['include_archived'] = includeArchived.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -104,8 +110,12 @@ return execute(
 /// `GET /organization/projects/{project_id}/api_keys`
 Future<ApiResult<KeyListResponse, Never>> listProjectApiKeys({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -194,9 +204,15 @@ return execute(
 /// `GET /organization/projects/{project_id}/rate_limits`
 Future<ApiResult<ProjectRateLimitListResponse, Never>> listProjectRateLimits({required String projectId, int? limit, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
-if (before != null) queryParameters['before'] = before;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -245,8 +261,12 @@ return execute(
 /// `GET /organization/projects/{project_id}/service_accounts`
 Future<ApiResult<ProjectServiceAccountListResponse, ErrorResponse>> listProjectServiceAccounts({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -340,8 +360,12 @@ return execute(
 /// `GET /organization/projects/{project_id}/users`
 Future<ApiResult<ProjectUserListResponse, ErrorResponse>> listProjectUsers({required String projectId, int? limit, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

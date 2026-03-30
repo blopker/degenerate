@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (size != null) 'size': size?.toJson(),
   if (url != null) 'url': url?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'position', 'size', 'url'}.contains(key)); } 
 RealtimekitVideoConfigWatermark copyWith({RealtimekitVideoConfigWatermarkPosition Function()? position, RealtimekitVideoConfigWatermarkSize Function()? size, Uri Function()? url, }) { return RealtimekitVideoConfigWatermark(
   position: position != null ? position() : this.position,
   size: size != null ? size() : this.size,

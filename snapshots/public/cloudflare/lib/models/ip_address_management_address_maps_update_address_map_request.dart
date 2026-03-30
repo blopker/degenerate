@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (description != null) 'description': description?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_sni', 'description', 'enabled'}.contains(key)); } 
 IpAddressManagementAddressMapsUpdateAddressMapRequest copyWith({AddressingDefaultSni? Function()? defaultSni, AddressingSchemasDescription? Function()? description, AddressingEnabled? Function()? enabled, }) { return IpAddressManagementAddressMapsUpdateAddressMapRequest(
   defaultSni: defaultSni != null ? defaultSni() : this.defaultSni,
   description: description != null ? description() : this.description,

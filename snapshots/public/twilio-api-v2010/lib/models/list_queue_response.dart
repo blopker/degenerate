@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'start': ?start,
   if (uri != null) 'uri': uri?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'queues', 'end', 'first_page_uri', 'next_page_uri', 'page', 'page_size', 'previous_page_uri', 'start', 'uri'}.contains(key)); } 
 ListQueueResponse copyWith({List<AccountQueue> Function()? queues, int Function()? end, Uri Function()? firstPageUri, Uri? Function()? nextPageUri, int Function()? page, int Function()? pageSize, Uri? Function()? previousPageUri, int Function()? start, Uri Function()? uri, }) { return ListQueueResponse(
   queues: queues != null ? queues() : this.queues,
   end: end != null ? end() : this.end,

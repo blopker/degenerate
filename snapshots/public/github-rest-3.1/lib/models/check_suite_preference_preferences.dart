@@ -11,7 +11,7 @@ final List<CheckSuitePreferencePreferencesAutoTriggerChecks>? autoTriggerChecks;
 Map<String, dynamic> toJson() { return {
   if (autoTriggerChecks != null) 'auto_trigger_checks': autoTriggerChecks?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_trigger_checks'}.contains(key)); } 
 CheckSuitePreferencePreferences copyWith({List<CheckSuitePreferencePreferencesAutoTriggerChecks> Function()? autoTriggerChecks}) { return CheckSuitePreferencePreferences(
   autoTriggerChecks: autoTriggerChecks != null ? autoTriggerChecks() : this.autoTriggerChecks,
 ); } 

@@ -15,9 +15,15 @@ final class LicensesApi with ApiExecutor {const LicensesApi(this.apiConfig);
 /// `GET /licenses`
 Future<ApiResult<List<LicenseSimple>, Never>> licensesGetAllCommonlyUsed({bool? featured, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (featured != null) queryParameters['featured'] = featured.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (featured != null) {
+  queryParameters['featured'] = featured.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -74,7 +80,9 @@ return execute(
 /// `GET /repos/{owner}/{repo}/license`
 Future<ApiResult<LicenseContent, BasicError>> licensesGetForRepo({required String owner, required String repo, CodeScanningRef? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ref != null) queryParameters['ref'] = ref.toString();
+if (ref != null) {
+  queryParameters['ref'] = ref.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

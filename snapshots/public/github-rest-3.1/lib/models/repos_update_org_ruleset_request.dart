@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   if (conditions != null) 'conditions': conditions?.toJson(),
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'target', 'enforcement', 'bypass_actors', 'conditions', 'rules'}.contains(key)); } 
 ReposUpdateOrgRulesetRequest copyWith({String Function()? name, ReposUpdateOrgRulesetRequestTarget Function()? target, RepositoryRuleEnforcement Function()? enforcement, List<RepositoryRulesetBypassActor> Function()? bypassActors, OrgRulesetConditions Function()? conditions, List<OrgRules> Function()? rules, }) { return ReposUpdateOrgRulesetRequest(
   name: name != null ? name() : this.name,
   target: target != null ? target() : this.target,

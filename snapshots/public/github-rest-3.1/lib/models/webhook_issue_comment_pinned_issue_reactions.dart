@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'total_count': ?totalCount,
   'url': ?url,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'+1', '-1', 'confused', 'eyes', 'heart', 'hooray', 'laugh', 'rocket', 'total_count', 'url'}.contains(key)); } 
 WebhookIssueCommentPinnedIssueReactions copyWith({int Function()? plus1, int Function()? minus1, int Function()? confused, int Function()? eyes, int Function()? heart, int Function()? hooray, int Function()? laugh, int Function()? rocket, int Function()? totalCount, String Function()? url, }) { return WebhookIssueCommentPinnedIssueReactions(
   plus1: plus1 != null ? plus1() : this.plus1,
   minus1: minus1 != null ? minus1() : this.minus1,

@@ -108,7 +108,7 @@ Map<String, dynamic> toJson() { return {
   if (network != null) 'network': network?.toJson(),
   if (requestThreeDSecure != null) 'request_three_d_secure': requestThreeDSecure?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'network', 'request_three_d_secure'}.contains(key)); } 
 SubscriptionPaymentMethodOptionsCard copyWith({InvoiceMandateOptionsCard Function()? mandateOptions, SubscriptionPaymentMethodOptionsCardNetwork? Function()? network, SubscriptionPaymentMethodOptionsCardRequestThreeDSecure? Function()? requestThreeDSecure, }) { return SubscriptionPaymentMethodOptionsCard(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   network: network != null ? network() : this.network,

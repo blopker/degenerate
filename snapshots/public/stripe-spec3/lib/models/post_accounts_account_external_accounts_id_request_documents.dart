@@ -12,7 +12,7 @@ final PostAccountsAccountExternalAccountsIdRequestDocumentsBankAccountOwnershipV
 Map<String, dynamic> toJson() { return {
   if (bankAccountOwnershipVerification != null) 'bank_account_ownership_verification': bankAccountOwnershipVerification?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_account_ownership_verification'}.contains(key)); } 
 PostAccountsAccountExternalAccountsIdRequestDocuments copyWith({PostAccountsAccountExternalAccountsIdRequestDocumentsBankAccountOwnershipVerification Function()? bankAccountOwnershipVerification}) { return PostAccountsAccountExternalAccountsIdRequestDocuments(
   bankAccountOwnershipVerification: bankAccountOwnershipVerification != null ? bankAccountOwnershipVerification() : this.bankAccountOwnershipVerification,
 ); } 

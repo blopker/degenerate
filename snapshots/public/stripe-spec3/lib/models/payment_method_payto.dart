@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'last4': ?last4,
   'pay_id': ?payId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bsb_number', 'last4', 'pay_id'}.contains(key)); } 
 PaymentMethodPayto copyWith({String? Function()? bsbNumber, String? Function()? last4, String? Function()? payId, }) { return PaymentMethodPayto(
   bsbNumber: bsbNumber != null ? bsbNumber() : this.bsbNumber,
   last4: last4 != null ? last4() : this.last4,

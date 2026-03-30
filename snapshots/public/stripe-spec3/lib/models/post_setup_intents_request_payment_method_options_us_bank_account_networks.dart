@@ -35,7 +35,7 @@ final List<PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksReque
 Map<String, dynamic> toJson() { return {
   if (requested != null) 'requested': requested?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
 PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks copyWith({List<PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested> Function()? requested}) { return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks(
   requested: requested != null ? requested() : this.requested,
 ); } 

@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'user_Id': ?userId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'type', 'user_Id'}.contains(key)); } 
 RealtimekitStartReasonCaller copyWith({String Function()? name, RealtimekitStartReasonCallerType Function()? type, String Function()? userId, }) { return RealtimekitStartReasonCaller(
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,

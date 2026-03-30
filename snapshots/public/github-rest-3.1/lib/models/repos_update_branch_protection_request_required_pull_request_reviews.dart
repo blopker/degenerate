@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'require_last_push_approval': requireLastPushApproval,
   if (bypassPullRequestAllowances != null) 'bypass_pull_request_allowances': bypassPullRequestAllowances?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dismissal_restrictions', 'dismiss_stale_reviews', 'require_code_owner_reviews', 'required_approving_review_count', 'require_last_push_approval', 'bypass_pull_request_allowances'}.contains(key)); } 
 ReposUpdateBranchProtectionRequestRequiredPullRequestReviews copyWith({ReposUpdateBranchProtectionRequestRequiredPullRequestReviewsDismissalRestrictions Function()? dismissalRestrictions, bool Function()? dismissStaleReviews, bool Function()? requireCodeOwnerReviews, int Function()? requiredApprovingReviewCount, bool Function()? requireLastPushApproval, ReposUpdateBranchProtectionRequestRequiredPullRequestReviewsBypassPullRequestAllowances Function()? bypassPullRequestAllowances, }) { return ReposUpdateBranchProtectionRequestRequiredPullRequestReviews(
   dismissalRestrictions: dismissalRestrictions != null ? dismissalRestrictions() : this.dismissalRestrictions,
   dismissStaleReviews: dismissStaleReviews != null ? dismissStaleReviews() : this.dismissStaleReviews,

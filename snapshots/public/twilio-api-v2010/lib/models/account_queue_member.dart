@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'wait_time': waitTime,
   'queue_sid': ?queueSid,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'call_sid', 'date_enqueued', 'position', 'uri', 'wait_time', 'queue_sid'}.contains(key)); } 
 AccountQueueMember copyWith({String? Function()? callSid, String? Function()? dateEnqueued, int Function()? position, String? Function()? uri, int Function()? waitTime, String? Function()? queueSid, }) { return AccountQueueMember(
   callSid: callSid != null ? callSid() : this.callSid,
   dateEnqueued: dateEnqueued != null ? dateEnqueued() : this.dateEnqueued,

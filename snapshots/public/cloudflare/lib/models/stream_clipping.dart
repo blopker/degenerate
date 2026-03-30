@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   if (thumbnailTimestampPct != null) 'thumbnailTimestampPct': thumbnailTimestampPct?.toJson(),
   if (watermark != null) 'watermark': watermark?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowedOrigins', 'clippedFromVideoUID', 'created', 'creator', 'endTimeSeconds', 'maxDurationSeconds', 'meta', 'modified', 'playback', 'preview', 'requireSignedURLs', 'startTimeSeconds', 'status', 'thumbnailTimestampPct', 'watermark'}.contains(key)); } 
 StreamClipping copyWith({List<String> Function()? allowedOrigins, StreamClippedFromVideoUid Function()? clippedFromVideoUid, StreamClippingCreated Function()? created, StreamCreator Function()? creator, StreamEndTimeSeconds Function()? endTimeSeconds, StreamMaxDurationSeconds Function()? maxDurationSeconds, Map<String, dynamic> Function()? meta, StreamLiveInputModified Function()? modified, StreamPlayback Function()? playback, StreamPreview Function()? preview, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamStartTimeSeconds Function()? startTimeSeconds, StreamMediaState Function()? status, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamWatermarkAtUpload2 Function()? watermark, }) { return StreamClipping(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   clippedFromVideoUid: clippedFromVideoUid != null ? clippedFromVideoUid() : this.clippedFromVideoUid,

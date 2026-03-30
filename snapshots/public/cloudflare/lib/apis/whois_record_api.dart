@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudforce_one_whois_identifier.dart';import '../models/response_common15.dart';/// WhoisRecordApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudforce_one_whois_identifier.dart';import '../models/cloudforce_one_whois_whois.dart';/// WhoisRecordApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,9 +11,11 @@ final class WhoisRecordApi with ApiExecutor {const WhoisRecordApi(this.apiConfig
 /// Get WHOIS Record
 ///
 /// `GET /accounts/{account_id}/intel/whois`
-Future<ApiResult<ResponseCommon15, Never>> whoisRecordGetWhoisRecord({required CloudforceOneWhoisIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CloudforceOneWhoisWhois?, Never>> whoisRecordGetWhoisRecord({required CloudforceOneWhoisIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (domain != null) queryParameters['domain'] = domain;
+if (domain != null) {
+  queryParameters['domain'] = domain;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -29,7 +31,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon15.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? CloudforceOneWhoisWhois.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

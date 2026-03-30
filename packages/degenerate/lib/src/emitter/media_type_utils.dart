@@ -58,6 +58,16 @@ bool isEventStreamMediaType(String mediaType) {
   return normalizeMediaType(mediaType) == 'text/event-stream';
 }
 
+bool isJsonlMediaType(String mediaType) {
+  final normalized = normalizeMediaType(mediaType);
+  return normalized == 'application/jsonl' ||
+      normalized == 'application/x-ndjson' ||
+      normalized == 'application/json-seq';
+}
+
+/// The kind of streaming format.
+enum StreamKind { sse, jsonl }
+
 /// Find the `text/event-stream` response content for an operation, if any.
 (String, IrMediaType)? eventStreamContent(IrOperation op) {
   // Check 2xx responses for text/event-stream content type.
@@ -66,6 +76,23 @@ bool isEventStreamMediaType(String mediaType) {
       for (final content in entry.value.content.entries) {
         if (isEventStreamMediaType(content.key)) {
           return (content.key, content.value);
+        }
+      }
+    }
+  }
+  return null;
+}
+
+/// Find any streaming response content (SSE or JSONL) for an operation.
+(String, IrMediaType, StreamKind)? streamingContent(IrOperation op) {
+  for (final entry in op.responses.entries) {
+    if (entry.key >= 200 && entry.key < 300) {
+      for (final content in entry.value.content.entries) {
+        if (isEventStreamMediaType(content.key)) {
+          return (content.key, content.value, StreamKind.sse);
+        }
+        if (isJsonlMediaType(content.key)) {
+          return (content.key, content.value, StreamKind.jsonl);
         }
       }
     }

@@ -35,7 +35,7 @@ final PostAccountsRequestControllerFeesPayer? payer;
 Map<String, dynamic> toJson() { return {
   if (payer != null) 'payer': payer?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payer'}.contains(key)); } 
 PostAccountsRequestControllerFees copyWith({PostAccountsRequestControllerFeesPayer Function()? payer}) { return PostAccountsRequestControllerFees(
   payer: payer != null ? payer() : this.payer,
 ); } 

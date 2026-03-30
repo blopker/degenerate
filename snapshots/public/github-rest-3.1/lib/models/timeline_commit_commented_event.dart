@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'commit_id': ?commitId,
   if (comments != null) 'comments': comments?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'event', 'node_id', 'commit_id', 'comments'}.contains(key)); } 
 TimelineCommitCommentedEvent copyWith({String Function()? event, String Function()? nodeId, String Function()? commitId, List<CommitComment> Function()? comments, }) { return TimelineCommitCommentedEvent(
   event: event != null ? event() : this.event,
   nodeId: nodeId != null ? nodeId() : this.nodeId,

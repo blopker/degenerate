@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name'}.contains(key)); } 
 AuditLogIpAllowlistConfigDeactivatedConfigs copyWith({String Function()? id, String Function()? name, }) { return AuditLogIpAllowlistConfigDeactivatedConfigs(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

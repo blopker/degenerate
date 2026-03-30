@@ -15,8 +15,12 @@ final class WorkersAiImageClassificationApi with ApiExecutor {const WorkersAiIma
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/nonomni-resnet-50`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMicrosoftNonomniResnet50Response400>> workersAiPostRunCfMicrosoftNonomniResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';
@@ -48,8 +52,12 @@ return execute(
 /// `POST /accounts/{account_id}/ai/run/@cf/microsoft/resnet-50`
 Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMicrosoftResnet50Response400>> workersAiPostRunCfMicrosoftResnet50({required String accountId, String? queueRequest, String? tags, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
-if (tags != null) queryParameters['tags'] = tags;
+if (queueRequest != null) {
+  queryParameters['queueRequest'] = queueRequest;
+}
+if (tags != null) {
+  queryParameters['tags'] = tags;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';

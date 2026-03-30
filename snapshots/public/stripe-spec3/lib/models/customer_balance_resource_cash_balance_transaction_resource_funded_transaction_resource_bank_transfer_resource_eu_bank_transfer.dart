@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'iban_last4': ?ibanLast4,
   'sender_name': ?senderName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bic', 'iban_last4', 'sender_name'}.contains(key)); } 
 CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer copyWith({String? Function()? bic, String? Function()? ibanLast4, String? Function()? senderName, }) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer(
   bic: bic != null ? bic() : this.bic,
   ibanLast4: ibanLast4 != null ? ibanLast4() : this.ibanLast4,

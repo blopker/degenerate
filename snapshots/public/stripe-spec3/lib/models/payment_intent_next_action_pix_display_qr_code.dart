@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'image_url_png': ?imageUrlPng,
   'image_url_svg': ?imageUrlSvg,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'expires_at', 'hosted_instructions_url', 'image_url_png', 'image_url_svg'}.contains(key)); } 
 PaymentIntentNextActionPixDisplayQrCode copyWith({String Function()? data, int Function()? expiresAt, String Function()? hostedInstructionsUrl, String Function()? imageUrlPng, String Function()? imageUrlSvg, }) { return PaymentIntentNextActionPixDisplayQrCode(
   data: data != null ? data() : this.data,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

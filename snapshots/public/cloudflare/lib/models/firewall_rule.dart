@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_asn_configuration.dart';import 'firewall_cidr_configuration.dart';import 'firewall_configuration.dart';import 'firewall_country_configuration.dart';import 'firewall_ip_configuration.dart';import 'firewall_ipv6_configuration.dart';import 'firewall_notes.dart';import 'firewall_schemas_mode.dart';/// The unique identifier of the IP Access rule.
-extension type const FirewallSchemasIdentifier(String value) {
-factory FirewallSchemasIdentifier.fromJson(String json) => FirewallSchemasIdentifier(json);
-
-String toJson() => value;
-
-}
-final class FirewallRule {const FirewallRule({required this.allowedModes, required this.configuration, this.createdOn, required this.id, required this.mode, this.modifiedOn, this.notes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_asn_configuration.dart';import 'firewall_cidr_configuration.dart';import 'firewall_configuration.dart';import 'firewall_country_configuration.dart';import 'firewall_ip_configuration.dart';import 'firewall_ipv6_configuration.dart';import 'firewall_notes.dart';import 'firewall_schemas_identifier.dart';import 'firewall_schemas_mode.dart';final class FirewallRule {const FirewallRule({required this.allowedModes, required this.configuration, this.createdOn, required this.id, required this.mode, this.modifiedOn, this.notes, });
 
 factory FirewallRule.fromJson(Map<String, dynamic> json) { return FirewallRule(
   allowedModes: (json['allowed_modes'] as List<dynamic>).map((e) => FirewallSchemasMode.fromJson(e as String)).toList(),

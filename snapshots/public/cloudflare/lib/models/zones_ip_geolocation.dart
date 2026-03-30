@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
 ZonesIpGeolocation copyWith({ZonesIpGeolocationId Function()? id, ZonesIpGeolocationValue Function()? value, }) { return ZonesIpGeolocation(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,

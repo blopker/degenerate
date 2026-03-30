@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'include_obfuscation': ?includeObfuscation,
   'include_usage': ?includeUsage,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'include_obfuscation', 'include_usage'}.contains(key)); } 
 Messages51StreamOptionsVariant1 copyWith({bool Function()? includeObfuscation, bool Function()? includeUsage, }) { return Messages51StreamOptionsVariant1(
   includeObfuscation: includeObfuscation != null ? includeObfuscation() : this.includeObfuscation,
   includeUsage: includeUsage != null ? includeUsage() : this.includeUsage,

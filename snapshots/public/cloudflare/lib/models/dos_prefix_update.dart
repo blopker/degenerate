@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'comment': ?comment,
   'excluded': ?excluded,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'excluded'}.contains(key)); } 
 DosPrefixUpdate copyWith({String Function()? comment, bool Function()? excluded, }) { return DosPrefixUpdate(
   comment: comment != null ? comment() : this.comment,
   excluded: excluded != null ? excluded() : this.excluded,

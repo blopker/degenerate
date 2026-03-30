@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'web_analytics_tag': ?webAnalyticsTag,
   'web_analytics_token': ?webAnalyticsToken,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_caching', 'build_command', 'destination_dir', 'root_dir', 'web_analytics_tag', 'web_analytics_token'}.contains(key)); } 
 PagesProjectCreateProjectRequestBuildConfig copyWith({bool Function()? buildCaching, String Function()? buildCommand, String Function()? destinationDir, String Function()? rootDir, String? Function()? webAnalyticsTag, String? Function()? webAnalyticsToken, }) { return PagesProjectCreateProjectRequestBuildConfig(
   buildCaching: buildCaching != null ? buildCaching() : this.buildCaching,
   buildCommand: buildCommand != null ? buildCommand() : this.buildCommand,

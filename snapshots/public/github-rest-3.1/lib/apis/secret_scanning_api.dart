@@ -19,20 +19,48 @@ final class SecretScanningApi with ApiExecutor {const SecretScanningApi(this.api
 /// `GET /orgs/{org}/secret-scanning/alerts`
 Future<ApiResult<List<OrganizationSecretScanningAlert>, BasicError>> secretScanningListAlertsForOrg({required String org, SecretScanningListAlertsForOrgState? state, String? secretType, String? resolution, String? assignee, SecretScanningListAlertsForOrgSort? sort, SecretScanningListAlertsForOrgDirection? direction, int? page, int? perPage, String? before, String? after, String? validity, bool? isPubliclyLeaked, bool? isMultiRepo, bool? hideSecret, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (state != null) queryParameters['state'] = state.toJson();
-if (secretType != null) queryParameters['secret_type'] = secretType;
-if (resolution != null) queryParameters['resolution'] = resolution;
-if (assignee != null) queryParameters['assignee'] = assignee;
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (validity != null) queryParameters['validity'] = validity;
-if (isPubliclyLeaked != null) queryParameters['is_publicly_leaked'] = isPubliclyLeaked.toString();
-if (isMultiRepo != null) queryParameters['is_multi_repo'] = isMultiRepo.toString();
-if (hideSecret != null) queryParameters['hide_secret'] = hideSecret.toString();
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
+if (secretType != null) {
+  queryParameters['secret_type'] = secretType;
+}
+if (resolution != null) {
+  queryParameters['resolution'] = resolution;
+}
+if (assignee != null) {
+  queryParameters['assignee'] = assignee;
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (validity != null) {
+  queryParameters['validity'] = validity;
+}
+if (isPubliclyLeaked != null) {
+  queryParameters['is_publicly_leaked'] = isPubliclyLeaked.toString();
+}
+if (isMultiRepo != null) {
+  queryParameters['is_multi_repo'] = isMultiRepo.toString();
+}
+if (hideSecret != null) {
+  queryParameters['hide_secret'] = hideSecret.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -121,20 +149,48 @@ return execute(
 /// `GET /repos/{owner}/{repo}/secret-scanning/alerts`
 Future<ApiResult<List<SecretScanningAlert>, SecretScanningListAlertsForRepoResponse503>> secretScanningListAlertsForRepo({required String owner, required String repo, SecretScanningListAlertsForRepoState? state, String? secretType, String? resolution, String? assignee, SecretScanningListAlertsForRepoSort? sort, SecretScanningListAlertsForRepoDirection? direction, int? page, int? perPage, String? before, String? after, String? validity, bool? isPubliclyLeaked, bool? isMultiRepo, bool? hideSecret, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (state != null) queryParameters['state'] = state.toJson();
-if (secretType != null) queryParameters['secret_type'] = secretType;
-if (resolution != null) queryParameters['resolution'] = resolution;
-if (assignee != null) queryParameters['assignee'] = assignee;
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (validity != null) queryParameters['validity'] = validity;
-if (isPubliclyLeaked != null) queryParameters['is_publicly_leaked'] = isPubliclyLeaked.toString();
-if (isMultiRepo != null) queryParameters['is_multi_repo'] = isMultiRepo.toString();
-if (hideSecret != null) queryParameters['hide_secret'] = hideSecret.toString();
+if (state != null) {
+  queryParameters['state'] = state.toJson();
+}
+if (secretType != null) {
+  queryParameters['secret_type'] = secretType;
+}
+if (resolution != null) {
+  queryParameters['resolution'] = resolution;
+}
+if (assignee != null) {
+  queryParameters['assignee'] = assignee;
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (validity != null) {
+  queryParameters['validity'] = validity;
+}
+if (isPubliclyLeaked != null) {
+  queryParameters['is_publicly_leaked'] = isPubliclyLeaked.toString();
+}
+if (isMultiRepo != null) {
+  queryParameters['is_multi_repo'] = isMultiRepo.toString();
+}
+if (hideSecret != null) {
+  queryParameters['hide_secret'] = hideSecret.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -169,7 +225,9 @@ return execute(
 /// `GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}`
 Future<ApiResult<SecretScanningAlert, SecretScanningGetAlertResponse503>> secretScanningGetAlert({required String owner, required String repo, required AlertNumber alertNumber, bool? hideSecret, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (hideSecret != null) queryParameters['hide_secret'] = hideSecret.toString();
+if (hideSecret != null) {
+  queryParameters['hide_secret'] = hideSecret.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -235,8 +293,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations`
 Future<ApiResult<List<SecretScanningLocation>, SecretScanningListLocationsForAlertResponse503>> secretScanningListLocationsForAlert({required String owner, required String repo, required AlertNumber alertNumber, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

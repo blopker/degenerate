@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (session != null) 'session': session?.toJson(),
   if (apiKey != null) 'api_key': apiKey?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'session', 'api_key'}.contains(key)); } 
 AuditLogActor copyWith({AuditLogActorType Function()? type, AuditLogActorSession Function()? session, Key2 Function()? apiKey, }) { return AuditLogActor(
   type: type != null ? type() : this.type,
   session: session != null ? session() : this.session,

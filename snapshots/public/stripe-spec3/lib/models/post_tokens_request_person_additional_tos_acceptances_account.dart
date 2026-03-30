@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'ip': ?ip,
   if (userAgent != null) 'user_agent': userAgent?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'ip', 'user_agent'}.contains(key)); } 
 PostTokensRequestPersonAdditionalTosAcceptancesAccount copyWith({int Function()? date, String Function()? ip, PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgent Function()? userAgent, }) { return PostTokensRequestPersonAdditionalTosAcceptancesAccount(
   date: date != null ? date() : this.date,
   ip: ip != null ? ip() : this.ip,

@@ -11,7 +11,7 @@ final bool? requested;
 Map<String, dynamic> toJson() { return {
   'requested': ?requested,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'requested'}.contains(key)); } 
 PostAccountsAccountRequestCapabilitiesSofortPayments copyWith({bool Function()? requested}) { return PostAccountsAccountRequestCapabilitiesSofortPayments(
   requested: requested != null ? requested() : this.requested,
 ); } 

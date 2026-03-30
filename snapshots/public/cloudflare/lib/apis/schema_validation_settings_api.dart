@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common6.dart';import '../models/schema_validation_bulk_edit_per_operation_settings_request_value.dart';import '../models/shield_global_setting_change_base.dart';import '../models/shield_identifier.dart';import '../models/shield_per_operation_setting_change_base.dart';import '../models/shield_uuid.dart';/// SchemaValidationSettingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/schema_validation_bulk_edit_per_operation_settings_request_value.dart';import '../models/schema_validation_delete_per_operation_setting_response_result.dart';import '../models/shield_global_setting_change_base.dart';import '../models/shield_global_settings.dart';import '../models/shield_identifier.dart';import '../models/shield_per_operation_setting.dart';import '../models/shield_per_operation_setting_change_base.dart';import '../models/shield_uuid.dart';/// SchemaValidationSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class SchemaValidationSettingsApi with ApiExecutor {const SchemaValidation
 /// Retrieves the current global schema validation settings for a zone.
 ///
 /// `GET /zones/{zone_id}/schema_validation/settings`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetSettings({required ShieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldGlobalSettings, Never>> schemaValidationGetSettings({required ShieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return ShieldGlobalSettings.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +35,7 @@ return execute(
 /// Fully updates global schema validation settings for a zone, replacing existing configuration.
 ///
 /// `PUT /zones/{zone_id}/schema_validation/settings`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationUpdateSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldGlobalSettings, Never>> schemaValidationUpdateSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return ShieldGlobalSettings.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -57,7 +59,7 @@ return execute(
 /// Partially updates global schema validation settings for a zone using PATCH semantics.
 ///
 /// `PATCH /zones/{zone_id}/schema_validation/settings`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationEditSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldGlobalSettings, Never>> schemaValidationEditSettings({required ShieldIdentifier zoneId, required ShieldGlobalSettingChangeBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,7 +73,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return ShieldGlobalSettings.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -80,10 +83,14 @@ return execute(
 /// Lists all per-operation schema validation settings configured for the zone.
 ///
 /// `GET /zones/{zone_id}/schema_validation/settings/operations`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationListPerOperationSettings({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldPerOperationSetting>, Never>> schemaValidationListPerOperationSettings({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -99,7 +106,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => ShieldPerOperationSetting.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -108,7 +116,7 @@ return execute(
 /// Updates schema validation settings for multiple API operations in a single request. Efficient for applying consistent validation rules across endpoints.
 ///
 /// `PATCH /zones/{zone_id}/schema_validation/settings/operations`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationBulkEditPerOperationSettings({required ShieldIdentifier zoneId, required Map<String,SchemaValidationBulkEditPerOperationSettingsRequestValue> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, ShieldPerOperationSetting>, Never>> schemaValidationBulkEditPerOperationSettings({required ShieldIdentifier zoneId, required Map<String,SchemaValidationBulkEditPerOperationSettingsRequestValue> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -122,7 +130,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, ShieldPerOperationSetting.fromJson(v as Map<String, dynamic>)));
   },
 );
  } 
@@ -131,7 +140,7 @@ return execute(
 /// Retrieves the schema validation settings configured for a specific API operation.
 ///
 /// `GET /zones/{zone_id}/schema_validation/settings/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationGetPerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldPerOperationSetting, Never>> schemaValidationGetPerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -143,7 +152,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return ShieldPerOperationSetting.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -152,7 +162,7 @@ return execute(
 /// Fully updates schema validation settings for a specific API operation.
 ///
 /// `PUT /zones/{zone_id}/schema_validation/settings/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationUpdatePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, required ShieldPerOperationSettingChangeBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldPerOperationSetting, Never>> schemaValidationUpdatePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, required ShieldPerOperationSettingChangeBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -166,7 +176,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return ShieldPerOperationSetting.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -175,7 +186,7 @@ return execute(
 /// Removes custom schema validation settings for a specific API operation, reverting to zone-level defaults.
 ///
 /// `DELETE /zones/{zone_id}/schema_validation/settings/operations/{operation_id}`
-Future<ApiResult<ResponseCommon6, Never>> schemaValidationDeletePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SchemaValidationDeletePerOperationSettingResponseResult, Never>> schemaValidationDeletePerOperationSetting({required ShieldIdentifier zoneId, required ShieldUuid operationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -187,7 +198,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return SchemaValidationDeletePerOperationSettingResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

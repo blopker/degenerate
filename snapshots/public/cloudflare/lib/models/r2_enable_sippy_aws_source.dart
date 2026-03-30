@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'region': ?region,
   'secretAccessKey': ?secretAccessKey,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessKeyId', 'bucket', 'provider', 'region', 'secretAccessKey'}.contains(key)); } 
 R2EnableSippyAwsSource copyWith({String Function()? accessKeyId, String Function()? bucket, R2EnableSippyAwsSourceProvider Function()? provider, String Function()? region, String Function()? secretAccessKey, }) { return R2EnableSippyAwsSource(
   accessKeyId: accessKeyId != null ? accessKeyId() : this.accessKeyId,
   bucket: bucket != null ? bucket() : this.bucket,

@@ -9,9 +9,9 @@ factory PutAccountsAccountIdLogpushJobsJobIdRequest.fromJson(Map<String, dynamic
   frequency: json['frequency'] != null ? LogpushFrequency.fromJson(json['frequency'] as String) : null,
   kind: json['kind'] != null ? LogpushKind.fromJson(json['kind'] as String) : null,
   logpullOptions: json['logpull_options'] != null ? LogpushLogpullOptions.fromJson(json['logpull_options'] as String) : null,
-  maxUploadBytes: json['max_upload_bytes'] != null ? OneOf2.parse(json['max_upload_bytes'], fromA: (v) => (v as num).toInt(), fromB: (v) => (v as num).toInt(),) : null,
-  maxUploadIntervalSeconds: json['max_upload_interval_seconds'] != null ? OneOf2.parse(json['max_upload_interval_seconds'], fromA: (v) => (v as num).toInt(), fromB: (v) => (v as num).toInt(),) : null,
-  maxUploadRecords: json['max_upload_records'] != null ? OneOf2.parse(json['max_upload_records'], fromA: (v) => (v as num).toInt(), fromB: (v) => (v as num).toInt(),) : null,
+  maxUploadBytes: json['max_upload_bytes'] != null ? OneOf2.parse(json['max_upload_bytes'], fromA: (v) => LogpushMaxUploadBytesVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null,
+  maxUploadIntervalSeconds: json['max_upload_interval_seconds'] != null ? OneOf2.parse(json['max_upload_interval_seconds'], fromA: (v) => LogpushMaxUploadIntervalSecondsVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null,
+  maxUploadRecords: json['max_upload_records'] != null ? OneOf2.parse(json['max_upload_records'], fromA: (v) => LogpushMaxUploadRecordsVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null,
   name: json['name'] != null ? LogpushName.fromJson(json['name'] as String) : null,
   outputOptions: json['output_options'] != null ? LogpushOutputOptions.fromJson(json['output_options'] as Map<String, dynamic>) : null,
   ownershipChallenge: json['ownership_challenge'] != null ? LogpushOwnershipChallenge.fromJson(json['ownership_challenge'] as String) : null,
@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   if (outputOptions != null) 'output_options': outputOptions?.toJson(),
   if (ownershipChallenge != null) 'ownership_challenge': ownershipChallenge?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination_conf', 'enabled', 'filter', 'frequency', 'kind', 'logpull_options', 'max_upload_bytes', 'max_upload_interval_seconds', 'max_upload_records', 'name', 'output_options', 'ownership_challenge'}.contains(key)); } 
 PutAccountsAccountIdLogpushJobsJobIdRequest copyWith({LogpushDestinationConf Function()? destinationConf, LogpushEnabled Function()? enabled, LogpushFilter? Function()? filter, LogpushFrequency? Function()? frequency, LogpushKind Function()? kind, LogpushLogpullOptions? Function()? logpullOptions, LogpushMaxUploadBytes Function()? maxUploadBytes, LogpushMaxUploadIntervalSeconds Function()? maxUploadIntervalSeconds, LogpushMaxUploadRecords Function()? maxUploadRecords, LogpushName? Function()? name, LogpushOutputOptions Function()? outputOptions, LogpushOwnershipChallenge Function()? ownershipChallenge, }) { return PutAccountsAccountIdLogpushJobsJobIdRequest(
   destinationConf: destinationConf != null ? destinationConf() : this.destinationConf,
   enabled: enabled != null ? enabled() : this.enabled,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'lexical_search_ok': ?lexicalSearchOk,
   'lexical_commit_sha': ?lexicalCommitSha,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'lexical_search_ok', 'lexical_commit_sha'}.contains(key)); } 
 RepositoryCodeSearchIndexStatus copyWith({bool Function()? lexicalSearchOk, String Function()? lexicalCommitSha, }) { return RepositoryCodeSearchIndexStatus(
   lexicalSearchOk: lexicalSearchOk != null ? lexicalSearchOk() : this.lexicalSearchOk,
   lexicalCommitSha: lexicalCommitSha != null ? lexicalCommitSha() : this.lexicalCommitSha,

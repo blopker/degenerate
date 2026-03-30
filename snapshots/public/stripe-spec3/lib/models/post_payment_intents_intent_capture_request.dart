@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_suffix': ?statementDescriptorSuffix,
   if (transferData != null) 'transfer_data': transferData?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_details', 'amount_to_capture', 'application_fee_amount', 'expand', 'final_capture', 'hooks', 'metadata', 'payment_details', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data'}.contains(key)); } 
 PostPaymentIntentsIntentCaptureRequest copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetails Function()? amountDetails, int Function()? amountToCapture, int Function()? applicationFeeAmount, List<String> Function()? expand, bool Function()? finalCapture, PostPaymentIntentsIntentCaptureRequestHooks Function()? hooks, PostPaymentIntentsIntentCaptureRequestMetadata Function()? metadata, PostPaymentIntentsIntentCaptureRequestPaymentDetails Function()? paymentDetails, String Function()? statementDescriptor, String Function()? statementDescriptorSuffix, PostPaymentIntentsIntentCaptureRequestTransferData Function()? transferData, }) { return PostPaymentIntentsIntentCaptureRequest(
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   amountToCapture: amountToCapture != null ? amountToCapture() : this.amountToCapture,

@@ -17,7 +17,7 @@ final Map<String,int>? available;
 Map<String, dynamic> toJson() { return {
   'available': ?available,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'available'}.contains(key)); } 
 ResourceCashBalance copyWith({Map<String, int>? Function()? available}) { return ResourceCashBalance(
   available: available != null ? available() : this.available,
 ); } 

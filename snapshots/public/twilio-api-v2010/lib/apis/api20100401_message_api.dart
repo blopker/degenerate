@@ -13,14 +13,30 @@ final class Api20100401MessageApi with ApiExecutor {const Api20100401MessageApi(
 /// `GET /2010-04-01/Accounts/{AccountSid}/Messages.json`
 Future<ApiResult<ListMessageResponse, Never>> listMessage({required String accountSid, String? to, String? from, DateTime? dateSent, DateTime? dateSentBefore, DateTime? dateSentAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (to != null) queryParameters['To'] = to;
-if (from != null) queryParameters['From'] = from;
-if (dateSent != null) queryParameters['DateSent'] = dateSent.toString();
-if (dateSentBefore != null) queryParameters['DateSent<'] = dateSentBefore.toString();
-if (dateSentAfter != null) queryParameters['DateSent>'] = dateSentAfter.toString();
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (to != null) {
+  queryParameters['To'] = to;
+}
+if (from != null) {
+  queryParameters['From'] = from;
+}
+if (dateSent != null) {
+  queryParameters['DateSent'] = dateSent.toString();
+}
+if (dateSentBefore != null) {
+  queryParameters['DateSent<'] = dateSentBefore.toString();
+}
+if (dateSentAfter != null) {
+  queryParameters['DateSent>'] = dateSentAfter.toString();
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

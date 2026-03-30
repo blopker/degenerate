@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (queueName != null) 'queue_name': queueName?.toJson(),
   if (settings != null) 'settings': settings?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'consumers', 'consumers_total_count', 'created_on', 'modified_on', 'producers', 'producers_total_count', 'queue_id', 'queue_name', 'settings'}.contains(key)); } 
 MqQueue copyWith({List<MqConsumerResponse> Function()? consumers, double Function()? consumersTotalCount, String Function()? createdOn, String Function()? modifiedOn, List<MqProducer> Function()? producers, double Function()? producersTotalCount, String Function()? queueId, MqQueueName Function()? queueName, MqQueueSettings Function()? settings, }) { return MqQueue(
   consumers: consumers != null ? consumers() : this.consumers,
   consumersTotalCount: consumersTotalCount != null ? consumersTotalCount() : this.consumersTotalCount,

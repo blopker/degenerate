@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   if (effort != null) 'effort': effort?.toJson(),
   if (summary != null) 'summary': summary?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'effort', 'summary'}.contains(key)); } 
 Responses2Reasoning copyWith({Responses2ReasoningEffort Function()? effort, Responses2ReasoningSummary Function()? summary, }) { return Responses2Reasoning(
   effort: effort != null ? effort() : this.effort,
   summary: summary != null ? summary() : this.summary,

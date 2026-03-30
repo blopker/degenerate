@@ -89,7 +89,7 @@ Map<String, dynamic> toJson() { return {
   if (mode != null) 'mode': mode?.toJson(),
   'notes': ?notes,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configuration.target', 'configuration.value', 'match', 'mode', 'notes'}.contains(key)); } 
 FirewallFilters copyWith({FirewallFiltersConfigurationTarget Function()? configurationTarget, String Function()? configurationValue, FirewallFiltersMatch Function()? match, FirewallSchemasMode Function()? mode, String Function()? notes, }) { return FirewallFilters(
   configurationTarget: configurationTarget != null ? configurationTarget() : this.configurationTarget,
   configurationValue: configurationValue != null ? configurationValue() : this.configurationValue,

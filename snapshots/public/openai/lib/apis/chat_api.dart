@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/chat_completion_deleted.dart';import '../models/chat_completion_list.dart';import '../models/chat_completion_message_list.dart';import '../models/create_chat_completion_response.dart';import '../models/create_chat_completion_stream_response.dart';import '../models/get_chat_completion_messages_order.dart';import '../models/list_chat_completions_order.dart';import '../models/model_response_properties.dart';import '../models/update_chat_completion_request.dart';/// ChatApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/chat_completion_deleted.dart';import '../models/chat_completion_list.dart';import '../models/chat_completion_message_list.dart';import '../models/create_chat_completion_request.dart';import '../models/create_chat_completion_response.dart';import '../models/create_chat_completion_stream_response.dart';import '../models/get_chat_completion_messages_order.dart';import '../models/list_chat_completions_order.dart';import '../models/update_chat_completion_request.dart';/// ChatApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -15,15 +15,23 @@ final class ChatApi with ApiExecutor {const ChatApi(this.apiConfig);
 /// `GET /chat/completions`
 Future<ApiResult<ChatCompletionList, Never>> listChatCompletions({String? model, Map<String,String>? metadata, String? after, int? limit, ListChatCompletionsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (model != null) queryParameters['model'] = model;
+if (model != null) {
+  queryParameters['model'] = model;
+}
 if (metadata != null) {
 for (final entry in metadata.entries) {
   queryParametersList.add(ApiQueryParameter(name: entry.key, value: entry.value, allowReserved: false));
 }
 }
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -64,7 +72,7 @@ return execute(
 /// 
 ///
 /// `POST /chat/completions`
-Future<ApiResult<CreateChatCompletionResponse, Never>> createChatCompletion({required ModelResponseProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateChatCompletionResponse, Never>> createChatCompletion({required CreateChatCompletionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,9 +164,15 @@ return execute(
 /// `GET /chat/completions/{completion_id}/messages`
 Future<ApiResult<ChatCompletionMessageList, Never>> getChatCompletionMessages({required String completionId, String? after, int? limit, GetChatCompletionMessagesOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (after != null) queryParameters['after'] = after;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -199,7 +213,7 @@ return execute(
 ///  (streaming)
 ///
 /// `POST /chat/completions`
-Stream<CreateChatCompletionStreamResponse> createChatCompletionStream({required ModelResponseProperties body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<CreateChatCompletionStreamResponse> createChatCompletionStream({required CreateChatCompletionRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(

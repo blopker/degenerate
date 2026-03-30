@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dns_firewall_identifier.dart';final class DnsFirewallDeleteDnsFirewallClusterResponseResult {const DnsFirewallDeleteDnsFirewallClusterResponseResult({this.id});
+
+factory DnsFirewallDeleteDnsFirewallClusterResponseResult.fromJson(Map<String, dynamic> json) { return DnsFirewallDeleteDnsFirewallClusterResponseResult(
+  id: json['id'] != null ? DnsFirewallIdentifier.fromJson(json['id'] as String) : null,
+); }
+
+/// Identifier.
+final DnsFirewallIdentifier? id;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
+DnsFirewallDeleteDnsFirewallClusterResponseResult copyWith({DnsFirewallIdentifier Function()? id}) { return DnsFirewallDeleteDnsFirewallClusterResponseResult(
+  id: id != null ? id() : this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DnsFirewallDeleteDnsFirewallClusterResponseResult &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'DnsFirewallDeleteDnsFirewallClusterResponseResult(id: $id)'; } 
+ }

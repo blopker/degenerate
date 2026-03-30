@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (parents != null) 'parents': parents?.map((e) => e.toJson()).toList(),
   if (verification != null) 'verification': verification?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sha', 'node_id', 'url', 'html_url', 'author', 'committer', 'message', 'tree', 'parents', 'verification'}.contains(key)); } 
 FileCommitCommit copyWith({String Function()? sha, String Function()? nodeId, String Function()? url, String Function()? htmlUrl, FileCommitCommitAuthor Function()? author, FileCommitCommitCommitter Function()? committer, String Function()? message, FileCommitCommitTree Function()? tree, List<FileCommitCommitParents> Function()? parents, FileCommitCommitVerification Function()? verification, }) { return FileCommitCommit(
   sha: sha != null ? sha() : this.sha,
   nodeId: nodeId != null ? nodeId() : this.nodeId,

@@ -13,8 +13,12 @@ final class UsersApi with ApiExecutor {const UsersApi(this.apiConfig);
 /// `GET /organization/users`
 Future<ApiResult<UserListResponse, Never>> listUsers({int? limit, String? after, List<String>? emails, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 if (emails != null) {
 for (final item in emails) {
   queryParametersList.add(ApiQueryParameter(name: 'emails', value: item, allowReserved: false));

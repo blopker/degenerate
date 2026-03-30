@@ -130,7 +130,7 @@ Map<String, dynamic> toJson() { return {
   'encryption_details': ?encryptionDetails,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'conference_sid', 'date_created', 'date_updated', 'start_time', 'duration', 'sid', 'price', 'price_unit', 'status', 'channels', 'source', 'error_code', 'encryption_details', 'uri'}.contains(key)); } 
 AccountConferenceConferenceRecording copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? callSid, String? Function()? conferenceSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? startTime, String? Function()? duration, String? Function()? sid, String? Function()? price, String? Function()? priceUnit, ConferenceRecordingEnumStatus Function()? status, int Function()? channels, ConferenceRecordingEnumSource Function()? source, int? Function()? errorCode, dynamic Function()? encryptionDetails, String? Function()? uri, }) { return AccountConferenceConferenceRecording(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'targetIndustry': ?targetIndustry,
   'tlp': ?tlp,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attacker', 'attackerCountry', 'category', 'createdAt', 'datasetId', 'date', 'event', 'indicator', 'indicatorType', 'insight', 'raw', 'targetCountry', 'targetIndustry', 'tlp'}.contains(key)); } 
 PostEventUpdateRequest copyWith({String? Function()? attacker, String Function()? attackerCountry, String Function()? category, DateTime Function()? createdAt, String Function()? datasetId, DateTime Function()? date, String Function()? event, String Function()? indicator, String Function()? indicatorType, String Function()? insight, PostEventUpdateRequestRaw Function()? raw, String Function()? targetCountry, String Function()? targetIndustry, String Function()? tlp, }) { return PostEventUpdateRequest(
   attacker: attacker != null ? attacker() : this.attacker,
   attackerCountry: attackerCountry != null ? attackerCountry() : this.attackerCountry,

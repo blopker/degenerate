@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/error_model.dart';import '../models/include_enum.dart';import '../models/list_input_items_order.dart';import '../models/model_response_properties.dart';import '../models/response_item_list.dart';import '../models/response_stream_event.dart';/// ResponsesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_response.dart';import '../models/error_model.dart';import '../models/include_enum.dart';import '../models/list_input_items_order.dart';import '../models/response.dart';import '../models/response_item_list.dart';import '../models/response_stream_event.dart';/// ResponsesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -18,7 +18,7 @@ final class ResponsesApi with ApiExecutor {const ResponsesApi(this.apiConfig);
 /// 
 ///
 /// `POST /responses`
-Future<ApiResult<ModelResponseProperties, Never>> createResponse({required ModelResponseProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Response, Never>> createResponse({required CreateResponse body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -32,7 +32,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ModelResponseProperties.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -40,16 +40,22 @@ return execute(
 /// 
 ///
 /// `GET /responses/{response_id}`
-Future<ApiResult<ModelResponseProperties, Never>> getResponse({required String responseId, List<IncludeEnum>? include, bool? stream, int? startingAfter, bool? includeObfuscation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Response, Never>> getResponse({required String responseId, List<IncludeEnum>? include, bool? stream, int? startingAfter, bool? includeObfuscation, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
   queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
 }
 }
-if (stream != null) queryParameters['stream'] = stream.toString();
-if (startingAfter != null) queryParameters['starting_after'] = startingAfter.toString();
-if (includeObfuscation != null) queryParameters['include_obfuscation'] = includeObfuscation.toString();
+if (stream != null) {
+  queryParameters['stream'] = stream.toString();
+}
+if (startingAfter != null) {
+  queryParameters['starting_after'] = startingAfter.toString();
+}
+if (includeObfuscation != null) {
+  queryParameters['include_obfuscation'] = includeObfuscation.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -65,7 +71,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ModelResponseProperties.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -96,7 +102,7 @@ return execute(
 /// 
 ///
 /// `POST /responses/{response_id}/cancel`
-Future<ApiResult<ModelResponseProperties, ErrorModel>> cancelResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Response, ErrorModel>> cancelResponse({required String responseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -108,7 +114,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ModelResponseProperties.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
     return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -120,9 +126,15 @@ return execute(
 /// `GET /responses/{response_id}/input_items`
 Future<ApiResult<ResponseItemList, Never>> listInputItems({required String responseId, int? limit, ListInputItemsOrder? order, String? after, List<IncludeEnum>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 if (include != null) {
 for (final item in include) {
   queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
@@ -157,7 +169,7 @@ return execute(
 ///  (streaming)
 ///
 /// `POST /responses`
-Stream<ResponseStreamEvent> createResponseStream({required ModelResponseProperties body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<ResponseStreamEvent> createResponseStream({required CreateResponse body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(

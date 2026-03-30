@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'comment': ?comment,
   'enabled': ?enabled,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'enabled'}.contains(key)); } 
 DosInfraPrefixUpdate copyWith({String Function()? comment, bool Function()? enabled, }) { return DosInfraPrefixUpdate(
   comment: comment != null ? comment() : this.comment,
   enabled: enabled != null ? enabled() : this.enabled,

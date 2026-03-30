@@ -13,7 +13,9 @@ final class Api20100401RecordingApi with ApiExecutor {const Api20100401Recording
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings/{Sid}.json`
 Future<ApiResult<AccountRecording, Never>> fetchRecording({required String accountSid, required String sid, bool? includeSoftDeleted, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (includeSoftDeleted != null) queryParameters['IncludeSoftDeleted'] = includeSoftDeleted.toString();
+if (includeSoftDeleted != null) {
+  queryParameters['IncludeSoftDeleted'] = includeSoftDeleted.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -55,15 +57,33 @@ return execute(
 /// `GET /2010-04-01/Accounts/{AccountSid}/Recordings.json`
 Future<ApiResult<ListRecordingResponse, Never>> listRecording({required String accountSid, DateTime? dateCreated, DateTime? dateCreatedBefore, DateTime? dateCreatedAfter, String? callSid, String? conferenceSid, bool? includeSoftDeleted, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (dateCreated != null) queryParameters['DateCreated'] = dateCreated.toString();
-if (dateCreatedBefore != null) queryParameters['DateCreated<'] = dateCreatedBefore.toString();
-if (dateCreatedAfter != null) queryParameters['DateCreated>'] = dateCreatedAfter.toString();
-if (callSid != null) queryParameters['CallSid'] = callSid;
-if (conferenceSid != null) queryParameters['ConferenceSid'] = conferenceSid;
-if (includeSoftDeleted != null) queryParameters['IncludeSoftDeleted'] = includeSoftDeleted.toString();
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (dateCreated != null) {
+  queryParameters['DateCreated'] = dateCreated.toString();
+}
+if (dateCreatedBefore != null) {
+  queryParameters['DateCreated<'] = dateCreatedBefore.toString();
+}
+if (dateCreatedAfter != null) {
+  queryParameters['DateCreated>'] = dateCreatedAfter.toString();
+}
+if (callSid != null) {
+  queryParameters['CallSid'] = callSid;
+}
+if (conferenceSid != null) {
+  queryParameters['ConferenceSid'] = conferenceSid;
+}
+if (includeSoftDeleted != null) {
+  queryParameters['IncludeSoftDeleted'] = includeSoftDeleted.toString();
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

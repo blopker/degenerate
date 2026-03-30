@@ -13,10 +13,18 @@ final class FilesApi with ApiExecutor {const FilesApi(this.apiConfig);
 /// `GET /files`
 Future<ApiResult<ListFilesResponse, Never>> listFiles({String? purpose, int? limit, ListFilesOrder? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (purpose != null) queryParameters['purpose'] = purpose;
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
+if (purpose != null) {
+  queryParameters['purpose'] = purpose;
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

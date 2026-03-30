@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (defaultAccountTaxIds != null) 'default_account_tax_ids': defaultAccountTaxIds?.map((e) => e.toJson()).toList(),
   if (hostedPaymentMethodSave != null) 'hosted_payment_method_save': hostedPaymentMethodSave?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_account_tax_ids', 'hosted_payment_method_save'}.contains(key)); } 
 AccountInvoicesSettings copyWith({List<AccountInvoicesSettingsDefaultAccountTaxIds>? Function()? defaultAccountTaxIds, AccountInvoicesSettingsHostedPaymentMethodSave? Function()? hostedPaymentMethodSave, }) { return AccountInvoicesSettings(
   defaultAccountTaxIds: defaultAccountTaxIds != null ? defaultAccountTaxIds() : this.defaultAccountTaxIds,
   hostedPaymentMethodSave: hostedPaymentMethodSave != null ? hostedPaymentMethodSave() : this.hostedPaymentMethodSave,

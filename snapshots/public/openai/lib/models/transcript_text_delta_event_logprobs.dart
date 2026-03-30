@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'logprob': ?logprob,
   'bytes': ?bytes,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token', 'logprob', 'bytes'}.contains(key)); } 
 TranscriptTextDeltaEventLogprobs copyWith({String Function()? token, double Function()? logprob, List<int> Function()? bytes, }) { return TranscriptTextDeltaEventLogprobs(
   token: token != null ? token() : this.token,
   logprob: logprob != null ? logprob() : this.logprob,

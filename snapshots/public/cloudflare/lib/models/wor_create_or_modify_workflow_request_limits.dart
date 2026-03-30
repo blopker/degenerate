@@ -11,7 +11,7 @@ final int? steps;
 Map<String, dynamic> toJson() { return {
   'steps': ?steps,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'steps'}.contains(key)); } 
 WorCreateOrModifyWorkflowRequestLimits copyWith({int Function()? steps}) { return WorCreateOrModifyWorkflowRequestLimits(
   steps: steps != null ? steps() : this.steps,
 ); } 

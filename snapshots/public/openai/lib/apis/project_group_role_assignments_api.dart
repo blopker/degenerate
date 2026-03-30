@@ -13,9 +13,15 @@ final class ProjectGroupRoleAssignmentsApi with ApiExecutor {const ProjectGroupR
 /// `GET /projects/{project_id}/groups/{group_id}/roles`
 Future<ApiResult<RoleListResource, Never>> listProjectGroupRoleAssignments({required String projectId, required String groupId, int? limit, String? after, ListProjectGroupRoleAssignmentsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (after != null) queryParameters['after'] = after;
-if (order != null) queryParameters['order'] = order.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -13,7 +13,7 @@ final bool? labeledRunners;
 Map<String, dynamic> toJson() { return {
   'labeled_runners': ?labeledRunners,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'labeled_runners'}.contains(key)); } 
 CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitActionOptions copyWith({bool Function()? labeledRunners}) { return CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitActionOptions(
   labeledRunners: labeledRunners != null ? labeledRunners() : this.labeledRunners,
 ); } 

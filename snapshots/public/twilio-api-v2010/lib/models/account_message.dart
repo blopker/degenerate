@@ -194,7 +194,7 @@ Map<String, dynamic> toJson() { return {
   'api_version': ?apiVersion,
   'subresource_uris': ?subresourceUris,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'num_segments', 'direction', 'from', 'to', 'date_updated', 'price', 'error_message', 'uri', 'account_sid', 'num_media', 'status', 'messaging_service_sid', 'sid', 'date_sent', 'date_created', 'error_code', 'price_unit', 'api_version', 'subresource_uris'}.contains(key)); } 
 AccountMessage copyWith({String? Function()? body, String? Function()? numSegments, MessageEnumDirection Function()? direction, String? Function()? from, String? Function()? to, String? Function()? dateUpdated, String? Function()? price, String? Function()? errorMessage, String? Function()? uri, String? Function()? accountSid, String? Function()? numMedia, MessageEnumStatus Function()? status, String? Function()? messagingServiceSid, String? Function()? sid, String? Function()? dateSent, String? Function()? dateCreated, int? Function()? errorCode, String? Function()? priceUnit, String? Function()? apiVersion, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountMessage(
   body: body != null ? body() : this.body,
   numSegments: numSegments != null ? numSegments() : this.numSegments,

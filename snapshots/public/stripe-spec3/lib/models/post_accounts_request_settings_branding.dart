@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'primary_color': ?primaryColor,
   'secondary_color': ?secondaryColor,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'icon', 'logo', 'primary_color', 'secondary_color'}.contains(key)); } 
 PostAccountsRequestSettingsBranding copyWith({String Function()? icon, String Function()? logo, String Function()? primaryColor, String Function()? secondaryColor, }) { return PostAccountsRequestSettingsBranding(
   icon: icon != null ? icon() : this.icon,
   logo: logo != null ? logo() : this.logo,

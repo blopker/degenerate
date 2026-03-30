@@ -148,7 +148,7 @@ factory TlsCertificatesAndHostnamesCertificatePack.fromJson(Map<String, dynamic>
   validationErrors: (json['validation_errors'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesCertificatePackValidationErrors.fromJson(e as Map<String, dynamic>)).toList(),
   validationMethod: json['validation_method'] != null ? TlsCertificatesAndHostnamesValidationMethod.fromJson(json['validation_method'] as String) : null,
   validationRecords: (json['validation_records'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesValidationRecord.fromJson(e as Map<String, dynamic>)).toList(),
-  validityDays: json['validity_days'] != null ? TlsCertificatesAndHostnamesValidityDays.fromJson(json['validity_days'] as num) : null,
+  validityDays: json['validity_days'] != null ? TlsCertificatesAndHostnamesValidityDays.fromJson((json['validity_days'] as num).toInt()) : null,
 ); }
 
 final TlsCertificatesAndHostnamesSchemasCertificateAuthority? certificateAuthority;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/builds_account_id.dart';import '../models/builds_error_response.dart';import '../models/builds_repo_connection_uuid.dart';import '../models/builds_upsert_repo_connection_request.dart';import '../models/response.dart';/// RepositoryConnectionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/builds_account_id.dart';import '../models/builds_error_response.dart';import '../models/builds_repo_connection_uuid.dart';import '../models/builds_upsert_repo_connection_request.dart';/// RepositoryConnectionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RepositoryConnectionsApi with ApiExecutor {const RepositoryConnectio
 /// Upsert a repository connection for CI/CD integration
 ///
 /// `PUT /accounts/{account_id}/builds/repos/connections`
-Future<ApiResult<Response, Never>> upsertRepoConnection({required BuildsAccountId accountId, required BuildsUpsertRepoConnectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, Never>> upsertRepoConnection({required BuildsAccountId accountId, required BuildsUpsertRepoConnectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -27,7 +27,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -36,7 +37,7 @@ return execute(
 /// Remove a repository connection
 ///
 /// `DELETE /accounts/{account_id}/builds/repos/connections/{repo_connection_uuid}`
-Future<ApiResult<Response, BuildsErrorResponse>> deleteRepoConnection({required BuildsAccountId accountId, required BuildsRepoConnectionUuid repoConnectionUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> deleteRepoConnection({required BuildsAccountId accountId, required BuildsRepoConnectionUuid repoConnectionUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

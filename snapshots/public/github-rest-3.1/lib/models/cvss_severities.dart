@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (cvssV3 != null) 'cvss_v3': cvssV3?.toJson(),
   if (cvssV4 != null) 'cvss_v4': cvssV4?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cvss_v3', 'cvss_v4'}.contains(key)); } 
 CvssSeverities copyWith({CvssSeveritiesCvss? Function()? cvssV3, CvssSeveritiesCvss2? Function()? cvssV4, }) { return CvssSeverities(
   cvssV3: cvssV3 != null ? cvssV3() : this.cvssV3,
   cvssV4: cvssV4 != null ? cvssV4() : this.cvssV4,

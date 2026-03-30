@@ -11,7 +11,7 @@ final ImagesImageVariantPublicRequest? variants;
 Map<String, dynamic> toJson() { return {
   if (variants != null) 'variants': variants?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'variants'}.contains(key)); } 
 ImagesImageVariantsResponse copyWith({ImagesImageVariantPublicRequest Function()? variants}) { return ImagesImageVariantsResponse(
   variants: variants != null ? variants() : this.variants,
 ); } 

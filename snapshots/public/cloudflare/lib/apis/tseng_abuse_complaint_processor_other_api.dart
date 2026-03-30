@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/abuse_reports_mitigated_entity_type.dart';import '../models/abuse_reports_mitigation_appeal_request.dart';import '../models/abuse_reports_mitigation_appeal_result.dart';import '../models/abuse_reports_mitigation_status.dart';import '../models/abuse_reports_mitigation_type.dart';import '../models/abuse_reports_report_status.dart';import '../models/abuse_reports_report_type.dart';import '../models/abuse_reports_submission_report_type.dart';import '../models/abuse_reports_submit_error_response.dart';import '../models/abuse_reports_submit_report_request.dart';import '../models/abuse_reports_submit_report_response.dart';import '../models/get_abuse_report_response.dart';import '../models/get_abuse_report_response400.dart';import '../models/list_abuse_reports_response.dart';import '../models/list_abuse_reports_response500.dart';import '../models/list_emails_response.dart';import '../models/list_emails_response400.dart';import '../models/list_mitigations_response.dart';import '../models/list_mitigations_response500.dart';import '../models/list_mitigations_sort.dart';import '../models/request_review_response500.dart';/// TsengAbuseComplaintProcessorOtherApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/abuse_reports_abuse_report.dart';import '../models/abuse_reports_mitigated_entity_type.dart';import '../models/abuse_reports_mitigation_appeal_request.dart';import '../models/abuse_reports_mitigation_list_item.dart';import '../models/abuse_reports_mitigation_status.dart';import '../models/abuse_reports_mitigation_type.dart';import '../models/abuse_reports_report_status.dart';import '../models/abuse_reports_report_type.dart';import '../models/abuse_reports_submission_report_type.dart';import '../models/abuse_reports_submit_error_response.dart';import '../models/abuse_reports_submit_report_request.dart';import '../models/get_abuse_report_response400.dart';import '../models/list_abuse_reports_response500.dart';import '../models/list_abuse_reports_response_result.dart';import '../models/list_emails_response400.dart';import '../models/list_emails_response_result.dart';import '../models/list_mitigations_response500.dart';import '../models/list_mitigations_response_result.dart';import '../models/list_mitigations_sort.dart';import '../models/request_review_response500.dart';/// TsengAbuseComplaintProcessorOtherApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,17 +13,35 @@ final class TsengAbuseComplaintProcessorOtherApi with ApiExecutor {const TsengAb
 /// List the abuse reports for a given account
 ///
 /// `GET /accounts/{account_id}/abuse-reports`
-Future<ApiResult<ListAbuseReportsResponse, ListAbuseReportsResponse500>> listAbuseReports({required String accountId, int? page, int? perPage, String? sort, String? domain, String? createdBefore, String? createdAfter, AbuseReportsReportStatus? status, AbuseReportsReportType? type, AbuseReportsMitigationStatus? mitigationStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListAbuseReportsResponseResult?, ListAbuseReportsResponse500>> listAbuseReports({required String accountId, int? page, int? perPage, String? sort, String? domain, String? createdBefore, String? createdAfter, AbuseReportsReportStatus? status, AbuseReportsReportType? type, AbuseReportsMitigationStatus? mitigationStatus, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (sort != null) queryParameters['sort'] = sort;
-if (domain != null) queryParameters['domain'] = domain;
-if (createdBefore != null) queryParameters['created_before'] = createdBefore;
-if (createdAfter != null) queryParameters['created_after'] = createdAfter;
-if (status != null) queryParameters['status'] = status.toJson();
-if (type != null) queryParameters['type'] = type.toJson();
-if (mitigationStatus != null) queryParameters['mitigation_status'] = mitigationStatus.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort;
+}
+if (domain != null) {
+  queryParameters['domain'] = domain;
+}
+if (createdBefore != null) {
+  queryParameters['created_before'] = createdBefore;
+}
+if (createdAfter != null) {
+  queryParameters['created_after'] = createdAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (mitigationStatus != null) {
+  queryParameters['mitigation_status'] = mitigationStatus.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -39,7 +57,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListAbuseReportsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ListAbuseReportsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
     return ListAbuseReportsResponse500.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -51,10 +70,14 @@ return execute(
 /// List emails sent to the customer for an abuse report. Returns all successful customer emails sent for the specified abuse report. Does not include emails sent to hosts or submitters.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_id}/emails`
-Future<ApiResult<ListEmailsResponse, ListEmailsResponse400>> listEmails({required String accountId, required String reportId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListEmailsResponseResult?, ListEmailsResponse400>> listEmails({required String accountId, required String reportId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -70,7 +93,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListEmailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ListEmailsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
     return ListEmailsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -82,16 +106,32 @@ return execute(
 /// List mitigations done to remediate the abuse report.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_id}/mitigations`
-Future<ApiResult<ListMitigationsResponse, ListMitigationsResponse500>> listMitigations({required String accountId, required String reportId, int? page, int? perPage, ListMitigationsSort? sort, AbuseReportsMitigationType? type, String? effectiveBefore, String? effectiveAfter, AbuseReportsMitigationStatus? status, AbuseReportsMitigatedEntityType? entityType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListMitigationsResponseResult?, ListMitigationsResponse500>> listMitigations({required String accountId, required String reportId, int? page, int? perPage, ListMitigationsSort? sort, AbuseReportsMitigationType? type, String? effectiveBefore, String? effectiveAfter, AbuseReportsMitigationStatus? status, AbuseReportsMitigatedEntityType? entityType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (type != null) queryParameters['type'] = type.toJson();
-if (effectiveBefore != null) queryParameters['effective_before'] = effectiveBefore;
-if (effectiveAfter != null) queryParameters['effective_after'] = effectiveAfter;
-if (status != null) queryParameters['status'] = status.toJson();
-if (entityType != null) queryParameters['entity_type'] = entityType.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (effectiveBefore != null) {
+  queryParameters['effective_before'] = effectiveBefore;
+}
+if (effectiveAfter != null) {
+  queryParameters['effective_after'] = effectiveAfter;
+}
+if (status != null) {
+  queryParameters['status'] = status.toJson();
+}
+if (entityType != null) {
+  queryParameters['entity_type'] = entityType.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -107,7 +147,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListMitigationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ListMitigationsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
     return ListMitigationsResponse500.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -119,7 +160,7 @@ return execute(
 /// Request a review for mitigations on an account.
 ///
 /// `POST /accounts/{account_id}/abuse-reports/{report_id}/mitigations/appeal`
-Future<ApiResult<AbuseReportsMitigationAppealResult, RequestReviewResponse500>> requestReview({required String accountId, required String reportId, required AbuseReportsMitigationAppealRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AbuseReportsMitigationListItem>?, RequestReviewResponse500>> requestReview({required String accountId, required String reportId, required AbuseReportsMitigationAppealRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -133,7 +174,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AbuseReportsMitigationAppealResult.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => AbuseReportsMitigationListItem.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
     return RequestReviewResponse500.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -145,7 +187,7 @@ return execute(
 /// Retrieve the details of an abuse report.
 ///
 /// `GET /accounts/{account_id}/abuse-reports/{report_param}`
-Future<ApiResult<GetAbuseReportResponse, GetAbuseReportResponse400>> getAbuseReport({required String accountId, required String reportParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AbuseReportsAbuseReport, GetAbuseReportResponse400>> getAbuseReport({required String accountId, required String reportParam, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -157,7 +199,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetAbuseReportResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return AbuseReportsAbuseReport.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return GetAbuseReportResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -169,7 +212,7 @@ return execute(
 /// Submit the Abuse Report of a particular type
 ///
 /// `POST /accounts/{account_id}/abuse-reports/{report_param}`
-Future<ApiResult<AbuseReportsSubmitReportResponse, AbuseReportsSubmitErrorResponse>> submitAbuseReport({required String accountId, required AbuseReportsSubmissionReportType reportParam, required AbuseReportsSubmitReportRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, AbuseReportsSubmitErrorResponse>> submitAbuseReport({required String accountId, required AbuseReportsSubmissionReportType reportParam, required AbuseReportsSubmitReportRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -183,7 +226,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AbuseReportsSubmitReportResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] as String;
   },
   onError: (response) {
     return AbuseReportsSubmitErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

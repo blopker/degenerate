@@ -103,7 +103,7 @@ Map<String, dynamic> toJson() { return {
   'payment_reference': ?paymentReference,
   'routing_number': ?routingNumber,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'account_type', 'bank_name', 'expected_debit_date', 'fingerprint', 'last4', 'mandate', 'payment_reference', 'routing_number'}.contains(key)); } 
 PaymentMethodDetailsPaymentRecordUsBankAccount copyWith({PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType? Function()? accountHolderType, PaymentMethodDetailsPaymentRecordUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? last4, PaymentMethodDetailsPaymentRecordUsBankAccountMandate Function()? mandate, String? Function()? paymentReference, String? Function()? routingNumber, }) { return PaymentMethodDetailsPaymentRecordUsBankAccount(
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountType: accountType != null ? accountType() : this.accountType,

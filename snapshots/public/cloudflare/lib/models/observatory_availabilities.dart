@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (regions != null) 'regions': regions?.map((e) => e.toJson()).toList(),
   if (regionsPerPlan != null) 'regionsPerPlan': regionsPerPlan?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'quota', 'regions', 'regionsPerPlan'}.contains(key)); } 
 ObservatoryAvailabilities copyWith({ObservatoryAvailabilitiesQuota Function()? quota, List<ObservatoryLabeledRegion> Function()? regions, ObservatoryAvailabilitiesRegionsPerPlan Function()? regionsPerPlan, }) { return ObservatoryAvailabilities(
   quota: quota != null ? quota() : this.quota,
   regions: regions != null ? regions() : this.regions,

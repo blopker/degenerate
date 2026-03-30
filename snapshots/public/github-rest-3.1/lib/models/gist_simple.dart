@@ -97,7 +97,7 @@ Map<String, dynamic> toJson() { return {
   if (owner != null) 'owner': owner?.toJson(),
   'truncated': ?truncated,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'forks', 'history', 'fork_of', 'url', 'forks_url', 'commits_url', 'id', 'node_id', 'git_pull_url', 'git_push_url', 'html_url', 'files', 'public', 'created_at', 'updated_at', 'description', 'comments', 'comments_enabled', 'user', 'comments_url', 'owner', 'truncated'}.contains(key)); } 
 GistSimple copyWith({List<GistSimpleForks>? Function()? forks, List<GistHistory>? Function()? history, GistSimpleForkOf? Function()? forkOf, String Function()? url, String Function()? forksUrl, String Function()? commitsUrl, String Function()? id, String Function()? nodeId, String Function()? gitPullUrl, String Function()? gitPushUrl, String Function()? htmlUrl, Map<String, GistSimpleFilesValue> Function()? files, bool Function()? public, String Function()? createdAt, String Function()? updatedAt, String? Function()? description, int Function()? comments, bool Function()? commentsEnabled, String? Function()? user, String Function()? commentsUrl, SimpleUser Function()? owner, bool Function()? truncated, }) { return GistSimple(
   forks: forks != null ? forks() : this.forks,
   history: history != null ? history() : this.history,

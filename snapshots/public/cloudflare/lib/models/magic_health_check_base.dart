@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   if (target != null) 'target': target?.toJson(),
   'type': type.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'rate', 'target', 'type'}.contains(key)); } 
 MagicHealthCheckBase copyWith({bool Function()? enabled, MagicHealthCheckBaseRate Function()? rate, MagicHealthCheckBaseTarget Function()? target, MagicHealthCheckBaseType Function()? type, }) { return MagicHealthCheckBase(
   enabled: enabled != null ? enabled() : this.enabled,
   rate: rate != null ? rate() : this.rate,

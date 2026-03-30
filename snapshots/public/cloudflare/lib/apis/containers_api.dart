@@ -15,8 +15,12 @@ final class ContainersApi with ApiExecutor {const ContainersApi(this.apiConfig);
 /// `GET /accounts/{account_id}/containers`
 Future<ApiResult<BaseResponse, BaseErrorResponse>> publicListApplications({required String accountId, String? name, String? image, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (name != null) queryParameters['name'] = name;
-if (image != null) queryParameters['image'] = image;
+if (name != null) {
+  queryParameters['name'] = name;
+}
+if (image != null) {
+  queryParameters['image'] = image;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

@@ -13,7 +13,7 @@ final String? role;
 Map<String, dynamic> toJson() { return {
   'role': ?role,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role'}.contains(key)); } 
 AuditLogUserAddedData copyWith({String Function()? role}) { return AuditLogUserAddedData(
   role: role != null ? role() : this.role,
 ); } 

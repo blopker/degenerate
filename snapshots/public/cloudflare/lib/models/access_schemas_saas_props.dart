@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (saasApp != null) 'saas_app': saasApp?.toJson(),
   'type': ?type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_idps', 'app_launcher_visible', 'auto_redirect_to_identity', 'logo_url', 'name', 'saas_app', 'type'}.contains(key)); } 
 AccessSchemasSaasProps copyWith({List<String> Function()? allowedIdps, AccessAppLauncherVisible Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity Function()? autoRedirectToIdentity, AccessLogoUrl Function()? logoUrl, AccessAppsComponentsSchemasName Function()? name, AccessSchemasSaasPropsSaasApp Function()? saasApp, String Function()? type, }) { return AccessSchemasSaasProps(
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,

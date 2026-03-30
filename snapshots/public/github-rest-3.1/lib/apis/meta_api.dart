@@ -64,7 +64,9 @@ return execute(
 /// `GET /octocat`
 Future<ApiResult<String, Never>> metaGetOctocat({String? s, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (s != null) queryParameters['s'] = s;
+if (s != null) {
+  queryParameters['s'] = s;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

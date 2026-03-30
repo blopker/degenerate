@@ -11,7 +11,7 @@ final WorkersNamespaceScriptAndVersionSettingsItem? settings;
 Map<String, dynamic> toJson() { return {
   if (settings != null) 'settings': settings?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'settings'}.contains(key)); } 
 NamespaceWorkerPatchScriptSettingsRequest copyWith({WorkersNamespaceScriptAndVersionSettingsItem Function()? settings}) { return NamespaceWorkerPatchScriptSettingsRequest(
   settings: settings != null ? settings() : this.settings,
 ); } 

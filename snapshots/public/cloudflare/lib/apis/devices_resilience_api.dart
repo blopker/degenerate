@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common67.dart';import '../models/teams_devices_global_warp_override_request.dart';import '../models/teams_devices_identifier.dart';/// DevicesResilienceApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/teams_devices_global_warp_override.dart';import '../models/teams_devices_global_warp_override_request.dart';import '../models/teams_devices_identifier.dart';/// DevicesResilienceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DevicesResilienceApi with ApiExecutor {const DevicesResilienceApi(th
 /// Fetch the Global WARP override state.
 ///
 /// `GET /accounts/{account_id}/devices/resilience/disconnect`
-Future<ApiResult<ResponseCommon67, Never>> devicesResilienceRetrieveGlobalWarpOverride({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesGlobalWarpOverride?, Never>> devicesResilienceRetrieveGlobalWarpOverride({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon67.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TeamsDevicesGlobalWarpOverride.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -34,7 +35,7 @@ return execute(
 /// Sets the Global WARP override state.
 ///
 /// `POST /accounts/{account_id}/devices/resilience/disconnect`
-Future<ApiResult<ResponseCommon67, Never>> devicesResilienceSetGlobalWarpOverride({required TeamsDevicesIdentifier accountId, required TeamsDevicesGlobalWarpOverrideRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesGlobalWarpOverride?, Never>> devicesResilienceSetGlobalWarpOverride({required TeamsDevicesIdentifier accountId, required TeamsDevicesGlobalWarpOverrideRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon67.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TeamsDevicesGlobalWarpOverride.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'match': ?match,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'match', 'name'}.contains(key)); } 
 DigitalExperienceMonitoringPatchRuleBody copyWith({String Function()? description, String Function()? match, String Function()? name, }) { return DigitalExperienceMonitoringPatchRuleBody(
   description: description != null ? description() : this.description,
   match: match != null ? match() : this.match,

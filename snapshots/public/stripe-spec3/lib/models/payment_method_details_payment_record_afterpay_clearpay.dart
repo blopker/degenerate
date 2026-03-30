@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'order_id': ?orderId,
   'reference': ?reference,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'order_id', 'reference'}.contains(key)); } 
 PaymentMethodDetailsPaymentRecordAfterpayClearpay copyWith({String? Function()? orderId, String? Function()? reference, }) { return PaymentMethodDetailsPaymentRecordAfterpayClearpay(
   orderId: orderId != null ? orderId() : this.orderId,
   reference: reference != null ? reference() : this.reference,

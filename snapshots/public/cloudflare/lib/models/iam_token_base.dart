@@ -1,55 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_condition.dart';import 'iam_expires_on.dart';import 'iam_name.dart';import 'iam_not_before.dart';import 'iam_policy_with_permission_groups_and_resources.dart';import 'iam_token_identifier.dart';/// The time on which the token was created.
-extension type IamIssuedOn(DateTime value) {
-factory IamIssuedOn.fromJson(String json) => IamIssuedOn(DateTime.parse(json));
-
-String toJson() => value.toIso8601String();
-
-}
-/// Last time the token was used.
-extension type IamLastUsedOn(DateTime value) {
-factory IamLastUsedOn.fromJson(String json) => IamLastUsedOn(DateTime.parse(json));
-
-String toJson() => value.toIso8601String();
-
-}
-/// Last time the token was modified.
-extension type IamModifiedOn(DateTime value) {
-factory IamModifiedOn.fromJson(String json) => IamModifiedOn(DateTime.parse(json));
-
-String toJson() => value.toIso8601String();
-
-}
-/// Status of the token.
-final class IamTokenStatus {const IamTokenStatus._(this.value);
-
-factory IamTokenStatus.fromJson(String json) { return switch (json) {
-  'active' => active,
-  'disabled' => disabled,
-  'expired' => expired,
-  _ => IamTokenStatus._(json),
-}; }
-
-static const IamTokenStatus active = IamTokenStatus._('active');
-
-static const IamTokenStatus disabled = IamTokenStatus._('disabled');
-
-static const IamTokenStatus expired = IamTokenStatus._('expired');
-
-static const List<IamTokenStatus> values = [active, disabled, expired];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IamTokenStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IamTokenStatus($value)'; } 
- }
-final class IamTokenBase {const IamTokenBase({this.condition, this.expiresOn, this.id, this.issuedOn, this.lastUsedOn, this.modifiedOn, this.name, this.notBefore, this.policies, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_condition.dart';import 'iam_expires_on.dart';import 'iam_issued_on.dart';import 'iam_last_used_on.dart';import 'iam_modified_on.dart';import 'iam_name.dart';import 'iam_not_before.dart';import 'iam_policy_with_permission_groups_and_resources.dart';import 'iam_token_identifier.dart';import 'iam_token_status.dart';final class IamTokenBase {const IamTokenBase({this.condition, this.expiresOn, this.id, this.issuedOn, this.lastUsedOn, this.modifiedOn, this.name, this.notBefore, this.policies, this.status, });
 
 factory IamTokenBase.fromJson(Map<String, dynamic> json) { return IamTokenBase(
   condition: json['condition'] != null ? IamCondition.fromJson(json['condition'] as Map<String, dynamic>) : null,
@@ -102,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
   if (status != null) 'status': status?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'condition', 'expires_on', 'id', 'issued_on', 'last_used_on', 'modified_on', 'name', 'not_before', 'policies', 'status'}.contains(key)); } 
 IamTokenBase copyWith({IamCondition Function()? condition, IamExpiresOn Function()? expiresOn, IamTokenIdentifier Function()? id, IamIssuedOn Function()? issuedOn, IamLastUsedOn Function()? lastUsedOn, IamModifiedOn Function()? modifiedOn, IamName Function()? name, IamNotBefore Function()? notBefore, List<IamPolicyWithPermissionGroupsAndResources> Function()? policies, IamTokenStatus Function()? status, }) { return IamTokenBase(
   condition: condition != null ? condition() : this.condition,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,

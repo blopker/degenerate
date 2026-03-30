@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common63.dart';import '../models/spectrum_analytics_app_id_param.dart';import '../models/spectrum_analytics_by_time_get_analytics_by_time_time_delta.dart';import '../models/spectrum_analytics_dimensions2.dart';import '../models/spectrum_analytics_filters.dart';import '../models/spectrum_analytics_identifier.dart';import '../models/spectrum_analytics_metrics2.dart';import '../models/spectrum_analytics_timestamp.dart';/// SpectrumAnalyticsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/spectrum_analytics_app_id_param.dart';import '../models/spectrum_analytics_by_time_get_analytics_by_time_time_delta.dart';import '../models/spectrum_analytics_dimensions2.dart';import '../models/spectrum_analytics_filters.dart';import '../models/spectrum_analytics_identifier.dart';import '../models/spectrum_analytics_metrics2.dart';import '../models/spectrum_analytics_query_response_aggregate_result.dart';import '../models/spectrum_analytics_query_response_single_result.dart';import '../models/spectrum_analytics_timestamp.dart';/// SpectrumAnalyticsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,10 +13,14 @@ final class SpectrumAnalyticsApi with ApiExecutor {const SpectrumAnalyticsApi(th
 /// Retrieves analytics aggregated from the last minute of usage on Spectrum applications underneath a given zone.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/aggregate/current`
-Future<ApiResult<ResponseCommon63, Never>> spectrumAggregateAnalyticsGetCurrentAggregatedAnalytics({required SpectrumAnalyticsIdentifier zoneId, SpectrumAnalyticsAppIdParam? appId, String? coloName, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SpectrumAnalyticsQueryResponseAggregateResult>?, Never>> spectrumAggregateAnalyticsGetCurrentAggregatedAnalytics({required SpectrumAnalyticsIdentifier zoneId, SpectrumAnalyticsAppIdParam? appId, String? coloName, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (appId != null) queryParameters['appID'] = appId.toString();
-if (coloName != null) queryParameters['colo_name'] = coloName;
+if (appId != null) {
+  queryParameters['appID'] = appId.toString();
+}
+if (coloName != null) {
+  queryParameters['colo_name'] = coloName;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -32,7 +36,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon63.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => SpectrumAnalyticsQueryResponseAggregateResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -41,7 +46,7 @@ return execute(
 /// Retrieves a list of aggregate metrics grouped by time interval.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/events/bytime`
-Future<ApiResult<ResponseCommon63, Never>> spectrumAnalyticsByTimeGetAnalyticsByTime({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, required SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta timeDelta, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SpectrumAnalyticsQueryResponseSingleResult?, Never>> spectrumAnalyticsByTimeGetAnalyticsByTime({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, required SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta timeDelta, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dimensions != null) {
 for (final item in dimensions) {
@@ -53,14 +58,20 @@ for (final item in sort) {
   queryParametersList.add(ApiQueryParameter(name: 'sort', value: item, allowReserved: false));
 }
 }
-if (until != null) queryParameters['until'] = until.toString();
+if (until != null) {
+  queryParameters['until'] = until.toString();
+}
 if (metrics != null) {
 for (final item in metrics) {
   queryParametersList.add(ApiQueryParameter(name: 'metrics', value: item.toJson(), allowReserved: false));
 }
 }
-if (filters != null) queryParameters['filters'] = filters.toString();
-if (since != null) queryParameters['since'] = since.toString();
+if (filters != null) {
+  queryParameters['filters'] = filters.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
 queryParameters['time_delta'] = timeDelta.toJson();
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -77,7 +88,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon63.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? SpectrumAnalyticsQueryResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -86,7 +98,7 @@ return execute(
 /// Retrieves a list of summarised aggregate metrics over a given time period.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/events/summary`
-Future<ApiResult<ResponseCommon63, Never>> spectrumAnalyticsSummaryGetAnalyticsSummary({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SpectrumAnalyticsQueryResponseSingleResult?, Never>> spectrumAnalyticsSummaryGetAnalyticsSummary({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dimensions != null) {
 for (final item in dimensions) {
@@ -98,14 +110,20 @@ for (final item in sort) {
   queryParametersList.add(ApiQueryParameter(name: 'sort', value: item, allowReserved: false));
 }
 }
-if (until != null) queryParameters['until'] = until.toString();
+if (until != null) {
+  queryParameters['until'] = until.toString();
+}
 if (metrics != null) {
 for (final item in metrics) {
   queryParametersList.add(ApiQueryParameter(name: 'metrics', value: item.toJson(), allowReserved: false));
 }
 }
-if (filters != null) queryParameters['filters'] = filters.toString();
-if (since != null) queryParameters['since'] = since.toString();
+if (filters != null) {
+  queryParameters['filters'] = filters.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -121,7 +139,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon63.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? SpectrumAnalyticsQueryResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'release.dart';final class ReleaseEvent {const ReleaseEvent({required this.action, required this.release, });
+import 'release_event_release.dart';final class ReleaseEvent {const ReleaseEvent({required this.action, required this.release, });
 
 factory ReleaseEvent.fromJson(Map<String, dynamic> json) { return ReleaseEvent(
   action: json['action'] as String,
-  release: Release.fromJson(json['release'] as Map<String, dynamic>),
+  release: ReleaseEventRelease.fromJson(json['release'] as Map<String, dynamic>),
 ); }
 
 final String action;
 
-final Release release;
+final ReleaseEventRelease release;
 
 Map<String, dynamic> toJson() { return {
   'action': action,
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
       json.containsKey('release'); } 
-ReleaseEvent copyWith({String? action, Release? release, }) { return ReleaseEvent(
+ReleaseEvent copyWith({String? action, ReleaseEventRelease? release, }) { return ReleaseEvent(
   action: action ?? this.action,
   release: release ?? this.release,
 ); } 

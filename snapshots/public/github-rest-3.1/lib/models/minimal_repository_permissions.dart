@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'triage': ?triage,
   'pull': ?pull,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'admin', 'maintain', 'push', 'triage', 'pull'}.contains(key)); } 
 MinimalRepositoryPermissions copyWith({bool Function()? admin, bool Function()? maintain, bool Function()? push, bool Function()? triage, bool Function()? pull, }) { return MinimalRepositoryPermissions(
   admin: admin != null ? admin() : this.admin,
   maintain: maintain != null ? maintain() : this.maintain,

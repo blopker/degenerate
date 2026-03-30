@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (tagName != null) 'tag_name': tagName?.toJson(),
   if (makeLatest != null) 'make_latest': makeLatest?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'name', 'tag_name', 'make_latest'}.contains(key)); } 
 WebhookReleaseEditedChanges copyWith({WebhookReleaseEditedChangesBody Function()? body, WebhookReleaseEditedChangesName Function()? name, WebhookReleaseEditedChangesTagName Function()? tagName, WebhookReleaseEditedChangesMakeLatest Function()? makeLatest, }) { return WebhookReleaseEditedChanges(
   body: body != null ? body() : this.body,
   name: name != null ? name() : this.name,

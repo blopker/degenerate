@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'p95': ?p95,
   'p99': ?p99,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'p50', 'p90', 'p95', 'p99'}.contains(key)); } 
 DigitalExperienceMonitoringPercentiles copyWith({double? Function()? p50, double? Function()? p90, double? Function()? p95, double? Function()? p99, }) { return DigitalExperienceMonitoringPercentiles(
   p50: p50 != null ? p50() : this.p50,
   p90: p90 != null ? p90() : this.p90,

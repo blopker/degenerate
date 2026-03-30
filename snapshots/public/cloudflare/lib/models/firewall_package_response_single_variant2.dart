@@ -11,7 +11,7 @@ final Map<String,dynamic>? result;
 Map<String, dynamic> toJson() { return {
   'result': ?result,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
 FirewallPackageResponseSingleVariant2 copyWith({Map<String, dynamic> Function()? result}) { return FirewallPackageResponseSingleVariant2(
   result: result != null ? result() : this.result,
 ); } 

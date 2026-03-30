@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'geo': ?geo,
   'lang': ?lang,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'device_type', 'geo', 'lang'}.contains(key)); } 
 RulesetsSetCacheSettingsCustomCacheKeyUser copyWith({bool Function()? deviceType, bool Function()? geo, bool Function()? lang, }) { return RulesetsSetCacheSettingsCustomCacheKeyUser(
   deviceType: deviceType != null ? deviceType() : this.deviceType,
   geo: geo != null ? geo() : this.geo,

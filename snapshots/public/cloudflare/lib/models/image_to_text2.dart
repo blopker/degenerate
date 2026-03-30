@@ -11,7 +11,7 @@ final String? description;
 Map<String, dynamic> toJson() { return {
   'description': ?description,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description'}.contains(key)); } 
 ImageToText2 copyWith({String Function()? description}) { return ImageToText2(
   description: description != null ? description() : this.description,
 ); } 

@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'type'}.contains(key)); } 
 SpectrumConfigDns copyWith({SpectrumConfigDnsName Function()? name, SpectrumConfigDnsType Function()? type, }) { return SpectrumConfigDns(
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,

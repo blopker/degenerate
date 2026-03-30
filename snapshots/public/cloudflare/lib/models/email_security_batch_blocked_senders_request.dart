@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_blocked_senders_request_deletes.dart';import 'email_security_create_blocked_sender.dart';import 'email_security_update_blocked_sender.dart';final class EmailSecurityBatchBlockedSendersRequest {const EmailSecurityBatchBlockedSendersRequest({required this.deletes, required this.patches, required this.posts, required this.puts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_blocked_senders_request_deletes.dart';import 'email_security_batch_blocked_senders_request_patches.dart';import 'email_security_batch_blocked_senders_request_puts.dart';import 'email_security_create_blocked_sender.dart';final class EmailSecurityBatchBlockedSendersRequest {const EmailSecurityBatchBlockedSendersRequest({required this.deletes, required this.patches, required this.posts, required this.puts, });
 
 factory EmailSecurityBatchBlockedSendersRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchBlockedSendersRequest(
   deletes: (json['deletes'] as List<dynamic>).map((e) => EmailSecurityBatchBlockedSendersRequestDeletes.fromJson(e as Map<String, dynamic>)).toList(),
-  patches: (json['patches'] as List<dynamic>).map((e) => EmailSecurityUpdateBlockedSender.fromJson(e as Map<String, dynamic>)).toList(),
+  patches: (json['patches'] as List<dynamic>).map((e) => EmailSecurityBatchBlockedSendersRequestPatches.fromJson(e as Map<String, dynamic>)).toList(),
   posts: (json['posts'] as List<dynamic>).map((e) => EmailSecurityCreateBlockedSender.fromJson(e as Map<String, dynamic>)).toList(),
-  puts: (json['puts'] as List<dynamic>).map((e) => EmailSecurityCreateBlockedSender.fromJson(e as Map<String, dynamic>)).toList(),
+  puts: (json['puts'] as List<dynamic>).map((e) => EmailSecurityBatchBlockedSendersRequestPuts.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 final List<EmailSecurityBatchBlockedSendersRequestDeletes> deletes;
 
-final List<EmailSecurityUpdateBlockedSender> patches;
+final List<EmailSecurityBatchBlockedSendersRequestPatches> patches;
 
 final List<EmailSecurityCreateBlockedSender> posts;
 
-final List<EmailSecurityCreateBlockedSender> puts;
+final List<EmailSecurityBatchBlockedSendersRequestPuts> puts;
 
 Map<String, dynamic> toJson() { return {
   'deletes': deletes.map((e) => e.toJson()).toList(),
@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('delet
       json.containsKey('patches') &&
       json.containsKey('posts') &&
       json.containsKey('puts'); } 
-EmailSecurityBatchBlockedSendersRequest copyWith({List<EmailSecurityBatchBlockedSendersRequestDeletes>? deletes, List<EmailSecurityUpdateBlockedSender>? patches, List<EmailSecurityCreateBlockedSender>? posts, List<EmailSecurityCreateBlockedSender>? puts, }) { return EmailSecurityBatchBlockedSendersRequest(
+EmailSecurityBatchBlockedSendersRequest copyWith({List<EmailSecurityBatchBlockedSendersRequestDeletes>? deletes, List<EmailSecurityBatchBlockedSendersRequestPatches>? patches, List<EmailSecurityCreateBlockedSender>? posts, List<EmailSecurityBatchBlockedSendersRequestPuts>? puts, }) { return EmailSecurityBatchBlockedSendersRequest(
   deletes: deletes ?? this.deletes,
   patches: patches ?? this.patches,
   posts: posts ?? this.posts,

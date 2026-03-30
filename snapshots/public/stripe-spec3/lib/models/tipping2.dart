@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
   if (sgd != null) 'sgd': sgd?.toJson(),
   if (usd != null) 'usd': usd?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'aed', 'aud', 'cad', 'chf', 'czk', 'dkk', 'eur', 'gbp', 'gip', 'hkd', 'huf', 'jpy', 'mxn', 'myr', 'nok', 'nzd', 'pln', 'ron', 'sek', 'sgd', 'usd'}.contains(key)); } 
 Tipping2 copyWith({Tipping2Aed Function()? aed, Tipping2Aud Function()? aud, Tipping2Cad Function()? cad, Tipping2Chf Function()? chf, Tipping2Czk Function()? czk, Tipping2Dkk Function()? dkk, Tipping2Eur Function()? eur, Tipping2Gbp Function()? gbp, Tipping2Gip Function()? gip, Tipping2Hkd Function()? hkd, Tipping2Huf Function()? huf, Tipping2Jpy Function()? jpy, Tipping2Mxn Function()? mxn, Tipping2Myr Function()? myr, Tipping2Nok Function()? nok, Tipping2Nzd Function()? nzd, Tipping2Pln Function()? pln, Tipping2Ron Function()? ron, Tipping2Sek Function()? sek, Tipping2Sgd Function()? sgd, Tipping2Usd Function()? usd, }) { return Tipping2(
   aed: aed != null ? aed() : this.aed,
   aud: aud != null ? aud() : this.aud,

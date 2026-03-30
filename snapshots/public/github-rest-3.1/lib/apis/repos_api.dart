@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/activity.dart';import '../models/autolink.dart';import '../models/basic_error.dart';import '../models/branch_protection.dart';import '../models/branch_restriction_policy.dart';import '../models/branch_short.dart';import '../models/branch_with_protection.dart';import '../models/check_automated_security_fixes.dart';import '../models/check_immutable_releases.dart';import '../models/clone_traffic.dart';import '../models/codeowners_errors.dart';import '../models/collaborator.dart';import '../models/combined_commit_status.dart';import '../models/commit.dart';import '../models/commit_activity.dart';import '../models/commit_comment.dart';import '../models/commit_comparison.dart';import '../models/community_profile.dart';import '../models/content_file.dart';import '../models/content_traffic.dart';import '../models/contributor.dart';import '../models/contributor_activity.dart';import '../models/custom_property_value.dart';import '../models/deploy_key.dart';import '../models/deployment.dart';import '../models/deployment_branch_policy.dart';import '../models/deployment_branch_policy_name_pattern.dart';import '../models/deployment_branch_policy_name_pattern_with_type.dart';import '../models/deployment_protection_rule.dart';import '../models/deployment_status.dart';import '../models/environment.dart';import '../models/file_commit.dart';import '../models/full_repository.dart';import '../models/hook.dart';import '../models/hook_delivery.dart';import '../models/hook_delivery_item.dart';import '../models/integration.dart';import '../models/merged_upstream.dart';import '../models/minimal_repository.dart';import '../models/page.dart';import '../models/page_build.dart';import '../models/page_build_status.dart';import '../models/page_deployment.dart';import '../models/pages_deployment_status.dart';import '../models/pages_health_check.dart';import '../models/participation_stats.dart';import '../models/protected_branch.dart';import '../models/protected_branch_admin_enforced.dart';import '../models/protected_branch_pull_request_review.dart';import '../models/pull_request_simple.dart';import '../models/referrer_traffic.dart';import '../models/release.dart';import '../models/release_asset.dart';import '../models/release_notes_content.dart';import '../models/repos_add_app_access_restrictions_request.dart';import '../models/repos_add_collaborator_request.dart';import '../models/repos_add_status_check_contexts_request.dart';import '../models/repos_add_team_access_restrictions_request.dart';import '../models/repos_add_user_access_restrictions_request.dart';import '../models/repos_check_private_vulnerability_reporting_response.dart';import '../models/repos_create_attestation_request.dart';import '../models/repos_create_attestation_response.dart';import '../models/repos_create_autolink_request.dart';import '../models/repos_create_commit_comment_request.dart';import '../models/repos_create_commit_status_request.dart';import '../models/repos_create_deploy_key_request.dart';import '../models/repos_create_deployment_protection_rule_request.dart';import '../models/repos_create_deployment_request.dart';import '../models/repos_create_deployment_status_request.dart';import '../models/repos_create_dispatch_event_request.dart';import '../models/repos_create_for_authenticated_user_request.dart';import '../models/repos_create_fork_request.dart';import '../models/repos_create_in_org_request.dart';import '../models/repos_create_or_update_environment_request.dart';import '../models/repos_create_or_update_file_contents_request.dart';import '../models/repos_create_org_ruleset_request.dart';import '../models/repos_create_pages_deployment_request.dart';import '../models/repos_create_release_request.dart';import '../models/repos_create_repo_ruleset_request.dart';import '../models/repos_create_using_template_request.dart';import '../models/repos_create_webhook_request.dart';import '../models/repos_custom_properties_for_repos_create_or_update_repository_values_request.dart';import '../models/repos_delete_file_request.dart';import '../models/repos_delete_response403.dart';import '../models/repos_generate_release_notes_request.dart';import '../models/repos_get_all_deployment_protection_rules_response.dart';import '../models/repos_get_all_environments_response.dart';import '../models/repos_get_clones_per.dart';import '../models/repos_get_content_response.dart';import '../models/repos_get_org_rule_suites_rule_suite_result.dart';import '../models/repos_get_org_rule_suites_time_period.dart';import '../models/repos_get_repo_rule_suites_rule_suite_result.dart';import '../models/repos_get_repo_rule_suites_time_period.dart';import '../models/repos_get_views_per.dart';import '../models/repos_list_activities_activity_type.dart';import '../models/repos_list_activities_direction.dart';import '../models/repos_list_activities_time_period.dart';import '../models/repos_list_attestations_response.dart';import '../models/repos_list_collaborators_affiliation.dart';import '../models/repos_list_collaborators_permission.dart';import '../models/repos_list_custom_deployment_rule_integrations_response.dart';import '../models/repos_list_deployment_branch_policies_response.dart';import '../models/repos_list_for_authenticated_user_direction.dart';import '../models/repos_list_for_authenticated_user_sort.dart';import '../models/repos_list_for_authenticated_user_type.dart';import '../models/repos_list_for_authenticated_user_visibility.dart';import '../models/repos_list_for_org_direction.dart';import '../models/repos_list_for_org_sort.dart';import '../models/repos_list_for_org_type.dart';import '../models/repos_list_for_user_direction.dart';import '../models/repos_list_for_user_sort.dart';import '../models/repos_list_for_user_type.dart';import '../models/repos_list_forks_sort.dart';import '../models/repos_merge_request.dart';import '../models/repos_merge_upstream_request.dart';import '../models/repos_remove_app_access_restrictions_request.dart';import '../models/repos_remove_status_check_contexts_request.dart';import '../models/repos_remove_team_access_restrictions_request.dart';import '../models/repos_remove_user_access_restrictions_request.dart';import '../models/repos_rename_branch_request.dart';import '../models/repos_replace_all_topics_request.dart';import '../models/repos_set_app_access_restrictions_request.dart';import '../models/repos_set_status_check_contexts_request.dart';import '../models/repos_set_team_access_restrictions_request.dart';import '../models/repos_set_user_access_restrictions_request.dart';import '../models/repos_transfer_request.dart';import '../models/repos_update_branch_protection_request.dart';import '../models/repos_update_commit_comment_request.dart';import '../models/repos_update_invitation_request.dart';import '../models/repos_update_org_ruleset_request.dart';import '../models/repos_update_pull_request_review_protection_request.dart';import '../models/repos_update_release_asset_request.dart';import '../models/repos_update_release_request.dart';import '../models/repos_update_repo_ruleset_request.dart';import '../models/repos_update_request.dart';import '../models/repos_update_status_check_protection_request.dart';import '../models/repos_update_webhook_config_for_repo_request.dart';import '../models/repos_update_webhook_request.dart';import '../models/repository.dart';import '../models/repository_collaborator_permission.dart';import '../models/repository_invitation.dart';import '../models/repository_rule_detailed.dart';import '../models/repository_ruleset.dart';import '../models/rule_suite.dart';import '../models/rule_suites2.dart';import '../models/ruleset_version.dart';import '../models/short_branch.dart';import '../models/simple_user.dart';import '../models/status.dart';import '../models/status_check_policy.dart';import '../models/tag.dart';import '../models/team.dart';import '../models/topic.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';import '../models/view_traffic.dart';import '../models/webhook_config.dart';/// ReposApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/activity.dart';import '../models/autolink.dart';import '../models/basic_error.dart';import '../models/branch_protection.dart';import '../models/branch_restriction_policy.dart';import '../models/branch_short.dart';import '../models/branch_with_protection.dart';import '../models/check_automated_security_fixes.dart';import '../models/check_immutable_releases.dart';import '../models/clone_traffic.dart';import '../models/codeowners_errors.dart';import '../models/collaborator.dart';import '../models/combined_commit_status.dart';import '../models/commit.dart';import '../models/commit_activity.dart';import '../models/commit_comment.dart';import '../models/commit_comparison.dart';import '../models/community_profile.dart';import '../models/content_file.dart';import '../models/content_traffic.dart';import '../models/contributor.dart';import '../models/contributor_activity.dart';import '../models/custom_property_value.dart';import '../models/deploy_key.dart';import '../models/deployment.dart';import '../models/deployment_branch_policy.dart';import '../models/deployment_branch_policy_name_pattern.dart';import '../models/deployment_branch_policy_name_pattern_with_type.dart';import '../models/deployment_protection_rule.dart';import '../models/deployment_status.dart';import '../models/environment.dart';import '../models/file_commit.dart';import '../models/full_repository.dart';import '../models/hook.dart';import '../models/hook_delivery.dart';import '../models/hook_delivery_item.dart';import '../models/integration.dart';import '../models/merged_upstream.dart';import '../models/minimal_repository.dart';import '../models/page.dart';import '../models/page_build.dart';import '../models/page_build_status.dart';import '../models/page_deployment.dart';import '../models/pages_deployment_status.dart';import '../models/pages_health_check.dart';import '../models/participation_stats.dart';import '../models/protected_branch.dart';import '../models/protected_branch_admin_enforced.dart';import '../models/protected_branch_pull_request_review.dart';import '../models/pull_request_simple.dart';import '../models/referrer_traffic.dart';import '../models/release.dart';import '../models/release_asset.dart';import '../models/release_notes_content.dart';import '../models/repos_add_app_access_restrictions_request.dart';import '../models/repos_add_collaborator_request.dart';import '../models/repos_add_status_check_contexts_request.dart';import '../models/repos_add_team_access_restrictions_request.dart';import '../models/repos_add_user_access_restrictions_request.dart';import '../models/repos_check_private_vulnerability_reporting_response.dart';import '../models/repos_create_attestation_request.dart';import '../models/repos_create_attestation_response.dart';import '../models/repos_create_autolink_request.dart';import '../models/repos_create_commit_comment_request.dart';import '../models/repos_create_commit_status_request.dart';import '../models/repos_create_deploy_key_request.dart';import '../models/repos_create_deployment_protection_rule_request.dart';import '../models/repos_create_deployment_request.dart';import '../models/repos_create_deployment_status_request.dart';import '../models/repos_create_dispatch_event_request.dart';import '../models/repos_create_for_authenticated_user_request.dart';import '../models/repos_create_fork_request.dart';import '../models/repos_create_in_org_request.dart';import '../models/repos_create_or_update_environment_request.dart';import '../models/repos_create_or_update_file_contents_request.dart';import '../models/repos_create_org_ruleset_request.dart';import '../models/repos_create_pages_deployment_request.dart';import '../models/repos_create_release_request.dart';import '../models/repos_create_repo_ruleset_request.dart';import '../models/repos_create_using_template_request.dart';import '../models/repos_create_webhook_request.dart';import '../models/repos_custom_properties_for_repos_create_or_update_repository_values_request.dart';import '../models/repos_delete_file_request.dart';import '../models/repos_delete_response403.dart';import '../models/repos_generate_release_notes_request.dart';import '../models/repos_get_all_deployment_protection_rules_response.dart';import '../models/repos_get_all_environments_response.dart';import '../models/repos_get_clones_per.dart';import '../models/repos_get_content_response.dart';import '../models/repos_get_org_rule_suites_rule_suite_result.dart';import '../models/repos_get_org_rule_suites_time_period.dart';import '../models/repos_get_repo_rule_suites_rule_suite_result.dart';import '../models/repos_get_repo_rule_suites_time_period.dart';import '../models/repos_get_views_per.dart';import '../models/repos_list_activities_activity_type.dart';import '../models/repos_list_activities_direction.dart';import '../models/repos_list_activities_time_period.dart';import '../models/repos_list_attestations_response.dart';import '../models/repos_list_collaborators_affiliation.dart';import '../models/repos_list_collaborators_permission.dart';import '../models/repos_list_custom_deployment_rule_integrations_response.dart';import '../models/repos_list_deployment_branch_policies_response.dart';import '../models/repos_list_for_authenticated_user_direction.dart';import '../models/repos_list_for_authenticated_user_sort.dart';import '../models/repos_list_for_authenticated_user_type.dart';import '../models/repos_list_for_authenticated_user_visibility.dart';import '../models/repos_list_for_org_direction.dart';import '../models/repos_list_for_org_sort.dart';import '../models/repos_list_for_org_type.dart';import '../models/repos_list_for_user_direction.dart';import '../models/repos_list_for_user_sort.dart';import '../models/repos_list_for_user_type.dart';import '../models/repos_list_forks_sort.dart';import '../models/repos_merge_request.dart';import '../models/repos_merge_upstream_request.dart';import '../models/repos_remove_app_access_restrictions_request.dart';import '../models/repos_remove_status_check_contexts_request.dart';import '../models/repos_remove_team_access_restrictions_request.dart';import '../models/repos_remove_user_access_restrictions_request.dart';import '../models/repos_rename_branch_request.dart';import '../models/repos_replace_all_topics_request.dart';import '../models/repos_set_app_access_restrictions_request.dart';import '../models/repos_set_status_check_contexts_request.dart';import '../models/repos_set_team_access_restrictions_request.dart';import '../models/repos_set_user_access_restrictions_request.dart';import '../models/repos_transfer_request.dart';import '../models/repos_update_branch_protection_request.dart';import '../models/repos_update_commit_comment_request.dart';import '../models/repos_update_invitation_request.dart';import '../models/repos_update_org_ruleset_request.dart';import '../models/repos_update_pull_request_review_protection_request.dart';import '../models/repos_update_release_asset_request.dart';import '../models/repos_update_release_request.dart';import '../models/repos_update_repo_ruleset_request.dart';import '../models/repos_update_request.dart';import '../models/repos_update_status_check_protection_request.dart';import '../models/repos_update_webhook_config_for_repo_request.dart';import '../models/repos_update_webhook_request.dart';import '../models/repository.dart';import '../models/repository_collaborator_permission.dart';import '../models/repository_invitation.dart';import '../models/repository_rule_detailed.dart';import '../models/repository_ruleset.dart';import '../models/rule_suite.dart';import '../models/rule_suites2.dart';import '../models/ruleset_version.dart';import '../models/ruleset_version_with_state.dart';import '../models/short_branch.dart';import '../models/simple_user.dart';import '../models/status.dart';import '../models/status_check_policy.dart';import '../models/tag.dart';import '../models/team.dart';import '../models/topic.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';import '../models/view_traffic.dart';import '../models/webhook_config.dart';/// ReposApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -18,11 +18,21 @@ final class ReposApi with ApiExecutor {const ReposApi(this.apiConfig);
 /// `GET /orgs/{org}/repos`
 Future<ApiResult<List<MinimalRepository>, Never>> reposListForOrg({required String org, ReposListForOrgType? type, ReposListForOrgSort? sort, ReposListForOrgDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (type != null) queryParameters['type'] = type.toJson();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -78,9 +88,15 @@ return execute(
 /// `GET /orgs/{org}/rulesets`
 Future<ApiResult<List<RepositoryRuleset>, BasicError>> reposGetOrgRulesets({required String org, int? perPage, int? page, String? targets, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (targets != null) queryParameters['targets'] = targets;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (targets != null) {
+  queryParameters['targets'] = targets;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -138,13 +154,27 @@ return execute(
 /// `GET /orgs/{org}/rulesets/rule-suites`
 Future<ApiResult<List<RuleSuites2>, BasicError>> reposGetOrgRuleSuites({required String org, String? ref, String? repositoryName, ReposGetOrgRuleSuitesTimePeriod? timePeriod, String? actorName, ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ref != null) queryParameters['ref'] = ref;
-if (repositoryName != null) queryParameters['repository_name'] = repositoryName;
-if (timePeriod != null) queryParameters['time_period'] = timePeriod.toJson();
-if (actorName != null) queryParameters['actor_name'] = actorName;
-if (ruleSuiteResult != null) queryParameters['rule_suite_result'] = ruleSuiteResult.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (ref != null) {
+  queryParameters['ref'] = ref;
+}
+if (repositoryName != null) {
+  queryParameters['repository_name'] = repositoryName;
+}
+if (timePeriod != null) {
+  queryParameters['time_period'] = timePeriod.toJson();
+}
+if (actorName != null) {
+  queryParameters['actor_name'] = actorName;
+}
+if (ruleSuiteResult != null) {
+  queryParameters['rule_suite_result'] = ruleSuiteResult.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -359,14 +389,30 @@ return execute(
 /// `GET /repos/{owner}/{repo}/activity`
 Future<ApiResult<List<Activity>, ValidationErrorSimple>> reposListActivities({required String owner, required String repo, ReposListActivitiesDirection? direction, int? perPage, String? before, String? after, String? ref, String? actor, ReposListActivitiesTimePeriod? timePeriod, ReposListActivitiesActivityType? activityType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (ref != null) queryParameters['ref'] = ref;
-if (actor != null) queryParameters['actor'] = actor;
-if (timePeriod != null) queryParameters['time_period'] = timePeriod.toJson();
-if (activityType != null) queryParameters['activity_type'] = activityType.toJson();
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (ref != null) {
+  queryParameters['ref'] = ref;
+}
+if (actor != null) {
+  queryParameters['actor'] = actor;
+}
+if (timePeriod != null) {
+  queryParameters['time_period'] = timePeriod.toJson();
+}
+if (activityType != null) {
+  queryParameters['activity_type'] = activityType.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -431,10 +477,18 @@ return execute(
 /// `GET /repos/{owner}/{repo}/attestations/{subject_digest}`
 Future<ApiResult<ReposListAttestationsResponse, Never>> reposListAttestations({required String owner, required String repo, required String subjectDigest, int? perPage, String? before, String? after, String? predicateType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (before != null) queryParameters['before'] = before;
-if (after != null) queryParameters['after'] = after;
-if (predicateType != null) queryParameters['predicate_type'] = predicateType;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (predicateType != null) {
+  queryParameters['predicate_type'] = predicateType;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -620,9 +674,15 @@ return execute(
 /// `GET /repos/{owner}/{repo}/branches`
 Future<ApiResult<List<ShortBranch>, BasicError>> reposListBranches({required String owner, required String repo, bool? protected, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (protected != null) queryParameters['protected'] = protected.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (protected != null) {
+  queryParameters['protected'] = protected.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1596,7 +1656,9 @@ return execute(
 /// `GET /repos/{owner}/{repo}/codeowners/errors`
 Future<ApiResult<CodeownersErrors, Never>> reposCodeownersErrors({required String owner, required String repo, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ref != null) queryParameters['ref'] = ref;
+if (ref != null) {
+  queryParameters['ref'] = ref;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1630,10 +1692,18 @@ return execute(
 /// `GET /repos/{owner}/{repo}/collaborators`
 Future<ApiResult<List<Collaborator>, BasicError>> reposListCollaborators({required String owner, required String repo, ReposListCollaboratorsAffiliation? affiliation, ReposListCollaboratorsPermission? permission, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (affiliation != null) queryParameters['affiliation'] = affiliation.toJson();
-if (permission != null) queryParameters['permission'] = permission.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (affiliation != null) {
+  queryParameters['affiliation'] = affiliation.toJson();
+}
+if (permission != null) {
+  queryParameters['permission'] = permission.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1821,8 +1891,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/comments`
 Future<ApiResult<List<CommitComment>, Never>> reposListCommitCommentsForRepo({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -1964,14 +2038,30 @@ return execute(
 /// `GET /repos/{owner}/{repo}/commits`
 Future<ApiResult<List<Commit>, BasicError>> reposListCommits({required String owner, required String repo, String? sha, String? path, String? author, String? committer, DateTime? since, DateTime? until, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sha != null) queryParameters['sha'] = sha;
-if (path != null) queryParameters['path'] = path;
-if (author != null) queryParameters['author'] = author;
-if (committer != null) queryParameters['committer'] = committer;
-if (since != null) queryParameters['since'] = since.toString();
-if (until != null) queryParameters['until'] = until.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (sha != null) {
+  queryParameters['sha'] = sha;
+}
+if (path != null) {
+  queryParameters['path'] = path;
+}
+if (author != null) {
+  queryParameters['author'] = author;
+}
+if (committer != null) {
+  queryParameters['committer'] = committer;
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (until != null) {
+  queryParameters['until'] = until.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2036,8 +2126,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/commits/{commit_sha}/comments`
 Future<ApiResult<List<CommitComment>, Never>> reposListCommentsForCommit({required String owner, required String repo, required String commitSha, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2102,8 +2196,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls`
 Future<ApiResult<List<PullRequestSimple>, BasicError>> reposListPullRequestsAssociatedWithCommit({required String owner, required String repo, required String commitSha, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2173,8 +2271,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/commits/{ref}`
 Future<ApiResult<Commit, ValidationError>> reposGetCommit({required String owner, required String repo, required String ref, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2211,8 +2313,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/commits/{ref}/status`
 Future<ApiResult<CombinedCommitStatus, BasicError>> reposGetCombinedStatusForRef({required String owner, required String repo, required String ref, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2244,8 +2350,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/commits/{ref}/statuses`
 Future<ApiResult<List<Status>, Never>> reposListCommitStatusesForRef({required String owner, required String repo, required String ref, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2354,8 +2464,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/compare/{basehead}`
 Future<ApiResult<CommitComparison, BasicError>> reposCompareCommits({required String owner, required String repo, required String basehead, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2409,7 +2523,9 @@ return execute(
 /// `GET /repos/{owner}/{repo}/contents/{path}`
 Future<ApiResult<ReposGetContentResponse, BasicError>> reposGetContent({required String owner, required String repo, required String path, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ref != null) queryParameters['ref'] = ref;
+if (ref != null) {
+  queryParameters['ref'] = ref;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2507,9 +2623,15 @@ return execute(
 /// `GET /repos/{owner}/{repo}/contributors`
 Future<ApiResult<List<Contributor>, BasicError>> reposListContributors({required String owner, required String repo, String? anon, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (anon != null) queryParameters['anon'] = anon;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (anon != null) {
+  queryParameters['anon'] = anon;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2540,12 +2662,24 @@ return execute(
 /// `GET /repos/{owner}/{repo}/deployments`
 Future<ApiResult<List<Deployment>, Never>> reposListDeployments({required String owner, required String repo, String? sha, String? ref, String? task, String? environment, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sha != null) queryParameters['sha'] = sha;
-if (ref != null) queryParameters['ref'] = ref;
-if (task != null) queryParameters['task'] = task;
-if (environment != null) queryParameters['environment'] = environment;
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (sha != null) {
+  queryParameters['sha'] = sha;
+}
+if (ref != null) {
+  queryParameters['ref'] = ref;
+}
+if (task != null) {
+  queryParameters['task'] = task;
+}
+if (environment != null) {
+  queryParameters['environment'] = environment;
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2701,8 +2835,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses`
 Future<ApiResult<List<DeploymentStatus>, BasicError>> reposListDeploymentStatuses({required String owner, required String repo, required int deploymentId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2819,8 +2957,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/environments`
 Future<ApiResult<ReposGetAllEnvironmentsResponse, Never>> reposGetAllEnvironments({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -2930,8 +3072,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies`
 Future<ApiResult<ReposListDeploymentBranchPoliciesResponse, Never>> reposListDeploymentBranchPolicies({required String owner, required String repo, required String environmentName, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3116,8 +3262,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps`
 Future<ApiResult<ReposListCustomDeploymentRuleIntegrationsResponse, Never>> reposListCustomDeploymentRuleIntegrations({required String environmentName, required String repo, required String owner, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3192,9 +3342,15 @@ return execute(
 /// `GET /repos/{owner}/{repo}/forks`
 Future<ApiResult<List<MinimalRepository>, BasicError>> reposListForks({required String owner, required String repo, ReposListForksSort? sort, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3257,8 +3413,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/hooks`
 Future<ApiResult<List<Hook>, BasicError>> reposListWebhooks({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3438,8 +3598,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries`
 Future<ApiResult<List<HookDeliveryItem>, BasicError>> reposListWebhookDeliveries({required String owner, required String repo, required int hookId, int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (cursor != null) queryParameters['cursor'] = cursor;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (cursor != null) {
+  queryParameters['cursor'] = cursor;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3631,8 +3795,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/invitations`
 Future<ApiResult<List<RepositoryInvitation>, Never>> reposListInvitations({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3702,8 +3870,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/keys`
 Future<ApiResult<List<DeployKey>, Never>> reposListDeployKeys({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -3982,8 +4154,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/pages/builds`
 Future<ApiResult<List<PageBuild>, Never>> reposListPagesBuilds({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4314,7 +4490,9 @@ return execute(
 /// `GET /repos/{owner}/{repo}/readme`
 Future<ApiResult<ContentFile, BasicError>> reposGetReadme({required String owner, required String repo, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ref != null) queryParameters['ref'] = ref;
+if (ref != null) {
+  queryParameters['ref'] = ref;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4349,7 +4527,9 @@ return execute(
 /// `GET /repos/{owner}/{repo}/readme/{dir}`
 Future<ApiResult<ContentFile, BasicError>> reposGetReadmeInDirectory({required String owner, required String repo, required String dir, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ref != null) queryParameters['ref'] = ref;
+if (ref != null) {
+  queryParameters['ref'] = ref;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4381,8 +4561,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/releases`
 Future<ApiResult<List<Release>, BasicError>> reposListReleases({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4655,8 +4839,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/releases/{release_id}/assets`
 Future<ApiResult<List<ReleaseAsset>, Never>> reposListReleaseAssets({required String owner, required String repo, required int releaseId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4703,7 +4891,9 @@ return execute(
 Future<ApiResult<ReleaseAsset, Never>> reposUploadReleaseAsset({required String owner, required String repo, required int releaseId, required String name, String? label, Uint8List? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['name'] = name;
-if (label != null) queryParameters['label'] = label;
+if (label != null) {
+  queryParameters['label'] = label;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/octet-stream';
@@ -4735,8 +4925,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/rules/branches/{branch}`
 Future<ApiResult<List<RepositoryRuleDetailed>, Never>> reposGetBranchRules({required String owner, required String repo, required String branch, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4764,10 +4958,18 @@ return execute(
 /// `GET /repos/{owner}/{repo}/rulesets`
 Future<ApiResult<List<RepositoryRuleset>, BasicError>> reposGetRepoRulesets({required String owner, required String repo, int? perPage, int? page, bool? includesParents, String? targets, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (includesParents != null) queryParameters['includes_parents'] = includesParents.toString();
-if (targets != null) queryParameters['targets'] = targets;
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (includesParents != null) {
+  queryParameters['includes_parents'] = includesParents.toString();
+}
+if (targets != null) {
+  queryParameters['targets'] = targets;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4825,12 +5027,24 @@ return execute(
 /// `GET /repos/{owner}/{repo}/rulesets/rule-suites`
 Future<ApiResult<List<RuleSuites2>, BasicError>> reposGetRepoRuleSuites({required String owner, required String repo, String? ref, ReposGetRepoRuleSuitesTimePeriod? timePeriod, String? actorName, ReposGetRepoRuleSuitesRuleSuiteResult? ruleSuiteResult, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (ref != null) queryParameters['ref'] = ref;
-if (timePeriod != null) queryParameters['time_period'] = timePeriod.toJson();
-if (actorName != null) queryParameters['actor_name'] = actorName;
-if (ruleSuiteResult != null) queryParameters['rule_suite_result'] = ruleSuiteResult.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (ref != null) {
+  queryParameters['ref'] = ref;
+}
+if (timePeriod != null) {
+  queryParameters['time_period'] = timePeriod.toJson();
+}
+if (actorName != null) {
+  queryParameters['actor_name'] = actorName;
+}
+if (ruleSuiteResult != null) {
+  queryParameters['rule_suite_result'] = ruleSuiteResult.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4889,7 +5103,9 @@ return execute(
 /// `GET /repos/{owner}/{repo}/rulesets/{ruleset_id}`
 Future<ApiResult<RepositoryRuleset, BasicError>> reposGetRepoRuleset({required String owner, required String repo, required int rulesetId, bool? includesParents, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (includesParents != null) queryParameters['includes_parents'] = includesParents.toString();
+if (includesParents != null) {
+  queryParameters['includes_parents'] = includesParents.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4967,8 +5183,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history`
 Future<ApiResult<List<RulesetVersion>, BasicError>> reposGetRepoRulesetHistory({required String owner, required String repo, required int rulesetId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -4997,7 +5217,7 @@ return execute(
 /// Get a version of a repository ruleset.
 ///
 /// `GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}`
-Future<ApiResult<RulesetVersion, BasicError>> reposGetRepoRulesetVersion({required String owner, required String repo, required int rulesetId, required int versionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetVersionWithState, BasicError>> reposGetRepoRulesetVersion({required String owner, required String repo, required int rulesetId, required int versionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -5009,7 +5229,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RulesetVersion.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RulesetVersionWithState.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -5182,8 +5402,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/tags`
 Future<ApiResult<List<Tag>, Never>> reposListTags({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5239,8 +5463,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/teams`
 Future<ApiResult<List<Team>, BasicError>> reposListTeams({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5271,8 +5499,12 @@ return execute(
 /// `GET /repos/{owner}/{repo}/topics`
 Future<ApiResult<Topic, BasicError>> reposGetAllTopics({required String owner, required String repo, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5328,7 +5560,9 @@ return execute(
 /// `GET /repos/{owner}/{repo}/traffic/clones`
 Future<ApiResult<CloneTraffic, BasicError>> reposGetClones({required String owner, required String repo, ReposGetClonesPer? per, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (per != null) queryParameters['per'] = per.toJson();
+if (per != null) {
+  queryParameters['per'] = per.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5408,7 +5642,9 @@ return execute(
 /// `GET /repos/{owner}/{repo}/traffic/views`
 Future<ApiResult<ViewTraffic, BasicError>> reposGetViews({required String owner, required String repo, ReposGetViewsPer? per, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (per != null) queryParameters['per'] = per.toJson();
+if (per != null) {
+  queryParameters['per'] = per.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5573,7 +5809,9 @@ return execute(
 /// `GET /repositories`
 Future<ApiResult<List<MinimalRepository>, ValidationError>> reposListPublic({int? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (since != null) queryParameters['since'] = since.toString();
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5606,15 +5844,33 @@ return execute(
 /// `GET /user/repos`
 Future<ApiResult<List<Repository>, ValidationError>> reposListForAuthenticatedUser({ReposListForAuthenticatedUserVisibility? visibility, String? affiliation, ReposListForAuthenticatedUserType? type, ReposListForAuthenticatedUserSort? sort, ReposListForAuthenticatedUserDirection? direction, int? perPage, int? page, DateTime? since, DateTime? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (visibility != null) queryParameters['visibility'] = visibility.toJson();
-if (affiliation != null) queryParameters['affiliation'] = affiliation;
-if (type != null) queryParameters['type'] = type.toJson();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (since != null) queryParameters['since'] = since.toString();
-if (before != null) queryParameters['before'] = before.toString();
+if (visibility != null) {
+  queryParameters['visibility'] = visibility.toJson();
+}
+if (affiliation != null) {
+  queryParameters['affiliation'] = affiliation;
+}
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (before != null) {
+  queryParameters['before'] = before.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5673,8 +5929,12 @@ return execute(
 /// `GET /user/repository_invitations`
 Future<ApiResult<List<RepositoryInvitation>, BasicError>> reposListInvitationsForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -5749,11 +6009,21 @@ return execute(
 /// `GET /users/{username}/repos`
 Future<ApiResult<List<MinimalRepository>, Never>> reposListForUser({required String username, ReposListForUserType? type, ReposListForUserSort? sort, ReposListForUserDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (type != null) queryParameters['type'] = type.toJson();
-if (sort != null) queryParameters['sort'] = sort.toJson();
-if (direction != null) queryParameters['direction'] = direction.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (type != null) {
+  queryParameters['type'] = type.toJson();
+}
+if (sort != null) {
+  queryParameters['sort'] = sort.toJson();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

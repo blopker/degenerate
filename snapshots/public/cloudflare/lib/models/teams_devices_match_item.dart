@@ -11,7 +11,7 @@ final TeamsDevicesPlatform? platform;
 Map<String, dynamic> toJson() { return {
   if (platform != null) 'platform': platform?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'platform'}.contains(key)); } 
 TeamsDevicesMatchItem copyWith({TeamsDevicesPlatform Function()? platform}) { return TeamsDevicesMatchItem(
   platform: platform != null ? platform() : this.platform,
 ); } 

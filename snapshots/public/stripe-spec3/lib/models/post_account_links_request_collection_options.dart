@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   if (fields != null) 'fields': fields?.toJson(),
   if (futureRequirements != null) 'future_requirements': futureRequirements?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fields', 'future_requirements'}.contains(key)); } 
 PostAccountLinksRequestCollectionOptions copyWith({PostAccountLinksRequestCollectionOptionsFields Function()? fields, PostAccountLinksRequestCollectionOptionsFutureRequirements Function()? futureRequirements, }) { return PostAccountLinksRequestCollectionOptions(
   fields: fields != null ? fields() : this.fields,
   futureRequirements: futureRequirements != null ? futureRequirements() : this.futureRequirements,

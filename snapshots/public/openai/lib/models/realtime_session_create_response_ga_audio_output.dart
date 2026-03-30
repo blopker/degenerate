@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (voice != null) 'voice': voice?.toJson(),
   'speed': speed,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'voice', 'speed'}.contains(key)); } 
 RealtimeSessionCreateResponseGaAudioOutput copyWith({RealtimeAudioFormats Function()? format, VoiceIdsShared Function()? voice, double Function()? speed, }) { return RealtimeSessionCreateResponseGaAudioOutput(
   format: format != null ? format() : this.format,
   voice: voice != null ? voice() : this.voice,

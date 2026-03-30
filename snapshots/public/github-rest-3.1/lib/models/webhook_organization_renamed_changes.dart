@@ -11,7 +11,7 @@ final WebhookOrganizationRenamedChangesLogin? login;
 Map<String, dynamic> toJson() { return {
   if (login != null) 'login': login?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'login'}.contains(key)); } 
 WebhookOrganizationRenamedChanges copyWith({WebhookOrganizationRenamedChangesLogin Function()? login}) { return WebhookOrganizationRenamedChanges(
   login: login != null ? login() : this.login,
 ); } 

@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (privacyPolicyUrl != null) 'privacy_policy_url': privacyPolicyUrl?.toJson(),
   if (termsOfServiceUrl != null) 'terms_of_service_url': termsOfServiceUrl?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'headline', 'privacy_policy_url', 'terms_of_service_url'}.contains(key)); } 
 PostBillingPortalConfigurationsConfigurationRequestBusinessProfile copyWith({PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline Function()? headline, PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrl Function()? privacyPolicyUrl, PostBillingPortalConfigurationsConfigurationRequestBusinessProfileTermsOfServiceUrl Function()? termsOfServiceUrl, }) { return PostBillingPortalConfigurationsConfigurationRequestBusinessProfile(
   headline: headline != null ? headline() : this.headline,
   privacyPolicyUrl: privacyPolicyUrl != null ? privacyPolicyUrl() : this.privacyPolicyUrl,

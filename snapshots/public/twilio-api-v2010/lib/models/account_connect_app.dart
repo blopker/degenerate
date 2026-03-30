@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'sid': ?sid,
   'uri': ?uri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'authorize_redirect_url', 'company_name', 'deauthorize_callback_method', 'deauthorize_callback_url', 'description', 'friendly_name', 'homepage_url', 'permissions', 'sid', 'uri'}.contains(key)); } 
 AccountConnectApp copyWith({String? Function()? accountSid, Uri? Function()? authorizeRedirectUrl, String? Function()? companyName, AccountConnectAppDeauthorizeCallbackMethod? Function()? deauthorizeCallbackMethod, Uri? Function()? deauthorizeCallbackUrl, String? Function()? description, String? Function()? friendlyName, Uri? Function()? homepageUrl, List<ConnectAppEnumPermission>? Function()? permissions, String? Function()? sid, String? Function()? uri, }) { return AccountConnectApp(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   authorizeRedirectUrl: authorizeRedirectUrl != null ? authorizeRedirectUrl() : this.authorizeRedirectUrl,

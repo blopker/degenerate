@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   'organization_selection_type': organizationSelectionType.toJson(),
   'group_id': ?groupId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'sync_to_organizations', 'organization_selection_type', 'group_id'}.contains(key)); } 
 EnterpriseTeamsUpdateRequest copyWith({String? Function()? name, String? Function()? description, EnterpriseTeamsUpdateRequestSyncToOrganizations Function()? syncToOrganizations, EnterpriseTeamsUpdateRequestOrganizationSelectionType Function()? organizationSelectionType, String? Function()? groupId, }) { return EnterpriseTeamsUpdateRequest(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,

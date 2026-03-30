@@ -41,7 +41,7 @@ final RealtimekitUpdatePresetPermissionsMediaAudioCanProduce? canProduce;
 Map<String, dynamic> toJson() { return {
   if (canProduce != null) 'can_produce': canProduce?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_produce'}.contains(key)); } 
 RealtimekitUpdatePresetPermissionsMediaAudio copyWith({RealtimekitUpdatePresetPermissionsMediaAudioCanProduce Function()? canProduce}) { return RealtimekitUpdatePresetPermissionsMediaAudio(
   canProduce: canProduce != null ? canProduce() : this.canProduce,
 ); } 

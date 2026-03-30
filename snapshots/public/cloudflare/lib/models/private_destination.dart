@@ -83,7 +83,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'vnet_id': ?vnetId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cidr', 'hostname', 'l4_protocol', 'port_range', 'type', 'vnet_id'}.contains(key)); } 
 PrivateDestination copyWith({String Function()? cidr, String Function()? hostname, PrivateDestinationL4Protocol Function()? l4Protocol, String Function()? portRange, PrivateDestinationType Function()? type, String Function()? vnetId, }) { return PrivateDestination(
   cidr: cidr != null ? cidr() : this.cidr,
   hostname: hostname != null ? hostname() : this.hostname,

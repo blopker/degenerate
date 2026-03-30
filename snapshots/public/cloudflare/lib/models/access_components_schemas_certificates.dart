@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'associated_hostnames', 'created_at', 'expires_on', 'fingerprint', 'id', 'name', 'updated_at'}.contains(key)); } 
 AccessComponentsSchemasCertificates copyWith({List<String> Function()? associatedHostnames, AccessTimestamp Function()? createdAt, AccessTimestamp Function()? expiresOn, AccessFingerprint Function()? fingerprint, dynamic Function()? id, AccessCertificatesComponentsSchemasName2 Function()? name, AccessTimestamp Function()? updatedAt, }) { return AccessComponentsSchemasCertificates(
   associatedHostnames: associatedHostnames != null ? associatedHostnames() : this.associatedHostnames,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

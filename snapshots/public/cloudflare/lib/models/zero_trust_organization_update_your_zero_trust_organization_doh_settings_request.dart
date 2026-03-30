@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The duration the DoH JWT is valid for. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.  Note that the maximum duration for this setting is the same as the key rotation period on the account. Default expiration is 24h
-extension type const AccessDohJwtDuration(String value) {
-factory AccessDohJwtDuration.fromJson(String json) => AccessDohJwtDuration(json);
-
-String toJson() => value;
-
-}
-final class ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest {const ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest({this.dohJwtDuration, this.serviceTokenId, });
+import 'access_doh_jwt_duration.dart';final class ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest {const ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest({this.dohJwtDuration, this.serviceTokenId, });
 
 factory ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest(
   dohJwtDuration: json['doh_jwt_duration'] != null ? AccessDohJwtDuration.fromJson(json['doh_jwt_duration'] as String) : null,
@@ -24,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (dohJwtDuration != null) 'doh_jwt_duration': dohJwtDuration?.toJson(),
   'service_token_id': ?serviceTokenId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'doh_jwt_duration', 'service_token_id'}.contains(key)); } 
 ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest copyWith({AccessDohJwtDuration Function()? dohJwtDuration, String Function()? serviceTokenId, }) { return ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest(
   dohJwtDuration: dohJwtDuration != null ? dohJwtDuration() : this.dohJwtDuration,
   serviceTokenId: serviceTokenId != null ? serviceTokenId() : this.serviceTokenId,

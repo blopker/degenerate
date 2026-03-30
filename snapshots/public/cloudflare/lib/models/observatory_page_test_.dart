@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (scheduleFrequency != null) 'scheduleFrequency': scheduleFrequency?.toJson(),
   if (url != null) 'url': url?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'desktopReport', 'id', 'mobileReport', 'region', 'scheduleFrequency', 'url'}.contains(key)); } 
 ObservatoryPageTest copyWith({ObservatoryTimestamp Function()? date, ObservatoryLighthouseReport Function()? desktopReport, ObservatoryUuid Function()? id, ObservatoryLighthouseReport Function()? mobileReport, ObservatoryLabeledRegion Function()? region, ObservatoryScheduleFrequency Function()? scheduleFrequency, ObservatoryUrl Function()? url, }) { return ObservatoryPageTest(
   date: date != null ? date() : this.date,
   desktopReport: desktopReport != null ? desktopReport() : this.desktopReport,

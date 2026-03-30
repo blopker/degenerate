@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'text': ?text,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'text'}.contains(key)); } 
 RealtimeConversationItemMessageSystemContent copyWith({RealtimeConversationItemMessageSystemContentType Function()? type, String Function()? text, }) { return RealtimeConversationItemMessageSystemContent(
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,

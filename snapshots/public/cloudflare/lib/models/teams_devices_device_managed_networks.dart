@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (networkId != null) 'network_id': networkId?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'name', 'network_id', 'type'}.contains(key)); } 
 TeamsDevicesDeviceManagedNetworks copyWith({TeamsDevicesSchemasConfigResponse Function()? config, TeamsDevicesDeviceManagedNetworksComponentsSchemasName Function()? name, TeamsDevicesUuid Function()? networkId, TeamsDevicesComponentsSchemasType Function()? type, }) { return TeamsDevicesDeviceManagedNetworks(
   config: config != null ? config() : this.config,
   name: name != null ? name() : this.name,

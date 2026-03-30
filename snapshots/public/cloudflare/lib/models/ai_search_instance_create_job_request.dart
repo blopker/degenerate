@@ -11,7 +11,7 @@ final String? description;
 Map<String, dynamic> toJson() { return {
   'description': ?description,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description'}.contains(key)); } 
 AiSearchInstanceCreateJobRequest copyWith({String Function()? description}) { return AiSearchInstanceCreateJobRequest(
   description: description != null ? description() : this.description,
 ); } 

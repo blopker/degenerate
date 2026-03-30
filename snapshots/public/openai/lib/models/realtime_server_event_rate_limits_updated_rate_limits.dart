@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   'remaining': ?remaining,
   'reset_seconds': ?resetSeconds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'limit', 'remaining', 'reset_seconds'}.contains(key)); } 
 RealtimeServerEventRateLimitsUpdatedRateLimits copyWith({RealtimeServerEventRateLimitsUpdatedRateLimitsName Function()? name, int Function()? limit, int Function()? remaining, double Function()? resetSeconds, }) { return RealtimeServerEventRateLimitsUpdatedRateLimits(
   name: name != null ? name() : this.name,
   limit: limit != null ? limit() : this.limit,

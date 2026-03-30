@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   if (changesRequested != null) 'changes_requested': changesRequested?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'changes_requested'}.contains(key)); } 
 AuditLogServiceAccountUpdated copyWith({String Function()? id, AuditLogServiceAccountUpdatedChangesRequested Function()? changesRequested, }) { return AuditLogServiceAccountUpdated(
   id: id != null ? id() : this.id,
   changesRequested: changesRequested != null ? changesRequested() : this.changesRequested,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_schemas_identifier.dart';/// The signing key in JWK format.
+import 'stream_schemas_identifier.dart';import 'stream_signing_key_created.dart';/// The signing key in JWK format.
 extension type const StreamJwk(String value) {
 factory StreamJwk.fromJson(String json) => StreamJwk(json);
 
@@ -12,13 +12,6 @@ extension type const StreamPem(String value) {
 factory StreamPem.fromJson(String json) => StreamPem(json);
 
 String toJson() => value;
-
-}
-/// The date and time a signing key was created.
-extension type StreamSigningKeyCreated(DateTime value) {
-factory StreamSigningKeyCreated.fromJson(String json) => StreamSigningKeyCreated(DateTime.parse(json));
-
-String toJson() => value.toIso8601String();
 
 }
 final class StreamKeys {const StreamKeys({this.created, this.id, this.jwk, this.pem, });
@@ -45,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (jwk != null) 'jwk': jwk?.toJson(),
   if (pem != null) 'pem': pem?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'id', 'jwk', 'pem'}.contains(key)); } 
 StreamKeys copyWith({StreamSigningKeyCreated Function()? created, StreamSchemasIdentifier Function()? id, StreamJwk Function()? jwk, StreamPem Function()? pem, }) { return StreamKeys(
   created: created != null ? created() : this.created,
   id: id != null ? id() : this.id,

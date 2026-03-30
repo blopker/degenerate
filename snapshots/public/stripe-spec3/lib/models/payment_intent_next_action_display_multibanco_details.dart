@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'hosted_voucher_url': ?hostedVoucherUrl,
   'reference': ?reference,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'entity', 'expires_at', 'hosted_voucher_url', 'reference'}.contains(key)); } 
 PaymentIntentNextActionDisplayMultibancoDetails copyWith({String? Function()? entity, int? Function()? expiresAt, String? Function()? hostedVoucherUrl, String? Function()? reference, }) { return PaymentIntentNextActionDisplayMultibancoDetails(
   entity: entity != null ? entity() : this.entity,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,

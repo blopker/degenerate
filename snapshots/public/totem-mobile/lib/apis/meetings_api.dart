@@ -1,224 +1,332 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/error_response_schema.dart';import '../models/livekit_order_schema.dart';import '../models/livekit_token_response_schema.dart';import '../models/session_state.dart';/// MeetingsApi operations.
+import 'dart:async';
+import 'dart:convert';
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+import '../models/error_response_schema.dart';
+import '../models/livekit_order_schema.dart';
+import '../models/livekit_token_response_schema.dart';
+import '../models/session_state.dart';
+
+/// MeetingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
-final class MeetingsApi with ApiExecutor {const MeetingsApi(this.apiConfig);
+final class MeetingsApi with ApiExecutor {
+  const MeetingsApi(this.apiConfig);
 
-@override final ApiConfig apiConfig;
+  @override
+  final ApiConfig apiConfig;
 
-/// Get Livekit Token
-///
-/// `GET /api/mobile/protected/meetings/event/{event_slug}/token`
-Future<ApiResult<LivekitTokenResponseSchema, ErrorResponseSchema>> totemMeetingsMobileApiGetLivekitToken({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+  /// Get Livekit Token
+  ///
+  /// `GET /api/mobile/protected/meetings/event/{event_slug}/token`
+  Future<ApiResult<LivekitTokenResponseSchema, ErrorResponseSchema>>
+  totemMeetingsMobileApiGetLivekitToken({
+    required String eventSlug,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
 
-final request = ApiRequest(
-  method: 'GET',
-  path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/token',
-  headers: headers,
-  options: options,
-);
+    final request = ApiRequest(
+      method: 'GET',
+      path:
+          '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/token',
+      headers: headers,
+      options: options,
+    );
 
-return execute(
-  request,
-  onSuccess: (response) {
-    return LivekitTokenResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-  onError: (response) {
-    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-);
- } 
-/// Pass Totem Endpoint
-///
-/// `POST /api/mobile/protected/meetings/event/{event_slug}/pass-totem`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiPassTotemEndpoint({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+    return execute(
+      request,
+      onSuccess: (response) {
+        return LivekitTokenResponseSchema.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+      onError: (response) {
+        return ErrorResponseSchema.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+    );
+  }
 
-final request = ApiRequest(
-  method: 'POST',
-  path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/pass-totem',
-  headers: headers,
-  options: options,
-);
+  /// Pass Totem Endpoint
+  ///
+  /// `POST /api/mobile/protected/meetings/event/{event_slug}/pass-totem`
+  Future<ApiResult<void, ErrorResponseSchema>>
+  totemMeetingsMobileApiPassTotemEndpoint({
+    required String eventSlug,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
 
-return execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-);
- } 
-/// Accept Totem Endpoint
-///
-/// `POST /api/mobile/protected/meetings/event/{event_slug}/accept-totem`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiAcceptTotemEndpoint({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+    final request = ApiRequest(
+      method: 'POST',
+      path:
+          '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/pass-totem',
+      headers: headers,
+      options: options,
+    );
 
-final request = ApiRequest(
-  method: 'POST',
-  path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/accept-totem',
-  headers: headers,
-  options: options,
-);
+    return execute(
+      request,
+      onSuccess: (_) {},
+      onError: (response) {
+        return ErrorResponseSchema.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+    );
+  }
 
-return execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-);
- } 
-/// Start Room Endpoint
-///
-/// `POST /api/mobile/protected/meetings/event/{event_slug}/start`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiStartRoomEndpoint({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+  /// Accept Totem Endpoint
+  ///
+  /// `POST /api/mobile/protected/meetings/event/{event_slug}/accept-totem`
+  Future<ApiResult<void, ErrorResponseSchema>>
+  totemMeetingsMobileApiAcceptTotemEndpoint({
+    required String eventSlug,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
 
-final request = ApiRequest(
-  method: 'POST',
-  path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/start',
-  headers: headers,
-  options: options,
-);
+    final request = ApiRequest(
+      method: 'POST',
+      path:
+          '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/accept-totem',
+      headers: headers,
+      options: options,
+    );
 
-return execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-);
- } 
-/// End Room Endpoint
-///
-/// `POST /api/mobile/protected/meetings/event/{event_slug}/end`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiEndRoomEndpoint({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+    return execute(
+      request,
+      onSuccess: (_) {},
+      onError: (response) {
+        return ErrorResponseSchema.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+    );
+  }
 
-final request = ApiRequest(
-  method: 'POST',
-  path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/end',
-  headers: headers,
-  options: options,
-);
+  /// Start Room Endpoint
+  ///
+  /// `POST /api/mobile/protected/meetings/event/{event_slug}/start`
+  Future<ApiResult<void, ErrorResponseSchema>>
+  totemMeetingsMobileApiStartRoomEndpoint({
+    required String eventSlug,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
 
-return execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-);
- } 
-/// Mute Participant Endpoint
-///
-/// `POST /api/mobile/protected/meetings/event/{event_slug}/mute/{participant_identity}`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiMuteParticipantEndpoint({required String eventSlug, required String participantIdentity, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+    final request = ApiRequest(
+      method: 'POST',
+      path:
+          '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/start',
+      headers: headers,
+      options: options,
+    );
 
-final request = ApiRequest(
-  method: 'POST',
-  path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/mute/${Uri.encodeComponent(participantIdentity)}',
-  headers: headers,
-  options: options,
-);
+    return execute(
+      request,
+      onSuccess: (_) {},
+      onError: (response) {
+        return ErrorResponseSchema.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+    );
+  }
 
-return execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-);
- } 
-/// Mute All Participants Endpoint
-///
-/// `POST /api/mobile/protected/meetings/event/{event_slug}/mute-all`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiMuteAllParticipantsEndpoint({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+  /// End Room Endpoint
+  ///
+  /// `POST /api/mobile/protected/meetings/event/{event_slug}/end`
+  Future<ApiResult<void, ErrorResponseSchema>>
+  totemMeetingsMobileApiEndRoomEndpoint({
+    required String eventSlug,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
 
-final request = ApiRequest(
-  method: 'POST',
-  path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/mute-all',
-  headers: headers,
-  options: options,
-);
+    final request = ApiRequest(
+      method: 'POST',
+      path:
+          '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/end',
+      headers: headers,
+      options: options,
+    );
 
-return execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-);
- } 
-/// Remove Participant Endpoint
-///
-/// `POST /api/mobile/protected/meetings/event/{event_slug}/remove/{participant_identity}`
-Future<ApiResult<void, ErrorResponseSchema>> totemMeetingsMobileApiRemoveParticipantEndpoint({required String eventSlug, required String participantIdentity, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+    return execute(
+      request,
+      onSuccess: (_) {},
+      onError: (response) {
+        return ErrorResponseSchema.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+    );
+  }
 
-final request = ApiRequest(
-  method: 'POST',
-  path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/remove/${Uri.encodeComponent(participantIdentity)}',
-  headers: headers,
-  options: options,
-);
+  /// Mute Participant Endpoint
+  ///
+  /// `POST /api/mobile/protected/meetings/event/{event_slug}/mute/{participant_identity}`
+  Future<ApiResult<void, ErrorResponseSchema>>
+  totemMeetingsMobileApiMuteParticipantEndpoint({
+    required String eventSlug,
+    required String participantIdentity,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
 
-return execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-);
- } 
-/// Reorder Participants Endpoint
-///
-/// `POST /api/mobile/protected/meetings/event/{event_slug}/reorder`
-Future<ApiResult<LivekitOrderSchema, ErrorResponseSchema>> totemMeetingsMobileApiReorderParticipantsEndpoint({required String eventSlug, required LivekitOrderSchema body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
-headers['Content-Type'] = 'application/json';
+    final request = ApiRequest(
+      method: 'POST',
+      path:
+          '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/mute/${Uri.encodeComponent(participantIdentity)}',
+      headers: headers,
+      options: options,
+    );
 
-final request = ApiRequest(
-  method: 'POST',
-  path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/reorder',
-  headers: headers,
-  body: jsonEncode(body.toJson()),
-  options: options,
-);
+    return execute(
+      request,
+      onSuccess: (_) {},
+      onError: (response) {
+        return ErrorResponseSchema.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+    );
+  }
 
-return execute(
-  request,
-  onSuccess: (response) {
-    return LivekitOrderSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-  onError: (response) {
-    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-);
- } 
-/// Get Room State Endpoint
-///
-/// Retrieves the current session state for a room.
-/// 
-/// This endpoint exposes the SessionState schema and its enums (SessionStatus, TotemStatus)
-/// in the OpenAPI documentation for client-side usage.
-///
-/// `GET /api/mobile/protected/meetings/event/{event_slug}/room-state`
-Future<ApiResult<SessionState, ErrorResponseSchema>> totemMeetingsMobileApiGetRoomStateEndpoint({required String eventSlug, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+  /// Mute All Participants Endpoint
+  ///
+  /// `POST /api/mobile/protected/meetings/event/{event_slug}/mute-all`
+  Future<ApiResult<void, ErrorResponseSchema>>
+  totemMeetingsMobileApiMuteAllParticipantsEndpoint({
+    required String eventSlug,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
 
-final request = ApiRequest(
-  method: 'GET',
-  path: '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/room-state',
-  headers: headers,
-  options: options,
-);
+    final request = ApiRequest(
+      method: 'POST',
+      path:
+          '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/mute-all',
+      headers: headers,
+      options: options,
+    );
 
-return execute(
-  request,
-  onSuccess: (response) {
-    return SessionState.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-  onError: (response) {
-    return ErrorResponseSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
-  },
-);
- } 
- }
+    return execute(
+      request,
+      onSuccess: (_) {},
+      onError: (response) {
+        return ErrorResponseSchema.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+    );
+  }
+
+  /// Remove Participant Endpoint
+  ///
+  /// `POST /api/mobile/protected/meetings/event/{event_slug}/remove/{participant_identity}`
+  Future<ApiResult<void, ErrorResponseSchema>>
+  totemMeetingsMobileApiRemoveParticipantEndpoint({
+    required String eventSlug,
+    required String participantIdentity,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
+
+    final request = ApiRequest(
+      method: 'POST',
+      path:
+          '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/remove/${Uri.encodeComponent(participantIdentity)}',
+      headers: headers,
+      options: options,
+    );
+
+    return execute(
+      request,
+      onSuccess: (_) {},
+      onError: (response) {
+        return ErrorResponseSchema.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+    );
+  }
+
+  /// Reorder Participants Endpoint
+  ///
+  /// `POST /api/mobile/protected/meetings/event/{event_slug}/reorder`
+  Future<ApiResult<LivekitOrderSchema, ErrorResponseSchema>>
+  totemMeetingsMobileApiReorderParticipantsEndpoint({
+    required String eventSlug,
+    required LivekitOrderSchema body,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
+    headers['Content-Type'] = 'application/json';
+
+    final request = ApiRequest(
+      method: 'POST',
+      path:
+          '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/reorder',
+      headers: headers,
+      body: jsonEncode(body.toJson()),
+      options: options,
+    );
+
+    return execute(
+      request,
+      onSuccess: (response) {
+        return LivekitOrderSchema.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+      onError: (response) {
+        return ErrorResponseSchema.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+    );
+  }
+
+  /// Get Room State Endpoint
+  ///
+  /// Retrieves the current session state for a room.
+  ///
+  /// This endpoint exposes the SessionState schema and its enums (SessionStatus, TotemStatus)
+  /// in the OpenAPI documentation for client-side usage.
+  ///
+  /// `GET /api/mobile/protected/meetings/event/{event_slug}/room-state`
+  Future<ApiResult<SessionState, ErrorResponseSchema>>
+  totemMeetingsMobileApiGetRoomStateEndpoint({
+    required String eventSlug,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
+
+    final request = ApiRequest(
+      method: 'GET',
+      path:
+          '/api/mobile/protected/meetings/event/${Uri.encodeComponent(eventSlug)}/room-state',
+      headers: headers,
+      options: options,
+    );
+
+    return execute(
+      request,
+      onSuccess: (response) {
+        return SessionState.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+      onError: (response) {
+        return ErrorResponseSchema.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+    );
+  }
+}

@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'active_this_cycle': ?activeThisCycle,
   'inactive_this_cycle': ?inactiveThisCycle,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total', 'added_this_cycle', 'pending_cancellation', 'pending_invitation', 'active_this_cycle', 'inactive_this_cycle'}.contains(key)); } 
 CopilotOrganizationSeatBreakdown copyWith({int Function()? total, int Function()? addedThisCycle, int Function()? pendingCancellation, int Function()? pendingInvitation, int Function()? activeThisCycle, int Function()? inactiveThisCycle, }) { return CopilotOrganizationSeatBreakdown(
   total: total != null ? total() : this.total,
   addedThisCycle: addedThisCycle != null ? addedThisCycle() : this.addedThisCycle,

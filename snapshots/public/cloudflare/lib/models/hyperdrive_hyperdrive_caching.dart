@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'hyperdrive_hyperdrive_caching_common.dart';sealed class HyperdriveHyperdriveCaching {const HyperdriveHyperdriveCaching();
+import 'hyperdrive_hyperdrive_caching_common.dart';import 'hyperdrive_hyperdrive_caching_enabled.dart';sealed class HyperdriveHyperdriveCaching {const HyperdriveHyperdriveCaching();
 
 /// Deserialize from JSON, dispatching on the `disabled` discriminator.
 factory HyperdriveHyperdriveCaching.fromJson(Map<String, dynamic> json) { return switch (json['disabled']) {
@@ -15,18 +15,18 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is HyperdriveHyperdriveCaching$Unknown; } 
  }
-final class HyperdriveHyperdriveCachingFalse extends HyperdriveHyperdriveCaching {const HyperdriveHyperdriveCachingFalse(this.hyperdriveHyperdriveCachingCommon);
+final class HyperdriveHyperdriveCachingFalse extends HyperdriveHyperdriveCaching {const HyperdriveHyperdriveCachingFalse(this.hyperdriveHyperdriveCachingEnabled);
 
-factory HyperdriveHyperdriveCachingFalse.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveCachingFalse(HyperdriveHyperdriveCachingCommon.fromJson(json)); }
+factory HyperdriveHyperdriveCachingFalse.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveCachingFalse(HyperdriveHyperdriveCachingEnabled.fromJson(json)); }
 
-final HyperdriveHyperdriveCachingCommon hyperdriveHyperdriveCachingCommon;
+final HyperdriveHyperdriveCachingEnabled hyperdriveHyperdriveCachingEnabled;
 
 @override String get disabled { return 'false'; } 
-@override Map<String, dynamic> toJson() { return {'disabled': disabled, ...hyperdriveHyperdriveCachingCommon.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...hyperdriveHyperdriveCachingEnabled.toJson(), 'disabled': disabled}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is HyperdriveHyperdriveCachingFalse && hyperdriveHyperdriveCachingCommon == other.hyperdriveHyperdriveCachingCommon; } 
-@override int get hashCode { return hyperdriveHyperdriveCachingCommon.hashCode; } 
-@override String toString() { return 'HyperdriveHyperdriveCachingFalse(hyperdriveHyperdriveCachingCommon: $hyperdriveHyperdriveCachingCommon)'; } 
+    other is HyperdriveHyperdriveCachingFalse && hyperdriveHyperdriveCachingEnabled == other.hyperdriveHyperdriveCachingEnabled; } 
+@override int get hashCode { return hyperdriveHyperdriveCachingEnabled.hashCode; } 
+@override String toString() { return 'HyperdriveHyperdriveCachingFalse(hyperdriveHyperdriveCachingEnabled: $hyperdriveHyperdriveCachingEnabled)'; } 
  }
 final class HyperdriveHyperdriveCachingTrue extends HyperdriveHyperdriveCaching {const HyperdriveHyperdriveCachingTrue(this.hyperdriveHyperdriveCachingCommon);
 
@@ -35,7 +35,7 @@ factory HyperdriveHyperdriveCachingTrue.fromJson(Map<String, dynamic> json) { re
 final HyperdriveHyperdriveCachingCommon hyperdriveHyperdriveCachingCommon;
 
 @override String get disabled { return 'true'; } 
-@override Map<String, dynamic> toJson() { return {'disabled': disabled, ...hyperdriveHyperdriveCachingCommon.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...hyperdriveHyperdriveCachingCommon.toJson(), 'disabled': disabled}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is HyperdriveHyperdriveCachingTrue && hyperdriveHyperdriveCachingCommon == other.hyperdriveHyperdriveCachingCommon; } 
 @override int get hashCode { return hyperdriveHyperdriveCachingCommon.hashCode; } 

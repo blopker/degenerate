@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'source_account': ?sourceAccount,
   'version': ?version,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'read_only', 'source_account', 'version'}.contains(key)); } 
 ZeroTrustGatewayExtendedEmailMatching copyWith({bool? Function()? enabled, bool Function()? readOnly, String Function()? sourceAccount, int Function()? version, }) { return ZeroTrustGatewayExtendedEmailMatching(
   enabled: enabled != null ? enabled() : this.enabled,
   readOnly: readOnly != null ? readOnly() : this.readOnly,

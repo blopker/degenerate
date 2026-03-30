@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (fraudRisk != null) 'fraud_risk': fraudRisk?.toJson(),
   if (merchantDisputeRisk != null) 'merchant_dispute_risk': merchantDisputeRisk?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_testing_risk', 'fraud_risk', 'merchant_dispute_risk'}.contains(key)); } 
 PostTestHelpersIssuingAuthorizationsRequestRiskAssessment copyWith({PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk Function()? cardTestingRisk, PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk Function()? fraudRisk, PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRisk Function()? merchantDisputeRisk, }) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessment(
   cardTestingRisk: cardTestingRisk != null ? cardTestingRisk() : this.cardTestingRisk,
   fraudRisk: fraudRisk != null ? fraudRisk() : this.fraudRisk,

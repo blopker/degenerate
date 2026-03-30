@@ -23,7 +23,7 @@ factory InputItemEasyInputMessage.fromJson(Map<String, dynamic> json) { return I
 final EasyInputMessage easyInputMessage;
 
 @override String get type { return 'EasyInputMessage'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...easyInputMessage.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...easyInputMessage.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputItemEasyInputMessage && easyInputMessage == other.easyInputMessage; } 
 @override int get hashCode { return easyInputMessage.hashCode; } 
@@ -36,7 +36,7 @@ factory InputItemItem.fromJson(Map<String, dynamic> json) { return InputItemItem
 final Item item;
 
 @override String get type { return 'Item'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...item.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...item.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputItemItem && item == other.item; } 
 @override int get hashCode { return item.hashCode; } 
@@ -49,7 +49,7 @@ factory InputItemItemReferenceParam.fromJson(Map<String, dynamic> json) { return
 final ItemReferenceParam itemReferenceParam;
 
 @override String get type { return 'ItemReferenceParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...itemReferenceParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...itemReferenceParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputItemItemReferenceParam && itemReferenceParam == other.itemReferenceParam; } 
 @override int get hashCode { return itemReferenceParam.hashCode; } 

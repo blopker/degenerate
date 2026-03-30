@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   'transport': ?transport,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip_restrictions'); } 
-EmailSecurityUpdateDomainRequest copyWith({List<EmailSecurityDeliveryMode> Function()? allowedDeliveryModes, String Function()? domain, List<EmailSecurityDispositionLabel> Function()? dropDispositions, EmailSecurityScannableFolder Function()? folder, String Function()? integrationId, List<String>? ipRestrictions, int Function()? lookbackHops, List<EmailSecurityUpdateDomainRequestRegions> Function()? regions, bool Function()? requireTlsInbound, bool Function()? requireTlsOutbound, String Function()? transport, }) { return EmailSecurityUpdateDomainRequest(
+EmailSecurityUpdateDomainRequest copyWith({List<EmailSecurityDeliveryMode> Function()? allowedDeliveryModes, String Function()? domain, List<EmailSecurityDispositionLabel> Function()? dropDispositions, EmailSecurityScannableFolder? Function()? folder, String Function()? integrationId, List<String>? ipRestrictions, int Function()? lookbackHops, List<EmailSecurityUpdateDomainRequestRegions> Function()? regions, bool Function()? requireTlsInbound, bool Function()? requireTlsOutbound, String Function()? transport, }) { return EmailSecurityUpdateDomainRequest(
   allowedDeliveryModes: allowedDeliveryModes != null ? allowedDeliveryModes() : this.allowedDeliveryModes,
   domain: domain != null ? domain() : this.domain,
   dropDispositions: dropDispositions != null ? dropDispositions() : this.dropDispositions,

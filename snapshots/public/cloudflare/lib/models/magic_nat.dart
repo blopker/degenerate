@@ -12,7 +12,7 @@ final MagicCidr? staticPrefix;
 Map<String, dynamic> toJson() { return {
   if (staticPrefix != null) 'static_prefix': staticPrefix?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'static_prefix'}.contains(key)); } 
 MagicNat copyWith({MagicCidr Function()? staticPrefix}) { return MagicNat(
   staticPrefix: staticPrefix != null ? staticPrefix() : this.staticPrefix,
 ); } 

@@ -27,6 +27,9 @@ class IrMapper {
   /// Warnings collected during lowering (e.g., unknown schema fallbacks).
   final List<String> warnings;
 
+  /// Raw OpenAPI schemas for resolving $ref targets during allOf expansion.
+  Map<String, dynamic> _rawSchemas = {};
+
   /// Resolver for IrTypeRef nodes, created lazily over typeRegistry.
   late final TypeRefResolver _resolver = TypeRefResolver(typeRegistry);
 
@@ -42,6 +45,7 @@ class IrMapper {
   /// Each entry in [schemas] is a raw schema map keyed by its OpenAPI name.
   /// Returns the list of top-level IR types and populates [typeRegistry].
   List<IrType> lowerSchemas(Map<String, dynamic> schemas) {
+    _rawSchemas = schemas;
     final results = <IrType>[];
     for (final entry in schemas.entries) {
       final name = entry.key;
@@ -177,8 +181,12 @@ class IrMapper {
     if (schema.containsKey(r'$ref') || schema.containsKey('_cycleRef')) {
       return false;
     }
-    // Inline enum
-    if (schema['type'] == 'string' && schema.containsKey('enum')) return true;
+    // Inline enum (string, integer, or number)
+    final schemaType = schema['type'];
+    if (schema.containsKey('enum') &&
+        (schemaType == 'string' || schemaType == 'integer' || schemaType == 'number')) {
+      return true;
+    }
     // oneOf/anyOf produce named union types
     if (schema.containsKey('oneOf') || schema.containsKey('anyOf')) return true;
     // allOf wrapping an enum or other named type
@@ -274,14 +282,49 @@ class IrMapper {
       final refName =
           _nameMapping[rawRefName] ??
           sanitizeDartName(toPascalCase(rawRefName));
-      final flatDescription =
-          flattened['description'] as String? ?? description;
-      final flatNullable = _isNullable(flattened) || nullable;
-      return IrTypeRef(
-        refName,
-        description: flatDescription,
-        isNullable: flatNullable,
-      );
+
+      // Check if the allOf added properties beyond what the $ref target has.
+      // If so, merge the ref's properties and treat as a full object.
+      final refSchema = _rawSchemas[rawRefName];
+      final refPropKeys = refSchema is Map<String, dynamic>
+          ? (refSchema['properties'] as Map<String, dynamic>?)?.keys.toSet() ??
+              <String>{}
+          : <String>{};
+      final flatProps =
+          flattened['properties'] as Map<String, dynamic>? ?? {};
+      final hasExtraProperties =
+          flatProps.keys.toSet().difference(refPropKeys).isNotEmpty;
+
+      // Don't expand discriminator variants — they should stay as refs so
+      // the sealed union emitter can wrap them correctly.
+      final isDiscriminatorVariant = discriminatorProperty != null;
+      if (hasExtraProperties && !isDiscriminatorVariant &&
+          refSchema is Map<String, dynamic>) {
+        // Merge ref target's properties into the flattened schema.
+        final refProps =
+            refSchema['properties'] as Map<String, dynamic>? ?? {};
+        flattened['properties'] = <String, dynamic>{
+          ...refProps,
+          ...flatProps,
+        };
+        final refReq =
+            (refSchema['required'] as List?)?.cast<String>() ?? [];
+        final localReq =
+            (flattened['required'] as List?)?.cast<String>() ?? [];
+        flattened['required'] = {...refReq, ...localReq}.toList();
+        flattened.remove(r'$ref');
+        // Falls through to object handling below.
+      } else {
+        // Pure ref alias or ref + description only — return type reference.
+        final flatDescription =
+            flattened['description'] as String? ?? description;
+        final flatNullable = _isNullable(flattened) || nullable;
+        return IrTypeRef(
+          refName,
+          description: flatDescription,
+          isNullable: flatNullable,
+        );
+      }
     }
 
     // After flattening, check again for resolved refs (allOf may have surfaced one).
@@ -325,8 +368,9 @@ class IrMapper {
 
     final type = _extractType(flattened);
 
-    // Enum strings.
-    if (type == 'string' && flattened.containsKey('enum')) {
+    // Enums (string, integer, number).
+    if (flattened.containsKey('enum') &&
+        (type == 'string' || type == 'integer' || type == 'number')) {
       // If an existing registered enum has the same title and values, reuse it
       // instead of creating a duplicate (e.g. allOf wrapping a named enum).
       final title = flattened['title'] as String?;
@@ -371,6 +415,15 @@ class IrMapper {
     // Object-like map (additionalProperties only, no explicit type).
     if (flattened.containsKey('additionalProperties')) {
       return _lowerMap(flattened, nameHint: name);
+    }
+
+    // JSON Schema `type: "null"` — the only valid value is null.
+    if (type == 'null') {
+      return IrPrimitive(
+        PrimitiveKind.dynamic_,
+        description: schema['description'] as String?,
+        isNullable: true,
+      );
     }
 
     // Primitives.
@@ -439,14 +492,24 @@ class IrMapper {
   IrType _lowerEnum(String? name, Map<String, dynamic> schema) {
     final values = (schema['enum'] as List).map((e) => e.toString()).toList();
     final rawDefault = schema['default'];
-    final defaultValue = rawDefault is String ? rawDefault : null;
+    final defaultValue = rawDefault?.toString();
     final description = schema['description'] as String?;
     final nullable = _isNullable(schema);
     final enumName = name ?? _uniqueTypeName('InlineEnum');
+    final type = _extractType(schema);
+    final PrimitiveKind valueKind;
+    if (type == 'integer') {
+      valueKind = PrimitiveKind.int;
+    } else if (type == 'number') {
+      valueKind = PrimitiveKind.double;
+    } else {
+      valueKind = PrimitiveKind.string;
+    }
     return IrEnum(
       enumName,
       values,
       defaultValue: defaultValue,
+      valueKind: valueKind,
       description: description,
       isNullable: nullable,
     );
@@ -510,7 +573,7 @@ class IrMapper {
 
     for (final entry in properties.entries) {
       final fieldOriginalName = entry.key;
-      final fieldDartName = sanitizeDartName(toCamelCase(fieldOriginalName));
+      final fieldDartName = sanitizeFieldName(toCamelCase(fieldOriginalName));
       // Property values can be boolean schemas (true/false) in JSON Schema.
       // Treat boolean schemas as unconstrained (true) or impossible (false).
       if (entry.value is! Map<String, dynamic>) {
@@ -540,7 +603,11 @@ class IrMapper {
       // If this field is a discriminator property, just use String instead of enum.
       String? inlineEnumName;
       final fieldSchemaType = _extractType(fieldSchema);
-      if (fieldSchemaType == 'string' && fieldSchema.containsKey('enum')) {
+      final isEnumCandidate = fieldSchema.containsKey('enum') &&
+          (fieldSchemaType == 'string' ||
+           fieldSchemaType == 'integer' ||
+           fieldSchemaType == 'number');
+      if (isEnumCandidate) {
         if (discriminatorProperty != null &&
             fieldOriginalName == discriminatorProperty) {
           // This is a discriminator field - emit as plain String.
@@ -554,8 +621,7 @@ class IrMapper {
       IrType fieldType;
       if (discriminatorProperty != null &&
           fieldOriginalName == discriminatorProperty &&
-          fieldSchemaType == 'string' &&
-          fieldSchema.containsKey('enum')) {
+          isEnumCandidate) {
         // Discriminator field: emit as plain String.
         fieldType = IrPrimitive(
           PrimitiveKind.string,
@@ -602,10 +668,26 @@ class IrMapper {
       );
     }
 
+    // additionalProperties: typed overflow map for extra keys.
+    IrType? additionalPropsType;
+    final addProps = schema['additionalProperties'];
+    if (addProps != null && addProps != false) {
+      if (addProps is Map<String, dynamic>) {
+        final valueHint = '${objectName}Value';
+        additionalPropsType =
+            lowerInlineSchema(addProps, nameHint: valueHint);
+      } else {
+        // additionalProperties: true → Map<String, dynamic>
+        additionalPropsType =
+            const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true);
+      }
+    }
+
     return IrObject(
       objectName,
       fields,
       requiredFields: requiredList,
+      additionalProperties: additionalPropsType,
       description: description,
       isNullable: nullable,
     );
@@ -671,7 +753,7 @@ class IrMapper {
           final dartRefName =
               _nameMapping[rawRefName] ??
               sanitizeDartName(toPascalCase(rawRefName));
-          mapping[dartRefName] = IrTypeRef(dartRefName);
+          mapping[rawRefName] = IrTypeRef(dartRefName);
         } else if (variant is Map<String, dynamic> &&
             (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
           final hint =

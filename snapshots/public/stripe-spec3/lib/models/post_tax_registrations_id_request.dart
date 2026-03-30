@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   if (expiresAt != null) 'expires_at': expiresAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active_from', 'expand', 'expires_at'}.contains(key)); } 
 PostTaxRegistrationsIdRequest copyWith({PostTaxRegistrationsIdRequestActiveFrom Function()? activeFrom, List<String> Function()? expand, PostTaxRegistrationsIdRequestExpiresAt Function()? expiresAt, }) { return PostTaxRegistrationsIdRequest(
   activeFrom: activeFrom != null ? activeFrom() : this.activeFrom,
   expand: expand != null ? expand() : this.expand,

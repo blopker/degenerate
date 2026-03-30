@@ -12,7 +12,7 @@ final String? message;
 Map<String, dynamic> toJson() { return {
   'message': ?message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message'}.contains(key)); } 
 TlsCertificatesAndHostnamesSslDvValidationErrors copyWith({String Function()? message}) { return TlsCertificatesAndHostnamesSslDvValidationErrors(
   message: message != null ? message() : this.message,
 ); } 

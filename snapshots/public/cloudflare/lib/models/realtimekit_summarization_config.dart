@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
   'text_format': textFormat.toJson(),
   'word_limit': wordLimit,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'summary_type', 'text_format', 'word_limit'}.contains(key)); } 
 RealtimekitSummarizationConfig copyWith({RealtimekitSummarizationConfigSummaryType Function()? summaryType, RealtimekitSummarizationConfigTextFormat Function()? textFormat, int Function()? wordLimit, }) { return RealtimekitSummarizationConfig(
   summaryType: summaryType != null ? summaryType() : this.summaryType,
   textFormat: textFormat != null ? textFormat() : this.textFormat,

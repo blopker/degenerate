@@ -12,7 +12,7 @@ final double? updateWindowDays;
 Map<String, dynamic> toJson() { return {
   'update_window_days': ?updateWindowDays,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'update_window_days'}.contains(key)); } 
 TeamsDevicesAntivirusInputRequest copyWith({double Function()? updateWindowDays}) { return TeamsDevicesAntivirusInputRequest(
   updateWindowDays: updateWindowDays != null ? updateWindowDays() : this.updateWindowDays,
 ); } 

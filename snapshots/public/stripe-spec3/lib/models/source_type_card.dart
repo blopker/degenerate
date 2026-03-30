@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'three_d_secure': ?threeDSecure,
   'tokenization_method': ?tokenizationMethod,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address_line1_check', 'address_zip_check', 'brand', 'country', 'cvc_check', 'dynamic_last4', 'exp_month', 'exp_year', 'fingerprint', 'funding', 'last4', 'name', 'three_d_secure', 'tokenization_method'}.contains(key)); } 
 SourceTypeCard copyWith({String? Function()? addressLine1Check, String? Function()? addressZipCheck, String? Function()? brand, String? Function()? country, String? Function()? cvcCheck, String? Function()? dynamicLast4, int? Function()? expMonth, int? Function()? expYear, String Function()? fingerprint, String? Function()? funding, String? Function()? last4, String? Function()? name, String Function()? threeDSecure, String? Function()? tokenizationMethod, }) { return SourceTypeCard(
   addressLine1Check: addressLine1Check != null ? addressLine1Check() : this.addressLine1Check,
   addressZipCheck: addressZipCheck != null ? addressZipCheck() : this.addressZipCheck,

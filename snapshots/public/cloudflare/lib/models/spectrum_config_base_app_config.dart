@@ -1,12 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'spectrum_config_identifier.dart';extension type SpectrumConfigTimestamp(DateTime value) {
-factory SpectrumConfigTimestamp.fromJson(String json) => SpectrumConfigTimestamp(DateTime.parse(json));
-
-String toJson() => value.toIso8601String();
-
-}
-final class SpectrumConfigBaseAppConfig {const SpectrumConfigBaseAppConfig({required this.createdOn, required this.id, required this.modifiedOn, });
+import 'spectrum_config_identifier.dart';import 'spectrum_config_timestamp.dart';final class SpectrumConfigBaseAppConfig {const SpectrumConfigBaseAppConfig({required this.createdOn, required this.id, required this.modifiedOn, });
 
 factory SpectrumConfigBaseAppConfig.fromJson(Map<String, dynamic> json) { return SpectrumConfigBaseAppConfig(
   createdOn: SpectrumConfigTimestamp.fromJson(json['created_on'] as String),

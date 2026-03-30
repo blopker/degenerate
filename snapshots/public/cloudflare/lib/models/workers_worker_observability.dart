@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'head_sampling_rate': headSamplingRate,
   if (logs != null) 'logs': logs?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'head_sampling_rate', 'logs'}.contains(key)); } 
 WorkersWorkerObservability copyWith({bool Function()? enabled, double Function()? headSamplingRate, WorkersWorkerObservabilityLogs Function()? logs, }) { return WorkersWorkerObservability(
   enabled: enabled != null ? enabled() : this.enabled,
   headSamplingRate: headSamplingRate != null ? headSamplingRate() : this.headSamplingRate,

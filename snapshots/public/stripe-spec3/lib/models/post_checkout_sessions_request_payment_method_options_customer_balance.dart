@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (fundingType != null) 'funding_type': fundingType?.toJson(),
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_transfer', 'funding_type', 'setup_future_usage'}.contains(key)); } 
 PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransfer Function()? bankTransfer, PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType Function()? fundingType, PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance(
   bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
   fundingType: fundingType != null ? fundingType() : this.fundingType,

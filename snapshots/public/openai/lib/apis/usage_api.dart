@@ -14,8 +14,12 @@ final class UsageApi with ApiExecutor {const UsageApi(this.apiConfig);
 Future<ApiResult<UsageResponse, Never>> usageCosts({required int startTime, int? endTime, UsageCostsBucketWidth? bucketWidth, List<String>? projectIds, List<UsageCostsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
-if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
+if (bucketWidth != null) {
+  queryParameters['bucket_width'] = bucketWidth.toJson();
+}
 if (projectIds != null) {
 for (final item in projectIds) {
   queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
@@ -26,8 +30,12 @@ for (final item in groupBy) {
   queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
 }
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -53,8 +61,12 @@ return execute(
 Future<ApiResult<UsageResponse, Never>> usageAudioSpeeches({required int startTime, int? endTime, UsageAudioSpeechesBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageAudioSpeechesGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
-if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
+if (bucketWidth != null) {
+  queryParameters['bucket_width'] = bucketWidth.toJson();
+}
 if (projectIds != null) {
 for (final item in projectIds) {
   queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
@@ -80,8 +92,12 @@ for (final item in groupBy) {
   queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
 }
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -107,8 +123,12 @@ return execute(
 Future<ApiResult<UsageResponse, Never>> usageAudioTranscriptions({required int startTime, int? endTime, UsageAudioTranscriptionsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageAudioTranscriptionsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
-if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
+if (bucketWidth != null) {
+  queryParameters['bucket_width'] = bucketWidth.toJson();
+}
 if (projectIds != null) {
 for (final item in projectIds) {
   queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
@@ -134,8 +154,12 @@ for (final item in groupBy) {
   queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
 }
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -161,8 +185,12 @@ return execute(
 Future<ApiResult<UsageResponse, Never>> usageCodeInterpreterSessions({required int startTime, int? endTime, UsageCodeInterpreterSessionsBucketWidth? bucketWidth, List<String>? projectIds, List<UsageCodeInterpreterSessionsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
-if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
+if (bucketWidth != null) {
+  queryParameters['bucket_width'] = bucketWidth.toJson();
+}
 if (projectIds != null) {
 for (final item in projectIds) {
   queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
@@ -173,8 +201,12 @@ for (final item in groupBy) {
   queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
 }
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -200,8 +232,12 @@ return execute(
 Future<ApiResult<UsageResponse, Never>> usageCompletions({required int startTime, int? endTime, UsageCompletionsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, bool? batch, List<UsageCompletionsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
-if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
+if (bucketWidth != null) {
+  queryParameters['bucket_width'] = bucketWidth.toJson();
+}
 if (projectIds != null) {
 for (final item in projectIds) {
   queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
@@ -222,14 +258,20 @@ for (final item in models) {
   queryParametersList.add(ApiQueryParameter(name: 'models', value: item, allowReserved: false));
 }
 }
-if (batch != null) queryParameters['batch'] = batch.toString();
+if (batch != null) {
+  queryParameters['batch'] = batch.toString();
+}
 if (groupBy != null) {
 for (final item in groupBy) {
   queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
 }
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -255,8 +297,12 @@ return execute(
 Future<ApiResult<UsageResponse, Never>> usageEmbeddings({required int startTime, int? endTime, UsageEmbeddingsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageEmbeddingsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
-if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
+if (bucketWidth != null) {
+  queryParameters['bucket_width'] = bucketWidth.toJson();
+}
 if (projectIds != null) {
 for (final item in projectIds) {
   queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
@@ -282,8 +328,12 @@ for (final item in groupBy) {
   queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
 }
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -309,8 +359,12 @@ return execute(
 Future<ApiResult<UsageResponse, Never>> usageImages({required int startTime, int? endTime, UsageImagesBucketWidth? bucketWidth, List<UsageImagesSources>? sources, List<UsageImagesSizes>? sizes, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageImagesGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
-if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
+if (bucketWidth != null) {
+  queryParameters['bucket_width'] = bucketWidth.toJson();
+}
 if (sources != null) {
 for (final item in sources) {
   queryParametersList.add(ApiQueryParameter(name: 'sources', value: item.toJson(), allowReserved: false));
@@ -346,8 +400,12 @@ for (final item in groupBy) {
   queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
 }
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -373,8 +431,12 @@ return execute(
 Future<ApiResult<UsageResponse, Never>> usageModerations({required int startTime, int? endTime, UsageModerationsBucketWidth? bucketWidth, List<String>? projectIds, List<String>? userIds, List<String>? apiKeyIds, List<String>? models, List<UsageModerationsGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
-if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
+if (bucketWidth != null) {
+  queryParameters['bucket_width'] = bucketWidth.toJson();
+}
 if (projectIds != null) {
 for (final item in projectIds) {
   queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
@@ -400,8 +462,12 @@ for (final item in groupBy) {
   queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
 }
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -427,8 +493,12 @@ return execute(
 Future<ApiResult<UsageResponse, Never>> usageVectorStores({required int startTime, int? endTime, UsageVectorStoresBucketWidth? bucketWidth, List<String>? projectIds, List<UsageVectorStoresGroupBy>? groupBy, int? limit, String? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['start_time'] = startTime.toString();
-if (endTime != null) queryParameters['end_time'] = endTime.toString();
-if (bucketWidth != null) queryParameters['bucket_width'] = bucketWidth.toJson();
+if (endTime != null) {
+  queryParameters['end_time'] = endTime.toString();
+}
+if (bucketWidth != null) {
+  queryParameters['bucket_width'] = bucketWidth.toJson();
+}
 if (projectIds != null) {
 for (final item in projectIds) {
   queryParametersList.add(ApiQueryParameter(name: 'project_ids', value: item, allowReserved: false));
@@ -439,8 +509,12 @@ for (final item in groupBy) {
   queryParametersList.add(ApiQueryParameter(name: 'group_by', value: item.toJson(), allowReserved: false));
 }
 }
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (page != null) queryParameters['page'] = page;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

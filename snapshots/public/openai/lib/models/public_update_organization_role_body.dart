@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'description': ?description,
   'role_name': ?roleName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'permissions', 'description', 'role_name'}.contains(key)); } 
 PublicUpdateOrganizationRoleBody copyWith({List<String>? Function()? permissions, String? Function()? description, String? Function()? roleName, }) { return PublicUpdateOrganizationRoleBody(
   permissions: permissions != null ? permissions() : this.permissions,
   description: description != null ? description() : this.description,

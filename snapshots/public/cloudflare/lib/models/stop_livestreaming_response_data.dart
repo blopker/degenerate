@@ -11,7 +11,7 @@ final String? message;
 Map<String, dynamic> toJson() { return {
   'message': ?message,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message'}.contains(key)); } 
 StopLivestreamingResponseData copyWith({String Function()? message}) { return StopLivestreamingResponseData(
   message: message != null ? message() : this.message,
 ); } 

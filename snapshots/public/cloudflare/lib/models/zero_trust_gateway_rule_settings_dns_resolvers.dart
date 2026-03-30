@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (ipv4 != null) 'ipv4': ipv4?.map((e) => e.toJson()).toList(),
   if (ipv6 != null) 'ipv6': ipv6?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ipv4', 'ipv6'}.contains(key)); } 
 ZeroTrustGatewayRuleSettingsDnsResolvers copyWith({List<ZeroTrustGatewayDnsResolverSettings> Function()? ipv4, List<ZeroTrustGatewayDnsResolverSettings2> Function()? ipv6, }) { return ZeroTrustGatewayRuleSettingsDnsResolvers(
   ipv4: ipv4 != null ? ipv4() : this.ipv4,
   ipv6: ipv6 != null ? ipv6() : this.ipv6,

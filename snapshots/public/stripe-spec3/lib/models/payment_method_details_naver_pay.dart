@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'buyer_id': ?buyerId,
   'transaction_id': ?transactionId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buyer_id', 'transaction_id'}.contains(key)); } 
 PaymentMethodDetailsNaverPay copyWith({String? Function()? buyerId, String? Function()? transactionId, }) { return PaymentMethodDetailsNaverPay(
   buyerId: buyerId != null ? buyerId() : this.buyerId,
   transactionId: transactionId != null ? transactionId() : this.transactionId,

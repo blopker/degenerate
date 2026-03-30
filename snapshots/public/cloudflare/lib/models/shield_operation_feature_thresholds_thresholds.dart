@@ -101,7 +101,7 @@ Map<String, dynamic> toJson() { return {
   if (requests != null) 'requests': requests?.toJson(),
   if (suggestedThreshold != null) 'suggested_threshold': suggestedThreshold?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_id_tokens', 'data_points', 'last_updated', 'p50', 'p90', 'p99', 'period_seconds', 'requests', 'suggested_threshold'}.contains(key)); } 
 ShieldOperationFeatureThresholdsThresholds copyWith({ShieldAuthIdTokens Function()? authIdTokens, ShieldDataPoints Function()? dataPoints, ShieldTimestamp Function()? lastUpdated, ShieldP50 Function()? p50, ShieldP90 Function()? p90, ShieldP99 Function()? p99, ShieldPeriodSeconds Function()? periodSeconds, ShieldRequests Function()? requests, ShieldSuggestedThreshold Function()? suggestedThreshold, }) { return ShieldOperationFeatureThresholdsThresholds(
   authIdTokens: authIdTokens != null ? authIdTokens() : this.authIdTokens,
   dataPoints: dataPoints != null ? dataPoints() : this.dataPoints,

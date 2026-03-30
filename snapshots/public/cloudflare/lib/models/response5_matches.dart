@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'score': ?score,
   'values': ?values,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'metadata', 'namespace', 'score', 'values'}.contains(key)); } 
 Response5Matches copyWith({VectorizeVectorIdentifier Function()? id, Map<String, dynamic>? Function()? metadata, String? Function()? namespace, double Function()? score, List<double>? Function()? values, }) { return Response5Matches(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,

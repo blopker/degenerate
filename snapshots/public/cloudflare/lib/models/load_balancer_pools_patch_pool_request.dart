@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   if (originSteering != null) 'origin_steering': originSteering?.toJson(),
   if (origins != null) 'origins': origins?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_regions', 'description', 'disabled_at', 'enabled', 'latitude', 'load_shedding', 'longitude', 'minimum_origins', 'monitor', 'monitor_group', 'name', 'notification_email', 'notification_filter', 'origin_steering', 'origins'}.contains(key)); } 
 LoadBalancerPoolsPatchPoolRequest copyWith({List<LoadBalancingCheckRegions2>? Function()? checkRegions, LoadBalancingSchemasDescription Function()? description, LoadBalancingSchemasDisabledAt Function()? disabledAt, LoadBalancingEnabled Function()? enabled, LoadBalancingLatitude Function()? latitude, LoadBalancingLoadShedding Function()? loadShedding, LoadBalancingLongitude Function()? longitude, LoadBalancingMinimumOrigins Function()? minimumOrigins, LoadBalancingMonitorId Function()? monitor, LoadBalancingMonitorGroupId Function()? monitorGroup, LoadBalancingName Function()? name, LoadBalancingNotificationEmail Function()? notificationEmail, LoadBalancingNotificationFilter Function()? notificationFilter, LoadBalancingOriginSteering Function()? originSteering, List<LoadBalancingOrigin> Function()? origins, }) { return LoadBalancerPoolsPatchPoolRequest(
   checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,
   description: description != null ? description() : this.description,

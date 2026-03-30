@@ -2,6 +2,35 @@
 
 Important user-facing changes only. For full details see commit log.
 
+## 0.3.0
+
+**Major feature release: allOf composition, additionalProperties, streaming, and OAS 3.2 support.**
+
+### New features
+
+- **`additionalProperties` support**: objects with `additionalProperties` now generate a typed overflow `Map<String, T>` field. Extra keys are preserved during fromJson/toJson round-trips instead of being silently dropped. Supports typed values, dynamic, and recursive self-references.
+- **`allOf` composition**: `allOf` schemas that combine a `$ref` with extra inline properties now produce a merged object with all fields from both the ref target and the inline schema, instead of silently dropping the extra properties.
+- **`--unwrap-fields` CLI option**: unwrap response envelopes by extracting a named field. `--unwrap-fields=result` returns the `result` type directly instead of the full `{errors, messages, success, result}` envelope — matching what Stainless generates for Cloudflare SDKs.
+- **OAS 3.2 `query` method**: the HTTP QUERY method (safe method with request body) is now a first-class operation.
+- **OAS 3.2 `additionalOperations`**: custom HTTP methods (COPY, LOCK, PURGE, etc.) via the path item's `additionalOperations` map.
+- **Typed streaming via `itemSchema`**: SSE and JSONL responses with `itemSchema` now return `Stream<T>` with typed deserialization instead of `void`.
+- **JSONL streaming**: `application/jsonl` and `application/x-ndjson` media types are now supported with a dedicated `executeJsonlStreaming` runtime method.
+- **Integer and number enums**: enum schemas with `type: integer` or `type: number` now generate typed enums with `int`/`double` values, not just string enums.
+- **`content`-based parameter schemas**: parameters using the OAS 3.x `content` field (instead of `schema`) now have their schema correctly extracted.
+- **OAuth2 `deviceAuthorization`**: the device authorization flow type and `deviceAuthorizationUrl` are now supported.
+
+### Bug fixes
+
+- **String literal escaping**: `$`, `\n`, `\r`, `\t`, and Unicode bidi/zero-width characters are now properly escaped in generated string literals.
+- **Object member name conflicts**: fields and methods named `toString`, `hashCode`, `runtimeType`, or `noSuchMethod` are prefixed with `$` to avoid conflicts with `Object` members.
+- **Discriminator mapping keys**: inferred `oneOf` discriminator mappings now use the original schema names as switch keys, not the Dart type names.
+- **Discriminator `toJson` collision**: union variant `toJson` spreads the variant first and sets the discriminator key last, so the discriminator always wins over fields with the same name.
+- **`type: "null"` handling**: `type: "null"` now maps to nullable `dynamic` instead of `String`.
+- **`canParse` for optional-only models**: models with no required fields now check for at least one known property key instead of returning `true` unconditionally.
+- **Latin character transliteration**: accented characters are transliterated to ASCII (`café` → `cafe`) instead of being stripped (`caf`).
+- **Enum casing**: leading `+`/`-` before letters in enum values no longer corrupts casing (`+NaN` → `naN`, not `NaN`).
+- **Query/header parameter key escaping**: `$` and special characters in parameter names are properly escaped in generated map key strings.
+
 ## 0.2.1
 
 - Fix required-but-nullable query parameters generating invalid assignments (`String?` assigned to `Map<String, String>`)

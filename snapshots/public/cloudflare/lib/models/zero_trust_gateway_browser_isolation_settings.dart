@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'non_identity_enabled': ?nonIdentityEnabled,
   'url_browser_isolation_enabled': ?urlBrowserIsolationEnabled,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'non_identity_enabled', 'url_browser_isolation_enabled'}.contains(key)); } 
 ZeroTrustGatewayBrowserIsolationSettings copyWith({bool Function()? nonIdentityEnabled, bool Function()? urlBrowserIsolationEnabled, }) { return ZeroTrustGatewayBrowserIsolationSettings(
   nonIdentityEnabled: nonIdentityEnabled != null ? nonIdentityEnabled() : this.nonIdentityEnabled,
   urlBrowserIsolationEnabled: urlBrowserIsolationEnabled != null ? urlBrowserIsolationEnabled() : this.urlBrowserIsolationEnabled,

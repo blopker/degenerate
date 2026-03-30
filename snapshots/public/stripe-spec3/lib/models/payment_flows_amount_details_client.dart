@@ -12,7 +12,7 @@ final PaymentFlowsAmountDetailsClientResourceTip? tip;
 Map<String, dynamic> toJson() { return {
   if (tip != null) 'tip': tip?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tip'}.contains(key)); } 
 PaymentFlowsAmountDetailsClient copyWith({PaymentFlowsAmountDetailsClientResourceTip Function()? tip}) { return PaymentFlowsAmountDetailsClient(
   tip: tip != null ? tip() : this.tip,
 ); } 

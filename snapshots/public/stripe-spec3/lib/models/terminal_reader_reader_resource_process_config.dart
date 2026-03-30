@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'skip_tipping': ?skipTipping,
   if (tipping != null) 'tipping': tipping?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enable_customer_cancellation', 'return_url', 'skip_tipping', 'tipping'}.contains(key)); } 
 TerminalReaderReaderResourceProcessConfig copyWith({bool Function()? enableCustomerCancellation, String Function()? returnUrl, bool Function()? skipTipping, TerminalReaderReaderResourceTippingConfig Function()? tipping, }) { return TerminalReaderReaderResourceProcessConfig(
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,

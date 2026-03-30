@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'right': ?right,
   'top': ?top,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bottom', 'left', 'right', 'top'}.contains(key)); } 
 BrapiPostPdfRequestVariant2PdfOptionsMargin copyWith({dynamic Function()? bottom, dynamic Function()? left, dynamic Function()? right, dynamic Function()? top, }) { return BrapiPostPdfRequestVariant2PdfOptionsMargin(
   bottom: bottom != null ? bottom() : this.bottom,
   left: left != null ? left() : this.left,

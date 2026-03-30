@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'gcp_project_id': ?gcpProjectId,
   'gcp_service_account_email': ?gcpServiceAccountEmail,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'aws_arn', 'azure_subscription_id', 'azure_tenant_id', 'description', 'friendly_name', 'gcp_project_id', 'gcp_service_account_email'}.contains(key)); } 
 McnUpdateProviderRequest copyWith({String Function()? awsArn, String Function()? azureSubscriptionId, String Function()? azureTenantId, String Function()? description, String Function()? friendlyName, String Function()? gcpProjectId, String Function()? gcpServiceAccountEmail, }) { return McnUpdateProviderRequest(
   awsArn: awsArn != null ? awsArn() : this.awsArn,
   azureSubscriptionId: azureSubscriptionId != null ? azureSubscriptionId() : this.azureSubscriptionId,

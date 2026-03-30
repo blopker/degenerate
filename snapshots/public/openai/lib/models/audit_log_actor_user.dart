@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
   'email': ?email,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'email'}.contains(key)); } 
 AuditLogActorUser copyWith({String Function()? id, String Function()? email, }) { return AuditLogActorUser(
   id: id != null ? id() : this.id,
   email: email != null ? email() : this.email,

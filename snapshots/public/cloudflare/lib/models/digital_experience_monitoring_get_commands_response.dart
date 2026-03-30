@@ -11,7 +11,7 @@ final List<DigitalExperienceMonitoringGetCommandsResponseCommands>? commands;
 Map<String, dynamic> toJson() { return {
   if (commands != null) 'commands': commands?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'commands'}.contains(key)); } 
 DigitalExperienceMonitoringGetCommandsResponse copyWith({List<DigitalExperienceMonitoringGetCommandsResponseCommands> Function()? commands}) { return DigitalExperienceMonitoringGetCommandsResponse(
   commands: commands != null ? commands() : this.commands,
 ); } 

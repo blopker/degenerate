@@ -35,7 +35,7 @@ final InvoicePaymentMethodOptionsParam31MandateOptionsTransactionType? transacti
 Map<String, dynamic> toJson() { return {
   if (transactionType != null) 'transaction_type': transactionType?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'transaction_type'}.contains(key)); } 
 InvoicePaymentMethodOptionsParam31MandateOptions copyWith({InvoicePaymentMethodOptionsParam31MandateOptionsTransactionType Function()? transactionType}) { return InvoicePaymentMethodOptionsParam31MandateOptions(
   transactionType: transactionType != null ? transactionType() : this.transactionType,
 ); } 

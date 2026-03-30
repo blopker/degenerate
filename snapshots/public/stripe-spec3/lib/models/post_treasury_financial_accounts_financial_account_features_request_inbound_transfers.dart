@@ -12,7 +12,7 @@ final PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfe
 Map<String, dynamic> toJson() { return {
   if (ach != null) 'ach': ach?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ach'}.contains(key)); } 
 PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers copyWith({PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfersAch Function()? ach}) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers(
   ach: ach != null ? ach() : this.ach,
 ); } 

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (buildMinutesRefreshOn != null) 'build_minutes_refresh_on': buildMinutesRefreshOn?.toIso8601String(),
   'has_reached_build_minutes_limit': ?hasReachedBuildMinutesLimit,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_minutes_refresh_on', 'has_reached_build_minutes_limit'}.contains(key)); } 
 BuildsGetAccountLimitResponse copyWith({DateTime? Function()? buildMinutesRefreshOn, bool? Function()? hasReachedBuildMinutesLimit, }) { return BuildsGetAccountLimitResponse(
   buildMinutesRefreshOn: buildMinutesRefreshOn != null ? buildMinutesRefreshOn() : this.buildMinutesRefreshOn,
   hasReachedBuildMinutesLimit: hasReachedBuildMinutesLimit != null ? hasReachedBuildMinutesLimit() : this.hasReachedBuildMinutesLimit,

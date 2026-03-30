@@ -13,10 +13,18 @@ final class Api20100401ApplicationApi with ApiExecutor {const Api20100401Applica
 /// `GET /2010-04-01/Accounts/{AccountSid}/Applications.json`
 Future<ApiResult<ListApplicationResponse, Never>> listApplication({required String accountSid, String? friendlyName, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (friendlyName != null) {
+  queryParameters['FriendlyName'] = friendlyName;
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

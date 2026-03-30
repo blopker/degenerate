@@ -12,7 +12,7 @@ final List<DigitalExperienceMonitoringPostCommandsResponseCommands>? commands;
 Map<String, dynamic> toJson() { return {
   if (commands != null) 'commands': commands?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'commands'}.contains(key)); } 
 DigitalExperienceMonitoringPostCommandsResponse copyWith({List<DigitalExperienceMonitoringPostCommandsResponseCommands> Function()? commands}) { return DigitalExperienceMonitoringPostCommandsResponse(
   commands: commands != null ? commands() : this.commands,
 ); } 

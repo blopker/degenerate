@@ -11,7 +11,7 @@ final PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires? cartesBancai
 Map<String, dynamic> toJson() { return {
   if (cartesBancaires != null) 'cartes_bancaires': cartesBancaires?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cartes_bancaires'}.contains(key)); } 
 PaymentIntentParam3ThreeDSecureNetworkOptions copyWith({PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires Function()? cartesBancaires}) { return PaymentIntentParam3ThreeDSecureNetworkOptions(
   cartesBancaires: cartesBancaires != null ? cartesBancaires() : this.cartesBancaires,
 ); } 

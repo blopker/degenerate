@@ -23,7 +23,7 @@ factory MqConsumerResponseHttpPull.fromJson(Map<String, dynamic> json) { return 
 final MqHttpConsumerResponse mqHttpConsumerResponse;
 
 @override String get type { return 'http_pull'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...mqHttpConsumerResponse.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...mqHttpConsumerResponse.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MqConsumerResponseHttpPull && mqHttpConsumerResponse == other.mqHttpConsumerResponse; } 
 @override int get hashCode { return mqHttpConsumerResponse.hashCode; } 
@@ -36,7 +36,7 @@ factory MqConsumerResponseWorker.fromJson(Map<String, dynamic> json) { return Mq
 final MqWorkerConsumerResponse mqWorkerConsumerResponse;
 
 @override String get type { return 'worker'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...mqWorkerConsumerResponse.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...mqWorkerConsumerResponse.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is MqConsumerResponseWorker && mqWorkerConsumerResponse == other.mqWorkerConsumerResponse; } 
 @override int get hashCode { return mqWorkerConsumerResponse.hashCode; } 

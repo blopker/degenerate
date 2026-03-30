@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/addressing_schemas_account_identifier.dart';import '../models/response_common4.dart';/// IpAddressManagementLeasesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/addressing_lease.dart';import '../models/addressing_schemas_account_identifier.dart';/// IpAddressManagementLeasesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class IpAddressManagementLeasesApi with ApiExecutor {const IpAddressManage
 /// List all leases owned by the account.
 ///
 /// `GET /accounts/{account_id}/addressing/leases`
-Future<ApiResult<ResponseCommon4, Never>> ipAddressManagementListLeases({required AddressingSchemasAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AddressingLease>?, Never>> ipAddressManagementListLeases({required AddressingSchemasAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => AddressingLease.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

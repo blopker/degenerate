@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (scriptCount != null) 'script_count': scriptCount?.toJson(),
   if (trustedWorkers != null) 'trusted_workers': trustedWorkers?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_by', 'created_on', 'modified_by', 'modified_on', 'namespace_id', 'namespace_name', 'script_count', 'trusted_workers'}.contains(key)); } 
 WorkersNamespaceResponse copyWith({WorkersIdentifier Function()? createdBy, WorkersCreatedOn Function()? createdOn, WorkersIdentifier Function()? modifiedBy, WorkersModifiedOn Function()? modifiedOn, WorkersUuid Function()? namespaceId, WorkersDispatchNamespaceName Function()? namespaceName, WorkersScriptCount Function()? scriptCount, WorkersTrustedWorkers Function()? trustedWorkers, }) { return WorkersNamespaceResponse(
   createdBy: createdBy != null ? createdBy() : this.createdBy,
   createdOn: createdOn != null ? createdOn() : this.createdOn,

@@ -11,7 +11,7 @@ final int? defaultAsn;
 Map<String, dynamic> toJson() { return {
   'default_asn': ?defaultAsn,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_asn'}.contains(key)); } 
 NscSettingsRequest copyWith({int? Function()? defaultAsn}) { return NscSettingsRequest(
   defaultAsn: defaultAsn != null ? defaultAsn() : this.defaultAsn,
 ); } 

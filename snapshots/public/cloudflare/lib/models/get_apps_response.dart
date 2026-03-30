@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (data != null) 'data': data?.map((e) => e.toJson()).toList(),
   'success': ?success,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
 GetAppsResponse copyWith({List<GetAppsResponseData> Function()? data, bool Function()? success, }) { return GetAppsResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,

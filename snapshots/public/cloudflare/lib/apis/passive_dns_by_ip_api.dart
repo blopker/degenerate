@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_identifier.dart';import '../models/intel_start_end_params.dart';import '../models/response_common40.dart';/// PassiveDnsByIpApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_identifier.dart';import '../models/intel_passive_dns_by_ip.dart';import '../models/intel_start_end_params.dart';/// PassiveDnsByIpApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,14 +13,20 @@ final class PassiveDnsByIpApi with ApiExecutor {const PassiveDnsByIpApi(this.api
 /// Gets a list of all the domains that have resolved to a specific IP address.
 ///
 /// `GET /accounts/{account_id}/intel/dns`
-Future<ApiResult<ResponseCommon40, Never>> passiveDnsByIpGetPassiveDnsByIp({required IntelIdentifier accountId, IntelStartEndParams? startEndParams, String? ipv4, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IntelPassiveDnsByIp?, Never>> passiveDnsByIpGetPassiveDnsByIp({required IntelIdentifier accountId, IntelStartEndParams? startEndParams, String? ipv4, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (startEndParams != null) {
 queryParametersList.add(ApiQueryParameter(name: 'start_end_params', value: startEndParams.toString(), allowReserved: false));
 }
-if (ipv4 != null) queryParameters['ipv4'] = ipv4;
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (ipv4 != null) {
+  queryParameters['ipv4'] = ipv4;
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -36,7 +42,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon40.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? IntelPassiveDnsByIp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

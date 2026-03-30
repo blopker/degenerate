@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   'unit_amount': ?unitAmount,
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_unit_amount', 'tax_behavior', 'tiers', 'unit_amount', 'unit_amount_decimal'}.contains(key)); } 
 PostPricesPriceRequestCurrencyOptionsVariant1Value copyWith({PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount Function()? customUnitAmount, PostPricesPriceRequestCurrencyOptionsVariant1ValueTaxBehavior Function()? taxBehavior, List<PostPricesPriceRequestCurrencyOptionsVariant1ValueTiers> Function()? tiers, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return PostPricesPriceRequestCurrencyOptionsVariant1Value(
   customUnitAmount: customUnitAmount != null ? customUnitAmount() : this.customUnitAmount,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,

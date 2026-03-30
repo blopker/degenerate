@@ -41,7 +41,7 @@ final RealtimekitUpdatePresetPermissionsMediaScreenshareCanProduce? canProduce;
 Map<String, dynamic> toJson() { return {
   if (canProduce != null) 'can_produce': canProduce?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_produce'}.contains(key)); } 
 RealtimekitUpdatePresetPermissionsMediaScreenshare copyWith({RealtimekitUpdatePresetPermissionsMediaScreenshareCanProduce Function()? canProduce}) { return RealtimekitUpdatePresetPermissionsMediaScreenshare(
   canProduce: canProduce != null ? canProduce() : this.canProduce,
 ); } 

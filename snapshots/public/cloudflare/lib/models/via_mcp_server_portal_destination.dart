@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'mcp_server_id': ?mcpServerId,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mcp_server_id', 'type'}.contains(key)); } 
 ViaMcpServerPortalDestination copyWith({String Function()? mcpServerId, ViaMcpServerPortalDestinationType Function()? type, }) { return ViaMcpServerPortalDestination(
   mcpServerId: mcpServerId != null ? mcpServerId() : this.mcpServerId,
   type: type != null ? type() : this.type,

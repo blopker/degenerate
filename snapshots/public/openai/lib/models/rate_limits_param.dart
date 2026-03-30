@@ -13,7 +13,7 @@ final int? maxRequestsPer1Minute;
 Map<String, dynamic> toJson() { return {
   'max_requests_per_1_minute': ?maxRequestsPer1Minute,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_requests_per_1_minute'}.contains(key)); } 
 RateLimitsParam copyWith({int Function()? maxRequestsPer1Minute}) { return RateLimitsParam(
   maxRequestsPer1Minute: maxRequestsPer1Minute != null ? maxRequestsPer1Minute() : this.maxRequestsPer1Minute,
 ); } 

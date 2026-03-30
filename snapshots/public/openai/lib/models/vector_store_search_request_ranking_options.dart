@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'ranker': ranker.toJson(),
   'score_threshold': scoreThreshold,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ranker', 'score_threshold'}.contains(key)); } 
 VectorStoreSearchRequestRankingOptions copyWith({VectorStoreSearchRequestRankingOptionsRanker Function()? ranker, double Function()? scoreThreshold, }) { return VectorStoreSearchRequestRankingOptions(
   ranker: ranker != null ? ranker() : this.ranker,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,

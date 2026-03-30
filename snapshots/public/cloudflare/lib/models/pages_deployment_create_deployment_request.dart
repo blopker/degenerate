@@ -104,7 +104,7 @@ Map<String, dynamic> toJson() { return {
   'pages_build_output_dir': ?pagesBuildOutputDir,
   'wrangler_config_hash': ?wranglerConfigHash,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'_headers', '_redirects', '_routes.json', '_worker.bundle', '_worker.js', 'branch', 'commit_dirty', 'commit_hash', 'commit_message', 'functions-filepath-routing-config.json', 'manifest', 'pages_build_output_dir', 'wrangler_config_hash'}.contains(key)); } 
 PagesDeploymentCreateDeploymentRequest copyWith({Uint8List Function()? headers, Uint8List Function()? redirects, Uint8List Function()? routesJson, Uint8List Function()? workerBundle, Uint8List Function()? workerJs, String Function()? branch, PagesDeploymentCreateDeploymentRequestCommitDirty Function()? commitDirty, String Function()? commitHash, String Function()? commitMessage, Uint8List Function()? functionsFilepathRoutingConfigJson, String Function()? manifest, String Function()? pagesBuildOutputDir, String Function()? wranglerConfigHash, }) { return PagesDeploymentCreateDeploymentRequest(
   headers: headers != null ? headers() : this.headers,
   redirects: redirects != null ? redirects() : this.redirects,

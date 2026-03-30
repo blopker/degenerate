@@ -117,7 +117,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
   if (evaluationResult != null) 'evaluation_result': evaluationResult?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'actor_id', 'actor_name', 'before_sha', 'after_sha', 'ref', 'repository_id', 'repository_name', 'pushed_at', 'result', 'evaluation_result'}.contains(key)); } 
 RuleSuites2 copyWith({int Function()? id, int Function()? actorId, String Function()? actorName, String Function()? beforeSha, String Function()? afterSha, String Function()? ref, int Function()? repositoryId, String Function()? repositoryName, DateTime Function()? pushedAt, RuleSuites2Result Function()? result, RuleSuites2EvaluationResult Function()? evaluationResult, }) { return RuleSuites2(
   id: id != null ? id() : this.id,
   actorId: actorId != null ? actorId() : this.actorId,

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'value'}.contains(key)); } 
 ActionsUpdateRepoVariableRequest copyWith({String Function()? name, String Function()? value, }) { return ActionsUpdateRepoVariableRequest(
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,

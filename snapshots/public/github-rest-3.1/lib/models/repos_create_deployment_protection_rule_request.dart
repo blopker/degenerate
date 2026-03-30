@@ -12,7 +12,7 @@ final int? integrationId;
 Map<String, dynamic> toJson() { return {
   'integration_id': ?integrationId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'integration_id'}.contains(key)); } 
 ReposCreateDeploymentProtectionRuleRequest copyWith({int Function()? integrationId}) { return ReposCreateDeploymentProtectionRuleRequest(
   integrationId: integrationId != null ? integrationId() : this.integrationId,
 ); } 

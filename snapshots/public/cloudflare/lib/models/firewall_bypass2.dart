@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'value'}.contains(key)); } 
 FirewallBypass2 copyWith({FirewallBypass2Name Function()? name, String Function()? value, }) { return FirewallBypass2(
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,

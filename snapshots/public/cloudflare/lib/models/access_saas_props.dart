@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'tags': ?tags,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_idps', 'app_launcher_visible', 'auto_redirect_to_identity', 'custom_pages', 'logo_url', 'name', 'saas_app', 'scim_config', 'tags', 'type'}.contains(key)); } 
 AccessSaasProps copyWith({List<String> Function()? allowedIdps, AccessAppLauncherVisible Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity Function()? autoRedirectToIdentity, List<String> Function()? customPages, AccessLogoUrl Function()? logoUrl, AccessAppsComponentsSchemasName Function()? name, AccessSaasPropsSaasApp Function()? saasApp, AccessScimConfig Function()? scimConfig, List<String> Function()? tags, AccessType Function()? type, }) { return AccessSaasProps(
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,

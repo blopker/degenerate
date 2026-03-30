@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'defaultMode': ?defaultMode,
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'defaultMode', 'items'}.contains(key)); } 
 VolumeSource copyWith({int Function()? defaultMode, List<VolumeFile> Function()? items, }) { return VolumeSource(
   defaultMode: defaultMode != null ? defaultMode() : this.defaultMode,
   items: items != null ? items() : this.items,

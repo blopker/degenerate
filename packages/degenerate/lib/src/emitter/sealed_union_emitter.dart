@@ -161,46 +161,14 @@ class DiscriminatedUnionEmitter {
               ..body = const Code('return json;'),
           ),
         )
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'operator =='
-              ..annotations.add(refer('override'))
-              ..returns = refer('bool')
-              ..requiredParameters.add(
-                Parameter(
-                  (p) => p
-                    ..name = 'other'
-                    ..type = refer('Object'),
-                ),
-              )
-              ..body = Code(
-                'return identical(this, other) ||\n'
-                '    other is $className && json == other.json;',
-              ),
-          ),
-        )
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'hashCode'
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = refer('int')
-              ..body = const Code('return json.hashCode;'),
-          ),
-        )
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'toString'
-              ..annotations.add(refer('override'))
-              ..returns = refer('String')
-              ..body = Code(
-                "return '${escapeNameForString(union.name)}.unknown(\$json)';",
-              ),
-          ),
-        ),
+        ..methods.add(buildEqualsOverride(
+            'return identical(this, other) ||\n'
+            '    other is $className && json == other.json;',
+          ))
+        ..methods.add(buildHashCodeOverride('return json.hashCode;'))
+        ..methods.add(buildToStringOverride(
+            "return '${escapeNameForString(union.name)}.unknown(\$json)';",
+          )),
     );
   }
 
@@ -256,7 +224,8 @@ class DiscriminatedUnionEmitter {
     final toJsonEntries = <String>["  '$_discJsonKey': $_discDartName,"];
     for (final f in fields) {
       final key = "'${f.originalName}'";
-      final value = buildToJsonCode(f.type, f.name);
+      final isNullable = !f.isRequired || f.type.isNullable;
+      final value = buildToJsonCode(f.type, f.name, nullable: isNullable);
       if (!f.isRequired) {
         if (value == f.name) {
           toJsonEntries.add("  $key: ?${f.name},");
@@ -280,7 +249,13 @@ class DiscriminatedUnionEmitter {
         ? 'return runtimeType.hashCode;'
         : 'return Object.hash(runtimeType, $hashFields);';
 
-    final toStrFields = fields.map((f) => '${f.name}: \$${f.name}').join(', ');
+    final toStrFields = fields.map((f) {
+      if (f.name.startsWith(r'$')) {
+        final escaped = f.name.replaceAll(r'$', r'\$');
+        return '$escaped: \${${f.name}}';
+      }
+      return '${f.name}: \$${f.name}';
+    }).join(', ');
 
     return Class(
       (b) => b
@@ -329,43 +304,11 @@ class DiscriminatedUnionEmitter {
               ..body = Code('return {\n${toJsonEntries.join('\n')}\n};'),
           ),
         )
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'operator =='
-              ..annotations.add(refer('override'))
-              ..returns = refer('bool')
-              ..requiredParameters.add(
-                Parameter(
-                  (p) => p
-                    ..name = 'other'
-                    ..type = refer('Object'),
-                ),
-              )
-              ..body = Code(eqBody),
-          ),
-        )
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'hashCode'
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = refer('int')
-              ..body = Code(hashBody),
-          ),
-        )
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'toString'
-              ..annotations.add(refer('override'))
-              ..returns = refer('String')
-              ..body = Code(
-                "return '${escapeNameForString(className)}($toStrFields)';",
-              ),
-          ),
-        ),
+        ..methods.add(buildEqualsOverride(eqBody))
+        ..methods.add(buildHashCodeOverride(hashBody))
+        ..methods.add(buildToStringOverride(
+            "return '${escapeNameForString(className)}($toStrFields)';",
+          )),
     );
   }
 
@@ -378,7 +321,8 @@ class DiscriminatedUnionEmitter {
       IrTypeRef() ||
       IrDiscriminatedUnion() ||
       IrUntaggedUnion() ||
-      IrAnyOf() => "return {'$_discJsonKey': $_discDartName, ...$toJsonExpr};",
+      // Spread first so the discriminator key always wins.
+      IrAnyOf() => "return {...$toJsonExpr, '$_discJsonKey': $_discDartName};",
       _ => "return {'$_discJsonKey': $_discDartName, 'data': $toJsonExpr};",
     };
   }
@@ -451,37 +395,12 @@ class DiscriminatedUnionEmitter {
               ..body = Code(_refVariantToJsonBody(type, fieldName)),
           ),
         )
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'operator =='
-              ..annotations.add(refer('override'))
-              ..returns = refer('bool')
-              ..requiredParameters.add(
-                Parameter(
-                  (p) => p
-                    ..name = 'other'
-                    ..type = refer('Object'),
-                ),
-              )
-              ..body = Code(
-                'return identical(this, other) ||\n'
-                '    other is $className && $fieldName == other.$fieldName;',
-              ),
-          ),
-        )
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'hashCode'
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = refer('int')
-              ..body = Code('return $fieldName.hashCode;'),
-          ),
-        )
-        ..methods.add(
-          Method((m) {
+        ..methods.add(buildEqualsOverride(
+            'return identical(this, other) ||\n'
+            '    other is $className && $fieldName == other.$fieldName;',
+          ))
+        ..methods.add(buildHashCodeOverride('return $fieldName.hashCode;'))
+        ..methods.add(() {
             final String fieldStr;
             if (fieldName.startsWith(r'$')) {
               final escaped = fieldName.replaceAll(r'$', r'\$');
@@ -489,15 +408,10 @@ class DiscriminatedUnionEmitter {
             } else {
               fieldStr = '$fieldName: \$$fieldName';
             }
-            m
-              ..name = 'toString'
-              ..annotations.add(refer('override'))
-              ..returns = refer('String')
-              ..body = Code(
-                "return '${escapeNameForString(className)}($fieldStr)';",
-              );
-          }),
-        ),
+            return buildToStringOverride(
+              "return '${escapeNameForString(className)}($fieldStr)';",
+            );
+          }()),
     );
   }
 }
@@ -708,39 +622,13 @@ class UntaggedUnionEmitter {
           ),
         )
         ..methods.addAll([
-          Method(
-            (m) => m
-              ..name = 'operator =='
-              ..annotations.add(refer('override'))
-              ..returns = refer('bool')
-              ..requiredParameters.add(
-                Parameter(
-                  (p) => p
-                    ..name = 'other'
-                    ..type = refer('Object'),
-                ),
-              )
-              ..body = Code(
-                'return identical(this, other) ||\n'
-                '    other is $className && _value == other._value;',
-              ),
+          buildEqualsOverride(
+            'return identical(this, other) ||\n'
+            '    other is $className && _value == other._value;',
           ),
-          Method(
-            (m) => m
-              ..name = 'hashCode'
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = refer('int')
-              ..body = const Code('return _value.hashCode;'),
-          ),
-          Method(
-            (m) => m
-              ..name = 'toString'
-              ..annotations.add(refer('override'))
-              ..returns = refer('String')
-              ..body = Code(
-                "return '${escapeNameForString(union.name)}.${toCamelCase(typeName)}(\$_value)';",
-              ),
+          buildHashCodeOverride('return _value.hashCode;'),
+          buildToStringOverride(
+            "return '${escapeNameForString(union.name)}.${toCamelCase(typeName)}(\$_value)';",
           ),
         ]),
     );
@@ -786,39 +674,13 @@ class UntaggedUnionEmitter {
           ),
         )
         ..methods.addAll([
-          Method(
-            (m) => m
-              ..name = 'operator =='
-              ..annotations.add(refer('override'))
-              ..returns = refer('bool')
-              ..requiredParameters.add(
-                Parameter(
-                  (p) => p
-                    ..name = 'other'
-                    ..type = refer('Object'),
-                ),
-              )
-              ..body = Code(
-                'return identical(this, other) ||\n'
-                '    other is $className && _value == other._value;',
-              ),
+          buildEqualsOverride(
+            'return identical(this, other) ||\n'
+            '    other is $className && _value == other._value;',
           ),
-          Method(
-            (m) => m
-              ..name = 'hashCode'
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = refer('int')
-              ..body = const Code('return _value.hashCode;'),
-          ),
-          Method(
-            (m) => m
-              ..name = 'toString'
-              ..annotations.add(refer('override'))
-              ..returns = refer('String')
-              ..body = Code(
-                "return '${escapeNameForString(union.name)}.unknown(\$_value)';",
-              ),
+          buildHashCodeOverride('return _value.hashCode;'),
+          buildToStringOverride(
+            "return '${escapeNameForString(union.name)}.unknown(\$_value)';",
           ),
         ]),
     );

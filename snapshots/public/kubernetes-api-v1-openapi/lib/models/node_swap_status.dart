@@ -13,7 +13,7 @@ final int? capacity;
 Map<String, dynamic> toJson() { return {
   'capacity': ?capacity,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capacity'}.contains(key)); } 
 NodeSwapStatus copyWith({int Function()? capacity}) { return NodeSwapStatus(
   capacity: capacity != null ? capacity() : this.capacity,
 ); } 

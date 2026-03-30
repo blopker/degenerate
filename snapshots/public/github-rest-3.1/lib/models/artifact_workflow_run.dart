@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'head_branch': ?headBranch,
   'head_sha': ?headSha,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'repository_id', 'head_repository_id', 'head_branch', 'head_sha'}.contains(key)); } 
 ArtifactWorkflowRun copyWith({int Function()? id, int Function()? repositoryId, int Function()? headRepositoryId, String Function()? headBranch, String Function()? headSha, }) { return ArtifactWorkflowRun(
   id: id != null ? id() : this.id,
   repositoryId: repositoryId != null ? repositoryId() : this.repositoryId,

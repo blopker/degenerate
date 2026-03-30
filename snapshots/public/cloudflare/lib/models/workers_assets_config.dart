@@ -96,7 +96,7 @@ Map<String, dynamic> toJson() { return {
   if (runWorkerFirst != null) 'run_worker_first': runWorkerFirst?.toJson(),
   'serve_directly': ?serveDirectly,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'_headers', '_redirects', 'html_handling', 'not_found_handling', 'run_worker_first', 'serve_directly'}.contains(key)); } 
 WorkersAssetsConfig copyWith({String Function()? headers, String Function()? redirects, WorkersAssetsConfigHtmlHandling Function()? htmlHandling, WorkersAssetsConfigNotFoundHandling Function()? notFoundHandling, WorkersAssetsConfigRunWorkerFirst Function()? runWorkerFirst, bool Function()? serveDirectly, }) { return WorkersAssetsConfig(
   headers: headers != null ? headers() : this.headers,
   redirects: redirects != null ? redirects() : this.redirects,

@@ -1,20 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_address_map_identifier.dart';import 'addressing_default_sni.dart';import 'addressing_enabled.dart';import 'addressing_schemas_description.dart';import 'addressing_timestamp.dart';/// If set to false, then the Address Map cannot be deleted via API. This is true for Cloudflare-managed maps.
-extension type const AddressingCanDelete(bool value) {
-factory AddressingCanDelete.fromJson(bool json) => AddressingCanDelete(json);
-
-bool toJson() => value;
-
-}
-/// If set to false, then the IPs on the Address Map cannot be modified via the API. This is true for Cloudflare-managed maps.
-extension type const AddressingCanModifyIps(bool value) {
-factory AddressingCanModifyIps.fromJson(bool json) => AddressingCanModifyIps(json);
-
-bool toJson() => value;
-
-}
-final class AddressingAddressMaps {const AddressingAddressMaps({this.canDelete, this.canModifyIps, this.createdAt, this.defaultSni, this.description, this.enabled, this.id, this.modifiedAt, });
+import 'addressing_address_map_identifier.dart';import 'addressing_can_delete.dart';import 'addressing_can_modify_ips.dart';import 'addressing_default_sni.dart';import 'addressing_enabled.dart';import 'addressing_schemas_description.dart';import 'addressing_timestamp.dart';final class AddressingAddressMaps {const AddressingAddressMaps({this.canDelete, this.canModifyIps, this.createdAt, this.defaultSni, this.description, this.enabled, this.id, this.modifiedAt, });
 
 factory AddressingAddressMaps.fromJson(Map<String, dynamic> json) { return AddressingAddressMaps(
   canDelete: json['can_delete'] != null ? AddressingCanDelete.fromJson(json['can_delete'] as bool) : null,
@@ -53,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (modifiedAt != null) 'modified_at': modifiedAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_delete', 'can_modify_ips', 'created_at', 'default_sni', 'description', 'enabled', 'id', 'modified_at'}.contains(key)); } 
 AddressingAddressMaps copyWith({AddressingCanDelete Function()? canDelete, AddressingCanModifyIps Function()? canModifyIps, AddressingTimestamp Function()? createdAt, AddressingDefaultSni? Function()? defaultSni, AddressingSchemasDescription? Function()? description, AddressingEnabled? Function()? enabled, AddressingAddressMapIdentifier Function()? id, AddressingTimestamp Function()? modifiedAt, }) { return AddressingAddressMaps(
   canDelete: canDelete != null ? canDelete() : this.canDelete,
   canModifyIps: canModifyIps != null ? canModifyIps() : this.canModifyIps,

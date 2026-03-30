@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
   'revised_prompt': ?revisedPrompt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'b64_json', 'url', 'revised_prompt'}.contains(key)); } 
 Image copyWith({String Function()? b64Json, String Function()? url, String Function()? revisedPrompt, }) { return Image(
   b64Json: b64Json != null ? b64Json() : this.b64Json,
   url: url != null ? url() : this.url,

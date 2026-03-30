@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (delaySeconds != null) 'delay_seconds': delaySeconds?.toJson(),
   if (leaseId != null) 'lease_id': leaseId?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delay_seconds', 'lease_id'}.contains(key)); } 
 QueuesAckMessagesRequestRetries copyWith({MqRetryDelay Function()? delaySeconds, MqLeaseId Function()? leaseId, }) { return QueuesAckMessagesRequestRetries(
   delaySeconds: delaySeconds != null ? delaySeconds() : this.delaySeconds,
   leaseId: leaseId != null ? leaseId() : this.leaseId,

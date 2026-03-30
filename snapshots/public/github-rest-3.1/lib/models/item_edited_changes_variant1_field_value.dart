@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (from != null) 'from': from?.toJson(),
   if (to != null) 'to': to?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'field_node_id', 'field_type', 'field_name', 'project_number', 'from', 'to'}.contains(key)); } 
 ItemEditedChangesVariant1FieldValue copyWith({String Function()? fieldNodeId, String Function()? fieldType, String Function()? fieldName, int Function()? projectNumber, ItemEditedChangesVariant1FieldValueFrom? Function()? from, ItemEditedChangesVariant1FieldValueTo? Function()? to, }) { return ItemEditedChangesVariant1FieldValue(
   fieldNodeId: fieldNodeId != null ? fieldNodeId() : this.fieldNodeId,
   fieldType: fieldType != null ? fieldType() : this.fieldType,

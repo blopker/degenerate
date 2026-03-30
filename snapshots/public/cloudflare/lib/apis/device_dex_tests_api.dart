@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/device_dex_test_details_kind.dart';import '../models/digital_experience_monitoring_account_identifier.dart';import '../models/digital_experience_monitoring_device_dex_test_schemas_http.dart';import '../models/digital_experience_monitoring_schemas_test_id.dart';import '../models/digital_experience_monitoring_uuid.dart';import '../models/response_common19.dart';/// DeviceDexTestsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/device_dex_test_details_kind.dart';import '../models/digital_experience_monitoring_account_identifier.dart';import '../models/digital_experience_monitoring_device_dex_test_schemas_http.dart';import '../models/digital_experience_monitoring_dex_delete_response_collection_result.dart';import '../models/digital_experience_monitoring_schemas_test_id.dart';import '../models/digital_experience_monitoring_uuid.dart';/// DeviceDexTestsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,12 +13,20 @@ final class DeviceDexTestsApi with ApiExecutor {const DeviceDexTestsApi(this.api
 /// Fetch all DEX tests
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<ResponseCommon19, Never>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DigitalExperienceMonitoringDeviceDexTestSchemasHttp>?, Never>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (testName != null) queryParameters['testName'] = testName;
-if (kind != null) queryParameters['kind'] = kind.toJson();
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (testName != null) {
+  queryParameters['testName'] = testName;
+}
+if (kind != null) {
+  queryParameters['kind'] = kind.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -34,7 +42,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon19.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -43,7 +52,7 @@ return execute(
 /// Create a DEX test.
 ///
 /// `POST /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<ResponseCommon19, Never>> deviceDexTestCreateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, Never>> deviceDexTestCreateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -57,7 +66,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon19.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -66,7 +76,7 @@ return execute(
 /// Fetch a single DEX test.
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<ResponseCommon19, Never>> deviceDexTestGetDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSchemasTestId dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, Never>> deviceDexTestGetDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSchemasTestId dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -78,7 +88,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon19.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -87,7 +98,7 @@ return execute(
 /// Update a DEX test.
 ///
 /// `PUT /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<ResponseCommon19, Never>> deviceDexTestUpdateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, Never>> deviceDexTestUpdateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -101,7 +112,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon19.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -110,7 +122,7 @@ return execute(
 /// Delete a Device DEX test. Returns the remaining device dex tests for the account.
 ///
 /// `DELETE /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<ResponseCommon19, Never>> deviceDexTestDeleteDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDexDeleteResponseCollectionResult?, Never>> deviceDexTestDeleteDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -122,7 +134,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon19.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? DigitalExperienceMonitoringDexDeleteResponseCollectionResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

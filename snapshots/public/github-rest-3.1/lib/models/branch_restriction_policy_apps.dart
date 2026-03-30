@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   if (permissions != null) 'permissions': permissions?.toJson(),
   'events': ?events,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'slug', 'node_id', 'owner', 'name', 'client_id', 'description', 'external_url', 'html_url', 'created_at', 'updated_at', 'permissions', 'events'}.contains(key)); } 
 BranchRestrictionPolicyApps copyWith({int Function()? id, String Function()? slug, String Function()? nodeId, BranchRestrictionPolicyAppsOwner Function()? owner, String Function()? name, String Function()? clientId, String Function()? description, String Function()? externalUrl, String Function()? htmlUrl, String Function()? createdAt, String Function()? updatedAt, BranchRestrictionPolicyAppsPermissions Function()? permissions, List<String> Function()? events, }) { return BranchRestrictionPolicyApps(
   id: id != null ? id() : this.id,
   slug: slug != null ? slug() : this.slug,

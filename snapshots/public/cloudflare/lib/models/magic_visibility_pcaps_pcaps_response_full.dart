@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
   if (timeLimit != null) 'time_limit': timeLimit?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'byte_limit', 'colo_name', 'destination_conf', 'error_message', 'filter_v1', 'id', 'packets_captured', 'status', 'stop_requested', 'submitted', 'system', 'time_limit', 'type'}.contains(key)); } 
 MagicVisibilityPcapsPcapsResponseFull copyWith({MagicVisibilityPcapsPcapsByteLimit Function()? byteLimit, MagicVisibilityPcapsPcapsColoName Function()? coloName, MagicVisibilityPcapsPcapsDestinationConf Function()? destinationConf, MagicVisibilityPcapsPcapsErrorMessage Function()? errorMessage, MagicVisibilityPcapsPcapsFilter Function()? filterV1, MagicVisibilityPcapsPcapsId Function()? id, MagicVisibilityPcapsPcapsPacketsCaptured Function()? packetsCaptured, MagicVisibilityPcapsPcapsStatus Function()? status, MagicVisibilityPcapsPcapsStopRequested Function()? stopRequested, MagicVisibilityPcapsPcapsSubmitted Function()? submitted, MagicVisibilityPcapsPcapsSystem Function()? system, MagicVisibilityPcapsPcapsTimeLimitFull Function()? timeLimit, MagicVisibilityPcapsPcapsType Function()? type, }) { return MagicVisibilityPcapsPcapsResponseFull(
   byteLimit: byteLimit != null ? byteLimit() : this.byteLimit,
   coloName: coloName != null ? coloName() : this.coloName,

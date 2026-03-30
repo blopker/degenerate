@@ -32,13 +32,27 @@ return execute(
 /// `GET /2010-04-01/Accounts/{AccountSid}/Notifications.json`
 Future<ApiResult<ListNotificationResponse, Never>> listNotification({required String accountSid, int? log, String? messageDate, String? messageDateBefore, String? messageDateAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (log != null) queryParameters['Log'] = log.toString();
-if (messageDate != null) queryParameters['MessageDate'] = messageDate;
-if (messageDateBefore != null) queryParameters['MessageDate<'] = messageDateBefore;
-if (messageDateAfter != null) queryParameters['MessageDate>'] = messageDateAfter;
-if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
-if (page != null) queryParameters['Page'] = page.toString();
-if (pageToken != null) queryParameters['PageToken'] = pageToken;
+if (log != null) {
+  queryParameters['Log'] = log.toString();
+}
+if (messageDate != null) {
+  queryParameters['MessageDate'] = messageDate;
+}
+if (messageDateBefore != null) {
+  queryParameters['MessageDate<'] = messageDateBefore;
+}
+if (messageDateAfter != null) {
+  queryParameters['MessageDate>'] = messageDateAfter;
+}
+if (pageSize != null) {
+  queryParameters['PageSize'] = pageSize.toString();
+}
+if (page != null) {
+  queryParameters['Page'] = page.toString();
+}
+if (pageToken != null) {
+  queryParameters['PageToken'] = pageToken;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

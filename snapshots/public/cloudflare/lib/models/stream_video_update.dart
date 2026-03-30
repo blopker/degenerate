@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (thumbnailTimestampPct != null) 'thumbnailTimestampPct': thumbnailTimestampPct?.toJson(),
   if (uploadExpiry != null) 'uploadExpiry': uploadExpiry?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowedOrigins', 'creator', 'maxDurationSeconds', 'meta', 'requireSignedURLs', 'scheduledDeletion', 'thumbnailTimestampPct', 'uploadExpiry'}.contains(key)); } 
 StreamVideoUpdate copyWith({List<String> Function()? allowedOrigins, StreamCreator Function()? creator, StreamMaxDurationSeconds Function()? maxDurationSeconds, Map<String, dynamic> Function()? meta, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamOneTimeUploadExpiry Function()? uploadExpiry, }) { return StreamVideoUpdate(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   creator: creator != null ? creator() : this.creator,

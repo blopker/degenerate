@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'is_learned': ?isLearned,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'id', 'is_learned', 'name'}.contains(key)); } 
 ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema copyWith({ShieldTimestamp Function()? createdAt, ShieldUuid Function()? id, bool Function()? isLearned, String Function()? name, }) { return ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,

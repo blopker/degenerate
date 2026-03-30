@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'total_ingest_seconds': ?totalIngestSeconds,
   'total_viewer_seconds': ?totalViewerSeconds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'total_ingest_seconds', 'total_viewer_seconds'}.contains(key)); } 
 GetLivestreamAnalyticsCompleteResponseData copyWith({int Function()? count, int Function()? totalIngestSeconds, int Function()? totalViewerSeconds, }) { return GetLivestreamAnalyticsCompleteResponseData(
   count: count != null ? count() : this.count,
   totalIngestSeconds: totalIngestSeconds != null ? totalIngestSeconds() : this.totalIngestSeconds,

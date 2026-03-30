@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_base.dart';final class CacheRulesRegionalTieredCacheResponseValue {const CacheRulesRegionalTieredCacheResponseValue({this.result});
+import 'cache_rules_regional_tiered_cache_response_value_result.dart';final class CacheRulesRegionalTieredCacheResponseValue {const CacheRulesRegionalTieredCacheResponseValue({this.result});
 
 factory CacheRulesRegionalTieredCacheResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesRegionalTieredCacheResponseValue(
-  result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? CacheRulesRegionalTieredCacheResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
-/// Instructs Cloudflare to check a regional hub data center on the way to your upper tier. This can help improve performance for smart and custom tiered cache topologies.
-final CacheRulesBase? result;
+final CacheRulesRegionalTieredCacheResponseValueResult? result;
 
 Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
-CacheRulesRegionalTieredCacheResponseValue copyWith({CacheRulesBase Function()? result}) { return CacheRulesRegionalTieredCacheResponseValue(
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
+CacheRulesRegionalTieredCacheResponseValue copyWith({CacheRulesRegionalTieredCacheResponseValueResult Function()? result}) { return CacheRulesRegionalTieredCacheResponseValue(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

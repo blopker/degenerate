@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_first_name.dart';import 'iam_last_name.dart';/// The country in which the user lives.
-extension type const IamCountry(String value) {
-factory IamCountry.fromJson(String json) => IamCountry(json);
-
-String toJson() => value;
-
-}
-/// User's telephone number
-extension type const IamTelephone(String value) {
-factory IamTelephone.fromJson(String json) => IamTelephone(json);
-
-String toJson() => value;
-
-}
-/// The zipcode or postal code where the user lives.
-extension type const IamZipcode(String value) {
-factory IamZipcode.fromJson(String json) => IamZipcode(json);
-
-String toJson() => value;
-
-}
-final class UserEditUserRequest {const UserEditUserRequest({this.country, this.firstName, this.lastName, this.telephone, this.zipcode, });
+import 'iam_country.dart';import 'iam_first_name.dart';import 'iam_last_name.dart';import 'iam_telephone.dart';import 'iam_zipcode.dart';final class UserEditUserRequest {const UserEditUserRequest({this.country, this.firstName, this.lastName, this.telephone, this.zipcode, });
 
 factory UserEditUserRequest.fromJson(Map<String, dynamic> json) { return UserEditUserRequest(
   country: json['country'] != null ? IamCountry.fromJson(json['country'] as String) : null,
@@ -53,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (telephone != null) 'telephone': telephone?.toJson(),
   if (zipcode != null) 'zipcode': zipcode?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country', 'first_name', 'last_name', 'telephone', 'zipcode'}.contains(key)); } 
 UserEditUserRequest copyWith({IamCountry? Function()? country, IamFirstName? Function()? firstName, IamLastName? Function()? lastName, IamTelephone? Function()? telephone, IamZipcode? Function()? zipcode, }) { return UserEditUserRequest(
   country: country != null ? country() : this.country,
   firstName: firstName != null ? firstName() : this.firstName,

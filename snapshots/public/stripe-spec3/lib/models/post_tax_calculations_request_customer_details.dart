@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   if (taxIds != null) 'tax_ids': taxIds?.map((e) => e.toJson()).toList(),
   if (taxabilityOverride != null) 'taxability_override': taxabilityOverride?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_source', 'ip_address', 'tax_ids', 'taxability_override'}.contains(key)); } 
 PostTaxCalculationsRequestCustomerDetails copyWith({PostTaxCalculationsRequestCustomerDetailsAddress Function()? address, PostTaxCalculationsRequestCustomerDetailsAddressSource Function()? addressSource, String Function()? ipAddress, List<PostTaxCalculationsRequestCustomerDetailsTaxIds> Function()? taxIds, PostTaxCalculationsRequestCustomerDetailsTaxabilityOverride Function()? taxabilityOverride, }) { return PostTaxCalculationsRequestCustomerDetails(
   address: address != null ? address() : this.address,
   addressSource: addressSource != null ? addressSource() : this.addressSource,

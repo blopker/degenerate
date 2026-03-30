@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'events': ?events,
   'name': ?name,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination', 'enabled', 'events', 'name'}.contains(key)); } 
 SubscriptionsPatchRequest copyWith({MqEventDestination Function()? destination, bool Function()? enabled, List<String> Function()? events, String Function()? name, }) { return SubscriptionsPatchRequest(
   destination: destination != null ? destination() : this.destination,
   enabled: enabled != null ? enabled() : this.enabled,

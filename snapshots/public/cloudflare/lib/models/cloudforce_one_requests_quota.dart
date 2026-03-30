@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'quota': ?quota,
   'remaining': ?remaining,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'anniversary_date', 'quarter_anniversary_date', 'quota', 'remaining'}.contains(key)); } 
 CloudforceOneRequestsQuota copyWith({CloudforceOneRequestsTime Function()? anniversaryDate, CloudforceOneRequestsTime Function()? quarterAnniversaryDate, int Function()? quota, int Function()? remaining, }) { return CloudforceOneRequestsQuota(
   anniversaryDate: anniversaryDate != null ? anniversaryDate() : this.anniversaryDate,
   quarterAnniversaryDate: quarterAnniversaryDate != null ? quarterAnniversaryDate() : this.quarterAnniversaryDate,

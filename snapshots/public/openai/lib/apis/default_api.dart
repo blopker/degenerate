@@ -15,10 +15,18 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 /// `GET /containers`
 Future<ApiResult<ContainerListResource, Never>> listContainers({int? limit, ListContainersOrder? order, String? after, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
-if (name != null) queryParameters['name'] = name;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (name != null) {
+  queryParameters['name'] = name;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -108,9 +116,15 @@ return execute(
 /// `GET /containers/{container_id}/files`
 Future<ApiResult<ContainerFileListResource, Never>> listContainerFiles({required String containerId, int? limit, ListContainerFilesOrder? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -223,9 +237,15 @@ return execute(
 /// `GET /organization/admin_api_keys`
 Future<ApiResult<KeyList, Never>> adminApiKeysList({String? after, KeysListOrder? order, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (after != null) queryParameters['after'] = after;
-if (order != null) queryParameters['order'] = order.toJson();
-if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -403,10 +423,18 @@ return execute(
 /// `GET /chatkit/threads/{thread_id}/items`
 Future<ApiResult<ThreadItemListResource, Never>> listThreadItemsMethod({required String threadId, int? limit, OrderEnum? order, String? after, String? before, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
-if (before != null) queryParameters['before'] = before;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -469,11 +497,21 @@ return execute(
 /// `GET /chatkit/threads`
 Future<ApiResult<ThreadListResource, Never>> listThreadsMethod({int? limit, OrderEnum? order, String? after, String? before, String? user, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (order != null) queryParameters['order'] = order.toJson();
-if (after != null) queryParameters['after'] = after;
-if (before != null) queryParameters['before'] = before;
-if (user != null) queryParameters['user'] = user;
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (order != null) {
+  queryParameters['order'] = order.toJson();
+}
+if (after != null) {
+  queryParameters['after'] = after;
+}
+if (before != null) {
+  queryParameters['before'] = before;
+}
+if (user != null) {
+  queryParameters['user'] = user;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

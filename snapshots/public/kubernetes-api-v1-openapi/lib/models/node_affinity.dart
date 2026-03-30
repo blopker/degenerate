@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (preferredDuringSchedulingIgnoredDuringExecution != null) 'preferredDuringSchedulingIgnoredDuringExecution': preferredDuringSchedulingIgnoredDuringExecution?.map((e) => e.toJson()).toList(),
   if (requiredDuringSchedulingIgnoredDuringExecution != null) 'requiredDuringSchedulingIgnoredDuringExecution': requiredDuringSchedulingIgnoredDuringExecution?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferredDuringSchedulingIgnoredDuringExecution', 'requiredDuringSchedulingIgnoredDuringExecution'}.contains(key)); } 
 NodeAffinity copyWith({List<PreferredSchedulingTerm> Function()? preferredDuringSchedulingIgnoredDuringExecution, NodeSelector Function()? requiredDuringSchedulingIgnoredDuringExecution, }) { return NodeAffinity(
   preferredDuringSchedulingIgnoredDuringExecution: preferredDuringSchedulingIgnoredDuringExecution != null ? preferredDuringSchedulingIgnoredDuringExecution() : this.preferredDuringSchedulingIgnoredDuringExecution,
   requiredDuringSchedulingIgnoredDuringExecution: requiredDuringSchedulingIgnoredDuringExecution != null ? requiredDuringSchedulingIgnoredDuringExecution() : this.requiredDuringSchedulingIgnoredDuringExecution,

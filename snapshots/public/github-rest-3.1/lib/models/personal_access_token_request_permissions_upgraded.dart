@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'repository': ?repository,
   'other': ?other,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'organization', 'repository', 'other'}.contains(key)); } 
 PersonalAccessTokenRequestPermissionsUpgraded copyWith({Map<String, String> Function()? organization, Map<String, String> Function()? repository, Map<String, String> Function()? other, }) { return PersonalAccessTokenRequestPermissionsUpgraded(
   organization: organization != null ? organization() : this.organization,
   repository: repository != null ? repository() : this.repository,

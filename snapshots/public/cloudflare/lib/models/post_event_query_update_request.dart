@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'rule_enabled': ?ruleEnabled,
   'rule_scope': ?ruleScope,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alert_enabled', 'alert_rollup_enabled', 'name', 'query_json', 'rule_enabled', 'rule_scope'}.contains(key)); } 
 PostEventQueryUpdateRequest copyWith({bool Function()? alertEnabled, bool Function()? alertRollupEnabled, String Function()? name, String Function()? queryJson, bool Function()? ruleEnabled, String Function()? ruleScope, }) { return PostEventQueryUpdateRequest(
   alertEnabled: alertEnabled != null ? alertEnabled() : this.alertEnabled,
   alertRollupEnabled: alertRollupEnabled != null ? alertRollupEnabled() : this.alertRollupEnabled,

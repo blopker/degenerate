@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'file_id': ?fileId,
   'quote': ?quote,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'quote'}.contains(key)); } 
 MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation copyWith({String Function()? fileId, String Function()? quote, }) { return MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation(
   fileId: fileId != null ? fileId() : this.fileId,
   quote: quote != null ? quote() : this.quote,

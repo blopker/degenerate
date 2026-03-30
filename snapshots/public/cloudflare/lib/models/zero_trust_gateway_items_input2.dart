@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (description != null) 'description': description?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'value'}.contains(key)); } 
 ZeroTrustGatewayItemsInput2 copyWith({ZeroTrustGatewayDescriptionItem Function()? description, ZeroTrustGatewayValue Function()? value, }) { return ZeroTrustGatewayItemsInput2(
   description: description != null ? description() : this.description,
   value: value != null ? value() : this.value,

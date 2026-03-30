@@ -11,7 +11,7 @@ final GetParticipantDataFromPeerIdResponseDataParticipant? participant;
 Map<String, dynamic> toJson() { return {
   if (participant != null) 'participant': participant?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'participant'}.contains(key)); } 
 GetParticipantDataFromPeerIdResponseData copyWith({GetParticipantDataFromPeerIdResponseDataParticipant Function()? participant}) { return GetParticipantDataFromPeerIdResponseData(
   participant: participant != null ? participant() : this.participant,
 ); } 

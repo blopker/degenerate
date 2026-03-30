@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
   'vanity_name_servers': ?vanityNameServers,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'paused', 'plan', 'type', 'vanity_name_servers'}.contains(key)); } 
 Zones0PatchRequest copyWith({ZonesPaused Function()? paused, Zones0PatchRequestPlan Function()? plan, Zones0PatchRequestType Function()? type, List<String> Function()? vanityNameServers, }) { return Zones0PatchRequest(
   paused: paused != null ? paused() : this.paused,
   plan: plan != null ? plan() : this.plan,

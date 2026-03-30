@@ -1984,7 +1984,7 @@ Map<String, dynamic> toJson() { return {
   if (reportingCategory != null) 'reporting_category': reportingCategory?.toJson(),
   if (timezone != null) 'timezone': timezone?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'columns', 'connected_account', 'currency', 'interval_end', 'interval_start', 'payout', 'reporting_category', 'timezone'}.contains(key)); } 
 PostReportingReportRunsRequestParameters copyWith({List<String> Function()? columns, String Function()? connectedAccount, String Function()? currency, int Function()? intervalEnd, int Function()? intervalStart, String Function()? payout, PostReportingReportRunsRequestParametersReportingCategory Function()? reportingCategory, PostReportingReportRunsRequestParametersTimezone Function()? timezone, }) { return PostReportingReportRunsRequestParameters(
   columns: columns != null ? columns() : this.columns,
   connectedAccount: connectedAccount != null ? connectedAccount() : this.connectedAccount,

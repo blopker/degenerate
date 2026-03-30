@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
   if (userLimits != null) 'user_limits': userLimits?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'usage_model', 'user_limits'}.contains(key)); } 
 WorkerScriptUpdateUsageModelRequest copyWith({WorkersUsageModel Function()? usageModel, WorkersUserLimits Function()? userLimits, }) { return WorkerScriptUpdateUsageModelRequest(
   usageModel: usageModel != null ? usageModel() : this.usageModel,
   userLimits: userLimits != null ? userLimits() : this.userLimits,

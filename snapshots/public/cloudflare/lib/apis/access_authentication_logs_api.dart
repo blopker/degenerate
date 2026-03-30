@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_components_schemas_email.dart';import '../models/access_identifier.dart';import '../models/access_user_id.dart';import '../models/response_common3.dart';/// AccessAuthenticationLogsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_access_requests.dart';import '../models/access_components_schemas_email.dart';import '../models/access_identifier.dart';import '../models/access_user_id.dart';/// AccessAuthenticationLogsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,17 +13,35 @@ final class AccessAuthenticationLogsApi with ApiExecutor {const AccessAuthentica
 /// Gets a list of Access authentication audit logs for an account.
 ///
 /// `GET /accounts/{account_id}/access/logs/access_requests`
-Future<ApiResult<ResponseCommon3, Never>> accessAuthenticationLogsGetAccessAuthenticationLogs({required AccessIdentifier accountId, int? limit, dynamic direction, DateTime? since, DateTime? until, int? page, int? perPage, AccessComponentsSchemasEmail? email, bool? emailExact, AccessUserId? userId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessAccessRequests>?, Never>> accessAuthenticationLogsGetAccessAuthenticationLogs({required AccessIdentifier accountId, int? limit, dynamic direction, DateTime? since, DateTime? until, int? page, int? perPage, AccessComponentsSchemasEmail? email, bool? emailExact, AccessUserId? userId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (direction != null) queryParameters['direction'] = direction.toString();
-if (since != null) queryParameters['since'] = since.toString();
-if (until != null) queryParameters['until'] = until.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (email != null) queryParameters['email'] = email.toString();
-if (emailExact != null) queryParameters['email_exact'] = emailExact.toString();
-if (userId != null) queryParameters['user_id'] = userId.toString();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (direction != null) {
+  queryParameters['direction'] = direction.toString();
+}
+if (since != null) {
+  queryParameters['since'] = since.toString();
+}
+if (until != null) {
+  queryParameters['until'] = until.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (email != null) {
+  queryParameters['email'] = email.toString();
+}
+if (emailExact != null) {
+  queryParameters['email_exact'] = emailExact.toString();
+}
+if (userId != null) {
+  queryParameters['user_id'] = userId.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -39,7 +57,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => AccessAccessRequests.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

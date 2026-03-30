@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (timestamp != null) 'timestamp': timestamp?.toJson(),
   if (version != null) 'version': version?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deviceId', 'deviceName', 'eligible', 'ineligibleReason', 'personEmail', 'platform', 'registrationId', 'status', 'timestamp', 'version'}.contains(key)); } 
 DigitalExperienceMonitoringCommandsDevicesResponseDevices copyWith({String Function()? deviceId, String Function()? deviceName, bool Function()? eligible, String Function()? ineligibleReason, String Function()? personEmail, DigitalExperienceMonitoringPlatform Function()? platform, String Function()? registrationId, DigitalExperienceMonitoringStatus Function()? status, DigitalExperienceMonitoringTimestamp Function()? timestamp, DigitalExperienceMonitoringVersion Function()? version, }) { return DigitalExperienceMonitoringCommandsDevicesResponseDevices(
   deviceId: deviceId != null ? deviceId() : this.deviceId,
   deviceName: deviceName != null ? deviceName() : this.deviceName,

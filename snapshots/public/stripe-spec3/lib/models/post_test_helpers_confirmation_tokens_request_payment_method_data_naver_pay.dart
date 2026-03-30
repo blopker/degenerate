@@ -35,7 +35,7 @@ final PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPayFunding? 
 Map<String, dynamic> toJson() { return {
   if (funding != null) 'funding': funding?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'funding'}.contains(key)); } 
 PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay copyWith({PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPayFunding Function()? funding}) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay(
   funding: funding != null ? funding() : this.funding,
 ); } 

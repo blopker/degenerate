@@ -34,9 +34,9 @@ factory LogpushLogpushJob.fromJson(Map<String, dynamic> json) { return LogpushLo
   lastComplete: json['last_complete'] != null ? LogpushLastComplete.fromJson(json['last_complete'] as String) : null,
   lastError: json['last_error'] != null ? LogpushLastError.fromJson(json['last_error'] as String) : null,
   logpullOptions: json['logpull_options'] != null ? LogpushLogpullOptions.fromJson(json['logpull_options'] as String) : null,
-  maxUploadBytes: json['max_upload_bytes'] != null ? OneOf2.parse(json['max_upload_bytes'], fromA: (v) => (v as num).toInt(), fromB: (v) => (v as num).toInt(),) : null,
-  maxUploadIntervalSeconds: json['max_upload_interval_seconds'] != null ? OneOf2.parse(json['max_upload_interval_seconds'], fromA: (v) => (v as num).toInt(), fromB: (v) => (v as num).toInt(),) : null,
-  maxUploadRecords: json['max_upload_records'] != null ? OneOf2.parse(json['max_upload_records'], fromA: (v) => (v as num).toInt(), fromB: (v) => (v as num).toInt(),) : null,
+  maxUploadBytes: json['max_upload_bytes'] != null ? OneOf2.parse(json['max_upload_bytes'], fromA: (v) => LogpushMaxUploadBytesVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null,
+  maxUploadIntervalSeconds: json['max_upload_interval_seconds'] != null ? OneOf2.parse(json['max_upload_interval_seconds'], fromA: (v) => LogpushMaxUploadIntervalSecondsVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null,
+  maxUploadRecords: json['max_upload_records'] != null ? OneOf2.parse(json['max_upload_records'], fromA: (v) => LogpushMaxUploadRecordsVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null,
   name: json['name'] != null ? LogpushName.fromJson(json['name'] as String) : null,
   outputOptions: json['output_options'] != null ? LogpushOutputOptions.fromJson(json['output_options'] as Map<String, dynamic>) : null,
 ); }
@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (outputOptions != null) 'output_options': outputOptions?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dataset', 'destination_conf', 'enabled', 'error_message', 'frequency', 'id', 'kind', 'last_complete', 'last_error', 'logpull_options', 'max_upload_bytes', 'max_upload_interval_seconds', 'max_upload_records', 'name', 'output_options'}.contains(key)); } 
 LogpushLogpushJob copyWith({LogpushDataset? Function()? dataset, LogpushDestinationConf Function()? destinationConf, LogpushEnabled Function()? enabled, LogpushErrorMessage? Function()? errorMessage, LogpushFrequency? Function()? frequency, LogpushId Function()? id, LogpushKind Function()? kind, LogpushLastComplete? Function()? lastComplete, LogpushLastError? Function()? lastError, LogpushLogpullOptions? Function()? logpullOptions, LogpushMaxUploadBytes Function()? maxUploadBytes, LogpushMaxUploadIntervalSeconds Function()? maxUploadIntervalSeconds, LogpushMaxUploadRecords Function()? maxUploadRecords, LogpushName? Function()? name, LogpushOutputOptions Function()? outputOptions, }) { return LogpushLogpushJob(
   dataset: dataset != null ? dataset() : this.dataset,
   destinationConf: destinationConf != null ? destinationConf() : this.destinationConf,

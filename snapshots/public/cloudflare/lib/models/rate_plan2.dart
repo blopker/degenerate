@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'scope': ?scope,
   'sets': ?sets,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'externally_managed', 'id', 'is_contract', 'public_name', 'scope', 'sets'}.contains(key)); } 
 RatePlan2 copyWith({String Function()? currency, bool Function()? externallyManaged, String Function()? id, bool Function()? isContract, String Function()? publicName, String Function()? scope, List<String> Function()? sets, }) { return RatePlan2(
   currency: currency != null ? currency() : this.currency,
   externallyManaged: externallyManaged != null ? externallyManaged() : this.externallyManaged,

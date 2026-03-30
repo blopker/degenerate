@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'production_branch': ?productionBranch,
   if (source != null) 'source': source?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_config', 'deployment_configs', 'name', 'production_branch', 'source'}.contains(key)); } 
 PagesProjectUpdateProjectRequest copyWith({PagesProjectUpdateProjectRequestBuildConfig Function()? buildConfig, PagesProjectUpdateProjectRequestDeploymentConfigs Function()? deploymentConfigs, String Function()? name, String Function()? productionBranch, PagesProjectUpdateProjectRequestSource Function()? source, }) { return PagesProjectUpdateProjectRequest(
   buildConfig: buildConfig != null ? buildConfig() : this.buildConfig,
   deploymentConfigs: deploymentConfigs != null ? deploymentConfigs() : this.deploymentConfigs,

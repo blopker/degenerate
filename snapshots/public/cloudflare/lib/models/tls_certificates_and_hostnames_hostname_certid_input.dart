@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (enabled != null) 'enabled': enabled?.toJson(),
   if (hostname != null) 'hostname': hostname?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cert_id', 'enabled', 'hostname'}.contains(key)); } 
 TlsCertificatesAndHostnamesHostnameCertidInput copyWith({TlsCertificatesAndHostnamesCertId Function()? certId, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasEnabled? Function()? enabled, TlsCertificatesAndHostnamesSchemasHostname Function()? hostname, }) { return TlsCertificatesAndHostnamesHostnameCertidInput(
   certId: certId != null ? certId() : this.certId,
   enabled: enabled != null ? enabled() : this.enabled,

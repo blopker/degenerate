@@ -15,9 +15,15 @@ final class TeamsApi with ApiExecutor {const TeamsApi(this.apiConfig);
 /// `GET /orgs/{org}/teams`
 Future<ApiResult<List<Team>, BasicError>> teamsList({required String org, int? perPage, int? page, TeamsListTeamType? teamType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
-if (teamType != null) queryParameters['team_type'] = teamType.toJson();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
+if (teamType != null) {
+  queryParameters['team_type'] = teamType.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -159,8 +165,12 @@ return execute(
 /// `GET /orgs/{org}/teams/{team_slug}/invitations`
 Future<ApiResult<List<OrganizationInvitation>, Never>> teamsListPendingInvitationsInOrg({required String org, required String teamSlug, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -190,9 +200,15 @@ return execute(
 /// `GET /orgs/{org}/teams/{team_slug}/members`
 Future<ApiResult<List<SimpleUser>, Never>> teamsListMembersInOrg({required String org, required String teamSlug, TeamsListMembersInOrgRole? role, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (role != null) queryParameters['role'] = role.toJson();
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (role != null) {
+  queryParameters['role'] = role.toJson();
+}
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -316,8 +332,12 @@ return execute(
 /// `GET /orgs/{org}/teams/{team_slug}/repos`
 Future<ApiResult<List<MinimalRepository>, Never>> teamsListReposInOrg({required String org, required String teamSlug, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -426,8 +446,12 @@ return execute(
 /// `GET /orgs/{org}/teams/{team_slug}/teams`
 Future<ApiResult<List<Team>, Never>> teamsListChildInOrg({required String org, required String teamSlug, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -460,8 +484,12 @@ return execute(
 /// `GET /user/teams`
 Future<ApiResult<List<TeamFull>, BasicError>> teamsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (perPage != null) queryParameters['per_page'] = perPage.toString();
-if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) {
+  queryParameters['per_page'] = perPage.toString();
+}
+if (page != null) {
+  queryParameters['page'] = page.toString();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

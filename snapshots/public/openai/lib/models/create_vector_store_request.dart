@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   if (chunkingStrategy != null) 'chunking_strategy': chunkingStrategy?.toJson(),
   'metadata': ?metadata,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_ids', 'name', 'description', 'expires_after', 'chunking_strategy', 'metadata'}.contains(key)); } 
 CreateVectorStoreRequest copyWith({List<String> Function()? fileIds, String Function()? name, String Function()? description, VectorStoreExpirationAfter Function()? expiresAfter, CreateVectorStoreRequestChunkingStrategy Function()? chunkingStrategy, Map<String, String>? Function()? metadata, }) { return CreateVectorStoreRequest(
   fileIds: fileIds != null ? fileIds() : this.fileIds,
   name: name != null ? name() : this.name,

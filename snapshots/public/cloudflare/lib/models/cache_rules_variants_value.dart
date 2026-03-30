@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'tiff': ?tiff,
   'webp': ?webp,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'avif', 'bmp', 'gif', 'jp2', 'jpeg', 'jpg', 'jpg2', 'png', 'tif', 'tiff', 'webp'}.contains(key)); } 
 CacheRulesVariantsValue copyWith({List<String> Function()? avif, List<String> Function()? bmp, List<String> Function()? gif, List<String> Function()? jp2, List<String> Function()? jpeg, List<String> Function()? jpg, List<String> Function()? jpg2, List<String> Function()? png, List<String> Function()? tif, List<String> Function()? tiff, List<String> Function()? webp, }) { return CacheRulesVariantsValue(
   avif: avif != null ? avif() : this.avif,
   bmp: bmp != null ? bmp() : this.bmp,

@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reasoning_effort', 'temperature', 'max_completion_tokens', 'top_p', 'seed', 'response_format', 'tools'}.contains(key)); } 
 CreateEvalCompletionsRunDataSourceSamplingParams copyWith({ReasoningEffort? Function()? reasoningEffort, double Function()? temperature, int Function()? maxCompletionTokens, double Function()? topP, int Function()? seed, CreateEvalCompletionsRunDataSourceSamplingParamsResponseFormat Function()? responseFormat, List<ChatCompletionTool> Function()? tools, }) { return CreateEvalCompletionsRunDataSourceSamplingParams(
   reasoningEffort: reasoningEffort != null ? reasoningEffort() : this.reasoningEffort,
   temperature: temperature != null ? temperature() : this.temperature,

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (matching != null) 'matching': matching?.toJson(),
   if (phone != null) 'phone': phone?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'document', 'email', 'id_number', 'matching', 'phone'}.contains(key)); } 
 GelatoVerificationSessionOptions copyWith({GelatoSessionDocumentOptions Function()? document, GelatoSessionEmailOptions Function()? email, GelatoSessionIdNumberOptions Function()? idNumber, GelatoSessionMatchingOptions Function()? matching, GelatoSessionPhoneOptions Function()? phone, }) { return GelatoVerificationSessionOptions(
   document: document != null ? document() : this.document,
   email: email != null ? email() : this.email,

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (storageClass != null) 'storage_class': storageClass?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creation_date', 'jurisdiction', 'location', 'name', 'storage_class'}.contains(key)); } 
 R2Bucket copyWith({String Function()? creationDate, R2Jurisdiction Function()? jurisdiction, R2BucketLocation Function()? location, R2BucketName Function()? name, R2StorageClass Function()? storageClass, }) { return R2Bucket(
   creationDate: creationDate != null ? creationDate() : this.creationDate,
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,

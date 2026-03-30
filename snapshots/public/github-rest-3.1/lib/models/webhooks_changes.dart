@@ -12,7 +12,7 @@ final WebhooksChangesBody? body;
 Map<String, dynamic> toJson() { return {
   if (body != null) 'body': body?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body'}.contains(key)); } 
 WebhooksChanges copyWith({WebhooksChangesBody Function()? body}) { return WebhooksChanges(
   body: body != null ? body() : this.body,
 ); } 

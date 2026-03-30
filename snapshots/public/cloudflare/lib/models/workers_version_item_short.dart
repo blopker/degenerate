@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   'number': ?number,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'metadata', 'number'}.contains(key)); } 
 WorkersVersionItemShort copyWith({String Function()? id, WorkersVersionItemShortMetadata Function()? metadata, double Function()? number, }) { return WorkersVersionItemShort(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,

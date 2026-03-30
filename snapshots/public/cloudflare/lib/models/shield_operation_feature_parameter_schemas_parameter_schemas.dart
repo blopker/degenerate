@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (lastUpdated != null) 'last_updated': lastUpdated?.toJson(),
   if (parameterSchemas != null) 'parameter_schemas': parameterSchemas?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'last_updated', 'parameter_schemas'}.contains(key)); } 
 ShieldOperationFeatureParameterSchemasParameterSchemas copyWith({ShieldTimestamp Function()? lastUpdated, ShieldParameterSchemasDefinition Function()? parameterSchemas, }) { return ShieldOperationFeatureParameterSchemasParameterSchemas(
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
   parameterSchemas: parameterSchemas != null ? parameterSchemas() : this.parameterSchemas,

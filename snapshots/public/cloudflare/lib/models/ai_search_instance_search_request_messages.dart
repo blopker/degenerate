@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchInstanceSearchRequestMessagesRole {const AiSearchInstanceSearchRequestMessagesRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class AiSearchInstanceSearchRequestMessagesRole {const AiSearchInstanceSearchRequestMessagesRole._(this.value);
 
 factory AiSearchInstanceSearchRequestMessagesRole.fromJson(String json) { return switch (json) {
   'system' => system,
@@ -33,31 +33,37 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceSearchRequestMessagesRole($value)'; } 
  }
-final class AiSearchInstanceSearchRequestMessages {const AiSearchInstanceSearchRequestMessages({required this.content, required this.role, });
+final class AiSearchInstanceSearchRequestMessages {const AiSearchInstanceSearchRequestMessages({required this.content, required this.role, this.additionalProperties = const {}, });
 
 factory AiSearchInstanceSearchRequestMessages.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestMessages(
   content: json['content'] as String?,
   role: AiSearchInstanceSearchRequestMessagesRole.fromJson(json['role'] as String),
+  additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'content', 'role'}.contains(e.key))),
 ); }
 
 final String? content;
 
 final AiSearchInstanceSearchRequestMessagesRole role;
 
+final Map<String,dynamic> additionalProperties;
+
 Map<String, dynamic> toJson() { return {
   'content': ?content,
   'role': role.toJson(),
+  ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
       json.containsKey('role'); } 
-AiSearchInstanceSearchRequestMessages copyWith({String? Function()? content, AiSearchInstanceSearchRequestMessagesRole? role, }) { return AiSearchInstanceSearchRequestMessages(
+AiSearchInstanceSearchRequestMessages copyWith({String? Function()? content, AiSearchInstanceSearchRequestMessagesRole? role, Map<String, dynamic>? additionalProperties, }) { return AiSearchInstanceSearchRequestMessages(
   content: content != null ? content() : this.content,
   role: role ?? this.role,
+  additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AiSearchInstanceSearchRequestMessages &&
           content == other.content &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(content, role); } 
-@override String toString() { return 'AiSearchInstanceSearchRequestMessages(content: $content, role: $role)'; } 
+          role == other.role &&
+          mapEquals(additionalProperties, other.additionalProperties); } 
+@override int get hashCode { return Object.hash(content, role, Object.hashAll(additionalProperties.entries)); } 
+@override String toString() { return 'AiSearchInstanceSearchRequestMessages(content: $content, role: $role, additionalProperties: $additionalProperties)'; } 
  }

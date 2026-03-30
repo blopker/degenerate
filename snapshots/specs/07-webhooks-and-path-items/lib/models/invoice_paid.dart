@@ -11,7 +11,7 @@ final String? invoiceId;
 Map<String, dynamic> toJson() { return {
   'invoiceId': ?invoiceId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'invoiceId'}.contains(key)); } 
 InvoicePaid copyWith({String Function()? invoiceId}) { return InvoicePaid(
   invoiceId: invoiceId != null ? invoiceId() : this.invoiceId,
 ); } 

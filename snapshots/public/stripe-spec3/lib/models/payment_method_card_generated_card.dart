@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodDetails != null) 'payment_method_details': paymentMethodDetails?.toJson(),
   if (setupAttempt != null) 'setup_attempt': setupAttempt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'charge', 'payment_method_details', 'setup_attempt'}.contains(key)); } 
 PaymentMethodCardGeneratedCard copyWith({String? Function()? charge, PaymentMethodCardGeneratedCardPaymentMethodDetails? Function()? paymentMethodDetails, PaymentMethodCardGeneratedCardSetupAttempt? Function()? setupAttempt, }) { return PaymentMethodCardGeneratedCard(
   charge: charge != null ? charge() : this.charge,
   paymentMethodDetails: paymentMethodDetails != null ? paymentMethodDetails() : this.paymentMethodDetails,

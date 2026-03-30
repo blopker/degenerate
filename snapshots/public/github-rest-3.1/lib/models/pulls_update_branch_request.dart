@@ -12,7 +12,7 @@ final String? expectedHeadSha;
 Map<String, dynamic> toJson() { return {
   'expected_head_sha': ?expectedHeadSha,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expected_head_sha'}.contains(key)); } 
 PullsUpdateBranchRequest copyWith({String Function()? expectedHeadSha}) { return PullsUpdateBranchRequest(
   expectedHeadSha: expectedHeadSha != null ? expectedHeadSha() : this.expectedHeadSha,
 ); } 

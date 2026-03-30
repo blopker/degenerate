@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'prefix': ?prefix,
   'length': ?length,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'prefix', 'length'}.contains(key)); } 
 PublicIp copyWith({bool Function()? enabled, String Function()? prefix, int Function()? length, }) { return PublicIp(
   enabled: enabled != null ? enabled() : this.enabled,
   prefix: prefix != null ? prefix() : this.prefix,

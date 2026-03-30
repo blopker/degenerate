@@ -12,7 +12,7 @@ final String? href;
 Map<String, dynamic> toJson() { return {
   'href': ?href,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'href'}.contains(key)); } 
 RepositoryRulesetLinksSelf copyWith({String Function()? href}) { return RepositoryRulesetLinksSelf(
   href: href != null ? href() : this.href,
 ); } 

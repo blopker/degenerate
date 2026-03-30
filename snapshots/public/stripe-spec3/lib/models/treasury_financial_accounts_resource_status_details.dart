@@ -13,7 +13,7 @@ final TreasuryFinancialAccountsResourceStatusDetailsClosed? closed;
 Map<String, dynamic> toJson() { return {
   if (closed != null) 'closed': closed?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'closed'}.contains(key)); } 
 TreasuryFinancialAccountsResourceStatusDetails copyWith({TreasuryFinancialAccountsResourceStatusDetailsClosed? Function()? closed}) { return TreasuryFinancialAccountsResourceStatusDetails(
   closed: closed != null ? closed() : this.closed,
 ); } 

@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
   if (needle != null) 'needle': needle?.toJson(),
   if (orderBy != null) 'orderBy': orderBy?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'calculations', 'datasets', 'filterCombination', 'filters', 'groupBys', 'havings', 'limit', 'needle', 'orderBy'}.contains(key)); } 
 TelemetryQueryRequestParameters copyWith({List<TelemetryQueryRequestParametersCalculations> Function()? calculations, List<String> Function()? datasets, TelemetryQueryRequestParametersFilterCombination Function()? filterCombination, List<TelemetryQueryRequestParametersFilters> Function()? filters, List<TelemetryQueryRequestParametersGroupBys> Function()? groupBys, List<TelemetryQueryRequestParametersHavings> Function()? havings, int Function()? limit, TelemetryQueryRequestParametersNeedle Function()? needle, TelemetryQueryRequestParametersOrderBy Function()? orderBy, }) { return TelemetryQueryRequestParameters(
   calculations: calculations != null ? calculations() : this.calculations,
   datasets: datasets != null ? datasets() : this.datasets,

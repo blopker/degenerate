@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'max_duration_s': maxDurationS,
   'max_rows': maxRows,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_bytes', 'max_duration_s', 'max_rows'}.contains(key)); } 
 AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch copyWith({int Function()? maxBytes, double Function()? maxDurationS, int Function()? maxRows, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch(
   maxBytes: maxBytes != null ? maxBytes() : this.maxBytes,
   maxDurationS: maxDurationS != null ? maxDurationS() : this.maxDurationS,

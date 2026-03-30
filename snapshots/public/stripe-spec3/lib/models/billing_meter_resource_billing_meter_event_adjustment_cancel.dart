@@ -13,7 +13,7 @@ final String? identifier;
 Map<String, dynamic> toJson() { return {
   'identifier': ?identifier,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'identifier'}.contains(key)); } 
 BillingMeterResourceBillingMeterEventAdjustmentCancel copyWith({String? Function()? identifier}) { return BillingMeterResourceBillingMeterEventAdjustmentCancel(
   identifier: identifier != null ? identifier() : this.identifier,
 ); } 

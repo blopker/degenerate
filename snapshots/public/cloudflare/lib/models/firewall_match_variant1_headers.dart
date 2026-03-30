@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   if (op != null) 'op': op?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'op', 'value'}.contains(key)); } 
 FirewallMatchVariant1Headers copyWith({FirewallHeaderName Function()? name, FirewallHeaderOp Function()? op, FirewallHeaderValue Function()? value, }) { return FirewallMatchVariant1Headers(
   name: name != null ? name() : this.name,
   op: op != null ? op() : this.op,

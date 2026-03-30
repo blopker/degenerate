@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (uiReadOnlyToggleReason != null) 'ui_read_only_toggle_reason': uiReadOnlyToggleReason?.toJson(),
   if (userSeatExpirationInactiveTime != null) 'user_seat_expiration_inactive_time': userSeatExpirationInactiveTime?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_domain', 'is_ui_read_only', 'login_design', 'name', 'ui_read_only_toggle_reason', 'user_seat_expiration_inactive_time'}.contains(key)); } 
 ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest copyWith({AccessSchemasAuthDomain Function()? authDomain, AccessSchemasIsUiReadOnly Function()? isUiReadOnly, AccessSchemasLoginDesign Function()? loginDesign, AccessOrganizationsComponentsSchemasName Function()? name, AccessUiReadOnlyToggleReason Function()? uiReadOnlyToggleReason, AccessSchemasUserSeatExpirationInactiveTime Function()? userSeatExpirationInactiveTime, }) { return ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest(
   authDomain: authDomain != null ? authDomain() : this.authDomain,
   isUiReadOnly: isUiReadOnly != null ? isUiReadOnly() : this.isUiReadOnly,

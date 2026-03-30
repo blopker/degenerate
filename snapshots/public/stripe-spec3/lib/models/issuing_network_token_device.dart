@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'phone_number': ?phoneNumber,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'device_fingerprint', 'ip_address', 'location', 'name', 'phone_number', 'type'}.contains(key)); } 
 IssuingNetworkTokenDevice copyWith({String Function()? deviceFingerprint, String Function()? ipAddress, String Function()? location, String Function()? name, String Function()? phoneNumber, IssuingNetworkTokenDeviceType Function()? type, }) { return IssuingNetworkTokenDevice(
   deviceFingerprint: deviceFingerprint != null ? deviceFingerprint() : this.deviceFingerprint,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,

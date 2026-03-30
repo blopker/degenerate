@@ -12,7 +12,7 @@ final D1DatabaseUpdatePartialRequestBodyReadReplication? readReplication;
 Map<String, dynamic> toJson() { return {
   if (readReplication != null) 'read_replication': readReplication?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'read_replication'}.contains(key)); } 
 D1DatabaseUpdatePartialRequestBody copyWith({D1DatabaseUpdatePartialRequestBodyReadReplication Function()? readReplication}) { return D1DatabaseUpdatePartialRequestBody(
   readReplication: readReplication != null ? readReplication() : this.readReplication,
 ); } 

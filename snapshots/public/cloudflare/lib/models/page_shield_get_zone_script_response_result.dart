@@ -1,0 +1,158 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_cryptomining_score.dart';import 'page_shield_dataflow_score.dart';import 'page_shield_fetched_at.dart';import 'page_shield_hash.dart';import 'page_shield_id.dart';import 'page_shield_js_integrity_score.dart';import 'page_shield_magecart_score.dart';import 'page_shield_malware_score.dart';import 'page_shield_obfuscation_score.dart';import 'page_shield_version.dart';final class PageShieldGetZoneScriptResponseResult {const PageShieldGetZoneScriptResponseResult({required this.addedAt, this.cryptominingScore, this.dataflowScore, this.domainReportedMalicious, this.fetchedAt, this.firstPageUrl, required this.firstSeenAt, this.hash, required this.host, required this.id, this.jsIntegrityScore, required this.lastSeenAt, this.magecartScore, this.maliciousDomainCategories, this.maliciousUrlCategories, this.malwareScore, this.obfuscationScore, this.pageUrls, required this.url, required this.urlContainsCdnCgiPath, this.urlReportedMalicious, this.versions, });
+
+factory PageShieldGetZoneScriptResponseResult.fromJson(Map<String, dynamic> json) { return PageShieldGetZoneScriptResponseResult(
+  addedAt: DateTime.parse(json['added_at'] as String),
+  cryptominingScore: json['cryptomining_score'] != null ? PageShieldCryptominingScore.fromJson(json['cryptomining_score'] as num) : null,
+  dataflowScore: json['dataflow_score'] != null ? PageShieldDataflowScore.fromJson(json['dataflow_score'] as num) : null,
+  domainReportedMalicious: json['domain_reported_malicious'] as bool?,
+  fetchedAt: json['fetched_at'] != null ? PageShieldFetchedAt.fromJson(json['fetched_at'] as String) : null,
+  firstPageUrl: json['first_page_url'] as String?,
+  firstSeenAt: DateTime.parse(json['first_seen_at'] as String),
+  hash: json['hash'] != null ? PageShieldHash.fromJson(json['hash'] as String) : null,
+  host: json['host'] as String,
+  id: PageShieldId.fromJson(json['id'] as String),
+  jsIntegrityScore: json['js_integrity_score'] != null ? PageShieldJsIntegrityScore.fromJson(json['js_integrity_score'] as num) : null,
+  lastSeenAt: DateTime.parse(json['last_seen_at'] as String),
+  magecartScore: json['magecart_score'] != null ? PageShieldMagecartScore.fromJson(json['magecart_score'] as num) : null,
+  maliciousDomainCategories: (json['malicious_domain_categories'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  maliciousUrlCategories: (json['malicious_url_categories'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  malwareScore: json['malware_score'] != null ? PageShieldMalwareScore.fromJson(json['malware_score'] as num) : null,
+  obfuscationScore: json['obfuscation_score'] != null ? PageShieldObfuscationScore.fromJson(json['obfuscation_score'] as num) : null,
+  pageUrls: (json['page_urls'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  url: json['url'] as String,
+  urlContainsCdnCgiPath: json['url_contains_cdn_cgi_path'] as bool,
+  urlReportedMalicious: json['url_reported_malicious'] as bool?,
+  versions: (json['versions'] as List<dynamic>?)?.map((e) => PageShieldVersion.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final DateTime addedAt;
+
+/// The cryptomining score of the JavaScript content.
+final PageShieldCryptominingScore? cryptominingScore;
+
+/// The dataflow score of the JavaScript content.
+final PageShieldDataflowScore? dataflowScore;
+
+final bool? domainReportedMalicious;
+
+/// The timestamp of when the script was last fetched.
+final PageShieldFetchedAt? fetchedAt;
+
+final String? firstPageUrl;
+
+final DateTime firstSeenAt;
+
+final PageShieldHash? hash;
+
+final String host;
+
+final PageShieldId id;
+
+final PageShieldJsIntegrityScore? jsIntegrityScore;
+
+final DateTime lastSeenAt;
+
+final PageShieldMagecartScore? magecartScore;
+
+final List<String>? maliciousDomainCategories;
+
+final List<String>? maliciousUrlCategories;
+
+final PageShieldMalwareScore? malwareScore;
+
+final PageShieldObfuscationScore? obfuscationScore;
+
+final List<String>? pageUrls;
+
+final String url;
+
+final bool urlContainsCdnCgiPath;
+
+final bool? urlReportedMalicious;
+
+final List<PageShieldVersion>? versions;
+
+Map<String, dynamic> toJson() { return {
+  'added_at': addedAt.toIso8601String(),
+  if (cryptominingScore != null) 'cryptomining_score': cryptominingScore?.toJson(),
+  if (dataflowScore != null) 'dataflow_score': dataflowScore?.toJson(),
+  'domain_reported_malicious': ?domainReportedMalicious,
+  if (fetchedAt != null) 'fetched_at': fetchedAt?.toJson(),
+  'first_page_url': ?firstPageUrl,
+  'first_seen_at': firstSeenAt.toIso8601String(),
+  if (hash != null) 'hash': hash?.toJson(),
+  'host': host,
+  'id': id.toJson(),
+  if (jsIntegrityScore != null) 'js_integrity_score': jsIntegrityScore?.toJson(),
+  'last_seen_at': lastSeenAt.toIso8601String(),
+  if (magecartScore != null) 'magecart_score': magecartScore?.toJson(),
+  'malicious_domain_categories': ?maliciousDomainCategories,
+  'malicious_url_categories': ?maliciousUrlCategories,
+  if (malwareScore != null) 'malware_score': malwareScore?.toJson(),
+  if (obfuscationScore != null) 'obfuscation_score': obfuscationScore?.toJson(),
+  'page_urls': ?pageUrls,
+  'url': url,
+  'url_contains_cdn_cgi_path': urlContainsCdnCgiPath,
+  'url_reported_malicious': ?urlReportedMalicious,
+  if (versions != null) 'versions': versions?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('added_at') && json['added_at'] is String &&
+      json.containsKey('first_seen_at') && json['first_seen_at'] is String &&
+      json.containsKey('host') && json['host'] is String &&
+      json.containsKey('id') &&
+      json.containsKey('last_seen_at') && json['last_seen_at'] is String &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('url_contains_cdn_cgi_path') && json['url_contains_cdn_cgi_path'] is bool; } 
+PageShieldGetZoneScriptResponseResult copyWith({DateTime? addedAt, PageShieldCryptominingScore? Function()? cryptominingScore, PageShieldDataflowScore? Function()? dataflowScore, bool Function()? domainReportedMalicious, PageShieldFetchedAt? Function()? fetchedAt, String Function()? firstPageUrl, DateTime? firstSeenAt, PageShieldHash? Function()? hash, String? host, PageShieldId? id, PageShieldJsIntegrityScore? Function()? jsIntegrityScore, DateTime? lastSeenAt, PageShieldMagecartScore? Function()? magecartScore, List<String> Function()? maliciousDomainCategories, List<String> Function()? maliciousUrlCategories, PageShieldMalwareScore? Function()? malwareScore, PageShieldObfuscationScore? Function()? obfuscationScore, List<String> Function()? pageUrls, String? url, bool? urlContainsCdnCgiPath, bool Function()? urlReportedMalicious, List<PageShieldVersion>? Function()? versions, }) { return PageShieldGetZoneScriptResponseResult(
+  addedAt: addedAt ?? this.addedAt,
+  cryptominingScore: cryptominingScore != null ? cryptominingScore() : this.cryptominingScore,
+  dataflowScore: dataflowScore != null ? dataflowScore() : this.dataflowScore,
+  domainReportedMalicious: domainReportedMalicious != null ? domainReportedMalicious() : this.domainReportedMalicious,
+  fetchedAt: fetchedAt != null ? fetchedAt() : this.fetchedAt,
+  firstPageUrl: firstPageUrl != null ? firstPageUrl() : this.firstPageUrl,
+  firstSeenAt: firstSeenAt ?? this.firstSeenAt,
+  hash: hash != null ? hash() : this.hash,
+  host: host ?? this.host,
+  id: id ?? this.id,
+  jsIntegrityScore: jsIntegrityScore != null ? jsIntegrityScore() : this.jsIntegrityScore,
+  lastSeenAt: lastSeenAt ?? this.lastSeenAt,
+  magecartScore: magecartScore != null ? magecartScore() : this.magecartScore,
+  maliciousDomainCategories: maliciousDomainCategories != null ? maliciousDomainCategories() : this.maliciousDomainCategories,
+  maliciousUrlCategories: maliciousUrlCategories != null ? maliciousUrlCategories() : this.maliciousUrlCategories,
+  malwareScore: malwareScore != null ? malwareScore() : this.malwareScore,
+  obfuscationScore: obfuscationScore != null ? obfuscationScore() : this.obfuscationScore,
+  pageUrls: pageUrls != null ? pageUrls() : this.pageUrls,
+  url: url ?? this.url,
+  urlContainsCdnCgiPath: urlContainsCdnCgiPath ?? this.urlContainsCdnCgiPath,
+  urlReportedMalicious: urlReportedMalicious != null ? urlReportedMalicious() : this.urlReportedMalicious,
+  versions: versions != null ? versions() : this.versions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PageShieldGetZoneScriptResponseResult &&
+          addedAt == other.addedAt &&
+          cryptominingScore == other.cryptominingScore &&
+          dataflowScore == other.dataflowScore &&
+          domainReportedMalicious == other.domainReportedMalicious &&
+          fetchedAt == other.fetchedAt &&
+          firstPageUrl == other.firstPageUrl &&
+          firstSeenAt == other.firstSeenAt &&
+          hash == other.hash &&
+          host == other.host &&
+          id == other.id &&
+          jsIntegrityScore == other.jsIntegrityScore &&
+          lastSeenAt == other.lastSeenAt &&
+          magecartScore == other.magecartScore &&
+          listEquals(maliciousDomainCategories, other.maliciousDomainCategories) &&
+          listEquals(maliciousUrlCategories, other.maliciousUrlCategories) &&
+          malwareScore == other.malwareScore &&
+          obfuscationScore == other.obfuscationScore &&
+          listEquals(pageUrls, other.pageUrls) &&
+          url == other.url &&
+          urlContainsCdnCgiPath == other.urlContainsCdnCgiPath &&
+          urlReportedMalicious == other.urlReportedMalicious &&
+          listEquals(versions, other.versions); } 
+@override int get hashCode { return Object.hashAll([addedAt, cryptominingScore, dataflowScore, domainReportedMalicious, fetchedAt, firstPageUrl, firstSeenAt, hash, host, id, jsIntegrityScore, lastSeenAt, magecartScore, Object.hashAll(maliciousDomainCategories ?? const []), Object.hashAll(maliciousUrlCategories ?? const []), malwareScore, obfuscationScore, Object.hashAll(pageUrls ?? const []), url, urlContainsCdnCgiPath, urlReportedMalicious, Object.hashAll(versions ?? const [])]); } 
+@override String toString() { return 'PageShieldGetZoneScriptResponseResult(addedAt: $addedAt, cryptominingScore: $cryptominingScore, dataflowScore: $dataflowScore, domainReportedMalicious: $domainReportedMalicious, fetchedAt: $fetchedAt, firstPageUrl: $firstPageUrl, firstSeenAt: $firstSeenAt, hash: $hash, host: $host, id: $id, jsIntegrityScore: $jsIntegrityScore, lastSeenAt: $lastSeenAt, magecartScore: $magecartScore, maliciousDomainCategories: $maliciousDomainCategories, maliciousUrlCategories: $maliciousUrlCategories, malwareScore: $malwareScore, obfuscationScore: $obfuscationScore, pageUrls: $pageUrls, url: $url, urlContainsCdnCgiPath: $urlContainsCdnCgiPath, urlReportedMalicious: $urlReportedMalicious, versions: $versions)'; } 
+ }

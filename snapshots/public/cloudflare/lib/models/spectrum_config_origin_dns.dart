@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   if (ttl != null) 'ttl': ttl?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'ttl', 'type'}.contains(key)); } 
 SpectrumConfigOriginDns copyWith({SpectrumConfigOriginDnsName Function()? name, SpectrumConfigDnsTtl Function()? ttl, SpectrumConfigOriginDnsType Function()? type, }) { return SpectrumConfigOriginDns(
   name: name != null ? name() : this.name,
   ttl: ttl != null ? ttl() : this.ttl,

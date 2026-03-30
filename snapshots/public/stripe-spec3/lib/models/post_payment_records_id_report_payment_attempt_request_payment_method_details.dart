@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'payment_method': ?paymentMethod,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_details', 'custom', 'payment_method', 'type'}.contains(key)); } 
 PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails copyWith({PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsBillingDetails Function()? billingDetails, PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsCustom Function()? custom, String Function()? paymentMethod, PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType Function()? type, }) { return PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails(
   billingDetails: billingDetails != null ? billingDetails() : this.billingDetails,
   custom: custom != null ? custom() : this.custom,

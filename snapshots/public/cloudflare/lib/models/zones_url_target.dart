@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (constraint != null) 'constraint': constraint?.toJson(),
   'target': ?target,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'constraint', 'target'}.contains(key)); } 
 ZonesUrlTarget copyWith({ZonesStringConstraint Function()? constraint, dynamic Function()? target, }) { return ZonesUrlTarget(
   constraint: constraint != null ? constraint() : this.constraint,
   target: target != null ? target() : this.target,

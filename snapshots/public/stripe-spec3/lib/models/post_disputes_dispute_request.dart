@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
   'submit': ?submit,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'evidence', 'expand', 'metadata', 'submit'}.contains(key)); } 
 PostDisputesDisputeRequest copyWith({PostDisputesDisputeRequestEvidence Function()? evidence, List<String> Function()? expand, PostDisputesDisputeRequestMetadata Function()? metadata, bool Function()? submit, }) { return PostDisputesDisputeRequest(
   evidence: evidence != null ? evidence() : this.evidence,
   expand: expand != null ? expand() : this.expand,

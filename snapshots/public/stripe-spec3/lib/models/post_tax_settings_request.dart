@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
   if (headOffice != null) 'head_office': headOffice?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'defaults', 'expand', 'head_office'}.contains(key)); } 
 PostTaxSettingsRequest copyWith({PostTaxSettingsRequestDefaults Function()? defaults, List<String> Function()? expand, PostTaxSettingsRequestHeadOffice Function()? headOffice, }) { return PostTaxSettingsRequest(
   defaults: defaults != null ? defaults() : this.defaults,
   expand: expand != null ? expand() : this.expand,

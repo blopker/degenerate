@@ -12,7 +12,7 @@ final String? price;
 Map<String, dynamic> toJson() { return {
   'price': ?price,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'price'}.contains(key)); } 
 PostInvoicesInvoiceLinesLineItemIdRequestPricing copyWith({String Function()? price}) { return PostInvoicesInvoiceLinesLineItemIdRequestPricing(
   price: price != null ? price() : this.price,
 ); } 

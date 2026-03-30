@@ -22,7 +22,7 @@ factory UsersGetAuthenticatedResponsePublic.fromJson(Map<String, dynamic> json) 
 final PublicUser publicUser;
 
 @override String get userViewType { return 'public'; } 
-@override Map<String, dynamic> toJson() { return {'user_view_type': userViewType, ...publicUser.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...publicUser.toJson(), 'user_view_type': userViewType}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is UsersGetAuthenticatedResponsePublic && publicUser == other.publicUser; } 
 @override int get hashCode { return publicUser.hashCode; } 
@@ -35,7 +35,7 @@ factory UsersGetAuthenticatedResponsePrivate.fromJson(Map<String, dynamic> json)
 final PrivateUser privateUser;
 
 @override String get userViewType { return 'private'; } 
-@override Map<String, dynamic> toJson() { return {'user_view_type': userViewType, ...privateUser.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...privateUser.toJson(), 'user_view_type': userViewType}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is UsersGetAuthenticatedResponsePrivate && privateUser == other.privateUser; } 
 @override int get hashCode { return privateUser.hashCode; } 

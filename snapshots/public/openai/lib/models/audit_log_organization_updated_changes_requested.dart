@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'api_call_logging': ?apiCallLogging,
   'api_call_logging_project_ids': ?apiCallLoggingProjectIds,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title', 'description', 'name', 'threads_ui_visibility', 'usage_dashboard_visibility', 'api_call_logging', 'api_call_logging_project_ids'}.contains(key)); } 
 AuditLogOrganizationUpdatedChangesRequested copyWith({String Function()? title, String Function()? description, String Function()? name, String Function()? threadsUiVisibility, String Function()? usageDashboardVisibility, String Function()? apiCallLogging, String Function()? apiCallLoggingProjectIds, }) { return AuditLogOrganizationUpdatedChangesRequested(
   title: title != null ? title() : this.title,
   description: description != null ? description() : this.description,

@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'interval', 'name', 'type'}.contains(key)); } 
 DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest copyWith({TeamsDevicesConfigRequest Function()? config, TeamsDevicesInterval Function()? interval, TeamsDevicesComponentsSchemasName Function()? name, TeamsDevicesSchemasType Function()? type, }) { return DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest(
   config: config != null ? config() : this.config,
   interval: interval != null ? interval() : this.interval,

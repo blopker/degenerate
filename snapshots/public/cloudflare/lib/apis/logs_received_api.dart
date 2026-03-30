@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/logcontrol_identifier.dart';import '../models/logcontrol_retention_flag.dart';import '../models/logshare_count.dart';import '../models/logshare_end.dart';import '../models/logshare_fields.dart';import '../models/logshare_fields_response.dart';import '../models/logshare_identifier.dart';import '../models/logshare_logs_response_json_lines.dart';import '../models/logshare_ray_identifier.dart';import '../models/logshare_sample.dart';import '../models/logshare_start.dart';import '../models/logshare_timestamps.dart';import '../models/response_common43.dart';/// LogsReceivedApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/logcontrol_identifier.dart';import '../models/logcontrol_retention_flag.dart';import '../models/logshare_count.dart';import '../models/logshare_end.dart';import '../models/logshare_fields.dart';import '../models/logshare_fields_response.dart';import '../models/logshare_identifier.dart';import '../models/logshare_logs_response_json_lines.dart';import '../models/logshare_ray_identifier.dart';import '../models/logshare_sample.dart';import '../models/logshare_start.dart';import '../models/logshare_timestamps.dart';/// LogsReceivedApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class LogsReceivedApi with ApiExecutor {const LogsReceivedApi(this.apiConf
 /// Gets log retention flag for Logpull API.
 ///
 /// `GET /zones/{zone_id}/logs/control/retention/flag`
-Future<ApiResult<ResponseCommon43, Never>> getZonesZoneIdLogsControlRetentionFlag({required LogcontrolIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogcontrolRetentionFlag?, Never>> getZonesZoneIdLogsControlRetentionFlag({required LogcontrolIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon43.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? LogcontrolRetentionFlag.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -34,7 +35,7 @@ return execute(
 /// Updates log retention flag for Logpull API.
 ///
 /// `POST /zones/{zone_id}/logs/control/retention/flag`
-Future<ApiResult<ResponseCommon43, Never>> postZonesZoneIdLogsControlRetentionFlag({required LogcontrolIdentifier zoneId, required LogcontrolRetentionFlag body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogcontrolRetentionFlag?, Never>> postZonesZoneIdLogsControlRetentionFlag({required LogcontrolIdentifier zoneId, required LogcontrolRetentionFlag body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon43.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? LogcontrolRetentionFlag.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -59,8 +61,12 @@ return execute(
 /// `GET /zones/{zone_id}/logs/rayids/{ray_id}`
 Future<ApiResult<LogshareLogsResponseJsonLines, Never>> getZonesZoneIdLogsRayidsRayId({required LogshareIdentifier zoneId, required LogshareRayIdentifier rayId, LogshareFields? fields, LogshareTimestamps? timestamps, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (fields != null) queryParameters['fields'] = fields.toString();
-if (timestamps != null) queryParameters['timestamps'] = timestamps.toJson();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
+if (timestamps != null) {
+  queryParameters['timestamps'] = timestamps.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -91,10 +97,18 @@ if (start != null) {
 queryParametersList.add(ApiQueryParameter(name: 'start', value: start.toString(), allowReserved: false));
 }
 queryParametersList.add(ApiQueryParameter(name: 'end', value: end.toString(), allowReserved: false));
-if (fields != null) queryParameters['fields'] = fields.toString();
-if (sample != null) queryParameters['sample'] = sample.toString();
-if (count != null) queryParameters['count'] = count.toString();
-if (timestamps != null) queryParameters['timestamps'] = timestamps.toJson();
+if (fields != null) {
+  queryParameters['fields'] = fields.toString();
+}
+if (sample != null) {
+  queryParameters['sample'] = sample.toString();
+}
+if (count != null) {
+  queryParameters['count'] = count.toString();
+}
+if (timestamps != null) {
+  queryParameters['timestamps'] = timestamps.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

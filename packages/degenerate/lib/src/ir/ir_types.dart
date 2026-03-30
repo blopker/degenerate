@@ -53,10 +53,14 @@ final class IrEnum extends IrType {
   final String name;
   final List<String> values;
   final String? defaultValue;
+  /// The underlying JSON type for this enum's values.
+  /// Defaults to [PrimitiveKind.string].
+  final PrimitiveKind valueKind;
   const IrEnum(
     this.name,
     this.values, {
     this.defaultValue,
+    this.valueKind = PrimitiveKind.string,
     super.description,
     super.isNullable,
   });
@@ -68,6 +72,7 @@ final class IrEnum extends IrType {
           name,
           values,
           defaultValue: defaultValue,
+          valueKind: valueKind,
           description: description,
           isNullable: true,
         );
@@ -97,10 +102,14 @@ final class IrObject extends IrType {
   final String name;
   final List<IrField> fields;
   final List<String> requiredFields;
+  /// Value type for `additionalProperties` (overflow map).
+  /// Non-null means the object accepts extra keys beyond [fields].
+  final IrType? additionalProperties;
   const IrObject(
     this.name,
     this.fields, {
     this.requiredFields = const [],
+    this.additionalProperties,
     super.description,
     super.isNullable,
   });
@@ -112,6 +121,7 @@ final class IrObject extends IrType {
           name,
           fields,
           requiredFields: requiredFields,
+          additionalProperties: additionalProperties,
           description: description,
           isNullable: true,
         );
@@ -252,12 +262,14 @@ final class IrOAuthFlow {
   final String? authorizationUrl;
   final String? tokenUrl;
   final String? refreshUrl;
+  final String? deviceAuthorizationUrl;
   final Map<String, String> scopes;
   const IrOAuthFlow({
     required this.type,
     this.authorizationUrl,
     this.tokenUrl,
     this.refreshUrl,
+    this.deviceAuthorizationUrl,
     this.scopes = const {},
   });
 }
@@ -287,6 +299,9 @@ final class IrOperation {
   final String operationId;
   final String dartMethodName;
   final HttpMethod method;
+  /// The raw HTTP method string for [HttpMethod.custom] operations
+  /// (from `additionalOperations`). Null for standard methods.
+  final String? customMethod;
   final String path;
   final String? summary;
   final String? description;
@@ -301,6 +316,7 @@ final class IrOperation {
     this.dartMethodName,
     this.method,
     this.path, {
+    this.customMethod,
     this.summary,
     this.description,
     this.parameters = const [],
@@ -343,8 +359,11 @@ final class IrRequestBody {
 
 final class IrMediaType {
   final IrType schema;
+  /// Per-item schema for streaming media types (SSE, JSONL).
+  /// When present, each streamed event/line is deserialized as this type.
+  final IrType? itemSchema;
   final String? encoding;
-  const IrMediaType(this.schema, {this.encoding});
+  const IrMediaType(this.schema, {this.itemSchema, this.encoding});
 }
 
 final class IrResponse {
@@ -358,7 +377,12 @@ final class IrResponse {
   });
 }
 
-enum HttpMethod { get, post, put, patch, delete, head, options, trace }
+enum HttpMethod {
+  get, post, put, patch, delete, head, options, trace, query,
+  /// Custom HTTP method from `additionalOperations`.
+  /// The actual method name is stored in [IrOperation.customMethod].
+  custom,
+}
 
 enum ParameterLocation { path, query, header, cookie }
 

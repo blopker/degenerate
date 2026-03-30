@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'price': ?price,
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default', 'name', 'price', 'value'}.contains(key)); } 
 ComponentValue2 copyWith({double Function()? $default, String Function()? name, double Function()? price, double Function()? value, }) { return ComponentValue2(
   $default: $default != null ? $default() : this.$default,
   name: name != null ? name() : this.name,

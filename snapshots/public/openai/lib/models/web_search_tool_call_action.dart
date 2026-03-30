@@ -26,7 +26,7 @@ factory WebSearchToolCallActionWebSearchActionSearch.fromJson(Map<String, dynami
 final WebSearchActionSearch webSearchActionSearch;
 
 @override String get type { return 'WebSearchActionSearch'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...webSearchActionSearch.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...webSearchActionSearch.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WebSearchToolCallActionWebSearchActionSearch && webSearchActionSearch == other.webSearchActionSearch; } 
 @override int get hashCode { return webSearchActionSearch.hashCode; } 
@@ -39,7 +39,7 @@ factory WebSearchToolCallActionWebSearchActionOpenPage.fromJson(Map<String, dyna
 final WebSearchActionOpenPage webSearchActionOpenPage;
 
 @override String get type { return 'WebSearchActionOpenPage'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...webSearchActionOpenPage.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...webSearchActionOpenPage.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WebSearchToolCallActionWebSearchActionOpenPage && webSearchActionOpenPage == other.webSearchActionOpenPage; } 
 @override int get hashCode { return webSearchActionOpenPage.hashCode; } 
@@ -52,7 +52,7 @@ factory WebSearchToolCallActionWebSearchActionFind.fromJson(Map<String, dynamic>
 final WebSearchActionFind webSearchActionFind;
 
 @override String get type { return 'WebSearchActionFind'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...webSearchActionFind.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...webSearchActionFind.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WebSearchToolCallActionWebSearchActionFind && webSearchActionFind == other.webSearchActionFind; } 
 @override int get hashCode { return webSearchActionFind.hashCode; } 

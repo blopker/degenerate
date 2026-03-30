@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudforce_one_requests_identifier.dart';import '../models/cloudforce_one_requests_priority_edit.dart';import '../models/cloudforce_one_requests_priority_list.dart';import '../models/cloudforce_one_requests_uuid.dart';import '../models/response_common14.dart';/// PriorityIntelligenceRequirementsPirApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudforce_one_requests_identifier.dart';import '../models/cloudforce_one_requests_priority_edit.dart';import '../models/cloudforce_one_requests_priority_item.dart';import '../models/cloudforce_one_requests_priority_list.dart';import '../models/cloudforce_one_requests_quota.dart';import '../models/cloudforce_one_requests_request_item.dart';import '../models/cloudforce_one_requests_uuid.dart';import '../models/response_common14.dart';/// PriorityIntelligenceRequirementsPirApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class PriorityIntelligenceRequirementsPirApi with ApiExecutor {const Prior
 /// List Priority Intelligence Requirements
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/priority`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsPriorityList body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CloudforceOneRequestsPriorityItem>?, Never>> cloudforceOnePriorityList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsPriorityList body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,14 +25,15 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => CloudforceOneRequestsPriorityItem.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
 /// Get a Priority Intelligence Requirement
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsRequestItem?, Never>> cloudforceOnePriorityGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -44,14 +45,15 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? CloudforceOneRequestsRequestItem.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
 /// Update a Priority Intelligence Requirement
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, required CloudforceOneRequestsPriorityEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsRequestItem?, Never>> cloudforceOnePriorityUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid priorityId, required CloudforceOneRequestsPriorityEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +67,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? CloudforceOneRequestsRequestItem.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -91,7 +94,7 @@ return execute(
 /// Create a New Priority Intelligence Requirement
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/priority/new`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsPriorityEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsPriorityItem?, Never>> cloudforceOnePriorityNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsPriorityEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -105,14 +108,15 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? CloudforceOneRequestsPriorityItem.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
 /// Get Priority Intelligence Requirement Quota
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/priority/quota`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOnePriorityQuota({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestsQuota?, Never>> cloudforceOnePriorityQuota({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -124,7 +128,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? CloudforceOneRequestsQuota.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

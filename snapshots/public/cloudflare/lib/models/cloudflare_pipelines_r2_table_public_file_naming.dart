@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (strategy != null) 'strategy': strategy?.toJson(),
   'suffix': ?suffix,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'prefix', 'strategy', 'suffix'}.contains(key)); } 
 CloudflarePipelinesR2TablePublicFileNaming copyWith({String Function()? prefix, CloudflarePipelinesR2TablePublicFileNamingStrategy Function()? strategy, String Function()? suffix, }) { return CloudflarePipelinesR2TablePublicFileNaming(
   prefix: prefix != null ? prefix() : this.prefix,
   strategy: strategy != null ? strategy() : this.strategy,

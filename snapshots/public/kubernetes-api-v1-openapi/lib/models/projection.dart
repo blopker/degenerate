@@ -13,7 +13,7 @@ final List<VolumeFile>? items;
 Map<String, dynamic> toJson() { return {
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'items'}.contains(key)); } 
 Projection copyWith({List<VolumeFile> Function()? items}) { return Projection(
   items: items != null ? items() : this.items,
 ); } 

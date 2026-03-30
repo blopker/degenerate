@@ -113,7 +113,7 @@ Map<String, dynamic> toJson() { return {
   if (networkCode != null) 'network_code': networkCode?.toJson(),
   if (reason != null) 'reason': reason?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'network_code', 'reason'}.contains(key)); } 
 PaymentMethodUsBankAccountBlocked copyWith({PaymentMethodUsBankAccountBlockedNetworkCode? Function()? networkCode, PaymentMethodUsBankAccountBlockedReason? Function()? reason, }) { return PaymentMethodUsBankAccountBlocked(
   networkCode: networkCode != null ? networkCode() : this.networkCode,
   reason: reason != null ? reason() : this.reason,

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'reader': ?reader,
   'transaction_id': ?transactionId,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'location', 'reader', 'transaction_id'}.contains(key)); } 
 PaymentMethodDetailsAffirm copyWith({String Function()? location, String Function()? reader, String? Function()? transactionId, }) { return PaymentMethodDetailsAffirm(
   location: location != null ? location() : this.location,
   reader: reader != null ? reader() : this.reader,

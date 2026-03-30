@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/base_error_response.dart';import '../models/base_response.dart';import '../models/cc_image_registry_credentials_configuration.dart';/// ImageRegistriesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/base_error_response.dart';import '../models/cc_account_registry_token.dart';import '../models/cc_image_registry_credentials_configuration.dart';/// ImageRegistriesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ImageRegistriesApi with ApiExecutor {const ImageRegistriesApi(this.a
 /// Generates temporary credentials for accessing Cloudflare's container image registry. Used for pulling and pushing container images.
 ///
 /// `POST /accounts/{account_id}/containers/registries/{domain}/credentials`
-Future<ApiResult<BaseResponse, BaseErrorResponse>> generateImageRegistryCredentials({required String accountId, required String domain, required CcImageRegistryCredentialsConfiguration body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CcAccountRegistryToken, BaseErrorResponse>> generateImageRegistryCredentials({required String accountId, required String domain, required CcImageRegistryCredentialsConfiguration body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -27,7 +27,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return BaseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return CcAccountRegistryToken.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return BaseErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

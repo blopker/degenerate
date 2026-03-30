@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'uuid': ?uuid,
   'value': ?value,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'categoryName', 'uuid', 'value'}.contains(key)); } 
 PatchIndicatorUpdateResponseTags copyWith({String Function()? categoryName, String Function()? uuid, String Function()? value, }) { return PatchIndicatorUpdateResponseTags(
   categoryName: categoryName != null ? categoryName() : this.categoryName,
   uuid: uuid != null ? uuid() : this.uuid,

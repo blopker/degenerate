@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'model_response_properties.dart';/// The type of the event. Always 'response.queued'.
+import 'response.dart';/// The type of the event. Always 'response.queued'.
 final class ResponseQueuedEventType {const ResponseQueuedEventType._(this.value);
 
 factory ResponseQueuedEventType.fromJson(String json) { return switch (json) {
@@ -28,7 +28,7 @@ final class ResponseQueuedEvent {const ResponseQueuedEvent({required this.type, 
 
 factory ResponseQueuedEvent.fromJson(Map<String, dynamic> json) { return ResponseQueuedEvent(
   type: ResponseQueuedEventType.fromJson(json['type'] as String),
-  response: ModelResponseProperties.fromJson(json['response'] as Map<String, dynamic>),
+  response: Response.fromJson(json['response'] as Map<String, dynamic>),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
 ); }
 
@@ -36,7 +36,7 @@ factory ResponseQueuedEvent.fromJson(Map<String, dynamic> json) { return Respons
 final ResponseQueuedEventType type;
 
 /// The full response object that is queued.
-final ModelResponseProperties response;
+final Response response;
 
 /// The sequence number for this event.
 final int sequenceNumber;
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('response') &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseQueuedEvent copyWith({ResponseQueuedEventType? type, ModelResponseProperties? response, int? sequenceNumber, }) { return ResponseQueuedEvent(
+ResponseQueuedEvent copyWith({ResponseQueuedEventType? type, Response? response, int? sequenceNumber, }) { return ResponseQueuedEvent(
   type: type ?? this.type,
   response: response ?? this.response,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,

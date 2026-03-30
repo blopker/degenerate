@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'unit_amount_decimal': ?unitAmountDecimal,
   'up_to': ?upTo,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'flat_amount', 'flat_amount_decimal', 'unit_amount', 'unit_amount_decimal', 'up_to'}.contains(key)); } 
 PlanTier copyWith({int? Function()? flatAmount, String? Function()? flatAmountDecimal, int? Function()? unitAmount, String? Function()? unitAmountDecimal, int? Function()? upTo, }) { return PlanTier(
   flatAmount: flatAmount != null ? flatAmount() : this.flatAmount,
   flatAmountDecimal: flatAmountDecimal != null ? flatAmountDecimal() : this.flatAmountDecimal,

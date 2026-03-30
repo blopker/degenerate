@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
   if (previousClientSecretExpiresAt != null) 'previous_client_secret_expires_at': previousClientSecretExpiresAt?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_secret_version', 'duration', 'name', 'previous_client_secret_expires_at'}.contains(key)); } 
 AccessServiceTokensUpdateAServiceTokenRequest copyWith({AccessClientSecretVersion Function()? clientSecretVersion, AccessDuration Function()? duration, AccessSchemasName Function()? name, AccessPreviousClientSecretExpiresAt Function()? previousClientSecretExpiresAt, }) { return AccessServiceTokensUpdateAServiceTokenRequest(
   clientSecretVersion: clientSecretVersion != null ? clientSecretVersion() : this.clientSecretVersion,
   duration: duration != null ? duration() : this.duration,

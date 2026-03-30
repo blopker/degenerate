@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   if (connector != null) 'connector': connector?.toJson(),
   if (device != null) 'device': device?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connector', 'device'}.contains(key)); } 
 MconnControllerIdentifyEkCertResult copyWith({MconnControllerConnectorIdentity Function()? connector, MconnControllerDeviceIdentity Function()? device, }) { return MconnControllerIdentifyEkCertResult(
   connector: connector != null ? connector() : this.connector,
   device: device != null ? device() : this.device,

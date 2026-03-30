@@ -110,7 +110,7 @@ Map<String, dynamic> toJson() { return {
   'usage_category': ?usageCategory,
   'usage_record_uri': ?usageRecordUri,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'callback_method', 'callback_url', 'current_value', 'date_created', 'date_fired', 'date_updated', 'friendly_name', 'recurring', 'sid', 'trigger_by', 'trigger_value', 'uri', 'usage_category', 'usage_record_uri'}.contains(key)); } 
 AccountUsageUsageTrigger copyWith({String? Function()? accountSid, String? Function()? apiVersion, AccountUsageUsageTriggerCallbackMethod? Function()? callbackMethod, Uri? Function()? callbackUrl, String? Function()? currentValue, String? Function()? dateCreated, String? Function()? dateFired, String? Function()? dateUpdated, String? Function()? friendlyName, UsageTriggerEnumRecurring Function()? recurring, String? Function()? sid, UsageTriggerEnumTriggerField Function()? triggerBy, String? Function()? triggerValue, String? Function()? uri, String? Function()? usageCategory, String? Function()? usageRecordUri, }) { return AccountUsageUsageTrigger(
   accountSid: accountSid != null ? accountSid() : this.accountSid,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

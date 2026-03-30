@@ -100,7 +100,7 @@ Map<String, dynamic> toJson() { return {
   if (amountType != null) 'amount_type': amountType?.toJson(),
   if (purpose != null) 'purpose': purpose?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'purpose'}.contains(key)); } 
 InvoiceMandateOptionsPayto copyWith({int? Function()? amount, InvoiceMandateOptionsPaytoAmountType? Function()? amountType, InvoiceMandateOptionsPaytoPurpose? Function()? purpose, }) { return InvoiceMandateOptionsPayto(
   amount: amount != null ? amount() : this.amount,
   amountType: amountType != null ? amountType() : this.amountType,

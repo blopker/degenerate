@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'explanation': ?explanation,
   'received_at': ?receivedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'canceled_at', 'cancellation_reason', 'explanation', 'received_at'}.contains(key)); } 
 IssuingDisputeServiceNotAsDescribedEvidence copyWith({IssuingDisputeServiceNotAsDescribedEvidenceAdditionalDocumentation? Function()? additionalDocumentation, int? Function()? canceledAt, String? Function()? cancellationReason, String? Function()? explanation, int? Function()? receivedAt, }) { return IssuingDisputeServiceNotAsDescribedEvidence(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,

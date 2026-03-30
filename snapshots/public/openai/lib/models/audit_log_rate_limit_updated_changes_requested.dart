@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'max_requests_per_1_day': ?maxRequestsPer1Day,
   'batch_1_day_max_input_tokens': ?batch1DayMaxInputTokens,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_requests_per_1_minute', 'max_tokens_per_1_minute', 'max_images_per_1_minute', 'max_audio_megabytes_per_1_minute', 'max_requests_per_1_day', 'batch_1_day_max_input_tokens'}.contains(key)); } 
 AuditLogRateLimitUpdatedChangesRequested copyWith({int Function()? maxRequestsPer1Minute, int Function()? maxTokensPer1Minute, int Function()? maxImagesPer1Minute, int Function()? maxAudioMegabytesPer1Minute, int Function()? maxRequestsPer1Day, int Function()? batch1DayMaxInputTokens, }) { return AuditLogRateLimitUpdatedChangesRequested(
   maxRequestsPer1Minute: maxRequestsPer1Minute != null ? maxRequestsPer1Minute() : this.maxRequestsPer1Minute,
   maxTokensPer1Minute: maxTokensPer1Minute != null ? maxTokensPer1Minute() : this.maxTokensPer1Minute,

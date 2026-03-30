@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (uploadedOn != null) 'uploaded_on': uploadedOn?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'certificate', 'expires_on', 'id', 'issuer', 'serial_number', 'signature', 'status', 'uploaded_on'}.contains(key)); } 
 TlsCertificatesAndHostnamesSchemasCertificateObject copyWith({TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate Function()? certificate, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasExpiresOn Function()? expiresOn, TlsCertificatesAndHostnamesIdentifier Function()? id, TlsCertificatesAndHostnamesIssuer Function()? issuer, TlsCertificatesAndHostnamesSerialNumber Function()? serialNumber, TlsCertificatesAndHostnamesSignature Function()? signature, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus Function()? status, TlsCertificatesAndHostnamesComponentsSchemasUploadedOn Function()? uploadedOn, }) { return TlsCertificatesAndHostnamesSchemasCertificateObject(
   certificate: certificate != null ? certificate() : this.certificate,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,

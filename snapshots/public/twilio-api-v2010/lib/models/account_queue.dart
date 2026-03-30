@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'date_created': ?dateCreated,
   'max_size': maxSize,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date_updated', 'current_size', 'friendly_name', 'uri', 'account_sid', 'average_wait_time', 'sid', 'date_created', 'max_size'}.contains(key)); } 
 AccountQueue copyWith({String? Function()? dateUpdated, int Function()? currentSize, String? Function()? friendlyName, String? Function()? uri, String? Function()? accountSid, int Function()? averageWaitTime, String? Function()? sid, String? Function()? dateCreated, int Function()? maxSize, }) { return AccountQueue(
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
   currentSize: currentSize != null ? currentSize() : this.currentSize,

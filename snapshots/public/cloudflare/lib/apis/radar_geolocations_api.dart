@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_geolocation_details_format.dart';import '../models/radar_get_geolocation_details_response.dart';import '../models/radar_get_geolocation_details_response404.dart';import '../models/radar_get_geolocations_format.dart';import '../models/radar_get_geolocations_response.dart';import '../models/radar_get_geolocations_response400.dart';/// RadarGeolocationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_geolocation_details_format.dart';import '../models/radar_get_geolocation_details_response404.dart';import '../models/radar_get_geolocation_details_response_result.dart';import '../models/radar_get_geolocations_format.dart';import '../models/radar_get_geolocations_response400.dart';import '../models/radar_get_geolocations_response_result.dart';/// RadarGeolocationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,13 +13,23 @@ final class RadarGeolocationsApi with ApiExecutor {const RadarGeolocationsApi(th
 /// Retrieves a list of geolocations.
 ///
 /// `GET /radar/geolocations`
-Future<ApiResult<RadarGetGeolocationsResponse, RadarGetGeolocationsResponse400>> radarGetGeolocations({int? limit, int? offset, String? geoId, String? location, RadarGetGeolocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetGeolocationsResponseResult, RadarGetGeolocationsResponse400>> radarGetGeolocations({int? limit, int? offset, String? geoId, String? location, RadarGetGeolocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (limit != null) queryParameters['limit'] = limit.toString();
-if (offset != null) queryParameters['offset'] = offset.toString();
-if (geoId != null) queryParameters['geoId'] = geoId;
-if (location != null) queryParameters['location'] = location;
-if (format != null) queryParameters['format'] = format.toJson();
+if (limit != null) {
+  queryParameters['limit'] = limit.toString();
+}
+if (offset != null) {
+  queryParameters['offset'] = offset.toString();
+}
+if (geoId != null) {
+  queryParameters['geoId'] = geoId;
+}
+if (location != null) {
+  queryParameters['location'] = location;
+}
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -35,7 +45,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetGeolocationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetGeolocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetGeolocationsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -47,9 +58,11 @@ return execute(
 /// Retrieves the requested Geolocation information.
 ///
 /// `GET /radar/geolocations/{geo_id}`
-Future<ApiResult<RadarGetGeolocationDetailsResponse, RadarGetGeolocationDetailsResponse404>> radarGetGeolocationDetails({required String geoId, RadarGetGeolocationDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetGeolocationDetailsResponseResult, RadarGetGeolocationDetailsResponse404>> radarGetGeolocationDetails({required String geoId, RadarGetGeolocationDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (format != null) queryParameters['format'] = format.toJson();
+if (format != null) {
+  queryParameters['format'] = format.toJson();
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 
@@ -65,7 +78,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetGeolocationDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetGeolocationDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetGeolocationDetailsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

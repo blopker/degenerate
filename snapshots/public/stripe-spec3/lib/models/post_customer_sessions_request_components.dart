@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentElement != null) 'payment_element': paymentElement?.toJson(),
   if (pricingTable != null) 'pricing_table': pricingTable?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'buy_button', 'customer_sheet', 'mobile_payment_element', 'payment_element', 'pricing_table'}.contains(key)); } 
 PostCustomerSessionsRequestComponents copyWith({PostCustomerSessionsRequestComponentsBuyButton Function()? buyButton, PostCustomerSessionsRequestComponentsCustomerSheet Function()? customerSheet, PostCustomerSessionsRequestComponentsMobilePaymentElement Function()? mobilePaymentElement, PostCustomerSessionsRequestComponentsPaymentElement Function()? paymentElement, PostCustomerSessionsRequestComponentsPricingTable Function()? pricingTable, }) { return PostCustomerSessionsRequestComponents(
   buyButton: buyButton != null ? buyButton() : this.buyButton,
   customerSheet: customerSheet != null ? customerSheet() : this.customerSheet,

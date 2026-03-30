@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'model_name': ?modelName,
   if (type != null) 'type': type?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model_name', 'type'}.contains(key)); } 
 MqEventSourceWorkersAiModel copyWith({String Function()? modelName, MqEventSourceWorkersAiModelType Function()? type, }) { return MqEventSourceWorkersAiModel(
   modelName: modelName != null ? modelName() : this.modelName,
   type: type != null ? type() : this.type,

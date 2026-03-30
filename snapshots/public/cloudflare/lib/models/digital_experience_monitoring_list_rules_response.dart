@@ -11,7 +11,7 @@ final List<DigitalExperienceMonitoringDexRule>? rules;
 Map<String, dynamic> toJson() { return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rules'}.contains(key)); } 
 DigitalExperienceMonitoringListRulesResponse copyWith({List<DigitalExperienceMonitoringDexRule> Function()? rules}) { return DigitalExperienceMonitoringListRulesResponse(
   rules: rules != null ? rules() : this.rules,
 ); } 

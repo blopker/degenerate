@@ -11,7 +11,7 @@ final int? amountEligible;
 Map<String, dynamic> toJson() { return {
   'amount_eligible': ?amountEligible,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_eligible'}.contains(key)); } 
 PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigTipping copyWith({int Function()? amountEligible}) { return PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigTipping(
   amountEligible: amountEligible != null ? amountEligible() : this.amountEligible,
 ); } 

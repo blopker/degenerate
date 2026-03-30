@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'video_bg': videoBg,
   'warning': warning,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'background', 'brand', 'danger', 'success', 'text', 'text_on_brand', 'video_bg', 'warning'}.contains(key)); } 
 RealtimekitUpdatePresetUiDesignTokensColors copyWith({RealtimekitUpdatePresetUiDesignTokensColorsBackground Function()? background, RealtimekitUpdatePresetUiDesignTokensColorsBrand Function()? brand, String Function()? danger, String Function()? success, String Function()? text, String Function()? textOnBrand, String Function()? videoBg, String Function()? warning, }) { return RealtimekitUpdatePresetUiDesignTokensColors(
   background: background != null ? background() : this.background,
   brand: brand != null ? brand() : this.brand,

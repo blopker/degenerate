@@ -4,7 +4,7 @@ Use the gitignored outputs/ folder for experimenting and investigating outputs. 
 
 Popular openapi specs are in test/fixtures, we have committed snapshot outputs in test/snapshots.
 
-The full openapi 3.1.1 spec is in openapi_specs/. This generator only supports Openapi 3+. Non-conforming specs should generate code, but emit warnings.
+The OpenAPI spec docs for 3.0, 3.1 and 3.2 in openapi_specs/. Refer to them as needed. This generator only supports Openapi 3+. Non-conforming specs should generate code, but emit warnings.
 
 Use a "Senior Dart Engineer" subagent to review generated clients. Outputs should be as good as hand-made code.
 

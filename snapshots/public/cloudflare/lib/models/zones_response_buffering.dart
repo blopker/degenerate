@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
 ZonesResponseBuffering copyWith({ZonesResponseBufferingId Function()? id, ZonesResponseBufferingValue Function()? value, }) { return ZonesResponseBuffering(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,

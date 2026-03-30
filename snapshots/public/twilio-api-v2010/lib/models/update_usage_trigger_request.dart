@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (callbackUrl != null) 'CallbackUrl': callbackUrl?.toString(),
   'FriendlyName': ?friendlyName,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'CallbackMethod', 'CallbackUrl', 'FriendlyName'}.contains(key)); } 
 UpdateUsageTriggerRequest copyWith({UpdateUsageTriggerRequestCallbackMethod Function()? callbackMethod, Uri Function()? callbackUrl, String Function()? friendlyName, }) { return UpdateUsageTriggerRequest(
   callbackMethod: callbackMethod != null ? callbackMethod() : this.callbackMethod,
   callbackUrl: callbackUrl != null ? callbackUrl() : this.callbackUrl,

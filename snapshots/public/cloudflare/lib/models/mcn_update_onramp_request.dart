@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (vpc != null) 'vpc': vpc?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attached_hubs', 'attached_vpcs', 'description', 'install_routes_in_cloud', 'install_routes_in_magic_wan', 'manage_hub_to_hub_attachments', 'manage_vpc_to_hub_attachments', 'name', 'vpc'}.contains(key)); } 
 McnUpdateOnrampRequest copyWith({List<McnResourceId> Function()? attachedHubs, List<McnResourceId> Function()? attachedVpcs, String Function()? description, bool Function()? installRoutesInCloud, bool Function()? installRoutesInMagicWan, bool Function()? manageHubToHubAttachments, bool Function()? manageVpcToHubAttachments, String Function()? name, McnResourceId Function()? vpc, }) { return McnUpdateOnrampRequest(
   attachedHubs: attachedHubs != null ? attachedHubs() : this.attachedHubs,
   attachedVpcs: attachedVpcs != null ? attachedVpcs() : this.attachedVpcs,

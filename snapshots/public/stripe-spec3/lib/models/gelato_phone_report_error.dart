@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (code != null) 'code': code?.toJson(),
   'reason': ?reason,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'reason'}.contains(key)); } 
 GelatoPhoneReportError copyWith({GelatoPhoneReportErrorCode? Function()? code, String? Function()? reason, }) { return GelatoPhoneReportError(
   code: code != null ? code() : this.code,
   reason: reason != null ? reason() : this.reason,

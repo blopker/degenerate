@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (timeseries != null) 'timeseries': timeseries?.map((e) => e.toJson()).toList(),
   if (totals != null) 'totals': totals?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'timeseries', 'totals'}.contains(key)); } 
 Dashboard copyWith({List<Timeseries2> Function()? timeseries, Totals Function()? totals, }) { return Dashboard(
   timeseries: timeseries != null ? timeseries() : this.timeseries,
   totals: totals != null ? totals() : this.totals,

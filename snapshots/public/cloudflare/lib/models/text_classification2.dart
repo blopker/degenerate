@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'label': ?label,
   'score': ?score,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'label', 'score'}.contains(key)); } 
 TextClassification2 copyWith({String Function()? label, double Function()? score, }) { return TextClassification2(
   label: label != null ? label() : this.label,
   score: score != null ? score() : this.score,

@@ -307,6 +307,14 @@ void main() {
         expect((t as IrTypeRef).name, equals('Pet'));
       });
 
+      test('type: "null" → nullable dynamic', () {
+        final t = lowerer.lowerInlineSchema({'type': 'null'});
+        expect(t, isA<IrPrimitive>());
+        final p = t as IrPrimitive;
+        expect(p.kind, equals(PrimitiveKind.dynamic_));
+        expect(p.isNullable, isTrue);
+      });
+
       test('_cycleRef → IrTypeRef', () {
         final t = lowerer.lowerInlineSchema({'_cycleRef': 'Node'});
         expect(t, isA<IrTypeRef>());
@@ -470,6 +478,57 @@ void main() {
         expect(jsonContent.schema, isA<IrTypeRef>());
         expect((jsonContent.schema as IrTypeRef).name, equals('Pet'));
       });
+    });
+  });
+
+  group('OperationLowerer - content-based parameter schema', () {
+    test('extracts schema from parameter content field', () {
+      final doc = OpenApiDocument({
+        'openapi': '3.1.0',
+        'info': {'title': 'Test', 'version': '1'},
+        'paths': {
+          '/search': {
+            'get': {
+              'operationId': 'search',
+              'parameters': [
+                {
+                  'name': 'filter',
+                  'in': 'query',
+                  'required': true,
+                  'content': {
+                    'application/json': {
+                      'schema': {
+                        'type': 'object',
+                        'properties': {
+                          'field': {'type': 'string'},
+                          'value': {'type': 'string'},
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+              'responses': {
+                '200': {'description': 'ok'},
+              },
+            },
+          },
+        },
+      });
+      final ctx = SchemaNormalizer().normalize(doc.schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(doc.schemas);
+      final opLowerer = OperationLowerer(mapper, doc: doc);
+      final apis = opLowerer.lowerPaths(doc.paths);
+
+      final op = apis.first.operations.first;
+      final param = op.parameters.first;
+      expect(param.name, 'filter');
+      expect(param.isRequired, isTrue);
+      // Should be an object type, not dynamic
+      expect(param.type, isNot(isA<IrPrimitive>().having(
+        (p) => p.kind, 'kind', PrimitiveKind.dynamic_,
+      )));
     });
   });
 
@@ -943,6 +1002,219 @@ void main() {
         lowerer.typeRegistry.keys.where((k) => k.startsWith('InlineObject')),
         isEmpty,
       );
+    });
+
+    test('inferred discriminator mapping uses original schema names, not Dart names', () {
+      final ctx = SchemaNormalizer().normalize({
+        'Animal': {
+          'oneOf': [
+            {r'$ref': '#/components/schemas/Cat'},
+            {r'$ref': '#/components/schemas/__dog__'},
+          ],
+          'discriminator': {
+            'propertyName': 'type',
+          },
+        },
+        'Cat': {
+          'type': 'object',
+          'properties': {
+            'type': {'type': 'string'},
+            'purr': {'type': 'boolean'},
+          },
+        },
+        '__dog__': {
+          'type': 'object',
+          'properties': {
+            'type': {'type': 'string'},
+            'bark': {'type': 'boolean'},
+          },
+        },
+      });
+      final lowerer = IrMapper(ctx);
+      lowerer.lowerSchemas(ctx.nameMapping.map((k, v) => MapEntry(k, {
+        'type': 'object',
+        'properties': {
+          'type': {'type': 'string'},
+        },
+      })));
+      // Lower the union schema
+      lowerer.lowerSchema('Animal', {
+        'oneOf': [
+          {r'$ref': '#/components/schemas/Cat'},
+          {r'$ref': '#/components/schemas/__dog__'},
+        ],
+        'discriminator': {
+          'propertyName': 'type',
+        },
+      });
+      final union = lowerer.typeRegistry['Animal']! as IrDiscriminatedUnion;
+      // Mapping keys should be the original schema names (what appears in JSON),
+      // not the Dart type names.
+      expect(union.mapping.keys, contains('Cat'));
+      expect(union.mapping.keys, contains('__dog__'));
+      expect(union.mapping.keys, isNot(contains('Dog')));
+    });
+  });
+
+  group('allOf with ref and extra properties', () {
+    test('merges ref properties with local properties into IrObject', () {
+      final schemas = <String, dynamic>{
+        'Base': {
+          'type': 'object',
+          'properties': {
+            'id': {'type': 'string'},
+          },
+          'required': ['id'],
+        },
+        'Extended': {
+          'allOf': [
+            {r'$ref': '#/components/schemas/Base'},
+            {
+              'type': 'object',
+              'properties': {
+                'extra': {'type': 'string'},
+              },
+            },
+          ],
+        },
+      };
+      final ctx = SchemaNormalizer().normalize(schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(schemas);
+
+      final extended = mapper.typeRegistry['Extended'];
+      expect(extended, isA<IrObject>());
+      final obj = extended as IrObject;
+      final fieldNames = obj.fields.map((f) => f.name).toSet();
+      expect(fieldNames, contains('id'));
+      expect(fieldNames, contains('extra'));
+    });
+
+    test('merges required lists from ref and local schema', () {
+      final schemas = <String, dynamic>{
+        'Base': {
+          'type': 'object',
+          'properties': {
+            'id': {'type': 'string'},
+          },
+          'required': ['id'],
+        },
+        'Extended': {
+          'allOf': [
+            {r'$ref': '#/components/schemas/Base'},
+            {
+              'type': 'object',
+              'required': ['extra'],
+              'properties': {
+                'extra': {'type': 'string'},
+              },
+            },
+          ],
+        },
+      };
+      final ctx = SchemaNormalizer().normalize(schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(schemas);
+
+      final obj = mapper.typeRegistry['Extended']! as IrObject;
+      final requiredNames =
+          obj.fields.where((f) => f.isRequired).map((f) => f.name).toSet();
+      expect(requiredNames, contains('id'));
+      expect(requiredNames, contains('extra'));
+    });
+
+    test('discriminator variant with allOf stays as IrTypeRef to preserve union wrapping', () {
+      final schemas = <String, dynamic>{
+        'Animal': {
+          'oneOf': [
+            {r'$ref': '#/components/schemas/Cat'},
+            {r'$ref': '#/components/schemas/Dog'},
+          ],
+          'discriminator': {
+            'propertyName': 'type',
+          },
+        },
+        'AnimalBase': {
+          'type': 'object',
+          'properties': {
+            'name': {'type': 'string'},
+          },
+        },
+        'Cat': {
+          'allOf': [
+            {
+              'type': 'object',
+              'properties': {
+                'type': {
+                  'type': 'string',
+                  'enum': ['cat'],
+                },
+              },
+              'required': ['type'],
+            },
+            {r'$ref': '#/components/schemas/AnimalBase'},
+          ],
+        },
+        'Dog': {
+          'allOf': [
+            {
+              'type': 'object',
+              'properties': {
+                'type': {
+                  'type': 'string',
+                  'enum': ['dog'],
+                },
+              },
+              'required': ['type'],
+            },
+            {r'$ref': '#/components/schemas/AnimalBase'},
+          ],
+        },
+      };
+      final ctx = SchemaNormalizer().normalize(schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(schemas);
+
+      // Cat and Dog are discriminator variants — they stay as refs to base
+      // so the sealed union emitter can wrap them correctly.
+      final cat = mapper.typeRegistry['Cat'];
+      expect(cat, isA<IrTypeRef>());
+      final dog = mapper.typeRegistry['Dog'];
+      expect(dog, isA<IrTypeRef>());
+    });
+
+    test('multiple refs merged into IrObject', skip: 'Needs flattener-level ref resolution', () {
+      final schemas = <String, dynamic>{
+        'HasName': {
+          'type': 'object',
+          'properties': {
+            'name': {'type': 'string'},
+          },
+          'required': ['name'],
+        },
+        'HasAge': {
+          'type': 'object',
+          'properties': {
+            'age': {'type': 'integer'},
+          },
+        },
+        'Person': {
+          'allOf': [
+            {r'$ref': '#/components/schemas/HasName'},
+            {r'$ref': '#/components/schemas/HasAge'},
+          ],
+        },
+      };
+      final ctx = SchemaNormalizer().normalize(schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(schemas);
+
+      final person = mapper.typeRegistry['Person'];
+      expect(person, isA<IrObject>());
+      final obj = person as IrObject;
+      final fieldNames = obj.fields.map((f) => f.name).toSet();
+      expect(fieldNames, contains('name'));
+      expect(fieldNames, contains('age'));
     });
   });
 

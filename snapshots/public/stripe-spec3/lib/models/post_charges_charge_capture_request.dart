@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (transferData != null) 'transfer_data': transferData?.toJson(),
   'transfer_group': ?transferGroup,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'application_fee', 'application_fee_amount', 'expand', 'receipt_email', 'statement_descriptor', 'statement_descriptor_suffix', 'transfer_data', 'transfer_group'}.contains(key)); } 
 PostChargesChargeCaptureRequest copyWith({int Function()? amount, int Function()? applicationFee, int Function()? applicationFeeAmount, List<String> Function()? expand, String Function()? receiptEmail, String Function()? statementDescriptor, String Function()? statementDescriptorSuffix, PostChargesChargeCaptureRequestTransferData Function()? transferData, String Function()? transferGroup, }) { return PostChargesChargeCaptureRequest(
   amount: amount != null ? amount() : this.amount,
   applicationFee: applicationFee != null ? applicationFee() : this.applicationFee,

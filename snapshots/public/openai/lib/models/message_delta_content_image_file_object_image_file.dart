@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'file_id': ?fileId,
   'detail': detail.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'detail'}.contains(key)); } 
 MessageDeltaContentImageFileObjectImageFile copyWith({String Function()? fileId, MessageDeltaContentImageFileObjectImageFileDetail Function()? detail, }) { return MessageDeltaContentImageFileObjectImageFile(
   fileId: fileId != null ? fileId() : this.fileId,
   detail: detail != null ? detail() : this.detail,

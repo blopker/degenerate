@@ -11,7 +11,7 @@ final String? shippingRate;
 Map<String, dynamic> toJson() { return {
   'shipping_rate': ?shippingRate,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'shipping_rate'}.contains(key)); } 
 PostPaymentLinksRequestShippingOptions copyWith({String Function()? shippingRate}) { return PostPaymentLinksRequestShippingOptions(
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,
 ); } 

@@ -18,7 +18,7 @@ factory WaitingroomQueryWaitingroom.fromJson(Map<String, dynamic> json) { return
   path: json['path'] != null ? WaitingroomPath.fromJson(json['path'] as String) : null,
   queueAll: json['queue_all'] != null ? WaitingroomQueueAll.fromJson(json['queue_all'] as bool) : null,
   queueingMethod: json['queueing_method'] != null ? WaitingroomQueueingMethod.fromJson(json['queueing_method'] as String) : null,
-  queueingStatusCode: json['queueing_status_code'] != null ? WaitingroomQueueingStatusCode.fromJson(json['queueing_status_code'] as num) : null,
+  queueingStatusCode: json['queueing_status_code'] != null ? WaitingroomQueueingStatusCode.fromJson((json['queueing_status_code'] as num).toInt()) : null,
   sessionDuration: json['session_duration'] != null ? WaitingroomSessionDuration.fromJson(json['session_duration'] as num) : null,
   suspended: json['suspended'] != null ? WaitingroomSuspended.fromJson(json['suspended'] as bool) : null,
   totalActiveUsers: WaitingroomTotalActiveUsers.fromJson(json['total_active_users'] as num),

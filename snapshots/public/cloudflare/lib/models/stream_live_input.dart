@@ -110,7 +110,7 @@ Map<String, dynamic> toJson() { return {
   if (webRtc != null) 'webRTC': webRtc?.toJson(),
   if (webRtcPlayback != null) 'webRTCPlayback': webRtcPlayback?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'deleteRecordingAfterDays', 'enabled', 'meta', 'modified', 'recording', 'rtmps', 'rtmpsPlayback', 'srt', 'srtPlayback', 'status', 'uid', 'webRTC', 'webRTCPlayback'}.contains(key)); } 
 StreamLiveInput copyWith({StreamLiveInputCreated Function()? created, StreamLiveInputRecordingDeletion Function()? deleteRecordingAfterDays, StreamLiveInputEnabled Function()? enabled, Map<String, dynamic> Function()? meta, StreamLiveInputModified Function()? modified, StreamLiveInputRecordingSettings Function()? recording, StreamInputRtmps Function()? rtmps, StreamPlaybackRtmps Function()? rtmpsPlayback, StreamInputSrt Function()? srt, StreamPlaybackSrt Function()? srtPlayback, StreamLiveInputStatus? Function()? status, StreamLiveInputIdentifier Function()? uid, StreamInputWebrtc Function()? webRtc, StreamPlaybackWebrtc Function()? webRtcPlayback, }) { return StreamLiveInput(
   created: created != null ? created() : this.created,
   deleteRecordingAfterDays: deleteRecordingAfterDays != null ? deleteRecordingAfterDays() : this.deleteRecordingAfterDays,

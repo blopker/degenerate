@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'start_time': ?startTime,
   'updated_at': ?updatedAt,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'end_time', 'id', 'policy_id', 'start_time', 'updated_at'}.contains(key)); } 
 AaaSilence copyWith({String Function()? createdAt, String Function()? endTime, AaaSilenceId Function()? id, AaaPolicyId Function()? policyId, String Function()? startTime, String Function()? updatedAt, }) { return AaaSilence(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   endTime: endTime != null ? endTime() : this.endTime,

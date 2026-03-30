@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'default': ?$default,
   'description': ?description,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'url', 'name', 'color', 'default', 'description'}.contains(key)); } 
 IssueSearchResultItemLabels copyWith({int Function()? id, String Function()? nodeId, String Function()? url, String Function()? name, String Function()? color, bool Function()? $default, String? Function()? description, }) { return IssueSearchResultItemLabels(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,

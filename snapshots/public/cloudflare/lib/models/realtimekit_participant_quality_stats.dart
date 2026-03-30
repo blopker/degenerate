@@ -11,7 +11,7 @@ final List<RealtimekitParticipantQualityStatsQualityStats>? qualityStats;
 Map<String, dynamic> toJson() { return {
   if (qualityStats != null) 'quality_stats': qualityStats?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'quality_stats'}.contains(key)); } 
 RealtimekitParticipantQualityStats copyWith({List<RealtimekitParticipantQualityStatsQualityStats> Function()? qualityStats}) { return RealtimekitParticipantQualityStats(
   qualityStats: qualityStats != null ? qualityStats() : this.qualityStats,
 ); } 

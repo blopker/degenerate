@@ -89,7 +89,7 @@ final PostSetupIntentsIntentConfirmRequestPaymentMethodDataIdealBank? bank;
 Map<String, dynamic> toJson() { return {
   if (bank != null) 'bank': bank?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
 PostSetupIntentsIntentConfirmRequestPaymentMethodDataIdeal copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodDataIdealBank Function()? bank}) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataIdeal(
   bank: bank != null ? bank() : this.bank,
 ); } 

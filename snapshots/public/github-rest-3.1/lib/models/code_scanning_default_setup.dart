@@ -227,7 +227,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   if (schedule != null) 'schedule': schedule?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state', 'languages', 'runner_type', 'runner_label', 'query_suite', 'threat_model', 'updated_at', 'schedule'}.contains(key)); } 
 CodeScanningDefaultSetup copyWith({CodeScanningDefaultSetupState Function()? state, List<CodeScanningDefaultSetupLanguages> Function()? languages, CodeScanningDefaultSetupRunnerType? Function()? runnerType, String? Function()? runnerLabel, CodeScanningDefaultSetupQuerySuite Function()? querySuite, CodeScanningDefaultSetupThreatModel Function()? threatModel, DateTime? Function()? updatedAt, CodeScanningDefaultSetupSchedule? Function()? schedule, }) { return CodeScanningDefaultSetup(
   state: state != null ? state() : this.state,
   languages: languages != null ? languages() : this.languages,

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'resourceVersion': ?resourceVersion,
   'uid': ?uid,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'resourceVersion', 'uid'}.contains(key)); } 
 Preconditions copyWith({String Function()? resourceVersion, String Function()? uid, }) { return Preconditions(
   resourceVersion: resourceVersion != null ? resourceVersion() : this.resourceVersion,
   uid: uid != null ? uid() : this.uid,

@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (mechanisms != null) 'mechanisms': mechanisms?.toJson(),
   if (name != null) 'name': name?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'alert_interval', 'alert_type', 'description', 'enabled', 'filters', 'mechanisms', 'name'}.contains(key)); } 
 NotificationPoliciesUpdateANotificationPolicyRequest copyWith({AaaAlertInterval Function()? alertInterval, AaaAlertType Function()? alertType, AaaSchemasDescription Function()? description, AaaEnabled Function()? enabled, AaaFilters Function()? filters, AaaMechanisms Function()? mechanisms, AaaSchemasName Function()? name, }) { return NotificationPoliciesUpdateANotificationPolicyRequest(
   alertInterval: alertInterval != null ? alertInterval() : this.alertInterval,
   alertType: alertType != null ? alertType() : this.alertType,

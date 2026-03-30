@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (sourceFlowDetails != null) 'source_flow_details': sourceFlowDetails?.toJson(),
   'source_flow_type': ?sourceFlowType,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'credit_reversal', 'issuing_authorization', 'issuing_transaction', 'source_flow', 'source_flow_details', 'source_flow_type'}.contains(key)); } 
 TreasuryReceivedCreditsResourceLinkedFlows copyWith({String? Function()? creditReversal, String? Function()? issuingAuthorization, String? Function()? issuingTransaction, String? Function()? sourceFlow, TreasuryReceivedCreditsResourceLinkedFlowsSourceFlowDetails? Function()? sourceFlowDetails, String? Function()? sourceFlowType, }) { return TreasuryReceivedCreditsResourceLinkedFlows(
   creditReversal: creditReversal != null ? creditReversal() : this.creditReversal,
   issuingAuthorization: issuingAuthorization != null ? issuingAuthorization() : this.issuingAuthorization,

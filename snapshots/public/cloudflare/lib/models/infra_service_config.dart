@@ -21,7 +21,7 @@ factory InfraServiceConfigHttp.fromJson(Map<String, dynamic> json) { return Infr
 final InfraServiceCommon infraServiceCommon;
 
 @override String get type { return 'http'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...infraServiceCommon.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...infraServiceCommon.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InfraServiceConfigHttp && infraServiceCommon == other.infraServiceCommon; } 
 @override int get hashCode { return infraServiceCommon.hashCode; } 

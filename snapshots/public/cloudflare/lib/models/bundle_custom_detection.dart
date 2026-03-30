@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'password': ?password,
   'username': ?username,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'password', 'username'}.contains(key)); } 
 BundleCustomDetection copyWith({BundleIdentifier Function()? id, String Function()? password, String Function()? username, }) { return BundleCustomDetection(
   id: id != null ? id() : this.id,
   password: password != null ? password() : this.password,

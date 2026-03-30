@@ -1,37 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_format_json_object.dart';import 'response_format_text.dart';import 'text_response_format_configuration.dart';import 'text_response_format_json_schema.dart';/// Constrains the verbosity of the model's response. Lower values will result in
-/// more concise responses, while higher values will result in more verbose responses.
-/// Currently supported values are `low`, `medium`, and `high`.
-/// 
-final class Verbosity {const Verbosity._(this.value);
-
-factory Verbosity.fromJson(String json) { return switch (json) {
-  'low' => low,
-  'medium' => medium,
-  'high' => high,
-  _ => Verbosity._(json),
-}; }
-
-static const Verbosity low = Verbosity._('low');
-
-static const Verbosity medium = Verbosity._('medium');
-
-static const Verbosity high = Verbosity._('high');
-
-static const List<Verbosity> values = [low, medium, high];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Verbosity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Verbosity($value)'; } 
- }
-/// Configuration options for a text response from the model. Can be plain
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_format_json_object.dart';import 'response_format_text.dart';import 'text_response_format_configuration.dart';import 'text_response_format_json_schema.dart';import 'verbosity.dart';/// Configuration options for a text response from the model. Can be plain
 /// text or structured JSON data. Learn more:
 /// - [Text inputs and outputs](/docs/guides/text)
 /// - [Structured Outputs](/docs/guides/structured-outputs)
@@ -51,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (format != null) 'format': format?.toJson(),
   if (verbosity != null) 'verbosity': verbosity?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'verbosity'}.contains(key)); } 
 ResponseTextParam copyWith({TextResponseFormatConfiguration Function()? format, Verbosity? Function()? verbosity, }) { return ResponseTextParam(
   format: format != null ? format() : this.format,
   verbosity: verbosity != null ? verbosity() : this.verbosity,
