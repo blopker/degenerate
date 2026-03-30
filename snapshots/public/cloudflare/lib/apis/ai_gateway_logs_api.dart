@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_delete_gateway_logs_filters.dart';import '../models/aig_config_delete_gateway_logs_order_by.dart';import '../models/aig_config_delete_gateway_logs_order_by_direction.dart';import '../models/aig_config_delete_gateway_logs_response.dart';import '../models/aig_config_delete_gateway_logs_response400.dart';import '../models/aig_config_get_gateway_log_detail_response.dart';import '../models/aig_config_get_gateway_log_detail_response404.dart';import '../models/aig_config_get_gateway_log_request_response404.dart';import '../models/aig_config_get_gateway_log_response_response404.dart';import '../models/aig_config_list_gateway_logs_direction.dart';import '../models/aig_config_list_gateway_logs_feedback.dart';import '../models/aig_config_list_gateway_logs_filters.dart';import '../models/aig_config_list_gateway_logs_order_by.dart';import '../models/aig_config_list_gateway_logs_order_by_direction.dart';import '../models/aig_config_list_gateway_logs_response.dart';import '../models/aig_config_list_gateway_logs_response400.dart';import '../models/aig_config_patch_gateway_log_request.dart';import '../models/aig_config_patch_gateway_log_response.dart';import '../models/aig_config_patch_gateway_log_response404.dart';/// AiGatewayLogsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_delete_gateway_logs_filters.dart';import '../models/aig_config_delete_gateway_logs_order_by.dart';import '../models/aig_config_delete_gateway_logs_order_by_direction.dart';import '../models/aig_config_delete_gateway_logs_response.dart';import '../models/aig_config_delete_gateway_logs_response400.dart';import '../models/aig_config_get_gateway_log_detail_response404.dart';import '../models/aig_config_get_gateway_log_detail_response_result.dart';import '../models/aig_config_get_gateway_log_request_response404.dart';import '../models/aig_config_get_gateway_log_response_response404.dart';import '../models/aig_config_list_gateway_logs_direction.dart';import '../models/aig_config_list_gateway_logs_feedback.dart';import '../models/aig_config_list_gateway_logs_filters.dart';import '../models/aig_config_list_gateway_logs_order_by.dart';import '../models/aig_config_list_gateway_logs_order_by_direction.dart';import '../models/aig_config_list_gateway_logs_response400.dart';import '../models/aig_config_list_gateway_logs_response_result.dart';import '../models/aig_config_patch_gateway_log_request.dart';import '../models/aig_config_patch_gateway_log_response404.dart';/// AiGatewayLogsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class AiGatewayLogsApi with ApiExecutor {const AiGatewayLogsApi(this.apiCo
 /// List Gateway Logs
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs`
-Future<ApiResult<AigConfigListGatewayLogsResponse, AigConfigListGatewayLogsResponse400>> aigConfigListGatewayLogs({required String accountId, required String gatewayId, String? search, int? page, int? perPage, AigConfigListGatewayLogsOrderBy? orderBy, AigConfigListGatewayLogsOrderByDirection? orderByDirection, List<AigConfigListGatewayLogsFilters>? filters, bool? metaInfo, AigConfigListGatewayLogsDirection? direction, DateTime? startDate, DateTime? endDate, double? minCost, double? maxCost, double? minTokensIn, double? maxTokensIn, double? minTokensOut, double? maxTokensOut, double? minTotalTokens, double? maxTotalTokens, double? minDuration, double? maxDuration, AigConfigListGatewayLogsFeedback? feedback, bool? success, bool? cached, String? model, String? modelType, String? provider, String? requestContentType, String? responseContentType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AigConfigListGatewayLogsResponseResult>, AigConfigListGatewayLogsResponse400>> aigConfigListGatewayLogs({required String accountId, required String gatewayId, String? search, int? page, int? perPage, AigConfigListGatewayLogsOrderBy? orderBy, AigConfigListGatewayLogsOrderByDirection? orderByDirection, List<AigConfigListGatewayLogsFilters>? filters, bool? metaInfo, AigConfigListGatewayLogsDirection? direction, DateTime? startDate, DateTime? endDate, double? minCost, double? maxCost, double? minTokensIn, double? maxTokensIn, double? minTokensOut, double? maxTokensOut, double? minTotalTokens, double? maxTotalTokens, double? minDuration, double? maxDuration, AigConfigListGatewayLogsFeedback? feedback, bool? success, bool? cached, String? model, String? modelType, String? provider, String? requestContentType, String? responseContentType, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (search != null) {
   queryParameters['search'] = search;
@@ -114,7 +114,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AigConfigListGatewayLogsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => AigConfigListGatewayLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
     return AigConfigListGatewayLogsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -167,7 +168,7 @@ return execute(
 /// Retrieves detailed information for a specific AI Gateway log entry.
 ///
 /// `GET /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}`
-Future<ApiResult<AigConfigGetGatewayLogDetailResponse, AigConfigGetGatewayLogDetailResponse404>> aigConfigGetGatewayLogDetail({required String id, required String gatewayId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigGetGatewayLogDetailResponseResult, AigConfigGetGatewayLogDetailResponse404>> aigConfigGetGatewayLogDetail({required String id, required String gatewayId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -179,7 +180,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AigConfigGetGatewayLogDetailResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return AigConfigGetGatewayLogDetailResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return AigConfigGetGatewayLogDetailResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -191,7 +193,7 @@ return execute(
 /// Updates metadata for an AI Gateway log entry.
 ///
 /// `PATCH /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs/{id}`
-Future<ApiResult<AigConfigPatchGatewayLogResponse, AigConfigPatchGatewayLogResponse404>> aigConfigPatchGatewayLog({required String id, required String gatewayId, required String accountId, AigConfigPatchGatewayLogRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, AigConfigPatchGatewayLogResponse404>> aigConfigPatchGatewayLog({required String id, required String gatewayId, required String accountId, AigConfigPatchGatewayLogRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -205,7 +207,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AigConfigPatchGatewayLogResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     return AigConfigPatchGatewayLogResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/accounts_batch_move_accounts_request.dart';import '../models/accounts_batch_move_accounts_response.dart';import '../models/accounts_get_account_profile_response.dart';import '../models/accounts_list_account_organizations_response.dart';import '../models/accounts_list_accounts_direction.dart';import '../models/accounts_move_accounts_request.dart';import '../models/accounts_move_accounts_response.dart';import '../models/iam_account.dart';import '../models/iam_common_components_schemas_identifier.dart';import '../models/iam_create_account.dart';import '../models/iam_response_collection_accounts.dart';import '../models/iam_response_single_account.dart';import '../models/profile.dart';import '../models/response_single_id4.dart';/// AccountsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/accounts_batch_move_accounts_request.dart';import '../models/accounts_list_accounts_direction.dart';import '../models/accounts_move_accounts_request.dart';import '../models/batch_account_move_response.dart';import '../models/iam_account.dart';import '../models/iam_common_components_schemas_identifier.dart';import '../models/iam_create_account.dart';import '../models/move_account_response.dart';import '../models/organization.dart';import '../models/profile.dart';import '../models/response_single_id4_result.dart';/// AccountsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccountsApi with ApiExecutor {const AccountsApi(this.apiConfig);
 /// List all accounts you have ownership or verified access to.
 ///
 /// `GET /accounts`
-Future<ApiResult<IamResponseCollectionAccounts, Never>> accountsListAccounts({String? name, double? page, double? perPage, AccountsListAccountsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamAccount>?, Never>> accountsListAccounts({String? name, double? page, double? perPage, AccountsListAccountsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -42,7 +42,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IamResponseCollectionAccounts.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => IamAccount.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -51,7 +52,7 @@ return execute(
 /// Create an account (only available for tenant admins at this time)
 ///
 /// `POST /accounts`
-Future<ApiResult<IamResponseSingleAccount, Never>> accountCreation({required IamCreateAccount body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamAccount?, Never>> accountCreation({required IamCreateAccount body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +66,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IamResponseSingleAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? IamAccount.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -74,7 +76,7 @@ return execute(
 /// Get information about a specific account that you are a member of.
 ///
 /// `GET /accounts/{account_id}`
-Future<ApiResult<IamResponseSingleAccount, Never>> accountsAccountDetails({required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamAccount?, Never>> accountsAccountDetails({required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,7 +88,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IamResponseSingleAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? IamAccount.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -95,7 +98,7 @@ return execute(
 /// Update an existing account.
 ///
 /// `PUT /accounts/{account_id}`
-Future<ApiResult<IamResponseSingleAccount, Never>> accountsUpdateAccount({required IamCommonComponentsSchemasIdentifier accountId, required IamAccount body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamAccount?, Never>> accountsUpdateAccount({required IamCommonComponentsSchemasIdentifier accountId, required IamAccount body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,7 +112,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IamResponseSingleAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? IamAccount.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -118,7 +122,7 @@ return execute(
 /// Delete a specific account (only available for tenant admins at this time). This is a permanent operation that will delete any zones or other resources under the account
 ///
 /// `DELETE /accounts/{account_id}`
-Future<ApiResult<ResponseSingleId4, Never>> accountDeletion({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4Result?, Never>> accountDeletion({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -130,7 +134,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseSingleId4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ResponseSingleId4Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -139,7 +144,7 @@ return execute(
 /// Move an account within an organization hierarchy or an account outside an organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /accounts/{account_id}/move`
-Future<ApiResult<AccountsMoveAccountsResponse, Never>> accountsMoveAccounts({required String accountId, required AccountsMoveAccountsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MoveAccountResponse, Never>> accountsMoveAccounts({required String accountId, required AccountsMoveAccountsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -153,7 +158,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountsMoveAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return MoveAccountResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -167,7 +173,7 @@ return execute(
 /// account.
 ///
 /// `GET /accounts/{account_id}/organizations`
-Future<ApiResult<AccountsListAccountOrganizationsResponse, Never>> accountsListAccountOrganizations({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Organization>, Never>> accountsListAccountOrganizations({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -179,14 +185,15 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountsListAccountOrganizationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => Organization.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
 /// Get account profile
 ///
 /// `GET /accounts/{account_id}/profile`
-Future<ApiResult<AccountsGetAccountProfileResponse, Never>> accountsGetAccountProfile({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Profile, Never>> accountsGetAccountProfile({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -198,7 +205,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountsGetAccountProfileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return Profile.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -226,7 +234,7 @@ return execute(
 /// Batch move a collection of accounts to a specific organization. ⚠️ Not implemented.
 ///
 /// `POST /accounts/move`
-Future<ApiResult<AccountsBatchMoveAccountsResponse, Never>> accountsBatchMoveAccounts({required AccountsBatchMoveAccountsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BatchAccountMoveResponse, Never>> accountsBatchMoveAccounts({required AccountsBatchMoveAccountsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -240,7 +248,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountsBatchMoveAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return BatchAccountMoveResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

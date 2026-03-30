@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_network_monitoring_configuration_create_account_configuration_request.dart';import '../models/magic_network_monitoring_configuration_update_account_configuration_fields_request.dart';import '../models/magic_network_monitoring_configuration_update_an_entire_account_configuration_request.dart';import '../models/magic_visibility_mnm_account_identifier.dart';import '../models/magic_visibility_mnm_mnm_config_single_response.dart';/// MagicNetworkMonitoringConfigurationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_network_monitoring_configuration_create_account_configuration_request.dart';import '../models/magic_network_monitoring_configuration_update_account_configuration_fields_request.dart';import '../models/magic_network_monitoring_configuration_update_an_entire_account_configuration_request.dart';import '../models/magic_visibility_mnm_account_identifier.dart';import '../models/magic_visibility_mnm_mnm_config.dart';/// MagicNetworkMonitoringConfigurationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class MagicNetworkMonitoringConfigurationApi with ApiExecutor {const Magic
 /// Lists default sampling, router IPs and warp devices for account.
 ///
 /// `GET /accounts/{account_id}/mnm/config`
-Future<ApiResult<MagicVisibilityMnmMnmConfigSingleResponse, Never>> magicNetworkMonitoringConfigurationListAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmConfig?, Never>> magicNetworkMonitoringConfigurationListAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MagicVisibilityMnmMnmConfigSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -34,7 +35,7 @@ return execute(
 /// Create a new network monitoring configuration.
 ///
 /// `POST /accounts/{account_id}/mnm/config`
-Future<ApiResult<MagicVisibilityMnmMnmConfigSingleResponse, Never>> magicNetworkMonitoringConfigurationCreateAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringConfigurationCreateAccountConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmConfig?, Never>> magicNetworkMonitoringConfigurationCreateAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringConfigurationCreateAccountConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MagicVisibilityMnmMnmConfigSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -57,7 +59,7 @@ return execute(
 /// Update an existing network monitoring configuration, requires the entire configuration to be updated at once.
 ///
 /// `PUT /accounts/{account_id}/mnm/config`
-Future<ApiResult<MagicVisibilityMnmMnmConfigSingleResponse, Never>> magicNetworkMonitoringConfigurationUpdateAnEntireAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmConfig?, Never>> magicNetworkMonitoringConfigurationUpdateAnEntireAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,7 +73,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MagicVisibilityMnmMnmConfigSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -80,7 +83,7 @@ return execute(
 /// Update fields in an existing network monitoring configuration.
 ///
 /// `PATCH /accounts/{account_id}/mnm/config`
-Future<ApiResult<MagicVisibilityMnmMnmConfigSingleResponse, Never>> magicNetworkMonitoringConfigurationUpdateAccountConfigurationFields({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmConfig?, Never>> magicNetworkMonitoringConfigurationUpdateAccountConfigurationFields({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -94,7 +97,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MagicVisibilityMnmMnmConfigSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -103,7 +107,7 @@ return execute(
 /// Delete an existing network monitoring configuration.
 ///
 /// `DELETE /accounts/{account_id}/mnm/config`
-Future<ApiResult<MagicVisibilityMnmMnmConfigSingleResponse, Never>> magicNetworkMonitoringConfigurationDeleteAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmConfig?, Never>> magicNetworkMonitoringConfigurationDeleteAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -115,7 +119,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MagicVisibilityMnmMnmConfigSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -124,7 +129,7 @@ return execute(
 /// Lists default sampling, router IPs, warp devices, and rules for account.
 ///
 /// `GET /accounts/{account_id}/mnm/config/full`
-Future<ApiResult<MagicVisibilityMnmMnmConfigSingleResponse, Never>> magicNetworkMonitoringConfigurationListRulesAndAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmConfig?, Never>> magicNetworkMonitoringConfigurationListRulesAndAccountConfiguration({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -136,7 +141,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MagicVisibilityMnmMnmConfigSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/worker_subdomain_create_subdomain_response.dart';import '../models/worker_subdomain_get_subdomain_response.dart';import '../models/workers_identifier.dart';import '../models/workers_schemas_subdomain.dart';/// WorkerSubdomainApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_identifier.dart';import '../models/workers_schemas_subdomain.dart';/// WorkerSubdomainApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkerSubdomainApi with ApiExecutor {const WorkerSubdomainApi(this.a
 /// Returns a Workers subdomain for an account.
 ///
 /// `GET /accounts/{account_id}/workers/subdomain`
-Future<ApiResult<WorkerSubdomainGetSubdomainResponse, Never>> workerSubdomainGetSubdomain({required WorkersIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersSchemasSubdomain, Never>> workerSubdomainGetSubdomain({required WorkersIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkerSubdomainGetSubdomainResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return WorkersSchemasSubdomain.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +35,7 @@ return execute(
 /// Creates a Workers subdomain for an account.
 ///
 /// `PUT /accounts/{account_id}/workers/subdomain`
-Future<ApiResult<WorkerSubdomainCreateSubdomainResponse, Never>> workerSubdomainCreateSubdomain({required WorkersIdentifier accountId, required WorkersSchemasSubdomain body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersSchemasSubdomain, Never>> workerSubdomainCreateSubdomain({required WorkersIdentifier accountId, required WorkersSchemasSubdomain body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkerSubdomainCreateSubdomainResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return WorkersSchemasSubdomain.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

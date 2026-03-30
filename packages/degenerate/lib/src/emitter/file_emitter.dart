@@ -26,6 +26,7 @@ class FileEmitter {
     bool workspace = false,
     String? defaultServerUrl,
     List<String>? warnings,
+    List<String> unwrapFields = const [],
   }) {
     final files = <String, String>{};
 
@@ -153,11 +154,12 @@ class FileEmitter {
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
       final header = _header;
-      final apiEmitter = ApiEmitter(api, typeRegistry: typeRegistry);
+      final apiEmitter = ApiEmitter(api,
+          typeRegistry: typeRegistry, unwrapFields: unwrapFields);
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
 
-      final analysis = _analyzeApi(api, typeRegistry);
+      final analysis = _analyzeApi(api, typeRegistry, unwrapFields);
 
       // Derive imports directly from referenced types using pre-built lookup
       final sortedApiFiles =
@@ -313,7 +315,8 @@ class FileEmitter {
   /// Single-pass analysis of an API: collects referenced types, and determines
   /// whether dart:convert and dart:typed_data imports are needed.
   ({Set<String> referencedTypes, bool needsConvert, bool needsTypedData})
-  _analyzeApi(IrApi api, [Map<String, IrType>? typeRegistry]) {
+  _analyzeApi(IrApi api, [Map<String, IrType>? typeRegistry,
+      List<String> unwrapFields = const []]) {
     final names = <String>{};
     var needsConvert = false;
     var needsTypedData = false;
@@ -323,6 +326,25 @@ class FileEmitter {
       IrMap(:final values) => isBytesType(values),
       _ => false,
     };
+
+    // Unwrap a response type if it matches unwrapFields config.
+    IrType maybeUnwrap(IrType type) {
+      if (unwrapFields.isEmpty || typeRegistry == null) return type;
+      IrObject? obj;
+      if (type is IrObject) {
+        obj = type;
+      } else if (type is IrTypeRef) {
+        final resolved = typeRegistry[type.name];
+        if (resolved is IrObject) obj = resolved;
+      }
+      if (obj == null) return type;
+      for (final fieldName in unwrapFields) {
+        for (final f in obj.fields) {
+          if (f.originalName == fieldName) return f.type;
+        }
+      }
+      return type;
+    }
 
     for (final op in api.operations) {
       for (final param in op.parameters) {
@@ -348,8 +370,9 @@ class FileEmitter {
           final content = preferredContent(resp.content);
           if (content != null) {
             if (isJsonLikeMediaType(content.$1)) needsConvert = true;
-            _collectTopLevelTypeName(content.$2.schema, names, typeRegistry);
-            if (isBytesType(content.$2.schema)) needsTypedData = true;
+            final schema = maybeUnwrap(content.$2.schema);
+            _collectTopLevelTypeName(schema, names, typeRegistry);
+            if (isBytesType(schema)) needsTypedData = true;
             break;
           }
         }

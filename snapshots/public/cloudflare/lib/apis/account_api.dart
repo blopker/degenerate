@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/builds_account_id.dart';import '../models/response.dart';/// AccountApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/builds_account_id.dart';/// AccountApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccountApi with ApiExecutor {const AccountApi(this.apiConfig);
 /// Retrieve account limits and usage information
 ///
 /// `GET /accounts/{account_id}/builds/account/limits`
-Future<ApiResult<Response, Never>> getAccountLimits({required BuildsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, Never>> getAccountLimits({required BuildsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
 );
  } 

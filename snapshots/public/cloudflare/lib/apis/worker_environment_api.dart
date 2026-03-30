@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/worker_environment_put_script_content_request.dart';import '../models/workers_environment.dart';import '../models/workers_identifier.dart';import '../models/workers_script_response_single.dart';import '../models/workers_script_settings_response.dart';import '../models/workers_service.dart';/// WorkerEnvironmentApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/worker_environment_put_script_content_request.dart';import '../models/workers_environment.dart';import '../models/workers_identifier.dart';import '../models/workers_script_response.dart';import '../models/workers_script_settings_item.dart';import '../models/workers_script_settings_response.dart';import '../models/workers_service.dart';/// WorkerEnvironmentApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -34,7 +34,7 @@ return execute(
 /// Put script content from a worker with an environment.
 ///
 /// `PUT /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<WorkersScriptResponseSingle, Never>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerEnvironmentPutScriptContentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptResponse, Never>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerEnvironmentPutScriptContentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (cfWorkerBodyPart != null) {
   headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
 }
@@ -58,7 +58,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkersScriptResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return WorkersScriptResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -67,7 +68,7 @@ return execute(
 /// Get script settings from a worker with an environment.
 ///
 /// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
-Future<ApiResult<WorkersScriptSettingsResponse, Never>> workerScriptEnvironmentGetSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptSettingsItem, Never>> workerScriptEnvironmentGetSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -79,7 +80,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkersScriptSettingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return WorkersScriptSettingsItem.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -88,7 +90,7 @@ return execute(
 /// Patch script metadata, such as bindings.
 ///
 /// `PATCH /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
-Future<ApiResult<WorkersScriptSettingsResponse, Never>> workerScriptEnvironmentPatchSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required WorkersScriptSettingsResponse body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptSettingsItem, Never>> workerScriptEnvironmentPatchSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required WorkersScriptSettingsResponse body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -102,7 +104,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkersScriptSettingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return WorkersScriptSettingsItem.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

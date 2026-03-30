@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_resource_group_create_response.dart';import '../models/account_resource_group_details_response.dart';import '../models/account_resource_group_list_response.dart';import '../models/account_resource_group_update_response.dart';import '../models/iam_common_components_schemas_identifier.dart';import '../models/iam_request_create_resource_group.dart';import '../models/iam_request_update_resource_group.dart';import '../models/response_single_id4.dart';/// AccountResourceGroupsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/iam_common_components_schemas_identifier.dart';import '../models/iam_request_create_resource_group.dart';import '../models/iam_request_update_resource_group.dart';import '../models/iam_resource_group.dart';import '../models/response_single_id4_result.dart';/// AccountResourceGroupsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccountResourceGroupsApi with ApiExecutor {const AccountResourceGrou
 /// List all the resource groups for an account.
 ///
 /// `GET /accounts/{account_id}/iam/resource_groups`
-Future<ApiResult<AccountResourceGroupListResponse, Never>> accountResourceGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamResourceGroup>?, Never>> accountResourceGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id.toString();
@@ -36,7 +36,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountResourceGroupListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => IamResourceGroup.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -45,7 +46,7 @@ return execute(
 /// Create a new Resource Group under the specified account.
 ///
 /// `POST /accounts/{account_id}/iam/resource_groups`
-Future<ApiResult<AccountResourceGroupCreateResponse, Never>> accountResourceGroupCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamRequestCreateResourceGroup body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamResourceGroup?, Never>> accountResourceGroupCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamRequestCreateResourceGroup body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -59,7 +60,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountResourceGroupCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? IamResourceGroup.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -68,7 +70,7 @@ return execute(
 /// Get information about a specific resource group in an account.
 ///
 /// `GET /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<AccountResourceGroupDetailsResponse, Never>> accountResourceGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamResourceGroup?, Never>> accountResourceGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -80,7 +82,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountResourceGroupDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? IamResourceGroup.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -89,7 +92,7 @@ return execute(
 /// Modify an existing resource group.
 ///
 /// `PUT /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<AccountResourceGroupUpdateResponse, Never>> accountResourceGroupUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, required IamRequestUpdateResourceGroup body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamResourceGroup?, Never>> accountResourceGroupUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, required IamRequestUpdateResourceGroup body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -103,7 +106,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountResourceGroupUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? IamResourceGroup.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -112,7 +116,7 @@ return execute(
 /// Remove a resource group from an account.
 ///
 /// `DELETE /accounts/{account_id}/iam/resource_groups/{resource_group_id}`
-Future<ApiResult<ResponseSingleId4, Never>> accountResourceGroupDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4Result?, Never>> accountResourceGroupDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier resourceGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -124,7 +128,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseSingleId4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ResponseSingleId4Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

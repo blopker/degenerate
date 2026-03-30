@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_identifier.dart';import '../models/intel_response.dart';/// DomainHistoryApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_domain_history.dart';import '../models/intel_identifier.dart';/// DomainHistoryApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DomainHistoryApi with ApiExecutor {const DomainHistoryApi(this.apiCo
 /// Gets historical security threat and content categories currently and previously assigned to a domain.
 ///
 /// `GET /accounts/{account_id}/intel/domain-history`
-Future<ApiResult<IntelResponse, Never>> domainHistoryGetDomainHistory({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IntelDomainHistory>?, Never>> domainHistoryGetDomainHistory({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domain != null) {
   queryParameters['domain'] = domain;
@@ -33,7 +33,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IntelResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => IntelDomainHistory.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

@@ -76,6 +76,14 @@ ArgParser buildParser() {
       defaultsTo: false,
       negatable: false,
     )
+    ..addMultiOption(
+      'unwrap-fields',
+      help:
+          'Unwrap response envelopes by extracting these fields.\n'
+          'E.g., --unwrap-fields=result returns the result type directly\n'
+          'instead of the full response envelope.',
+      valueHelp: 'field',
+    )
     ..addFlag('help', abbr: 'h', help: 'Show this help.', negatable: false)
     ..addFlag('version', help: 'Print the tool version.', negatable: false);
 }
@@ -140,6 +148,7 @@ Future<void> main(List<String> arguments) async {
       dryRun: results.flag('dry-run'),
       workspace: workspace,
       stdinContent: stdinContent,
+      unwrapFields: results.multiOption('unwrap-fields'),
     );
 
     final generator = Generator(config);

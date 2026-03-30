@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_email_routing_summary_arc.dart';import '../models/radar_get_email_routing_summary_dimension.dart';import '../models/radar_get_email_routing_summary_dkim.dart';import '../models/radar_get_email_routing_summary_dmarc.dart';import '../models/radar_get_email_routing_summary_encrypted.dart';import '../models/radar_get_email_routing_summary_format.dart';import '../models/radar_get_email_routing_summary_ip_version.dart';import '../models/radar_get_email_routing_summary_response.dart';import '../models/radar_get_email_routing_summary_response400.dart';import '../models/radar_get_email_routing_summary_spf.dart';import '../models/radar_get_email_routing_timeseries_group_agg_interval.dart';import '../models/radar_get_email_routing_timeseries_group_arc.dart';import '../models/radar_get_email_routing_timeseries_group_dimension.dart';import '../models/radar_get_email_routing_timeseries_group_dkim.dart';import '../models/radar_get_email_routing_timeseries_group_dmarc.dart';import '../models/radar_get_email_routing_timeseries_group_encrypted.dart';import '../models/radar_get_email_routing_timeseries_group_format.dart';import '../models/radar_get_email_routing_timeseries_group_ip_version.dart';import '../models/radar_get_email_routing_timeseries_group_response.dart';import '../models/radar_get_email_routing_timeseries_group_response400.dart';import '../models/radar_get_email_routing_timeseries_group_spf.dart';/// RadarEmailRoutingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_email_routing_summary_arc.dart';import '../models/radar_get_email_routing_summary_dimension.dart';import '../models/radar_get_email_routing_summary_dkim.dart';import '../models/radar_get_email_routing_summary_dmarc.dart';import '../models/radar_get_email_routing_summary_encrypted.dart';import '../models/radar_get_email_routing_summary_format.dart';import '../models/radar_get_email_routing_summary_ip_version.dart';import '../models/radar_get_email_routing_summary_response400.dart';import '../models/radar_get_email_routing_summary_response_result.dart';import '../models/radar_get_email_routing_summary_spf.dart';import '../models/radar_get_email_routing_timeseries_group_agg_interval.dart';import '../models/radar_get_email_routing_timeseries_group_arc.dart';import '../models/radar_get_email_routing_timeseries_group_dimension.dart';import '../models/radar_get_email_routing_timeseries_group_dkim.dart';import '../models/radar_get_email_routing_timeseries_group_dmarc.dart';import '../models/radar_get_email_routing_timeseries_group_encrypted.dart';import '../models/radar_get_email_routing_timeseries_group_format.dart';import '../models/radar_get_email_routing_timeseries_group_ip_version.dart';import '../models/radar_get_email_routing_timeseries_group_response400.dart';import '../models/radar_get_email_routing_timeseries_group_response_result.dart';import '../models/radar_get_email_routing_timeseries_group_spf.dart';/// RadarEmailRoutingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarEmailRoutingApi with ApiExecutor {const RadarEmailRoutingApi(th
 /// Retrieves the distribution of email routing metrics by the specified dimension.
 ///
 /// `GET /radar/email/routing/summary/{dimension}`
-Future<ApiResult<RadarGetEmailRoutingSummaryResponse, RadarGetEmailRoutingSummaryResponse400>> radarGetEmailRoutingSummary({required RadarGetEmailRoutingSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingSummaryArc>? arc, List<RadarGetEmailRoutingSummaryDkim>? dkim, List<RadarGetEmailRoutingSummaryDmarc>? dmarc, List<RadarGetEmailRoutingSummarySpf>? spf, List<RadarGetEmailRoutingSummaryIpVersion>? ipVersion, List<RadarGetEmailRoutingSummaryEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailRoutingSummaryResponseResult, RadarGetEmailRoutingSummaryResponse400>> radarGetEmailRoutingSummary({required RadarGetEmailRoutingSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingSummaryArc>? arc, List<RadarGetEmailRoutingSummaryDkim>? dkim, List<RadarGetEmailRoutingSummaryDmarc>? dmarc, List<RadarGetEmailRoutingSummarySpf>? spf, List<RadarGetEmailRoutingSummaryIpVersion>? ipVersion, List<RadarGetEmailRoutingSummaryEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -86,7 +86,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetEmailRoutingSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetEmailRoutingSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetEmailRoutingSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -98,7 +99,7 @@ return execute(
 /// Retrieves the distribution of email routing metrics grouped by dimension over time.
 ///
 /// `GET /radar/email/routing/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetEmailRoutingTimeseriesGroupResponse, RadarGetEmailRoutingTimeseriesGroupResponse400>> radarGetEmailRoutingTimeseriesGroup({required RadarGetEmailRoutingTimeseriesGroupDimension dimension, RadarGetEmailRoutingTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingTimeseriesGroupArc>? arc, List<RadarGetEmailRoutingTimeseriesGroupDkim>? dkim, List<RadarGetEmailRoutingTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailRoutingTimeseriesGroupSpf>? spf, List<RadarGetEmailRoutingTimeseriesGroupIpVersion>? ipVersion, List<RadarGetEmailRoutingTimeseriesGroupEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailRoutingTimeseriesGroupResponseResult, RadarGetEmailRoutingTimeseriesGroupResponse400>> radarGetEmailRoutingTimeseriesGroup({required RadarGetEmailRoutingTimeseriesGroupDimension dimension, RadarGetEmailRoutingTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailRoutingTimeseriesGroupArc>? arc, List<RadarGetEmailRoutingTimeseriesGroupDkim>? dkim, List<RadarGetEmailRoutingTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailRoutingTimeseriesGroupSpf>? spf, List<RadarGetEmailRoutingTimeseriesGroupIpVersion>? ipVersion, List<RadarGetEmailRoutingTimeseriesGroupEncrypted>? encrypted, int? limitPerGroup, RadarGetEmailRoutingTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -174,7 +175,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetEmailRoutingTimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetEmailRoutingTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetEmailRoutingTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

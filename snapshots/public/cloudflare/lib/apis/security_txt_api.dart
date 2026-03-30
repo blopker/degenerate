@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_security_txt_response.dart';import '../models/response_common61.dart';import '../models/security_center_identifier.dart';import '../models/security_center_security_txt.dart';/// SecurityTxtApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_security_txt_response_result.dart';import '../models/response_common61.dart';import '../models/security_center_identifier.dart';import '../models/security_center_security_txt.dart';/// SecurityTxtApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class SecurityTxtApi with ApiExecutor {const SecurityTxtApi(this.apiConfig
 /// Retrieves security.txt
 ///
 /// `GET /zones/{zone_id}/security-center/securitytxt`
-Future<ApiResult<GetSecurityTxtResponse, Never>> getSecurityTxt({required SecurityCenterIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetSecurityTxtResponseResult?, Never>> getSecurityTxt({required SecurityCenterIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetSecurityTxtResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? GetSecurityTxtResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

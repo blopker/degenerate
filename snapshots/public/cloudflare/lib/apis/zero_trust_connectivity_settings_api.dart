@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69.dart';import '../models/tunnel_account_id.dart';import '../models/zero_trust_accounts_patch_connectivity_settings_request.dart';/// ZeroTrustConnectivitySettingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69_result.dart';import '../models/tunnel_account_id.dart';import '../models/zero_trust_accounts_patch_connectivity_settings_request.dart';/// ZeroTrustConnectivitySettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZeroTrustConnectivitySettingsApi with ApiExecutor {const ZeroTrustCo
 /// Gets the Zero Trust Connectivity Settings for the given account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/connectivity_settings`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustAccountsGetConnectivitySettings({required TunnelAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon69Result, Never>> zeroTrustAccountsGetConnectivitySettings({required TunnelAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
 );
  } 
@@ -34,7 +35,7 @@ return execute(
 /// Updates the Zero Trust Connectivity Settings for the given account.
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/connectivity_settings`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustAccountsPatchConnectivitySettings({required TunnelAccountId accountId, required ZeroTrustAccountsPatchConnectivitySettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon69Result, Never>> zeroTrustAccountsPatchConnectivitySettings({required TunnelAccountId accountId, required ZeroTrustAccountsPatchConnectivitySettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
 );
  } 

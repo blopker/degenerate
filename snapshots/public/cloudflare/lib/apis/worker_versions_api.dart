@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/worker_versions_upload_version_bindings_inherit.dart';import '../models/worker_versions_upload_version_request.dart';import '../models/workers_identifier.dart';import '../models/workers_schemas_script_name.dart';import '../models/workers_version_identifier.dart';import '../models/workers_versions_list_response.dart';import '../models/workers_versions_single_response.dart';import '../models/workers_versions_upload_response.dart';/// WorkerVersionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/worker_versions_upload_version_bindings_inherit.dart';import '../models/worker_versions_upload_version_request.dart';import '../models/workers_identifier.dart';import '../models/workers_schemas_script_name.dart';import '../models/workers_version_identifier.dart';import '../models/workers_version_item_full.dart';import '../models/workers_version_item_uploaded.dart';import '../models/workers_versions_list_response_result.dart';/// WorkerVersionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkerVersionsApi with ApiExecutor {const WorkerVersionsApi(this.api
 /// List of Worker Versions. The first version in the list is the latest version.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/versions`
-Future<ApiResult<WorkersVersionsListResponse, Never>> workerVersionsListVersions({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, bool? deployable, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersVersionsListResponseResult, Never>> workerVersionsListVersions({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, bool? deployable, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deployable != null) {
   queryParameters['deployable'] = deployable.toString();
@@ -39,7 +39,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkersVersionsListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return WorkersVersionsListResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -48,7 +49,7 @@ return execute(
 /// Upload a Worker Version without deploying to Cloudflare's network. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/versions`
-Future<ApiResult<WorkersVersionsUploadResponse, Never>> workerVersionsUploadVersion({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, WorkerVersionsUploadVersionBindingsInherit? bindingsInherit, required WorkerVersionsUploadVersionRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersVersionItemUploaded, Never>> workerVersionsUploadVersion({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, WorkerVersionsUploadVersionBindingsInherit? bindingsInherit, required WorkerVersionsUploadVersionRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bindingsInherit != null) {
   queryParameters['bindings_inherit'] = bindingsInherit.toJson();
@@ -74,7 +75,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkersVersionsUploadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return WorkersVersionItemUploaded.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -83,7 +85,7 @@ return execute(
 /// Retrieves detailed information about a specific version of a Workers script.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/versions/{version_id}`
-Future<ApiResult<WorkersVersionsSingleResponse, Never>> workerVersionsGetVersionDetail({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, required WorkersVersionIdentifier versionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersVersionItemFull, Never>> workerVersionsGetVersionDetail({required WorkersIdentifier accountId, required WorkersSchemasScriptName scriptName, required WorkersVersionIdentifier versionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -95,7 +97,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkersVersionsSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return WorkersVersionItemFull.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

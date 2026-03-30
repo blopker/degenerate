@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/iam_collection_permission_groups_response.dart';import '../models/iam_common_components_schemas_identifier.dart';import '../models/iam_single_permission_groups_response.dart';/// AccountPermissionGroupsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/iam_common_components_schemas_identifier.dart';import '../models/iam_permission_group.dart';/// AccountPermissionGroupsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccountPermissionGroupsApi with ApiExecutor {const AccountPermission
 /// List all the permissions groups for an account.
 ///
 /// `GET /accounts/{account_id}/iam/permission_groups`
-Future<ApiResult<IamCollectionPermissionGroupsResponse, Never>> accountPermissionGroupList({required IamCommonComponentsSchemasIdentifier accountId, String? id, String? name, String? label, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamPermissionGroup>?, Never>> accountPermissionGroupList({required IamCommonComponentsSchemasIdentifier accountId, String? id, String? name, String? label, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -45,7 +45,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IamCollectionPermissionGroupsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => IamPermissionGroup.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -54,7 +55,7 @@ return execute(
 /// Get information about a specific permission group in an account.
 ///
 /// `GET /accounts/{account_id}/iam/permission_groups/{permission_group_id}`
-Future<ApiResult<IamSinglePermissionGroupsResponse, Never>> accountPermissionGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier permissionGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamPermissionGroup?, Never>> accountPermissionGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier permissionGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -66,7 +67,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IamSinglePermissionGroupsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? IamPermissionGroup.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

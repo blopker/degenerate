@@ -59,6 +59,12 @@ class GeneratorConfig {
   /// reads from this string instead of from [inputPath].
   final String? stdinContent;
 
+  /// When non-empty, response objects containing one of these fields will
+  /// have their return type unwrapped to the field's type instead of the
+  /// full envelope. For example, `['result']` unwraps
+  /// `{errors, messages, success, result: T}` to just `T`.
+  final List<String> unwrapFields;
+
   GeneratorConfig({
     required this.inputPath,
     this.outputDir,
@@ -72,6 +78,7 @@ class GeneratorConfig {
     this.paths = const [],
     this.workspace = false,
     this.stdinContent,
+    this.unwrapFields = const [],
   });
 }
 
@@ -289,6 +296,7 @@ class Generator {
       workspace: config.workspace,
       defaultServerUrl: defaultServerUrl,
       warnings: emitterWarnings,
+      unwrapFields: config.unwrapFields,
     );
 
     // In workspace mode, Dart source files live under lib/.

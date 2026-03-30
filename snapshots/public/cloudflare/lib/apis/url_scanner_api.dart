@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/urlscanner_create_scan_bulk_request.dart';import '../models/urlscanner_create_scan_bulk_response.dart';import '../models/urlscanner_create_scan_bulk_response400.dart';import '../models/urlscanner_create_scan_request2.dart';import '../models/urlscanner_create_scan_response2.dart';import '../models/urlscanner_create_scan_response4002.dart';import '../models/urlscanner_get_response_response400.dart';import '../models/urlscanner_get_scan_dom_response400.dart';import '../models/urlscanner_get_scan_har_response2.dart';import '../models/urlscanner_get_scan_har_response4002.dart';import '../models/urlscanner_get_scan_response2.dart';import '../models/urlscanner_get_scan_response4002.dart';import '../models/urlscanner_get_scan_screenshot_resolution2.dart';import '../models/urlscanner_get_scan_screenshot_response4002.dart';import '../models/urlscanner_search_scans_response2.dart';import '../models/urlscanner_search_scans_response4002.dart';/// UrlScannerApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/urlscanner_create_scan_bulk_request.dart';import '../models/urlscanner_create_scan_bulk_response.dart';import '../models/urlscanner_create_scan_bulk_response400.dart';import '../models/urlscanner_create_scan_request2.dart';import '../models/urlscanner_create_scan_response4002.dart';import '../models/urlscanner_get_response_response400.dart';import '../models/urlscanner_get_scan_dom_response400.dart';import '../models/urlscanner_get_scan_har_response2.dart';import '../models/urlscanner_get_scan_har_response4002.dart';import '../models/urlscanner_get_scan_response2.dart';import '../models/urlscanner_get_scan_response4002.dart';import '../models/urlscanner_get_scan_screenshot_resolution2.dart';import '../models/urlscanner_get_scan_screenshot_response4002.dart';import '../models/urlscanner_search_scans_response2.dart';import '../models/urlscanner_search_scans_response4002.dart';/// UrlScannerApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -136,7 +136,7 @@ return execute(
 /// Submit a URL to scan. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/.
 ///
 /// `POST /accounts/{account_id}/urlscanner/v2/scan`
-Future<ApiResult<UrlscannerCreateScanResponse2, UrlscannerCreateScanResponse4002>> urlscannerCreateScanV2({required String accountId, UrlscannerCreateScanRequest2? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, UrlscannerCreateScanResponse4002>> urlscannerCreateScanV2({required String accountId, UrlscannerCreateScanRequest2? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -150,7 +150,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return UrlscannerCreateScanResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] as String;
   },
   onError: (response) {
     return UrlscannerCreateScanResponse4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_ai_create_finetune_request.dart';import '../models/workers_ai_create_finetune_response.dart';import '../models/workers_ai_create_finetune_response400.dart';import '../models/workers_ai_list_finetunes_response.dart';import '../models/workers_ai_list_finetunes_response400.dart';import '../models/workers_ai_list_public_finetunes_response.dart';import '../models/workers_ai_list_public_finetunes_response400.dart';import '../models/workers_ai_upload_finetune_asset_request.dart';import '../models/workers_ai_upload_finetune_asset_response.dart';import '../models/workers_ai_upload_finetune_asset_response400.dart';/// WorkersAiFinetuneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_ai_create_finetune_request.dart';import '../models/workers_ai_create_finetune_response400.dart';import '../models/workers_ai_create_finetune_response_result.dart';import '../models/workers_ai_list_finetunes_response400.dart';import '../models/workers_ai_list_finetunes_response_result.dart';import '../models/workers_ai_list_public_finetunes_response400.dart';import '../models/workers_ai_list_public_finetunes_response_result.dart';import '../models/workers_ai_upload_finetune_asset_request.dart';import '../models/workers_ai_upload_finetune_asset_response.dart';import '../models/workers_ai_upload_finetune_asset_response400.dart';/// WorkersAiFinetuneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class WorkersAiFinetuneApi with ApiExecutor {const WorkersAiFinetuneApi(th
 /// List Finetunes
 ///
 /// `GET /accounts/{account_id}/ai/finetunes`
-Future<ApiResult<WorkersAiListFinetunesResponse, WorkersAiListFinetunesResponse400>> workersAiListFinetunes({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAiListFinetunesResponseResult, WorkersAiListFinetunesResponse400>> workersAiListFinetunes({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,7 +23,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkersAiListFinetunesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return WorkersAiListFinetunesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return WorkersAiListFinetunesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -33,7 +34,7 @@ return execute(
 /// Create a new Finetune
 ///
 /// `POST /accounts/{account_id}/ai/finetunes`
-Future<ApiResult<WorkersAiCreateFinetuneResponse, WorkersAiCreateFinetuneResponse400>> workersAiCreateFinetune({required String accountId, WorkersAiCreateFinetuneRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAiCreateFinetuneResponseResult, WorkersAiCreateFinetuneResponse400>> workersAiCreateFinetune({required String accountId, WorkersAiCreateFinetuneRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -47,7 +48,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkersAiCreateFinetuneResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return WorkersAiCreateFinetuneResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return WorkersAiCreateFinetuneResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -86,7 +88,7 @@ return execute(
 /// List Public Finetunes
 ///
 /// `GET /accounts/{account_id}/ai/finetunes/public`
-Future<ApiResult<WorkersAiListPublicFinetunesResponse, WorkersAiListPublicFinetunesResponse400>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersAiListPublicFinetunesResponseResult>, WorkersAiListPublicFinetunesResponse400>> workersAiListPublicFinetunes({required String accountId, double? limit, double? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -112,7 +114,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkersAiListPublicFinetunesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => WorkersAiListPublicFinetunesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
     return WorkersAiListPublicFinetunesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

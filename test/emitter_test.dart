@@ -2699,6 +2699,89 @@ void main() {
     });
   });
 
+  group('ApiEmitter - unwrapFields', () {
+    test('unwraps response envelope to result field type', () {
+      final envelopeType = IrObject('GetZoneResponse', [
+        IrField('success', 'success', const IrPrimitive(PrimitiveKind.bool),
+            isRequired: true),
+        IrField('errors', 'errors',
+            const IrList(IrPrimitive(PrimitiveKind.dynamic_)),
+            isRequired: true),
+        IrField('result', 'result', IrTypeRef('Zone')),
+      ]);
+      final api = IrApi('ZonesApi', [
+        IrOperation(
+          'getZone',
+          'getZone',
+          HttpMethod.get,
+          '/zones/{id}',
+          responses: {
+            200: IrResponse(
+              content: {
+                'application/json': IrMediaType(IrTypeRef('GetZoneResponse')),
+              },
+            ),
+          },
+        ),
+      ]);
+      final typeRegistry = <String, IrType>{
+        'GetZoneResponse': envelopeType,
+        'Zone': IrObject('Zone', [
+          IrField('id', 'id', const IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ]),
+      };
+      final specs = ApiEmitter(api,
+              typeRegistry: typeRegistry, unwrapFields: ['result'])
+          .emit();
+      final source = emitRaw(
+        Library(
+          (b) => b
+            ..directives.add(Directive.import('dart:convert'))
+            ..body.addAll(specs),
+        ),
+      );
+
+      // Return type should be Zone?, not GetZoneResponse
+      // (result field is optional so return type is nullable)
+      expect(source, contains('Future<ApiResult<Zone?, Never>>'));
+      expect(source, isNot(contains('GetZoneResponse')));
+      // Should extract 'result' from parsed JSON
+      expect(source, contains("json['result']"));
+    });
+
+    test('does not unwrap when field is not present', () {
+      final api = IrApi('PetsApi', [
+        IrOperation(
+          'listPets',
+          'listPets',
+          HttpMethod.get,
+          '/pets',
+          responses: {
+            200: IrResponse(
+              content: {
+                'application/json': IrMediaType(
+                  IrList(IrTypeRef('Pet')),
+                ),
+              },
+            ),
+          },
+        ),
+      ]);
+      final specs = ApiEmitter(api, unwrapFields: ['result']).emit();
+      final source = emitRaw(
+        Library(
+          (b) => b
+            ..directives.add(Directive.import('dart:convert'))
+            ..body.addAll(specs),
+        ),
+      );
+
+      // List<Pet> has no 'result' field — should not unwrap
+      expect(source, contains('Future<ApiResult<List<Pet>, Never>>'));
+    });
+  });
+
   group('ApiEmitter - dollar sign in parameter names', () {
     late String source;
 

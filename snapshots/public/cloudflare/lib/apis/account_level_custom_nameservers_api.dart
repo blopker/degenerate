@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_custom_nameservers_acns_response_collection.dart';import '../models/dns_custom_nameservers_acns_response_single.dart';import '../models/dns_custom_nameservers_custom_ns_input.dart';import '../models/dns_custom_nameservers_empty_response.dart';import '../models/dns_custom_nameservers_identifier.dart';import '../models/dns_custom_nameservers_ns_name.dart';/// AccountLevelCustomNameserversApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_custom_nameservers_custom_ns.dart';import '../models/dns_custom_nameservers_custom_ns_input.dart';import '../models/dns_custom_nameservers_identifier.dart';import '../models/dns_custom_nameservers_ns_name.dart';/// AccountLevelCustomNameserversApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccountLevelCustomNameserversApi with ApiExecutor {const AccountLeve
 /// List an account's custom nameservers.
 ///
 /// `GET /accounts/{account_id}/custom_ns`
-Future<ApiResult<DnsCustomNameserversAcnsResponseCollection, Never>> accountLevelCustomNameserversListAccountCustomNameservers({required DnsCustomNameserversIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DnsCustomNameserversCustomNs>?, Never>> accountLevelCustomNameserversListAccountCustomNameservers({required DnsCustomNameserversIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,14 +25,15 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DnsCustomNameserversAcnsResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => DnsCustomNameserversCustomNs.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
 /// Add Account Custom Nameserver
 ///
 /// `POST /accounts/{account_id}/custom_ns`
-Future<ApiResult<DnsCustomNameserversAcnsResponseSingle, Never>> accountLevelCustomNameserversAddAccountCustomNameserver({required DnsCustomNameserversIdentifier accountId, required DnsCustomNameserversCustomNsInput body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsCustomNameserversCustomNs?, Never>> accountLevelCustomNameserversAddAccountCustomNameserver({required DnsCustomNameserversIdentifier accountId, required DnsCustomNameserversCustomNsInput body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -46,14 +47,15 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DnsCustomNameserversAcnsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? DnsCustomNameserversCustomNs.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
 /// Delete Account Custom Nameserver
 ///
 /// `DELETE /accounts/{account_id}/custom_ns/{custom_ns_id}`
-Future<ApiResult<DnsCustomNameserversEmptyResponse, Never>> accountLevelCustomNameserversDeleteAccountCustomNameserver({required DnsCustomNameserversNsName customNsId, required DnsCustomNameserversIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<String>?, Never>> accountLevelCustomNameserversDeleteAccountCustomNameserver({required DnsCustomNameserversNsName customNsId, required DnsCustomNameserversIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -65,7 +67,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DnsCustomNameserversEmptyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => e as String).toList();
   },
 );
  } 

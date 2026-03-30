@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_pcap_collection_add_buckets_for_full_packet_captures_responsedefault.dart';import '../models/magic_pcap_collection_create_pcap_request_responsedefault.dart';import '../models/magic_pcap_collection_get_pcap_request_responsedefault.dart';import '../models/magic_pcap_collection_list_packet_capture_requests_responsedefault.dart';import '../models/magic_pcap_collection_list_pca_ps_bucket_ownership_responsedefault.dart';import '../models/magic_pcap_collection_validate_buckets_for_full_packet_captures_responsedefault.dart';import '../models/magic_visibility_pcaps_identifier.dart';import '../models/magic_visibility_pcaps_pcaps_collection_response.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_collection.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_request.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_validate_request.dart';import '../models/magic_visibility_pcaps_pcaps_request_pcap.dart';import '../models/magic_visibility_pcaps_pcaps_single_response.dart';import '../models/response_common47.dart';import '../models/response_common_failure49.dart';/// MagicPcapCollectionApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_pcap_collection_add_buckets_for_full_packet_captures_responsedefault.dart';import '../models/magic_pcap_collection_create_pcap_request_responsedefault.dart';import '../models/magic_pcap_collection_get_pcap_request_responsedefault.dart';import '../models/magic_pcap_collection_list_packet_capture_requests_responsedefault.dart';import '../models/magic_pcap_collection_list_pca_ps_bucket_ownership_responsedefault.dart';import '../models/magic_pcap_collection_validate_buckets_for_full_packet_captures_responsedefault.dart';import '../models/magic_visibility_pcaps_identifier.dart';import '../models/magic_visibility_pcaps_pcaps_collection_response.dart';import '../models/magic_visibility_pcaps_pcaps_collection_response_result.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_collection.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_request.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_response.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_validate_request.dart';import '../models/magic_visibility_pcaps_pcaps_request_pcap.dart';import '../models/magic_visibility_pcaps_pcaps_response_full.dart';import '../models/magic_visibility_pcaps_pcaps_response_simple.dart';import '../models/magic_visibility_pcaps_pcaps_single_response.dart';import '../models/magic_visibility_pcaps_pcaps_single_response_result.dart';import '../models/response_common47.dart';import '../models/response_common47_result.dart';import '../models/response_common_failure49.dart';/// MagicPcapCollectionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class MagicPcapCollectionApi with ApiExecutor {const MagicPcapCollectionAp
 /// Lists all packet capture requests for an account.
 ///
 /// `GET /accounts/{account_id}/pcaps`
-Future<ApiResult<MagicVisibilityPcapsPcapsCollectionResponse, MagicPcapCollectionListPacketCaptureRequestsResponsedefault>> magicPcapCollectionListPacketCaptureRequests({required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicVisibilityPcapsPcapsCollectionResponseResult>?, MagicPcapCollectionListPacketCaptureRequestsResponsedefault>> magicPcapCollectionListPacketCaptureRequests({required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MagicVisibilityPcapsPcapsCollectionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),)).toList();
   },
   onError: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => MagicVisibilityPcapsPcapsCollectionResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
@@ -37,7 +38,7 @@ return execute(
 /// Create new PCAP request for account.
 ///
 /// `POST /accounts/{account_id}/pcaps`
-Future<ApiResult<MagicVisibilityPcapsPcapsSingleResponse, MagicPcapCollectionCreatePcapRequestResponsedefault>> magicPcapCollectionCreatePcapRequest({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsRequestPcap body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityPcapsPcapsSingleResponseResult?, MagicPcapCollectionCreatePcapRequestResponsedefault>> magicPcapCollectionCreatePcapRequest({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsRequestPcap body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -51,7 +52,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MagicVisibilityPcapsPcapsSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),) : null;
   },
   onError: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
@@ -63,7 +65,7 @@ return execute(
 /// Get information for a PCAP request by id.
 ///
 /// `GET /accounts/{account_id}/pcaps/{pcap_id}`
-Future<ApiResult<MagicVisibilityPcapsPcapsSingleResponse, MagicPcapCollectionGetPcapRequestResponsedefault>> magicPcapCollectionGetPcapRequest({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityPcapsPcapsSingleResponseResult?, MagicPcapCollectionGetPcapRequestResponsedefault>> magicPcapCollectionGetPcapRequest({required MagicVisibilityPcapsIdentifier pcapId, required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,7 +77,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MagicVisibilityPcapsPcapsSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),) : null;
   },
   onError: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
@@ -128,7 +131,7 @@ return execute(
 /// List all buckets configured for use with PCAPs API.
 ///
 /// `GET /accounts/{account_id}/pcaps/ownership`
-Future<ApiResult<MagicVisibilityPcapsPcapsOwnershipCollection, MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault>> magicPcapCollectionListPcaPsBucketOwnership({required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicVisibilityPcapsPcapsOwnershipResponse>?, MagicPcapCollectionListPcaPsBucketOwnershipResponsedefault>> magicPcapCollectionListPcaPsBucketOwnership({required MagicVisibilityPcapsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -140,7 +143,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MagicVisibilityPcapsPcapsOwnershipCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => MagicVisibilityPcapsPcapsOwnershipCollection.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
@@ -152,7 +156,7 @@ return execute(
 /// Adds an AWS or GCP bucket to use with full packet captures.
 ///
 /// `POST /accounts/{account_id}/pcaps/ownership`
-Future<ApiResult<ResponseCommon47, MagicPcapCollectionAddBucketsForFullPacketCapturesResponsedefault>> magicPcapCollectionAddBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon47Result, MagicPcapCollectionAddBucketsForFullPacketCapturesResponsedefault>> magicPcapCollectionAddBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -166,7 +170,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
   onError: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon47.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
@@ -197,7 +202,7 @@ return execute(
 /// Validates buckets added to the packet captures API.
 ///
 /// `POST /accounts/{account_id}/pcaps/ownership/validate`
-Future<ApiResult<ResponseCommon47, MagicPcapCollectionValidateBucketsForFullPacketCapturesResponsedefault>> magicPcapCollectionValidateBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipValidateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon47Result, MagicPcapCollectionValidateBucketsForFullPacketCapturesResponsedefault>> magicPcapCollectionValidateBucketsForFullPacketCaptures({required MagicVisibilityPcapsIdentifier accountId, required MagicVisibilityPcapsPcapsOwnershipValidateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -211,7 +216,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon47.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
   onError: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon47.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);

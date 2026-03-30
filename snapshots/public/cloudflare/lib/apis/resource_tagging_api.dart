@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/resource_tagging_access_application_id.dart';import '../models/resource_tagging_account_resource_type.dart';import '../models/resource_tagging_delete_tags_request_account_level.dart';import '../models/resource_tagging_delete_tags_request_zone_level.dart';import '../models/resource_tagging_identifier.dart';import '../models/resource_tagging_resource_id.dart';import '../models/resource_tagging_resource_type.dart';import '../models/resource_tagging_set_tags_request_account_level.dart';import '../models/resource_tagging_set_tags_request_zone_level.dart';import '../models/resource_tagging_tag_keys_response_collection.dart';import '../models/resource_tagging_tag_values_response_collection.dart';import '../models/resource_tagging_tagged_resource_response_collection.dart';import '../models/resource_tagging_tagged_resource_response_single.dart';import '../models/resource_tagging_worker_id.dart';import '../models/resource_tagging_zone_resource_type.dart';import '../models/response_common_failure59.dart';/// ResourceTaggingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/resource_tagging_access_application_id.dart';import '../models/resource_tagging_account_resource_type.dart';import '../models/resource_tagging_delete_tags_request_account_level.dart';import '../models/resource_tagging_delete_tags_request_zone_level.dart';import '../models/resource_tagging_identifier.dart';import '../models/resource_tagging_resource_id.dart';import '../models/resource_tagging_resource_type.dart';import '../models/resource_tagging_set_tags_request_account_level.dart';import '../models/resource_tagging_set_tags_request_zone_level.dart';import '../models/resource_tagging_tagged_resource_object.dart';import '../models/resource_tagging_worker_id.dart';import '../models/resource_tagging_zone_resource_type.dart';import '../models/response_common_failure59.dart';/// ResourceTaggingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ResourceTaggingApi with ApiExecutor {const ResourceTaggingApi(this.a
 /// Retrieves tags for a specific account-level resource.
 ///
 /// `GET /accounts/{account_id}/tags`
-Future<ApiResult<ResourceTaggingTaggedResourceResponseSingle, Never>> tagsGet({required ResourceTaggingIdentifier accountId, required ResourceTaggingResourceId resourceId, required ResourceTaggingAccountResourceType resourceType, ResourceTaggingWorkerId? workerId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceTaggingTaggedResourceObject?, Never>> tagsGet({required ResourceTaggingIdentifier accountId, required ResourceTaggingResourceId resourceId, required ResourceTaggingAccountResourceType resourceType, ResourceTaggingWorkerId? workerId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['resource_id'] = resourceId.toString();
 queryParameters['resource_type'] = resourceType.toJson();
@@ -35,7 +35,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResourceTaggingTaggedResourceResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -44,7 +45,7 @@ return execute(
 /// Creates or updates tags for a specific account-level resource.
 ///
 /// `PUT /accounts/{account_id}/tags`
-Future<ApiResult<ResourceTaggingTaggedResourceResponseSingle, ResponseCommonFailure59>> tagsSet({required ResourceTaggingIdentifier accountId, String? ifMatch, required ResourceTaggingSetTagsRequestAccountLevel body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceTaggingTaggedResourceObject?, ResponseCommonFailure59>> tagsSet({required ResourceTaggingIdentifier accountId, String? ifMatch, required ResourceTaggingSetTagsRequestAccountLevel body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) {
   headers['If-Match'] = ifMatch;
@@ -61,7 +62,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResourceTaggingTaggedResourceResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
     return ResponseCommonFailure59.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -100,7 +102,7 @@ return execute(
 /// Lists all distinct tag keys used across resources in an account.
 ///
 /// `GET /accounts/{account_id}/tags/keys`
-Future<ApiResult<ResourceTaggingTagKeysResponseCollection, Never>> tagsListKeys({required ResourceTaggingIdentifier accountId, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<String>?, Never>> tagsListKeys({required ResourceTaggingIdentifier accountId, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
   queryParameters['cursor'] = cursor;
@@ -120,7 +122,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResourceTaggingTagKeysResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => e as String).toList();
   },
 );
  } 
@@ -129,7 +132,7 @@ return execute(
 /// Lists all tagged resources for an account.
 ///
 /// `GET /accounts/{account_id}/tags/resources`
-Future<ApiResult<ResourceTaggingTaggedResourceResponseCollection, Never>> tagsList({required ResourceTaggingIdentifier accountId, List<ResourceTaggingResourceType>? type, List<String>? tag, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ResourceTaggingTaggedResourceObject>?, Never>> tagsList({required ResourceTaggingIdentifier accountId, List<ResourceTaggingResourceType>? type, List<String>? tag, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) {
 for (final item in type) {
@@ -159,7 +162,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResourceTaggingTaggedResourceResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => ResourceTaggingTaggedResourceObject.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -168,7 +172,7 @@ return execute(
 /// Lists all distinct values for a given tag key, optionally filtered by resource type.
 ///
 /// `GET /accounts/{account_id}/tags/values/{tag_key}`
-Future<ApiResult<ResourceTaggingTagValuesResponseCollection, Never>> tagsListValues({required ResourceTaggingIdentifier accountId, required String tagKey, ResourceTaggingResourceType? type, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<String>?, Never>> tagsListValues({required ResourceTaggingIdentifier accountId, required String tagKey, ResourceTaggingResourceType? type, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) {
   queryParameters['type'] = type.toJson();
@@ -191,7 +195,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResourceTaggingTagValuesResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => e as String).toList();
   },
 );
  } 
@@ -200,7 +205,7 @@ return execute(
 /// Retrieves tags for a specific zone-level resource.
 ///
 /// `GET /zones/{zone_id}/tags`
-Future<ApiResult<ResourceTaggingTaggedResourceResponseSingle, Never>> tagsZoneGet({required ResourceTaggingIdentifier zoneId, required ResourceTaggingResourceId resourceId, required ResourceTaggingZoneResourceType resourceType, ResourceTaggingAccessApplicationId? accessApplicationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceTaggingTaggedResourceObject?, Never>> tagsZoneGet({required ResourceTaggingIdentifier zoneId, required ResourceTaggingResourceId resourceId, required ResourceTaggingZoneResourceType resourceType, ResourceTaggingAccessApplicationId? accessApplicationId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['resource_id'] = resourceId.toString();
 queryParameters['resource_type'] = resourceType.toJson();
@@ -222,7 +227,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResourceTaggingTaggedResourceResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -231,7 +237,7 @@ return execute(
 /// Creates or updates tags for a specific zone-level resource. Replaces all existing tags for the resource.
 ///
 /// `PUT /zones/{zone_id}/tags`
-Future<ApiResult<ResourceTaggingTaggedResourceResponseSingle, ResponseCommonFailure59>> tagsZoneSet({required ResourceTaggingIdentifier zoneId, String? ifMatch, required ResourceTaggingSetTagsRequestZoneLevel body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResourceTaggingTaggedResourceObject?, ResponseCommonFailure59>> tagsZoneSet({required ResourceTaggingIdentifier zoneId, String? ifMatch, required ResourceTaggingSetTagsRequestZoneLevel body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (ifMatch != null) {
   headers['If-Match'] = ifMatch;
@@ -248,7 +254,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResourceTaggingTaggedResourceResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
     return ResponseCommonFailure59.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

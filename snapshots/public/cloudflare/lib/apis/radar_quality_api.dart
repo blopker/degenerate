@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_quality_index_summary_format.dart';import '../models/radar_get_quality_index_summary_metric.dart';import '../models/radar_get_quality_index_summary_response.dart';import '../models/radar_get_quality_index_summary_response400.dart';import '../models/radar_get_quality_index_timeseries_group_agg_interval.dart';import '../models/radar_get_quality_index_timeseries_group_format.dart';import '../models/radar_get_quality_index_timeseries_group_metric.dart';import '../models/radar_get_quality_index_timeseries_group_response.dart';import '../models/radar_get_quality_index_timeseries_group_response400.dart';import '../models/radar_get_quality_speed_histogram_format.dart';import '../models/radar_get_quality_speed_histogram_metric_group.dart';import '../models/radar_get_quality_speed_histogram_response.dart';import '../models/radar_get_quality_speed_histogram_response400.dart';import '../models/radar_get_quality_speed_summary_format.dart';import '../models/radar_get_quality_speed_summary_response.dart';import '../models/radar_get_quality_speed_summary_response400.dart';import '../models/radar_get_quality_speed_top_ases_format.dart';import '../models/radar_get_quality_speed_top_ases_order_by.dart';import '../models/radar_get_quality_speed_top_ases_response.dart';import '../models/radar_get_quality_speed_top_ases_response404.dart';import '../models/radar_get_quality_speed_top_locations_format.dart';import '../models/radar_get_quality_speed_top_locations_order_by.dart';import '../models/radar_get_quality_speed_top_locations_response.dart';import '../models/radar_get_quality_speed_top_locations_response404.dart';/// RadarQualityApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_quality_index_summary_format.dart';import '../models/radar_get_quality_index_summary_metric.dart';import '../models/radar_get_quality_index_summary_response400.dart';import '../models/radar_get_quality_index_summary_response_result.dart';import '../models/radar_get_quality_index_timeseries_group_agg_interval.dart';import '../models/radar_get_quality_index_timeseries_group_format.dart';import '../models/radar_get_quality_index_timeseries_group_metric.dart';import '../models/radar_get_quality_index_timeseries_group_response400.dart';import '../models/radar_get_quality_index_timeseries_group_response_result.dart';import '../models/radar_get_quality_speed_histogram_format.dart';import '../models/radar_get_quality_speed_histogram_metric_group.dart';import '../models/radar_get_quality_speed_histogram_response400.dart';import '../models/radar_get_quality_speed_histogram_response_result.dart';import '../models/radar_get_quality_speed_summary_format.dart';import '../models/radar_get_quality_speed_summary_response400.dart';import '../models/radar_get_quality_speed_summary_response_result.dart';import '../models/radar_get_quality_speed_top_ases_format.dart';import '../models/radar_get_quality_speed_top_ases_order_by.dart';import '../models/radar_get_quality_speed_top_ases_response404.dart';import '../models/radar_get_quality_speed_top_ases_response_result.dart';import '../models/radar_get_quality_speed_top_locations_format.dart';import '../models/radar_get_quality_speed_top_locations_order_by.dart';import '../models/radar_get_quality_speed_top_locations_response404.dart';import '../models/radar_get_quality_speed_top_locations_response_result.dart';/// RadarQualityApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarQualityApi with ApiExecutor {const RadarQualityApi(this.apiConf
 /// Retrieves a summary (percentiles) of bandwidth, latency, or DNS response time from the Radar Internet Quality Index (IQI).
 ///
 /// `GET /radar/quality/iqi/summary`
-Future<ApiResult<RadarGetQualityIndexSummaryResponse, RadarGetQualityIndexSummaryResponse400>> radarGetQualityIndexSummary({List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, required RadarGetQualityIndexSummaryMetric metric, RadarGetQualityIndexSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetQualityIndexSummaryResponseResult, RadarGetQualityIndexSummaryResponse400>> radarGetQualityIndexSummary({List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, required RadarGetQualityIndexSummaryMetric metric, RadarGetQualityIndexSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -69,7 +69,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetQualityIndexSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetQualityIndexSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetQualityIndexSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -81,7 +82,7 @@ return execute(
 /// Retrieves a time series (percentiles) of bandwidth, latency, or DNS response time from the Radar Internet Quality Index (IQI).
 ///
 /// `GET /radar/quality/iqi/timeseries_groups`
-Future<ApiResult<RadarGetQualityIndexTimeseriesGroupResponse, RadarGetQualityIndexTimeseriesGroupResponse400>> radarGetQualityIndexTimeseriesGroup({RadarGetQualityIndexTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, bool? interpolation, required RadarGetQualityIndexTimeseriesGroupMetric metric, RadarGetQualityIndexTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetQualityIndexTimeseriesGroupResponseResult, RadarGetQualityIndexTimeseriesGroupResponse400>> radarGetQualityIndexTimeseriesGroup({RadarGetQualityIndexTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, bool? interpolation, required RadarGetQualityIndexTimeseriesGroupMetric metric, RadarGetQualityIndexTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -143,7 +144,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetQualityIndexTimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetQualityIndexTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetQualityIndexTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -155,7 +157,7 @@ return execute(
 /// Retrieves a histogram from the previous 90 days of Cloudflare Speed Test data, split into fixed bandwidth (Mbps), latency (ms), or jitter (ms) buckets.
 ///
 /// `GET /radar/quality/speed/histogram`
-Future<ApiResult<RadarGetQualitySpeedHistogramResponse, RadarGetQualitySpeedHistogramResponse400>> radarGetQualitySpeedHistogram({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? bucketSize, RadarGetQualitySpeedHistogramMetricGroup? metricGroup, RadarGetQualitySpeedHistogramFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetQualitySpeedHistogramResponseResult, RadarGetQualitySpeedHistogramResponse400>> radarGetQualitySpeedHistogram({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, int? bucketSize, RadarGetQualitySpeedHistogramMetricGroup? metricGroup, RadarGetQualitySpeedHistogramFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -206,7 +208,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetQualitySpeedHistogramResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetQualitySpeedHistogramResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetQualitySpeedHistogramResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -218,7 +221,7 @@ return execute(
 /// Retrieves a summary of bandwidth, latency, jitter, and packet loss, from the previous 90 days of Cloudflare Speed Test data.
 ///
 /// `GET /radar/quality/speed/summary`
-Future<ApiResult<RadarGetQualitySpeedSummaryResponse, RadarGetQualitySpeedSummaryResponse400>> radarGetQualitySpeedSummary({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetQualitySpeedSummaryResponseResult, RadarGetQualitySpeedSummaryResponse400>> radarGetQualitySpeedSummary({List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -263,7 +266,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetQualitySpeedSummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetQualitySpeedSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetQualitySpeedSummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -275,7 +279,7 @@ return execute(
 /// Retrieves the top autonomous systems by bandwidth, latency, jitter, or packet loss, from the previous 90 days of Cloudflare Speed Test data.
 ///
 /// `GET /radar/quality/speed/top/ases`
-Future<ApiResult<RadarGetQualitySpeedTopAsesResponse, RadarGetQualitySpeedTopAsesResponse404>> radarGetQualitySpeedTopAses({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopAsesOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetQualitySpeedTopAsesResponseResult, RadarGetQualitySpeedTopAsesResponse404>> radarGetQualitySpeedTopAses({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopAsesOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopAsesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -329,7 +333,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetQualitySpeedTopAsesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetQualitySpeedTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetQualitySpeedTopAsesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -341,7 +346,7 @@ return execute(
 /// Retrieves the top locations by bandwidth, latency, jitter, or packet loss, from the previous 90 days of Cloudflare Speed Test data.
 ///
 /// `GET /radar/quality/speed/top/locations`
-Future<ApiResult<RadarGetQualitySpeedTopLocationsResponse, RadarGetQualitySpeedTopLocationsResponse404>> radarGetQualitySpeedTopLocations({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopLocationsOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetQualitySpeedTopLocationsResponseResult, RadarGetQualitySpeedTopLocationsResponse404>> radarGetQualitySpeedTopLocations({int? limit, List<String>? name, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetQualitySpeedTopLocationsOrderBy? orderBy, bool? reverse, RadarGetQualitySpeedTopLocationsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -395,7 +400,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetQualitySpeedTopLocationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetQualitySpeedTopLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetQualitySpeedTopLocationsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_collection_response.dart';import '../models/intel_identifier.dart';import '../models/intel_single_response.dart';/// DomainIntelligenceApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_collection_response_result.dart';import '../models/intel_domain.dart';import '../models/intel_identifier.dart';/// DomainIntelligenceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DomainIntelligenceApi with ApiExecutor {const DomainIntelligenceApi(
 /// Gets security details and statistics about a domain.
 ///
 /// `GET /accounts/{account_id}/intel/domain`
-Future<ApiResult<IntelSingleResponse, Never>> domainIntelligenceGetDomainDetails({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IntelDomain?, Never>> domainIntelligenceGetDomainDetails({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domain != null) {
   queryParameters['domain'] = domain;
@@ -33,7 +33,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IntelSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? IntelDomain.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -42,7 +43,7 @@ return execute(
 /// Same as summary.
 ///
 /// `GET /accounts/{account_id}/intel/domain/bulk`
-Future<ApiResult<IntelCollectionResponse, Never>> domainIntelligenceGetMultipleDomainDetails({required IntelIdentifier accountId, List<String>? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IntelCollectionResponseResult>?, Never>> domainIntelligenceGetMultipleDomainDetails({required IntelIdentifier accountId, List<String>? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domain != null) {
 for (final item in domain) {
@@ -64,7 +65,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IntelCollectionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => IntelCollectionResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

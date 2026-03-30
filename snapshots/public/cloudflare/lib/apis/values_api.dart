@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/telemetry_values_list_request.dart';import '../models/telemetry_values_list_response.dart';import '../models/telemetry_values_list_response401.dart';/// ValuesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/telemetry_values_list_request.dart';import '../models/telemetry_values_list_response401.dart';import '../models/telemetry_values_list_response_result.dart';/// ValuesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ValuesApi with ApiExecutor {const ValuesApi(this.apiConfig);
 /// List unique values found in your events.
 ///
 /// `POST /accounts/{account_id}/workers/observability/telemetry/values`
-Future<ApiResult<TelemetryValuesListResponse, TelemetryValuesListResponse401>> telemetryValuesList({required String accountId, required TelemetryValuesListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TelemetryValuesListResponseResult>, TelemetryValuesListResponse401>> telemetryValuesList({required String accountId, required TelemetryValuesListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -27,7 +27,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return TelemetryValuesListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => TelemetryValuesListResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
     return TelemetryValuesListResponse401.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

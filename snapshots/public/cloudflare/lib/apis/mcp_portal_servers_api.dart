@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_servers_request.dart';import '../models/create_servers_response.dart';import '../models/create_servers_response400.dart';import '../models/delete_servers_response.dart';import '../models/delete_servers_response404.dart';import '../models/fetch_servers_response.dart';import '../models/fetch_servers_response404.dart';import '../models/list_servers_response.dart';import '../models/list_servers_response400.dart';import '../models/sync_server_response.dart';import '../models/sync_server_response404.dart';import '../models/update_servers_request.dart';import '../models/update_servers_response.dart';import '../models/update_servers_response400.dart';/// McpPortalServersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_servers_request.dart';import '../models/create_servers_response400.dart';import '../models/create_servers_response_result.dart';import '../models/delete_servers_response404.dart';import '../models/delete_servers_response_result.dart';import '../models/fetch_servers_response404.dart';import '../models/fetch_servers_response_result.dart';import '../models/list_servers_response400.dart';import '../models/list_servers_response_result.dart';import '../models/sync_server_response404.dart';import '../models/update_servers_request.dart';import '../models/update_servers_response400.dart';import '../models/update_servers_response_result.dart';/// McpPortalServersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class McpPortalServersApi with ApiExecutor {const McpPortalServersApi(this
 /// List MCP Servers
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/servers`
-Future<ApiResult<ListServersResponse, ListServersResponse400>> mcpPortalsApiListServers({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ListServersResponseResult>, ListServersResponse400>> mcpPortalsApiListServers({required String accountId, int? page, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -37,7 +37,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListServersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => ListServersResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
     return ListServersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -47,7 +48,7 @@ return execute(
 /// Create a new MCP Server
 ///
 /// `POST /accounts/{account_id}/access/ai-controls/mcp/servers`
-Future<ApiResult<CreateServersResponse, CreateServersResponse400>> mcpPortalsApiCreateServers({required String accountId, CreateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateServersResponseResult, CreateServersResponse400>> mcpPortalsApiCreateServers({required String accountId, CreateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -61,7 +62,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CreateServersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return CreateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return CreateServersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -71,7 +73,7 @@ return execute(
 /// Read the details of a MCP Server
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<FetchServersResponse, FetchServersResponse404>> mcpPortalsApiFetchServers({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FetchServersResponseResult, FetchServersResponse404>> mcpPortalsApiFetchServers({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -83,7 +85,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return FetchServersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return FetchServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return FetchServersResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -93,7 +96,7 @@ return execute(
 /// Update a MCP Server
 ///
 /// `PUT /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<UpdateServersResponse, UpdateServersResponse400>> mcpPortalsApiUpdateServers({required String id, required String accountId, UpdateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UpdateServersResponseResult, UpdateServersResponse400>> mcpPortalsApiUpdateServers({required String id, required String accountId, UpdateServersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,7 +110,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return UpdateServersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return UpdateServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return UpdateServersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -117,7 +121,7 @@ return execute(
 /// Delete a MCP Server
 ///
 /// `DELETE /accounts/{account_id}/access/ai-controls/mcp/servers/{id}`
-Future<ApiResult<DeleteServersResponse, DeleteServersResponse404>> mcpPortalsApiDeleteServers({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteServersResponseResult, DeleteServersResponse404>> mcpPortalsApiDeleteServers({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -129,7 +133,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteServersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return DeleteServersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return DeleteServersResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -139,7 +144,7 @@ return execute(
 /// Sync MCP Server Capabilities
 ///
 /// `POST /accounts/{account_id}/access/ai-controls/mcp/servers/{id}/sync`
-Future<ApiResult<SyncServerResponse, SyncServerResponse404>> mcpPortalsApiSyncServer({required String id, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, SyncServerResponse404>> mcpPortalsApiSyncServer({required String id, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -151,7 +156,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SyncServerResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     return SyncServerResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

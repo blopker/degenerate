@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/secondary_dns_account_identifier.dart';import '../models/secondary_dns_components_schemas_id_response.dart';import '../models/secondary_dns_components_schemas_identifier.dart';import '../models/secondary_dns_peer.dart';import '../models/secondary_dns_peer_create_peer_request.dart';import '../models/secondary_dns_schemas_response_collection.dart';import '../models/secondary_dns_schemas_single_response.dart';/// SecondaryDnsPeerApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/secondary_dns_account_identifier.dart';import '../models/secondary_dns_components_schemas_id_response_result.dart';import '../models/secondary_dns_components_schemas_identifier.dart';import '../models/secondary_dns_peer.dart';import '../models/secondary_dns_peer_create_peer_request.dart';/// SecondaryDnsPeerApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class SecondaryDnsPeerApi with ApiExecutor {const SecondaryDnsPeerApi(this
 /// List Peers.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/peers`
-Future<ApiResult<SecondaryDnsSchemasResponseCollection, Never>> secondaryDnsPeerListPeers({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecondaryDnsPeer>?, Never>> secondaryDnsPeerListPeers({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SecondaryDnsSchemasResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => SecondaryDnsPeer.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -34,7 +35,7 @@ return execute(
 /// Create Peer.
 ///
 /// `POST /accounts/{account_id}/secondary_dns/peers`
-Future<ApiResult<SecondaryDnsSchemasSingleResponse, Never>> secondaryDnsPeerCreatePeer({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeerCreatePeerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsPeer?, Never>> secondaryDnsPeerCreatePeer({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeerCreatePeerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SecondaryDnsSchemasSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? SecondaryDnsPeer.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -57,7 +59,7 @@ return execute(
 /// Get Peer.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/peers/{peer_id}`
-Future<ApiResult<SecondaryDnsSchemasSingleResponse, Never>> secondaryDnsPeerPeerDetails({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsPeer?, Never>> secondaryDnsPeerPeerDetails({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,7 +71,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SecondaryDnsSchemasSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? SecondaryDnsPeer.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -78,7 +81,7 @@ return execute(
 /// Modify Peer.
 ///
 /// `PUT /accounts/{account_id}/secondary_dns/peers/{peer_id}`
-Future<ApiResult<SecondaryDnsSchemasSingleResponse, Never>> secondaryDnsPeerUpdatePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeer body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsPeer?, Never>> secondaryDnsPeerUpdatePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsPeer body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,7 +95,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SecondaryDnsSchemasSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? SecondaryDnsPeer.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -101,7 +105,7 @@ return execute(
 /// Delete Peer.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/peers/{peer_id}`
-Future<ApiResult<SecondaryDnsComponentsSchemasIdResponse, Never>> secondaryDnsPeerDeletePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsComponentsSchemasIdResponseResult?, Never>> secondaryDnsPeerDeletePeer({required SecondaryDnsComponentsSchemasIdentifier peerId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -113,7 +117,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SecondaryDnsComponentsSchemasIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? SecondaryDnsComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

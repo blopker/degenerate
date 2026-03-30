@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_pipelines_workers_pipelines_account_id.dart';import '../models/cloudflare_pipelines_workers_pipelines_pipeline_id.dart';import '../models/cloudflare_pipelines_workers_pipelines_sink_id.dart';import '../models/cloudflare_pipelines_workers_pipelines_stream_id.dart';import '../models/pipelines_by_pipeline_id_response.dart';import '../models/pipelines_request.dart';import '../models/pipelines_response.dart';import '../models/pipelines_response2.dart';import '../models/sinks_by_sink_id_response.dart';import '../models/sinks_request.dart';import '../models/sinks_response.dart';import '../models/sinks_response2.dart';import '../models/streams_by_stream_id_request.dart';import '../models/streams_by_stream_id_response.dart';import '../models/streams_by_stream_id_response2.dart';import '../models/streams_request.dart';import '../models/streams_response.dart';import '../models/streams_response2.dart';import '../models/validate_sql_request.dart';import '../models/validate_sql_response.dart';/// WorkersPipelinesOtherApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_pipelines_workers_pipelines_account_id.dart';import '../models/cloudflare_pipelines_workers_pipelines_pipeline_id.dart';import '../models/cloudflare_pipelines_workers_pipelines_sink_id.dart';import '../models/cloudflare_pipelines_workers_pipelines_stream_id.dart';import '../models/pipelines_by_pipeline_id_response_result.dart';import '../models/pipelines_request.dart';import '../models/pipelines_response2_result.dart';import '../models/pipelines_response_result.dart';import '../models/sinks_by_sink_id_response_result.dart';import '../models/sinks_request.dart';import '../models/sinks_response2_result.dart';import '../models/sinks_response_result.dart';import '../models/streams_by_stream_id_request.dart';import '../models/streams_by_stream_id_response2_result.dart';import '../models/streams_by_stream_id_response_result.dart';import '../models/streams_request.dart';import '../models/streams_response2_result.dart';import '../models/streams_response_result.dart';import '../models/validate_sql_request.dart';import '../models/validate_sql_response_result.dart';/// WorkersPipelinesOtherApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkersPipelinesOtherApi with ApiExecutor {const WorkersPipelinesOth
 /// List/Filter Pipelines in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/pipelines`
-Future<ApiResult<PipelinesResponse, Never>> getV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<PipelinesResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -36,7 +36,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PipelinesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => PipelinesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -45,7 +46,7 @@ return execute(
 /// Create a new Pipeline.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/pipelines`
-Future<ApiResult<PipelinesResponse2, Never>> postV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, PipelinesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PipelinesResponse2Result, Never>> postV4AccountsByAccountIdPipelinesV1Pipelines({required CloudflarePipelinesWorkersPipelinesAccountId accountId, PipelinesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -59,7 +60,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PipelinesResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return PipelinesResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -68,7 +70,7 @@ return execute(
 /// Get Pipelines Details.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/pipelines/{pipeline_id}`
-Future<ApiResult<PipelinesByPipelineIdResponse, Never>> getV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesPipelineId pipelineId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PipelinesByPipelineIdResponseResult, Never>> getV4AccountsByAccountIdPipelinesV1PipelinesByPipelineId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesPipelineId pipelineId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -80,7 +82,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PipelinesByPipelineIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return PipelinesByPipelineIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -108,7 +111,7 @@ return execute(
 /// List/Filter Sinks in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/sinks`
-Future<ApiResult<SinksResponse, Never>> getV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, String? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SinksResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, String? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pipelineId != null) {
   queryParameters['pipeline_id'] = pipelineId;
@@ -134,7 +137,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SinksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => SinksResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -143,7 +147,7 @@ return execute(
 /// Create a new Sink.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/sinks`
-Future<ApiResult<SinksResponse2, Never>> postV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, SinksRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SinksResponse2Result, Never>> postV4AccountsByAccountIdPipelinesV1Sinks({required CloudflarePipelinesWorkersPipelinesAccountId accountId, SinksRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -157,7 +161,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SinksResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return SinksResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -166,7 +171,7 @@ return execute(
 /// Get Sink Details.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/sinks/{sink_id}`
-Future<ApiResult<SinksBySinkIdResponse, Never>> getV4AccountsByAccountIdPipelinesV1SinksBySinkId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesSinkId sinkId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SinksBySinkIdResponseResult, Never>> getV4AccountsByAccountIdPipelinesV1SinksBySinkId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesSinkId sinkId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -178,7 +183,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SinksBySinkIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return SinksBySinkIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -214,7 +220,7 @@ return execute(
 /// List/Filter Streams in Account.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/streams`
-Future<ApiResult<StreamsResponse, Never>> getV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, CloudflarePipelinesWorkersPipelinesPipelineId? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<StreamsResponseResult>, Never>> getV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, CloudflarePipelinesWorkersPipelinesPipelineId? pipelineId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (pipelineId != null) {
   queryParameters['pipeline_id'] = pipelineId.toString();
@@ -240,7 +246,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return StreamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => StreamsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -249,7 +256,7 @@ return execute(
 /// Create a new Stream.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/streams`
-Future<ApiResult<StreamsResponse2, Never>> postV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, StreamsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamsResponse2Result, Never>> postV4AccountsByAccountIdPipelinesV1Streams({required CloudflarePipelinesWorkersPipelinesAccountId accountId, StreamsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -263,7 +270,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return StreamsResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return StreamsResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -272,7 +280,7 @@ return execute(
 /// Get Stream Details.
 ///
 /// `GET /accounts/{account_id}/pipelines/v1/streams/{stream_id}`
-Future<ApiResult<StreamsByStreamIdResponse, Never>> getV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamsByStreamIdResponseResult, Never>> getV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -284,7 +292,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return StreamsByStreamIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return StreamsByStreamIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -293,7 +302,7 @@ return execute(
 /// Update a Stream.
 ///
 /// `PATCH /accounts/{account_id}/pipelines/v1/streams/{stream_id}`
-Future<ApiResult<StreamsByStreamIdResponse2, Never>> patchV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, StreamsByStreamIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamsByStreamIdResponse2Result, Never>> patchV4AccountsByAccountIdPipelinesV1StreamsByStreamId({required CloudflarePipelinesWorkersPipelinesAccountId accountId, required CloudflarePipelinesWorkersPipelinesStreamId streamId, StreamsByStreamIdRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -307,7 +316,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return StreamsByStreamIdResponse2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return StreamsByStreamIdResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -343,7 +353,7 @@ return execute(
 /// Validate Arroyo SQL.
 ///
 /// `POST /accounts/{account_id}/pipelines/v1/validate_sql`
-Future<ApiResult<ValidateSqlResponse, Never>> postV4AccountsByAccountIdPipelinesV1ValidateSql({required CloudflarePipelinesWorkersPipelinesAccountId accountId, ValidateSqlRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ValidateSqlResponseResult, Never>> postV4AccountsByAccountIdPipelinesV1ValidateSql({required CloudflarePipelinesWorkersPipelinesAccountId accountId, ValidateSqlRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -357,7 +367,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ValidateSqlResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return ValidateSqlResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_hyperdrive_response.dart';import '../models/delete_hyperdrive_response.dart';import '../models/get_hyperdrive_response.dart';import '../models/hyperdrive_hyperdrive_config.dart';import '../models/hyperdrive_hyperdrive_config_patch.dart';import '../models/hyperdrive_identifier.dart';import '../models/list_hyperdrive_response.dart';import '../models/response_common34.dart';import '../models/update_hyperdrive_response.dart';/// HyperdriveApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/hyperdrive_hyperdrive_config.dart';import '../models/hyperdrive_hyperdrive_config_patch.dart';import '../models/hyperdrive_identifier.dart';/// HyperdriveApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class HyperdriveApi with ApiExecutor {const HyperdriveApi(this.apiConfig);
 /// Returns a list of Hyperdrives.
 ///
 /// `GET /accounts/{account_id}/hyperdrive/configs`
-Future<ApiResult<ListHyperdriveResponse, Never>> listHyperdrive({required HyperdriveIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<HyperdriveHyperdriveConfig>?, Never>> listHyperdrive({required HyperdriveIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListHyperdriveResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => HyperdriveHyperdriveConfig.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -34,7 +35,7 @@ return execute(
 /// Creates and returns a new Hyperdrive configuration.
 ///
 /// `POST /accounts/{account_id}/hyperdrive/configs`
-Future<ApiResult<CreateHyperdriveResponse, Never>> createHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveHyperdriveConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HyperdriveHyperdriveConfig?, Never>> createHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveHyperdriveConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CreateHyperdriveResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? HyperdriveHyperdriveConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -57,7 +59,7 @@ return execute(
 /// Returns the specified Hyperdrive configuration.
 ///
 /// `GET /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<GetHyperdriveResponse, Never>> getHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HyperdriveHyperdriveConfig?, Never>> getHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,7 +71,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetHyperdriveResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? HyperdriveHyperdriveConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -78,7 +81,7 @@ return execute(
 /// Updates and returns the specified Hyperdrive configuration.
 ///
 /// `PUT /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<UpdateHyperdriveResponse, Never>> updateHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, required HyperdriveHyperdriveConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HyperdriveHyperdriveConfig?, Never>> updateHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, required HyperdriveHyperdriveConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,7 +95,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return UpdateHyperdriveResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? HyperdriveHyperdriveConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -101,7 +105,7 @@ return execute(
 /// Patches and returns the specified Hyperdrive configuration. Custom caching settings are not kept if caching is disabled.
 ///
 /// `PATCH /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<ResponseCommon34, Never>> patchHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, required HyperdriveHyperdriveConfigPatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> patchHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, required HyperdriveHyperdriveConfigPatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,7 +119,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon34.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -124,7 +129,7 @@ return execute(
 /// Deletes the specified Hyperdrive.
 ///
 /// `DELETE /accounts/{account_id}/hyperdrive/configs/{hyperdrive_id}`
-Future<ApiResult<DeleteHyperdriveResponse, Never>> deleteHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, Never>> deleteHyperdrive({required HyperdriveIdentifier accountId, required HyperdriveIdentifier hyperdriveId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -136,7 +141,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteHyperdriveResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
 );
  } 

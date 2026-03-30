@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_delete_scans_response.dart';import '../models/get_config_fetch_response.dart';import '../models/get_get_open_ports_response.dart';import '../models/post_config_create_request.dart';import '../models/post_config_create_response.dart';import '../models/post_config_update_request.dart';import '../models/post_config_update_response.dart';/// ScansApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_get_open_ports_response_result.dart';import '../models/post_config_create_request.dart';import '../models/post_config_update_request.dart';import '../models/scan_config.dart';/// ScansApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class ScansApi with ApiExecutor {const ScansApi(this.apiConfig);
 /// List Scan Configs
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/scans/config`
-Future<ApiResult<GetConfigFetchResponse, Never>> getConfigFetch({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ScanConfig>?, Never>> getConfigFetch({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,14 +23,15 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetConfigFetchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => ScanConfig.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
 /// Create a new Scan Config
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/scans/config`
-Future<ApiResult<PostConfigCreateResponse, Never>> postConfigCreate({required String accountId, PostConfigCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ScanConfig?, Never>> postConfigCreate({required String accountId, PostConfigCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -44,14 +45,15 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostConfigCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ScanConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
 /// Update an existing Scan Config
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/scans/config/{config_id}`
-Future<ApiResult<PostConfigUpdateResponse, Never>> postConfigUpdate({required String accountId, required String configId, PostConfigUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ScanConfig?, Never>> postConfigUpdate({required String accountId, required String configId, PostConfigUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,14 +67,15 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostConfigUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ScanConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
 /// Delete a Scan Config
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/scans/config/{config_id}`
-Future<ApiResult<DeleteDeleteScansResponse, Never>> deleteDeleteScans({required String accountId, required String configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> deleteDeleteScans({required String accountId, required String configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -84,14 +87,15 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteDeleteScansResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
   },
 );
  } 
 /// Get the Latest Scan Result
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/scans/results/{config_id}`
-Future<ApiResult<GetGetOpenPortsResponse, Never>> getGetOpenPorts({required String accountId, required String configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetGetOpenPortsResponseResult, Never>> getGetOpenPorts({required String accountId, required String configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -103,7 +107,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetGetOpenPortsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return GetGetOpenPortsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

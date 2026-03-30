@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_ranking_domain_details_format.dart';import '../models/radar_get_ranking_domain_details_ranking_type.dart';import '../models/radar_get_ranking_domain_details_response.dart';import '../models/radar_get_ranking_domain_details_response400.dart';import '../models/radar_get_ranking_domain_timeseries_format.dart';import '../models/radar_get_ranking_domain_timeseries_ranking_type.dart';import '../models/radar_get_ranking_domain_timeseries_response.dart';import '../models/radar_get_ranking_domain_timeseries_response400.dart';import '../models/radar_get_ranking_top_domains_format.dart';import '../models/radar_get_ranking_top_domains_ranking_type.dart';import '../models/radar_get_ranking_top_domains_response.dart';import '../models/radar_get_ranking_top_domains_response400.dart';/// RadarDomainsRankingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_ranking_domain_details_format.dart';import '../models/radar_get_ranking_domain_details_ranking_type.dart';import '../models/radar_get_ranking_domain_details_response400.dart';import '../models/radar_get_ranking_domain_details_response_result.dart';import '../models/radar_get_ranking_domain_timeseries_format.dart';import '../models/radar_get_ranking_domain_timeseries_ranking_type.dart';import '../models/radar_get_ranking_domain_timeseries_response400.dart';import '../models/radar_get_ranking_domain_timeseries_response_result.dart';import '../models/radar_get_ranking_top_domains_format.dart';import '../models/radar_get_ranking_top_domains_ranking_type.dart';import '../models/radar_get_ranking_top_domains_response400.dart';import '../models/radar_get_ranking_top_domains_response_result.dart';/// RadarDomainsRankingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarDomainsRankingApi with ApiExecutor {const RadarDomainsRankingAp
 /// Retrieves domain rank details. Cloudflare provides an ordered rank for the top 100 domains, but for the remainder it only provides ranking buckets like top 200 thousand, top one million, etc.. These are available through Radar datasets endpoints.
 ///
 /// `GET /radar/ranking/domain/{domain}`
-Future<ApiResult<RadarGetRankingDomainDetailsResponse, RadarGetRankingDomainDetailsResponse400>> radarGetRankingDomainDetails({required String domain, int? limit, RadarGetRankingDomainDetailsRankingType? rankingType, List<String>? name, bool? includeTopLocations, List<String>? date, RadarGetRankingDomainDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingDomainDetailsResponseResult, RadarGetRankingDomainDetailsResponse400>> radarGetRankingDomainDetails({required String domain, int? limit, RadarGetRankingDomainDetailsRankingType? rankingType, List<String>? name, bool? includeTopLocations, List<String>? date, RadarGetRankingDomainDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -52,7 +52,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetRankingDomainDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetRankingDomainDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetRankingDomainDetailsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -64,7 +65,7 @@ return execute(
 /// Retrieves domains rank over time.
 ///
 /// `GET /radar/ranking/timeseries_groups`
-Future<ApiResult<RadarGetRankingDomainTimeseriesResponse, RadarGetRankingDomainTimeseriesResponse400>> radarGetRankingDomainTimeseries({int? limit, RadarGetRankingDomainTimeseriesRankingType? rankingType, List<String>? name, List<String>? location, List<String>? domains, List<String>? domainCategory, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingDomainTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingDomainTimeseriesResponseResult, RadarGetRankingDomainTimeseriesResponse400>> radarGetRankingDomainTimeseries({int? limit, RadarGetRankingDomainTimeseriesRankingType? rankingType, List<String>? name, List<String>? location, List<String>? domains, List<String>? domainCategory, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, RadarGetRankingDomainTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -125,7 +126,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetRankingDomainTimeseriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetRankingDomainTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetRankingDomainTimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -137,7 +139,7 @@ return execute(
 /// Retrieves the top or trending domains based on their rank. Popular domains are domains of broad appeal based on how people use the Internet. Trending domains are domains that are generating a surge in interest. For more information on top domains, see https://blog.cloudflare.com/radar-domain-rankings/.
 ///
 /// `GET /radar/ranking/top`
-Future<ApiResult<RadarGetRankingTopDomainsResponse, RadarGetRankingTopDomainsResponse400>> radarGetRankingTopDomains({int? limit, List<String>? name, List<String>? location, List<String>? domainCategory, List<String>? date, RadarGetRankingTopDomainsRankingType? rankingType, RadarGetRankingTopDomainsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetRankingTopDomainsResponseResult, RadarGetRankingTopDomainsResponse400>> radarGetRankingTopDomains({int? limit, List<String>? name, List<String>? location, List<String>? domainCategory, List<String>? date, RadarGetRankingTopDomainsRankingType? rankingType, RadarGetRankingTopDomainsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -183,7 +185,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetRankingTopDomainsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetRankingTopDomainsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetRankingTopDomainsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

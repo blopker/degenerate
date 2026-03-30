@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/mcn_account_id.dart';import '../models/mcn_bad_response.dart';import '../models/mcn_read_account_resource_response.dart';import '../models/mcn_read_account_resources_response.dart';import '../models/mcn_resource_id.dart';import '../models/mcn_resource_type.dart';import '../models/mcn_resources_catalog_policy_preview_request.dart';import '../models/mcn_resources_catalog_policy_preview_response.dart';/// ResourcesApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/mcn_account_id.dart';import '../models/mcn_bad_response.dart';import '../models/mcn_resource_details.dart';import '../models/mcn_resource_id.dart';import '../models/mcn_resource_type.dart';import '../models/mcn_resources_catalog_policy_preview_request.dart';import '../models/mcn_resources_catalog_policy_preview_response.dart';/// ResourcesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ResourcesApi with ApiExecutor {const ResourcesApi(this.apiConfig);
 /// List resources in the Resource Catalog (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources`
-Future<ApiResult<McnReadAccountResourcesResponse, McnBadResponse>> resourcesCatalogList({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, bool? managed, List<String>? search, String? orderBy, bool? desc, int? perPage, int? page, bool? cloudflare, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<McnResourceDetails>?, McnBadResponse>> resourcesCatalogList({required McnAccountId accountId, String? providerId, List<McnResourceType>? resourceType, List<McnResourceId>? resourceId, String? region, String? resourceGroup, bool? managed, List<String>? search, String? orderBy, bool? desc, int? perPage, int? page, bool? cloudflare, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (providerId != null) {
   queryParameters['provider_id'] = providerId;
@@ -75,7 +75,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return McnReadAccountResourcesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => McnResourceDetails.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
     return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -87,7 +88,7 @@ return execute(
 /// Read an resource from the Resource Catalog (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/resources/{resource_id}`
-Future<ApiResult<McnReadAccountResourceResponse, McnBadResponse>> resourcesCatalogRead({required McnAccountId accountId, required McnResourceId resourceId, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<McnResourceDetails?, McnBadResponse>> resourcesCatalogRead({required McnAccountId accountId, required McnResourceId resourceId, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (v2 != null) {
   queryParameters['v2'] = v2.toString();
@@ -107,7 +108,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return McnReadAccountResourceResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? McnResourceDetails.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
     return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -181,7 +183,7 @@ return execute(
 /// Preview Rego query result against the latest resource catalog (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/resources/policy-preview`
-Future<ApiResult<McnResourcesCatalogPolicyPreviewResponse, McnBadResponse>> resourcesCatalogPolicyPreview({required McnAccountId accountId, required McnResourcesCatalogPolicyPreviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnResourcesCatalogPolicyPreview?, McnBadResponse>> resourcesCatalogPolicyPreview({required McnAccountId accountId, required McnResourcesCatalogPolicyPreviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -195,7 +197,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return McnResourcesCatalogPolicyPreviewResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? McnResourcesCatalogPolicyPreview.fromJson(json['result'] as String) : null;
   },
   onError: (response) {
     return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

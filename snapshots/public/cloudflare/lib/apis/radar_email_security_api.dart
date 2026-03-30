@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_email_security_summary_arc.dart';import '../models/radar_get_email_security_summary_dimension.dart';import '../models/radar_get_email_security_summary_dkim.dart';import '../models/radar_get_email_security_summary_dmarc.dart';import '../models/radar_get_email_security_summary_format.dart';import '../models/radar_get_email_security_summary_response.dart';import '../models/radar_get_email_security_summary_response400.dart';import '../models/radar_get_email_security_summary_spf.dart';import '../models/radar_get_email_security_summary_tls_version.dart';import '../models/radar_get_email_security_timeseries_group_agg_interval.dart';import '../models/radar_get_email_security_timeseries_group_arc.dart';import '../models/radar_get_email_security_timeseries_group_dimension.dart';import '../models/radar_get_email_security_timeseries_group_dkim.dart';import '../models/radar_get_email_security_timeseries_group_dmarc.dart';import '../models/radar_get_email_security_timeseries_group_format.dart';import '../models/radar_get_email_security_timeseries_group_response.dart';import '../models/radar_get_email_security_timeseries_group_response400.dart';import '../models/radar_get_email_security_timeseries_group_spf.dart';import '../models/radar_get_email_security_timeseries_group_tls_version.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_arc.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_dkim.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_dmarc.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_format.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_malicious.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_response.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_response404.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_spf.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_tld_category.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_tls_version.dart';import '../models/radar_get_email_security_top_tlds_by_messages_arc.dart';import '../models/radar_get_email_security_top_tlds_by_messages_dkim.dart';import '../models/radar_get_email_security_top_tlds_by_messages_dmarc.dart';import '../models/radar_get_email_security_top_tlds_by_messages_format.dart';import '../models/radar_get_email_security_top_tlds_by_messages_response.dart';import '../models/radar_get_email_security_top_tlds_by_messages_response404.dart';import '../models/radar_get_email_security_top_tlds_by_messages_spf.dart';import '../models/radar_get_email_security_top_tlds_by_messages_tld_category.dart';import '../models/radar_get_email_security_top_tlds_by_messages_tls_version.dart';import '../models/radar_get_email_security_top_tlds_by_spam_arc.dart';import '../models/radar_get_email_security_top_tlds_by_spam_dkim.dart';import '../models/radar_get_email_security_top_tlds_by_spam_dmarc.dart';import '../models/radar_get_email_security_top_tlds_by_spam_format.dart';import '../models/radar_get_email_security_top_tlds_by_spam_response.dart';import '../models/radar_get_email_security_top_tlds_by_spam_response404.dart';import '../models/radar_get_email_security_top_tlds_by_spam_spam.dart';import '../models/radar_get_email_security_top_tlds_by_spam_spf.dart';import '../models/radar_get_email_security_top_tlds_by_spam_tld_category.dart';import '../models/radar_get_email_security_top_tlds_by_spam_tls_version.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_arc.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_dkim.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_dmarc.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_format.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_response.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_response404.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_spf.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_spoof.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_tld_category.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_tls_version.dart';/// RadarEmailSecurityApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_email_security_summary_arc.dart';import '../models/radar_get_email_security_summary_dimension.dart';import '../models/radar_get_email_security_summary_dkim.dart';import '../models/radar_get_email_security_summary_dmarc.dart';import '../models/radar_get_email_security_summary_format.dart';import '../models/radar_get_email_security_summary_response400.dart';import '../models/radar_get_email_security_summary_response_result.dart';import '../models/radar_get_email_security_summary_spf.dart';import '../models/radar_get_email_security_summary_tls_version.dart';import '../models/radar_get_email_security_timeseries_group_agg_interval.dart';import '../models/radar_get_email_security_timeseries_group_arc.dart';import '../models/radar_get_email_security_timeseries_group_dimension.dart';import '../models/radar_get_email_security_timeseries_group_dkim.dart';import '../models/radar_get_email_security_timeseries_group_dmarc.dart';import '../models/radar_get_email_security_timeseries_group_format.dart';import '../models/radar_get_email_security_timeseries_group_response400.dart';import '../models/radar_get_email_security_timeseries_group_response_result.dart';import '../models/radar_get_email_security_timeseries_group_spf.dart';import '../models/radar_get_email_security_timeseries_group_tls_version.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_arc.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_dkim.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_dmarc.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_format.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_malicious.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_response404.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_response_result.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_spf.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_tld_category.dart';import '../models/radar_get_email_security_top_tlds_by_malicious_tls_version.dart';import '../models/radar_get_email_security_top_tlds_by_messages_arc.dart';import '../models/radar_get_email_security_top_tlds_by_messages_dkim.dart';import '../models/radar_get_email_security_top_tlds_by_messages_dmarc.dart';import '../models/radar_get_email_security_top_tlds_by_messages_format.dart';import '../models/radar_get_email_security_top_tlds_by_messages_response404.dart';import '../models/radar_get_email_security_top_tlds_by_messages_response_result.dart';import '../models/radar_get_email_security_top_tlds_by_messages_spf.dart';import '../models/radar_get_email_security_top_tlds_by_messages_tld_category.dart';import '../models/radar_get_email_security_top_tlds_by_messages_tls_version.dart';import '../models/radar_get_email_security_top_tlds_by_spam_arc.dart';import '../models/radar_get_email_security_top_tlds_by_spam_dkim.dart';import '../models/radar_get_email_security_top_tlds_by_spam_dmarc.dart';import '../models/radar_get_email_security_top_tlds_by_spam_format.dart';import '../models/radar_get_email_security_top_tlds_by_spam_response404.dart';import '../models/radar_get_email_security_top_tlds_by_spam_response_result.dart';import '../models/radar_get_email_security_top_tlds_by_spam_spam.dart';import '../models/radar_get_email_security_top_tlds_by_spam_spf.dart';import '../models/radar_get_email_security_top_tlds_by_spam_tld_category.dart';import '../models/radar_get_email_security_top_tlds_by_spam_tls_version.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_arc.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_dkim.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_dmarc.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_format.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_response404.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_response_result.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_spf.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_spoof.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_tld_category.dart';import '../models/radar_get_email_security_top_tlds_by_spoof_tls_version.dart';/// RadarEmailSecurityApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RadarEmailSecurityApi with ApiExecutor {const RadarEmailSecurityApi(
 /// Retrieves the distribution of email security metrics by the specified dimension.
 ///
 /// `GET /radar/email/security/summary/{dimension}`
-Future<ApiResult<RadarGetEmailSecuritySummaryResponse, RadarGetEmailSecuritySummaryResponse400>> radarGetEmailSecuritySummary({required RadarGetEmailSecuritySummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecuritySummaryArc>? arc, List<RadarGetEmailSecuritySummaryDkim>? dkim, List<RadarGetEmailSecuritySummaryDmarc>? dmarc, List<RadarGetEmailSecuritySummarySpf>? spf, List<RadarGetEmailSecuritySummaryTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecuritySummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailSecuritySummaryResponseResult, RadarGetEmailSecuritySummaryResponse400>> radarGetEmailSecuritySummary({required RadarGetEmailSecuritySummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecuritySummaryArc>? arc, List<RadarGetEmailSecuritySummaryDkim>? dkim, List<RadarGetEmailSecuritySummaryDmarc>? dmarc, List<RadarGetEmailSecuritySummarySpf>? spf, List<RadarGetEmailSecuritySummaryTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecuritySummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
@@ -81,7 +81,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetEmailSecuritySummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetEmailSecuritySummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetEmailSecuritySummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -93,7 +94,7 @@ return execute(
 /// Retrieves the distribution of email security metrics grouped by dimension over time.
 ///
 /// `GET /radar/email/security/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetEmailSecurityTimeseriesGroupResponse, RadarGetEmailSecurityTimeseriesGroupResponse400>> radarGetEmailSecurityTimeseriesGroup({required RadarGetEmailSecurityTimeseriesGroupDimension dimension, RadarGetEmailSecurityTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTimeseriesGroupArc>? arc, List<RadarGetEmailSecurityTimeseriesGroupDkim>? dkim, List<RadarGetEmailSecurityTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailSecurityTimeseriesGroupSpf>? spf, List<RadarGetEmailSecurityTimeseriesGroupTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecurityTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailSecurityTimeseriesGroupResponseResult, RadarGetEmailSecurityTimeseriesGroupResponse400>> radarGetEmailSecurityTimeseriesGroup({required RadarGetEmailSecurityTimeseriesGroupDimension dimension, RadarGetEmailSecurityTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTimeseriesGroupArc>? arc, List<RadarGetEmailSecurityTimeseriesGroupDkim>? dkim, List<RadarGetEmailSecurityTimeseriesGroupDmarc>? dmarc, List<RadarGetEmailSecurityTimeseriesGroupSpf>? spf, List<RadarGetEmailSecurityTimeseriesGroupTlsVersion>? tlsVersion, int? limitPerGroup, RadarGetEmailSecurityTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
@@ -164,7 +165,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetEmailSecurityTimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetEmailSecurityTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetEmailSecurityTimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -176,7 +178,7 @@ return execute(
 /// Retrieves the top TLDs by number of email messages.
 ///
 /// `GET /radar/email/security/top/tlds`
-Future<ApiResult<RadarGetEmailSecurityTopTldsByMessagesResponse, RadarGetEmailSecurityTopTldsByMessagesResponse404>> radarGetEmailSecurityTopTldsByMessages({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMessagesArc>? arc, List<RadarGetEmailSecurityTopTldsByMessagesDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMessagesDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMessagesSpf>? spf, List<RadarGetEmailSecurityTopTldsByMessagesTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMessagesTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMessagesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailSecurityTopTldsByMessagesResponseResult, RadarGetEmailSecurityTopTldsByMessagesResponse404>> radarGetEmailSecurityTopTldsByMessages({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMessagesArc>? arc, List<RadarGetEmailSecurityTopTldsByMessagesDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMessagesDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMessagesSpf>? spf, List<RadarGetEmailSecurityTopTldsByMessagesTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMessagesTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMessagesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -247,7 +249,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetEmailSecurityTopTldsByMessagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetEmailSecurityTopTldsByMessagesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetEmailSecurityTopTldsByMessagesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -259,7 +262,7 @@ return execute(
 /// Retrieves the top TLDs by emails classified as malicious or not.
 ///
 /// `GET /radar/email/security/top/tlds/malicious/{malicious}`
-Future<ApiResult<RadarGetEmailSecurityTopTldsByMaliciousResponse, RadarGetEmailSecurityTopTldsByMaliciousResponse404>> radarGetEmailSecurityTopTldsByMalicious({required RadarGetEmailSecurityTopTldsByMaliciousMalicious malicious, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMaliciousArc>? arc, List<RadarGetEmailSecurityTopTldsByMaliciousDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMaliciousDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMaliciousSpf>? spf, List<RadarGetEmailSecurityTopTldsByMaliciousTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMaliciousTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMaliciousFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailSecurityTopTldsByMaliciousResponseResult, RadarGetEmailSecurityTopTldsByMaliciousResponse404>> radarGetEmailSecurityTopTldsByMalicious({required RadarGetEmailSecurityTopTldsByMaliciousMalicious malicious, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsByMaliciousArc>? arc, List<RadarGetEmailSecurityTopTldsByMaliciousDkim>? dkim, List<RadarGetEmailSecurityTopTldsByMaliciousDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsByMaliciousSpf>? spf, List<RadarGetEmailSecurityTopTldsByMaliciousTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsByMaliciousTldCategory? tldCategory, RadarGetEmailSecurityTopTldsByMaliciousFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -330,7 +333,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetEmailSecurityTopTldsByMaliciousResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetEmailSecurityTopTldsByMaliciousResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetEmailSecurityTopTldsByMaliciousResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -342,7 +346,7 @@ return execute(
 /// Retrieves the top TLDs by emails classified as spam or not.
 ///
 /// `GET /radar/email/security/top/tlds/spam/{spam}`
-Future<ApiResult<RadarGetEmailSecurityTopTldsBySpamResponse, RadarGetEmailSecurityTopTldsBySpamResponse404>> radarGetEmailSecurityTopTldsBySpam({required RadarGetEmailSecurityTopTldsBySpamSpam spam, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpamArc>? arc, List<RadarGetEmailSecurityTopTldsBySpamDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpamDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpamSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpamTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpamTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpamFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailSecurityTopTldsBySpamResponseResult, RadarGetEmailSecurityTopTldsBySpamResponse404>> radarGetEmailSecurityTopTldsBySpam({required RadarGetEmailSecurityTopTldsBySpamSpam spam, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpamArc>? arc, List<RadarGetEmailSecurityTopTldsBySpamDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpamDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpamSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpamTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpamTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpamFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -413,7 +417,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetEmailSecurityTopTldsBySpamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetEmailSecurityTopTldsBySpamResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetEmailSecurityTopTldsBySpamResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -425,7 +430,7 @@ return execute(
 /// Retrieves the top TLDs by emails classified as spoof or not.
 ///
 /// `GET /radar/email/security/top/tlds/spoof/{spoof}`
-Future<ApiResult<RadarGetEmailSecurityTopTldsBySpoofResponse, RadarGetEmailSecurityTopTldsBySpoofResponse404>> radarGetEmailSecurityTopTldsBySpoof({required RadarGetEmailSecurityTopTldsBySpoofSpoof spoof, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpoofArc>? arc, List<RadarGetEmailSecurityTopTldsBySpoofDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpoofDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpoofSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpoofTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpoofTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpoofFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetEmailSecurityTopTldsBySpoofResponseResult, RadarGetEmailSecurityTopTldsBySpoofResponse404>> radarGetEmailSecurityTopTldsBySpoof({required RadarGetEmailSecurityTopTldsBySpoofSpoof spoof, int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<RadarGetEmailSecurityTopTldsBySpoofArc>? arc, List<RadarGetEmailSecurityTopTldsBySpoofDkim>? dkim, List<RadarGetEmailSecurityTopTldsBySpoofDmarc>? dmarc, List<RadarGetEmailSecurityTopTldsBySpoofSpf>? spf, List<RadarGetEmailSecurityTopTldsBySpoofTlsVersion>? tlsVersion, RadarGetEmailSecurityTopTldsBySpoofTldCategory? tldCategory, RadarGetEmailSecurityTopTldsBySpoofFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -496,7 +501,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RadarGetEmailSecurityTopTldsBySpoofResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return RadarGetEmailSecurityTopTldsBySpoofResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
     return RadarGetEmailSecurityTopTldsBySpoofResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

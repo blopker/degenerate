@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aaa_account_id.dart';import '../models/aaa_schemas_response_collection.dart';/// NotificationMechanismEligibilityApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aaa_account_id.dart';import '../models/aaa_eligibility.dart';/// NotificationMechanismEligibilityApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class NotificationMechanismEligibilityApi with ApiExecutor {const Notifica
 /// Get a list of all delivery mechanism types for which an account is eligible.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/eligible`
-Future<ApiResult<AaaSchemasResponseCollection, Never>> notificationMechanismEligibilityGetDeliveryMechanismEligibility({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, List<AaaEligibility>>?, Never>> notificationMechanismEligibilityGetDeliveryMechanismEligibility({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AaaSchemasResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => AaaEligibility.fromJson(e as Map<String, dynamic>)).toList()));
   },
 );
  } 

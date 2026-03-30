@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/accounts_turnstile_widget_create_direction.dart';import '../models/accounts_turnstile_widget_create_order.dart';import '../models/accounts_turnstile_widget_create_request.dart';import '../models/accounts_turnstile_widget_create_response.dart';import '../models/accounts_turnstile_widget_delete_response.dart';import '../models/accounts_turnstile_widget_get_response.dart';import '../models/accounts_turnstile_widget_rotate_secret_request.dart';import '../models/accounts_turnstile_widget_rotate_secret_response.dart';import '../models/accounts_turnstile_widget_update_request.dart';import '../models/accounts_turnstile_widget_update_response.dart';import '../models/accounts_turnstile_widgets_list_direction.dart';import '../models/accounts_turnstile_widgets_list_order.dart';import '../models/accounts_turnstile_widgets_list_response.dart';import '../models/turnstile_identifier.dart';import '../models/turnstile_sitekey.dart';/// TurnstileApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/accounts_turnstile_widget_create_direction.dart';import '../models/accounts_turnstile_widget_create_order.dart';import '../models/accounts_turnstile_widget_create_request.dart';import '../models/accounts_turnstile_widget_rotate_secret_request.dart';import '../models/accounts_turnstile_widget_update_request.dart';import '../models/accounts_turnstile_widgets_list_direction.dart';import '../models/accounts_turnstile_widgets_list_order.dart';import '../models/turnstile_identifier.dart';import '../models/turnstile_sitekey.dart';import '../models/turnstile_widget_detail.dart';import '../models/turnstile_widget_list.dart';/// TurnstileApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class TurnstileApi with ApiExecutor {const TurnstileApi(this.apiConfig);
 /// Lists all turnstile widgets of an account.
 ///
 /// `GET /accounts/{account_id}/challenges/widgets`
-Future<ApiResult<AccountsTurnstileWidgetsListResponse, Never>> accountsTurnstileWidgetsList({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetsListOrder? order, AccountsTurnstileWidgetsListDirection? direction, String? filter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TurnstileWidgetList>?, Never>> accountsTurnstileWidgetsList({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetsListOrder? order, AccountsTurnstileWidgetsListDirection? direction, String? filter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -45,7 +45,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountsTurnstileWidgetsListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => TurnstileWidgetList.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -54,7 +55,7 @@ return execute(
 /// Lists challenge widgets.
 ///
 /// `POST /accounts/{account_id}/challenges/widgets`
-Future<ApiResult<AccountsTurnstileWidgetCreateResponse, Never>> accountsTurnstileWidgetCreate({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetCreateOrder? order, AccountsTurnstileWidgetCreateDirection? direction, String? filter, required AccountsTurnstileWidgetCreateRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TurnstileWidgetDetail?, Never>> accountsTurnstileWidgetCreate({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetCreateOrder? order, AccountsTurnstileWidgetCreateDirection? direction, String? filter, required AccountsTurnstileWidgetCreateRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -88,7 +89,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountsTurnstileWidgetCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TurnstileWidgetDetail.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -97,7 +99,7 @@ return execute(
 /// Show a single challenge widget configuration.
 ///
 /// `GET /accounts/{account_id}/challenges/widgets/{sitekey}`
-Future<ApiResult<AccountsTurnstileWidgetGetResponse, Never>> accountsTurnstileWidgetGet({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TurnstileWidgetDetail?, Never>> accountsTurnstileWidgetGet({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -109,7 +111,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountsTurnstileWidgetGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TurnstileWidgetDetail.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -118,7 +121,7 @@ return execute(
 /// Update the configuration of a widget.
 ///
 /// `PUT /accounts/{account_id}/challenges/widgets/{sitekey}`
-Future<ApiResult<AccountsTurnstileWidgetUpdateResponse, Never>> accountsTurnstileWidgetUpdate({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, required AccountsTurnstileWidgetUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TurnstileWidgetDetail?, Never>> accountsTurnstileWidgetUpdate({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, required AccountsTurnstileWidgetUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,7 +135,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountsTurnstileWidgetUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TurnstileWidgetDetail.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -141,7 +145,7 @@ return execute(
 /// Destroy a Turnstile Widget.
 ///
 /// `DELETE /accounts/{account_id}/challenges/widgets/{sitekey}`
-Future<ApiResult<AccountsTurnstileWidgetDeleteResponse, Never>> accountsTurnstileWidgetDelete({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TurnstileWidgetDetail?, Never>> accountsTurnstileWidgetDelete({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -153,7 +157,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountsTurnstileWidgetDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TurnstileWidgetDetail.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -166,7 +171,7 @@ return execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/challenges/widgets/{sitekey}/rotate_secret`
-Future<ApiResult<AccountsTurnstileWidgetRotateSecretResponse, Never>> accountsTurnstileWidgetRotateSecret({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, required AccountsTurnstileWidgetRotateSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TurnstileWidgetDetail?, Never>> accountsTurnstileWidgetRotateSecret({required TurnstileIdentifier accountId, required TurnstileSitekey sitekey, required AccountsTurnstileWidgetRotateSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -180,7 +185,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountsTurnstileWidgetRotateSecretResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? TurnstileWidgetDetail.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

@@ -11,7 +11,9 @@ import 'media_type_utils.dart';
 class ApiEmitter {
   final IrApi api;
   final Map<String, IrType> typeRegistry;
-  const ApiEmitter(this.api, {this.typeRegistry = const {}});
+  final List<String> unwrapFields;
+  const ApiEmitter(this.api, {this.typeRegistry = const {},
+      this.unwrapFields = const []});
 
   /// Wrapper around [buildFromJsonCode] that passes the type registry.
   String _fromJson(
@@ -220,10 +222,20 @@ class ApiEmitter {
 
     // Determine return type from success response
     final successResponseContent = _successResponseContent(op);
-    final returnType = successResponseContent?.$2.schema;
+    var returnType = successResponseContent?.$2.schema;
+    // Unwrap response envelope if configured.
+    final unwrapResult = _maybeUnwrapResponseType(returnType);
+    returnType = unwrapResult.type;
+    final unwrappedFieldIsOptional = unwrapResult.fieldIsOptional;
     final errorResponseContent = _errorResponseContent(op);
     final errorType = errorResponseContent?.$2.schema;
-    final returnTypeStr = returnType != null ? irTypeName(returnType) : 'void';
+    final needsNullableSuffix = unwrapResult.unwrappedField != null &&
+        returnType != null &&
+        returnType.isNullable &&
+        !(returnType is IrPrimitive && returnType.kind == PrimitiveKind.dynamic_);
+    final returnTypeStr = returnType != null
+        ? '${irTypeName(returnType)}${needsNullableSuffix ? '?' : ''}'
+        : 'void';
     final errorTypeStr = errorType != null ? irTypeName(errorType) : 'Never';
     final futureType = 'Future<ApiResult<$returnTypeStr, $errorTypeStr>>';
 
@@ -239,6 +251,8 @@ class ApiEmitter {
       queryParams: queryParams,
       headerParams: headerParams,
       cookieParams: cookieParams,
+      unwrappedField: unwrapResult.unwrappedField,
+      unwrappedFieldIsOptional: unwrappedFieldIsOptional,
     );
 
     final docs = <String>[];
@@ -284,6 +298,8 @@ class ApiEmitter {
     required List<IrParameter> queryParams,
     required List<IrParameter> headerParams,
     required List<IrParameter> cookieParams,
+    String? unwrappedField,
+    bool unwrappedFieldIsOptional = false,
   }) {
     final buf = StringBuffer();
     final httpMethod = op.method.name.toUpperCase();
@@ -421,14 +437,21 @@ class ApiEmitter {
 
     // Build onSuccess callback
     if (returnType != null) {
-      final deserialize = _buildDeserializeExpr(
-        successResponseContent!.$1,
-        returnType,
-      );
       buf.writeln('return execute(');
       buf.writeln('  request,');
       buf.writeln('  onSuccess: (response) {');
-      buf.writeln('    $deserialize');
+      if (unwrappedField != null) {
+        // Unwrap: parse full JSON, extract the field, deserialize it.
+        final escaped = escapeDartString(unwrappedField);
+        buf.writeln("    final json = jsonDecode(response.body) as Map<String, dynamic>;");
+        buf.writeln("    return ${_fromJson(returnType, "json['$escaped']", isOptional: unwrappedFieldIsOptional)};");
+      } else {
+        final deserialize = _buildDeserializeExpr(
+          successResponseContent!.$1,
+          returnType,
+        );
+        buf.writeln('    $deserialize');
+      }
       buf.writeln('  },');
     } else {
       buf.writeln('return execute(');
@@ -734,6 +757,47 @@ class ApiEmitter {
 
   String _sanitizeParameterName(String value) =>
       escapeDartString(value.replaceAll('\n', '').replaceAll('\r', '').trim());
+
+  /// If [unwrapFields] is configured and [type] is an object (or ref to one)
+  /// with a matching field, return that field's type and the JSON key used
+  /// to extract it. Otherwise returns the original type with no field name.
+  ({IrType? type, String? unwrappedField, bool fieldIsOptional})
+      _maybeUnwrapResponseType(IrType? type) {
+    if (type == null || unwrapFields.isEmpty) {
+      return (type: type, unwrappedField: null, fieldIsOptional: false);
+    }
+    final obj = _resolveToObject(type);
+    if (obj == null) {
+      return (type: type, unwrappedField: null, fieldIsOptional: false);
+    }
+    for (final fieldName in unwrapFields) {
+      for (final f in obj.fields) {
+        if (f.originalName == fieldName) {
+          final isOptional = !f.isRequired || f.type.isNullable;
+          var fieldType = f.type;
+          if (isOptional && !fieldType.isNullable) {
+            fieldType = fieldType.copyAsNullable();
+          }
+          return (
+            type: fieldType,
+            unwrappedField: fieldName,
+            fieldIsOptional: isOptional,
+          );
+        }
+      }
+    }
+    return (type: type, unwrappedField: null, fieldIsOptional: false);
+  }
+
+  /// Resolve an IrType to an IrObject if possible (through IrTypeRef).
+  IrObject? _resolveToObject(IrType type) {
+    if (type is IrObject) return type;
+    if (type is IrTypeRef) {
+      final resolved = typeRegistry[type.name];
+      if (resolved is IrObject) return resolved;
+    }
+    return null;
+  }
 
   Method _buildStreamingOperation(IrOperation op) {
     final params = <Parameter>[];

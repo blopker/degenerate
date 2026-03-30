@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/builds_account_id.dart';import '../models/builds_build_uuid.dart';import '../models/builds_cursor.dart';import '../models/builds_error_response.dart';import '../models/builds_external_script_ids.dart';import '../models/builds_version_ids.dart';import '../models/response.dart';/// BuildsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/builds_account_id.dart';import '../models/builds_build_uuid.dart';import '../models/builds_cursor.dart';import '../models/builds_error_response.dart';import '../models/builds_external_script_ids.dart';import '../models/builds_version_ids.dart';/// BuildsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class BuildsApi with ApiExecutor {const BuildsApi(this.apiConfig);
 /// Retrieve builds for specific version IDs
 ///
 /// `GET /accounts/{account_id}/builds/builds`
-Future<ApiResult<Response, Never>> getBuildsByVersionIds({required BuildsAccountId accountId, required BuildsVersionIds versionIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>?, Never>> getBuildsByVersionIds({required BuildsAccountId accountId, required BuildsVersionIds versionIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['version_ids'] = versionIds.toString();
 
@@ -31,7 +31,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -40,7 +41,7 @@ return execute(
 /// Retrieve detailed information about a specific build
 ///
 /// `GET /accounts/{account_id}/builds/builds/{build_uuid}`
-Future<ApiResult<Response, BuildsErrorResponse>> getBuildByUuid({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> getBuildByUuid({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -52,7 +53,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -64,7 +66,7 @@ return execute(
 /// Cancel a running or queued build
 ///
 /// `PUT /accounts/{account_id}/builds/builds/{build_uuid}/cancel`
-Future<ApiResult<Response, BuildsErrorResponse>> cancelBuildByUuid({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> cancelBuildByUuid({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -76,7 +78,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -88,7 +91,7 @@ return execute(
 /// Retrieve logs for a specific build with cursor-based pagination
 ///
 /// `GET /accounts/{account_id}/builds/builds/{build_uuid}/logs`
-Future<ApiResult<Response, BuildsErrorResponse>> getBuildLogs({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, BuildsCursor? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>?, BuildsErrorResponse>> getBuildLogs({required BuildsAccountId accountId, required BuildsBuildUuid buildUuid, BuildsCursor? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
   queryParameters['cursor'] = cursor.toString();
@@ -108,7 +111,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
   onError: (response) {
     return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -120,7 +124,7 @@ return execute(
 /// Retrieve the most recent builds for multiple worker scripts
 ///
 /// `GET /accounts/{account_id}/builds/builds/latest`
-Future<ApiResult<Response, Never>> getLatestBuildsByScripts({required BuildsAccountId accountId, required BuildsExternalScriptIds externalScriptIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>?, Never>> getLatestBuildsByScripts({required BuildsAccountId accountId, required BuildsExternalScriptIds externalScriptIds, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['external_script_ids'] = externalScriptIds.toString();
 
@@ -138,7 +142,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
 );
  } 

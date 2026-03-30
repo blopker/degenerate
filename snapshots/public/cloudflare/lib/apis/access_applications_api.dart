@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_app_id.dart';import '../models/access_app_request.dart';import '../models/access_app_settings_request.dart';import '../models/access_applications_add_an_application_response.dart';import '../models/access_applications_update_an_access_application_response.dart';import '../models/access_apps_components_schemas_response_collection.dart';import '../models/access_apps_components_schemas_single_response.dart';import '../models/access_id_response.dart';import '../models/access_identifier.dart';import '../models/access_policy_check_response.dart';import '../models/access_schemas_empty_response.dart';import '../models/access_single_response_update.dart';/// AccessApplicationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_app_id.dart';import '../models/access_app_request.dart';import '../models/access_app_response.dart';import '../models/access_app_settings_request.dart';import '../models/access_app_settings_response.dart';import '../models/access_id_response_result.dart';import '../models/access_identifier.dart';import '../models/access_policy_check_response_result.dart';/// AccessApplicationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccessApplicationsApi with ApiExecutor {const AccessApplicationsApi(
 /// Lists all Access applications in an account.
 ///
 /// `GET /accounts/{account_id}/access/apps`
-Future<ApiResult<AccessAppsComponentsSchemasResponseCollection, Never>> accessApplicationsListAccessApplications({required AccessIdentifier accountId, String? name, String? domain, String? aud, String? targetAttributes, bool? exact, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessAppResponse>?, Never>> accessApplicationsListAccessApplications({required AccessIdentifier accountId, String? name, String? domain, String? aud, String? targetAttributes, bool? exact, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -54,7 +54,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessAppsComponentsSchemasResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => AccessAppResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -63,7 +64,7 @@ return execute(
 /// Adds a new application to Access.
 ///
 /// `POST /accounts/{account_id}/access/apps`
-Future<ApiResult<AccessApplicationsAddAnApplicationResponse, Never>> accessApplicationsAddAnApplication({required AccessIdentifier accountId, required AccessAppRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppResponse?, Never>> accessApplicationsAddAnApplication({required AccessIdentifier accountId, required AccessAppRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,7 +78,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessApplicationsAddAnApplicationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? AccessAppResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -86,7 +88,7 @@ return execute(
 /// Fetches information about an Access application.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<AccessAppsComponentsSchemasSingleResponse, Never>> accessApplicationsGetAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppResponse?, Never>> accessApplicationsGetAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +100,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessAppsComponentsSchemasSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? AccessAppResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -107,7 +110,7 @@ return execute(
 /// Updates an Access application.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<AccessApplicationsUpdateAnAccessApplicationResponse, Never>> accessApplicationsUpdateAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppResponse?, Never>> accessApplicationsUpdateAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -121,7 +124,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessApplicationsUpdateAnAccessApplicationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? AccessAppResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -130,7 +134,7 @@ return execute(
 /// Deletes an application from Access.
 ///
 /// `DELETE /accounts/{account_id}/access/apps/{app_id}`
-Future<ApiResult<AccessIdResponse, Never>> accessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdResponseResult?, Never>> accessApplicationsDeleteAnAccessApplication({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -142,7 +146,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? AccessIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -151,7 +156,7 @@ return execute(
 /// Revokes all tokens issued for an application.
 ///
 /// `POST /accounts/{account_id}/access/apps/{app_id}/revoke_tokens`
-Future<ApiResult<AccessSchemasEmptyResponse, Never>> accessApplicationsRevokeServiceTokens({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, Never>> accessApplicationsRevokeServiceTokens({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -163,7 +168,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessSchemasEmptyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -172,7 +178,7 @@ return execute(
 /// Updates Access application settings.
 ///
 /// `PUT /accounts/{account_id}/access/apps/{app_id}/settings`
-Future<ApiResult<AccessSingleResponseUpdate, Never>> accessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppSettingsResponse?, Never>> accessApplicationsPutUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -186,7 +192,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessSingleResponseUpdate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? AccessAppSettingsResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -195,7 +202,7 @@ return execute(
 /// Updates Access application settings.
 ///
 /// `PATCH /accounts/{account_id}/access/apps/{app_id}/settings`
-Future<ApiResult<AccessSingleResponseUpdate, Never>> accessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessAppSettingsResponse?, Never>> accessApplicationsPatchUpdateAccessApplicationSettings({required AccessAppId appId, required AccessIdentifier accountId, required AccessAppSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -209,7 +216,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessSingleResponseUpdate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? AccessAppSettingsResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -218,7 +226,7 @@ return execute(
 /// Tests if a specific user has permission to access an application.
 ///
 /// `GET /accounts/{account_id}/access/apps/{app_id}/user_policy_checks`
-Future<ApiResult<AccessPolicyCheckResponse, Never>> accessApplicationsTestAccessPolicies({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessPolicyCheckResponseResult?, Never>> accessApplicationsTestAccessPolicies({required AccessAppId appId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -230,7 +238,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessPolicyCheckResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? AccessPolicyCheckResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 

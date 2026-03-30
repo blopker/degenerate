@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common6.dart';import '../models/schemas_feature.dart';import '../models/shield_basic_operation.dart';import '../models/shield_endpoint_management_retrieve_information_about_all_operations_on_a_zone_direction.dart';import '../models/shield_endpoint_management_retrieve_information_about_all_operations_on_a_zone_feature.dart';import '../models/shield_endpoint_management_retrieve_information_about_all_operations_on_a_zone_order.dart';import '../models/shield_endpoint_management_retrieve_information_about_an_operation_feature.dart';import '../models/shield_identifier.dart';import '../models/shield_multiple_operation_response.dart';import '../models/shield_multiple_operation_response_paginated.dart';import '../models/shield_object_with_operation_id.dart';import '../models/shield_schema_response_with_thresholds.dart';import '../models/shield_single_operation_response.dart';import '../models/shield_uuid.dart';/// ShieldEndpointManagementApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common6.dart';import '../models/schemas_feature.dart';import '../models/shield_basic_operation.dart';import '../models/shield_endpoint_management_retrieve_information_about_all_operations_on_a_zone_direction.dart';import '../models/shield_endpoint_management_retrieve_information_about_all_operations_on_a_zone_feature.dart';import '../models/shield_endpoint_management_retrieve_information_about_all_operations_on_a_zone_order.dart';import '../models/shield_endpoint_management_retrieve_information_about_an_operation_feature.dart';import '../models/shield_identifier.dart';import '../models/shield_object_with_operation_id.dart';import '../models/shield_operation.dart';import '../models/shield_schema_response_with_thresholds_result.dart';import '../models/shield_uuid.dart';/// ShieldEndpointManagementApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ShieldEndpointManagementApi with ApiExecutor {const ShieldEndpointMa
 /// Lists all API operations tracked by API Shield for a zone with pagination. Returns operation details including method, path, and feature configurations.
 ///
 /// `GET /zones/{zone_id}/api_gateway/operations`
-Future<ApiResult<ShieldMultipleOperationResponsePaginated, Never>> apiShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder? order, ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection? direction, List<String>? host, List<String>? method, String? endpoint, List<ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature>? feature, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldOperation>, Never>> apiShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZone({required ShieldIdentifier zoneId, int? page, int? perPage, ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder? order, ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection? direction, List<String>? host, List<String>? method, String? endpoint, List<ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature>? feature, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -60,7 +60,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ShieldMultipleOperationResponsePaginated.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => ShieldOperation.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -69,7 +70,7 @@ return execute(
 /// Add one or more operations to a zone. Endpoints can contain path variables. Host, method, endpoint will be normalized to a canoncial form when creating an operation and must be unique on the zone. Inserting an operation that matches an existing one will return the record of the already existing operation and update its last_updated date.
 ///
 /// `POST /zones/{zone_id}/api_gateway/operations`
-Future<ApiResult<ShieldMultipleOperationResponse, Never>> apiShieldEndpointManagementAddOperationsToAZone({required ShieldIdentifier zoneId, required List<ShieldBasicOperation> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ShieldOperation>, Never>> apiShieldEndpointManagementAddOperationsToAZone({required ShieldIdentifier zoneId, required List<ShieldBasicOperation> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -83,7 +84,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ShieldMultipleOperationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => ShieldOperation.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -115,7 +117,7 @@ return execute(
 /// Gets detailed information about a specific API operation in API Shield, including its schema validation settings and traffic statistics.
 ///
 /// `GET /zones/{zone_id}/api_gateway/operations/{operation_id}`
-Future<ApiResult<ShieldSingleOperationResponse, Never>> apiShieldEndpointManagementRetrieveInformationAboutAnOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, List<ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature>? feature, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ShieldOperation, Never>> apiShieldEndpointManagementRetrieveInformationAboutAnOperation({required ShieldIdentifier zoneId, required ShieldUuid operationId, List<ShieldEndpointManagementRetrieveInformationAboutAnOperationFeature>? feature, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (feature != null) {
 for (final item in feature) {
@@ -137,7 +139,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ShieldSingleOperationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return ShieldOperation.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -167,7 +170,7 @@ return execute(
 /// Add one operation to a zone. Endpoints can contain path variables. Host, method, endpoint will be normalized to a canoncial form when creating an operation and must be unique on the zone. Inserting an operation that matches an existing one will return the record of the already existing operation and update its last_updated date.
 ///
 /// `POST /zones/{zone_id}/api_gateway/operations/item`
-Future<ApiResult<ShieldSingleOperationResponse, Never>> apiShieldEndpointManagementAddOperationToAZone({required ShieldIdentifier zoneId, required ShieldBasicOperation body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldOperation, Never>> apiShieldEndpointManagementAddOperationToAZone({required ShieldIdentifier zoneId, required ShieldBasicOperation body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -181,14 +184,15 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ShieldSingleOperationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return ShieldOperation.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
 /// Retrieve operations and features as OpenAPI schemas
 ///
 /// `GET /zones/{zone_id}/api_gateway/schemas`
-Future<ApiResult<ShieldSchemaResponseWithThresholds, Never>> apiShieldEndpointManagementRetrieveOperationsAndFeaturesAsOpenApiSchemas({required ShieldIdentifier zoneId, List<String>? host, List<SchemasFeature>? feature, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ShieldSchemaResponseWithThresholdsResult, Never>> apiShieldEndpointManagementRetrieveOperationsAndFeaturesAsOpenApiSchemas({required ShieldIdentifier zoneId, List<String>? host, List<SchemasFeature>? feature, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (host != null) {
 for (final item in host) {
@@ -215,7 +219,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ShieldSchemaResponseWithThresholds.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return ShieldSchemaResponseWithThresholdsResult.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

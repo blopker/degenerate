@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/batch_create_members_request.dart';import '../models/create_member_request.dart';import '../models/member_id.dart';import '../models/members_batch_create_response.dart';import '../models/members_create_response.dart';import '../models/members_delete_request.dart';import '../models/members_list_response.dart';import '../models/members_list_status.dart';import '../models/members_retrieve_response.dart';import '../models/organization_id.dart';/// OrganizationMembersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/batch_create_members_request.dart';import '../models/create_member_request.dart';import '../models/member.dart';import '../models/member_id.dart';import '../models/members_delete_request.dart';import '../models/members_list_status.dart';import '../models/organization_id.dart';/// OrganizationMembersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class OrganizationMembersApi with ApiExecutor {const OrganizationMembersAp
 /// List memberships for an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/members`
-Future<ApiResult<MembersListResponse, Never>> membersList({required OrganizationId organizationId, List<MembersListStatus>? status, String? userEmail, String? userEmailContains, String? userEmailStartsWith, String? userEmailEndsWith, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Member>, Never>> membersList({required OrganizationId organizationId, List<MembersListStatus>? status, String? userEmail, String? userEmailContains, String? userEmailStartsWith, String? userEmailEndsWith, String? pageToken, int? pageSize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
 for (final item in status) {
@@ -53,7 +53,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MembersListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => Member.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -62,7 +63,7 @@ return execute(
 /// Create a membership that grants access to a specific Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `POST /organizations/{organization_id}/members`
-Future<ApiResult<MembersCreateResponse, Never>> membersCreate({required OrganizationId organizationId, required CreateMemberRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Member, Never>> membersCreate({required OrganizationId organizationId, required CreateMemberRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -76,7 +77,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MembersCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return Member.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -85,7 +87,7 @@ return execute(
 /// Retrieve a single membership from an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
 ///
 /// `GET /organizations/{organization_id}/members/{member_id}`
-Future<ApiResult<MembersRetrieveResponse, Never>> membersRetrieve({required OrganizationId organizationId, required MemberId memberId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Member, Never>> membersRetrieve({required OrganizationId organizationId, required MemberId memberId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -97,7 +99,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MembersRetrieveResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return Member.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -127,7 +130,7 @@ return execute(
 /// Batch create multiple memberships that grant access to a specific Organization.
 ///
 /// `POST /organizations/{organization_id}/members:batchCreate`
-Future<ApiResult<MembersBatchCreateResponse, Never>> membersBatchCreate({required OrganizationId organizationId, required BatchCreateMembersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Member>, Never>> membersBatchCreate({required OrganizationId organizationId, required BatchCreateMembersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -141,7 +144,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MembersBatchCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => Member.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

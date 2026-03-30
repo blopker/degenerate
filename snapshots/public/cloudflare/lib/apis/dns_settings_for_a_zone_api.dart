@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_settings_dns_settings_zone_patch.dart';import '../models/dns_settings_identifier.dart';import '../models/dns_settings_schemas_dns_response_single.dart';/// DnsSettingsForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_settings_dns_settings_zone_patch.dart';import '../models/dns_settings_dns_settings_zone_response.dart';import '../models/dns_settings_identifier.dart';/// DnsSettingsForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DnsSettingsForAZoneApi with ApiExecutor {const DnsSettingsForAZoneAp
 /// Show DNS settings for a zone
 ///
 /// `GET /zones/{zone_id}/dns_settings`
-Future<ApiResult<DnsSettingsSchemasDnsResponseSingle, Never>> dnsSettingsForAZoneListDnsSettings({required DnsSettingsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsSettingsZoneResponse, Never>> dnsSettingsForAZoneListDnsSettings({required DnsSettingsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DnsSettingsSchemasDnsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return DnsSettingsDnsSettingsZoneResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +35,7 @@ return execute(
 /// Update DNS settings for a zone
 ///
 /// `PATCH /zones/{zone_id}/dns_settings`
-Future<ApiResult<DnsSettingsSchemasDnsResponseSingle, Never>> dnsSettingsForAZoneUpdateDnsSettings({required DnsSettingsIdentifier zoneId, required DnsSettingsDnsSettingsZonePatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsSettingsZoneResponse, Never>> dnsSettingsForAZoneUpdateDnsSettings({required DnsSettingsIdentifier zoneId, required DnsSettingsDnsSettingsZonePatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DnsSettingsSchemasDnsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return DnsSettingsDnsSettingsZoneResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

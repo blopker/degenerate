@@ -61,7 +61,7 @@ void _snapshotTests(String groupName, List<File> specFiles, {bool workspace = fa
             inputPath: specFile.path,
             outputDir: 'unused',
             packageName: packageName,
-
+            unwrapFields: _unwrapFields[specName] ?? const [],
             workspace: workspace,
             dryRun: true,
             quiet: true,
@@ -106,7 +106,7 @@ void _snapshotTests(String groupName, List<File> specFiles, {bool workspace = fa
             inputPath: specFile.path,
             outputDir: 'unused',
             packageName: packageName,
-
+            unwrapFields: _unwrapFields[specName] ?? const [],
             workspace: workspace,
             dryRun: true,
             quiet: true,
@@ -170,6 +170,11 @@ void _snapshotTests(String groupName, List<File> specFiles, {bool workspace = fa
 /// Snapshots that are stored formatted (via dart_style) so we catch
 /// formatting-related regressions.
 const _formattedSpecs = {'unhinged', 'totem-mobile'};
+
+/// Per-spec unwrapFields configuration.
+const _unwrapFields = <String, List<String>>{
+  'cloudflare': ['result'],
+};
 
 final _formatter = DartFormatter(
   languageVersion: DartFormatter.latestLanguageVersion,

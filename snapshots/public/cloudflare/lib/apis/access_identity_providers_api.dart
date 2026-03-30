@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_cf_resource_id.dart';import '../models/access_components_schemas_single_response.dart';import '../models/access_email.dart';import '../models/access_groups_name.dart';import '../models/access_id_response.dart';import '../models/access_identifier.dart';import '../models/access_identity_providers.dart';import '../models/access_idp_resource_id.dart';import '../models/access_response_collection.dart';import '../models/access_scim_groups_response.dart';import '../models/access_scim_users_response.dart';import '../models/access_username.dart';import '../models/access_users_cf_resource_id.dart';import '../models/access_users_idp_resource_id.dart';import '../models/access_users_name.dart';import '../models/access_uuid.dart';/// AccessIdentityProvidersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_cf_resource_id.dart';import '../models/access_email.dart';import '../models/access_groups.dart';import '../models/access_groups_name.dart';import '../models/access_id_response_result.dart';import '../models/access_identifier.dart';import '../models/access_identity_providers.dart';import '../models/access_idp_resource_id.dart';import '../models/access_response_collection_result.dart';import '../models/access_username.dart';import '../models/access_users.dart';import '../models/access_users_cf_resource_id.dart';import '../models/access_users_idp_resource_id.dart';import '../models/access_users_name.dart';import '../models/access_uuid.dart';/// AccessIdentityProvidersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccessIdentityProvidersApi with ApiExecutor {const AccessIdentityPro
 /// Lists all configured identity providers.
 ///
 /// `GET /accounts/{account_id}/access/identity_providers`
-Future<ApiResult<AccessResponseCollection, Never>> accessIdentityProvidersListAccessIdentityProviders({required AccessIdentifier accountId, String? scimEnabled, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessResponseCollectionResult>?, Never>> accessIdentityProvidersListAccessIdentityProviders({required AccessIdentifier accountId, String? scimEnabled, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (scimEnabled != null) {
   queryParameters['scim_enabled'] = scimEnabled;
@@ -39,7 +39,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => AccessResponseCollectionResult.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -48,7 +49,7 @@ return execute(
 /// Adds a new identity provider to Access.
 ///
 /// `POST /accounts/{account_id}/access/identity_providers`
-Future<ApiResult<AccessComponentsSchemasSingleResponse, Never>> accessIdentityProvidersAddAnAccessIdentityProvider({required AccessIdentifier accountId, required AccessIdentityProviders body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdentityProviders?, Never>> accessIdentityProvidersAddAnAccessIdentityProvider({required AccessIdentifier accountId, required AccessIdentityProviders body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -62,7 +63,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessComponentsSchemasSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -71,7 +73,7 @@ return execute(
 /// Fetches a configured identity provider.
 ///
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<AccessComponentsSchemasSingleResponse, Never>> accessIdentityProvidersGetAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdentityProviders?, Never>> accessIdentityProvidersGetAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -83,7 +85,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessComponentsSchemasSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -92,7 +95,7 @@ return execute(
 /// Updates a configured identity provider.
 ///
 /// `PUT /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<AccessComponentsSchemasSingleResponse, Never>> accessIdentityProvidersUpdateAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, required AccessIdentityProviders body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdentityProviders?, Never>> accessIdentityProvidersUpdateAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, required AccessIdentityProviders body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,7 +109,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessComponentsSchemasSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -115,7 +119,7 @@ return execute(
 /// Deletes an identity provider from Access.
 ///
 /// `DELETE /accounts/{account_id}/access/identity_providers/{identity_provider_id}`
-Future<ApiResult<AccessIdResponse, Never>> accessIdentityProvidersDeleteAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessIdResponseResult?, Never>> accessIdentityProvidersDeleteAnAccessIdentityProvider({required AccessUuid identityProviderId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,7 +131,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? AccessIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -136,7 +141,7 @@ return execute(
 /// Lists SCIM Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
 ///
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/groups`
-Future<ApiResult<AccessScimGroupsResponse, Never>> accessIdentityProvidersListScimGroupResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessCfResourceId? cfResourceId, AccessIdpResourceId? idpResourceId, AccessGroupsName? name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessGroups>?, Never>> accessIdentityProvidersListScimGroupResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessCfResourceId? cfResourceId, AccessIdpResourceId? idpResourceId, AccessGroupsName? name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cfResourceId != null) {
   queryParameters['cf_resource_id'] = cfResourceId.toString();
@@ -168,7 +173,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessScimGroupsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => AccessGroups.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -177,7 +183,7 @@ return execute(
 /// Lists SCIM User resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
 ///
 /// `GET /accounts/{account_id}/access/identity_providers/{identity_provider_id}/scim/users`
-Future<ApiResult<AccessScimUsersResponse, Never>> accessIdentityProvidersListScimUserResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessUsersCfResourceId? cfResourceId, AccessUsersIdpResourceId? idpResourceId, AccessUsername? username, AccessEmail? email, AccessUsersName? name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessUsers>?, Never>> accessIdentityProvidersListScimUserResources({required AccessUuid identityProviderId, required AccessIdentifier accountId, AccessUsersCfResourceId? cfResourceId, AccessUsersIdpResourceId? idpResourceId, AccessUsername? username, AccessEmail? email, AccessUsersName? name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cfResourceId != null) {
   queryParameters['cf_resource_id'] = cfResourceId.toString();
@@ -215,7 +221,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccessScimUsersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>?)?.map((e) => AccessUsers.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

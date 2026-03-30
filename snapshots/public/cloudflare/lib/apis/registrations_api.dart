@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_registration_response.dart';import '../models/get_registration_response.dart';import '../models/list_registrations_response.dart';import '../models/list_registrations_sort_by.dart';import '../models/list_registrations_sort_order.dart';import '../models/list_registrations_status.dart';import '../models/revoke_registrations_response.dart';import '../models/unrevoke_registrations_response.dart';/// RegistrationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/list_registrations_sort_by.dart';import '../models/list_registrations_sort_order.dart';import '../models/list_registrations_status.dart';import '../models/teams_devices_registration.dart';/// RegistrationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class RegistrationsApi with ApiExecutor {const RegistrationsApi(this.apiCo
 /// Lists WARP registrations.
 ///
 /// `GET /accounts/{account_id}/devices/registrations`
-Future<ApiResult<ListRegistrationsResponse, Never>> listRegistrations({required String accountId, List<String>? userId, String? seenAfter, String? seenBefore, ListRegistrationsStatus? status, int? perPage, String? search, ListRegistrationsSortBy? sortBy, ListRegistrationsSortOrder? sortOrder, String? cursor, List<String>? id, String? deviceId, String? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TeamsDevicesRegistration>, Never>> listRegistrations({required String accountId, List<String>? userId, String? seenAfter, String? seenBefore, ListRegistrationsStatus? status, int? perPage, String? search, ListRegistrationsSortBy? sortBy, ListRegistrationsSortOrder? sortOrder, String? cursor, List<String>? id, String? deviceId, String? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (userId != null) {
 for (final item in userId) {
@@ -70,7 +70,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListRegistrationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as List<dynamic>).map((e) => TeamsDevicesRegistration.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -79,7 +80,7 @@ return execute(
 /// Fetches a single WARP registration.
 ///
 /// `GET /accounts/{account_id}/devices/registrations/{registration_id}`
-Future<ApiResult<GetRegistrationResponse, Never>> getRegistration({required String registrationId, required String accountId, String? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TeamsDevicesRegistration, Never>> getRegistration({required String registrationId, required String accountId, String? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
   queryParameters['include'] = include;
@@ -99,7 +100,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetRegistrationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return TeamsDevicesRegistration.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -108,7 +110,7 @@ return execute(
 /// Deletes a WARP registration.
 ///
 /// `DELETE /accounts/{account_id}/devices/registrations/{registration_id}`
-Future<ApiResult<DeleteRegistrationResponse, Never>> deleteRegistration({required String registrationId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, Never>> deleteRegistration({required String registrationId, required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -120,7 +122,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteRegistrationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -129,7 +132,7 @@ return execute(
 /// Revokes a list of WARP registrations.
 ///
 /// `POST /accounts/{account_id}/devices/registrations/revoke`
-Future<ApiResult<RevokeRegistrationsResponse, Never>> revokeRegistrations({required String accountId, required List<String> id, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>?, Never>> revokeRegistrations({required String accountId, required List<String> id, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in id) {
   queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
@@ -149,7 +152,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RevokeRegistrationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
 );
  } 
@@ -158,7 +162,7 @@ return execute(
 /// Unrevokes a list of WARP registrations.
 ///
 /// `POST /accounts/{account_id}/devices/registrations/unrevoke`
-Future<ApiResult<UnrevokeRegistrationsResponse, Never>> unrevokeRegistrations({required String accountId, required List<String> id, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>?, Never>> unrevokeRegistrations({required String accountId, required List<String> id, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in id) {
   queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
@@ -178,7 +182,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return UnrevokeRegistrationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
 );
  } 

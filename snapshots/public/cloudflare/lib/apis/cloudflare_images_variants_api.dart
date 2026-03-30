@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/images_account_identifier.dart';import '../models/images_deleted_response.dart';import '../models/images_image_variant_definition.dart';import '../models/images_image_variant_identifier.dart';import '../models/images_image_variant_patch_request.dart';import '../models/images_image_variant_simple_response.dart';import '../models/response_common36.dart';/// CloudflareImagesVariantsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/images_account_identifier.dart';import '../models/images_image_variant_definition.dart';import '../models/images_image_variant_identifier.dart';import '../models/images_image_variant_patch_request.dart';import '../models/images_image_variant_response.dart';import '../models/response_common36_result.dart';/// CloudflareImagesVariantsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CloudflareImagesVariantsApi with ApiExecutor {const CloudflareImages
 /// Lists existing variants.
 ///
 /// `GET /accounts/{account_id}/images/v1/variants`
-Future<ApiResult<ResponseCommon36, Never>> cloudflareImagesVariantsListVariants({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon36Result, Never>> cloudflareImagesVariantsListVariants({required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon36.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
 );
  } 
@@ -34,7 +35,7 @@ return execute(
 /// Specify variants that allow you to resize images for different use cases.
 ///
 /// `POST /accounts/{account_id}/images/v1/variants`
-Future<ApiResult<ImagesImageVariantSimpleResponse, Never>> cloudflareImagesVariantsCreateAVariant({required ImagesAccountIdentifier accountId, required ImagesImageVariantDefinition body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImageVariantResponse?, Never>> cloudflareImagesVariantsCreateAVariant({required ImagesAccountIdentifier accountId, required ImagesImageVariantDefinition body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ImagesImageVariantSimpleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ImagesImageVariantResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -57,7 +59,7 @@ return execute(
 /// Fetch details for a single variant.
 ///
 /// `GET /accounts/{account_id}/images/v1/variants/{variant_id}`
-Future<ApiResult<ImagesImageVariantSimpleResponse, Never>> cloudflareImagesVariantsVariantDetails({required ImagesImageVariantIdentifier variantId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImageVariantResponse?, Never>> cloudflareImagesVariantsVariantDetails({required ImagesImageVariantIdentifier variantId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,7 +71,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ImagesImageVariantSimpleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ImagesImageVariantResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -78,7 +81,7 @@ return execute(
 /// Updating a variant purges the cache for all images associated with the variant.
 ///
 /// `PATCH /accounts/{account_id}/images/v1/variants/{variant_id}`
-Future<ApiResult<ImagesImageVariantSimpleResponse, Never>> cloudflareImagesVariantsUpdateAVariant({required ImagesImageVariantIdentifier variantId, required ImagesAccountIdentifier accountId, required ImagesImageVariantPatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ImagesImageVariantResponse?, Never>> cloudflareImagesVariantsUpdateAVariant({required ImagesImageVariantIdentifier variantId, required ImagesAccountIdentifier accountId, required ImagesImageVariantPatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,7 +95,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ImagesImageVariantSimpleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return json['result'] != null ? ImagesImageVariantResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -101,7 +105,7 @@ return execute(
 /// Deleting a variant purges the cache for all images associated with the variant.
 ///
 /// `DELETE /accounts/{account_id}/images/v1/variants/{variant_id}`
-Future<ApiResult<ImagesDeletedResponse, Never>> cloudflareImagesVariantsDeleteAVariant({required ImagesImageVariantIdentifier variantId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, Never>> cloudflareImagesVariantsDeleteAVariant({required ImagesImageVariantIdentifier variantId, required ImagesAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -113,7 +117,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ImagesDeletedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
   },
 );
  } 
