@@ -1048,12 +1048,14 @@ void main() {
     });
   });
 
-  group('allOf with ref and extra properties', () {
-    test('currently produces a type ref (known limitation)', () {
-      // TODO: allOf with $ref + extra properties should produce an IrObject
-      // with merged fields. Currently returns IrTypeRef, losing the extra
-      // properties. Fixing this requires careful handling to avoid breaking
-      // discriminated union variants that use the same pattern.
+  // TODO: allOf ref resolution requires resolving $ref targets in the
+  // flattener, resolving IrTypeRef→IrObject in the sealed union emitter,
+  // fixing import generation for inlined object variants, and handling
+  // $-prefixed field names in variant toString. Each piece works individually
+  // but the cascading effects across ~3200 Cloudflare allOf schemas need
+  // careful incremental rollout.
+  group('allOf with ref and extra properties', skip: 'Needs allOf ref resolution', () {
+    test('merges ref properties with local properties into IrObject', () {
       final schemas = <String, dynamic>{
         'Base': {
           'type': 'object',
@@ -1079,7 +1081,138 @@ void main() {
       mapper.lowerSchemas(schemas);
 
       final extended = mapper.typeRegistry['Extended'];
-      expect(extended, isA<IrTypeRef>());
+      expect(extended, isA<IrObject>());
+      final obj = extended as IrObject;
+      final fieldNames = obj.fields.map((f) => f.name).toSet();
+      expect(fieldNames, contains('id'));
+      expect(fieldNames, contains('extra'));
+    });
+
+    test('merges required lists from ref and local schema', () {
+      final schemas = <String, dynamic>{
+        'Base': {
+          'type': 'object',
+          'properties': {
+            'id': {'type': 'string'},
+          },
+          'required': ['id'],
+        },
+        'Extended': {
+          'allOf': [
+            {r'$ref': '#/components/schemas/Base'},
+            {
+              'type': 'object',
+              'required': ['extra'],
+              'properties': {
+                'extra': {'type': 'string'},
+              },
+            },
+          ],
+        },
+      };
+      final ctx = SchemaNormalizer().normalize(schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(schemas);
+
+      final obj = mapper.typeRegistry['Extended']! as IrObject;
+      final requiredNames =
+          obj.fields.where((f) => f.isRequired).map((f) => f.name).toSet();
+      expect(requiredNames, contains('id'));
+      expect(requiredNames, contains('extra'));
+    });
+
+    test('discriminator variant with allOf merges into IrObject with all fields', () {
+      final schemas = <String, dynamic>{
+        'Animal': {
+          'oneOf': [
+            {r'$ref': '#/components/schemas/Cat'},
+            {r'$ref': '#/components/schemas/Dog'},
+          ],
+          'discriminator': {
+            'propertyName': 'type',
+          },
+        },
+        'AnimalBase': {
+          'type': 'object',
+          'properties': {
+            'name': {'type': 'string'},
+          },
+        },
+        'Cat': {
+          'allOf': [
+            {
+              'type': 'object',
+              'properties': {
+                'type': {
+                  'type': 'string',
+                  'enum': ['cat'],
+                },
+              },
+              'required': ['type'],
+            },
+            {r'$ref': '#/components/schemas/AnimalBase'},
+          ],
+        },
+        'Dog': {
+          'allOf': [
+            {
+              'type': 'object',
+              'properties': {
+                'type': {
+                  'type': 'string',
+                  'enum': ['dog'],
+                },
+              },
+              'required': ['type'],
+            },
+            {r'$ref': '#/components/schemas/AnimalBase'},
+          ],
+        },
+      };
+      final ctx = SchemaNormalizer().normalize(schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(schemas);
+
+      // Cat and Dog are discriminator variants — they should be IrObjects
+      // with merged fields from both the discriminator enum and the base.
+      final cat = mapper.typeRegistry['Cat'];
+      expect(cat, isA<IrObject>());
+      final catFields = (cat as IrObject).fields.map((f) => f.originalName).toSet();
+      expect(catFields, containsAll(['type', 'name']));
+    });
+
+    test('multiple refs merged into IrObject', () {
+      final schemas = <String, dynamic>{
+        'HasName': {
+          'type': 'object',
+          'properties': {
+            'name': {'type': 'string'},
+          },
+          'required': ['name'],
+        },
+        'HasAge': {
+          'type': 'object',
+          'properties': {
+            'age': {'type': 'integer'},
+          },
+        },
+        'Person': {
+          'allOf': [
+            {r'$ref': '#/components/schemas/HasName'},
+            {r'$ref': '#/components/schemas/HasAge'},
+          ],
+        },
+      };
+      final ctx = SchemaNormalizer().normalize(schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(schemas);
+
+      final person = mapper.typeRegistry['Person'];
+      expect(person, isA<IrObject>());
+      final obj = person as IrObject;
+      final fieldNames = obj.fields.map((f) => f.name).toSet();
+      expect(fieldNames, contains('name'));
+      expect(fieldNames, contains('age'));
     });
   });
 
