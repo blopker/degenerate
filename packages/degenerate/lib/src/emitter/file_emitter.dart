@@ -377,11 +377,12 @@ class FileEmitter {
           }
         }
       }
-      // Collect types from SSE (text/event-stream) responses
-      final sseContent = eventStreamContent(op);
-      if (sseContent != null) {
+      // Collect types from streaming responses (SSE, JSONL)
+      final streaming = streamingContent(op);
+      if (streaming != null) {
         needsConvert = true;
-        _collectTopLevelTypeName(sseContent.$2.schema, names, typeRegistry);
+        final eventType = streaming.$2.itemSchema ?? streaming.$2.schema;
+        _collectTopLevelTypeName(eventType, names, typeRegistry);
       }
       // Collect error response type (matching ApiEmitter._errorResponseContent
       // logic: prefer default, then first 4xx+, only one error type per operation).

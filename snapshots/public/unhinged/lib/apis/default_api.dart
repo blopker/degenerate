@@ -6,6 +6,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';
 import '../models/list_model.dart';
 import '../models/object_model.dart';
 import '../models/proto.dart';
+import '../models/string_model.dart';
+import '../models/type_model.dart';
 import '../models/yield_topic.dart';
 
 /// DefaultApi operations.
@@ -121,7 +123,7 @@ final class DefaultApi with ApiExecutor {
 
   ///
   /// `GET /barn/{barnId}/events`
-  Future<ApiResult<void, Never>> streamBarnEvents({
+  Future<ApiResult<TypeModel, Never>> streamBarnEvents({
     required String barnId,
     RequestOptions? options,
   }) async {
@@ -134,12 +136,20 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return execute(
+      request,
+      onSuccess: (response) {
+        // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into TypeModel
+        throw UnsupportedError(
+          'Cannot decode text/event-stream response into TypeModel',
+        );
+      },
+    );
   }
 
   ///
   /// `GET /prophecies`
-  Future<ApiResult<void, Never>> $yield({
+  Future<ApiResult<StringModel, Never>> $yield({
     required YieldTopic topic,
     RequestOptions? options,
   }) async {
@@ -173,6 +183,83 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return execute(
+      request,
+      onSuccess: (response) {
+        // TODO: Unsupported non-JSON response schema Cannot decode application/jsonl response into StringModel
+        throw UnsupportedError(
+          'Cannot decode application/jsonl response into StringModel',
+        );
+      },
+    );
+  }
+
+  /// Stream response.
+  ///
+  /// `GET /barn/{barnId}/events`
+  Stream<TypeModel> streamBarnEventsStream({
+    required String barnId,
+    RequestOptions? options,
+  }) {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
+
+    final request = ApiRequest(
+      method: 'GET',
+      path: '/barn/${Uri.encodeComponent(barnId)}/events',
+      headers: headers,
+      options: options,
+    );
+
+    return executeStreaming(
+      request,
+      onEvent: (data) {
+        return TypeModel.fromJson(jsonDecode(data) as Map<String, dynamic>);
+      },
+    );
+  }
+
+  /// Stream response.
+  ///
+  /// `GET /prophecies`
+  Stream<StringModel> $yieldStream({
+    required YieldTopic topic,
+    RequestOptions? options,
+  }) {
+    final queryParameters = <String, String>{
+      ...apiConfig.defaultQueryParameters,
+    };
+    final queryParametersList = <ApiQueryParameter>[];
+    if (topic.$await case final $await$?) {
+      queryParametersList.add(
+        ApiQueryParameter(name: 'await', value: $await$, allowReserved: false),
+      );
+    }
+    if (topic.$async case final $async$?) {
+      queryParametersList.add(
+        ApiQueryParameter(
+          name: 'async',
+          value: $async$.toString(),
+          allowReserved: false,
+        ),
+      );
+    }
+
+    final headers = <String, String>{...apiConfig.defaultHeaders};
+
+    final request = ApiRequest(
+      method: 'GET',
+      path: '/prophecies',
+      headers: headers,
+      queryParameters: queryParameters,
+      queryParametersList: queryParametersList,
+      options: options,
+    );
+
+    return executeJsonlStreaming(
+      request,
+      onEvent: (data) {
+        return StringModel.fromJson(jsonDecode(data) as Map<String, dynamic>);
+      },
+    );
   }
 }

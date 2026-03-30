@@ -359,8 +359,11 @@ final class IrRequestBody {
 
 final class IrMediaType {
   final IrType schema;
+  /// Per-item schema for streaming media types (SSE, JSONL).
+  /// When present, each streamed event/line is deserialized as this type.
+  final IrType? itemSchema;
   final String? encoding;
-  const IrMediaType(this.schema, {this.encoding});
+  const IrMediaType(this.schema, {this.itemSchema, this.encoding});
 }
 
 final class IrResponse {

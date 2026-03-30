@@ -14,14 +14,14 @@
 - ~~High: non-HTTP-standard and extended operations/features are omitted instead of surfaced.~~
   - Fixed: OAS 3.2 `query` method and `additionalOperations` (custom HTTP methods like HAUNT, PURGE) are now parsed and generated. Operation method names that conflict with Object members are escaped (`toString` → `$toString`).
 
-- High: streaming `itemSchema` responses are collapsed to `void`.
+- ~~High: streaming `itemSchema` responses are collapsed to `void`.~~
   - Spec:
     - SSE stream of `Type`: `test/fixtures/public/unhinged.yaml:223-238`
     - JSONL stream of `String`: `test/fixtures/public/unhinged.yaml:240-261`
   - Generated:
     - `streamBarnEvents()` returns `Future<ApiResult<void, Never>>`: `snapshots/public/unhinged/lib/apis/default_api.dart:54-68`
     - `$yield()` returns `Future<ApiResult<void, Never>>`: `snapshots/public/unhinged/lib/apis/default_api.dart:72-96`
-  - Impact: response typing is dropped for two notable media-type features the spec is explicitly testing.
+  - Fixed: `itemSchema` is now parsed from media type objects. SSE streams use `executeStreaming`, JSONL streams use `executeJsonlStreaming`. Both return `Stream<T>` with typed deserialization.
 
 - Medium: discriminator/composition behavior is incomplete or wrong.
   - `"3Incident"` has a discriminator on `"2species"` with mappings: `test/fixtures/public/unhinged.yaml:378-383`

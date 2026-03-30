@@ -413,7 +413,8 @@ class OperationLowerer {
         if (mediaMap is! Map<String, dynamic>) continue;
 
         final rawSchema = mediaMap['schema'];
-        if (rawSchema == null) continue;
+        final rawItemSchema = mediaMap['itemSchema'];
+        if (rawSchema == null && rawItemSchema == null) continue;
 
         // Generate a name hint for inline schemas based on the operation
         String? nameHint;
@@ -426,11 +427,23 @@ class OperationLowerer {
           }
         }
 
-        final irSchema = irMapper.lowerUntypedInlineSchema(
-          rawSchema,
-          nameHint: nameHint,
-        );
-        irContent[mediaType] = IrMediaType(irSchema);
+        // Lower itemSchema for streaming media types (SSE, JSONL).
+        IrType? irItemSchema;
+        if (rawItemSchema != null) {
+          final itemHint = _currentOperationId != null
+              ? '${_currentOpPascal!}Event'
+              : null;
+          irItemSchema = irMapper.lowerUntypedInlineSchema(
+            rawItemSchema,
+            nameHint: itemHint,
+          );
+        }
+
+        // schema may be null for streaming-only media types — use itemSchema.
+        final irSchema = rawSchema != null
+            ? irMapper.lowerUntypedInlineSchema(rawSchema, nameHint: nameHint)
+            : irItemSchema!;
+        irContent[mediaType] = IrMediaType(irSchema, itemSchema: irItemSchema);
       }
     }
 

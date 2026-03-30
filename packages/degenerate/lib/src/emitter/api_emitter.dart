@@ -62,7 +62,7 @@ class ApiEmitter {
           ..methods.addAll(api.operations.map(_buildOperation))
           ..methods.addAll(
             api.operations
-                .where((op) => eventStreamContent(op) != null)
+                .where((op) => streamingContent(op) != null)
                 .map(_buildStreamingOperation),
           ),
       ),
@@ -897,13 +897,16 @@ class ApiEmitter {
       ),
     );
 
-    final sseContent = eventStreamContent(op)!;
-    final eventType = sseContent.$2.schema;
+    final streaming = streamingContent(op)!;
+    final streamKind = streaming.$3;
+    // Prefer itemSchema (per-event type) over schema (full response type).
+    final eventType = streaming.$2.itemSchema ?? streaming.$2.schema;
     final eventTypeName = irTypeName(eventType);
 
     final bodyCode = _buildStreamingOperationBody(
       op,
       eventType,
+      streamKind: streamKind,
       requestBodyContent: requestBodyContent,
       bodyType: bodyType,
       pathParams: pathParams,
@@ -935,6 +938,7 @@ class ApiEmitter {
   String _buildStreamingOperationBody(
     IrOperation op,
     IrType eventType, {
+    StreamKind streamKind = StreamKind.sse,
     (String, IrMediaType)? requestBodyContent,
     IrType? bodyType,
     required List<IrParameter> pathParams,
@@ -1069,9 +1073,13 @@ class ApiEmitter {
     buf.writeln(');');
     buf.writeln();
 
-    // Build the deserialize expression for each SSE event
+    // Build the deserialize expression for each streamed event
     final deserializeExpr = _buildSseDeserializeExpr(eventType);
-    buf.writeln('return executeStreaming(');
+    final executeMethod = switch (streamKind) {
+      StreamKind.sse => 'executeStreaming',
+      StreamKind.jsonl => 'executeJsonlStreaming',
+    };
+    buf.writeln('return $executeMethod(');
     buf.writeln('  request,');
     buf.writeln('  onEvent: (data) {');
     buf.writeln('    $deserializeExpr');
