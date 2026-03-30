@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apps_create_from_manifest_response_owner.dart';import 'apps_create_from_manifest_response_permissions.dart';import 'enterprise.dart';import 'simple_user.dart';final class AppsCreateFromManifestResponse {const AppsCreateFromManifestResponse({required this.id, this.slug, required this.nodeId, required this.clientId, required this.owner, required this.name, required this.description, required this.externalUrl, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.permissions, required this.events, this.installationsCount, required this.clientSecret, required this.webhookSecret, required this.pem, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apps_create_from_manifest_response_owner.dart';import 'apps_create_from_manifest_response_permissions.dart';import 'enterprise.dart';import 'simple_user.dart';final class AppsCreateFromManifestResponse {const AppsCreateFromManifestResponse({required this.id, this.slug, required this.nodeId, required this.clientId, required this.owner, required this.name, required this.description, required this.externalUrl, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.permissions, required this.events, this.installationsCount, required this.clientSecret, required this.webhookSecret, required this.pem, this.additionalProperties = const {}, });
 
 factory AppsCreateFromManifestResponse.fromJson(Map<String, dynamic> json) { return AppsCreateFromManifestResponse(
   id: (json['id'] as num).toInt(),
@@ -20,6 +20,7 @@ factory AppsCreateFromManifestResponse.fromJson(Map<String, dynamic> json) { ret
   clientSecret: json['client_secret'] as String,
   webhookSecret: json['webhook_secret'] as String?,
   pem: json['pem'] as String,
+  additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'id', 'slug', 'node_id', 'client_id', 'owner', 'name', 'description', 'external_url', 'html_url', 'created_at', 'updated_at', 'permissions', 'events', 'installations_count', 'client_secret', 'webhook_secret', 'pem'}.contains(e.key))),
 ); }
 
 /// Unique identifier of the GitHub app
@@ -62,6 +63,8 @@ final String? webhookSecret;
 
 final String pem;
 
+final Map<String,dynamic> additionalProperties;
+
 Map<String, dynamic> toJson() { return {
   'id': id,
   'slug': ?slug,
@@ -80,6 +83,7 @@ Map<String, dynamic> toJson() { return {
   'client_secret': clientSecret,
   'webhook_secret': ?webhookSecret,
   'pem': pem,
+  ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -96,7 +100,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('client_secret') && json['client_secret'] is String &&
       json.containsKey('webhook_secret') && json['webhook_secret'] is String &&
       json.containsKey('pem') && json['pem'] is String; } 
-AppsCreateFromManifestResponse copyWith({int? id, String Function()? slug, String? nodeId, String? clientId, AppsCreateFromManifestResponseOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, AppsCreateFromManifestResponsePermissions? permissions, List<String>? events, int Function()? installationsCount, String? clientSecret, String? Function()? webhookSecret, String? pem, }) { return AppsCreateFromManifestResponse(
+AppsCreateFromManifestResponse copyWith({int? id, String Function()? slug, String? nodeId, String? clientId, AppsCreateFromManifestResponseOwner? owner, String? name, String? Function()? description, Uri? externalUrl, Uri? htmlUrl, DateTime? createdAt, DateTime? updatedAt, AppsCreateFromManifestResponsePermissions? permissions, List<String>? events, int Function()? installationsCount, String? clientSecret, String? Function()? webhookSecret, String? pem, Map<String, dynamic>? additionalProperties, }) { return AppsCreateFromManifestResponse(
   id: id ?? this.id,
   slug: slug != null ? slug() : this.slug,
   nodeId: nodeId ?? this.nodeId,
@@ -114,6 +118,7 @@ AppsCreateFromManifestResponse copyWith({int? id, String Function()? slug, Strin
   clientSecret: clientSecret ?? this.clientSecret,
   webhookSecret: webhookSecret != null ? webhookSecret() : this.webhookSecret,
   pem: pem ?? this.pem,
+  additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AppsCreateFromManifestResponse &&
@@ -133,7 +138,8 @@ AppsCreateFromManifestResponse copyWith({int? id, String Function()? slug, Strin
           installationsCount == other.installationsCount &&
           clientSecret == other.clientSecret &&
           webhookSecret == other.webhookSecret &&
-          pem == other.pem; } 
-@override int get hashCode { return Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount, clientSecret, webhookSecret, pem); } 
-@override String toString() { return 'AppsCreateFromManifestResponse(id: $id, slug: $slug, nodeId: $nodeId, clientId: $clientId, owner: $owner, name: $name, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events, installationsCount: $installationsCount, clientSecret: $clientSecret, webhookSecret: $webhookSecret, pem: $pem)'; } 
+          pem == other.pem &&
+          mapEquals(additionalProperties, other.additionalProperties); } 
+@override int get hashCode { return Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount, clientSecret, webhookSecret, pem, Object.hashAll(additionalProperties.entries)); } 
+@override String toString() { return 'AppsCreateFromManifestResponse(id: $id, slug: $slug, nodeId: $nodeId, clientId: $clientId, owner: $owner, name: $name, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events, installationsCount: $installationsCount, clientSecret: $clientSecret, webhookSecret: $webhookSecret, pem: $pem, additionalProperties: $additionalProperties)'; } 
  }

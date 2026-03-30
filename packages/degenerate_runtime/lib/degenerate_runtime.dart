@@ -1,5 +1,6 @@
 export 'src/api_client.dart';
 export 'src/list_equals.dart';
+export 'src/map_equals.dart';
 export 'src/api_executor.dart';
 export 'src/one_of.dart';
 export 'src/api_config.dart';

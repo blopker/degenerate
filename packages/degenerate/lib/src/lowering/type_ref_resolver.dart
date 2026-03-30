@@ -58,11 +58,21 @@ class TypeRefResolver {
             description: f.description,
           );
         }).toList();
+        IrType? newAdditionalProps = type.additionalProperties;
+        if (newAdditionalProps != null) {
+          var resolved = resolveRef(newAdditionalProps);
+          resolved = _resolveInType(resolved);
+          if (!identical(resolved, newAdditionalProps)) {
+            changed = true;
+            newAdditionalProps = resolved;
+          }
+        }
         if (!changed) return type;
         return IrObject(
           type.name,
           newFields,
           requiredFields: type.requiredFields,
+          additionalProperties: newAdditionalProps,
           description: type.description,
           isNullable: type.isNullable,
         );

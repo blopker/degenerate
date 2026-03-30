@@ -130,6 +130,71 @@ void main() {
       });
     });
 
+    group('additionalProperties overflow map', () {
+      late String source;
+
+      setUp(() {
+        final model = IrObject(
+          'Metadata',
+          [
+            IrField(
+              'name',
+              'name',
+              const IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['name'],
+          additionalProperties: const IrPrimitive(PrimitiveKind.string),
+        );
+        final specs = ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        source = emitRaw(library);
+      });
+
+      test('emits overflow map field', () {
+        expect(source, contains('Map<String,String> additionalProperties'));
+      });
+
+      test('constructor has overflow param with const {} default', () {
+        expect(source, contains('this.additionalProperties = const {}'));
+      });
+
+      test('fromJson filters known keys into overflow', () {
+        expect(source, contains("!const {'name'}"));
+        expect(source, contains('additionalProperties:'));
+      });
+
+      test('toJson spreads overflow', () {
+        expect(source, contains('...additionalProperties'));
+      });
+
+      test('is valid Dart', () {
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+
+    group('additionalProperties with dynamic values', () {
+      test('emits Map<String, dynamic> for additionalProperties: true', () {
+        final model = IrObject(
+          'Config',
+          [
+            IrField('id', 'id', const IrPrimitive(PrimitiveKind.string),
+                isRequired: true),
+          ],
+          requiredFields: ['id'],
+          additionalProperties:
+              const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true),
+        );
+        final specs = ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        final source = emitRaw(library);
+
+        expect(source, contains('Map<String,dynamic> additionalProperties'));
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+
     group('canParse checks known keys when no required fields', () {
       late String source;
 

@@ -8,10 +8,8 @@
 - ~~High: the `allOf` schema `"new"` is dropped entirely, and the affected operation uses the wrong request type.~~
   - Fixed: allOf with `$ref` + extra properties now merges into a full IrObject. The `New` model is generated with all fields, and `POST /incidents` uses it.
 
-- High: `additionalProperties` on `True` is ignored, so unknown recursive properties are silently lost.
-  - Spec: `test/fixtures/public/unhinged.yaml:330-331`
-  - Generated model has only fixed fields and no storage for extra keys: `snapshots/public/unhinged/lib/models/true.dart`
-  - Impact: round-tripping is lossy and the generated type does not match the schema contract.
+- ~~High: `additionalProperties` on `True` is ignored, so unknown recursive properties are silently lost.~~
+  - Fixed: objects with `additionalProperties` now generate an overflow `Map<String, T>` field. fromJson filters known keys into fixed fields and collects the rest. toJson spreads the overflow back. Supports typed values, dynamic, and recursive self-references.
 
 - ~~High: non-HTTP-standard and extended operations/features are omitted instead of surfaced.~~
   - Fixed: OAS 3.2 `query` method and `additionalOperations` (custom HTTP methods like HAUNT, PURGE) are now parsed and generated. Operation method names that conflict with Object members are escaped (`toString` → `$toString`).

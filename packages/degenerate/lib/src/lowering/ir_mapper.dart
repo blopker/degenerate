@@ -668,10 +668,26 @@ class IrMapper {
       );
     }
 
+    // additionalProperties: typed overflow map for extra keys.
+    IrType? additionalPropsType;
+    final addProps = schema['additionalProperties'];
+    if (addProps != null && addProps != false) {
+      if (addProps is Map<String, dynamic>) {
+        final valueHint = '${objectName}Value';
+        additionalPropsType =
+            lowerInlineSchema(addProps, nameHint: valueHint);
+      } else {
+        // additionalProperties: true → Map<String, dynamic>
+        additionalPropsType =
+            const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true);
+      }
+    }
+
     return IrObject(
       objectName,
       fields,
       requiredFields: requiredList,
+      additionalProperties: additionalPropsType,
       description: description,
       isNullable: nullable,
     );

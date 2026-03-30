@@ -623,10 +623,14 @@ class FileEmitter {
     }
 
     switch (type) {
-      case IrObject(:final name, :final fields):
+      case IrObject(:final name, :final fields, :final additionalProperties):
         names.add(name);
         for (final field in fields) {
           checkField(field.type);
+        }
+        if (additionalProperties != null) {
+          checkField(additionalProperties);
+          needsCollection = true; // mapEquals from runtime
         }
       case IrEnum(:final name):
         names.add(name);

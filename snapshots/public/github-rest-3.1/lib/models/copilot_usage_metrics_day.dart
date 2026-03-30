@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'copilot_dotcom_chat.dart';import 'copilot_dotcom_pull_requests.dart';import 'copilot_ide_chat.dart';import 'copilot_ide_code_completions.dart';/// Copilot usage metrics for a given day.
-final class CopilotUsageMetricsDay {const CopilotUsageMetricsDay({required this.date, this.totalActiveUsers, this.totalEngagedUsers, this.copilotIdeCodeCompletions, this.copilotIdeChat, this.copilotDotcomChat, this.copilotDotcomPullRequests, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_dotcom_chat.dart';import 'copilot_dotcom_pull_requests.dart';import 'copilot_ide_chat.dart';import 'copilot_ide_code_completions.dart';/// Copilot usage metrics for a given day.
+final class CopilotUsageMetricsDay {const CopilotUsageMetricsDay({required this.date, this.totalActiveUsers, this.totalEngagedUsers, this.copilotIdeCodeCompletions, this.copilotIdeChat, this.copilotDotcomChat, this.copilotDotcomPullRequests, this.additionalProperties = const {}, });
 
 factory CopilotUsageMetricsDay.fromJson(Map<String, dynamic> json) { return CopilotUsageMetricsDay(
   date: json['date'] as String,
@@ -11,6 +11,7 @@ factory CopilotUsageMetricsDay.fromJson(Map<String, dynamic> json) { return Copi
   copilotIdeChat: json['copilot_ide_chat'] != null ? CopilotIdeChat.fromJson(json['copilot_ide_chat'] as Map<String, dynamic>) : null,
   copilotDotcomChat: json['copilot_dotcom_chat'] != null ? CopilotDotcomChat.fromJson(json['copilot_dotcom_chat'] as Map<String, dynamic>) : null,
   copilotDotcomPullRequests: json['copilot_dotcom_pull_requests'] != null ? CopilotDotcomPullRequests.fromJson(json['copilot_dotcom_pull_requests'] as Map<String, dynamic>) : null,
+  additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'date', 'total_active_users', 'total_engaged_users', 'copilot_ide_code_completions', 'copilot_ide_chat', 'copilot_dotcom_chat', 'copilot_dotcom_pull_requests'}.contains(e.key))),
 ); }
 
 /// The date for which the usage metrics are aggregated, in `YYYY-MM-DD` format.
@@ -30,6 +31,8 @@ final CopilotDotcomChat? copilotDotcomChat;
 
 final CopilotDotcomPullRequests? copilotDotcomPullRequests;
 
+final Map<String,dynamic> additionalProperties;
+
 Map<String, dynamic> toJson() { return {
   'date': date,
   'total_active_users': ?totalActiveUsers,
@@ -38,9 +41,10 @@ Map<String, dynamic> toJson() { return {
   if (copilotIdeChat != null) 'copilot_ide_chat': copilotIdeChat?.toJson(),
   if (copilotDotcomChat != null) 'copilot_dotcom_chat': copilotDotcomChat?.toJson(),
   if (copilotDotcomPullRequests != null) 'copilot_dotcom_pull_requests': copilotDotcomPullRequests?.toJson(),
+  ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('date') && json['date'] is String; } 
-CopilotUsageMetricsDay copyWith({String? date, int Function()? totalActiveUsers, int Function()? totalEngagedUsers, CopilotIdeCodeCompletions Function()? copilotIdeCodeCompletions, CopilotIdeChat Function()? copilotIdeChat, CopilotDotcomChat Function()? copilotDotcomChat, CopilotDotcomPullRequests Function()? copilotDotcomPullRequests, }) { return CopilotUsageMetricsDay(
+CopilotUsageMetricsDay copyWith({String? date, int Function()? totalActiveUsers, int Function()? totalEngagedUsers, CopilotIdeCodeCompletions Function()? copilotIdeCodeCompletions, CopilotIdeChat Function()? copilotIdeChat, CopilotDotcomChat Function()? copilotDotcomChat, CopilotDotcomPullRequests Function()? copilotDotcomPullRequests, Map<String, dynamic>? additionalProperties, }) { return CopilotUsageMetricsDay(
   date: date ?? this.date,
   totalActiveUsers: totalActiveUsers != null ? totalActiveUsers() : this.totalActiveUsers,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
@@ -48,6 +52,7 @@ CopilotUsageMetricsDay copyWith({String? date, int Function()? totalActiveUsers,
   copilotIdeChat: copilotIdeChat != null ? copilotIdeChat() : this.copilotIdeChat,
   copilotDotcomChat: copilotDotcomChat != null ? copilotDotcomChat() : this.copilotDotcomChat,
   copilotDotcomPullRequests: copilotDotcomPullRequests != null ? copilotDotcomPullRequests() : this.copilotDotcomPullRequests,
+  additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CopilotUsageMetricsDay &&
@@ -57,7 +62,8 @@ CopilotUsageMetricsDay copyWith({String? date, int Function()? totalActiveUsers,
           copilotIdeCodeCompletions == other.copilotIdeCodeCompletions &&
           copilotIdeChat == other.copilotIdeChat &&
           copilotDotcomChat == other.copilotDotcomChat &&
-          copilotDotcomPullRequests == other.copilotDotcomPullRequests; } 
-@override int get hashCode { return Object.hash(date, totalActiveUsers, totalEngagedUsers, copilotIdeCodeCompletions, copilotIdeChat, copilotDotcomChat, copilotDotcomPullRequests); } 
-@override String toString() { return 'CopilotUsageMetricsDay(date: $date, totalActiveUsers: $totalActiveUsers, totalEngagedUsers: $totalEngagedUsers, copilotIdeCodeCompletions: $copilotIdeCodeCompletions, copilotIdeChat: $copilotIdeChat, copilotDotcomChat: $copilotDotcomChat, copilotDotcomPullRequests: $copilotDotcomPullRequests)'; } 
+          copilotDotcomPullRequests == other.copilotDotcomPullRequests &&
+          mapEquals(additionalProperties, other.additionalProperties); } 
+@override int get hashCode { return Object.hash(date, totalActiveUsers, totalEngagedUsers, copilotIdeCodeCompletions, copilotIdeChat, copilotDotcomChat, copilotDotcomPullRequests, Object.hashAll(additionalProperties.entries)); } 
+@override String toString() { return 'CopilotUsageMetricsDay(date: $date, totalActiveUsers: $totalActiveUsers, totalEngagedUsers: $totalEngagedUsers, copilotIdeCodeCompletions: $copilotIdeCodeCompletions, copilotIdeChat: $copilotIdeChat, copilotDotcomChat: $copilotDotcomChat, copilotDotcomPullRequests: $copilotDotcomPullRequests, additionalProperties: $additionalProperties)'; } 
  }

@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 final class TrueNull {
   const TrueNull._(this.value);
 
@@ -151,6 +153,7 @@ final class True {
     this.$ref,
     this.$id,
     this.xExtensionLookalike,
+    this.additionalProperties = const {},
   });
 
   factory True.fromJson(Map<String, dynamic> json) {
@@ -167,6 +170,31 @@ final class True {
       $ref: json['\$ref'] as String?,
       $id: json['\$id'] as String?,
       xExtensionLookalike: json['x-extension-lookalike'] as String?,
+      additionalProperties: Map.fromEntries(
+        json.entries
+            .where(
+              (e) => !const {
+                'false',
+                'none',
+                'null',
+                '0',
+                '',
+                'constructor',
+                '__proto__',
+                'hasOwnProperty',
+                'type',
+                '\$ref',
+                '\$id',
+                'x-extension-lookalike',
+              }.contains(e.key),
+            )
+            .map(
+              (e) => MapEntry(
+                e.key,
+                True.fromJson(e.value as Map<String, dynamic>),
+              ),
+            ),
+      ),
     );
   }
 
@@ -196,6 +224,8 @@ final class True {
   /// Looks like a vendor extension but it is a property.
   final String? xExtensionLookalike;
 
+  final Map<String, True> additionalProperties;
+
   Map<String, dynamic> toJson() {
     return {
       'false': $false,
@@ -210,6 +240,7 @@ final class True {
       '\$ref': ?$ref,
       '\$id': ?$id,
       'x-extension-lookalike': ?xExtensionLookalike,
+      ...additionalProperties.map((k, v) => MapEntry(k, v.toJson())),
     };
   }
 
@@ -236,6 +267,7 @@ final class True {
     String Function()? $ref,
     String Function()? $id,
     String Function()? xExtensionLookalike,
+    Map<String, True>? additionalProperties,
   }) {
     return True(
       $false: $false ?? this.$false,
@@ -254,6 +286,7 @@ final class True {
       xExtensionLookalike: xExtensionLookalike != null
           ? xExtensionLookalike()
           : this.xExtensionLookalike,
+      additionalProperties: additionalProperties ?? this.additionalProperties,
     );
   }
 
@@ -272,7 +305,8 @@ final class True {
             type == other.type &&
             $ref == other.$ref &&
             $id == other.$id &&
-            xExtensionLookalike == other.xExtensionLookalike;
+            xExtensionLookalike == other.xExtensionLookalike &&
+            mapEquals(additionalProperties, other.additionalProperties);
   }
 
   @override
@@ -290,11 +324,12 @@ final class True {
       $ref,
       $id,
       xExtensionLookalike,
+      Object.hashAll(additionalProperties.entries),
     );
   }
 
   @override
   String toString() {
-    return 'True(\$false: ${$false}, none: $none, \$null: ${$null}, \$0: ${$0}, \$empty: ${$empty}, constructor: $constructor, proto: $proto, hasOwnProperty: $hasOwnProperty, type: $type, \$ref: ${$ref}, \$id: ${$id}, xExtensionLookalike: $xExtensionLookalike)';
+    return 'True(\$false: ${$false}, none: $none, \$null: ${$null}, \$0: ${$0}, \$empty: ${$empty}, constructor: $constructor, proto: $proto, hasOwnProperty: $hasOwnProperty, type: $type, \$ref: ${$ref}, \$id: ${$id}, xExtensionLookalike: $xExtensionLookalike, additionalProperties: $additionalProperties)';
   }
 }

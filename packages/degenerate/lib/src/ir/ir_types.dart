@@ -102,10 +102,14 @@ final class IrObject extends IrType {
   final String name;
   final List<IrField> fields;
   final List<String> requiredFields;
+  /// Value type for `additionalProperties` (overflow map).
+  /// Non-null means the object accepts extra keys beyond [fields].
+  final IrType? additionalProperties;
   const IrObject(
     this.name,
     this.fields, {
     this.requiredFields = const [],
+    this.additionalProperties,
     super.description,
     super.isNullable,
   });
@@ -117,6 +121,7 @@ final class IrObject extends IrType {
           name,
           fields,
           requiredFields: requiredFields,
+          additionalProperties: additionalProperties,
           description: description,
           isNullable: true,
         );
