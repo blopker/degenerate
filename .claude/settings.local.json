@@ -17,7 +17,9 @@
       "WebFetch(domain:pub.dev)",
       "Bash(grep -r 'dart run bin/degenerate' /Users/blopker/code/degenerate --include=*.md --include=Makefile)",
       "WebSearch",
-      "Bash(gh search:*)"
+      "Bash(gh search:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)"
     ]
   }
 }
