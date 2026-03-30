@@ -19,6 +19,12 @@ String _oneOfError(Object? json, List<(String, Object)> errors) {
 sealed class OneOf2<A, B> {
   const OneOf2();
 
+  /// Wraps a value of variant A.
+  const factory OneOf2.a(A value) = OneOf2A;
+
+  /// Wraps a value of variant B.
+  const factory OneOf2.b(B value) = OneOf2B;
+
   /// The wrapped value.
   Object? get value;
 
@@ -92,6 +98,9 @@ final class OneOf2B<A, B> extends OneOf2<A, B> {
 
 sealed class OneOf3<A, B, C> {
   const OneOf3();
+  const factory OneOf3.a(A value) = OneOf3A;
+  const factory OneOf3.b(B value) = OneOf3B;
+  const factory OneOf3.c(C value) = OneOf3C;
   Object? get value;
 
   factory OneOf3.from(Object? value) {
@@ -182,6 +191,10 @@ final class OneOf3C<A, B, C> extends OneOf3<A, B, C> {
 
 sealed class OneOf4<A, B, C, D> {
   const OneOf4();
+  const factory OneOf4.a(A value) = OneOf4A;
+  const factory OneOf4.b(B value) = OneOf4B;
+  const factory OneOf4.c(C value) = OneOf4C;
+  const factory OneOf4.d(D value) = OneOf4D;
   Object? get value;
 
   factory OneOf4.from(Object? value) {
@@ -296,6 +309,11 @@ final class OneOf4D<A, B, C, D> extends OneOf4<A, B, C, D> {
 
 sealed class OneOf5<A, B, C, D, E> {
   const OneOf5();
+  const factory OneOf5.a(A value) = OneOf5A;
+  const factory OneOf5.b(B value) = OneOf5B;
+  const factory OneOf5.c(C value) = OneOf5C;
+  const factory OneOf5.d(D value) = OneOf5D;
+  const factory OneOf5.e(E value) = OneOf5E;
   Object? get value;
 
   factory OneOf5.from(Object? value) {
@@ -428,6 +446,12 @@ final class OneOf5E<A, B, C, D, E> extends OneOf5<A, B, C, D, E> {
 
 sealed class OneOf6<A, B, C, D, E, F> {
   const OneOf6();
+  const factory OneOf6.a(A value) = OneOf6A;
+  const factory OneOf6.b(B value) = OneOf6B;
+  const factory OneOf6.c(C value) = OneOf6C;
+  const factory OneOf6.d(D value) = OneOf6D;
+  const factory OneOf6.e(E value) = OneOf6E;
+  const factory OneOf6.f(F value) = OneOf6F;
   Object? get value;
 
   factory OneOf6.from(Object? value) {
@@ -582,6 +606,13 @@ final class OneOf6F<A, B, C, D, E, F> extends OneOf6<A, B, C, D, E, F> {
 
 sealed class OneOf7<A, B, C, D, E, F, G> {
   const OneOf7();
+  const factory OneOf7.a(A value) = OneOf7A;
+  const factory OneOf7.b(B value) = OneOf7B;
+  const factory OneOf7.c(C value) = OneOf7C;
+  const factory OneOf7.d(D value) = OneOf7D;
+  const factory OneOf7.e(E value) = OneOf7E;
+  const factory OneOf7.f(F value) = OneOf7F;
+  const factory OneOf7.g(G value) = OneOf7G;
   Object? get value;
 
   factory OneOf7.from(Object? value) {
@@ -758,6 +789,14 @@ final class OneOf7G<A, B, C, D, E, F, G> extends OneOf7<A, B, C, D, E, F, G> {
 
 sealed class OneOf8<A, B, C, D, E, F, G, H> {
   const OneOf8();
+  const factory OneOf8.a(A value) = OneOf8A;
+  const factory OneOf8.b(B value) = OneOf8B;
+  const factory OneOf8.c(C value) = OneOf8C;
+  const factory OneOf8.d(D value) = OneOf8D;
+  const factory OneOf8.e(E value) = OneOf8E;
+  const factory OneOf8.f(F value) = OneOf8F;
+  const factory OneOf8.g(G value) = OneOf8G;
+  const factory OneOf8.h(H value) = OneOf8H;
   Object? get value;
 
   factory OneOf8.from(Object? value) {
@@ -964,6 +1003,15 @@ final class OneOf8H<A, B, C, D, E, F, G, H>
 
 sealed class OneOf9<A, B, C, D, E, F, G, H, I> {
   const OneOf9();
+  const factory OneOf9.a(A value) = OneOf9A;
+  const factory OneOf9.b(B value) = OneOf9B;
+  const factory OneOf9.c(C value) = OneOf9C;
+  const factory OneOf9.d(D value) = OneOf9D;
+  const factory OneOf9.e(E value) = OneOf9E;
+  const factory OneOf9.f(F value) = OneOf9F;
+  const factory OneOf9.g(G value) = OneOf9G;
+  const factory OneOf9.h(H value) = OneOf9H;
+  const factory OneOf9.i(I value) = OneOf9I;
   Object? get value;
 
   factory OneOf9.from(Object? value) {
