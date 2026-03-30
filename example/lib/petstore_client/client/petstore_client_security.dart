@@ -6,7 +6,7 @@ final class PetstoreClientSecurity {
   const PetstoreClientSecurity._();
 
   static final securitySchemes = <String, ApiSecurityScheme>{
-    'petstore_auth': ApiSecurityScheme(name: 'petstore_auth', type: ApiSecuritySchemeType.oauth2, scheme: null, bearerFormat: null, parameterName: null, location: null, openIdConnectUrl: null, flows: [ApiOAuthFlow(type: ApiOAuthFlowType.implicit, authorizationUrl: 'https://petstore3.swagger.io/oauth/authorize', tokenUrl: null, refreshUrl: null, scopes: {'write:pets': 'modify pets in your account', 'read:pets': 'read your pets'})]),
+    'petstore_auth': ApiSecurityScheme(name: 'petstore_auth', type: ApiSecuritySchemeType.oauth2, scheme: null, bearerFormat: null, parameterName: null, location: null, openIdConnectUrl: null, flows: [ApiOAuthFlow(type: ApiOAuthFlowType.implicit, authorizationUrl: 'https://petstore3.swagger.io/oauth/authorize', tokenUrl: null, refreshUrl: null, deviceAuthorizationUrl: null, scopes: {'write:pets': 'modify pets in your account', 'read:pets': 'read your pets'})]),
     'api_key': ApiSecurityScheme(name: 'api_key', type: ApiSecuritySchemeType.apiKey, scheme: null, bearerFormat: null, parameterName: 'api_key', location: ApiKeyLocation.header, openIdConnectUrl: null, flows: []),
   };
 

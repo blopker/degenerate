@@ -59,8 +59,12 @@ return execute(
 /// `GET /user/login`
 Future<ApiResult<String, Never>> loginUser({String? username, String? password, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-if (username != null) queryParameters['username'] = username;
-if (password != null) queryParameters['password'] = password;
+if (username != null) {
+  queryParameters['username'] = username;
+}
+if (password != null) {
+  queryParameters['password'] = password;
+}
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

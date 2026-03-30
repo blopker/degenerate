@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   'complete': ?complete,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'petId', 'quantity', 'shipDate', 'status', 'complete'}.contains(key)); } 
 Order copyWith({int Function()? id, int Function()? petId, int Function()? quantity, DateTime Function()? shipDate, OrderStatus Function()? status, bool Function()? complete, }) { return Order(
   id: id != null ? id() : this.id,
   petId: petId != null ? petId() : this.petId,

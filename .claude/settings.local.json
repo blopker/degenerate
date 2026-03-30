@@ -19,7 +19,8 @@
       "WebSearch",
       "Bash(gh search:*)",
       "Bash(grep:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(xargs -I {} basename {})"
     ]
   }
 }

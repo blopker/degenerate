@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'phone': ?phone,
   'userStatus': ?userStatus,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return true; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'username', 'firstName', 'lastName', 'email', 'password', 'phone', 'userStatus'}.contains(key)); } 
 User copyWith({int Function()? id, String Function()? username, String Function()? firstName, String Function()? lastName, String Function()? email, String Function()? password, String Function()? phone, int Function()? userStatus, }) { return User(
   id: id != null ? id() : this.id,
   username: username != null ? username() : this.username,
