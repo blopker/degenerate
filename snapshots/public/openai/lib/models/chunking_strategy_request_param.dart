@@ -5,8 +5,8 @@ sealed class ChunkingStrategyRequestParam {const ChunkingStrategyRequestParam();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ChunkingStrategyRequestParam.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'AutoChunkingStrategyRequestParam' => ChunkingStrategyRequestParamAutoChunkingStrategyRequestParam.fromJson(json),
-  'StaticChunkingStrategyRequestParam' => ChunkingStrategyRequestParamStaticChunkingStrategyRequestParam.fromJson(json),
+  'auto' => ChunkingStrategyRequestParamAuto.fromJson(json),
+  'static' => ChunkingStrategyRequestParamStatic.fromJson(json),
   _ => ChunkingStrategyRequestParam$Unknown(json),
 }; }
 
@@ -16,31 +16,31 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChunkingStrategyRequestParam$Unknown; } 
  }
-final class ChunkingStrategyRequestParamAutoChunkingStrategyRequestParam extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParamAutoChunkingStrategyRequestParam(this.autoChunkingStrategyRequestParam);
+final class ChunkingStrategyRequestParamAuto extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParamAuto(this.autoChunkingStrategyRequestParam);
 
-factory ChunkingStrategyRequestParamAutoChunkingStrategyRequestParam.fromJson(Map<String, dynamic> json) { return ChunkingStrategyRequestParamAutoChunkingStrategyRequestParam(AutoChunkingStrategyRequestParam.fromJson(json)); }
+factory ChunkingStrategyRequestParamAuto.fromJson(Map<String, dynamic> json) { return ChunkingStrategyRequestParamAuto(AutoChunkingStrategyRequestParam.fromJson(json)); }
 
 final AutoChunkingStrategyRequestParam autoChunkingStrategyRequestParam;
 
-@override String get type { return 'AutoChunkingStrategyRequestParam'; } 
+@override String get type { return 'auto'; } 
 @override Map<String, dynamic> toJson() { return {...autoChunkingStrategyRequestParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChunkingStrategyRequestParamAutoChunkingStrategyRequestParam && autoChunkingStrategyRequestParam == other.autoChunkingStrategyRequestParam; } 
+    other is ChunkingStrategyRequestParamAuto && autoChunkingStrategyRequestParam == other.autoChunkingStrategyRequestParam; } 
 @override int get hashCode { return autoChunkingStrategyRequestParam.hashCode; } 
-@override String toString() { return 'ChunkingStrategyRequestParamAutoChunkingStrategyRequestParam(autoChunkingStrategyRequestParam: $autoChunkingStrategyRequestParam)'; } 
+@override String toString() { return 'ChunkingStrategyRequestParamAuto(autoChunkingStrategyRequestParam: $autoChunkingStrategyRequestParam)'; } 
  }
-final class ChunkingStrategyRequestParamStaticChunkingStrategyRequestParam extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParamStaticChunkingStrategyRequestParam(this.staticChunkingStrategyRequestParam);
+final class ChunkingStrategyRequestParamStatic extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParamStatic(this.staticChunkingStrategyRequestParam);
 
-factory ChunkingStrategyRequestParamStaticChunkingStrategyRequestParam.fromJson(Map<String, dynamic> json) { return ChunkingStrategyRequestParamStaticChunkingStrategyRequestParam(StaticChunkingStrategyRequestParam.fromJson(json)); }
+factory ChunkingStrategyRequestParamStatic.fromJson(Map<String, dynamic> json) { return ChunkingStrategyRequestParamStatic(StaticChunkingStrategyRequestParam.fromJson(json)); }
 
 final StaticChunkingStrategyRequestParam staticChunkingStrategyRequestParam;
 
-@override String get type { return 'StaticChunkingStrategyRequestParam'; } 
+@override String get type { return 'static'; } 
 @override Map<String, dynamic> toJson() { return {...staticChunkingStrategyRequestParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChunkingStrategyRequestParamStaticChunkingStrategyRequestParam && staticChunkingStrategyRequestParam == other.staticChunkingStrategyRequestParam; } 
+    other is ChunkingStrategyRequestParamStatic && staticChunkingStrategyRequestParam == other.staticChunkingStrategyRequestParam; } 
 @override int get hashCode { return staticChunkingStrategyRequestParam.hashCode; } 
-@override String toString() { return 'ChunkingStrategyRequestParamStaticChunkingStrategyRequestParam(staticChunkingStrategyRequestParam: $staticChunkingStrategyRequestParam)'; } 
+@override String toString() { return 'ChunkingStrategyRequestParamStatic(staticChunkingStrategyRequestParam: $staticChunkingStrategyRequestParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

@@ -4,7 +4,7 @@ import 'comparison_filter.dart';sealed class CompoundFilterFilters {const Compou
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CompoundFilterFilters.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'ComparisonFilter' => CompoundFilterFiltersComparisonFilter.fromJson(json),
+  'eq' => CompoundFilterFiltersEq.fromJson(json),
   _ => CompoundFilterFilters$Unknown(json),
 }; }
 
@@ -14,18 +14,18 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CompoundFilterFilters$Unknown; } 
  }
-final class CompoundFilterFiltersComparisonFilter extends CompoundFilterFilters {const CompoundFilterFiltersComparisonFilter(this.comparisonFilter);
+final class CompoundFilterFiltersEq extends CompoundFilterFilters {const CompoundFilterFiltersEq(this.comparisonFilter);
 
-factory CompoundFilterFiltersComparisonFilter.fromJson(Map<String, dynamic> json) { return CompoundFilterFiltersComparisonFilter(ComparisonFilter.fromJson(json)); }
+factory CompoundFilterFiltersEq.fromJson(Map<String, dynamic> json) { return CompoundFilterFiltersEq(ComparisonFilter.fromJson(json)); }
 
 final ComparisonFilter comparisonFilter;
 
-@override String get type { return 'ComparisonFilter'; } 
+@override String get type { return 'eq'; } 
 @override Map<String, dynamic> toJson() { return {...comparisonFilter.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CompoundFilterFiltersComparisonFilter && comparisonFilter == other.comparisonFilter; } 
+    other is CompoundFilterFiltersEq && comparisonFilter == other.comparisonFilter; } 
 @override int get hashCode { return comparisonFilter.hashCode; } 
-@override String toString() { return 'CompoundFilterFiltersComparisonFilter(comparisonFilter: $comparisonFilter)'; } 
+@override String toString() { return 'CompoundFilterFiltersEq(comparisonFilter: $comparisonFilter)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

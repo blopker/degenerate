@@ -5,8 +5,8 @@ sealed class FunctionShellCallItemParamEnvironment {const FunctionShellCallItemP
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory FunctionShellCallItemParamEnvironment.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'LocalEnvironmentParam' => FunctionShellCallItemParamEnvironmentLocalEnvironmentParam.fromJson(json),
-  'ContainerReferenceParam' => FunctionShellCallItemParamEnvironmentContainerReferenceParam.fromJson(json),
+  'local' => FunctionShellCallItemParamEnvironmentLocal.fromJson(json),
+  'container_reference' => FunctionShellCallItemParamEnvironmentContainerReference.fromJson(json),
   _ => FunctionShellCallItemParamEnvironment$Unknown(json),
 }; }
 
@@ -16,31 +16,31 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FunctionShellCallItemParamEnvironment$Unknown; } 
  }
-final class FunctionShellCallItemParamEnvironmentLocalEnvironmentParam extends FunctionShellCallItemParamEnvironment {const FunctionShellCallItemParamEnvironmentLocalEnvironmentParam(this.localEnvironmentParam);
+final class FunctionShellCallItemParamEnvironmentLocal extends FunctionShellCallItemParamEnvironment {const FunctionShellCallItemParamEnvironmentLocal(this.localEnvironmentParam);
 
-factory FunctionShellCallItemParamEnvironmentLocalEnvironmentParam.fromJson(Map<String, dynamic> json) { return FunctionShellCallItemParamEnvironmentLocalEnvironmentParam(LocalEnvironmentParam.fromJson(json)); }
+factory FunctionShellCallItemParamEnvironmentLocal.fromJson(Map<String, dynamic> json) { return FunctionShellCallItemParamEnvironmentLocal(LocalEnvironmentParam.fromJson(json)); }
 
 final LocalEnvironmentParam localEnvironmentParam;
 
-@override String get type { return 'LocalEnvironmentParam'; } 
+@override String get type { return 'local'; } 
 @override Map<String, dynamic> toJson() { return {...localEnvironmentParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallItemParamEnvironmentLocalEnvironmentParam && localEnvironmentParam == other.localEnvironmentParam; } 
+    other is FunctionShellCallItemParamEnvironmentLocal && localEnvironmentParam == other.localEnvironmentParam; } 
 @override int get hashCode { return localEnvironmentParam.hashCode; } 
-@override String toString() { return 'FunctionShellCallItemParamEnvironmentLocalEnvironmentParam(localEnvironmentParam: $localEnvironmentParam)'; } 
+@override String toString() { return 'FunctionShellCallItemParamEnvironmentLocal(localEnvironmentParam: $localEnvironmentParam)'; } 
  }
-final class FunctionShellCallItemParamEnvironmentContainerReferenceParam extends FunctionShellCallItemParamEnvironment {const FunctionShellCallItemParamEnvironmentContainerReferenceParam(this.containerReferenceParam);
+final class FunctionShellCallItemParamEnvironmentContainerReference extends FunctionShellCallItemParamEnvironment {const FunctionShellCallItemParamEnvironmentContainerReference(this.containerReferenceParam);
 
-factory FunctionShellCallItemParamEnvironmentContainerReferenceParam.fromJson(Map<String, dynamic> json) { return FunctionShellCallItemParamEnvironmentContainerReferenceParam(ContainerReferenceParam.fromJson(json)); }
+factory FunctionShellCallItemParamEnvironmentContainerReference.fromJson(Map<String, dynamic> json) { return FunctionShellCallItemParamEnvironmentContainerReference(ContainerReferenceParam.fromJson(json)); }
 
 final ContainerReferenceParam containerReferenceParam;
 
-@override String get type { return 'ContainerReferenceParam'; } 
+@override String get type { return 'container_reference'; } 
 @override Map<String, dynamic> toJson() { return {...containerReferenceParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallItemParamEnvironmentContainerReferenceParam && containerReferenceParam == other.containerReferenceParam; } 
+    other is FunctionShellCallItemParamEnvironmentContainerReference && containerReferenceParam == other.containerReferenceParam; } 
 @override int get hashCode { return containerReferenceParam.hashCode; } 
-@override String toString() { return 'FunctionShellCallItemParamEnvironmentContainerReferenceParam(containerReferenceParam: $containerReferenceParam)'; } 
+@override String toString() { return 'FunctionShellCallItemParamEnvironmentContainerReference(containerReferenceParam: $containerReferenceParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

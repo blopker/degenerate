@@ -5,8 +5,8 @@ sealed class AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterprete
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory AutoCodeInterpreterToolParamNetworkPolicy.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'ContainerNetworkPolicyDisabledParam' => AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyDisabledParam.fromJson(json),
-  'ContainerNetworkPolicyAllowlistParam' => AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyAllowlistParam.fromJson(json),
+  'disabled' => AutoCodeInterpreterToolParamNetworkPolicyDisabled.fromJson(json),
+  'allowlist' => AutoCodeInterpreterToolParamNetworkPolicyAllowlist.fromJson(json),
   _ => AutoCodeInterpreterToolParamNetworkPolicy$Unknown(json),
 }; }
 
@@ -16,31 +16,31 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AutoCodeInterpreterToolParamNetworkPolicy$Unknown; } 
  }
-final class AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyDisabledParam extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyDisabledParam(this.containerNetworkPolicyDisabledParam);
+final class AutoCodeInterpreterToolParamNetworkPolicyDisabled extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicyDisabled(this.containerNetworkPolicyDisabledParam);
 
-factory AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyDisabledParam.fromJson(Map<String, dynamic> json) { return AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyDisabledParam(ContainerNetworkPolicyDisabledParam.fromJson(json)); }
+factory AutoCodeInterpreterToolParamNetworkPolicyDisabled.fromJson(Map<String, dynamic> json) { return AutoCodeInterpreterToolParamNetworkPolicyDisabled(ContainerNetworkPolicyDisabledParam.fromJson(json)); }
 
 final ContainerNetworkPolicyDisabledParam containerNetworkPolicyDisabledParam;
 
-@override String get type { return 'ContainerNetworkPolicyDisabledParam'; } 
+@override String get type { return 'disabled'; } 
 @override Map<String, dynamic> toJson() { return {...containerNetworkPolicyDisabledParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyDisabledParam && containerNetworkPolicyDisabledParam == other.containerNetworkPolicyDisabledParam; } 
+    other is AutoCodeInterpreterToolParamNetworkPolicyDisabled && containerNetworkPolicyDisabledParam == other.containerNetworkPolicyDisabledParam; } 
 @override int get hashCode { return containerNetworkPolicyDisabledParam.hashCode; } 
-@override String toString() { return 'AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyDisabledParam(containerNetworkPolicyDisabledParam: $containerNetworkPolicyDisabledParam)'; } 
+@override String toString() { return 'AutoCodeInterpreterToolParamNetworkPolicyDisabled(containerNetworkPolicyDisabledParam: $containerNetworkPolicyDisabledParam)'; } 
  }
-final class AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyAllowlistParam extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyAllowlistParam(this.containerNetworkPolicyAllowlistParam);
+final class AutoCodeInterpreterToolParamNetworkPolicyAllowlist extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicyAllowlist(this.containerNetworkPolicyAllowlistParam);
 
-factory AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyAllowlistParam.fromJson(Map<String, dynamic> json) { return AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyAllowlistParam(ContainerNetworkPolicyAllowlistParam.fromJson(json)); }
+factory AutoCodeInterpreterToolParamNetworkPolicyAllowlist.fromJson(Map<String, dynamic> json) { return AutoCodeInterpreterToolParamNetworkPolicyAllowlist(ContainerNetworkPolicyAllowlistParam.fromJson(json)); }
 
 final ContainerNetworkPolicyAllowlistParam containerNetworkPolicyAllowlistParam;
 
-@override String get type { return 'ContainerNetworkPolicyAllowlistParam'; } 
+@override String get type { return 'allowlist'; } 
 @override Map<String, dynamic> toJson() { return {...containerNetworkPolicyAllowlistParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyAllowlistParam && containerNetworkPolicyAllowlistParam == other.containerNetworkPolicyAllowlistParam; } 
+    other is AutoCodeInterpreterToolParamNetworkPolicyAllowlist && containerNetworkPolicyAllowlistParam == other.containerNetworkPolicyAllowlistParam; } 
 @override int get hashCode { return containerNetworkPolicyAllowlistParam.hashCode; } 
-@override String toString() { return 'AutoCodeInterpreterToolParamNetworkPolicyContainerNetworkPolicyAllowlistParam(containerNetworkPolicyAllowlistParam: $containerNetworkPolicyAllowlistParam)'; } 
+@override String toString() { return 'AutoCodeInterpreterToolParamNetworkPolicyAllowlist(containerNetworkPolicyAllowlistParam: $containerNetworkPolicyAllowlistParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

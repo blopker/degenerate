@@ -4,7 +4,7 @@ import 'easy_input_message.dart';import 'item.dart';import 'item_reference_param
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InputItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'EasyInputMessage' => InputItemEasyInputMessage.fromJson(json),
+  'message' => InputItemMessage.fromJson(json),
   'Item' => InputItemItem.fromJson(json),
   'ItemReferenceParam' => InputItemItemReferenceParam.fromJson(json),
   _ => InputItem$Unknown(json),
@@ -16,18 +16,18 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InputItem$Unknown; } 
  }
-final class InputItemEasyInputMessage extends InputItem {const InputItemEasyInputMessage(this.easyInputMessage);
+final class InputItemMessage extends InputItem {const InputItemMessage(this.easyInputMessage);
 
-factory InputItemEasyInputMessage.fromJson(Map<String, dynamic> json) { return InputItemEasyInputMessage(EasyInputMessage.fromJson(json)); }
+factory InputItemMessage.fromJson(Map<String, dynamic> json) { return InputItemMessage(EasyInputMessage.fromJson(json)); }
 
 final EasyInputMessage easyInputMessage;
 
-@override String get type { return 'EasyInputMessage'; } 
+@override String get type { return 'message'; } 
 @override Map<String, dynamic> toJson() { return {...easyInputMessage.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputItemEasyInputMessage && easyInputMessage == other.easyInputMessage; } 
+    other is InputItemMessage && easyInputMessage == other.easyInputMessage; } 
 @override int get hashCode { return easyInputMessage.hashCode; } 
-@override String toString() { return 'InputItemEasyInputMessage(easyInputMessage: $easyInputMessage)'; } 
+@override String toString() { return 'InputItemMessage(easyInputMessage: $easyInputMessage)'; } 
  }
 final class InputItemItem extends InputItem {const InputItemItem(this.item);
 

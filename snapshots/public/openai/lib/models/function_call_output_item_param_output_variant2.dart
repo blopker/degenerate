@@ -5,9 +5,9 @@ sealed class FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutput
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory FunctionCallOutputItemParamOutputVariant2.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'InputTextContentParam' => FunctionCallOutputItemParamOutputVariant2InputTextContentParam.fromJson(json),
-  'InputImageContentParamAutoParam' => FunctionCallOutputItemParamOutputVariant2InputImageContentParamAutoParam.fromJson(json),
-  'InputFileContentParam' => FunctionCallOutputItemParamOutputVariant2InputFileContentParam.fromJson(json),
+  'input_text' => FunctionCallOutputItemParamOutputVariant2InputText.fromJson(json),
+  'input_image' => FunctionCallOutputItemParamOutputVariant2InputImage.fromJson(json),
+  'input_file' => FunctionCallOutputItemParamOutputVariant2InputFile.fromJson(json),
   _ => FunctionCallOutputItemParamOutputVariant2$Unknown(json),
 }; }
 
@@ -17,44 +17,44 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FunctionCallOutputItemParamOutputVariant2$Unknown; } 
  }
-final class FunctionCallOutputItemParamOutputVariant2InputTextContentParam extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2InputTextContentParam(this.inputTextContentParam);
+final class FunctionCallOutputItemParamOutputVariant2InputText extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2InputText(this.inputTextContentParam);
 
-factory FunctionCallOutputItemParamOutputVariant2InputTextContentParam.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParamOutputVariant2InputTextContentParam(InputTextContentParam.fromJson(json)); }
+factory FunctionCallOutputItemParamOutputVariant2InputText.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParamOutputVariant2InputText(InputTextContentParam.fromJson(json)); }
 
 final InputTextContentParam inputTextContentParam;
 
-@override String get type { return 'InputTextContentParam'; } 
+@override String get type { return 'input_text'; } 
 @override Map<String, dynamic> toJson() { return {...inputTextContentParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionCallOutputItemParamOutputVariant2InputTextContentParam && inputTextContentParam == other.inputTextContentParam; } 
+    other is FunctionCallOutputItemParamOutputVariant2InputText && inputTextContentParam == other.inputTextContentParam; } 
 @override int get hashCode { return inputTextContentParam.hashCode; } 
-@override String toString() { return 'FunctionCallOutputItemParamOutputVariant2InputTextContentParam(inputTextContentParam: $inputTextContentParam)'; } 
+@override String toString() { return 'FunctionCallOutputItemParamOutputVariant2InputText(inputTextContentParam: $inputTextContentParam)'; } 
  }
-final class FunctionCallOutputItemParamOutputVariant2InputImageContentParamAutoParam extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2InputImageContentParamAutoParam(this.inputImageContentParamAutoParam);
+final class FunctionCallOutputItemParamOutputVariant2InputImage extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2InputImage(this.inputImageContentParamAutoParam);
 
-factory FunctionCallOutputItemParamOutputVariant2InputImageContentParamAutoParam.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParamOutputVariant2InputImageContentParamAutoParam(InputImageContentParamAutoParam.fromJson(json)); }
+factory FunctionCallOutputItemParamOutputVariant2InputImage.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParamOutputVariant2InputImage(InputImageContentParamAutoParam.fromJson(json)); }
 
 final InputImageContentParamAutoParam inputImageContentParamAutoParam;
 
-@override String get type { return 'InputImageContentParamAutoParam'; } 
+@override String get type { return 'input_image'; } 
 @override Map<String, dynamic> toJson() { return {...inputImageContentParamAutoParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionCallOutputItemParamOutputVariant2InputImageContentParamAutoParam && inputImageContentParamAutoParam == other.inputImageContentParamAutoParam; } 
+    other is FunctionCallOutputItemParamOutputVariant2InputImage && inputImageContentParamAutoParam == other.inputImageContentParamAutoParam; } 
 @override int get hashCode { return inputImageContentParamAutoParam.hashCode; } 
-@override String toString() { return 'FunctionCallOutputItemParamOutputVariant2InputImageContentParamAutoParam(inputImageContentParamAutoParam: $inputImageContentParamAutoParam)'; } 
+@override String toString() { return 'FunctionCallOutputItemParamOutputVariant2InputImage(inputImageContentParamAutoParam: $inputImageContentParamAutoParam)'; } 
  }
-final class FunctionCallOutputItemParamOutputVariant2InputFileContentParam extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2InputFileContentParam(this.inputFileContentParam);
+final class FunctionCallOutputItemParamOutputVariant2InputFile extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2InputFile(this.inputFileContentParam);
 
-factory FunctionCallOutputItemParamOutputVariant2InputFileContentParam.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParamOutputVariant2InputFileContentParam(InputFileContentParam.fromJson(json)); }
+factory FunctionCallOutputItemParamOutputVariant2InputFile.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParamOutputVariant2InputFile(InputFileContentParam.fromJson(json)); }
 
 final InputFileContentParam inputFileContentParam;
 
-@override String get type { return 'InputFileContentParam'; } 
+@override String get type { return 'input_file'; } 
 @override Map<String, dynamic> toJson() { return {...inputFileContentParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionCallOutputItemParamOutputVariant2InputFileContentParam && inputFileContentParam == other.inputFileContentParam; } 
+    other is FunctionCallOutputItemParamOutputVariant2InputFile && inputFileContentParam == other.inputFileContentParam; } 
 @override int get hashCode { return inputFileContentParam.hashCode; } 
-@override String toString() { return 'FunctionCallOutputItemParamOutputVariant2InputFileContentParam(inputFileContentParam: $inputFileContentParam)'; } 
+@override String toString() { return 'FunctionCallOutputItemParamOutputVariant2InputFile(inputFileContentParam: $inputFileContentParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

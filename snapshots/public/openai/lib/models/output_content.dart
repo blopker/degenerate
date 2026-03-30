@@ -4,9 +4,9 @@ import 'output_text_content.dart';import 'reasoning_text_content.dart';import 'r
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory OutputContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'OutputTextContent' => OutputContentOutputTextContent.fromJson(json),
-  'RefusalContent' => OutputContentRefusalContent.fromJson(json),
-  'ReasoningTextContent' => OutputContentReasoningTextContent.fromJson(json),
+  'output_text' => OutputContentOutputText.fromJson(json),
+  'refusal' => OutputContentRefusal.fromJson(json),
+  'reasoning_text' => OutputContentReasoningText.fromJson(json),
   _ => OutputContent$Unknown(json),
 }; }
 
@@ -16,44 +16,44 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OutputContent$Unknown; } 
  }
-final class OutputContentOutputTextContent extends OutputContent {const OutputContentOutputTextContent(this.outputTextContent);
+final class OutputContentOutputText extends OutputContent {const OutputContentOutputText(this.outputTextContent);
 
-factory OutputContentOutputTextContent.fromJson(Map<String, dynamic> json) { return OutputContentOutputTextContent(OutputTextContent.fromJson(json)); }
+factory OutputContentOutputText.fromJson(Map<String, dynamic> json) { return OutputContentOutputText(OutputTextContent.fromJson(json)); }
 
 final OutputTextContent outputTextContent;
 
-@override String get type { return 'OutputTextContent'; } 
+@override String get type { return 'output_text'; } 
 @override Map<String, dynamic> toJson() { return {...outputTextContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputContentOutputTextContent && outputTextContent == other.outputTextContent; } 
+    other is OutputContentOutputText && outputTextContent == other.outputTextContent; } 
 @override int get hashCode { return outputTextContent.hashCode; } 
-@override String toString() { return 'OutputContentOutputTextContent(outputTextContent: $outputTextContent)'; } 
+@override String toString() { return 'OutputContentOutputText(outputTextContent: $outputTextContent)'; } 
  }
-final class OutputContentRefusalContent extends OutputContent {const OutputContentRefusalContent(this.refusalContent);
+final class OutputContentRefusal extends OutputContent {const OutputContentRefusal(this.refusalContent);
 
-factory OutputContentRefusalContent.fromJson(Map<String, dynamic> json) { return OutputContentRefusalContent(RefusalContent.fromJson(json)); }
+factory OutputContentRefusal.fromJson(Map<String, dynamic> json) { return OutputContentRefusal(RefusalContent.fromJson(json)); }
 
 final RefusalContent refusalContent;
 
-@override String get type { return 'RefusalContent'; } 
+@override String get type { return 'refusal'; } 
 @override Map<String, dynamic> toJson() { return {...refusalContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputContentRefusalContent && refusalContent == other.refusalContent; } 
+    other is OutputContentRefusal && refusalContent == other.refusalContent; } 
 @override int get hashCode { return refusalContent.hashCode; } 
-@override String toString() { return 'OutputContentRefusalContent(refusalContent: $refusalContent)'; } 
+@override String toString() { return 'OutputContentRefusal(refusalContent: $refusalContent)'; } 
  }
-final class OutputContentReasoningTextContent extends OutputContent {const OutputContentReasoningTextContent(this.reasoningTextContent);
+final class OutputContentReasoningText extends OutputContent {const OutputContentReasoningText(this.reasoningTextContent);
 
-factory OutputContentReasoningTextContent.fromJson(Map<String, dynamic> json) { return OutputContentReasoningTextContent(ReasoningTextContent.fromJson(json)); }
+factory OutputContentReasoningText.fromJson(Map<String, dynamic> json) { return OutputContentReasoningText(ReasoningTextContent.fromJson(json)); }
 
 final ReasoningTextContent reasoningTextContent;
 
-@override String get type { return 'ReasoningTextContent'; } 
+@override String get type { return 'reasoning_text'; } 
 @override Map<String, dynamic> toJson() { return {...reasoningTextContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputContentReasoningTextContent && reasoningTextContent == other.reasoningTextContent; } 
+    other is OutputContentReasoningText && reasoningTextContent == other.reasoningTextContent; } 
 @override int get hashCode { return reasoningTextContent.hashCode; } 
-@override String toString() { return 'OutputContentReasoningTextContent(reasoningTextContent: $reasoningTextContent)'; } 
+@override String toString() { return 'OutputContentReasoningText(reasoningTextContent: $reasoningTextContent)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

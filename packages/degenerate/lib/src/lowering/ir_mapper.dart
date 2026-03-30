@@ -753,7 +753,22 @@ class IrMapper {
           final dartRefName =
               _nameMapping[rawRefName] ??
               sanitizeDartName(toPascalCase(rawRefName));
-          mapping[rawRefName] = IrTypeRef(dartRefName);
+          // Try to extract the actual discriminator enum value from the
+          // referenced schema (e.g. role: enum: ['system'] → 'system').
+          var key = rawRefName;
+          final refSchema = _rawSchemas[rawRefName];
+          if (refSchema is Map<String, dynamic>) {
+            final flatRef = _flattener.flatten(refSchema);
+            final refProps =
+                flatRef['properties'] as Map<String, dynamic>?;
+            final discProp =
+                refProps?[propertyName] as Map<String, dynamic>?;
+            final enumVals = discProp?['enum'] as List?;
+            if (enumVals != null && enumVals.isNotEmpty) {
+              key = enumVals.first.toString();
+            }
+          }
+          mapping[key] = IrTypeRef(dartRefName);
         } else if (variant is Map<String, dynamic> &&
             (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
           final hint =

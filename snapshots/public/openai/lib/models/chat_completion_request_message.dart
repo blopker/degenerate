@@ -4,12 +4,12 @@ import 'chat_completion_request_assistant_message.dart';import 'chat_completion_
 
 /// Deserialize from JSON, dispatching on the `role` discriminator.
 factory ChatCompletionRequestMessage.fromJson(Map<String, dynamic> json) { return switch (json['role']) {
-  'ChatCompletionRequestDeveloperMessage' => ChatCompletionRequestMessageChatCompletionRequestDeveloperMessage.fromJson(json),
-  'ChatCompletionRequestSystemMessage' => ChatCompletionRequestMessageChatCompletionRequestSystemMessage.fromJson(json),
-  'ChatCompletionRequestUserMessage' => ChatCompletionRequestMessageChatCompletionRequestUserMessage.fromJson(json),
-  'ChatCompletionRequestAssistantMessage' => ChatCompletionRequestMessageChatCompletionRequestAssistantMessage.fromJson(json),
-  'ChatCompletionRequestToolMessage' => ChatCompletionRequestMessageChatCompletionRequestToolMessage.fromJson(json),
-  'ChatCompletionRequestFunctionMessage' => ChatCompletionRequestMessageChatCompletionRequestFunctionMessage.fromJson(json),
+  'developer' => ChatCompletionRequestMessageDeveloper.fromJson(json),
+  'system' => ChatCompletionRequestMessageSystem.fromJson(json),
+  'user' => ChatCompletionRequestMessageUser.fromJson(json),
+  'assistant' => ChatCompletionRequestMessageAssistant.fromJson(json),
+  'tool' => ChatCompletionRequestMessageTool.fromJson(json),
+  'function' => ChatCompletionRequestMessageFunction.fromJson(json),
   _ => ChatCompletionRequestMessage$Unknown(json),
 }; }
 
@@ -19,83 +19,83 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChatCompletionRequestMessage$Unknown; } 
  }
-final class ChatCompletionRequestMessageChatCompletionRequestDeveloperMessage extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageChatCompletionRequestDeveloperMessage(this.chatCompletionRequestDeveloperMessage);
+final class ChatCompletionRequestMessageDeveloper extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageDeveloper(this.chatCompletionRequestDeveloperMessage);
 
-factory ChatCompletionRequestMessageChatCompletionRequestDeveloperMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageChatCompletionRequestDeveloperMessage(ChatCompletionRequestDeveloperMessage.fromJson(json)); }
+factory ChatCompletionRequestMessageDeveloper.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageDeveloper(ChatCompletionRequestDeveloperMessage.fromJson(json)); }
 
 final ChatCompletionRequestDeveloperMessage chatCompletionRequestDeveloperMessage;
 
-@override String get role { return 'ChatCompletionRequestDeveloperMessage'; } 
+@override String get role { return 'developer'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestDeveloperMessage.toJson(), 'role': role}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestMessageChatCompletionRequestDeveloperMessage && chatCompletionRequestDeveloperMessage == other.chatCompletionRequestDeveloperMessage; } 
+    other is ChatCompletionRequestMessageDeveloper && chatCompletionRequestDeveloperMessage == other.chatCompletionRequestDeveloperMessage; } 
 @override int get hashCode { return chatCompletionRequestDeveloperMessage.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageChatCompletionRequestDeveloperMessage(chatCompletionRequestDeveloperMessage: $chatCompletionRequestDeveloperMessage)'; } 
+@override String toString() { return 'ChatCompletionRequestMessageDeveloper(chatCompletionRequestDeveloperMessage: $chatCompletionRequestDeveloperMessage)'; } 
  }
-final class ChatCompletionRequestMessageChatCompletionRequestSystemMessage extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageChatCompletionRequestSystemMessage(this.chatCompletionRequestSystemMessage);
+final class ChatCompletionRequestMessageSystem extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageSystem(this.chatCompletionRequestSystemMessage);
 
-factory ChatCompletionRequestMessageChatCompletionRequestSystemMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageChatCompletionRequestSystemMessage(ChatCompletionRequestSystemMessage.fromJson(json)); }
+factory ChatCompletionRequestMessageSystem.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageSystem(ChatCompletionRequestSystemMessage.fromJson(json)); }
 
 final ChatCompletionRequestSystemMessage chatCompletionRequestSystemMessage;
 
-@override String get role { return 'ChatCompletionRequestSystemMessage'; } 
+@override String get role { return 'system'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestSystemMessage.toJson(), 'role': role}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestMessageChatCompletionRequestSystemMessage && chatCompletionRequestSystemMessage == other.chatCompletionRequestSystemMessage; } 
+    other is ChatCompletionRequestMessageSystem && chatCompletionRequestSystemMessage == other.chatCompletionRequestSystemMessage; } 
 @override int get hashCode { return chatCompletionRequestSystemMessage.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageChatCompletionRequestSystemMessage(chatCompletionRequestSystemMessage: $chatCompletionRequestSystemMessage)'; } 
+@override String toString() { return 'ChatCompletionRequestMessageSystem(chatCompletionRequestSystemMessage: $chatCompletionRequestSystemMessage)'; } 
  }
-final class ChatCompletionRequestMessageChatCompletionRequestUserMessage extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageChatCompletionRequestUserMessage(this.chatCompletionRequestUserMessage);
+final class ChatCompletionRequestMessageUser extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageUser(this.chatCompletionRequestUserMessage);
 
-factory ChatCompletionRequestMessageChatCompletionRequestUserMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageChatCompletionRequestUserMessage(ChatCompletionRequestUserMessage.fromJson(json)); }
+factory ChatCompletionRequestMessageUser.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageUser(ChatCompletionRequestUserMessage.fromJson(json)); }
 
 final ChatCompletionRequestUserMessage chatCompletionRequestUserMessage;
 
-@override String get role { return 'ChatCompletionRequestUserMessage'; } 
+@override String get role { return 'user'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestUserMessage.toJson(), 'role': role}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestMessageChatCompletionRequestUserMessage && chatCompletionRequestUserMessage == other.chatCompletionRequestUserMessage; } 
+    other is ChatCompletionRequestMessageUser && chatCompletionRequestUserMessage == other.chatCompletionRequestUserMessage; } 
 @override int get hashCode { return chatCompletionRequestUserMessage.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageChatCompletionRequestUserMessage(chatCompletionRequestUserMessage: $chatCompletionRequestUserMessage)'; } 
+@override String toString() { return 'ChatCompletionRequestMessageUser(chatCompletionRequestUserMessage: $chatCompletionRequestUserMessage)'; } 
  }
-final class ChatCompletionRequestMessageChatCompletionRequestAssistantMessage extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageChatCompletionRequestAssistantMessage(this.chatCompletionRequestAssistantMessage);
+final class ChatCompletionRequestMessageAssistant extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageAssistant(this.chatCompletionRequestAssistantMessage);
 
-factory ChatCompletionRequestMessageChatCompletionRequestAssistantMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageChatCompletionRequestAssistantMessage(ChatCompletionRequestAssistantMessage.fromJson(json)); }
+factory ChatCompletionRequestMessageAssistant.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageAssistant(ChatCompletionRequestAssistantMessage.fromJson(json)); }
 
 final ChatCompletionRequestAssistantMessage chatCompletionRequestAssistantMessage;
 
-@override String get role { return 'ChatCompletionRequestAssistantMessage'; } 
+@override String get role { return 'assistant'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestAssistantMessage.toJson(), 'role': role}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestMessageChatCompletionRequestAssistantMessage && chatCompletionRequestAssistantMessage == other.chatCompletionRequestAssistantMessage; } 
+    other is ChatCompletionRequestMessageAssistant && chatCompletionRequestAssistantMessage == other.chatCompletionRequestAssistantMessage; } 
 @override int get hashCode { return chatCompletionRequestAssistantMessage.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageChatCompletionRequestAssistantMessage(chatCompletionRequestAssistantMessage: $chatCompletionRequestAssistantMessage)'; } 
+@override String toString() { return 'ChatCompletionRequestMessageAssistant(chatCompletionRequestAssistantMessage: $chatCompletionRequestAssistantMessage)'; } 
  }
-final class ChatCompletionRequestMessageChatCompletionRequestToolMessage extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageChatCompletionRequestToolMessage(this.chatCompletionRequestToolMessage);
+final class ChatCompletionRequestMessageTool extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageTool(this.chatCompletionRequestToolMessage);
 
-factory ChatCompletionRequestMessageChatCompletionRequestToolMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageChatCompletionRequestToolMessage(ChatCompletionRequestToolMessage.fromJson(json)); }
+factory ChatCompletionRequestMessageTool.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageTool(ChatCompletionRequestToolMessage.fromJson(json)); }
 
 final ChatCompletionRequestToolMessage chatCompletionRequestToolMessage;
 
-@override String get role { return 'ChatCompletionRequestToolMessage'; } 
+@override String get role { return 'tool'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestToolMessage.toJson(), 'role': role}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestMessageChatCompletionRequestToolMessage && chatCompletionRequestToolMessage == other.chatCompletionRequestToolMessage; } 
+    other is ChatCompletionRequestMessageTool && chatCompletionRequestToolMessage == other.chatCompletionRequestToolMessage; } 
 @override int get hashCode { return chatCompletionRequestToolMessage.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageChatCompletionRequestToolMessage(chatCompletionRequestToolMessage: $chatCompletionRequestToolMessage)'; } 
+@override String toString() { return 'ChatCompletionRequestMessageTool(chatCompletionRequestToolMessage: $chatCompletionRequestToolMessage)'; } 
  }
-final class ChatCompletionRequestMessageChatCompletionRequestFunctionMessage extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageChatCompletionRequestFunctionMessage(this.chatCompletionRequestFunctionMessage);
+final class ChatCompletionRequestMessageFunction extends ChatCompletionRequestMessage {const ChatCompletionRequestMessageFunction(this.chatCompletionRequestFunctionMessage);
 
-factory ChatCompletionRequestMessageChatCompletionRequestFunctionMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageChatCompletionRequestFunctionMessage(ChatCompletionRequestFunctionMessage.fromJson(json)); }
+factory ChatCompletionRequestMessageFunction.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageFunction(ChatCompletionRequestFunctionMessage.fromJson(json)); }
 
 final ChatCompletionRequestFunctionMessage chatCompletionRequestFunctionMessage;
 
-@override String get role { return 'ChatCompletionRequestFunctionMessage'; } 
+@override String get role { return 'function'; } 
 @override Map<String, dynamic> toJson() { return {...chatCompletionRequestFunctionMessage.toJson(), 'role': role}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestMessageChatCompletionRequestFunctionMessage && chatCompletionRequestFunctionMessage == other.chatCompletionRequestFunctionMessage; } 
+    other is ChatCompletionRequestMessageFunction && chatCompletionRequestFunctionMessage == other.chatCompletionRequestFunctionMessage; } 
 @override int get hashCode { return chatCompletionRequestFunctionMessage.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageChatCompletionRequestFunctionMessage(chatCompletionRequestFunctionMessage: $chatCompletionRequestFunctionMessage)'; } 
+@override String toString() { return 'ChatCompletionRequestMessageFunction(chatCompletionRequestFunctionMessage: $chatCompletionRequestFunctionMessage)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

@@ -5,15 +5,15 @@ sealed class MessageContent {const MessageContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory MessageContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'InputTextContent' => MessageContentInputTextContent.fromJson(json),
-  'OutputTextContent' => MessageContentOutputTextContent.fromJson(json),
-  'TextContent' => MessageContentTextContent.fromJson(json),
-  'SummaryTextContent' => MessageContentSummaryTextContent.fromJson(json),
-  'ReasoningTextContent' => MessageContentReasoningTextContent.fromJson(json),
-  'RefusalContent' => MessageContentRefusalContent.fromJson(json),
-  'InputImageContent' => MessageContentInputImageContent.fromJson(json),
-  'ComputerScreenshotContent' => MessageContentComputerScreenshotContent.fromJson(json),
-  'InputFileContent' => MessageContentInputFileContent.fromJson(json),
+  'input_text' => MessageContentInputText.fromJson(json),
+  'output_text' => MessageContentOutputText.fromJson(json),
+  'text' => MessageContentText.fromJson(json),
+  'summary_text' => MessageContentSummaryText.fromJson(json),
+  'reasoning_text' => MessageContentReasoningText.fromJson(json),
+  'refusal' => MessageContentRefusal.fromJson(json),
+  'input_image' => MessageContentInputImage.fromJson(json),
+  'computer_screenshot' => MessageContentComputerScreenshot.fromJson(json),
+  'input_file' => MessageContentInputFile.fromJson(json),
   _ => MessageContent$Unknown(json),
 }; }
 
@@ -23,122 +23,122 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageContent$Unknown; } 
  }
-final class MessageContentInputTextContent extends MessageContent {const MessageContentInputTextContent(this.inputTextContent);
+final class MessageContentInputText extends MessageContent {const MessageContentInputText(this.inputTextContent);
 
-factory MessageContentInputTextContent.fromJson(Map<String, dynamic> json) { return MessageContentInputTextContent(InputTextContent.fromJson(json)); }
+factory MessageContentInputText.fromJson(Map<String, dynamic> json) { return MessageContentInputText(InputTextContent.fromJson(json)); }
 
 final InputTextContent inputTextContent;
 
-@override String get type { return 'InputTextContent'; } 
+@override String get type { return 'input_text'; } 
 @override Map<String, dynamic> toJson() { return {...inputTextContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentInputTextContent && inputTextContent == other.inputTextContent; } 
+    other is MessageContentInputText && inputTextContent == other.inputTextContent; } 
 @override int get hashCode { return inputTextContent.hashCode; } 
-@override String toString() { return 'MessageContentInputTextContent(inputTextContent: $inputTextContent)'; } 
+@override String toString() { return 'MessageContentInputText(inputTextContent: $inputTextContent)'; } 
  }
-final class MessageContentOutputTextContent extends MessageContent {const MessageContentOutputTextContent(this.outputTextContent);
+final class MessageContentOutputText extends MessageContent {const MessageContentOutputText(this.outputTextContent);
 
-factory MessageContentOutputTextContent.fromJson(Map<String, dynamic> json) { return MessageContentOutputTextContent(OutputTextContent.fromJson(json)); }
+factory MessageContentOutputText.fromJson(Map<String, dynamic> json) { return MessageContentOutputText(OutputTextContent.fromJson(json)); }
 
 final OutputTextContent outputTextContent;
 
-@override String get type { return 'OutputTextContent'; } 
+@override String get type { return 'output_text'; } 
 @override Map<String, dynamic> toJson() { return {...outputTextContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentOutputTextContent && outputTextContent == other.outputTextContent; } 
+    other is MessageContentOutputText && outputTextContent == other.outputTextContent; } 
 @override int get hashCode { return outputTextContent.hashCode; } 
-@override String toString() { return 'MessageContentOutputTextContent(outputTextContent: $outputTextContent)'; } 
+@override String toString() { return 'MessageContentOutputText(outputTextContent: $outputTextContent)'; } 
  }
-final class MessageContentTextContent extends MessageContent {const MessageContentTextContent(this.textContent);
+final class MessageContentText extends MessageContent {const MessageContentText(this.textContent);
 
-factory MessageContentTextContent.fromJson(Map<String, dynamic> json) { return MessageContentTextContent(TextContent.fromJson(json)); }
+factory MessageContentText.fromJson(Map<String, dynamic> json) { return MessageContentText(TextContent.fromJson(json)); }
 
 final TextContent textContent;
 
-@override String get type { return 'TextContent'; } 
+@override String get type { return 'text'; } 
 @override Map<String, dynamic> toJson() { return {...textContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentTextContent && textContent == other.textContent; } 
+    other is MessageContentText && textContent == other.textContent; } 
 @override int get hashCode { return textContent.hashCode; } 
-@override String toString() { return 'MessageContentTextContent(textContent: $textContent)'; } 
+@override String toString() { return 'MessageContentText(textContent: $textContent)'; } 
  }
-final class MessageContentSummaryTextContent extends MessageContent {const MessageContentSummaryTextContent(this.summaryTextContent);
+final class MessageContentSummaryText extends MessageContent {const MessageContentSummaryText(this.summaryTextContent);
 
-factory MessageContentSummaryTextContent.fromJson(Map<String, dynamic> json) { return MessageContentSummaryTextContent(SummaryTextContent.fromJson(json)); }
+factory MessageContentSummaryText.fromJson(Map<String, dynamic> json) { return MessageContentSummaryText(SummaryTextContent.fromJson(json)); }
 
 final SummaryTextContent summaryTextContent;
 
-@override String get type { return 'SummaryTextContent'; } 
+@override String get type { return 'summary_text'; } 
 @override Map<String, dynamic> toJson() { return {...summaryTextContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentSummaryTextContent && summaryTextContent == other.summaryTextContent; } 
+    other is MessageContentSummaryText && summaryTextContent == other.summaryTextContent; } 
 @override int get hashCode { return summaryTextContent.hashCode; } 
-@override String toString() { return 'MessageContentSummaryTextContent(summaryTextContent: $summaryTextContent)'; } 
+@override String toString() { return 'MessageContentSummaryText(summaryTextContent: $summaryTextContent)'; } 
  }
-final class MessageContentReasoningTextContent extends MessageContent {const MessageContentReasoningTextContent(this.reasoningTextContent);
+final class MessageContentReasoningText extends MessageContent {const MessageContentReasoningText(this.reasoningTextContent);
 
-factory MessageContentReasoningTextContent.fromJson(Map<String, dynamic> json) { return MessageContentReasoningTextContent(ReasoningTextContent.fromJson(json)); }
+factory MessageContentReasoningText.fromJson(Map<String, dynamic> json) { return MessageContentReasoningText(ReasoningTextContent.fromJson(json)); }
 
 final ReasoningTextContent reasoningTextContent;
 
-@override String get type { return 'ReasoningTextContent'; } 
+@override String get type { return 'reasoning_text'; } 
 @override Map<String, dynamic> toJson() { return {...reasoningTextContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentReasoningTextContent && reasoningTextContent == other.reasoningTextContent; } 
+    other is MessageContentReasoningText && reasoningTextContent == other.reasoningTextContent; } 
 @override int get hashCode { return reasoningTextContent.hashCode; } 
-@override String toString() { return 'MessageContentReasoningTextContent(reasoningTextContent: $reasoningTextContent)'; } 
+@override String toString() { return 'MessageContentReasoningText(reasoningTextContent: $reasoningTextContent)'; } 
  }
-final class MessageContentRefusalContent extends MessageContent {const MessageContentRefusalContent(this.refusalContent);
+final class MessageContentRefusal extends MessageContent {const MessageContentRefusal(this.refusalContent);
 
-factory MessageContentRefusalContent.fromJson(Map<String, dynamic> json) { return MessageContentRefusalContent(RefusalContent.fromJson(json)); }
+factory MessageContentRefusal.fromJson(Map<String, dynamic> json) { return MessageContentRefusal(RefusalContent.fromJson(json)); }
 
 final RefusalContent refusalContent;
 
-@override String get type { return 'RefusalContent'; } 
+@override String get type { return 'refusal'; } 
 @override Map<String, dynamic> toJson() { return {...refusalContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentRefusalContent && refusalContent == other.refusalContent; } 
+    other is MessageContentRefusal && refusalContent == other.refusalContent; } 
 @override int get hashCode { return refusalContent.hashCode; } 
-@override String toString() { return 'MessageContentRefusalContent(refusalContent: $refusalContent)'; } 
+@override String toString() { return 'MessageContentRefusal(refusalContent: $refusalContent)'; } 
  }
-final class MessageContentInputImageContent extends MessageContent {const MessageContentInputImageContent(this.inputImageContent);
+final class MessageContentInputImage extends MessageContent {const MessageContentInputImage(this.inputImageContent);
 
-factory MessageContentInputImageContent.fromJson(Map<String, dynamic> json) { return MessageContentInputImageContent(InputImageContent.fromJson(json)); }
+factory MessageContentInputImage.fromJson(Map<String, dynamic> json) { return MessageContentInputImage(InputImageContent.fromJson(json)); }
 
 final InputImageContent inputImageContent;
 
-@override String get type { return 'InputImageContent'; } 
+@override String get type { return 'input_image'; } 
 @override Map<String, dynamic> toJson() { return {...inputImageContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentInputImageContent && inputImageContent == other.inputImageContent; } 
+    other is MessageContentInputImage && inputImageContent == other.inputImageContent; } 
 @override int get hashCode { return inputImageContent.hashCode; } 
-@override String toString() { return 'MessageContentInputImageContent(inputImageContent: $inputImageContent)'; } 
+@override String toString() { return 'MessageContentInputImage(inputImageContent: $inputImageContent)'; } 
  }
-final class MessageContentComputerScreenshotContent extends MessageContent {const MessageContentComputerScreenshotContent(this.computerScreenshotContent);
+final class MessageContentComputerScreenshot extends MessageContent {const MessageContentComputerScreenshot(this.computerScreenshotContent);
 
-factory MessageContentComputerScreenshotContent.fromJson(Map<String, dynamic> json) { return MessageContentComputerScreenshotContent(ComputerScreenshotContent.fromJson(json)); }
+factory MessageContentComputerScreenshot.fromJson(Map<String, dynamic> json) { return MessageContentComputerScreenshot(ComputerScreenshotContent.fromJson(json)); }
 
 final ComputerScreenshotContent computerScreenshotContent;
 
-@override String get type { return 'ComputerScreenshotContent'; } 
+@override String get type { return 'computer_screenshot'; } 
 @override Map<String, dynamic> toJson() { return {...computerScreenshotContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentComputerScreenshotContent && computerScreenshotContent == other.computerScreenshotContent; } 
+    other is MessageContentComputerScreenshot && computerScreenshotContent == other.computerScreenshotContent; } 
 @override int get hashCode { return computerScreenshotContent.hashCode; } 
-@override String toString() { return 'MessageContentComputerScreenshotContent(computerScreenshotContent: $computerScreenshotContent)'; } 
+@override String toString() { return 'MessageContentComputerScreenshot(computerScreenshotContent: $computerScreenshotContent)'; } 
  }
-final class MessageContentInputFileContent extends MessageContent {const MessageContentInputFileContent(this.inputFileContent);
+final class MessageContentInputFile extends MessageContent {const MessageContentInputFile(this.inputFileContent);
 
-factory MessageContentInputFileContent.fromJson(Map<String, dynamic> json) { return MessageContentInputFileContent(InputFileContent.fromJson(json)); }
+factory MessageContentInputFile.fromJson(Map<String, dynamic> json) { return MessageContentInputFile(InputFileContent.fromJson(json)); }
 
 final InputFileContent inputFileContent;
 
-@override String get type { return 'InputFileContent'; } 
+@override String get type { return 'input_file'; } 
 @override Map<String, dynamic> toJson() { return {...inputFileContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageContentInputFileContent && inputFileContent == other.inputFileContent; } 
+    other is MessageContentInputFile && inputFileContent == other.inputFileContent; } 
 @override int get hashCode { return inputFileContent.hashCode; } 
-@override String toString() { return 'MessageContentInputFileContent(inputFileContent: $inputFileContent)'; } 
+@override String toString() { return 'MessageContentInputFile(inputFileContent: $inputFileContent)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

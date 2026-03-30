@@ -5,9 +5,9 @@ sealed class ApplyPatchOperationParam {const ApplyPatchOperationParam();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ApplyPatchOperationParam.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'ApplyPatchCreateFileOperationParam' => ApplyPatchOperationParamApplyPatchCreateFileOperationParam.fromJson(json),
-  'ApplyPatchDeleteFileOperationParam' => ApplyPatchOperationParamApplyPatchDeleteFileOperationParam.fromJson(json),
-  'ApplyPatchUpdateFileOperationParam' => ApplyPatchOperationParamApplyPatchUpdateFileOperationParam.fromJson(json),
+  'create_file' => ApplyPatchOperationParamCreateFile.fromJson(json),
+  'delete_file' => ApplyPatchOperationParamDeleteFile.fromJson(json),
+  'update_file' => ApplyPatchOperationParamUpdateFile.fromJson(json),
   _ => ApplyPatchOperationParam$Unknown(json),
 }; }
 
@@ -17,44 +17,44 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ApplyPatchOperationParam$Unknown; } 
  }
-final class ApplyPatchOperationParamApplyPatchCreateFileOperationParam extends ApplyPatchOperationParam {const ApplyPatchOperationParamApplyPatchCreateFileOperationParam(this.applyPatchCreateFileOperationParam);
+final class ApplyPatchOperationParamCreateFile extends ApplyPatchOperationParam {const ApplyPatchOperationParamCreateFile(this.applyPatchCreateFileOperationParam);
 
-factory ApplyPatchOperationParamApplyPatchCreateFileOperationParam.fromJson(Map<String, dynamic> json) { return ApplyPatchOperationParamApplyPatchCreateFileOperationParam(ApplyPatchCreateFileOperationParam.fromJson(json)); }
+factory ApplyPatchOperationParamCreateFile.fromJson(Map<String, dynamic> json) { return ApplyPatchOperationParamCreateFile(ApplyPatchCreateFileOperationParam.fromJson(json)); }
 
 final ApplyPatchCreateFileOperationParam applyPatchCreateFileOperationParam;
 
-@override String get type { return 'ApplyPatchCreateFileOperationParam'; } 
+@override String get type { return 'create_file'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchCreateFileOperationParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplyPatchOperationParamApplyPatchCreateFileOperationParam && applyPatchCreateFileOperationParam == other.applyPatchCreateFileOperationParam; } 
+    other is ApplyPatchOperationParamCreateFile && applyPatchCreateFileOperationParam == other.applyPatchCreateFileOperationParam; } 
 @override int get hashCode { return applyPatchCreateFileOperationParam.hashCode; } 
-@override String toString() { return 'ApplyPatchOperationParamApplyPatchCreateFileOperationParam(applyPatchCreateFileOperationParam: $applyPatchCreateFileOperationParam)'; } 
+@override String toString() { return 'ApplyPatchOperationParamCreateFile(applyPatchCreateFileOperationParam: $applyPatchCreateFileOperationParam)'; } 
  }
-final class ApplyPatchOperationParamApplyPatchDeleteFileOperationParam extends ApplyPatchOperationParam {const ApplyPatchOperationParamApplyPatchDeleteFileOperationParam(this.applyPatchDeleteFileOperationParam);
+final class ApplyPatchOperationParamDeleteFile extends ApplyPatchOperationParam {const ApplyPatchOperationParamDeleteFile(this.applyPatchDeleteFileOperationParam);
 
-factory ApplyPatchOperationParamApplyPatchDeleteFileOperationParam.fromJson(Map<String, dynamic> json) { return ApplyPatchOperationParamApplyPatchDeleteFileOperationParam(ApplyPatchDeleteFileOperationParam.fromJson(json)); }
+factory ApplyPatchOperationParamDeleteFile.fromJson(Map<String, dynamic> json) { return ApplyPatchOperationParamDeleteFile(ApplyPatchDeleteFileOperationParam.fromJson(json)); }
 
 final ApplyPatchDeleteFileOperationParam applyPatchDeleteFileOperationParam;
 
-@override String get type { return 'ApplyPatchDeleteFileOperationParam'; } 
+@override String get type { return 'delete_file'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchDeleteFileOperationParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplyPatchOperationParamApplyPatchDeleteFileOperationParam && applyPatchDeleteFileOperationParam == other.applyPatchDeleteFileOperationParam; } 
+    other is ApplyPatchOperationParamDeleteFile && applyPatchDeleteFileOperationParam == other.applyPatchDeleteFileOperationParam; } 
 @override int get hashCode { return applyPatchDeleteFileOperationParam.hashCode; } 
-@override String toString() { return 'ApplyPatchOperationParamApplyPatchDeleteFileOperationParam(applyPatchDeleteFileOperationParam: $applyPatchDeleteFileOperationParam)'; } 
+@override String toString() { return 'ApplyPatchOperationParamDeleteFile(applyPatchDeleteFileOperationParam: $applyPatchDeleteFileOperationParam)'; } 
  }
-final class ApplyPatchOperationParamApplyPatchUpdateFileOperationParam extends ApplyPatchOperationParam {const ApplyPatchOperationParamApplyPatchUpdateFileOperationParam(this.applyPatchUpdateFileOperationParam);
+final class ApplyPatchOperationParamUpdateFile extends ApplyPatchOperationParam {const ApplyPatchOperationParamUpdateFile(this.applyPatchUpdateFileOperationParam);
 
-factory ApplyPatchOperationParamApplyPatchUpdateFileOperationParam.fromJson(Map<String, dynamic> json) { return ApplyPatchOperationParamApplyPatchUpdateFileOperationParam(ApplyPatchUpdateFileOperationParam.fromJson(json)); }
+factory ApplyPatchOperationParamUpdateFile.fromJson(Map<String, dynamic> json) { return ApplyPatchOperationParamUpdateFile(ApplyPatchUpdateFileOperationParam.fromJson(json)); }
 
 final ApplyPatchUpdateFileOperationParam applyPatchUpdateFileOperationParam;
 
-@override String get type { return 'ApplyPatchUpdateFileOperationParam'; } 
+@override String get type { return 'update_file'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchUpdateFileOperationParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplyPatchOperationParamApplyPatchUpdateFileOperationParam && applyPatchUpdateFileOperationParam == other.applyPatchUpdateFileOperationParam; } 
+    other is ApplyPatchOperationParamUpdateFile && applyPatchUpdateFileOperationParam == other.applyPatchUpdateFileOperationParam; } 
 @override int get hashCode { return applyPatchUpdateFileOperationParam.hashCode; } 
-@override String toString() { return 'ApplyPatchOperationParamApplyPatchUpdateFileOperationParam(applyPatchUpdateFileOperationParam: $applyPatchUpdateFileOperationParam)'; } 
+@override String toString() { return 'ApplyPatchOperationParamUpdateFile(applyPatchUpdateFileOperationParam: $applyPatchUpdateFileOperationParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

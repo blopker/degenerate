@@ -5,8 +5,8 @@ sealed class FunctionShellCallOutputContentOutcome {const FunctionShellCallOutpu
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory FunctionShellCallOutputContentOutcome.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'FunctionShellCallOutputTimeoutOutcome' => FunctionShellCallOutputContentOutcomeFunctionShellCallOutputTimeoutOutcome.fromJson(json),
-  'FunctionShellCallOutputExitOutcome' => FunctionShellCallOutputContentOutcomeFunctionShellCallOutputExitOutcome.fromJson(json),
+  'timeout' => FunctionShellCallOutputContentOutcomeTimeout.fromJson(json),
+  'exit' => FunctionShellCallOutputContentOutcomeExit.fromJson(json),
   _ => FunctionShellCallOutputContentOutcome$Unknown(json),
 }; }
 
@@ -16,31 +16,31 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FunctionShellCallOutputContentOutcome$Unknown; } 
  }
-final class FunctionShellCallOutputContentOutcomeFunctionShellCallOutputTimeoutOutcome extends FunctionShellCallOutputContentOutcome {const FunctionShellCallOutputContentOutcomeFunctionShellCallOutputTimeoutOutcome(this.functionShellCallOutputTimeoutOutcome);
+final class FunctionShellCallOutputContentOutcomeTimeout extends FunctionShellCallOutputContentOutcome {const FunctionShellCallOutputContentOutcomeTimeout(this.functionShellCallOutputTimeoutOutcome);
 
-factory FunctionShellCallOutputContentOutcomeFunctionShellCallOutputTimeoutOutcome.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputContentOutcomeFunctionShellCallOutputTimeoutOutcome(FunctionShellCallOutputTimeoutOutcome.fromJson(json)); }
+factory FunctionShellCallOutputContentOutcomeTimeout.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputContentOutcomeTimeout(FunctionShellCallOutputTimeoutOutcome.fromJson(json)); }
 
 final FunctionShellCallOutputTimeoutOutcome functionShellCallOutputTimeoutOutcome;
 
-@override String get type { return 'FunctionShellCallOutputTimeoutOutcome'; } 
+@override String get type { return 'timeout'; } 
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutputTimeoutOutcome.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallOutputContentOutcomeFunctionShellCallOutputTimeoutOutcome && functionShellCallOutputTimeoutOutcome == other.functionShellCallOutputTimeoutOutcome; } 
+    other is FunctionShellCallOutputContentOutcomeTimeout && functionShellCallOutputTimeoutOutcome == other.functionShellCallOutputTimeoutOutcome; } 
 @override int get hashCode { return functionShellCallOutputTimeoutOutcome.hashCode; } 
-@override String toString() { return 'FunctionShellCallOutputContentOutcomeFunctionShellCallOutputTimeoutOutcome(functionShellCallOutputTimeoutOutcome: $functionShellCallOutputTimeoutOutcome)'; } 
+@override String toString() { return 'FunctionShellCallOutputContentOutcomeTimeout(functionShellCallOutputTimeoutOutcome: $functionShellCallOutputTimeoutOutcome)'; } 
  }
-final class FunctionShellCallOutputContentOutcomeFunctionShellCallOutputExitOutcome extends FunctionShellCallOutputContentOutcome {const FunctionShellCallOutputContentOutcomeFunctionShellCallOutputExitOutcome(this.functionShellCallOutputExitOutcome);
+final class FunctionShellCallOutputContentOutcomeExit extends FunctionShellCallOutputContentOutcome {const FunctionShellCallOutputContentOutcomeExit(this.functionShellCallOutputExitOutcome);
 
-factory FunctionShellCallOutputContentOutcomeFunctionShellCallOutputExitOutcome.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputContentOutcomeFunctionShellCallOutputExitOutcome(FunctionShellCallOutputExitOutcome.fromJson(json)); }
+factory FunctionShellCallOutputContentOutcomeExit.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputContentOutcomeExit(FunctionShellCallOutputExitOutcome.fromJson(json)); }
 
 final FunctionShellCallOutputExitOutcome functionShellCallOutputExitOutcome;
 
-@override String get type { return 'FunctionShellCallOutputExitOutcome'; } 
+@override String get type { return 'exit'; } 
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutputExitOutcome.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallOutputContentOutcomeFunctionShellCallOutputExitOutcome && functionShellCallOutputExitOutcome == other.functionShellCallOutputExitOutcome; } 
+    other is FunctionShellCallOutputContentOutcomeExit && functionShellCallOutputExitOutcome == other.functionShellCallOutputExitOutcome; } 
 @override int get hashCode { return functionShellCallOutputExitOutcome.hashCode; } 
-@override String toString() { return 'FunctionShellCallOutputContentOutcomeFunctionShellCallOutputExitOutcome(functionShellCallOutputExitOutcome: $functionShellCallOutputExitOutcome)'; } 
+@override String toString() { return 'FunctionShellCallOutputContentOutcomeExit(functionShellCallOutputExitOutcome: $functionShellCallOutputExitOutcome)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

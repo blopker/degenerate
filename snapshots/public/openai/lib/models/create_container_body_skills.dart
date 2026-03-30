@@ -4,8 +4,8 @@ import 'inline_skill_param.dart';import 'skill_reference_param.dart';sealed clas
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CreateContainerBodySkills.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'SkillReferenceParam' => CreateContainerBodySkillsSkillReferenceParam.fromJson(json),
-  'InlineSkillParam' => CreateContainerBodySkillsInlineSkillParam.fromJson(json),
+  'skill_reference' => CreateContainerBodySkillsSkillReference.fromJson(json),
+  'inline' => CreateContainerBodySkillsInline.fromJson(json),
   _ => CreateContainerBodySkills$Unknown(json),
 }; }
 
@@ -15,31 +15,31 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateContainerBodySkills$Unknown; } 
  }
-final class CreateContainerBodySkillsSkillReferenceParam extends CreateContainerBodySkills {const CreateContainerBodySkillsSkillReferenceParam(this.skillReferenceParam);
+final class CreateContainerBodySkillsSkillReference extends CreateContainerBodySkills {const CreateContainerBodySkillsSkillReference(this.skillReferenceParam);
 
-factory CreateContainerBodySkillsSkillReferenceParam.fromJson(Map<String, dynamic> json) { return CreateContainerBodySkillsSkillReferenceParam(SkillReferenceParam.fromJson(json)); }
+factory CreateContainerBodySkillsSkillReference.fromJson(Map<String, dynamic> json) { return CreateContainerBodySkillsSkillReference(SkillReferenceParam.fromJson(json)); }
 
 final SkillReferenceParam skillReferenceParam;
 
-@override String get type { return 'SkillReferenceParam'; } 
+@override String get type { return 'skill_reference'; } 
 @override Map<String, dynamic> toJson() { return {...skillReferenceParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateContainerBodySkillsSkillReferenceParam && skillReferenceParam == other.skillReferenceParam; } 
+    other is CreateContainerBodySkillsSkillReference && skillReferenceParam == other.skillReferenceParam; } 
 @override int get hashCode { return skillReferenceParam.hashCode; } 
-@override String toString() { return 'CreateContainerBodySkillsSkillReferenceParam(skillReferenceParam: $skillReferenceParam)'; } 
+@override String toString() { return 'CreateContainerBodySkillsSkillReference(skillReferenceParam: $skillReferenceParam)'; } 
  }
-final class CreateContainerBodySkillsInlineSkillParam extends CreateContainerBodySkills {const CreateContainerBodySkillsInlineSkillParam(this.inlineSkillParam);
+final class CreateContainerBodySkillsInline extends CreateContainerBodySkills {const CreateContainerBodySkillsInline(this.inlineSkillParam);
 
-factory CreateContainerBodySkillsInlineSkillParam.fromJson(Map<String, dynamic> json) { return CreateContainerBodySkillsInlineSkillParam(InlineSkillParam.fromJson(json)); }
+factory CreateContainerBodySkillsInline.fromJson(Map<String, dynamic> json) { return CreateContainerBodySkillsInline(InlineSkillParam.fromJson(json)); }
 
 final InlineSkillParam inlineSkillParam;
 
-@override String get type { return 'InlineSkillParam'; } 
+@override String get type { return 'inline'; } 
 @override Map<String, dynamic> toJson() { return {...inlineSkillParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateContainerBodySkillsInlineSkillParam && inlineSkillParam == other.inlineSkillParam; } 
+    other is CreateContainerBodySkillsInline && inlineSkillParam == other.inlineSkillParam; } 
 @override int get hashCode { return inlineSkillParam.hashCode; } 
-@override String toString() { return 'CreateContainerBodySkillsInlineSkillParam(inlineSkillParam: $inlineSkillParam)'; } 
+@override String toString() { return 'CreateContainerBodySkillsInline(inlineSkillParam: $inlineSkillParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

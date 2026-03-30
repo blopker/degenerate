@@ -5,10 +5,10 @@ sealed class Annotation {const Annotation();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory Annotation.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'FileCitationBody' => AnnotationFileCitationBody.fromJson(json),
-  'UrlCitationBody' => AnnotationUrlCitationBody.fromJson(json),
-  'ContainerFileCitationBody' => AnnotationContainerFileCitationBody.fromJson(json),
-  'FilePath' => AnnotationFilePath.fromJson(json),
+  'file_citation' => AnnotationFileCitation.fromJson(json),
+  'url_citation' => AnnotationUrlCitation.fromJson(json),
+  'container_file_citation' => AnnotationContainerFileCitation.fromJson(json),
+  'file_path' => AnnotationFilePath.fromJson(json),
   _ => Annotation$Unknown(json),
 }; }
 
@@ -18,44 +18,44 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Annotation$Unknown; } 
  }
-final class AnnotationFileCitationBody extends Annotation {const AnnotationFileCitationBody(this.fileCitationBody);
+final class AnnotationFileCitation extends Annotation {const AnnotationFileCitation(this.fileCitationBody);
 
-factory AnnotationFileCitationBody.fromJson(Map<String, dynamic> json) { return AnnotationFileCitationBody(FileCitationBody.fromJson(json)); }
+factory AnnotationFileCitation.fromJson(Map<String, dynamic> json) { return AnnotationFileCitation(FileCitationBody.fromJson(json)); }
 
 final FileCitationBody fileCitationBody;
 
-@override String get type { return 'FileCitationBody'; } 
+@override String get type { return 'file_citation'; } 
 @override Map<String, dynamic> toJson() { return {...fileCitationBody.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is AnnotationFileCitationBody && fileCitationBody == other.fileCitationBody; } 
+    other is AnnotationFileCitation && fileCitationBody == other.fileCitationBody; } 
 @override int get hashCode { return fileCitationBody.hashCode; } 
-@override String toString() { return 'AnnotationFileCitationBody(fileCitationBody: $fileCitationBody)'; } 
+@override String toString() { return 'AnnotationFileCitation(fileCitationBody: $fileCitationBody)'; } 
  }
-final class AnnotationUrlCitationBody extends Annotation {const AnnotationUrlCitationBody(this.urlCitationBody);
+final class AnnotationUrlCitation extends Annotation {const AnnotationUrlCitation(this.urlCitationBody);
 
-factory AnnotationUrlCitationBody.fromJson(Map<String, dynamic> json) { return AnnotationUrlCitationBody(UrlCitationBody.fromJson(json)); }
+factory AnnotationUrlCitation.fromJson(Map<String, dynamic> json) { return AnnotationUrlCitation(UrlCitationBody.fromJson(json)); }
 
 final UrlCitationBody urlCitationBody;
 
-@override String get type { return 'UrlCitationBody'; } 
+@override String get type { return 'url_citation'; } 
 @override Map<String, dynamic> toJson() { return {...urlCitationBody.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is AnnotationUrlCitationBody && urlCitationBody == other.urlCitationBody; } 
+    other is AnnotationUrlCitation && urlCitationBody == other.urlCitationBody; } 
 @override int get hashCode { return urlCitationBody.hashCode; } 
-@override String toString() { return 'AnnotationUrlCitationBody(urlCitationBody: $urlCitationBody)'; } 
+@override String toString() { return 'AnnotationUrlCitation(urlCitationBody: $urlCitationBody)'; } 
  }
-final class AnnotationContainerFileCitationBody extends Annotation {const AnnotationContainerFileCitationBody(this.containerFileCitationBody);
+final class AnnotationContainerFileCitation extends Annotation {const AnnotationContainerFileCitation(this.containerFileCitationBody);
 
-factory AnnotationContainerFileCitationBody.fromJson(Map<String, dynamic> json) { return AnnotationContainerFileCitationBody(ContainerFileCitationBody.fromJson(json)); }
+factory AnnotationContainerFileCitation.fromJson(Map<String, dynamic> json) { return AnnotationContainerFileCitation(ContainerFileCitationBody.fromJson(json)); }
 
 final ContainerFileCitationBody containerFileCitationBody;
 
-@override String get type { return 'ContainerFileCitationBody'; } 
+@override String get type { return 'container_file_citation'; } 
 @override Map<String, dynamic> toJson() { return {...containerFileCitationBody.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is AnnotationContainerFileCitationBody && containerFileCitationBody == other.containerFileCitationBody; } 
+    other is AnnotationContainerFileCitation && containerFileCitationBody == other.containerFileCitationBody; } 
 @override int get hashCode { return containerFileCitationBody.hashCode; } 
-@override String toString() { return 'AnnotationContainerFileCitationBody(containerFileCitationBody: $containerFileCitationBody)'; } 
+@override String toString() { return 'AnnotationContainerFileCitation(containerFileCitationBody: $containerFileCitationBody)'; } 
  }
 final class AnnotationFilePath extends Annotation {const AnnotationFilePath(this.filePath);
 
@@ -63,7 +63,7 @@ factory AnnotationFilePath.fromJson(Map<String, dynamic> json) { return Annotati
 
 final FilePath filePath;
 
-@override String get type { return 'FilePath'; } 
+@override String get type { return 'file_path'; } 
 @override Map<String, dynamic> toJson() { return {...filePath.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationFilePath && filePath == other.filePath; } 

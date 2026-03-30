@@ -5,8 +5,8 @@ sealed class ContainerAutoParamNetworkPolicy {const ContainerAutoParamNetworkPol
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ContainerAutoParamNetworkPolicy.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'ContainerNetworkPolicyDisabledParam' => ContainerAutoParamNetworkPolicyContainerNetworkPolicyDisabledParam.fromJson(json),
-  'ContainerNetworkPolicyAllowlistParam' => ContainerAutoParamNetworkPolicyContainerNetworkPolicyAllowlistParam.fromJson(json),
+  'disabled' => ContainerAutoParamNetworkPolicyDisabled.fromJson(json),
+  'allowlist' => ContainerAutoParamNetworkPolicyAllowlist.fromJson(json),
   _ => ContainerAutoParamNetworkPolicy$Unknown(json),
 }; }
 
@@ -16,31 +16,31 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ContainerAutoParamNetworkPolicy$Unknown; } 
  }
-final class ContainerAutoParamNetworkPolicyContainerNetworkPolicyDisabledParam extends ContainerAutoParamNetworkPolicy {const ContainerAutoParamNetworkPolicyContainerNetworkPolicyDisabledParam(this.containerNetworkPolicyDisabledParam);
+final class ContainerAutoParamNetworkPolicyDisabled extends ContainerAutoParamNetworkPolicy {const ContainerAutoParamNetworkPolicyDisabled(this.containerNetworkPolicyDisabledParam);
 
-factory ContainerAutoParamNetworkPolicyContainerNetworkPolicyDisabledParam.fromJson(Map<String, dynamic> json) { return ContainerAutoParamNetworkPolicyContainerNetworkPolicyDisabledParam(ContainerNetworkPolicyDisabledParam.fromJson(json)); }
+factory ContainerAutoParamNetworkPolicyDisabled.fromJson(Map<String, dynamic> json) { return ContainerAutoParamNetworkPolicyDisabled(ContainerNetworkPolicyDisabledParam.fromJson(json)); }
 
 final ContainerNetworkPolicyDisabledParam containerNetworkPolicyDisabledParam;
 
-@override String get type { return 'ContainerNetworkPolicyDisabledParam'; } 
+@override String get type { return 'disabled'; } 
 @override Map<String, dynamic> toJson() { return {...containerNetworkPolicyDisabledParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContainerAutoParamNetworkPolicyContainerNetworkPolicyDisabledParam && containerNetworkPolicyDisabledParam == other.containerNetworkPolicyDisabledParam; } 
+    other is ContainerAutoParamNetworkPolicyDisabled && containerNetworkPolicyDisabledParam == other.containerNetworkPolicyDisabledParam; } 
 @override int get hashCode { return containerNetworkPolicyDisabledParam.hashCode; } 
-@override String toString() { return 'ContainerAutoParamNetworkPolicyContainerNetworkPolicyDisabledParam(containerNetworkPolicyDisabledParam: $containerNetworkPolicyDisabledParam)'; } 
+@override String toString() { return 'ContainerAutoParamNetworkPolicyDisabled(containerNetworkPolicyDisabledParam: $containerNetworkPolicyDisabledParam)'; } 
  }
-final class ContainerAutoParamNetworkPolicyContainerNetworkPolicyAllowlistParam extends ContainerAutoParamNetworkPolicy {const ContainerAutoParamNetworkPolicyContainerNetworkPolicyAllowlistParam(this.containerNetworkPolicyAllowlistParam);
+final class ContainerAutoParamNetworkPolicyAllowlist extends ContainerAutoParamNetworkPolicy {const ContainerAutoParamNetworkPolicyAllowlist(this.containerNetworkPolicyAllowlistParam);
 
-factory ContainerAutoParamNetworkPolicyContainerNetworkPolicyAllowlistParam.fromJson(Map<String, dynamic> json) { return ContainerAutoParamNetworkPolicyContainerNetworkPolicyAllowlistParam(ContainerNetworkPolicyAllowlistParam.fromJson(json)); }
+factory ContainerAutoParamNetworkPolicyAllowlist.fromJson(Map<String, dynamic> json) { return ContainerAutoParamNetworkPolicyAllowlist(ContainerNetworkPolicyAllowlistParam.fromJson(json)); }
 
 final ContainerNetworkPolicyAllowlistParam containerNetworkPolicyAllowlistParam;
 
-@override String get type { return 'ContainerNetworkPolicyAllowlistParam'; } 
+@override String get type { return 'allowlist'; } 
 @override Map<String, dynamic> toJson() { return {...containerNetworkPolicyAllowlistParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContainerAutoParamNetworkPolicyContainerNetworkPolicyAllowlistParam && containerNetworkPolicyAllowlistParam == other.containerNetworkPolicyAllowlistParam; } 
+    other is ContainerAutoParamNetworkPolicyAllowlist && containerNetworkPolicyAllowlistParam == other.containerNetworkPolicyAllowlistParam; } 
 @override int get hashCode { return containerNetworkPolicyAllowlistParam.hashCode; } 
-@override String toString() { return 'ContainerAutoParamNetworkPolicyContainerNetworkPolicyAllowlistParam(containerNetworkPolicyAllowlistParam: $containerNetworkPolicyAllowlistParam)'; } 
+@override String toString() { return 'ContainerAutoParamNetworkPolicyAllowlist(containerNetworkPolicyAllowlistParam: $containerNetworkPolicyAllowlistParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

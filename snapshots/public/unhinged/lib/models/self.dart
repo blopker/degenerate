@@ -10,7 +10,7 @@ sealed class Self {
   /// Deserialize from JSON, dispatching on the `type` discriminator.
   factory Self.fromJson(Map<String, dynamic> json) {
     return switch (json['type']) {
-      'True' => SelfTrue.fromJson(json),
+      'type' => SelfType.fromJson(json),
       '__proto__' => SelfProto.fromJson(json),
       'String' => SelfString.fromJson(json),
       _ => Self$Unknown(json),
@@ -27,18 +27,18 @@ sealed class Self {
   }
 }
 
-final class SelfTrue extends Self {
-  const SelfTrue(this.$true);
+final class SelfType extends Self {
+  const SelfType(this.$true);
 
-  factory SelfTrue.fromJson(Map<String, dynamic> json) {
-    return SelfTrue(True.fromJson(json));
+  factory SelfType.fromJson(Map<String, dynamic> json) {
+    return SelfType(True.fromJson(json));
   }
 
   final True $true;
 
   @override
   String get type {
-    return 'True';
+    return 'type';
   }
 
   @override
@@ -48,7 +48,7 @@ final class SelfTrue extends Self {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || other is SelfTrue && $true == other.$true;
+    return identical(this, other) || other is SelfType && $true == other.$true;
   }
 
   @override
@@ -58,7 +58,7 @@ final class SelfTrue extends Self {
 
   @override
   String toString() {
-    return 'SelfTrue(\$true: ${$true})';
+    return 'SelfType(\$true: ${$true})';
   }
 }
 

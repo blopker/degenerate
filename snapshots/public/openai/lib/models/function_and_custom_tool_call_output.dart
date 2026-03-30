@@ -4,9 +4,9 @@ import 'input_file_content.dart';import 'input_image_content.dart';import 'input
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory FunctionAndCustomToolCallOutput.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'InputTextContent' => FunctionAndCustomToolCallOutputInputTextContent.fromJson(json),
-  'InputImageContent' => FunctionAndCustomToolCallOutputInputImageContent.fromJson(json),
-  'InputFileContent' => FunctionAndCustomToolCallOutputInputFileContent.fromJson(json),
+  'input_text' => FunctionAndCustomToolCallOutputInputText.fromJson(json),
+  'input_image' => FunctionAndCustomToolCallOutputInputImage.fromJson(json),
+  'input_file' => FunctionAndCustomToolCallOutputInputFile.fromJson(json),
   _ => FunctionAndCustomToolCallOutput$Unknown(json),
 }; }
 
@@ -16,44 +16,44 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FunctionAndCustomToolCallOutput$Unknown; } 
  }
-final class FunctionAndCustomToolCallOutputInputTextContent extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputTextContent(this.inputTextContent);
+final class FunctionAndCustomToolCallOutputInputText extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputText(this.inputTextContent);
 
-factory FunctionAndCustomToolCallOutputInputTextContent.fromJson(Map<String, dynamic> json) { return FunctionAndCustomToolCallOutputInputTextContent(InputTextContent.fromJson(json)); }
+factory FunctionAndCustomToolCallOutputInputText.fromJson(Map<String, dynamic> json) { return FunctionAndCustomToolCallOutputInputText(InputTextContent.fromJson(json)); }
 
 final InputTextContent inputTextContent;
 
-@override String get type { return 'InputTextContent'; } 
+@override String get type { return 'input_text'; } 
 @override Map<String, dynamic> toJson() { return {...inputTextContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionAndCustomToolCallOutputInputTextContent && inputTextContent == other.inputTextContent; } 
+    other is FunctionAndCustomToolCallOutputInputText && inputTextContent == other.inputTextContent; } 
 @override int get hashCode { return inputTextContent.hashCode; } 
-@override String toString() { return 'FunctionAndCustomToolCallOutputInputTextContent(inputTextContent: $inputTextContent)'; } 
+@override String toString() { return 'FunctionAndCustomToolCallOutputInputText(inputTextContent: $inputTextContent)'; } 
  }
-final class FunctionAndCustomToolCallOutputInputImageContent extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputImageContent(this.inputImageContent);
+final class FunctionAndCustomToolCallOutputInputImage extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputImage(this.inputImageContent);
 
-factory FunctionAndCustomToolCallOutputInputImageContent.fromJson(Map<String, dynamic> json) { return FunctionAndCustomToolCallOutputInputImageContent(InputImageContent.fromJson(json)); }
+factory FunctionAndCustomToolCallOutputInputImage.fromJson(Map<String, dynamic> json) { return FunctionAndCustomToolCallOutputInputImage(InputImageContent.fromJson(json)); }
 
 final InputImageContent inputImageContent;
 
-@override String get type { return 'InputImageContent'; } 
+@override String get type { return 'input_image'; } 
 @override Map<String, dynamic> toJson() { return {...inputImageContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionAndCustomToolCallOutputInputImageContent && inputImageContent == other.inputImageContent; } 
+    other is FunctionAndCustomToolCallOutputInputImage && inputImageContent == other.inputImageContent; } 
 @override int get hashCode { return inputImageContent.hashCode; } 
-@override String toString() { return 'FunctionAndCustomToolCallOutputInputImageContent(inputImageContent: $inputImageContent)'; } 
+@override String toString() { return 'FunctionAndCustomToolCallOutputInputImage(inputImageContent: $inputImageContent)'; } 
  }
-final class FunctionAndCustomToolCallOutputInputFileContent extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputFileContent(this.inputFileContent);
+final class FunctionAndCustomToolCallOutputInputFile extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputFile(this.inputFileContent);
 
-factory FunctionAndCustomToolCallOutputInputFileContent.fromJson(Map<String, dynamic> json) { return FunctionAndCustomToolCallOutputInputFileContent(InputFileContent.fromJson(json)); }
+factory FunctionAndCustomToolCallOutputInputFile.fromJson(Map<String, dynamic> json) { return FunctionAndCustomToolCallOutputInputFile(InputFileContent.fromJson(json)); }
 
 final InputFileContent inputFileContent;
 
-@override String get type { return 'InputFileContent'; } 
+@override String get type { return 'input_file'; } 
 @override Map<String, dynamic> toJson() { return {...inputFileContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionAndCustomToolCallOutputInputFileContent && inputFileContent == other.inputFileContent; } 
+    other is FunctionAndCustomToolCallOutputInputFile && inputFileContent == other.inputFileContent; } 
 @override int get hashCode { return inputFileContent.hashCode; } 
-@override String toString() { return 'FunctionAndCustomToolCallOutputInputFileContent(inputFileContent: $inputFileContent)'; } 
+@override String toString() { return 'FunctionAndCustomToolCallOutputInputFile(inputFileContent: $inputFileContent)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

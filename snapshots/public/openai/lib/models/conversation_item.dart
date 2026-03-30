@@ -5,30 +5,30 @@ sealed class ConversationItem {const ConversationItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ConversationItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'Message' => ConversationItemMessage.fromJson(json),
+  'message' => ConversationItemMessage.fromJson(json),
   'FunctionToolCallResource' => ConversationItemFunctionToolCallResource.fromJson(json),
   'FunctionToolCallOutputResource' => ConversationItemFunctionToolCallOutputResource.fromJson(json),
-  'FileSearchToolCall' => ConversationItemFileSearchToolCall.fromJson(json),
-  'WebSearchToolCall' => ConversationItemWebSearchToolCall.fromJson(json),
-  'ImageGenToolCall' => ConversationItemImageGenToolCall.fromJson(json),
-  'ComputerToolCall' => ConversationItemComputerToolCall.fromJson(json),
+  'file_search_call' => ConversationItemFileSearchCall.fromJson(json),
+  'web_search_call' => ConversationItemWebSearchCall.fromJson(json),
+  'image_generation_call' => ConversationItemImageGenerationCall.fromJson(json),
+  'computer_call' => ConversationItemComputerCall.fromJson(json),
   'ComputerToolCallOutputResource' => ConversationItemComputerToolCallOutputResource.fromJson(json),
-  'ToolSearchCall' => ConversationItemToolSearchCall.fromJson(json),
-  'ToolSearchOutput' => ConversationItemToolSearchOutput.fromJson(json),
-  'ReasoningItem' => ConversationItemReasoningItem.fromJson(json),
-  'CodeInterpreterToolCall' => ConversationItemCodeInterpreterToolCall.fromJson(json),
-  'LocalShellToolCall' => ConversationItemLocalShellToolCall.fromJson(json),
-  'LocalShellToolCallOutput' => ConversationItemLocalShellToolCallOutput.fromJson(json),
-  'FunctionShellCall' => ConversationItemFunctionShellCall.fromJson(json),
-  'FunctionShellCallOutput' => ConversationItemFunctionShellCallOutput.fromJson(json),
-  'ApplyPatchToolCall' => ConversationItemApplyPatchToolCall.fromJson(json),
-  'ApplyPatchToolCallOutput' => ConversationItemApplyPatchToolCallOutput.fromJson(json),
-  'MCPListTools' => ConversationItemMcpListTools.fromJson(json),
-  'MCPApprovalRequest' => ConversationItemMcpApprovalRequest.fromJson(json),
-  'MCPApprovalResponseResource' => ConversationItemMcpApprovalResponseResource.fromJson(json),
-  'MCPToolCall' => ConversationItemMcpToolCall.fromJson(json),
-  'CustomToolCall' => ConversationItemCustomToolCall.fromJson(json),
-  'CustomToolCallOutput' => ConversationItemCustomToolCallOutput.fromJson(json),
+  'tool_search_call' => ConversationItemToolSearchCall.fromJson(json),
+  'tool_search_output' => ConversationItemToolSearchOutput.fromJson(json),
+  'reasoning' => ConversationItemReasoning.fromJson(json),
+  'code_interpreter_call' => ConversationItemCodeInterpreterCall.fromJson(json),
+  'local_shell_call' => ConversationItemLocalShellCall.fromJson(json),
+  'local_shell_call_output' => ConversationItemLocalShellCallOutput.fromJson(json),
+  'shell_call' => ConversationItemShellCall.fromJson(json),
+  'shell_call_output' => ConversationItemShellCallOutput.fromJson(json),
+  'apply_patch_call' => ConversationItemApplyPatchCall.fromJson(json),
+  'apply_patch_call_output' => ConversationItemApplyPatchCallOutput.fromJson(json),
+  'mcp_list_tools' => ConversationItemMcpListTools.fromJson(json),
+  'mcp_approval_request' => ConversationItemMcpApprovalRequest.fromJson(json),
+  'mcp_approval_response' => ConversationItemMcpApprovalResponse.fromJson(json),
+  'mcp_call' => ConversationItemMcpCall.fromJson(json),
+  'custom_tool_call' => ConversationItemCustomToolCall.fromJson(json),
+  'custom_tool_call_output' => ConversationItemCustomToolCallOutput.fromJson(json),
   _ => ConversationItem$Unknown(json),
 }; }
 
@@ -44,7 +44,7 @@ factory ConversationItemMessage.fromJson(Map<String, dynamic> json) { return Con
 
 final Message message;
 
-@override String get type { return 'Message'; } 
+@override String get type { return 'message'; } 
 @override Map<String, dynamic> toJson() { return {...message.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMessage && message == other.message; } 
@@ -77,57 +77,57 @@ final FunctionToolCallOutput functionToolCallOutput;
 @override int get hashCode { return functionToolCallOutput.hashCode; } 
 @override String toString() { return 'ConversationItemFunctionToolCallOutputResource(functionToolCallOutput: $functionToolCallOutput)'; } 
  }
-final class ConversationItemFileSearchToolCall extends ConversationItem {const ConversationItemFileSearchToolCall(this.fileSearchToolCall);
+final class ConversationItemFileSearchCall extends ConversationItem {const ConversationItemFileSearchCall(this.fileSearchToolCall);
 
-factory ConversationItemFileSearchToolCall.fromJson(Map<String, dynamic> json) { return ConversationItemFileSearchToolCall(FileSearchToolCall.fromJson(json)); }
+factory ConversationItemFileSearchCall.fromJson(Map<String, dynamic> json) { return ConversationItemFileSearchCall(FileSearchToolCall.fromJson(json)); }
 
 final FileSearchToolCall fileSearchToolCall;
 
-@override String get type { return 'FileSearchToolCall'; } 
+@override String get type { return 'file_search_call'; } 
 @override Map<String, dynamic> toJson() { return {...fileSearchToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemFileSearchToolCall && fileSearchToolCall == other.fileSearchToolCall; } 
+    other is ConversationItemFileSearchCall && fileSearchToolCall == other.fileSearchToolCall; } 
 @override int get hashCode { return fileSearchToolCall.hashCode; } 
-@override String toString() { return 'ConversationItemFileSearchToolCall(fileSearchToolCall: $fileSearchToolCall)'; } 
+@override String toString() { return 'ConversationItemFileSearchCall(fileSearchToolCall: $fileSearchToolCall)'; } 
  }
-final class ConversationItemWebSearchToolCall extends ConversationItem {const ConversationItemWebSearchToolCall(this.webSearchToolCall);
+final class ConversationItemWebSearchCall extends ConversationItem {const ConversationItemWebSearchCall(this.webSearchToolCall);
 
-factory ConversationItemWebSearchToolCall.fromJson(Map<String, dynamic> json) { return ConversationItemWebSearchToolCall(WebSearchToolCall.fromJson(json)); }
+factory ConversationItemWebSearchCall.fromJson(Map<String, dynamic> json) { return ConversationItemWebSearchCall(WebSearchToolCall.fromJson(json)); }
 
 final WebSearchToolCall webSearchToolCall;
 
-@override String get type { return 'WebSearchToolCall'; } 
+@override String get type { return 'web_search_call'; } 
 @override Map<String, dynamic> toJson() { return {...webSearchToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemWebSearchToolCall && webSearchToolCall == other.webSearchToolCall; } 
+    other is ConversationItemWebSearchCall && webSearchToolCall == other.webSearchToolCall; } 
 @override int get hashCode { return webSearchToolCall.hashCode; } 
-@override String toString() { return 'ConversationItemWebSearchToolCall(webSearchToolCall: $webSearchToolCall)'; } 
+@override String toString() { return 'ConversationItemWebSearchCall(webSearchToolCall: $webSearchToolCall)'; } 
  }
-final class ConversationItemImageGenToolCall extends ConversationItem {const ConversationItemImageGenToolCall(this.imageGenToolCall);
+final class ConversationItemImageGenerationCall extends ConversationItem {const ConversationItemImageGenerationCall(this.imageGenToolCall);
 
-factory ConversationItemImageGenToolCall.fromJson(Map<String, dynamic> json) { return ConversationItemImageGenToolCall(ImageGenToolCall.fromJson(json)); }
+factory ConversationItemImageGenerationCall.fromJson(Map<String, dynamic> json) { return ConversationItemImageGenerationCall(ImageGenToolCall.fromJson(json)); }
 
 final ImageGenToolCall imageGenToolCall;
 
-@override String get type { return 'ImageGenToolCall'; } 
+@override String get type { return 'image_generation_call'; } 
 @override Map<String, dynamic> toJson() { return {...imageGenToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemImageGenToolCall && imageGenToolCall == other.imageGenToolCall; } 
+    other is ConversationItemImageGenerationCall && imageGenToolCall == other.imageGenToolCall; } 
 @override int get hashCode { return imageGenToolCall.hashCode; } 
-@override String toString() { return 'ConversationItemImageGenToolCall(imageGenToolCall: $imageGenToolCall)'; } 
+@override String toString() { return 'ConversationItemImageGenerationCall(imageGenToolCall: $imageGenToolCall)'; } 
  }
-final class ConversationItemComputerToolCall extends ConversationItem {const ConversationItemComputerToolCall(this.computerToolCall);
+final class ConversationItemComputerCall extends ConversationItem {const ConversationItemComputerCall(this.computerToolCall);
 
-factory ConversationItemComputerToolCall.fromJson(Map<String, dynamic> json) { return ConversationItemComputerToolCall(ComputerToolCall.fromJson(json)); }
+factory ConversationItemComputerCall.fromJson(Map<String, dynamic> json) { return ConversationItemComputerCall(ComputerToolCall.fromJson(json)); }
 
 final ComputerToolCall computerToolCall;
 
-@override String get type { return 'ComputerToolCall'; } 
+@override String get type { return 'computer_call'; } 
 @override Map<String, dynamic> toJson() { return {...computerToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemComputerToolCall && computerToolCall == other.computerToolCall; } 
+    other is ConversationItemComputerCall && computerToolCall == other.computerToolCall; } 
 @override int get hashCode { return computerToolCall.hashCode; } 
-@override String toString() { return 'ConversationItemComputerToolCall(computerToolCall: $computerToolCall)'; } 
+@override String toString() { return 'ConversationItemComputerCall(computerToolCall: $computerToolCall)'; } 
  }
 final class ConversationItemComputerToolCallOutputResource extends ConversationItem {const ConversationItemComputerToolCallOutputResource(this.computerToolCallOutput);
 
@@ -148,7 +148,7 @@ factory ConversationItemToolSearchCall.fromJson(Map<String, dynamic> json) { ret
 
 final ToolSearchCall toolSearchCall;
 
-@override String get type { return 'ToolSearchCall'; } 
+@override String get type { return 'tool_search_call'; } 
 @override Map<String, dynamic> toJson() { return {...toolSearchCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemToolSearchCall && toolSearchCall == other.toolSearchCall; } 
@@ -161,116 +161,116 @@ factory ConversationItemToolSearchOutput.fromJson(Map<String, dynamic> json) { r
 
 final ToolSearchOutput toolSearchOutput;
 
-@override String get type { return 'ToolSearchOutput'; } 
+@override String get type { return 'tool_search_output'; } 
 @override Map<String, dynamic> toJson() { return {...toolSearchOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemToolSearchOutput && toolSearchOutput == other.toolSearchOutput; } 
 @override int get hashCode { return toolSearchOutput.hashCode; } 
 @override String toString() { return 'ConversationItemToolSearchOutput(toolSearchOutput: $toolSearchOutput)'; } 
  }
-final class ConversationItemReasoningItem extends ConversationItem {const ConversationItemReasoningItem(this.reasoningItem);
+final class ConversationItemReasoning extends ConversationItem {const ConversationItemReasoning(this.reasoningItem);
 
-factory ConversationItemReasoningItem.fromJson(Map<String, dynamic> json) { return ConversationItemReasoningItem(ReasoningItem.fromJson(json)); }
+factory ConversationItemReasoning.fromJson(Map<String, dynamic> json) { return ConversationItemReasoning(ReasoningItem.fromJson(json)); }
 
 final ReasoningItem reasoningItem;
 
-@override String get type { return 'ReasoningItem'; } 
+@override String get type { return 'reasoning'; } 
 @override Map<String, dynamic> toJson() { return {...reasoningItem.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemReasoningItem && reasoningItem == other.reasoningItem; } 
+    other is ConversationItemReasoning && reasoningItem == other.reasoningItem; } 
 @override int get hashCode { return reasoningItem.hashCode; } 
-@override String toString() { return 'ConversationItemReasoningItem(reasoningItem: $reasoningItem)'; } 
+@override String toString() { return 'ConversationItemReasoning(reasoningItem: $reasoningItem)'; } 
  }
-final class ConversationItemCodeInterpreterToolCall extends ConversationItem {const ConversationItemCodeInterpreterToolCall(this.codeInterpreterToolCall);
+final class ConversationItemCodeInterpreterCall extends ConversationItem {const ConversationItemCodeInterpreterCall(this.codeInterpreterToolCall);
 
-factory ConversationItemCodeInterpreterToolCall.fromJson(Map<String, dynamic> json) { return ConversationItemCodeInterpreterToolCall(CodeInterpreterToolCall.fromJson(json)); }
+factory ConversationItemCodeInterpreterCall.fromJson(Map<String, dynamic> json) { return ConversationItemCodeInterpreterCall(CodeInterpreterToolCall.fromJson(json)); }
 
 final CodeInterpreterToolCall codeInterpreterToolCall;
 
-@override String get type { return 'CodeInterpreterToolCall'; } 
+@override String get type { return 'code_interpreter_call'; } 
 @override Map<String, dynamic> toJson() { return {...codeInterpreterToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemCodeInterpreterToolCall && codeInterpreterToolCall == other.codeInterpreterToolCall; } 
+    other is ConversationItemCodeInterpreterCall && codeInterpreterToolCall == other.codeInterpreterToolCall; } 
 @override int get hashCode { return codeInterpreterToolCall.hashCode; } 
-@override String toString() { return 'ConversationItemCodeInterpreterToolCall(codeInterpreterToolCall: $codeInterpreterToolCall)'; } 
+@override String toString() { return 'ConversationItemCodeInterpreterCall(codeInterpreterToolCall: $codeInterpreterToolCall)'; } 
  }
-final class ConversationItemLocalShellToolCall extends ConversationItem {const ConversationItemLocalShellToolCall(this.localShellToolCall);
+final class ConversationItemLocalShellCall extends ConversationItem {const ConversationItemLocalShellCall(this.localShellToolCall);
 
-factory ConversationItemLocalShellToolCall.fromJson(Map<String, dynamic> json) { return ConversationItemLocalShellToolCall(LocalShellToolCall.fromJson(json)); }
+factory ConversationItemLocalShellCall.fromJson(Map<String, dynamic> json) { return ConversationItemLocalShellCall(LocalShellToolCall.fromJson(json)); }
 
 final LocalShellToolCall localShellToolCall;
 
-@override String get type { return 'LocalShellToolCall'; } 
+@override String get type { return 'local_shell_call'; } 
 @override Map<String, dynamic> toJson() { return {...localShellToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemLocalShellToolCall && localShellToolCall == other.localShellToolCall; } 
+    other is ConversationItemLocalShellCall && localShellToolCall == other.localShellToolCall; } 
 @override int get hashCode { return localShellToolCall.hashCode; } 
-@override String toString() { return 'ConversationItemLocalShellToolCall(localShellToolCall: $localShellToolCall)'; } 
+@override String toString() { return 'ConversationItemLocalShellCall(localShellToolCall: $localShellToolCall)'; } 
  }
-final class ConversationItemLocalShellToolCallOutput extends ConversationItem {const ConversationItemLocalShellToolCallOutput(this.localShellToolCallOutput);
+final class ConversationItemLocalShellCallOutput extends ConversationItem {const ConversationItemLocalShellCallOutput(this.localShellToolCallOutput);
 
-factory ConversationItemLocalShellToolCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemLocalShellToolCallOutput(LocalShellToolCallOutput.fromJson(json)); }
+factory ConversationItemLocalShellCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemLocalShellCallOutput(LocalShellToolCallOutput.fromJson(json)); }
 
 final LocalShellToolCallOutput localShellToolCallOutput;
 
-@override String get type { return 'LocalShellToolCallOutput'; } 
+@override String get type { return 'local_shell_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...localShellToolCallOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemLocalShellToolCallOutput && localShellToolCallOutput == other.localShellToolCallOutput; } 
+    other is ConversationItemLocalShellCallOutput && localShellToolCallOutput == other.localShellToolCallOutput; } 
 @override int get hashCode { return localShellToolCallOutput.hashCode; } 
-@override String toString() { return 'ConversationItemLocalShellToolCallOutput(localShellToolCallOutput: $localShellToolCallOutput)'; } 
+@override String toString() { return 'ConversationItemLocalShellCallOutput(localShellToolCallOutput: $localShellToolCallOutput)'; } 
  }
-final class ConversationItemFunctionShellCall extends ConversationItem {const ConversationItemFunctionShellCall(this.functionShellCall);
+final class ConversationItemShellCall extends ConversationItem {const ConversationItemShellCall(this.functionShellCall);
 
-factory ConversationItemFunctionShellCall.fromJson(Map<String, dynamic> json) { return ConversationItemFunctionShellCall(FunctionShellCall.fromJson(json)); }
+factory ConversationItemShellCall.fromJson(Map<String, dynamic> json) { return ConversationItemShellCall(FunctionShellCall.fromJson(json)); }
 
 final FunctionShellCall functionShellCall;
 
-@override String get type { return 'FunctionShellCall'; } 
+@override String get type { return 'shell_call'; } 
 @override Map<String, dynamic> toJson() { return {...functionShellCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemFunctionShellCall && functionShellCall == other.functionShellCall; } 
+    other is ConversationItemShellCall && functionShellCall == other.functionShellCall; } 
 @override int get hashCode { return functionShellCall.hashCode; } 
-@override String toString() { return 'ConversationItemFunctionShellCall(functionShellCall: $functionShellCall)'; } 
+@override String toString() { return 'ConversationItemShellCall(functionShellCall: $functionShellCall)'; } 
  }
-final class ConversationItemFunctionShellCallOutput extends ConversationItem {const ConversationItemFunctionShellCallOutput(this.functionShellCallOutput);
+final class ConversationItemShellCallOutput extends ConversationItem {const ConversationItemShellCallOutput(this.functionShellCallOutput);
 
-factory ConversationItemFunctionShellCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemFunctionShellCallOutput(FunctionShellCallOutput.fromJson(json)); }
+factory ConversationItemShellCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemShellCallOutput(FunctionShellCallOutput.fromJson(json)); }
 
 final FunctionShellCallOutput functionShellCallOutput;
 
-@override String get type { return 'FunctionShellCallOutput'; } 
+@override String get type { return 'shell_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemFunctionShellCallOutput && functionShellCallOutput == other.functionShellCallOutput; } 
+    other is ConversationItemShellCallOutput && functionShellCallOutput == other.functionShellCallOutput; } 
 @override int get hashCode { return functionShellCallOutput.hashCode; } 
-@override String toString() { return 'ConversationItemFunctionShellCallOutput(functionShellCallOutput: $functionShellCallOutput)'; } 
+@override String toString() { return 'ConversationItemShellCallOutput(functionShellCallOutput: $functionShellCallOutput)'; } 
  }
-final class ConversationItemApplyPatchToolCall extends ConversationItem {const ConversationItemApplyPatchToolCall(this.applyPatchToolCall);
+final class ConversationItemApplyPatchCall extends ConversationItem {const ConversationItemApplyPatchCall(this.applyPatchToolCall);
 
-factory ConversationItemApplyPatchToolCall.fromJson(Map<String, dynamic> json) { return ConversationItemApplyPatchToolCall(ApplyPatchToolCall.fromJson(json)); }
+factory ConversationItemApplyPatchCall.fromJson(Map<String, dynamic> json) { return ConversationItemApplyPatchCall(ApplyPatchToolCall.fromJson(json)); }
 
 final ApplyPatchToolCall applyPatchToolCall;
 
-@override String get type { return 'ApplyPatchToolCall'; } 
+@override String get type { return 'apply_patch_call'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemApplyPatchToolCall && applyPatchToolCall == other.applyPatchToolCall; } 
+    other is ConversationItemApplyPatchCall && applyPatchToolCall == other.applyPatchToolCall; } 
 @override int get hashCode { return applyPatchToolCall.hashCode; } 
-@override String toString() { return 'ConversationItemApplyPatchToolCall(applyPatchToolCall: $applyPatchToolCall)'; } 
+@override String toString() { return 'ConversationItemApplyPatchCall(applyPatchToolCall: $applyPatchToolCall)'; } 
  }
-final class ConversationItemApplyPatchToolCallOutput extends ConversationItem {const ConversationItemApplyPatchToolCallOutput(this.applyPatchToolCallOutput);
+final class ConversationItemApplyPatchCallOutput extends ConversationItem {const ConversationItemApplyPatchCallOutput(this.applyPatchToolCallOutput);
 
-factory ConversationItemApplyPatchToolCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemApplyPatchToolCallOutput(ApplyPatchToolCallOutput.fromJson(json)); }
+factory ConversationItemApplyPatchCallOutput.fromJson(Map<String, dynamic> json) { return ConversationItemApplyPatchCallOutput(ApplyPatchToolCallOutput.fromJson(json)); }
 
 final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 
-@override String get type { return 'ApplyPatchToolCallOutput'; } 
+@override String get type { return 'apply_patch_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...applyPatchToolCallOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemApplyPatchToolCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput; } 
+    other is ConversationItemApplyPatchCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput; } 
 @override int get hashCode { return applyPatchToolCallOutput.hashCode; } 
-@override String toString() { return 'ConversationItemApplyPatchToolCallOutput(applyPatchToolCallOutput: $applyPatchToolCallOutput)'; } 
+@override String toString() { return 'ConversationItemApplyPatchCallOutput(applyPatchToolCallOutput: $applyPatchToolCallOutput)'; } 
  }
 final class ConversationItemMcpListTools extends ConversationItem {const ConversationItemMcpListTools(this.mcpListTools);
 
@@ -278,7 +278,7 @@ factory ConversationItemMcpListTools.fromJson(Map<String, dynamic> json) { retur
 
 final McpListTools mcpListTools;
 
-@override String get type { return 'MCPListTools'; } 
+@override String get type { return 'mcp_list_tools'; } 
 @override Map<String, dynamic> toJson() { return {...mcpListTools.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMcpListTools && mcpListTools == other.mcpListTools; } 
@@ -291,38 +291,38 @@ factory ConversationItemMcpApprovalRequest.fromJson(Map<String, dynamic> json) {
 
 final McpApprovalRequest mcpApprovalRequest;
 
-@override String get type { return 'MCPApprovalRequest'; } 
+@override String get type { return 'mcp_approval_request'; } 
 @override Map<String, dynamic> toJson() { return {...mcpApprovalRequest.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest; } 
 @override int get hashCode { return mcpApprovalRequest.hashCode; } 
 @override String toString() { return 'ConversationItemMcpApprovalRequest(mcpApprovalRequest: $mcpApprovalRequest)'; } 
  }
-final class ConversationItemMcpApprovalResponseResource extends ConversationItem {const ConversationItemMcpApprovalResponseResource(this.mcpApprovalResponseResource);
+final class ConversationItemMcpApprovalResponse extends ConversationItem {const ConversationItemMcpApprovalResponse(this.mcpApprovalResponseResource);
 
-factory ConversationItemMcpApprovalResponseResource.fromJson(Map<String, dynamic> json) { return ConversationItemMcpApprovalResponseResource(McpApprovalResponseResource.fromJson(json)); }
+factory ConversationItemMcpApprovalResponse.fromJson(Map<String, dynamic> json) { return ConversationItemMcpApprovalResponse(McpApprovalResponseResource.fromJson(json)); }
 
 final McpApprovalResponseResource mcpApprovalResponseResource;
 
-@override String get type { return 'MCPApprovalResponseResource'; } 
+@override String get type { return 'mcp_approval_response'; } 
 @override Map<String, dynamic> toJson() { return {...mcpApprovalResponseResource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemMcpApprovalResponseResource && mcpApprovalResponseResource == other.mcpApprovalResponseResource; } 
+    other is ConversationItemMcpApprovalResponse && mcpApprovalResponseResource == other.mcpApprovalResponseResource; } 
 @override int get hashCode { return mcpApprovalResponseResource.hashCode; } 
-@override String toString() { return 'ConversationItemMcpApprovalResponseResource(mcpApprovalResponseResource: $mcpApprovalResponseResource)'; } 
+@override String toString() { return 'ConversationItemMcpApprovalResponse(mcpApprovalResponseResource: $mcpApprovalResponseResource)'; } 
  }
-final class ConversationItemMcpToolCall extends ConversationItem {const ConversationItemMcpToolCall(this.mcpToolCall);
+final class ConversationItemMcpCall extends ConversationItem {const ConversationItemMcpCall(this.mcpToolCall);
 
-factory ConversationItemMcpToolCall.fromJson(Map<String, dynamic> json) { return ConversationItemMcpToolCall(McpToolCall.fromJson(json)); }
+factory ConversationItemMcpCall.fromJson(Map<String, dynamic> json) { return ConversationItemMcpCall(McpToolCall.fromJson(json)); }
 
 final McpToolCall mcpToolCall;
 
-@override String get type { return 'MCPToolCall'; } 
+@override String get type { return 'mcp_call'; } 
 @override Map<String, dynamic> toJson() { return {...mcpToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationItemMcpToolCall && mcpToolCall == other.mcpToolCall; } 
+    other is ConversationItemMcpCall && mcpToolCall == other.mcpToolCall; } 
 @override int get hashCode { return mcpToolCall.hashCode; } 
-@override String toString() { return 'ConversationItemMcpToolCall(mcpToolCall: $mcpToolCall)'; } 
+@override String toString() { return 'ConversationItemMcpCall(mcpToolCall: $mcpToolCall)'; } 
  }
 final class ConversationItemCustomToolCall extends ConversationItem {const ConversationItemCustomToolCall(this.customToolCall);
 
@@ -330,7 +330,7 @@ factory ConversationItemCustomToolCall.fromJson(Map<String, dynamic> json) { ret
 
 final CustomToolCall customToolCall;
 
-@override String get type { return 'CustomToolCall'; } 
+@override String get type { return 'custom_tool_call'; } 
 @override Map<String, dynamic> toJson() { return {...customToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemCustomToolCall && customToolCall == other.customToolCall; } 
@@ -343,7 +343,7 @@ factory ConversationItemCustomToolCallOutput.fromJson(Map<String, dynamic> json)
 
 final CustomToolCallOutput customToolCallOutput;
 
-@override String get type { return 'CustomToolCallOutput'; } 
+@override String get type { return 'custom_tool_call_output'; } 
 @override Map<String, dynamic> toJson() { return {...customToolCallOutput.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ConversationItemCustomToolCallOutput && customToolCallOutput == other.customToolCallOutput; } 

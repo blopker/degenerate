@@ -5,8 +5,8 @@ sealed class NamespaceToolParamTools {const NamespaceToolParamTools();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory NamespaceToolParamTools.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'FunctionToolParam' => NamespaceToolParamToolsFunctionToolParam.fromJson(json),
-  'CustomToolParam' => NamespaceToolParamToolsCustomToolParam.fromJson(json),
+  'function' => NamespaceToolParamToolsFunction.fromJson(json),
+  'custom' => NamespaceToolParamToolsCustom.fromJson(json),
   _ => NamespaceToolParamTools$Unknown(json),
 }; }
 
@@ -16,31 +16,31 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NamespaceToolParamTools$Unknown; } 
  }
-final class NamespaceToolParamToolsFunctionToolParam extends NamespaceToolParamTools {const NamespaceToolParamToolsFunctionToolParam(this.functionToolParam);
+final class NamespaceToolParamToolsFunction extends NamespaceToolParamTools {const NamespaceToolParamToolsFunction(this.functionToolParam);
 
-factory NamespaceToolParamToolsFunctionToolParam.fromJson(Map<String, dynamic> json) { return NamespaceToolParamToolsFunctionToolParam(FunctionToolParam.fromJson(json)); }
+factory NamespaceToolParamToolsFunction.fromJson(Map<String, dynamic> json) { return NamespaceToolParamToolsFunction(FunctionToolParam.fromJson(json)); }
 
 final FunctionToolParam functionToolParam;
 
-@override String get type { return 'FunctionToolParam'; } 
+@override String get type { return 'function'; } 
 @override Map<String, dynamic> toJson() { return {...functionToolParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is NamespaceToolParamToolsFunctionToolParam && functionToolParam == other.functionToolParam; } 
+    other is NamespaceToolParamToolsFunction && functionToolParam == other.functionToolParam; } 
 @override int get hashCode { return functionToolParam.hashCode; } 
-@override String toString() { return 'NamespaceToolParamToolsFunctionToolParam(functionToolParam: $functionToolParam)'; } 
+@override String toString() { return 'NamespaceToolParamToolsFunction(functionToolParam: $functionToolParam)'; } 
  }
-final class NamespaceToolParamToolsCustomToolParam extends NamespaceToolParamTools {const NamespaceToolParamToolsCustomToolParam(this.customToolParam);
+final class NamespaceToolParamToolsCustom extends NamespaceToolParamTools {const NamespaceToolParamToolsCustom(this.customToolParam);
 
-factory NamespaceToolParamToolsCustomToolParam.fromJson(Map<String, dynamic> json) { return NamespaceToolParamToolsCustomToolParam(CustomToolParam.fromJson(json)); }
+factory NamespaceToolParamToolsCustom.fromJson(Map<String, dynamic> json) { return NamespaceToolParamToolsCustom(CustomToolParam.fromJson(json)); }
 
 final CustomToolParam customToolParam;
 
-@override String get type { return 'CustomToolParam'; } 
+@override String get type { return 'custom'; } 
 @override Map<String, dynamic> toJson() { return {...customToolParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is NamespaceToolParamToolsCustomToolParam && customToolParam == other.customToolParam; } 
+    other is NamespaceToolParamToolsCustom && customToolParam == other.customToolParam; } 
 @override int get hashCode { return customToolParam.hashCode; } 
-@override String toString() { return 'NamespaceToolParamToolsCustomToolParam(customToolParam: $customToolParam)'; } 
+@override String toString() { return 'NamespaceToolParamToolsCustom(customToolParam: $customToolParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

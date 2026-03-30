@@ -99,137 +99,121 @@ mixin ApiExecutor {
     }
   }
 
+  /// Shared streaming setup: applies interceptors to modify the request
+  /// (auth, logging, etc.), then sends via [sendStreaming] and yields
+  /// events from the provided [parseStream] function.
+  Stream<T> _executeStreamingImpl<T>(
+    ApiRequest request, {
+    required T Function(String data) onEvent,
+    required Stream<String> Function(Stream<List<int>> byteStream) parseStream,
+  }) async* {
+    final userCancelToken = request.options?.cancelToken;
+    if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
+
+    final effectiveTimeout = request.options?.timeout ?? apiConfig.timeout;
+    final extraHeaders = request.options?.extraHeaders;
+
+    final adapterToken = (effectiveTimeout != null || userCancelToken != null)
+        ? CancelToken()
+        : null;
+    Timer? timeoutTimer;
+    bool timedOut = false;
+
+    if (adapterToken != null) {
+      if (userCancelToken != null) {
+        final token = adapterToken;
+        userCancelToken.whenCancelled.then((_) {
+          if (!token.isCancelled) token.cancel();
+        });
+      }
+      if (effectiveTimeout != null) {
+        final token = adapterToken;
+        timeoutTimer = Timer(effectiveTimeout, () {
+          timedOut = true;
+          if (!token.isCancelled) token.cancel();
+        });
+      }
+    }
+
+    final effectiveRequest = request.copyWith(
+      headers: extraHeaders != null
+          ? {...request.headers, ...extraHeaders}
+          : null,
+      options: RequestOptions(cancelToken: adapterToken),
+    );
+
+    try {
+      // Run interceptors to apply auth headers, logging, etc.
+      // The terminal handler captures the final request and sends it as
+      // a streaming request.
+      late ApiRequest finalRequest;
+      final chain = buildInterceptorChain(
+        interceptors: apiConfig.interceptors,
+        terminal: (req) async {
+          finalRequest = req;
+          // Return a dummy response — we'll send the real streaming request below.
+          return ApiResponse(statusCode: 200, headers: const {}, body: '');
+        },
+      );
+      await chain(effectiveRequest);
+
+      final streamedResponse = await apiConfig.client.sendStreaming(
+        finalRequest,
+      );
+      timeoutTimer?.cancel();
+
+      if (!streamedResponse.isSuccessful) {
+        final buffered = await streamedResponse.toApiResponse();
+        throw ApiStreamError(
+          statusCode: buffered.statusCode,
+          rawError: buffered.body,
+          headers: buffered.headers,
+        );
+      }
+
+      yield* parseStream(streamedResponse.byteStream)
+          .map((data) => onEvent(data));
+    } on CancelledException {
+      timeoutTimer?.cancel();
+      if (timedOut) {
+        throw TimeoutException('Request timed out', effectiveTimeout);
+      }
+      rethrow;
+    } on ApiStreamError {
+      rethrow;
+    } catch (e) {
+      // Wrap raw network/platform exceptions (SocketException, ClientException,
+      // etc.) in ApiStreamError so callers have a consistent error type.
+      throw ApiStreamError(statusCode: 0, rawError: e.toString());
+    }
+  }
+
   /// Streaming execution pipeline: send -> SSE parse -> deserialize.
+  ///
+  /// Interceptors are applied to the request (auth, logging, etc.) before
+  /// sending the streaming request.
   Stream<T> executeStreaming<T>(
     ApiRequest request, {
     required T Function(String data) onEvent,
-  }) async* {
-    final userCancelToken = request.options?.cancelToken;
-    if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-    final effectiveTimeout = request.options?.timeout ?? apiConfig.timeout;
-    final extraHeaders = request.options?.extraHeaders;
-
-    final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-        ? CancelToken()
-        : null;
-    Timer? timeoutTimer;
-    bool timedOut = false;
-
-    if (adapterToken != null) {
-      if (userCancelToken != null) {
-        final token = adapterToken;
-        userCancelToken.whenCancelled.then((_) {
-          if (!token.isCancelled) token.cancel();
-        });
-      }
-      if (effectiveTimeout != null) {
-        final token = adapterToken;
-        timeoutTimer = Timer(effectiveTimeout, () {
-          timedOut = true;
-          if (!token.isCancelled) token.cancel();
-        });
-      }
-    }
-
-    final effectiveRequest = request.copyWith(
-      headers: extraHeaders != null
-          ? {...request.headers, ...extraHeaders}
-          : null,
-      options: RequestOptions(cancelToken: adapterToken),
-    );
-
-    try {
-      final streamedResponse = await apiConfig.client.sendStreaming(
-        effectiveRequest,
+  }) =>
+      _executeStreamingImpl(
+        request,
+        onEvent: onEvent,
+        parseStream: (bytes) =>
+            parseSseStream(bytes).map((event) => event.data),
       );
-      timeoutTimer?.cancel();
-
-      if (!streamedResponse.isSuccessful) {
-        final buffered = await streamedResponse.toApiResponse();
-        throw ApiStreamError(
-          statusCode: buffered.statusCode,
-          rawError: buffered.body,
-          headers: buffered.headers,
-        );
-      }
-
-      yield* parseSseStream(
-        streamedResponse.byteStream,
-      ).map((event) => onEvent(event.data));
-    } on CancelledException {
-      timeoutTimer?.cancel();
-      if (timedOut) {
-        throw TimeoutException('Request timed out', effectiveTimeout);
-      }
-      rethrow;
-    }
-  }
 
   /// JSONL streaming pipeline: send -> line parse -> deserialize.
+  ///
+  /// Interceptors are applied to the request (auth, logging, etc.) before
+  /// sending the streaming request.
   Stream<T> executeJsonlStreaming<T>(
     ApiRequest request, {
     required T Function(String data) onEvent,
-  }) async* {
-    final userCancelToken = request.options?.cancelToken;
-    if (userCancelToken?.isCancelled ?? false) throw const CancelledException();
-
-    final effectiveTimeout = request.options?.timeout ?? apiConfig.timeout;
-    final extraHeaders = request.options?.extraHeaders;
-
-    final adapterToken = (effectiveTimeout != null || userCancelToken != null)
-        ? CancelToken()
-        : null;
-    Timer? timeoutTimer;
-    bool timedOut = false;
-
-    if (adapterToken != null) {
-      if (userCancelToken != null) {
-        final token = adapterToken;
-        userCancelToken.whenCancelled.then((_) {
-          if (!token.isCancelled) token.cancel();
-        });
-      }
-      if (effectiveTimeout != null) {
-        final token = adapterToken;
-        timeoutTimer = Timer(effectiveTimeout, () {
-          timedOut = true;
-          if (!token.isCancelled) token.cancel();
-        });
-      }
-    }
-
-    final effectiveRequest = request.copyWith(
-      headers: extraHeaders != null
-          ? {...request.headers, ...extraHeaders}
-          : null,
-      options: RequestOptions(cancelToken: adapterToken),
-    );
-
-    try {
-      final streamedResponse = await apiConfig.client.sendStreaming(
-        effectiveRequest,
+  }) =>
+      _executeStreamingImpl(
+        request,
+        onEvent: onEvent,
+        parseStream: parseJsonlStream,
       );
-      timeoutTimer?.cancel();
-
-      if (!streamedResponse.isSuccessful) {
-        final buffered = await streamedResponse.toApiResponse();
-        throw ApiStreamError(
-          statusCode: buffered.statusCode,
-          rawError: buffered.body,
-          headers: buffered.headers,
-        );
-      }
-
-      yield* parseJsonlStream(
-        streamedResponse.byteStream,
-      ).map((line) => onEvent(line));
-    } on CancelledException {
-      timeoutTimer?.cancel();
-      if (timedOut) {
-        throw TimeoutException('Request timed out', effectiveTimeout);
-      }
-      rethrow;
-    }
-  }
 }

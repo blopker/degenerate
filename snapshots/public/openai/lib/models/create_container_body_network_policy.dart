@@ -5,8 +5,8 @@ sealed class CreateContainerBodyNetworkPolicy {const CreateContainerBodyNetworkP
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CreateContainerBodyNetworkPolicy.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'ContainerNetworkPolicyDisabledParam' => CreateContainerBodyNetworkPolicyContainerNetworkPolicyDisabledParam.fromJson(json),
-  'ContainerNetworkPolicyAllowlistParam' => CreateContainerBodyNetworkPolicyContainerNetworkPolicyAllowlistParam.fromJson(json),
+  'disabled' => CreateContainerBodyNetworkPolicyDisabled.fromJson(json),
+  'allowlist' => CreateContainerBodyNetworkPolicyAllowlist.fromJson(json),
   _ => CreateContainerBodyNetworkPolicy$Unknown(json),
 }; }
 
@@ -16,31 +16,31 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateContainerBodyNetworkPolicy$Unknown; } 
  }
-final class CreateContainerBodyNetworkPolicyContainerNetworkPolicyDisabledParam extends CreateContainerBodyNetworkPolicy {const CreateContainerBodyNetworkPolicyContainerNetworkPolicyDisabledParam(this.containerNetworkPolicyDisabledParam);
+final class CreateContainerBodyNetworkPolicyDisabled extends CreateContainerBodyNetworkPolicy {const CreateContainerBodyNetworkPolicyDisabled(this.containerNetworkPolicyDisabledParam);
 
-factory CreateContainerBodyNetworkPolicyContainerNetworkPolicyDisabledParam.fromJson(Map<String, dynamic> json) { return CreateContainerBodyNetworkPolicyContainerNetworkPolicyDisabledParam(ContainerNetworkPolicyDisabledParam.fromJson(json)); }
+factory CreateContainerBodyNetworkPolicyDisabled.fromJson(Map<String, dynamic> json) { return CreateContainerBodyNetworkPolicyDisabled(ContainerNetworkPolicyDisabledParam.fromJson(json)); }
 
 final ContainerNetworkPolicyDisabledParam containerNetworkPolicyDisabledParam;
 
-@override String get type { return 'ContainerNetworkPolicyDisabledParam'; } 
+@override String get type { return 'disabled'; } 
 @override Map<String, dynamic> toJson() { return {...containerNetworkPolicyDisabledParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateContainerBodyNetworkPolicyContainerNetworkPolicyDisabledParam && containerNetworkPolicyDisabledParam == other.containerNetworkPolicyDisabledParam; } 
+    other is CreateContainerBodyNetworkPolicyDisabled && containerNetworkPolicyDisabledParam == other.containerNetworkPolicyDisabledParam; } 
 @override int get hashCode { return containerNetworkPolicyDisabledParam.hashCode; } 
-@override String toString() { return 'CreateContainerBodyNetworkPolicyContainerNetworkPolicyDisabledParam(containerNetworkPolicyDisabledParam: $containerNetworkPolicyDisabledParam)'; } 
+@override String toString() { return 'CreateContainerBodyNetworkPolicyDisabled(containerNetworkPolicyDisabledParam: $containerNetworkPolicyDisabledParam)'; } 
  }
-final class CreateContainerBodyNetworkPolicyContainerNetworkPolicyAllowlistParam extends CreateContainerBodyNetworkPolicy {const CreateContainerBodyNetworkPolicyContainerNetworkPolicyAllowlistParam(this.containerNetworkPolicyAllowlistParam);
+final class CreateContainerBodyNetworkPolicyAllowlist extends CreateContainerBodyNetworkPolicy {const CreateContainerBodyNetworkPolicyAllowlist(this.containerNetworkPolicyAllowlistParam);
 
-factory CreateContainerBodyNetworkPolicyContainerNetworkPolicyAllowlistParam.fromJson(Map<String, dynamic> json) { return CreateContainerBodyNetworkPolicyContainerNetworkPolicyAllowlistParam(ContainerNetworkPolicyAllowlistParam.fromJson(json)); }
+factory CreateContainerBodyNetworkPolicyAllowlist.fromJson(Map<String, dynamic> json) { return CreateContainerBodyNetworkPolicyAllowlist(ContainerNetworkPolicyAllowlistParam.fromJson(json)); }
 
 final ContainerNetworkPolicyAllowlistParam containerNetworkPolicyAllowlistParam;
 
-@override String get type { return 'ContainerNetworkPolicyAllowlistParam'; } 
+@override String get type { return 'allowlist'; } 
 @override Map<String, dynamic> toJson() { return {...containerNetworkPolicyAllowlistParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateContainerBodyNetworkPolicyContainerNetworkPolicyAllowlistParam && containerNetworkPolicyAllowlistParam == other.containerNetworkPolicyAllowlistParam; } 
+    other is CreateContainerBodyNetworkPolicyAllowlist && containerNetworkPolicyAllowlistParam == other.containerNetworkPolicyAllowlistParam; } 
 @override int get hashCode { return containerNetworkPolicyAllowlistParam.hashCode; } 
-@override String toString() { return 'CreateContainerBodyNetworkPolicyContainerNetworkPolicyAllowlistParam(containerNetworkPolicyAllowlistParam: $containerNetworkPolicyAllowlistParam)'; } 
+@override String toString() { return 'CreateContainerBodyNetworkPolicyAllowlist(containerNetworkPolicyAllowlistParam: $containerNetworkPolicyAllowlistParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

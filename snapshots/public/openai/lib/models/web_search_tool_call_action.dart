@@ -7,9 +7,9 @@ sealed class WebSearchToolCallAction {const WebSearchToolCallAction();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory WebSearchToolCallAction.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'WebSearchActionSearch' => WebSearchToolCallActionWebSearchActionSearch.fromJson(json),
-  'WebSearchActionOpenPage' => WebSearchToolCallActionWebSearchActionOpenPage.fromJson(json),
-  'WebSearchActionFind' => WebSearchToolCallActionWebSearchActionFind.fromJson(json),
+  'search' => WebSearchToolCallActionSearch.fromJson(json),
+  'open_page' => WebSearchToolCallActionOpenPage.fromJson(json),
+  'find_in_page' => WebSearchToolCallActionFindInPage.fromJson(json),
   _ => WebSearchToolCallAction$Unknown(json),
 }; }
 
@@ -19,44 +19,44 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebSearchToolCallAction$Unknown; } 
  }
-final class WebSearchToolCallActionWebSearchActionSearch extends WebSearchToolCallAction {const WebSearchToolCallActionWebSearchActionSearch(this.webSearchActionSearch);
+final class WebSearchToolCallActionSearch extends WebSearchToolCallAction {const WebSearchToolCallActionSearch(this.webSearchActionSearch);
 
-factory WebSearchToolCallActionWebSearchActionSearch.fromJson(Map<String, dynamic> json) { return WebSearchToolCallActionWebSearchActionSearch(WebSearchActionSearch.fromJson(json)); }
+factory WebSearchToolCallActionSearch.fromJson(Map<String, dynamic> json) { return WebSearchToolCallActionSearch(WebSearchActionSearch.fromJson(json)); }
 
 final WebSearchActionSearch webSearchActionSearch;
 
-@override String get type { return 'WebSearchActionSearch'; } 
+@override String get type { return 'search'; } 
 @override Map<String, dynamic> toJson() { return {...webSearchActionSearch.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchToolCallActionWebSearchActionSearch && webSearchActionSearch == other.webSearchActionSearch; } 
+    other is WebSearchToolCallActionSearch && webSearchActionSearch == other.webSearchActionSearch; } 
 @override int get hashCode { return webSearchActionSearch.hashCode; } 
-@override String toString() { return 'WebSearchToolCallActionWebSearchActionSearch(webSearchActionSearch: $webSearchActionSearch)'; } 
+@override String toString() { return 'WebSearchToolCallActionSearch(webSearchActionSearch: $webSearchActionSearch)'; } 
  }
-final class WebSearchToolCallActionWebSearchActionOpenPage extends WebSearchToolCallAction {const WebSearchToolCallActionWebSearchActionOpenPage(this.webSearchActionOpenPage);
+final class WebSearchToolCallActionOpenPage extends WebSearchToolCallAction {const WebSearchToolCallActionOpenPage(this.webSearchActionOpenPage);
 
-factory WebSearchToolCallActionWebSearchActionOpenPage.fromJson(Map<String, dynamic> json) { return WebSearchToolCallActionWebSearchActionOpenPage(WebSearchActionOpenPage.fromJson(json)); }
+factory WebSearchToolCallActionOpenPage.fromJson(Map<String, dynamic> json) { return WebSearchToolCallActionOpenPage(WebSearchActionOpenPage.fromJson(json)); }
 
 final WebSearchActionOpenPage webSearchActionOpenPage;
 
-@override String get type { return 'WebSearchActionOpenPage'; } 
+@override String get type { return 'open_page'; } 
 @override Map<String, dynamic> toJson() { return {...webSearchActionOpenPage.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchToolCallActionWebSearchActionOpenPage && webSearchActionOpenPage == other.webSearchActionOpenPage; } 
+    other is WebSearchToolCallActionOpenPage && webSearchActionOpenPage == other.webSearchActionOpenPage; } 
 @override int get hashCode { return webSearchActionOpenPage.hashCode; } 
-@override String toString() { return 'WebSearchToolCallActionWebSearchActionOpenPage(webSearchActionOpenPage: $webSearchActionOpenPage)'; } 
+@override String toString() { return 'WebSearchToolCallActionOpenPage(webSearchActionOpenPage: $webSearchActionOpenPage)'; } 
  }
-final class WebSearchToolCallActionWebSearchActionFind extends WebSearchToolCallAction {const WebSearchToolCallActionWebSearchActionFind(this.webSearchActionFind);
+final class WebSearchToolCallActionFindInPage extends WebSearchToolCallAction {const WebSearchToolCallActionFindInPage(this.webSearchActionFind);
 
-factory WebSearchToolCallActionWebSearchActionFind.fromJson(Map<String, dynamic> json) { return WebSearchToolCallActionWebSearchActionFind(WebSearchActionFind.fromJson(json)); }
+factory WebSearchToolCallActionFindInPage.fromJson(Map<String, dynamic> json) { return WebSearchToolCallActionFindInPage(WebSearchActionFind.fromJson(json)); }
 
 final WebSearchActionFind webSearchActionFind;
 
-@override String get type { return 'WebSearchActionFind'; } 
+@override String get type { return 'find_in_page'; } 
 @override Map<String, dynamic> toJson() { return {...webSearchActionFind.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchToolCallActionWebSearchActionFind && webSearchActionFind == other.webSearchActionFind; } 
+    other is WebSearchToolCallActionFindInPage && webSearchActionFind == other.webSearchActionFind; } 
 @override int get hashCode { return webSearchActionFind.hashCode; } 
-@override String toString() { return 'WebSearchToolCallActionWebSearchActionFind(webSearchActionFind: $webSearchActionFind)'; } 
+@override String toString() { return 'WebSearchToolCallActionFindInPage(webSearchActionFind: $webSearchActionFind)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

@@ -5,8 +5,8 @@ sealed class UserMessageItemContent {const UserMessageItemContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory UserMessageItemContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'UserMessageInputText' => UserMessageItemContentUserMessageInputText.fromJson(json),
-  'UserMessageQuotedText' => UserMessageItemContentUserMessageQuotedText.fromJson(json),
+  'input_text' => UserMessageItemContentInputText.fromJson(json),
+  'quoted_text' => UserMessageItemContentQuotedText.fromJson(json),
   _ => UserMessageItemContent$Unknown(json),
 }; }
 
@@ -16,31 +16,31 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UserMessageItemContent$Unknown; } 
  }
-final class UserMessageItemContentUserMessageInputText extends UserMessageItemContent {const UserMessageItemContentUserMessageInputText(this.userMessageInputText);
+final class UserMessageItemContentInputText extends UserMessageItemContent {const UserMessageItemContentInputText(this.userMessageInputText);
 
-factory UserMessageItemContentUserMessageInputText.fromJson(Map<String, dynamic> json) { return UserMessageItemContentUserMessageInputText(UserMessageInputText.fromJson(json)); }
+factory UserMessageItemContentInputText.fromJson(Map<String, dynamic> json) { return UserMessageItemContentInputText(UserMessageInputText.fromJson(json)); }
 
 final UserMessageInputText userMessageInputText;
 
-@override String get type { return 'UserMessageInputText'; } 
+@override String get type { return 'input_text'; } 
 @override Map<String, dynamic> toJson() { return {...userMessageInputText.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserMessageItemContentUserMessageInputText && userMessageInputText == other.userMessageInputText; } 
+    other is UserMessageItemContentInputText && userMessageInputText == other.userMessageInputText; } 
 @override int get hashCode { return userMessageInputText.hashCode; } 
-@override String toString() { return 'UserMessageItemContentUserMessageInputText(userMessageInputText: $userMessageInputText)'; } 
+@override String toString() { return 'UserMessageItemContentInputText(userMessageInputText: $userMessageInputText)'; } 
  }
-final class UserMessageItemContentUserMessageQuotedText extends UserMessageItemContent {const UserMessageItemContentUserMessageQuotedText(this.userMessageQuotedText);
+final class UserMessageItemContentQuotedText extends UserMessageItemContent {const UserMessageItemContentQuotedText(this.userMessageQuotedText);
 
-factory UserMessageItemContentUserMessageQuotedText.fromJson(Map<String, dynamic> json) { return UserMessageItemContentUserMessageQuotedText(UserMessageQuotedText.fromJson(json)); }
+factory UserMessageItemContentQuotedText.fromJson(Map<String, dynamic> json) { return UserMessageItemContentQuotedText(UserMessageQuotedText.fromJson(json)); }
 
 final UserMessageQuotedText userMessageQuotedText;
 
-@override String get type { return 'UserMessageQuotedText'; } 
+@override String get type { return 'quoted_text'; } 
 @override Map<String, dynamic> toJson() { return {...userMessageQuotedText.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserMessageItemContentUserMessageQuotedText && userMessageQuotedText == other.userMessageQuotedText; } 
+    other is UserMessageItemContentQuotedText && userMessageQuotedText == other.userMessageQuotedText; } 
 @override int get hashCode { return userMessageQuotedText.hashCode; } 
-@override String toString() { return 'UserMessageItemContentUserMessageQuotedText(userMessageQuotedText: $userMessageQuotedText)'; } 
+@override String toString() { return 'UserMessageItemContentQuotedText(userMessageQuotedText: $userMessageQuotedText)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

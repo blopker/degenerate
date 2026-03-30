@@ -5,8 +5,8 @@ sealed class FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputO
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory FunctionShellCallOutputOutcomeParam.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'FunctionShellCallOutputTimeoutOutcomeParam' => FunctionShellCallOutputOutcomeParamFunctionShellCallOutputTimeoutOutcomeParam.fromJson(json),
-  'FunctionShellCallOutputExitOutcomeParam' => FunctionShellCallOutputOutcomeParamFunctionShellCallOutputExitOutcomeParam.fromJson(json),
+  'timeout' => FunctionShellCallOutputOutcomeParamTimeout.fromJson(json),
+  'exit' => FunctionShellCallOutputOutcomeParamExit.fromJson(json),
   _ => FunctionShellCallOutputOutcomeParam$Unknown(json),
 }; }
 
@@ -16,31 +16,31 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FunctionShellCallOutputOutcomeParam$Unknown; } 
  }
-final class FunctionShellCallOutputOutcomeParamFunctionShellCallOutputTimeoutOutcomeParam extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParamFunctionShellCallOutputTimeoutOutcomeParam(this.functionShellCallOutputTimeoutOutcomeParam);
+final class FunctionShellCallOutputOutcomeParamTimeout extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParamTimeout(this.functionShellCallOutputTimeoutOutcomeParam);
 
-factory FunctionShellCallOutputOutcomeParamFunctionShellCallOutputTimeoutOutcomeParam.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputOutcomeParamFunctionShellCallOutputTimeoutOutcomeParam(FunctionShellCallOutputTimeoutOutcomeParam.fromJson(json)); }
+factory FunctionShellCallOutputOutcomeParamTimeout.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputOutcomeParamTimeout(FunctionShellCallOutputTimeoutOutcomeParam.fromJson(json)); }
 
 final FunctionShellCallOutputTimeoutOutcomeParam functionShellCallOutputTimeoutOutcomeParam;
 
-@override String get type { return 'FunctionShellCallOutputTimeoutOutcomeParam'; } 
+@override String get type { return 'timeout'; } 
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutputTimeoutOutcomeParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallOutputOutcomeParamFunctionShellCallOutputTimeoutOutcomeParam && functionShellCallOutputTimeoutOutcomeParam == other.functionShellCallOutputTimeoutOutcomeParam; } 
+    other is FunctionShellCallOutputOutcomeParamTimeout && functionShellCallOutputTimeoutOutcomeParam == other.functionShellCallOutputTimeoutOutcomeParam; } 
 @override int get hashCode { return functionShellCallOutputTimeoutOutcomeParam.hashCode; } 
-@override String toString() { return 'FunctionShellCallOutputOutcomeParamFunctionShellCallOutputTimeoutOutcomeParam(functionShellCallOutputTimeoutOutcomeParam: $functionShellCallOutputTimeoutOutcomeParam)'; } 
+@override String toString() { return 'FunctionShellCallOutputOutcomeParamTimeout(functionShellCallOutputTimeoutOutcomeParam: $functionShellCallOutputTimeoutOutcomeParam)'; } 
  }
-final class FunctionShellCallOutputOutcomeParamFunctionShellCallOutputExitOutcomeParam extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParamFunctionShellCallOutputExitOutcomeParam(this.functionShellCallOutputExitOutcomeParam);
+final class FunctionShellCallOutputOutcomeParamExit extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParamExit(this.functionShellCallOutputExitOutcomeParam);
 
-factory FunctionShellCallOutputOutcomeParamFunctionShellCallOutputExitOutcomeParam.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputOutcomeParamFunctionShellCallOutputExitOutcomeParam(FunctionShellCallOutputExitOutcomeParam.fromJson(json)); }
+factory FunctionShellCallOutputOutcomeParamExit.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputOutcomeParamExit(FunctionShellCallOutputExitOutcomeParam.fromJson(json)); }
 
 final FunctionShellCallOutputExitOutcomeParam functionShellCallOutputExitOutcomeParam;
 
-@override String get type { return 'FunctionShellCallOutputExitOutcomeParam'; } 
+@override String get type { return 'exit'; } 
 @override Map<String, dynamic> toJson() { return {...functionShellCallOutputExitOutcomeParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallOutputOutcomeParamFunctionShellCallOutputExitOutcomeParam && functionShellCallOutputExitOutcomeParam == other.functionShellCallOutputExitOutcomeParam; } 
+    other is FunctionShellCallOutputOutcomeParamExit && functionShellCallOutputExitOutcomeParam == other.functionShellCallOutputExitOutcomeParam; } 
 @override int get hashCode { return functionShellCallOutputExitOutcomeParam.hashCode; } 
-@override String toString() { return 'FunctionShellCallOutputOutcomeParamFunctionShellCallOutputExitOutcomeParam(functionShellCallOutputExitOutcomeParam: $functionShellCallOutputExitOutcomeParam)'; } 
+@override String toString() { return 'FunctionShellCallOutputOutcomeParamExit(functionShellCallOutputExitOutcomeParam: $functionShellCallOutputExitOutcomeParam)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
