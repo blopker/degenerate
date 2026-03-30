@@ -324,14 +324,21 @@ void handleNotification(Notification notification) {
   }
 }
 
-// Create a union value to pass to an API call
-final notification = Notification.from(
-  EmailDetails(to: 'user@example.com', subject: 'Hello'),
+// Create a union value — three equivalent ways:
+final n1 = Notification.from(EmailDetails(to: 'a@b.com', subject: 'Hi'));
+final n2 = Notification.a(EmailDetails(to: 'a@b.com', subject: 'Hi'));
+final n3 = OneOf2.a(EmailDetails(to: 'a@b.com', subject: 'Hi'));
+
+// With Dart's implicit context syntax, named parameters are concise:
+await sdk.chat.createCompletion(
+  body: CreateCompletionRequest(
+    model: .b(.gpt4oMini),       // OneOf2<String, ModelIds>.b(ModelIds.gpt4oMini)
+    messages: [message],
+  ),
 );
-await sdk.notifications.send(body: notification);
 ```
 
-Since `Notification` is a type alias, `.from()` validates at runtime that the value matches one of the expected types. Pattern matching on `.value` gives you exhaustive type checking.
+Named constructors `.a()`, `.b()`, `.c()` etc. wrap a specific variant. `.from()` selects the variant by runtime type. Pattern matching on `.value` gives you type checking.
 
 ### Discriminated Unions
 
