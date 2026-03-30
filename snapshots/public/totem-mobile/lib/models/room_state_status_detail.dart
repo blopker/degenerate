@@ -43,7 +43,7 @@ final class RoomStateStatusDetailActive extends RoomStateStatusDetail {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...activeDetail.toJson()};
+    return {...activeDetail.toJson(), 'type': type};
   }
 
   @override
@@ -80,7 +80,7 @@ final class RoomStateStatusDetailEnded extends RoomStateStatusDetail {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...endedDetail.toJson()};
+    return {...endedDetail.toJson(), 'type': type};
   }
 
   @override
@@ -116,7 +116,7 @@ final class RoomStateStatusDetailWaitingRoom extends RoomStateStatusDetail {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...waitingRoomDetail.toJson()};
+    return {...waitingRoomDetail.toJson(), 'type': type};
   }
 
   @override

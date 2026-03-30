@@ -47,7 +47,7 @@ factory ResourceTaggingTaggedResourceObjectAccessApplication.fromJson(Map<String
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'access_application'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectAccessApplication && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -60,7 +60,7 @@ factory ResourceTaggingTaggedResourceObjectAccessApplicationPolicy.fromJson(Map<
 final ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase;
 
 @override String get type { return 'access_application_policy'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectAccessApplicationPolicy && resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase == other.resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.hashCode; } 
@@ -73,7 +73,7 @@ factory ResourceTaggingTaggedResourceObjectAccessGroup.fromJson(Map<String, dyna
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'access_group'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectAccessGroup && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -86,7 +86,7 @@ factory ResourceTaggingTaggedResourceObjectAccount.fromJson(Map<String, dynamic>
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'account'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectAccount && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -99,7 +99,7 @@ factory ResourceTaggingTaggedResourceObjectAiGateway.fromJson(Map<String, dynami
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'ai_gateway'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectAiGateway && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -112,7 +112,7 @@ factory ResourceTaggingTaggedResourceObjectAlertingPolicy.fromJson(Map<String, d
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'alerting_policy'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectAlertingPolicy && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -125,7 +125,7 @@ factory ResourceTaggingTaggedResourceObjectAlertingWebhook.fromJson(Map<String, 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'alerting_webhook'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectAlertingWebhook && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -138,7 +138,7 @@ factory ResourceTaggingTaggedResourceObjectGatewayOperation.fromJson(Map<String,
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
 @override String get type { return 'api_gateway_operation'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectGatewayOperation && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
@@ -151,7 +151,7 @@ factory ResourceTaggingTaggedResourceObjectCloudflaredTunnel.fromJson(Map<String
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'cloudflared_tunnel'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectCloudflaredTunnel && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -164,7 +164,7 @@ factory ResourceTaggingTaggedResourceObjectCustomCertificate.fromJson(Map<String
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
 @override String get type { return 'custom_certificate'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectCustomCertificate && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
@@ -177,7 +177,7 @@ factory ResourceTaggingTaggedResourceObjectCustomHostname.fromJson(Map<String, d
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
 @override String get type { return 'custom_hostname'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectCustomHostname && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
@@ -190,7 +190,7 @@ factory ResourceTaggingTaggedResourceObjectD1Database.fromJson(Map<String, dynam
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'd1_database'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectD1Database && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -203,7 +203,7 @@ factory ResourceTaggingTaggedResourceObjectDnsRecord.fromJson(Map<String, dynami
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
 @override String get type { return 'dns_record'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectDnsRecord && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
@@ -216,7 +216,7 @@ factory ResourceTaggingTaggedResourceObjectDurableObjectNamespace.fromJson(Map<S
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'durable_object_namespace'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectDurableObjectNamespace && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -229,7 +229,7 @@ factory ResourceTaggingTaggedResourceObjectGatewayList.fromJson(Map<String, dyna
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'gateway_list'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectGatewayList && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -242,7 +242,7 @@ factory ResourceTaggingTaggedResourceObjectGatewayRule.fromJson(Map<String, dyna
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'gateway_rule'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectGatewayRule && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -255,7 +255,7 @@ factory ResourceTaggingTaggedResourceObjectImage.fromJson(Map<String, dynamic> j
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'image'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectImage && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -268,7 +268,7 @@ factory ResourceTaggingTaggedResourceObjectKvNamespace.fromJson(Map<String, dyna
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'kv_namespace'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectKvNamespace && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -281,7 +281,7 @@ factory ResourceTaggingTaggedResourceObjectManagedClientCertificate.fromJson(Map
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
 @override String get type { return 'managed_client_certificate'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectManagedClientCertificate && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 
@@ -294,7 +294,7 @@ factory ResourceTaggingTaggedResourceObjectQueue.fromJson(Map<String, dynamic> j
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'queue'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectQueue && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -307,7 +307,7 @@ factory ResourceTaggingTaggedResourceObjectR2Bucket.fromJson(Map<String, dynamic
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'r2_bucket'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectR2Bucket && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -320,7 +320,7 @@ factory ResourceTaggingTaggedResourceObjectResourceShare.fromJson(Map<String, dy
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'resource_share'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectResourceShare && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -333,7 +333,7 @@ factory ResourceTaggingTaggedResourceObjectStreamLiveInput.fromJson(Map<String, 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'stream_live_input'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectStreamLiveInput && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -346,7 +346,7 @@ factory ResourceTaggingTaggedResourceObjectStreamVideo.fromJson(Map<String, dyna
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'stream_video'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectStreamVideo && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -359,7 +359,7 @@ factory ResourceTaggingTaggedResourceObjectWorker.fromJson(Map<String, dynamic> 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
 @override String get type { return 'worker'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectWorker && resourceTaggingTaggedResourceObjectAccountLevelBase == other.resourceTaggingTaggedResourceObjectAccountLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectAccountLevelBase.hashCode; } 
@@ -372,7 +372,7 @@ factory ResourceTaggingTaggedResourceObjectWorkerVersion.fromJson(Map<String, dy
 final ResourceTaggingTaggedResourceObjectWorkerVersionBase resourceTaggingTaggedResourceObjectWorkerVersionBase;
 
 @override String get type { return 'worker_version'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectWorkerVersionBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectWorkerVersionBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectWorkerVersion && resourceTaggingTaggedResourceObjectWorkerVersionBase == other.resourceTaggingTaggedResourceObjectWorkerVersionBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectWorkerVersionBase.hashCode; } 
@@ -385,7 +385,7 @@ factory ResourceTaggingTaggedResourceObjectZone.fromJson(Map<String, dynamic> js
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
 @override String get type { return 'zone'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ResourceTaggingTaggedResourceObjectZone && resourceTaggingTaggedResourceObjectZoneLevelBase == other.resourceTaggingTaggedResourceObjectZoneLevelBase; } 
 @override int get hashCode { return resourceTaggingTaggedResourceObjectZoneLevelBase.hashCode; } 

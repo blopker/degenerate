@@ -8,23 +8,16 @@
   - `True.none` should represent JSON `null`, but the client requires a `String` and validates `json['none'] is String`.
   - Impact: valid server payloads with `null` will fail to parse, and client serialization is wrong.
 
-- High: the `allOf` schema `"new"` is dropped entirely, and the affected operation uses the wrong request type.
-  - Spec defines `"new"` as `allOf: [True, object-with-extra-fields]`: `test/fixtures/public/unhinged.yaml:333-352`
-  - `POST /incidents` should accept `"new"` but generated code uses `True`: `snapshots/public/unhinged/lib/apis/incidents_api.dart:86-97`
-  - No generated model exists for `"new"` at all.
-  - Impact: request bodies cannot express the full schema and valid inputs are rejected at the API surface.
+- ~~High: the `allOf` schema `"new"` is dropped entirely, and the affected operation uses the wrong request type.~~
+  - Fixed: allOf with `$ref` + extra properties now merges into a full IrObject. The `New` model is generated with all fields, and `POST /incidents` uses it.
 
 - High: `additionalProperties` on `True` is ignored, so unknown recursive properties are silently lost.
   - Spec: `test/fixtures/public/unhinged.yaml:330-331`
   - Generated model has only fixed fields and no storage for extra keys: `snapshots/public/unhinged/lib/models/true.dart`
   - Impact: round-tripping is lossy and the generated type does not match the schema contract.
 
-- High: non-HTTP-standard and extended operations/features are omitted instead of surfaced.
-  - `additionalOperations` under `/animals/{animalId}` are in the spec: `test/fixtures/public/unhinged.yaml:172-193`
-  - Generated `ClassApi` only contains `getAnimal`: `snapshots/public/unhinged/lib/apis/class_api.dart:18-39`
-  - `/incidents/search` with the `query` method exists in the spec: `test/fixtures/public/unhinged.yaml:195-221`
-  - There is no generated API for it.
-  - Impact: whole operations are missing from the client.
+- ~~High: non-HTTP-standard and extended operations/features are omitted instead of surfaced.~~
+  - Fixed: OAS 3.2 `query` method and `additionalOperations` (custom HTTP methods like HAUNT, PURGE) are now parsed and generated. Operation method names that conflict with Object members are escaped (`toString` → `$toString`).
 
 - High: streaming `itemSchema` responses are collapsed to `void`.
   - Spec:
@@ -38,13 +31,9 @@
 - Medium: discriminator/composition behavior is incomplete or wrong.
   - `"3Incident"` has a discriminator on `"2species"` with mappings: `test/fixtures/public/unhinged.yaml:378-383`
   - Generated output is only a plain `$3Incident` model with no subtype dispatch or mapping support: `snapshots/public/unhinged/lib/models/n3_incident.dart`
-  - `Self` does generate a tagged union, but `SelfTrue.fromJson()` can overwrite the discriminator:
-    - union serializer: `snapshots/public/unhinged/lib/models/self.dart:45-47`
-    - base model also serializes a `"type"` property: `snapshots/public/unhinged/lib/models/true.dart:123,143`
-  - Because the spread comes after `'type': type`, a `True.type` value can replace the union discriminator.
-  - ~~`Self` discriminator uses normalized names like `'Proto'` and `'StringModel'` instead of the original schema names `'__proto__'` and `'String'`.~~
-    Fixed: inferred discriminator mappings now use original schema names as switch keys.
-  - Impact: union serialization can emit invalid discriminator values. The `True.type` / discriminator `type` key collision is still unresolved.
+  - ~~`Self` `toJson()` discriminator key collision~~ — Fixed: spread comes before discriminator, so the discriminator key always wins.
+  - ~~`Self` discriminator uses normalized names~~ — Fixed: inferred mappings use original schema names.
+  - Impact: `3Incident` discriminator with emoji mappings is still not handled as a union.
 
 - ~~Low: property name normalization strips non-ASCII letters.~~
   - Fixed: accented Latin characters are now transliterated to ASCII (`café` → `cafe`). `dart_style` does not support Unicode identifiers, so ASCII transliteration is the correct approach.
@@ -73,10 +62,8 @@
   - `666` is not surfaced distinctly, and response headers are ignored.
   - Impact: clients lose typed access to non-default responses and headers the spec declares.
 
-- Medium: `Proto.constructor` references wrong type due to missing `new` model.
-  - Spec: `constructor` is `$ref: "#/components/schemas/new"`: `test/fixtures/public/unhinged.yaml:389`
-  - Generated as `True?` instead of the `new` allOf type: `snapshots/public/unhinged/lib/models/proto.dart`
-  - Impact: the nested constructor field loses the extra properties from the `new` schema.
+- ~~Medium: `Proto.constructor` references wrong type due to missing `new` model.~~
+  - Fixed: `New` model is now generated via allOf expansion. `Proto.constructor` is typed as `New?`.
 
 - Low: required fields in `fromJson()` have no null/missing-key checks.
   - All models cast required fields directly (e.g. `json['code'] as String`) with no guard.

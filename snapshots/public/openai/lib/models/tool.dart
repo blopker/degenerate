@@ -37,7 +37,7 @@ factory ToolFunctionTool.fromJson(Map<String, dynamic> json) { return ToolFuncti
 final FunctionTool functionTool;
 
 @override String get type { return 'FunctionTool'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...functionTool.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...functionTool.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolFunctionTool && functionTool == other.functionTool; } 
 @override int get hashCode { return functionTool.hashCode; } 
@@ -50,7 +50,7 @@ factory ToolFileSearchTool.fromJson(Map<String, dynamic> json) { return ToolFile
 final FileSearchTool fileSearchTool;
 
 @override String get type { return 'FileSearchTool'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...fileSearchTool.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...fileSearchTool.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolFileSearchTool && fileSearchTool == other.fileSearchTool; } 
 @override int get hashCode { return fileSearchTool.hashCode; } 
@@ -63,7 +63,7 @@ factory ToolComputerTool.fromJson(Map<String, dynamic> json) { return ToolComput
 final ComputerTool computerTool;
 
 @override String get type { return 'ComputerTool'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...computerTool.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...computerTool.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolComputerTool && computerTool == other.computerTool; } 
 @override int get hashCode { return computerTool.hashCode; } 
@@ -76,7 +76,7 @@ factory ToolComputerUsePreviewTool.fromJson(Map<String, dynamic> json) { return 
 final ComputerUsePreviewTool computerUsePreviewTool;
 
 @override String get type { return 'ComputerUsePreviewTool'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...computerUsePreviewTool.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...computerUsePreviewTool.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolComputerUsePreviewTool && computerUsePreviewTool == other.computerUsePreviewTool; } 
 @override int get hashCode { return computerUsePreviewTool.hashCode; } 
@@ -89,7 +89,7 @@ factory ToolWebSearchTool.fromJson(Map<String, dynamic> json) { return ToolWebSe
 final WebSearchTool webSearchTool;
 
 @override String get type { return 'WebSearchTool'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...webSearchTool.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...webSearchTool.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolWebSearchTool && webSearchTool == other.webSearchTool; } 
 @override int get hashCode { return webSearchTool.hashCode; } 
@@ -102,7 +102,7 @@ factory ToolMcpTool.fromJson(Map<String, dynamic> json) { return ToolMcpTool(Mcp
 final McpTool mcpTool;
 
 @override String get type { return 'MCPTool'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...mcpTool.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...mcpTool.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolMcpTool && mcpTool == other.mcpTool; } 
 @override int get hashCode { return mcpTool.hashCode; } 
@@ -115,7 +115,7 @@ factory ToolCodeInterpreterTool.fromJson(Map<String, dynamic> json) { return Too
 final CodeInterpreterTool codeInterpreterTool;
 
 @override String get type { return 'CodeInterpreterTool'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...codeInterpreterTool.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...codeInterpreterTool.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolCodeInterpreterTool && codeInterpreterTool == other.codeInterpreterTool; } 
 @override int get hashCode { return codeInterpreterTool.hashCode; } 
@@ -128,7 +128,7 @@ factory ToolImageGenTool.fromJson(Map<String, dynamic> json) { return ToolImageG
 final ImageGenTool imageGenTool;
 
 @override String get type { return 'ImageGenTool'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...imageGenTool.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...imageGenTool.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolImageGenTool && imageGenTool == other.imageGenTool; } 
 @override int get hashCode { return imageGenTool.hashCode; } 
@@ -141,7 +141,7 @@ factory ToolLocalShellToolParam.fromJson(Map<String, dynamic> json) { return Too
 final LocalShellToolParam localShellToolParam;
 
 @override String get type { return 'LocalShellToolParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...localShellToolParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...localShellToolParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolLocalShellToolParam && localShellToolParam == other.localShellToolParam; } 
 @override int get hashCode { return localShellToolParam.hashCode; } 
@@ -154,7 +154,7 @@ factory ToolFunctionShellToolParam.fromJson(Map<String, dynamic> json) { return 
 final FunctionShellToolParam functionShellToolParam;
 
 @override String get type { return 'FunctionShellToolParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...functionShellToolParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...functionShellToolParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolFunctionShellToolParam && functionShellToolParam == other.functionShellToolParam; } 
 @override int get hashCode { return functionShellToolParam.hashCode; } 
@@ -167,7 +167,7 @@ factory ToolCustomToolParam.fromJson(Map<String, dynamic> json) { return ToolCus
 final CustomToolParam customToolParam;
 
 @override String get type { return 'CustomToolParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...customToolParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...customToolParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolCustomToolParam && customToolParam == other.customToolParam; } 
 @override int get hashCode { return customToolParam.hashCode; } 
@@ -180,7 +180,7 @@ factory ToolNamespaceToolParam.fromJson(Map<String, dynamic> json) { return Tool
 final NamespaceToolParam namespaceToolParam;
 
 @override String get type { return 'NamespaceToolParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...namespaceToolParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...namespaceToolParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolNamespaceToolParam && namespaceToolParam == other.namespaceToolParam; } 
 @override int get hashCode { return namespaceToolParam.hashCode; } 
@@ -193,7 +193,7 @@ factory ToolToolSearchToolParam.fromJson(Map<String, dynamic> json) { return Too
 final ToolSearchToolParam toolSearchToolParam;
 
 @override String get type { return 'ToolSearchToolParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...toolSearchToolParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...toolSearchToolParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolToolSearchToolParam && toolSearchToolParam == other.toolSearchToolParam; } 
 @override int get hashCode { return toolSearchToolParam.hashCode; } 
@@ -206,7 +206,7 @@ factory ToolWebSearchPreviewTool.fromJson(Map<String, dynamic> json) { return To
 final WebSearchPreviewTool webSearchPreviewTool;
 
 @override String get type { return 'WebSearchPreviewTool'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...webSearchPreviewTool.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...webSearchPreviewTool.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolWebSearchPreviewTool && webSearchPreviewTool == other.webSearchPreviewTool; } 
 @override int get hashCode { return webSearchPreviewTool.hashCode; } 
@@ -219,7 +219,7 @@ factory ToolApplyPatchToolParam.fromJson(Map<String, dynamic> json) { return Too
 final ApplyPatchToolParam applyPatchToolParam;
 
 @override String get type { return 'ApplyPatchToolParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...applyPatchToolParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...applyPatchToolParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolApplyPatchToolParam && applyPatchToolParam == other.applyPatchToolParam; } 
 @override int get hashCode { return applyPatchToolParam.hashCode; } 

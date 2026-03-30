@@ -321,7 +321,8 @@ class DiscriminatedUnionEmitter {
       IrTypeRef() ||
       IrDiscriminatedUnion() ||
       IrUntaggedUnion() ||
-      IrAnyOf() => "return {'$_discJsonKey': $_discDartName, ...$toJsonExpr};",
+      // Spread first so the discriminator key always wins.
+      IrAnyOf() => "return {...$toJsonExpr, '$_discJsonKey': $_discDartName};",
       _ => "return {'$_discJsonKey': $_discDartName, 'data': $toJsonExpr};",
     };
   }

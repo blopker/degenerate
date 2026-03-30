@@ -22,7 +22,7 @@ factory NscInterconnectCreateDirect.fromJson(Map<String, dynamic> json) { return
 final NscInterconnectCreatePhysicalBody nscInterconnectCreatePhysicalBody;
 
 @override String get type { return 'direct'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...nscInterconnectCreatePhysicalBody.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...nscInterconnectCreatePhysicalBody.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscInterconnectCreateDirect && nscInterconnectCreatePhysicalBody == other.nscInterconnectCreatePhysicalBody; } 
 @override int get hashCode { return nscInterconnectCreatePhysicalBody.hashCode; } 
@@ -35,7 +35,7 @@ factory NscInterconnectCreateGcpPartner.fromJson(Map<String, dynamic> json) { re
 final NscInterconnectCreateGcpPartnerBody nscInterconnectCreateGcpPartnerBody;
 
 @override String get type { return 'gcp_partner'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...nscInterconnectCreateGcpPartnerBody.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...nscInterconnectCreateGcpPartnerBody.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscInterconnectCreateGcpPartner && nscInterconnectCreateGcpPartnerBody == other.nscInterconnectCreateGcpPartnerBody; } 
 @override int get hashCode { return nscInterconnectCreateGcpPartnerBody.hashCode; } 

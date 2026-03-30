@@ -23,7 +23,7 @@ factory ShapeCircle.fromJson(Map<String, dynamic> json) { return ShapeCircle(Cir
 final Circle circle;
 
 @override String get type { return 'circle'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...circle.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...circle.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ShapeCircle && circle == other.circle; } 
 @override int get hashCode { return circle.hashCode; } 
@@ -36,7 +36,7 @@ factory ShapeRectangle.fromJson(Map<String, dynamic> json) { return ShapeRectang
 final Rectangle rectangle;
 
 @override String get type { return 'rectangle'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...rectangle.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rectangle.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ShapeRectangle && rectangle == other.rectangle; } 
 @override int get hashCode { return rectangle.hashCode; } 
@@ -49,7 +49,7 @@ factory ShapeTriangle.fromJson(Map<String, dynamic> json) { return ShapeTriangle
 final Triangle triangle;
 
 @override String get type { return 'triangle'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...triangle.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...triangle.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ShapeTriangle && triangle == other.triangle; } 
 @override int get hashCode { return triangle.hashCode; } 

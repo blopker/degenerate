@@ -72,6 +72,32 @@ class OperationLowerer {
         final tag = _primaryTag(opMap);
         grouped.putIfAbsent(tag, () => []).add(operation);
       }
+
+      // OAS 3.2: additionalOperations — custom HTTP methods.
+      final additionalOps =
+          pathItem['additionalOperations'] as Map<String, dynamic>?;
+      if (additionalOps != null) {
+        for (final entry in additionalOps.entries) {
+          var opMap = entry.value;
+          if (opMap is! Map<String, dynamic>) continue;
+          if (opMap.containsKey(r'$ref') && _doc != null) {
+            final resolved = _doc.resolveRef(opMap[r'$ref'] as String);
+            if (resolved is Map<String, dynamic>) {
+              opMap = resolved;
+            } else {
+              continue;
+            }
+          }
+          final operation = lowerOperation(
+            path,
+            entry.key, // raw method name like "HAUNT", "PURGE"
+            opMap,
+            pathParameters: pathParameters,
+          );
+          final tag = _primaryTag(opMap);
+          grouped.putIfAbsent(tag, () => []).add(operation);
+        }
+      }
     }
 
     return grouped.entries.map((e) {
@@ -127,7 +153,7 @@ class OperationLowerer {
     _currentOperationId = operationId;
     _currentOpPascal = toPascalCase(operationId);
     _usedParamNames.clear();
-    final dartMethod = sanitizeDartName(operationMethodName(operationId));
+    final dartMethod = sanitizeFieldName(operationMethodName(operationId));
     final httpMethod = _parseHttpMethod(method);
     final summary = op['summary'] as String?;
     final description = op['description'] as String?;
@@ -184,6 +210,7 @@ class OperationLowerer {
       dartMethod,
       httpMethod,
       path,
+      customMethod: httpMethod == HttpMethod.custom ? method.toUpperCase() : null,
       summary: summary,
       description: description,
       parameters: parameters,
@@ -462,7 +489,8 @@ class OperationLowerer {
       'head' => HttpMethod.head,
       'options' => HttpMethod.options,
       'trace' => HttpMethod.trace,
-      _ => HttpMethod.get,
+      'query' => HttpMethod.query,
+      _ => HttpMethod.custom,
     };
   }
 
@@ -485,5 +513,6 @@ class OperationLowerer {
     'head',
     'options',
     'trace',
+    'query',
   ];
 }

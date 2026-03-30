@@ -22,7 +22,7 @@ factory FunctionShellCallEnvironmentLocalEnvironmentResource.fromJson(Map<String
 final LocalEnvironmentResource localEnvironmentResource;
 
 @override String get type { return 'LocalEnvironmentResource'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...localEnvironmentResource.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...localEnvironmentResource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallEnvironmentLocalEnvironmentResource && localEnvironmentResource == other.localEnvironmentResource; } 
 @override int get hashCode { return localEnvironmentResource.hashCode; } 
@@ -35,7 +35,7 @@ factory FunctionShellCallEnvironmentContainerReferenceResource.fromJson(Map<Stri
 final ContainerReferenceResource containerReferenceResource;
 
 @override String get type { return 'ContainerReferenceResource'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...containerReferenceResource.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...containerReferenceResource.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallEnvironmentContainerReferenceResource && containerReferenceResource == other.containerReferenceResource; } 
 @override int get hashCode { return containerReferenceResource.hashCode; } 

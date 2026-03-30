@@ -263,7 +263,7 @@ class ApiEmitter {
       docs.add('///');
       docs.addAll(formatDocComment(op.description!));
     }
-    final httpMethod = op.method.name.toUpperCase();
+    final httpMethod = _httpMethodString(op);
     docs.add('///');
     docs.add('/// `$httpMethod ${op.path}`');
 
@@ -302,7 +302,7 @@ class ApiEmitter {
     bool unwrappedFieldIsOptional = false,
   }) {
     final buf = StringBuffer();
-    final httpMethod = op.method.name.toUpperCase();
+    final httpMethod = _httpMethodString(op);
 
     // Build path with parameter interpolation (URL-encoded)
     final pathParamsByName = {for (final p in pathParams) p.name: p};
@@ -758,6 +758,10 @@ class ApiEmitter {
   String _sanitizeParameterName(String value) =>
       escapeDartString(value.replaceAll('\n', '').replaceAll('\r', '').trim());
 
+  /// Returns the HTTP method string for an operation (e.g. 'GET', 'HAUNT').
+  static String _httpMethodString(IrOperation op) =>
+      op.customMethod ?? op.method.name.toUpperCase();
+
   /// If [unwrapFields] is configured and [type] is an object (or ref to one)
   /// with a matching field, return that field's type and the JSON key used
   /// to extract it. Otherwise returns the original type with no field name.
@@ -914,7 +918,7 @@ class ApiEmitter {
     } else {
       docs.add('/// Stream response.');
     }
-    final httpMethod = op.method.name.toUpperCase();
+    final httpMethod = _httpMethodString(op);
     docs.add('///');
     docs.add('/// `$httpMethod ${op.path}`');
 
@@ -939,7 +943,7 @@ class ApiEmitter {
     required List<IrParameter> cookieParams,
   }) {
     final buf = StringBuffer();
-    final httpMethod = op.method.name.toUpperCase();
+    final httpMethod = _httpMethodString(op);
 
     // Reuse path interpolation logic
     final pathParamsByName = {for (final p in pathParams) p.name: p};

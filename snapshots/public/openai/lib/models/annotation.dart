@@ -25,7 +25,7 @@ factory AnnotationFileCitationBody.fromJson(Map<String, dynamic> json) { return 
 final FileCitationBody fileCitationBody;
 
 @override String get type { return 'FileCitationBody'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...fileCitationBody.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...fileCitationBody.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationFileCitationBody && fileCitationBody == other.fileCitationBody; } 
 @override int get hashCode { return fileCitationBody.hashCode; } 
@@ -38,7 +38,7 @@ factory AnnotationUrlCitationBody.fromJson(Map<String, dynamic> json) { return A
 final UrlCitationBody urlCitationBody;
 
 @override String get type { return 'UrlCitationBody'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...urlCitationBody.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...urlCitationBody.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationUrlCitationBody && urlCitationBody == other.urlCitationBody; } 
 @override int get hashCode { return urlCitationBody.hashCode; } 
@@ -51,7 +51,7 @@ factory AnnotationContainerFileCitationBody.fromJson(Map<String, dynamic> json) 
 final ContainerFileCitationBody containerFileCitationBody;
 
 @override String get type { return 'ContainerFileCitationBody'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...containerFileCitationBody.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...containerFileCitationBody.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationContainerFileCitationBody && containerFileCitationBody == other.containerFileCitationBody; } 
 @override int get hashCode { return containerFileCitationBody.hashCode; } 
@@ -64,7 +64,7 @@ factory AnnotationFilePath.fromJson(Map<String, dynamic> json) { return Annotati
 final FilePath filePath;
 
 @override String get type { return 'FilePath'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...filePath.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...filePath.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is AnnotationFilePath && filePath == other.filePath; } 
 @override int get hashCode { return filePath.hashCode; } 

@@ -53,7 +53,7 @@ final class EventRequestEventAcceptStick extends EventRequestEvent {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...acceptStickEvent.toJson()};
+    return {...acceptStickEvent.toJson(), 'type': type};
   }
 
   @override
@@ -90,7 +90,7 @@ final class EventRequestEventBanParticipant extends EventRequestEvent {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...banParticipantEvent.toJson()};
+    return {...banParticipantEvent.toJson(), 'type': type};
   }
 
   @override
@@ -127,7 +127,7 @@ final class EventRequestEventEndRoom extends EventRequestEvent {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...endRoomEvent.toJson()};
+    return {...endRoomEvent.toJson(), 'type': type};
   }
 
   @override
@@ -163,7 +163,7 @@ final class EventRequestEventForcePassStick extends EventRequestEvent {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...forcePassStickEvent.toJson()};
+    return {...forcePassStickEvent.toJson(), 'type': type};
   }
 
   @override
@@ -200,7 +200,7 @@ final class EventRequestEventPassStick extends EventRequestEvent {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...passStickEvent.toJson()};
+    return {...passStickEvent.toJson(), 'type': type};
   }
 
   @override
@@ -237,7 +237,7 @@ final class EventRequestEventReorder extends EventRequestEvent {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...reorderEvent.toJson()};
+    return {...reorderEvent.toJson(), 'type': type};
   }
 
   @override
@@ -273,7 +273,7 @@ final class EventRequestEventStartRoom extends EventRequestEvent {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...startRoomEvent.toJson()};
+    return {...startRoomEvent.toJson(), 'type': type};
   }
 
   @override
@@ -314,7 +314,7 @@ final class EventRequestEventUnbanParticipant extends EventRequestEvent {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...unbanParticipantEvent.toJson()};
+    return {...unbanParticipantEvent.toJson(), 'type': type};
   }
 
   @override

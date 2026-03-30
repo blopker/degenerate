@@ -23,7 +23,7 @@ factory McnProviderInitialSetupResponseResultMcnAwsTrustPolicy.fromJson(Map<Stri
 final McnAwsTrustPolicy mcnAwsTrustPolicy;
 
 @override String get itemType { return 'mcn_aws_trust_policy'; } 
-@override Map<String, dynamic> toJson() { return {'item_type': itemType, ...mcnAwsTrustPolicy.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...mcnAwsTrustPolicy.toJson(), 'item_type': itemType}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnProviderInitialSetupResponseResultMcnAwsTrustPolicy && mcnAwsTrustPolicy == other.mcnAwsTrustPolicy; } 
 @override int get hashCode { return mcnAwsTrustPolicy.hashCode; } 
@@ -36,7 +36,7 @@ factory McnProviderInitialSetupResponseResultMcnAzureSetup.fromJson(Map<String, 
 final McnAzureSetup mcnAzureSetup;
 
 @override String get itemType { return 'mcn_azure_setup'; } 
-@override Map<String, dynamic> toJson() { return {'item_type': itemType, ...mcnAzureSetup.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...mcnAzureSetup.toJson(), 'item_type': itemType}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnProviderInitialSetupResponseResultMcnAzureSetup && mcnAzureSetup == other.mcnAzureSetup; } 
 @override int get hashCode { return mcnAzureSetup.hashCode; } 
@@ -49,7 +49,7 @@ factory McnProviderInitialSetupResponseResultMcnGcpSetup.fromJson(Map<String, dy
 final McnGcpSetup mcnGcpSetup;
 
 @override String get itemType { return 'mcn_gcp_setup'; } 
-@override Map<String, dynamic> toJson() { return {'item_type': itemType, ...mcnGcpSetup.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...mcnGcpSetup.toJson(), 'item_type': itemType}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnProviderInitialSetupResponseResultMcnGcpSetup && mcnGcpSetup == other.mcnGcpSetup; } 
 @override int get hashCode { return mcnGcpSetup.hashCode; } 

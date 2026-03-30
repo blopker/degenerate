@@ -23,7 +23,7 @@ factory WorkersSecretSecretKey.fromJson(Map<String, dynamic> json) { return Work
 final WorkersBindingKindSecretKey workersBindingKindSecretKey;
 
 @override String get type { return 'secret_key'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...workersBindingKindSecretKey.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...workersBindingKindSecretKey.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersSecretSecretKey && workersBindingKindSecretKey == other.workersBindingKindSecretKey; } 
 @override int get hashCode { return workersBindingKindSecretKey.hashCode; } 
@@ -36,7 +36,7 @@ factory WorkersSecretSecretText.fromJson(Map<String, dynamic> json) { return Wor
 final WorkersBindingKindSecretText workersBindingKindSecretText;
 
 @override String get type { return 'secret_text'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...workersBindingKindSecretText.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...workersBindingKindSecretText.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is WorkersSecretSecretText && workersBindingKindSecretText == other.workersBindingKindSecretText; } 
 @override int get hashCode { return workersBindingKindSecretText.hashCode; } 

@@ -23,7 +23,7 @@ factory FunctionShellCallOutputContentOutcomeFunctionShellCallOutputTimeoutOutco
 final FunctionShellCallOutputTimeoutOutcome functionShellCallOutputTimeoutOutcome;
 
 @override String get type { return 'FunctionShellCallOutputTimeoutOutcome'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...functionShellCallOutputTimeoutOutcome.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...functionShellCallOutputTimeoutOutcome.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallOutputContentOutcomeFunctionShellCallOutputTimeoutOutcome && functionShellCallOutputTimeoutOutcome == other.functionShellCallOutputTimeoutOutcome; } 
 @override int get hashCode { return functionShellCallOutputTimeoutOutcome.hashCode; } 
@@ -36,7 +36,7 @@ factory FunctionShellCallOutputContentOutcomeFunctionShellCallOutputExitOutcome.
 final FunctionShellCallOutputExitOutcome functionShellCallOutputExitOutcome;
 
 @override String get type { return 'FunctionShellCallOutputExitOutcome'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...functionShellCallOutputExitOutcome.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...functionShellCallOutputExitOutcome.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallOutputContentOutcomeFunctionShellCallOutputExitOutcome && functionShellCallOutputExitOutcome == other.functionShellCallOutputExitOutcome; } 
 @override int get hashCode { return functionShellCallOutputExitOutcome.hashCode; } 

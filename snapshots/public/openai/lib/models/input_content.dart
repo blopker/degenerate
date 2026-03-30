@@ -23,7 +23,7 @@ factory InputContentInputTextContent.fromJson(Map<String, dynamic> json) { retur
 final InputTextContent inputTextContent;
 
 @override String get type { return 'InputTextContent'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...inputTextContent.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...inputTextContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputContentInputTextContent && inputTextContent == other.inputTextContent; } 
 @override int get hashCode { return inputTextContent.hashCode; } 
@@ -36,7 +36,7 @@ factory InputContentInputImageContent.fromJson(Map<String, dynamic> json) { retu
 final InputImageContent inputImageContent;
 
 @override String get type { return 'InputImageContent'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...inputImageContent.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...inputImageContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputContentInputImageContent && inputImageContent == other.inputImageContent; } 
 @override int get hashCode { return inputImageContent.hashCode; } 
@@ -49,7 +49,7 @@ factory InputContentInputFileContent.fromJson(Map<String, dynamic> json) { retur
 final InputFileContent inputFileContent;
 
 @override String get type { return 'InputFileContent'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...inputFileContent.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...inputFileContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is InputContentInputFileContent && inputFileContent == other.inputFileContent; } 
 @override int get hashCode { return inputFileContent.hashCode; } 

@@ -22,7 +22,7 @@ factory NscInterconnectDirect.fromJson(Map<String, dynamic> json) { return NscIn
 final NscInterconnectPhysicalBody nscInterconnectPhysicalBody;
 
 @override String get type { return 'direct'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...nscInterconnectPhysicalBody.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...nscInterconnectPhysicalBody.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscInterconnectDirect && nscInterconnectPhysicalBody == other.nscInterconnectPhysicalBody; } 
 @override int get hashCode { return nscInterconnectPhysicalBody.hashCode; } 
@@ -35,7 +35,7 @@ factory NscInterconnectGcpPartner.fromJson(Map<String, dynamic> json) { return N
 final NscInterconnectGcpPartnerBody nscInterconnectGcpPartnerBody;
 
 @override String get type { return 'gcp_partner'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...nscInterconnectGcpPartnerBody.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...nscInterconnectGcpPartnerBody.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NscInterconnectGcpPartner && nscInterconnectGcpPartnerBody == other.nscInterconnectGcpPartnerBody; } 
 @override int get hashCode { return nscInterconnectGcpPartnerBody.hashCode; } 

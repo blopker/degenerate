@@ -23,7 +23,7 @@ factory ContainerAutoParamNetworkPolicyContainerNetworkPolicyDisabledParam.fromJ
 final ContainerNetworkPolicyDisabledParam containerNetworkPolicyDisabledParam;
 
 @override String get type { return 'ContainerNetworkPolicyDisabledParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...containerNetworkPolicyDisabledParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...containerNetworkPolicyDisabledParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ContainerAutoParamNetworkPolicyContainerNetworkPolicyDisabledParam && containerNetworkPolicyDisabledParam == other.containerNetworkPolicyDisabledParam; } 
 @override int get hashCode { return containerNetworkPolicyDisabledParam.hashCode; } 
@@ -36,7 +36,7 @@ factory ContainerAutoParamNetworkPolicyContainerNetworkPolicyAllowlistParam.from
 final ContainerNetworkPolicyAllowlistParam containerNetworkPolicyAllowlistParam;
 
 @override String get type { return 'ContainerNetworkPolicyAllowlistParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...containerNetworkPolicyAllowlistParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...containerNetworkPolicyAllowlistParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ContainerAutoParamNetworkPolicyContainerNetworkPolicyAllowlistParam && containerNetworkPolicyAllowlistParam == other.containerNetworkPolicyAllowlistParam; } 
 @override int get hashCode { return containerNetworkPolicyAllowlistParam.hashCode; } 

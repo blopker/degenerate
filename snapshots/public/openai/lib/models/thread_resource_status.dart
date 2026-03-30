@@ -24,7 +24,7 @@ factory ThreadResourceStatusActiveStatus.fromJson(Map<String, dynamic> json) { r
 final ActiveStatus activeStatus;
 
 @override String get type { return 'ActiveStatus'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...activeStatus.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...activeStatus.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadResourceStatusActiveStatus && activeStatus == other.activeStatus; } 
 @override int get hashCode { return activeStatus.hashCode; } 
@@ -37,7 +37,7 @@ factory ThreadResourceStatusLockedStatus.fromJson(Map<String, dynamic> json) { r
 final LockedStatus lockedStatus;
 
 @override String get type { return 'LockedStatus'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...lockedStatus.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...lockedStatus.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadResourceStatusLockedStatus && lockedStatus == other.lockedStatus; } 
 @override int get hashCode { return lockedStatus.hashCode; } 
@@ -50,7 +50,7 @@ factory ThreadResourceStatusClosedStatus.fromJson(Map<String, dynamic> json) { r
 final ClosedStatus closedStatus;
 
 @override String get type { return 'ClosedStatus'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...closedStatus.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...closedStatus.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadResourceStatusClosedStatus && closedStatus == other.closedStatus; } 
 @override int get hashCode { return closedStatus.hashCode; } 

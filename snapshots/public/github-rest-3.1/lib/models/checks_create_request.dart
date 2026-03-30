@@ -22,7 +22,7 @@ factory ChecksCreateRequestCompleted.fromJson(Map<String, dynamic> json) { retur
 final ChecksCreateRequestVariant1 checksCreateRequestVariant1;
 
 @override String get status { return 'completed'; } 
-@override Map<String, dynamic> toJson() { return {'status': status, ...checksCreateRequestVariant1.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...checksCreateRequestVariant1.toJson(), 'status': status}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChecksCreateRequestCompleted && checksCreateRequestVariant1 == other.checksCreateRequestVariant1; } 
 @override int get hashCode { return checksCreateRequestVariant1.hashCode; } 
@@ -35,7 +35,7 @@ factory ChecksCreateRequestQueued.fromJson(Map<String, dynamic> json) { return C
 final ChecksCreateRequestVariant2 checksCreateRequestVariant2;
 
 @override String get status { return 'queued'; } 
-@override Map<String, dynamic> toJson() { return {'status': status, ...checksCreateRequestVariant2.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...checksCreateRequestVariant2.toJson(), 'status': status}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChecksCreateRequestQueued && checksCreateRequestVariant2 == other.checksCreateRequestVariant2; } 
 @override int get hashCode { return checksCreateRequestVariant2.hashCode; } 

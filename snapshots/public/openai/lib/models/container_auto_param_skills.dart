@@ -22,7 +22,7 @@ factory ContainerAutoParamSkillsSkillReferenceParam.fromJson(Map<String, dynamic
 final SkillReferenceParam skillReferenceParam;
 
 @override String get type { return 'SkillReferenceParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...skillReferenceParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...skillReferenceParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ContainerAutoParamSkillsSkillReferenceParam && skillReferenceParam == other.skillReferenceParam; } 
 @override int get hashCode { return skillReferenceParam.hashCode; } 
@@ -35,7 +35,7 @@ factory ContainerAutoParamSkillsInlineSkillParam.fromJson(Map<String, dynamic> j
 final InlineSkillParam inlineSkillParam;
 
 @override String get type { return 'InlineSkillParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...inlineSkillParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...inlineSkillParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ContainerAutoParamSkillsInlineSkillParam && inlineSkillParam == other.inlineSkillParam; } 
 @override int get hashCode { return inlineSkillParam.hashCode; } 

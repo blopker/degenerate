@@ -22,7 +22,7 @@ factory CloudflarePipelinesFormatJson2.fromJson(Map<String, dynamic> json) { ret
 final Json2 json2;
 
 @override String get type { return 'Json2'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...json2.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...json2.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFormatJson2 && json2 == other.json2; } 
 @override int get hashCode { return json2.hashCode; } 
@@ -35,7 +35,7 @@ factory CloudflarePipelinesFormatParquet.fromJson(Map<String, dynamic> json) { r
 final Parquet parquet;
 
 @override String get type { return 'Parquet'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...parquet.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...parquet.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFormatParquet && parquet == other.parquet; } 
 @override int get hashCode { return parquet.hashCode; } 

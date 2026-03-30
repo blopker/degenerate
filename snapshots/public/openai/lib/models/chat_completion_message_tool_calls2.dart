@@ -22,7 +22,7 @@ factory ChatCompletionMessageToolCalls2ChatCompletionMessageToolCall.fromJson(Ma
 final ChatCompletionMessageToolCall chatCompletionMessageToolCall;
 
 @override String get type { return 'ChatCompletionMessageToolCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...chatCompletionMessageToolCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...chatCompletionMessageToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionMessageToolCalls2ChatCompletionMessageToolCall && chatCompletionMessageToolCall == other.chatCompletionMessageToolCall; } 
 @override int get hashCode { return chatCompletionMessageToolCall.hashCode; } 
@@ -35,7 +35,7 @@ factory ChatCompletionMessageToolCalls2ChatCompletionMessageCustomToolCall.fromJ
 final ChatCompletionMessageCustomToolCall chatCompletionMessageCustomToolCall;
 
 @override String get type { return 'ChatCompletionMessageCustomToolCall'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...chatCompletionMessageCustomToolCall.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...chatCompletionMessageCustomToolCall.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionMessageToolCalls2ChatCompletionMessageCustomToolCall && chatCompletionMessageCustomToolCall == other.chatCompletionMessageCustomToolCall; } 
 @override int get hashCode { return chatCompletionMessageCustomToolCall.hashCode; } 

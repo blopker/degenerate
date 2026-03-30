@@ -1,7 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'dart:async';
+import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+import '../models/list_model.dart';
+import '../models/object_model.dart';
+import '../models/proto.dart';
 import '../models/yield_topic.dart';
 
 /// DefaultApi operations.
@@ -48,6 +52,71 @@ final class DefaultApi with ApiExecutor {
     );
 
     return execute(request, onSuccess: (_) {});
+  }
+
+  ///
+  /// `HAUNT /animals/{animalId}`
+  Future<ApiResult<void, Never>> $toString({
+    Proto? body,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
+    headers['Content-Type'] = 'application/json';
+
+    final request = ApiRequest(
+      method: 'HAUNT',
+      path: '/animals/{animalId}',
+      headers: headers,
+      body: jsonEncode(body?.toJson()),
+      options: options,
+    );
+
+    return execute(request, onSuccess: (_) {});
+  }
+
+  ///
+  /// `PURGE /animals/{animalId}`
+  Future<ApiResult<void, Never>> constructor({
+    required String animalId,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
+
+    final request = ApiRequest(
+      method: 'PURGE',
+      path: '/animals/${Uri.encodeComponent(animalId)}',
+      headers: headers,
+      options: options,
+    );
+
+    return execute(request, onSuccess: (_) {});
+  }
+
+  ///
+  /// `QUERY /incidents/search`
+  Future<ApiResult<ListModel, Never>> $null({
+    ObjectModel? body,
+    RequestOptions? options,
+  }) async {
+    final headers = <String, String>{...apiConfig.defaultHeaders};
+    headers['Content-Type'] = 'application/json';
+
+    final request = ApiRequest(
+      method: 'QUERY',
+      path: '/incidents/search',
+      headers: headers,
+      body: jsonEncode(body?.toJson()),
+      options: options,
+    );
+
+    return execute(
+      request,
+      onSuccess: (response) {
+        return ListModel.fromJson(
+          jsonDecode(response.body) as Map<String, dynamic>,
+        );
+      },
+    );
   }
 
   ///

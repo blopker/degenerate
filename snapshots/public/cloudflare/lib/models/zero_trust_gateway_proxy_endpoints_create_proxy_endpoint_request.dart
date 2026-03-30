@@ -22,7 +22,7 @@ factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity.fromJso
 final ZeroTrustGatewayProxyEndpointIdentityCreate zeroTrustGatewayProxyEndpointIdentityCreate;
 
 @override String get kind { return 'identity'; } 
-@override Map<String, dynamic> toJson() { return {'kind': kind, ...zeroTrustGatewayProxyEndpointIdentityCreate.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...zeroTrustGatewayProxyEndpointIdentityCreate.toJson(), 'kind': kind}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity && zeroTrustGatewayProxyEndpointIdentityCreate == other.zeroTrustGatewayProxyEndpointIdentityCreate; } 
 @override int get hashCode { return zeroTrustGatewayProxyEndpointIdentityCreate.hashCode; } 
@@ -35,7 +35,7 @@ factory ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp.fromJson(Map<
 final ZeroTrustGatewayProxyEndpointIpCreate zeroTrustGatewayProxyEndpointIpCreate;
 
 @override String get kind { return 'ip'; } 
-@override Map<String, dynamic> toJson() { return {'kind': kind, ...zeroTrustGatewayProxyEndpointIpCreate.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...zeroTrustGatewayProxyEndpointIpCreate.toJson(), 'kind': kind}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp && zeroTrustGatewayProxyEndpointIpCreate == other.zeroTrustGatewayProxyEndpointIpCreate; } 
 @override int get hashCode { return zeroTrustGatewayProxyEndpointIpCreate.hashCode; } 

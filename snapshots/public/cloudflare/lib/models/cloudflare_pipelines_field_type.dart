@@ -31,7 +31,7 @@ factory CloudflarePipelinesFieldTypeInt32.fromJson(Map<String, dynamic> json) { 
 final Int32 int32;
 
 @override String get type { return 'int32'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...int32.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...int32.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeInt32 && int32 == other.int32; } 
 @override int get hashCode { return int32.hashCode; } 
@@ -44,7 +44,7 @@ factory CloudflarePipelinesFieldTypeInt64.fromJson(Map<String, dynamic> json) { 
 final Int64 int64;
 
 @override String get type { return 'int64'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...int64.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...int64.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeInt64 && int64 == other.int64; } 
 @override int get hashCode { return int64.hashCode; } 
@@ -57,7 +57,7 @@ factory CloudflarePipelinesFieldTypeFloat32.fromJson(Map<String, dynamic> json) 
 final Float32 float32;
 
 @override String get type { return 'float32'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...float32.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...float32.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeFloat32 && float32 == other.float32; } 
 @override int get hashCode { return float32.hashCode; } 
@@ -70,7 +70,7 @@ factory CloudflarePipelinesFieldTypeFloat64.fromJson(Map<String, dynamic> json) 
 final Float64 float64;
 
 @override String get type { return 'float64'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...float64.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...float64.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeFloat64 && float64 == other.float64; } 
 @override int get hashCode { return float64.hashCode; } 
@@ -83,7 +83,7 @@ factory CloudflarePipelinesFieldTypeBool.fromJson(Map<String, dynamic> json) { r
 final Bool $bool;
 
 @override String get type { return 'bool'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...$bool.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...$bool.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeBool && $bool == other.$bool; } 
 @override int get hashCode { return $bool.hashCode; } 
@@ -96,7 +96,7 @@ factory CloudflarePipelinesFieldTypeString.fromJson(Map<String, dynamic> json) {
 final StringModel stringModel;
 
 @override String get type { return 'string'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...stringModel.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...stringModel.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeString && stringModel == other.stringModel; } 
 @override int get hashCode { return stringModel.hashCode; } 
@@ -109,7 +109,7 @@ factory CloudflarePipelinesFieldTypeBinary.fromJson(Map<String, dynamic> json) {
 final Binary binary;
 
 @override String get type { return 'binary'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...binary.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...binary.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeBinary && binary == other.binary; } 
 @override int get hashCode { return binary.hashCode; } 
@@ -122,7 +122,7 @@ factory CloudflarePipelinesFieldTypeTimestamp.fromJson(Map<String, dynamic> json
 final Timestamp timestamp;
 
 @override String get type { return 'Timestamp'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...timestamp.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...timestamp.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeTimestamp && timestamp == other.timestamp; } 
 @override int get hashCode { return timestamp.hashCode; } 
@@ -135,7 +135,7 @@ factory CloudflarePipelinesFieldTypeJson.fromJson(Map<String, dynamic> json) { r
 final Json json;
 
 @override String get type { return 'json'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...json.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...json.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeJson && json == other.json; } 
 @override int get hashCode { return json.hashCode; } 
@@ -148,7 +148,7 @@ factory CloudflarePipelinesFieldTypeStruct.fromJson(Map<String, dynamic> json) {
 final Struct struct;
 
 @override String get type { return 'Struct'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...struct.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...struct.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeStruct && struct == other.struct; } 
 @override int get hashCode { return struct.hashCode; } 
@@ -161,7 +161,7 @@ factory CloudflarePipelinesFieldTypeListModel.fromJson(Map<String, dynamic> json
 final ListModel listModel;
 
 @override String get type { return 'ListModel'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...listModel.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...listModel.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CloudflarePipelinesFieldTypeListModel && listModel == other.listModel; } 
 @override int get hashCode { return listModel.hashCode; } 

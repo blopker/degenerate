@@ -22,7 +22,7 @@ factory ChatCompletionRequestAssistantMessageContentPartChatCompletionRequestMes
 final ChatCompletionRequestMessageContentPartText chatCompletionRequestMessageContentPartText;
 
 @override String get type { return 'ChatCompletionRequestMessageContentPartText'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...chatCompletionRequestMessageContentPartText.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...chatCompletionRequestMessageContentPartText.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestAssistantMessageContentPartChatCompletionRequestMessageContentPartText && chatCompletionRequestMessageContentPartText == other.chatCompletionRequestMessageContentPartText; } 
 @override int get hashCode { return chatCompletionRequestMessageContentPartText.hashCode; } 
@@ -35,7 +35,7 @@ factory ChatCompletionRequestAssistantMessageContentPartChatCompletionRequestMes
 final ChatCompletionRequestMessageContentPartRefusal chatCompletionRequestMessageContentPartRefusal;
 
 @override String get type { return 'ChatCompletionRequestMessageContentPartRefusal'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...chatCompletionRequestMessageContentPartRefusal.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...chatCompletionRequestMessageContentPartRefusal.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestAssistantMessageContentPartChatCompletionRequestMessageContentPartRefusal && chatCompletionRequestMessageContentPartRefusal == other.chatCompletionRequestMessageContentPartRefusal; } 
 @override int get hashCode { return chatCompletionRequestMessageContentPartRefusal.hashCode; } 

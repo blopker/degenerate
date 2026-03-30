@@ -28,7 +28,7 @@ factory RealtimeTurnDetectionServerVad.fromJson(Map<String, dynamic> json) { ret
 final ServerVad serverVad;
 
 @override String get type { return 'ServerVad'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...serverVad.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...serverVad.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeTurnDetectionServerVad && serverVad == other.serverVad; } 
 @override int get hashCode { return serverVad.hashCode; } 
@@ -41,7 +41,7 @@ factory RealtimeTurnDetectionSemanticVad.fromJson(Map<String, dynamic> json) { r
 final SemanticVad semanticVad;
 
 @override String get type { return 'SemanticVad'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...semanticVad.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...semanticVad.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeTurnDetectionSemanticVad && semanticVad == other.semanticVad; } 
 @override int get hashCode { return semanticVad.hashCode; } 

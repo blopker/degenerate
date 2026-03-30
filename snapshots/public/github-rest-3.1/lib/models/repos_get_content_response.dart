@@ -37,7 +37,7 @@ factory ReposGetContentResponseFile.fromJson(Map<String, dynamic> json) { return
 final ContentFile contentFile;
 
 @override String get type { return 'file'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...contentFile.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...contentFile.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ReposGetContentResponseFile && contentFile == other.contentFile; } 
 @override int get hashCode { return contentFile.hashCode; } 
@@ -50,7 +50,7 @@ factory ReposGetContentResponseSymlink.fromJson(Map<String, dynamic> json) { ret
 final ContentSymlink contentSymlink;
 
 @override String get type { return 'symlink'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...contentSymlink.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...contentSymlink.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ReposGetContentResponseSymlink && contentSymlink == other.contentSymlink; } 
 @override int get hashCode { return contentSymlink.hashCode; } 
@@ -63,7 +63,7 @@ factory ReposGetContentResponseSubmodule.fromJson(Map<String, dynamic> json) { r
 final ContentSubmodule contentSubmodule;
 
 @override String get type { return 'submodule'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...contentSubmodule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...contentSubmodule.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ReposGetContentResponseSubmodule && contentSubmodule == other.contentSubmodule; } 
 @override int get hashCode { return contentSubmodule.hashCode; } 

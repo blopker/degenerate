@@ -22,7 +22,7 @@ factory PagesDeploymentConfigValuesRequestEnvVarsValuePlainText.fromJson(Map<Str
 final PagesPlainTextEnvVar pagesPlainTextEnvVar;
 
 @override String get type { return 'plain_text'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...pagesPlainTextEnvVar.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...pagesPlainTextEnvVar.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is PagesDeploymentConfigValuesRequestEnvVarsValuePlainText && pagesPlainTextEnvVar == other.pagesPlainTextEnvVar; } 
 @override int get hashCode { return pagesPlainTextEnvVar.hashCode; } 
@@ -35,7 +35,7 @@ factory PagesDeploymentConfigValuesRequestEnvVarsValueSecretText.fromJson(Map<St
 final PagesSecretTextEnvVar pagesSecretTextEnvVar;
 
 @override String get type { return 'secret_text'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...pagesSecretTextEnvVar.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...pagesSecretTextEnvVar.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is PagesDeploymentConfigValuesRequestEnvVarsValueSecretText && pagesSecretTextEnvVar == other.pagesSecretTextEnvVar; } 
 @override int get hashCode { return pagesSecretTextEnvVar.hashCode; } 

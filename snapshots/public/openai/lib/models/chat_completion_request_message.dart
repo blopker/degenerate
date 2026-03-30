@@ -26,7 +26,7 @@ factory ChatCompletionRequestMessageChatCompletionRequestDeveloperMessage.fromJs
 final ChatCompletionRequestDeveloperMessage chatCompletionRequestDeveloperMessage;
 
 @override String get role { return 'ChatCompletionRequestDeveloperMessage'; } 
-@override Map<String, dynamic> toJson() { return {'role': role, ...chatCompletionRequestDeveloperMessage.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...chatCompletionRequestDeveloperMessage.toJson(), 'role': role}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageChatCompletionRequestDeveloperMessage && chatCompletionRequestDeveloperMessage == other.chatCompletionRequestDeveloperMessage; } 
 @override int get hashCode { return chatCompletionRequestDeveloperMessage.hashCode; } 
@@ -39,7 +39,7 @@ factory ChatCompletionRequestMessageChatCompletionRequestSystemMessage.fromJson(
 final ChatCompletionRequestSystemMessage chatCompletionRequestSystemMessage;
 
 @override String get role { return 'ChatCompletionRequestSystemMessage'; } 
-@override Map<String, dynamic> toJson() { return {'role': role, ...chatCompletionRequestSystemMessage.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...chatCompletionRequestSystemMessage.toJson(), 'role': role}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageChatCompletionRequestSystemMessage && chatCompletionRequestSystemMessage == other.chatCompletionRequestSystemMessage; } 
 @override int get hashCode { return chatCompletionRequestSystemMessage.hashCode; } 
@@ -52,7 +52,7 @@ factory ChatCompletionRequestMessageChatCompletionRequestUserMessage.fromJson(Ma
 final ChatCompletionRequestUserMessage chatCompletionRequestUserMessage;
 
 @override String get role { return 'ChatCompletionRequestUserMessage'; } 
-@override Map<String, dynamic> toJson() { return {'role': role, ...chatCompletionRequestUserMessage.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...chatCompletionRequestUserMessage.toJson(), 'role': role}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageChatCompletionRequestUserMessage && chatCompletionRequestUserMessage == other.chatCompletionRequestUserMessage; } 
 @override int get hashCode { return chatCompletionRequestUserMessage.hashCode; } 
@@ -65,7 +65,7 @@ factory ChatCompletionRequestMessageChatCompletionRequestAssistantMessage.fromJs
 final ChatCompletionRequestAssistantMessage chatCompletionRequestAssistantMessage;
 
 @override String get role { return 'ChatCompletionRequestAssistantMessage'; } 
-@override Map<String, dynamic> toJson() { return {'role': role, ...chatCompletionRequestAssistantMessage.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...chatCompletionRequestAssistantMessage.toJson(), 'role': role}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageChatCompletionRequestAssistantMessage && chatCompletionRequestAssistantMessage == other.chatCompletionRequestAssistantMessage; } 
 @override int get hashCode { return chatCompletionRequestAssistantMessage.hashCode; } 
@@ -78,7 +78,7 @@ factory ChatCompletionRequestMessageChatCompletionRequestToolMessage.fromJson(Ma
 final ChatCompletionRequestToolMessage chatCompletionRequestToolMessage;
 
 @override String get role { return 'ChatCompletionRequestToolMessage'; } 
-@override Map<String, dynamic> toJson() { return {'role': role, ...chatCompletionRequestToolMessage.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...chatCompletionRequestToolMessage.toJson(), 'role': role}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageChatCompletionRequestToolMessage && chatCompletionRequestToolMessage == other.chatCompletionRequestToolMessage; } 
 @override int get hashCode { return chatCompletionRequestToolMessage.hashCode; } 
@@ -91,7 +91,7 @@ factory ChatCompletionRequestMessageChatCompletionRequestFunctionMessage.fromJso
 final ChatCompletionRequestFunctionMessage chatCompletionRequestFunctionMessage;
 
 @override String get role { return 'ChatCompletionRequestFunctionMessage'; } 
-@override Map<String, dynamic> toJson() { return {'role': role, ...chatCompletionRequestFunctionMessage.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...chatCompletionRequestFunctionMessage.toJson(), 'role': role}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChatCompletionRequestMessageChatCompletionRequestFunctionMessage && chatCompletionRequestFunctionMessage == other.chatCompletionRequestFunctionMessage; } 
 @override int get hashCode { return chatCompletionRequestFunctionMessage.hashCode; } 

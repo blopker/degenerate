@@ -22,7 +22,7 @@ factory OutputMessageContentOutputTextContent.fromJson(Map<String, dynamic> json
 final OutputTextContent outputTextContent;
 
 @override String get type { return 'OutputTextContent'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...outputTextContent.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...outputTextContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputMessageContentOutputTextContent && outputTextContent == other.outputTextContent; } 
 @override int get hashCode { return outputTextContent.hashCode; } 
@@ -35,7 +35,7 @@ factory OutputMessageContentRefusalContent.fromJson(Map<String, dynamic> json) {
 final RefusalContent refusalContent;
 
 @override String get type { return 'RefusalContent'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...refusalContent.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...refusalContent.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is OutputMessageContentRefusalContent && refusalContent == other.refusalContent; } 
 @override int get hashCode { return refusalContent.hashCode; } 

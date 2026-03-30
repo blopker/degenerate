@@ -292,6 +292,9 @@ final class IrOperation {
   final String operationId;
   final String dartMethodName;
   final HttpMethod method;
+  /// The raw HTTP method string for [HttpMethod.custom] operations
+  /// (from `additionalOperations`). Null for standard methods.
+  final String? customMethod;
   final String path;
   final String? summary;
   final String? description;
@@ -306,6 +309,7 @@ final class IrOperation {
     this.dartMethodName,
     this.method,
     this.path, {
+    this.customMethod,
     this.summary,
     this.description,
     this.parameters = const [],
@@ -363,7 +367,12 @@ final class IrResponse {
   });
 }
 
-enum HttpMethod { get, post, put, patch, delete, head, options, trace }
+enum HttpMethod {
+  get, post, put, patch, delete, head, options, trace, query,
+  /// Custom HTTP method from `additionalOperations`.
+  /// The actual method name is stored in [IrOperation.customMethod].
+  custom,
+}
 
 enum ParameterLocation { path, query, header, cookie }
 

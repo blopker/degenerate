@@ -23,7 +23,7 @@ factory FunctionShellCallItemParamEnvironmentLocalEnvironmentParam.fromJson(Map<
 final LocalEnvironmentParam localEnvironmentParam;
 
 @override String get type { return 'LocalEnvironmentParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...localEnvironmentParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...localEnvironmentParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallItemParamEnvironmentLocalEnvironmentParam && localEnvironmentParam == other.localEnvironmentParam; } 
 @override int get hashCode { return localEnvironmentParam.hashCode; } 
@@ -36,7 +36,7 @@ factory FunctionShellCallItemParamEnvironmentContainerReferenceParam.fromJson(Ma
 final ContainerReferenceParam containerReferenceParam;
 
 @override String get type { return 'ContainerReferenceParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...containerReferenceParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...containerReferenceParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellCallItemParamEnvironmentContainerReferenceParam && containerReferenceParam == other.containerReferenceParam; } 
 @override int get hashCode { return containerReferenceParam.hashCode; } 

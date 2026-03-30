@@ -23,7 +23,7 @@ factory FunctionShellToolParamEnvironmentContainerAutoParam.fromJson(Map<String,
 final ContainerAutoParam containerAutoParam;
 
 @override String get type { return 'ContainerAutoParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...containerAutoParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...containerAutoParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellToolParamEnvironmentContainerAutoParam && containerAutoParam == other.containerAutoParam; } 
 @override int get hashCode { return containerAutoParam.hashCode; } 
@@ -36,7 +36,7 @@ factory FunctionShellToolParamEnvironmentLocalEnvironmentParam.fromJson(Map<Stri
 final LocalEnvironmentParam localEnvironmentParam;
 
 @override String get type { return 'LocalEnvironmentParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...localEnvironmentParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...localEnvironmentParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellToolParamEnvironmentLocalEnvironmentParam && localEnvironmentParam == other.localEnvironmentParam; } 
 @override int get hashCode { return localEnvironmentParam.hashCode; } 
@@ -49,7 +49,7 @@ factory FunctionShellToolParamEnvironmentContainerReferenceParam.fromJson(Map<St
 final ContainerReferenceParam containerReferenceParam;
 
 @override String get type { return 'ContainerReferenceParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...containerReferenceParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...containerReferenceParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is FunctionShellToolParamEnvironmentContainerReferenceParam && containerReferenceParam == other.containerReferenceParam; } 
 @override int get hashCode { return containerReferenceParam.hashCode; } 

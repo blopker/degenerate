@@ -43,7 +43,7 @@ final class SelfTrue extends Self {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...$true.toJson()};
+    return {...$true.toJson(), 'type': type};
   }
 
   @override
@@ -78,7 +78,7 @@ final class SelfProto extends Self {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...proto.toJson()};
+    return {...proto.toJson(), 'type': type};
   }
 
   @override
@@ -113,7 +113,7 @@ final class SelfString extends Self {
 
   @override
   Map<String, dynamic> toJson() {
-    return {'type': type, ...stringModel.toJson()};
+    return {...stringModel.toJson(), 'type': type};
   }
 
   @override

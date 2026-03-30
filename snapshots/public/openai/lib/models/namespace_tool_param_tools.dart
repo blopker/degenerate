@@ -23,7 +23,7 @@ factory NamespaceToolParamToolsFunctionToolParam.fromJson(Map<String, dynamic> j
 final FunctionToolParam functionToolParam;
 
 @override String get type { return 'FunctionToolParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...functionToolParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...functionToolParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NamespaceToolParamToolsFunctionToolParam && functionToolParam == other.functionToolParam; } 
 @override int get hashCode { return functionToolParam.hashCode; } 
@@ -36,7 +36,7 @@ factory NamespaceToolParamToolsCustomToolParam.fromJson(Map<String, dynamic> jso
 final CustomToolParam customToolParam;
 
 @override String get type { return 'CustomToolParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...customToolParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...customToolParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is NamespaceToolParamToolsCustomToolParam && customToolParam == other.customToolParam; } 
 @override int get hashCode { return customToolParam.hashCode; } 

@@ -40,7 +40,7 @@ factory RulesetsRequestRuleBlock.fromJson(Map<String, dynamic> json) { return Ru
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'block'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleBlock && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -53,7 +53,7 @@ factory RulesetsRequestRuleChallenge.fromJson(Map<String, dynamic> json) { retur
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'challenge'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleChallenge && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -66,7 +66,7 @@ factory RulesetsRequestRuleCompressResponse.fromJson(Map<String, dynamic> json) 
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'compress_response'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleCompressResponse && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -79,7 +79,7 @@ factory RulesetsRequestRuleDdosDynamic.fromJson(Map<String, dynamic> json) { ret
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'ddos_dynamic'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleDdosDynamic && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -92,7 +92,7 @@ factory RulesetsRequestRuleExecute.fromJson(Map<String, dynamic> json) { return 
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'execute'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleExecute && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -105,7 +105,7 @@ factory RulesetsRequestRuleForceConnectionClose.fromJson(Map<String, dynamic> js
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'force_connection_close'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleForceConnectionClose && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -118,7 +118,7 @@ factory RulesetsRequestRuleJsChallenge.fromJson(Map<String, dynamic> json) { ret
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'js_challenge'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleJsChallenge && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -131,7 +131,7 @@ factory RulesetsRequestRuleLog.fromJson(Map<String, dynamic> json) { return Rule
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'log'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleLog && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -144,7 +144,7 @@ factory RulesetsRequestRuleLogCustomField.fromJson(Map<String, dynamic> json) { 
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'log_custom_field'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleLogCustomField && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -157,7 +157,7 @@ factory RulesetsRequestRuleManagedChallenge.fromJson(Map<String, dynamic> json) 
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'managed_challenge'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleManagedChallenge && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -170,7 +170,7 @@ factory RulesetsRequestRuleRedirect.fromJson(Map<String, dynamic> json) { return
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'redirect'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleRedirect && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -183,7 +183,7 @@ factory RulesetsRequestRuleRewrite.fromJson(Map<String, dynamic> json) { return 
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'rewrite'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleRewrite && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -196,7 +196,7 @@ factory RulesetsRequestRuleRoute.fromJson(Map<String, dynamic> json) { return Ru
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'route'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleRoute && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -209,7 +209,7 @@ factory RulesetsRequestRuleScore.fromJson(Map<String, dynamic> json) { return Ru
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'score'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleScore && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -222,7 +222,7 @@ factory RulesetsRequestRuleServeError.fromJson(Map<String, dynamic> json) { retu
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'serve_error'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleServeError && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -235,7 +235,7 @@ factory RulesetsRequestRuleSetCacheControl.fromJson(Map<String, dynamic> json) {
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'set_cache_control'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleSetCacheControl && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -248,7 +248,7 @@ factory RulesetsRequestRuleSetCacheSettings.fromJson(Map<String, dynamic> json) 
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'set_cache_settings'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleSetCacheSettings && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -261,7 +261,7 @@ factory RulesetsRequestRuleSetCacheTags.fromJson(Map<String, dynamic> json) { re
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'set_cache_tags'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleSetCacheTags && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -274,7 +274,7 @@ factory RulesetsRequestRuleSetConfig.fromJson(Map<String, dynamic> json) { retur
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'set_config'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleSetConfig && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 
@@ -287,7 +287,7 @@ factory RulesetsRequestRuleSkip.fromJson(Map<String, dynamic> json) { return Rul
 final RulesetsRule rulesetsRule;
 
 @override String get action { return 'skip'; } 
-@override Map<String, dynamic> toJson() { return {'action': action, ...rulesetsRule.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RulesetsRequestRuleSkip && rulesetsRule == other.rulesetsRule; } 
 @override int get hashCode { return rulesetsRule.hashCode; } 

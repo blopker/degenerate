@@ -26,7 +26,7 @@ factory ThreadItemUserMessageItem.fromJson(Map<String, dynamic> json) { return T
 final UserMessageItem userMessageItem;
 
 @override String get type { return 'UserMessageItem'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...userMessageItem.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...userMessageItem.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItemUserMessageItem && userMessageItem == other.userMessageItem; } 
 @override int get hashCode { return userMessageItem.hashCode; } 
@@ -39,7 +39,7 @@ factory ThreadItemAssistantMessageItem.fromJson(Map<String, dynamic> json) { ret
 final AssistantMessageItem assistantMessageItem;
 
 @override String get type { return 'AssistantMessageItem'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...assistantMessageItem.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...assistantMessageItem.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItemAssistantMessageItem && assistantMessageItem == other.assistantMessageItem; } 
 @override int get hashCode { return assistantMessageItem.hashCode; } 
@@ -52,7 +52,7 @@ factory ThreadItemWidgetMessageItem.fromJson(Map<String, dynamic> json) { return
 final WidgetMessageItem widgetMessageItem;
 
 @override String get type { return 'WidgetMessageItem'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...widgetMessageItem.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...widgetMessageItem.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItemWidgetMessageItem && widgetMessageItem == other.widgetMessageItem; } 
 @override int get hashCode { return widgetMessageItem.hashCode; } 
@@ -65,7 +65,7 @@ factory ThreadItemClientToolCallItem.fromJson(Map<String, dynamic> json) { retur
 final ClientToolCallItem clientToolCallItem;
 
 @override String get type { return 'ClientToolCallItem'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...clientToolCallItem.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...clientToolCallItem.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItemClientToolCallItem && clientToolCallItem == other.clientToolCallItem; } 
 @override int get hashCode { return clientToolCallItem.hashCode; } 
@@ -78,7 +78,7 @@ factory ThreadItemTaskItem.fromJson(Map<String, dynamic> json) { return ThreadIt
 final TaskItem taskItem;
 
 @override String get type { return 'TaskItem'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...taskItem.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...taskItem.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItemTaskItem && taskItem == other.taskItem; } 
 @override int get hashCode { return taskItem.hashCode; } 
@@ -91,7 +91,7 @@ factory ThreadItemTaskGroupItem.fromJson(Map<String, dynamic> json) { return Thr
 final TaskGroupItem taskGroupItem;
 
 @override String get type { return 'TaskGroupItem'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...taskGroupItem.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...taskGroupItem.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ThreadItemTaskGroupItem && taskGroupItem == other.taskGroupItem; } 
 @override int get hashCode { return taskGroupItem.hashCode; } 

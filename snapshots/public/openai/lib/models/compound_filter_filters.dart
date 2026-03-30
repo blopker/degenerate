@@ -21,7 +21,7 @@ factory CompoundFilterFiltersComparisonFilter.fromJson(Map<String, dynamic> json
 final ComparisonFilter comparisonFilter;
 
 @override String get type { return 'ComparisonFilter'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...comparisonFilter.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...comparisonFilter.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is CompoundFilterFiltersComparisonFilter && comparisonFilter == other.comparisonFilter; } 
 @override int get hashCode { return comparisonFilter.hashCode; } 

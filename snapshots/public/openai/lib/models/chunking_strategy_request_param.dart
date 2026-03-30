@@ -23,7 +23,7 @@ factory ChunkingStrategyRequestParamAutoChunkingStrategyRequestParam.fromJson(Ma
 final AutoChunkingStrategyRequestParam autoChunkingStrategyRequestParam;
 
 @override String get type { return 'AutoChunkingStrategyRequestParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...autoChunkingStrategyRequestParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...autoChunkingStrategyRequestParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChunkingStrategyRequestParamAutoChunkingStrategyRequestParam && autoChunkingStrategyRequestParam == other.autoChunkingStrategyRequestParam; } 
 @override int get hashCode { return autoChunkingStrategyRequestParam.hashCode; } 
@@ -36,7 +36,7 @@ factory ChunkingStrategyRequestParamStaticChunkingStrategyRequestParam.fromJson(
 final StaticChunkingStrategyRequestParam staticChunkingStrategyRequestParam;
 
 @override String get type { return 'StaticChunkingStrategyRequestParam'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...staticChunkingStrategyRequestParam.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {...staticChunkingStrategyRequestParam.toJson(), 'type': type}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ChunkingStrategyRequestParamStaticChunkingStrategyRequestParam && staticChunkingStrategyRequestParam == other.staticChunkingStrategyRequestParam; } 
 @override int get hashCode { return staticChunkingStrategyRequestParam.hashCode; } 
