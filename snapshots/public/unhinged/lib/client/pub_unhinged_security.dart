@@ -41,6 +41,7 @@ final class PubUnhingedSecurity {
           authorizationUrl: 'https://auth.bplm.gov/goat/authorize',
           tokenUrl: 'https://auth.bplm.gov/goat/token',
           refreshUrl: 'https://auth.bplm.gov/goat/refresh',
+          deviceAuthorizationUrl: null,
           scopes: {
             'bleat:read': 'Read bleats',
             'delete': 'Scope named after HTTP method',
@@ -49,10 +50,11 @@ final class PubUnhingedSecurity {
           },
         ),
         ApiOAuthFlow(
-          type: ApiOAuthFlowType.authorizationCode,
+          type: ApiOAuthFlowType.deviceAuthorization,
           authorizationUrl: null,
           tokenUrl: 'https://auth.bplm.gov/goat/token',
           refreshUrl: null,
+          deviceAuthorizationUrl: 'https://auth.bplm.gov/goat/device',
           scopes: {'bleat:read': 'Read bleats'},
         ),
       ],

@@ -393,6 +393,8 @@ class Generator {
               authorizationUrl: flow['authorizationUrl'] as String?,
               tokenUrl: flow['tokenUrl'] as String?,
               refreshUrl: flow['refreshUrl'] as String?,
+              deviceAuthorizationUrl:
+                  flow['deviceAuthorizationUrl'] as String?,
               scopes: scopes,
             ),
           );

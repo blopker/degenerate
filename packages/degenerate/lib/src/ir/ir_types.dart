@@ -257,12 +257,14 @@ final class IrOAuthFlow {
   final String? authorizationUrl;
   final String? tokenUrl;
   final String? refreshUrl;
+  final String? deviceAuthorizationUrl;
   final Map<String, String> scopes;
   const IrOAuthFlow({
     required this.type,
     this.authorizationUrl,
     this.tokenUrl,
     this.refreshUrl,
+    this.deviceAuthorizationUrl,
     this.scopes = const {},
   });
 }

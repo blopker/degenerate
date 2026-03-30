@@ -886,7 +886,7 @@ class FileEmitter {
     final flowLiterals = scheme.flows
         .map(
           (flow) =>
-              'ApiOAuthFlow(type: ${_oauthFlowType(flow.type)}, authorizationUrl: ${_stringOrNull(flow.authorizationUrl)}, tokenUrl: ${_stringOrNull(flow.tokenUrl)}, refreshUrl: ${_stringOrNull(flow.refreshUrl)}, scopes: ${_stringMapLiteral(flow.scopes)})',
+              'ApiOAuthFlow(type: ${_oauthFlowType(flow.type)}, authorizationUrl: ${_stringOrNull(flow.authorizationUrl)}, tokenUrl: ${_stringOrNull(flow.tokenUrl)}, refreshUrl: ${_stringOrNull(flow.refreshUrl)}, deviceAuthorizationUrl: ${_stringOrNull(flow.deviceAuthorizationUrl)}, scopes: ${_stringMapLiteral(flow.scopes)})',
         )
         .join(', ');
     return 'ApiSecurityScheme(name: ${_stringOrNull(scheme.name)}, type: $type, scheme: ${_stringOrNull(scheme.scheme)}, bearerFormat: ${_stringOrNull(scheme.bearerFormat)}, parameterName: ${_stringOrNull(scheme.parameterName)}, location: $location, openIdConnectUrl: ${_stringOrNull(scheme.openIdConnectUrl)}, flows: [$flowLiterals])';
@@ -914,6 +914,7 @@ class FileEmitter {
     'password' => 'ApiOAuthFlowType.password',
     'clientCredentials' => 'ApiOAuthFlowType.clientCredentials',
     'authorizationCode' => 'ApiOAuthFlowType.authorizationCode',
+    'deviceAuthorization' => 'ApiOAuthFlowType.deviceAuthorization',
     _ => 'ApiOAuthFlowType.authorizationCode',
   };
 

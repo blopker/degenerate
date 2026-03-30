@@ -48,10 +48,9 @@
 - ~~Medium: `queryString` content is flattened to `dynamic.toString()`, losing encoding semantics and structure.~~
   - Fixed: the operation lowerer now extracts schemas from `content`-based parameters. `topic` is lowered to a typed `YieldTopic` object with properly serialized query fields.
 
-- Medium: OAuth2 flow generation is incomplete/incorrect.
-  - Spec includes `authorizationCode` plus `deviceAuthorization`, and also `oauth2MetadataUrl`: `test/fixtures/public/unhinged.yaml:274-291`
-  - Generated output emits two `authorizationCode` flows, drops `deviceAuthorizationUrl`, and does not preserve `oauth2MetadataUrl`: `snapshots/public/unhinged/lib/client/pub_unhinged_security.dart:38-58`
-  - Impact: generated security metadata does not faithfully describe the spec.
+- ~~Medium: OAuth2 flow generation is incomplete/incorrect.~~
+  - Fixed: `deviceAuthorization` flow type and `deviceAuthorizationUrl` are now supported.
+  - Remaining: `oauth2MetadataUrl` is not preserved (non-standard OAS extension).
 
 - Medium: response modeling drops important response detail.
   - `GET /incidents` has `200`, `666`, and `default`, plus typed headers: `test/fixtures/public/unhinged.yaml:84-105`

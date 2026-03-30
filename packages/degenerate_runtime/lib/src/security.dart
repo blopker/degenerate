@@ -7,6 +7,7 @@ enum ApiOAuthFlowType {
   password,
   clientCredentials,
   authorizationCode,
+  deviceAuthorization,
 }
 
 final class ApiOAuthFlow {
@@ -14,6 +15,7 @@ final class ApiOAuthFlow {
   final String? authorizationUrl;
   final String? tokenUrl;
   final String? refreshUrl;
+  final String? deviceAuthorizationUrl;
   final Map<String, String> scopes;
 
   const ApiOAuthFlow({
@@ -21,6 +23,7 @@ final class ApiOAuthFlow {
     this.authorizationUrl,
     this.tokenUrl,
     this.refreshUrl,
+    this.deviceAuthorizationUrl,
     this.scopes = const {},
   });
 }
