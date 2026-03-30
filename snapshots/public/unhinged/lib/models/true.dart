@@ -156,7 +156,7 @@ final class True {
   factory True.fromJson(Map<String, dynamic> json) {
     return True(
       $false: json['false'] as bool,
-      none: json['none'] as String,
+      none: json['none'],
       $null: TrueNull.fromJson(json['null'] as String),
       $0: True0.fromJson((json['0'] as num).toInt()),
       $empty: json[''] as String,
@@ -172,7 +172,7 @@ final class True {
 
   final bool $false;
 
-  final String none;
+  final dynamic none;
 
   final TrueNull $null;
 
@@ -199,7 +199,7 @@ final class True {
   Map<String, dynamic> toJson() {
     return {
       'false': $false,
-      'none': none,
+      'none': ?none,
       'null': $null.toJson(),
       '0': $0.toJson(),
       '': $empty,
@@ -217,7 +217,6 @@ final class True {
     return json.containsKey('false') &&
         json['false'] is bool &&
         json.containsKey('none') &&
-        json['none'] is String &&
         json.containsKey('null') &&
         json.containsKey('0') &&
         json.containsKey('') &&
@@ -226,7 +225,7 @@ final class True {
 
   True copyWith({
     bool? $false,
-    String? none,
+    dynamic Function()? none,
     TrueNull? $null,
     True0? $0,
     String? $empty,
@@ -240,7 +239,7 @@ final class True {
   }) {
     return True(
       $false: $false ?? this.$false,
-      none: none ?? this.none,
+      none: none != null ? none() : this.none,
       $null: $null ?? this.$null,
       $0: $0 ?? this.$0,
       $empty: $empty ?? this.$empty,

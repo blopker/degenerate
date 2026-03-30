@@ -417,6 +417,15 @@ class IrMapper {
       return _lowerMap(flattened, nameHint: name);
     }
 
+    // JSON Schema `type: "null"` — the only valid value is null.
+    if (type == 'null') {
+      return IrPrimitive(
+        PrimitiveKind.dynamic_,
+        description: schema['description'] as String?,
+        isNullable: true,
+      );
+    }
+
     // Primitives.
     if (type != null) {
       return _lowerPrimitive(type, flattened);

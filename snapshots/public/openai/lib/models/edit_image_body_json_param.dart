@@ -171,7 +171,7 @@ bool get isUnknown { return !values.contains(this); }
 final class EditImageBodyJsonParam {const EditImageBodyJsonParam({this.model, required this.images, this.mask, required this.prompt, this.n = 1, this.quality = EditImageBodyJsonParamQuality.auto, this.inputFidelity, this.size = EditImageBodyJsonParamSize.auto, this.user, this.outputFormat = EditImageBodyJsonParamOutputFormat.png, this.outputCompression, this.moderation = EditImageBodyJsonParamModeration.auto, this.background = EditImageBodyJsonParamBackground.auto, this.stream = false, this.partialImages, });
 
 factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return EditImageBodyJsonParam(
-  model: json['model'] != null ? OneOf3.parse(json['model'], fromA: (v) => v as String, fromB: (v) => EditImageBodyJsonParamModelVariant2.fromJson(v as String), fromC: (v) => v as String,) : null,
+  model: json['model'] != null ? OneOf3.parse(json['model'], fromA: (v) => v as String, fromB: (v) => EditImageBodyJsonParamModelVariant2.fromJson(v as String), fromC: (v) => v,) : null,
   images: (json['images'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => v, fromB: (v) => v,)).toList(),
   mask: json['mask'] != null ? OneOf2.parse(json['mask'], fromA: (v) => v, fromB: (v) => v,) : null,
   prompt: json['prompt'] as String,

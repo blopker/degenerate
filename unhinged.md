@@ -2,11 +2,8 @@
 
 ## Findings
 
-- High: `type: "null"` is generated incorrectly as `String`.
-  - Spec: `test/fixtures/public/unhinged.yaml:301-302`
-  - Generated: `snapshots/public/unhinged/lib/models/true.dart:77,93,109,153-154`
-  - `True.none` should represent JSON `null`, but the client requires a `String` and validates `json['none'] is String`.
-  - Impact: valid server payloads with `null` will fail to parse, and client serialization is wrong.
+- ~~High: `type: "null"` is generated incorrectly as `String`.~~
+  - Fixed: `type: "null"` now maps to nullable `dynamic` instead of `String`. The field accepts only `null` as a valid JSON value.
 
 - ~~High: the `allOf` schema `"new"` is dropped entirely, and the affected operation uses the wrong request type.~~
   - Fixed: allOf with `$ref` + extra properties now merges into a full IrObject. The `New` model is generated with all fields, and `POST /incidents` uses it.

@@ -307,6 +307,14 @@ void main() {
         expect((t as IrTypeRef).name, equals('Pet'));
       });
 
+      test('type: "null" → nullable dynamic', () {
+        final t = lowerer.lowerInlineSchema({'type': 'null'});
+        expect(t, isA<IrPrimitive>());
+        final p = t as IrPrimitive;
+        expect(p.kind, equals(PrimitiveKind.dynamic_));
+        expect(p.isNullable, isTrue);
+      });
+
       test('_cycleRef → IrTypeRef', () {
         final t = lowerer.lowerInlineSchema({'_cycleRef': 'Node'});
         expect(t, isA<IrTypeRef>());
