@@ -19,7 +19,7 @@ import 'emitter/file_emitter.dart';
 import 'ir/ir_types.dart';
 
 // packageVersion updated by scripts/release.dart
-const packageVersion = '0.3.0';
+const packageVersion = '0.4.0';
 const defaultPackageName = 'api_client';
 const defaultOutputDir = 'lib';
 const defaultWorkspaceOutputDir = 'packages';
