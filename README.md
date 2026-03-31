@@ -4,6 +4,10 @@
   <h1>degenerate</h1>
   <p><strong>A fast, opinionated OpenAPI 3.x to Dart code generator.</strong></p>
   <p>
+    <a href="https://pub.dev/packages/degenerate">pub.dev</a> &middot;
+    <a href="https://github.com/blopker/degenerate">GitHub</a>
+  </p>
+  <p>
     <a href="#features">Features</a> &middot;
     <a href="#quick-start">Quick Start</a> &middot;
     <a href="#usage">Usage</a> &middot;
@@ -90,7 +94,7 @@ void main() async {
 }
 ```
 
-See [`example/`](example/) for a full working example against the live Petstore API, [`example_workspace/`](example_workspace/) for a Dart workspace setup, and [`packages/degenerate/example/example.md`](packages/degenerate/example/example.md) for more usage patterns including OpenAI, streaming, and Riverpod.
+See [`example/`](https://github.com/blopker/degenerate/tree/main/example) for a full working example against the live Petstore API, [`example_workspace/`](https://github.com/blopker/degenerate/tree/main/example_workspace) for a Dart workspace setup, and [`example.md`](https://github.com/blopker/degenerate/blob/main/packages/degenerate/example/example.md) for more usage patterns including OpenAI, streaming, and Riverpod.
 
 ## Usage
 
