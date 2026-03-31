@@ -2,6 +2,26 @@
 
 Important user-facing changes only. For full details see commit log.
 
+## 0.4.0
+
+**Critical fixes for discriminated unions, streaming, and runtime ergonomics.**
+
+### Breaking changes
+
+- **`OneOf` types simplified**: the sealed subclass hierarchy (`OneOf2A`, `OneOf2B`, etc.) is replaced by a single `final class` per arity. Code using `is OneOf2A` checks must switch to matching on `.value` type instead. Named constructors `.a()`, `.b()`, `.c()` etc. provide concise construction with Dart's implicit context syntax (e.g. `model: .b(.gpt4oMini)`).
+
+### Bug fixes
+
+- **Discriminator enum value extraction**: inferred discriminator mappings now extract the actual enum value from referenced schemas (e.g. `'system'` from `role: enum: [system]`) instead of using schema names. Fixes OpenAI `ChatCompletionRequestMessage` dispatch and similar patterns.
+- **Streaming interceptor bypass**: `executeStreaming` and `executeJsonlStreaming` now run through the full interceptor chain (auth, retry, logging) before sending. Previously interceptors were completely bypassed for streaming requests, causing silent auth failures.
+- **Mid-stream error wrapping**: network errors during SSE/JSONL streaming (SocketException, etc.) are now wrapped in `ApiStreamError` instead of propagating as raw platform exceptions.
+
+### Improvements
+
+- **OneOf variant deduplication**: inline unions with duplicate variant types (e.g. `OneOf3<A, A, B>`) are collapsed to remove redundant variants (`OneOf2<A, B>`).
+- **Shorter discriminated union variant names**: variant class names now use the discriminator enum value (`ChatCompletionRequestMessageSystem`) instead of the full schema name (`ChatCompletionRequestMessageChatCompletionRequestSystemMessage`).
+- Added `example.md` with real-world usage patterns (OpenAI, streaming, Riverpod, envelope unwrapping).
+
 ## 0.3.0
 
 **Major feature release: allOf composition, additionalProperties, streaming, and OAS 3.2 support.**

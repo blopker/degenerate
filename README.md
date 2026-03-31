@@ -1,3 +1,4 @@
+<!--Ensure all links are absolute, from https://github.com/blopker/degenerate/ or https://raw.githubusercontent.com/blopker/degenerate/main/ for assets-->
 <div align="center">
   <img src="https://raw.githubusercontent.com/blopker/degenerate/main/assets/degenerate.webp" alt="degenerate" width="400">
   <h1>degenerate</h1>
@@ -6,13 +7,13 @@
     <a href="#features">Features</a> &middot;
     <a href="#quick-start">Quick Start</a> &middot;
     <a href="#usage">Usage</a> &middot;
+    <a href="#streaming">Streaming</a> &middot;
     <a href="#middleware">Middleware</a> &middot;
-    <a href="#state-management">State Management</a> &middot;
     <a href="#tested-specs">Tested Specs</a>
   </p>
   <p>
     A Dart OpenAPI client generator that actually works on real-world specs. Zero analysis issues<br>
-    on Stripe, GitHub, Kubernetes, and 9 others, with no manual fixups. Production-ready batteries included.
+    on Stripe, GitHub, Kubernetes, OpenAI, Cloudflare, and 6 others, with no manual fixups.
   </p>
 </div>
 
@@ -89,7 +90,7 @@ void main() async {
 }
 ```
 
-See [`example/`](example/) for a full working example against the live Petstore API, and [`example_workspace/`](example_workspace/) for a Dart workspace setup.
+See [`example/`](example/) for a full working example against the live Petstore API, [`example_workspace/`](example_workspace/) for a Dart workspace setup, and [`packages/degenerate/example/example.md`](packages/degenerate/example/example.md) for more usage patterns including OpenAI, streaming, and Riverpod.
 
 ## Usage
 
@@ -374,6 +375,23 @@ switch (result) {
     print('Network error: $exception');
 }
 ```
+
+## Streaming
+
+Operations with `text/event-stream` (SSE) or `application/jsonl` (JSONL) responses generate a streaming variant that returns `Stream<T>`:
+
+```dart
+// SSE streaming (e.g. OpenAI chat completions)
+try {
+  await for (final event in sdk.chat.createChatCompletionStream(body: req)) {
+    stdout.write(event.choices.first.delta.content ?? '');
+  }
+} on ApiStreamError catch (e) {
+  print('Error ${e.statusCode}: ${e.rawError}');
+}
+```
+
+When the spec declares `itemSchema` on the media type, each event is deserialized as the typed schema. Interceptors (auth, logging, etc.) are applied to streaming requests.
 
 ## Middleware
 
