@@ -35,9 +35,11 @@ final class CancelToken {
 
 /// Thrown when a request is cancelled via [CancelToken].
 final class CancelledException implements Exception {
-  final String? message;
-
+  /// Creates a [CancelledException] with an optional [message].
   const CancelledException([this.message]);
+
+  /// An optional message describing the cancellation reason.
+  final String? message;
 
   @override
   String toString() =>

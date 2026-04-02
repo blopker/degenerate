@@ -22,11 +22,10 @@ void main() {
     });
 
     test('is a subtype of ApiException', () {
-      final response = ApiResponse(statusCode: 200, body: '{}');
       final result = ApiParseException<String, String>(
-        FormatException('bad'),
+        const FormatException('bad'),
         StackTrace.current,
-        response: response,
+        response: ApiResponse(statusCode: 200, body: '{}'),
       );
 
       expect(result, isA<ApiException<String, String>>());
@@ -71,7 +70,7 @@ void main() {
 
   group('dataOrThrow', () {
     test('returns data on success', () {
-      final ApiResult<String, String> result = ApiSuccess(
+      const ApiResult<String, String> result = ApiSuccess(
         'hello',
         statusCode: 200,
       );
@@ -79,21 +78,24 @@ void main() {
     });
 
     test('throws on ApiError', () {
-      final ApiResult<String, String> result = ApiError(
+      const ApiResult<String, String> result = ApiError(
         statusCode: 404,
         rawError: 'not found',
       );
-      expect(() => result.dataOrThrow, throwsA(isA<ApiError>()));
+      expect(
+        () => result.dataOrThrow,
+        throwsA(isA<ApiError<String, String>>()),
+      );
     });
 
     test('throws on ApiError with typed error', () {
-      final ApiResult<String, String> result = ApiError(
+      const ApiResult<String, String> result = ApiError(
         statusCode: 422,
         error: 'validation failed',
       );
       final thrown = _catchError(() => result.dataOrThrow);
       expect(thrown, isA<ApiError<String, String>>());
-      expect((thrown as ApiError).error, 'validation failed');
+      expect((thrown! as ApiError).error, 'validation failed');
     });
 
     test('rethrows on ApiException', () {
@@ -106,7 +108,7 @@ void main() {
     });
 
     test('rethrows on ApiParseException', () {
-      final original = FormatException('bad json');
+      const original = FormatException('bad json');
       final ApiResult<String, String> result = ApiParseException(
         original,
         StackTrace.current,
@@ -121,7 +123,7 @@ Object? _catchError(void Function() fn) {
   try {
     fn();
     return null;
-  } catch (e) {
+  } on Object catch (e) {
     return e;
   }
 }

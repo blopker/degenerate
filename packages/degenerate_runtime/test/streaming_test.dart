@@ -22,16 +22,16 @@ void main() {
 
     test('isSuccessful checks 2xx', () {
       expect(
-        StreamedApiResponse(
+        const StreamedApiResponse(
           statusCode: 200,
-          byteStream: const Stream.empty(),
+          byteStream: Stream.empty(),
         ).isSuccessful,
         isTrue,
       );
       expect(
-        StreamedApiResponse(
+        const StreamedApiResponse(
           statusCode: 404,
-          byteStream: const Stream.empty(),
+          byteStream: Stream.empty(),
         ).isSuccessful,
         isFalse,
       );
@@ -51,10 +51,10 @@ void main() {
 
   group('RecordingClient.sendStreaming', () {
     test('records request and returns streamed response', () async {
-      final client = RecordingClient();
-      client.nextStreamedResponse = RecordingClient.sseResponse([
-        '{"chunk":"hello"}',
-      ]);
+      final client = RecordingClient()
+        ..nextStreamedResponse = RecordingClient.sseResponse([
+          '{"chunk":"hello"}',
+        ]);
 
       final response = await client.sendStreaming(
         const ApiRequest(method: 'POST', path: '/stream'),

@@ -1,4 +1,4 @@
-import 'api_client.dart';
+import 'package:degenerate_runtime/src/api_client.dart';
 
 /// A function that processes a request and returns a response.
 typedef Handler = Future<ApiResponse> Function(ApiRequest request);
@@ -20,7 +20,9 @@ typedef Handler = Future<ApiResponse> Function(ApiRequest request);
 ///   }
 /// }
 /// ```
+// ignore: one_member_abstracts
 abstract interface class Interceptor {
+  /// Processes [request] and optionally delegates to [next].
   Future<ApiResponse> intercept(ApiRequest request, Handler next);
 }
 

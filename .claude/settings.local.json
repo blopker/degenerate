@@ -20,7 +20,8 @@
       "Bash(gh search:*)",
       "Bash(grep:*)",
       "Bash(ls:*)",
-      "Bash(xargs -I {} basename {})"
+      "Bash(xargs -I {} basename {})",
+      "Bash(rg ' - \\(\\\\S+\\)$' -o -r '$1')"
     ]
   }
 }

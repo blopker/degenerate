@@ -5,8 +5,7 @@ void main() {
   group('RetryInterceptor', () {
     test('retries on 503 and succeeds', () async {
       var attempts = 0;
-      final interceptor = RetryInterceptor(
-        maxRetries: 3,
+      const interceptor = RetryInterceptor(
         initialDelay: Duration.zero,
       );
 
@@ -20,14 +19,16 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
       expect(response.statusCode, 200);
       expect(attempts, 3);
     });
 
     test('retries on 429', () async {
       var attempts = 0;
-      final interceptor = RetryInterceptor(
+      const interceptor = RetryInterceptor(
         maxRetries: 2,
         initialDelay: Duration.zero,
       );
@@ -42,15 +43,16 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
       expect(response.statusCode, 200);
       expect(attempts, 2);
     });
 
     test('does not retry on 400', () async {
       var attempts = 0;
-      final interceptor = RetryInterceptor(
-        maxRetries: 3,
+      const interceptor = RetryInterceptor(
         initialDelay: Duration.zero,
       );
 
@@ -62,14 +64,16 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
       expect(response.statusCode, 400);
       expect(attempts, 1);
     });
 
     test('gives up after maxRetries', () async {
       var attempts = 0;
-      final interceptor = RetryInterceptor(
+      const interceptor = RetryInterceptor(
         maxRetries: 2,
         initialDelay: Duration.zero,
       );
@@ -82,14 +86,16 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
       expect(response.statusCode, 503);
       expect(attempts, 3); // initial + 2 retries
     });
 
     test('retries on network exceptions', () async {
       var attempts = 0;
-      final interceptor = RetryInterceptor(
+      const interceptor = RetryInterceptor(
         maxRetries: 2,
         initialDelay: Duration.zero,
       );
@@ -103,13 +109,15 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
       expect(response.statusCode, 200);
       expect(attempts, 3);
     });
 
     test('rethrows after exhausting retries on exceptions', () async {
-      final interceptor = RetryInterceptor(
+      const interceptor = RetryInterceptor(
         maxRetries: 1,
         initialDelay: Duration.zero,
       );
@@ -120,7 +128,7 @@ void main() {
       );
 
       expect(
-        () => chain(ApiRequest(method: 'GET', path: '/test')),
+        () => chain(const ApiRequest(method: 'GET', path: '/test')),
         throwsException,
       );
     });
@@ -143,7 +151,9 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
       expect(response.statusCode, 200);
       expect(attempts, 2);
     });
@@ -171,7 +181,9 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
       expect(response.statusCode, 200);
       expect(delays, [const Duration(seconds: 2)]);
     });
@@ -197,7 +209,9 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
       expect(response.statusCode, 200);
       expect(delays, [const Duration(milliseconds: 150)]);
     });
@@ -230,7 +244,9 @@ void main() {
           },
         );
 
-        final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+        final response = await chain(
+          const ApiRequest(method: 'GET', path: '/test'),
+        );
         expect(response.statusCode, 200);
         // Falls back to exponential backoff (100ms for first retry)
         expect(delays, [const Duration(milliseconds: 100)]);
@@ -239,7 +255,7 @@ void main() {
 
     test('does not retry non-idempotent POST by default', () async {
       var attempts = 0;
-      final interceptor = RetryInterceptor(
+      const interceptor = RetryInterceptor(
         maxRetries: 2,
         initialDelay: Duration.zero,
       );
@@ -252,7 +268,9 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'POST', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'POST', path: '/test'),
+      );
       expect(response.statusCode, 503);
       expect(attempts, 1);
     });
@@ -275,7 +293,9 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'POST', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'POST', path: '/test'),
+      );
       expect(response.statusCode, 200);
       expect(attempts, 2);
     });

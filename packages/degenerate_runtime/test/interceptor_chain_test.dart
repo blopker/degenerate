@@ -3,9 +3,9 @@ import 'package:test/test.dart';
 
 /// Records the order of interceptor calls.
 class _OrderInterceptor implements Interceptor {
+  _OrderInterceptor(this.name, this.log);
   final String name;
   final List<String> log;
-  _OrderInterceptor(this.name, this.log);
 
   @override
   Future<ApiResponse> intercept(ApiRequest request, Handler next) async {
@@ -18,9 +18,9 @@ class _OrderInterceptor implements Interceptor {
 
 /// Adds a header and forwards.
 class _HeaderInterceptor implements Interceptor {
+  _HeaderInterceptor(this.key, this.value);
   final String key;
   final String value;
-  _HeaderInterceptor(this.key, this.value);
 
   @override
   Future<ApiResponse> intercept(ApiRequest request, Handler next) {
@@ -62,7 +62,7 @@ void main() {
         terminal: (_) async => ApiResponse(statusCode: 200, body: 'ok'),
       );
 
-      await chain(ApiRequest(method: 'GET', path: '/test'));
+      await chain(const ApiRequest(method: 'GET', path: '/test'));
 
       expect(log, [
         'first:before',
@@ -87,7 +87,7 @@ void main() {
         },
       );
 
-      await chain(ApiRequest(method: 'GET', path: '/test'));
+      await chain(const ApiRequest(method: 'GET', path: '/test'));
 
       expect(capturedHeaders, containsPair('X-First', '1'));
       expect(capturedHeaders, containsPair('X-Second', '2'));
@@ -109,7 +109,7 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(const ApiRequest(method: 'GET', path: '/test'));
 
       expect(response.statusCode, 418);
       expect(response.body, 'short-circuited');
@@ -130,7 +130,7 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(const ApiRequest(method: 'GET', path: '/test'));
 
       expect(response.statusCode, 200);
       expect(callCount, 2);
@@ -146,7 +146,7 @@ void main() {
         },
       );
 
-      await chain(ApiRequest(method: 'GET', path: '/test'));
+      await chain(const ApiRequest(method: 'GET', path: '/test'));
       expect(called, isTrue);
     });
   });

@@ -4,9 +4,9 @@ import 'package:degenerate_runtime/testing.dart';
 import 'package:test/test.dart';
 
 final class _TestApi with ApiExecutor {
+  _TestApi(this.apiConfig);
   @override
   final ApiConfig apiConfig;
-  _TestApi(this.apiConfig);
 }
 
 void main() {

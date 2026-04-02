@@ -3,6 +3,9 @@ import 'dart:convert';
 
 /// A parsed Server-Sent Event.
 final class SseEvent {
+  /// Creates an [SseEvent] with the given [data] and optional fields.
+  const SseEvent({required this.data, this.event, this.id});
+
   /// The event type (from `event:` field), or `null` for default events.
   final String? event;
 
@@ -11,8 +14,6 @@ final class SseEvent {
 
   /// The event ID (from `id:` field), or `null`.
   final String? id;
-
-  const SseEvent({this.event, required this.data, this.id});
 
   @override
   String toString() =>

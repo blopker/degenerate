@@ -1,4 +1,4 @@
-import 'cancel_token.dart';
+import 'package:degenerate_runtime/src/cancel_token.dart';
 
 /// Per-request overrides for timeout, headers, and cancellation.
 ///
@@ -13,6 +13,9 @@ import 'cancel_token.dart';
 /// );
 /// ```
 final class RequestOptions {
+  /// Creates [RequestOptions] with optional per-request overrides.
+  const RequestOptions({this.timeout, this.extraHeaders, this.cancelToken});
+
   /// Override the default timeout for this request.
   final Duration? timeout;
 
@@ -21,6 +24,4 @@ final class RequestOptions {
 
   /// Token to cancel this request.
   final CancelToken? cancelToken;
-
-  const RequestOptions({this.timeout, this.extraHeaders, this.cancelToken});
 }

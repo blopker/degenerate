@@ -1,9 +1,12 @@
 import 'dart:math';
 
-import '../api_client.dart';
-import '../interceptor.dart';
+import 'package:degenerate_runtime/src/api_client.dart';
+import 'package:degenerate_runtime/src/interceptor.dart';
 
+/// A function that delays execution for the given [delay] duration.
 typedef RetrySleep = Future<void> Function(Duration delay);
+
+/// A function that returns a random double in the range [0, 1).
 typedef RetryRandom = double Function();
 
 /// Middleware that retries failed requests with exponential backoff.
@@ -20,6 +23,18 @@ typedef RetryRandom = double Function();
 /// );
 /// ```
 class RetryInterceptor implements Interceptor {
+  /// Creates a [RetryInterceptor] with configurable retry behavior.
+  const RetryInterceptor({
+    this.maxRetries = 3,
+    this.initialDelay = const Duration(milliseconds: 500),
+    this.retryWhen,
+    this.shouldRetryRequest,
+    this.jitterRatio = 0.25,
+    this.sleep,
+    this.random,
+    this.maxDelay,
+  });
+
   /// Maximum number of retries (not counting the initial attempt).
   final int maxRetries;
 
@@ -39,20 +54,14 @@ class RetryInterceptor implements Interceptor {
   /// `0.25` means the computed delay is randomized within +/-25%.
   final double jitterRatio;
 
+  /// Custom sleep function for testing. Defaults to [Future.delayed].
   final RetrySleep? sleep;
-  final RetryRandom? random;
-  final Duration? maxDelay;
 
-  const RetryInterceptor({
-    this.maxRetries = 3,
-    this.initialDelay = const Duration(milliseconds: 500),
-    this.retryWhen,
-    this.shouldRetryRequest,
-    this.jitterRatio = 0.25,
-    this.sleep,
-    this.random,
-    this.maxDelay,
-  });
+  /// Custom random function for testing. Defaults to [Random.nextDouble].
+  final RetryRandom? random;
+
+  /// Maximum delay between retries, capping exponential growth.
+  final Duration? maxDelay;
 
   bool _shouldRetry(ApiResponse response) {
     if (retryWhen != null) return retryWhen!(response);
@@ -98,7 +107,7 @@ class RetryInterceptor implements Interceptor {
             attempt == maxRetries) {
           return response;
         }
-      } catch (e, st) {
+      } on Object catch (e, st) {
         lastError = e;
         lastStack = st;
         if (attempt == maxRetries || !_shouldRetryRequest(request)) break;

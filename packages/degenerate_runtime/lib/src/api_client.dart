@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'request_options.dart';
-import 'streamed_api_response.dart';
+import 'package:degenerate_runtime/src/request_options.dart';
+import 'package:degenerate_runtime/src/streamed_api_response.dart';
 
 /// The contract any HTTP client must satisfy.
 abstract interface class ApiClient {
@@ -22,30 +22,28 @@ abstract interface class ApiClient {
   Future<void> close();
 }
 
-/// An outgoing API request.
+/// A single query parameter with encoding options.
 final class ApiQueryParameter {
-  final String name;
-  final String value;
-  final bool allowReserved;
-
+  /// Creates a new [ApiQueryParameter].
   const ApiQueryParameter({
     required this.name,
     required this.value,
     this.allowReserved = false,
   });
+
+  /// The parameter name.
+  final String name;
+
+  /// The parameter value.
+  final String value;
+
+  /// Whether reserved characters should be left unencoded.
+  final bool allowReserved;
 }
 
+/// An outgoing API request.
 final class ApiRequest {
-  final String method;
-  final String path;
-  final Map<String, String> headers;
-  final Map<String, String> queryParameters;
-  final List<ApiQueryParameter> queryParametersList;
-  final Map<String, String> cookies;
-  final Object? body;
-  final String? contentType;
-  final RequestOptions? options;
-
+  /// Creates a new [ApiRequest].
   const ApiRequest({
     required this.method,
     required this.path,
@@ -57,6 +55,33 @@ final class ApiRequest {
     this.contentType,
     this.options,
   });
+
+  /// The HTTP method (e.g. GET, POST).
+  final String method;
+
+  /// The request path relative to the base URL.
+  final String path;
+
+  /// HTTP headers to include in the request.
+  final Map<String, String> headers;
+
+  /// Simple key-value query parameters.
+  final Map<String, String> queryParameters;
+
+  /// Query parameters with encoding options.
+  final List<ApiQueryParameter> queryParametersList;
+
+  /// Cookies to include in the request.
+  final Map<String, String> cookies;
+
+  /// The request body.
+  final Object? body;
+
+  /// The content type of the request body.
+  final String? contentType;
+
+  /// Additional request options.
+  final RequestOptions? options;
 
   /// Create a copy with selected fields replaced.
   ApiRequest copyWith({
@@ -98,9 +123,9 @@ final class ApiRequest {
       queryParts.add(resolved.query);
     }
     for (final entry in queryParameters.entries) {
-      queryParts.add(
-        '${Uri.encodeQueryComponent(entry.key)}=${Uri.encodeQueryComponent(entry.value)}',
-      );
+      final key = Uri.encodeQueryComponent(entry.key);
+      final val = Uri.encodeQueryComponent(entry.value);
+      queryParts.add('$key=$val');
     }
     for (final entry in queryParametersList) {
       final encode = entry.allowReserved
@@ -111,6 +136,7 @@ final class ApiRequest {
     return resolved.replace(query: queryParts.join('&'));
   }
 
+  /// Returns headers with cookies merged into a Cookie header.
   Map<String, String> resolvedHeaders() {
     if (cookies.isEmpty) return headers;
     final cookieHeader = cookies.entries
@@ -133,7 +159,7 @@ String _encodeCookieValue(String value) {
 }
 
 const _unreservedOrReservedQueryChars =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~:/?#[]@!\$&'()*+,;=";
+    r"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~:/?#[]@!$&'()*+,;=";
 
 String _encodeQueryComponentAllowReserved(String value) {
   final buffer = StringBuffer();
@@ -150,21 +176,29 @@ String _encodeQueryComponentAllowReserved(String value) {
 
 /// A raw API response before deserialization.
 final class ApiResponse {
-  final int statusCode;
-  final Map<String, String> headers;
-  final String body;
-  final Uint8List bodyBytes;
-
+  /// Creates a new [ApiResponse].
   ApiResponse({
     required this.statusCode,
-    this.headers = const {},
     required this.body,
+    this.headers = const {},
     List<int>? bodyBytes,
   }) : bodyBytes = switch (bodyBytes) {
          Uint8List() => bodyBytes,
          List<int>() => Uint8List.fromList(bodyBytes),
          null => Uint8List.fromList(utf8.encode(body)),
        };
+
+  /// The HTTP status code.
+  final int statusCode;
+
+  /// The response headers.
+  final Map<String, String> headers;
+
+  /// The response body as a string.
+  final String body;
+
+  /// The response body as raw bytes.
+  final Uint8List bodyBytes;
 
   /// True if status code is 2xx.
   bool get isSuccessful => statusCode >= 200 && statusCode < 300;
