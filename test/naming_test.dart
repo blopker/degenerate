@@ -100,7 +100,7 @@ void main() {
   });
 
   group('sanitizeDartName', () {
-    test('prefixes reserved words with \$', () {
+    test(r'prefixes reserved words with $', () {
       expect(sanitizeDartName('class'), r'$class');
       expect(sanitizeDartName('return'), r'$return');
       expect(sanitizeDartName('var'), r'$var');
@@ -113,7 +113,7 @@ void main() {
       expect(sanitizeDartName('0value'), r'$0value');
     });
 
-    test('returns \$empty for empty string', () {
+    test(r'returns $empty for empty string', () {
       expect(sanitizeDartName(''), r'$empty');
     });
 
@@ -214,13 +214,13 @@ void main() {
       expect(enumValueName('in_progress'), 'inProgress');
     });
 
-    test('escapes Dart reserved words with \$ prefix', () {
+    test(r'escapes Dart reserved words with $ prefix', () {
       expect(enumValueName('class'), r'$class');
       expect(enumValueName('return'), r'$return');
       expect(enumValueName('on'), r'$on');
     });
 
-    test('escapes enum-internal reserved names with \$ prefix', () {
+    test(r'escapes enum-internal reserved names with $ prefix', () {
       expect(enumValueName('value'), r'$value');
       expect(enumValueName('values'), r'$values');
       expect(enumValueName('override'), r'$override');
@@ -230,7 +230,7 @@ void main() {
       expect(enumValueName('json'), r'$json');
     });
 
-    test('escapes dart:core type names with \$ prefix', () {
+    test(r'escapes dart:core type names with $ prefix', () {
       // camelCase enum values match lowercase core types
       expect(enumValueName('bool'), r'$bool');
       expect(enumValueName('int'), r'$int');
@@ -267,7 +267,7 @@ void main() {
   });
 
   group('sanitizeFieldName', () {
-    test('escapes dart:core type names with \$ prefix', () {
+    test(r'escapes dart:core type names with $ prefix', () {
       expect(sanitizeFieldName('double'), r'$double');
       expect(sanitizeFieldName('bool'), r'$bool');
       expect(sanitizeFieldName('String'), r'$String');

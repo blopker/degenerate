@@ -1,6 +1,5 @@
-import 'package:test/test.dart';
-
 import 'package:degenerate/src/normalizer/allof_flattener.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('AllOfFlattener', () {

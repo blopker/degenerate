@@ -37,7 +37,7 @@ void main() {
       );
 
       final result = await api.listPets();
-      final success = result as ApiSuccess<List<Pet>, dynamic>;
+      final success = result as ApiSuccess<List<Pet>, ErrorModel>;
       expect(success.data, hasLength(2));
       expect(success.data[0].name, equals('Buddy'));
       expect(success.data[0].tag, equals('dog'));
@@ -55,7 +55,7 @@ void main() {
       expect(client.lastRequest!.method, equals('POST'));
       expect(client.lastRequest!.path, equals('/pets'));
 
-      final body = jsonDecode(client.lastRequest!.body! as String);
+      final body = jsonDecode(client.lastRequest!.body! as String) as Map<String, dynamic>;
       expect(body['id'], equals(1));
       expect(body['name'], equals('Buddy'));
     });
@@ -69,9 +69,10 @@ void main() {
         ),
       );
 
-      final body = jsonDecode(client.lastRequest!.body! as String);
-      expect(body['owner']['name'], equals('Alice'));
-      expect(body['owner']['email'], equals('alice@example.com'));
+      final body = jsonDecode(client.lastRequest!.body! as String) as Map<String, dynamic>;
+      final owner = body['owner'] as Map<String, dynamic>;
+      expect(owner['name'], equals('Alice'));
+      expect(owner['email'], equals('alice@example.com'));
     });
 
     test('circular ref: owner with pets round-trips', () async {
@@ -89,10 +90,12 @@ void main() {
 
       await api.createPet(body: pet);
 
-      final body = jsonDecode(client.lastRequest!.body! as String);
-      expect(body['owner']['pets'], hasLength(2));
-      expect(body['owner']['pets'][0]['name'], equals('Buddy'));
-      expect(body['owner']['pets'][1]['name'], equals('Whiskers'));
+      final body = jsonDecode(client.lastRequest!.body! as String) as Map<String, dynamic>;
+      final owner = body['owner'] as Map<String, dynamic>;
+      final pets = owner['pets'] as List<dynamic>;
+      expect(pets, hasLength(2));
+      expect((pets[0] as Map<String, dynamic>)['name'], equals('Buddy'));
+      expect((pets[1] as Map<String, dynamic>)['name'], equals('Whiskers'));
     });
   });
 
@@ -115,7 +118,7 @@ void main() {
       );
 
       final result = await api.getPet(petId: '1');
-      final success = result as ApiSuccess<Pet, dynamic>;
+      final success = result as ApiSuccess<Pet, ErrorModel>;
       expect(success.data.name, equals('Buddy'));
       expect(success.data.owner?.name, equals('Alice'));
     });
@@ -126,13 +129,13 @@ void main() {
         body: jsonEncode({
           'id': 1,
           // name is required but missing - server spec violation
-          'photoUrls': [],
+          'photoUrls': <String>[],
         }),
       );
 
       final result = await api.getPet(petId: '1');
-      expect(result, isA<ApiParseException>());
-      final parseError = result as ApiParseException;
+      expect(result, isA<ApiParseException<Pet, ErrorModel>>());
+      final parseError = result as ApiParseException<Pet, ErrorModel>;
       expect(parseError.response.statusCode, equals(200));
       expect(parseError.response.body, contains('"id":1'));
     });
@@ -144,8 +147,8 @@ void main() {
       );
 
       final result = await api.getPet(petId: '1');
-      expect(result, isA<ApiParseException>());
-      final parseError = result as ApiParseException;
+      expect(result, isA<ApiParseException<Pet, ErrorModel>>());
+      final parseError = result as ApiParseException<Pet, ErrorModel>;
       expect(parseError.response.statusCode, equals(500));
       expect(parseError.response.body, equals('internal server error'));
     });
@@ -157,7 +160,7 @@ void main() {
       );
 
       final result = await api.getPet(petId: '999');
-      final error = result as ApiError<dynamic, ErrorModel>;
+      final error = result as ApiError<Pet, ErrorModel>;
       expect(error.statusCode, equals(404));
       expect(error.error?.code, equals(404));
       expect(error.error?.message, equals('Not found'));
@@ -183,8 +186,8 @@ void main() {
         options: RequestOptions(cancelToken: token),
       );
 
-      expect(result, isA<ApiException>());
-      final exception = result as ApiException;
+      expect(result, isA<ApiException<List<Pet>, ErrorModel>>());
+      final exception = result as ApiException<List<Pet>, ErrorModel>;
       expect(exception.exception, isA<CancelledException>());
     });
   });

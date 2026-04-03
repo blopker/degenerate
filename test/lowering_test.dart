@@ -1695,8 +1695,8 @@ void main() {
     });
 
     test('skips non-map schemas', () {
-      final schemas = <String, dynamic>{
-        'Valid': {'type': 'object', 'properties': {}},
+      final schemas = <String, Object?>{
+        'Valid': {'type': 'object', 'properties': <String, dynamic>{}},
         'Invalid': true,
       };
       final ctx = SchemaNormalizer().normalize(schemas);

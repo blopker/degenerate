@@ -50,7 +50,7 @@ void main() {
 
   group('createUser', () {
     test('sends POST /users with JSON body', () async {
-      final user = User(id: 'u1', email: 'a@b.com');
+      const user = User(id: 'u1', email: 'a@b.com');
       await api.createUser(body: user);
 
       expect(client.lastRequest!.method, equals('POST'));
@@ -60,7 +60,7 @@ void main() {
         equals('application/json'),
       );
 
-      final sentBody = jsonDecode(client.lastRequest!.body as String);
+      final sentBody = jsonDecode(client.lastRequest!.body! as String) as Map<String, dynamic>;
       expect(sentBody['id'], equals('u1'));
       expect(sentBody['email'], equals('a@b.com'));
     });
@@ -110,15 +110,15 @@ void main() {
 
       final result = await api.getUserById(userId: 'u1');
 
-      expect(result, isA<ApiError>());
-      final error = result as ApiError;
+      expect(result, isA<ApiError<User, Never>>());
+      final error = result as ApiError<User, Never>;
       expect(error.statusCode, equals(500));
     });
   });
 
   group('User model', () {
     test('roundtrips through JSON', () {
-      final user = User(id: 'u1', email: 'test@example.com');
+      const user = User(id: 'u1', email: 'test@example.com');
       final json = user.toJson();
       final restored = User.fromJson(json);
 
@@ -127,16 +127,16 @@ void main() {
     });
 
     test('equality', () {
-      final a = User(id: 'u1', email: 'a@b.com');
-      final b = User(id: 'u1', email: 'a@b.com');
-      final c = User(id: 'u2', email: 'a@b.com');
+      const a = User(id: 'u1', email: 'a@b.com');
+      const b = User(id: 'u1', email: 'a@b.com');
+      const c = User(id: 'u2', email: 'a@b.com');
 
       expect(a, equals(b));
       expect(a, isNot(equals(c)));
     });
 
     test('copyWith', () {
-      final user = User(id: 'u1', email: 'old@example.com');
+      const user = User(id: 'u1', email: 'old@example.com');
       final updated = user.copyWith(email: 'new@example.com');
 
       expect(updated.id, equals('u1'));

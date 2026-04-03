@@ -1,9 +1,8 @@
 import 'dart:io';
 
+import 'package:degenerate/src/generator.dart';
 import 'package:path/path.dart' as p;
 import 'package:test/test.dart';
-
-import 'package:degenerate/src/generator.dart';
 
 
 void main() {
@@ -123,9 +122,9 @@ void main() {
       );
 
       if (analyzeResult.exitCode != 0) {
-        // ignore: avoid_print
+        // ignore: avoid_print -- diagnostic output for failing analyze
         print('dart analyze stdout:\n${analyzeResult.stdout}');
-        // ignore: avoid_print
+        // ignore: avoid_print -- diagnostic output for failing analyze
         print('dart analyze stderr:\n${analyzeResult.stderr}');
         _printGeneratedFiles(tempDir);
       }
@@ -167,7 +166,7 @@ void main() {
 
       final generator = Generator(config);
       expect(
-        () => generator.generate(),
+        generator.generate,
         throwsA(isA<GeneratorException>()),
       );
     });
@@ -437,9 +436,9 @@ void main() {
 void _printGeneratedFiles(Directory dir) {
   for (final entity in dir.listSync(recursive: true)) {
     if (entity is File && entity.path.endsWith('.dart')) {
-      // ignore: avoid_print
+      // ignore: avoid_print -- diagnostic output for generated file contents
       print('\n=== ${p.relative(entity.path, from: dir.path)} ===');
-      // ignore: avoid_print
+      // ignore: avoid_print -- diagnostic output for generated file contents
       print(entity.readAsStringSync());
     }
   }

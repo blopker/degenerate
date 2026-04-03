@@ -22,6 +22,7 @@ linter:
     always_use_package_imports: false
     public_member_api_docs: false
     avoid_positional_boolean_parameters: false
+    flutter_style_todos: false
 
 analyzer:
   exclude:

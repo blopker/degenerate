@@ -2,21 +2,20 @@ import 'dart:io';
 
 import 'package:code_builder/code_builder.dart';
 import 'package:dart_style/dart_style.dart';
-import 'package:test/test.dart';
-
+import 'package:degenerate/src/emitter/api_emitter.dart';
+import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/emitter/enum_emitter.dart';
+import 'package:degenerate/src/emitter/extension_type_emitter.dart';
+import 'package:degenerate/src/emitter/file_emitter.dart';
+import 'package:degenerate/src/emitter/media_type_utils.dart';
+import 'package:degenerate/src/emitter/model_emitter.dart';
+import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
-import 'package:degenerate/src/emitter/emit_utils.dart';
-import 'package:degenerate/src/emitter/media_type_utils.dart';
-import 'package:degenerate/src/emitter/model_emitter.dart';
-import 'package:degenerate/src/emitter/enum_emitter.dart';
-import 'package:degenerate/src/emitter/api_emitter.dart';
-import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
-import 'package:degenerate/src/emitter/extension_type_emitter.dart';
-import 'package:degenerate/src/emitter/file_emitter.dart';
+import 'package:test/test.dart';
 
 /// Full pipeline helper: parse YAML -> normalize -> lower types -> lower operations.
 ({List<IrType> types, List<IrApi> apis, IrMapper irMapper})
@@ -95,7 +94,7 @@ void main() {
         expect(source, contains("'id': id"));
         expect(source, contains("'name': name"));
         // Optional field uses null check
-        expect(source, contains("tag"));
+        expect(source, contains('tag'));
       });
 
       test('has copyWith method', () {
@@ -134,20 +133,20 @@ void main() {
       late String source;
 
       setUp(() {
-        final model = IrObject(
+        const model = IrObject(
           'Metadata',
           [
             IrField(
               'name',
               'name',
-              const IrPrimitive(PrimitiveKind.string),
+              IrPrimitive(PrimitiveKind.string),
               isRequired: true,
             ),
           ],
           requiredFields: ['name'],
-          additionalProperties: const IrPrimitive(PrimitiveKind.string),
+          additionalProperties: IrPrimitive(PrimitiveKind.string),
         );
-        final specs = ModelEmitter(model).emit();
+        final specs = const ModelEmitter(model).emit();
         final library = Library((b) => b..body.addAll(specs));
         source = emitRaw(library);
       });
@@ -176,17 +175,17 @@ void main() {
 
     group('additionalProperties with dynamic values', () {
       test('emits Map<String, dynamic> for additionalProperties: true', () {
-        final model = IrObject(
+        const model = IrObject(
           'Config',
           [
-            IrField('id', 'id', const IrPrimitive(PrimitiveKind.string),
+            IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
                 isRequired: true),
           ],
           requiredFields: ['id'],
           additionalProperties:
-              const IrPrimitive(PrimitiveKind.dynamic_, isNullable: true),
+              IrPrimitive(PrimitiveKind.dynamic_, isNullable: true),
         );
-        final specs = ModelEmitter(model).emit();
+        final specs = const ModelEmitter(model).emit();
         final library = Library((b) => b..body.addAll(specs));
         final source = emitRaw(library);
 
@@ -199,19 +198,19 @@ void main() {
       late String source;
 
       setUp(() {
-        final model = IrObject('Config', [
+        const model = IrObject('Config', [
           IrField(
             'name',
             'name',
-            const IrPrimitive(PrimitiveKind.string),
+            IrPrimitive(PrimitiveKind.string),
           ),
           IrField(
             'value',
             'value',
-            const IrPrimitive(PrimitiveKind.int),
+            IrPrimitive(PrimitiveKind.int),
           ),
         ]);
-        final specs = ModelEmitter(model).emit();
+        final specs = const ModelEmitter(model).emit();
         final library = Library((b) => b..body.addAll(specs));
         source = emitRaw(library);
       });
@@ -236,15 +235,15 @@ void main() {
 
       setUp(() {
         // Field name '$toString' simulates sanitizeFieldName('toString')
-        final model = IrObject('Proto', [
+        const model = IrObject('Proto', [
           IrField(
             r'$toString',
             'toString',
-            const IrPrimitive(PrimitiveKind.string),
+            IrPrimitive(PrimitiveKind.string),
             defaultValue: '[object Object]',
           ),
         ]);
-        final specs = ModelEmitter(model).emit();
+        final specs = const ModelEmitter(model).emit();
         final library = Library((b) => b..body.addAll(specs));
         source = emitRaw(library);
       });
@@ -262,7 +261,7 @@ void main() {
       late String source;
 
       setUp(() {
-        final model = IrObject('DynModel', [
+        const model = IrObject('DynModel', [
           IrField(
             'data',
             'data',
@@ -272,7 +271,7 @@ void main() {
           ),
           IrField('payload', 'payload', IrPrimitive(PrimitiveKind.dynamic_)),
         ]);
-        final specs = ModelEmitter(model).emit();
+        final specs = const ModelEmitter(model).emit();
         final library = Library((b) => b..body.addAll(specs));
         source = emitRaw(library);
       });
@@ -298,25 +297,25 @@ void main() {
         // A field can be required (key must be present in JSON) but nullable
         // (value can be null). The generated fromJson should use `as String?`
         // not `as String` to avoid "type 'Null' is not a subtype of type 'String'"
-        final model = IrObject(
+        const model = IrObject(
           'SpaceDetail',
           [
             IrField(
               'name',
               'name',
-              const IrPrimitive(PrimitiveKind.string),
+              IrPrimitive(PrimitiveKind.string),
               isRequired: true,
             ),
             IrField(
               'description',
               'description',
-              const IrPrimitive(PrimitiveKind.string, isNullable: true),
+              IrPrimitive(PrimitiveKind.string, isNullable: true),
               isRequired: true,
             ),
           ],
           requiredFields: ['name', 'description'],
         );
-        final specs = ModelEmitter(model).emit();
+        final specs = const ModelEmitter(model).emit();
         final library = Library((b) => b..body.addAll(specs));
         final source = emitRaw(library);
 
@@ -366,8 +365,8 @@ void main() {
 
   group('EnumEmitter', () {
     test('emits enhanced enum with value field', () {
-      final irEnum = IrEnum('Status', ['active', 'inactive', 'suspended']);
-      final specs = EnumEmitter(irEnum).emit();
+      const irEnum = IrEnum('Status', ['active', 'inactive', 'suspended']);
+      final specs = const EnumEmitter(irEnum).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
@@ -382,8 +381,8 @@ void main() {
     });
 
     test('enum code is valid Dart', () {
-      final irEnum = IrEnum('Color', ['red', 'green', 'blue']);
-      final specs = EnumEmitter(irEnum).emit();
+      const irEnum = IrEnum('Color', ['red', 'green', 'blue']);
+      final specs = const EnumEmitter(irEnum).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
@@ -391,9 +390,9 @@ void main() {
     });
 
     test('emits integer enum with int value field', () {
-      final irEnum = IrEnum('Priority', ['0', '1', '2'],
+      const irEnum = IrEnum('Priority', ['0', '1', '2'],
           valueKind: PrimitiveKind.int);
-      final specs = EnumEmitter(irEnum).emit();
+      final specs = const EnumEmitter(irEnum).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
@@ -405,9 +404,9 @@ void main() {
     });
 
     test('integer enum is valid Dart', () {
-      final irEnum = IrEnum('Priority', ['0', '-1', '42'],
+      const irEnum = IrEnum('Priority', ['0', '-1', '42'],
           valueKind: PrimitiveKind.int);
-      final specs = EnumEmitter(irEnum).emit();
+      final specs = const EnumEmitter(irEnum).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
@@ -419,7 +418,7 @@ void main() {
 
   group('DiscriminatedUnionEmitter', () {
     test('emits sealed class with variant subclasses', () {
-      final union = IrDiscriminatedUnion('Shape', 'type', {
+      const union = IrDiscriminatedUnion('Shape', 'type', {
         'circle': IrObject(
           'Circle',
           [
@@ -464,7 +463,7 @@ void main() {
         ),
       });
 
-      final specs = DiscriminatedUnionEmitter(union).emit();
+      final specs = const DiscriminatedUnionEmitter(union).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
@@ -476,7 +475,7 @@ void main() {
     });
 
     test('discriminated union is valid Dart', () {
-      final union = IrDiscriminatedUnion('Animal', 'kind', {
+      const union = IrDiscriminatedUnion('Animal', 'kind', {
         'dog': IrObject(
           'Dog',
           [
@@ -497,7 +496,7 @@ void main() {
         ),
       });
 
-      final specs = DiscriminatedUnionEmitter(union).emit();
+      final specs = const DiscriminatedUnionEmitter(union).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
@@ -509,12 +508,12 @@ void main() {
 
   group('UntaggedUnionEmitter', () {
     test('emits sealed class for primitive union', () {
-      final union = IrUntaggedUnion('StringOrInt', [
+      const union = IrUntaggedUnion('StringOrInt', [
         IrPrimitive(PrimitiveKind.string),
         IrPrimitive(PrimitiveKind.int),
       ]);
 
-      final specs = UntaggedUnionEmitter(union).emit();
+      final specs = const UntaggedUnionEmitter(union).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
@@ -524,12 +523,12 @@ void main() {
     });
 
     test('primitive union is valid Dart', () {
-      final union = IrUntaggedUnion('StringOrBool', [
+      const union = IrUntaggedUnion('StringOrBool', [
         IrPrimitive(PrimitiveKind.string),
         IrPrimitive(PrimitiveKind.bool),
       ]);
 
-      final specs = UntaggedUnionEmitter(union).emit();
+      final specs = const UntaggedUnionEmitter(union).emit();
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
@@ -750,7 +749,7 @@ void main() {
     late String source;
 
     setUp(() {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getWithHeaders',
           'getWithHeaders',
@@ -769,7 +768,6 @@ void main() {
               'xRequestId',
               ParameterLocation.header,
               IrPrimitive(PrimitiveKind.string),
-              isRequired: false,
             ),
           ],
           responses: {
@@ -783,7 +781,7 @@ void main() {
           },
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -805,7 +803,7 @@ void main() {
       'optional header params are conditionally written into request headers',
       () {
         expect(source, contains('xRequestId'));
-        expect(source, contains("if (xRequestId != null) {"));
+        expect(source, contains('if (xRequestId != null) {'));
         expect(
           source,
           contains("headers['X-Request-Id'] = xRequestId;"),
@@ -820,7 +818,7 @@ void main() {
 
   group('ApiEmitter - query serialization', () {
     test('serializes exploded form arrays as repeated query parameters', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'listPets',
           'listPets',
@@ -839,7 +837,7 @@ void main() {
         ),
       ]);
       final source = emitRaw(
-        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
       );
 
       expect(
@@ -855,7 +853,7 @@ void main() {
     });
 
     test('serializes pipeDelimited arrays into queryParameters map', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'listPets',
           'listPets',
@@ -876,14 +874,14 @@ void main() {
         ),
       ]);
       final source = emitRaw(
-        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
       );
 
       expect(source, contains("queryParameters['tag'] = tag.join('|');"));
     });
 
     test('serializes spaceDelimited arrays into queryParameters map', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'listPets',
           'listPets',
@@ -904,14 +902,14 @@ void main() {
         ),
       ]);
       final source = emitRaw(
-        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
       );
 
       expect(source, contains("queryParameters['tag'] = tag.join(' ');"));
     });
 
     test('serializes deepObject query params into bracketed keys', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'listPets',
           'listPets',
@@ -943,7 +941,7 @@ void main() {
         ),
       ]);
       final source = emitRaw(
-        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
       );
 
       expect(
@@ -953,7 +951,7 @@ void main() {
     });
 
     test('serializes non-exploded form objects into comma-joined values', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'listPets',
           'listPets',
@@ -991,7 +989,7 @@ void main() {
         ),
       ]);
       final source = emitRaw(
-        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
       );
 
       expect(
@@ -1003,7 +1001,7 @@ void main() {
     });
 
     test('uses queryParametersList for allowReserved values', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'listPets',
           'listPets',
@@ -1023,7 +1021,7 @@ void main() {
         ),
       ]);
       final source = emitRaw(
-        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
       );
 
       expect(
@@ -1041,7 +1039,7 @@ void main() {
     test(
       'cookie params are included in method signature and request cookies',
       () {
-        final api = IrApi('TestApi', [
+        const api = IrApi('TestApi', [
           IrOperation(
             'getWithCookie',
             'getWithCookie',
@@ -1067,7 +1065,7 @@ void main() {
             },
           ),
         ]);
-        final specs = ApiEmitter(api).emit();
+        final specs = const ApiEmitter(api).emit();
         final library = Library(
           (b) => b
             ..directives.add(Directive.import('dart:convert'))
@@ -1093,7 +1091,7 @@ void main() {
 
   group('ApiEmitter - error deserialization', () {
     test('primitive string error type generates valid Dart', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getTest',
           'getTest',
@@ -1117,7 +1115,7 @@ void main() {
           ),
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1131,7 +1129,7 @@ void main() {
     });
 
     test('primitive int error type generates valid Dart', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getTest',
           'getTest',
@@ -1153,7 +1151,7 @@ void main() {
           ),
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1166,7 +1164,7 @@ void main() {
     });
 
     test('list error type generates valid Dart', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getTest',
           'getTest',
@@ -1190,7 +1188,7 @@ void main() {
           ),
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1203,7 +1201,7 @@ void main() {
     });
 
     test('enum error type generates valid Dart', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getTest',
           'getTest',
@@ -1227,7 +1225,7 @@ void main() {
           ),
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1253,7 +1251,7 @@ void main() {
 
   group('ApiEmitter - success response detection', () {
     test('handles 206 partial content response', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getPartial',
           'getPartial',
@@ -1270,7 +1268,7 @@ void main() {
           },
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1283,7 +1281,7 @@ void main() {
     });
 
     test('handles 207 multi-status response', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getMultiStatus',
           'getMultiStatus',
@@ -1311,7 +1309,7 @@ void main() {
           },
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1323,7 +1321,7 @@ void main() {
     });
 
     test('handles text/plain success responses', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getPlainText',
           'getPlainText',
@@ -1338,7 +1336,7 @@ void main() {
           },
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1353,7 +1351,7 @@ void main() {
 
   group('ApiEmitter - non-JSON media types', () {
     test('emits text/plain request bodies without jsonEncode', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'sendPlainText',
           'sendPlainText',
@@ -1365,7 +1363,7 @@ void main() {
           responses: {200: IrResponse()},
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1379,7 +1377,7 @@ void main() {
     });
 
     test('detects application/problem+json error responses', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getTest',
           'getTest',
@@ -1408,7 +1406,7 @@ void main() {
           },
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1421,7 +1419,7 @@ void main() {
     });
 
     test('treats JSON media types with parameters as JSON-like', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getProblem',
           'getProblem',
@@ -1449,7 +1447,7 @@ void main() {
           },
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1461,7 +1459,7 @@ void main() {
     });
 
     test('emits TODO and throw for unsupported text response objects', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getTextObject',
           'getTextObject',
@@ -1489,7 +1487,7 @@ void main() {
           },
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1507,7 +1505,7 @@ void main() {
     });
 
     test('emits TODO for unsupported text error objects', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getError',
           'getError',
@@ -1535,7 +1533,7 @@ void main() {
           },
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1548,7 +1546,7 @@ void main() {
     });
 
     test('emits multipart/form-data body from object schema', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'uploadFile',
           'uploadFile',
@@ -1569,7 +1567,6 @@ void main() {
                     'description',
                     'description',
                     IrPrimitive(PrimitiveKind.string),
-                    isRequired: false,
                   ),
                 ],
                 requiredFields: ['file'],
@@ -1579,7 +1576,7 @@ void main() {
           responses: {200: IrResponse()},
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1595,7 +1592,7 @@ void main() {
     });
 
     test('emits form-urlencoded body from object schema', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'createToken',
           'createToken',
@@ -1616,7 +1613,6 @@ void main() {
                     'scope',
                     'scope',
                     IrPrimitive(PrimitiveKind.string),
-                    isRequired: false,
                   ),
                 ],
                 requiredFields: ['grant_type'],
@@ -1626,7 +1622,7 @@ void main() {
           responses: {200: IrResponse()},
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1648,7 +1644,7 @@ void main() {
     });
 
     test('treats */* wildcard as JSON for object request bodies', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'createItem',
           'createItem',
@@ -1662,7 +1658,7 @@ void main() {
           responses: {200: IrResponse()},
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1679,7 +1675,7 @@ void main() {
     });
 
     test('treats */* wildcard as JSON for object success responses', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getItem',
           'getItem',
@@ -1694,7 +1690,7 @@ void main() {
           },
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1708,7 +1704,7 @@ void main() {
     });
 
     test('throws for unsupported text request object bodies', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'sendObject',
           'sendObject',
@@ -1733,7 +1729,7 @@ void main() {
           responses: {200: IrResponse()},
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1751,7 +1747,7 @@ void main() {
     });
 
     test('uses bodyBytes for octet-stream success responses', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'download',
           'download',
@@ -1768,7 +1764,7 @@ void main() {
           },
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -1789,7 +1785,7 @@ void main() {
       FileEmitter().emitAll(
         types: const [],
         apis: [
-          IrApi('TestApi', [
+          const IrApi('TestApi', [
             IrOperation(
               'sendObject',
               'sendObject',
@@ -1811,7 +1807,7 @@ void main() {
                   ),
                 ),
               }, isRequired: true),
-              responses: const {200: IrResponse()},
+              responses: {200: IrResponse()},
             ),
           ]),
         ],
@@ -1833,7 +1829,7 @@ void main() {
       FileEmitter().emitAll(
         types: const [],
         apis: [
-          IrApi('TestApi', [
+          const IrApi('TestApi', [
             IrOperation(
               'getTextObject',
               'getTextObject',
@@ -1904,14 +1900,14 @@ void main() {
       final files = FileEmitter().emitAll(
         types: const [],
         apis: [
-          IrApi('DefaultApi', [
+          const IrApi('DefaultApi', [
             IrOperation(
               'secureRead',
               'secureRead',
               HttpMethod.get,
               '/secure',
-              responses: const {200: IrResponse()},
-              securityRequirements: const [
+              responses: {200: IrResponse()},
+              securityRequirements: [
                 IrSecurityRequirement({'HttpBearer': []}),
               ],
             ),
@@ -1944,13 +1940,13 @@ void main() {
       expect(
         securityFile,
         contains(
-          'static final globalRequirements = [const ApiSecurityRequirement({\'ApiKeyAuth\': []})];',
+          "static final globalRequirements = [const ApiSecurityRequirement({'ApiKeyAuth': []})];",
         ),
       );
       expect(
         securityFile,
         contains(
-          'static final secureReadRequirements = [const ApiSecurityRequirement({\'HttpBearer\': []})];',
+          "static final secureReadRequirements = [const ApiSecurityRequirement({'HttpBearer': []})];",
         ),
       );
       expect(
@@ -1991,12 +1987,12 @@ void main() {
 
   group('ExtensionTypeEmitter', () {
     test('emits string extension type', () {
-      final type = IrExtensionType(
+      const type = IrExtensionType(
         'UserId',
-        const IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.string),
         description: 'A unique user identifier.',
       );
-      final specs = ExtensionTypeEmitter(type).emit();
+      final specs = const ExtensionTypeEmitter(type).emit();
       final source = emitRaw(Library((b) => b.body.addAll(specs)));
 
       expect(source, contains('extension type const UserId(String value)'));
@@ -2009,11 +2005,11 @@ void main() {
     });
 
     test('emits DateTime extension type with parsing', () {
-      final type = IrExtensionType(
+      const type = IrExtensionType(
         'Timestamp',
-        const IrPrimitive(PrimitiveKind.dateTime),
+        IrPrimitive(PrimitiveKind.dateTime),
       );
-      final specs = ExtensionTypeEmitter(type).emit();
+      final specs = const ExtensionTypeEmitter(type).emit();
       final source = emitRaw(Library((b) => b.body.addAll(specs)));
 
       // DateTime wraps DateTime, but fromJson takes String and parses
@@ -2030,11 +2026,11 @@ void main() {
     });
 
     test('emits int extension type with num fromJson', () {
-      final type = IrExtensionType(
+      const type = IrExtensionType(
         'Score',
-        const IrPrimitive(PrimitiveKind.int),
+        IrPrimitive(PrimitiveKind.int),
       );
-      final specs = ExtensionTypeEmitter(type).emit();
+      final specs = const ExtensionTypeEmitter(type).emit();
       final source = emitRaw(Library((b) => b.body.addAll(specs)));
 
       expect(source, contains('extension type const Score(int value)'));
@@ -2044,11 +2040,11 @@ void main() {
     });
 
     test('emits Uri extension type with parsing', () {
-      final type = IrExtensionType(
+      const type = IrExtensionType(
         'WebUrl',
-        const IrPrimitive(PrimitiveKind.uri),
+        IrPrimitive(PrimitiveKind.uri),
       );
-      final specs = ExtensionTypeEmitter(type).emit();
+      final specs = const ExtensionTypeEmitter(type).emit();
       final source = emitRaw(Library((b) => b.body.addAll(specs)));
 
       expect(source, contains('extension type WebUrl(Uri value)'));
@@ -2059,11 +2055,11 @@ void main() {
     });
 
     test('emits bool extension type', () {
-      final type = IrExtensionType(
+      const type = IrExtensionType(
         'Active',
-        const IrPrimitive(PrimitiveKind.bool),
+        IrPrimitive(PrimitiveKind.bool),
       );
-      final specs = ExtensionTypeEmitter(type).emit();
+      final specs = const ExtensionTypeEmitter(type).emit();
       final source = emitRaw(Library((b) => b.body.addAll(specs)));
 
       expect(source, contains('extension type const Active(bool value)'));
@@ -2122,7 +2118,7 @@ void main() {
       expect(user, contains('UserId.fromJson'));
       expect(user, contains('Timestamp.fromJson'));
       // Should NOT cast to Map<String, dynamic> for extension types
-      expect(user, isNot(contains('UserId.fromJson(json[\'id\'] as Map')));
+      expect(user, isNot(contains("UserId.fromJson(json['id'] as Map")));
     });
 
     test('API deserializes extension type parameters correctly', () {
@@ -2147,16 +2143,16 @@ void main() {
   group('preferredContent', () {
     test('prefers JSON over other types', () {
       final result = preferredContent({
-        'application/octet-stream': IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
-        'application/json': IrMediaType(IrTypeRef('Item')),
+        'application/octet-stream': const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'application/json': const IrMediaType(IrTypeRef('Item')),
       });
       expect(result!.$1, equals('application/json'));
     });
 
     test('prefers multipart over octet-stream', () {
       final result = preferredContent({
-        'application/octet-stream': IrMediaType(IrTypeRef('Value')),
-        'multipart/form-data': IrMediaType(
+        'application/octet-stream': const IrMediaType(IrTypeRef('Value')),
+        'multipart/form-data': const IrMediaType(
           IrObject('Request', [
             IrField('value', 'value', IrTypeRef('Value'), isRequired: true),
           ], requiredFields: ['value']),
@@ -2167,9 +2163,9 @@ void main() {
 
     test('prefers form-urlencoded over octet-stream', () {
       final result = preferredContent({
-        'application/octet-stream': IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
-        'application/x-www-form-urlencoded': IrMediaType(
-          IrObject('Request', [], requiredFields: []),
+        'application/octet-stream': const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'application/x-www-form-urlencoded': const IrMediaType(
+          IrObject('Request', []),
         ),
       });
       expect(result!.$1, equals('application/x-www-form-urlencoded'));
@@ -2177,24 +2173,24 @@ void main() {
 
     test('prefers text/plain over multipart', () {
       final result = preferredContent({
-        'multipart/form-data': IrMediaType(IrTypeRef('Item')),
-        'text/plain': IrMediaType(IrPrimitive(PrimitiveKind.string)),
+        'multipart/form-data': const IrMediaType(IrTypeRef('Item')),
+        'text/plain': const IrMediaType(IrPrimitive(PrimitiveKind.string)),
       });
       expect(result!.$1, equals('text/plain'));
     });
 
     test('prefers octet-stream over unknown types', () {
       final result = preferredContent({
-        'image/png': IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
-        'application/octet-stream': IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'image/png': const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'application/octet-stream': const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
       });
       expect(result!.$1, equals('application/octet-stream'));
     });
 
     test('falls back to first entry for unknown types', () {
       final result = preferredContent({
-        'image/png': IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
-        'video/mp4': IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'image/png': const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
+        'video/mp4': const IrMediaType(IrPrimitive(PrimitiveKind.bytes)),
       });
       expect(result!.$1, equals('image/png'));
     });
@@ -2297,21 +2293,21 @@ void main() {
       // which is OneOf2<InnerOneOf, String>. InnerOneOf is OneOf2<A, B>.
       // InnerOneOf should NOT be imported by Parent because it's inlined.
       final types = <IrType>[
-        IrObject('A', [
+        const IrObject('A', [
           IrField('id', 'id', IrPrimitive(PrimitiveKind.string), isRequired: true),
         ]),
-        IrObject('B', [
+        const IrObject('B', [
           IrField('name', 'name', IrPrimitive(PrimitiveKind.string), isRequired: true),
         ]),
-        IrUntaggedUnion('InnerOneOf', [
+        const IrUntaggedUnion('InnerOneOf', [
           IrTypeRef('A'),
           IrTypeRef('B'),
         ]),
-        IrUntaggedUnion('OuterOneOf', [
+        const IrUntaggedUnion('OuterOneOf', [
           IrTypeRef('InnerOneOf'),
           IrPrimitive(PrimitiveKind.string),
         ]),
-        IrObject('Parent', [
+        const IrObject('Parent', [
           IrField('value', 'value', IrTypeRef('OuterOneOf'), isRequired: true),
         ]),
       ];
@@ -2341,11 +2337,11 @@ void main() {
 
     setUpAll(() {
       final types = <IrType>[
-        IrUntaggedUnion('BytesOrStringOneOf', [
+        const IrUntaggedUnion('BytesOrStringOneOf', [
           IrPrimitive(PrimitiveKind.bytes),
           IrPrimitive(PrimitiveKind.string),
         ]),
-        IrAnyOf('BytesOrStringAnyOf', [
+        const IrAnyOf('BytesOrStringAnyOf', [
           IrPrimitive(PrimitiveKind.bytes),
           IrPrimitive(PrimitiveKind.string),
         ]),
@@ -2378,20 +2374,20 @@ void main() {
       // Create a sealed class (non-OneOf-eligible, 10 variants) that has bytes.
       // Parent model should NOT import dart:convert because it just calls .fromJson().
       final variants = <IrType>[
-        IrPrimitive(PrimitiveKind.string),
-        IrPrimitive(PrimitiveKind.int),
-        IrPrimitive(PrimitiveKind.double),
-        IrPrimitive(PrimitiveKind.bool),
-        IrPrimitive(PrimitiveKind.bytes),
-        IrPrimitive(PrimitiveKind.string),
-        IrPrimitive(PrimitiveKind.int),
-        IrPrimitive(PrimitiveKind.double),
-        IrPrimitive(PrimitiveKind.bool),
-        IrPrimitive(PrimitiveKind.num),
+        const IrPrimitive(PrimitiveKind.string),
+        const IrPrimitive(PrimitiveKind.int),
+        const IrPrimitive(PrimitiveKind.double),
+        const IrPrimitive(PrimitiveKind.bool),
+        const IrPrimitive(PrimitiveKind.bytes),
+        const IrPrimitive(PrimitiveKind.string),
+        const IrPrimitive(PrimitiveKind.int),
+        const IrPrimitive(PrimitiveKind.double),
+        const IrPrimitive(PrimitiveKind.bool),
+        const IrPrimitive(PrimitiveKind.num),
       ];
       final types = <IrType>[
         IrAnyOf('BigResult', variants),
-        IrObject('ParentModel', [
+        const IrObject('ParentModel', [
           IrField('result', 'result', IrTypeRef('BigResult')),
         ]),
       ];
@@ -2415,13 +2411,13 @@ void main() {
 
     setUpAll(() {
       final types = <IrType>[
-        IrObject('SomeResponse', [
+        const IrObject('SomeResponse', [
           IrField('ok', 'ok', IrPrimitive(PrimitiveKind.bool), isRequired: true),
         ]),
       ];
 
       final apis = <IrApi>[
-        IrApi('TestApi', [
+        const IrApi('TestApi', [
           IrOperation(
             'unsupportedUpload',
             'unsupportedUpload',
@@ -2433,7 +2429,6 @@ void main() {
                 'tag',
                 ParameterLocation.query,
                 IrPrimitive(PrimitiveKind.string),
-                isRequired: false,
               ),
             ],
             requestBody: IrRequestBody(
@@ -2480,14 +2475,14 @@ void main() {
     late Map<String, String> files;
 
     setUpAll(() {
-      final bodyType = IrObject('CreateRequest', [
+      const bodyType = IrObject('CreateRequest', [
         IrField('name', 'Name', IrPrimitive(PrimitiveKind.string), isRequired: true),
         IrField('tag', 'Tag', IrPrimitive(PrimitiveKind.string)),
       ]);
       final types = <IrType>[bodyType];
 
       final apis = <IrApi>[
-        IrApi('TestApi', [
+        const IrApi('TestApi', [
           IrOperation(
             'createThing',
             'createThing',
@@ -2499,7 +2494,6 @@ void main() {
                   IrTypeRef('CreateRequest'),
                 ),
               },
-              isRequired: false,
             ),
             responses: {
               200: IrResponse(
@@ -2533,13 +2527,13 @@ void main() {
     late Map<String, String> files;
 
     setUpAll(() {
-      final bodyType = IrObject('ObjRequest', [
+      const bodyType = IrObject('ObjRequest', [
         IrField('data', 'Data', IrPrimitive(PrimitiveKind.dynamic_)),
       ]);
       final types = <IrType>[bodyType];
 
       final apis = <IrApi>[
-        IrApi('TestApi', [
+        const IrApi('TestApi', [
           IrOperation(
             'sendData',
             'sendData',
@@ -2587,13 +2581,13 @@ void main() {
       final files = FileEmitter().emitAll(
         types: const [],
         apis: [
-          IrApi('PetsApi', [
+          const IrApi('PetsApi', [
             IrOperation(
               'listPets',
               'listPets',
               HttpMethod.get,
               '/pets',
-              responses: const {200: IrResponse()},
+              responses: {200: IrResponse()},
             ),
           ]),
         ],
@@ -2612,7 +2606,7 @@ void main() {
 
   group('deepObject nullable field promotion', () {
     test('uses case-final pattern for nullable deepObject fields', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'listItems',
           'listItems',
@@ -2636,7 +2630,6 @@ void main() {
                     'user',
                     'user',
                     IrPrimitive(PrimitiveKind.string),
-                    isRequired: false,
                   ),
                 ],
                 requiredFields: ['type'],
@@ -2650,7 +2643,7 @@ void main() {
         ),
       ]);
       final source = emitRaw(
-        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
       );
 
       // Required field should still use direct access
@@ -2659,11 +2652,11 @@ void main() {
       // (would fail dart analyze: can't promote public property)
       expect(source, isNot(contains("queryParameters['scope[user]'] = scope.user;")));
       // Should use case-final pattern for promotion
-      expect(source, contains("case final user\$?"));
+      expect(source, contains(r'case final user$?'));
     });
 
     test('uses case-final pattern for nullable form-exploded fields', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'listItems',
           'listItems',
@@ -2687,7 +2680,6 @@ void main() {
                     'meter',
                     'meter',
                     IrPrimitive(PrimitiveKind.string),
-                    isRequired: false,
                   ),
                 ],
                 requiredFields: ['status'],
@@ -2701,12 +2693,12 @@ void main() {
         ),
       ]);
       final source = emitRaw(
-        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
       );
 
       // Optional field must use case-final for promotion
-      expect(source, isNot(contains("filter.meter != null")));
-      expect(source, contains("case final meter\$?"));
+      expect(source, isNot(contains('filter.meter != null')));
+      expect(source, contains(r'case final meter$?'));
     });
   });
 
@@ -2714,7 +2706,7 @@ void main() {
 
   group('ApiEmitter - GET with request body', () {
     test('emits body parameter for GET requests with requestBody', () {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'getWithBody',
           'getWithBody',
@@ -2725,12 +2717,11 @@ void main() {
                 IrList(IrPrimitive(PrimitiveKind.string)),
               ),
             },
-            isRequired: false,
           ),
         ),
       ]);
       final source = emitRaw(
-        Library((b) => b..body.addAll(ApiEmitter(api).emit())),
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
       );
       expect(source, contains('List<String>? body'));
       expect(source, contains('body: jsonEncode(body)'));
@@ -2766,15 +2757,15 @@ void main() {
 
   group('ApiEmitter - unwrapFields', () {
     test('unwraps response envelope to result field type', () {
-      final envelopeType = IrObject('GetZoneResponse', [
-        IrField('success', 'success', const IrPrimitive(PrimitiveKind.bool),
+      const envelopeType = IrObject('GetZoneResponse', [
+        IrField('success', 'success', IrPrimitive(PrimitiveKind.bool),
             isRequired: true),
         IrField('errors', 'errors',
-            const IrList(IrPrimitive(PrimitiveKind.dynamic_)),
+            IrList(IrPrimitive(PrimitiveKind.dynamic_)),
             isRequired: true),
         IrField('result', 'result', IrTypeRef('Zone')),
       ]);
-      final api = IrApi('ZonesApi', [
+      const api = IrApi('ZonesApi', [
         IrOperation(
           'getZone',
           'getZone',
@@ -2791,8 +2782,8 @@ void main() {
       ]);
       final typeRegistry = <String, IrType>{
         'GetZoneResponse': envelopeType,
-        'Zone': IrObject('Zone', [
-          IrField('id', 'id', const IrPrimitive(PrimitiveKind.string),
+        'Zone': const IrObject('Zone', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
               isRequired: true),
         ]),
       };
@@ -2816,7 +2807,7 @@ void main() {
     });
 
     test('does not unwrap when field is not present', () {
-      final api = IrApi('PetsApi', [
+      const api = IrApi('PetsApi', [
         IrOperation(
           'listPets',
           'listPets',
@@ -2833,7 +2824,7 @@ void main() {
           },
         ),
       ]);
-      final specs = ApiEmitter(api, unwrapFields: ['result']).emit();
+      final specs = const ApiEmitter(api, unwrapFields: ['result']).emit();
       final source = emitRaw(
         Library(
           (b) => b
@@ -2851,7 +2842,7 @@ void main() {
     late String source;
 
     setUp(() {
-      final api = IrApi('TestApi', [
+      const api = IrApi('TestApi', [
         IrOperation(
           'listItems',
           'listItems',
@@ -2863,14 +2854,12 @@ void main() {
               r'$filter',
               ParameterLocation.query,
               IrPrimitive(PrimitiveKind.string),
-              isRequired: false,
             ),
             IrParameter(
               r'$top',
               r'$top',
               ParameterLocation.header,
               IrPrimitive(PrimitiveKind.string),
-              isRequired: false,
             ),
           ],
           responses: {
@@ -2884,7 +2873,7 @@ void main() {
           },
         ),
       ]);
-      final specs = ApiEmitter(api).emit();
+      final specs = const ApiEmitter(api).emit();
       final library = Library(
         (b) => b
           ..directives.add(Directive.import('dart:convert'))
@@ -2908,7 +2897,7 @@ void main() {
 
   group('escapeDartString', () {
     test('escapes backslash, quote, and dollar', () {
-      expect(escapeDartString(r"a\b"), r"a\\b");
+      expect(escapeDartString(r'a\b'), r'a\\b');
       expect(escapeDartString("a'b"), r"a\'b");
       expect(escapeDartString(r'a$b'), r'a\$b');
     });
