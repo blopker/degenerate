@@ -136,7 +136,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersAiPostRunModelResponseResult.fromJson(json['result']) : null;
+    return json['result'] != null ? WorkersAiPostRunModelResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
     return WorkersAiPostRunModelResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

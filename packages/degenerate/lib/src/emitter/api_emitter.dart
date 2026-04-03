@@ -508,8 +508,13 @@ class ApiEmitter {
         IrList(:final items) =>
           'final json = jsonDecode(response.body) as List<dynamic>;\n'
               '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
-        IrMap(:final values) =>
-          'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_fromJson(values, 'v')}));',
+        IrMap(:final values) => () {
+          final valueExpr = _fromJson(values, 'v');
+          if (valueExpr == 'v') {
+            return 'return jsonDecode(response.body) as Map<String, dynamic>;';
+          }
+          return 'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, $valueExpr));';
+        }(),
         IrPrimitive(:final kind) => switch (kind) {
           PrimitiveKind.string => 'return response.body;',
           PrimitiveKind.int => 'return int.parse(response.body);',
@@ -1187,8 +1192,13 @@ class ApiEmitter {
         IrList(:final items) =>
           'final json = jsonDecode(response.body) as List<dynamic>;\n'
               '    return json.map((e) => ${_fromJson(items, 'e')}).toList();',
-        IrMap(:final values) =>
-          'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_fromJson(values, 'v')}));',
+        IrMap(:final values) => () {
+          final valueExpr = _fromJson(values, 'v');
+          if (valueExpr == 'v') {
+            return 'return jsonDecode(response.body) as Map<String, dynamic>;';
+          }
+          return 'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, $valueExpr));';
+        }(),
         // All named types with .fromJson(Map)
         _ => 'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
       };

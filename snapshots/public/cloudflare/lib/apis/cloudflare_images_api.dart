@@ -177,7 +177,7 @@ return execute(
 /// - Supports string, number, and boolean value types
 /// 
 /// **Examples:**
-/// ````
+/// ```text
 /// # List all images
 /// /images/v2
 /// 
@@ -198,7 +198,7 @@ return execute(
 /// 
 /// # Multiple metadata filters (AND logic)
 /// /images/v2?meta.status`[eq]`=active&meta.priority`[eq:number]`=5
-/// ````
+/// ```text
 /// 
 ///
 /// `GET /accounts/{account_id}/images/v2`

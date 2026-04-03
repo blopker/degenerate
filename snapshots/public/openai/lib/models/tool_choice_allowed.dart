@@ -84,7 +84,7 @@ final ToolChoiceAllowedMode mode;
 ///   { "type": "mcp", "server_label": "deepwiki" },
 ///   { "type": "image_generation" }
 /// ]
-/// ````
+/// ```text
 /// 
 final List<Map<String,dynamic>> tools;
 

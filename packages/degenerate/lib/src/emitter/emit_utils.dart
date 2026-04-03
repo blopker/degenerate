@@ -247,7 +247,10 @@ String _buildFromJsonNonNull(
         typeRegistry: typeRegistry,
         resolving: resolving,
       ),
-    IrUntaggedUnion(:final name) => '$name.fromJson($accessor)',
+    IrUntaggedUnion(:final name, :final variants) =>
+      variants.every((v) => v is IrPrimitive)
+          ? '$name.fromJson($accessor)'
+          : '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
     IrExtensionType(:final name, :final inner) =>
       '$name.fromJson(${_extensionTypeJsonCast(inner, accessor)})',
     IrAnyOf(:final variants) when isOneOfEligible(variants) =>
@@ -439,20 +442,37 @@ String escapeDartString(String value) {
       });
 }
 
-/// Produce a single-quoted Dart string literal for [value].
+/// Produce a Dart string literal for [value], preferring raw strings when
+/// the value contains characters that would otherwise need escaping.
 ///
-/// Uses a raw string (`r'...'`) when the value contains `$` but no characters
-/// that would need other escapes (single quotes, backslashes, control chars).
-/// Otherwise falls back to a regular escaped string.
+/// Tries in order:
+/// 1. `'...'` — plain single-quoted when nothing needs escaping
+/// 2. `"..."` — plain double-quoted when value has `'` but no `"` or `$`
+/// 3. `r'...'` — raw single-quoted when value has `$` or `\` but no `'`
+/// 4. `r"..."` — raw double-quoted when value has `$`/`\` and `'` but no `"`
+/// 5. `'${escaped}'` — fallback with escapes
 String dartStringLiteral(String value) {
-  if (value.contains(r'$') &&
-      !value.contains("'") &&
-      !value.contains(r'\') &&
-      !value.contains('\n') &&
-      !value.contains('\r') &&
-      !value.contains('\t') &&
-      !_unicodeControlChars.hasMatch(value)) {
-    return "r'$value'";
+  final hasSingleQuote = value.contains("'");
+  final hasDoubleQuote = value.contains('"');
+  final hasDollar = value.contains(r'$');
+  final hasBackslash = value.contains(r'\');
+  final hasControl = value.contains('\n') ||
+      value.contains('\r') ||
+      value.contains('\t') ||
+      _unicodeControlChars.hasMatch(value);
+
+  // Plain single-quoted when nothing needs escaping.
+  if (!hasSingleQuote && !hasDollar && !hasBackslash && !hasControl) {
+    return "'$value'";
+  }
+  // Plain double-quoted when value has ' but no " or $ or control chars.
+  if (hasSingleQuote && !hasDoubleQuote && !hasDollar && !hasControl) {
+    return '"$value"';
+  }
+  // Raw strings for values with $ or \ (but no control chars).
+  if ((hasDollar || hasBackslash) && !hasControl) {
+    if (!hasSingleQuote) return "r'$value'";
+    if (!hasDoubleQuote) return 'r"$value"';
   }
   return "'${escapeDartString(value)}'";
 }
@@ -517,14 +537,23 @@ String escapeDocComment(String line) {
   return buf.toString();
 }
 
+/// Regex matching a fenced code block opening without a language specifier.
+final _bareCodeFence = RegExp(r'^(`{3,})$');
+
 /// Format a description string as `///` doc comment lines.
 ///
 /// Splits on newlines, trims trailing whitespace, and escapes HTML-like tags.
+/// Adds a `text` language hint to fenced code blocks that lack one.
 List<String> formatDocComment(String description) {
-  return description
-      .split('\n')
-      .map((l) => '/// ${escapeDocComment(l.trimRight())}')
-      .toList();
+  return description.split('\n').map((l) {
+    final trimmed = l.trimRight();
+    // Add language to bare fenced code blocks (``` or ```` without language).
+    final fenceMatch = _bareCodeFence.firstMatch(trimmed);
+    if (fenceMatch != null) {
+      return '/// ${fenceMatch[1]!}text';
+    }
+    return '/// ${escapeDocComment(trimmed)}';
+  }).toList();
 }
 
 /// Convert a field name to a file-system-friendly snake_case name.

@@ -57,7 +57,7 @@ final ChatCompletionAllowedToolsMode mode;
 ///   { "type": "function", "function": { "name": "get_weather" } },
 ///   { "type": "function", "function": { "name": "get_time" } }
 /// ]
-/// ````
+/// ```text
 /// 
 final List<Map<String,dynamic>> tools;
 

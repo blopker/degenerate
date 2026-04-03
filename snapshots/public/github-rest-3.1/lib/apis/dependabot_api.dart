@@ -135,7 +135,7 @@ return execute(
 ///   "repository_ids_to_add": `[123, 456]`,
 ///   "repository_ids_to_remove": `[789]`
 /// }
-/// ````
+/// ```text
 ///
 /// `PATCH /organizations/{org}/dependabot/repository-access`
 Future<ApiResult<void, BasicError>> dependabotUpdateRepositoryAccessForOrg({required String org, required DependabotUpdateRepositoryAccessForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};

@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// **Required when 
 
 factory CodeScanningAlertDismissedReason.fromJson(String json) { return switch (json) {
   'false positive' => falsePositive,
-  'won\'t fix' => wontFix,
+  "won't fix" => wontFix,
   'used in tests' => usedInTests,
   'null' => $null,
   _ => CodeScanningAlertDismissedReason._(json),
@@ -13,7 +13,7 @@ factory CodeScanningAlertDismissedReason.fromJson(String json) { return switch (
 
 static const CodeScanningAlertDismissedReason falsePositive = CodeScanningAlertDismissedReason._('false positive');
 
-static const CodeScanningAlertDismissedReason wontFix = CodeScanningAlertDismissedReason._('won\'t fix');
+static const CodeScanningAlertDismissedReason wontFix = CodeScanningAlertDismissedReason._("won't fix");
 
 static const CodeScanningAlertDismissedReason usedInTests = CodeScanningAlertDismissedReason._('used in tests');
 

@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scannin
 
 factory WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason.fromJson(String json) { return switch (json) {
   'false positive' => falsePositive,
-  'won\'t fix' => wontFix,
+  "won't fix" => wontFix,
   'used in tests' => usedInTests,
   'null' => $null,
   _ => WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._(json),
@@ -13,7 +13,7 @@ factory WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason.fromJson(S
 
 static const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason falsePositive = WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._('false positive');
 
-static const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason wontFix = WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._('won\'t fix');
+static const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason wontFix = WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._("won't fix");
 
 static const WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason usedInTests = WebhookCodeScanningAlertUpdatedAssignmentAlertDismissedReason._('used in tests');
 

@@ -84,7 +84,7 @@ class EnumEmitter {
                   ..type = refer(className)
                   ..assignment = Code(
                     isString
-                        ? "$className._('${escapeDartString(pair.$1)}')"
+                        ? '$className._(${dartStringLiteral(pair.$1)})'
                         : '$className._(${pair.$1})',
                   ),
               ),
@@ -131,12 +131,12 @@ class EnumEmitter {
     final seenCaseKeys = <String>{};
     final cases = deduped
         .where((pair) {
-          final key = isString ? "'${_escape(pair.$1)}'" : pair.$1;
+          final key = isString ? dartStringLiteral(pair.$1) : pair.$1;
           return seenCaseKeys.add(key);
         })
         .map(
           (pair) => isString
-              ? "  '${_escape(pair.$1)}' => ${pair.$2},"
+              ? '  ${dartStringLiteral(pair.$1)} => ${pair.$2},'
               : '  ${pair.$1} => ${pair.$2},',
         )
         .join('\n');
@@ -196,6 +196,4 @@ class EnumEmitter {
   );
 
   String _valueName(String value) => enumValueName(value);
-
-  String _escape(String v) => escapeDartString(v);
 }
