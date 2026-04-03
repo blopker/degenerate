@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payout.dart';import 'treasury_credit_reversal.dart';import 'treasury_outbound_payment.dart';import 'treasury_outbound_transfer.dart';/// The type of the source flow that originated the ReceivedCredit.
-final class TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const TreasuryReceivedCreditsResourceSourceFlowsDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payout.dart';import 'treasury_credit_reversal.dart';import 'treasury_outbound_payment.dart';import 'treasury_outbound_transfer.dart';/// The type of the source flow that originated the ReceivedCredit.
+@immutable final class TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const TreasuryReceivedCreditsResourceSourceFlowsDetailsType._(this.value);
 
 factory TreasuryReceivedCreditsResourceSourceFlowsDetailsType.fromJson(String json) { return switch (json) {
   'credit_reversal' => creditReversal,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryReceivedCreditsResourceSourceFlowsDetailsType($value)'; } 
  }
 /// 
-final class TreasuryReceivedCreditsResourceSourceFlowsDetails {const TreasuryReceivedCreditsResourceSourceFlowsDetails({this.creditReversal, this.outboundPayment, this.outboundTransfer, this.payout, required this.type, });
+@immutable final class TreasuryReceivedCreditsResourceSourceFlowsDetails {const TreasuryReceivedCreditsResourceSourceFlowsDetails({required this.type, this.creditReversal, this.outboundPayment, this.outboundTransfer, this.payout, });
 
 factory TreasuryReceivedCreditsResourceSourceFlowsDetails.fromJson(Map<String, dynamic> json) { return TreasuryReceivedCreditsResourceSourceFlowsDetails(
   creditReversal: json['credit_reversal'] != null ? TreasuryCreditReversal.fromJson(json['credit_reversal'] as Map<String, dynamic>) : null,

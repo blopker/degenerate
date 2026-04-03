@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_message_tool_calls2.dart';import 'chat_completion_request_assistant_message_content_part.dart';import 'fine_tune_chat_completion_request_assistant_message_audio.dart';import 'fine_tune_chat_completion_request_assistant_message_content.dart';import 'fine_tune_chat_completion_request_assistant_message_function_call.dart';/// The role of the messages author, in this case `assistant`.
-final class FineTuneChatCompletionRequestAssistantMessageRole {const FineTuneChatCompletionRequestAssistantMessageRole._(this.value);
+@immutable final class FineTuneChatCompletionRequestAssistantMessageRole {const FineTuneChatCompletionRequestAssistantMessageRole._(this.value);
 
 factory FineTuneChatCompletionRequestAssistantMessageRole.fromJson(String json) { return switch (json) {
   'assistant' => assistant,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FineTuneChatCompletionRequestAssistantMessageRole($value)'; } 
  }
 /// Controls whether the assistant message is trained against (0 or 1)
-final class FineTuneChatCompletionRequestAssistantMessageWeight {const FineTuneChatCompletionRequestAssistantMessageWeight._(this.value);
+@immutable final class FineTuneChatCompletionRequestAssistantMessageWeight {const FineTuneChatCompletionRequestAssistantMessageWeight._(this.value);
 
 factory FineTuneChatCompletionRequestAssistantMessageWeight.fromJson(int json) { return switch (json) {
   0 => $0,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FineTuneChatCompletionRequestAssistantMessageWeight($value)'; } 
  }
-final class FineTuneChatCompletionRequestAssistantMessage {const FineTuneChatCompletionRequestAssistantMessage({this.content, this.refusal, required this.role, this.name, this.audio, this.toolCalls, this.functionCall, this.weight, });
+@immutable final class FineTuneChatCompletionRequestAssistantMessage {const FineTuneChatCompletionRequestAssistantMessage({required this.role, this.content, this.refusal, this.name, this.audio, this.toolCalls, this.functionCall, this.weight, });
 
 factory FineTuneChatCompletionRequestAssistantMessage.fromJson(Map<String, dynamic> json) { return FineTuneChatCompletionRequestAssistantMessage(
   content: json['content'] != null ? OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => ChatCompletionRequestAssistantMessageContentPart.fromJson(e as Map<String, dynamic>)).toList(),) : null,

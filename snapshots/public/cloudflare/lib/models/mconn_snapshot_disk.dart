@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Snapshot Disk
-final class MconnSnapshotDisk {const MconnSnapshotDisk({this.connectorId, this.discards, this.discardsMerged, this.flushes, required this.inProgress, required this.major, required this.merged, required this.minor, required this.name, required this.reads, this.sectorsDiscarded, required this.sectorsRead, required this.sectorsWritten, this.timeDiscardingMs, this.timeFlushingMs, required this.timeInProgressMs, required this.timeReadingMs, required this.timeWritingMs, required this.weightedTimeInProgressMs, required this.writes, required this.writesMerged, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Disk
+@immutable final class MconnSnapshotDisk {const MconnSnapshotDisk({required this.inProgress, required this.major, required this.merged, required this.minor, required this.name, required this.reads, required this.sectorsRead, required this.sectorsWritten, required this.timeInProgressMs, required this.timeReadingMs, required this.timeWritingMs, required this.weightedTimeInProgressMs, required this.writes, required this.writesMerged, this.connectorId, this.discards, this.discardsMerged, this.flushes, this.sectorsDiscarded, this.timeDiscardingMs, this.timeFlushingMs, });
 
 factory MconnSnapshotDisk.fromJson(Map<String, dynamic> json) { return MconnSnapshotDisk(
   connectorId: json['connector_id'] as String?,

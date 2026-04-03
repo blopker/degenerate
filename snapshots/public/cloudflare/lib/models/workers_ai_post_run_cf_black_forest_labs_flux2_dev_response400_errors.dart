@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400Errors {const WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400Errors {const WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400Errors({required this.code, required this.message, });
 
 factory WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400Errors(
   code: json['code'] as String,

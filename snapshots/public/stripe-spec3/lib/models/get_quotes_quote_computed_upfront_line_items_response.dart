@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetQuotesQuoteComputedUpfrontLineItemsResponseObject {const GetQuotesQuoteComputedUpfrontLineItemsResponseObject._(this.value);
+@immutable final class GetQuotesQuoteComputedUpfrontLineItemsResponseObject {const GetQuotesQuoteComputedUpfrontLineItemsResponseObject._(this.value);
 
 factory GetQuotesQuoteComputedUpfrontLineItemsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetQuotesQuoteComputedUpfrontLineItemsResponseObject($value)'; } 
  }
 /// 
-final class GetQuotesQuoteComputedUpfrontLineItemsResponse {const GetQuotesQuoteComputedUpfrontLineItemsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetQuotesQuoteComputedUpfrontLineItemsResponse {const GetQuotesQuoteComputedUpfrontLineItemsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetQuotesQuoteComputedUpfrontLineItemsResponse.fromJson(Map<String, dynamic> json) { return GetQuotesQuoteComputedUpfrontLineItemsResponse(
   data: (json['data'] as List<dynamic>).map((e) => Item.fromJson(e as Map<String, dynamic>)).toList(),

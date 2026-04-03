@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCreditNotesIdRequest {const PostCreditNotesIdRequest({this.expand, this.memo, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCreditNotesIdRequest {const PostCreditNotesIdRequest({this.expand, this.memo, this.metadata, });
 
 factory PostCreditNotesIdRequest.fromJson(Map<String, dynamic> json) { return PostCreditNotesIdRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

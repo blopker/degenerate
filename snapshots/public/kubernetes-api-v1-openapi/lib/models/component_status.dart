@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'component_condition.dart';import 'object_meta.dart';/// ComponentStatus (and ComponentStatusList) holds the cluster validation info. Deprecated: This API is deprecated in v1.19+
-final class ComponentStatus {const ComponentStatus({this.apiVersion, this.conditions, this.kind, this.metadata, });
+@immutable final class ComponentStatus {const ComponentStatus({this.apiVersion, this.conditions, this.kind, this.metadata, });
 
 factory ComponentStatus.fromJson(Map<String, dynamic> json) { return ComponentStatus(
   apiVersion: json['apiVersion'] as String?,

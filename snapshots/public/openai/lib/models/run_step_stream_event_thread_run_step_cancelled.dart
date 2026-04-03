@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_object.dart';final class RunStepStreamEventThreadRunStepCancelledEvent {const RunStepStreamEventThreadRunStepCancelledEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_object.dart';@immutable final class RunStepStreamEventThreadRunStepCancelledEvent {const RunStepStreamEventThreadRunStepCancelledEvent._(this.value);
 
 factory RunStepStreamEventThreadRunStepCancelledEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.cancelled' => threadRunStepCancelled,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepStreamEventThreadRunStepCancelledEvent($value)'; } 
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.
-final class RunStepStreamEventThreadRunStepCancelled {const RunStepStreamEventThreadRunStepCancelled({required this.event, required this.data, });
+@immutable final class RunStepStreamEventThreadRunStepCancelled {const RunStepStreamEventThreadRunStepCancelled({required this.event, required this.data, });
 
 factory RunStepStreamEventThreadRunStepCancelled.fromJson(Map<String, dynamic> json) { return RunStepStreamEventThreadRunStepCancelled(
   event: RunStepStreamEventThreadRunStepCancelledEvent.fromJson(json['event'] as String),

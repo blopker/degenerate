@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always "checkpoint.permission".
-final class FineTuningCheckpointPermissionObject {const FineTuningCheckpointPermissionObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "checkpoint.permission".
+@immutable final class FineTuningCheckpointPermissionObject {const FineTuningCheckpointPermissionObject._(this.value);
 
 factory FineTuningCheckpointPermissionObject.fromJson(String json) { return switch (json) {
   'checkpoint.permission' => checkpointPermission,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The `checkpoint.permission` object represents a permission for a fine-tuned model checkpoint.
 /// 
-final class FineTuningCheckpointPermission {const FineTuningCheckpointPermission({required this.id, required this.createdAt, required this.projectId, required this.object, });
+@immutable final class FineTuningCheckpointPermission {const FineTuningCheckpointPermission({required this.id, required this.createdAt, required this.projectId, required this.object, });
 
 factory FineTuningCheckpointPermission.fromJson(Map<String, dynamic> json) { return FineTuningCheckpointPermission(
   id: json['id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An option for a single select field
-final class SingleSelectOption {const SingleSelectOption({required this.id, required this.name, this.color, this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An option for a single select field
+@immutable final class SingleSelectOption {const SingleSelectOption({required this.id, required this.name, this.color, this.description, });
 
 factory SingleSelectOption.fromJson(Map<String, dynamic> json) { return SingleSelectOption(
   id: json['id'] as String,

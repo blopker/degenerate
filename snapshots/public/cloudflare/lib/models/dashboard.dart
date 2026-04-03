@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'timeseries2.dart';import 'totals.dart';/// Totals and timeseries data.
-final class Dashboard {const Dashboard({this.timeseries, this.totals, });
+@immutable final class Dashboard {const Dashboard({this.timeseries, this.totals, });
 
 factory Dashboard.fromJson(Map<String, dynamic> json) { return Dashboard(
   timeseries: (json['timeseries'] as List<dynamic>?)?.map((e) => Timeseries2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PayPerCrawlStripeConnectResp {const PayPerCrawlStripeConnectResp({this.url});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PayPerCrawlStripeConnectResp {const PayPerCrawlStripeConnectResp({this.url});
 
 factory PayPerCrawlStripeConnectResp.fromJson(Map<String, dynamic> json) { return PayPerCrawlStripeConnectResp(
   url: json['url'] as String?,

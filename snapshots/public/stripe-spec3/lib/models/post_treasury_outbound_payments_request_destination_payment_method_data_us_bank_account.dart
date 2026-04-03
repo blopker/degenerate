@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountHolderType {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountHolderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountHolderType {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountHolderType._(this.value);
 
 factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountHolderType($value)'; } 
  }
-final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountType {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountType._(this.value);
+@immutable final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountType {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountType._(this.value);
 
 factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountType($value)'; } 
  }
-final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccount {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccount({this.accountHolderType, this.accountNumber, this.accountType, this.financialConnectionsAccount, this.routingNumber, });
+@immutable final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccount {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccount({this.accountHolderType, this.accountNumber, this.accountType, this.financialConnectionsAccount, this.routingNumber, });
 
 factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccount.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccount(
   accountHolderType: json['account_holder_type'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,

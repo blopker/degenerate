@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_accounts_account_people_request_documents_company_authorization.dart';import 'post_accounts_account_people_request_documents_passport.dart';import 'post_accounts_account_people_request_documents_visa.dart';/// Documents that may be submitted to satisfy various informational requests.
-final class PostAccountsAccountPeopleRequestDocuments {const PostAccountsAccountPeopleRequestDocuments({this.companyAuthorization, this.passport, this.visa, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_people_request_documents_company_authorization.dart';import 'post_accounts_account_people_request_documents_passport.dart';import 'post_accounts_account_people_request_documents_visa.dart';/// Documents that may be submitted to satisfy various informational requests.
+@immutable final class PostAccountsAccountPeopleRequestDocuments {const PostAccountsAccountPeopleRequestDocuments({this.companyAuthorization, this.passport, this.visa, });
 
 factory PostAccountsAccountPeopleRequestDocuments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeopleRequestDocuments(
   companyAuthorization: json['company_authorization'] != null ? PostAccountsAccountPeopleRequestDocumentsCompanyAuthorization.fromJson(json['company_authorization'] as Map<String, dynamic>) : null,

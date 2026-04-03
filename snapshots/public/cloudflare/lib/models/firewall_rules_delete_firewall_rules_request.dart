@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_firewall_rules_components_schemas_id.dart';final class FirewallRulesDeleteFirewallRulesRequest {const FirewallRulesDeleteFirewallRulesRequest({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_firewall_rules_components_schemas_id.dart';@immutable final class FirewallRulesDeleteFirewallRulesRequest {const FirewallRulesDeleteFirewallRulesRequest({required this.id});
 
 factory FirewallRulesDeleteFirewallRulesRequest.fromJson(Map<String, dynamic> json) { return FirewallRulesDeleteFirewallRulesRequest(
   id: FirewallFirewallRulesComponentsSchemasId.fromJson(json['id'] as String),

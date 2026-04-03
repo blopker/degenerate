@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McpToolCallStatus {const McpToolCallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McpToolCallStatus {const McpToolCallStatus._(this.value);
 
 factory McpToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An invocation of a tool on an MCP server.
 /// 
-final class McpToolCall {const McpToolCall({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, this.output, this.error, this.status, this.approvalRequestId, });
+@immutable final class McpToolCall {const McpToolCall({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, this.output, this.error, this.status, this.approvalRequestId, });
 
 factory McpToolCall.fromJson(Map<String, dynamic> json) { return McpToolCall(
   type: json['type'] as String,

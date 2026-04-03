@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentMethodOptionsParam55ExpiresAfterDaysVariant2 {const PaymentMethodOptionsParam55ExpiresAfterDaysVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam55ExpiresAfterDaysVariant2 {const PaymentMethodOptionsParam55ExpiresAfterDaysVariant2._(this.value);
 
 factory PaymentMethodOptionsParam55ExpiresAfterDaysVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

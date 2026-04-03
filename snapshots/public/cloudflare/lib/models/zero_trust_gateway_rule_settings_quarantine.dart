@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ZeroTrustGatewayRuleSettingsQuarantineFileTypes {const ZeroTrustGatewayRuleSettingsQuarantineFileTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayRuleSettingsQuarantineFileTypes {const ZeroTrustGatewayRuleSettingsQuarantineFileTypes._(this.value);
 
 factory ZeroTrustGatewayRuleSettingsQuarantineFileTypes.fromJson(String json) { return switch (json) {
   'exe' => exe,
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayRuleSettingsQuarantineFileTypes($value)'; } 
  }
 /// Configure settings that apply to quarantine rules. Settable only for `http` rules.
-final class ZeroTrustGatewayRuleSettingsQuarantine {const ZeroTrustGatewayRuleSettingsQuarantine({this.fileTypes});
+@immutable final class ZeroTrustGatewayRuleSettingsQuarantine {const ZeroTrustGatewayRuleSettingsQuarantine({this.fileTypes});
 
 factory ZeroTrustGatewayRuleSettingsQuarantine.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsQuarantine(
   fileTypes: (json['file_types'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayRuleSettingsQuarantineFileTypes.fromJson(e as String)).toList(),

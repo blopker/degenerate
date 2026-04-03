@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'group.dart';import 'role.dart';/// Always `group.role`.
-final class GroupRoleAssignmentObject {const GroupRoleAssignmentObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'group.dart';import 'role.dart';/// Always `group.role`.
+@immutable final class GroupRoleAssignmentObject {const GroupRoleAssignmentObject._(this.value);
 
 factory GroupRoleAssignmentObject.fromJson(String json) { return switch (json) {
   'group.role' => groupRole,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GroupRoleAssignmentObject($value)'; } 
  }
 /// Role assignment linking a group to a role.
-final class GroupRoleAssignment {const GroupRoleAssignment({required this.object, required this.group, required this.role, });
+@immutable final class GroupRoleAssignment {const GroupRoleAssignment({required this.object, required this.group, required this.role, });
 
 factory GroupRoleAssignment.fromJson(Map<String, dynamic> json) { return GroupRoleAssignment(
   object: GroupRoleAssignmentObject.fromJson(json['object'] as String),

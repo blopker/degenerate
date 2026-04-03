@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UsBankAccountNetworksSupported {const UsBankAccountNetworksSupported._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsBankAccountNetworksSupported {const UsBankAccountNetworksSupported._(this.value);
 
 factory UsBankAccountNetworksSupported.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UsBankAccountNetworksSupported($value)'; } 
  }
 /// 
-final class UsBankAccountNetworks {const UsBankAccountNetworks({this.preferred, required this.supported, });
+@immutable final class UsBankAccountNetworks {const UsBankAccountNetworks({required this.supported, this.preferred, });
 
 factory UsBankAccountNetworks.fromJson(Map<String, dynamic> json) { return UsBankAccountNetworks(
   preferred: json['preferred'] as String?,

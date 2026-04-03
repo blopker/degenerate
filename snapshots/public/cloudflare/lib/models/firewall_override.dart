@@ -21,11 +21,11 @@ factory FirewallPriority.fromJson(num json) => FirewallPriority(json.toDouble())
 num toJson() => value;
 
 }
-final class FirewallOverride {const FirewallOverride({this.description, this.groups, this.id, this.paused, this.priority, this.rewriteAction, this.rules, this.urls, });
+@immutable final class FirewallOverride {const FirewallOverride({this.description, this.groups, this.id, this.paused, this.priority, this.rewriteAction, this.rules, this.urls, });
 
 factory FirewallOverride.fromJson(Map<String, dynamic> json) { return FirewallOverride(
   description: json['description'] != null ? FirewallComponentsSchemasDescription.fromJson(json['description'] as String) : null,
-  groups: (json['groups'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  groups: json['groups'] as Map<String, dynamic>?,
   id: json['id'] != null ? FirewallOverridesId.fromJson(json['id'] as String) : null,
   paused: json['paused'] != null ? FirewallPaused.fromJson(json['paused'] as bool) : null,
   priority: json['priority'] != null ? FirewallPriority.fromJson(json['priority'] as num) : null,

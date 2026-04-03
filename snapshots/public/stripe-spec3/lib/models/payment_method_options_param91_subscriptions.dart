@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param91_subscriptions_variant1.dart';final class PaymentMethodOptionsParam91SubscriptionsVariant2 {const PaymentMethodOptionsParam91SubscriptionsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param91_subscriptions_variant1.dart';@immutable final class PaymentMethodOptionsParam91SubscriptionsVariant2 {const PaymentMethodOptionsParam91SubscriptionsVariant2._(this.value);
 
 factory PaymentMethodOptionsParam91SubscriptionsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

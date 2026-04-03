@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_oidc_saas_app_custom_claims_source.dart';/// The scope of the claim.
-final class AccessOidcSaasAppCustomClaimsScope {const AccessOidcSaasAppCustomClaimsScope._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_oidc_saas_app_custom_claims_source.dart';/// The scope of the claim.
+@immutable final class AccessOidcSaasAppCustomClaimsScope {const AccessOidcSaasAppCustomClaimsScope._(this.value);
 
 factory AccessOidcSaasAppCustomClaimsScope.fromJson(String json) { return switch (json) {
   'groups' => groups,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessOidcSaasAppCustomClaimsScope($value)'; } 
  }
-final class AccessOidcSaasAppCustomClaims {const AccessOidcSaasAppCustomClaims({this.name, this.$required, this.scope, this.source, });
+@immutable final class AccessOidcSaasAppCustomClaims {const AccessOidcSaasAppCustomClaims({this.name, this.$required, this.scope, this.source, });
 
 factory AccessOidcSaasAppCustomClaims.fromJson(Map<String, dynamic> json) { return AccessOidcSaasAppCustomClaims(
   name: json['name'] as String?,

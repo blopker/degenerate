@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAsBotnetThreatFeedResponseResultAses {const RadarGetAsBotnetThreatFeedResponseResultAses({required this.asn, required this.country, required this.name, required this.rank, this.rankChange, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAsBotnetThreatFeedResponseResultAses {const RadarGetAsBotnetThreatFeedResponseResultAses({required this.asn, required this.country, required this.name, required this.rank, this.rankChange, });
 
 factory RadarGetAsBotnetThreatFeedResponseResultAses.fromJson(Map<String, dynamic> json) { return RadarGetAsBotnetThreatFeedResponseResultAses(
   asn: (json['asn'] as num).toInt(),

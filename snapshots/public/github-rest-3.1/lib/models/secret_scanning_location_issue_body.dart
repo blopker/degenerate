@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents an 'issue_body' secret scanning location type. This location type shows that a secret was detected in the body of an issue.
-final class SecretScanningLocationIssueBody {const SecretScanningLocationIssueBody({required this.issueBodyUrl});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents an 'issue_body' secret scanning location type. This location type shows that a secret was detected in the body of an issue.
+@immutable final class SecretScanningLocationIssueBody {const SecretScanningLocationIssueBody({required this.issueBodyUrl});
 
 factory SecretScanningLocationIssueBody.fromJson(Map<String, dynamic> json) { return SecretScanningLocationIssueBody(
   issueBodyUrl: Uri.parse(json['issue_body_url'] as String),

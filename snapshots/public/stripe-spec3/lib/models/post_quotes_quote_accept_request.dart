@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostQuotesQuoteAcceptRequest {const PostQuotesQuoteAcceptRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostQuotesQuoteAcceptRequest {const PostQuotesQuoteAcceptRequest({this.expand});
 
 factory PostQuotesQuoteAcceptRequest.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteAcceptRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

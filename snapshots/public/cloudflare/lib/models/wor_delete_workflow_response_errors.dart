@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorDeleteWorkflowResponseErrors {const WorDeleteWorkflowResponseErrors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDeleteWorkflowResponseErrors {const WorDeleteWorkflowResponseErrors({required this.code, required this.message, });
 
 factory WorDeleteWorkflowResponseErrors.fromJson(Map<String, dynamic> json) { return WorDeleteWorkflowResponseErrors(
   code: (json['code'] as num).toDouble(),

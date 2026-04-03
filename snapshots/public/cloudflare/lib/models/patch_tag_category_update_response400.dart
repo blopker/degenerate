@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'patch_tag_category_update_response400_errors.dart';final class PatchTagCategoryUpdateResponse400 {const PatchTagCategoryUpdateResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'patch_tag_category_update_response400_errors.dart';@immutable final class PatchTagCategoryUpdateResponse400 {const PatchTagCategoryUpdateResponse400({required this.errors, required this.result, required this.success, });
 
 factory PatchTagCategoryUpdateResponse400.fromJson(Map<String, dynamic> json) { return PatchTagCategoryUpdateResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => PatchTagCategoryUpdateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

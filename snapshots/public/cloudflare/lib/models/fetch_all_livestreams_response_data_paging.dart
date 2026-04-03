@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FetchAllLivestreamsResponseDataPaging {const FetchAllLivestreamsResponseDataPaging({this.endOffset, this.startOffset, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FetchAllLivestreamsResponseDataPaging {const FetchAllLivestreamsResponseDataPaging({this.endOffset, this.startOffset, this.totalCount, });
 
 factory FetchAllLivestreamsResponseDataPaging.fromJson(Map<String, dynamic> json) { return FetchAllLivestreamsResponseDataPaging(
   endOffset: json['end_offset'] != null ? (json['end_offset'] as num).toInt() : null,

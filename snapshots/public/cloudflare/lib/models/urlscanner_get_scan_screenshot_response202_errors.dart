@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanScreenshotResponse202Errors {const UrlscannerGetScanScreenshotResponse202Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanScreenshotResponse202Errors {const UrlscannerGetScanScreenshotResponse202Errors({required this.message});
 
 factory UrlscannerGetScanScreenshotResponse202Errors.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanScreenshotResponse202Errors(
   message: json['message'] as String,

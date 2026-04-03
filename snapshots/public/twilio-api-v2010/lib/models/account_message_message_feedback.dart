@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_feedback_enum_outcome.dart';final class AccountMessageMessageFeedback {const AccountMessageMessageFeedback({this.accountSid, this.messageSid, this.outcome, this.dateCreated, this.dateUpdated, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_feedback_enum_outcome.dart';@immutable final class AccountMessageMessageFeedback {const AccountMessageMessageFeedback({this.accountSid, this.messageSid, this.outcome, this.dateCreated, this.dateUpdated, this.uri, });
 
 factory AccountMessageMessageFeedback.fromJson(Map<String, dynamic> json) { return AccountMessageMessageFeedback(
   accountSid: json['account_sid'] as String?,

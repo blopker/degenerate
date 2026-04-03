@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TurnstileResultInfo {const TurnstileResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TurnstileResultInfo {const TurnstileResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
 
 factory TurnstileResultInfo.fromJson(Map<String, dynamic> json) { return TurnstileResultInfo(
   count: (json['count'] as num).toDouble(),

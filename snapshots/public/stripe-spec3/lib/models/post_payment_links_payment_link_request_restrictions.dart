@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'restrictions_params.dart';final class PostPaymentLinksPaymentLinkRequestRestrictionsVariant2 {const PostPaymentLinksPaymentLinkRequestRestrictionsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'restrictions_params.dart';@immutable final class PostPaymentLinksPaymentLinkRequestRestrictionsVariant2 {const PostPaymentLinksPaymentLinkRequestRestrictionsVariant2._(this.value);
 
 factory PostPaymentLinksPaymentLinkRequestRestrictionsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

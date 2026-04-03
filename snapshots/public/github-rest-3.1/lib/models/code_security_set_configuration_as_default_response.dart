@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'code_security_configuration.dart';/// Specifies which types of repository this security configuration is applied to by default.
-final class CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos {const CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_security_configuration.dart';/// Specifies which types of repository this security configuration is applied to by default.
+@immutable final class CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos {const CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos._(this.value);
 
 factory CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos($value)'; } 
  }
-final class CodeSecuritySetConfigurationAsDefaultResponse {const CodeSecuritySetConfigurationAsDefaultResponse({this.defaultForNewRepos, this.configuration, });
+@immutable final class CodeSecuritySetConfigurationAsDefaultResponse {const CodeSecuritySetConfigurationAsDefaultResponse({this.defaultForNewRepos, this.configuration, });
 
 factory CodeSecuritySetConfigurationAsDefaultResponse.fromJson(Map<String, dynamic> json) { return CodeSecuritySetConfigurationAsDefaultResponse(
   defaultForNewRepos: json['default_for_new_repos'] != null ? CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos.fromJson(json['default_for_new_repos'] as String) : null,

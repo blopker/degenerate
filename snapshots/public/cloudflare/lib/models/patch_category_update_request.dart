@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PatchCategoryUpdateRequest {const PatchCategoryUpdateRequest({this.killChain, this.mitreAttack, this.name, this.shortname, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchCategoryUpdateRequest {const PatchCategoryUpdateRequest({this.killChain, this.mitreAttack, this.name, this.shortname, });
 
 factory PatchCategoryUpdateRequest.fromJson(Map<String, dynamic> json) { return PatchCategoryUpdateRequest(
   killChain: json['killChain'] != null ? (json['killChain'] as num).toDouble() : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_parameters_calculations.dart';import 'workers_observability_query_parameters_filters.dart';import 'workers_observability_query_parameters_group_bys.dart';import 'workers_observability_query_parameters_havings.dart';import 'workers_observability_query_parameters_needle.dart';import 'workers_observability_query_parameters_order_by.dart';/// Set a Flag to describe how to combine the filters on the query.
-final class WorkersObservabilityQueryParametersFilterCombination {const WorkersObservabilityQueryParametersFilterCombination._(this.value);
+@immutable final class WorkersObservabilityQueryParametersFilterCombination {const WorkersObservabilityQueryParametersFilterCombination._(this.value);
 
 factory WorkersObservabilityQueryParametersFilterCombination.fromJson(String json) { return switch (json) {
   'and' => and,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersObservabilityQueryParametersFilterCombination($value)'; } 
  }
-final class WorkersObservabilityQueryParameters {const WorkersObservabilityQueryParameters({this.calculations, this.datasets, this.filterCombination, this.filters, this.groupBys, this.havings, this.limit, this.needle, this.orderBy, });
+@immutable final class WorkersObservabilityQueryParameters {const WorkersObservabilityQueryParameters({this.calculations, this.datasets, this.filterCombination, this.filters, this.groupBys, this.havings, this.limit, this.needle, this.orderBy, });
 
 factory WorkersObservabilityQueryParameters.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryParameters(
   calculations: (json['calculations'] as List<dynamic>?)?.map((e) => WorkersObservabilityQueryParametersCalculations.fromJson(e as Map<String, dynamic>)).toList(),

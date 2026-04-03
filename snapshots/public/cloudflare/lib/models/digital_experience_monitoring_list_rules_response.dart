@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_dex_rule.dart';final class DigitalExperienceMonitoringListRulesResponse {const DigitalExperienceMonitoringListRulesResponse({this.rules});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_dex_rule.dart';@immutable final class DigitalExperienceMonitoringListRulesResponse {const DigitalExperienceMonitoringListRulesResponse({this.rules});
 
 factory DigitalExperienceMonitoringListRulesResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringListRulesResponse(
   rules: (json['rules'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringDexRule.fromJson(e as Map<String, dynamic>)).toList(),

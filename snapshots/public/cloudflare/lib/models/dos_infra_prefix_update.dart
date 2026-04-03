@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DosInfraPrefixUpdate {const DosInfraPrefixUpdate({this.comment, this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosInfraPrefixUpdate {const DosInfraPrefixUpdate({this.comment, this.enabled, });
 
 factory DosInfraPrefixUpdate.fromJson(Map<String, dynamic> json) { return DosInfraPrefixUpdate(
   comment: json['comment'] as String?,

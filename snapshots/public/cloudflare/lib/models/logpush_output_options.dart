@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the output type, such as `ndjson` or `csv`. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.
-final class LogpushOutputOptionsOutputType {const LogpushOutputOptionsOutputType._(this.value);
+@immutable final class LogpushOutputOptionsOutputType {const LogpushOutputOptionsOutputType._(this.value);
 
 factory LogpushOutputOptionsOutputType.fromJson(String json) { return switch (json) {
   'ndjson' => ndjson,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LogpushOutputOptionsOutputType($value)'; } 
  }
 /// String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339` or `rfc3339nano`.
-final class LogpushOutputOptionsTimestampFormat {const LogpushOutputOptionsTimestampFormat._(this.value);
+@immutable final class LogpushOutputOptionsTimestampFormat {const LogpushOutputOptionsTimestampFormat._(this.value);
 
 factory LogpushOutputOptionsTimestampFormat.fromJson(String json) { return switch (json) {
   'unixnano' => unixnano,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LogpushOutputOptionsTimestampFormat($value)'; } 
  }
 /// The structured replacement for `logpull_options`. When including this field, the `logpull_option` field will be ignored.
-final class LogpushOutputOptions {const LogpushOutputOptions({this.cve202144228, this.batchPrefix, this.batchSuffix, this.fieldDelimiter, this.fieldNames, this.outputType, this.recordDelimiter, this.recordPrefix, this.recordSuffix, this.recordTemplate, this.sampleRate, this.timestampFormat, });
+@immutable final class LogpushOutputOptions {const LogpushOutputOptions({this.cve202144228, this.batchPrefix, this.batchSuffix, this.fieldDelimiter, this.fieldNames, this.outputType, this.recordDelimiter, this.recordPrefix, this.recordSuffix, this.recordTemplate, this.sampleRate, this.timestampFormat, });
 
 factory LogpushOutputOptions.fromJson(Map<String, dynamic> json) { return LogpushOutputOptions(
   cve202144228: json['CVE-2021-44228'] as bool?,

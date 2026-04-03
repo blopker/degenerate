@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment.dart';import 'organization_simple_webhooks.dart';import 'pull_request.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookDeploymentProtectionRuleRequestedAction {const WebhookDeploymentProtectionRuleRequestedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment.dart';import 'organization_simple_webhooks.dart';import 'pull_request.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDeploymentProtectionRuleRequestedAction {const WebhookDeploymentProtectionRuleRequestedAction._(this.value);
 
 factory WebhookDeploymentProtectionRuleRequestedAction.fromJson(String json) { return switch (json) {
   'requested' => requested,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentProtectionRuleRequestedAction($value)'; } 
  }
-final class WebhookDeploymentProtectionRuleRequested {const WebhookDeploymentProtectionRuleRequested({this.action, this.environment, this.event, this.sha, this.ref, this.deploymentCallbackUrl, this.deployment, this.pullRequests, this.repository, this.organization, this.installation, this.sender, });
+@immutable final class WebhookDeploymentProtectionRuleRequested {const WebhookDeploymentProtectionRuleRequested({this.action, this.environment, this.event, this.sha, this.ref, this.deploymentCallbackUrl, this.deployment, this.pullRequests, this.repository, this.organization, this.installation, this.sender, });
 
 factory WebhookDeploymentProtectionRuleRequested.fromJson(Map<String, dynamic> json) { return WebhookDeploymentProtectionRuleRequested(
   action: json['action'] != null ? WebhookDeploymentProtectionRuleRequestedAction.fromJson(json['action'] as String) : null,

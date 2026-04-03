@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of actor that can bypass a ruleset.
-final class RepositoryRulesetBypassActorActorType {const RepositoryRulesetBypassActorActorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of actor that can bypass a ruleset.
+@immutable final class RepositoryRulesetBypassActorActorType {const RepositoryRulesetBypassActorActorType._(this.value);
 
 factory RepositoryRulesetBypassActorActorType.fromJson(String json) { return switch (json) {
   'Integration' => integration,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRulesetBypassActorActorType($value)'; } 
  }
 /// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets. When `bypass_mode` is `exempt`, rules will not be run for that actor and a bypass audit entry will not be created.
-final class RepositoryRulesetBypassActorBypassMode {const RepositoryRulesetBypassActorBypassMode._(this.value);
+@immutable final class RepositoryRulesetBypassActorBypassMode {const RepositoryRulesetBypassActorBypassMode._(this.value);
 
 factory RepositoryRulesetBypassActorBypassMode.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRulesetBypassActorBypassMode($value)'; } 
  }
 /// An actor that can bypass rules in a ruleset
-final class RepositoryRulesetBypassActor {const RepositoryRulesetBypassActor({this.actorId, required this.actorType, this.bypassMode = RepositoryRulesetBypassActorBypassMode.always, });
+@immutable final class RepositoryRulesetBypassActor {const RepositoryRulesetBypassActor({required this.actorType, this.actorId, this.bypassMode = RepositoryRulesetBypassActorBypassMode.always, });
 
 factory RepositoryRulesetBypassActor.fromJson(Map<String, dynamic> json) { return RepositoryRulesetBypassActor(
   actorId: json['actor_id'] != null ? (json['actor_id'] as num).toInt() : null,

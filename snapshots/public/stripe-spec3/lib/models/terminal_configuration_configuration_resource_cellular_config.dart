@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TerminalConfigurationConfigurationResourceCellularConfig {const TerminalConfigurationConfigurationResourceCellularConfig({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TerminalConfigurationConfigurationResourceCellularConfig {const TerminalConfigurationConfigurationResourceCellularConfig({required this.enabled});
 
 factory TerminalConfigurationConfigurationResourceCellularConfig.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceCellularConfig(
   enabled: json['enabled'] as bool,

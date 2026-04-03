@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnPlanProgress {const McnPlanProgress({required this.done, required this.total, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnPlanProgress {const McnPlanProgress({required this.done, required this.total, });
 
 factory McnPlanProgress.fromJson(Map<String, dynamic> json) { return McnPlanProgress(
   done: (json['done'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAffirmSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAffirm {const PostCheckoutSessionsRequestPaymentMethodOptionsAffirm({this.captureMethod, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAffirm {const PostCheckoutSessionsRequestPaymentMethodOptionsAffirm({this.captureMethod, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAffirm.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsAffirm(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAffirmCaptureMethod.fromJson(json['capture_method'] as String) : null,

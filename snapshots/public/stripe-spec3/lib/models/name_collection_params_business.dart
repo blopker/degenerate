@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class NameCollectionParamsBusiness {const NameCollectionParamsBusiness({required this.enabled, this.optional, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NameCollectionParamsBusiness {const NameCollectionParamsBusiness({required this.enabled, this.optional, });
 
 factory NameCollectionParamsBusiness.fromJson(Map<String, dynamic> json) { return NameCollectionParamsBusiness(
   enabled: json['enabled'] as bool,

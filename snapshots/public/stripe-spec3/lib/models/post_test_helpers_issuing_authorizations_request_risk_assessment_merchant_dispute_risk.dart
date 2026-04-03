@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRiskRiskLevel {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRiskRiskLevel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRiskRiskLevel {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRiskRiskLevel._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRiskRiskLevel.fromJson(String json) { return switch (json) {
   'elevated' => elevated,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRiskRiskLevel($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRisk {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRisk({this.disputeRate, required this.riskLevel, });
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRisk {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRisk({required this.riskLevel, this.disputeRate, });
 
 factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRisk.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRisk(
   disputeRate: json['dispute_rate'] != null ? (json['dispute_rate'] as num).toInt() : null,

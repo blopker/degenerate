@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TextContentType {const TextContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextContentType {const TextContentType._(this.value);
 
 factory TextContentType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TextContentType($value)'; } 
  }
 /// A text content.
-final class TextContent {const TextContent({this.type = TextContentType.text, required this.text, });
+@immutable final class TextContent {const TextContent({required this.text, this.type = TextContentType.text, });
 
 factory TextContent.fromJson(Map<String, dynamic> json) { return TextContent(
   type: TextContentType.fromJson(json['type'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The Kanji variation of the person's address (Japan only).
-final class PostAccountsAccountPeoplePersonRequestAddressKanji {const PostAccountsAccountPeoplePersonRequestAddressKanji({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, this.town, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Kanji variation of the person's address (Japan only).
+@immutable final class PostAccountsAccountPeoplePersonRequestAddressKanji {const PostAccountsAccountPeoplePersonRequestAddressKanji({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, this.town, });
 
 factory PostAccountsAccountPeoplePersonRequestAddressKanji.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeoplePersonRequestAddressKanji(
   city: json['city'] as String?,

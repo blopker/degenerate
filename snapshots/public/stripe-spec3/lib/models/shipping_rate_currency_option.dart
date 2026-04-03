@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
-final class ShippingRateCurrencyOptionTaxBehavior {const ShippingRateCurrencyOptionTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
+@immutable final class ShippingRateCurrencyOptionTaxBehavior {const ShippingRateCurrencyOptionTaxBehavior._(this.value);
 
 factory ShippingRateCurrencyOptionTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ShippingRateCurrencyOptionTaxBehavior($value)'; } 
  }
 /// 
-final class ShippingRateCurrencyOption {const ShippingRateCurrencyOption({required this.amount, required this.taxBehavior, });
+@immutable final class ShippingRateCurrencyOption {const ShippingRateCurrencyOption({required this.amount, required this.taxBehavior, });
 
 factory ShippingRateCurrencyOption.fromJson(Map<String, dynamic> json) { return ShippingRateCurrencyOption(
   amount: (json['amount'] as num).toInt(),

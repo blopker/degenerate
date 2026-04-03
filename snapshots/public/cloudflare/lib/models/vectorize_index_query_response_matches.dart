@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_identifier.dart';final class VectorizeIndexQueryResponseMatches {const VectorizeIndexQueryResponseMatches({this.id, this.metadata, this.score, this.values, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_identifier.dart';@immutable final class VectorizeIndexQueryResponseMatches {const VectorizeIndexQueryResponseMatches({this.id, this.metadata, this.score, this.values, });
 
 factory VectorizeIndexQueryResponseMatches.fromJson(Map<String, dynamic> json) { return VectorizeIndexQueryResponseMatches(
   id: json['id'] != null ? VectorizeVectorIdentifier.fromJson(json['id'] as String) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   score: json['score'] != null ? (json['score'] as num).toDouble() : null,
   values: (json['values'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
 ); }

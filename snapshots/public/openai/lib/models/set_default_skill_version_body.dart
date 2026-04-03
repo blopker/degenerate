@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Updates the default version pointer for a skill.
-final class SetDefaultSkillVersionBody {const SetDefaultSkillVersionBody({required this.defaultVersion});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Updates the default version pointer for a skill.
+@immutable final class SetDefaultSkillVersionBody {const SetDefaultSkillVersionBody({required this.defaultVersion});
 
 factory SetDefaultSkillVersionBody.fromJson(Map<String, dynamic> json) { return SetDefaultSkillVersionBody(
   defaultVersion: json['default_version'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTaxCalculationsRequestShippingCostTaxBehavior {const PostTaxCalculationsRequestShippingCostTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxCalculationsRequestShippingCostTaxBehavior {const PostTaxCalculationsRequestShippingCostTaxBehavior._(this.value);
 
 factory PostTaxCalculationsRequestShippingCostTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTaxCalculationsRequestShippingCostTaxBehavior($value)'; } 
  }
 /// Shipping cost details to be used for the calculation.
-final class PostTaxCalculationsRequestShippingCost {const PostTaxCalculationsRequestShippingCost({this.amount, this.shippingRate, this.taxBehavior, this.taxCode, });
+@immutable final class PostTaxCalculationsRequestShippingCost {const PostTaxCalculationsRequestShippingCost({this.amount, this.shippingRate, this.taxBehavior, this.taxCode, });
 
 factory PostTaxCalculationsRequestShippingCost.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestShippingCost(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

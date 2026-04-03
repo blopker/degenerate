@@ -29,7 +29,7 @@ if (indicatorType != null) {
 }
 if (relatedEvent != null) {
 for (final item in relatedEvent) {
-  queryParametersList.add(ApiQueryParameter(name: 'relatedEvent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'relatedEvent', value: item));
 }
 }
 
@@ -195,7 +195,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList();
+    return json.map((e) => e as Map<String, dynamic>).toList();
   },
   onError: (response) {
     return GetIndicatorTagsListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -211,7 +211,7 @@ Future<ApiResult<GetIndicatorListResponse, GetIndicatorListResponse400>> getIndi
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item));
 }
 }
 if (page != null) {
@@ -228,12 +228,12 @@ if (indicatorType != null) {
 }
 if (relatedEvents != null) {
 for (final item in relatedEvents) {
-  queryParametersList.add(ApiQueryParameter(name: 'relatedEvents', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'relatedEvents', value: item));
 }
 }
 if (tags != null) {
 for (final item in tags) {
-  queryParametersList.add(ApiQueryParameter(name: 'tags', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tags', value: item));
 }
 }
 if (createdAfter != null) {

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_data_catalog_catalog_maintenance_state.dart';import 'r2_data_catalog_catalog_target_file_size.dart';/// Configures compaction for catalog maintenance.
-final class R2DataCatalogCatalogCompactionConfig {const R2DataCatalogCatalogCompactionConfig({required this.state, required this.targetSizeMb, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_catalog_maintenance_state.dart';import 'r2_data_catalog_catalog_target_file_size.dart';/// Configures compaction for catalog maintenance.
+@immutable final class R2DataCatalogCatalogCompactionConfig {const R2DataCatalogCatalogCompactionConfig({required this.state, required this.targetSizeMb, });
 
 factory R2DataCatalogCatalogCompactionConfig.fromJson(Map<String, dynamic> json) { return R2DataCatalogCatalogCompactionConfig(
   state: R2DataCatalogCatalogMaintenanceState.fromJson(json['state'] as String),

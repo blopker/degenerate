@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_workflow_run_requested_workflow_run_pull_requests_head_repo.dart';final class WebhookWorkflowRunRequestedWorkflowRunPullRequestsHead {const WebhookWorkflowRunRequestedWorkflowRunPullRequestsHead({required this.ref, required this.repo, required this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_run_requested_workflow_run_pull_requests_head_repo.dart';@immutable final class WebhookWorkflowRunRequestedWorkflowRunPullRequestsHead {const WebhookWorkflowRunRequestedWorkflowRunPullRequestsHead({required this.ref, required this.repo, required this.sha, });
 
 factory WebhookWorkflowRunRequestedWorkflowRunPullRequestsHead.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunRequestedWorkflowRunPullRequestsHead(
   ref: json['ref'] as String,

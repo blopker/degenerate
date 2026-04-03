@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoiceitemsInvoiceitemRequestMetadataVariant2 {const PostInvoiceitemsInvoiceitemRequestMetadataVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoiceitemsInvoiceitemRequestMetadataVariant2 {const PostInvoiceitemsInvoiceitemRequestMetadataVariant2._(this.value);
 
 factory PostInvoiceitemsInvoiceitemRequestMetadataVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

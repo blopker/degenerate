@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_entitlements_features_id_request_metadata.dart';final class PostEntitlementsFeaturesIdRequest {const PostEntitlementsFeaturesIdRequest({this.active, this.expand, this.metadata, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_entitlements_features_id_request_metadata.dart';@immutable final class PostEntitlementsFeaturesIdRequest {const PostEntitlementsFeaturesIdRequest({this.active, this.expand, this.metadata, this.name, });
 
 factory PostEntitlementsFeaturesIdRequest.fromJson(Map<String, dynamic> json) { return PostEntitlementsFeaturesIdRequest(
   active: json['active'] as bool?,

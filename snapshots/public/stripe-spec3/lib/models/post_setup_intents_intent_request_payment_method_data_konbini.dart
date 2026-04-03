@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsIntentRequestPaymentMethodDataKonbini {const PostSetupIntentsIntentRequestPaymentMethodDataKonbini();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodDataKonbini {const PostSetupIntentsIntentRequestPaymentMethodDataKonbini();
 
-factory PostSetupIntentsIntentRequestPaymentMethodDataKonbini.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataKonbini(
-
-); }
+factory PostSetupIntentsIntentRequestPaymentMethodDataKonbini.fromJson(Map<String, dynamic> _) { return const PostSetupIntentsIntentRequestPaymentMethodDataKonbini(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostSetupIntentsIntentRequestPaymentMethodDataKonbini copyWith() { return PostSetupIntentsIntentRequestPaymentMethodDataKonbini(
+PostSetupIntentsIntentRequestPaymentMethodDataKonbini copyWith() { return const PostSetupIntentsIntentRequestPaymentMethodDataKonbini(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsIntentRequestPaymentMethodDataKonbini; } 

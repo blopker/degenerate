@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_alert_dismisser.dart';final class WebhooksAlertState {const WebhooksAlertState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_alert_dismisser.dart';@immutable final class WebhooksAlertState {const WebhooksAlertState._(this.value);
 
 factory WebhooksAlertState.fromJson(String json) { return switch (json) {
   'auto_dismissed' => autoDismissed,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksAlertState($value)'; } 
  }
 /// The security alert of the vulnerable dependency.
-final class WebhooksAlert {const WebhooksAlert({required this.affectedPackageName, required this.affectedRange, required this.createdAt, this.dismissReason, this.dismissedAt, this.dismisser, required this.externalIdentifier, required this.externalReference, this.fixReason, this.fixedAt, this.fixedIn, required this.ghsaId, required this.id, required this.nodeId, required this.number, required this.severity, required this.state, });
+@immutable final class WebhooksAlert {const WebhooksAlert({required this.affectedPackageName, required this.affectedRange, required this.createdAt, required this.externalIdentifier, required this.externalReference, required this.ghsaId, required this.id, required this.nodeId, required this.number, required this.severity, required this.state, this.dismissReason, this.dismissedAt, this.dismisser, this.fixReason, this.fixedAt, this.fixedIn, });
 
 factory WebhooksAlert.fromJson(Map<String, dynamic> json) { return WebhooksAlert(
   affectedPackageName: json['affected_package_name'] as String,

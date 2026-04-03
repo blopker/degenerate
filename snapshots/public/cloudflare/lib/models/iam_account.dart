@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_account_managed_by.dart';import 'iam_account_settings.dart';import 'iam_account_type.dart';import 'iam_common_components_schemas_identifier.dart';final class IamAccount {const IamAccount({this.createdOn, required this.id, this.managedBy, required this.name, this.settings, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_account_managed_by.dart';import 'iam_account_settings.dart';import 'iam_account_type.dart';import 'iam_common_components_schemas_identifier.dart';@immutable final class IamAccount {const IamAccount({required this.id, required this.name, required this.type, this.createdOn, this.managedBy, this.settings, });
 
 factory IamAccount.fromJson(Map<String, dynamic> json) { return IamAccount(
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,

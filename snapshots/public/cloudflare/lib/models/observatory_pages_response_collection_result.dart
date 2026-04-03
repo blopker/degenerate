@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_labeled_region.dart';import 'observatory_page_test_.dart';import 'observatory_schedule_frequency.dart';import 'observatory_url.dart';final class ObservatoryPagesResponseCollectionResult {const ObservatoryPagesResponseCollectionResult({this.region, this.scheduleFrequency, this.tests, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_labeled_region.dart';import 'observatory_page_test_.dart';import 'observatory_schedule_frequency.dart';import 'observatory_url.dart';@immutable final class ObservatoryPagesResponseCollectionResult {const ObservatoryPagesResponseCollectionResult({this.region, this.scheduleFrequency, this.tests, this.url, });
 
 factory ObservatoryPagesResponseCollectionResult.fromJson(Map<String, dynamic> json) { return ObservatoryPagesResponseCollectionResult(
   region: json['region'] != null ? ObservatoryLabeledRegion.fromJson(json['region'] as Map<String, dynamic>) : null,

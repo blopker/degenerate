@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class Category {const Category({required this.id, required this.name, this.parent, this.children, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Category {const Category({required this.id, required this.name, this.parent, this.children, });
 
 factory Category.fromJson(Map<String, dynamic> json) { return Category(
   id: (json['id'] as num).toInt(),

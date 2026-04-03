@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_monitor_group_id.dart';import 'load_balancing_monitor_group_member.dart';final class LoadBalancingMonitorGroup {const LoadBalancingMonitorGroup({this.createdAt, required this.description, required this.id, required this.members, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_monitor_group_id.dart';import 'load_balancing_monitor_group_member.dart';@immutable final class LoadBalancingMonitorGroup {const LoadBalancingMonitorGroup({required this.description, required this.id, required this.members, this.createdAt, this.updatedAt, });
 
 factory LoadBalancingMonitorGroup.fromJson(Map<String, dynamic> json) { return LoadBalancingMonitorGroup(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

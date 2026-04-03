@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Use the `status` property to enable or disable GitHub Code Security for this repository.
-final class ReposUpdateRequestSecurityAndAnalysisCodeSecurity {const ReposUpdateRequestSecurityAndAnalysisCodeSecurity({this.status});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable GitHub Code Security for this repository.
+@immutable final class ReposUpdateRequestSecurityAndAnalysisCodeSecurity {const ReposUpdateRequestSecurityAndAnalysisCodeSecurity({this.status});
 
 factory ReposUpdateRequestSecurityAndAnalysisCodeSecurity.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysisCodeSecurity(
   status: json['status'] as String?,

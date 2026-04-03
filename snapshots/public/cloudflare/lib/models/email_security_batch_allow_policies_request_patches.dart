@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_security_allow_policy_id.dart';import 'email_security_pattern_type.dart';final class EmailSecurityBatchAllowPoliciesRequestPatches {const EmailSecurityBatchAllowPoliciesRequestPatches({this.comments, this.isAcceptableSender, this.isExemptRecipient, this.isRegex, this.isTrustedSender, this.pattern, this.patternType, this.verifySender, required this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_allow_policy_id.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityBatchAllowPoliciesRequestPatches {const EmailSecurityBatchAllowPoliciesRequestPatches({required this.id, this.comments, this.isAcceptableSender, this.isExemptRecipient, this.isRegex, this.isTrustedSender, this.pattern, this.patternType, this.verifySender, });
 
 factory EmailSecurityBatchAllowPoliciesRequestPatches.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchAllowPoliciesRequestPatches(
   comments: json['comments'] as String?,

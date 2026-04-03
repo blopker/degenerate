@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-final class CountrySpecVerificationFieldDetails {const CountrySpecVerificationFieldDetails({required this.additional, required this.minimum, });
+@immutable final class CountrySpecVerificationFieldDetails {const CountrySpecVerificationFieldDetails({required this.additional, required this.minimum, });
 
 factory CountrySpecVerificationFieldDetails.fromJson(Map<String, dynamic> json) { return CountrySpecVerificationFieldDetails(
   additional: (json['additional'] as List<dynamic>).map((e) => e as String).toList(),

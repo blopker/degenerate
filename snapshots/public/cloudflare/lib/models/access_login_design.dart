@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessLoginDesign {const AccessLoginDesign({this.backgroundColor, this.footerText, this.headerText, this.logoPath, this.textColor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessLoginDesign {const AccessLoginDesign({this.backgroundColor, this.footerText, this.headerText, this.logoPath, this.textColor, });
 
 factory AccessLoginDesign.fromJson(Map<String, dynamic> json) { return AccessLoginDesign(
   backgroundColor: json['background_color'] as String?,

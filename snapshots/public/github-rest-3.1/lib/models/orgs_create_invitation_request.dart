@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role for the
 ///  * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.
 ///  * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.
 ///  * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.
-final class OrgsCreateInvitationRequestRole {const OrgsCreateInvitationRequestRole._(this.value);
+@immutable final class OrgsCreateInvitationRequestRole {const OrgsCreateInvitationRequestRole._(this.value);
 
 factory OrgsCreateInvitationRequestRole.fromJson(String json) { return switch (json) {
   'admin' => admin,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsCreateInvitationRequestRole($value)'; } 
  }
-final class OrgsCreateInvitationRequest {const OrgsCreateInvitationRequest({this.inviteeId, this.email, this.role = OrgsCreateInvitationRequestRole.directMember, this.teamIds, });
+@immutable final class OrgsCreateInvitationRequest {const OrgsCreateInvitationRequest({this.inviteeId, this.email, this.role = OrgsCreateInvitationRequestRole.directMember, this.teamIds, });
 
 factory OrgsCreateInvitationRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateInvitationRequest(
   inviteeId: json['invitee_id'] != null ? (json['invitee_id'] as num).toInt() : null,

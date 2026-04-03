@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeletePermissionDeleteResponse {const DeletePermissionDeleteResponse({this.message, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeletePermissionDeleteResponse {const DeletePermissionDeleteResponse({this.message, this.success, });
 
 factory DeletePermissionDeleteResponse.fromJson(Map<String, dynamic> json) { return DeletePermissionDeleteResponse(
   message: json['message'] as String?,

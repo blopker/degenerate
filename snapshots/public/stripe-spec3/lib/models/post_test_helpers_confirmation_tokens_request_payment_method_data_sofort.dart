@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry._(this.value);
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry.fromJson(String json) { return switch (json) {
   'AT' => at,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry($value)'; } 
  }
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort({required this.country});
+@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort({required this.country});
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofort(
   country: PostTestHelpersConfirmationTokensRequestPaymentMethodDataSofortCountry.fromJson(json['country'] as String),

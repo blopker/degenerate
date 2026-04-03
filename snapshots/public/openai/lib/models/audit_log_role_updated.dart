@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'audit_log_role_updated_changes_requested.dart';/// The details for events with this `type`.
-final class AuditLogRoleUpdated {const AuditLogRoleUpdated({this.id, this.changesRequested, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_role_updated_changes_requested.dart';/// The details for events with this `type`.
+@immutable final class AuditLogRoleUpdated {const AuditLogRoleUpdated({this.id, this.changesRequested, });
 
 factory AuditLogRoleUpdated.fromJson(Map<String, dynamic> json) { return AuditLogRoleUpdated(
   id: json['id'] as String?,

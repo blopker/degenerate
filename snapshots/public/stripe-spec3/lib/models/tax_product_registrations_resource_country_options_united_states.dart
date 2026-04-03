@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_registrations_resource_country_options_us_local_amusement_tax.dart';import 'tax_product_registrations_resource_country_options_us_local_lease_tax.dart';import 'tax_product_registrations_resource_country_options_us_state_sales_tax.dart';/// Type of registration in the US.
-final class TaxProductRegistrationsResourceCountryOptionsUnitedStatesType {const TaxProductRegistrationsResourceCountryOptionsUnitedStatesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_registrations_resource_country_options_us_local_amusement_tax.dart';import 'tax_product_registrations_resource_country_options_us_local_lease_tax.dart';import 'tax_product_registrations_resource_country_options_us_state_sales_tax.dart';/// Type of registration in the US.
+@immutable final class TaxProductRegistrationsResourceCountryOptionsUnitedStatesType {const TaxProductRegistrationsResourceCountryOptionsUnitedStatesType._(this.value);
 
 factory TaxProductRegistrationsResourceCountryOptionsUnitedStatesType.fromJson(String json) { return switch (json) {
   'local_amusement_tax' => localAmusementTax,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsUnitedStatesType($value)'; } 
  }
 /// 
-final class TaxProductRegistrationsResourceCountryOptionsUnitedStates {const TaxProductRegistrationsResourceCountryOptionsUnitedStates({this.localAmusementTax, this.localLeaseTax, required this.state, this.stateSalesTax, required this.type, });
+@immutable final class TaxProductRegistrationsResourceCountryOptionsUnitedStates {const TaxProductRegistrationsResourceCountryOptionsUnitedStates({required this.state, required this.type, this.localAmusementTax, this.localLeaseTax, this.stateSalesTax, });
 
 factory TaxProductRegistrationsResourceCountryOptionsUnitedStates.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsUnitedStates(
   localAmusementTax: json['local_amusement_tax'] != null ? TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax.fromJson(json['local_amusement_tax'] as Map<String, dynamic>) : null,

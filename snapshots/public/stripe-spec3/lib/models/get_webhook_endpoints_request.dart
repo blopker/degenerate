@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetWebhookEndpointsRequest {const GetWebhookEndpointsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetWebhookEndpointsRequest {const GetWebhookEndpointsRequest();
 
-factory GetWebhookEndpointsRequest.fromJson(Map<String, dynamic> json) { return GetWebhookEndpointsRequest(
-
-); }
+factory GetWebhookEndpointsRequest.fromJson(Map<String, dynamic> _) { return const GetWebhookEndpointsRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetWebhookEndpointsRequest copyWith() { return GetWebhookEndpointsRequest(
+GetWebhookEndpointsRequest copyWith() { return const GetWebhookEndpointsRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetWebhookEndpointsRequest; } 

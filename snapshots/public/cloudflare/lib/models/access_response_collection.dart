@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_identity_provider.dart';import 'access_response_collection_result.dart';final class AccessResponseCollection {const AccessResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_identity_provider.dart';import 'access_response_collection_result.dart';@immutable final class AccessResponseCollection {const AccessResponseCollection({this.result});
 
 factory AccessResponseCollection.fromJson(Map<String, dynamic> json) { return AccessResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>),)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudforceOneRequestsRequestAssetList {const CloudforceOneRequestsRequestAssetList({required this.page, required this.perPage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudforceOneRequestsRequestAssetList {const CloudforceOneRequestsRequestAssetList({required this.page, required this.perPage, });
 
 factory CloudforceOneRequestsRequestAssetList.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestAssetList(
   page: (json['page'] as num).toInt(),

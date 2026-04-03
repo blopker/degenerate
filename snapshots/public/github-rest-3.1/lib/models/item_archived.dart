@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'item.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_changes.dart';final class ItemArchivedAction {const ItemArchivedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_changes.dart';@immutable final class ItemArchivedAction {const ItemArchivedAction._(this.value);
 
 factory ItemArchivedAction.fromJson(String json) { return switch (json) {
   'archived' => archived,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ItemArchivedAction($value)'; } 
  }
-final class ItemArchived {const ItemArchived({required this.action, required this.changes, this.installation, required this.organization, required this.projectsV2Item, required this.sender, });
+@immutable final class ItemArchived {const ItemArchived({required this.action, required this.changes, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });
 
 factory ItemArchived.fromJson(Map<String, dynamic> json) { return ItemArchived(
   action: ItemArchivedAction.fromJson(json['action'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNzBankAccount {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNzBankAccount({this.accountHolderName, required this.accountNumber, required this.bankCode, required this.branchCode, this.reference, required this.suffix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNzBankAccount {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNzBankAccount({required this.accountNumber, required this.bankCode, required this.branchCode, required this.suffix, this.accountHolderName, this.reference, });
 
 factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNzBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataNzBankAccount(
   accountHolderName: json['account_holder_name'] as String?,

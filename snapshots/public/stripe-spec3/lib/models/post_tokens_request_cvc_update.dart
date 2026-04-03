@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The updated CVC value this token represents.
-final class PostTokensRequestCvcUpdate {const PostTokensRequestCvcUpdate({required this.cvc});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The updated CVC value this token represents.
+@immutable final class PostTokensRequestCvcUpdate {const PostTokensRequestCvcUpdate({required this.cvc});
 
 factory PostTokensRequestCvcUpdate.fromJson(Map<String, dynamic> json) { return PostTokensRequestCvcUpdate(
   cvc: json['cvc'] as String,

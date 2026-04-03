@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestBrandingSettingsIconType {const PostCheckoutSessionsRequestBrandingSettingsIconType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestBrandingSettingsIconType {const PostCheckoutSessionsRequestBrandingSettingsIconType._(this.value);
 
 factory PostCheckoutSessionsRequestBrandingSettingsIconType.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestBrandingSettingsIconType($value)'; } 
  }
-final class PostCheckoutSessionsRequestBrandingSettingsIcon {const PostCheckoutSessionsRequestBrandingSettingsIcon({this.file, required this.type, this.url, });
+@immutable final class PostCheckoutSessionsRequestBrandingSettingsIcon {const PostCheckoutSessionsRequestBrandingSettingsIcon({required this.type, this.file, this.url, });
 
 factory PostCheckoutSessionsRequestBrandingSettingsIcon.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestBrandingSettingsIcon(
   file: json['file'] as String?,

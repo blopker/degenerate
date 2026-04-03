@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetRunStepInclude {const GetRunStepInclude._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetRunStepInclude {const GetRunStepInclude._(this.value);
 
 factory GetRunStepInclude.fromJson(String json) { return switch (json) {
   'step_details.tool_calls[*].file_search.results[*].content' => stepDetailsToolCallsFileSearchResultsContent,

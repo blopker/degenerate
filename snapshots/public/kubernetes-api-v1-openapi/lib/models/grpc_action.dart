@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// GRPCAction specifies an action involving a GRPC service.
-final class GrpcAction {const GrpcAction({this.port = 0, this.service = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// GRPCAction specifies an action involving a GRPC service.
+@immutable final class GrpcAction {const GrpcAction({this.port = 0, this.service = '', });
 
 factory GrpcAction.fromJson(Map<String, dynamic> json) { return GrpcAction(
   port: (json['port'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopAsesByOperatingSystemHttpVersion {const RadarGetHttpTopAsesByOperatingSystemHttpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByOperatingSystemHttpVersion {const RadarGetHttpTopAsesByOperatingSystemHttpVersion._(this.value);
 
 factory RadarGetHttpTopAsesByOperatingSystemHttpVersion.fromJson(String json) { return switch (json) {
   'HTTPv1' => httPv1,

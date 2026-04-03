@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CustomerPaymentSourceCardObject {const CustomerPaymentSourceCardObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerPaymentSourceCardObject {const CustomerPaymentSourceCardObject._(this.value);
 
 factory CustomerPaymentSourceCardObject.fromJson(String json) { return switch (json) {
   'card' => card,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CustomerPaymentSourceCardObject($value)'; } 
  }
-final class CustomerPaymentSourceCard {const CustomerPaymentSourceCard({this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.cvc, required this.expMonth, required this.expYear, this.metadata, this.name, required this.number, this.object, });
+@immutable final class CustomerPaymentSourceCard {const CustomerPaymentSourceCard({required this.expMonth, required this.expYear, required this.number, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.cvc, this.metadata, this.name, this.object, });
 
 factory CustomerPaymentSourceCard.fromJson(Map<String, dynamic> json) { return CustomerPaymentSourceCard(
   addressCity: json['address_city'] as String?,

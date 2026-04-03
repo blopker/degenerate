@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RuleSuiteRuleEvaluationsRuleSource {const RuleSuiteRuleEvaluationsRuleSource({this.type, this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RuleSuiteRuleEvaluationsRuleSource {const RuleSuiteRuleEvaluationsRuleSource({this.type, this.id, this.name, });
 
 factory RuleSuiteRuleEvaluationsRuleSource.fromJson(Map<String, dynamic> json) { return RuleSuiteRuleEvaluationsRuleSource(
   type: json['type'] as String?,

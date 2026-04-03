@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Snapshot Mount
-final class MconnSnapshotMount {const MconnSnapshotMount({this.availableBytes, this.connectorId, required this.fileSystem, this.isReadOnly, this.isRemovable, required this.kind, required this.mountPoint, required this.name, this.totalBytes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Mount
+@immutable final class MconnSnapshotMount {const MconnSnapshotMount({required this.fileSystem, required this.kind, required this.mountPoint, required this.name, this.availableBytes, this.connectorId, this.isReadOnly, this.isRemovable, this.totalBytes, });
 
 factory MconnSnapshotMount.fromJson(Map<String, dynamic> json) { return MconnSnapshotMount(
   availableBytes: json['available_bytes'] != null ? (json['available_bytes'] as num).toDouble() : null,

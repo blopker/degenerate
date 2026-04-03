@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit_search_result_item.dart';final class SearchCommitsResponse {const SearchCommitsResponse({required this.totalCount, required this.incompleteResults, required this.items, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit_search_result_item.dart';@immutable final class SearchCommitsResponse {const SearchCommitsResponse({required this.totalCount, required this.incompleteResults, required this.items, });
 
 factory SearchCommitsResponse.fromJson(Map<String, dynamic> json) { return SearchCommitsResponse(
   totalCount: (json['total_count'] as num).toInt(),

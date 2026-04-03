@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'marketplace_listing_plan.dart';final class MarketplacePurchaseMarketplacePurchase {const MarketplacePurchaseMarketplacePurchase({this.billingCycle, this.nextBillingDate, this.isInstalled, this.unitCount, this.onFreeTrial, this.freeTrialEndsOn, this.updatedAt, this.plan, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'marketplace_listing_plan.dart';@immutable final class MarketplacePurchaseMarketplacePurchase {const MarketplacePurchaseMarketplacePurchase({this.billingCycle, this.nextBillingDate, this.isInstalled, this.unitCount, this.onFreeTrial, this.freeTrialEndsOn, this.updatedAt, this.plan, });
 
 factory MarketplacePurchaseMarketplacePurchase.fromJson(Map<String, dynamic> json) { return MarketplacePurchaseMarketplacePurchase(
   billingCycle: json['billing_cycle'] as String?,

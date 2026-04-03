@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DosTcpFlowProtectionRuleUpdate {const DosTcpFlowProtectionRuleUpdate({this.burstSensitivity, this.mode, this.rateSensitivity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosTcpFlowProtectionRuleUpdate {const DosTcpFlowProtectionRuleUpdate({this.burstSensitivity, this.mode, this.rateSensitivity, });
 
 factory DosTcpFlowProtectionRuleUpdate.fromJson(Map<String, dynamic> json) { return DosTcpFlowProtectionRuleUpdate(
   burstSensitivity: json['burst_sensitivity'] as String?,

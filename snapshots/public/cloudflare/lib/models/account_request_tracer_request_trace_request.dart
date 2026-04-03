@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_request_tracer_request_trace_request_body.dart';import 'account_request_tracer_request_trace_request_context.dart';final class AccountRequestTracerRequestTraceRequest {const AccountRequestTracerRequestTraceRequest({this.body, this.context, this.cookies, this.headers, required this.method, this.protocol, this.skipResponse, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_request_tracer_request_trace_request_body.dart';import 'account_request_tracer_request_trace_request_context.dart';@immutable final class AccountRequestTracerRequestTraceRequest {const AccountRequestTracerRequestTraceRequest({required this.method, required this.url, this.body, this.context, this.cookies, this.headers, this.protocol, this.skipResponse, });
 
 factory AccountRequestTracerRequestTraceRequest.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceRequest(
   body: json['body'] != null ? AccountRequestTracerRequestTraceRequestBody.fromJson(json['body'] as Map<String, dynamic>) : null,

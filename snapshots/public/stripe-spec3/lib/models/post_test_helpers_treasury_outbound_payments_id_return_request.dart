@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_outbound_payments_id_return_request_returned_details.dart';final class PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest {const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest({this.expand, this.returnedDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_outbound_payments_id_return_request_returned_details.dart';@immutable final class PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest {const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest({this.expand, this.returnedDetails, });
 
 factory PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundPaymentsIdReturnRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

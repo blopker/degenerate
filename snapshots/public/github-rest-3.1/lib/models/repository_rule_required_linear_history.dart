@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryRuleRequiredLinearHistoryType {const RepositoryRuleRequiredLinearHistoryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleRequiredLinearHistoryType {const RepositoryRuleRequiredLinearHistoryType._(this.value);
 
 factory RepositoryRuleRequiredLinearHistoryType.fromJson(String json) { return switch (json) {
   'required_linear_history' => requiredLinearHistory,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleRequiredLinearHistoryType($value)'; } 
  }
 /// Prevent merge commits from being pushed to matching refs.
-final class RepositoryRuleRequiredLinearHistory {const RepositoryRuleRequiredLinearHistory({required this.type});
+@immutable final class RepositoryRuleRequiredLinearHistory {const RepositoryRuleRequiredLinearHistory({required this.type});
 
 factory RepositoryRuleRequiredLinearHistory.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredLinearHistory(
   type: RepositoryRuleRequiredLinearHistoryType.fromJson(json['type'] as String),

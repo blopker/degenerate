@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_content_image_url_object_image_url.dart';/// The type of the content part.
-final class MessageContentImageUrlObjectType {const MessageContentImageUrlObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_image_url_object_image_url.dart';/// The type of the content part.
+@immutable final class MessageContentImageUrlObjectType {const MessageContentImageUrlObjectType._(this.value);
 
 factory MessageContentImageUrlObjectType.fromJson(String json) { return switch (json) {
   'image_url' => imageUrl,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageContentImageUrlObjectType($value)'; } 
  }
 /// References an image URL in the content of a message.
-final class MessageContentImageUrlObject {const MessageContentImageUrlObject({required this.type, required this.imageUrl, });
+@immutable final class MessageContentImageUrlObject {const MessageContentImageUrlObject({required this.type, required this.imageUrl, });
 
 factory MessageContentImageUrlObject.fromJson(Map<String, dynamic> json) { return MessageContentImageUrlObject(
   type: MessageContentImageUrlObjectType.fromJson(json['type'] as String),

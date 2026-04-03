@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class HyperdriveHyperdriveMtls {const HyperdriveHyperdriveMtls({this.caCertificateId, this.mtlsCertificateId, this.sslmode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HyperdriveHyperdriveMtls {const HyperdriveHyperdriveMtls({this.caCertificateId, this.mtlsCertificateId, this.sslmode, });
 
 factory HyperdriveHyperdriveMtls.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveMtls(
   caCertificateId: json['ca_certificate_id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class EmailSecurityPhishGuardReportFields {const EmailSecurityPhishGuardReportFields({this.from, this.postfixId, required this.to, required this.ts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityPhishGuardReportFields {const EmailSecurityPhishGuardReportFields({required this.to, required this.ts, this.from, this.postfixId, });
 
 factory EmailSecurityPhishGuardReportFields.fromJson(Map<String, dynamic> json) { return EmailSecurityPhishGuardReportFields(
   from: json['from'] as String?,

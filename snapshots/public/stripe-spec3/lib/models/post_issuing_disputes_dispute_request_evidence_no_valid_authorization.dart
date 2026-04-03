@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'no_valid_authorization2.dart';final class PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2 {const PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'no_valid_authorization2.dart';@immutable final class PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2 {const PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2._(this.value);
 
 factory PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

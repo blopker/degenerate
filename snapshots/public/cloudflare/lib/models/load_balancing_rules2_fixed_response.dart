@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A collection of fields used to directly respond to the eyeball instead of routing to a pool. If a fixed_response is supplied the rule will be marked as terminates.
-final class LoadBalancingRules2FixedResponse {const LoadBalancingRules2FixedResponse({this.contentType, this.location, this.messageBody, this.statusCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A collection of fields used to directly respond to the eyeball instead of routing to a pool. If a fixed_response is supplied the rule will be marked as terminates.
+@immutable final class LoadBalancingRules2FixedResponse {const LoadBalancingRules2FixedResponse({this.contentType, this.location, this.messageBody, this.statusCode, });
 
 factory LoadBalancingRules2FixedResponse.fromJson(Map<String, dynamic> json) { return LoadBalancingRules2FixedResponse(
   contentType: json['content_type'] as String?,

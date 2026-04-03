@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_chat_message.dart';final class GetSessionChatResponse {const GetSessionChatResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_chat_message.dart';@immutable final class GetSessionChatResponse {const GetSessionChatResponse({this.data, this.success, });
 
 factory GetSessionChatResponse.fromJson(Map<String, dynamic> json) { return GetSessionChatResponse(
   data: json['data'] != null ? RealtimekitChatMessage.fromJson(json['data'] as Map<String, dynamic>) : null,

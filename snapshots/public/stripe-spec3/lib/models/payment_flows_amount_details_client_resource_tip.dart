@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentFlowsAmountDetailsClientResourceTip {const PaymentFlowsAmountDetailsClientResourceTip({this.amount});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentFlowsAmountDetailsClientResourceTip {const PaymentFlowsAmountDetailsClientResourceTip({this.amount});
 
 factory PaymentFlowsAmountDetailsClientResourceTip.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetailsClientResourceTip(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

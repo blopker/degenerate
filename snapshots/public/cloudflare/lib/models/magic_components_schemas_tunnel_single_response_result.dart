@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_interconnect.dart';final class MagicComponentsSchemasTunnelSingleResponseResult {const MagicComponentsSchemasTunnelSingleResponseResult({this.interconnect});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_interconnect.dart';@immutable final class MagicComponentsSchemasTunnelSingleResponseResult {const MagicComponentsSchemasTunnelSingleResponseResult({this.interconnect});
 
 factory MagicComponentsSchemasTunnelSingleResponseResult.fromJson(Map<String, dynamic> json) { return MagicComponentsSchemasTunnelSingleResponseResult(
   interconnect: json['interconnect'] != null ? MagicInterconnect.fromJson(json['interconnect'] as Map<String, dynamic>) : null,

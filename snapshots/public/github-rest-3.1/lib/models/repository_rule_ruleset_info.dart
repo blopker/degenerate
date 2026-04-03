@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of source for the ruleset that includes this rule.
-final class RepositoryRuleRulesetInfoRulesetSourceType {const RepositoryRuleRulesetInfoRulesetSourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of source for the ruleset that includes this rule.
+@immutable final class RepositoryRuleRulesetInfoRulesetSourceType {const RepositoryRuleRulesetInfoRulesetSourceType._(this.value);
 
 factory RepositoryRuleRulesetInfoRulesetSourceType.fromJson(String json) { return switch (json) {
   'Repository' => repository,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleRulesetInfoRulesetSourceType($value)'; } 
  }
 /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
-final class RepositoryRuleRulesetInfo {const RepositoryRuleRulesetInfo({this.rulesetSourceType, this.rulesetSource, this.rulesetId, });
+@immutable final class RepositoryRuleRulesetInfo {const RepositoryRuleRulesetInfo({this.rulesetSourceType, this.rulesetSource, this.rulesetId, });
 
 factory RepositoryRuleRulesetInfo.fromJson(Map<String, dynamic> json) { return RepositoryRuleRulesetInfo(
   rulesetSourceType: json['ruleset_source_type'] != null ? RepositoryRuleRulesetInfoRulesetSourceType.fromJson(json['ruleset_source_type'] as String) : null,

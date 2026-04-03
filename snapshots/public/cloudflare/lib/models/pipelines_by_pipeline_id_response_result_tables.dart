@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of the connection.
-final class PipelinesByPipelineIdResponseResultTablesType {const PipelinesByPipelineIdResponseResultTablesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the connection.
+@immutable final class PipelinesByPipelineIdResponseResultTablesType {const PipelinesByPipelineIdResponseResultTablesType._(this.value);
 
 factory PipelinesByPipelineIdResponseResultTablesType.fromJson(String json) { return switch (json) {
   'stream' => stream,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PipelinesByPipelineIdResponseResultTablesType($value)'; } 
  }
-final class PipelinesByPipelineIdResponseResultTables {const PipelinesByPipelineIdResponseResultTables({required this.id, required this.latest, required this.name, required this.type, required this.version, });
+@immutable final class PipelinesByPipelineIdResponseResultTables {const PipelinesByPipelineIdResponseResultTables({required this.id, required this.latest, required this.name, required this.type, required this.version, });
 
 factory PipelinesByPipelineIdResponseResultTables.fromJson(Map<String, dynamic> json) { return PipelinesByPipelineIdResponseResultTables(
   id: json['id'] as String,

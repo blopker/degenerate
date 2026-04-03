@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsAffirm {const PaymentMethodDetailsAffirm({this.location, this.reader, this.transactionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsAffirm {const PaymentMethodDetailsAffirm({this.location, this.reader, this.transactionId, });
 
 factory PaymentMethodDetailsAffirm.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAffirm(
   location: json['location'] as String?,

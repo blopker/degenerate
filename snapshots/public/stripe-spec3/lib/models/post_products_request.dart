@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_products_request_default_price_data.dart';import 'post_products_request_marketing_features.dart';import 'post_products_request_package_dimensions.dart';final class PostProductsRequest {const PostProductsRequest({this.active, this.defaultPriceData, this.description, this.expand, this.id, this.images, this.marketingFeatures, this.metadata, required this.name, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_products_request_default_price_data.dart';import 'post_products_request_marketing_features.dart';import 'post_products_request_package_dimensions.dart';@immutable final class PostProductsRequest {const PostProductsRequest({required this.name, this.active, this.defaultPriceData, this.description, this.expand, this.id, this.images, this.marketingFeatures, this.metadata, this.packageDimensions, this.shippable, this.statementDescriptor, this.taxCode, this.unitLabel, this.url, });
 
 factory PostProductsRequest.fromJson(Map<String, dynamic> json) { return PostProductsRequest(
   active: json['active'] as bool?,

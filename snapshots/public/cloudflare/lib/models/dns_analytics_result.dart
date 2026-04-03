@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_analytics_data2.dart';import 'dns_analytics_query.dart';final class DnsAnalyticsResult {const DnsAnalyticsResult({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_analytics_data2.dart';import 'dns_analytics_query.dart';@immutable final class DnsAnalyticsResult {const DnsAnalyticsResult({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, });
 
 factory DnsAnalyticsResult.fromJson(Map<String, dynamic> json) { return DnsAnalyticsResult(
   data: (json['data'] as List<dynamic>).map((e) => DnsAnalyticsData2.fromJson(e as Map<String, dynamic>)).toList(),
   dataLag: (json['data_lag'] as num).toDouble(),
-  max: (json['max'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  min: (json['min'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  max: json['max'] as Map<String, dynamic>,
+  min: json['min'] as Map<String, dynamic>,
   query: DnsAnalyticsQuery.fromJson(json['query'] as Map<String, dynamic>),
   rows: (json['rows'] as num).toDouble(),
-  totals: (json['totals'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  totals: json['totals'] as Map<String, dynamic>,
 ); }
 
 /// Array with one row per combination of dimension values.

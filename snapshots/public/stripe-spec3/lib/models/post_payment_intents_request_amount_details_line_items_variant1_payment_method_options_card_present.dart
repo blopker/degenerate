@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsCardPresent {const PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsCardPresent({this.commodityCode});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsCardPresent {const PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsCardPresent({this.commodityCode});
 
 factory PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsCardPresent.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsCardPresent(
   commodityCode: json['commodity_code'] as String?,

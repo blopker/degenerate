@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AbuseReportsMitigatedEntityType {const AbuseReportsMitigatedEntityType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AbuseReportsMitigatedEntityType {const AbuseReportsMitigatedEntityType._(this.value);
 
 factory AbuseReportsMitigatedEntityType.fromJson(String json) { return switch (json) {
   'url_pattern' => urlPattern,

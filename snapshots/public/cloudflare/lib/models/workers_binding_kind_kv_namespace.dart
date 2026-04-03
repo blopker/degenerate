@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_name.dart';import 'workers_namespace_identifier.dart';final class WorkersBindingKindKvNamespace {const WorkersBindingKindKvNamespace({required this.name, required this.namespaceId, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';import 'workers_namespace_identifier.dart';@immutable final class WorkersBindingKindKvNamespace {const WorkersBindingKindKvNamespace({required this.name, required this.namespaceId, required this.type, });
 
 factory WorkersBindingKindKvNamespace.fromJson(Map<String, dynamic> json) { return WorkersBindingKindKvNamespace(
   name: WorkersBindingName.fromJson(json['name'] as String),

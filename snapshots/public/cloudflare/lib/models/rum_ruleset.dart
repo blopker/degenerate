@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rum_ruleset_identifier.dart';import 'rum_zone_tag.dart';final class RumRuleset {const RumRuleset({this.enabled, this.id, this.zoneName, this.zoneTag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_ruleset_identifier.dart';import 'rum_zone_tag.dart';@immutable final class RumRuleset {const RumRuleset({this.enabled, this.id, this.zoneName, this.zoneTag, });
 
 factory RumRuleset.fromJson(Map<String, dynamic> json) { return RumRuleset(
   enabled: json['enabled'] as bool?,

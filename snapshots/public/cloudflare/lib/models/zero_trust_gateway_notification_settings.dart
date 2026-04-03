@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configure the message the user's device shows during an antivirus scan.
-final class ZeroTrustGatewayNotificationSettings {const ZeroTrustGatewayNotificationSettings({this.enabled, this.includeContext, this.msg, this.supportUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure the message the user's device shows during an antivirus scan.
+@immutable final class ZeroTrustGatewayNotificationSettings {const ZeroTrustGatewayNotificationSettings({this.enabled, this.includeContext, this.msg, this.supportUrl, });
 
 factory ZeroTrustGatewayNotificationSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayNotificationSettings(
   enabled: json['enabled'] as bool?,

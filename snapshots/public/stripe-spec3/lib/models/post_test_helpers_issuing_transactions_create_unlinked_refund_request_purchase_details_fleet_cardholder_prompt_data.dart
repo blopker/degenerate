@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData({this.driverId, this.odometer, this.unspecifiedId, this.userId, this.vehicleNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData({this.driverId, this.odometer, this.unspecifiedId, this.userId, this.vehicleNumber, });
 
 factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetCardholderPromptData(
   driverId: json['driver_id'] as String?,

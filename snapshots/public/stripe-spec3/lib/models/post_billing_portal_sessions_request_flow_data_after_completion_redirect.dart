@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect {const PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect({required this.returnUrl});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect {const PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect({required this.returnUrl});
 
 factory PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataAfterCompletionRedirect(
   returnUrl: json['return_url'] as String,

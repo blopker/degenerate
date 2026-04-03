@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'builds_created_on.dart';import 'builds_deleted_on.dart';import 'builds_modified_on.dart';import 'builds_provider_account_id.dart';import 'builds_provider_account_name.dart';import 'builds_repo_connection_uuid.dart';import 'builds_repo_id.dart';import 'builds_repo_name.dart';import 'builds_scm_provider_type.dart';final class BuildsUpsertRepoConnectionResponse {const BuildsUpsertRepoConnectionResponse({this.createdOn, this.deletedOn, this.modifiedOn, this.providerAccountId, this.providerAccountName, this.providerType, this.repoConnectionUuid, this.repoId, this.repoName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_created_on.dart';import 'builds_deleted_on.dart';import 'builds_modified_on.dart';import 'builds_provider_account_id.dart';import 'builds_provider_account_name.dart';import 'builds_repo_connection_uuid.dart';import 'builds_repo_id.dart';import 'builds_repo_name.dart';import 'builds_scm_provider_type.dart';@immutable final class BuildsUpsertRepoConnectionResponse {const BuildsUpsertRepoConnectionResponse({this.createdOn, this.deletedOn, this.modifiedOn, this.providerAccountId, this.providerAccountName, this.providerType, this.repoConnectionUuid, this.repoId, this.repoName, });
 
 factory BuildsUpsertRepoConnectionResponse.fromJson(Map<String, dynamic> json) { return BuildsUpsertRepoConnectionResponse(
   createdOn: json['created_on'] != null ? BuildsCreatedOn.fromJson(json['created_on'] as String) : null,

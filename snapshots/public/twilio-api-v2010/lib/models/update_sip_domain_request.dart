@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-final class UpdateSipDomainRequestVoiceFallbackMethod {const UpdateSipDomainRequestVoiceFallbackMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
+@immutable final class UpdateSipDomainRequestVoiceFallbackMethod {const UpdateSipDomainRequestVoiceFallbackMethod._(this.value);
 
 factory UpdateSipDomainRequestVoiceFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UpdateSipDomainRequestVoiceFallbackMethod($value)'; } 
  }
 /// The HTTP method we should use to call `voice_url`
-final class UpdateSipDomainRequestVoiceMethod {const UpdateSipDomainRequestVoiceMethod._(this.value);
+@immutable final class UpdateSipDomainRequestVoiceMethod {const UpdateSipDomainRequestVoiceMethod._(this.value);
 
 factory UpdateSipDomainRequestVoiceMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UpdateSipDomainRequestVoiceMethod($value)'; } 
  }
 /// The HTTP method we should use to call `voice_status_callback_url`. Can be: `GET` or `POST`.
-final class UpdateSipDomainRequestVoiceStatusCallbackMethod {const UpdateSipDomainRequestVoiceStatusCallbackMethod._(this.value);
+@immutable final class UpdateSipDomainRequestVoiceStatusCallbackMethod {const UpdateSipDomainRequestVoiceStatusCallbackMethod._(this.value);
 
 factory UpdateSipDomainRequestVoiceStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UpdateSipDomainRequestVoiceStatusCallbackMethod($value)'; } 
  }
-final class UpdateSipDomainRequest {const UpdateSipDomainRequest({this.friendlyName, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceStatusCallbackMethod, this.voiceStatusCallbackUrl, this.voiceUrl, this.sipRegistration, this.domainName, this.emergencyCallingEnabled, this.secure, this.byocTrunkSid, this.emergencyCallerSid, });
+@immutable final class UpdateSipDomainRequest {const UpdateSipDomainRequest({this.friendlyName, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceStatusCallbackMethod, this.voiceStatusCallbackUrl, this.voiceUrl, this.sipRegistration, this.domainName, this.emergencyCallingEnabled, this.secure, this.byocTrunkSid, this.emergencyCallerSid, });
 
 factory UpdateSipDomainRequest.fromJson(Map<String, dynamic> json) { return UpdateSipDomainRequest(
   friendlyName: json['FriendlyName'] as String?,

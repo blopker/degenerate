@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_dns_summary_by_dnssec_e2e_version_response_result_meta.dart';import 'radar_get_dns_summary_by_dnssec_e2e_version_response_result_summary0.dart';final class RadarGetDnsSummaryByDnssecE2eVersionResponseResult {const RadarGetDnsSummaryByDnssecE2eVersionResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_dnssec_e2e_version_response_result_meta.dart';import 'radar_get_dns_summary_by_dnssec_e2e_version_response_result_summary0.dart';@immutable final class RadarGetDnsSummaryByDnssecE2eVersionResponseResult {const RadarGetDnsSummaryByDnssecE2eVersionResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetDnsSummaryByDnssecE2eVersionResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByDnssecE2eVersionResponseResult(
   meta: RadarGetDnsSummaryByDnssecE2eVersionResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

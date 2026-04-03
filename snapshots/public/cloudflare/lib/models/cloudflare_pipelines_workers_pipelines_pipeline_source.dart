@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_workers_pipelines_binding_source.dart';import 'cloudflare_pipelines_workers_pipelines_http_source.dart';sealed class CloudflarePipelinesWorkersPipelinesPipelineSource {const CloudflarePipelinesWorkersPipelinesPipelineSource();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_workers_pipelines_binding_source.dart';import 'cloudflare_pipelines_workers_pipelines_http_source.dart';sealed class CloudflarePipelinesWorkersPipelinesPipelineSource {const CloudflarePipelinesWorkersPipelinesPipelineSource();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CloudflarePipelinesWorkersPipelinesPipelineSource.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CloudflarePipelinesWorkersPipelinesPipelineSource$Unknown; } 
  }
-final class CloudflarePipelinesWorkersPipelinesPipelineSourceBinding extends CloudflarePipelinesWorkersPipelinesPipelineSource {const CloudflarePipelinesWorkersPipelinesPipelineSourceBinding(this.cloudflarePipelinesWorkersPipelinesBindingSource);
+@immutable final class CloudflarePipelinesWorkersPipelinesPipelineSourceBinding extends CloudflarePipelinesWorkersPipelinesPipelineSource {const CloudflarePipelinesWorkersPipelinesPipelineSourceBinding(this.cloudflarePipelinesWorkersPipelinesBindingSource);
 
 factory CloudflarePipelinesWorkersPipelinesPipelineSourceBinding.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesPipelineSourceBinding(CloudflarePipelinesWorkersPipelinesBindingSource.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final CloudflarePipelinesWorkersPipelinesBindingSource cloudflarePipelinesWorker
 @override int get hashCode { return cloudflarePipelinesWorkersPipelinesBindingSource.hashCode; } 
 @override String toString() { return 'CloudflarePipelinesWorkersPipelinesPipelineSourceBinding(cloudflarePipelinesWorkersPipelinesBindingSource: $cloudflarePipelinesWorkersPipelinesBindingSource)'; } 
  }
-final class CloudflarePipelinesWorkersPipelinesPipelineSourceHttp extends CloudflarePipelinesWorkersPipelinesPipelineSource {const CloudflarePipelinesWorkersPipelinesPipelineSourceHttp(this.cloudflarePipelinesWorkersPipelinesHttpSource);
+@immutable final class CloudflarePipelinesWorkersPipelinesPipelineSourceHttp extends CloudflarePipelinesWorkersPipelinesPipelineSource {const CloudflarePipelinesWorkersPipelinesPipelineSourceHttp(this.cloudflarePipelinesWorkersPipelinesHttpSource);
 
 factory CloudflarePipelinesWorkersPipelinesPipelineSourceHttp.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesPipelineSourceHttp(CloudflarePipelinesWorkersPipelinesHttpSource.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final CloudflarePipelinesWorkersPipelinesHttpSource cloudflarePipelinesWorkersPi
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class CloudflarePipelinesWorkersPipelinesPipelineSource$Unknown extends CloudflarePipelinesWorkersPipelinesPipelineSource {const CloudflarePipelinesWorkersPipelinesPipelineSource$Unknown(this.json);
+@immutable final class CloudflarePipelinesWorkersPipelinesPipelineSource$Unknown extends CloudflarePipelinesWorkersPipelinesPipelineSource {const CloudflarePipelinesWorkersPipelinesPipelineSource$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

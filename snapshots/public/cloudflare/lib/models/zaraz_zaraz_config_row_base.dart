@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazZarazConfigRowBase {const ZarazZarazConfigRowBase({required this.createdAt, required this.id, required this.updatedAt, required this.userId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazZarazConfigRowBase {const ZarazZarazConfigRowBase({required this.createdAt, required this.id, required this.updatedAt, required this.userId, });
 
 factory ZarazZarazConfigRowBase.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigRowBase(
   createdAt: DateTime.parse(json['createdAt'] as String),

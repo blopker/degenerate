@@ -12,7 +12,7 @@ final class ReposApi with ApiExecutor {const ReposApi(this.apiConfig);
 ///
 /// Lists repositories for the specified organization.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 ///
 /// `GET /orgs/{org}/repos`
@@ -302,7 +302,7 @@ return execute(
 ///
 /// The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > - In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 /// > - To view merge-related settings, you must have the `contents:read` and `contents:write` permissions.
 ///
@@ -760,10 +760,10 @@ return execute(
 /// 
 /// Protecting a branch requires admin or owner permissions to the repository.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Passing new arrays of `users` and `teams` replaces their previous values.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > The list of users, apps, and teams in total is limited to 100 items.
 ///
 /// `PUT /repos/{owner}/{repo}/branches/{branch}/protection`
@@ -905,7 +905,7 @@ return execute(
 /// 
 /// Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Passing new arrays of `users` and `teams` replaces their previous values.
 ///
 /// `PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews`
@@ -958,7 +958,7 @@ return execute(
 /// 
 /// When authenticated with admin or owner permissions to the repository, you can use this endpoint to check whether a branch requires signed commits. An enabled status of `true` indicates you must sign commits on this branch. For more information, see [Signing commits with GPG](https://docs.github.com/articles/signing-commits-with-gpg) in GitHub Help.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You must enable branch protection to require signed commits.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures`
@@ -1214,7 +1214,7 @@ return execute(
 /// 
 /// Lists who has access to this protected branch.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Users, apps, and teams `restrictions` are only available for organization-owned repositories.
 ///
 /// `GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions`
@@ -1616,7 +1616,7 @@ return execute(
 ///
 /// Renames a branch in a repository.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)".
 /// 
 /// The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.
@@ -1762,9 +1762,9 @@ return execute(
 /// 
 /// For more information on permission levels, see "[Repository permission levels for an organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)". There are restrictions on which permissions can be granted to organization members when an organization base role is in place. In this case, the role being given must be equal to or higher than the org base permission. Otherwise, the request will fail with:
 /// 
-/// ````
+/// ```text
 /// Cannot assign {member} permission of {role name}
-/// ````
+/// ```text
 /// 
 /// Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 /// 
@@ -1820,7 +1820,7 @@ return execute(
 ///  - If the user had their own fork of the repository, the fork will be deleted.
 ///  - If the user still has read access to the repository, open pull requests by this user from a fork will be denied.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > A user can still have access to the repository through organization permissions like base repository permissions.
 /// 
 /// Although the API responds immediately, the additional permission updates might take some extra time to complete in the background.
@@ -2229,7 +2229,7 @@ return execute(
 ///
 /// Returns the contents of a single commit reference. You must have `read` access for the repository to use this endpoint.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > If there are more than 300 files in the commit diff and the default JSON media type is requested, the response will include pagination link headers for the remaining files, up to a limit of 3000 files. Each page contains the static commit information, and the only changes are to the file listing.
 /// 
 /// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)." Pagination query parameters are not supported for these media types.
@@ -2552,7 +2552,7 @@ return execute(
 ///
 /// Creates a new file or replaces an existing file in a repository.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > If you use this endpoint and the "[Delete a file](https://docs.github.com/rest/repos/contents/#delete-a-file)" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.
 /// 
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The `workflow` scope is also required in order to modify files in the `.github/workflows` directory.
@@ -2589,7 +2589,7 @@ return execute(
 /// 
 /// You must provide values for both `name` and `email`, whether you choose to use `author` or `committer`. Otherwise, you'll receive a `422` status code.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > If you use this endpoint and the "[Create or update file contents](https://docs.github.com/rest/repos/contents/#create-or-update-file-contents)" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.
 ///
 /// `DELETE /repos/{owner}/{repo}/contents/{path}`
@@ -2984,7 +2984,7 @@ return execute(
  } 
 /// Get an environment
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > To get information about name patterns that branches must match in order to deploy to this environment, see "[Get a deployment branch policy](/rest/deployments/branch-policies#get-a-deployment-branch-policy)."
 /// 
 /// Anyone with read access to the repository can use this endpoint.
@@ -3012,10 +3012,10 @@ return execute(
 ///
 /// Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see "[Environments](/actions/reference/environments#environment-protection-rules)."
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > To create or update name patterns that branches must match in order to deploy to this environment, see "[Deployment branch policies](/rest/deployments/branch-policies)."
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > To create or update secrets for an environment, see "[GitHub Actions secrets](/rest/actions/secrets)."
 /// 
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -3378,10 +3378,10 @@ return execute(
 ///
 /// Create a fork for the authenticated user.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api).
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Although this endpoint works with GitHub Apps, the GitHub App must be installed on the destination account with access to all repositories and on the source account with access to the source repository.
 ///
 /// `POST /repos/{owner}/{repo}/forks`
@@ -3668,7 +3668,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3701,7 +3701,7 @@ return execute(
 ///
 /// This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Previously `/repos/:owner/:repo/hooks/:hook_id/test`
 ///
 /// `POST /repos/{owner}/{repo}/hooks/{hook_id}/tests`
@@ -4767,7 +4767,7 @@ return execute(
 ///
 /// Gets a public release with the specified release ID.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a hypermedia resource. For more information, see "[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
 ///
 /// `GET /repos/{owner}/{repo}/releases/{release_id}`
@@ -5240,7 +5240,7 @@ return execute(
 ///
 /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains 10,000 or more commits, a 422 status code will be returned.
 ///
 /// `GET /repos/{owner}/{repo}/stats/code_frequency`
@@ -5293,7 +5293,7 @@ return execute(
 /// *   `d` - Number of deletions
 /// *   `c` - Number of commits
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
 ///
 /// `GET /repos/{owner}/{repo}/stats/contributors`
@@ -5434,7 +5434,7 @@ return execute(
 /// `main`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use
 /// the `Location` header to make a second `GET` request.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > For private repositories, these links are temporary and expire after five minutes.
 ///
 /// `GET /repos/{owner}/{repo}/tarball/{ref}`
@@ -5755,7 +5755,7 @@ return execute(
 /// `main`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use
 /// the `Location` header to make a second `GET` request.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > For private repositories, these links are temporary and expire after five minutes. If the repository is empty, you will receive a 404 when you follow the redirect.
 ///
 /// `GET /repos/{owner}/{repo}/zipball/{ref}`

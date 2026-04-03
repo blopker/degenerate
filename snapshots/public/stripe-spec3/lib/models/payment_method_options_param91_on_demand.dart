@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentMethodOptionsParam91OnDemandPurchaseInterval {const PaymentMethodOptionsParam91OnDemandPurchaseInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam91OnDemandPurchaseInterval {const PaymentMethodOptionsParam91OnDemandPurchaseInterval._(this.value);
 
 factory PaymentMethodOptionsParam91OnDemandPurchaseInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam91OnDemandPurchaseInterval($value)'; } 
  }
-final class PaymentMethodOptionsParam91OnDemand {const PaymentMethodOptionsParam91OnDemand({this.averageAmount, this.maximumAmount, this.minimumAmount, this.purchaseInterval, this.purchaseIntervalCount, });
+@immutable final class PaymentMethodOptionsParam91OnDemand {const PaymentMethodOptionsParam91OnDemand({this.averageAmount, this.maximumAmount, this.minimumAmount, this.purchaseInterval, this.purchaseIntervalCount, });
 
 factory PaymentMethodOptionsParam91OnDemand.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam91OnDemand(
   averageAmount: json['average_amount'] != null ? (json['average_amount'] as num).toInt() : null,

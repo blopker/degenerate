@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_settings_card_payments_decline_on.dart';import 'post_accounts_request_settings_card_payments_statement_descriptor_prefix_kana.dart';import 'post_accounts_request_settings_card_payments_statement_descriptor_prefix_kanji.dart';final class PostAccountsRequestSettingsCardPayments {const PostAccountsRequestSettingsCardPayments({this.declineOn, this.statementDescriptorPrefix, this.statementDescriptorPrefixKana, this.statementDescriptorPrefixKanji, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_settings_card_payments_decline_on.dart';import 'post_accounts_request_settings_card_payments_statement_descriptor_prefix_kana.dart';import 'post_accounts_request_settings_card_payments_statement_descriptor_prefix_kanji.dart';@immutable final class PostAccountsRequestSettingsCardPayments {const PostAccountsRequestSettingsCardPayments({this.declineOn, this.statementDescriptorPrefix, this.statementDescriptorPrefixKana, this.statementDescriptorPrefixKanji, });
 
 factory PostAccountsRequestSettingsCardPayments.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsCardPayments(
   declineOn: json['decline_on'] != null ? PostAccountsRequestSettingsCardPaymentsDeclineOn.fromJson(json['decline_on'] as Map<String, dynamic>) : null,

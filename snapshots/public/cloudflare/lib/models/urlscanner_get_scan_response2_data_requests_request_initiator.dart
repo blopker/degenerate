@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2DataRequestsRequestInitiator {const UrlscannerGetScanResponse2DataRequestsRequestInitiator({required this.host, required this.type, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsRequestInitiator {const UrlscannerGetScanResponse2DataRequestsRequestInitiator({required this.host, required this.type, required this.url, });
 
 factory UrlscannerGetScanResponse2DataRequestsRequestInitiator.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequestInitiator(
   host: json['host'] as String,

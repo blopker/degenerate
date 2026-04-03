@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coupon.dart';import 'payment_pages_checkout_session_discount_coupon.dart';import 'payment_pages_checkout_session_discount_promotion_code.dart';import 'promotion_code.dart';/// 
-final class PaymentPagesCheckoutSessionDiscount {const PaymentPagesCheckoutSessionDiscount({this.coupon, this.promotionCode, });
+@immutable final class PaymentPagesCheckoutSessionDiscount {const PaymentPagesCheckoutSessionDiscount({this.coupon, this.promotionCode, });
 
 factory PaymentPagesCheckoutSessionDiscount.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionDiscount(
   coupon: json['coupon'] != null ? OneOf2.parse(json['coupon'], fromA: (v) => v as String, fromB: (v) => Coupon.fromJson(v as Map<String, dynamic>),) : null,

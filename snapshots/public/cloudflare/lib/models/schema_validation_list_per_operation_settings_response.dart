@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_per_operation_setting.dart';final class SchemaValidationListPerOperationSettingsResponse {const SchemaValidationListPerOperationSettingsResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_per_operation_setting.dart';@immutable final class SchemaValidationListPerOperationSettingsResponse {const SchemaValidationListPerOperationSettingsResponse({required this.result});
 
 factory SchemaValidationListPerOperationSettingsResponse.fromJson(Map<String, dynamic> json) { return SchemaValidationListPerOperationSettingsResponse(
   result: (json['result'] as List<dynamic>).map((e) => ShieldPerOperationSetting.fromJson(e as Map<String, dynamic>)).toList(),

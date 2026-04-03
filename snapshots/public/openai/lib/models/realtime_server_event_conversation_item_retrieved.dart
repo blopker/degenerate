@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';/// The event type, must be `conversation.item.retrieved`.
-final class RealtimeServerEventConversationItemRetrievedType {const RealtimeServerEventConversationItemRetrievedType._(this.value);
+@immutable final class RealtimeServerEventConversationItemRetrievedType {const RealtimeServerEventConversationItemRetrievedType._(this.value);
 
 factory RealtimeServerEventConversationItemRetrievedType.fromJson(String json) { return switch (json) {
   'conversation.item.retrieved' => conversationItemRetrieved,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Returned when a conversation item is retrieved with `conversation.item.retrieve`. This is provided as a way to fetch the server's representation of an item, for example to get access to the post-processed audio data after noise cancellation and VAD. It includes the full content of the Item, including audio data.
 /// 
-final class RealtimeServerEventConversationItemRetrieved {const RealtimeServerEventConversationItemRetrieved({required this.eventId, required this.type, required this.item, });
+@immutable final class RealtimeServerEventConversationItemRetrieved {const RealtimeServerEventConversationItemRetrieved({required this.eventId, required this.type, required this.item, });
 
 factory RealtimeServerEventConversationItemRetrieved.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemRetrieved(
   eventId: json['event_id'] as String,

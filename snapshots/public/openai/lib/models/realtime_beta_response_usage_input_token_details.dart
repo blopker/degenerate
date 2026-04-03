@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_beta_response_usage_input_token_details_cached_tokens_details.dart';/// Details about the input tokens used in the Response.
-final class RealtimeBetaResponseUsageInputTokenDetails {const RealtimeBetaResponseUsageInputTokenDetails({this.cachedTokens, this.textTokens, this.imageTokens, this.audioTokens, this.cachedTokensDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_response_usage_input_token_details_cached_tokens_details.dart';/// Details about the input tokens used in the Response.
+@immutable final class RealtimeBetaResponseUsageInputTokenDetails {const RealtimeBetaResponseUsageInputTokenDetails({this.cachedTokens, this.textTokens, this.imageTokens, this.audioTokens, this.cachedTokensDetails, });
 
 factory RealtimeBetaResponseUsageInputTokenDetails.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponseUsageInputTokenDetails(
   cachedTokens: json['cached_tokens'] != null ? (json['cached_tokens'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DependabotCreateOrUpdateRepoSecretRequest {const DependabotCreateOrUpdateRepoSecretRequest({this.encryptedValue, this.keyId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotCreateOrUpdateRepoSecretRequest {const DependabotCreateOrUpdateRepoSecretRequest({this.encryptedValue, this.keyId, });
 
 factory DependabotCreateOrUpdateRepoSecretRequest.fromJson(Map<String, dynamic> json) { return DependabotCreateOrUpdateRepoSecretRequest(
   encryptedValue: json['encrypted_value'] as String?,

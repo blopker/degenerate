@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_ip_version_response400_errors.dart';final class RadarGetDnsSummaryByIpVersionResponse400 {const RadarGetDnsSummaryByIpVersionResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_ip_version_response400_errors.dart';@immutable final class RadarGetDnsSummaryByIpVersionResponse400 {const RadarGetDnsSummaryByIpVersionResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetDnsSummaryByIpVersionResponse400.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByIpVersionResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetDnsSummaryByIpVersionResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

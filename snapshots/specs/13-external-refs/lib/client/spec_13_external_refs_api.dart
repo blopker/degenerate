@@ -10,11 +10,11 @@ import '../apis/pets_api.dart';
 /// sdk.pets.listPets();
 /// ```
 final class Spec13ExternalRefsApi {
+  Spec13ExternalRefsApi(this._config);
+
   static const defaultBaseUrl = 'https://petstore.example.com/v1';
 
   final ApiConfig _config;
-
-  Spec13ExternalRefsApi(this._config);
 
   late final PetsApi pets = PetsApi(_config);
 }

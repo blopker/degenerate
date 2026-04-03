@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'file_expiration_after.dart';/// The intended purpose of the uploaded file. One of:
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_expiration_after.dart';/// The intended purpose of the uploaded file. One of:
 /// - `assistants`: Used in the Assistants API
 /// - `batch`: Used in the Batch API
 /// - `fine-tune`: Used for fine-tuning
@@ -8,7 +8,7 @@ import 'dart:convert';import 'dart:typed_data';import 'file_expiration_after.dar
 /// - `user_data`: Flexible file type for any purpose
 /// - `evals`: Used for eval data sets
 /// 
-final class CreateFileRequestPurpose {const CreateFileRequestPurpose._(this.value);
+@immutable final class CreateFileRequestPurpose {const CreateFileRequestPurpose._(this.value);
 
 factory CreateFileRequestPurpose.fromJson(String json) { return switch (json) {
   'assistants' => assistants,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateFileRequestPurpose($value)'; } 
  }
-final class CreateFileRequest {const CreateFileRequest({required this.file, required this.purpose, this.expiresAfter, });
+@immutable final class CreateFileRequest {const CreateFileRequest({required this.file, required this.purpose, this.expiresAfter, });
 
 factory CreateFileRequest.fromJson(Map<String, dynamic> json) { return CreateFileRequest(
   file: base64Decode(json['file'] as String),

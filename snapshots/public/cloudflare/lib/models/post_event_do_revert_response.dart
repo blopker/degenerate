@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_do_revert_response_properties.dart';final class PostEventDoRevertResponse {const PostEventDoRevertResponse({required this.properties, required this.$required, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_do_revert_response_properties.dart';@immutable final class PostEventDoRevertResponse {const PostEventDoRevertResponse({required this.properties, required this.$required, required this.type, });
 
 factory PostEventDoRevertResponse.fromJson(Map<String, dynamic> json) { return PostEventDoRevertResponse(
   properties: PostEventDoRevertResponseProperties.fromJson(json['properties'] as Map<String, dynamic>),

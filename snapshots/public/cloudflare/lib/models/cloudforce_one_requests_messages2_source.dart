@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudforceOneRequestsMessages2Source {const CloudforceOneRequestsMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudforceOneRequestsMessages2Source {const CloudforceOneRequestsMessages2Source({this.pointer});
 
 factory CloudforceOneRequestsMessages2Source.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsMessages2Source(
   pointer: json['pointer'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_column.dart';final class WebhookProjectColumnCreatedAction {const WebhookProjectColumnCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_column.dart';@immutable final class WebhookProjectColumnCreatedAction {const WebhookProjectColumnCreatedAction._(this.value);
 
 factory WebhookProjectColumnCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookProjectColumnCreatedAction($value)'; } 
  }
-final class WebhookProjectColumnCreated {const WebhookProjectColumnCreated({required this.action, this.enterprise, this.installation, this.organization, required this.projectColumn, this.repository, this.sender, });
+@immutable final class WebhookProjectColumnCreated {const WebhookProjectColumnCreated({required this.action, required this.projectColumn, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
 factory WebhookProjectColumnCreated.fromJson(Map<String, dynamic> json) { return WebhookProjectColumnCreated(
   action: WebhookProjectColumnCreatedAction.fromJson(json['action'] as String),

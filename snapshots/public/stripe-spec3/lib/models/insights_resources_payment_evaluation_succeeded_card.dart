@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Result of the address line 1 check.
-final class InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check {const InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Result of the address line 1 check.
+@immutable final class InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check {const InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check._(this.value);
 
 factory InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check.fromJson(String json) { return switch (json) {
   'fail' => fail,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check($value)'; } 
  }
 /// Indicates whether the cardholder provided a postal code and if it matched the cardholder’s billing address.
-final class InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck {const InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck._(this.value);
+@immutable final class InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck {const InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck._(this.value);
 
 factory InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck.fromJson(String json) { return switch (json) {
   'fail' => fail,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationSucceededCardAddressPostalCodeCheck($value)'; } 
  }
 /// Result of the CVC check.
-final class InsightsResourcesPaymentEvaluationSucceededCardCvcCheck {const InsightsResourcesPaymentEvaluationSucceededCardCvcCheck._(this.value);
+@immutable final class InsightsResourcesPaymentEvaluationSucceededCardCvcCheck {const InsightsResourcesPaymentEvaluationSucceededCardCvcCheck._(this.value);
 
 factory InsightsResourcesPaymentEvaluationSucceededCardCvcCheck.fromJson(String json) { return switch (json) {
   'fail' => fail,
@@ -94,7 +94,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationSucceededCardCvcCheck($value)'; } 
  }
 /// Details of an succeeded card outcome attached to this payment evaluation.
-final class InsightsResourcesPaymentEvaluationSucceededCard {const InsightsResourcesPaymentEvaluationSucceededCard({required this.addressLine1Check, required this.addressPostalCodeCheck, required this.cvcCheck, });
+@immutable final class InsightsResourcesPaymentEvaluationSucceededCard {const InsightsResourcesPaymentEvaluationSucceededCard({required this.addressLine1Check, required this.addressPostalCodeCheck, required this.cvcCheck, });
 
 factory InsightsResourcesPaymentEvaluationSucceededCard.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationSucceededCard(
   addressLine1Check: InsightsResourcesPaymentEvaluationSucceededCardAddressLine1Check.fromJson(json['address_line1_check'] as String),

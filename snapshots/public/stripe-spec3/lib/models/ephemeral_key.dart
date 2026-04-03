@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class EphemeralKeyObject {const EphemeralKeyObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class EphemeralKeyObject {const EphemeralKeyObject._(this.value);
 
 factory EphemeralKeyObject.fromJson(String json) { return switch (json) {
   'ephemeral_key' => ephemeralKey,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'EphemeralKeyObject($value)'; } 
  }
 /// 
-final class EphemeralKey {const EphemeralKey({required this.created, required this.expires, required this.id, required this.livemode, required this.object, this.secret, });
+@immutable final class EphemeralKey {const EphemeralKey({required this.created, required this.expires, required this.id, required this.livemode, required this.object, this.secret, });
 
 factory EphemeralKey.fromJson(Map<String, dynamic> json) { return EphemeralKey(
   created: (json['created'] as num).toInt(),

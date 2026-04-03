@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Move rule to after rule with ID.
-final class ShieldBefore {const ShieldBefore({this.before});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Move rule to after rule with ID.
+@immutable final class ShieldBefore {const ShieldBefore({this.before});
 
 factory ShieldBefore.fromJson(Map<String, dynamic> json) { return ShieldBefore(
   before: json['before'] as String?,

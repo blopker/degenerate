@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkflowUsageBillableWindows {const WorkflowUsageBillableWindows({this.totalMs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowUsageBillableWindows {const WorkflowUsageBillableWindows({this.totalMs});
 
 factory WorkflowUsageBillableWindows.fromJson(Map<String, dynamic> json) { return WorkflowUsageBillableWindows(
   totalMs: json['total_ms'] != null ? (json['total_ms'] as num).toInt() : null,

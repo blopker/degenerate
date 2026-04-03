@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payments_primitives_payment_records_resource_amount.dart';import 'payments_primitives_payment_records_resource_customer_details.dart';import 'payments_primitives_payment_records_resource_payment_method_details.dart';import 'payments_primitives_payment_records_resource_processor_details.dart';import 'payments_primitives_payment_records_resource_shipping_details.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
-final class PaymentAttemptRecordCustomerPresence {const PaymentAttemptRecordCustomerPresence._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_amount.dart';import 'payments_primitives_payment_records_resource_customer_details.dart';import 'payments_primitives_payment_records_resource_payment_method_details.dart';import 'payments_primitives_payment_records_resource_processor_details.dart';import 'payments_primitives_payment_records_resource_shipping_details.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
+@immutable final class PaymentAttemptRecordCustomerPresence {const PaymentAttemptRecordCustomerPresence._(this.value);
 
 factory PaymentAttemptRecordCustomerPresence.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentAttemptRecordCustomerPresence($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class PaymentAttemptRecordObject {const PaymentAttemptRecordObject._(this.value);
+@immutable final class PaymentAttemptRecordObject {const PaymentAttemptRecordObject._(this.value);
 
 factory PaymentAttemptRecordObject.fromJson(String json) { return switch (json) {
   'payment_attempt_record' => paymentAttemptRecord,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentAttemptRecordObject($value)'; } 
  }
 /// Indicates who reported the payment.
-final class PaymentAttemptRecordReportedBy {const PaymentAttemptRecordReportedBy._(this.value);
+@immutable final class PaymentAttemptRecordReportedBy {const PaymentAttemptRecordReportedBy._(this.value);
 
 factory PaymentAttemptRecordReportedBy.fromJson(String json) { return switch (json) {
   'self' => self,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Each payment attempt tries to collect a fixed amount of money from a fixed customer and payment
 /// method. Payment Attempt Records are attached to Payment Records. Only one attempt per Payment Record
 /// can have guaranteed funds.
-final class PaymentAttemptRecord {const PaymentAttemptRecord({required this.amount, required this.amountAuthorized, required this.amountCanceled, required this.amountFailed, required this.amountGuaranteed, required this.amountRefunded, required this.amountRequested, this.application, required this.created, this.customerDetails, this.customerPresence, this.description, required this.id, required this.livemode, required this.metadata, required this.object, this.paymentMethodDetails, this.paymentRecord, required this.processorDetails, required this.reportedBy, this.shippingDetails, });
+@immutable final class PaymentAttemptRecord {const PaymentAttemptRecord({required this.amount, required this.amountAuthorized, required this.amountCanceled, required this.amountFailed, required this.amountGuaranteed, required this.amountRefunded, required this.amountRequested, required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.processorDetails, required this.reportedBy, this.application, this.customerDetails, this.customerPresence, this.description, this.paymentMethodDetails, this.paymentRecord, this.shippingDetails, });
 
 factory PaymentAttemptRecord.fromJson(Map<String, dynamic> json) { return PaymentAttemptRecord(
   amount: PaymentsPrimitivesPaymentRecordsResourceAmount.fromJson(json['amount'] as Map<String, dynamic>),

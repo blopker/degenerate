@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_email_routing_timeseries_group_by_encrypted_response_result.dart';final class RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse {const RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_timeseries_group_by_encrypted_response_result.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse {const RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse({required this.result, required this.success, });
 
 factory RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponse(
   result: RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResult.fromJson(json['result'] as Map<String, dynamic>),

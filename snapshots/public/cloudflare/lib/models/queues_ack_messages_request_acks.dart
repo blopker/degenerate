@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mq_lease_id.dart';final class QueuesAckMessagesRequestAcks {const QueuesAckMessagesRequestAcks({this.leaseId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_lease_id.dart';@immutable final class QueuesAckMessagesRequestAcks {const QueuesAckMessagesRequestAcks({this.leaseId});
 
 factory QueuesAckMessagesRequestAcks.fromJson(Map<String, dynamic> json) { return QueuesAckMessagesRequestAcks(
   leaseId: json['lease_id'] != null ? MqLeaseId.fromJson(json['lease_id'] as String) : null,

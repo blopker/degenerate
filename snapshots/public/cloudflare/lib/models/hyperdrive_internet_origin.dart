@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class HyperdriveInternetOrigin {const HyperdriveInternetOrigin({required this.host, required this.port, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HyperdriveInternetOrigin {const HyperdriveInternetOrigin({required this.host, required this.port, });
 
 factory HyperdriveInternetOrigin.fromJson(Map<String, dynamic> json) { return HyperdriveInternetOrigin(
   host: json['host'] as String,

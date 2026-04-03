@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_guaranteed_request_metadata.dart';final class PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest {const PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest({this.expand, required this.guaranteedAt, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_guaranteed_request_metadata.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest {const PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest({required this.guaranteedAt, this.expand, this.metadata, });
 
 factory PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

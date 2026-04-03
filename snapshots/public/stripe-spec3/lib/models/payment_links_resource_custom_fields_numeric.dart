@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentLinksResourceCustomFieldsNumeric {const PaymentLinksResourceCustomFieldsNumeric({this.defaultValue, this.maximumLength, this.minimumLength, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentLinksResourceCustomFieldsNumeric {const PaymentLinksResourceCustomFieldsNumeric({this.defaultValue, this.maximumLength, this.minimumLength, });
 
 factory PaymentLinksResourceCustomFieldsNumeric.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomFieldsNumeric(
   defaultValue: json['default_value'] as String?,

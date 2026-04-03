@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The Kanji variation of the full address of the location (Japan only).
-final class PostTerminalLocationsRequestAddressKanji {const PostTerminalLocationsRequestAddressKanji({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, this.town, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Kanji variation of the full address of the location (Japan only).
+@immutable final class PostTerminalLocationsRequestAddressKanji {const PostTerminalLocationsRequestAddressKanji({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, this.town, });
 
 factory PostTerminalLocationsRequestAddressKanji.fromJson(Map<String, dynamic> json) { return PostTerminalLocationsRequestAddressKanji(
   city: json['city'] as String?,

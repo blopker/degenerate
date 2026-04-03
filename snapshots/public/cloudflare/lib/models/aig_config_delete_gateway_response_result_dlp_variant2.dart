@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_gateway_response_result_dlp_variant2_policies.dart';final class AigConfigDeleteGatewayResponseResultDlpVariant2 {const AigConfigDeleteGatewayResponseResultDlpVariant2({required this.enabled, required this.policies, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_gateway_response_result_dlp_variant2_policies.dart';@immutable final class AigConfigDeleteGatewayResponseResultDlpVariant2 {const AigConfigDeleteGatewayResponseResultDlpVariant2({required this.enabled, required this.policies, });
 
 factory AigConfigDeleteGatewayResponseResultDlpVariant2.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayResponseResultDlpVariant2(
   enabled: json['enabled'] as bool,

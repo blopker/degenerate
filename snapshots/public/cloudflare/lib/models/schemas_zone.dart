@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SchemasZone {const SchemasZone({this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SchemasZone {const SchemasZone({this.name});
 
 factory SchemasZone.fromJson(Map<String, dynamic> json) { return SchemasZone(
   name: json['name'] as String?,

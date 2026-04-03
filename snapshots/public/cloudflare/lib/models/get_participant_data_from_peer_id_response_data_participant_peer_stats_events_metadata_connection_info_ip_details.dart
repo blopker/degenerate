@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'get_participant_data_from_peer_id_response_data_participant_peer_stats_events_metadata_connection_info_ip_details_asn.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails {const GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails({this.asn, this.city, this.country, this.ip, this.loc, this.postal, this.region, this.timezone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_stats_events_metadata_connection_info_ip_details_asn.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails {const GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails({this.asn, this.city, this.country, this.ip, this.loc, this.postal, this.region, this.timezone, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails(
   asn: json['asn'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetailsAsn.fromJson(json['asn'] as Map<String, dynamic>) : null,

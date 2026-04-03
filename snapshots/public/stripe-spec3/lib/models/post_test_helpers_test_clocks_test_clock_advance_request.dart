@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersTestClocksTestClockAdvanceRequest {const PostTestHelpersTestClocksTestClockAdvanceRequest({this.expand, required this.frozenTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersTestClocksTestClockAdvanceRequest {const PostTestHelpersTestClocksTestClockAdvanceRequest({required this.frozenTime, this.expand, });
 
 factory PostTestHelpersTestClocksTestClockAdvanceRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTestClocksTestClockAdvanceRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

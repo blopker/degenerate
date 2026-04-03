@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ReposRemoveUserAccessRestrictionsRequest {const ReposRemoveUserAccessRestrictionsRequest({required this.users});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposRemoveUserAccessRestrictionsRequest {const ReposRemoveUserAccessRestrictionsRequest({required this.users});
 
 factory ReposRemoveUserAccessRestrictionsRequest.fromJson(Map<String, dynamic> json) { return ReposRemoveUserAccessRestrictionsRequest(
   users: (json['users'] as List<dynamic>).map((e) => e as String).toList(),

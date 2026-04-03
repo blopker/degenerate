@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_embedded_account_features_claim.dart';/// 
-final class ConnectEmbeddedAccountConfigClaim {const ConnectEmbeddedAccountConfigClaim({required this.enabled, required this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_embedded_account_features_claim.dart';/// 
+@immutable final class ConnectEmbeddedAccountConfigClaim {const ConnectEmbeddedAccountConfigClaim({required this.enabled, required this.features, });
 
 factory ConnectEmbeddedAccountConfigClaim.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedAccountConfigClaim(
   enabled: json['enabled'] as bool,

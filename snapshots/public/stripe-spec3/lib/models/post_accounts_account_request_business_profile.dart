@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_business_profile_annual_revenue.dart';import 'post_accounts_account_request_business_profile_monthly_estimated_revenue.dart';import 'post_accounts_account_request_business_profile_support_address.dart';import 'post_accounts_account_request_business_profile_support_url.dart';final class PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation {const PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_business_profile_annual_revenue.dart';import 'post_accounts_account_request_business_profile_monthly_estimated_revenue.dart';import 'post_accounts_account_request_business_profile_support_address.dart';import 'post_accounts_account_request_business_profile_support_url.dart';@immutable final class PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation {const PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation._(this.value);
 
 factory PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation.fromJson(String json) { return switch (json) {
   'lgbtqi_owned_business' => lgbtqiOwnedBusiness,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostAccountsAccountRequestBusinessProfileMinorityOwnedBusinessDesignation($value)'; } 
  }
 /// Business information about the account.
-final class PostAccountsAccountRequestBusinessProfile {const PostAccountsAccountRequestBusinessProfile({this.annualRevenue, this.estimatedWorkerCount, this.mcc, this.minorityOwnedBusinessDesignation, this.monthlyEstimatedRevenue, this.name, this.productDescription, this.supportAddress, this.supportEmail, this.supportPhone, this.supportUrl, this.url, });
+@immutable final class PostAccountsAccountRequestBusinessProfile {const PostAccountsAccountRequestBusinessProfile({this.annualRevenue, this.estimatedWorkerCount, this.mcc, this.minorityOwnedBusinessDesignation, this.monthlyEstimatedRevenue, this.name, this.productDescription, this.supportAddress, this.supportEmail, this.supportPhone, this.supportUrl, this.url, });
 
 factory PostAccountsAccountRequestBusinessProfile.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestBusinessProfile(
   annualRevenue: json['annual_revenue'] != null ? PostAccountsAccountRequestBusinessProfileAnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>) : null,

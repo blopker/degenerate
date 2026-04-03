@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type discriminator that is always `input_text`.
-final class UserMessageInputTextType {const UserMessageInputTextType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `input_text`.
+@immutable final class UserMessageInputTextType {const UserMessageInputTextType._(this.value);
 
 factory UserMessageInputTextType.fromJson(String json) { return switch (json) {
   'input_text' => inputText,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UserMessageInputTextType($value)'; } 
  }
 /// Text block that a user contributed to the thread.
-final class UserMessageInputText {const UserMessageInputText({this.type = UserMessageInputTextType.inputText, required this.text, });
+@immutable final class UserMessageInputText {const UserMessageInputText({required this.text, this.type = UserMessageInputTextType.inputText, });
 
 factory UserMessageInputText.fromJson(Map<String, dynamic> json) { return UserMessageInputText(
   type: UserMessageInputTextType.fromJson(json['type'] as String),

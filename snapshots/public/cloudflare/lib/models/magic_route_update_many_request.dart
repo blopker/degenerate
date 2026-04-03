@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_route_update_single_request.dart';final class MagicRouteUpdateManyRequest {const MagicRouteUpdateManyRequest({required this.routes});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_route_update_single_request.dart';@immutable final class MagicRouteUpdateManyRequest {const MagicRouteUpdateManyRequest({required this.routes});
 
 factory MagicRouteUpdateManyRequest.fromJson(Map<String, dynamic> json) { return MagicRouteUpdateManyRequest(
   routes: (json['routes'] as List<dynamic>).map((e) => MagicRouteUpdateSingleRequest.fromJson(e as Map<String, dynamic>)).toList(),

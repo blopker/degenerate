@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurringInterval {const PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurringInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurringInterval {const PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurringInterval._(this.value);
 
 factory PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurringInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurringInterval($value)'; } 
  }
-final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurring {const PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurring({required this.interval, this.intervalCount, });
+@immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurring {const PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurring({required this.interval, this.intervalCount, });
 
 factory PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurring.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurring(
   interval: PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurringInterval.fromJson(json['interval'] as String),

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObservabilityQueryResultsEventsSeriesDataAggregates {const WorkersObservabilityQueryResultsEventsSeriesDataAggregates({required this.count, required this.firstSeen, required this.interval, required this.lastSeen, this.bin, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryResultsEventsSeriesDataAggregates {const WorkersObservabilityQueryResultsEventsSeriesDataAggregates({required this.count, required this.firstSeen, required this.interval, required this.lastSeen, this.bin, });
 
 factory WorkersObservabilityQueryResultsEventsSeriesDataAggregates.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsEventsSeriesDataAggregates(
   count: (json['_count'] as num).toInt(),
   firstSeen: json['_firstSeen'] as String,
   interval: (json['_interval'] as num).toInt(),
   lastSeen: json['_lastSeen'] as String,
-  bin: (json['bin'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  bin: json['bin'] as Map<String, dynamic>?,
 ); }
 
 final int count;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_auto_merge_disabled_pull_request_requested_teams_parent.dart';final class WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamsPrivacy {const WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamsPrivacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_auto_merge_disabled_pull_request_requested_teams_parent.dart';@immutable final class WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamsPrivacy {const WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamsPrivacy._(this.value);
 
 factory WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamsPrivacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeamsPrivacy($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-final class WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeams {const WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeams({this.deleted, this.description, this.htmlUrl, required this.id, this.membersUrl, required this.name, this.nodeId, this.parent, this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
+@immutable final class WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeams {const WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeams({required this.id, required this.name, this.deleted, this.description, this.htmlUrl, this.membersUrl, this.nodeId, this.parent, this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
 
 factory WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeams.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAutoMergeDisabledPullRequestRequestedTeams(
   deleted: json['deleted'] as bool?,

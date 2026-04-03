@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsAccountRequestDocumentsCompanyLicense {const PostAccountsAccountRequestDocumentsCompanyLicense({this.files});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestDocumentsCompanyLicense {const PostAccountsAccountRequestDocumentsCompanyLicense({this.files});
 
 factory PostAccountsAccountRequestDocumentsCompanyLicense.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestDocumentsCompanyLicense(
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),

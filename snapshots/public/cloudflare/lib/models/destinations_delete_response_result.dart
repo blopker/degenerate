@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destinations_delete_response_result_configuration.dart';final class DestinationsDeleteResponseResult {const DestinationsDeleteResponseResult({required this.configuration, required this.enabled, required this.name, required this.scripts, required this.slug, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destinations_delete_response_result_configuration.dart';@immutable final class DestinationsDeleteResponseResult {const DestinationsDeleteResponseResult({required this.configuration, required this.enabled, required this.name, required this.scripts, required this.slug, });
 
 factory DestinationsDeleteResponseResult.fromJson(Map<String, dynamic> json) { return DestinationsDeleteResponseResult(
   configuration: DestinationsDeleteResponseResultConfiguration.fromJson(json['configuration'] as Map<String, dynamic>),

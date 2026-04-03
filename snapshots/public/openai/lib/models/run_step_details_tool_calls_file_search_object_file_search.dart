@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_details_tool_calls_file_search_ranking_options_object.dart';import 'run_step_details_tool_calls_file_search_result_object.dart';/// For now, this is always going to be an empty object.
-final class RunStepDetailsToolCallsFileSearchObjectFileSearch {const RunStepDetailsToolCallsFileSearchObjectFileSearch({this.rankingOptions, this.results, });
+@immutable final class RunStepDetailsToolCallsFileSearchObjectFileSearch {const RunStepDetailsToolCallsFileSearchObjectFileSearch({this.rankingOptions, this.results, });
 
 factory RunStepDetailsToolCallsFileSearchObjectFileSearch.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsFileSearchObjectFileSearch(
   rankingOptions: json['ranking_options'] != null ? RunStepDetailsToolCallsFileSearchRankingOptionsObject.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,

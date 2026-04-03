@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_value_list_item.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class RadarValueListListItemsObject {const RadarValueListListItemsObject._(this.value);
+@immutable final class RadarValueListListItemsObject {const RadarValueListListItemsObject._(this.value);
 
 factory RadarValueListListItemsObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarValueListListItemsObject($value)'; } 
  }
 /// List of items contained within this value list.
-final class RadarValueListListItems {const RadarValueListListItems({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class RadarValueListListItems {const RadarValueListListItems({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory RadarValueListListItems.fromJson(Map<String, dynamic> json) { return RadarValueListListItems(
   data: (json['data'] as List<dynamic>).map((e) => RadarValueListItem.fromJson(e as Map<String, dynamic>)).toList(),

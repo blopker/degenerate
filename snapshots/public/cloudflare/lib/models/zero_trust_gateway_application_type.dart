@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_app_type_id.dart';import 'zero_trust_gateway_app_types_components_schemas_name.dart';import 'zero_trust_gateway_timestamp.dart';final class ZeroTrustGatewayApplicationType {const ZeroTrustGatewayApplicationType({this.createdAt, this.description, this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_app_type_id.dart';import 'zero_trust_gateway_app_types_components_schemas_name.dart';import 'zero_trust_gateway_timestamp.dart';@immutable final class ZeroTrustGatewayApplicationType {const ZeroTrustGatewayApplicationType({this.createdAt, this.description, this.id, this.name, });
 
 factory ZeroTrustGatewayApplicationType.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayApplicationType(
   createdAt: json['created_at'] != null ? ZeroTrustGatewayTimestamp.fromJson(json['created_at'] as String) : null,

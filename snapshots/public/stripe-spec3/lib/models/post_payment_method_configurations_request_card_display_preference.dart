@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsRequestCardDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestCardDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsRequestCardDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestCardDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsRequestCardDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsRequestCardDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsRequestCardDisplayPreference {const PostPaymentMethodConfigurationsRequestCardDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsRequestCardDisplayPreference {const PostPaymentMethodConfigurationsRequestCardDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsRequestCardDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestCardDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestCardDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

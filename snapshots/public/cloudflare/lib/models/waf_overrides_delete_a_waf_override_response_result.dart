@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_overrides_id.dart';final class WafOverridesDeleteAWafOverrideResponseResult {const WafOverridesDeleteAWafOverrideResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_overrides_id.dart';@immutable final class WafOverridesDeleteAWafOverrideResponseResult {const WafOverridesDeleteAWafOverrideResponseResult({this.id});
 
 factory WafOverridesDeleteAWafOverrideResponseResult.fromJson(Map<String, dynamic> json) { return WafOverridesDeleteAWafOverrideResponseResult(
   id: json['id'] != null ? FirewallOverridesId.fromJson(json['id'] as String) : null,

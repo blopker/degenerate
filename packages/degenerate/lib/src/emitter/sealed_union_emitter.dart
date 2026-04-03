@@ -1,16 +1,18 @@
 import 'package:code_builder/code_builder.dart';
-
-import '../ir/ir_types.dart';
-import '../naming.dart';
-import 'emit_utils.dart';
+import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
+import 'package:degenerate/src/naming.dart';
 
 /// Regex to strip angle brackets, commas, and whitespace from type names.
 final _unsafeTypeNameChars = RegExp(r'[<>,\s]');
 
 /// Emits a sealed class hierarchy from an [IrDiscriminatedUnion].
 class DiscriminatedUnionEmitter {
-  final IrDiscriminatedUnion union;
+  /// Creates an emitter for the given discriminated [union].
   const DiscriminatedUnionEmitter(this.union);
+
+  /// The discriminated union IR to emit.
+  final IrDiscriminatedUnion union;
 
   /// The Dart getter name for the discriminator property.
   String get _discDartName => toCamelCase(union.discriminatorProperty);
@@ -18,6 +20,7 @@ class DiscriminatedUnionEmitter {
   /// The original JSON key for the discriminator property.
   String get _discJsonKey => union.discriminatorProperty;
 
+  /// Emit the sealed class hierarchy as code_builder specs.
   List<Spec> emit() {
     final specs = <Spec>[];
     final unknownClassName = '${union.name}\$Unknown';
@@ -105,7 +108,7 @@ class DiscriminatedUnionEmitter {
         ..body = Code(
           "return switch (json['$_discJsonKey']) {\n"
           '$cases\n'
-          "  _ => $unknownClassName(json),\n"
+          '  _ => $unknownClassName(json),\n'
           '};',
         ),
     );
@@ -116,18 +119,11 @@ class DiscriminatedUnionEmitter {
       (b) => b
         ..name = className
         ..modifier = ClassModifier.final$
+        ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
         ..docs.add('/// An unknown variant not defined in the OpenAPI spec.')
         ..docs.add(
           '/// Returned when the server sends a discriminator value that this client does not recognize.',
-        )
-        ..fields.add(
-          Field(
-            (f) => f
-              ..name = 'json'
-              ..modifier = FieldModifier.final$
-              ..type = refer('Map<String, dynamic>'),
-          ),
         )
         ..constructors.add(
           Constructor(
@@ -140,6 +136,14 @@ class DiscriminatedUnionEmitter {
                     ..toThis = true,
                 ),
               ),
+          ),
+        )
+        ..fields.add(
+          Field(
+            (f) => f
+              ..name = 'json'
+              ..modifier = FieldModifier.final$
+              ..type = refer('Map<String, dynamic>'),
           ),
         )
         ..methods.add(
@@ -161,14 +165,18 @@ class DiscriminatedUnionEmitter {
               ..body = const Code('return json;'),
           ),
         )
-        ..methods.add(buildEqualsOverride(
+        ..methods.add(
+          buildEqualsOverride(
             'return identical(this, other) ||\n'
             '    other is $className && json == other.json;',
-          ))
+          ),
+        )
         ..methods.add(buildHashCodeOverride('return json.hashCode;'))
-        ..methods.add(buildToStringOverride(
+        ..methods.add(
+          buildToStringOverride(
             "return '${escapeNameForString(union.name)}.unknown(\$json)';",
-          )),
+          ),
+        ),
     );
   }
 
@@ -228,9 +236,9 @@ class DiscriminatedUnionEmitter {
       final value = buildToJsonCode(f.type, f.name, nullable: isNullable);
       if (!f.isRequired) {
         if (value == f.name) {
-          toJsonEntries.add("  $key: ?${f.name},");
+          toJsonEntries.add('  $key: ?${f.name},');
         } else {
-          toJsonEntries.add("  if (${f.name} != null) $key: $value,");
+          toJsonEntries.add('  if (${f.name} != null) $key: $value,');
         }
       } else {
         toJsonEntries.add('  $key: $value,');
@@ -249,30 +257,22 @@ class DiscriminatedUnionEmitter {
         ? 'return runtimeType.hashCode;'
         : 'return Object.hash(runtimeType, $hashFields);';
 
-    final toStrFields = fields.map((f) {
-      if (f.name.startsWith(r'$')) {
-        final escaped = f.name.replaceAll(r'$', r'\$');
-        return '$escaped: \${${f.name}}';
-      }
-      return '${f.name}: \$${f.name}';
-    }).join(', ');
+    final toStrFields = fields
+        .map((f) {
+          if (f.name.startsWith(r'$')) {
+            final escaped = f.name.replaceAll(r'$', r'\$');
+            return '$escaped: \${${f.name}}';
+          }
+          return '${f.name}: \$${f.name}';
+        })
+        .join(', ');
 
     return Class(
       (b) => b
         ..name = className
         ..modifier = ClassModifier.final$
+        ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = _discDartName
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = refer('String')
-              ..body = Code("return '$discValue';"),
-          ),
-        )
-        ..fields.addAll(fieldDecls)
         ..constructors.add(
           Constructor(
             (c) => c
@@ -295,6 +295,17 @@ class DiscriminatedUnionEmitter {
               ..body = Code('return $className(\n$fromJsonArgs\n);'),
           ),
         )
+        ..fields.addAll(fieldDecls)
+        ..methods.add(
+          Method(
+            (m) => m
+              ..name = _discDartName
+              ..type = MethodType.getter
+              ..annotations.add(refer('override'))
+              ..returns = refer('String')
+              ..body = Code("return '$discValue';"),
+          ),
+        )
         ..methods.add(
           Method(
             (m) => m
@@ -306,9 +317,11 @@ class DiscriminatedUnionEmitter {
         )
         ..methods.add(buildEqualsOverride(eqBody))
         ..methods.add(buildHashCodeOverride(hashBody))
-        ..methods.add(buildToStringOverride(
+        ..methods.add(
+          buildToStringOverride(
             "return '${escapeNameForString(className)}($toStrFields)';",
-          )),
+          ),
+        ),
     );
   }
 
@@ -337,25 +350,8 @@ class DiscriminatedUnionEmitter {
       (b) => b
         ..name = className
         ..modifier = ClassModifier.final$
+        ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = _discDartName
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = refer('String')
-              ..body = Code("return '$discValue';"),
-          ),
-        )
-        ..fields.add(
-          Field(
-            (f) => f
-              ..name = fieldName
-              ..modifier = FieldModifier.final$
-              ..type = irTypeToReference(type),
-          ),
-        )
         ..constructors.add(
           Constructor(
             (c) => c
@@ -386,6 +382,24 @@ class DiscriminatedUnionEmitter {
               ),
           ),
         )
+        ..fields.add(
+          Field(
+            (f) => f
+              ..name = fieldName
+              ..modifier = FieldModifier.final$
+              ..type = irTypeToReference(type),
+          ),
+        )
+        ..methods.add(
+          Method(
+            (m) => m
+              ..name = _discDartName
+              ..type = MethodType.getter
+              ..annotations.add(refer('override'))
+              ..returns = refer('String')
+              ..body = Code("return '$discValue';"),
+          ),
+        )
         ..methods.add(
           Method(
             (m) => m
@@ -395,32 +409,42 @@ class DiscriminatedUnionEmitter {
               ..body = Code(_refVariantToJsonBody(type, fieldName)),
           ),
         )
-        ..methods.add(buildEqualsOverride(
+        ..methods.add(
+          buildEqualsOverride(
             'return identical(this, other) ||\n'
             '    other is $className && $fieldName == other.$fieldName;',
-          ))
+          ),
+        )
         ..methods.add(buildHashCodeOverride('return $fieldName.hashCode;'))
         ..methods.add(() {
-            final String fieldStr;
-            if (fieldName.startsWith(r'$')) {
-              final escaped = fieldName.replaceAll(r'$', r'\$');
-              fieldStr = '$escaped: \${$fieldName}';
-            } else {
-              fieldStr = '$fieldName: \$$fieldName';
-            }
-            return buildToStringOverride(
-              "return '${escapeNameForString(className)}($fieldStr)';",
-            );
-          }()),
+          final String fieldStr;
+          if (fieldName.startsWith(r'$')) {
+            final escaped = fieldName.replaceAll(r'$', r'\$');
+            fieldStr = '$escaped: \${$fieldName}';
+          } else {
+            fieldStr = '$fieldName: \$$fieldName';
+          }
+          return buildToStringOverride(
+            "return '${escapeNameForString(className)}($fieldStr)';",
+          );
+        }()),
     );
   }
 }
 
 /// Emits a sealed class with try-parse from an [IrUntaggedUnion].
 class UntaggedUnionEmitter {
+  /// Creates an emitter for the given untagged [union].
+  const UntaggedUnionEmitter(
+    this.union, {
+    this.typeRegistry = const {},
+  });
+
+  /// The untagged union IR to emit.
   final IrUntaggedUnion union;
+
+  /// Registry of all known IR types for resolution.
   final Map<String, IrType> typeRegistry;
-  const UntaggedUnionEmitter(this.union, {this.typeRegistry = const {}});
 
   /// Check if a type (possibly via IrTypeRef) is a union/sealed type.
   bool _isUnionType(IrType type) {
@@ -432,6 +456,7 @@ class UntaggedUnionEmitter {
         resolved is IrAnyOf;
   }
 
+  /// Emit the sealed class hierarchy as code_builder specs.
   List<Spec> emit() {
     final specs = <Spec>[];
 
@@ -547,7 +572,8 @@ class UntaggedUnionEmitter {
         final refName = typeName;
         if (_isUnionType(variant)) {
           // Union types don't have canParse - just try fromJson.
-          // Their own fromJson handles unknown values, so this is unconditional.
+          // Their own fromJson handles unknown values, so this is
+          // unconditional.
           checks.add('  return $className($refName.fromJson(json));');
           hasUnconditionalReturn = true;
         } else {
@@ -589,25 +615,8 @@ class UntaggedUnionEmitter {
       (b) => b
         ..name = className
         ..modifier = ClassModifier.final$
+        ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'value'
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = irTypeToReference(variant)
-              ..body = const Code('return _value;'),
-          ),
-        )
-        ..fields.add(
-          Field(
-            (f) => f
-              ..name = '_value'
-              ..modifier = FieldModifier.final$
-              ..type = irTypeToReference(variant),
-          ),
-        )
         ..constructors.add(
           Constructor(
             (c) => c
@@ -619,6 +628,24 @@ class UntaggedUnionEmitter {
                     ..toThis = true,
                 ),
               ),
+          ),
+        )
+        ..fields.add(
+          Field(
+            (f) => f
+              ..name = '_value'
+              ..modifier = FieldModifier.final$
+              ..type = irTypeToReference(variant),
+          ),
+        )
+        ..methods.add(
+          Method(
+            (m) => m
+              ..name = 'value'
+              ..type = MethodType.getter
+              ..annotations.add(refer('override'))
+              ..returns = irTypeToReference(variant)
+              ..body = const Code('return _value;'),
           ),
         )
         ..methods.addAll([
@@ -640,26 +667,9 @@ class UntaggedUnionEmitter {
       (b) => b
         ..name = className
         ..modifier = ClassModifier.final$
+        ..annotations.add(refer('immutable'))
         ..extend = refer(union.name)
         ..docs.add('/// An unknown variant not defined in the OpenAPI spec.')
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'value'
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = refer('dynamic')
-              ..body = const Code("return _value ?? '';"),
-          ),
-        )
-        ..fields.add(
-          Field(
-            (f) => f
-              ..name = '_value'
-              ..modifier = FieldModifier.final$
-              ..type = refer('dynamic'),
-          ),
-        )
         ..constructors.add(
           Constructor(
             (c) => c
@@ -671,6 +681,24 @@ class UntaggedUnionEmitter {
                     ..toThis = true,
                 ),
               ),
+          ),
+        )
+        ..fields.add(
+          Field(
+            (f) => f
+              ..name = '_value'
+              ..modifier = FieldModifier.final$
+              ..type = refer('dynamic'),
+          ),
+        )
+        ..methods.add(
+          Method(
+            (m) => m
+              ..name = 'value'
+              ..type = MethodType.getter
+              ..annotations.add(refer('override'))
+              ..returns = refer('dynamic')
+              ..body = const Code("return _value ?? '';"),
           ),
         )
         ..methods.addAll([
@@ -689,9 +717,17 @@ class UntaggedUnionEmitter {
 
 /// Emits a final class with nullable variant fields from an [IrAnyOf].
 class AnyOfEmitter {
+  /// Creates an emitter for the given [anyOf] type.
+  const AnyOfEmitter(
+    this.anyOf, {
+    this.typeRegistry = const {},
+  });
+
+  /// The anyOf IR to emit.
   final IrAnyOf anyOf;
+
+  /// Registry of all known IR types for resolution.
   final Map<String, IrType> typeRegistry;
-  const AnyOfEmitter(this.anyOf, {this.typeRegistry = const {}});
 
   /// Resolve an [IrTypeRef] to its underlying type, if available.
   IrType _resolveType(IrType type) {
@@ -737,6 +773,7 @@ class AnyOfEmitter {
     return variants.any(check);
   }
 
+  /// Emit the anyOf class as code_builder specs.
   List<Spec> emit() {
     // Deduplicate variants by type name - anyOf specs can list the same type
     // multiple times (e.g., 29 String variants). Only keep the first of each.
@@ -810,7 +847,8 @@ class AnyOfEmitter {
   Constructor _buildFromJson(
     List<({String name, IrType type, String typeName})> fields,
   ) {
-    // If all variants are objects/refs (have canParse), accept Map<String, dynamic>.
+    // If all variants are objects/refs (have canParse), accept Map<String,
+    // dynamic>.
     // Otherwise accept Object? to support primitive/enum variants.
     final allObjectLike = fields.every(
       (f) =>
@@ -823,7 +861,8 @@ class AnyOfEmitter {
     );
     final paramType = allObjectLike ? 'Map<String, dynamic>' : 'dynamic';
 
-    // Only declare 'map' when we actually need it (non-primitive, non-enum variants
+    // Only declare 'map' when we actually need it (non-primitive, non-enum
+    // variants
     // in a mixed-type anyOf).
     final needsMap =
         !allObjectLike &&
@@ -903,7 +942,8 @@ class AnyOfEmitter {
   /// Uses type promotion (is check + direct access) to avoid unnecessary casts.
   /// Generate a single expression for a primitive AnyOf variant.
   /// Uses type checks with promotion to avoid unnecessary casts and to
-  /// prevent breaking type promotion across named arguments in constructor calls.
+  /// prevent breaking type promotion across named arguments in constructor
+  /// calls.
   static String _primitiveAnyOfExpr(IrPrimitive p, String accessor) {
     return switch (p.kind) {
       PrimitiveKind.dynamic_ => accessor,
@@ -929,21 +969,24 @@ class AnyOfEmitter {
   ) {
     final spreads = fields
         .map((f) {
-          // Primitives and enums can't be spread into a Map - include as named entries.
+          // Primitives and enums can't be spread into a Map - include as named
+          // entries.
           if (f.type is IrPrimitive) {
             return "  '${f.name}': ?${f.name},";
           }
           if (f.type is IrEnum) {
             return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
           }
-          // Extension types wrap a primitive - toJson returns a primitive, not a Map.
+          // Extension types wrap a primitive - toJson returns a primitive, not
+          // a Map.
           if (f.type is IrExtensionType) {
             return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
           }
           if (f.type is IrList || f.type is IrMap) {
             return "  '${f.name}': ?${f.name},";
           }
-          // Sealed/union types have toJson returning Object?, so we can't spread.
+          // Sealed/union types have toJson returning Object?, so we can't
+          // spread.
           if (_isUnionType(f.type)) {
             return "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),";
           }

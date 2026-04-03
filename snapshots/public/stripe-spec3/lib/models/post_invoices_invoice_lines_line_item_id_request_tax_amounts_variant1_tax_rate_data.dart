@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataJurisdictionLevel {const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataJurisdictionLevel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataJurisdictionLevel {const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataJurisdictionLevel._(this.value);
 
 factory PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataJurisdictionLevel.fromJson(String json) { return switch (json) {
   'city' => city,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataJurisdictionLevel($value)'; } 
  }
-final class PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataTaxType {const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataTaxType._(this.value);
+@immutable final class PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataTaxType {const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataTaxType._(this.value);
 
 factory PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataTaxType.fromJson(String json) { return switch (json) {
   'amusement_tax' => amusementTax,
@@ -96,7 +96,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateDataTaxType($value)'; } 
  }
-final class PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData {const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData({this.country, this.description, required this.displayName, required this.inclusive, this.jurisdiction, this.jurisdictionLevel, required this.percentage, this.state, this.taxType, });
+@immutable final class PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData {const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData({required this.displayName, required this.inclusive, required this.percentage, this.country, this.description, this.jurisdiction, this.jurisdictionLevel, this.state, this.taxType, });
 
 factory PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData(
   country: json['country'] as String?,

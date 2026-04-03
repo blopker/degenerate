@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bandwidth.dart';final class NscInterconnectCreateGcpPartnerBody {const NscInterconnectCreateGcpPartnerBody({required this.account, required this.type, required this.bandwidth, required this.pairingKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth.dart';@immutable final class NscInterconnectCreateGcpPartnerBody {const NscInterconnectCreateGcpPartnerBody({required this.account, required this.type, required this.bandwidth, required this.pairingKey, });
 
 factory NscInterconnectCreateGcpPartnerBody.fromJson(Map<String, dynamic> json) { return NscInterconnectCreateGcpPartnerBody(
   account: json['account'] as String,

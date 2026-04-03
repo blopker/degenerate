@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CampaignSummaryAlertStats {const CampaignSummaryAlertStats({required this.openCount, required this.closedCount, required this.inProgressCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CampaignSummaryAlertStats {const CampaignSummaryAlertStats({required this.openCount, required this.closedCount, required this.inProgressCount, });
 
 factory CampaignSummaryAlertStats.fromJson(Map<String, dynamic> json) { return CampaignSummaryAlertStats(
   openCount: (json['open_count'] as num).toInt(),

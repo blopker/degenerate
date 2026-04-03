@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdatePortalsResponse404Errors {const UpdatePortalsResponse404Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdatePortalsResponse404Errors {const UpdatePortalsResponse404Errors({required this.code, required this.message, });
 
 factory UpdatePortalsResponse404Errors.fromJson(Map<String, dynamic> json) { return UpdatePortalsResponse404Errors(
   code: (json['code'] as num).toDouble(),

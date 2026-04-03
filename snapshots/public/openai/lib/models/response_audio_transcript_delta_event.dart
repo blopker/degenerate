@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.audio.transcript.delta`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.audio.transcript.delta`.
 /// 
-final class ResponseAudioTranscriptDeltaEventType {const ResponseAudioTranscriptDeltaEventType._(this.value);
+@immutable final class ResponseAudioTranscriptDeltaEventType {const ResponseAudioTranscriptDeltaEventType._(this.value);
 
 factory ResponseAudioTranscriptDeltaEventType.fromJson(String json) { return switch (json) {
   'response.audio.transcript.delta' => responseAudioTranscriptDelta,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseAudioTranscriptDeltaEventType($value)'; } 
  }
 /// Emitted when there is a partial transcript of audio.
-final class ResponseAudioTranscriptDeltaEvent {const ResponseAudioTranscriptDeltaEvent({required this.type, required this.delta, required this.sequenceNumber, });
+@immutable final class ResponseAudioTranscriptDeltaEvent {const ResponseAudioTranscriptDeltaEvent({required this.type, required this.delta, required this.sequenceNumber, });
 
 factory ResponseAudioTranscriptDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseAudioTranscriptDeltaEvent(
   type: ResponseAudioTranscriptDeltaEventType.fromJson(json['type'] as String),

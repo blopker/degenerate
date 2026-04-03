@@ -17,22 +17,22 @@ Future<ApiResult<RadarGetCrawlersSummaryResponseResult, RadarGetCrawlersSummaryR
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (limitPerGroup != null) {
@@ -40,22 +40,22 @@ if (limitPerGroup != null) {
 }
 if (botOperator != null) {
 for (final item in botOperator) {
-  queryParametersList.add(ApiQueryParameter(name: 'botOperator', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'botOperator', value: item));
 }
 }
 if (vertical != null) {
 for (final item in vertical) {
-  queryParametersList.add(ApiQueryParameter(name: 'vertical', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'vertical', value: item));
 }
 }
 if (industry != null) {
 for (final item in industry) {
-  queryParametersList.add(ApiQueryParameter(name: 'industry', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'industry', value: item));
 }
 }
 if (clientType != null) {
 for (final item in clientType) {
-  queryParametersList.add(ApiQueryParameter(name: 'clientType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'clientType', value: item.toJson()));
 }
 }
 if (format != null) {
@@ -96,22 +96,22 @@ if (aggInterval != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (limitPerGroup != null) {
@@ -119,22 +119,22 @@ if (limitPerGroup != null) {
 }
 if (botOperator != null) {
 for (final item in botOperator) {
-  queryParametersList.add(ApiQueryParameter(name: 'botOperator', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'botOperator', value: item));
 }
 }
 if (vertical != null) {
 for (final item in vertical) {
-  queryParametersList.add(ApiQueryParameter(name: 'vertical', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'vertical', value: item));
 }
 }
 if (industry != null) {
 for (final item in industry) {
-  queryParametersList.add(ApiQueryParameter(name: 'industry', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'industry', value: item));
 }
 }
 if (clientType != null) {
 for (final item in clientType) {
-  queryParametersList.add(ApiQueryParameter(name: 'clientType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'clientType', value: item.toJson()));
 }
 }
 if (format != null) {

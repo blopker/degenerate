@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookReleaseEditedChangesTagName {const WebhookReleaseEditedChangesTagName({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookReleaseEditedChangesTagName {const WebhookReleaseEditedChangesTagName({required this.from});
 
 factory WebhookReleaseEditedChangesTagName.fromJson(Map<String, dynamic> json) { return WebhookReleaseEditedChangesTagName(
   from: json['from'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoice_payment_method_options_us_bank_account_linked_account_options.dart';/// Bank account verification method.
-final class InvoicePaymentMethodOptionsUsBankAccountVerificationMethod {const InvoicePaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_us_bank_account_linked_account_options.dart';/// Bank account verification method.
+@immutable final class InvoicePaymentMethodOptionsUsBankAccountVerificationMethod {const InvoicePaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
 
 factory InvoicePaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsUsBankAccountVerificationMethod($value)'; } 
  }
 /// 
-final class InvoicePaymentMethodOptionsUsBankAccount {const InvoicePaymentMethodOptionsUsBankAccount({this.financialConnections, this.verificationMethod, });
+@immutable final class InvoicePaymentMethodOptionsUsBankAccount {const InvoicePaymentMethodOptionsUsBankAccount({this.financialConnections, this.verificationMethod, });
 
 factory InvoicePaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsUsBankAccount(
   financialConnections: json['financial_connections'] != null ? InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptions.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,

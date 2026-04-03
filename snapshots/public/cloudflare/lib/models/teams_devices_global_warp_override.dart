@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_disconnect.dart';/// When the Global WARP override state was updated.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_disconnect.dart';/// When the Global WARP override state was updated.
 extension type TeamsDevicesTimestamp(DateTime value) {
 factory TeamsDevicesTimestamp.fromJson(String json) => TeamsDevicesTimestamp(DateTime.parse(json));
 
 String toJson() => value.toIso8601String();
 
 }
-final class TeamsDevicesGlobalWarpOverride {const TeamsDevicesGlobalWarpOverride({this.disconnect, this.timestamp, });
+@immutable final class TeamsDevicesGlobalWarpOverride {const TeamsDevicesGlobalWarpOverride({this.disconnect, this.timestamp, });
 
 factory TeamsDevicesGlobalWarpOverride.fromJson(Map<String, dynamic> json) { return TeamsDevicesGlobalWarpOverride(
   disconnect: json['disconnect'] != null ? TeamsDevicesDisconnect.fromJson(json['disconnect'] as bool) : null,

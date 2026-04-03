@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_priority.dart';final class CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates {const CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates({this.id, this.priority, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_priority.dart';@immutable final class CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates {const CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates({this.id, this.priority, });
 
 factory CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates.fromJson(Map<String, dynamic> json) { return CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates(
   id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,

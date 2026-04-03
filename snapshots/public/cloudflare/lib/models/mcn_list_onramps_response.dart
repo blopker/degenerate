@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_onramp.dart';final class McnListOnrampsResponse {const McnListOnrampsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_onramp.dart';@immutable final class McnListOnrampsResponse {const McnListOnrampsResponse({this.result});
 
 factory McnListOnrampsResponse.fromJson(Map<String, dynamic> json) { return McnListOnrampsResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => McnOnramp.fromJson(e as Map<String, dynamic>)).toList(),

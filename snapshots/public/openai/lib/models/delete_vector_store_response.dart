@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteVectorStoreResponseObject {const DeleteVectorStoreResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteVectorStoreResponseObject {const DeleteVectorStoreResponseObject._(this.value);
 
 factory DeleteVectorStoreResponseObject.fromJson(String json) { return switch (json) {
   'vector_store.deleted' => vectorStoreDeleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DeleteVectorStoreResponseObject($value)'; } 
  }
-final class DeleteVectorStoreResponse {const DeleteVectorStoreResponse({required this.id, required this.deleted, required this.object, });
+@immutable final class DeleteVectorStoreResponse {const DeleteVectorStoreResponse({required this.id, required this.deleted, required this.object, });
 
 factory DeleteVectorStoreResponse.fromJson(Map<String, dynamic> json) { return DeleteVectorStoreResponse(
   id: json['id'] as String,

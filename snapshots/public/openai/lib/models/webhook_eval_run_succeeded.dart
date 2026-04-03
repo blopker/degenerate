@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_eval_run_succeeded_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_eval_run_succeeded_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookEvalRunSucceededObject {const WebhookEvalRunSucceededObject._(this.value);
+@immutable final class WebhookEvalRunSucceededObject {const WebhookEvalRunSucceededObject._(this.value);
 
 factory WebhookEvalRunSucceededObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `eval.run.succeeded`.
 /// 
-final class WebhookEvalRunSucceededType {const WebhookEvalRunSucceededType._(this.value);
+@immutable final class WebhookEvalRunSucceededType {const WebhookEvalRunSucceededType._(this.value);
 
 factory WebhookEvalRunSucceededType.fromJson(String json) { return switch (json) {
   'eval.run.succeeded' => evalRunSucceeded,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when an eval run has succeeded.
 /// 
-final class WebhookEvalRunSucceeded {const WebhookEvalRunSucceeded({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookEvalRunSucceeded {const WebhookEvalRunSucceeded({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookEvalRunSucceeded.fromJson(Map<String, dynamic> json) { return WebhookEvalRunSucceeded(
   createdAt: (json['created_at'] as num).toInt(),

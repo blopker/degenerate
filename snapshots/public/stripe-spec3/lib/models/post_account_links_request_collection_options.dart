@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountLinksRequestCollectionOptionsFields {const PostAccountLinksRequestCollectionOptionsFields._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountLinksRequestCollectionOptionsFields {const PostAccountLinksRequestCollectionOptionsFields._(this.value);
 
 factory PostAccountLinksRequestCollectionOptionsFields.fromJson(String json) { return switch (json) {
   'currently_due' => currentlyDue,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountLinksRequestCollectionOptionsFields($value)'; } 
  }
-final class PostAccountLinksRequestCollectionOptionsFutureRequirements {const PostAccountLinksRequestCollectionOptionsFutureRequirements._(this.value);
+@immutable final class PostAccountLinksRequestCollectionOptionsFutureRequirements {const PostAccountLinksRequestCollectionOptionsFutureRequirements._(this.value);
 
 factory PostAccountLinksRequestCollectionOptionsFutureRequirements.fromJson(String json) { return switch (json) {
   'include' => include,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostAccountLinksRequestCollectionOptionsFutureRequirements($value)'; } 
  }
 /// Specifies the requirements that Stripe collects from connected accounts in the Connect Onboarding flow.
-final class PostAccountLinksRequestCollectionOptions {const PostAccountLinksRequestCollectionOptions({this.fields, this.futureRequirements, });
+@immutable final class PostAccountLinksRequestCollectionOptions {const PostAccountLinksRequestCollectionOptions({this.fields, this.futureRequirements, });
 
 factory PostAccountLinksRequestCollectionOptions.fromJson(Map<String, dynamic> json) { return PostAccountLinksRequestCollectionOptions(
   fields: json['fields'] != null ? PostAccountLinksRequestCollectionOptionsFields.fromJson(json['fields'] as String) : null,

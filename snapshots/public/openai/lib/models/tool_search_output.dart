@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tool.dart';import 'tool_search_execution_type.dart';final class FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tool.dart';import 'tool_search_execution_type.dart';@immutable final class FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum._(this.value);
 
 factory FunctionCallOutputStatusEnum.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FunctionCallOutputStatusEnum($value)'; } 
  }
-final class ToolSearchOutput {const ToolSearchOutput({this.type = 'tool_search_output', required this.id, required this.callId, required this.execution, required this.tools, required this.status, this.createdBy, });
+@immutable final class ToolSearchOutput {const ToolSearchOutput({required this.id, required this.callId, required this.execution, required this.tools, required this.status, this.type = 'tool_search_output', this.createdBy, });
 
 factory ToolSearchOutput.fromJson(Map<String, dynamic> json) { return ToolSearchOutput(
   type: json['type'] as String,

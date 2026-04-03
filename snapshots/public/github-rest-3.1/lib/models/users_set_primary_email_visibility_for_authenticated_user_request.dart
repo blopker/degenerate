@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Denotes whether an email is publicly visible.
-final class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility {const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Denotes whether an email is publicly visible.
+@immutable final class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility {const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility._(this.value);
 
 factory UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility.fromJson(String json) { return switch (json) {
   'public' => public,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility($value)'; } 
  }
-final class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest {const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest({required this.visibility});
+@immutable final class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest {const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest({required this.visibility});
 
 factory UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest(
   visibility: UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility.fromJson(json['visibility'] as String),

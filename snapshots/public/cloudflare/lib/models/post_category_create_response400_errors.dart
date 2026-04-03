@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCategoryCreateResponse400Errors {const PostCategoryCreateResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCategoryCreateResponse400Errors {const PostCategoryCreateResponse400Errors({required this.message});
 
 factory PostCategoryCreateResponse400Errors.fromJson(Map<String, dynamic> json) { return PostCategoryCreateResponse400Errors(
   message: json['message'] as String,

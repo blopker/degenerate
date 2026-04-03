@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_rewrite_uri_query.dart';/// A URI query rewrite.
-final class UriQuery {const UriQuery({required this.query});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rewrite_uri_query.dart';/// A URI query rewrite.
+@immutable final class UriQuery {const UriQuery({required this.query});
 
 factory UriQuery.fromJson(Map<String, dynamic> json) { return UriQuery(
   query: RulesetsRewriteUriQuery.fromJson(json['query'] as Map<String, dynamic>),

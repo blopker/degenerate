@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'balance_settings_resource_payments.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class BalanceSettingsObject {const BalanceSettingsObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_settings_resource_payments.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class BalanceSettingsObject {const BalanceSettingsObject._(this.value);
 
 factory BalanceSettingsObject.fromJson(String json) { return switch (json) {
   'balance_settings' => balanceSettings,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BalanceSettingsObject($value)'; } 
  }
 /// Options for customizing account balances and payout settings for a Stripe platform’s connected accounts.
-final class BalanceSettings {const BalanceSettings({required this.object, required this.payments, });
+@immutable final class BalanceSettings {const BalanceSettings({required this.object, required this.payments, });
 
 factory BalanceSettings.fromJson(Map<String, dynamic> json) { return BalanceSettings(
   object: BalanceSettingsObject.fromJson(json['object'] as String),

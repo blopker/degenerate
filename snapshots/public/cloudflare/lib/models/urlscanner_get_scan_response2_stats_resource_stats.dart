@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UrlscannerGetScanResponse2StatsResourceStats {const UrlscannerGetScanResponse2StatsResourceStats({required this.compression, required this.count, required this.countries, required this.encodedSize, required this.ips, required this.percentage, required this.size, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2StatsResourceStats {const UrlscannerGetScanResponse2StatsResourceStats({required this.compression, required this.count, required this.countries, required this.encodedSize, required this.ips, required this.percentage, required this.size, required this.type, });
 
 factory UrlscannerGetScanResponse2StatsResourceStats.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2StatsResourceStats(
   compression: (json['compression'] as num).toDouble(),

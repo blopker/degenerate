@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_conditional_outputs_false.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_conditional_outputs_true.dart';final class AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalOutputs {const AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalOutputs({required this.$false, required this.$true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_conditional_outputs_false.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_conditional_outputs_true.dart';@immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalOutputs {const AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalOutputs({required this.$false, required this.$true, });
 
 factory AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalOutputs.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalOutputs(
   $false: AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalOutputsFalse.fromJson(json['false'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'forwarded_request_header.dart';/// The HTTP method used to call the destination endpoint.
-final class ForwardedRequestDetailsHttpMethod {const ForwardedRequestDetailsHttpMethod._(this.value);
+@immutable final class ForwardedRequestDetailsHttpMethod {const ForwardedRequestDetailsHttpMethod._(this.value);
 
 factory ForwardedRequestDetailsHttpMethod.fromJson(String json) { return switch (json) {
   'POST' => post,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ForwardedRequestDetailsHttpMethod($value)'; } 
  }
 /// Details about the request forwarded to the destination endpoint.
-final class ForwardedRequestDetails {const ForwardedRequestDetails({required this.body, required this.headers, required this.httpMethod, });
+@immutable final class ForwardedRequestDetails {const ForwardedRequestDetails({required this.body, required this.headers, required this.httpMethod, });
 
 factory ForwardedRequestDetails.fromJson(Map<String, dynamic> json) { return ForwardedRequestDetails(
   body: json['body'] as String,

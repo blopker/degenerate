@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'internal_card.dart';/// 
-final class PaymentMethodDetailsMobilepay {const PaymentMethodDetailsMobilepay({this.card});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'internal_card.dart';/// 
+@immutable final class PaymentMethodDetailsMobilepay {const PaymentMethodDetailsMobilepay({this.card});
 
 factory PaymentMethodDetailsMobilepay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsMobilepay(
   card: json['card'] != null ? InternalCard.fromJson(json['card'] as Map<String, dynamic>) : null,

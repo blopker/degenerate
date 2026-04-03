@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_adaptive_routing.dart';import 'load_balancing_fallback_pool.dart';import 'load_balancing_location_strategy.dart';import 'load_balancing_random_steering.dart';import 'load_balancing_session_affinity.dart';import 'load_balancing_session_affinity_attributes.dart';import 'load_balancing_session_affinity_ttl.dart';import 'load_balancing_steering_policy.dart';import 'load_balancing_ttl.dart';/// A collection of overrides to apply to the load balancer when this rule's condition is true. All fields are optional.
-final class LoadBalancingRules2Overrides {const LoadBalancingRules2Overrides({this.adaptiveRouting, this.countryPools, this.defaultPools, this.fallbackPool, this.locationStrategy, this.popPools, this.randomSteering, this.regionPools, this.sessionAffinity, this.sessionAffinityAttributes, this.sessionAffinityTtl, this.steeringPolicy, this.ttl, });
+@immutable final class LoadBalancingRules2Overrides {const LoadBalancingRules2Overrides({this.adaptiveRouting, this.countryPools, this.defaultPools, this.fallbackPool, this.locationStrategy, this.popPools, this.randomSteering, this.regionPools, this.sessionAffinity, this.sessionAffinityAttributes, this.sessionAffinityTtl, this.steeringPolicy, this.ttl, });
 
 factory LoadBalancingRules2Overrides.fromJson(Map<String, dynamic> json) { return LoadBalancingRules2Overrides(
   adaptiveRouting: json['adaptive_routing'] != null ? LoadBalancingAdaptiveRouting.fromJson(json['adaptive_routing'] as Map<String, dynamic>) : null,
@@ -52,13 +52,13 @@ final LoadBalancingTtl? ttl;
 
 Map<String, dynamic> toJson() { return {
   if (adaptiveRouting != null) 'adaptive_routing': adaptiveRouting?.toJson(),
-  if (countryPools != null) 'country_pools': countryPools?.map((k, v) => MapEntry(k, v)),
+  'country_pools': ?countryPools,
   'default_pools': ?defaultPools,
   if (fallbackPool != null) 'fallback_pool': fallbackPool?.toJson(),
   if (locationStrategy != null) 'location_strategy': locationStrategy?.toJson(),
-  if (popPools != null) 'pop_pools': popPools?.map((k, v) => MapEntry(k, v)),
+  'pop_pools': ?popPools,
   if (randomSteering != null) 'random_steering': randomSteering?.toJson(),
-  if (regionPools != null) 'region_pools': regionPools?.map((k, v) => MapEntry(k, v)),
+  'region_pools': ?regionPools,
   if (sessionAffinity != null) 'session_affinity': sessionAffinity?.toJson(),
   if (sessionAffinityAttributes != null) 'session_affinity_attributes': sessionAffinityAttributes?.toJson(),
   if (sessionAffinityTtl != null) 'session_affinity_ttl': sessionAffinityTtl?.toJson(),

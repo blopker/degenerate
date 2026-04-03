@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_tech_evidence_patterns.dart';final class UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence {const UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence({required this.impliedBy, required this.patterns, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_tech_evidence_patterns.dart';@immutable final class UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence {const UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence({required this.impliedBy, required this.patterns, });
 
 factory UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence(
   impliedBy: (json['impliedBy'] as List<dynamic>).map((e) => e as String).toList(),

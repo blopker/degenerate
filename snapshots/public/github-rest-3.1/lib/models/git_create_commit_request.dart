@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'git_create_commit_request_author.dart';import 'git_create_commit_request_committer.dart';final class GitCreateCommitRequest {const GitCreateCommitRequest({required this.message, required this.tree, this.parents, this.author, this.committer, this.signature, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'git_create_commit_request_author.dart';import 'git_create_commit_request_committer.dart';@immutable final class GitCreateCommitRequest {const GitCreateCommitRequest({required this.message, required this.tree, this.parents, this.author, this.committer, this.signature, });
 
 factory GitCreateCommitRequest.fromJson(Map<String, dynamic> json) { return GitCreateCommitRequest(
   message: json['message'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_analytics_result.dart';final class DnsFirewallAnalyticsTableResponse {const DnsFirewallAnalyticsTableResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_analytics_result.dart';@immutable final class DnsFirewallAnalyticsTableResponse {const DnsFirewallAnalyticsTableResponse({this.result});
 
 factory DnsFirewallAnalyticsTableResponse.fromJson(Map<String, dynamic> json) { return DnsFirewallAnalyticsTableResponse(
   result: json['result'] != null ? DnsAnalyticsResult.fromJson(json['result'] as Map<String, dynamic>) : null,

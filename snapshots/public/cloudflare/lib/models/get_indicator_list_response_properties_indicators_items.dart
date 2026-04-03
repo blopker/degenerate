@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_indicator_list_response_properties_indicators_items_related_events.dart';import 'get_indicator_list_response_properties_indicators_items_tags.dart';final class GetIndicatorListResponsePropertiesIndicatorsItems {const GetIndicatorListResponsePropertiesIndicatorsItems({required this.createdAt, this.datasetId, required this.indicatorType, this.relatedEvents, this.tags, required this.updatedAt, required this.uuid, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_indicator_list_response_properties_indicators_items_related_events.dart';import 'get_indicator_list_response_properties_indicators_items_tags.dart';@immutable final class GetIndicatorListResponsePropertiesIndicatorsItems {const GetIndicatorListResponsePropertiesIndicatorsItems({required this.createdAt, required this.indicatorType, required this.updatedAt, required this.uuid, required this.value, this.datasetId, this.relatedEvents, this.tags, });
 
 factory GetIndicatorListResponsePropertiesIndicatorsItems.fromJson(Map<String, dynamic> json) { return GetIndicatorListResponsePropertiesIndicatorsItems(
   createdAt: DateTime.parse(json['createdAt'] as String),

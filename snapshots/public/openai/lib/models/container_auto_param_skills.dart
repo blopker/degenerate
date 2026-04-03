@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'inline_skill_param.dart';import 'skill_reference_param.dart';sealed class ContainerAutoParamSkills {const ContainerAutoParamSkills();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inline_skill_param.dart';import 'skill_reference_param.dart';sealed class ContainerAutoParamSkills {const ContainerAutoParamSkills();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ContainerAutoParamSkills.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ContainerAutoParamSkills$Unknown; } 
  }
-final class ContainerAutoParamSkillsSkillReference extends ContainerAutoParamSkills {const ContainerAutoParamSkillsSkillReference(this.skillReferenceParam);
+@immutable final class ContainerAutoParamSkillsSkillReference extends ContainerAutoParamSkills {const ContainerAutoParamSkillsSkillReference(this.skillReferenceParam);
 
 factory ContainerAutoParamSkillsSkillReference.fromJson(Map<String, dynamic> json) { return ContainerAutoParamSkillsSkillReference(SkillReferenceParam.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final SkillReferenceParam skillReferenceParam;
 @override int get hashCode { return skillReferenceParam.hashCode; } 
 @override String toString() { return 'ContainerAutoParamSkillsSkillReference(skillReferenceParam: $skillReferenceParam)'; } 
  }
-final class ContainerAutoParamSkillsInline extends ContainerAutoParamSkills {const ContainerAutoParamSkillsInline(this.inlineSkillParam);
+@immutable final class ContainerAutoParamSkillsInline extends ContainerAutoParamSkills {const ContainerAutoParamSkillsInline(this.inlineSkillParam);
 
 factory ContainerAutoParamSkillsInline.fromJson(Map<String, dynamic> json) { return ContainerAutoParamSkillsInline(InlineSkillParam.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final InlineSkillParam inlineSkillParam;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ContainerAutoParamSkills$Unknown extends ContainerAutoParamSkills {const ContainerAutoParamSkills$Unknown(this.json);
+@immutable final class ContainerAutoParamSkills$Unknown extends ContainerAutoParamSkills {const ContainerAutoParamSkills$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

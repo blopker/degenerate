@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metaproperties for Git author/committer information.
-final class WebhookCheckSuiteCompletedCheckSuiteHeadCommitCommitter {const WebhookCheckSuiteCompletedCheckSuiteHeadCommitCommitter({this.date, required this.email, required this.name, this.username, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metaproperties for Git author/committer information.
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteHeadCommitCommitter {const WebhookCheckSuiteCompletedCheckSuiteHeadCommitCommitter({required this.email, required this.name, this.date, this.username, });
 
 factory WebhookCheckSuiteCompletedCheckSuiteHeadCommitCommitter.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteCompletedCheckSuiteHeadCommitCommitter(
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,

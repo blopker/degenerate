@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'file_search_ranker.dart';/// The ranking options for the file search. If not specified, the file search tool will use the `auto` ranker and a score_threshold of 0.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_search_ranker.dart';/// The ranking options for the file search. If not specified, the file search tool will use the `auto` ranker and a score_threshold of 0.
 /// 
 /// See the [file search tool documentation](/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.
 /// 
-final class FileSearchRankingOptions {const FileSearchRankingOptions({this.ranker, required this.scoreThreshold, });
+@immutable final class FileSearchRankingOptions {const FileSearchRankingOptions({required this.scoreThreshold, this.ranker, });
 
 factory FileSearchRankingOptions.fromJson(Map<String, dynamic> json) { return FileSearchRankingOptions(
   ranker: json['ranker'] != null ? FileSearchRanker.fromJson(json['ranker'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataEpsBank {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataEpsBank._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataEpsBank {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataEpsBank._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataEpsBank.fromJson(String json) { return switch (json) {
   'arzte_und_apotheker_bank' => arzteUndApothekerBank,
@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataEpsBank($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataEps {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataEps({this.bank});
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataEps {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataEps({this.bank});
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataEps.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataEps(
   bank: json['bank'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodDataEpsBank.fromJson(json['bank'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_grabpay_display_preference.dart';/// GrabPay is a payment method developed by [Grab](https://www.grab.com/sg/consumer/finance/pay/). GrabPay is a digital wallet - customers maintain a balance in their wallets that they pay out with. Check this [page](https://docs.stripe.com/payments/grabpay) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestGrabpay {const PostPaymentMethodConfigurationsConfigurationRequestGrabpay({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_grabpay_display_preference.dart';/// GrabPay is a payment method developed by [Grab](https://www.grab.com/sg/consumer/finance/pay/). GrabPay is a digital wallet - customers maintain a balance in their wallets that they pay out with. Check this [page](https://docs.stripe.com/payments/grabpay) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestGrabpay {const PostPaymentMethodConfigurationsConfigurationRequestGrabpay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestGrabpay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestGrabpay(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestGrabpayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

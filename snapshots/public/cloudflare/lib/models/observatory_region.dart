@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A test region.
-final class ObservatoryRegion {const ObservatoryRegion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A test region.
+@immutable final class ObservatoryRegion {const ObservatoryRegion._(this.value);
 
 factory ObservatoryRegion.fromJson(String json) { return switch (json) {
   'asia-east1' => asiaEast1,

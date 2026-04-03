@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_paging_response_paging.dart';final class RealtimekitPagingResponse {const RealtimekitPagingResponse({required this.data, required this.paging, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_paging_response_paging.dart';@immutable final class RealtimekitPagingResponse {const RealtimekitPagingResponse({required this.data, required this.paging, required this.success, });
 
 factory RealtimekitPagingResponse.fromJson(Map<String, dynamic> json) { return RealtimekitPagingResponse(
-  data: (json['data'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  data: (json['data'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   paging: RealtimekitPagingResponsePaging.fromJson(json['paging'] as Map<String, dynamic>),
   success: json['success'] as bool,
 ); }

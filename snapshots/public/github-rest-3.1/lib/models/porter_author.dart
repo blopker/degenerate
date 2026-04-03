@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Porter Author
-final class PorterAuthor {const PorterAuthor({required this.id, required this.remoteId, required this.remoteName, required this.email, required this.name, required this.url, required this.importUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Porter Author
+@immutable final class PorterAuthor {const PorterAuthor({required this.id, required this.remoteId, required this.remoteName, required this.email, required this.name, required this.url, required this.importUrl, });
 
 factory PorterAuthor.fromJson(Map<String, dynamic> json) { return PorterAuthor(
   id: (json['id'] as num).toInt(),

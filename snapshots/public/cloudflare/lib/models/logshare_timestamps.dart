@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// By default, timestamps in responses are returned as Unix nanosecond integers. The `?timestamps=` argument can be set to change the format in which response timestamps are returned. Possible values are: `unix`, `unixnano`, `rfc3339`. Note that `unix` and `unixnano` return timestamps as integers; `rfc3339` returns timestamps as strings.
-final class LogshareTimestamps {const LogshareTimestamps._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// By default, timestamps in responses are returned as Unix nanosecond integers. The `?timestamps=` argument can be set to change the format in which response timestamps are returned. Possible values are: `unix`, `unixnano`, `rfc3339`. Note that `unix` and `unixnano` return timestamps as integers; `rfc3339` returns timestamps as strings.
+@immutable final class LogshareTimestamps {const LogshareTimestamps._(this.value);
 
 factory LogshareTimestamps.fromJson(String json) { return switch (json) {
   'unix' => unix,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant3 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant3({required this.gt3dLte16d, required this.gt16dLte31d, required this.gt31dLte91d, required this.gt91dLte121d, required this.gt121d, required this.lte3d, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant3 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant3({required this.gt3dLte16d, required this.gt16dLte31d, required this.gt31dLte91d, required this.gt91dLte121d, required this.gt121d, required this.lte3d, });
 
 factory RadarGetCtTimeseriesGroupResponseResultSerie0Variant3.fromJson(Map<String, dynamic> json) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant3(
   gt3dLte16d: (json['gt_3d_lte_16d'] as List<dynamic>).map((e) => e as String).toList(),

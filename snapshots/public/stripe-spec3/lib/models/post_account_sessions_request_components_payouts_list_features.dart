@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountSessionsRequestComponentsPayoutsListFeatures {const PostAccountSessionsRequestComponentsPayoutsListFeatures();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountSessionsRequestComponentsPayoutsListFeatures {const PostAccountSessionsRequestComponentsPayoutsListFeatures();
 
-factory PostAccountSessionsRequestComponentsPayoutsListFeatures.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsPayoutsListFeatures(
-
-); }
+factory PostAccountSessionsRequestComponentsPayoutsListFeatures.fromJson(Map<String, dynamic> _) { return const PostAccountSessionsRequestComponentsPayoutsListFeatures(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostAccountSessionsRequestComponentsPayoutsListFeatures copyWith() { return PostAccountSessionsRequestComponentsPayoutsListFeatures(
+PostAccountSessionsRequestComponentsPayoutsListFeatures copyWith() { return const PostAccountSessionsRequestComponentsPayoutsListFeatures(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostAccountSessionsRequestComponentsPayoutsListFeatures; } 

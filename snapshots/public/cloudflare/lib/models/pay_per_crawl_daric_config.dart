@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PayPerCrawlBotAccessMode {const PayPerCrawlBotAccessMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PayPerCrawlBotAccessMode {const PayPerCrawlBotAccessMode._(this.value);
 
 factory PayPerCrawlBotAccessMode.fromJson(String json) { return switch (json) {
   'charge' => charge,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PayPerCrawlBotAccessMode($value)'; } 
  }
-final class PayPerCrawlDaricConfig {const PayPerCrawlDaricConfig({this.botOverrides, this.enabled, this.priceUsdMicrocents, });
+@immutable final class PayPerCrawlDaricConfig {const PayPerCrawlDaricConfig({this.botOverrides, this.enabled, this.priceUsdMicrocents, });
 
 factory PayPerCrawlDaricConfig.fromJson(Map<String, dynamic> json) { return PayPerCrawlDaricConfig(
   botOverrides: (json['bot_overrides'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PayPerCrawlBotAccessMode.fromJson(v as String))),

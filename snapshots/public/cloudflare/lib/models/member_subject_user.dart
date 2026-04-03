@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MemberSubjectUser {const MemberSubjectUser({required this.email, required this.id, required this.name, required this.twoFactorAuthenticationEnabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MemberSubjectUser {const MemberSubjectUser({required this.email, required this.id, required this.name, required this.twoFactorAuthenticationEnabled, });
 
 factory MemberSubjectUser.fromJson(Map<String, dynamic> json) { return MemberSubjectUser(
   email: json['email'] as String,

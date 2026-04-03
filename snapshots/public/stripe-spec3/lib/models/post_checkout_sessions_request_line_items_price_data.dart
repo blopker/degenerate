@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_line_items_price_data_product_data.dart';import 'post_checkout_sessions_request_line_items_price_data_recurring.dart';final class PostCheckoutSessionsRequestLineItemsPriceDataTaxBehavior {const PostCheckoutSessionsRequestLineItemsPriceDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_line_items_price_data_product_data.dart';import 'post_checkout_sessions_request_line_items_price_data_recurring.dart';@immutable final class PostCheckoutSessionsRequestLineItemsPriceDataTaxBehavior {const PostCheckoutSessionsRequestLineItemsPriceDataTaxBehavior._(this.value);
 
 factory PostCheckoutSessionsRequestLineItemsPriceDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestLineItemsPriceDataTaxBehavior($value)'; } 
  }
-final class PostCheckoutSessionsRequestLineItemsPriceData {const PostCheckoutSessionsRequestLineItemsPriceData({required this.currency, this.product, this.productData, this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostCheckoutSessionsRequestLineItemsPriceData {const PostCheckoutSessionsRequestLineItemsPriceData({required this.currency, this.product, this.productData, this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostCheckoutSessionsRequestLineItemsPriceData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestLineItemsPriceData(
   currency: json['currency'] as String,

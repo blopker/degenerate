@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_dispute_canceled_evidence.dart';import 'issuing_dispute_duplicate_evidence.dart';import 'issuing_dispute_fraudulent_evidence.dart';import 'issuing_dispute_merchandise_not_as_described_evidence.dart';import 'issuing_dispute_no_valid_authorization_evidence.dart';import 'issuing_dispute_not_received_evidence.dart';import 'issuing_dispute_other_evidence.dart';import 'issuing_dispute_service_not_as_described_evidence.dart';/// The reason for filing the dispute. Its value will match the field containing the evidence.
-final class IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_dispute_canceled_evidence.dart';import 'issuing_dispute_duplicate_evidence.dart';import 'issuing_dispute_fraudulent_evidence.dart';import 'issuing_dispute_merchandise_not_as_described_evidence.dart';import 'issuing_dispute_no_valid_authorization_evidence.dart';import 'issuing_dispute_not_received_evidence.dart';import 'issuing_dispute_other_evidence.dart';import 'issuing_dispute_service_not_as_described_evidence.dart';/// The reason for filing the dispute. Its value will match the field containing the evidence.
+@immutable final class IssuingDisputeEvidenceReason {const IssuingDisputeEvidenceReason._(this.value);
 
 factory IssuingDisputeEvidenceReason.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingDisputeEvidenceReason($value)'; } 
  }
 /// 
-final class IssuingDisputeEvidence {const IssuingDisputeEvidence({this.canceled, this.duplicate, this.fraudulent, this.merchandiseNotAsDescribed, this.noValidAuthorization, this.notReceived, this.other, required this.reason, this.serviceNotAsDescribed, });
+@immutable final class IssuingDisputeEvidence {const IssuingDisputeEvidence({required this.reason, this.canceled, this.duplicate, this.fraudulent, this.merchandiseNotAsDescribed, this.noValidAuthorization, this.notReceived, this.other, this.serviceNotAsDescribed, });
 
 factory IssuingDisputeEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeEvidence(
   canceled: json['canceled'] != null ? IssuingDisputeCanceledEvidence.fromJson(json['canceled'] as Map<String, dynamic>) : null,

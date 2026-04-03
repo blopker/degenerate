@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssueSearchResultItemLabels {const IssueSearchResultItemLabels({this.id, this.nodeId, this.url, this.name, this.color, this.$default, this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssueSearchResultItemLabels {const IssueSearchResultItemLabels({this.id, this.nodeId, this.url, this.name, this.color, this.$default, this.description, });
 
 factory IssueSearchResultItemLabels.fromJson(Map<String, dynamic> json) { return IssueSearchResultItemLabels(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

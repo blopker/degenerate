@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaDateRange {const RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaDateRange({required this.endTime, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaDateRange {const RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),

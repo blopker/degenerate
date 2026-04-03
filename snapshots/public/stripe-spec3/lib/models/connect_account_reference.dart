@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'connect_account_reference_account.dart';/// Type of the account referenced.
-final class ConnectAccountReferenceType {const ConnectAccountReferenceType._(this.value);
+@immutable final class ConnectAccountReferenceType {const ConnectAccountReferenceType._(this.value);
 
 factory ConnectAccountReferenceType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ConnectAccountReferenceType($value)'; } 
  }
 /// 
-final class ConnectAccountReference {const ConnectAccountReference({this.account, required this.type, });
+@immutable final class ConnectAccountReference {const ConnectAccountReference({required this.type, this.account, });
 
 factory ConnectAccountReference.fromJson(Map<String, dynamic> json) { return ConnectAccountReference(
   account: json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,

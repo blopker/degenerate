@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TunnelMessages2 {const TunnelMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TunnelMessages2 {const TunnelMessages2({required this.code, required this.message, });
 
 factory TunnelMessages2.fromJson(Map<String, dynamic> json) { return TunnelMessages2(
   code: (json['code'] as num).toInt(),

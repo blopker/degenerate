@@ -26,7 +26,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
+    return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,);
   },
 );
  } 
@@ -94,7 +94,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -173,7 +173,7 @@ return execute(
 /// Inserts vectors into the specified index and returns a mutation id corresponding to the vectors enqueued for insertion.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/insert`
-Future<ApiResult<Response4?, Never>> vectorizeInsertVector({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, VectorizeInsertVectorUnparsableBehavior? unparsableBehavior, required Uint8List body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Response4?, Never>> vectorizeInsertVector({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, required Uint8List body, VectorizeInsertVectorUnparsableBehavior? unparsableBehavior, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (unparsableBehavior != null) {
   queryParameters['unparsable-behavior'] = unparsableBehavior.toJson();
@@ -332,7 +332,7 @@ return execute(
 /// Upserts vectors into the specified index, creating them if they do not exist and returns a mutation id corresponding to the vectors enqueued for upsertion.
 ///
 /// `POST /accounts/{account_id}/vectorize/v2/indexes/{index_name}/upsert`
-Future<ApiResult<Response6?, Never>> vectorizeUpsertVector({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, VectorizeUpsertVectorUnparsableBehavior? unparsableBehavior, required Uint8List body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Response6?, Never>> vectorizeUpsertVector({required VectorizeIdentifier accountId, required VectorizeIndexName indexName, required Uint8List body, VectorizeUpsertVectorUnparsableBehavior? unparsableBehavior, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (unparsableBehavior != null) {
   queryParameters['unparsable-behavior'] = unparsableBehavior.toJson();

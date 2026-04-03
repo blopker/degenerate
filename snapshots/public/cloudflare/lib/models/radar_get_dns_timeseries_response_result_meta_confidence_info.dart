@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_response_result_meta_confidence_info_annotations.dart';final class RadarGetDnsTimeseriesResponseResultMetaConfidenceInfo {const RadarGetDnsTimeseriesResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetDnsTimeseriesResponseResultMetaConfidenceInfo {const RadarGetDnsTimeseriesResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetDnsTimeseriesResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetDnsTimeseriesResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

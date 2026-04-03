@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSubscriptionsAutomaticTax {const GetSubscriptionsAutomaticTax({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSubscriptionsAutomaticTax {const GetSubscriptionsAutomaticTax({required this.enabled});
 
 factory GetSubscriptionsAutomaticTax.fromJson(Map<String, dynamic> json) { return GetSubscriptionsAutomaticTax(
   enabled: json['enabled'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_origin_post_quantum_encryption_value.dart';final class ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest {const ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest({required this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_origin_post_quantum_encryption_value.dart';@immutable final class ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest {const ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest({required this.value});
 
 factory ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest(
   value: CacheRulesOriginPostQuantumEncryptionValue.fromJson(json['value'] as String),

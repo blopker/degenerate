@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.
-final class RunObjectLastErrorCode {const RunObjectLastErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.
+@immutable final class RunObjectLastErrorCode {const RunObjectLastErrorCode._(this.value);
 
 factory RunObjectLastErrorCode.fromJson(String json) { return switch (json) {
   'server_error' => serverError,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunObjectLastErrorCode($value)'; } 
  }
 /// The last error associated with this run. Will be `null` if there are no errors.
-final class RunObjectLastError {const RunObjectLastError({required this.code, required this.message, });
+@immutable final class RunObjectLastError {const RunObjectLastError({required this.code, required this.message, });
 
 factory RunObjectLastError.fromJson(Map<String, dynamic> json) { return RunObjectLastError(
   code: RunObjectLastErrorCode.fromJson(json['code'] as String),

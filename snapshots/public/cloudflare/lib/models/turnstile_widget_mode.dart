@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Widget Mode
-final class TurnstileWidgetMode {const TurnstileWidgetMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Widget Mode
+@immutable final class TurnstileWidgetMode {const TurnstileWidgetMode._(this.value);
 
 factory TurnstileWidgetMode.fromJson(String json) { return switch (json) {
   'non-interactive' => nonInteractive,

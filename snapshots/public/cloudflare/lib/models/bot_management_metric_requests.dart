@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BotManagementMetricRequests {const BotManagementMetricRequests({required this.metric, required this.requests, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BotManagementMetricRequests {const BotManagementMetricRequests({required this.metric, required this.requests, });
 
 factory BotManagementMetricRequests.fromJson(Map<String, dynamic> json) { return BotManagementMetricRequests(
   metric: json['metric'] as String,

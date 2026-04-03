@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AssistantSupportedModels {const AssistantSupportedModels._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AssistantSupportedModels {const AssistantSupportedModels._(this.value);
 
 factory AssistantSupportedModels.fromJson(String json) { return switch (json) {
   'gpt-5' => gpt5,

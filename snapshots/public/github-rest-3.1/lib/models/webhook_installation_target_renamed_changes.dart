@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_installation_target_renamed_changes_login.dart';import 'webhook_installation_target_renamed_changes_slug.dart';final class WebhookInstallationTargetRenamedChanges {const WebhookInstallationTargetRenamedChanges({this.login, this.slug, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_installation_target_renamed_changes_login.dart';import 'webhook_installation_target_renamed_changes_slug.dart';@immutable final class WebhookInstallationTargetRenamedChanges {const WebhookInstallationTargetRenamedChanges({this.login, this.slug, });
 
 factory WebhookInstallationTargetRenamedChanges.fromJson(Map<String, dynamic> json) { return WebhookInstallationTargetRenamedChanges(
   login: json['login'] != null ? WebhookInstallationTargetRenamedChangesLogin.fromJson(json['login'] as Map<String, dynamic>) : null,

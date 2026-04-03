@@ -82,7 +82,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,);
   },
 );
  } 
@@ -91,12 +91,12 @@ return execute(
 /// The `/received` api route allows customers to retrieve their edge HTTP logs. The basic access pattern is "give me all the logs for zone Z for minute M", where the minute M refers to the time records were received at Cloudflare's central data center. `start` is inclusive, and `end` is exclusive. Because of that, to get all data, at minutely cadence, starting at 10AM, the proper values are: `start=2018-05-20T10:00:00Z&end=2018-05-20T10:01:00Z`, then `start=2018-05-20T10:01:00Z&end=2018-05-20T10:02:00Z` and so on; the overlap will be handled properly.
 ///
 /// `GET /zones/{zone_id}/logs/received`
-Future<ApiResult<LogshareLogsResponseJsonLines, Never>> getZonesZoneIdLogsReceived({required LogshareIdentifier zoneId, LogshareStart? start, required LogshareEnd end, LogshareFields? fields, LogshareSample? sample, LogshareCount? count, LogshareTimestamps? timestamps, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LogshareLogsResponseJsonLines, Never>> getZonesZoneIdLogsReceived({required LogshareIdentifier zoneId, required LogshareEnd end, LogshareStart? start, LogshareFields? fields, LogshareSample? sample, LogshareCount? count, LogshareTimestamps? timestamps, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (start != null) {
-queryParametersList.add(ApiQueryParameter(name: 'start', value: start.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'start', value: start.toString()));
 }
-queryParametersList.add(ApiQueryParameter(name: 'end', value: end.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'end', value: end.toString()));
 if (fields != null) {
   queryParameters['fields'] = fields.toString();
 }
@@ -124,7 +124,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,);
   },
 );
  } 

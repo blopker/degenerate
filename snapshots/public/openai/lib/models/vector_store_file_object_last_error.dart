@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// One of `server_error`, `unsupported_file`, or `invalid_file`.
-final class VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `server_error`, `unsupported_file`, or `invalid_file`.
+@immutable final class VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode._(this.value);
 
 factory VectorStoreFileObjectLastErrorCode.fromJson(String json) { return switch (json) {
   'server_error' => serverError,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VectorStoreFileObjectLastErrorCode($value)'; } 
  }
 /// The last error associated with this vector store file. Will be `null` if there are no errors.
-final class VectorStoreFileObjectLastError {const VectorStoreFileObjectLastError({required this.code, required this.message, });
+@immutable final class VectorStoreFileObjectLastError {const VectorStoreFileObjectLastError({required this.code, required this.message, });
 
 factory VectorStoreFileObjectLastError.fromJson(Map<String, dynamic> json) { return VectorStoreFileObjectLastError(
   code: VectorStoreFileObjectLastErrorCode.fromJson(json['code'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_name.dart';final class WorkersBindingKindSecretText {const WorkersBindingKindSecretText({required this.name, required this.text, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindSecretText {const WorkersBindingKindSecretText({required this.name, required this.text, required this.type, });
 
 factory WorkersBindingKindSecretText.fromJson(Map<String, dynamic> json) { return WorkersBindingKindSecretText(
   name: WorkersBindingName.fromJson(json['name'] as String),

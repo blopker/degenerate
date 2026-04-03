@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';final class AddUploadPartRequest {const AddUploadPartRequest({required this.data});
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddUploadPartRequest {const AddUploadPartRequest({required this.data});
 
 factory AddUploadPartRequest.fromJson(Map<String, dynamic> json) { return AddUploadPartRequest(
   data: base64Decode(json['data'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'infra_target.dart';final class InfraTargetsGetResponse {const InfraTargetsGetResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_target.dart';@immutable final class InfraTargetsGetResponse {const InfraTargetsGetResponse({this.result});
 
 factory InfraTargetsGetResponse.fromJson(Map<String, dynamic> json) { return InfraTargetsGetResponse(
   result: json['result'] != null ? InfraTarget.fromJson(json['result'] as Map<String, dynamic>) : null,

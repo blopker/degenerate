@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_connection_rules_infra.dart';import 'access_decision.dart';import 'access_policy_components_schemas_name.dart';import 'access_rule.dart';final class AccessInfraPolicyReq {const AccessInfraPolicyReq({required this.decision, this.exclude, required this.include, required this.name, this.require, this.connectionRules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_connection_rules_infra.dart';import 'access_decision.dart';import 'access_policy_components_schemas_name.dart';import 'access_rule.dart';@immutable final class AccessInfraPolicyReq {const AccessInfraPolicyReq({required this.decision, required this.include, required this.name, this.exclude, this.require, this.connectionRules, });
 
 factory AccessInfraPolicyReq.fromJson(Map<String, dynamic> json) { return AccessInfraPolicyReq(
   decision: AccessDecision.fromJson(json['decision'] as String),

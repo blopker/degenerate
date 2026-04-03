@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pull_request_minimal_head_repo.dart';final class PullRequestMinimalHead {const PullRequestMinimalHead({required this.ref, required this.sha, required this.repo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pull_request_minimal_head_repo.dart';@immutable final class PullRequestMinimalHead {const PullRequestMinimalHead({required this.ref, required this.sha, required this.repo, });
 
 factory PullRequestMinimalHead.fromJson(Map<String, dynamic> json) { return PullRequestMinimalHead(
   ref: json['ref'] as String,

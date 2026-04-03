@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_available_phone_number_country_available_phone_number_shared_cost.dart';final class ListAvailablePhoneNumberSharedCostResponse {const ListAvailablePhoneNumberSharedCostResponse({this.availablePhoneNumbers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_available_phone_number_country_available_phone_number_shared_cost.dart';@immutable final class ListAvailablePhoneNumberSharedCostResponse {const ListAvailablePhoneNumberSharedCostResponse({this.availablePhoneNumbers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListAvailablePhoneNumberSharedCostResponse.fromJson(Map<String, dynamic> json) { return ListAvailablePhoneNumberSharedCostResponse(
   availablePhoneNumbers: (json['available_phone_numbers'] as List<dynamic>?)?.map((e) => AccountAvailablePhoneNumberCountryAvailablePhoneNumberSharedCost.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PlanTier {const PlanTier({this.flatAmount, this.flatAmountDecimal, this.unitAmount, this.unitAmountDecimal, this.upTo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PlanTier {const PlanTier({this.flatAmount, this.flatAmountDecimal, this.unitAmount, this.unitAmountDecimal, this.upTo, });
 
 factory PlanTier.fromJson(Map<String, dynamic> json) { return PlanTier(
   flatAmount: json['flat_amount'] != null ? (json['flat_amount'] as num).toInt() : null,

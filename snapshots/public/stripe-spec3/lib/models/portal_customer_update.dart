@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates._(this.value);
 
 factory PortalCustomerUpdateAllowedUpdates.fromJson(String json) { return switch (json) {
   'address' => address,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalCustomerUpdateAllowedUpdates($value)'; } 
  }
 /// 
-final class PortalCustomerUpdate {const PortalCustomerUpdate({required this.allowedUpdates, required this.enabled, });
+@immutable final class PortalCustomerUpdate {const PortalCustomerUpdate({required this.allowedUpdates, required this.enabled, });
 
 factory PortalCustomerUpdate.fromJson(Map<String, dynamic> json) { return PortalCustomerUpdate(
   allowedUpdates: (json['allowed_updates'] as List<dynamic>).map((e) => PortalCustomerUpdateAllowedUpdates.fromJson(e as String)).toList(),

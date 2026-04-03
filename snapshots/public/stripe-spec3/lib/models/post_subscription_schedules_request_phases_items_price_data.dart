@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_subscription_schedules_request_phases_items_price_data_recurring.dart';final class PostSubscriptionSchedulesRequestPhasesItemsPriceDataTaxBehavior {const PostSubscriptionSchedulesRequestPhasesItemsPriceDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_phases_items_price_data_recurring.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesItemsPriceDataTaxBehavior {const PostSubscriptionSchedulesRequestPhasesItemsPriceDataTaxBehavior._(this.value);
 
 factory PostSubscriptionSchedulesRequestPhasesItemsPriceDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesRequestPhasesItemsPriceDataTaxBehavior($value)'; } 
  }
-final class PostSubscriptionSchedulesRequestPhasesItemsPriceData {const PostSubscriptionSchedulesRequestPhasesItemsPriceData({required this.currency, required this.product, required this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostSubscriptionSchedulesRequestPhasesItemsPriceData {const PostSubscriptionSchedulesRequestPhasesItemsPriceData({required this.currency, required this.product, required this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostSubscriptionSchedulesRequestPhasesItemsPriceData.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhasesItemsPriceData(
   currency: json['currency'] as String,

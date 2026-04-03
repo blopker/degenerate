@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoice_payment_method_options_customer_balance_bank_transfer.dart';/// The funding method type to be used when there are not enough funds in the customer balance. Permitted values include: `bank_transfer`.
-final class InvoicePaymentMethodOptionsCustomerBalanceFundingType {const InvoicePaymentMethodOptionsCustomerBalanceFundingType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_customer_balance_bank_transfer.dart';/// The funding method type to be used when there are not enough funds in the customer balance. Permitted values include: `bank_transfer`.
+@immutable final class InvoicePaymentMethodOptionsCustomerBalanceFundingType {const InvoicePaymentMethodOptionsCustomerBalanceFundingType._(this.value);
 
 factory InvoicePaymentMethodOptionsCustomerBalanceFundingType.fromJson(String json) { return switch (json) {
   'bank_transfer' => bankTransfer,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsCustomerBalanceFundingType($value)'; } 
  }
 /// 
-final class InvoicePaymentMethodOptionsCustomerBalance {const InvoicePaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType, });
+@immutable final class InvoicePaymentMethodOptionsCustomerBalance {const InvoicePaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType, });
 
 factory InvoicePaymentMethodOptionsCustomerBalance.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsCustomerBalance(
   bankTransfer: json['bank_transfer'] != null ? InvoicePaymentMethodOptionsCustomerBalanceBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPermissions {const WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPermissions({required this.admin, this.maintain, required this.pull, required this.push, this.triage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPermissions {const WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPermissions({required this.admin, required this.pull, required this.push, this.maintain, this.triage, });
 
 factory WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPermissions.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAutoMergeDisabledPullRequestHeadRepoPermissions(
   admin: json['admin'] as bool,

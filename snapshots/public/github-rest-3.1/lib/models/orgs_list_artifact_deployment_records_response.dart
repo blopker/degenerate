@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'artifact_deployment_record.dart';final class OrgsListArtifactDeploymentRecordsResponse {const OrgsListArtifactDeploymentRecordsResponse({this.totalCount, this.deploymentRecords, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'artifact_deployment_record.dart';@immutable final class OrgsListArtifactDeploymentRecordsResponse {const OrgsListArtifactDeploymentRecordsResponse({this.totalCount, this.deploymentRecords, });
 
 factory OrgsListArtifactDeploymentRecordsResponse.fromJson(Map<String, dynamic> json) { return OrgsListArtifactDeploymentRecordsResponse(
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,

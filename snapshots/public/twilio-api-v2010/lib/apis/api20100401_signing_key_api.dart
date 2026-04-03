@@ -70,7 +70,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SigningKeys/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.friendlyName case final friendlyName$?)
       'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
   ].join('&'),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Rectangle {const Rectangle({required this.type, required this.width, required this.height, this.color, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Rectangle {const Rectangle({required this.type, required this.width, required this.height, this.color, });
 
 factory Rectangle.fromJson(Map<String, dynamic> json) { return Rectangle(
   type: json['type'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_details_tool_calls_code_object.dart';import 'run_step_details_tool_calls_file_search_object.dart';import 'run_step_details_tool_calls_function_object.dart';import 'run_step_details_tool_calls_object_tool_calls.dart';/// Always `tool_calls`.
-final class RunStepDetailsToolCallsObjectType {const RunStepDetailsToolCallsObjectType._(this.value);
+@immutable final class RunStepDetailsToolCallsObjectType {const RunStepDetailsToolCallsObjectType._(this.value);
 
 factory RunStepDetailsToolCallsObjectType.fromJson(String json) { return switch (json) {
   'tool_calls' => toolCalls,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepDetailsToolCallsObjectType($value)'; } 
  }
 /// Details of the tool call.
-final class RunStepDetailsToolCallsObject {const RunStepDetailsToolCallsObject({required this.type, required this.toolCalls, });
+@immutable final class RunStepDetailsToolCallsObject {const RunStepDetailsToolCallsObject({required this.type, required this.toolCalls, });
 
 factory RunStepDetailsToolCallsObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsObject(
   type: RunStepDetailsToolCallsObjectType.fromJson(json['type'] as String),

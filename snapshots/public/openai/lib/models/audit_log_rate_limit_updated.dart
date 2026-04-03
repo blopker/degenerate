@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'audit_log_rate_limit_updated_changes_requested.dart';/// The details for events with this `type`.
-final class AuditLogRateLimitUpdated {const AuditLogRateLimitUpdated({this.id, this.changesRequested, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_rate_limit_updated_changes_requested.dart';/// The details for events with this `type`.
+@immutable final class AuditLogRateLimitUpdated {const AuditLogRateLimitUpdated({this.id, this.changesRequested, });
 
 factory AuditLogRateLimitUpdated.fromJson(Map<String, dynamic> json) { return AuditLogRateLimitUpdated(
   id: json['id'] as String?,

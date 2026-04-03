@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaypalSellerProtectionDisputeCategories {const PaypalSellerProtectionDisputeCategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaypalSellerProtectionDisputeCategories {const PaypalSellerProtectionDisputeCategories._(this.value);
 
 factory PaypalSellerProtectionDisputeCategories.fromJson(String json) { return switch (json) {
   'fraudulent' => fraudulent,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaypalSellerProtectionDisputeCategories($value)'; } 
  }
 /// Indicates whether the transaction is eligible for PayPal's seller protection.
-final class PaypalSellerProtectionStatus {const PaypalSellerProtectionStatus._(this.value);
+@immutable final class PaypalSellerProtectionStatus {const PaypalSellerProtectionStatus._(this.value);
 
 factory PaypalSellerProtectionStatus.fromJson(String json) { return switch (json) {
   'eligible' => eligible,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaypalSellerProtectionStatus($value)'; } 
  }
 /// 
-final class PaypalSellerProtection {const PaypalSellerProtection({this.disputeCategories, required this.status, });
+@immutable final class PaypalSellerProtection {const PaypalSellerProtection({required this.status, this.disputeCategories, });
 
 factory PaypalSellerProtection.fromJson(Map<String, dynamic> json) { return PaypalSellerProtection(
   disputeCategories: (json['dispute_categories'] as List<dynamic>?)?.map((e) => PaypalSellerProtectionDisputeCategories.fromJson(e as String)).toList(),

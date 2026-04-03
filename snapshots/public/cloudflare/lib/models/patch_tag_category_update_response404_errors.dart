@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PatchTagCategoryUpdateResponse404Errors {const PatchTagCategoryUpdateResponse404Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchTagCategoryUpdateResponse404Errors {const PatchTagCategoryUpdateResponse404Errors({required this.message});
 
 factory PatchTagCategoryUpdateResponse404Errors.fromJson(Map<String, dynamic> json) { return PatchTagCategoryUpdateResponse404Errors(
   message: json['message'] as String,

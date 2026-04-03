@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Custom processors represent payment processors not modeled directly in
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom processors represent payment processors not modeled directly in
 /// the Stripe API. This resource consists of details about the custom processor
 /// used for this payment attempt.
-final class PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails {const PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails({this.paymentReference});
+@immutable final class PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails {const PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails({this.paymentReference});
 
 factory PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails(
   paymentReference: json['payment_reference'] as String?,

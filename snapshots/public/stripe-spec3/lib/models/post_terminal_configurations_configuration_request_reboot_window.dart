@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reboot_window.dart';final class PostTerminalConfigurationsConfigurationRequestRebootWindowVariant2 {const PostTerminalConfigurationsConfigurationRequestRebootWindowVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reboot_window.dart';@immutable final class PostTerminalConfigurationsConfigurationRequestRebootWindowVariant2 {const PostTerminalConfigurationsConfigurationRequestRebootWindowVariant2._(this.value);
 
 factory PostTerminalConfigurationsConfigurationRequestRebootWindowVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

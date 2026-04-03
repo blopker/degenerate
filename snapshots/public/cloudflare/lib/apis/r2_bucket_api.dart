@@ -29,7 +29,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
   onError: (response) {
     return ResponseFailure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -57,7 +57,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
   onError: (response) {
     return ResponseFailure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -69,7 +69,7 @@ return execute(
 /// Create event notification rule.
 ///
 /// `PUT /accounts/{account_id}/event_notifications/r2/{bucket_name}/configuration/queues/{queue_id}`
-Future<ApiResult<Map<String, dynamic>, Never>> r2PutEventNotificationConfig({required R2QueueIdentifier queueId, required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, required R2PutEventNotificationConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> r2PutEventNotificationConfig({required R2QueueIdentifier queueId, required R2BucketName bucketName, required R2AccountIdentifier accountId, required R2PutEventNotificationConfigRequest body, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (cfR2Jurisdiction != null) {
   headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
@@ -87,7 +87,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -114,7 +114,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -171,7 +171,7 @@ return execute(
 /// Creates a new R2 bucket.
 ///
 /// `POST /accounts/{account_id}/r2/buckets`
-Future<ApiResult<Map<String, dynamic>, Never>> r2CreateBucket({required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, required R2CreateBucketRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> r2CreateBucket({required R2AccountIdentifier accountId, required R2CreateBucketRequest body, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (cfR2Jurisdiction != null) {
   headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
@@ -189,7 +189,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -214,7 +214,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -223,7 +223,7 @@ return execute(
 /// Updates properties of an existing R2 bucket.
 ///
 /// `PATCH /accounts/{account_id}/r2/buckets/{bucket_name}`
-Future<ApiResult<Map<String, dynamic>, Never>> r2PatchBucket({required R2AccountIdentifier accountId, required R2BucketName bucketName, R2Jurisdiction? cfR2Jurisdiction, required R2StorageClass cfR2StorageClass, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> r2PatchBucket({required R2AccountIdentifier accountId, required R2BucketName bucketName, required R2StorageClass cfR2StorageClass, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (cfR2Jurisdiction != null) {
   headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
 }
@@ -240,7 +240,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -265,7 +265,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -290,7 +290,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -299,7 +299,7 @@ return execute(
 /// Set the CORS policy for a bucket.
 ///
 /// `PUT /accounts/{account_id}/r2/buckets/{bucket_name}/cors`
-Future<ApiResult<Map<String, dynamic>, Never>> r2PutBucketCorsPolicy({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, required R2PutBucketCorsPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> r2PutBucketCorsPolicy({required R2BucketName bucketName, required R2AccountIdentifier accountId, required R2PutBucketCorsPolicyRequest body, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (cfR2Jurisdiction != null) {
   headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
@@ -317,7 +317,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -342,7 +342,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -367,7 +367,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -376,7 +376,7 @@ return execute(
 /// Register a new custom domain for an existing R2 bucket.
 ///
 /// `POST /accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom`
-Future<ApiResult<Map<String, dynamic>, Never>> r2AddCustomDomain({required R2AccountIdentifier accountId, required R2BucketName bucketName, R2Jurisdiction? cfR2Jurisdiction, required R2AddCustomDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> r2AddCustomDomain({required R2AccountIdentifier accountId, required R2BucketName bucketName, required R2AddCustomDomainRequest body, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (cfR2Jurisdiction != null) {
   headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
@@ -394,7 +394,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -419,7 +419,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -428,7 +428,7 @@ return execute(
 /// Edit the configuration for a custom domain on an existing R2 bucket.
 ///
 /// `PUT /accounts/{account_id}/r2/buckets/{bucket_name}/domains/custom/{domain}`
-Future<ApiResult<Map<String, dynamic>, Never>> r2EditCustomDomainSettings({required R2AccountIdentifier accountId, required R2BucketName bucketName, required R2DomainName domain, R2Jurisdiction? cfR2Jurisdiction, required R2EditCustomDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> r2EditCustomDomainSettings({required R2AccountIdentifier accountId, required R2BucketName bucketName, required R2DomainName domain, required R2EditCustomDomainRequest body, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (cfR2Jurisdiction != null) {
   headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
@@ -446,7 +446,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -471,7 +471,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -496,7 +496,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -505,7 +505,7 @@ return execute(
 /// Updates state of public access over the bucket's R2-managed (r2.dev) domain.
 ///
 /// `PUT /accounts/{account_id}/r2/buckets/{bucket_name}/domains/managed`
-Future<ApiResult<Map<String, dynamic>, Never>> r2PutBucketPublicPolicy({required R2AccountIdentifier accountId, required R2BucketName bucketName, R2Jurisdiction? cfR2Jurisdiction, required R2EditManagedDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> r2PutBucketPublicPolicy({required R2AccountIdentifier accountId, required R2BucketName bucketName, required R2EditManagedDomainRequest body, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (cfR2Jurisdiction != null) {
   headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
@@ -523,7 +523,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -548,7 +548,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -557,7 +557,7 @@ return execute(
 /// Set the object lifecycle rules for a bucket.
 ///
 /// `PUT /accounts/{account_id}/r2/buckets/{bucket_name}/lifecycle`
-Future<ApiResult<Map<String, dynamic>, Never>> r2PutBucketLifecycleConfiguration({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, required R2PutBucketLifecycleConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> r2PutBucketLifecycleConfiguration({required R2BucketName bucketName, required R2AccountIdentifier accountId, required R2PutBucketLifecycleConfigurationRequest body, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (cfR2Jurisdiction != null) {
   headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
@@ -575,7 +575,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -597,7 +597,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -621,7 +621,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -646,7 +646,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -655,7 +655,7 @@ return execute(
 /// Set lock rules for a bucket.
 ///
 /// `PUT /accounts/{account_id}/r2/buckets/{bucket_name}/lock`
-Future<ApiResult<Map<String, dynamic>, Never>> r2PutBucketLockConfiguration({required R2BucketName bucketName, required R2AccountIdentifier accountId, R2Jurisdiction? cfR2Jurisdiction, required R2PutBucketLockConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> r2PutBucketLockConfiguration({required R2BucketName bucketName, required R2AccountIdentifier accountId, required R2PutBucketLockConfigurationRequest body, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (cfR2Jurisdiction != null) {
   headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
@@ -673,7 +673,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -698,7 +698,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -707,7 +707,7 @@ return execute(
 /// Sets configuration for Sippy for an existing R2 bucket.
 ///
 /// `PUT /accounts/{account_id}/r2/buckets/{bucket_name}/sippy`
-Future<ApiResult<Map<String, dynamic>, Never>> r2PutBucketSippyConfig({required R2AccountIdentifier accountId, required R2BucketName bucketName, R2Jurisdiction? cfR2Jurisdiction, required R2PutBucketSippyConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> r2PutBucketSippyConfig({required R2AccountIdentifier accountId, required R2BucketName bucketName, required R2PutBucketSippyConfigRequest body, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (cfR2Jurisdiction != null) {
   headers['cf-r2-jurisdiction'] = cfR2Jurisdiction.toJson();
@@ -725,7 +725,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -750,7 +750,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 
@@ -774,7 +774,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 

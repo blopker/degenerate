@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigListGatewayLogsDirection {const AigConfigListGatewayLogsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayLogsDirection {const AigConfigListGatewayLogsDirection._(this.value);
 
 factory AigConfigListGatewayLogsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

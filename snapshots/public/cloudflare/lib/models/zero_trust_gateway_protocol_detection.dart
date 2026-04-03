@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify whether to detect protocols from the initial bytes of client traffic.
-final class ZeroTrustGatewayProtocolDetection {const ZeroTrustGatewayProtocolDetection({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify whether to detect protocols from the initial bytes of client traffic.
+@immutable final class ZeroTrustGatewayProtocolDetection {const ZeroTrustGatewayProtocolDetection({this.enabled});
 
 factory ZeroTrustGatewayProtocolDetection.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProtocolDetection(
   enabled: json['enabled'] as bool?,

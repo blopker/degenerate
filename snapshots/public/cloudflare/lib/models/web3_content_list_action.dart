@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Behavior of the content list.
-final class Web3ContentListAction {const Web3ContentListAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Behavior of the content list.
+@immutable final class Web3ContentListAction {const Web3ContentListAction._(this.value);
 
 factory Web3ContentListAction.fromJson(String json) { return switch (json) {
   'block' => block,

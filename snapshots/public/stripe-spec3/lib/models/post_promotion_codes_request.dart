@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_promotion_codes_request_promotion.dart';import 'post_promotion_codes_request_restrictions.dart';final class PostPromotionCodesRequest {const PostPromotionCodesRequest({this.active, this.code, this.customer, this.customerAccount, this.expand, this.expiresAt, this.maxRedemptions, this.metadata, required this.promotion, this.restrictions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_promotion_codes_request_promotion.dart';import 'post_promotion_codes_request_restrictions.dart';@immutable final class PostPromotionCodesRequest {const PostPromotionCodesRequest({required this.promotion, this.active, this.code, this.customer, this.customerAccount, this.expand, this.expiresAt, this.maxRedemptions, this.metadata, this.restrictions, });
 
 factory PostPromotionCodesRequest.fromJson(Map<String, dynamic> json) { return PostPromotionCodesRequest(
   active: json['active'] as bool?,

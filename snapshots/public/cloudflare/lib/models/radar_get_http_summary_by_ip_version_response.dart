@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_http_summary_by_ip_version_response_result.dart';final class RadarGetHttpSummaryByIpVersionResponse {const RadarGetHttpSummaryByIpVersionResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_summary_by_ip_version_response_result.dart';@immutable final class RadarGetHttpSummaryByIpVersionResponse {const RadarGetHttpSummaryByIpVersionResponse({required this.result, required this.success, });
 
 factory RadarGetHttpSummaryByIpVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByIpVersionResponse(
   result: RadarGetHttpSummaryByIpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),

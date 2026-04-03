@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentMethodsPaymentMethodDetachRequest {const PostPaymentMethodsPaymentMethodDetachRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsPaymentMethodDetachRequest {const PostPaymentMethodsPaymentMethodDetachRequest({this.expand});
 
 factory PostPaymentMethodsPaymentMethodDetachRequest.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodDetachRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

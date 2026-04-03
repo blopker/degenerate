@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The policy that controls how immutable releases are enforced in the organization.
-final class ImmutableReleasesOrganizationSettingsEnforcedRepositories {const ImmutableReleasesOrganizationSettingsEnforcedRepositories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy that controls how immutable releases are enforced in the organization.
+@immutable final class ImmutableReleasesOrganizationSettingsEnforcedRepositories {const ImmutableReleasesOrganizationSettingsEnforcedRepositories._(this.value);
 
 factory ImmutableReleasesOrganizationSettingsEnforcedRepositories.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ImmutableReleasesOrganizationSettingsEnforcedRepositories($value)'; } 
  }
 /// Check immutable releases settings for an organization.
-final class ImmutableReleasesOrganizationSettings {const ImmutableReleasesOrganizationSettings({required this.enforcedRepositories, this.selectedRepositoriesUrl, });
+@immutable final class ImmutableReleasesOrganizationSettings {const ImmutableReleasesOrganizationSettings({required this.enforcedRepositories, this.selectedRepositoriesUrl, });
 
 factory ImmutableReleasesOrganizationSettings.fromJson(Map<String, dynamic> json) { return ImmutableReleasesOrganizationSettings(
   enforcedRepositories: ImmutableReleasesOrganizationSettingsEnforcedRepositories.fromJson(json['enforced_repositories'] as String),

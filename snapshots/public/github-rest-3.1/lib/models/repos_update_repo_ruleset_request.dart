@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';import 'repository_ruleset_conditions.dart';/// The target of the ruleset
-final class ReposUpdateRepoRulesetRequestTarget {const ReposUpdateRepoRulesetRequestTarget._(this.value);
+@immutable final class ReposUpdateRepoRulesetRequestTarget {const ReposUpdateRepoRulesetRequestTarget._(this.value);
 
 factory ReposUpdateRepoRulesetRequestTarget.fromJson(String json) { return switch (json) {
   'branch' => branch,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposUpdateRepoRulesetRequestTarget($value)'; } 
  }
-final class ReposUpdateRepoRulesetRequest {const ReposUpdateRepoRulesetRequest({this.name, this.target, this.enforcement, this.bypassActors, this.conditions, this.rules, });
+@immutable final class ReposUpdateRepoRulesetRequest {const ReposUpdateRepoRulesetRequest({this.name, this.target, this.enforcement, this.bypassActors, this.conditions, this.rules, });
 
 factory ReposUpdateRepoRulesetRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateRepoRulesetRequest(
   name: json['name'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Latitude direction.
-final class DnsRecordsLocRecordDataLatDirection {const DnsRecordsLocRecordDataLatDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Latitude direction.
+@immutable final class DnsRecordsLocRecordDataLatDirection {const DnsRecordsLocRecordDataLatDirection._(this.value);
 
 factory DnsRecordsLocRecordDataLatDirection.fromJson(String json) { return switch (json) {
   'N' => n,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DnsRecordsLocRecordDataLatDirection($value)'; } 
  }
 /// Longitude direction.
-final class DnsRecordsLocRecordDataLongDirection {const DnsRecordsLocRecordDataLongDirection._(this.value);
+@immutable final class DnsRecordsLocRecordDataLongDirection {const DnsRecordsLocRecordDataLongDirection._(this.value);
 
 factory DnsRecordsLocRecordDataLongDirection.fromJson(String json) { return switch (json) {
   'E' => e,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DnsRecordsLocRecordDataLongDirection($value)'; } 
  }
 /// Components of a LOC record.
-final class DnsRecordsLocRecordData {const DnsRecordsLocRecordData({this.altitude, this.latDegrees, this.latDirection, this.latMinutes, this.latSeconds, this.longDegrees, this.longDirection, this.longMinutes, this.longSeconds, this.precisionHorz, this.precisionVert, this.size, });
+@immutable final class DnsRecordsLocRecordData {const DnsRecordsLocRecordData({this.altitude, this.latDegrees, this.latDirection, this.latMinutes, this.latSeconds, this.longDegrees, this.longDirection, this.longMinutes, this.longSeconds, this.precisionHorz, this.precisionVert, this.size, });
 
 factory DnsRecordsLocRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsLocRecordData(
   altitude: json['altitude'] != null ? (json['altitude'] as num).toDouble() : null,

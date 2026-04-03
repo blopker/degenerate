@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CreateTranslationRequestModelVariant2 {const CreateTranslationRequestModelVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateTranslationRequestModelVariant2 {const CreateTranslationRequestModelVariant2._(this.value);
 
 factory CreateTranslationRequestModelVariant2.fromJson(String json) { return switch (json) {
   'whisper-1' => whisper1,

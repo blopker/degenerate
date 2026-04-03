@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_response_buffering_value.dart';/// Turn on or off whether Cloudflare should wait for an entire file
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_response_buffering_value.dart';/// Turn on or off whether Cloudflare should wait for an entire file
 /// from the origin server before forwarding it to the site visitor. By
 /// default, Cloudflare sends packets to the client as they arrive from
 /// the origin server.
 /// 
-final class ZonesResponseBufferingId {const ZonesResponseBufferingId._(this.value);
+@immutable final class ZonesResponseBufferingId {const ZonesResponseBufferingId._(this.value);
 
 factory ZonesResponseBufferingId.fromJson(String json) { return switch (json) {
   'response_buffering' => responseBuffering,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesResponseBufferingId($value)'; } 
  }
-final class ZonesResponseBuffering {const ZonesResponseBuffering({this.id, this.value, });
+@immutable final class ZonesResponseBuffering {const ZonesResponseBuffering({this.id, this.value, });
 
 factory ZonesResponseBuffering.fromJson(Map<String, dynamic> json) { return ZonesResponseBuffering(
   id: json['id'] != null ? ZonesResponseBufferingId.fromJson(json['id'] as String) : null,

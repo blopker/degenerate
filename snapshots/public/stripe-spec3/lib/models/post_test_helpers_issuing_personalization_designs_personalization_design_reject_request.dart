@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_personalization_designs_personalization_design_reject_request_rejection_reasons.dart';final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest({this.expand, required this.rejectionReasons, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_personalization_designs_personalization_design_reject_request_rejection_reasons.dart';@immutable final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest({required this.rejectionReasons, this.expand, });
 
 factory PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

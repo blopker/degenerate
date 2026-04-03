@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurringInterval {const PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurringInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurringInterval {const PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurringInterval._(this.value);
 
 factory PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurringInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurringInterval($value)'; } 
  }
-final class PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurring {const PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurring({required this.interval, this.intervalCount, });
+@immutable final class PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurring {const PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurring({required this.interval, this.intervalCount, });
 
 factory PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurring.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurring(
   interval: PostCheckoutSessionsSessionRequestLineItemsPriceDataRecurringInterval.fromJson(json['interval'] as String),

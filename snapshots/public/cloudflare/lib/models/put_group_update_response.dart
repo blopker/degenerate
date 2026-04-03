@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PutGroupUpdateResponse {const PutGroupUpdateResponse({required this.createdAt, required this.description, required this.name, required this.updatedAt, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PutGroupUpdateResponse {const PutGroupUpdateResponse({required this.createdAt, required this.description, required this.name, required this.updatedAt, required this.uuid, });
 
 factory PutGroupUpdateResponse.fromJson(Map<String, dynamic> json) { return PutGroupUpdateResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),

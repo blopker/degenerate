@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_post_gateway_dynamic_route_response_result_elements_end_outputs_value.dart';final class AigConfigPostGatewayDynamicRouteResponseResultElementsEndType {const AigConfigPostGatewayDynamicRouteResponseResultElementsEndType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_response_result_elements_end_outputs_value.dart';@immutable final class AigConfigPostGatewayDynamicRouteResponseResultElementsEndType {const AigConfigPostGatewayDynamicRouteResponseResultElementsEndType._(this.value);
 
 factory AigConfigPostGatewayDynamicRouteResponseResultElementsEndType.fromJson(String json) { return switch (json) {
   'end' => end,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigPostGatewayDynamicRouteResponseResultElementsEndType($value)'; } 
  }
-final class AigConfigPostGatewayDynamicRouteResponseResultElementsEnd {const AigConfigPostGatewayDynamicRouteResponseResultElementsEnd({required this.id, required this.outputs, required this.type, });
+@immutable final class AigConfigPostGatewayDynamicRouteResponseResultElementsEnd {const AigConfigPostGatewayDynamicRouteResponseResultElementsEnd({required this.id, required this.outputs, required this.type, });
 
 factory AigConfigPostGatewayDynamicRouteResponseResultElementsEnd.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteResponseResultElementsEnd(
   id: json['id'] as String,

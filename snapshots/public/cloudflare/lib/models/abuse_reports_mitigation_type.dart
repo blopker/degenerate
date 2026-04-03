@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of mitigation
-final class AbuseReportsMitigationType {const AbuseReportsMitigationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of mitigation
+@immutable final class AbuseReportsMitigationType {const AbuseReportsMitigationType._(this.value);
 
 factory AbuseReportsMitigationType.fromJson(String json) { return switch (json) {
   'legal_block' => legalBlock,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestReviewEditedPullRequestLabels {const WebhookPullRequestReviewEditedPullRequestLabels({required this.color, required this.$default, required this.description, required this.id, required this.name, required this.nodeId, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewEditedPullRequestLabels {const WebhookPullRequestReviewEditedPullRequestLabels({required this.color, required this.$default, required this.description, required this.id, required this.name, required this.nodeId, required this.url, });
 
 factory WebhookPullRequestReviewEditedPullRequestLabels.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEditedPullRequestLabels(
   color: json['color'] as String,

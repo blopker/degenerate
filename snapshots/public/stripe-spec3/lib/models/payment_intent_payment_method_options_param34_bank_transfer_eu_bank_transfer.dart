@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentIntentPaymentMethodOptionsParam34BankTransferEuBankTransfer {const PaymentIntentPaymentMethodOptionsParam34BankTransferEuBankTransfer({required this.country});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam34BankTransferEuBankTransfer {const PaymentIntentPaymentMethodOptionsParam34BankTransferEuBankTransfer({required this.country});
 
 factory PaymentIntentPaymentMethodOptionsParam34BankTransferEuBankTransfer.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam34BankTransferEuBankTransfer(
   country: json['country'] as String,

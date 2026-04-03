@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActivityListReposStarredByAuthenticatedUserSort {const ActivityListReposStarredByAuthenticatedUserSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivityListReposStarredByAuthenticatedUserSort {const ActivityListReposStarredByAuthenticatedUserSort._(this.value);
 
 factory ActivityListReposStarredByAuthenticatedUserSort.fromJson(String json) { return switch (json) {
   'created' => created,

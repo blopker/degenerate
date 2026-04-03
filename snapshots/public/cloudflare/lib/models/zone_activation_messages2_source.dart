@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZoneActivationMessages2Source {const ZoneActivationMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZoneActivationMessages2Source {const ZoneActivationMessages2Source({this.pointer});
 
 factory ZoneActivationMessages2Source.fromJson(Map<String, dynamic> json) { return ZoneActivationMessages2Source(
   pointer: json['pointer'] as String?,

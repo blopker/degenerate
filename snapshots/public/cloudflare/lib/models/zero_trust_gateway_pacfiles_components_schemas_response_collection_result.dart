@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_components_schemas_uuid.dart';import 'zero_trust_gateway_pacfiles_components_schemas_description.dart';import 'zero_trust_gateway_pacfiles_components_schemas_name.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_slug.dart';import 'zero_trust_gateway_url.dart';final class ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult {const ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult({this.createdAt, this.description, this.id, this.name, this.slug, this.updatedAt, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_components_schemas_uuid.dart';import 'zero_trust_gateway_pacfiles_components_schemas_description.dart';import 'zero_trust_gateway_pacfiles_components_schemas_name.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_slug.dart';import 'zero_trust_gateway_url.dart';@immutable final class ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult {const ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult({this.createdAt, this.description, this.id, this.name, this.slug, this.updatedAt, this.url, });
 
 factory ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult(
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,

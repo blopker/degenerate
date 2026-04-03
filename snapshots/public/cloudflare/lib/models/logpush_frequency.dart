@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// This field is deprecated. Please use `max_upload_*` parameters instead. . The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.
-final class LogpushFrequency {const LogpushFrequency._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// This field is deprecated. Please use `max_upload_*` parameters instead. . The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.
+@immutable final class LogpushFrequency {const LogpushFrequency._(this.value);
 
 factory LogpushFrequency.fromJson(String json) { return switch (json) {
   'high' => high,

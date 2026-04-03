@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CategoryFilterSchema {const CategoryFilterSchema({required this.name, required this.slug, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CategoryFilterSchema {const CategoryFilterSchema({required this.name, required this.slug, });
 
 factory CategoryFilterSchema.fromJson(Map<String, dynamic> json) { return CategoryFilterSchema(
   name: json['name'] as String,

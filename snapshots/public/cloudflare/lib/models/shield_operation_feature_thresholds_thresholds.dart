@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_timestamp.dart';/// The total number of auth-ids seen across this calculation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_timestamp.dart';/// The total number of auth-ids seen across this calculation.
 extension type const ShieldAuthIdTokens(int value) {
 factory ShieldAuthIdTokens.fromJson(num json) => ShieldAuthIdTokens(json.toInt());
 
@@ -56,7 +56,7 @@ factory ShieldSuggestedThreshold.fromJson(num json) => ShieldSuggestedThreshold(
 num toJson() => value;
 
 }
-final class ShieldOperationFeatureThresholdsThresholds {const ShieldOperationFeatureThresholdsThresholds({this.authIdTokens, this.dataPoints, this.lastUpdated, this.p50, this.p90, this.p99, this.periodSeconds, this.requests, this.suggestedThreshold, });
+@immutable final class ShieldOperationFeatureThresholdsThresholds {const ShieldOperationFeatureThresholdsThresholds({this.authIdTokens, this.dataPoints, this.lastUpdated, this.p50, this.p90, this.p99, this.periodSeconds, this.requests, this.suggestedThreshold, });
 
 factory ShieldOperationFeatureThresholdsThresholds.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureThresholdsThresholds(
   authIdTokens: json['auth_id_tokens'] != null ? ShieldAuthIdTokens.fromJson(json['auth_id_tokens'] as num) : null,

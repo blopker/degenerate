@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'calls_turn_key_name.dart';final class CallsTurnKeyEditableFields {const CallsTurnKeyEditableFields({this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'calls_turn_key_name.dart';@immutable final class CallsTurnKeyEditableFields {const CallsTurnKeyEditableFields({this.name});
 
 factory CallsTurnKeyEditableFields.fromJson(Map<String, dynamic> json) { return CallsTurnKeyEditableFields(
   name: json['name'] != null ? CallsTurnKeyName.fromJson(json['name'] as String) : null,

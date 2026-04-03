@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'prompt43_tools_function_function.dart';final class Prompt43ToolsFunctionType {const Prompt43ToolsFunctionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_tools_function_function.dart';@immutable final class Prompt43ToolsFunctionType {const Prompt43ToolsFunctionType._(this.value);
 
 factory Prompt43ToolsFunctionType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43ToolsFunctionType($value)'; } 
  }
-final class Prompt43ToolsFunction {const Prompt43ToolsFunction({required this.function, required this.type, });
+@immutable final class Prompt43ToolsFunction {const Prompt43ToolsFunction({required this.function, required this.type, });
 
 factory Prompt43ToolsFunction.fromJson(Map<String, dynamic> json) { return Prompt43ToolsFunction(
   function: Prompt43ToolsFunctionFunction.fromJson(json['function'] as Map<String, dynamic>),

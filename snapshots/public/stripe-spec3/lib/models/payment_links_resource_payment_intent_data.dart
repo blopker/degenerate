@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates when the funds will be captured from the customer's account.
-final class PaymentLinksResourcePaymentIntentDataCaptureMethod {const PaymentLinksResourcePaymentIntentDataCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates when the funds will be captured from the customer's account.
+@immutable final class PaymentLinksResourcePaymentIntentDataCaptureMethod {const PaymentLinksResourcePaymentIntentDataCaptureMethod._(this.value);
 
 factory PaymentLinksResourcePaymentIntentDataCaptureMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinksResourcePaymentIntentDataCaptureMethod($value)'; } 
  }
 /// Indicates that you intend to make future payments with the payment method collected during checkout.
-final class PaymentLinksResourcePaymentIntentDataSetupFutureUsage {const PaymentLinksResourcePaymentIntentDataSetupFutureUsage._(this.value);
+@immutable final class PaymentLinksResourcePaymentIntentDataSetupFutureUsage {const PaymentLinksResourcePaymentIntentDataSetupFutureUsage._(this.value);
 
 factory PaymentLinksResourcePaymentIntentDataSetupFutureUsage.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinksResourcePaymentIntentDataSetupFutureUsage($value)'; } 
  }
 /// 
-final class PaymentLinksResourcePaymentIntentData {const PaymentLinksResourcePaymentIntentData({this.captureMethod, this.description, required this.metadata, this.setupFutureUsage, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
+@immutable final class PaymentLinksResourcePaymentIntentData {const PaymentLinksResourcePaymentIntentData({required this.metadata, this.captureMethod, this.description, this.setupFutureUsage, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
 
 factory PaymentLinksResourcePaymentIntentData.fromJson(Map<String, dynamic> json) { return PaymentLinksResourcePaymentIntentData(
   captureMethod: json['capture_method'] != null ? PaymentLinksResourcePaymentIntentDataCaptureMethod.fromJson(json['capture_method'] as String) : null,

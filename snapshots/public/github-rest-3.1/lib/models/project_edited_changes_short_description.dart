@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProjectEditedChangesShortDescription {const ProjectEditedChangesShortDescription({this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectEditedChangesShortDescription {const ProjectEditedChangesShortDescription({this.from, this.to, });
 
 factory ProjectEditedChangesShortDescription.fromJson(Map<String, dynamic> json) { return ProjectEditedChangesShortDescription(
   from: json['from'] as String?,

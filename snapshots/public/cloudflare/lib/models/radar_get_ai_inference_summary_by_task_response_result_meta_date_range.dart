@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAiInferenceSummaryByTaskResponseResultMetaDateRange {const RadarGetAiInferenceSummaryByTaskResponseResultMetaDateRange({required this.endTime, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiInferenceSummaryByTaskResponseResultMetaDateRange {const RadarGetAiInferenceSummaryByTaskResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
 factory RadarGetAiInferenceSummaryByTaskResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceSummaryByTaskResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),

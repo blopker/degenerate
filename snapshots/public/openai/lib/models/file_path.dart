@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A path to a file.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A path to a file.
 /// 
-final class FilePath {const FilePath({required this.type, required this.fileId, required this.index, });
+@immutable final class FilePath {const FilePath({required this.type, required this.fileId, required this.index, });
 
 factory FilePath.fromJson(Map<String, dynamic> json) { return FilePath(
   type: json['type'] as String,

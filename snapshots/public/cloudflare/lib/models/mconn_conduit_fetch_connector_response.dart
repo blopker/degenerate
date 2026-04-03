@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_conduit_connector.dart';final class MconnConduitFetchConnectorResponse {const MconnConduitFetchConnectorResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_conduit_connector.dart';@immutable final class MconnConduitFetchConnectorResponse {const MconnConduitFetchConnectorResponse({this.result});
 
 factory MconnConduitFetchConnectorResponse.fromJson(Map<String, dynamic> json) { return MconnConduitFetchConnectorResponse(
   result: json['result'] != null ? MconnConduitConnector.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_review_edited_changes_body.dart';final class WebhookPullRequestReviewEditedChanges {const WebhookPullRequestReviewEditedChanges({this.body});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_edited_changes_body.dart';@immutable final class WebhookPullRequestReviewEditedChanges {const WebhookPullRequestReviewEditedChanges({this.body});
 
 factory WebhookPullRequestReviewEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEditedChanges(
   body: json['body'] != null ? WebhookPullRequestReviewEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_authorization_amount_details.dart';import 'issuing_authorization_cardholder.dart';import 'issuing_authorization_fleet_data.dart';import 'issuing_authorization_fraud_challenge.dart';import 'issuing_authorization_fuel_data.dart';import 'issuing_authorization_merchant_data.dart';import 'issuing_authorization_network_data.dart';import 'issuing_authorization_pending_request.dart';import 'issuing_authorization_request.dart';import 'issuing_authorization_token.dart';import 'issuing_authorization_treasury.dart';import 'issuing_authorization_verification_data.dart';import 'issuing_card.dart';import 'issuing_cardholder.dart';import 'issuing_token.dart';import 'issuing_transaction.dart';/// How the card details were provided.
-final class IssuingAuthorizationAuthorizationMethod {const IssuingAuthorizationAuthorizationMethod._(this.value);
+@immutable final class IssuingAuthorizationAuthorizationMethod {const IssuingAuthorizationAuthorizationMethod._(this.value);
 
 factory IssuingAuthorizationAuthorizationMethod.fromJson(String json) { return switch (json) {
   'chip' => chip,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationAuthorizationMethod($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class IssuingAuthorizationObject {const IssuingAuthorizationObject._(this.value);
+@immutable final class IssuingAuthorizationObject {const IssuingAuthorizationObject._(this.value);
 
 factory IssuingAuthorizationObject.fromJson(String json) { return switch (json) {
   'issuing.authorization' => issuingAuthorization,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationObject($value)'; } 
  }
 /// The current status of the authorization in its lifecycle.
-final class IssuingAuthorizationStatus {const IssuingAuthorizationStatus._(this.value);
+@immutable final class IssuingAuthorizationStatus {const IssuingAuthorizationStatus._(this.value);
 
 factory IssuingAuthorizationStatus.fromJson(String json) { return switch (json) {
   'closed' => closed,
@@ -92,7 +92,7 @@ bool get isUnknown { return !values.contains(this); }
 /// purchase to be completed successfully.
 /// 
 /// Related guide: [Issued card authorizations](https://docs.stripe.com/issuing/purchases/authorizations)
-final class IssuingAuthorization {const IssuingAuthorization({required this.amount, this.amountDetails, required this.approved, required this.authorizationMethod, required this.balanceTransactions, required this.card, this.cardholder, required this.created, required this.currency, this.fleet, this.fraudChallenges, this.fuel, required this.id, required this.livemode, required this.merchantAmount, required this.merchantCurrency, required this.merchantData, required this.metadata, this.networkData, required this.object, this.pendingRequest, required this.requestHistory, required this.status, this.token, required this.transactions, this.treasury, required this.verificationData, this.verifiedByFraudChallenge, this.wallet, });
+@immutable final class IssuingAuthorization {const IssuingAuthorization({required this.amount, required this.approved, required this.authorizationMethod, required this.balanceTransactions, required this.card, required this.created, required this.currency, required this.id, required this.livemode, required this.merchantAmount, required this.merchantCurrency, required this.merchantData, required this.metadata, required this.object, required this.requestHistory, required this.status, required this.transactions, required this.verificationData, this.amountDetails, this.cardholder, this.fleet, this.fraudChallenges, this.fuel, this.networkData, this.pendingRequest, this.token, this.treasury, this.verifiedByFraudChallenge, this.wallet, });
 
 factory IssuingAuthorization.fromJson(Map<String, dynamic> json) { return IssuingAuthorization(
   amount: (json['amount'] as num).toInt(),

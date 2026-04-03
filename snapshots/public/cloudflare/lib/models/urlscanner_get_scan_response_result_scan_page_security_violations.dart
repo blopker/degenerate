@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponseResultScanPageSecurityViolations {const UrlscannerGetScanResponseResultScanPageSecurityViolations({required this.category, required this.text, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanPageSecurityViolations {const UrlscannerGetScanResponseResultScanPageSecurityViolations({required this.category, required this.text, required this.url, });
 
 factory UrlscannerGetScanResponseResultScanPageSecurityViolations.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanPageSecurityViolations(
   category: json['category'] as String,

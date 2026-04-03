@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InsightsRouteStats2 {const InsightsRouteStats2({this.httpMethod, this.apiRoute, this.totalRequestCount, this.rateLimitedRequestCount, this.lastRateLimitedTimestamp, this.lastRequestTimestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsRouteStats2 {const InsightsRouteStats2({this.httpMethod, this.apiRoute, this.totalRequestCount, this.rateLimitedRequestCount, this.lastRateLimitedTimestamp, this.lastRequestTimestamp, });
 
 factory InsightsRouteStats2.fromJson(Map<String, dynamic> json) { return InsightsRouteStats2(
   httpMethod: json['http_method'] as String?,

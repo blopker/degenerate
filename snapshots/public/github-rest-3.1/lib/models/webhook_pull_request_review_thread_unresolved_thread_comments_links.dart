@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_review_thread_unresolved_thread_comments_links_html.dart';import 'webhook_pull_request_review_thread_unresolved_thread_comments_links_pull_request.dart';import 'webhook_pull_request_review_thread_unresolved_thread_comments_links_self.dart';final class WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks {const WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks({required this.html, required this.pullRequest, required this.self, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_thread_unresolved_thread_comments_links_html.dart';import 'webhook_pull_request_review_thread_unresolved_thread_comments_links_pull_request.dart';import 'webhook_pull_request_review_thread_unresolved_thread_comments_links_self.dart';@immutable final class WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks {const WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks({required this.html, required this.pullRequest, required this.self, });
 
 factory WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinks(
   html: WebhookPullRequestReviewThreadUnresolvedThreadCommentsLinksHtml.fromJson(json['html'] as Map<String, dynamic>),

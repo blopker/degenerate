@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'setup_intent_payment_method_options_mandate_options_acss_debit.dart';/// Currency supported by the bank account
-final class SetupIntentPaymentMethodOptionsAcssDebitCurrency {const SetupIntentPaymentMethodOptionsAcssDebitCurrency._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent_payment_method_options_mandate_options_acss_debit.dart';/// Currency supported by the bank account
+@immutable final class SetupIntentPaymentMethodOptionsAcssDebitCurrency {const SetupIntentPaymentMethodOptionsAcssDebitCurrency._(this.value);
 
 factory SetupIntentPaymentMethodOptionsAcssDebitCurrency.fromJson(String json) { return switch (json) {
   'cad' => cad,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsAcssDebitCurrency($value)'; } 
  }
 /// Bank account verification method.
-final class SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod {const SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod._(this.value);
+@immutable final class SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod {const SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod._(this.value);
 
 factory SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsAcssDebitVerificationMethod($value)'; } 
  }
 /// 
-final class SetupIntentPaymentMethodOptionsAcssDebit {const SetupIntentPaymentMethodOptionsAcssDebit({this.currency, this.mandateOptions, this.verificationMethod, });
+@immutable final class SetupIntentPaymentMethodOptionsAcssDebit {const SetupIntentPaymentMethodOptionsAcssDebit({this.currency, this.mandateOptions, this.verificationMethod, });
 
 factory SetupIntentPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsAcssDebit(
   currency: json['currency'] != null ? SetupIntentPaymentMethodOptionsAcssDebitCurrency.fromJson(json['currency'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'input_file_content.dart';import 'input_image_content.dart';import 'input_text_content.dart';sealed class FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutput();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_file_content.dart';import 'input_image_content.dart';import 'input_text_content.dart';sealed class FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutput();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory FunctionAndCustomToolCallOutput.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FunctionAndCustomToolCallOutput$Unknown; } 
  }
-final class FunctionAndCustomToolCallOutputInputText extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputText(this.inputTextContent);
+@immutable final class FunctionAndCustomToolCallOutputInputText extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputText(this.inputTextContent);
 
 factory FunctionAndCustomToolCallOutputInputText.fromJson(Map<String, dynamic> json) { return FunctionAndCustomToolCallOutputInputText(InputTextContent.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final InputTextContent inputTextContent;
 @override int get hashCode { return inputTextContent.hashCode; } 
 @override String toString() { return 'FunctionAndCustomToolCallOutputInputText(inputTextContent: $inputTextContent)'; } 
  }
-final class FunctionAndCustomToolCallOutputInputImage extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputImage(this.inputImageContent);
+@immutable final class FunctionAndCustomToolCallOutputInputImage extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputImage(this.inputImageContent);
 
 factory FunctionAndCustomToolCallOutputInputImage.fromJson(Map<String, dynamic> json) { return FunctionAndCustomToolCallOutputInputImage(InputImageContent.fromJson(json)); }
 
@@ -42,7 +42,7 @@ final InputImageContent inputImageContent;
 @override int get hashCode { return inputImageContent.hashCode; } 
 @override String toString() { return 'FunctionAndCustomToolCallOutputInputImage(inputImageContent: $inputImageContent)'; } 
  }
-final class FunctionAndCustomToolCallOutputInputFile extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputFile(this.inputFileContent);
+@immutable final class FunctionAndCustomToolCallOutputInputFile extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutputInputFile(this.inputFileContent);
 
 factory FunctionAndCustomToolCallOutputInputFile.fromJson(Map<String, dynamic> json) { return FunctionAndCustomToolCallOutputInputFile(InputFileContent.fromJson(json)); }
 
@@ -57,7 +57,7 @@ final InputFileContent inputFileContent;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class FunctionAndCustomToolCallOutput$Unknown extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutput$Unknown(this.json);
+@immutable final class FunctionAndCustomToolCallOutput$Unknown extends FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutput$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'integration.dart';import 'review_dismissed_issue_event_dismissed_review.dart';import 'simple_user.dart';/// Review Dismissed Issue Event
-final class ReviewDismissedIssueEvent {const ReviewDismissedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.dismissedReview, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'review_dismissed_issue_event_dismissed_review.dart';import 'simple_user.dart';/// Review Dismissed Issue Event
+@immutable final class ReviewDismissedIssueEvent {const ReviewDismissedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.dismissedReview, });
 
 factory ReviewDismissedIssueEvent.fromJson(Map<String, dynamic> json) { return ReviewDismissedIssueEvent(
   id: (json['id'] as num).toInt(),

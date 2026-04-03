@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the style of the summary, such as general, team meeting, or sales call.
-final class RealtimekitSummarizationConfigSummaryType {const RealtimekitSummarizationConfigSummaryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the style of the summary, such as general, team meeting, or sales call.
+@immutable final class RealtimekitSummarizationConfigSummaryType {const RealtimekitSummarizationConfigSummaryType._(this.value);
 
 factory RealtimekitSummarizationConfigSummaryType.fromJson(String json) { return switch (json) {
   'general' => general,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitSummarizationConfigSummaryType($value)'; } 
  }
 /// Determines the text format of the summary, such as plain text or markdown.
-final class RealtimekitSummarizationConfigTextFormat {const RealtimekitSummarizationConfigTextFormat._(this.value);
+@immutable final class RealtimekitSummarizationConfigTextFormat {const RealtimekitSummarizationConfigTextFormat._(this.value);
 
 factory RealtimekitSummarizationConfigTextFormat.fromJson(String json) { return switch (json) {
   'plain_text' => plainText,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitSummarizationConfigTextFormat($value)'; } 
  }
 /// Summary Config
-final class RealtimekitSummarizationConfig {const RealtimekitSummarizationConfig({this.summaryType = RealtimekitSummarizationConfigSummaryType.general, this.textFormat = RealtimekitSummarizationConfigTextFormat.markdown, this.wordLimit = 500, });
+@immutable final class RealtimekitSummarizationConfig {const RealtimekitSummarizationConfig({this.summaryType = RealtimekitSummarizationConfigSummaryType.general, this.textFormat = RealtimekitSummarizationConfigTextFormat.markdown, this.wordLimit = 500, });
 
 factory RealtimekitSummarizationConfig.fromJson(Map<String, dynamic> json) { return RealtimekitSummarizationConfig(
   summaryType: json.containsKey('summary_type') ? RealtimekitSummarizationConfigSummaryType.fromJson(json['summary_type'] as String) : RealtimekitSummarizationConfigSummaryType.general,

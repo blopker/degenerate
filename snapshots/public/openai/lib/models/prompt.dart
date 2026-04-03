@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_file_content.dart';import 'input_image_content.dart';import 'input_text_content.dart';import 'response_prompt_variables_value.dart';/// Reference to a prompt template and its variables.
 /// [Learn more](/docs/guides/text?api-mode=responses#reusable-prompts).
 /// 
-final class Prompt {const Prompt({required this.id, this.version, this.variables, });
+@immutable final class Prompt {const Prompt({required this.id, this.version, this.variables, });
 
 factory Prompt.fromJson(Map<String, dynamic> json) { return Prompt(
   id: json['id'] as String,

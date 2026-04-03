@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pages_https_certificate.dart';import 'pages_source_hash.dart';/// The status of the most recent build of the Page.
-final class PageStatus {const PageStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_https_certificate.dart';import 'pages_source_hash.dart';/// The status of the most recent build of the Page.
+@immutable final class PageStatus {const PageStatus._(this.value);
 
 factory PageStatus.fromJson(String json) { return switch (json) {
   'built' => built,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PageStatus($value)'; } 
  }
 /// The state if the domain is verified
-final class PageProtectedDomainState {const PageProtectedDomainState._(this.value);
+@immutable final class PageProtectedDomainState {const PageProtectedDomainState._(this.value);
 
 factory PageProtectedDomainState.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PageProtectedDomainState($value)'; } 
  }
 /// The process in which the Page will be built.
-final class PageBuildType {const PageBuildType._(this.value);
+@immutable final class PageBuildType {const PageBuildType._(this.value);
 
 factory PageBuildType.fromJson(String json) { return switch (json) {
   'legacy' => legacy,
@@ -91,7 +91,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PageBuildType($value)'; } 
  }
 /// The configuration for GitHub Pages for a repository.
-final class Page {const Page({required this.url, required this.status, required this.cname, this.protectedDomainState, this.pendingDomainUnverifiedAt, this.custom404 = false, this.htmlUrl, this.buildType, this.source, required this.public, this.httpsCertificate, this.httpsEnforced, });
+@immutable final class Page {const Page({required this.url, required this.status, required this.cname, required this.public, this.protectedDomainState, this.pendingDomainUnverifiedAt, this.custom404 = false, this.htmlUrl, this.buildType, this.source, this.httpsCertificate, this.httpsEnforced, });
 
 factory Page.fromJson(Map<String, dynamic> json) { return Page(
   url: Uri.parse(json['url'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ChecksListForRefFilter {const ChecksListForRefFilter._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksListForRefFilter {const ChecksListForRefFilter._(this.value);
 
 factory ChecksListForRefFilter.fromJson(String json) { return switch (json) {
   'latest' => latest,

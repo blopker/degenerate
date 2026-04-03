@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtTimeseriesGroupValidationLevel {const RadarGetCtTimeseriesGroupValidationLevel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesGroupValidationLevel {const RadarGetCtTimeseriesGroupValidationLevel._(this.value);
 
 factory RadarGetCtTimeseriesGroupValidationLevel.fromJson(String json) { return switch (json) {
   'DOMAIN' => domain,

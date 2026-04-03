@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposMergeUpstreamRequest {const ReposMergeUpstreamRequest({required this.branch});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposMergeUpstreamRequest {const ReposMergeUpstreamRequest({required this.branch});
 
 factory ReposMergeUpstreamRequest.fromJson(Map<String, dynamic> json) { return ReposMergeUpstreamRequest(
   branch: json['branch'] as String,

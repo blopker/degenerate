@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_responses_run_data_source_input_messages.dart';import 'create_eval_responses_run_data_source_sampling_params.dart';import 'create_eval_responses_run_data_source_source.dart';import 'eval_jsonl_file_content_source.dart';import 'eval_jsonl_file_id_source.dart';import 'eval_responses_source.dart';import 'input_messages_item_reference.dart';import 'input_messages_template.dart';/// The type of run data source. Always `responses`.
-final class CreateEvalResponsesRunDataSourceType {const CreateEvalResponsesRunDataSourceType._(this.value);
+@immutable final class CreateEvalResponsesRunDataSourceType {const CreateEvalResponsesRunDataSourceType._(this.value);
 
 factory CreateEvalResponsesRunDataSourceType.fromJson(String json) { return switch (json) {
   'responses' => responses,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A ResponsesRunDataSource object describing a model sampling configuration.
 /// 
-final class CreateEvalResponsesRunDataSource {const CreateEvalResponsesRunDataSource({this.type = CreateEvalResponsesRunDataSourceType.responses, this.inputMessages, this.samplingParams, this.model, required this.source, });
+@immutable final class CreateEvalResponsesRunDataSource {const CreateEvalResponsesRunDataSource({required this.source, this.type = CreateEvalResponsesRunDataSourceType.responses, this.inputMessages, this.samplingParams, this.model, });
 
 factory CreateEvalResponsesRunDataSource.fromJson(Map<String, dynamic> json) { return CreateEvalResponsesRunDataSource(
   type: CreateEvalResponsesRunDataSourceType.fromJson(json['type'] as String),

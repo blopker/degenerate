@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_create_scope.dart';final class IamRequestUpdateResourceGroup {const IamRequestUpdateResourceGroup({this.name, this.scope, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_create_scope.dart';@immutable final class IamRequestUpdateResourceGroup {const IamRequestUpdateResourceGroup({this.name, this.scope, });
 
 factory IamRequestUpdateResourceGroup.fromJson(Map<String, dynamic> json) { return IamRequestUpdateResourceGroup(
   name: json['name'] as String?,

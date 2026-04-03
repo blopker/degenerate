@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_id.dart';final class PageShieldConnection {const PageShieldConnection({required this.addedAt, this.domainReportedMalicious, this.firstPageUrl, required this.firstSeenAt, required this.host, required this.id, required this.lastSeenAt, this.maliciousDomainCategories, this.maliciousUrlCategories, this.pageUrls, required this.url, required this.urlContainsCdnCgiPath, this.urlReportedMalicious, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_id.dart';@immutable final class PageShieldConnection {const PageShieldConnection({required this.addedAt, required this.firstSeenAt, required this.host, required this.id, required this.lastSeenAt, required this.url, required this.urlContainsCdnCgiPath, this.domainReportedMalicious, this.firstPageUrl, this.maliciousDomainCategories, this.maliciousUrlCategories, this.pageUrls, this.urlReportedMalicious, });
 
 factory PageShieldConnection.fromJson(Map<String, dynamic> json) { return PageShieldConnection(
   addedAt: DateTime.parse(json['added_at'] as String),

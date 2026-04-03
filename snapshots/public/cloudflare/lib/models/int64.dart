@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Int64Type {const Int64Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Int64Type {const Int64Type._(this.value);
 
 factory Int64Type.fromJson(String json) { return switch (json) {
   'int64' => int64,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Int64Type($value)'; } 
  }
-final class Int64 {const Int64({required this.type});
+@immutable final class Int64 {const Int64({required this.type});
 
 factory Int64.fromJson(Map<String, dynamic> json) { return Int64(
   type: Int64Type.fromJson(json['type'] as String),

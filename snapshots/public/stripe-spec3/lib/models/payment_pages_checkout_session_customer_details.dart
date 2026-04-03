@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'payment_pages_checkout_session_tax_id.dart';/// The customer’s tax exempt status after a completed Checkout Session.
-final class PaymentPagesCheckoutSessionCustomerDetailsTaxExempt {const PaymentPagesCheckoutSessionCustomerDetailsTaxExempt._(this.value);
+@immutable final class PaymentPagesCheckoutSessionCustomerDetailsTaxExempt {const PaymentPagesCheckoutSessionCustomerDetailsTaxExempt._(this.value);
 
 factory PaymentPagesCheckoutSessionCustomerDetailsTaxExempt.fromJson(String json) { return switch (json) {
   'exempt' => exempt,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionCustomerDetailsTaxExempt($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionCustomerDetails {const PaymentPagesCheckoutSessionCustomerDetails({this.address, this.businessName, this.email, this.individualName, this.name, this.phone, this.taxExempt, this.taxIds, });
+@immutable final class PaymentPagesCheckoutSessionCustomerDetails {const PaymentPagesCheckoutSessionCustomerDetails({this.address, this.businessName, this.email, this.individualName, this.name, this.phone, this.taxExempt, this.taxIds, });
 
 factory PaymentPagesCheckoutSessionCustomerDetails.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomerDetails(
   address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,

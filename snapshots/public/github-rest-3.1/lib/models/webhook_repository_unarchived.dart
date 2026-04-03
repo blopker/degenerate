@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookRepositoryUnarchivedAction {const WebhookRepositoryUnarchivedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookRepositoryUnarchivedAction {const WebhookRepositoryUnarchivedAction._(this.value);
 
 factory WebhookRepositoryUnarchivedAction.fromJson(String json) { return switch (json) {
   'unarchived' => unarchived,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookRepositoryUnarchivedAction($value)'; } 
  }
-final class WebhookRepositoryUnarchived {const WebhookRepositoryUnarchived({required this.action, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookRepositoryUnarchived {const WebhookRepositoryUnarchived({required this.action, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookRepositoryUnarchived.fromJson(Map<String, dynamic> json) { return WebhookRepositoryUnarchived(
   action: WebhookRepositoryUnarchivedAction.fromJson(json['action'] as String),

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'response_reasoning_summary_part_added_event_part.dart';/// The type of the event. Always `response.reasoning_summary_part.added`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_reasoning_summary_part_added_event_part.dart';/// The type of the event. Always `response.reasoning_summary_part.added`.
 /// 
-final class ResponseReasoningSummaryPartAddedEventType {const ResponseReasoningSummaryPartAddedEventType._(this.value);
+@immutable final class ResponseReasoningSummaryPartAddedEventType {const ResponseReasoningSummaryPartAddedEventType._(this.value);
 
 factory ResponseReasoningSummaryPartAddedEventType.fromJson(String json) { return switch (json) {
   'response.reasoning_summary_part.added' => responseReasoningSummaryPartAdded,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseReasoningSummaryPartAddedEventType($value)'; } 
  }
 /// Emitted when a new reasoning summary part is added.
-final class ResponseReasoningSummaryPartAddedEvent {const ResponseReasoningSummaryPartAddedEvent({required this.type, required this.itemId, required this.outputIndex, required this.summaryIndex, required this.sequenceNumber, required this.$part, });
+@immutable final class ResponseReasoningSummaryPartAddedEvent {const ResponseReasoningSummaryPartAddedEvent({required this.type, required this.itemId, required this.outputIndex, required this.summaryIndex, required this.sequenceNumber, required this.$part, });
 
 factory ResponseReasoningSummaryPartAddedEvent.fromJson(Map<String, dynamic> json) { return ResponseReasoningSummaryPartAddedEvent(
   type: ResponseReasoningSummaryPartAddedEventType.fromJson(json['type'] as String),

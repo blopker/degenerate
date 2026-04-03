@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The top log probability of a token.
-final class TopLogProb {const TopLogProb({required this.token, required this.logprob, required this.bytes, });
+@immutable final class TopLogProb {const TopLogProb({required this.token, required this.logprob, required this.bytes, });
 
 factory TopLogProb.fromJson(Map<String, dynamic> json) { return TopLogProb(
   token: json['token'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'web_search_approximate_location.dart';import 'web_search_tool_filters.dart';/// High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.
-final class WebSearchToolSearchContextSize {const WebSearchToolSearchContextSize._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web_search_approximate_location.dart';import 'web_search_tool_filters.dart';/// High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.
+@immutable final class WebSearchToolSearchContextSize {const WebSearchToolSearchContextSize._(this.value);
 
 factory WebSearchToolSearchContextSize.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Search the Internet for sources related to the prompt. Learn more about the
 /// [web search tool](/docs/guides/tools-web-search).
 /// 
-final class WebSearchTool {const WebSearchTool({this.type = 'web_search', this.filters, this.userLocation, this.searchContextSize = WebSearchToolSearchContextSize.medium, });
+@immutable final class WebSearchTool {const WebSearchTool({this.type = 'web_search', this.filters, this.userLocation, this.searchContextSize = WebSearchToolSearchContextSize.medium, });
 
 factory WebSearchTool.fromJson(Map<String, dynamic> json) { return WebSearchTool(
   type: json['type'] as String,

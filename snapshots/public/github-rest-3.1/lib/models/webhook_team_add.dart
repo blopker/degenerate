@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_team1.dart';final class WebhookTeamAdd {const WebhookTeamAdd({this.enterprise, this.installation, this.organization, required this.repository, required this.sender, required this.team, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_team1.dart';@immutable final class WebhookTeamAdd {const WebhookTeamAdd({required this.repository, required this.sender, required this.team, this.enterprise, this.installation, this.organization, });
 
 factory WebhookTeamAdd.fromJson(Map<String, dynamic> json) { return WebhookTeamAdd(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,

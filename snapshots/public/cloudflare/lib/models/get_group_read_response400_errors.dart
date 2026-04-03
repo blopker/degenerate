@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetGroupReadResponse400Errors {const GetGroupReadResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetGroupReadResponse400Errors {const GetGroupReadResponse400Errors({required this.message});
 
 factory GetGroupReadResponse400Errors.fromJson(Map<String, dynamic> json) { return GetGroupReadResponse400Errors(
   message: json['message'] as String,

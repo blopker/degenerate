@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Protect from web cache deception attacks while still allowing static
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Protect from web cache deception attacks while still allowing static
 /// assets to be cached. This setting verifies that the URL's extension
 /// matches the returned `Content-Type`.
 /// 
-final class ZonesCacheDeceptionArmorId {const ZonesCacheDeceptionArmorId._(this.value);
+@immutable final class ZonesCacheDeceptionArmorId {const ZonesCacheDeceptionArmorId._(this.value);
 
 factory ZonesCacheDeceptionArmorId.fromJson(String json) { return switch (json) {
   'cache_deception_armor' => cacheDeceptionArmor,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The status of Cache Deception Armor.
 /// 
-final class ZonesCacheDeceptionArmorValue {const ZonesCacheDeceptionArmorValue._(this.value);
+@immutable final class ZonesCacheDeceptionArmorValue {const ZonesCacheDeceptionArmorValue._(this.value);
 
 factory ZonesCacheDeceptionArmorValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesCacheDeceptionArmorValue($value)'; } 
  }
-final class ZonesCacheDeceptionArmor {const ZonesCacheDeceptionArmor({this.id, this.value, });
+@immutable final class ZonesCacheDeceptionArmor {const ZonesCacheDeceptionArmor({this.id, this.value, });
 
 factory ZonesCacheDeceptionArmor.fromJson(Map<String, dynamic> json) { return ZonesCacheDeceptionArmor(
   id: json['id'] != null ? ZonesCacheDeceptionArmorId.fromJson(json['id'] as String) : null,

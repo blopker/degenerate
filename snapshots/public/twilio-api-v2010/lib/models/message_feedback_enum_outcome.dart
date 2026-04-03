@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Reported outcome indicating whether there is confirmation that the Message recipient performed a tracked user action. Can be: `unconfirmed` or `confirmed`. For more details see [How to Optimize Message Deliverability with Message Feedback](https://www.twilio.com/docs/messaging/guides/send-message-feedback-to-twilio).
-final class MessageFeedbackEnumOutcome {const MessageFeedbackEnumOutcome._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reported outcome indicating whether there is confirmation that the Message recipient performed a tracked user action. Can be: `unconfirmed` or `confirmed`. For more details see [How to Optimize Message Deliverability with Message Feedback](https://www.twilio.com/docs/messaging/guides/send-message-feedback-to-twilio).
+@immutable final class MessageFeedbackEnumOutcome {const MessageFeedbackEnumOutcome._(this.value);
 
 factory MessageFeedbackEnumOutcome.fromJson(String json) { return switch (json) {
   'confirmed' => confirmed,

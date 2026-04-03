@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostLinkAccountSessionsRequestFiltersAccountSubcategories {const PostLinkAccountSessionsRequestFiltersAccountSubcategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostLinkAccountSessionsRequestFiltersAccountSubcategories {const PostLinkAccountSessionsRequestFiltersAccountSubcategories._(this.value);
 
 factory PostLinkAccountSessionsRequestFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostLinkAccountSessionsRequestFiltersAccountSubcategories($value)'; } 
  }
 /// Filters to restrict the kinds of accounts to collect.
-final class PostLinkAccountSessionsRequestFilters {const PostLinkAccountSessionsRequestFilters({this.accountSubcategories, this.countries, });
+@immutable final class PostLinkAccountSessionsRequestFilters {const PostLinkAccountSessionsRequestFilters({this.accountSubcategories, this.countries, });
 
 factory PostLinkAccountSessionsRequestFilters.fromJson(Map<String, dynamic> json) { return PostLinkAccountSessionsRequestFilters(
   accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => PostLinkAccountSessionsRequestFiltersAccountSubcategories.fromJson(e as String)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Finished upgrade
-final class MconnEventFinishUpgradeSuccessK {const MconnEventFinishUpgradeSuccessK._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Finished upgrade
+@immutable final class MconnEventFinishUpgradeSuccessK {const MconnEventFinishUpgradeSuccessK._(this.value);
 
 factory MconnEventFinishUpgradeSuccessK.fromJson(String json) { return switch (json) {
   'FinishUpgradeSuccess' => finishUpgradeSuccess,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MconnEventFinishUpgradeSuccessK($value)'; } 
  }
-final class MconnEventFinishUpgradeSuccess {const MconnEventFinishUpgradeSuccess({required this.k});
+@immutable final class MconnEventFinishUpgradeSuccess {const MconnEventFinishUpgradeSuccess({required this.k});
 
 factory MconnEventFinishUpgradeSuccess.fromJson(Map<String, dynamic> json) { return MconnEventFinishUpgradeSuccess(
   k: MconnEventFinishUpgradeSuccessK.fromJson(json['k'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'queues_ack_messages_request_acks.dart';import 'queues_ack_messages_request_retries.dart';final class QueuesAckMessagesRequest {const QueuesAckMessagesRequest({this.acks, this.retries, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'queues_ack_messages_request_acks.dart';import 'queues_ack_messages_request_retries.dart';@immutable final class QueuesAckMessagesRequest {const QueuesAckMessagesRequest({this.acks, this.retries, });
 
 factory QueuesAckMessagesRequest.fromJson(Map<String, dynamic> json) { return QueuesAckMessagesRequest(
   acks: (json['acks'] as List<dynamic>?)?.map((e) => QueuesAckMessagesRequestAcks.fromJson(e as Map<String, dynamic>)).toList(),

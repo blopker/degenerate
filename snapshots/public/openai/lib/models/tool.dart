@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'apply_patch_tool_param.dart';import 'code_interpreter_tool.dart';import 'computer_tool.dart';import 'computer_use_preview_tool.dart';import 'custom_tool_param.dart';import 'file_search_tool.dart';import 'function_shell_tool_param.dart';import 'function_tool.dart';import 'image_gen_tool.dart';import 'local_shell_tool_param.dart';import 'mcp_tool.dart';import 'namespace_tool_param.dart';import 'tool_search_tool_param.dart';import 'web_search_preview_tool.dart';import 'web_search_tool.dart';/// A tool that can be used to generate a response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_tool_param.dart';import 'code_interpreter_tool.dart';import 'computer_tool.dart';import 'computer_use_preview_tool.dart';import 'custom_tool_param.dart';import 'file_search_tool.dart';import 'function_shell_tool_param.dart';import 'function_tool.dart';import 'image_gen_tool.dart';import 'local_shell_tool_param.dart';import 'mcp_tool.dart';import 'namespace_tool_param.dart';import 'tool_search_tool_param.dart';import 'web_search_preview_tool.dart';import 'web_search_tool.dart';/// A tool that can be used to generate a response.
 /// 
 sealed class Tool {const Tool();
 
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Tool$Unknown; } 
  }
-final class ToolFunction extends Tool {const ToolFunction(this.functionTool);
+@immutable final class ToolFunction extends Tool {const ToolFunction(this.functionTool);
 
 factory ToolFunction.fromJson(Map<String, dynamic> json) { return ToolFunction(FunctionTool.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final FunctionTool functionTool;
 @override int get hashCode { return functionTool.hashCode; } 
 @override String toString() { return 'ToolFunction(functionTool: $functionTool)'; } 
  }
-final class ToolFileSearch extends Tool {const ToolFileSearch(this.fileSearchTool);
+@immutable final class ToolFileSearch extends Tool {const ToolFileSearch(this.fileSearchTool);
 
 factory ToolFileSearch.fromJson(Map<String, dynamic> json) { return ToolFileSearch(FileSearchTool.fromJson(json)); }
 
@@ -56,7 +56,7 @@ final FileSearchTool fileSearchTool;
 @override int get hashCode { return fileSearchTool.hashCode; } 
 @override String toString() { return 'ToolFileSearch(fileSearchTool: $fileSearchTool)'; } 
  }
-final class ToolComputer extends Tool {const ToolComputer(this.computerTool);
+@immutable final class ToolComputer extends Tool {const ToolComputer(this.computerTool);
 
 factory ToolComputer.fromJson(Map<String, dynamic> json) { return ToolComputer(ComputerTool.fromJson(json)); }
 
@@ -69,7 +69,7 @@ final ComputerTool computerTool;
 @override int get hashCode { return computerTool.hashCode; } 
 @override String toString() { return 'ToolComputer(computerTool: $computerTool)'; } 
  }
-final class ToolComputerUsePreview extends Tool {const ToolComputerUsePreview(this.computerUsePreviewTool);
+@immutable final class ToolComputerUsePreview extends Tool {const ToolComputerUsePreview(this.computerUsePreviewTool);
 
 factory ToolComputerUsePreview.fromJson(Map<String, dynamic> json) { return ToolComputerUsePreview(ComputerUsePreviewTool.fromJson(json)); }
 
@@ -82,7 +82,7 @@ final ComputerUsePreviewTool computerUsePreviewTool;
 @override int get hashCode { return computerUsePreviewTool.hashCode; } 
 @override String toString() { return 'ToolComputerUsePreview(computerUsePreviewTool: $computerUsePreviewTool)'; } 
  }
-final class ToolWebSearch extends Tool {const ToolWebSearch(this.webSearchTool);
+@immutable final class ToolWebSearch extends Tool {const ToolWebSearch(this.webSearchTool);
 
 factory ToolWebSearch.fromJson(Map<String, dynamic> json) { return ToolWebSearch(WebSearchTool.fromJson(json)); }
 
@@ -95,7 +95,7 @@ final WebSearchTool webSearchTool;
 @override int get hashCode { return webSearchTool.hashCode; } 
 @override String toString() { return 'ToolWebSearch(webSearchTool: $webSearchTool)'; } 
  }
-final class ToolMcp extends Tool {const ToolMcp(this.mcpTool);
+@immutable final class ToolMcp extends Tool {const ToolMcp(this.mcpTool);
 
 factory ToolMcp.fromJson(Map<String, dynamic> json) { return ToolMcp(McpTool.fromJson(json)); }
 
@@ -108,7 +108,7 @@ final McpTool mcpTool;
 @override int get hashCode { return mcpTool.hashCode; } 
 @override String toString() { return 'ToolMcp(mcpTool: $mcpTool)'; } 
  }
-final class ToolCodeInterpreter extends Tool {const ToolCodeInterpreter(this.codeInterpreterTool);
+@immutable final class ToolCodeInterpreter extends Tool {const ToolCodeInterpreter(this.codeInterpreterTool);
 
 factory ToolCodeInterpreter.fromJson(Map<String, dynamic> json) { return ToolCodeInterpreter(CodeInterpreterTool.fromJson(json)); }
 
@@ -121,7 +121,7 @@ final CodeInterpreterTool codeInterpreterTool;
 @override int get hashCode { return codeInterpreterTool.hashCode; } 
 @override String toString() { return 'ToolCodeInterpreter(codeInterpreterTool: $codeInterpreterTool)'; } 
  }
-final class ToolImageGeneration extends Tool {const ToolImageGeneration(this.imageGenTool);
+@immutable final class ToolImageGeneration extends Tool {const ToolImageGeneration(this.imageGenTool);
 
 factory ToolImageGeneration.fromJson(Map<String, dynamic> json) { return ToolImageGeneration(ImageGenTool.fromJson(json)); }
 
@@ -134,7 +134,7 @@ final ImageGenTool imageGenTool;
 @override int get hashCode { return imageGenTool.hashCode; } 
 @override String toString() { return 'ToolImageGeneration(imageGenTool: $imageGenTool)'; } 
  }
-final class ToolLocalShell extends Tool {const ToolLocalShell(this.localShellToolParam);
+@immutable final class ToolLocalShell extends Tool {const ToolLocalShell(this.localShellToolParam);
 
 factory ToolLocalShell.fromJson(Map<String, dynamic> json) { return ToolLocalShell(LocalShellToolParam.fromJson(json)); }
 
@@ -147,7 +147,7 @@ final LocalShellToolParam localShellToolParam;
 @override int get hashCode { return localShellToolParam.hashCode; } 
 @override String toString() { return 'ToolLocalShell(localShellToolParam: $localShellToolParam)'; } 
  }
-final class ToolShell extends Tool {const ToolShell(this.functionShellToolParam);
+@immutable final class ToolShell extends Tool {const ToolShell(this.functionShellToolParam);
 
 factory ToolShell.fromJson(Map<String, dynamic> json) { return ToolShell(FunctionShellToolParam.fromJson(json)); }
 
@@ -160,7 +160,7 @@ final FunctionShellToolParam functionShellToolParam;
 @override int get hashCode { return functionShellToolParam.hashCode; } 
 @override String toString() { return 'ToolShell(functionShellToolParam: $functionShellToolParam)'; } 
  }
-final class ToolCustom extends Tool {const ToolCustom(this.customToolParam);
+@immutable final class ToolCustom extends Tool {const ToolCustom(this.customToolParam);
 
 factory ToolCustom.fromJson(Map<String, dynamic> json) { return ToolCustom(CustomToolParam.fromJson(json)); }
 
@@ -173,7 +173,7 @@ final CustomToolParam customToolParam;
 @override int get hashCode { return customToolParam.hashCode; } 
 @override String toString() { return 'ToolCustom(customToolParam: $customToolParam)'; } 
  }
-final class ToolNamespace extends Tool {const ToolNamespace(this.namespaceToolParam);
+@immutable final class ToolNamespace extends Tool {const ToolNamespace(this.namespaceToolParam);
 
 factory ToolNamespace.fromJson(Map<String, dynamic> json) { return ToolNamespace(NamespaceToolParam.fromJson(json)); }
 
@@ -186,7 +186,7 @@ final NamespaceToolParam namespaceToolParam;
 @override int get hashCode { return namespaceToolParam.hashCode; } 
 @override String toString() { return 'ToolNamespace(namespaceToolParam: $namespaceToolParam)'; } 
  }
-final class ToolToolSearch extends Tool {const ToolToolSearch(this.toolSearchToolParam);
+@immutable final class ToolToolSearch extends Tool {const ToolToolSearch(this.toolSearchToolParam);
 
 factory ToolToolSearch.fromJson(Map<String, dynamic> json) { return ToolToolSearch(ToolSearchToolParam.fromJson(json)); }
 
@@ -199,7 +199,7 @@ final ToolSearchToolParam toolSearchToolParam;
 @override int get hashCode { return toolSearchToolParam.hashCode; } 
 @override String toString() { return 'ToolToolSearch(toolSearchToolParam: $toolSearchToolParam)'; } 
  }
-final class ToolWebSearchPreview extends Tool {const ToolWebSearchPreview(this.webSearchPreviewTool);
+@immutable final class ToolWebSearchPreview extends Tool {const ToolWebSearchPreview(this.webSearchPreviewTool);
 
 factory ToolWebSearchPreview.fromJson(Map<String, dynamic> json) { return ToolWebSearchPreview(WebSearchPreviewTool.fromJson(json)); }
 
@@ -212,7 +212,7 @@ final WebSearchPreviewTool webSearchPreviewTool;
 @override int get hashCode { return webSearchPreviewTool.hashCode; } 
 @override String toString() { return 'ToolWebSearchPreview(webSearchPreviewTool: $webSearchPreviewTool)'; } 
  }
-final class ToolApplyPatch extends Tool {const ToolApplyPatch(this.applyPatchToolParam);
+@immutable final class ToolApplyPatch extends Tool {const ToolApplyPatch(this.applyPatchToolParam);
 
 factory ToolApplyPatch.fromJson(Map<String, dynamic> json) { return ToolApplyPatch(ApplyPatchToolParam.fromJson(json)); }
 
@@ -227,7 +227,7 @@ final ApplyPatchToolParam applyPatchToolParam;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class Tool$Unknown extends Tool {const Tool$Unknown(this.json);
+@immutable final class Tool$Unknown extends Tool {const Tool$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

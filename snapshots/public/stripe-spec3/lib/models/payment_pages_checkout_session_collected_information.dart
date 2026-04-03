@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_checkout_address_details.dart';/// 
-final class PaymentPagesCheckoutSessionCollectedInformation {const PaymentPagesCheckoutSessionCollectedInformation({this.businessName, this.individualName, this.shippingDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_checkout_address_details.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionCollectedInformation {const PaymentPagesCheckoutSessionCollectedInformation({this.businessName, this.individualName, this.shippingDetails, });
 
 factory PaymentPagesCheckoutSessionCollectedInformation.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCollectedInformation(
   businessName: json['business_name'] as String?,

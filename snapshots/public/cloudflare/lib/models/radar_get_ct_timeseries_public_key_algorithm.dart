@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtTimeseriesPublicKeyAlgorithm {const RadarGetCtTimeseriesPublicKeyAlgorithm._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesPublicKeyAlgorithm {const RadarGetCtTimeseriesPublicKeyAlgorithm._(this.value);
 
 factory RadarGetCtTimeseriesPublicKeyAlgorithm.fromJson(String json) { return switch (json) {
   'DSA' => dsa,

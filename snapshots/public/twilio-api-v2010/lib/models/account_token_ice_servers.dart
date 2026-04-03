@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountTokenIceServers {const AccountTokenIceServers({this.credential, this.username, this.url, this.urls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountTokenIceServers {const AccountTokenIceServers({this.credential, this.username, this.url, this.urls, });
 
 factory AccountTokenIceServers.fromJson(Map<String, dynamic> json) { return AccountTokenIceServers(
   credential: json['credential'] as String?,

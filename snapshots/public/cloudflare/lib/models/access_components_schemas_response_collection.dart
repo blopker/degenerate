@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_service_tokens.dart';final class AccessComponentsSchemasResponseCollection {const AccessComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_service_tokens.dart';@immutable final class AccessComponentsSchemasResponseCollection {const AccessComponentsSchemasResponseCollection({this.result});
 
 factory AccessComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AccessComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessServiceTokens.fromJson(e as Map<String, dynamic>)).toList(),

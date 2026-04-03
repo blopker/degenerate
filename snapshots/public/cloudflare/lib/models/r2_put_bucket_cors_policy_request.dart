@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_cors_rule.dart';final class R2PutBucketCorsPolicyRequest {const R2PutBucketCorsPolicyRequest({this.rules});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_cors_rule.dart';@immutable final class R2PutBucketCorsPolicyRequest {const R2PutBucketCorsPolicyRequest({this.rules});
 
 factory R2PutBucketCorsPolicyRequest.fromJson(Map<String, dynamic> json) { return R2PutBucketCorsPolicyRequest(
   rules: (json['rules'] as List<dynamic>?)?.map((e) => R2CorsRule.fromJson(e as Map<String, dynamic>)).toList(),

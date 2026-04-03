@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullRequestReviewEventReviewLinksHtml {const PullRequestReviewEventReviewLinksHtml({required this.href});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestReviewEventReviewLinksHtml {const PullRequestReviewEventReviewLinksHtml({required this.href});
 
 factory PullRequestReviewEventReviewLinksHtml.fromJson(Map<String, dynamic> json) { return PullRequestReviewEventReviewLinksHtml(
   href: json['href'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchDeleteTokensResponseResult {const AiSearchDeleteTokensResponseResult({required this.cfApiId, required this.createdAt, this.createdBy, this.enabled = true, required this.id, this.legacy = true, required this.modifiedAt, this.modifiedBy, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchDeleteTokensResponseResult {const AiSearchDeleteTokensResponseResult({required this.cfApiId, required this.createdAt, required this.id, required this.modifiedAt, required this.name, this.createdBy, this.enabled = true, this.legacy = true, this.modifiedBy, });
 
 factory AiSearchDeleteTokensResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchDeleteTokensResponseResult(
   cfApiId: json['cf_api_id'] as String,

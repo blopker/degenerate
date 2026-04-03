@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The details for events with this `type`.
-final class AuditLogCheckpointPermissionDeleted {const AuditLogCheckpointPermissionDeleted({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
+@immutable final class AuditLogCheckpointPermissionDeleted {const AuditLogCheckpointPermissionDeleted({this.id});
 
 factory AuditLogCheckpointPermissionDeleted.fromJson(Map<String, dynamic> json) { return AuditLogCheckpointPermissionDeleted(
   id: json['id'] as String?,

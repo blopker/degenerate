@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_visibility_pcaps_pcaps_destination_conf.dart';import 'magic_visibility_pcaps_pcaps_ownership_challenge.dart';/// The status of the ownership challenge. Can be pending, success or failed.
-final class MagicVisibilityPcapsPcapsOwnershipResponseStatus {const MagicVisibilityPcapsPcapsOwnershipResponseStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_pcaps_destination_conf.dart';import 'magic_visibility_pcaps_pcaps_ownership_challenge.dart';/// The status of the ownership challenge. Can be pending, success or failed.
+@immutable final class MagicVisibilityPcapsPcapsOwnershipResponseStatus {const MagicVisibilityPcapsPcapsOwnershipResponseStatus._(this.value);
 
 factory MagicVisibilityPcapsPcapsOwnershipResponseStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MagicVisibilityPcapsPcapsOwnershipResponseStatus($value)'; } 
  }
-final class MagicVisibilityPcapsPcapsOwnershipResponse {const MagicVisibilityPcapsPcapsOwnershipResponse({required this.destinationConf, required this.filename, required this.id, required this.status, required this.submitted, this.validated, });
+@immutable final class MagicVisibilityPcapsPcapsOwnershipResponse {const MagicVisibilityPcapsPcapsOwnershipResponse({required this.destinationConf, required this.filename, required this.id, required this.status, required this.submitted, this.validated, });
 
 factory MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsOwnershipResponse(
   destinationConf: MagicVisibilityPcapsPcapsDestinationConf.fromJson(json['destination_conf'] as String),

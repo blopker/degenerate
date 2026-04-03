@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2MetaProcessorsWappaDataConfidence {const UrlscannerGetScanResponse2MetaProcessorsWappaDataConfidence({required this.confidence, required this.name, required this.pattern, required this.patternType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsWappaDataConfidence {const UrlscannerGetScanResponse2MetaProcessorsWappaDataConfidence({required this.confidence, required this.name, required this.pattern, required this.patternType, });
 
 factory UrlscannerGetScanResponse2MetaProcessorsWappaDataConfidence.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsWappaDataConfidence(
   confidence: (json['confidence'] as num).toDouble(),

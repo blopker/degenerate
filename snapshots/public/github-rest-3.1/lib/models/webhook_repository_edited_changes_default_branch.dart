@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookRepositoryEditedChangesDefaultBranch {const WebhookRepositoryEditedChangesDefaultBranch({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRepositoryEditedChangesDefaultBranch {const WebhookRepositoryEditedChangesDefaultBranch({required this.from});
 
 factory WebhookRepositoryEditedChangesDefaultBranch.fromJson(Map<String, dynamic> json) { return WebhookRepositoryEditedChangesDefaultBranch(
   from: json['from'] as String,

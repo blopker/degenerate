@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The set of permissions that you authorized for the Connect App.  Can be: `get-all` or `post-all`.
-final class AuthorizedConnectAppEnumPermission {const AuthorizedConnectAppEnumPermission._(this.value);
+@immutable final class AuthorizedConnectAppEnumPermission {const AuthorizedConnectAppEnumPermission._(this.value);
 
 factory AuthorizedConnectAppEnumPermission.fromJson(String json) { return switch (json) {
   'get-all' => getAll,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AuthorizedConnectAppEnumPermission($value)'; } 
  }
-final class AccountAuthorizedConnectApp {const AccountAuthorizedConnectApp({this.accountSid, this.connectAppCompanyName, this.connectAppDescription, this.connectAppFriendlyName, this.connectAppHomepageUrl, this.connectAppSid, this.permissions, this.uri, });
+@immutable final class AccountAuthorizedConnectApp {const AccountAuthorizedConnectApp({this.accountSid, this.connectAppCompanyName, this.connectAppDescription, this.connectAppFriendlyName, this.connectAppHomepageUrl, this.connectAppSid, this.permissions, this.uri, });
 
 factory AccountAuthorizedConnectApp.fromJson(Map<String, dynamic> json) { return AccountAuthorizedConnectApp(
   accountSid: json['account_sid'] as String?,

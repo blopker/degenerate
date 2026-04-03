@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UserSAccountMembershipsUpdateMembershipRequest {const UserSAccountMembershipsUpdateMembershipRequest({required this.status});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UserSAccountMembershipsUpdateMembershipRequest {const UserSAccountMembershipsUpdateMembershipRequest({required this.status});
 
 factory UserSAccountMembershipsUpdateMembershipRequest.fromJson(Map<String, dynamic> json) { return UserSAccountMembershipsUpdateMembershipRequest(
   status: json['status'],

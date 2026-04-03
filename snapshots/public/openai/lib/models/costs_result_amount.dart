@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The monetary value in its associated currency.
-final class CostsResultAmount {const CostsResultAmount({this.value, this.currency, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The monetary value in its associated currency.
+@immutable final class CostsResultAmount {const CostsResultAmount({this.value, this.currency, });
 
 factory CostsResultAmount.fromJson(Map<String, dynamic> json) { return CostsResultAmount(
   value: json['value'] != null ? (json['value'] as num).toDouble() : null,

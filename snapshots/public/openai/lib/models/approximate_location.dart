@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of location approximation. Always `approximate`.
-final class ApproximateLocationType {const ApproximateLocationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of location approximation. Always `approximate`.
+@immutable final class ApproximateLocationType {const ApproximateLocationType._(this.value);
 
 factory ApproximateLocationType.fromJson(String json) { return switch (json) {
   'approximate' => approximate,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ApproximateLocationType($value)'; } 
  }
-final class ApproximateLocation {const ApproximateLocation({this.type = ApproximateLocationType.approximate, this.country, this.region, this.city, this.timezone, });
+@immutable final class ApproximateLocation {const ApproximateLocation({this.type = ApproximateLocationType.approximate, this.country, this.region, this.city, this.timezone, });
 
 factory ApproximateLocation.fromJson(Map<String, dynamic> json) { return ApproximateLocation(
   type: ApproximateLocationType.fromJson(json['type'] as String),

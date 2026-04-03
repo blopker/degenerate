@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_proxy_endpoint_identity.dart';import 'zero_trust_gateway_proxy_endpoint_ip.dart';sealed class ZeroTrustGatewayProxyEndpoints {const ZeroTrustGatewayProxyEndpoints();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_proxy_endpoint_identity.dart';import 'zero_trust_gateway_proxy_endpoint_ip.dart';sealed class ZeroTrustGatewayProxyEndpoints {const ZeroTrustGatewayProxyEndpoints();
 
 /// Deserialize from JSON, dispatching on the `kind` discriminator.
 factory ZeroTrustGatewayProxyEndpoints.fromJson(Map<String, dynamic> json) { return switch (json['kind']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ZeroTrustGatewayProxyEndpoints$Unknown; } 
  }
-final class ZeroTrustGatewayProxyEndpointsIdentity extends ZeroTrustGatewayProxyEndpoints {const ZeroTrustGatewayProxyEndpointsIdentity(this.zeroTrustGatewayProxyEndpointIdentity);
+@immutable final class ZeroTrustGatewayProxyEndpointsIdentity extends ZeroTrustGatewayProxyEndpoints {const ZeroTrustGatewayProxyEndpointsIdentity(this.zeroTrustGatewayProxyEndpointIdentity);
 
 factory ZeroTrustGatewayProxyEndpointsIdentity.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProxyEndpointsIdentity(ZeroTrustGatewayProxyEndpointIdentity.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final ZeroTrustGatewayProxyEndpointIdentity zeroTrustGatewayProxyEndpointIdentit
 @override int get hashCode { return zeroTrustGatewayProxyEndpointIdentity.hashCode; } 
 @override String toString() { return 'ZeroTrustGatewayProxyEndpointsIdentity(zeroTrustGatewayProxyEndpointIdentity: $zeroTrustGatewayProxyEndpointIdentity)'; } 
  }
-final class ZeroTrustGatewayProxyEndpointsIp extends ZeroTrustGatewayProxyEndpoints {const ZeroTrustGatewayProxyEndpointsIp(this.zeroTrustGatewayProxyEndpointIp);
+@immutable final class ZeroTrustGatewayProxyEndpointsIp extends ZeroTrustGatewayProxyEndpoints {const ZeroTrustGatewayProxyEndpointsIp(this.zeroTrustGatewayProxyEndpointIp);
 
 factory ZeroTrustGatewayProxyEndpointsIp.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProxyEndpointsIp(ZeroTrustGatewayProxyEndpointIp.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final ZeroTrustGatewayProxyEndpointIp zeroTrustGatewayProxyEndpointIp;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ZeroTrustGatewayProxyEndpoints$Unknown extends ZeroTrustGatewayProxyEndpoints {const ZeroTrustGatewayProxyEndpoints$Unknown(this.json);
+@immutable final class ZeroTrustGatewayProxyEndpoints$Unknown extends ZeroTrustGatewayProxyEndpoints {const ZeroTrustGatewayProxyEndpoints$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

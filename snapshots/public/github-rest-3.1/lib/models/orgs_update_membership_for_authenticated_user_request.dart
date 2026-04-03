@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The state that the membership should be in. Only `"active"` will be accepted.
-final class OrgsUpdateMembershipForAuthenticatedUserRequestState {const OrgsUpdateMembershipForAuthenticatedUserRequestState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state that the membership should be in. Only `"active"` will be accepted.
+@immutable final class OrgsUpdateMembershipForAuthenticatedUserRequestState {const OrgsUpdateMembershipForAuthenticatedUserRequestState._(this.value);
 
 factory OrgsUpdateMembershipForAuthenticatedUserRequestState.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsUpdateMembershipForAuthenticatedUserRequestState($value)'; } 
  }
-final class OrgsUpdateMembershipForAuthenticatedUserRequest {const OrgsUpdateMembershipForAuthenticatedUserRequest({required this.state});
+@immutable final class OrgsUpdateMembershipForAuthenticatedUserRequest {const OrgsUpdateMembershipForAuthenticatedUserRequest({required this.state});
 
 factory OrgsUpdateMembershipForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdateMembershipForAuthenticatedUserRequest(
   state: OrgsUpdateMembershipForAuthenticatedUserRequestState.fromJson(json['state'] as String),

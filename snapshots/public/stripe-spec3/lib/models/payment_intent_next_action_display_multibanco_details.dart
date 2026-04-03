@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionDisplayMultibancoDetails {const PaymentIntentNextActionDisplayMultibancoDetails({this.entity, this.expiresAt, this.hostedVoucherUrl, this.reference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionDisplayMultibancoDetails {const PaymentIntentNextActionDisplayMultibancoDetails({this.entity, this.expiresAt, this.hostedVoucherUrl, this.reference, });
 
 factory PaymentIntentNextActionDisplayMultibancoDetails.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionDisplayMultibancoDetails(
   entity: json['entity'] as String?,

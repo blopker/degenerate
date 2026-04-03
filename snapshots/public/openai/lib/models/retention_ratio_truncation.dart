@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'retention_ratio_truncation_token_limits.dart';/// Use retention ratio truncation.
-final class RetentionRatioTruncationType {const RetentionRatioTruncationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'retention_ratio_truncation_token_limits.dart';/// Use retention ratio truncation.
+@immutable final class RetentionRatioTruncationType {const RetentionRatioTruncationType._(this.value);
 
 factory RetentionRatioTruncationType.fromJson(String json) { return switch (json) {
   'retention_ratio' => retentionRatio,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RetentionRatioTruncationType($value)'; } 
  }
 /// Retain a fraction of the conversation tokens when the conversation exceeds the input token limit. This allows you to amortize truncations across multiple turns, which can help improve cached token usage.
-final class RetentionRatioTruncation {const RetentionRatioTruncation({required this.type, required this.retentionRatio, this.tokenLimits, });
+@immutable final class RetentionRatioTruncation {const RetentionRatioTruncation({required this.type, required this.retentionRatio, this.tokenLimits, });
 
 factory RetentionRatioTruncation.fromJson(Map<String, dynamic> json) { return RetentionRatioTruncation(
   type: RetentionRatioTruncationType.fromJson(json['type'] as String),

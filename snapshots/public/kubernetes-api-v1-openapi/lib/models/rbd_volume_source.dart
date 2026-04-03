@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'local_object_reference.dart';/// Represents a Rados Block Device mount that lasts the lifetime of a pod. RBD volumes support ownership management and SELinux relabeling.
-final class RbdVolumeSource {const RbdVolumeSource({this.fsType, this.image = '', this.keyring = '/etc/ceph/keyring', required this.monitors, this.pool = 'rbd', this.readOnly, this.secretRef, this.user = 'admin', });
+@immutable final class RbdVolumeSource {const RbdVolumeSource({required this.monitors, this.fsType, this.image = '', this.keyring = '/etc/ceph/keyring', this.pool = 'rbd', this.readOnly, this.secretRef, this.user = 'admin', });
 
 factory RbdVolumeSource.fromJson(Map<String, dynamic> json) { return RbdVolumeSource(
   fsType: json['fsType'] as String?,

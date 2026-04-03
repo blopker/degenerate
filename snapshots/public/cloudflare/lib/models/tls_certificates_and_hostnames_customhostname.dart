@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_custom_origin_server.dart';import 'tls_certificates_and_hostnames_custom_origin_sni.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_ownership_verification.dart';import 'tls_certificates_and_hostnames_ownership_verification_http.dart';import 'tls_certificates_and_hostnames_ssl.dart';/// Status of the hostname's activation.
-final class TlsCertificatesAndHostnamesComponentsSchemasStatus {const TlsCertificatesAndHostnamesComponentsSchemasStatus._(this.value);
+@immutable final class TlsCertificatesAndHostnamesComponentsSchemasStatus {const TlsCertificatesAndHostnamesComponentsSchemasStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -81,7 +81,7 @@ factory TlsCertificatesAndHostnamesHostname.fromJson(String json) => TlsCertific
 String toJson() => value;
 
 }
-final class TlsCertificatesAndHostnamesCustomhostname {const TlsCertificatesAndHostnamesCustomhostname({this.createdAt, this.customMetadata, this.customOriginServer, this.customOriginSni, this.hostname, this.id, this.ownershipVerification, this.ownershipVerificationHttp, this.ssl, this.status, this.verificationErrors, });
+@immutable final class TlsCertificatesAndHostnamesCustomhostname {const TlsCertificatesAndHostnamesCustomhostname({this.createdAt, this.customMetadata, this.customOriginServer, this.customOriginSni, this.hostname, this.id, this.ownershipVerification, this.ownershipVerificationHttp, this.ssl, this.status, this.verificationErrors, });
 
 factory TlsCertificatesAndHostnamesCustomhostname.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCustomhostname(
   createdAt: json['created_at'] != null ? TlsCertificatesAndHostnamesCreatedAt.fromJson(json['created_at'] as String) : null,

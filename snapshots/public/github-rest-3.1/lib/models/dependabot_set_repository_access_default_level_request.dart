@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The default repository access level for Dependabot updates.
-final class DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel {const DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default repository access level for Dependabot updates.
+@immutable final class DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel {const DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel._(this.value);
 
 factory DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel.fromJson(String json) { return switch (json) {
   'public' => public,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel($value)'; } 
  }
-final class DependabotSetRepositoryAccessDefaultLevelRequest {const DependabotSetRepositoryAccessDefaultLevelRequest({required this.defaultLevel});
+@immutable final class DependabotSetRepositoryAccessDefaultLevelRequest {const DependabotSetRepositoryAccessDefaultLevelRequest({required this.defaultLevel});
 
 factory DependabotSetRepositoryAccessDefaultLevelRequest.fromJson(Map<String, dynamic> json) { return DependabotSetRepositoryAccessDefaultLevelRequest(
   defaultLevel: DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel.fromJson(json['default_level'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_asn_prepend_count.dart';import 'addressing_auto_advertise_withdraw.dart';import 'addressing_bgp_prefix_update_advertisement_on_demand.dart';final class AddressingBgpPrefixUpdateAdvertisement {const AddressingBgpPrefixUpdateAdvertisement({this.asnPrependCount, this.autoAdvertiseWithdraw, this.onDemand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_asn_prepend_count.dart';import 'addressing_auto_advertise_withdraw.dart';import 'addressing_bgp_prefix_update_advertisement_on_demand.dart';@immutable final class AddressingBgpPrefixUpdateAdvertisement {const AddressingBgpPrefixUpdateAdvertisement({this.asnPrependCount, this.autoAdvertiseWithdraw, this.onDemand, });
 
 factory AddressingBgpPrefixUpdateAdvertisement.fromJson(Map<String, dynamic> json) { return AddressingBgpPrefixUpdateAdvertisement(
   asnPrependCount: json['asn_prepend_count'] != null ? AddressingAsnPrependCount.fromJson(json['asn_prepend_count'] as num) : null,

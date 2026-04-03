@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Sorts results by the specified field.
-final class RadarGetBgpHijacksEventsSortBy {const RadarGetBgpHijacksEventsSortBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sorts results by the specified field.
+@immutable final class RadarGetBgpHijacksEventsSortBy {const RadarGetBgpHijacksEventsSortBy._(this.value);
 
 factory RadarGetBgpHijacksEventsSortBy.fromJson(String json) { return switch (json) {
   'ID' => id,

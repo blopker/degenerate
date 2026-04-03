@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts {const WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts({this.text});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts {const WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts({this.text});
 
 factory WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts(
   text: json['text'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RepositoryRuleFileExtensionRestrictionParameters {const RepositoryRuleFileExtensionRestrictionParameters({required this.restrictedFileExtensions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleFileExtensionRestrictionParameters {const RepositoryRuleFileExtensionRestrictionParameters({required this.restrictedFileExtensions});
 
 factory RepositoryRuleFileExtensionRestrictionParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleFileExtensionRestrictionParameters(
   restrictedFileExtensions: (json['restricted_file_extensions'] as List<dynamic>).map((e) => e as String).toList(),

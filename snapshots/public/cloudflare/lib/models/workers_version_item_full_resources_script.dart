@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_version_item_full_resources_script_named_handlers.dart';final class WorkersVersionItemFullResourcesScript {const WorkersVersionItemFullResourcesScript({this.etag, this.handlers, this.lastDeployedFrom, this.namedHandlers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_version_item_full_resources_script_named_handlers.dart';@immutable final class WorkersVersionItemFullResourcesScript {const WorkersVersionItemFullResourcesScript({this.etag, this.handlers, this.lastDeployedFrom, this.namedHandlers, });
 
 factory WorkersVersionItemFullResourcesScript.fromJson(Map<String, dynamic> json) { return WorkersVersionItemFullResourcesScript(
   etag: json['etag'] as String?,

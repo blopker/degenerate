@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class TranscriptionSegment {const TranscriptionSegment({required this.id, required this.seek, required this.start, required this.end, required this.text, required this.tokens, required this.temperature, required this.avgLogprob, required this.compressionRatio, required this.noSpeechProb, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TranscriptionSegment {const TranscriptionSegment({required this.id, required this.seek, required this.start, required this.end, required this.text, required this.tokens, required this.temperature, required this.avgLogprob, required this.compressionRatio, required this.noSpeechProb, });
 
 factory TranscriptionSegment.fromJson(Map<String, dynamic> json) { return TranscriptionSegment(
   id: (json['id'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the membership.
-final class AddressingKind {const AddressingKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the membership.
+@immutable final class AddressingKind {const AddressingKind._(this.value);
 
 factory AddressingKind.fromJson(String json) { return switch (json) {
   'zone' => zone,

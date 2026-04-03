@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_markdown_request_variant1_add_script_tag.dart';import 'brapi_post_markdown_request_variant1_add_style_tag.dart';import 'brapi_post_markdown_request_variant1_authenticate.dart';import 'brapi_post_markdown_request_variant1_cookies.dart';import 'brapi_post_markdown_request_variant1_goto_options.dart';import 'brapi_post_markdown_request_variant1_viewport.dart';import 'brapi_post_markdown_request_variant1_wait_for_selector.dart';final class BrapiPostMarkdownRequestVariant1AllowResourceTypes {const BrapiPostMarkdownRequestVariant1AllowResourceTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_markdown_request_variant1_add_script_tag.dart';import 'brapi_post_markdown_request_variant1_add_style_tag.dart';import 'brapi_post_markdown_request_variant1_authenticate.dart';import 'brapi_post_markdown_request_variant1_cookies.dart';import 'brapi_post_markdown_request_variant1_goto_options.dart';import 'brapi_post_markdown_request_variant1_viewport.dart';import 'brapi_post_markdown_request_variant1_wait_for_selector.dart';@immutable final class BrapiPostMarkdownRequestVariant1AllowResourceTypes {const BrapiPostMarkdownRequestVariant1AllowResourceTypes._(this.value);
 
 factory BrapiPostMarkdownRequestVariant1AllowResourceTypes.fromJson(String json) { return switch (json) {
   'document' => document,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostMarkdownRequestVariant1AllowResourceTypes($value)'; } 
  }
-final class BrapiPostMarkdownRequestVariant1RejectResourceTypes {const BrapiPostMarkdownRequestVariant1RejectResourceTypes._(this.value);
+@immutable final class BrapiPostMarkdownRequestVariant1RejectResourceTypes {const BrapiPostMarkdownRequestVariant1RejectResourceTypes._(this.value);
 
 factory BrapiPostMarkdownRequestVariant1RejectResourceTypes.fromJson(String json) { return switch (json) {
   'document' => document,
@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostMarkdownRequestVariant1RejectResourceTypes($value)'; } 
  }
-final class BrapiPostMarkdownRequestVariant1 {const BrapiPostMarkdownRequestVariant1({this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.emulateMediaType, this.gotoOptions, this.rejectRequestPattern, this.rejectResourceTypes, this.setExtraHttpHeaders, this.setJavaScriptEnabled, required this.url, this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', this.viewport, this.waitForSelector, this.waitForTimeout, });
+@immutable final class BrapiPostMarkdownRequestVariant1 {const BrapiPostMarkdownRequestVariant1({required this.url, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.emulateMediaType, this.gotoOptions, this.rejectRequestPattern, this.rejectResourceTypes, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', this.viewport, this.waitForSelector, this.waitForTimeout, });
 
 factory BrapiPostMarkdownRequestVariant1.fromJson(Map<String, dynamic> json) { return BrapiPostMarkdownRequestVariant1(
   actionTimeout: json['actionTimeout'] != null ? (json['actionTimeout'] as num).toDouble() : null,

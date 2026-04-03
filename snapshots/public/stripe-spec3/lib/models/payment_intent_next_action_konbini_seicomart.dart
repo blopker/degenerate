@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionKonbiniSeicomart {const PaymentIntentNextActionKonbiniSeicomart({this.confirmationNumber, required this.paymentCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionKonbiniSeicomart {const PaymentIntentNextActionKonbiniSeicomart({required this.paymentCode, this.confirmationNumber, });
 
 factory PaymentIntentNextActionKonbiniSeicomart.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionKonbiniSeicomart(
   confirmationNumber: json['confirmation_number'] as String?,

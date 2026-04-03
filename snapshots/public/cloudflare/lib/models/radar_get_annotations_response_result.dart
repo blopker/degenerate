@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_annotations_response_result_annotations.dart';final class RadarGetAnnotationsResponseResult {const RadarGetAnnotationsResponseResult({required this.annotations});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_annotations_response_result_annotations.dart';@immutable final class RadarGetAnnotationsResponseResult {const RadarGetAnnotationsResponseResult({required this.annotations});
 
 factory RadarGetAnnotationsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsResponseResult(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetAnnotationsResponseResultAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

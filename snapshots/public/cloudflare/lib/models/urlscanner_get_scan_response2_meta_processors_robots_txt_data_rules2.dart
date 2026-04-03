@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_robots_txt_data_rules2_content_signal.dart';final class UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2 {const UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2({required this.allow, this.contentSignal, this.crawlDelay, required this.disallow, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_robots_txt_data_rules2_content_signal.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2 {const UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2({required this.allow, required this.disallow, this.contentSignal, this.crawlDelay, });
 
 factory UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2(
   allow: (json['allow'] as List<dynamic>).map((e) => e as String).toList(),

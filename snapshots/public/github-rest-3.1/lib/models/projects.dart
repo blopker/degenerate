@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';import 'status_update.dart';/// The current state of the project.
-final class ProjectsState {const ProjectsState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';import 'status_update.dart';/// The current state of the project.
+@immutable final class ProjectsState {const ProjectsState._(this.value);
 
 factory ProjectsState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectsState($value)'; } 
  }
 /// A projects v2 project
-final class Projects {const Projects({required this.id, required this.nodeId, required this.owner, required this.creator, required this.title, required this.description, required this.public, required this.closedAt, required this.createdAt, required this.updatedAt, required this.number, required this.shortDescription, required this.deletedAt, required this.deletedBy, this.state, this.latestStatusUpdate, this.isTemplate, });
+@immutable final class Projects {const Projects({required this.id, required this.nodeId, required this.owner, required this.creator, required this.title, required this.description, required this.public, required this.closedAt, required this.createdAt, required this.updatedAt, required this.number, required this.shortDescription, required this.deletedAt, required this.deletedBy, this.state, this.latestStatusUpdate, this.isTemplate, });
 
 factory Projects.fromJson(Map<String, dynamic> json) { return Projects(
   id: (json['id'] as num).toDouble(),

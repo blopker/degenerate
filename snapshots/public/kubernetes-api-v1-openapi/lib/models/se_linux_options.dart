@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// SELinuxOptions are the labels to be applied to the container
-final class SeLinuxOptions {const SeLinuxOptions({this.level, this.role, this.type, this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// SELinuxOptions are the labels to be applied to the container
+@immutable final class SeLinuxOptions {const SeLinuxOptions({this.level, this.role, this.type, this.user, });
 
 factory SeLinuxOptions.fromJson(Map<String, dynamic> json) { return SeLinuxOptions(
   level: json['level'] as String?,

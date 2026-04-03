@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Action to apply to the request.
-final class OrgsReviewPatGrantRequestRequestAction {const OrgsReviewPatGrantRequestRequestAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Action to apply to the request.
+@immutable final class OrgsReviewPatGrantRequestRequestAction {const OrgsReviewPatGrantRequestRequestAction._(this.value);
 
 factory OrgsReviewPatGrantRequestRequestAction.fromJson(String json) { return switch (json) {
   'approve' => approve,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsReviewPatGrantRequestRequestAction($value)'; } 
  }
-final class OrgsReviewPatGrantRequestRequest {const OrgsReviewPatGrantRequestRequest({required this.action, this.reason, });
+@immutable final class OrgsReviewPatGrantRequestRequest {const OrgsReviewPatGrantRequestRequest({required this.action, this.reason, });
 
 factory OrgsReviewPatGrantRequestRequest.fromJson(Map<String, dynamic> json) { return OrgsReviewPatGrantRequestRequest(
   action: OrgsReviewPatGrantRequestRequestAction.fromJson(json['action'] as String),

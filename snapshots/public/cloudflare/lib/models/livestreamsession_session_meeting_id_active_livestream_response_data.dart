@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'livestreamsession_session_meeting_id_active_livestream_response_data_paging.dart';final class LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataErrMessage {const LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataErrMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'livestreamsession_session_meeting_id_active_livestream_response_data_paging.dart';@immutable final class LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataErrMessage {const LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataErrMessage._(this.value);
 
 factory LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataErrMessage.fromJson(String json) { return switch (json) {
   'LIVE' => live,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataErrMessage($value)'; } 
  }
-final class LivestreamsessionSessionMeetingIdActiveLivestreamResponseData {const LivestreamsessionSessionMeetingIdActiveLivestreamResponseData({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime, this.livestreamId, this.paging, this.stoppedTime, this.updatedAt, this.viewerSeconds, });
+@immutable final class LivestreamsessionSessionMeetingIdActiveLivestreamResponseData {const LivestreamsessionSessionMeetingIdActiveLivestreamResponseData({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime, this.livestreamId, this.paging, this.stoppedTime, this.updatedAt, this.viewerSeconds, });
 
 factory LivestreamsessionSessionMeetingIdActiveLivestreamResponseData.fromJson(Map<String, dynamic> json) { return LivestreamsessionSessionMeetingIdActiveLivestreamResponseData(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

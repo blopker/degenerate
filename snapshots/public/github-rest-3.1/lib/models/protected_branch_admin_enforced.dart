@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Protected Branch Admin Enforced
-final class ProtectedBranchAdminEnforced {const ProtectedBranchAdminEnforced({required this.url, required this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Protected Branch Admin Enforced
+@immutable final class ProtectedBranchAdminEnforced {const ProtectedBranchAdminEnforced({required this.url, required this.enabled, });
 
 factory ProtectedBranchAdminEnforced.fromJson(Map<String, dynamic> json) { return ProtectedBranchAdminEnforced(
   url: Uri.parse(json['url'] as String),

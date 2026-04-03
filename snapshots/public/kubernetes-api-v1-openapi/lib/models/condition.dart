@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'time.dart';/// Condition contains details for one aspect of the current state of this API Resource.
-final class Condition {const Condition({required this.lastTransitionTime, this.message = '', this.observedGeneration, this.reason = '', this.status = '', this.type = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// Condition contains details for one aspect of the current state of this API Resource.
+@immutable final class Condition {const Condition({required this.lastTransitionTime, this.message = '', this.observedGeneration, this.reason = '', this.status = '', this.type = '', });
 
 factory Condition.fromJson(Map<String, dynamic> json) { return Condition(
   lastTransitionTime: Time.fromJson(json['lastTransitionTime'] as String),
@@ -18,7 +18,7 @@ final Time lastTransitionTime;
 /// message is a human readable message indicating details about the transition. This may be an empty string.
 final String message;
 
-/// observedGeneration represents the .metadata.generation that the condition was set based upon. For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date with respect to the current state of the instance.
+/// observedGeneration represents the .metadata.generation that the condition was set based upon. For instance, if .metadata.generation is currently 12, but the .status.conditions`[x]`.observedGeneration is 9, the condition is out of date with respect to the current state of the instance.
 final int? observedGeneration;
 
 /// reason contains a programmatic identifier indicating the reason for the condition's last transition. Producers of specific condition types may define expected values and meanings for this field, and whether the values are considered a guaranteed API. The value should be a CamelCase string. This field may not be empty.

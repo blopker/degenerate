@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssuesAddBlockedByDependencyRequest {const IssuesAddBlockedByDependencyRequest({required this.issueId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesAddBlockedByDependencyRequest {const IssuesAddBlockedByDependencyRequest({required this.issueId});
 
 factory IssuesAddBlockedByDependencyRequest.fromJson(Map<String, dynamic> json) { return IssuesAddBlockedByDependencyRequest(
   issueId: (json['issue_id'] as num).toInt(),

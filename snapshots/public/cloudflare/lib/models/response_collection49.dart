@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_messages2.dart';import 'zero_trust_gateway_result_info.dart';final class ResponseCollection49 {const ResponseCollection49({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_messages2.dart';import 'zero_trust_gateway_result_info.dart';@immutable final class ResponseCollection49 {const ResponseCollection49({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection49.fromJson(Map<String, dynamic> json) { return ResponseCollection49(
   errors: (json['errors'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),

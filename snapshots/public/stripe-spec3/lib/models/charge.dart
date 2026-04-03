@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'application_fee.dart';import 'balance_transaction.dart';import 'billing_details.dart';import 'charge_application.dart';import 'charge_application_fee.dart';import 'charge_balance_transaction.dart';import 'charge_customer.dart';import 'charge_failure_balance_transaction.dart';import 'charge_fraud_details.dart';import 'charge_on_behalf_of.dart';import 'charge_outcome.dart';import 'charge_payment_intent.dart';import 'charge_refunds.dart';import 'charge_review.dart';import 'charge_source_transfer.dart';import 'charge_transfer.dart';import 'charge_transfer_data.dart';import 'customer.dart';import 'deleted_customer.dart';import 'payment_flows_payment_intent_presentment_details.dart';import 'payment_intent.dart';import 'payment_method_details.dart';import 'radar_radar_options.dart';import 'review.dart';import 'shipping.dart';import 'transfer.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class ChargeObject {const ChargeObject._(this.value);
+@immutable final class ChargeObject {const ChargeObject._(this.value);
 
 factory ChargeObject.fromJson(String json) { return switch (json) {
   'charge' => charge,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ChargeObject($value)'; } 
  }
 /// The status of the payment is either `succeeded`, `pending`, or `failed`.
-final class ChargeStatus {const ChargeStatus._(this.value);
+@immutable final class ChargeStatus {const ChargeStatus._(this.value);
 
 factory ChargeStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The `Charge` object represents a single attempt to move money into your Stripe account.
 /// PaymentIntent confirmation is the most common way to create Charges, but [Account Debits](https://docs.stripe.com/connect/account-debits) may also create Charges.
 /// Some legacy payment flows create Charges directly, which is not recommended for new integrations.
-final class Charge {const Charge({required this.amount, required this.amountCaptured, required this.amountRefunded, this.application, this.applicationFee, this.applicationFeeAmount, this.balanceTransaction, required this.billingDetails, this.calculatedStatementDescriptor, required this.captured, required this.created, required this.currency, this.customer, this.description, required this.disputed, this.failureBalanceTransaction, this.failureCode, this.failureMessage, this.fraudDetails, required this.id, required this.livemode, required this.metadata, required this.object, this.onBehalfOf, this.outcome, required this.paid, this.paymentIntent, this.paymentMethod, this.paymentMethodDetails, this.presentmentDetails, this.radarOptions, this.receiptEmail, this.receiptNumber, this.receiptUrl, required this.refunded, this.refunds, this.review, this.shipping, this.sourceTransfer, this.statementDescriptor, this.statementDescriptorSuffix, required this.status, this.transfer, this.transferData, this.transferGroup, });
+@immutable final class Charge {const Charge({required this.object, required this.amountCaptured, required this.amountRefunded, required this.billingDetails, required this.captured, required this.created, required this.currency, required this.disputed, required this.livemode, required this.refunded, required this.paid, required this.metadata, required this.id, required this.amount, required this.status, this.description, this.failureCode, this.failureMessage, this.fraudDetails, this.customer, this.calculatedStatementDescriptor, this.balanceTransaction, this.failureBalanceTransaction, this.onBehalfOf, this.outcome, this.applicationFeeAmount, this.paymentIntent, this.paymentMethod, this.paymentMethodDetails, this.transferGroup, this.radarOptions, this.receiptEmail, this.receiptNumber, this.receiptUrl, this.applicationFee, this.refunds, this.review, this.shipping, this.sourceTransfer, this.statementDescriptor, this.statementDescriptorSuffix, this.application, this.transfer, this.transferData, this.presentmentDetails, });
 
 factory Charge.fromJson(Map<String, dynamic> json) { return Charge(
   amount: (json['amount'] as num).toInt(),

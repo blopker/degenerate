@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetRankingInternetServicesTimeseriesResponseResultMetaUnits {const RadarGetRankingInternetServicesTimeseriesResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRankingInternetServicesTimeseriesResponseResultMetaUnits {const RadarGetRankingInternetServicesTimeseriesResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetRankingInternetServicesTimeseriesResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetRankingInternetServicesTimeseriesResponseResultMetaUnits(
   name: json['name'] as String,

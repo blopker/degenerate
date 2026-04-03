@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zaraz_zaraz_config_base_consent_button_text_translations.dart';import 'zaraz_zaraz_config_base_consent_purposes_value.dart';import 'zaraz_zaraz_config_base_consent_purposes_with_translations_value.dart';/// Consent management configuration.
-final class ZarazZarazConfigBaseConsent {const ZarazZarazConfigBaseConsent({this.buttonTextTranslations, this.companyEmail, this.companyName, this.companyStreetAddress, this.consentModalIntroHtml, this.consentModalIntroHtmlWithTranslations, this.cookieName, this.customCss, this.customIntroDisclaimerDismissed, this.defaultLanguage, required this.enabled, this.hideModal, this.purposes, this.purposesWithTranslations, this.tcfCompliant, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_zaraz_config_base_consent_button_text_translations.dart';import 'zaraz_zaraz_config_base_consent_purposes_value.dart';import 'zaraz_zaraz_config_base_consent_purposes_with_translations_value.dart';/// Consent management configuration.
+@immutable final class ZarazZarazConfigBaseConsent {const ZarazZarazConfigBaseConsent({required this.enabled, this.buttonTextTranslations, this.companyEmail, this.companyName, this.companyStreetAddress, this.consentModalIntroHtml, this.consentModalIntroHtmlWithTranslations, this.cookieName, this.customCss, this.customIntroDisclaimerDismissed, this.defaultLanguage, this.hideModal, this.purposes, this.purposesWithTranslations, this.tcfCompliant, });
 
 factory ZarazZarazConfigBaseConsent.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBaseConsent(
   buttonTextTranslations: json['buttonTextTranslations'] != null ? ZarazZarazConfigBaseConsentButtonTextTranslations.fromJson(json['buttonTextTranslations'] as Map<String, dynamic>) : null,

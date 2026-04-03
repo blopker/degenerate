@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_ipam_prefixes.dart';final class AddressingResponseCollection {const AddressingResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_ipam_prefixes.dart';@immutable final class AddressingResponseCollection {const AddressingResponseCollection({this.result});
 
 factory AddressingResponseCollection.fromJson(Map<String, dynamic> json) { return AddressingResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AddressingIpamPrefixes.fromJson(e as Map<String, dynamic>)).toList(),

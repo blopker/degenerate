@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_action.dart';import 'firewall_match.dart';import 'firewall_period.dart';import 'firewall_threshold.dart';final class RateLimitsForAZoneCreateARateLimitRequest {const RateLimitsForAZoneCreateARateLimitRequest({required this.action, required this.match, required this.period, required this.threshold, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_action.dart';import 'firewall_match.dart';import 'firewall_period.dart';import 'firewall_threshold.dart';@immutable final class RateLimitsForAZoneCreateARateLimitRequest {const RateLimitsForAZoneCreateARateLimitRequest({required this.action, required this.match, required this.period, required this.threshold, });
 
 factory RateLimitsForAZoneCreateARateLimitRequest.fromJson(Map<String, dynamic> json) { return RateLimitsForAZoneCreateARateLimitRequest(
   action: FirewallAction.fromJson(json['action'] as Map<String, dynamic>),

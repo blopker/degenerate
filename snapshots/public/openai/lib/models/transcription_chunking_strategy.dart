@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vad_config.dart';/// Automatically set chunking parameters based on the audio. Must be set to `"auto"`.
 /// 
-final class TranscriptionChunkingStrategyVariant1 {const TranscriptionChunkingStrategyVariant1._(this.value);
+@immutable final class TranscriptionChunkingStrategyVariant1 {const TranscriptionChunkingStrategyVariant1._(this.value);
 
 factory TranscriptionChunkingStrategyVariant1.fromJson(String json) { return switch (json) {
   'auto' => auto,

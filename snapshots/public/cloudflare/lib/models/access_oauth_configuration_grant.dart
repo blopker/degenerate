@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Settings for OAuth grant behavior.
-final class AccessOauthConfigurationGrant {const AccessOauthConfigurationGrant({this.accessTokenLifetime, this.sessionDuration, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings for OAuth grant behavior.
+@immutable final class AccessOauthConfigurationGrant {const AccessOauthConfigurationGrant({this.accessTokenLifetime, this.sessionDuration, });
 
 factory AccessOauthConfigurationGrant.fromJson(Map<String, dynamic> json) { return AccessOauthConfigurationGrant(
   accessTokenLifetime: json['access_token_lifetime'] as String?,

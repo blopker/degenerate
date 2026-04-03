@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An object without any properties.
-final class EmptyObject {const EmptyObject();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An object without any properties.
+@immutable final class EmptyObject {const EmptyObject();
 
-factory EmptyObject.fromJson(Map<String, dynamic> json) { return EmptyObject(
-
-); }
+factory EmptyObject.fromJson(Map<String, dynamic> _) { return const EmptyObject(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-EmptyObject copyWith() { return EmptyObject(
+EmptyObject copyWith() { return const EmptyObject(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is EmptyObject; } 

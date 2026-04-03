@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTaxRegistrationsRequestActiveFromVariant1 {const PostTaxRegistrationsRequestActiveFromVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxRegistrationsRequestActiveFromVariant1 {const PostTaxRegistrationsRequestActiveFromVariant1._(this.value);
 
 factory PostTaxRegistrationsRequestActiveFromVariant1.fromJson(String json) { return switch (json) {
   'now' => now,

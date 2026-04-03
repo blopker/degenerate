@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TimelineReviewedEventLinksHtml {const TimelineReviewedEventLinksHtml({required this.href});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TimelineReviewedEventLinksHtml {const TimelineReviewedEventLinksHtml({required this.href});
 
 factory TimelineReviewedEventLinksHtml.fromJson(Map<String, dynamic> json) { return TimelineReviewedEventLinksHtml(
   href: json['href'] as String,

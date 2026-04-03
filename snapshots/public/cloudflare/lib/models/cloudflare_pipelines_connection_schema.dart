@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_format.dart';import 'cloudflare_pipelines_source_field.dart';final class CloudflarePipelinesConnectionSchema {const CloudflarePipelinesConnectionSchema({this.fields, this.format, this.inferred, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_format.dart';import 'cloudflare_pipelines_source_field.dart';@immutable final class CloudflarePipelinesConnectionSchema {const CloudflarePipelinesConnectionSchema({this.fields, this.format, this.inferred, });
 
 factory CloudflarePipelinesConnectionSchema.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesConnectionSchema(
   fields: (json['fields'] as List<dynamic>?)?.map((e) => CloudflarePipelinesSourceField.fromJson(e as Map<String, dynamic>)).toList(),

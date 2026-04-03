@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about the payment attempt guarantee.
-final class PostPaymentRecordsReportPaymentRequestGuaranteed {const PostPaymentRecordsReportPaymentRequestGuaranteed({required this.guaranteedAt});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the payment attempt guarantee.
+@immutable final class PostPaymentRecordsReportPaymentRequestGuaranteed {const PostPaymentRecordsReportPaymentRequestGuaranteed({required this.guaranteedAt});
 
 factory PostPaymentRecordsReportPaymentRequestGuaranteed.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequestGuaranteed(
   guaranteedAt: (json['guaranteed_at'] as num).toInt(),

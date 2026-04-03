@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkflowUsageBillableMacos {const WorkflowUsageBillableMacos({this.totalMs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowUsageBillableMacos {const WorkflowUsageBillableMacos({this.totalMs});
 
 factory WorkflowUsageBillableMacos.fromJson(Map<String, dynamic> json) { return WorkflowUsageBillableMacos(
   totalMs: json['total_ms'] != null ? (json['total_ms'] as num).toInt() : null,

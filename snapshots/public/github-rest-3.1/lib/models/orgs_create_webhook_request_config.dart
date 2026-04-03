@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_config_content_type.dart';import 'webhook_config_insecure_ssl.dart';import 'webhook_config_secret.dart';import 'webhook_config_url.dart';/// Key/value pairs to provide settings for this webhook.
-final class OrgsCreateWebhookRequestConfig {const OrgsCreateWebhookRequestConfig({required this.url, this.contentType, this.secret, this.insecureSsl, this.username, this.password, });
+@immutable final class OrgsCreateWebhookRequestConfig {const OrgsCreateWebhookRequestConfig({required this.url, this.contentType, this.secret, this.insecureSsl, this.username, this.password, });
 
 factory OrgsCreateWebhookRequestConfig.fromJson(Map<String, dynamic> json) { return OrgsCreateWebhookRequestConfig(
   url: WebhookConfigUrl.fromJson(json['url'] as String),

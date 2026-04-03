@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'd1_database_name.dart';/// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
-final class D1Jurisdiction {const D1Jurisdiction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_database_name.dart';/// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
+@immutable final class D1Jurisdiction {const D1Jurisdiction._(this.value);
 
 factory D1Jurisdiction.fromJson(String json) { return switch (json) {
   'eu' => eu,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'D1Jurisdiction($value)'; } 
  }
 /// Specify the region to create the D1 primary, if available. If this option is omitted, the D1 will be created as close as possible to the current user.
-final class D1PrimaryLocationHint {const D1PrimaryLocationHint._(this.value);
+@immutable final class D1PrimaryLocationHint {const D1PrimaryLocationHint._(this.value);
 
 factory D1PrimaryLocationHint.fromJson(String json) { return switch (json) {
   'wnam' => wnam,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'D1PrimaryLocationHint($value)'; } 
  }
-final class D1CreateDatabaseRequest {const D1CreateDatabaseRequest({this.jurisdiction, required this.name, this.primaryLocationHint, });
+@immutable final class D1CreateDatabaseRequest {const D1CreateDatabaseRequest({required this.name, this.jurisdiction, this.primaryLocationHint, });
 
 factory D1CreateDatabaseRequest.fromJson(Map<String, dynamic> json) { return D1CreateDatabaseRequest(
   jurisdiction: json['jurisdiction'] != null ? D1Jurisdiction.fromJson(json['jurisdiction'] as String) : null,

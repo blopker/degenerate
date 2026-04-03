@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_check_suite_rerequested_check_suite.dart';final class WebhookCheckSuiteRerequestedAction {const WebhookCheckSuiteRerequestedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_check_suite_rerequested_check_suite.dart';@immutable final class WebhookCheckSuiteRerequestedAction {const WebhookCheckSuiteRerequestedAction._(this.value);
 
 factory WebhookCheckSuiteRerequestedAction.fromJson(String json) { return switch (json) {
   'rerequested' => rerequested,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedAction($value)'; } 
  }
-final class WebhookCheckSuiteRerequested {const WebhookCheckSuiteRerequested({required this.action, required this.checkSuite, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookCheckSuiteRerequested {const WebhookCheckSuiteRerequested({required this.action, required this.checkSuite, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCheckSuiteRerequested.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRerequested(
   action: WebhookCheckSuiteRerequestedAction.fromJson(json['action'] as String),

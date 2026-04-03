@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesCreatePreviewRequestInvoiceItemsPeriod {const PostInvoicesCreatePreviewRequestInvoiceItemsPeriod({required this.end, required this.start, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestInvoiceItemsPeriod {const PostInvoicesCreatePreviewRequestInvoiceItemsPeriod({required this.end, required this.start, });
 
 factory PostInvoicesCreatePreviewRequestInvoiceItemsPeriod.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestInvoiceItemsPeriod(
   end: (json['end'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The severity level at which code scanning results that raise alerts block a reference update. For more information on alert severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
-final class RepositoryRuleParamsCodeScanningToolAlertsThreshold {const RepositoryRuleParamsCodeScanningToolAlertsThreshold._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The severity level at which code scanning results that raise alerts block a reference update. For more information on alert severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
+@immutable final class RepositoryRuleParamsCodeScanningToolAlertsThreshold {const RepositoryRuleParamsCodeScanningToolAlertsThreshold._(this.value);
 
 factory RepositoryRuleParamsCodeScanningToolAlertsThreshold.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleParamsCodeScanningToolAlertsThreshold($value)'; } 
  }
 /// The severity level at which code scanning results that raise security alerts block a reference update. For more information on security severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
-final class RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold {const RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._(this.value);
+@immutable final class RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold {const RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold._(this.value);
 
 factory RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -66,7 +66,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleParamsCodeScanningToolSecurityAlertsThreshold($value)'; } 
  }
 /// A tool that must provide code scanning results for this rule to pass.
-final class RepositoryRuleParamsCodeScanningTool {const RepositoryRuleParamsCodeScanningTool({required this.alertsThreshold, required this.securityAlertsThreshold, required this.tool, });
+@immutable final class RepositoryRuleParamsCodeScanningTool {const RepositoryRuleParamsCodeScanningTool({required this.alertsThreshold, required this.securityAlertsThreshold, required this.tool, });
 
 factory RepositoryRuleParamsCodeScanningTool.fromJson(Map<String, dynamic> json) { return RepositoryRuleParamsCodeScanningTool(
   alertsThreshold: RepositoryRuleParamsCodeScanningToolAlertsThreshold.fromJson(json['alerts_threshold'] as String),

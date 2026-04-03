@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_project.dart';final class PagesProjectGetProjectsResponse {const PagesProjectGetProjectsResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_project.dart';@immutable final class PagesProjectGetProjectsResponse {const PagesProjectGetProjectsResponse({required this.result});
 
 factory PagesProjectGetProjectsResponse.fromJson(Map<String, dynamic> json) { return PagesProjectGetProjectsResponse(
   result: (json['result'] as List<dynamic>).map((e) => PagesProject.fromJson(e as Map<String, dynamic>)).toList(),

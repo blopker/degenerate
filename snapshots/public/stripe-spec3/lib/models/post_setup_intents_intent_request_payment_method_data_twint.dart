@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsIntentRequestPaymentMethodDataTwint {const PostSetupIntentsIntentRequestPaymentMethodDataTwint();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodDataTwint {const PostSetupIntentsIntentRequestPaymentMethodDataTwint();
 
-factory PostSetupIntentsIntentRequestPaymentMethodDataTwint.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataTwint(
-
-); }
+factory PostSetupIntentsIntentRequestPaymentMethodDataTwint.fromJson(Map<String, dynamic> _) { return const PostSetupIntentsIntentRequestPaymentMethodDataTwint(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostSetupIntentsIntentRequestPaymentMethodDataTwint copyWith() { return PostSetupIntentsIntentRequestPaymentMethodDataTwint(
+PostSetupIntentsIntentRequestPaymentMethodDataTwint copyWith() { return const PostSetupIntentsIntentRequestPaymentMethodDataTwint(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsIntentRequestPaymentMethodDataTwint; } 

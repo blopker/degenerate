@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The set of permissions for the GitHub app
-final class IntegrationPermissions {const IntegrationPermissions({this.issues, this.checks, this.metadata, this.contents, this.deployments, this.additionalProperties = const {}, });
+@immutable final class IntegrationPermissions {const IntegrationPermissions({this.issues, this.checks, this.metadata, this.contents, this.deployments, this.additionalProperties = const {}, });
 
 factory IntegrationPermissions.fromJson(Map<String, dynamic> json) { return IntegrationPermissions(
   issues: json['issues'] as String?,

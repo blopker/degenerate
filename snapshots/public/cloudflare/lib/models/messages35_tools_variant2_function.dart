@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages35_tools_variant2_function_parameters.dart';/// Details of the function tool.
-final class Messages35ToolsVariant2Function {const Messages35ToolsVariant2Function({required this.description, required this.name, required this.parameters, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages35_tools_variant2_function_parameters.dart';/// Details of the function tool.
+@immutable final class Messages35ToolsVariant2Function {const Messages35ToolsVariant2Function({required this.description, required this.name, required this.parameters, });
 
 factory Messages35ToolsVariant2Function.fromJson(Map<String, dynamic> json) { return Messages35ToolsVariant2Function(
   description: json['description'] as String,

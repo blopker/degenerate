@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_object.dart';final class RunStreamEventThreadRunCompletedEvent {const RunStreamEventThreadRunCompletedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_object.dart';@immutable final class RunStreamEventThreadRunCompletedEvent {const RunStreamEventThreadRunCompletedEvent._(this.value);
 
 factory RunStreamEventThreadRunCompletedEvent.fromJson(String json) { return switch (json) {
   'thread.run.completed' => threadRunCompleted,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStreamEventThreadRunCompletedEvent($value)'; } 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) is completed.
-final class RunStreamEventThreadRunCompleted {const RunStreamEventThreadRunCompleted({required this.event, required this.data, });
+@immutable final class RunStreamEventThreadRunCompleted {const RunStreamEventThreadRunCompleted({required this.event, required this.data, });
 
 factory RunStreamEventThreadRunCompleted.fromJson(Map<String, dynamic> json) { return RunStreamEventThreadRunCompleted(
   event: RunStreamEventThreadRunCompletedEvent.fromJson(json['event'] as String),

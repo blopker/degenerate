@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_certificate_pack_certificate.dart';import 'tls_certificates_and_hostnames_certificate_pack_validation_errors.dart';import 'tls_certificates_and_hostnames_cloudflare_branding.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_validation_method.dart';import 'tls_certificates_and_hostnames_validation_record.dart';import 'tls_certificates_and_hostnames_validity_days.dart';/// Status of certificate pack.
-final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._(this.value);
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -90,7 +90,7 @@ String toJson() => value;
 
 }
 /// Type of certificate pack.
-final class TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType._(this.value);
 
 factory TlsCertificatesAndHostnamesSchemasType.fromJson(String json) { return switch (json) {
   'mh_custom' => mhCustom,
@@ -133,7 +133,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesSchemasType($value)'; } 
  }
 /// A certificate pack with all its properties.
-final class TlsCertificatesAndHostnamesCertificatePack {const TlsCertificatesAndHostnamesCertificatePack({this.certificateAuthority, required this.certificates, this.cloudflareBranding, this.dcvDelegationRecords, required this.hosts, required this.id, this.primaryCertificate, required this.status, required this.type, this.validationErrors, this.validationMethod, this.validationRecords, this.validityDays, });
+@immutable final class TlsCertificatesAndHostnamesCertificatePack {const TlsCertificatesAndHostnamesCertificatePack({required this.certificates, required this.hosts, required this.id, required this.status, required this.type, this.certificateAuthority, this.cloudflareBranding, this.dcvDelegationRecords, this.primaryCertificate, this.validationErrors, this.validationMethod, this.validationRecords, this.validityDays, });
 
 factory TlsCertificatesAndHostnamesCertificatePack.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificatePack(
   certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesSchemasCertificateAuthority.fromJson(json['certificate_authority'] as String) : null,

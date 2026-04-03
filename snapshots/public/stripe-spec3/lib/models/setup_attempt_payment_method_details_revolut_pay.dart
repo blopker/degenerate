@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SetupAttemptPaymentMethodDetailsRevolutPay {const SetupAttemptPaymentMethodDetailsRevolutPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SetupAttemptPaymentMethodDetailsRevolutPay {const SetupAttemptPaymentMethodDetailsRevolutPay();
 
-factory SetupAttemptPaymentMethodDetailsRevolutPay.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsRevolutPay(
-
-); }
+factory SetupAttemptPaymentMethodDetailsRevolutPay.fromJson(Map<String, dynamic> _) { return const SetupAttemptPaymentMethodDetailsRevolutPay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-SetupAttemptPaymentMethodDetailsRevolutPay copyWith() { return SetupAttemptPaymentMethodDetailsRevolutPay(
+SetupAttemptPaymentMethodDetailsRevolutPay copyWith() { return const SetupAttemptPaymentMethodDetailsRevolutPay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is SetupAttemptPaymentMethodDetailsRevolutPay; } 

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'output_item.dart';/// The type of the event. Always `response.output_item.added`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_item.dart';/// The type of the event. Always `response.output_item.added`.
 /// 
-final class ResponseOutputItemAddedEventType {const ResponseOutputItemAddedEventType._(this.value);
+@immutable final class ResponseOutputItemAddedEventType {const ResponseOutputItemAddedEventType._(this.value);
 
 factory ResponseOutputItemAddedEventType.fromJson(String json) { return switch (json) {
   'response.output_item.added' => responseOutputItemAdded,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseOutputItemAddedEventType($value)'; } 
  }
 /// Emitted when a new output item is added.
-final class ResponseOutputItemAddedEvent {const ResponseOutputItemAddedEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.item, });
+@immutable final class ResponseOutputItemAddedEvent {const ResponseOutputItemAddedEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.item, });
 
 factory ResponseOutputItemAddedEvent.fromJson(Map<String, dynamic> json) { return ResponseOutputItemAddedEvent(
   type: ResponseOutputItemAddedEventType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_event_list_get_search_value.dart';final class GetEventListGetSearchOp {const GetEventListGetSearchOp._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_event_list_get_search_value.dart';@immutable final class GetEventListGetSearchOp {const GetEventListGetSearchOp._(this.value);
 
 factory GetEventListGetSearchOp.fromJson(String json) { return switch (json) {
   'equals' => equals,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetEventListGetSearchOp($value)'; } 
  }
-final class GetEventListGetSearch {const GetEventListGetSearch({this.field, this.op, this.value, });
+@immutable final class GetEventListGetSearch {const GetEventListGetSearch({this.field, this.op, this.value, });
 
 factory GetEventListGetSearch.fromJson(Map<String, dynamic> json) { return GetEventListGetSearch(
   field: json['field'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_rule_automatic_advertisement.dart';import 'magic_visibility_mnm_mnm_rule_bandwidth_threshold.dart';import 'magic_visibility_mnm_mnm_rule_duration.dart';import 'magic_visibility_mnm_mnm_rule_ip_prefix.dart';import 'magic_visibility_mnm_mnm_rule_name.dart';import 'magic_visibility_mnm_mnm_rule_packet_threshold.dart';import 'magic_visibility_mnm_rule_identifier.dart';/// Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.
-final class MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch._(this.value);
+@immutable final class MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch._(this.value);
 
 factory MagicVisibilityMnmMnmRulePrefixMatch.fromJson(String json) { return switch (json) {
   'exact' => exact,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MagicVisibilityMnmMnmRulePrefixMatch($value)'; } 
  }
 /// MNM rule type.
-final class MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType._(this.value);
+@immutable final class MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType._(this.value);
 
 factory MagicVisibilityMnmMnmRuleType.fromJson(String json) { return switch (json) {
   'threshold' => threshold,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MagicVisibilityMnmMnmRuleType($value)'; } 
  }
 /// Level of sensitivity set for zscore rules.
-final class MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity._(this.value);
+@immutable final class MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity._(this.value);
 
 factory MagicVisibilityMnmMnmRuleZscoreSensitivity.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MagicVisibilityMnmMnmRuleZscoreSensitivity($value)'; } 
  }
 /// Target of the zscore rule analysis.
-final class MagicVisibilityMnmMnmRuleZscoreTarget {const MagicVisibilityMnmMnmRuleZscoreTarget._(this.value);
+@immutable final class MagicVisibilityMnmMnmRuleZscoreTarget {const MagicVisibilityMnmMnmRuleZscoreTarget._(this.value);
 
 factory MagicVisibilityMnmMnmRuleZscoreTarget.fromJson(String json) { return switch (json) {
   'bits' => bits,
@@ -109,7 +109,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MagicVisibilityMnmMnmRuleZscoreTarget($value)'; } 
  }
-final class MagicVisibilityMnmMnmRule {const MagicVisibilityMnmMnmRule({required this.automaticAdvertisement, this.bandwidthThreshold, this.duration, this.id, required this.name, this.packetThreshold, this.prefixMatch, required this.prefixes, required this.type, this.zscoreSensitivity, this.zscoreTarget, });
+@immutable final class MagicVisibilityMnmMnmRule {const MagicVisibilityMnmMnmRule({required this.automaticAdvertisement, required this.name, required this.prefixes, required this.type, this.bandwidthThreshold, this.duration, this.id, this.packetThreshold, this.prefixMatch, this.zscoreSensitivity, this.zscoreTarget, });
 
 factory MagicVisibilityMnmMnmRule.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmRule(
   automaticAdvertisement: json['automatic_advertisement'] != null ? MagicVisibilityMnmMnmRuleAutomaticAdvertisement.fromJson(json['automatic_advertisement'] as bool) : null,

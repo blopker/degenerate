@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_request_payment_settings_default_mandate.dart';import 'post_invoices_invoice_request_payment_settings_payment_method_options.dart';import 'post_invoices_invoice_request_payment_settings_payment_method_types.dart';/// Configuration settings for the PaymentIntent that is generated when the invoice is finalized.
-final class PostInvoicesInvoiceRequestPaymentSettings {const PostInvoicesInvoiceRequestPaymentSettings({this.defaultMandate, this.paymentMethodOptions, this.paymentMethodTypes, });
+@immutable final class PostInvoicesInvoiceRequestPaymentSettings {const PostInvoicesInvoiceRequestPaymentSettings({this.defaultMandate, this.paymentMethodOptions, this.paymentMethodTypes, });
 
 factory PostInvoicesInvoiceRequestPaymentSettings.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRequestPaymentSettings(
   defaultMandate: json['default_mandate'] != null ? OneOf2.parse(json['default_mandate'], fromA: (v) => v as String, fromB: (v) => PostInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2.fromJson(v as String),) : null,

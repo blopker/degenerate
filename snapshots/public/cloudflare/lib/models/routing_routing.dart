@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_timestamp.dart';/// API Routing settings on endpoint.
-final class RoutingRouting {const RoutingRouting({this.lastUpdated, this.route, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_timestamp.dart';/// API Routing settings on endpoint.
+@immutable final class RoutingRouting {const RoutingRouting({this.lastUpdated, this.route, });
 
 factory RoutingRouting.fromJson(Map<String, dynamic> json) { return RoutingRouting(
   lastUpdated: json['last_updated'] != null ? ShieldTimestamp.fromJson(json['last_updated'] as String) : null,

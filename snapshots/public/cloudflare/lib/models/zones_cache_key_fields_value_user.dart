@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Feature fields to add features about the end-user (client) into
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Feature fields to add features about the end-user (client) into
 /// the Cache Key.
 /// 
-final class ZonesCacheKeyFieldsValueUser {const ZonesCacheKeyFieldsValueUser({this.deviceType, this.geo, this.lang, });
+@immutable final class ZonesCacheKeyFieldsValueUser {const ZonesCacheKeyFieldsValueUser({this.deviceType, this.geo, this.lang, });
 
 factory ZonesCacheKeyFieldsValueUser.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValueUser(
   deviceType: json['device_type'] as bool?,

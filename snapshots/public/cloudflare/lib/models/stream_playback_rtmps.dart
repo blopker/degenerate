@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The secret key to use for playback via RTMPS.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The secret key to use for playback via RTMPS.
 extension type const StreamPlaybackRtmpsStreamKey(String value) {
 factory StreamPlaybackRtmpsStreamKey.fromJson(String json) => StreamPlaybackRtmpsStreamKey(json);
 
@@ -15,7 +15,7 @@ String toJson() => value;
 
 }
 /// Details for playback from an live input using RTMPS.
-final class StreamPlaybackRtmps {const StreamPlaybackRtmps({this.streamKey, this.url, });
+@immutable final class StreamPlaybackRtmps {const StreamPlaybackRtmps({this.streamKey, this.url, });
 
 factory StreamPlaybackRtmps.fromJson(Map<String, dynamic> json) { return StreamPlaybackRtmps(
   streamKey: json['streamKey'] != null ? StreamPlaybackRtmpsStreamKey.fromJson(json['streamKey'] as String) : null,

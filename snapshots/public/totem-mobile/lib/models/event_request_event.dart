@@ -1,5 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'accept_stick_event.dart';
 import 'ban_participant_event.dart';
 import 'end_room_event.dart';
@@ -37,6 +38,7 @@ sealed class EventRequestEvent {
   }
 }
 
+@immutable
 final class EventRequestEventAcceptStick extends EventRequestEvent {
   const EventRequestEventAcceptStick(this.acceptStickEvent);
 
@@ -74,6 +76,7 @@ final class EventRequestEventAcceptStick extends EventRequestEvent {
   }
 }
 
+@immutable
 final class EventRequestEventBanParticipant extends EventRequestEvent {
   const EventRequestEventBanParticipant(this.banParticipantEvent);
 
@@ -111,6 +114,7 @@ final class EventRequestEventBanParticipant extends EventRequestEvent {
   }
 }
 
+@immutable
 final class EventRequestEventEndRoom extends EventRequestEvent {
   const EventRequestEventEndRoom(this.endRoomEvent);
 
@@ -147,6 +151,7 @@ final class EventRequestEventEndRoom extends EventRequestEvent {
   }
 }
 
+@immutable
 final class EventRequestEventForcePassStick extends EventRequestEvent {
   const EventRequestEventForcePassStick(this.forcePassStickEvent);
 
@@ -184,6 +189,7 @@ final class EventRequestEventForcePassStick extends EventRequestEvent {
   }
 }
 
+@immutable
 final class EventRequestEventPassStick extends EventRequestEvent {
   const EventRequestEventPassStick(this.passStickEvent);
 
@@ -221,6 +227,7 @@ final class EventRequestEventPassStick extends EventRequestEvent {
   }
 }
 
+@immutable
 final class EventRequestEventReorder extends EventRequestEvent {
   const EventRequestEventReorder(this.reorderEvent);
 
@@ -257,6 +264,7 @@ final class EventRequestEventReorder extends EventRequestEvent {
   }
 }
 
+@immutable
 final class EventRequestEventStartRoom extends EventRequestEvent {
   const EventRequestEventStartRoom(this.startRoomEvent);
 
@@ -294,6 +302,7 @@ final class EventRequestEventStartRoom extends EventRequestEvent {
   }
 }
 
+@immutable
 final class EventRequestEventUnbanParticipant extends EventRequestEvent {
   const EventRequestEventUnbanParticipant(this.unbanParticipantEvent);
 
@@ -337,6 +346,7 @@ final class EventRequestEventUnbanParticipant extends EventRequestEvent {
 
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
+@immutable
 final class EventRequestEvent$Unknown extends EventRequestEvent {
   const EventRequestEvent$Unknown(this.json);
 

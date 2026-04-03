@@ -1,41 +1,41 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'pub_openai_security.dart';
 import '../apis/assistants_api.dart';
 import '../apis/audio_api.dart';
+import '../apis/audit_logs_api.dart';
 import '../apis/batch_api.dart';
+import '../apis/certificates_api.dart';
 import '../apis/chat_api.dart';
 import '../apis/completions_api.dart';
-import '../apis/default_api.dart';
 import '../apis/conversations_api.dart';
+import '../apis/default_api.dart';
 import '../apis/embeddings_api.dart';
 import '../apis/evals_api.dart';
 import '../apis/files_api.dart';
 import '../apis/fine_tuning_api.dart';
-import '../apis/images_api.dart';
-import '../apis/models_api.dart';
-import '../apis/moderations_api.dart';
-import '../apis/audit_logs_api.dart';
-import '../apis/certificates_api.dart';
-import '../apis/usage_api.dart';
-import '../apis/groups_api.dart';
 import '../apis/group_organization_role_assignments_api.dart';
 import '../apis/group_users_api.dart';
+import '../apis/groups_api.dart';
+import '../apis/images_api.dart';
 import '../apis/invites_api.dart';
-import '../apis/projects_api.dart';
-import '../apis/project_groups_api.dart';
-import '../apis/roles_api.dart';
-import '../apis/users_api.dart';
-import '../apis/user_organization_role_assignments_api.dart';
+import '../apis/models_api.dart';
+import '../apis/moderations_api.dart';
 import '../apis/project_group_role_assignments_api.dart';
+import '../apis/project_groups_api.dart';
 import '../apis/project_user_role_assignments_api.dart';
+import '../apis/projects_api.dart';
 import '../apis/realtime_api.dart';
 import '../apis/responses_api.dart';
+import '../apis/roles_api.dart';
+import '../apis/skills_api.dart';
 import '../apis/uploads_api.dart';
+import '../apis/usage_api.dart';
+import '../apis/user_organization_role_assignments_api.dart';
+import '../apis/users_api.dart';
 import '../apis/vector_stores_api.dart';
 import '../apis/videos_api.dart';
-import '../apis/skills_api.dart';
+import 'pub_openai_security.dart';
 
 /// Root SDK client providing access to all API groups.
 ///
@@ -44,11 +44,11 @@ import '../apis/skills_api.dart';
 /// sdk.assistants.createThread();
 /// ```
 final class PubOpenaiApi {
+  PubOpenaiApi(this._config);
+
   static const defaultBaseUrl = 'https://api.openai.com/v1';
 
   final ApiConfig _config;
-
-  PubOpenaiApi(this._config);
 
   late final AssistantsApi assistants = AssistantsApi(_config);
   late final AudioApi audio = AudioApi(_config);

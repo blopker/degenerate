@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of hosted tool the model should to use. Learn more about
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of hosted tool the model should to use. Learn more about
 /// [built-in tools](/docs/guides/tools).
 /// 
 /// Allowed values are:
@@ -12,7 +12,7 @@
 /// - `code_interpreter`
 /// - `image_generation`
 /// 
-final class ToolChoiceTypesType {const ToolChoiceTypesType._(this.value);
+@immutable final class ToolChoiceTypesType {const ToolChoiceTypesType._(this.value);
 
 factory ToolChoiceTypesType.fromJson(String json) { return switch (json) {
   'file_search' => fileSearch,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Indicates that the model should use a built-in tool to generate a response.
 /// [Learn more about built-in tools](/docs/guides/tools).
 /// 
-final class ToolChoiceTypes {const ToolChoiceTypes({required this.type});
+@immutable final class ToolChoiceTypes {const ToolChoiceTypes({required this.type});
 
 factory ToolChoiceTypes.fromJson(Map<String, dynamic> json) { return ToolChoiceTypes(
   type: ToolChoiceTypesType.fromJson(json['type'] as String),

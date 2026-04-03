@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_editable.dart';import 'cache_rules_modified_on.dart';import 'cache_rules_setting_id.dart';final class CacheRulesResultObjectDelete {const CacheRulesResultObjectDelete({required this.editable, required this.id, this.modifiedOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_editable.dart';import 'cache_rules_modified_on.dart';import 'cache_rules_setting_id.dart';@immutable final class CacheRulesResultObjectDelete {const CacheRulesResultObjectDelete({required this.editable, required this.id, this.modifiedOn, });
 
 factory CacheRulesResultObjectDelete.fromJson(Map<String, dynamic> json) { return CacheRulesResultObjectDelete(
   editable: CacheRulesEditable.fromJson(json['editable'] as bool),

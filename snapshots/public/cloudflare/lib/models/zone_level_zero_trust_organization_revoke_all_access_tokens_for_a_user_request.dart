@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest {const ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest({required this.email});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest {const ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest({required this.email});
 
 factory ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest(
   email: json['email'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ExecAction describes a "run in container" action.
-final class ExecAction {const ExecAction({this.command});
+@immutable final class ExecAction {const ExecAction({this.command});
 
 factory ExecAction.fromJson(Map<String, dynamic> json) { return ExecAction(
   command: (json['command'] as List<dynamic>?)?.map((e) => e as String).toList(),

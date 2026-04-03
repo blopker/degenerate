@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_classroom_assignment.dart';import 'simple_classroom_repository.dart';import 'simple_classroom_user.dart';/// A GitHub Classroom accepted assignment
-final class ClassroomAcceptedAssignment {const ClassroomAcceptedAssignment({required this.id, required this.submitted, required this.passing, required this.commitCount, required this.grade, required this.students, required this.repository, required this.assignment, });
+@immutable final class ClassroomAcceptedAssignment {const ClassroomAcceptedAssignment({required this.id, required this.submitted, required this.passing, required this.commitCount, required this.grade, required this.students, required this.repository, required this.assignment, });
 
 factory ClassroomAcceptedAssignment.fromJson(Map<String, dynamic> json) { return ClassroomAcceptedAssignment(
   id: (json['id'] as num).toInt(),

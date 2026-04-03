@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The raw response field to log.
-final class RulesetsLogCustomFieldRawResponseFields2 {const RulesetsLogCustomFieldRawResponseFields2({required this.name, this.preserveDuplicates = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The raw response field to log.
+@immutable final class RulesetsLogCustomFieldRawResponseFields2 {const RulesetsLogCustomFieldRawResponseFields2({required this.name, this.preserveDuplicates = false, });
 
 factory RulesetsLogCustomFieldRawResponseFields2.fromJson(Map<String, dynamic> json) { return RulesetsLogCustomFieldRawResponseFields2(
   name: json['name'] as String,

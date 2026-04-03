@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_amount_details_line_item.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class PaymentFlowsAmountDetailsLineItemsObject {const PaymentFlowsAmountDetailsLineItemsObject._(this.value);
+@immutable final class PaymentFlowsAmountDetailsLineItemsObject {const PaymentFlowsAmountDetailsLineItemsObject._(this.value);
 
 factory PaymentFlowsAmountDetailsLineItemsObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentFlowsAmountDetailsLineItemsObject($value)'; } 
  }
 /// A list of line items, each containing information about a product in the PaymentIntent. There is a maximum of 200 line items.
-final class PaymentFlowsAmountDetailsLineItems {const PaymentFlowsAmountDetailsLineItems({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class PaymentFlowsAmountDetailsLineItems {const PaymentFlowsAmountDetailsLineItems({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory PaymentFlowsAmountDetailsLineItems.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetailsLineItems(
   data: (json['data'] as List<dynamic>).map((e) => PaymentIntentAmountDetailsLineItem.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessAccessGroupRuleGroup {const AccessAccessGroupRuleGroup({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessAccessGroupRuleGroup {const AccessAccessGroupRuleGroup({required this.id});
 
 factory AccessAccessGroupRuleGroup.fromJson(Map<String, dynamic> json) { return AccessAccessGroupRuleGroup(
   id: json['id'] as String,

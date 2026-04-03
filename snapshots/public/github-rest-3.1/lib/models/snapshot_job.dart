@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SnapshotJob {const SnapshotJob({required this.id, required this.correlator, this.htmlUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SnapshotJob {const SnapshotJob({required this.id, required this.correlator, this.htmlUrl, });
 
 factory SnapshotJob.fromJson(Map<String, dynamic> json) { return SnapshotJob(
   id: json['id'] as String,

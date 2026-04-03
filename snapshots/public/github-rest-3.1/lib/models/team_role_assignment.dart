@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'team_role_assignment_permissions.dart';import 'team_simple.dart';/// Determines if the team has a direct, indirect, or mixed relationship to a role
-final class TeamRoleAssignmentAssignment {const TeamRoleAssignmentAssignment._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team_role_assignment_permissions.dart';import 'team_simple.dart';/// Determines if the team has a direct, indirect, or mixed relationship to a role
+@immutable final class TeamRoleAssignmentAssignment {const TeamRoleAssignmentAssignment._(this.value);
 
 factory TeamRoleAssignmentAssignment.fromJson(String json) { return switch (json) {
   'direct' => direct,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamRoleAssignmentAssignment($value)'; } 
  }
 /// The ownership type of the team
-final class TeamRoleAssignmentType {const TeamRoleAssignmentType._(this.value);
+@immutable final class TeamRoleAssignmentType {const TeamRoleAssignmentType._(this.value);
 
 factory TeamRoleAssignmentType.fromJson(String json) { return switch (json) {
   'enterprise' => enterprise,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamRoleAssignmentType($value)'; } 
  }
 /// The Relationship a Team has with a role.
-final class TeamRoleAssignment {const TeamRoleAssignment({this.assignment, required this.id, required this.nodeId, required this.name, required this.slug, required this.description, this.privacy, this.notificationSetting, required this.permission, this.permissions, required this.url, required this.htmlUrl, required this.membersUrl, required this.repositoriesUrl, required this.parent, required this.type, this.organizationId, this.enterpriseId, });
+@immutable final class TeamRoleAssignment {const TeamRoleAssignment({required this.id, required this.nodeId, required this.name, required this.slug, required this.description, required this.permission, required this.url, required this.htmlUrl, required this.membersUrl, required this.repositoriesUrl, required this.parent, required this.type, this.assignment, this.privacy, this.notificationSetting, this.permissions, this.organizationId, this.enterpriseId, });
 
 factory TeamRoleAssignment.fromJson(Map<String, dynamic> json) { return TeamRoleAssignment(
   assignment: json['assignment'] != null ? TeamRoleAssignmentAssignment.fromJson(json['assignment'] as String) : null,

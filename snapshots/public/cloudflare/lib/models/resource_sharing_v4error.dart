@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ResourceSharingV4error {const ResourceSharingV4error({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResourceSharingV4error {const ResourceSharingV4error({required this.code, required this.message, });
 
 factory ResourceSharingV4error.fromJson(Map<String, dynamic> json) { return ResourceSharingV4error(
   code: (json['code'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay {const PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay {const PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay($value)'; } 
  }
 /// This parameter allows you to set some attributes on the payment method created during a Checkout session.
-final class PostCheckoutSessionsRequestPaymentMethodData {const PostCheckoutSessionsRequestPaymentMethodData({this.allowRedisplay});
+@immutable final class PostCheckoutSessionsRequestPaymentMethodData {const PostCheckoutSessionsRequestPaymentMethodData({this.allowRedisplay});
 
 factory PostCheckoutSessionsRequestPaymentMethodData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodData(
   allowRedisplay: json['allow_redisplay'] != null ? PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,

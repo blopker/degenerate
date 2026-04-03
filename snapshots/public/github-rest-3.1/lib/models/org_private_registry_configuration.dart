@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The registry type.
-final class OrgPrivateRegistryConfigurationRegistryType {const OrgPrivateRegistryConfigurationRegistryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The registry type.
+@immutable final class OrgPrivateRegistryConfigurationRegistryType {const OrgPrivateRegistryConfigurationRegistryType._(this.value);
 
 factory OrgPrivateRegistryConfigurationRegistryType.fromJson(String json) { return switch (json) {
   'maven_repository' => mavenRepository,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrgPrivateRegistryConfigurationRegistryType($value)'; } 
  }
 /// Which type of organization repositories have access to the private registry.
-final class OrgPrivateRegistryConfigurationVisibility {const OrgPrivateRegistryConfigurationVisibility._(this.value);
+@immutable final class OrgPrivateRegistryConfigurationVisibility {const OrgPrivateRegistryConfigurationVisibility._(this.value);
 
 factory OrgPrivateRegistryConfigurationVisibility.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -93,7 +93,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrgPrivateRegistryConfigurationVisibility($value)'; } 
  }
 /// Private registry configuration for an organization
-final class OrgPrivateRegistryConfiguration {const OrgPrivateRegistryConfiguration({required this.name, required this.registryType, this.url, this.username, this.replacesBase = false, required this.visibility, required this.createdAt, required this.updatedAt, });
+@immutable final class OrgPrivateRegistryConfiguration {const OrgPrivateRegistryConfiguration({required this.name, required this.registryType, required this.visibility, required this.createdAt, required this.updatedAt, this.url, this.username, this.replacesBase = false, });
 
 factory OrgPrivateRegistryConfiguration.fromJson(Map<String, dynamic> json) { return OrgPrivateRegistryConfiguration(
   name: json['name'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'credit_notes_pretax_credit_amount.dart';import 'discounts_resource_discount_amount.dart';import 'tax_rate.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class CreditNoteLineItemObject {const CreditNoteLineItemObject._(this.value);
+@immutable final class CreditNoteLineItemObject {const CreditNoteLineItemObject._(this.value);
 
 factory CreditNoteLineItemObject.fromJson(String json) { return switch (json) {
   'credit_note_line_item' => creditNoteLineItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreditNoteLineItemObject($value)'; } 
  }
 /// The type of the credit note line item, one of `invoice_line_item` or `custom_line_item`. When the type is `invoice_line_item` there is an additional `invoice_line_item` property on the resource the value of which is the id of the credited line item on the invoice.
-final class CreditNoteLineItemType {const CreditNoteLineItemType._(this.value);
+@immutable final class CreditNoteLineItemType {const CreditNoteLineItemType._(this.value);
 
 factory CreditNoteLineItemType.fromJson(String json) { return switch (json) {
   'custom_line_item' => customLineItem,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreditNoteLineItemType($value)'; } 
  }
 /// The credit note line item object
-final class CreditNoteLineItem {const CreditNoteLineItem({required this.amount, this.description, required this.discountAmount, required this.discountAmounts, required this.id, this.invoiceLineItem, required this.livemode, required this.object, required this.pretaxCreditAmounts, this.quantity, required this.taxRates, this.taxes, required this.type, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class CreditNoteLineItem {const CreditNoteLineItem({required this.amount, required this.discountAmount, required this.discountAmounts, required this.id, required this.livemode, required this.object, required this.pretaxCreditAmounts, required this.taxRates, required this.type, this.description, this.invoiceLineItem, this.quantity, this.taxes, this.unitAmount, this.unitAmountDecimal, });
 
 factory CreditNoteLineItem.fromJson(Map<String, dynamic> json) { return CreditNoteLineItem(
   amount: (json['amount'] as num).toInt(),

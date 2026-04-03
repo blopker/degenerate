@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_request_documents.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_request_queries.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_request_text.dart';final class WorkersAiPostRunCfQwenQwen3Embedding06bRequest {const WorkersAiPostRunCfQwenQwen3Embedding06bRequest({this.documents, this.instruction = 'Given a web search query, retrieve relevant passages that answer the query', this.queries, this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_request_documents.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_request_queries.dart';import 'workers_ai_post_run_cf_qwen_qwen3_embedding06b_request_text.dart';@immutable final class WorkersAiPostRunCfQwenQwen3Embedding06bRequest {const WorkersAiPostRunCfQwenQwen3Embedding06bRequest({this.documents, this.instruction = 'Given a web search query, retrieve relevant passages that answer the query', this.queries, this.text, });
 
 factory WorkersAiPostRunCfQwenQwen3Embedding06bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfQwenQwen3Embedding06bRequest(
   documents: json['documents'] != null ? OneOf2.parse(json['documents'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_trusted_domains_request_deletes.dart';import 'email_security_batch_trusted_domains_request_patches.dart';import 'email_security_batch_trusted_domains_request_puts.dart';import 'email_security_create_trusted_domain.dart';final class EmailSecurityBatchTrustedDomainsRequest {const EmailSecurityBatchTrustedDomainsRequest({required this.deletes, required this.patches, required this.posts, required this.puts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_batch_trusted_domains_request_deletes.dart';import 'email_security_batch_trusted_domains_request_patches.dart';import 'email_security_batch_trusted_domains_request_puts.dart';import 'email_security_create_trusted_domain.dart';@immutable final class EmailSecurityBatchTrustedDomainsRequest {const EmailSecurityBatchTrustedDomainsRequest({required this.deletes, required this.patches, required this.posts, required this.puts, });
 
 factory EmailSecurityBatchTrustedDomainsRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchTrustedDomainsRequest(
   deletes: (json['deletes'] as List<dynamic>).map((e) => EmailSecurityBatchTrustedDomainsRequestDeletes.fromJson(e as Map<String, dynamic>)).toList(),

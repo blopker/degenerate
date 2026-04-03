@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_resource_tax_rate_details.dart';/// The reasoning behind this tax, for example, if the product is tax exempt. We might extend the possible values for this field to support new tax rules.
-final class TaxProductResourceTaxBreakdownTaxabilityReason {const TaxProductResourceTaxBreakdownTaxabilityReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_tax_rate_details.dart';/// The reasoning behind this tax, for example, if the product is tax exempt. We might extend the possible values for this field to support new tax rules.
+@immutable final class TaxProductResourceTaxBreakdownTaxabilityReason {const TaxProductResourceTaxBreakdownTaxabilityReason._(this.value);
 
 factory TaxProductResourceTaxBreakdownTaxabilityReason.fromJson(String json) { return switch (json) {
   'customer_exempt' => customerExempt,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceTaxBreakdownTaxabilityReason($value)'; } 
  }
 /// 
-final class TaxProductResourceTaxBreakdown {const TaxProductResourceTaxBreakdown({required this.amount, required this.inclusive, required this.taxRateDetails, required this.taxabilityReason, required this.taxableAmount, });
+@immutable final class TaxProductResourceTaxBreakdown {const TaxProductResourceTaxBreakdown({required this.amount, required this.inclusive, required this.taxRateDetails, required this.taxabilityReason, required this.taxableAmount, });
 
 factory TaxProductResourceTaxBreakdown.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxBreakdown(
   amount: (json['amount'] as num).toInt(),

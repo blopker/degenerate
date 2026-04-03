@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_authorization_authentication_exemption.dart';import 'issuing_authorization_three_d_secure.dart';/// Whether the cardholder provided an address first line and if it matched the cardholder’s `billing.address.line1`.
-final class IssuingAuthorizationVerificationDataAddressLine1Check {const IssuingAuthorizationVerificationDataAddressLine1Check._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_authentication_exemption.dart';import 'issuing_authorization_three_d_secure.dart';/// Whether the cardholder provided an address first line and if it matched the cardholder’s `billing.address.line1`.
+@immutable final class IssuingAuthorizationVerificationDataAddressLine1Check {const IssuingAuthorizationVerificationDataAddressLine1Check._(this.value);
 
 factory IssuingAuthorizationVerificationDataAddressLine1Check.fromJson(String json) { return switch (json) {
   'match' => match,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationVerificationDataAddressLine1Check($value)'; } 
  }
 /// Whether the cardholder provided a postal code and if it matched the cardholder’s `billing.address.postal_code`.
-final class IssuingAuthorizationVerificationDataAddressPostalCodeCheck {const IssuingAuthorizationVerificationDataAddressPostalCodeCheck._(this.value);
+@immutable final class IssuingAuthorizationVerificationDataAddressPostalCodeCheck {const IssuingAuthorizationVerificationDataAddressPostalCodeCheck._(this.value);
 
 factory IssuingAuthorizationVerificationDataAddressPostalCodeCheck.fromJson(String json) { return switch (json) {
   'match' => match,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationVerificationDataAddressPostalCodeCheck($value)'; } 
  }
 /// Whether the cardholder provided a CVC and if it matched Stripe’s record.
-final class IssuingAuthorizationVerificationDataCvcCheck {const IssuingAuthorizationVerificationDataCvcCheck._(this.value);
+@immutable final class IssuingAuthorizationVerificationDataCvcCheck {const IssuingAuthorizationVerificationDataCvcCheck._(this.value);
 
 factory IssuingAuthorizationVerificationDataCvcCheck.fromJson(String json) { return switch (json) {
   'match' => match,
@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationVerificationDataCvcCheck($value)'; } 
  }
 /// Whether the cardholder provided an expiry date and if it matched Stripe’s record.
-final class IssuingAuthorizationVerificationDataExpiryCheck {const IssuingAuthorizationVerificationDataExpiryCheck._(this.value);
+@immutable final class IssuingAuthorizationVerificationDataExpiryCheck {const IssuingAuthorizationVerificationDataExpiryCheck._(this.value);
 
 factory IssuingAuthorizationVerificationDataExpiryCheck.fromJson(String json) { return switch (json) {
   'match' => match,
@@ -113,7 +113,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationVerificationDataExpiryCheck($value)'; } 
  }
 /// 
-final class IssuingAuthorizationVerificationData {const IssuingAuthorizationVerificationData({required this.addressLine1Check, required this.addressPostalCodeCheck, this.authenticationExemption, required this.cvcCheck, required this.expiryCheck, this.postalCode, this.threeDSecure, });
+@immutable final class IssuingAuthorizationVerificationData {const IssuingAuthorizationVerificationData({required this.addressLine1Check, required this.addressPostalCodeCheck, required this.cvcCheck, required this.expiryCheck, this.authenticationExemption, this.postalCode, this.threeDSecure, });
 
 factory IssuingAuthorizationVerificationData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationVerificationData(
   addressLine1Check: IssuingAuthorizationVerificationDataAddressLine1Check.fromJson(json['address_line1_check'] as String),

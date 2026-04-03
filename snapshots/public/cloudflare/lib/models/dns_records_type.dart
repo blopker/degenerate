@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Record type.
-final class DnsRecordsType {const DnsRecordsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Record type.
+@immutable final class DnsRecordsType {const DnsRecordsType._(this.value);
 
 factory DnsRecordsType.fromJson(String json) { return switch (json) {
   'A' => a,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of object being deleted.
-final class ChatCompletionDeletedObject {const ChatCompletionDeletedObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of object being deleted.
+@immutable final class ChatCompletionDeletedObject {const ChatCompletionDeletedObject._(this.value);
 
 factory ChatCompletionDeletedObject.fromJson(String json) { return switch (json) {
   'chat.completion.deleted' => chatCompletionDeleted,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ChatCompletionDeletedObject($value)'; } 
  }
-final class ChatCompletionDeleted {const ChatCompletionDeleted({required this.object, required this.id, required this.deleted, });
+@immutable final class ChatCompletionDeleted {const ChatCompletionDeleted({required this.object, required this.id, required this.deleted, });
 
 factory ChatCompletionDeleted.fromJson(Map<String, dynamic> json) { return ChatCompletionDeleted(
   object: ChatCompletionDeletedObject.fromJson(json['object'] as String),

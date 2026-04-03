@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_configuration.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetTerminalConfigurationsResponseObject {const GetTerminalConfigurationsResponseObject._(this.value);
+@immutable final class GetTerminalConfigurationsResponseObject {const GetTerminalConfigurationsResponseObject._(this.value);
 
 factory GetTerminalConfigurationsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetTerminalConfigurationsResponseObject($value)'; } 
  }
 /// 
-final class GetTerminalConfigurationsResponse {const GetTerminalConfigurationsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetTerminalConfigurationsResponse {const GetTerminalConfigurationsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetTerminalConfigurationsResponse.fromJson(Map<String, dynamic> json) { return GetTerminalConfigurationsResponse(
   data: (json['data'] as List<dynamic>).map((e) => TerminalConfiguration.fromJson(e as Map<String, dynamic>)).toList(),

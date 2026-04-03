@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'object_detection2_box.dart';final class ObjectDetection2 {const ObjectDetection2({this.box, this.label, this.score, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_detection2_box.dart';@immutable final class ObjectDetection2 {const ObjectDetection2({this.box, this.label, this.score, });
 
 factory ObjectDetection2.fromJson(Map<String, dynamic> json) { return ObjectDetection2(
   box: json['box'] != null ? ObjectDetection2Box.fromJson(json['box'] as Map<String, dynamic>) : null,

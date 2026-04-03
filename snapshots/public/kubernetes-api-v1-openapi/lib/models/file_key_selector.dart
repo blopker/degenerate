@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// FileKeySelector selects a key of the env file.
-final class FileKeySelector {const FileKeySelector({this.key = '', this.optional = false, this.path = '', this.volumeName = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// FileKeySelector selects a key of the env file.
+@immutable final class FileKeySelector {const FileKeySelector({this.key = '', this.optional = false, this.path = '', this.volumeName = '', });
 
 factory FileKeySelector.fromJson(Map<String, dynamic> json) { return FileKeySelector(
   key: json['key'] as String,

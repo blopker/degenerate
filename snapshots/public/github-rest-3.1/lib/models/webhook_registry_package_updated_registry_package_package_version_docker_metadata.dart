@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata {const WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata({this.tags});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata {const WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata({this.tags});
 
 factory WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdatedRegistryPackagePackageVersionDockerMetadata(
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),

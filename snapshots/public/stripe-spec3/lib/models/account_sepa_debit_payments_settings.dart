@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class AccountSepaDebitPaymentsSettings {const AccountSepaDebitPaymentsSettings({this.creditorId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class AccountSepaDebitPaymentsSettings {const AccountSepaDebitPaymentsSettings({this.creditorId});
 
 factory AccountSepaDebitPaymentsSettings.fromJson(Map<String, dynamic> json) { return AccountSepaDebitPaymentsSettings(
   creditorId: json['creditor_id'] as String?,

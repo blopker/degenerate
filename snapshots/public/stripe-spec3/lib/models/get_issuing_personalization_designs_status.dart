@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingPersonalizationDesignsStatus {const GetIssuingPersonalizationDesignsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingPersonalizationDesignsStatus {const GetIssuingPersonalizationDesignsStatus._(this.value);
 
 factory GetIssuingPersonalizationDesignsStatus.fromJson(String json) { return switch (json) {
   'active' => active,

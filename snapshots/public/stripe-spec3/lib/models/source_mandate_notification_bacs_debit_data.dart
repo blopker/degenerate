@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SourceMandateNotificationBacsDebitData {const SourceMandateNotificationBacsDebitData({this.last4});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SourceMandateNotificationBacsDebitData {const SourceMandateNotificationBacsDebitData({this.last4});
 
 factory SourceMandateNotificationBacsDebitData.fromJson(Map<String, dynamic> json) { return SourceMandateNotificationBacsDebitData(
   last4: json['last4'] as String?,

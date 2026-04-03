@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Attributes associated to the permission group.
-final class IamPermissionGroupMeta {const IamPermissionGroupMeta({this.key, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Attributes associated to the permission group.
+@immutable final class IamPermissionGroupMeta {const IamPermissionGroupMeta({this.key, this.value, });
 
 factory IamPermissionGroupMeta.fromJson(Map<String, dynamic> json) { return IamPermissionGroupMeta(
   key: json['key'] as String?,

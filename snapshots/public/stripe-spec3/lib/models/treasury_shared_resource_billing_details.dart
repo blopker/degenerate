@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';/// 
-final class TreasurySharedResourceBillingDetails {const TreasurySharedResourceBillingDetails({required this.address, this.email, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// 
+@immutable final class TreasurySharedResourceBillingDetails {const TreasurySharedResourceBillingDetails({required this.address, this.email, this.name, });
 
 factory TreasurySharedResourceBillingDetails.fromJson(Map<String, dynamic> json) { return TreasurySharedResourceBillingDetails(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),

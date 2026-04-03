@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'confirmation_tokens_resource_mandate_data_resource_customer_acceptance_resource_online.dart';/// This hash contains details about the customer acceptance of the Mandate.
-final class ConfirmationTokensResourceMandateDataResourceCustomerAcceptance {const ConfirmationTokensResourceMandateDataResourceCustomerAcceptance({this.online, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'confirmation_tokens_resource_mandate_data_resource_customer_acceptance_resource_online.dart';/// This hash contains details about the customer acceptance of the Mandate.
+@immutable final class ConfirmationTokensResourceMandateDataResourceCustomerAcceptance {const ConfirmationTokensResourceMandateDataResourceCustomerAcceptance({required this.type, this.online, });
 
 factory ConfirmationTokensResourceMandateDataResourceCustomerAcceptance.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourceMandateDataResourceCustomerAcceptance(
   online: json['online'] != null ? ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline.fromJson(json['online'] as Map<String, dynamic>) : null,

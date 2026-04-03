@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PortalFlowsAfterCompletionRedirect {const PortalFlowsAfterCompletionRedirect({required this.returnUrl});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PortalFlowsAfterCompletionRedirect {const PortalFlowsAfterCompletionRedirect({required this.returnUrl});
 
 factory PortalFlowsAfterCompletionRedirect.fromJson(Map<String, dynamic> json) { return PortalFlowsAfterCompletionRedirect(
   returnUrl: json['return_url'] as String,

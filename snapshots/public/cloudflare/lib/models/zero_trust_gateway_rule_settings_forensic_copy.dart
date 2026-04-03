@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configure whether a copy of the HTTP request will be sent to storage when the rule matches.
-final class ZeroTrustGatewayRuleSettingsForensicCopy {const ZeroTrustGatewayRuleSettingsForensicCopy({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure whether a copy of the HTTP request will be sent to storage when the rule matches.
+@immutable final class ZeroTrustGatewayRuleSettingsForensicCopy {const ZeroTrustGatewayRuleSettingsForensicCopy({this.enabled});
 
 factory ZeroTrustGatewayRuleSettingsForensicCopy.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsForensicCopy(
   enabled: json['enabled'] as bool?,

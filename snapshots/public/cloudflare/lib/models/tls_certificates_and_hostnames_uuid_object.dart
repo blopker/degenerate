@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The DCV Delegation unique identifier.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The DCV Delegation unique identifier.
 extension type const TlsCertificatesAndHostnamesUuid(String value) {
 factory TlsCertificatesAndHostnamesUuid.fromJson(String json) => TlsCertificatesAndHostnamesUuid(json);
 
 String toJson() => value;
 
 }
-final class TlsCertificatesAndHostnamesUuidObject {const TlsCertificatesAndHostnamesUuidObject({this.uuid});
+@immutable final class TlsCertificatesAndHostnamesUuidObject {const TlsCertificatesAndHostnamesUuidObject({this.uuid});
 
 factory TlsCertificatesAndHostnamesUuidObject.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesUuidObject(
   uuid: json['uuid'] != null ? TlsCertificatesAndHostnamesUuid.fromJson(json['uuid'] as String) : null,

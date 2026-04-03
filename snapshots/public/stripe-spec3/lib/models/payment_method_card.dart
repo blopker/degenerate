@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'networks.dart';import 'payment_method_card_checks.dart';import 'payment_method_card_generated_card.dart';import 'payment_method_card_wallet.dart';import 'three_d_secure_usage.dart';/// Status of a card based on the card issuer.
-final class PaymentMethodCardRegulatedStatus {const PaymentMethodCardRegulatedStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'networks.dart';import 'payment_method_card_checks.dart';import 'payment_method_card_generated_card.dart';import 'payment_method_card_wallet.dart';import 'three_d_secure_usage.dart';/// Status of a card based on the card issuer.
+@immutable final class PaymentMethodCardRegulatedStatus {const PaymentMethodCardRegulatedStatus._(this.value);
 
 factory PaymentMethodCardRegulatedStatus.fromJson(String json) { return switch (json) {
   'regulated' => regulated,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodCardRegulatedStatus($value)'; } 
  }
 /// 
-final class PaymentMethodCard {const PaymentMethodCard({required this.brand, this.checks, this.country, this.displayBrand, required this.expMonth, required this.expYear, this.fingerprint, required this.funding, this.generatedFrom, required this.last4, this.networks, this.regulatedStatus, this.threeDSecureUsage, this.wallet, });
+@immutable final class PaymentMethodCard {const PaymentMethodCard({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.last4, this.checks, this.country, this.displayBrand, this.fingerprint, this.generatedFrom, this.networks, this.regulatedStatus, this.threeDSecureUsage, this.wallet, });
 
 factory PaymentMethodCard.fromJson(Map<String, dynamic> json) { return PaymentMethodCard(
   brand: json['brand'] as String,

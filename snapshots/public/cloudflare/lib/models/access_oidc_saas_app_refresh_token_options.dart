@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessOidcSaasAppRefreshTokenOptions {const AccessOidcSaasAppRefreshTokenOptions({this.lifetime});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessOidcSaasAppRefreshTokenOptions {const AccessOidcSaasAppRefreshTokenOptions({this.lifetime});
 
 factory AccessOidcSaasAppRefreshTokenOptions.fromJson(Map<String, dynamic> json) { return AccessOidcSaasAppRefreshTokenOptions(
   lifetime: json['lifetime'] as String?,

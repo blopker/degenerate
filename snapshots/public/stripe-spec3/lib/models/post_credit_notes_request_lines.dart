@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_credit_notes_request_lines_tax_amounts.dart';import 'post_credit_notes_request_lines_tax_amounts_variant1.dart';import 'post_credit_notes_request_lines_tax_rates.dart';final class PostCreditNotesRequestLinesType {const PostCreditNotesRequestLinesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_credit_notes_request_lines_tax_amounts.dart';import 'post_credit_notes_request_lines_tax_amounts_variant1.dart';import 'post_credit_notes_request_lines_tax_rates.dart';@immutable final class PostCreditNotesRequestLinesType {const PostCreditNotesRequestLinesType._(this.value);
 
 factory PostCreditNotesRequestLinesType.fromJson(String json) { return switch (json) {
   'custom_line_item' => customLineItem,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCreditNotesRequestLinesType($value)'; } 
  }
-final class PostCreditNotesRequestLines {const PostCreditNotesRequestLines({this.amount, this.description, this.invoiceLineItem, this.quantity, this.taxAmounts, this.taxRates, required this.type, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostCreditNotesRequestLines {const PostCreditNotesRequestLines({required this.type, this.amount, this.description, this.invoiceLineItem, this.quantity, this.taxAmounts, this.taxRates, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostCreditNotesRequestLines.fromJson(Map<String, dynamic> json) { return PostCreditNotesRequestLines(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

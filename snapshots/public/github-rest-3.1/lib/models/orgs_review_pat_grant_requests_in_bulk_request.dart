@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Action to apply to the requests.
-final class OrgsReviewPatGrantRequestsInBulkRequestAction {const OrgsReviewPatGrantRequestsInBulkRequestAction._(this.value);
+@immutable final class OrgsReviewPatGrantRequestsInBulkRequestAction {const OrgsReviewPatGrantRequestsInBulkRequestAction._(this.value);
 
 factory OrgsReviewPatGrantRequestsInBulkRequestAction.fromJson(String json) { return switch (json) {
   'approve' => approve,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsReviewPatGrantRequestsInBulkRequestAction($value)'; } 
  }
-final class OrgsReviewPatGrantRequestsInBulkRequest {const OrgsReviewPatGrantRequestsInBulkRequest({this.patRequestIds, required this.action, this.reason, });
+@immutable final class OrgsReviewPatGrantRequestsInBulkRequest {const OrgsReviewPatGrantRequestsInBulkRequest({required this.action, this.patRequestIds, this.reason, });
 
 factory OrgsReviewPatGrantRequestsInBulkRequest.fromJson(Map<String, dynamic> json) { return OrgsReviewPatGrantRequestsInBulkRequest(
   patRequestIds: (json['pat_request_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

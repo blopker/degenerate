@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is an `au_becs_debit` PaymentMethod, this hash contains details about the bank account.
-final class PostPaymentMethodsRequestAuBecsDebit {const PostPaymentMethodsRequestAuBecsDebit({required this.accountNumber, required this.bsbNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is an `au_becs_debit` PaymentMethod, this hash contains details about the bank account.
+@immutable final class PostPaymentMethodsRequestAuBecsDebit {const PostPaymentMethodsRequestAuBecsDebit({required this.accountNumber, required this.bsbNumber, });
 
 factory PostPaymentMethodsRequestAuBecsDebit.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestAuBecsDebit(
   accountNumber: json['account_number'] as String,

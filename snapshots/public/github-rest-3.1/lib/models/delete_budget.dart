@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteBudget {const DeleteBudget({required this.message, required this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteBudget {const DeleteBudget({required this.message, required this.id, });
 
 factory DeleteBudget.fromJson(Map<String, dynamic> json) { return DeleteBudget(
   message: json['message'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_override.dart';final class FirewallOverrideResponseSingle {const FirewallOverrideResponseSingle({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_override.dart';@immutable final class FirewallOverrideResponseSingle {const FirewallOverrideResponseSingle({required this.result});
 
 factory FirewallOverrideResponseSingle.fromJson(Map<String, dynamic> json) { return FirewallOverrideResponseSingle(
   result: FirewallOverride.fromJson(json['result'] as Map<String, dynamic>),

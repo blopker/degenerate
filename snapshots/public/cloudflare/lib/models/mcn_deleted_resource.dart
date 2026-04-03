@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_resource_id.dart';final class McnDeletedResource {const McnDeletedResource({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_resource_id.dart';@immutable final class McnDeletedResource {const McnDeletedResource({required this.id});
 
 factory McnDeletedResource.fromJson(Map<String, dynamic> json) { return McnDeletedResource(
   id: McnResourceId.fromJson(json['id'] as String),

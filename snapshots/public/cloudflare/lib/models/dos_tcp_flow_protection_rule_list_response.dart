@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_tcp_flow_protection_rule.dart';final class DosTcpFlowProtectionRuleListResponse {const DosTcpFlowProtectionRuleListResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_tcp_flow_protection_rule.dart';@immutable final class DosTcpFlowProtectionRuleListResponse {const DosTcpFlowProtectionRuleListResponse({this.result});
 
 factory DosTcpFlowProtectionRuleListResponse.fromJson(Map<String, dynamic> json) { return DosTcpFlowProtectionRuleListResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => DosTcpFlowProtectionRule.fromJson(e as Map<String, dynamic>)).toList(),

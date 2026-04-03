@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_commit_commit_author.dart';import 'file_commit_commit_committer.dart';import 'file_commit_commit_parents.dart';import 'file_commit_commit_tree.dart';import 'file_commit_commit_verification.dart';final class FileCommitCommit {const FileCommitCommit({this.sha, this.nodeId, this.url, this.htmlUrl, this.author, this.committer, this.message, this.tree, this.parents, this.verification, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_commit_commit_author.dart';import 'file_commit_commit_committer.dart';import 'file_commit_commit_parents.dart';import 'file_commit_commit_tree.dart';import 'file_commit_commit_verification.dart';@immutable final class FileCommitCommit {const FileCommitCommit({this.sha, this.nodeId, this.url, this.htmlUrl, this.author, this.committer, this.message, this.tree, this.parents, this.verification, });
 
 factory FileCommitCommit.fromJson(Map<String, dynamic> json) { return FileCommitCommit(
   sha: json['sha'] as String?,

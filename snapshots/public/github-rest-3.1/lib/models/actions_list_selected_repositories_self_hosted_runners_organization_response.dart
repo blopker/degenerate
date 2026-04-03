@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';final class ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse {const ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse({this.totalCount, this.repositories, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';@immutable final class ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse {const ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse({this.totalCount, this.repositories, });
 
 factory ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,

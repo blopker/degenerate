@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Various durations for the query.
-final class D1QueryMetaTimings {const D1QueryMetaTimings({this.sqlDurationMs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Various durations for the query.
+@immutable final class D1QueryMetaTimings {const D1QueryMetaTimings({this.sqlDurationMs});
 
 factory D1QueryMetaTimings.fromJson(Map<String, dynamic> json) { return D1QueryMetaTimings(
   sqlDurationMs: json['sql_duration_ms'] != null ? (json['sql_duration_ms'] as num).toDouble() : null,

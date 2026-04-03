@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_name.dart';final class WorkersBindingKindPipelines {const WorkersBindingKindPipelines({required this.name, required this.pipeline, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindPipelines {const WorkersBindingKindPipelines({required this.name, required this.pipeline, required this.type, });
 
 factory WorkersBindingKindPipelines.fromJson(Map<String, dynamic> json) { return WorkersBindingKindPipelines(
   name: WorkersBindingName.fromJson(json['name'] as String),

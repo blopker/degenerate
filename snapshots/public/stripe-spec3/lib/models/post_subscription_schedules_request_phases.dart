@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param5.dart';import 'post_subscription_schedules_request_phases_add_invoice_items.dart';import 'post_subscription_schedules_request_phases_automatic_tax.dart';import 'post_subscription_schedules_request_phases_billing_thresholds.dart';import 'post_subscription_schedules_request_phases_default_tax_rates.dart';import 'post_subscription_schedules_request_phases_description.dart';import 'post_subscription_schedules_request_phases_discounts.dart';import 'post_subscription_schedules_request_phases_discounts_variant1.dart';import 'post_subscription_schedules_request_phases_duration.dart';import 'post_subscription_schedules_request_phases_invoice_settings.dart';import 'post_subscription_schedules_request_phases_items.dart';import 'post_subscription_schedules_request_phases_transfer_data.dart';final class PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor {const PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param5.dart';import 'post_subscription_schedules_request_phases_add_invoice_items.dart';import 'post_subscription_schedules_request_phases_automatic_tax.dart';import 'post_subscription_schedules_request_phases_billing_thresholds.dart';import 'post_subscription_schedules_request_phases_default_tax_rates.dart';import 'post_subscription_schedules_request_phases_description.dart';import 'post_subscription_schedules_request_phases_discounts.dart';import 'post_subscription_schedules_request_phases_discounts_variant1.dart';import 'post_subscription_schedules_request_phases_duration.dart';import 'post_subscription_schedules_request_phases_invoice_settings.dart';import 'post_subscription_schedules_request_phases_items.dart';import 'post_subscription_schedules_request_phases_transfer_data.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor {const PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor._(this.value);
 
 factory PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor($value)'; } 
  }
-final class PostSubscriptionSchedulesRequestPhasesCollectionMethod {const PostSubscriptionSchedulesRequestPhasesCollectionMethod._(this.value);
+@immutable final class PostSubscriptionSchedulesRequestPhasesCollectionMethod {const PostSubscriptionSchedulesRequestPhasesCollectionMethod._(this.value);
 
 factory PostSubscriptionSchedulesRequestPhasesCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesRequestPhasesCollectionMethod($value)'; } 
  }
-final class PostSubscriptionSchedulesRequestPhasesProrationBehavior {const PostSubscriptionSchedulesRequestPhasesProrationBehavior._(this.value);
+@immutable final class PostSubscriptionSchedulesRequestPhasesProrationBehavior {const PostSubscriptionSchedulesRequestPhasesProrationBehavior._(this.value);
 
 factory PostSubscriptionSchedulesRequestPhasesProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesRequestPhasesProrationBehavior($value)'; } 
  }
-final class PostSubscriptionSchedulesRequestPhases {const PostSubscriptionSchedulesRequestPhases({this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.currency, this.defaultPaymentMethod, this.defaultTaxRates, this.description, this.discounts, this.duration, this.endDate, this.invoiceSettings, required this.items, this.metadata, this.onBehalfOf, this.prorationBehavior, this.transferData, this.trial, this.trialEnd, });
+@immutable final class PostSubscriptionSchedulesRequestPhases {const PostSubscriptionSchedulesRequestPhases({required this.items, this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.currency, this.defaultPaymentMethod, this.defaultTaxRates, this.description, this.discounts, this.duration, this.endDate, this.invoiceSettings, this.metadata, this.onBehalfOf, this.prorationBehavior, this.transferData, this.trial, this.trialEnd, });
 
 factory PostSubscriptionSchedulesRequestPhases.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhases(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesRequestPhasesAddInvoiceItems.fromJson(e as Map<String, dynamic>)).toList(),

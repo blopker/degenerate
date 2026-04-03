@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bundle_status.dart';final class BundleResponseStatus {const BundleResponseStatus({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bundle_status.dart';@immutable final class BundleResponseStatus {const BundleResponseStatus({this.result});
 
 factory BundleResponseStatus.fromJson(Map<String, dynamic> json) { return BundleResponseStatus(
   result: json['result'] != null ? BundleStatus.fromJson(json['result'] as Map<String, dynamic>) : null,

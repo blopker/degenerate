@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpRegexValidationQuery {const DlpRegexValidationQuery({this.maxMatchBytes, required this.regex, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpRegexValidationQuery {const DlpRegexValidationQuery({required this.regex, this.maxMatchBytes, });
 
 factory DlpRegexValidationQuery.fromJson(Map<String, dynamic> json) { return DlpRegexValidationQuery(
   maxMatchBytes: json['max_match_bytes'] != null ? (json['max_match_bytes'] as num).toInt() : null,

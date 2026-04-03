@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StreamMessages2Source {const StreamMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamMessages2Source {const StreamMessages2Source({this.pointer});
 
 factory StreamMessages2Source.fromJson(Map<String, dynamic> json) { return StreamMessages2Source(
   pointer: json['pointer'] as String?,

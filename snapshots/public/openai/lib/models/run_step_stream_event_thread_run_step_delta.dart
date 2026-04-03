@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_delta_object.dart';final class RunStepStreamEventThreadRunStepDeltaEvent {const RunStepStreamEventThreadRunStepDeltaEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_delta_object.dart';@immutable final class RunStepStreamEventThreadRunStepDeltaEvent {const RunStepStreamEventThreadRunStepDeltaEvent._(this.value);
 
 factory RunStepStreamEventThreadRunStepDeltaEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.delta' => threadRunStepDelta,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepStreamEventThreadRunStepDeltaEvent($value)'; } 
  }
 /// Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.
-final class RunStepStreamEventThreadRunStepDelta {const RunStepStreamEventThreadRunStepDelta({required this.event, required this.data, });
+@immutable final class RunStepStreamEventThreadRunStepDelta {const RunStepStreamEventThreadRunStepDelta({required this.event, required this.data, });
 
 factory RunStepStreamEventThreadRunStepDelta.fromJson(Map<String, dynamic> json) { return RunStepStreamEventThreadRunStepDelta(
   event: RunStepStreamEventThreadRunStepDeltaEvent.fromJson(json['event'] as String),

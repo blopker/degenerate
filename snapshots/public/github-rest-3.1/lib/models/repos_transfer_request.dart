@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ReposTransferRequest {const ReposTransferRequest({required this.newOwner, this.newName, this.teamIds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposTransferRequest {const ReposTransferRequest({required this.newOwner, this.newName, this.teamIds, });
 
 factory ReposTransferRequest.fromJson(Map<String, dynamic> json) { return ReposTransferRequest(
   newOwner: json['new_owner'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_installment_plan.dart';/// 
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments({this.plan});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_installment_plan.dart';/// 
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments({this.plan});
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments(
   plan: json['plan'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallmentPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,

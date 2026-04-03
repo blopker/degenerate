@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCertificateInclude {const GetCertificateInclude._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCertificateInclude {const GetCertificateInclude._(this.value);
 
 factory GetCertificateInclude.fromJson(String json) { return switch (json) {
   'content' => content,

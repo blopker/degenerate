@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_rendering_options_param2.dart';import 'post_customers_customer_request_invoice_settings_custom_fields.dart';import 'post_customers_customer_request_invoice_settings_custom_fields_variant1.dart';import 'post_customers_customer_request_invoice_settings_rendering_options.dart';/// Default invoice settings for this customer.
-final class PostCustomersCustomerRequestInvoiceSettings {const PostCustomersCustomerRequestInvoiceSettings({this.customFields, this.defaultPaymentMethod, this.footer, this.renderingOptions, });
+@immutable final class PostCustomersCustomerRequestInvoiceSettings {const PostCustomersCustomerRequestInvoiceSettings({this.customFields, this.defaultPaymentMethod, this.footer, this.renderingOptions, });
 
 factory PostCustomersCustomerRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerRequestInvoiceSettings(
   customFields: json['custom_fields'] != null ? OneOf2.parse(json['custom_fields'], fromA: (v) => (v as List<dynamic>).map((e) => PostCustomersCustomerRequestInvoiceSettingsCustomFieldsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostCustomersCustomerRequestInvoiceSettingsCustomFieldsVariant2.fromJson(v as String),) : null,

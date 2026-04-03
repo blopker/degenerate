@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazZarazConfigReturnConsentButtonTextTranslations {const ZarazZarazConfigReturnConsentButtonTextTranslations({required this.acceptAll, required this.confirmMyChoices, required this.rejectAll, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazZarazConfigReturnConsentButtonTextTranslations {const ZarazZarazConfigReturnConsentButtonTextTranslations({required this.acceptAll, required this.confirmMyChoices, required this.rejectAll, });
 
 factory ZarazZarazConfigReturnConsentButtonTextTranslations.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigReturnConsentButtonTextTranslations(
   acceptAll: (json['accept_all'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),

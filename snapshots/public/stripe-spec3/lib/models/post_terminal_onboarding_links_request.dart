@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_onboarding_links_request_link_options.dart';/// The type of link being generated.
-final class PostTerminalOnboardingLinksRequestLinkType {const PostTerminalOnboardingLinksRequestLinkType._(this.value);
+@immutable final class PostTerminalOnboardingLinksRequestLinkType {const PostTerminalOnboardingLinksRequestLinkType._(this.value);
 
 factory PostTerminalOnboardingLinksRequestLinkType.fromJson(String json) { return switch (json) {
   'apple_terms_and_conditions' => appleTermsAndConditions,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTerminalOnboardingLinksRequestLinkType($value)'; } 
  }
-final class PostTerminalOnboardingLinksRequest {const PostTerminalOnboardingLinksRequest({this.expand, required this.linkOptions, required this.linkType, this.onBehalfOf, });
+@immutable final class PostTerminalOnboardingLinksRequest {const PostTerminalOnboardingLinksRequest({required this.linkOptions, required this.linkType, this.expand, this.onBehalfOf, });
 
 factory PostTerminalOnboardingLinksRequest.fromJson(Map<String, dynamic> json) { return PostTerminalOnboardingLinksRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

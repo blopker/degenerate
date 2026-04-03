@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_messages2.dart';import 'addressing_service_binding.dart';final class IpAddressManagementServiceBindingsGetServiceBindingResponse {const IpAddressManagementServiceBindingsGetServiceBindingResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_messages2.dart';import 'addressing_service_binding.dart';@immutable final class IpAddressManagementServiceBindingsGetServiceBindingResponse {const IpAddressManagementServiceBindingsGetServiceBindingResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory IpAddressManagementServiceBindingsGetServiceBindingResponse.fromJson(Map<String, dynamic> json) { return IpAddressManagementServiceBindingsGetServiceBindingResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => AddressingMessages2.fromJson(e as Map<String, dynamic>)).toList(),

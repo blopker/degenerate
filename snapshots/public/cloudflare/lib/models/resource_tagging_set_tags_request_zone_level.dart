@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'resource_tagging_delete_tags_request_zone_level_base.dart';/// Request body schema for setting tags on zone-level resources.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_delete_tags_request_zone_level_base.dart';/// Request body schema for setting tags on zone-level resources.
 sealed class ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevel();
 
 /// Deserialize from JSON, dispatching on the `resource_type` discriminator.
@@ -21,7 +21,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ResourceTaggingSetTagsRequestZoneLevel$Unknown; } 
  }
-final class ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
+@immutable final class ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
 factory ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy(ResourceTaggingDeleteTagsRequestZoneLevelBase.fromJson(json)); }
 
@@ -34,7 +34,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
  }
-final class ResourceTaggingSetTagsRequestZoneLevelGatewayOperation extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelGatewayOperation(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
+@immutable final class ResourceTaggingSetTagsRequestZoneLevelGatewayOperation extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelGatewayOperation(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
 factory ResourceTaggingSetTagsRequestZoneLevelGatewayOperation.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestZoneLevelGatewayOperation(ResourceTaggingDeleteTagsRequestZoneLevelBase.fromJson(json)); }
 
@@ -47,7 +47,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingSetTagsRequestZoneLevelGatewayOperation(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
  }
-final class ResourceTaggingSetTagsRequestZoneLevelCustomCertificate extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelCustomCertificate(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
+@immutable final class ResourceTaggingSetTagsRequestZoneLevelCustomCertificate extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelCustomCertificate(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
 factory ResourceTaggingSetTagsRequestZoneLevelCustomCertificate.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestZoneLevelCustomCertificate(ResourceTaggingDeleteTagsRequestZoneLevelBase.fromJson(json)); }
 
@@ -60,7 +60,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingSetTagsRequestZoneLevelCustomCertificate(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
  }
-final class ResourceTaggingSetTagsRequestZoneLevelCustomHostname extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelCustomHostname(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
+@immutable final class ResourceTaggingSetTagsRequestZoneLevelCustomHostname extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelCustomHostname(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
 factory ResourceTaggingSetTagsRequestZoneLevelCustomHostname.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestZoneLevelCustomHostname(ResourceTaggingDeleteTagsRequestZoneLevelBase.fromJson(json)); }
 
@@ -73,7 +73,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingSetTagsRequestZoneLevelCustomHostname(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
  }
-final class ResourceTaggingSetTagsRequestZoneLevelDnsRecord extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelDnsRecord(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
+@immutable final class ResourceTaggingSetTagsRequestZoneLevelDnsRecord extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelDnsRecord(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
 factory ResourceTaggingSetTagsRequestZoneLevelDnsRecord.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestZoneLevelDnsRecord(ResourceTaggingDeleteTagsRequestZoneLevelBase.fromJson(json)); }
 
@@ -86,7 +86,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingSetTagsRequestZoneLevelDnsRecord(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
  }
-final class ResourceTaggingSetTagsRequestZoneLevelManagedClientCertificate extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelManagedClientCertificate(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
+@immutable final class ResourceTaggingSetTagsRequestZoneLevelManagedClientCertificate extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelManagedClientCertificate(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
 factory ResourceTaggingSetTagsRequestZoneLevelManagedClientCertificate.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestZoneLevelManagedClientCertificate(ResourceTaggingDeleteTagsRequestZoneLevelBase.fromJson(json)); }
 
@@ -99,7 +99,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 @override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
 @override String toString() { return 'ResourceTaggingSetTagsRequestZoneLevelManagedClientCertificate(resourceTaggingDeleteTagsRequestZoneLevelBase: $resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
  }
-final class ResourceTaggingSetTagsRequestZoneLevelZone extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelZone(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
+@immutable final class ResourceTaggingSetTagsRequestZoneLevelZone extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevelZone(this.resourceTaggingDeleteTagsRequestZoneLevelBase);
 
 factory ResourceTaggingSetTagsRequestZoneLevelZone.fromJson(Map<String, dynamic> json) { return ResourceTaggingSetTagsRequestZoneLevelZone(ResourceTaggingDeleteTagsRequestZoneLevelBase.fromJson(json)); }
 
@@ -114,7 +114,7 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ResourceTaggingSetTagsRequestZoneLevel$Unknown extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevel$Unknown(this.json);
+@immutable final class ResourceTaggingSetTagsRequestZoneLevel$Unknown extends ResourceTaggingSetTagsRequestZoneLevel {const ResourceTaggingSetTagsRequestZoneLevel$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_variable.dart';final class ActionsListRepoVariablesResponse {const ActionsListRepoVariablesResponse({required this.totalCount, required this.variables, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_variable.dart';@immutable final class ActionsListRepoVariablesResponse {const ActionsListRepoVariablesResponse({required this.totalCount, required this.variables, });
 
 factory ActionsListRepoVariablesResponse.fromJson(Map<String, dynamic> json) { return ActionsListRepoVariablesResponse(
   totalCount: (json['total_count'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BranchProtectionBlockCreations {const BranchProtectionBlockCreations({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BranchProtectionBlockCreations {const BranchProtectionBlockCreations({this.enabled});
 
 factory BranchProtectionBlockCreations.fromJson(Map<String, dynamic> json) { return BranchProtectionBlockCreations(
   enabled: json['enabled'] as bool?,

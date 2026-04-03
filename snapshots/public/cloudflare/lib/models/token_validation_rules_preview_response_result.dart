@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_host.dart';import 'token_validation_rules_preview_response_result_operations.dart';final class TokenValidationRulesPreviewResponseResult {const TokenValidationRulesPreviewResponseResult({this.availableHosts, this.excluded, this.ignored, this.included, this.operations, this.selectedHosts, this.total, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_host.dart';import 'token_validation_rules_preview_response_result_operations.dart';@immutable final class TokenValidationRulesPreviewResponseResult {const TokenValidationRulesPreviewResponseResult({this.availableHosts, this.excluded, this.ignored, this.included, this.operations, this.selectedHosts, this.total, });
 
 factory TokenValidationRulesPreviewResponseResult.fromJson(Map<String, dynamic> json) { return TokenValidationRulesPreviewResponseResult(
   availableHosts: (json['available_hosts'] as List<dynamic>?)?.map((e) => ShieldHost.fromJson(e as String)).toList(),

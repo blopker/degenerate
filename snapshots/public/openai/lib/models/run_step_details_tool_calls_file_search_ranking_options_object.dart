@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'file_search_ranker.dart';/// The ranking options for the file search.
-final class RunStepDetailsToolCallsFileSearchRankingOptionsObject {const RunStepDetailsToolCallsFileSearchRankingOptionsObject({required this.ranker, required this.scoreThreshold, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_search_ranker.dart';/// The ranking options for the file search.
+@immutable final class RunStepDetailsToolCallsFileSearchRankingOptionsObject {const RunStepDetailsToolCallsFileSearchRankingOptionsObject({required this.ranker, required this.scoreThreshold, });
 
 factory RunStepDetailsToolCallsFileSearchRankingOptionsObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsFileSearchRankingOptionsObject(
   ranker: FileSearchRanker.fromJson(json['ranker'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2LockRuleIndefiniteConditionType {const R2LockRuleIndefiniteConditionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2LockRuleIndefiniteConditionType {const R2LockRuleIndefiniteConditionType._(this.value);
 
 factory R2LockRuleIndefiniteConditionType.fromJson(String json) { return switch (json) {
   'Indefinite' => indefinite,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2LockRuleIndefiniteConditionType($value)'; } 
  }
 /// Condition to apply a lock rule indefinitely.
-final class R2LockRuleIndefiniteCondition {const R2LockRuleIndefiniteCondition({required this.type});
+@immutable final class R2LockRuleIndefiniteCondition {const R2LockRuleIndefiniteCondition({required this.type});
 
 factory R2LockRuleIndefiniteCondition.fromJson(Map<String, dynamic> json) { return R2LockRuleIndefiniteCondition(
   type: R2LockRuleIndefiniteConditionType.fromJson(json['type'] as String),

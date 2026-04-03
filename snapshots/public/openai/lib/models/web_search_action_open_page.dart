@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The action type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action type.
 /// 
-final class WebSearchActionOpenPageType {const WebSearchActionOpenPageType._(this.value);
+@immutable final class WebSearchActionOpenPageType {const WebSearchActionOpenPageType._(this.value);
 
 factory WebSearchActionOpenPageType.fromJson(String json) { return switch (json) {
   'open_page' => openPage,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Action type "open_page" - Opens a specific URL from search results.
 /// 
-final class WebSearchActionOpenPage {const WebSearchActionOpenPage({required this.type, this.url, });
+@immutable final class WebSearchActionOpenPage {const WebSearchActionOpenPage({required this.type, this.url, });
 
 factory WebSearchActionOpenPage.fromJson(Map<String, dynamic> json) { return WebSearchActionOpenPage(
   type: WebSearchActionOpenPageType.fromJson(json['type'] as String),

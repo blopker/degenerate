@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.refusal.done`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.refusal.done`.
 /// 
-final class ResponseRefusalDoneEventType {const ResponseRefusalDoneEventType._(this.value);
+@immutable final class ResponseRefusalDoneEventType {const ResponseRefusalDoneEventType._(this.value);
 
 factory ResponseRefusalDoneEventType.fromJson(String json) { return switch (json) {
   'response.refusal.done' => responseRefusalDone,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseRefusalDoneEventType($value)'; } 
  }
 /// Emitted when refusal text is finalized.
-final class ResponseRefusalDoneEvent {const ResponseRefusalDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.refusal, required this.sequenceNumber, });
+@immutable final class ResponseRefusalDoneEvent {const ResponseRefusalDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.refusal, required this.sequenceNumber, });
 
 factory ResponseRefusalDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseRefusalDoneEvent(
   type: ResponseRefusalDoneEventType.fromJson(json['type'] as String),

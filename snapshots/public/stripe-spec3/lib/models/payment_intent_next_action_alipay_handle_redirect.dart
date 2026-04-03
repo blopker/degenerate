@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionAlipayHandleRedirect {const PaymentIntentNextActionAlipayHandleRedirect({this.nativeData, this.nativeUrl, this.returnUrl, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionAlipayHandleRedirect {const PaymentIntentNextActionAlipayHandleRedirect({this.nativeData, this.nativeUrl, this.returnUrl, this.url, });
 
 factory PaymentIntentNextActionAlipayHandleRedirect.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionAlipayHandleRedirect(
   nativeData: json['native_data'] as String?,

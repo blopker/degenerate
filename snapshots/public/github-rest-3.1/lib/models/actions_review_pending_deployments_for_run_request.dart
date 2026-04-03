@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to approve or reject deployment to the specified environments.
-final class ActionsReviewPendingDeploymentsForRunRequestState {const ActionsReviewPendingDeploymentsForRunRequestState._(this.value);
+@immutable final class ActionsReviewPendingDeploymentsForRunRequestState {const ActionsReviewPendingDeploymentsForRunRequestState._(this.value);
 
 factory ActionsReviewPendingDeploymentsForRunRequestState.fromJson(String json) { return switch (json) {
   'approved' => approved,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ActionsReviewPendingDeploymentsForRunRequestState($value)'; } 
  }
-final class ActionsReviewPendingDeploymentsForRunRequest {const ActionsReviewPendingDeploymentsForRunRequest({required this.environmentIds, required this.state, required this.comment, });
+@immutable final class ActionsReviewPendingDeploymentsForRunRequest {const ActionsReviewPendingDeploymentsForRunRequest({required this.environmentIds, required this.state, required this.comment, });
 
 factory ActionsReviewPendingDeploymentsForRunRequest.fromJson(Map<String, dynamic> json) { return ActionsReviewPendingDeploymentsForRunRequest(
   environmentIds: (json['environment_ids'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard {const TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard({required this.province});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard {const TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard({required this.province});
 
 factory TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard(
   province: json['province'] as String,

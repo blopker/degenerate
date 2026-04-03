@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'observatory_labeled_region.dart';import 'observatory_lighthouse_report.dart';import 'observatory_schedule_frequency.dart';import 'observatory_timestamp.dart';import 'observatory_url.dart';/// UUID.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_labeled_region.dart';import 'observatory_lighthouse_report.dart';import 'observatory_schedule_frequency.dart';import 'observatory_timestamp.dart';import 'observatory_url.dart';/// UUID.
 extension type const ObservatoryUuid(String value) {
 factory ObservatoryUuid.fromJson(String json) => ObservatoryUuid(json);
 
 String toJson() => value;
 
 }
-final class ObservatoryPageTest {const ObservatoryPageTest({this.date, this.desktopReport, this.id, this.mobileReport, this.region, this.scheduleFrequency, this.url, });
+@immutable final class ObservatoryPageTest {const ObservatoryPageTest({this.date, this.desktopReport, this.id, this.mobileReport, this.region, this.scheduleFrequency, this.url, });
 
 factory ObservatoryPageTest.fromJson(Map<String, dynamic> json) { return ObservatoryPageTest(
   date: json['date'] != null ? ObservatoryTimestamp.fromJson(json['date'] as String) : null,

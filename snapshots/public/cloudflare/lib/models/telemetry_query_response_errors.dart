@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TelemetryQueryResponseErrors {const TelemetryQueryResponseErrors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryQueryResponseErrors {const TelemetryQueryResponseErrors({required this.message});
 
 factory TelemetryQueryResponseErrors.fromJson(Map<String, dynamic> json) { return TelemetryQueryResponseErrors(
   message: json['message'] as String,

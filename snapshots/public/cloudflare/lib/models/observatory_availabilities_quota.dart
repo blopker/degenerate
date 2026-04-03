@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'observatory_availabilities_quota_quotas_per_plan.dart';import 'observatory_availabilities_quota_schedule_quotas_per_plan.dart';final class ObservatoryAvailabilitiesQuota {const ObservatoryAvailabilitiesQuota({this.plan, this.quotasPerPlan, this.remainingSchedules, this.remainingTests, this.scheduleQuotasPerPlan, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_availabilities_quota_quotas_per_plan.dart';import 'observatory_availabilities_quota_schedule_quotas_per_plan.dart';@immutable final class ObservatoryAvailabilitiesQuota {const ObservatoryAvailabilitiesQuota({this.plan, this.quotasPerPlan, this.remainingSchedules, this.remainingTests, this.scheduleQuotasPerPlan, });
 
 factory ObservatoryAvailabilitiesQuota.fromJson(Map<String, dynamic> json) { return ObservatoryAvailabilitiesQuota(
   plan: json['plan'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PagesPlainTextEnvVarType {const PagesPlainTextEnvVarType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesPlainTextEnvVarType {const PagesPlainTextEnvVarType._(this.value);
 
 factory PagesPlainTextEnvVarType.fromJson(String json) { return switch (json) {
   'plain_text' => plainText,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PagesPlainTextEnvVarType($value)'; } 
  }
 /// A plaintext environment variable.
-final class PagesPlainTextEnvVar {const PagesPlainTextEnvVar({required this.type, required this.value, });
+@immutable final class PagesPlainTextEnvVar {const PagesPlainTextEnvVar({required this.type, required this.value, });
 
 factory PagesPlainTextEnvVar.fromJson(Map<String, dynamic> json) { return PagesPlainTextEnvVar(
   type: PagesPlainTextEnvVarType.fromJson(json['type'] as String),

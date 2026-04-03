@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of matcher. Default is 'all'.
-final class EmailRuleCatchallMatcherType {const EmailRuleCatchallMatcherType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of matcher. Default is 'all'.
+@immutable final class EmailRuleCatchallMatcherType {const EmailRuleCatchallMatcherType._(this.value);
 
 factory EmailRuleCatchallMatcherType.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'EmailRuleCatchallMatcherType($value)'; } 
  }
 /// Matcher for catch-all routing rule.
-final class EmailRuleCatchallMatcher {const EmailRuleCatchallMatcher({required this.type});
+@immutable final class EmailRuleCatchallMatcher {const EmailRuleCatchallMatcher({required this.type});
 
 factory EmailRuleCatchallMatcher.fromJson(Map<String, dynamic> json) { return EmailRuleCatchallMatcher(
   type: EmailRuleCatchallMatcherType.fromJson(json['type'] as String),

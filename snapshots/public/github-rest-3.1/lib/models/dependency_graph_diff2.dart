@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependency_graph_diff2_vulnerabilities.dart';final class DependencyGraphDiff2ChangeType {const DependencyGraphDiff2ChangeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependency_graph_diff2_vulnerabilities.dart';@immutable final class DependencyGraphDiff2ChangeType {const DependencyGraphDiff2ChangeType._(this.value);
 
 factory DependencyGraphDiff2ChangeType.fromJson(String json) { return switch (json) {
   'added' => added,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependencyGraphDiff2ChangeType($value)'; } 
  }
 /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
-final class DependencyGraphDiff2Scope {const DependencyGraphDiff2Scope._(this.value);
+@immutable final class DependencyGraphDiff2Scope {const DependencyGraphDiff2Scope._(this.value);
 
 factory DependencyGraphDiff2Scope.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DependencyGraphDiff2Scope($value)'; } 
  }
-final class DependencyGraphDiff2 {const DependencyGraphDiff2({required this.changeType, required this.manifest, required this.ecosystem, required this.name, required this.version, required this.packageUrl, required this.license, required this.sourceRepositoryUrl, required this.vulnerabilities, required this.scope, });
+@immutable final class DependencyGraphDiff2 {const DependencyGraphDiff2({required this.changeType, required this.manifest, required this.ecosystem, required this.name, required this.version, required this.packageUrl, required this.license, required this.sourceRepositoryUrl, required this.vulnerabilities, required this.scope, });
 
 factory DependencyGraphDiff2.fromJson(Map<String, dynamic> json) { return DependencyGraphDiff2(
   changeType: DependencyGraphDiff2ChangeType.fromJson(json['change_type'] as String),

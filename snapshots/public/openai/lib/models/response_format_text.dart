@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of response format being defined. Always `text`.
-final class ResponseFormatTextType {const ResponseFormatTextType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of response format being defined. Always `text`.
+@immutable final class ResponseFormatTextType {const ResponseFormatTextType._(this.value);
 
 factory ResponseFormatTextType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Default response format. Used to generate text responses.
 /// 
-final class ResponseFormatText {const ResponseFormatText({required this.type});
+@immutable final class ResponseFormatText {const ResponseFormatText({required this.type});
 
 factory ResponseFormatText.fromJson(Map<String, dynamic> json) { return ResponseFormatText(
   type: ResponseFormatTextType.fromJson(json['type'] as String),

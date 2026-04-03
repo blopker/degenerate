@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostSnapshotResponseResult {const BrapiPostSnapshotResponseResult({required this.content, required this.screenshot, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostSnapshotResponseResult {const BrapiPostSnapshotResponseResult({required this.content, required this.screenshot, });
 
 factory BrapiPostSnapshotResponseResult.fromJson(Map<String, dynamic> json) { return BrapiPostSnapshotResponseResult(
   content: json['content'] as String,

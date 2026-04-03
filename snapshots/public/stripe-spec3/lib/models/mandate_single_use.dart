@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class MandateSingleUse {const MandateSingleUse({required this.amount, required this.currency, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class MandateSingleUse {const MandateSingleUse({required this.amount, required this.currency, });
 
 factory MandateSingleUse.fromJson(Map<String, dynamic> json) { return MandateSingleUse(
   amount: (json['amount'] as num).toInt(),

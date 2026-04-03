@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AmountDetailsTaxParam5 {const AmountDetailsTaxParam5({required this.totalTaxAmount});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AmountDetailsTaxParam5 {const AmountDetailsTaxParam5({required this.totalTaxAmount});
 
 factory AmountDetailsTaxParam5.fromJson(Map<String, dynamic> json) { return AmountDetailsTaxParam5(
   totalTaxAmount: (json['total_tax_amount'] as num).toInt(),

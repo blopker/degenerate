@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_created_on.dart';import 'workers_dispatch_namespace_name.dart';import 'workers_identifier.dart';import 'workers_modified_on.dart';import 'workers_trusted_workers.dart';import 'workers_uuid.dart';/// The current number of scripts in this Dispatch Namespace.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_created_on.dart';import 'workers_dispatch_namespace_name.dart';import 'workers_identifier.dart';import 'workers_modified_on.dart';import 'workers_trusted_workers.dart';import 'workers_uuid.dart';/// The current number of scripts in this Dispatch Namespace.
 extension type const WorkersScriptCount(int value) {
 factory WorkersScriptCount.fromJson(num json) => WorkersScriptCount(json.toInt());
 
 num toJson() => value;
 
 }
-final class WorkersNamespaceResponse {const WorkersNamespaceResponse({this.createdBy, this.createdOn, this.modifiedBy, this.modifiedOn, this.namespaceId, this.namespaceName, this.scriptCount, this.trustedWorkers, });
+@immutable final class WorkersNamespaceResponse {const WorkersNamespaceResponse({this.createdBy, this.createdOn, this.modifiedBy, this.modifiedOn, this.namespaceId, this.namespaceName, this.scriptCount, this.trustedWorkers, });
 
 factory WorkersNamespaceResponse.fromJson(Map<String, dynamic> json) { return WorkersNamespaceResponse(
   createdBy: json['created_by'] != null ? WorkersIdentifier.fromJson(json['created_by'] as String) : null,

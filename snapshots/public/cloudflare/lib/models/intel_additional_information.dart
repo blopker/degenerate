@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Additional information related to the host name.
-final class IntelAdditionalInformation {const IntelAdditionalInformation({this.suspectedMalwareFamily});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Additional information related to the host name.
+@immutable final class IntelAdditionalInformation {const IntelAdditionalInformation({this.suspectedMalwareFamily});
 
 factory IntelAdditionalInformation.fromJson(Map<String, dynamic> json) { return IntelAdditionalInformation(
   suspectedMalwareFamily: json['suspected_malware_family'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_components_schemas_name.dart';import 'aaa_secret.dart';import 'aaa_url.dart';import 'aaa_webhook_id.dart';/// Type of webhook endpoint.
-final class AaaComponentsSchemasType {const AaaComponentsSchemasType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_components_schemas_name.dart';import 'aaa_secret.dart';import 'aaa_url.dart';import 'aaa_webhook_id.dart';/// Type of webhook endpoint.
+@immutable final class AaaComponentsSchemasType {const AaaComponentsSchemasType._(this.value);
 
 factory AaaComponentsSchemasType.fromJson(String json) { return switch (json) {
   'datadog' => datadog,
@@ -64,7 +64,7 @@ factory AaaLastSuccess.fromJson(String json) => AaaLastSuccess(DateTime.parse(js
 String toJson() => value.toIso8601String();
 
 }
-final class AaaWebhooks {const AaaWebhooks({this.createdAt, this.id, this.lastFailure, this.lastSuccess, this.name, this.secret, this.type, this.url, });
+@immutable final class AaaWebhooks {const AaaWebhooks({this.createdAt, this.id, this.lastFailure, this.lastSuccess, this.name, this.secret, this.type, this.url, });
 
 factory AaaWebhooks.fromJson(Map<String, dynamic> json) { return AaaWebhooks(
   createdAt: json['created_at'] != null ? AaaCreatedAt.fromJson(json['created_at'] as String) : null,

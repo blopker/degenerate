@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Origins.
-final class RadarGetOriginsTimeseriesGroupOrigin {const RadarGetOriginsTimeseriesGroupOrigin._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Origins.
+@immutable final class RadarGetOriginsTimeseriesGroupOrigin {const RadarGetOriginsTimeseriesGroupOrigin._(this.value);
 
 factory RadarGetOriginsTimeseriesGroupOrigin.fromJson(String json) { return switch (json) {
   'AMAZON' => amazon,

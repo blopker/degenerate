@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The transformed request field to log.
-final class RulesetsLogCustomFieldTransformedRequestFields2 {const RulesetsLogCustomFieldTransformedRequestFields2({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The transformed request field to log.
+@immutable final class RulesetsLogCustomFieldTransformedRequestFields2 {const RulesetsLogCustomFieldTransformedRequestFields2({required this.name});
 
 factory RulesetsLogCustomFieldTransformedRequestFields2.fromJson(Map<String, dynamic> json) { return RulesetsLogCustomFieldTransformedRequestFields2(
   name: json['name'] as String,

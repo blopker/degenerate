@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_object_required_action_submit_tool_outputs.dart';/// For now, this is always `submit_tool_outputs`.
-final class RunObjectRequiredActionType {const RunObjectRequiredActionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_object_required_action_submit_tool_outputs.dart';/// For now, this is always `submit_tool_outputs`.
+@immutable final class RunObjectRequiredActionType {const RunObjectRequiredActionType._(this.value);
 
 factory RunObjectRequiredActionType.fromJson(String json) { return switch (json) {
   'submit_tool_outputs' => submitToolOutputs,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunObjectRequiredActionType($value)'; } 
  }
 /// Details on the action required to continue the run. Will be `null` if no action is required.
-final class RunObjectRequiredAction {const RunObjectRequiredAction({required this.type, required this.submitToolOutputs, });
+@immutable final class RunObjectRequiredAction {const RunObjectRequiredAction({required this.type, required this.submitToolOutputs, });
 
 factory RunObjectRequiredAction.fromJson(Map<String, dynamic> json) { return RunObjectRequiredAction(
   type: RunObjectRequiredActionType.fromJson(json['type'] as String),

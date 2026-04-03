@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObservabilityQueryParametersCalculationsKeyType {const WorkersObservabilityQueryParametersCalculationsKeyType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryParametersCalculationsKeyType {const WorkersObservabilityQueryParametersCalculationsKeyType._(this.value);
 
 factory WorkersObservabilityQueryParametersCalculationsKeyType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersObservabilityQueryParametersCalculationsKeyType($value)'; } 
  }
-final class WorkersObservabilityQueryParametersCalculationsOperator {const WorkersObservabilityQueryParametersCalculationsOperator._(this.value);
+@immutable final class WorkersObservabilityQueryParametersCalculationsOperator {const WorkersObservabilityQueryParametersCalculationsOperator._(this.value);
 
 factory WorkersObservabilityQueryParametersCalculationsOperator.fromJson(String json) { return switch (json) {
   'uniq' => uniq,
@@ -159,7 +159,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersObservabilityQueryParametersCalculationsOperator($value)'; } 
  }
-final class WorkersObservabilityQueryParametersCalculations {const WorkersObservabilityQueryParametersCalculations({this.alias, this.key, this.keyType, required this.$operator, });
+@immutable final class WorkersObservabilityQueryParametersCalculations {const WorkersObservabilityQueryParametersCalculations({required this.$operator, this.alias, this.key, this.keyType, });
 
 factory WorkersObservabilityQueryParametersCalculations.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryParametersCalculations(
   alias: json['alias'] as String?,

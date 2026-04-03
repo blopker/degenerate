@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping {const AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping({this.accountSid, this.dateCreated, this.dateUpdated, this.friendlyName, this.sid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping {const AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping({this.accountSid, this.dateCreated, this.dateUpdated, this.friendlyName, this.sid, });
 
 factory AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping.fromJson(Map<String, dynamic> json) { return AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping(
   accountSid: json['account_sid'] as String?,

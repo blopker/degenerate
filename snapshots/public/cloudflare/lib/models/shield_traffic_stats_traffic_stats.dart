@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_timestamp.dart';final class ShieldTrafficStatsTrafficStats {const ShieldTrafficStatsTrafficStats({required this.lastUpdated, required this.periodSeconds, required this.requests, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_timestamp.dart';@immutable final class ShieldTrafficStatsTrafficStats {const ShieldTrafficStatsTrafficStats({required this.lastUpdated, required this.periodSeconds, required this.requests, });
 
 factory ShieldTrafficStatsTrafficStats.fromJson(Map<String, dynamic> json) { return ShieldTrafficStatsTrafficStats(
   lastUpdated: ShieldTimestamp.fromJson(json['last_updated'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_routes_collection_response_result.dart';final class MagicRoutesCollectionResponse {const MagicRoutesCollectionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_routes_collection_response_result.dart';@immutable final class MagicRoutesCollectionResponse {const MagicRoutesCollectionResponse({this.result});
 
 factory MagicRoutesCollectionResponse.fromJson(Map<String, dynamic> json) { return MagicRoutesCollectionResponse(
   result: json['result'] != null ? MagicRoutesCollectionResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

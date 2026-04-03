@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'click_param.dart';import 'double_click_action.dart';import 'drag_param.dart';import 'key_press_action.dart';import 'move_param.dart';import 'screenshot_param.dart';import 'scroll_param.dart';import 'type_param.dart';import 'wait_param.dart';sealed class ComputerAction {const ComputerAction();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'click_param.dart';import 'double_click_action.dart';import 'drag_param.dart';import 'key_press_action.dart';import 'move_param.dart';import 'screenshot_param.dart';import 'scroll_param.dart';import 'type_param.dart';import 'wait_param.dart';sealed class ComputerAction {const ComputerAction();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ComputerAction.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ComputerAction$Unknown; } 
  }
-final class ComputerActionClick extends ComputerAction {const ComputerActionClick(this.clickParam);
+@immutable final class ComputerActionClick extends ComputerAction {const ComputerActionClick(this.clickParam);
 
 factory ComputerActionClick.fromJson(Map<String, dynamic> json) { return ComputerActionClick(ClickParam.fromJson(json)); }
 
@@ -35,7 +35,7 @@ final ClickParam clickParam;
 @override int get hashCode { return clickParam.hashCode; } 
 @override String toString() { return 'ComputerActionClick(clickParam: $clickParam)'; } 
  }
-final class ComputerActionDoubleClick extends ComputerAction {const ComputerActionDoubleClick(this.doubleClickAction);
+@immutable final class ComputerActionDoubleClick extends ComputerAction {const ComputerActionDoubleClick(this.doubleClickAction);
 
 factory ComputerActionDoubleClick.fromJson(Map<String, dynamic> json) { return ComputerActionDoubleClick(DoubleClickAction.fromJson(json)); }
 
@@ -48,7 +48,7 @@ final DoubleClickAction doubleClickAction;
 @override int get hashCode { return doubleClickAction.hashCode; } 
 @override String toString() { return 'ComputerActionDoubleClick(doubleClickAction: $doubleClickAction)'; } 
  }
-final class ComputerActionDrag extends ComputerAction {const ComputerActionDrag(this.dragParam);
+@immutable final class ComputerActionDrag extends ComputerAction {const ComputerActionDrag(this.dragParam);
 
 factory ComputerActionDrag.fromJson(Map<String, dynamic> json) { return ComputerActionDrag(DragParam.fromJson(json)); }
 
@@ -61,7 +61,7 @@ final DragParam dragParam;
 @override int get hashCode { return dragParam.hashCode; } 
 @override String toString() { return 'ComputerActionDrag(dragParam: $dragParam)'; } 
  }
-final class ComputerActionKeypress extends ComputerAction {const ComputerActionKeypress(this.keyPressAction);
+@immutable final class ComputerActionKeypress extends ComputerAction {const ComputerActionKeypress(this.keyPressAction);
 
 factory ComputerActionKeypress.fromJson(Map<String, dynamic> json) { return ComputerActionKeypress(KeyPressAction.fromJson(json)); }
 
@@ -74,7 +74,7 @@ final KeyPressAction keyPressAction;
 @override int get hashCode { return keyPressAction.hashCode; } 
 @override String toString() { return 'ComputerActionKeypress(keyPressAction: $keyPressAction)'; } 
  }
-final class ComputerActionMove extends ComputerAction {const ComputerActionMove(this.moveParam);
+@immutable final class ComputerActionMove extends ComputerAction {const ComputerActionMove(this.moveParam);
 
 factory ComputerActionMove.fromJson(Map<String, dynamic> json) { return ComputerActionMove(MoveParam.fromJson(json)); }
 
@@ -87,7 +87,7 @@ final MoveParam moveParam;
 @override int get hashCode { return moveParam.hashCode; } 
 @override String toString() { return 'ComputerActionMove(moveParam: $moveParam)'; } 
  }
-final class ComputerActionScreenshot extends ComputerAction {const ComputerActionScreenshot(this.screenshotParam);
+@immutable final class ComputerActionScreenshot extends ComputerAction {const ComputerActionScreenshot(this.screenshotParam);
 
 factory ComputerActionScreenshot.fromJson(Map<String, dynamic> json) { return ComputerActionScreenshot(ScreenshotParam.fromJson(json)); }
 
@@ -100,7 +100,7 @@ final ScreenshotParam screenshotParam;
 @override int get hashCode { return screenshotParam.hashCode; } 
 @override String toString() { return 'ComputerActionScreenshot(screenshotParam: $screenshotParam)'; } 
  }
-final class ComputerActionScroll extends ComputerAction {const ComputerActionScroll(this.scrollParam);
+@immutable final class ComputerActionScroll extends ComputerAction {const ComputerActionScroll(this.scrollParam);
 
 factory ComputerActionScroll.fromJson(Map<String, dynamic> json) { return ComputerActionScroll(ScrollParam.fromJson(json)); }
 
@@ -113,7 +113,7 @@ final ScrollParam scrollParam;
 @override int get hashCode { return scrollParam.hashCode; } 
 @override String toString() { return 'ComputerActionScroll(scrollParam: $scrollParam)'; } 
  }
-final class ComputerActionType extends ComputerAction {const ComputerActionType(this.typeParam);
+@immutable final class ComputerActionType extends ComputerAction {const ComputerActionType(this.typeParam);
 
 factory ComputerActionType.fromJson(Map<String, dynamic> json) { return ComputerActionType(TypeParam.fromJson(json)); }
 
@@ -126,7 +126,7 @@ final TypeParam typeParam;
 @override int get hashCode { return typeParam.hashCode; } 
 @override String toString() { return 'ComputerActionType(typeParam: $typeParam)'; } 
  }
-final class ComputerActionWait extends ComputerAction {const ComputerActionWait(this.waitParam);
+@immutable final class ComputerActionWait extends ComputerAction {const ComputerActionWait(this.waitParam);
 
 factory ComputerActionWait.fromJson(Map<String, dynamic> json) { return ComputerActionWait(WaitParam.fromJson(json)); }
 
@@ -141,7 +141,7 @@ final WaitParam waitParam;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ComputerAction$Unknown extends ComputerAction {const ComputerAction$Unknown(this.json);
+@immutable final class ComputerAction$Unknown extends ComputerAction {const ComputerAction$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

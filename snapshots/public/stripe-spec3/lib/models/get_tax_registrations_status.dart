@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTaxRegistrationsStatus {const GetTaxRegistrationsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTaxRegistrationsStatus {const GetTaxRegistrationsStatus._(this.value);
 
 factory GetTaxRegistrationsStatus.fromJson(String json) { return switch (json) {
   'active' => active,

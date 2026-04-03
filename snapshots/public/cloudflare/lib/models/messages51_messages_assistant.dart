@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_assistant_audio_variant1.dart';import 'messages51_messages_assistant_content.dart';import 'messages51_messages_assistant_content_variant2.dart';import 'messages51_messages_assistant_function_call_variant1.dart';import 'messages51_messages_assistant_tool_calls.dart';import 'messages51_messages_assistant_tool_calls_custom.dart';import 'messages51_messages_assistant_tool_calls_function.dart';final class Messages51MessagesAssistantRole {const Messages51MessagesAssistantRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_assistant_audio_variant1.dart';import 'messages51_messages_assistant_content.dart';import 'messages51_messages_assistant_content_variant2.dart';import 'messages51_messages_assistant_function_call_variant1.dart';import 'messages51_messages_assistant_tool_calls.dart';import 'messages51_messages_assistant_tool_calls_custom.dart';import 'messages51_messages_assistant_tool_calls_function.dart';@immutable final class Messages51MessagesAssistantRole {const Messages51MessagesAssistantRole._(this.value);
 
 factory Messages51MessagesAssistantRole.fromJson(String json) { return switch (json) {
   'assistant' => assistant,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51MessagesAssistantRole($value)'; } 
  }
-final class Messages51MessagesAssistant {const Messages51MessagesAssistant({this.audio, this.content, this.functionCall, this.name, this.refusal, required this.role, this.toolCalls, });
+@immutable final class Messages51MessagesAssistant {const Messages51MessagesAssistant({required this.role, this.audio, this.content, this.functionCall, this.name, this.refusal, this.toolCalls, });
 
 factory Messages51MessagesAssistant.fromJson(Map<String, dynamic> json) { return Messages51MessagesAssistant(
   audio: json['audio'] != null ? Messages51MessagesAssistantAudioVariant1.fromJson(json['audio'] as Map<String, dynamic>) : null,

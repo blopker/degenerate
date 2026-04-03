@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_name.dart';final class WorkersBindingKindQueue {const WorkersBindingKindQueue({required this.name, required this.queueName, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindQueue {const WorkersBindingKindQueue({required this.name, required this.queueName, required this.type, });
 
 factory WorkersBindingKindQueue.fromJson(Map<String, dynamic> json) { return WorkersBindingKindQueue(
   name: WorkersBindingName.fromJson(json['name'] as String),

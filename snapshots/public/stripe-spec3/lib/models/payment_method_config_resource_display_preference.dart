@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The account's display preference.
-final class PaymentMethodConfigResourceDisplayPreferencePreference {const PaymentMethodConfigResourceDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The account's display preference.
+@immutable final class PaymentMethodConfigResourceDisplayPreferencePreference {const PaymentMethodConfigResourceDisplayPreferencePreference._(this.value);
 
 factory PaymentMethodConfigResourceDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodConfigResourceDisplayPreferencePreference($value)'; } 
  }
 /// The effective display preference value.
-final class PaymentMethodConfigResourceDisplayPreferenceValue {const PaymentMethodConfigResourceDisplayPreferenceValue._(this.value);
+@immutable final class PaymentMethodConfigResourceDisplayPreferenceValue {const PaymentMethodConfigResourceDisplayPreferenceValue._(this.value);
 
 factory PaymentMethodConfigResourceDisplayPreferenceValue.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodConfigResourceDisplayPreferenceValue($value)'; } 
  }
 /// 
-final class PaymentMethodConfigResourceDisplayPreference {const PaymentMethodConfigResourceDisplayPreference({this.overridable, required this.preference, required this.value, });
+@immutable final class PaymentMethodConfigResourceDisplayPreference {const PaymentMethodConfigResourceDisplayPreference({required this.preference, required this.value, this.overridable, });
 
 factory PaymentMethodConfigResourceDisplayPreference.fromJson(Map<String, dynamic> json) { return PaymentMethodConfigResourceDisplayPreference(
   overridable: json['overridable'] as bool?,

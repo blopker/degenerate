@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_dataset_new_version.dart';final class DlpDatasetsCreateVersionResponse {const DlpDatasetsCreateVersionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_new_version.dart';@immutable final class DlpDatasetsCreateVersionResponse {const DlpDatasetsCreateVersionResponse({this.result});
 
 factory DlpDatasetsCreateVersionResponse.fromJson(Map<String, dynamic> json) { return DlpDatasetsCreateVersionResponse(
   result: json['result'] != null ? DlpDatasetNewVersion.fromJson(json['result'] as Map<String, dynamic>) : null,

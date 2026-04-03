@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_origin_request_access.dart';/// Configuration parameters for the public hostname specific connection settings between cloudflared and origin server.
-final class TunnelOriginRequest {const TunnelOriginRequest({this.access, this.caPool, this.connectTimeout, this.disableChunkedEncoding, this.http2Origin, this.httpHostHeader, this.keepAliveConnections, this.keepAliveTimeout, this.matchSnItoHost, this.noHappyEyeballs, this.noTlsVerify, this.originServerName, this.proxyType, this.tcpKeepAlive, this.tlsTimeout, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_origin_request_access.dart';/// Configuration parameters for the public hostname specific connection settings between cloudflared and origin server.
+@immutable final class TunnelOriginRequest {const TunnelOriginRequest({this.access, this.caPool, this.connectTimeout, this.disableChunkedEncoding, this.http2Origin, this.httpHostHeader, this.keepAliveConnections, this.keepAliveTimeout, this.matchSnItoHost, this.noHappyEyeballs, this.noTlsVerify, this.originServerName, this.proxyType, this.tcpKeepAlive, this.tlsTimeout, });
 
 factory TunnelOriginRequest.fromJson(Map<String, dynamic> json) { return TunnelOriginRequest(
   access: json['access'] != null ? TunnelOriginRequestAccess.fromJson(json['access'] as Map<String, dynamic>) : null,

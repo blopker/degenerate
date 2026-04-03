@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_update_gateway_dynamic_route_response_route_elements_percentage_outputs_value.dart';final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsPercentageType {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsPercentageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_dynamic_route_response_route_elements_percentage_outputs_value.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsPercentageType {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsPercentageType._(this.value);
 
 factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsPercentageType.fromJson(String json) { return switch (json) {
   'percentage' => percentage,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateGatewayDynamicRouteResponseRouteElementsPercentageType($value)'; } 
  }
-final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsPercentage {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsPercentage({required this.id, required this.outputs, required this.type, });
+@immutable final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsPercentage {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsPercentage({required this.id, required this.outputs, required this.type, });
 
 factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsPercentage.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsPercentage(
   id: json['id'] as String,

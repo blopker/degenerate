@@ -7,7 +7,7 @@ factory TeamsDevicesDefault.fromJson(bool json) => TeamsDevicesDefault(json);
 bool toJson() => value;
 
 }
-final class TeamsDevicesDeviceSettingsPolicy {const TeamsDevicesDeviceSettingsPolicy({this.allowModeSwitch, this.allowUpdates, this.allowedToLeave, this.autoConnect, this.captivePortal, this.$default, this.description, this.disableAutoFallback, this.enabled = true, this.exclude, this.excludeOfficeIps, this.fallbackDomains, this.gatewayUniqueId, this.include, this.lanAllowMinutes, this.lanAllowSubnetSize, this.match, this.name, this.policyId, this.precedence, this.registerInterfaceIpWithDns, this.sccmVpnBoundarySupport, this.serviceModeV2, this.supportUrl, this.switchLocked, this.targetTests, this.tunnelProtocol, });
+@immutable final class TeamsDevicesDeviceSettingsPolicy {const TeamsDevicesDeviceSettingsPolicy({this.allowModeSwitch, this.allowUpdates, this.allowedToLeave, this.autoConnect, this.captivePortal, this.$default, this.description, this.disableAutoFallback, this.enabled = true, this.exclude, this.excludeOfficeIps, this.fallbackDomains, this.gatewayUniqueId, this.include, this.lanAllowMinutes, this.lanAllowSubnetSize, this.match, this.name, this.policyId, this.precedence, this.registerInterfaceIpWithDns, this.sccmVpnBoundarySupport, this.serviceModeV2, this.supportUrl, this.switchLocked, this.targetTests, this.tunnelProtocol, });
 
 factory TeamsDevicesDeviceSettingsPolicy.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceSettingsPolicy(
   allowModeSwitch: json['allow_mode_switch'] != null ? TeamsDevicesAllowModeSwitch.fromJson(json['allow_mode_switch'] as bool) : null,

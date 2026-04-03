@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_components_schemas_messages2.dart';import 'aaa_silence.dart';final class AaaSilencesComponentsSchemasResponseCollection {const AaaSilencesComponentsSchemasResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_components_schemas_messages2.dart';import 'aaa_silence.dart';@immutable final class AaaSilencesComponentsSchemasResponseCollection {const AaaSilencesComponentsSchemasResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 
 factory AaaSilencesComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AaaSilencesComponentsSchemasResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => AaaComponentsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),

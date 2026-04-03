@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SearchIssuesAndPullRequestsResponse503 {const SearchIssuesAndPullRequestsResponse503({this.code, this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchIssuesAndPullRequestsResponse503 {const SearchIssuesAndPullRequestsResponse503({this.code, this.message, this.documentationUrl, });
 
 factory SearchIssuesAndPullRequestsResponse503.fromJson(Map<String, dynamic> json) { return SearchIssuesAndPullRequestsResponse503(
   code: json['code'] as String?,

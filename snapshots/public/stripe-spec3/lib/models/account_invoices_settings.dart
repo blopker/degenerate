@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_invoices_settings_default_account_tax_ids.dart';import 'tax_id.dart';/// Whether to save the payment method after a payment is completed for a one-time invoice or a subscription invoice when the customer already has a default payment method on the hosted invoice page.
-final class AccountInvoicesSettingsHostedPaymentMethodSave {const AccountInvoicesSettingsHostedPaymentMethodSave._(this.value);
+@immutable final class AccountInvoicesSettingsHostedPaymentMethodSave {const AccountInvoicesSettingsHostedPaymentMethodSave._(this.value);
 
 factory AccountInvoicesSettingsHostedPaymentMethodSave.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountInvoicesSettingsHostedPaymentMethodSave($value)'; } 
  }
 /// 
-final class AccountInvoicesSettings {const AccountInvoicesSettings({this.defaultAccountTaxIds, this.hostedPaymentMethodSave, });
+@immutable final class AccountInvoicesSettings {const AccountInvoicesSettings({this.defaultAccountTaxIds, this.hostedPaymentMethodSave, });
 
 factory AccountInvoicesSettings.fromJson(Map<String, dynamic> json) { return AccountInvoicesSettings(
   defaultAccountTaxIds: (json['default_account_tax_ids'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => TaxId.fromJson(v as Map<String, dynamic>),)).toList(),

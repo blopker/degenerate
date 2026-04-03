@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_permission_group.dart';final class IamSinglePermissionGroupsResponse {const IamSinglePermissionGroupsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_permission_group.dart';@immutable final class IamSinglePermissionGroupsResponse {const IamSinglePermissionGroupsResponse({this.result});
 
 factory IamSinglePermissionGroupsResponse.fromJson(Map<String, dynamic> json) { return IamSinglePermissionGroupsResponse(
   result: json['result'] != null ? IamPermissionGroup.fromJson(json['result'] as Map<String, dynamic>) : null,

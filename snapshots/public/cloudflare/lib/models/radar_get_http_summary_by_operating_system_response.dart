@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_http_summary_by_operating_system_response_result.dart';final class RadarGetHttpSummaryByOperatingSystemResponse {const RadarGetHttpSummaryByOperatingSystemResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_summary_by_operating_system_response_result.dart';@immutable final class RadarGetHttpSummaryByOperatingSystemResponse {const RadarGetHttpSummaryByOperatingSystemResponse({required this.result, required this.success, });
 
 factory RadarGetHttpSummaryByOperatingSystemResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByOperatingSystemResponse(
   result: RadarGetHttpSummaryByOperatingSystemResponseResult.fromJson(json['result'] as Map<String, dynamic>),

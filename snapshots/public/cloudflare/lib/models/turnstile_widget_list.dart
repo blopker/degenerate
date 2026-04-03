@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'turnstile_bot_fight_mode.dart';import 'turnstile_clearance_level.dart';import 'turnstile_created_on.dart';import 'turnstile_ephemeral_id.dart';import 'turnstile_modified_on.dart';import 'turnstile_name.dart';import 'turnstile_offlabel.dart';import 'turnstile_region.dart';import 'turnstile_sitekey.dart';import 'turnstile_widget_mode.dart';/// A Turnstile Widgets configuration as it appears in listings
-final class TurnstileWidgetList {const TurnstileWidgetList({required this.botFightMode, required this.clearanceLevel, required this.createdOn, required this.domains, required this.ephemeralId, required this.mode, required this.modifiedOn, required this.name, required this.offlabel, required this.region, required this.sitekey, });
+@immutable final class TurnstileWidgetList {const TurnstileWidgetList({required this.botFightMode, required this.clearanceLevel, required this.createdOn, required this.domains, required this.ephemeralId, required this.mode, required this.modifiedOn, required this.name, required this.offlabel, required this.region, required this.sitekey, });
 
 factory TurnstileWidgetList.fromJson(Map<String, dynamic> json) { return TurnstileWidgetList(
   botFightMode: TurnstileBotFightMode.fromJson(json['bot_fight_mode'] as bool),

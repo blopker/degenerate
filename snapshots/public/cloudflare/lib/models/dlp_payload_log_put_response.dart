@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_payload_log_setting.dart';final class DlpPayloadLogPutResponse {const DlpPayloadLogPutResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_payload_log_setting.dart';@immutable final class DlpPayloadLogPutResponse {const DlpPayloadLogPutResponse({this.result});
 
 factory DlpPayloadLogPutResponse.fromJson(Map<String, dynamic> json) { return DlpPayloadLogPutResponse(
   result: json['result'] != null ? DlpPayloadLogSetting.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_kv_any.dart';import 'workers_kv_expiration.dart';final class WorkersKvBulkGetResultWithMetadataValuesValue {const WorkersKvBulkGetResultWithMetadataValuesValue({this.expiration, required this.metadata, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_any.dart';import 'workers_kv_expiration.dart';@immutable final class WorkersKvBulkGetResultWithMetadataValuesValue {const WorkersKvBulkGetResultWithMetadataValuesValue({required this.metadata, required this.value, this.expiration, });
 
 factory WorkersKvBulkGetResultWithMetadataValuesValue.fromJson(Map<String, dynamic> json) { return WorkersKvBulkGetResultWithMetadataValuesValue(
   expiration: json['expiration'] != null ? WorkersKvExpiration.fromJson(json['expiration'] as num) : null,

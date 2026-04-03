@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksSecurityAdvisoryIdentifiers {const WebhooksSecurityAdvisoryIdentifiers({required this.type, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksSecurityAdvisoryIdentifiers {const WebhooksSecurityAdvisoryIdentifiers({required this.type, required this.value, });
 
 factory WebhooksSecurityAdvisoryIdentifiers.fromJson(Map<String, dynamic> json) { return WebhooksSecurityAdvisoryIdentifiers(
   type: json['type'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PayoutsTraceId {const PayoutsTraceId({required this.status, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PayoutsTraceId {const PayoutsTraceId({required this.status, this.value, });
 
 factory PayoutsTraceId.fromJson(Map<String, dynamic> json) { return PayoutsTraceId(
   status: json['status'] as String,

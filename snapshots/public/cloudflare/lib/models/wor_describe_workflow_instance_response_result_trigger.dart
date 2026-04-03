@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorDescribeWorkflowInstanceResponseResultTriggerSource {const WorDescribeWorkflowInstanceResponseResultTriggerSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultTriggerSource {const WorDescribeWorkflowInstanceResponseResultTriggerSource._(this.value);
 
 factory WorDescribeWorkflowInstanceResponseResultTriggerSource.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorDescribeWorkflowInstanceResponseResultTriggerSource($value)'; } 
  }
-final class WorDescribeWorkflowInstanceResponseResultTrigger {const WorDescribeWorkflowInstanceResponseResultTrigger({required this.source});
+@immutable final class WorDescribeWorkflowInstanceResponseResultTrigger {const WorDescribeWorkflowInstanceResponseResultTrigger({required this.source});
 
 factory WorDescribeWorkflowInstanceResponseResultTrigger.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultTrigger(
   source: WorDescribeWorkflowInstanceResponseResultTriggerSource.fromJson(json['source'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_source_request_source_order_items.dart';import 'post_sources_source_request_source_order_shipping.dart';/// Information about the items and shipping associated with the source. Required for transactional credit (for example Klarna) sources before you can charge it.
-final class PostSourcesSourceRequestSourceOrder {const PostSourcesSourceRequestSourceOrder({this.items, this.shipping, });
+@immutable final class PostSourcesSourceRequestSourceOrder {const PostSourcesSourceRequestSourceOrder({this.items, this.shipping, });
 
 factory PostSourcesSourceRequestSourceOrder.fromJson(Map<String, dynamic> json) { return PostSourcesSourceRequestSourceOrder(
   items: (json['items'] as List<dynamic>?)?.map((e) => PostSourcesSourceRequestSourceOrderItems.fromJson(e as Map<String, dynamic>)).toList(),

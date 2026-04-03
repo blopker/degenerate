@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_saml_group_rule_saml.dart';/// Matches a SAML group.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_saml_group_rule_saml.dart';/// Matches a SAML group.
 /// Requires a SAML identity provider.
-final class AccessSamlGroupRule {const AccessSamlGroupRule({required this.saml});
+@immutable final class AccessSamlGroupRule {const AccessSamlGroupRule({required this.saml});
 
 factory AccessSamlGroupRule.fromJson(Map<String, dynamic> json) { return AccessSamlGroupRule(
   saml: AccessSamlGroupRuleSaml.fromJson(json['saml'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GitCommitParents {const GitCommitParents({required this.sha, required this.url, required this.htmlUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitCommitParents {const GitCommitParents({required this.sha, required this.url, required this.htmlUrl, });
 
 factory GitCommitParents.fromJson(Map<String, dynamic> json) { return GitCommitParents(
   sha: json['sha'] as String,

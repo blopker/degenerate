@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Port {const Port({this.number, this.proto, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Port {const Port({this.number, this.proto, this.status, });
 
 factory Port.fromJson(Map<String, dynamic> json) { return Port(
   number: json['number'] != null ? (json['number'] as num).toDouble() : null,

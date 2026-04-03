@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Detailed information about a role assignment entry returned when listing assignments.
-final class AssignedRoleDetails {const AssignedRoleDetails({required this.id, required this.name, required this.permissions, required this.resourceType, required this.predefinedRole, required this.description, required this.createdAt, required this.updatedAt, required this.createdBy, required this.createdByUserObj, required this.metadata, });
+@immutable final class AssignedRoleDetails {const AssignedRoleDetails({required this.id, required this.name, required this.permissions, required this.resourceType, required this.predefinedRole, required this.description, required this.createdAt, required this.updatedAt, required this.createdBy, required this.createdByUserObj, required this.metadata, });
 
 factory AssignedRoleDetails.fromJson(Map<String, dynamic> json) { return AssignedRoleDetails(
   id: json['id'] as String,
@@ -13,8 +13,8 @@ factory AssignedRoleDetails.fromJson(Map<String, dynamic> json) { return Assigne
   createdAt: json['created_at'] != null ? (json['created_at'] as num).toInt() : null,
   updatedAt: json['updated_at'] != null ? (json['updated_at'] as num).toInt() : null,
   createdBy: json['created_by'] as String?,
-  createdByUserObj: (json['created_by_user_obj'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  createdByUserObj: json['created_by_user_obj'] as Map<String, dynamic>?,
+  metadata: json['metadata'] as Map<String, dynamic>?,
 ); }
 
 /// Identifier for the role.

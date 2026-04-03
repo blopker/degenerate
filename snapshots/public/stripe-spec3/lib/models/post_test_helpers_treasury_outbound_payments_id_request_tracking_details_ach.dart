@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch {const PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch({required this.traceId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch {const PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch({required this.traceId});
 
 factory PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch(
   traceId: json['trace_id'] as String,

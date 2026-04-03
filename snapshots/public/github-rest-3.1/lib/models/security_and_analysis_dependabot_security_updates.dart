@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The enablement status of Dependabot security updates for the repository.
-final class SecurityAndAnalysisDependabotSecurityUpdatesStatus {const SecurityAndAnalysisDependabotSecurityUpdatesStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of Dependabot security updates for the repository.
+@immutable final class SecurityAndAnalysisDependabotSecurityUpdatesStatus {const SecurityAndAnalysisDependabotSecurityUpdatesStatus._(this.value);
 
 factory SecurityAndAnalysisDependabotSecurityUpdatesStatus.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SecurityAndAnalysisDependabotSecurityUpdatesStatus($value)'; } 
  }
 /// Enable or disable Dependabot security updates for the repository.
-final class SecurityAndAnalysisDependabotSecurityUpdates {const SecurityAndAnalysisDependabotSecurityUpdates({this.status});
+@immutable final class SecurityAndAnalysisDependabotSecurityUpdates {const SecurityAndAnalysisDependabotSecurityUpdates({this.status});
 
 factory SecurityAndAnalysisDependabotSecurityUpdates.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisDependabotSecurityUpdates(
   status: json['status'] != null ? SecurityAndAnalysisDependabotSecurityUpdatesStatus.fromJson(json['status'] as String) : null,

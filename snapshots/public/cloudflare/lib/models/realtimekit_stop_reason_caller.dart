@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type can be an App or a user. If the type is `user`, then only the `user_Id` and `name` are returned.
-final class RealtimekitStopReasonCallerType {const RealtimekitStopReasonCallerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type can be an App or a user. If the type is `user`, then only the `user_Id` and `name` are returned.
+@immutable final class RealtimekitStopReasonCallerType {const RealtimekitStopReasonCallerType._(this.value);
 
 factory RealtimekitStopReasonCallerType.fromJson(String json) { return switch (json) {
   'ORGANIZATION' => organization,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitStopReasonCallerType($value)'; } 
  }
-final class RealtimekitStopReasonCaller {const RealtimekitStopReasonCaller({this.name, this.type, this.userId, });
+@immutable final class RealtimekitStopReasonCaller {const RealtimekitStopReasonCaller({this.name, this.type, this.userId, });
 
 factory RealtimekitStopReasonCaller.fromJson(Map<String, dynamic> json) { return RealtimekitStopReasonCaller(
   name: json['name'] as String?,

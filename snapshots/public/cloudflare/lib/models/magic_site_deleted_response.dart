@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_site.dart';final class MagicSiteDeletedResponse {const MagicSiteDeletedResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_site.dart';@immutable final class MagicSiteDeletedResponse {const MagicSiteDeletedResponse({this.result});
 
 factory MagicSiteDeletedResponse.fromJson(Map<String, dynamic> json) { return MagicSiteDeletedResponse(
   result: json['result'] != null ? MagicSite.fromJson(json['result'] as Map<String, dynamic>) : null,

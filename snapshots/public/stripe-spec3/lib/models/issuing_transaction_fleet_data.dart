@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_transaction_fleet_cardholder_prompt_data.dart';import 'issuing_transaction_fleet_reported_breakdown.dart';/// 
-final class IssuingTransactionFleetData {const IssuingTransactionFleetData({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_transaction_fleet_cardholder_prompt_data.dart';import 'issuing_transaction_fleet_reported_breakdown.dart';/// 
+@immutable final class IssuingTransactionFleetData {const IssuingTransactionFleetData({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
 
 factory IssuingTransactionFleetData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFleetData(
   cardholderPromptData: json['cardholder_prompt_data'] != null ? IssuingTransactionFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,

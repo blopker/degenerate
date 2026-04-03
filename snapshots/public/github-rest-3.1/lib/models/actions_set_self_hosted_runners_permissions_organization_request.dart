@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The policy that controls whether self-hosted runners can be used in the organization
-final class ActionsSetSelfHostedRunnersPermissionsOrganizationRequestEnabledRepositories {const ActionsSetSelfHostedRunnersPermissionsOrganizationRequestEnabledRepositories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy that controls whether self-hosted runners can be used in the organization
+@immutable final class ActionsSetSelfHostedRunnersPermissionsOrganizationRequestEnabledRepositories {const ActionsSetSelfHostedRunnersPermissionsOrganizationRequestEnabledRepositories._(this.value);
 
 factory ActionsSetSelfHostedRunnersPermissionsOrganizationRequestEnabledRepositories.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ActionsSetSelfHostedRunnersPermissionsOrganizationRequestEnabledRepositories($value)'; } 
  }
-final class ActionsSetSelfHostedRunnersPermissionsOrganizationRequest {const ActionsSetSelfHostedRunnersPermissionsOrganizationRequest({required this.enabledRepositories});
+@immutable final class ActionsSetSelfHostedRunnersPermissionsOrganizationRequest {const ActionsSetSelfHostedRunnersPermissionsOrganizationRequest({required this.enabledRepositories});
 
 factory ActionsSetSelfHostedRunnersPermissionsOrganizationRequest.fromJson(Map<String, dynamic> json) { return ActionsSetSelfHostedRunnersPermissionsOrganizationRequest(
   enabledRepositories: ActionsSetSelfHostedRunnersPermissionsOrganizationRequestEnabledRepositories.fromJson(json['enabled_repositories'] as String),

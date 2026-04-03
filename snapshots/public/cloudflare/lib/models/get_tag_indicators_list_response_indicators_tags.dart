@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTagIndicatorsListResponseIndicatorsTags {const GetTagIndicatorsListResponseIndicatorsTags({this.categoryName, this.uuid, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTagIndicatorsListResponseIndicatorsTags {const GetTagIndicatorsListResponseIndicatorsTags({this.categoryName, this.uuid, this.value, });
 
 factory GetTagIndicatorsListResponseIndicatorsTags.fromJson(Map<String, dynamic> json) { return GetTagIndicatorsListResponseIndicatorsTags(
   categoryName: json['categoryName'] as String?,

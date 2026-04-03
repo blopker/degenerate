@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MuteAllParticipantsResponseData {const MuteAllParticipantsResponseData({this.action, this.mutedParticipantsCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MuteAllParticipantsResponseData {const MuteAllParticipantsResponseData({this.action, this.mutedParticipantsCount, });
 
 factory MuteAllParticipantsResponseData.fromJson(Map<String, dynamic> json) { return MuteAllParticipantsResponseData(
   action: json['action'] as String?,

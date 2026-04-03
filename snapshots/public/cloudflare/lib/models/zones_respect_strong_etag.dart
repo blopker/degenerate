@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Turn on or off byte-for-byte equivalency checks between the
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn on or off byte-for-byte equivalency checks between the
 /// Cloudflare cache and the origin server.
 /// 
-final class ZonesRespectStrongEtagId {const ZonesRespectStrongEtagId._(this.value);
+@immutable final class ZonesRespectStrongEtagId {const ZonesRespectStrongEtagId._(this.value);
 
 factory ZonesRespectStrongEtagId.fromJson(String json) { return switch (json) {
   'respect_strong_etag' => respectStrongEtag,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The status of Respect Strong ETags
 /// 
-final class ZonesRespectStrongEtagValue {const ZonesRespectStrongEtagValue._(this.value);
+@immutable final class ZonesRespectStrongEtagValue {const ZonesRespectStrongEtagValue._(this.value);
 
 factory ZonesRespectStrongEtagValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesRespectStrongEtagValue($value)'; } 
  }
-final class ZonesRespectStrongEtag {const ZonesRespectStrongEtag({this.id, this.value, });
+@immutable final class ZonesRespectStrongEtag {const ZonesRespectStrongEtag({this.id, this.value, });
 
 factory ZonesRespectStrongEtag.fromJson(Map<String, dynamic> json) { return ZonesRespectStrongEtag(
   id: json['id'] != null ? ZonesRespectStrongEtagId.fromJson(json['id'] as String) : null,

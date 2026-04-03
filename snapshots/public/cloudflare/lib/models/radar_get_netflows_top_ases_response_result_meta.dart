@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_netflows_top_ases_response_result_meta_confidence_info.dart';import 'radar_get_netflows_top_ases_response_result_meta_date_range.dart';import 'radar_get_netflows_top_ases_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetNetflowsTopAsesResponseResultMetaNormalization {const RadarGetNetflowsTopAsesResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetNetflowsTopAsesResponseResultMetaNormalization {const RadarGetNetflowsTopAsesResponseResultMetaNormalization._(this.value);
 
 factory RadarGetNetflowsTopAsesResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetNetflowsTopAsesResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetNetflowsTopAsesResponseResultMeta {const RadarGetNetflowsTopAsesResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetNetflowsTopAsesResponseResultMeta {const RadarGetNetflowsTopAsesResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetNetflowsTopAsesResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsTopAsesResponseResultMeta(
   confidenceInfo: json['confidenceInfo'] != null ? RadarGetNetflowsTopAsesResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,

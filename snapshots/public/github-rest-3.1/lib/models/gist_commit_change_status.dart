@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GistCommitChangeStatus {const GistCommitChangeStatus({this.total, this.additions, this.deletions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistCommitChangeStatus {const GistCommitChangeStatus({this.total, this.additions, this.deletions, });
 
 factory GistCommitChangeStatus.fromJson(Map<String, dynamic> json) { return GistCommitChangeStatus(
   total: json['total'] != null ? (json['total'] as num).toInt() : null,

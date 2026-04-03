@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'request_tracer_messages2.dart';final class ResponseCommon54 {const ResponseCommon54({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'request_tracer_messages2.dart';@immutable final class ResponseCommon54 {const ResponseCommon54({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon54.fromJson(Map<String, dynamic> json) { return ResponseCommon54(
   errors: (json['errors'] as List<dynamic>).map((e) => RequestTracerMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpProfilesDeletePredefinedProfileResponse {const DlpProfilesDeletePredefinedProfileResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpProfilesDeletePredefinedProfileResponse {const DlpProfilesDeletePredefinedProfileResponse({this.result});
 
 factory DlpProfilesDeletePredefinedProfileResponse.fromJson(Map<String, dynamic> json) { return DlpProfilesDeletePredefinedProfileResponse(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 final Map<String,dynamic>? result;

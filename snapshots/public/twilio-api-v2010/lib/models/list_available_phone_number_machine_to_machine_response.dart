@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_available_phone_number_country_available_phone_number_machine_to_machine.dart';final class ListAvailablePhoneNumberMachineToMachineResponse {const ListAvailablePhoneNumberMachineToMachineResponse({this.availablePhoneNumbers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_available_phone_number_country_available_phone_number_machine_to_machine.dart';@immutable final class ListAvailablePhoneNumberMachineToMachineResponse {const ListAvailablePhoneNumberMachineToMachineResponse({this.availablePhoneNumbers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListAvailablePhoneNumberMachineToMachineResponse.fromJson(Map<String, dynamic> json) { return ListAvailablePhoneNumberMachineToMachineResponse(
   availablePhoneNumbers: (json['available_phone_numbers'] as List<dynamic>?)?.map((e) => AccountAvailablePhoneNumberCountryAvailablePhoneNumberMachineToMachine.fromJson(e as Map<String, dynamic>)).toList(),

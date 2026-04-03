@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configs for the project build process.
-final class PagesProjectCreateProjectRequestBuildConfig {const PagesProjectCreateProjectRequestBuildConfig({this.buildCaching, this.buildCommand, this.destinationDir, this.rootDir, this.webAnalyticsTag, this.webAnalyticsToken, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configs for the project build process.
+@immutable final class PagesProjectCreateProjectRequestBuildConfig {const PagesProjectCreateProjectRequestBuildConfig({this.buildCaching, this.buildCommand, this.destinationDir, this.rootDir, this.webAnalyticsTag, this.webAnalyticsToken, });
 
 factory PagesProjectCreateProjectRequestBuildConfig.fromJson(Map<String, dynamic> json) { return PagesProjectCreateProjectRequestBuildConfig(
   buildCaching: json['build_caching'] as bool?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_full_response_result.dart';final class AddressingFullResponse {const AddressingFullResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_full_response_result.dart';@immutable final class AddressingFullResponse {const AddressingFullResponse({this.result});
 
 factory AddressingFullResponse.fromJson(Map<String, dynamic> json) { return AddressingFullResponse(
   result: json['result'] != null ? AddressingFullResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

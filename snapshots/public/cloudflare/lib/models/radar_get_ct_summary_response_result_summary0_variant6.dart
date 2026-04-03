@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtSummaryResponseResultSummary0Variant6 {const RadarGetCtSummaryResponseResultSummary0Variant6({required this.negative, required this.positive, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtSummaryResponseResultSummary0Variant6 {const RadarGetCtSummaryResponseResultSummary0Variant6({required this.negative, required this.positive, });
 
 factory RadarGetCtSummaryResponseResultSummary0Variant6.fromJson(Map<String, dynamic> json) { return RadarGetCtSummaryResponseResultSummary0Variant6(
   negative: json['NEGATIVE'] as String,

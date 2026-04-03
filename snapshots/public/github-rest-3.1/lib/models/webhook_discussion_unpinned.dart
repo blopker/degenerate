@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookDiscussionUnpinnedAction {const WebhookDiscussionUnpinnedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDiscussionUnpinnedAction {const WebhookDiscussionUnpinnedAction._(this.value);
 
 factory WebhookDiscussionUnpinnedAction.fromJson(String json) { return switch (json) {
   'unpinned' => unpinned,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDiscussionUnpinnedAction($value)'; } 
  }
-final class WebhookDiscussionUnpinned {const WebhookDiscussionUnpinned({required this.action, required this.discussion, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookDiscussionUnpinned {const WebhookDiscussionUnpinned({required this.action, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDiscussionUnpinned.fromJson(Map<String, dynamic> json) { return WebhookDiscussionUnpinned(
   action: WebhookDiscussionUnpinnedAction.fromJson(json['action'] as String),

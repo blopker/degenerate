@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'port_status.dart';/// LoadBalancerIngress represents the status of a load-balancer ingress point: traffic intended for the service should be sent to an ingress point.
-final class LoadBalancerIngress {const LoadBalancerIngress({this.hostname, this.ip, this.ipMode, this.ports, });
+@immutable final class LoadBalancerIngress {const LoadBalancerIngress({this.hostname, this.ip, this.ipMode, this.ports, });
 
 factory LoadBalancerIngress.fromJson(Map<String, dynamic> json) { return LoadBalancerIngress(
   hostname: json['hostname'] as String?,

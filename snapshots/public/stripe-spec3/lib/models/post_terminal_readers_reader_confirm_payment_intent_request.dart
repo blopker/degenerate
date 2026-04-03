@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_confirm_payment_intent_request_confirm_config.dart';final class PostTerminalReadersReaderConfirmPaymentIntentRequest {const PostTerminalReadersReaderConfirmPaymentIntentRequest({this.confirmConfig, this.expand, required this.paymentIntent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_confirm_payment_intent_request_confirm_config.dart';@immutable final class PostTerminalReadersReaderConfirmPaymentIntentRequest {const PostTerminalReadersReaderConfirmPaymentIntentRequest({required this.paymentIntent, this.confirmConfig, this.expand, });
 
 factory PostTerminalReadersReaderConfirmPaymentIntentRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderConfirmPaymentIntentRequest(
   confirmConfig: json['confirm_config'] != null ? PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig.fromJson(json['confirm_config'] as Map<String, dynamic>) : null,

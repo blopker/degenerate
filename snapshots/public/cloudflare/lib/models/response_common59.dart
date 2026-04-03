@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_messages2.dart';final class ResponseCommon59 {const ResponseCommon59({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_messages2.dart';@immutable final class ResponseCommon59 {const ResponseCommon59({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon59.fromJson(Map<String, dynamic> json) { return ResponseCommon59(
   errors: (json['errors'] as List<dynamic>).map((e) => SecretsStoreMessages2.fromJson(e as Map<String, dynamic>)).toList(),

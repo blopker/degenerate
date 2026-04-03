@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FunctionObject {const FunctionObject({this.description, required this.name, this.parameters, this.strict, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FunctionObject {const FunctionObject({required this.name, this.description, this.parameters, this.strict, });
 
 factory FunctionObject.fromJson(Map<String, dynamic> json) { return FunctionObject(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  parameters: json['parameters'] as Map<String, dynamic>?,
   strict: json['strict'] as bool?,
 ); }
 

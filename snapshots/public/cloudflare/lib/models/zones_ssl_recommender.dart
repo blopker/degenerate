@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_ssl_recommender_enabled.dart';/// Enrollment in the SSL/TLS Recommender service which tries to detect and recommend (by sending periodic emails) the most secure SSL/TLS setting your origin servers support.
-final class ZonesSslRecommender {const ZonesSslRecommender({this.enabled, this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_ssl_recommender_enabled.dart';/// Enrollment in the SSL/TLS Recommender service which tries to detect and recommend (by sending periodic emails) the most secure SSL/TLS setting your origin servers support.
+@immutable final class ZonesSslRecommender {const ZonesSslRecommender({this.enabled, this.id, });
 
 factory ZonesSslRecommender.fromJson(Map<String, dynamic> json) { return ZonesSslRecommender(
   enabled: json['enabled'] != null ? ZonesSslRecommenderEnabled.fromJson(json['enabled'] as bool) : null,

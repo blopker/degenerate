@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The billing cycle anchor that applies when the subscription is resumed. Either `now` or `unchanged`. The default is `now`. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
-final class PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor {const PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor._(this.value);
+@immutable final class PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor {const PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor._(this.value);
 
 factory PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'now' => now,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor($value)'; } 
  }
 /// Determines how to handle [prorations](https://docs.stripe.com/billing/subscriptions/prorations) resulting from the `billing_cycle_anchor` being `unchanged`. When the `billing_cycle_anchor` is set to `now` (default value), no prorations are generated. If no value is passed, the default is `create_prorations`.
-final class PostSubscriptionsSubscriptionResumeRequestProrationBehavior {const PostSubscriptionsSubscriptionResumeRequestProrationBehavior._(this.value);
+@immutable final class PostSubscriptionsSubscriptionResumeRequestProrationBehavior {const PostSubscriptionsSubscriptionResumeRequestProrationBehavior._(this.value);
 
 factory PostSubscriptionsSubscriptionResumeRequestProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionsSubscriptionResumeRequestProrationBehavior($value)'; } 
  }
-final class PostSubscriptionsSubscriptionResumeRequest {const PostSubscriptionsSubscriptionResumeRequest({this.billingCycleAnchor, this.expand, this.prorationBehavior, this.prorationDate, });
+@immutable final class PostSubscriptionsSubscriptionResumeRequest {const PostSubscriptionsSubscriptionResumeRequest({this.billingCycleAnchor, this.expand, this.prorationBehavior, this.prorationDate, });
 
 factory PostSubscriptionsSubscriptionResumeRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionResumeRequest(
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,

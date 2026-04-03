@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_call_call_recording.dart';final class ListCallRecordingResponse {const ListCallRecordingResponse({this.recordings, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_call_call_recording.dart';@immutable final class ListCallRecordingResponse {const ListCallRecordingResponse({this.recordings, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListCallRecordingResponse.fromJson(Map<String, dynamic> json) { return ListCallRecordingResponse(
   recordings: (json['recordings'] as List<dynamic>?)?.map((e) => AccountCallCallRecording.fromJson(e as Map<String, dynamic>)).toList(),

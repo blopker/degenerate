@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SpectrumConfigMessages2Source {const SpectrumConfigMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SpectrumConfigMessages2Source {const SpectrumConfigMessages2Source({this.pointer});
 
 factory SpectrumConfigMessages2Source.fromJson(Map<String, dynamic> json) { return SpectrumConfigMessages2Source(
   pointer: json['pointer'] as String?,

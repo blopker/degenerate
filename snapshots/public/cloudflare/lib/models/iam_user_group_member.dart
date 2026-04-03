@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_email.dart';/// Member attached to a User Group.
-final class IamUserGroupMember {const IamUserGroupMember({this.email, required this.id, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_email.dart';/// Member attached to a User Group.
+@immutable final class IamUserGroupMember {const IamUserGroupMember({required this.id, this.email, this.status, });
 
 factory IamUserGroupMember.fromJson(Map<String, dynamic> json) { return IamUserGroupMember(
   email: json['email'] != null ? IamEmail.fromJson(json['email'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_messages2.dart';import 'resource_tagging_tagged_resource_object.dart';final class ResourceTaggingTaggedResourceResponseSingle {const ResourceTaggingTaggedResourceResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_messages2.dart';import 'resource_tagging_tagged_resource_object.dart';@immutable final class ResourceTaggingTaggedResourceResponseSingle {const ResourceTaggingTaggedResourceResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ResourceTaggingTaggedResourceResponseSingle.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => ResourceTaggingMessages2.fromJson(e as Map<String, dynamic>)).toList(),

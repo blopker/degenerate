@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Query {const Query({this.maxTime, this.minTime, this.scan, this.stringMatches, this.tag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Query {const Query({this.maxTime, this.minTime, this.scan, this.stringMatches, this.tag, });
 
 factory Query.fromJson(Map<String, dynamic> json) { return Query(
   maxTime: json['max_time'] != null ? DateTime.parse(json['max_time'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_payment_method_options_param6_bank_transfer.dart';final class PaymentIntentPaymentMethodOptionsParam6FundingType {const PaymentIntentPaymentMethodOptionsParam6FundingType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param6_bank_transfer.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam6FundingType {const PaymentIntentPaymentMethodOptionsParam6FundingType._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam6FundingType.fromJson(String json) { return switch (json) {
   'bank_transfer' => bankTransfer,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam6FundingType($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam6 {const PaymentIntentPaymentMethodOptionsParam6({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
+@immutable final class PaymentIntentPaymentMethodOptionsParam6 {const PaymentIntentPaymentMethodOptionsParam6({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
 
 factory PaymentIntentPaymentMethodOptionsParam6.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam6(
   bankTransfer: json['bank_transfer'] != null ? PaymentIntentPaymentMethodOptionsParam6BankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,

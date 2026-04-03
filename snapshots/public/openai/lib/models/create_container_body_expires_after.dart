@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Time anchor for the expiration time. Currently only 'last_active_at' is supported.
-final class CreateContainerBodyExpiresAfterAnchor {const CreateContainerBodyExpiresAfterAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Time anchor for the expiration time. Currently only 'last_active_at' is supported.
+@immutable final class CreateContainerBodyExpiresAfterAnchor {const CreateContainerBodyExpiresAfterAnchor._(this.value);
 
 factory CreateContainerBodyExpiresAfterAnchor.fromJson(String json) { return switch (json) {
   'last_active_at' => lastActiveAt,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateContainerBodyExpiresAfterAnchor($value)'; } 
  }
 /// Container expiration time in seconds relative to the 'anchor' time.
-final class CreateContainerBodyExpiresAfter {const CreateContainerBodyExpiresAfter({required this.anchor, required this.minutes, });
+@immutable final class CreateContainerBodyExpiresAfter {const CreateContainerBodyExpiresAfter({required this.anchor, required this.minutes, });
 
 factory CreateContainerBodyExpiresAfter.fromJson(Map<String, dynamic> json) { return CreateContainerBodyExpiresAfter(
   anchor: CreateContainerBodyExpiresAfterAnchor.fromJson(json['anchor'] as String),

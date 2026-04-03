@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The Certificate Authority that Total TLS certificates will be issued through.
-final class TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority {const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Certificate Authority that Total TLS certificates will be issued through.
+@immutable final class TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority {const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority._(this.value);
 
 factory TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority.fromJson(String json) { return switch (json) {
   'google' => google,

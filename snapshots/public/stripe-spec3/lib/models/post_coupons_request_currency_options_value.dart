@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCouponsRequestCurrencyOptionsValue {const PostCouponsRequestCurrencyOptionsValue({required this.amountOff});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCouponsRequestCurrencyOptionsValue {const PostCouponsRequestCurrencyOptionsValue({required this.amountOff});
 
 factory PostCouponsRequestCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return PostCouponsRequestCurrencyOptionsValue(
   amountOff: (json['amount_off'] as num).toInt(),

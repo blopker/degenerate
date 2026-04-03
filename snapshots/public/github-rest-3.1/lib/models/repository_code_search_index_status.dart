@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the code search index for this repository
-final class RepositoryCodeSearchIndexStatus {const RepositoryCodeSearchIndexStatus({this.lexicalSearchOk, this.lexicalCommitSha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the code search index for this repository
+@immutable final class RepositoryCodeSearchIndexStatus {const RepositoryCodeSearchIndexStatus({this.lexicalSearchOk, this.lexicalCommitSha, });
 
 factory RepositoryCodeSearchIndexStatus.fromJson(Map<String, dynamic> json) { return RepositoryCodeSearchIndexStatus(
   lexicalSearchOk: json['lexical_search_ok'] as bool?,

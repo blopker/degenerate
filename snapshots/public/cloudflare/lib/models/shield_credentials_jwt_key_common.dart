@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ShieldCredentialsJwtKeyCommon {const ShieldCredentialsJwtKeyCommon({required this.kid});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldCredentialsJwtKeyCommon {const ShieldCredentialsJwtKeyCommon({required this.kid});
 
 factory ShieldCredentialsJwtKeyCommon.fromJson(Map<String, dynamic> json) { return ShieldCredentialsJwtKeyCommon(
   kid: json['kid'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gists_create_request_files_value.dart';import 'gists_create_request_public.dart';final class GistsCreateRequest {const GistsCreateRequest({this.description, required this.files, this.public, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gists_create_request_files_value.dart';import 'gists_create_request_public.dart';@immutable final class GistsCreateRequest {const GistsCreateRequest({required this.files, this.description, this.public, });
 
 factory GistsCreateRequest.fromJson(Map<String, dynamic> json) { return GistsCreateRequest(
   description: json['description'] as String?,

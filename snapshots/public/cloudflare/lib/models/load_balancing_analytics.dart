@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_origin_analytics.dart';final class LoadBalancingAnalytics {const LoadBalancingAnalytics({this.id = 1, this.origins, this.pool, this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_origin_analytics.dart';@immutable final class LoadBalancingAnalytics {const LoadBalancingAnalytics({this.id = 1, this.origins, this.pool, this.timestamp, });
 
 factory LoadBalancingAnalytics.fromJson(Map<String, dynamic> json) { return LoadBalancingAnalytics(
   id: json.containsKey('id') ? (json['id'] as num).toInt() : 1,
   origins: (json['origins'] as List<dynamic>?)?.map((e) => LoadBalancingOriginAnalytics.fromJson(e as Map<String, dynamic>)).toList(),
-  pool: (json['pool'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  pool: json['pool'] as Map<String, dynamic>?,
   timestamp: json['timestamp'] != null ? DateTime.parse(json['timestamp'] as String) : null,
 ); }
 

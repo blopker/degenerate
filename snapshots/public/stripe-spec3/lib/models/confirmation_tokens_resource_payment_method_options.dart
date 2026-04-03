@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'confirmation_tokens_resource_payment_method_options_resource_card.dart';/// Payment-method-specific configuration
-final class ConfirmationTokensResourcePaymentMethodOptions {const ConfirmationTokensResourcePaymentMethodOptions({this.card});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'confirmation_tokens_resource_payment_method_options_resource_card.dart';/// Payment-method-specific configuration
+@immutable final class ConfirmationTokensResourcePaymentMethodOptions {const ConfirmationTokensResourcePaymentMethodOptions({this.card});
 
 factory ConfirmationTokensResourcePaymentMethodOptions.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourcePaymentMethodOptions(
   card: json['card'] != null ? ConfirmationTokensResourcePaymentMethodOptionsResourceCard.fromJson(json['card'] as Map<String, dynamic>) : null,

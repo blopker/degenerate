@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'load_balancing_health_details_result.dart';final class LoadBalancingHealthDetails {const LoadBalancingHealthDetails({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_health_details_result.dart';@immutable final class LoadBalancingHealthDetails {const LoadBalancingHealthDetails({this.result});
 
 factory LoadBalancingHealthDetails.fromJson(Map<String, dynamic> json) { return LoadBalancingHealthDetails(
   result: json['result'] != null ? LoadBalancingHealthDetailsResult.fromJson(json['result'] as Map<String, dynamic>) : null,

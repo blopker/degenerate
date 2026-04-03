@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_location.dart';import 'terminal_reader_location.dart';import 'terminal_reader_reader_resource_reader_action.dart';/// Device type of the reader.
-final class TerminalReaderDeviceType {const TerminalReaderDeviceType._(this.value);
+@immutable final class TerminalReaderDeviceType {const TerminalReaderDeviceType._(this.value);
 
 factory TerminalReaderDeviceType.fromJson(String json) { return switch (json) {
   'bbpos_chipper2x' => bbposChipper2x,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderDeviceType($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class TerminalReaderObject {const TerminalReaderObject._(this.value);
+@immutable final class TerminalReaderObject {const TerminalReaderObject._(this.value);
 
 factory TerminalReaderObject.fromJson(String json) { return switch (json) {
   'terminal.reader' => terminalReader,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderObject($value)'; } 
  }
 /// The networking status of the reader. We do not recommend using this field in flows that may block taking payments.
-final class TerminalReaderStatus {const TerminalReaderStatus._(this.value);
+@immutable final class TerminalReaderStatus {const TerminalReaderStatus._(this.value);
 
 factory TerminalReaderStatus.fromJson(String json) { return switch (json) {
   'offline' => offline,
@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A Reader represents a physical device for accepting payment details.
 /// 
 /// Related guide: [Connecting to a reader](https://docs.stripe.com/terminal/payments/connect-reader)
-final class TerminalReader {const TerminalReader({this.action, this.deviceSwVersion, required this.deviceType, required this.id, this.ipAddress, required this.label, this.lastSeenAt, required this.livemode, this.location, required this.metadata, required this.object, required this.serialNumber, this.status, });
+@immutable final class TerminalReader {const TerminalReader({required this.deviceType, required this.id, required this.label, required this.livemode, required this.metadata, required this.object, required this.serialNumber, this.action, this.deviceSwVersion, this.ipAddress, this.lastSeenAt, this.location, this.status, });
 
 factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalReader(
   action: json['action'] != null ? TerminalReaderReaderResourceReaderAction.fromJson(json['action'] as Map<String, dynamic>) : null,

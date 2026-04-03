@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The content type ("text", "audio").
-final class RealtimeServerEventResponseContentPartAddedPartType {const RealtimeServerEventResponseContentPartAddedPartType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type ("text", "audio").
+@immutable final class RealtimeServerEventResponseContentPartAddedPartType {const RealtimeServerEventResponseContentPartAddedPartType._(this.value);
 
 factory RealtimeServerEventResponseContentPartAddedPartType.fromJson(String json) { return switch (json) {
   'audio' => audio,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeServerEventResponseContentPartAddedPartType($value)'; } 
  }
 /// The content part that was added.
-final class RealtimeServerEventResponseContentPartAddedPart {const RealtimeServerEventResponseContentPartAddedPart({this.type, this.text, this.audio, this.transcript, });
+@immutable final class RealtimeServerEventResponseContentPartAddedPart {const RealtimeServerEventResponseContentPartAddedPart({this.type, this.text, this.audio, this.transcript, });
 
 factory RealtimeServerEventResponseContentPartAddedPart.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseContentPartAddedPart(
   type: json['type'] != null ? RealtimeServerEventResponseContentPartAddedPartType.fromJson(json['type'] as String) : null,

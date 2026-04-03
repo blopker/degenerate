@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The default mitigation action used
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default mitigation action used
 /// Mitigation actions are as follows:
 /// 
 ///   - `"log"` - log request when request does not conform to schema
 ///   - `"block"` - deny access to the site when request does not conform to schema
 ///   - `"none"` - skip running schema validation
 /// 
-final class ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction {const ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction._(this.value);
+@immutable final class ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction {const ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction._(this.value);
 
 factory ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -39,7 +39,7 @@ bool get isUnknown { return !values.contains(this); }
 ///   - `"none"` - skip running schema validation entirely for the request
 ///   - `null` - clears any existing override
 /// 
-final class ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction {const ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction._(this.value);
+@immutable final class ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction {const ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction._(this.value);
 
 factory ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction($value)'; } 
  }
-final class ShieldGlobalSettingChangeBase {const ShieldGlobalSettingChangeBase({this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });
+@immutable final class ShieldGlobalSettingChangeBase {const ShieldGlobalSettingChangeBase({this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });
 
 factory ShieldGlobalSettingChangeBase.fromJson(Map<String, dynamic> json) { return ShieldGlobalSettingChangeBase(
   validationDefaultMitigationAction: json['validation_default_mitigation_action'] != null ? ShieldGlobalSettingChangeBaseValidationDefaultMitigationAction.fromJson(json['validation_default_mitigation_action'] as String) : null,

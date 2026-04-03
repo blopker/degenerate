@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_history.dart';final class BillingHistoryCollection {const BillingHistoryCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_history.dart';@immutable final class BillingHistoryCollection {const BillingHistoryCollection({this.result});
 
 factory BillingHistoryCollection.fromJson(Map<String, dynamic> json) { return BillingHistoryCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => BillingHistory.fromJson(e as Map<String, dynamic>)).toList(),

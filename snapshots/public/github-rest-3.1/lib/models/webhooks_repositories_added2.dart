@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksRepositoriesAdded2 {const WebhooksRepositoriesAdded2({required this.fullName, required this.id, required this.name, required this.nodeId, required this.private, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksRepositoriesAdded2 {const WebhooksRepositoriesAdded2({required this.fullName, required this.id, required this.name, required this.nodeId, required this.private, });
 
 factory WebhooksRepositoriesAdded2.fromJson(Map<String, dynamic> json) { return WebhooksRepositoriesAdded2(
   fullName: json['full_name'] as String,

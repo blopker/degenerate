@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class KlarnaAddress {const KlarnaAddress({this.country});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class KlarnaAddress {const KlarnaAddress({this.country});
 
 factory KlarnaAddress.fromJson(Map<String, dynamic> json) { return KlarnaAddress(
   country: json['country'] as String?,

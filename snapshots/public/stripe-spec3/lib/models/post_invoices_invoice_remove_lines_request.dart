@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_remove_lines_request_invoice_metadata.dart';import 'post_invoices_invoice_remove_lines_request_lines.dart';final class PostInvoicesInvoiceRemoveLinesRequest {const PostInvoicesInvoiceRemoveLinesRequest({this.expand, this.invoiceMetadata, required this.lines, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_remove_lines_request_invoice_metadata.dart';import 'post_invoices_invoice_remove_lines_request_lines.dart';@immutable final class PostInvoicesInvoiceRemoveLinesRequest {const PostInvoicesInvoiceRemoveLinesRequest({required this.lines, this.expand, this.invoiceMetadata, });
 
 factory PostInvoicesInvoiceRemoveLinesRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRemoveLinesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

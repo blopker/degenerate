@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_email_security_timeseries_group_by_spf_response_result_meta.dart';import 'radar_get_email_security_timeseries_group_by_spf_response_result_serie0.dart';final class RadarGetEmailSecurityTimeseriesGroupBySpfResponseResult {const RadarGetEmailSecurityTimeseriesGroupBySpfResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_spf_response_result_meta.dart';import 'radar_get_email_security_timeseries_group_by_spf_response_result_serie0.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpfResponseResult {const RadarGetEmailSecurityTimeseriesGroupBySpfResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetEmailSecurityTimeseriesGroupBySpfResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupBySpfResponseResult(
   meta: RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

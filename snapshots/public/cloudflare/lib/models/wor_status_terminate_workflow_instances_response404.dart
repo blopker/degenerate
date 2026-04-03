@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_status_terminate_workflow_instances_response404_errors.dart';final class WorStatusTerminateWorkflowInstancesResponse404 {const WorStatusTerminateWorkflowInstancesResponse404({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_status_terminate_workflow_instances_response404_errors.dart';@immutable final class WorStatusTerminateWorkflowInstancesResponse404 {const WorStatusTerminateWorkflowInstancesResponse404({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory WorStatusTerminateWorkflowInstancesResponse404.fromJson(Map<String, dynamic> json) { return WorStatusTerminateWorkflowInstancesResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => WorStatusTerminateWorkflowInstancesResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
 ); }
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_resource_schedule_update_at_period_end_condition.dart';/// 
-final class PortalResourceScheduleUpdateAtPeriodEnd {const PortalResourceScheduleUpdateAtPeriodEnd({required this.conditions});
+@immutable final class PortalResourceScheduleUpdateAtPeriodEnd {const PortalResourceScheduleUpdateAtPeriodEnd({required this.conditions});
 
 factory PortalResourceScheduleUpdateAtPeriodEnd.fromJson(Map<String, dynamic> json) { return PortalResourceScheduleUpdateAtPeriodEnd(
   conditions: (json['conditions'] as List<dynamic>).map((e) => PortalResourceScheduleUpdateAtPeriodEndCondition.fromJson(e as Map<String, dynamic>)).toList(),

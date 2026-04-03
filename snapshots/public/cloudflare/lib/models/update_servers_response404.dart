@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'update_servers_response404_errors.dart';final class UpdateServersResponse404 {const UpdateServersResponse404({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'update_servers_response404_errors.dart';@immutable final class UpdateServersResponse404 {const UpdateServersResponse404({required this.errors, required this.success, });
 
 factory UpdateServersResponse404.fromJson(Map<String, dynamic> json) { return UpdateServersResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => UpdateServersResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),

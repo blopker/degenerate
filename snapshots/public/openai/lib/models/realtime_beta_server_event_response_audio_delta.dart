@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `response.output_audio.delta`.
-final class RealtimeBetaServerEventResponseAudioDeltaType {const RealtimeBetaServerEventResponseAudioDeltaType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_audio.delta`.
+@immutable final class RealtimeBetaServerEventResponseAudioDeltaType {const RealtimeBetaServerEventResponseAudioDeltaType._(this.value);
 
 factory RealtimeBetaServerEventResponseAudioDeltaType.fromJson(String json) { return switch (json) {
   'response.output_audio.delta' => responseOutputAudioDelta,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaServerEventResponseAudioDeltaType($value)'; } 
  }
 /// Returned when the model-generated audio is updated.
-final class RealtimeBetaServerEventResponseAudioDelta {const RealtimeBetaServerEventResponseAudioDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, });
+@immutable final class RealtimeBetaServerEventResponseAudioDelta {const RealtimeBetaServerEventResponseAudioDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, });
 
 factory RealtimeBetaServerEventResponseAudioDelta.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseAudioDelta(
   eventId: json['event_id'] as String,

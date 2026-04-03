@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UpdatePortalsResponse400Errors {const UpdatePortalsResponse400Errors({required this.code, required this.message, required this.path, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdatePortalsResponse400Errors {const UpdatePortalsResponse400Errors({required this.code, required this.message, required this.path, });
 
 factory UpdatePortalsResponse400Errors.fromJson(Map<String, dynamic> json) { return UpdatePortalsResponse400Errors(
   code: (json['code'] as num).toDouble(),

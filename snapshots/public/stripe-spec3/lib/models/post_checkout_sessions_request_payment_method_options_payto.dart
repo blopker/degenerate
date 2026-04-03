@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsPayto {const PostCheckoutSessionsRequestPaymentMethodOptionsPayto({this.mandateOptions, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPayto {const PostCheckoutSessionsRequestPaymentMethodOptionsPayto({this.mandateOptions, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPayto.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsPayto(
   mandateOptions: json['mandate_options'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters results by TLD type.
-final class RadarGetTldsTldType {const RadarGetTldsTldType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by TLD type.
+@immutable final class RadarGetTldsTldType {const RadarGetTldsTldType._(this.value);
 
 factory RadarGetTldsTldType.fromJson(String json) { return switch (json) {
   'GENERIC' => generic,

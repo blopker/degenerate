@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_service_identifier.dart';import 'addressing_service_name.dart';final class IpAddressManagementServiceBindingsListServicesResponseResult {const IpAddressManagementServiceBindingsListServicesResponseResult({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_service_identifier.dart';import 'addressing_service_name.dart';@immutable final class IpAddressManagementServiceBindingsListServicesResponseResult {const IpAddressManagementServiceBindingsListServicesResponseResult({this.id, this.name, });
 
 factory IpAddressManagementServiceBindingsListServicesResponseResult.fromJson(Map<String, dynamic> json) { return IpAddressManagementServiceBindingsListServicesResponseResult(
   id: json['id'] != null ? AddressingServiceIdentifier.fromJson(json['id'] as String) : null,

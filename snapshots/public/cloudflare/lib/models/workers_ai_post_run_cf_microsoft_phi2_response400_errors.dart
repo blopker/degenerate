@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfMicrosoftPhi2Response400Errors {const WorkersAiPostRunCfMicrosoftPhi2Response400Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfMicrosoftPhi2Response400Errors {const WorkersAiPostRunCfMicrosoftPhi2Response400Errors({required this.code, required this.message, });
 
 factory WorkersAiPostRunCfMicrosoftPhi2Response400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMicrosoftPhi2Response400Errors(
   code: json['code'] as String,

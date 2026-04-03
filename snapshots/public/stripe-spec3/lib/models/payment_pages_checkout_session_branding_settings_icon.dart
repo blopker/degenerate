@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of image for the icon. Must be one of `file` or `url`.
-final class PaymentPagesCheckoutSessionBrandingSettingsIconType {const PaymentPagesCheckoutSessionBrandingSettingsIconType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of image for the icon. Must be one of `file` or `url`.
+@immutable final class PaymentPagesCheckoutSessionBrandingSettingsIconType {const PaymentPagesCheckoutSessionBrandingSettingsIconType._(this.value);
 
 factory PaymentPagesCheckoutSessionBrandingSettingsIconType.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionBrandingSettingsIconType($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionBrandingSettingsIcon {const PaymentPagesCheckoutSessionBrandingSettingsIcon({this.file, required this.type, this.url, });
+@immutable final class PaymentPagesCheckoutSessionBrandingSettingsIcon {const PaymentPagesCheckoutSessionBrandingSettingsIcon({required this.type, this.file, this.url, });
 
 factory PaymentPagesCheckoutSessionBrandingSettingsIcon.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionBrandingSettingsIcon(
   file: json['file'] as String?,

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the segment. Always `transcript.text.segment`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the segment. Always `transcript.text.segment`.
 /// 
-final class TranscriptionDiarizedSegmentType {const TranscriptionDiarizedSegmentType._(this.value);
+@immutable final class TranscriptionDiarizedSegmentType {const TranscriptionDiarizedSegmentType._(this.value);
 
 factory TranscriptionDiarizedSegmentType.fromJson(String json) { return switch (json) {
   'transcript.text.segment' => transcriptTextSegment,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TranscriptionDiarizedSegmentType($value)'; } 
  }
 /// A segment of diarized transcript text with speaker metadata.
-final class TranscriptionDiarizedSegment {const TranscriptionDiarizedSegment({required this.type, required this.id, required this.start, required this.end, required this.text, required this.speaker, });
+@immutable final class TranscriptionDiarizedSegment {const TranscriptionDiarizedSegment({required this.type, required this.id, required this.start, required this.end, required this.text, required this.speaker, });
 
 factory TranscriptionDiarizedSegment.fromJson(Map<String, dynamic> json) { return TranscriptionDiarizedSegment(
   type: TranscriptionDiarizedSegmentType.fromJson(json['type'] as String),

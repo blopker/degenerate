@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_message.dart';import 'teams_devices_cursor_result_info.dart';import 'teams_devices_registration.dart';final class ListRegistrationsResponse {const ListRegistrationsResponse({required this.errors, required this.messages, required this.result, this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_message.dart';import 'teams_devices_cursor_result_info.dart';import 'teams_devices_registration.dart';@immutable final class ListRegistrationsResponse {const ListRegistrationsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ListRegistrationsResponse.fromJson(Map<String, dynamic> json) { return ListRegistrationsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),

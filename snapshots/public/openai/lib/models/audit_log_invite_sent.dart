@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'audit_log_invite_sent_data.dart';/// The details for events with this `type`.
-final class AuditLogInviteSent {const AuditLogInviteSent({this.id, this.data, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_invite_sent_data.dart';/// The details for events with this `type`.
+@immutable final class AuditLogInviteSent {const AuditLogInviteSent({this.id, this.data, });
 
 factory AuditLogInviteSent.fromJson(Map<String, dynamic> json) { return AuditLogInviteSent(
   id: json['id'] as String?,

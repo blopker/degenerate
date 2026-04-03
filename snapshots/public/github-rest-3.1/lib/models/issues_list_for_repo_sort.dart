@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssuesListForRepoSort {const IssuesListForRepoSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesListForRepoSort {const IssuesListForRepoSort._(this.value);
 
 factory IssuesListForRepoSort.fromJson(String json) { return switch (json) {
   'created' => created,

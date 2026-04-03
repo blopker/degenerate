@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_ssl_validation_method_response_collection_result.dart';final class TlsCertificatesAndHostnamesSslValidationMethodResponseCollection {const TlsCertificatesAndHostnamesSslValidationMethodResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_ssl_validation_method_response_collection_result.dart';@immutable final class TlsCertificatesAndHostnamesSslValidationMethodResponseCollection {const TlsCertificatesAndHostnamesSslValidationMethodResponseCollection({this.result});
 
 factory TlsCertificatesAndHostnamesSslValidationMethodResponseCollection.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslValidationMethodResponseCollection(
   result: json['result'] != null ? TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult.fromJson(json['result'] as Map<String, dynamic>) : null,

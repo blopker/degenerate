@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CustomerPaymentSourceBankAccount2AccountHolderType {const CustomerPaymentSourceBankAccount2AccountHolderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerPaymentSourceBankAccount2AccountHolderType {const CustomerPaymentSourceBankAccount2AccountHolderType._(this.value);
 
 factory CustomerPaymentSourceBankAccount2AccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CustomerPaymentSourceBankAccount2AccountHolderType($value)'; } 
  }
-final class CustomerPaymentSourceBankAccount2Object {const CustomerPaymentSourceBankAccount2Object._(this.value);
+@immutable final class CustomerPaymentSourceBankAccount2Object {const CustomerPaymentSourceBankAccount2Object._(this.value);
 
 factory CustomerPaymentSourceBankAccount2Object.fromJson(String json) { return switch (json) {
   'bank_account' => bankAccount,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CustomerPaymentSourceBankAccount2Object($value)'; } 
  }
-final class CustomerPaymentSourceBankAccount2 {const CustomerPaymentSourceBankAccount2({this.accountHolderName, this.accountHolderType, required this.accountNumber, required this.country, this.currency, this.object, this.routingNumber, });
+@immutable final class CustomerPaymentSourceBankAccount2 {const CustomerPaymentSourceBankAccount2({required this.accountNumber, required this.country, this.accountHolderName, this.accountHolderType, this.currency, this.object, this.routingNumber, });
 
 factory CustomerPaymentSourceBankAccount2.fromJson(Map<String, dynamic> json) { return CustomerPaymentSourceBankAccount2(
   accountHolderName: json['account_holder_name'] as String?,

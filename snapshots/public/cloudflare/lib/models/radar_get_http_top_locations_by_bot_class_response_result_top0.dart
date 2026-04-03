@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopLocationsByBotClassResponseResultTop0 {const RadarGetHttpTopLocationsByBotClassResponseResultTop0({required this.clientCountryAlpha2, required this.clientCountryName, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByBotClassResponseResultTop0 {const RadarGetHttpTopLocationsByBotClassResponseResultTop0({required this.clientCountryAlpha2, required this.clientCountryName, required this.value, });
 
 factory RadarGetHttpTopLocationsByBotClassResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopLocationsByBotClassResponseResultTop0(
   clientCountryAlpha2: json['clientCountryAlpha2'] as String,

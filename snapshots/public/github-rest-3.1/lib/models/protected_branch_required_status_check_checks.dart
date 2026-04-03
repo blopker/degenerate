@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProtectedBranchRequiredStatusCheckChecks {const ProtectedBranchRequiredStatusCheckChecks({required this.context, required this.appId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProtectedBranchRequiredStatusCheckChecks {const ProtectedBranchRequiredStatusCheckChecks({required this.context, required this.appId, });
 
 factory ProtectedBranchRequiredStatusCheckChecks.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredStatusCheckChecks(
   context: json['context'] as String,

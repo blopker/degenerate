@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_name.dart';final class WorkersBindingKindAnalyticsEngine {const WorkersBindingKindAnalyticsEngine({required this.dataset, required this.name, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindAnalyticsEngine {const WorkersBindingKindAnalyticsEngine({required this.dataset, required this.name, required this.type, });
 
 factory WorkersBindingKindAnalyticsEngine.fromJson(Map<String, dynamic> json) { return WorkersBindingKindAnalyticsEngine(
   dataset: json['dataset'] as String,

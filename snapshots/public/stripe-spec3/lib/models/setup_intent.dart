@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'deleted_customer.dart';import 'errors.dart';import 'mandate.dart';import 'payment_flows_automatic_payment_methods_setup_intent.dart';import 'payment_method.dart';import 'payment_method_config_biz_payment_method_configuration_details.dart';import 'setup_attempt.dart';import 'setup_intent_application.dart';import 'setup_intent_customer.dart';import 'setup_intent_latest_attempt.dart';import 'setup_intent_mandate.dart';import 'setup_intent_next_action.dart';import 'setup_intent_on_behalf_of.dart';import 'setup_intent_payment_method.dart';import 'setup_intent_payment_method_options.dart';import 'setup_intent_single_use_mandate.dart';/// Reason for cancellation of this SetupIntent, one of `abandoned`, `requested_by_customer`, or `duplicate`.
-final class SetupIntentCancellationReason {const SetupIntentCancellationReason._(this.value);
+@immutable final class SetupIntentCancellationReason {const SetupIntentCancellationReason._(this.value);
 
 factory SetupIntentCancellationReason.fromJson(String json) { return switch (json) {
   'abandoned' => abandoned,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SetupIntentCancellationReason($value)'; } 
  }
-final class SetupIntentExcludedPaymentMethodTypes {const SetupIntentExcludedPaymentMethodTypes._(this.value);
+@immutable final class SetupIntentExcludedPaymentMethodTypes {const SetupIntentExcludedPaymentMethodTypes._(this.value);
 
 factory SetupIntentExcludedPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'acss_debit' => acssDebit,
@@ -193,7 +193,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SetupIntentExcludedPaymentMethodTypes($value)'; } 
  }
-final class SetupIntentFlowDirections {const SetupIntentFlowDirections._(this.value);
+@immutable final class SetupIntentFlowDirections {const SetupIntentFlowDirections._(this.value);
 
 factory SetupIntentFlowDirections.fromJson(String json) { return switch (json) {
   'inbound' => inbound,
@@ -218,7 +218,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentFlowDirections($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class SetupIntentObject {const SetupIntentObject._(this.value);
+@immutable final class SetupIntentObject {const SetupIntentObject._(this.value);
 
 factory SetupIntentObject.fromJson(String json) { return switch (json) {
   'setup_intent' => setupIntent,
@@ -240,7 +240,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentObject($value)'; } 
  }
 /// [Status](https://docs.stripe.com/payments/intents#intent-statuses) of this SetupIntent, one of `requires_payment_method`, `requires_confirmation`, `requires_action`, `processing`, `canceled`, or `succeeded`.
-final class SetupIntentStatus {const SetupIntentStatus._(this.value);
+@immutable final class SetupIntentStatus {const SetupIntentStatus._(this.value);
 
 factory SetupIntentStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -297,7 +297,7 @@ bool get isUnknown { return !values.contains(this); }
 /// By using SetupIntents, you can reduce friction for your customers, even as regulations change over time.
 /// 
 /// Related guide: [Setup Intents API](https://docs.stripe.com/payments/setup-intents)
-final class SetupIntent {const SetupIntent({this.application, this.attachToSelf, this.automaticPaymentMethods, this.cancellationReason, this.clientSecret, required this.created, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.flowDirections, required this.id, this.lastSetupError, this.latestAttempt, required this.livemode, this.mandate, this.metadata, this.nextAction, required this.object, this.onBehalfOf, this.paymentMethod, this.paymentMethodConfigurationDetails, this.paymentMethodOptions, required this.paymentMethodTypes, this.singleUseMandate, required this.status, required this.usage, });
+@immutable final class SetupIntent {const SetupIntent({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethodTypes, required this.status, required this.usage, this.application, this.attachToSelf, this.automaticPaymentMethods, this.cancellationReason, this.clientSecret, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.flowDirections, this.lastSetupError, this.latestAttempt, this.mandate, this.metadata, this.nextAction, this.onBehalfOf, this.paymentMethod, this.paymentMethodConfigurationDetails, this.paymentMethodOptions, this.singleUseMandate, });
 
 factory SetupIntent.fromJson(Map<String, dynamic> json) { return SetupIntent(
   application: json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Turn off all active [Cloudflare Apps](https://developers.cloudflare.com/support/more-dashboard-apps/cloudflare-apps/)
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn off all active [Cloudflare Apps](https://developers.cloudflare.com/support/more-dashboard-apps/cloudflare-apps/)
 /// (deprecated).
 /// 
-final class ZonesDisableAppsId {const ZonesDisableAppsId._(this.value);
+@immutable final class ZonesDisableAppsId {const ZonesDisableAppsId._(this.value);
 
 factory ZonesDisableAppsId.fromJson(String json) { return switch (json) {
   'disable_apps' => disableApps,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesDisableAppsId($value)'; } 
  }
-final class ZonesDisableApps {const ZonesDisableApps({this.id});
+@immutable final class ZonesDisableApps {const ZonesDisableApps({this.id});
 
 factory ZonesDisableApps.fromJson(Map<String, dynamic> json) { return ZonesDisableApps(
   id: json['id'] != null ? ZonesDisableAppsId.fromJson(json['id'] as String) : null,

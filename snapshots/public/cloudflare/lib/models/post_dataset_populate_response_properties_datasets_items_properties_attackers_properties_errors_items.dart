@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackersPropertiesErrorsItems {const PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackersPropertiesErrorsItems({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackersPropertiesErrorsItems {const PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackersPropertiesErrorsItems({required this.type});
 
 factory PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackersPropertiesErrorsItems.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesAttackersPropertiesErrorsItems(
   type: json['type'] as String,

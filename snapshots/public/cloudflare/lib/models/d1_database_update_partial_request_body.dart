@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'd1_database_update_partial_request_body_read_replication.dart';final class D1DatabaseUpdatePartialRequestBody {const D1DatabaseUpdatePartialRequestBody({this.readReplication});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_database_update_partial_request_body_read_replication.dart';@immutable final class D1DatabaseUpdatePartialRequestBody {const D1DatabaseUpdatePartialRequestBody({this.readReplication});
 
 factory D1DatabaseUpdatePartialRequestBody.fromJson(Map<String, dynamic> json) { return D1DatabaseUpdatePartialRequestBody(
   readReplication: json['read_replication'] != null ? D1DatabaseUpdatePartialRequestBodyReadReplication.fromJson(json['read_replication'] as Map<String, dynamic>) : null,

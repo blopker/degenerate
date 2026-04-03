@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval._(this.value);
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval.fromJson(String json) { return switch (json) {
   'month' => month,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanInterval($value)'; } 
  }
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType._(this.value);
+@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType._(this.value);
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType.fromJson(String json) { return switch (json) {
   'bonus' => bonus,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlanType($value)'; } 
  }
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan({this.count, this.interval, required this.type, });
+@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan({required this.type, this.count, this.interval, });
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

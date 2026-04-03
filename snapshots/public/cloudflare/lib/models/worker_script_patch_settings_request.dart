@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_script_and_version_settings_item.dart';final class WorkerScriptPatchSettingsRequest {const WorkerScriptPatchSettingsRequest({this.settings});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_script_and_version_settings_item.dart';@immutable final class WorkerScriptPatchSettingsRequest {const WorkerScriptPatchSettingsRequest({this.settings});
 
 factory WorkerScriptPatchSettingsRequest.fromJson(Map<String, dynamic> json) { return WorkerScriptPatchSettingsRequest(
   settings: json['settings'] != null ? WorkersScriptAndVersionSettingsItem.fromJson(json['settings'] as Map<String, dynamic>) : null,

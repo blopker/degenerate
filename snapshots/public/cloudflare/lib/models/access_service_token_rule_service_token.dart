@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessServiceTokenRuleServiceToken {const AccessServiceTokenRuleServiceToken({required this.tokenId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessServiceTokenRuleServiceToken {const AccessServiceTokenRuleServiceToken({required this.tokenId});
 
 factory AccessServiceTokenRuleServiceToken.fromJson(Map<String, dynamic> json) { return AccessServiceTokenRuleServiceToken(
   tokenId: json['token_id'] as String,

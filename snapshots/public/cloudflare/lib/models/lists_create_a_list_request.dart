@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lists_description.dart';import 'lists_kind.dart';import 'lists_name.dart';final class ListsCreateAListRequest {const ListsCreateAListRequest({this.description, required this.kind, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_description.dart';import 'lists_kind.dart';import 'lists_name.dart';@immutable final class ListsCreateAListRequest {const ListsCreateAListRequest({required this.kind, required this.name, this.description, });
 
 factory ListsCreateAListRequest.fromJson(Map<String, dynamic> json) { return ListsCreateAListRequest(
   description: json['description'] != null ? ListsDescription.fromJson(json['description'] as String) : null,

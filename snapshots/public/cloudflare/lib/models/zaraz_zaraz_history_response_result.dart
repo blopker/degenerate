@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazZarazHistoryResponseResult {const ZarazZarazHistoryResponseResult({required this.createdAt, required this.id, required this.updatedAt, required this.userId, required this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazZarazHistoryResponseResult {const ZarazZarazHistoryResponseResult({required this.createdAt, required this.id, required this.updatedAt, required this.userId, required this.description, });
 
 factory ZarazZarazHistoryResponseResult.fromJson(Map<String, dynamic> json) { return ZarazZarazHistoryResponseResult(
   createdAt: DateTime.parse(json['createdAt'] as String),

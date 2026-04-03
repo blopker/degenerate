@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_team_created_repository.dart';import 'webhooks_team1.dart';final class WebhookTeamCreatedAction {const WebhookTeamCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_team_created_repository.dart';import 'webhooks_team1.dart';@immutable final class WebhookTeamCreatedAction {const WebhookTeamCreatedAction._(this.value);
 
 factory WebhookTeamCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookTeamCreatedAction($value)'; } 
  }
-final class WebhookTeamCreated {const WebhookTeamCreated({required this.action, this.enterprise, this.installation, required this.organization, this.repository, required this.sender, required this.team, });
+@immutable final class WebhookTeamCreated {const WebhookTeamCreated({required this.action, required this.organization, required this.sender, required this.team, this.enterprise, this.installation, this.repository, });
 
 factory WebhookTeamCreated.fromJson(Map<String, dynamic> json) { return WebhookTeamCreated(
   action: WebhookTeamCreatedAction.fromJson(json['action'] as String),

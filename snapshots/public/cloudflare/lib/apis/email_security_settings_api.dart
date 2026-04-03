@@ -390,7 +390,7 @@ if (allowedDeliveryMode != null) {
 }
 if (domain != null) {
 for (final item in domain) {
-  queryParametersList.add(ApiQueryParameter(name: 'domain', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'domain', value: item));
 }
 }
 if (activeDeliveryMode != null) {

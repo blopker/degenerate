@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_route_comment.dart';import 'tunnel_tunnel_id.dart';import 'tunnel_virtual_network_id.dart';final class TunnelRouteCreateATunnelRouteWithCidrRequest {const TunnelRouteCreateATunnelRouteWithCidrRequest({this.comment, required this.tunnelId, this.virtualNetworkId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_route_comment.dart';import 'tunnel_tunnel_id.dart';import 'tunnel_virtual_network_id.dart';@immutable final class TunnelRouteCreateATunnelRouteWithCidrRequest {const TunnelRouteCreateATunnelRouteWithCidrRequest({required this.tunnelId, this.comment, this.virtualNetworkId, });
 
 factory TunnelRouteCreateATunnelRouteWithCidrRequest.fromJson(Map<String, dynamic> json) { return TunnelRouteCreateATunnelRouteWithCidrRequest(
   comment: json['comment'] != null ? TunnelRouteComment.fromJson(json['comment'] as String) : null,

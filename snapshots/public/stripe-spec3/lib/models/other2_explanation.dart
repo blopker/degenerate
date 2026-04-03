@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class Other2ExplanationVariant2 {const Other2ExplanationVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Other2ExplanationVariant2 {const Other2ExplanationVariant2._(this.value);
 
 factory Other2ExplanationVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

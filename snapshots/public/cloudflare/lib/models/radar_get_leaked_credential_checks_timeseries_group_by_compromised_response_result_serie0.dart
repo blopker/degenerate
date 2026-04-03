@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 {const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0({required this.clean, required this.compromised, required this.timestamps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 {const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0({required this.clean, required this.compromised, required this.timestamps, });
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0(
   clean: (json['CLEAN'] as List<dynamic>).map((e) => e as String).toList(),

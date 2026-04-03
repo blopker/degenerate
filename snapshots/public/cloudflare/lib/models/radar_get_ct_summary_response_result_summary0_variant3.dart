@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtSummaryResponseResultSummary0Variant3 {const RadarGetCtSummaryResponseResultSummary0Variant3({required this.gt3dLte16d, required this.gt16dLte31d, required this.gt31dLte91d, required this.gt91dLte121d, required this.gt121d, required this.lte3d, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtSummaryResponseResultSummary0Variant3 {const RadarGetCtSummaryResponseResultSummary0Variant3({required this.gt3dLte16d, required this.gt16dLte31d, required this.gt31dLte91d, required this.gt91dLte121d, required this.gt121d, required this.lte3d, });
 
 factory RadarGetCtSummaryResponseResultSummary0Variant3.fromJson(Map<String, dynamic> json) { return RadarGetCtSummaryResponseResultSummary0Variant3(
   gt3dLte16d: json['gt_3d_lte_16d'] as String,

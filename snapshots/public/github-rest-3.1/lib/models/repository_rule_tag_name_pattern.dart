@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_tag_name_pattern_parameters.dart';final class RepositoryRuleTagNamePatternType {const RepositoryRuleTagNamePatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_tag_name_pattern_parameters.dart';@immutable final class RepositoryRuleTagNamePatternType {const RepositoryRuleTagNamePatternType._(this.value);
 
 factory RepositoryRuleTagNamePatternType.fromJson(String json) { return switch (json) {
   'tag_name_pattern' => tagNamePattern,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleTagNamePatternType($value)'; } 
  }
 /// Parameters to be used for the tag_name_pattern rule
-final class RepositoryRuleTagNamePattern {const RepositoryRuleTagNamePattern({required this.type, this.parameters, });
+@immutable final class RepositoryRuleTagNamePattern {const RepositoryRuleTagNamePattern({required this.type, this.parameters, });
 
 factory RepositoryRuleTagNamePattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleTagNamePattern(
   type: RepositoryRuleTagNamePatternType.fromJson(json['type'] as String),

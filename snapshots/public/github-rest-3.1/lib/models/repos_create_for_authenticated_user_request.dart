@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Required when using `squash_merge_commit_message`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Required when using `squash_merge_commit_message`.
 /// 
 /// The default value for a squash merge commit title:
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final class ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle {const ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle._(this.value);
+@immutable final class ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle {const ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle._(this.value);
 
 factory ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `PR_BODY` - default to the pull request's body.
 /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
 /// - `BLANK` - default to a blank commit message.
-final class ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage {const ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage._(this.value);
+@immutable final class ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage {const ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage._(this.value);
 
 factory ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.fromJson(String json) { return switch (json) {
   'PR_BODY' => prBody,
@@ -68,7 +68,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final class ReposCreateForAuthenticatedUserRequestMergeCommitTitle {const ReposCreateForAuthenticatedUserRequestMergeCommitTitle._(this.value);
+@immutable final class ReposCreateForAuthenticatedUserRequestMergeCommitTitle {const ReposCreateForAuthenticatedUserRequestMergeCommitTitle._(this.value);
 
 factory ReposCreateForAuthenticatedUserRequestMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
@@ -97,7 +97,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `PR_BODY` - default to the pull request's body.
 /// - `BLANK` - default to a blank commit message.
-final class ReposCreateForAuthenticatedUserRequestMergeCommitMessage {const ReposCreateForAuthenticatedUserRequestMergeCommitMessage._(this.value);
+@immutable final class ReposCreateForAuthenticatedUserRequestMergeCommitMessage {const ReposCreateForAuthenticatedUserRequestMergeCommitMessage._(this.value);
 
 factory ReposCreateForAuthenticatedUserRequestMergeCommitMessage.fromJson(String json) { return switch (json) {
   'PR_BODY' => prBody,
@@ -124,7 +124,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposCreateForAuthenticatedUserRequestMergeCommitMessage($value)'; } 
  }
-final class ReposCreateForAuthenticatedUserRequest {const ReposCreateForAuthenticatedUserRequest({required this.name, this.description, this.homepage, this.private = false, this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, this.hasDiscussions = false, this.teamId, this.autoInit = false, this.gitignoreTemplate, this.licenseTemplate, this.allowSquashMerge = true, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.hasDownloads = true, this.isTemplate = false, });
+@immutable final class ReposCreateForAuthenticatedUserRequest {const ReposCreateForAuthenticatedUserRequest({required this.name, this.description, this.homepage, this.private = false, this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, this.hasDiscussions = false, this.teamId, this.autoInit = false, this.gitignoreTemplate, this.licenseTemplate, this.allowSquashMerge = true, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.hasDownloads = true, this.isTemplate = false, });
 
 factory ReposCreateForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return ReposCreateForAuthenticatedUserRequest(
   name: json['name'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_passive_dns_by_ip_reverse_records.dart';final class IntelPassiveDnsByIp {const IntelPassiveDnsByIp({this.count, this.page, this.perPage, this.reverseRecords, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_passive_dns_by_ip_reverse_records.dart';@immutable final class IntelPassiveDnsByIp {const IntelPassiveDnsByIp({this.count, this.page, this.perPage, this.reverseRecords, });
 
 factory IntelPassiveDnsByIp.fromJson(Map<String, dynamic> json) { return IntelPassiveDnsByIp(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

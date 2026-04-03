@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_queue_message.dart';import 'mq_queue_message_json.dart';import 'mq_queue_message_text.dart';final class MqQueueBatch {const MqQueueBatch({this.delaySeconds, this.messages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_queue_message.dart';import 'mq_queue_message_json.dart';import 'mq_queue_message_text.dart';@immutable final class MqQueueBatch {const MqQueueBatch({this.delaySeconds, this.messages, });
 
 factory MqQueueBatch.fromJson(Map<String, dynamic> json) { return MqQueueBatch(
   delaySeconds: json['delay_seconds'] != null ? (json['delay_seconds'] as num).toDouble() : null,

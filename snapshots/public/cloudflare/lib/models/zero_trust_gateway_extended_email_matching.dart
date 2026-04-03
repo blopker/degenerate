@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configures user email settings for firewall policies. When you enable this, the system standardizes email addresses in the identity portion of the rule to match extended email variants in firewall policies. When you disable this setting, the system matches email addresses exactly as you provide them. Enable this setting if your email uses `.` or `+` modifiers.
-final class ZeroTrustGatewayExtendedEmailMatching {const ZeroTrustGatewayExtendedEmailMatching({this.enabled, this.readOnly, this.sourceAccount, this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures user email settings for firewall policies. When you enable this, the system standardizes email addresses in the identity portion of the rule to match extended email variants in firewall policies. When you disable this setting, the system matches email addresses exactly as you provide them. Enable this setting if your email uses `.` or `+` modifiers.
+@immutable final class ZeroTrustGatewayExtendedEmailMatching {const ZeroTrustGatewayExtendedEmailMatching({this.enabled, this.readOnly, this.sourceAccount, this.version, });
 
 factory ZeroTrustGatewayExtendedEmailMatching.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayExtendedEmailMatching(
   enabled: json['enabled'] as bool?,

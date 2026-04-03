@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'namespace_spec.dart';import 'namespace_status.dart';import 'object_meta.dart';/// Namespace provides a scope for Names. Use of multiple namespaces is optional.
-final class Namespace {const Namespace({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'namespace_spec.dart';import 'namespace_status.dart';import 'object_meta.dart';/// Namespace provides a scope for Names. Use of multiple namespaces is optional.
+@immutable final class Namespace {const Namespace({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
 factory Namespace.fromJson(Map<String, dynamic> json) { return Namespace(
   apiVersion: json['apiVersion'] as String?,

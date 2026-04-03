@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_comment.dart';final class SecretsStorePatchSecretObject {const SecretsStorePatchSecretObject({this.comment, this.scopes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_comment.dart';@immutable final class SecretsStorePatchSecretObject {const SecretsStorePatchSecretObject({this.comment, this.scopes, });
 
 factory SecretsStorePatchSecretObject.fromJson(Map<String, dynamic> json) { return SecretsStorePatchSecretObject(
   comment: json['comment'] != null ? SecretsStoreComment.fromJson(json['comment'] as String) : null,

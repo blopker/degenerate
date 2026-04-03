@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTimeseriesGroupByOperatingSystemBotClass {const RadarGetHttpTimeseriesGroupByOperatingSystemBotClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByOperatingSystemBotClass {const RadarGetHttpTimeseriesGroupByOperatingSystemBotClass._(this.value);
 
 factory RadarGetHttpTimeseriesGroupByOperatingSystemBotClass.fromJson(String json) { return switch (json) {
   'LIKELY_AUTOMATED' => likelyAutomated,

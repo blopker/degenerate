@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_center_count.dart';import 'security_center_issue.dart';import 'security_center_page.dart';import 'security_center_per_page.dart';final class GetSecurityCenterIssuesResponseResultVariant1 {const GetSecurityCenterIssuesResponseResultVariant1({this.count, this.issues, this.page, this.perPage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_center_count.dart';import 'security_center_issue.dart';import 'security_center_page.dart';import 'security_center_per_page.dart';@immutable final class GetSecurityCenterIssuesResponseResultVariant1 {const GetSecurityCenterIssuesResponseResultVariant1({this.count, this.issues, this.page, this.perPage, });
 
 factory GetSecurityCenterIssuesResponseResultVariant1.fromJson(Map<String, dynamic> json) { return GetSecurityCenterIssuesResponseResultVariant1(
   count: json['count'] != null ? SecurityCenterCount.fromJson(json['count'] as num) : null,

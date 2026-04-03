@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'get_budget_budget_alerting.dart';/// The type of scope for the budget
-final class GetBudgetBudgetScope {const GetBudgetBudgetScope._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_budget_budget_alerting.dart';/// The type of scope for the budget
+@immutable final class GetBudgetBudgetScope {const GetBudgetBudgetScope._(this.value);
 
 factory GetBudgetBudgetScope.fromJson(String json) { return switch (json) {
   'enterprise' => enterprise,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetBudgetBudgetScope($value)'; } 
  }
 /// The type of pricing for the budget
-final class GetBudgetBudgetType {const GetBudgetBudgetType._(this.value);
+@immutable final class GetBudgetBudgetType {const GetBudgetBudgetType._(this.value);
 
 factory GetBudgetBudgetType.fromJson(String json) { return switch (json) {
   'ProductPricing' => productPricing,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetBudgetBudgetType($value)'; } 
  }
-final class GetBudget {const GetBudget({required this.id, required this.budgetScope, required this.budgetEntityName, required this.budgetAmount, required this.preventFurtherUsage, required this.budgetProductSku, required this.budgetType, required this.budgetAlerting, });
+@immutable final class GetBudget {const GetBudget({required this.id, required this.budgetScope, required this.budgetEntityName, required this.budgetAmount, required this.preventFurtherUsage, required this.budgetProductSku, required this.budgetType, required this.budgetAlerting, });
 
 factory GetBudget.fromJson(Map<String, dynamic> json) { return GetBudget(
   id: json['id'] as String,

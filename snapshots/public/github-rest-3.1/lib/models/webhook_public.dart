@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookPublic {const WebhookPublic({this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookPublic {const WebhookPublic({required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPublic.fromJson(Map<String, dynamic> json) { return WebhookPublic(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_ranking_domain_timeseries_response_result_meta.dart';import 'radar_get_ranking_domain_timeseries_response_result_serie0.dart';final class RadarGetRankingDomainTimeseriesResponseResult {const RadarGetRankingDomainTimeseriesResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ranking_domain_timeseries_response_result_meta.dart';import 'radar_get_ranking_domain_timeseries_response_result_serie0.dart';@immutable final class RadarGetRankingDomainTimeseriesResponseResult {const RadarGetRankingDomainTimeseriesResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetRankingDomainTimeseriesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetRankingDomainTimeseriesResponseResult(
   meta: RadarGetRankingDomainTimeseriesResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

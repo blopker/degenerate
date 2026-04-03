@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_catalog_sync.dart';final class McnCreateCatalogSyncResponse {const McnCreateCatalogSyncResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_catalog_sync.dart';@immutable final class McnCreateCatalogSyncResponse {const McnCreateCatalogSyncResponse({this.result});
 
 factory McnCreateCatalogSyncResponse.fromJson(Map<String, dynamic> json) { return McnCreateCatalogSyncResponse(
   result: json['result'] != null ? McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>) : null,

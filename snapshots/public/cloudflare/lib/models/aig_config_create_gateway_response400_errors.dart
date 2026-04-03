@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigCreateGatewayResponse400Errors {const AigConfigCreateGatewayResponse400Errors({required this.code, required this.message, required this.path, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateGatewayResponse400Errors {const AigConfigCreateGatewayResponse400Errors({required this.code, required this.message, required this.path, });
 
 factory AigConfigCreateGatewayResponse400Errors.fromJson(Map<String, dynamic> json) { return AigConfigCreateGatewayResponse400Errors(
   code: (json['code'] as num).toDouble(),

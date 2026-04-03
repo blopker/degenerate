@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'input_file_content_param.dart';import 'input_image_content_param_auto_param.dart';import 'input_text_content_param.dart';/// A piece of message content, such as text, an image, or a file.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_file_content_param.dart';import 'input_image_content_param_auto_param.dart';import 'input_text_content_param.dart';/// A piece of message content, such as text, an image, or a file.
 sealed class FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FunctionCallOutputItemParamOutputVariant2$Unknown; } 
  }
-final class FunctionCallOutputItemParamOutputVariant2InputText extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2InputText(this.inputTextContentParam);
+@immutable final class FunctionCallOutputItemParamOutputVariant2InputText extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2InputText(this.inputTextContentParam);
 
 factory FunctionCallOutputItemParamOutputVariant2InputText.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParamOutputVariant2InputText(InputTextContentParam.fromJson(json)); }
 
@@ -30,7 +30,7 @@ final InputTextContentParam inputTextContentParam;
 @override int get hashCode { return inputTextContentParam.hashCode; } 
 @override String toString() { return 'FunctionCallOutputItemParamOutputVariant2InputText(inputTextContentParam: $inputTextContentParam)'; } 
  }
-final class FunctionCallOutputItemParamOutputVariant2InputImage extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2InputImage(this.inputImageContentParamAutoParam);
+@immutable final class FunctionCallOutputItemParamOutputVariant2InputImage extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2InputImage(this.inputImageContentParamAutoParam);
 
 factory FunctionCallOutputItemParamOutputVariant2InputImage.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParamOutputVariant2InputImage(InputImageContentParamAutoParam.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final InputImageContentParamAutoParam inputImageContentParamAutoParam;
 @override int get hashCode { return inputImageContentParamAutoParam.hashCode; } 
 @override String toString() { return 'FunctionCallOutputItemParamOutputVariant2InputImage(inputImageContentParamAutoParam: $inputImageContentParamAutoParam)'; } 
  }
-final class FunctionCallOutputItemParamOutputVariant2InputFile extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2InputFile(this.inputFileContentParam);
+@immutable final class FunctionCallOutputItemParamOutputVariant2InputFile extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2InputFile(this.inputFileContentParam);
 
 factory FunctionCallOutputItemParamOutputVariant2InputFile.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParamOutputVariant2InputFile(InputFileContentParam.fromJson(json)); }
 
@@ -58,7 +58,7 @@ final InputFileContentParam inputFileContentParam;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class FunctionCallOutputItemParamOutputVariant2$Unknown extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2$Unknown(this.json);
+@immutable final class FunctionCallOutputItemParamOutputVariant2$Unknown extends FunctionCallOutputItemParamOutputVariant2 {const FunctionCallOutputItemParamOutputVariant2$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

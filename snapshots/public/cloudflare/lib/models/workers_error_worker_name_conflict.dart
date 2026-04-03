@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code indicating that a Worker with this name already exists.
-final class WorkersErrorWorkerNameConflictCode {const WorkersErrorWorkerNameConflictCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that a Worker with this name already exists.
+@immutable final class WorkersErrorWorkerNameConflictCode {const WorkersErrorWorkerNameConflictCode._(this.value);
 
 factory WorkersErrorWorkerNameConflictCode.fromJson(int json) { return switch (json) {
   10040 => $10040,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersErrorWorkerNameConflictCode($value)'; } 
  }
-final class WorkersErrorWorkerNameConflict {const WorkersErrorWorkerNameConflict({required this.code, required this.message, });
+@immutable final class WorkersErrorWorkerNameConflict {const WorkersErrorWorkerNameConflict({required this.code, required this.message, });
 
 factory WorkersErrorWorkerNameConflict.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerNameConflict(
   code: WorkersErrorWorkerNameConflictCode.fromJson((json['code'] as num).toInt()),

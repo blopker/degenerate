@@ -8,7 +8,7 @@ dynamic toJson() => value;
 
 }
 /// Defines the action that the current WAF rule will perform when triggered. Applies to traditional (deny) WAF rules.
-final class WafManagedRulesModeDenyTraditional {const WafManagedRulesModeDenyTraditional._(this.value);
+@immutable final class WafManagedRulesModeDenyTraditional {const WafManagedRulesModeDenyTraditional._(this.value);
 
 factory WafManagedRulesModeDenyTraditional.fromJson(String json) { return switch (json) {
   'default' => $default,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WafManagedRulesModeDenyTraditional($value)'; } 
  }
 /// When triggered, traditional WAF rules cause the firewall to immediately act upon the request based on the configuration of the rule. A 'deny' rule will immediately respond to the request based on the configured rule action/mode (for example, 'block') and no other rules will be processed.
-final class WafManagedRulesTraditionalDenyRule {const WafManagedRulesTraditionalDenyRule({required this.description, required this.group, required this.id, required this.packageId, required this.priority, required this.allowedModes, required this.defaultMode, required this.mode, });
+@immutable final class WafManagedRulesTraditionalDenyRule {const WafManagedRulesTraditionalDenyRule({required this.description, required this.group, required this.id, required this.packageId, required this.priority, required this.allowedModes, required this.defaultMode, required this.mode, });
 
 factory WafManagedRulesTraditionalDenyRule.fromJson(Map<String, dynamic> json) { return WafManagedRulesTraditionalDenyRule(
   description: WafManagedRulesSchemasDescription.fromJson(json['description'] as String),

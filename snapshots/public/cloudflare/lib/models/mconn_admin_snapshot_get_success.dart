@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_coded_message.dart';import 'mconn_snapshot.dart';final class MconnAdminSnapshotGetSuccess {const MconnAdminSnapshotGetSuccess({this.errors, this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_coded_message.dart';import 'mconn_snapshot.dart';@immutable final class MconnAdminSnapshotGetSuccess {const MconnAdminSnapshotGetSuccess({required this.success, required this.result, this.errors, this.messages, });
 
 factory MconnAdminSnapshotGetSuccess.fromJson(Map<String, dynamic> json) { return MconnAdminSnapshotGetSuccess(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_meter_resource_billing_meter_event_adjustment_cancel.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class BillingMeterEventAdjustmentObject {const BillingMeterEventAdjustmentObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_meter_resource_billing_meter_event_adjustment_cancel.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class BillingMeterEventAdjustmentObject {const BillingMeterEventAdjustmentObject._(this.value);
 
 factory BillingMeterEventAdjustmentObject.fromJson(String json) { return switch (json) {
   'billing.meter_event_adjustment' => billingMeterEventAdjustment,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingMeterEventAdjustmentObject($value)'; } 
  }
 /// The meter event adjustment's status.
-final class BillingMeterEventAdjustmentStatus {const BillingMeterEventAdjustmentStatus._(this.value);
+@immutable final class BillingMeterEventAdjustmentStatus {const BillingMeterEventAdjustmentStatus._(this.value);
 
 factory BillingMeterEventAdjustmentStatus.fromJson(String json) { return switch (json) {
   'complete' => complete,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingMeterEventAdjustmentStatus($value)'; } 
  }
 /// Specifies whether to cancel a single event or a range of events for a time period. Time period cancellation is not supported yet.
-final class BillingMeterEventAdjustmentType {const BillingMeterEventAdjustmentType._(this.value);
+@immutable final class BillingMeterEventAdjustmentType {const BillingMeterEventAdjustmentType._(this.value);
 
 factory BillingMeterEventAdjustmentType.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
@@ -70,7 +70,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingMeterEventAdjustmentType($value)'; } 
  }
 /// A billing meter event adjustment is a resource that allows you to cancel a meter event. For example, you might create a billing meter event adjustment to cancel a meter event that was created in error or attached to the wrong customer.
-final class BillingMeterEventAdjustment {const BillingMeterEventAdjustment({this.cancel, required this.eventName, required this.livemode, required this.object, required this.status, required this.type, });
+@immutable final class BillingMeterEventAdjustment {const BillingMeterEventAdjustment({required this.eventName, required this.livemode, required this.object, required this.status, required this.type, this.cancel, });
 
 factory BillingMeterEventAdjustment.fromJson(Map<String, dynamic> json) { return BillingMeterEventAdjustment(
   cancel: json['cancel'] != null ? BillingMeterResourceBillingMeterEventAdjustmentCancel.fromJson(json['cancel'] as Map<String, dynamic>) : null,

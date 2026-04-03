@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AmountDetailsParamLineItemsVariant1PaymentMethodOptionsKlarna {const AmountDetailsParamLineItemsVariant1PaymentMethodOptionsKlarna({this.imageUrl, this.productUrl, this.reference, this.subscriptionReference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AmountDetailsParamLineItemsVariant1PaymentMethodOptionsKlarna {const AmountDetailsParamLineItemsVariant1PaymentMethodOptionsKlarna({this.imageUrl, this.productUrl, this.reference, this.subscriptionReference, });
 
 factory AmountDetailsParamLineItemsVariant1PaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return AmountDetailsParamLineItemsVariant1PaymentMethodOptionsKlarna(
   imageUrl: json['image_url'] as String?,

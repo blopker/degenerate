@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_confirmation_tokens_request_shipping_address.dart';import 'post_test_helpers_confirmation_tokens_request_shipping_phone.dart';/// Shipping information for this ConfirmationToken.
-final class PostTestHelpersConfirmationTokensRequestShipping {const PostTestHelpersConfirmationTokensRequestShipping({required this.address, required this.name, this.phone, });
+@immutable final class PostTestHelpersConfirmationTokensRequestShipping {const PostTestHelpersConfirmationTokensRequestShipping({required this.address, required this.name, this.phone, });
 
 factory PostTestHelpersConfirmationTokensRequestShipping.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestShipping(
   address: PostTestHelpersConfirmationTokensRequestShippingAddress.fromJson(json['address'] as Map<String, dynamic>),

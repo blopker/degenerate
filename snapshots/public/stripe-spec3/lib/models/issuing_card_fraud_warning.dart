@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of fraud warning that most recently took place on this card. This field updates with every new fraud warning, so the value changes over time. If populated, cancel and reissue the card.
-final class IssuingCardFraudWarningType {const IssuingCardFraudWarningType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of fraud warning that most recently took place on this card. This field updates with every new fraud warning, so the value changes over time. If populated, cancel and reissue the card.
+@immutable final class IssuingCardFraudWarningType {const IssuingCardFraudWarningType._(this.value);
 
 factory IssuingCardFraudWarningType.fromJson(String json) { return switch (json) {
   'card_testing_exposure' => cardTestingExposure,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardFraudWarningType($value)'; } 
  }
 /// 
-final class IssuingCardFraudWarning {const IssuingCardFraudWarning({this.startedAt, this.type, });
+@immutable final class IssuingCardFraudWarning {const IssuingCardFraudWarning({this.startedAt, this.type, });
 
 factory IssuingCardFraudWarning.fromJson(Map<String, dynamic> json) { return IssuingCardFraudWarning(
   startedAt: json['started_at'] != null ? (json['started_at'] as num).toInt() : null,

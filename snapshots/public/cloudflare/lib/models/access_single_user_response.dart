@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_users.dart';final class AccessSingleUserResponse {const AccessSingleUserResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_users.dart';@immutable final class AccessSingleUserResponse {const AccessSingleUserResponse({this.result});
 
 factory AccessSingleUserResponse.fromJson(Map<String, dynamic> json) { return AccessSingleUserResponse(
   result: json['result'] != null ? AccessSchemasUsers.fromJson(json['result'] as Map<String, dynamic>) : null,

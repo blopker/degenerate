@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_bacs_debit_payments_settings.dart';import 'account_branding_settings.dart';import 'account_card_issuing_settings.dart';import 'account_card_payments_settings.dart';import 'account_dashboard_settings.dart';import 'account_invoices_settings.dart';import 'account_payments_settings.dart';import 'account_payout_settings.dart';import 'account_sepa_debit_payments_settings.dart';import 'account_treasury_settings.dart';/// 
-final class AccountSettings {const AccountSettings({this.bacsDebitPayments, required this.branding, this.cardIssuing, required this.cardPayments, required this.dashboard, this.invoices, required this.payments, this.payouts, this.sepaDebitPayments, this.treasury, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_bacs_debit_payments_settings.dart';import 'account_branding_settings.dart';import 'account_card_issuing_settings.dart';import 'account_card_payments_settings.dart';import 'account_dashboard_settings.dart';import 'account_invoices_settings.dart';import 'account_payments_settings.dart';import 'account_payout_settings.dart';import 'account_sepa_debit_payments_settings.dart';import 'account_treasury_settings.dart';/// 
+@immutable final class AccountSettings {const AccountSettings({required this.branding, required this.cardPayments, required this.dashboard, required this.payments, this.bacsDebitPayments, this.cardIssuing, this.invoices, this.payouts, this.sepaDebitPayments, this.treasury, });
 
 factory AccountSettings.fromJson(Map<String, dynamic> json) { return AccountSettings(
   bacsDebitPayments: json['bacs_debit_payments'] != null ? AccountBacsDebitPaymentsSettings.fromJson(json['bacs_debit_payments'] as Map<String, dynamic>) : null,

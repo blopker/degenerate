@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_index_configuration.dart';import 'vectorize_index_description.dart';import 'vectorize_index_dimension_configuration.dart';import 'vectorize_index_name.dart';import 'vectorize_index_preset_configuration.dart';final class VectorizeCreateIndexRequest {const VectorizeCreateIndexRequest({required this.config, this.description, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_index_configuration.dart';import 'vectorize_index_description.dart';import 'vectorize_index_dimension_configuration.dart';import 'vectorize_index_name.dart';import 'vectorize_index_preset_configuration.dart';@immutable final class VectorizeCreateIndexRequest {const VectorizeCreateIndexRequest({required this.config, required this.name, this.description, });
 
 factory VectorizeCreateIndexRequest.fromJson(Map<String, dynamic> json) { return VectorizeCreateIndexRequest(
   config: OneOf2.parse(json['config'], fromA: (v) => VectorizeIndexDimensionConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => VectorizeIndexPresetConfiguration.fromJson(v as Map<String, dynamic>),),

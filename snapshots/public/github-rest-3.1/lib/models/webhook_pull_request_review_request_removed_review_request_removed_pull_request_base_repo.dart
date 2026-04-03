@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_request_removed_review_request_removed_pull_request_base_repo_license.dart';import 'webhook_pull_request_review_request_removed_review_request_removed_pull_request_base_repo_owner.dart';import 'webhook_pull_request_review_request_removed_review_request_removed_pull_request_base_repo_permissions.dart';/// The policy controlling who can create pull requests: all or collaborators_only.
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoPullRequestCreationPolicy {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoPullRequestCreationPolicy._(this.value);
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoPullRequestCreationPolicy {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoPullRequestCreationPolicy._(this.value);
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoPullRequestCreationPolicy.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `PR_BODY` - default to the pull request's body.
 /// - `BLANK` - default to a blank commit message.
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoMergeCommitMessage {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoMergeCommitMessage._(this.value);
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoMergeCommitMessage {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoMergeCommitMessage._(this.value);
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoMergeCommitMessage.fromJson(String json) { return switch (json) {
   'PR_BODY' => prBody,
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoMergeCommitTitle {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoMergeCommitTitle._(this.value);
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoMergeCommitTitle {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoMergeCommitTitle._(this.value);
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
@@ -86,7 +86,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoMergeCommitTitle($value)'; } 
  }
 /// The default value for a squash merge commit message.
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoSquashMergeCommitMessage {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoSquashMergeCommitMessage._(this.value);
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoSquashMergeCommitMessage {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoSquashMergeCommitMessage._(this.value);
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoSquashMergeCommitMessage.fromJson(String json) { return switch (json) {
   'PR_BODY' => prBody,
@@ -114,7 +114,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoSquashMergeCommitMessage($value)'; } 
  }
 /// The default value for a squash merge commit title.
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoSquashMergeCommitTitle {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoSquashMergeCommitTitle._(this.value);
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoSquashMergeCommitTitle {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoSquashMergeCommitTitle._(this.value);
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoSquashMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
@@ -138,7 +138,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoSquashMergeCommitTitle($value)'; } 
  }
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoVisibility {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoVisibility._(this.value);
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoVisibility {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoVisibility._(this.value);
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoVisibility.fromJson(String json) { return switch (json) {
   'public' => public,
@@ -166,7 +166,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepoVisibility($value)'; } 
  }
 /// A git repository
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepo {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepo({this.allowAutoMerge = false, this.allowForking, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowSquashMerge = true, this.allowUpdateBranch, required this.archiveUrl, this.archived = false, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.cloneUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.createdAt, required this.defaultBranch, this.deleteBranchOnMerge = false, required this.deploymentsUrl, required this.description, this.disabled, required this.downloadsUrl, required this.eventsUrl, required this.fork, required this.forks, required this.forksCount, required this.forksUrl, required this.fullName, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, this.hasDownloads = true, this.hasIssues = true, required this.hasPages, this.hasProjects = true, this.hasWiki = true, this.hasDiscussions = false, this.hasPullRequests = true, this.pullRequestCreationPolicy, required this.homepage, required this.hooksUrl, required this.htmlUrl, required this.id, this.isTemplate, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.language, required this.languagesUrl, required this.license, this.masterBranch, this.mergeCommitMessage, this.mergeCommitTitle, required this.mergesUrl, required this.milestonesUrl, required this.mirrorUrl, required this.name, required this.nodeId, required this.notificationsUrl, required this.openIssues, required this.openIssuesCount, this.organization, required this.owner, this.permissions, required this.private, this.public, required this.pullsUrl, required this.pushedAt, required this.releasesUrl, this.roleName, required this.size, this.squashMergeCommitMessage, this.squashMergeCommitTitle, required this.sshUrl, this.stargazers, required this.stargazersCount, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.svnUrl, required this.tagsUrl, required this.teamsUrl, required this.topics, required this.treesUrl, required this.updatedAt, required this.url, this.useSquashPrTitleAsDefault = false, required this.visibility, required this.watchers, required this.watchersCount, this.webCommitSignoffRequired, });
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepo {const WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepo({required this.gitRefsUrl, required this.watchersCount, required this.watchers, required this.visibility, required this.url, required this.updatedAt, required this.archiveUrl, required this.treesUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.cloneUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.createdAt, required this.defaultBranch, required this.topics, required this.deploymentsUrl, required this.description, required this.teamsUrl, required this.downloadsUrl, required this.eventsUrl, required this.fork, required this.forks, required this.forksCount, required this.forksUrl, required this.fullName, required this.gitCommitsUrl, required this.tagsUrl, required this.gitTagsUrl, required this.gitUrl, required this.svnUrl, required this.subscriptionUrl, required this.hasPages, required this.subscribersUrl, required this.statusesUrl, required this.stargazersUrl, required this.stargazersCount, required this.sshUrl, required this.homepage, required this.hooksUrl, required this.htmlUrl, required this.id, required this.size, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.language, required this.languagesUrl, required this.license, required this.releasesUrl, required this.pushedAt, required this.pullsUrl, required this.mergesUrl, required this.milestonesUrl, required this.mirrorUrl, required this.name, required this.nodeId, required this.private, required this.openIssues, required this.openIssuesCount, required this.owner, required this.notificationsUrl, this.permissions, this.webCommitSignoffRequired, this.public, this.mergeCommitTitle, this.mergeCommitMessage, this.masterBranch, this.roleName, this.isTemplate, this.squashMergeCommitMessage, this.squashMergeCommitTitle, this.pullRequestCreationPolicy, this.stargazers, this.hasPullRequests = true, this.hasDiscussions = false, this.hasWiki = true, this.hasProjects = true, this.hasIssues = true, this.hasDownloads = true, this.allowAutoMerge = false, this.disabled, this.deleteBranchOnMerge = false, this.archived = false, this.allowUpdateBranch, this.allowSquashMerge = true, this.useSquashPrTitleAsDefault = false, this.allowRebaseMerge = true, this.allowMergeCommit = true, this.allowForking, this.organization, });
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepo.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequestBaseRepo(
   allowAutoMerge: json.containsKey('allow_auto_merge') ? json['allow_auto_merge'] as bool : false,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigUpdateDatasetRequestFiltersKey {const AigConfigUpdateDatasetRequestFiltersKey._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateDatasetRequestFiltersKey {const AigConfigUpdateDatasetRequestFiltersKey._(this.value);
 
 factory AigConfigUpdateDatasetRequestFiltersKey.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateDatasetRequestFiltersKey($value)'; } 
  }
-final class AigConfigUpdateDatasetRequestFiltersOperator {const AigConfigUpdateDatasetRequestFiltersOperator._(this.value);
+@immutable final class AigConfigUpdateDatasetRequestFiltersOperator {const AigConfigUpdateDatasetRequestFiltersOperator._(this.value);
 
 factory AigConfigUpdateDatasetRequestFiltersOperator.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -87,7 +87,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateDatasetRequestFiltersOperator($value)'; } 
  }
-final class AigConfigUpdateDatasetRequestFilters {const AigConfigUpdateDatasetRequestFilters({required this.key, required this.$operator, required this.value, });
+@immutable final class AigConfigUpdateDatasetRequestFilters {const AigConfigUpdateDatasetRequestFilters({required this.key, required this.$operator, required this.value, });
 
 factory AigConfigUpdateDatasetRequestFilters.fromJson(Map<String, dynamic> json) { return AigConfigUpdateDatasetRequestFilters(
   key: AigConfigUpdateDatasetRequestFiltersKey.fromJson(json['key'] as String),

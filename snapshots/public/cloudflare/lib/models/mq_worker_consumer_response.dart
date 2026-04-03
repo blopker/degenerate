@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mq_identifier.dart';import 'mq_queue_name.dart';import 'mq_script_name.dart';import 'mq_worker_consumer_response_settings.dart';final class MqWorkerConsumerResponse {const MqWorkerConsumerResponse({this.consumerId, this.createdOn, this.deadLetterQueue, this.queueName, this.scriptName, this.settings, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_identifier.dart';import 'mq_queue_name.dart';import 'mq_script_name.dart';import 'mq_worker_consumer_response_settings.dart';@immutable final class MqWorkerConsumerResponse {const MqWorkerConsumerResponse({this.consumerId, this.createdOn, this.deadLetterQueue, this.queueName, this.scriptName, this.settings, this.type, });
 
 factory MqWorkerConsumerResponse.fromJson(Map<String, dynamic> json) { return MqWorkerConsumerResponse(
   consumerId: json['consumer_id'] != null ? MqIdentifier.fromJson(json['consumer_id'] as String) : null,

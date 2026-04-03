@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'spec_06_security_schemes_and_requirements_security.dart';
 import '../apis/default_api.dart';
+import 'spec_06_security_schemes_and_requirements_security.dart';
 
 /// Root SDK client providing access to all API groups.
 ///
@@ -11,9 +11,9 @@ import '../apis/default_api.dart';
 /// sdk.$default.secureRead();
 /// ```
 final class Spec06SecuritySchemesAndRequirementsApi {
-  final ApiConfig _config;
-
   Spec06SecuritySchemesAndRequirementsApi(this._config);
+
+  final ApiConfig _config;
 
   late final DefaultApi $default = DefaultApi(_config);
 

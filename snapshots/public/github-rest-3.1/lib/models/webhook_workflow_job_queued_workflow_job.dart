@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_job_queued_workflow_job_steps.dart';final class WebhookWorkflowJobQueuedWorkflowJobStatus {const WebhookWorkflowJobQueuedWorkflowJobStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_job_queued_workflow_job_steps.dart';@immutable final class WebhookWorkflowJobQueuedWorkflowJobStatus {const WebhookWorkflowJobQueuedWorkflowJobStatus._(this.value);
 
 factory WebhookWorkflowJobQueuedWorkflowJobStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWorkflowJobQueuedWorkflowJobStatus($value)'; } 
  }
-final class WebhookWorkflowJobQueuedWorkflowJob {const WebhookWorkflowJobQueuedWorkflowJob({required this.checkRunUrl, required this.completedAt, required this.conclusion, required this.createdAt, required this.headSha, required this.htmlUrl, required this.id, required this.labels, required this.name, required this.nodeId, required this.runAttempt, required this.runId, required this.runUrl, required this.runnerGroupId, required this.runnerGroupName, required this.runnerId, required this.runnerName, required this.startedAt, required this.status, required this.headBranch, required this.workflowName, required this.steps, required this.url, });
+@immutable final class WebhookWorkflowJobQueuedWorkflowJob {const WebhookWorkflowJobQueuedWorkflowJob({required this.checkRunUrl, required this.completedAt, required this.conclusion, required this.createdAt, required this.headSha, required this.htmlUrl, required this.id, required this.labels, required this.name, required this.nodeId, required this.runAttempt, required this.runId, required this.runUrl, required this.runnerGroupId, required this.runnerGroupName, required this.runnerId, required this.runnerName, required this.startedAt, required this.status, required this.headBranch, required this.workflowName, required this.steps, required this.url, });
 
 factory WebhookWorkflowJobQueuedWorkflowJob.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobQueuedWorkflowJob(
   checkRunUrl: Uri.parse(json['check_run_url'] as String),

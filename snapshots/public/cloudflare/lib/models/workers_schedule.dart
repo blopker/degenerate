@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersSchedule {const WorkersSchedule({this.createdOn, required this.cron, this.modifiedOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersSchedule {const WorkersSchedule({required this.cron, this.createdOn, this.modifiedOn, });
 
 factory WorkersSchedule.fromJson(Map<String, dynamic> json) { return WorkersSchedule(
   createdOn: json['created_on'] as String?,

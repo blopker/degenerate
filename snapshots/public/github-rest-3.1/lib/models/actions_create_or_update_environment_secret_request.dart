@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsCreateOrUpdateEnvironmentSecretRequest {const ActionsCreateOrUpdateEnvironmentSecretRequest({required this.encryptedValue, required this.keyId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsCreateOrUpdateEnvironmentSecretRequest {const ActionsCreateOrUpdateEnvironmentSecretRequest({required this.encryptedValue, required this.keyId, });
 
 factory ActionsCreateOrUpdateEnvironmentSecretRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateOrUpdateEnvironmentSecretRequest(
   encryptedValue: json['encrypted_value'] as String,

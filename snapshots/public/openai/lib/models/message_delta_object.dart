@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_delta_object_delta.dart';/// The object type, which is always `thread.message.delta`.
-final class MessageDeltaObjectObject {const MessageDeltaObjectObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_object_delta.dart';/// The object type, which is always `thread.message.delta`.
+@immutable final class MessageDeltaObjectObject {const MessageDeltaObjectObject._(this.value);
 
 factory MessageDeltaObjectObject.fromJson(String json) { return switch (json) {
   'thread.message.delta' => threadMessageDelta,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Represents a message delta i.e. any changed fields on a message during streaming.
 /// 
-final class MessageDeltaObject {const MessageDeltaObject({required this.id, required this.object, required this.delta, });
+@immutable final class MessageDeltaObject {const MessageDeltaObject({required this.id, required this.object, required this.delta, });
 
 factory MessageDeltaObject.fromJson(Map<String, dynamic> json) { return MessageDeltaObject(
   id: json['id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_links_payment_link_request_automatic_tax_liability.dart';/// Configuration for automatic tax collection.
-final class PostPaymentLinksPaymentLinkRequestAutomaticTax {const PostPaymentLinksPaymentLinkRequestAutomaticTax({required this.enabled, this.liability, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_automatic_tax_liability.dart';/// Configuration for automatic tax collection.
+@immutable final class PostPaymentLinksPaymentLinkRequestAutomaticTax {const PostPaymentLinksPaymentLinkRequestAutomaticTax({required this.enabled, this.liability, });
 
 factory PostPaymentLinksPaymentLinkRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestAutomaticTax(
   enabled: json['enabled'] as bool,

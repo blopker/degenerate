@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Contains either an image URL or a data URL for a base64 encoded image.
-final class CreateModerationRequestInputVariant3ImageUrlImageUrl {const CreateModerationRequestInputVariant3ImageUrlImageUrl({required this.url});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains either an image URL or a data URL for a base64 encoded image.
+@immutable final class CreateModerationRequestInputVariant3ImageUrlImageUrl {const CreateModerationRequestInputVariant3ImageUrlImageUrl({required this.url});
 
 factory CreateModerationRequestInputVariant3ImageUrlImageUrl.fromJson(Map<String, dynamic> json) { return CreateModerationRequestInputVariant3ImageUrlImageUrl(
   url: Uri.parse(json['url'] as String),

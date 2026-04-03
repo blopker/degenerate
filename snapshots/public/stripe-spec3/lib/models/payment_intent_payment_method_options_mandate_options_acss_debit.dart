@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Payment schedule for the mandate.
-final class PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule {const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Payment schedule for the mandate.
+@immutable final class PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule {const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule.fromJson(String json) { return switch (json) {
   'combined' => combined,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitPaymentSchedule($value)'; } 
  }
 /// Transaction type of the mandate.
-final class PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType {const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType {const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType.fromJson(String json) { return switch (json) {
   'business' => business,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebitTransactionType($value)'; } 
  }
 /// 
-final class PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit {const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit({this.customMandateUrl, this.intervalDescription, this.paymentSchedule, this.transactionType, });
+@immutable final class PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit {const PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit({this.customMandateUrl, this.intervalDescription, this.paymentSchedule, this.transactionType, });
 
 factory PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsMandateOptionsAcssDebit(
   customMandateUrl: json['custom_mandate_url'] as String?,

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If the audio output modality is requested, this object contains data
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If the audio output modality is requested, this object contains data
 /// about the audio response from the model. [Learn more](/docs/guides/audio).
 /// 
-final class ChatCompletionResponseMessageAudio {const ChatCompletionResponseMessageAudio({required this.id, required this.expiresAt, required this.data, required this.transcript, });
+@immutable final class ChatCompletionResponseMessageAudio {const ChatCompletionResponseMessageAudio({required this.id, required this.expiresAt, required this.data, required this.transcript, });
 
 factory ChatCompletionResponseMessageAudio.fromJson(Map<String, dynamic> json) { return ChatCompletionResponseMessageAudio(
   id: json['id'] as String,

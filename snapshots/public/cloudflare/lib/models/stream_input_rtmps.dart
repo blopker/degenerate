@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The secret key to use when streaming via RTMPS to a live input.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The secret key to use when streaming via RTMPS to a live input.
 extension type const StreamInputRtmpsStreamKey(String value) {
 factory StreamInputRtmpsStreamKey.fromJson(String json) => StreamInputRtmpsStreamKey(json);
 
@@ -15,7 +15,7 @@ String toJson() => value;
 
 }
 /// Details for streaming to an live input using RTMPS.
-final class StreamInputRtmps {const StreamInputRtmps({this.streamKey, this.url, });
+@immutable final class StreamInputRtmps {const StreamInputRtmps({this.streamKey, this.url, });
 
 factory StreamInputRtmps.fromJson(Map<String, dynamic> json) { return StreamInputRtmps(
   streamKey: json['streamKey'] != null ? StreamInputRtmpsStreamKey.fromJson(json['streamKey'] as String) : null,

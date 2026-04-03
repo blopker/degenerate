@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdealBank {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdealBank._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdealBank {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdealBank._(this.value);
 
 factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdealBank.fromJson(String json) { return switch (json) {
   'abn_amro' => abnAmro,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdealBank($value)'; } 
  }
-final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdeal {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdeal({this.bank});
+@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdeal {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdeal({this.bank});
 
 factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdeal.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdeal(
   bank: json['bank'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodDataIdealBank.fromJson(json['bank'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoice_payment_method_options_param25_installments.dart';final class InvoicePaymentMethodOptionsParam25RequestThreeDSecure {const InvoicePaymentMethodOptionsParam25RequestThreeDSecure._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param25_installments.dart';@immutable final class InvoicePaymentMethodOptionsParam25RequestThreeDSecure {const InvoicePaymentMethodOptionsParam25RequestThreeDSecure._(this.value);
 
 factory InvoicePaymentMethodOptionsParam25RequestThreeDSecure.fromJson(String json) { return switch (json) {
   'any' => any,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InvoicePaymentMethodOptionsParam25RequestThreeDSecure($value)'; } 
  }
-final class InvoicePaymentMethodOptionsParam25 {const InvoicePaymentMethodOptionsParam25({this.installments, this.requestThreeDSecure, });
+@immutable final class InvoicePaymentMethodOptionsParam25 {const InvoicePaymentMethodOptionsParam25({this.installments, this.requestThreeDSecure, });
 
 factory InvoicePaymentMethodOptionsParam25.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam25(
   installments: json['installments'] != null ? InvoicePaymentMethodOptionsParam25Installments.fromJson(json['installments'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The reason the payment was blocked by the merchant.
-final class InsightsResourcesPaymentEvaluationMerchantBlockedReason {const InsightsResourcesPaymentEvaluationMerchantBlockedReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason the payment was blocked by the merchant.
+@immutable final class InsightsResourcesPaymentEvaluationMerchantBlockedReason {const InsightsResourcesPaymentEvaluationMerchantBlockedReason._(this.value);
 
 factory InsightsResourcesPaymentEvaluationMerchantBlockedReason.fromJson(String json) { return switch (json) {
   'authentication_required' => authenticationRequired,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationMerchantBlockedReason($value)'; } 
  }
 /// Details of a merchant_blocked outcome attached to this payment evaluation.
-final class InsightsResourcesPaymentEvaluationMerchantBlocked {const InsightsResourcesPaymentEvaluationMerchantBlocked({required this.reason});
+@immutable final class InsightsResourcesPaymentEvaluationMerchantBlocked {const InsightsResourcesPaymentEvaluationMerchantBlocked({required this.reason});
 
 factory InsightsResourcesPaymentEvaluationMerchantBlocked.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationMerchantBlocked(
   reason: InsightsResourcesPaymentEvaluationMerchantBlockedReason.fromJson(json['reason'] as String),

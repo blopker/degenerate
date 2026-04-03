@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Params for disputes related to Treasury FinancialAccounts
-final class PostIssuingDisputesRequestTreasury {const PostIssuingDisputesRequestTreasury({required this.receivedDebit});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Params for disputes related to Treasury FinancialAccounts
+@immutable final class PostIssuingDisputesRequestTreasury {const PostIssuingDisputesRequestTreasury({required this.receivedDebit});
 
 factory PostIssuingDisputesRequestTreasury.fromJson(Map<String, dynamic> json) { return PostIssuingDisputesRequestTreasury(
   receivedDebit: json['received_debit'] as String,

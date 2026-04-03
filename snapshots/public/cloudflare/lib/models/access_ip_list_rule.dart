@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_ip_list_rule_ip_list.dart';/// Matches an IP address from a list.
-final class AccessIpListRule {const AccessIpListRule({required this.ipList});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_ip_list_rule_ip_list.dart';/// Matches an IP address from a list.
+@immutable final class AccessIpListRule {const AccessIpListRule({required this.ipList});
 
 factory AccessIpListRule.fromJson(Map<String, dynamic> json) { return AccessIpListRule(
   ipList: AccessIpListRuleIpList.fromJson(json['ip_list'] as Map<String, dynamic>),

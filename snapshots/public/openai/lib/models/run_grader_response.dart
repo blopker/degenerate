@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_grader_response_metadata.dart';final class RunGraderResponse {const RunGraderResponse({required this.reward, required this.metadata, required this.subRewards, required this.modelGraderTokenUsagePerModel, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_grader_response_metadata.dart';@immutable final class RunGraderResponse {const RunGraderResponse({required this.reward, required this.metadata, required this.subRewards, required this.modelGraderTokenUsagePerModel, });
 
 factory RunGraderResponse.fromJson(Map<String, dynamic> json) { return RunGraderResponse(
   reward: (json['reward'] as num).toDouble(),
   metadata: RunGraderResponseMetadata.fromJson(json['metadata'] as Map<String, dynamic>),
-  subRewards: (json['sub_rewards'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  modelGraderTokenUsagePerModel: (json['model_grader_token_usage_per_model'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  subRewards: json['sub_rewards'] as Map<String, dynamic>,
+  modelGraderTokenUsagePerModel: json['model_grader_token_usage_per_model'] as Map<String, dynamic>,
 ); }
 
 final double reward;

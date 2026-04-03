@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodCustomerBalance {const PaymentMethodCustomerBalance();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodCustomerBalance {const PaymentMethodCustomerBalance();
 
-factory PaymentMethodCustomerBalance.fromJson(Map<String, dynamic> json) { return PaymentMethodCustomerBalance(
-
-); }
+factory PaymentMethodCustomerBalance.fromJson(Map<String, dynamic> _) { return const PaymentMethodCustomerBalance(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PaymentMethodCustomerBalance copyWith() { return PaymentMethodCustomerBalance(
+PaymentMethodCustomerBalance copyWith() { return const PaymentMethodCustomerBalance(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PaymentMethodCustomerBalance; } 

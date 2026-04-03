@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountAvailablePhoneNumberCountry {const AccountAvailablePhoneNumberCountry({this.countryCode, this.country, this.uri, this.beta, this.subresourceUris, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountAvailablePhoneNumberCountry {const AccountAvailablePhoneNumberCountry({this.countryCode, this.country, this.uri, this.beta, this.subresourceUris, });
 
 factory AccountAvailablePhoneNumberCountry.fromJson(Map<String, dynamic> json) { return AccountAvailablePhoneNumberCountry(
   countryCode: json['country_code'] as String?,
   country: json['country'] as String?,
   uri: json['uri'] != null ? Uri.parse(json['uri'] as String) : null,
   beta: json['beta'] as bool?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
 ); }
 
 /// The [ISO-3166-1](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code of the country.

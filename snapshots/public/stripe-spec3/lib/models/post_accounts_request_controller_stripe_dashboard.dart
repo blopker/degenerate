@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsRequestControllerStripeDashboardType {const PostAccountsRequestControllerStripeDashboardType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestControllerStripeDashboardType {const PostAccountsRequestControllerStripeDashboardType._(this.value);
 
 factory PostAccountsRequestControllerStripeDashboardType.fromJson(String json) { return switch (json) {
   'express' => express,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsRequestControllerStripeDashboardType($value)'; } 
  }
-final class PostAccountsRequestControllerStripeDashboard {const PostAccountsRequestControllerStripeDashboard({this.type});
+@immutable final class PostAccountsRequestControllerStripeDashboard {const PostAccountsRequestControllerStripeDashboard({this.type});
 
 factory PostAccountsRequestControllerStripeDashboard.fromJson(Map<String, dynamic> json) { return PostAccountsRequestControllerStripeDashboard(
   type: json['type'] != null ? PostAccountsRequestControllerStripeDashboardType.fromJson(json['type'] as String) : null,

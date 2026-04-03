@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtSummaryResponseResultSummary0Variant5 {const RadarGetCtSummaryResponseResultSummary0Variant5({required this.expired, required this.valid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtSummaryResponseResultSummary0Variant5 {const RadarGetCtSummaryResponseResultSummary0Variant5({required this.expired, required this.valid, });
 
 factory RadarGetCtSummaryResponseResultSummary0Variant5.fromJson(Map<String, dynamic> json) { return RadarGetCtSummaryResponseResultSummary0Variant5(
   expired: json['EXPIRED'] as String,

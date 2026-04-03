@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dependency.dart';import 'manifest_file.dart';final class Manifest {const Manifest({required this.name, this.file, this.metadata, this.resolved, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependency.dart';import 'manifest_file.dart';@immutable final class Manifest {const Manifest({required this.name, this.file, this.metadata, this.resolved, });
 
 factory Manifest.fromJson(Map<String, dynamic> json) { return Manifest(
   name: json['name'] as String,
   file: json['file'] != null ? ManifestFile.fromJson(json['file'] as Map<String, dynamic>) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   resolved: (json['resolved'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, Dependency.fromJson(v as Map<String, dynamic>))),
 ); }
 

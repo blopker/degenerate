@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_messages2_source.dart';final class AccessMessages2 {const AccessMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_messages2_source.dart';@immutable final class AccessMessages2 {const AccessMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory AccessMessages2.fromJson(Map<String, dynamic> json) { return AccessMessages2(
   code: (json['code'] as num).toInt(),

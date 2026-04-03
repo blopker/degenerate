@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_netflows_summary_deprecated_response_result.dart';final class RadarGetNetflowsSummaryDeprecatedResponse {const RadarGetNetflowsSummaryDeprecatedResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_netflows_summary_deprecated_response_result.dart';@immutable final class RadarGetNetflowsSummaryDeprecatedResponse {const RadarGetNetflowsSummaryDeprecatedResponse({required this.result, required this.success, });
 
 factory RadarGetNetflowsSummaryDeprecatedResponse.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsSummaryDeprecatedResponse(
   result: RadarGetNetflowsSummaryDeprecatedResponseResult.fromJson(json['result'] as Map<String, dynamic>),

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_response_completed_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_response_completed_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookResponseCompletedObject {const WebhookResponseCompletedObject._(this.value);
+@immutable final class WebhookResponseCompletedObject {const WebhookResponseCompletedObject._(this.value);
 
 factory WebhookResponseCompletedObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `response.completed`.
 /// 
-final class WebhookResponseCompletedType {const WebhookResponseCompletedType._(this.value);
+@immutable final class WebhookResponseCompletedType {const WebhookResponseCompletedType._(this.value);
 
 factory WebhookResponseCompletedType.fromJson(String json) { return switch (json) {
   'response.completed' => responseCompleted,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when a background response has been completed.
 /// 
-final class WebhookResponseCompleted {const WebhookResponseCompleted({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookResponseCompleted {const WebhookResponseCompleted({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookResponseCompleted.fromJson(Map<String, dynamic> json) { return WebhookResponseCompleted(
   createdAt: (json['created_at'] as num).toInt(),

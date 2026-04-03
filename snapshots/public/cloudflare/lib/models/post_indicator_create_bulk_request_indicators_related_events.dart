@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostIndicatorCreateBulkRequestIndicatorsRelatedEvents {const PostIndicatorCreateBulkRequestIndicatorsRelatedEvents({required this.datasetId, required this.eventId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIndicatorCreateBulkRequestIndicatorsRelatedEvents {const PostIndicatorCreateBulkRequestIndicatorsRelatedEvents({required this.datasetId, required this.eventId, });
 
 factory PostIndicatorCreateBulkRequestIndicatorsRelatedEvents.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateBulkRequestIndicatorsRelatedEvents(
   datasetId: json['datasetId'] as String,

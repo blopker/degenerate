@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTaxCodesIdRequest {const GetTaxCodesIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTaxCodesIdRequest {const GetTaxCodesIdRequest();
 
-factory GetTaxCodesIdRequest.fromJson(Map<String, dynamic> json) { return GetTaxCodesIdRequest(
-
-); }
+factory GetTaxCodesIdRequest.fromJson(Map<String, dynamic> _) { return const GetTaxCodesIdRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetTaxCodesIdRequest copyWith() { return GetTaxCodesIdRequest(
+GetTaxCodesIdRequest copyWith() { return const GetTaxCodesIdRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetTaxCodesIdRequest; } 

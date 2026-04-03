@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package_version_metadata.dart';/// A version of a software package
-final class PackageVersion {const PackageVersion({required this.id, required this.name, required this.url, required this.packageHtmlUrl, this.htmlUrl, this.license, this.description, required this.createdAt, required this.updatedAt, this.deletedAt, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package_version_metadata.dart';/// A version of a software package
+@immutable final class PackageVersion {const PackageVersion({required this.id, required this.name, required this.url, required this.packageHtmlUrl, required this.createdAt, required this.updatedAt, this.htmlUrl, this.license, this.description, this.deletedAt, this.metadata, });
 
 factory PackageVersion.fromJson(Map<String, dynamic> json) { return PackageVersion(
   id: (json['id'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpPredefinedEntryUpdate {const DlpPredefinedEntryUpdate({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpPredefinedEntryUpdate {const DlpPredefinedEntryUpdate({required this.enabled});
 
 factory DlpPredefinedEntryUpdate.fromJson(Map<String, dynamic> json) { return DlpPredefinedEntryUpdate(
   enabled: json['enabled'] as bool,

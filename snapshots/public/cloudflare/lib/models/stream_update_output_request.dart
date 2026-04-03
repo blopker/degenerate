@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_output_enabled.dart';final class StreamUpdateOutputRequest {const StreamUpdateOutputRequest({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_output_enabled.dart';@immutable final class StreamUpdateOutputRequest {const StreamUpdateOutputRequest({required this.enabled});
 
 factory StreamUpdateOutputRequest.fromJson(Map<String, dynamic> json) { return StreamUpdateOutputRequest(
   enabled: StreamOutputEnabled.fromJson(json['enabled'] as bool),

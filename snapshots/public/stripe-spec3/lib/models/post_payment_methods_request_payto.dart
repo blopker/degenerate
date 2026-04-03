@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `payto` PaymentMethod, this hash contains details about the PayTo payment method.
-final class PostPaymentMethodsRequestPayto {const PostPaymentMethodsRequestPayto({this.accountNumber, this.bsbNumber, this.payId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `payto` PaymentMethod, this hash contains details about the PayTo payment method.
+@immutable final class PostPaymentMethodsRequestPayto {const PostPaymentMethodsRequestPayto({this.accountNumber, this.bsbNumber, this.payId, });
 
 factory PostPaymentMethodsRequestPayto.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestPayto(
   accountNumber: json['account_number'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration specific to GRE interconnects.
-final class MagicGre {const MagicGre({this.cloudflareEndpoint});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration specific to GRE interconnects.
+@immutable final class MagicGre {const MagicGre({this.cloudflareEndpoint});
 
 factory MagicGre.fromJson(Map<String, dynamic> json) { return MagicGre(
   cloudflareEndpoint: json['cloudflare_endpoint'] as String?,

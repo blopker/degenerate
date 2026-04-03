@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_deployment_status_created_check_run.dart';import 'webhook_deployment_status_created_deployment.dart';import 'webhook_deployment_status_created_deployment_status.dart';import 'webhook_deployment_status_created_workflow_run.dart';import 'webhooks_workflow.dart';final class WebhookDeploymentStatusCreatedAction {const WebhookDeploymentStatusCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_deployment_status_created_check_run.dart';import 'webhook_deployment_status_created_deployment.dart';import 'webhook_deployment_status_created_deployment_status.dart';import 'webhook_deployment_status_created_workflow_run.dart';import 'webhooks_workflow.dart';@immutable final class WebhookDeploymentStatusCreatedAction {const WebhookDeploymentStatusCreatedAction._(this.value);
 
 factory WebhookDeploymentStatusCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentStatusCreatedAction($value)'; } 
  }
-final class WebhookDeploymentStatusCreated {const WebhookDeploymentStatusCreated({required this.action, this.checkRun, required this.deployment, required this.deploymentStatus, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, this.workflow, this.workflowRun, });
+@immutable final class WebhookDeploymentStatusCreated {const WebhookDeploymentStatusCreated({required this.action, required this.deployment, required this.deploymentStatus, required this.repository, required this.sender, this.checkRun, this.enterprise, this.installation, this.organization, this.workflow, this.workflowRun, });
 
 factory WebhookDeploymentStatusCreated.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreated(
   action: WebhookDeploymentStatusCreatedAction.fromJson(json['action'] as String),

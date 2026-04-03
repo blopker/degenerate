@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_note_refund_refund.dart';import 'credit_notes_payment_record_refund.dart';import 'refund.dart';/// Type of the refund, one of `refund` or `payment_record_refund`.
-final class CreditNoteRefundType {const CreditNoteRefundType._(this.value);
+@immutable final class CreditNoteRefundType {const CreditNoteRefundType._(this.value);
 
 factory CreditNoteRefundType.fromJson(String json) { return switch (json) {
   'payment_record_refund' => paymentRecordRefund,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreditNoteRefundType($value)'; } 
  }
 /// 
-final class CreditNoteRefund {const CreditNoteRefund({required this.amountRefunded, this.paymentRecordRefund, required this.refund, this.type, });
+@immutable final class CreditNoteRefund {const CreditNoteRefund({required this.amountRefunded, required this.refund, this.paymentRecordRefund, this.type, });
 
 factory CreditNoteRefund.fromJson(Map<String, dynamic> json) { return CreditNoteRefund(
   amountRefunded: (json['amount_refunded'] as num).toInt(),

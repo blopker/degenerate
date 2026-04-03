@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Usage statistics for the inference request
-final class TextGeneration2Variant1Usage {const TextGeneration2Variant1Usage({this.completionTokens = 0.0, this.promptTokens = 0.0, this.totalTokens = 0.0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Usage statistics for the inference request
+@immutable final class TextGeneration2Variant1Usage {const TextGeneration2Variant1Usage({this.completionTokens = 0.0, this.promptTokens = 0.0, this.totalTokens = 0.0, });
 
 factory TextGeneration2Variant1Usage.fromJson(Map<String, dynamic> json) { return TextGeneration2Variant1Usage(
   completionTokens: json.containsKey('completion_tokens') ? (json['completion_tokens'] as num).toDouble() : 0.0,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the status for Content Scanning.
-final class BundleSchemasStatus {const BundleSchemasStatus({this.modified, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the status for Content Scanning.
+@immutable final class BundleSchemasStatus {const BundleSchemasStatus({this.modified, this.value, });
 
 factory BundleSchemasStatus.fromJson(Map<String, dynamic> json) { return BundleSchemasStatus(
   modified: json['modified'] as String?,

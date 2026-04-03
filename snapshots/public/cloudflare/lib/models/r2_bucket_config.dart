@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_queues_config.dart';final class R2BucketConfig {const R2BucketConfig({this.bucketName, this.queues, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_queues_config.dart';@immutable final class R2BucketConfig {const R2BucketConfig({this.bucketName, this.queues, });
 
 factory R2BucketConfig.fromJson(Map<String, dynamic> json) { return R2BucketConfig(
   bucketName: json['bucketName'] as String?,

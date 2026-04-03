@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_line_item_tax_breakdown.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TaxCalculationLineItemObject {const TaxCalculationLineItemObject._(this.value);
+@immutable final class TaxCalculationLineItemObject {const TaxCalculationLineItemObject._(this.value);
 
 factory TaxCalculationLineItemObject.fromJson(String json) { return switch (json) {
   'tax.calculation_line_item' => taxCalculationLineItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxCalculationLineItemObject($value)'; } 
  }
 /// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
-final class TaxCalculationLineItemTaxBehavior {const TaxCalculationLineItemTaxBehavior._(this.value);
+@immutable final class TaxCalculationLineItemTaxBehavior {const TaxCalculationLineItemTaxBehavior._(this.value);
 
 factory TaxCalculationLineItemTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxCalculationLineItemTaxBehavior($value)'; } 
  }
 /// 
-final class TaxCalculationLineItem {const TaxCalculationLineItem({required this.amount, required this.amountTax, required this.id, required this.livemode, this.metadata, required this.object, this.product, required this.quantity, required this.reference, required this.taxBehavior, this.taxBreakdown, required this.taxCode, });
+@immutable final class TaxCalculationLineItem {const TaxCalculationLineItem({required this.amount, required this.amountTax, required this.id, required this.livemode, required this.object, required this.quantity, required this.reference, required this.taxBehavior, required this.taxCode, this.metadata, this.product, this.taxBreakdown, });
 
 factory TaxCalculationLineItem.fromJson(Map<String, dynamic> json) { return TaxCalculationLineItem(
   amount: (json['amount'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted {const TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted({required this.transaction});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted {const TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted({required this.transaction});
 
 factory TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted(
   transaction: json['transaction'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails({this.ipAddress, required this.present, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails({required this.present, this.ipAddress, });
 
 factory TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails(
   ipAddress: json['ip_address'] as String?,

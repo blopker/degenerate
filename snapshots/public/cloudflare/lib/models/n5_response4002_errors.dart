@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class $5Response4002Errors {const $5Response4002Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class $5Response4002Errors {const $5Response4002Errors({required this.code, required this.message, });
 
 factory $5Response4002Errors.fromJson(Map<String, dynamic> json) { return $5Response4002Errors(
   code: json['code'] as String,

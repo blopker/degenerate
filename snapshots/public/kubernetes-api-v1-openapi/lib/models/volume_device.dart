@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// volumeDevice describes a mapping of a raw block device within a container.
-final class VolumeDevice {const VolumeDevice({this.devicePath = '', this.name = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// volumeDevice describes a mapping of a raw block device within a container.
+@immutable final class VolumeDevice {const VolumeDevice({this.devicePath = '', this.name = '', });
 
 factory VolumeDevice.fromJson(Map<String, dynamic> json) { return VolumeDevice(
   devicePath: json['devicePath'] as String,

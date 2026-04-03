@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'hybrid_search_options.dart';final class RankerVersionType {const RankerVersionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hybrid_search_options.dart';@immutable final class RankerVersionType {const RankerVersionType._(this.value);
 
 factory RankerVersionType.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RankerVersionType($value)'; } 
  }
-final class RankingOptions {const RankingOptions({this.ranker, this.scoreThreshold, this.hybridSearch, });
+@immutable final class RankingOptions {const RankingOptions({this.ranker, this.scoreThreshold, this.hybridSearch, });
 
 factory RankingOptions.fromJson(Map<String, dynamic> json) { return RankingOptions(
   ranker: json['ranker'] != null ? RankerVersionType.fromJson(json['ranker'] as String) : null,

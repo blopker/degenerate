@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';import 'issuing_card_shipping_address_validation.dart';import 'issuing_card_shipping_customs.dart';/// The delivery company that shipped a card.
-final class IssuingCardShippingCarrier {const IssuingCardShippingCarrier._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'issuing_card_shipping_address_validation.dart';import 'issuing_card_shipping_customs.dart';/// The delivery company that shipped a card.
+@immutable final class IssuingCardShippingCarrier {const IssuingCardShippingCarrier._(this.value);
 
 factory IssuingCardShippingCarrier.fromJson(String json) { return switch (json) {
   'dhl' => dhl,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardShippingCarrier($value)'; } 
  }
 /// Shipment service, such as `standard` or `express`.
-final class IssuingCardShippingService {const IssuingCardShippingService._(this.value);
+@immutable final class IssuingCardShippingService {const IssuingCardShippingService._(this.value);
 
 factory IssuingCardShippingService.fromJson(String json) { return switch (json) {
   'express' => express,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardShippingService($value)'; } 
  }
 /// The delivery status of the card.
-final class IssuingCardShippingStatus {const IssuingCardShippingStatus._(this.value);
+@immutable final class IssuingCardShippingStatus {const IssuingCardShippingStatus._(this.value);
 
 factory IssuingCardShippingStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -100,7 +100,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardShippingStatus($value)'; } 
  }
 /// Packaging options.
-final class IssuingCardShippingType {const IssuingCardShippingType._(this.value);
+@immutable final class IssuingCardShippingType {const IssuingCardShippingType._(this.value);
 
 factory IssuingCardShippingType.fromJson(String json) { return switch (json) {
   'bulk' => bulk,
@@ -125,7 +125,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardShippingType($value)'; } 
  }
 /// 
-final class IssuingCardShipping {const IssuingCardShipping({required this.address, this.addressValidation, this.carrier, this.customs, this.eta, required this.name, this.phoneNumber, this.requireSignature, required this.service, this.status, this.trackingNumber, this.trackingUrl, required this.type, });
+@immutable final class IssuingCardShipping {const IssuingCardShipping({required this.address, required this.name, required this.service, required this.type, this.addressValidation, this.carrier, this.customs, this.eta, this.phoneNumber, this.requireSignature, this.status, this.trackingNumber, this.trackingUrl, });
 
 factory IssuingCardShipping.fromJson(Map<String, dynamic> json) { return IssuingCardShipping(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),

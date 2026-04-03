@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookRubygemsMetadataVersionInfo {const WebhookRubygemsMetadataVersionInfo({this.version});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRubygemsMetadataVersionInfo {const WebhookRubygemsMetadataVersionInfo({this.version});
 
 factory WebhookRubygemsMetadataVersionInfo.fromJson(Map<String, dynamic> json) { return WebhookRubygemsMetadataVersionInfo(
   version: json['version'] as String?,

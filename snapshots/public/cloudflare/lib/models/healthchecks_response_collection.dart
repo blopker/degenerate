@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'healthchecks_healthchecks.dart';final class HealthchecksResponseCollection {const HealthchecksResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'healthchecks_healthchecks.dart';@immutable final class HealthchecksResponseCollection {const HealthchecksResponseCollection({this.result});
 
 factory HealthchecksResponseCollection.fromJson(Map<String, dynamic> json) { return HealthchecksResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => HealthchecksHealthchecks.fromJson(e as Map<String, dynamic>)).toList(),

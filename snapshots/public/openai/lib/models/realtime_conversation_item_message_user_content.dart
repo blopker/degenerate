@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The content type (`input_text`, `input_audio`, or `input_image`).
-final class RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type (`input_text`, `input_audio`, or `input_image`).
+@immutable final class RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType._(this.value);
 
 factory RealtimeConversationItemMessageUserContentType.fromJson(String json) { return switch (json) {
   'input_text' => inputText,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageUserContentType($value)'; } 
  }
 /// The detail level of the image (for `input_image`). `auto` will default to `high`.
-final class RealtimeConversationItemMessageUserContentDetail {const RealtimeConversationItemMessageUserContentDetail._(this.value);
+@immutable final class RealtimeConversationItemMessageUserContentDetail {const RealtimeConversationItemMessageUserContentDetail._(this.value);
 
 factory RealtimeConversationItemMessageUserContentDetail.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeConversationItemMessageUserContentDetail($value)'; } 
  }
-final class RealtimeConversationItemMessageUserContent {const RealtimeConversationItemMessageUserContent({this.type, this.text, this.audio, this.imageUrl, this.detail = RealtimeConversationItemMessageUserContentDetail.auto, this.transcript, });
+@immutable final class RealtimeConversationItemMessageUserContent {const RealtimeConversationItemMessageUserContent({this.type, this.text, this.audio, this.imageUrl, this.detail = RealtimeConversationItemMessageUserContentDetail.auto, this.transcript, });
 
 factory RealtimeConversationItemMessageUserContent.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageUserContent(
   type: json['type'] != null ? RealtimeConversationItemMessageUserContentType.fromJson(json['type'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';final class AppsScopeTokenRequest {const AppsScopeTokenRequest({required this.accessToken, this.target, this.targetId, this.repositories, this.repositoryIds, this.permissions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';@immutable final class AppsScopeTokenRequest {const AppsScopeTokenRequest({required this.accessToken, this.target, this.targetId, this.repositories, this.repositoryIds, this.permissions, });
 
 factory AppsScopeTokenRequest.fromJson(Map<String, dynamic> json) { return AppsScopeTokenRequest(
   accessToken: json['access_token'] as String,

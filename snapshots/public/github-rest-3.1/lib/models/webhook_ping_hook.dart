@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hook_response.dart';import 'webhook_ping_hook_config.dart';/// The type of webhook. The only valid value is 'web'.
-final class WebhookPingHookName {const WebhookPingHookName._(this.value);
+@immutable final class WebhookPingHookName {const WebhookPingHookName._(this.value);
 
 factory WebhookPingHookName.fromJson(String json) { return switch (json) {
   'web' => web,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPingHookName($value)'; } 
  }
 /// The webhook that is being pinged
-final class WebhookPingHook {const WebhookPingHook({required this.active, this.appId, required this.config, required this.createdAt, this.deliveriesUrl, required this.events, required this.id, this.lastResponse, required this.name, this.pingUrl, this.testUrl, required this.type, required this.updatedAt, this.url, });
+@immutable final class WebhookPingHook {const WebhookPingHook({required this.active, required this.config, required this.createdAt, required this.events, required this.id, required this.name, required this.type, required this.updatedAt, this.appId, this.deliveriesUrl, this.lastResponse, this.pingUrl, this.testUrl, this.url, });
 
 factory WebhookPingHook.fromJson(Map<String, dynamic> json) { return WebhookPingHook(
   active: json['active'] as bool,
@@ -54,7 +54,7 @@ final DateTime createdAt;
 
 final Uri? deliveriesUrl;
 
-/// Determines what events the hook is triggered for. Default: ['push'].
+/// Determines what events the hook is triggered for. Default: `['push']`.
 final List<String> events;
 
 /// Unique identifier of the webhook.

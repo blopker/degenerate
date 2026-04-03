@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_decimal_encoding.dart';import 'cloudflare_pipelines_timestamp_format.dart';final class CloudflarePipelinesJsonFormat {const CloudflarePipelinesJsonFormat({this.decimalEncoding, this.timestampFormat, this.unstructured, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_decimal_encoding.dart';import 'cloudflare_pipelines_timestamp_format.dart';@immutable final class CloudflarePipelinesJsonFormat {const CloudflarePipelinesJsonFormat({this.decimalEncoding, this.timestampFormat, this.unstructured, });
 
 factory CloudflarePipelinesJsonFormat.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesJsonFormat(
   decimalEncoding: json['decimal_encoding'] != null ? CloudflarePipelinesDecimalEncoding.fromJson(json['decimal_encoding'] as String) : null,

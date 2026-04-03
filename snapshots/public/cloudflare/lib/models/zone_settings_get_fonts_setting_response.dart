@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'speed_base.dart';import 'speed_messages2.dart';final class ZoneSettingsGetFontsSettingResponse {const ZoneSettingsGetFontsSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'speed_base.dart';import 'speed_messages2.dart';@immutable final class ZoneSettingsGetFontsSettingResponse {const ZoneSettingsGetFontsSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ZoneSettingsGetFontsSettingResponse.fromJson(Map<String, dynamic> json) { return ZoneSettingsGetFontsSettingResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => SpeedMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The function definition.
-final class RunToolCallObjectFunction {const RunToolCallObjectFunction({required this.name, required this.arguments, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The function definition.
+@immutable final class RunToolCallObjectFunction {const RunToolCallObjectFunction({required this.name, required this.arguments, });
 
 factory RunToolCallObjectFunction.fromJson(Map<String, dynamic> json) { return RunToolCallObjectFunction(
   name: json['name'] as String,

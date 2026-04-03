@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_leaked_credential_checks_timeseries_group_response_result_meta_confidence_info_annotations.dart';final class RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaConfidenceInfo {const RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_leaked_credential_checks_timeseries_group_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaConfidenceInfo {const RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_closed_by_user_alert.dart';import 'webhooks_code_scanning_commit_oid.dart';import 'webhooks_code_scanning_ref.dart';final class WebhookCodeScanningAlertClosedByUserAction {const WebhookCodeScanningAlertClosedByUserAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_closed_by_user_alert.dart';import 'webhooks_code_scanning_commit_oid.dart';import 'webhooks_code_scanning_ref.dart';@immutable final class WebhookCodeScanningAlertClosedByUserAction {const WebhookCodeScanningAlertClosedByUserAction._(this.value);
 
 factory WebhookCodeScanningAlertClosedByUserAction.fromJson(String json) { return switch (json) {
   'closed_by_user' => closedByUser,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCodeScanningAlertClosedByUserAction($value)'; } 
  }
-final class WebhookCodeScanningAlertClosedByUser {const WebhookCodeScanningAlertClosedByUser({required this.action, required this.alert, required this.commitOid, this.enterprise, this.installation, this.organization, required this.ref, required this.repository, required this.sender, });
+@immutable final class WebhookCodeScanningAlertClosedByUser {const WebhookCodeScanningAlertClosedByUser({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCodeScanningAlertClosedByUser.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertClosedByUser(
   action: WebhookCodeScanningAlertClosedByUserAction.fromJson(json['action'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'author_association.dart';import 'reaction_rollup.dart';import 'review_comment_links.dart';import 'simple_user.dart';/// The side of the first line of the range for a multi-line comment.
-final class ReviewCommentSide {const ReviewCommentSide._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'reaction_rollup.dart';import 'review_comment_links.dart';import 'simple_user.dart';/// The side of the first line of the range for a multi-line comment.
+@immutable final class ReviewCommentSide {const ReviewCommentSide._(this.value);
 
 factory ReviewCommentSide.fromJson(String json) { return switch (json) {
   'LEFT' => left,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ReviewCommentSide($value)'; } 
  }
 /// The side of the first line of the range for a multi-line comment.
-final class ReviewCommentStartSide {const ReviewCommentStartSide._(this.value);
+@immutable final class ReviewCommentStartSide {const ReviewCommentStartSide._(this.value);
 
 factory ReviewCommentStartSide.fromJson(String json) { return switch (json) {
   'LEFT' => left,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ReviewCommentStartSide($value)'; } 
  }
 /// The level at which the comment is targeted, can be a diff line or a file.
-final class ReviewCommentSubjectType {const ReviewCommentSubjectType._(this.value);
+@immutable final class ReviewCommentSubjectType {const ReviewCommentSubjectType._(this.value);
 
 factory ReviewCommentSubjectType.fromJson(String json) { return switch (json) {
   'line' => line,
@@ -79,7 +79,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ReviewCommentSubjectType($value)'; } 
  }
 /// Legacy Review Comment
-final class ReviewComment {const ReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, required this.position, required this.originalPosition, required this.commitId, required this.originalCommitId, this.inReplyToId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.bodyText, this.bodyHtml, this.reactions, this.side = ReviewCommentSide.right, this.startSide = ReviewCommentStartSide.right, this.line, this.originalLine, this.startLine, this.originalStartLine, this.subjectType, });
+@immutable final class ReviewComment {const ReviewComment({required this.url, required this.pullRequestReviewId, required this.id, required this.nodeId, required this.diffHunk, required this.path, required this.position, required this.originalPosition, required this.commitId, required this.originalCommitId, required this.user, required this.body, required this.createdAt, required this.updatedAt, required this.htmlUrl, required this.pullRequestUrl, required this.authorAssociation, required this.links, this.inReplyToId, this.bodyText, this.bodyHtml, this.reactions, this.side = ReviewCommentSide.right, this.startSide = ReviewCommentStartSide.right, this.line, this.originalLine, this.startLine, this.originalStartLine, this.subjectType, });
 
 factory ReviewComment.fromJson(Map<String, dynamic> json) { return ReviewComment(
   url: Uri.parse(json['url'] as String),

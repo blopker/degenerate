@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_meta_m2m10012b_request_variant2_requests.dart';final class WorkersAiPostRunCfMetaM2m10012bRequestVariant2 {const WorkersAiPostRunCfMetaM2m10012bRequestVariant2({required this.requests});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_meta_m2m10012b_request_variant2_requests.dart';@immutable final class WorkersAiPostRunCfMetaM2m10012bRequestVariant2 {const WorkersAiPostRunCfMetaM2m10012bRequestVariant2({required this.requests});
 
 factory WorkersAiPostRunCfMetaM2m10012bRequestVariant2.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaM2m10012bRequestVariant2(
   requests: (json['requests'] as List<dynamic>).map((e) => WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests.fromJson(e as Map<String, dynamic>)).toList(),

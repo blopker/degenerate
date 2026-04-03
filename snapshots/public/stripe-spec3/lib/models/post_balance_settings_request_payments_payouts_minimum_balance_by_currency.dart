@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_balance_settings_request_payments_payouts_minimum_balance_by_currency_variant1_value.dart';final class PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2 {const PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_balance_settings_request_payments_payouts_minimum_balance_by_currency_variant1_value.dart';@immutable final class PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2 {const PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2._(this.value);
 
 factory PostBalanceSettingsRequestPaymentsPayoutsMinimumBalanceByCurrencyVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_resource_eu_bank_transfer.dart';import 'customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_resource_gb_bank_transfer.dart';import 'customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_resource_jp_bank_transfer.dart';import 'customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_resource_us_bank_transfer.dart';/// The funding method type used to fund the customer balance. Permitted values include: `eu_bank_transfer`, `gb_bank_transfer`, `jp_bank_transfer`, `mx_bank_transfer`, or `us_bank_transfer`.
-final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_resource_eu_bank_transfer.dart';import 'customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_resource_gb_bank_transfer.dart';import 'customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_resource_jp_bank_transfer.dart';import 'customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_resource_us_bank_transfer.dart';/// The funding method type used to fund the customer balance. Permitted values include: `eu_bank_transfer`, `gb_bank_transfer`, `jp_bank_transfer`, `mx_bank_transfer`, or `us_bank_transfer`.
+@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType._(this.value);
 
 factory CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType.fromJson(String json) { return switch (json) {
   'eu_bank_transfer' => euBankTransfer,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType($value)'; } 
  }
 /// 
-final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer({this.euBankTransfer, this.gbBankTransfer, this.jpBankTransfer, this.reference, required this.type, this.usBankTransfer, });
+@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer({required this.type, this.euBankTransfer, this.gbBankTransfer, this.jpBankTransfer, this.reference, this.usBankTransfer, });
 
 factory CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer(
   euBankTransfer: json['eu_bank_transfer'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,

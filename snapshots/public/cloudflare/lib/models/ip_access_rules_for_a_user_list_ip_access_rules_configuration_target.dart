@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the target to search in existing rules.
-final class IpAccessRulesForAUserListIpAccessRulesConfigurationTarget {const IpAccessRulesForAUserListIpAccessRulesConfigurationTarget._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the target to search in existing rules.
+@immutable final class IpAccessRulesForAUserListIpAccessRulesConfigurationTarget {const IpAccessRulesForAUserListIpAccessRulesConfigurationTarget._(this.value);
 
 factory IpAccessRulesForAUserListIpAccessRulesConfigurationTarget.fromJson(String json) { return switch (json) {
   'ip' => ip,

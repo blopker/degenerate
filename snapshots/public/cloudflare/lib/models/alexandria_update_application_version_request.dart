@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AlexandriaUpdateApplicationVersionRequest {const AlexandriaUpdateApplicationVersionRequest({this.hostnames, this.ipSubnets, this.portProtocols, this.supportDomains, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AlexandriaUpdateApplicationVersionRequest {const AlexandriaUpdateApplicationVersionRequest({this.hostnames, this.ipSubnets, this.portProtocols, this.supportDomains, });
 
 factory AlexandriaUpdateApplicationVersionRequest.fromJson(Map<String, dynamic> json) { return AlexandriaUpdateApplicationVersionRequest(
   hostnames: (json['hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'artifact_workflow_run.dart';/// An artifact
-final class Artifact {const Artifact({required this.id, required this.nodeId, required this.name, required this.sizeInBytes, required this.url, required this.archiveDownloadUrl, required this.expired, required this.createdAt, required this.expiresAt, required this.updatedAt, this.digest, this.workflowRun, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'artifact_workflow_run.dart';/// An artifact
+@immutable final class Artifact {const Artifact({required this.id, required this.nodeId, required this.name, required this.sizeInBytes, required this.url, required this.archiveDownloadUrl, required this.expired, required this.createdAt, required this.expiresAt, required this.updatedAt, this.digest, this.workflowRun, });
 
 factory Artifact.fromJson(Map<String, dynamic> json) { return Artifact(
   id: (json['id'] as num).toInt(),

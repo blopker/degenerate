@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessEmptyResponse {const AccessEmptyResponse({this.result, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessEmptyResponse {const AccessEmptyResponse({this.result, this.success, });
 
 factory AccessEmptyResponse.fromJson(Map<String, dynamic> json) { return AccessEmptyResponse(
   result: json['result'] as bool?,

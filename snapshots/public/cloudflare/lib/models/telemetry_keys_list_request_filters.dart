@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TelemetryKeysListRequestFiltersOperation {const TelemetryKeysListRequestFiltersOperation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryKeysListRequestFiltersOperation {const TelemetryKeysListRequestFiltersOperation._(this.value);
 
 factory TelemetryKeysListRequestFiltersOperation.fromJson(String json) { return switch (json) {
   'includes' => includes,
@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TelemetryKeysListRequestFiltersOperation($value)'; } 
  }
-final class TelemetryKeysListRequestFiltersType {const TelemetryKeysListRequestFiltersType._(this.value);
+@immutable final class TelemetryKeysListRequestFiltersType {const TelemetryKeysListRequestFiltersType._(this.value);
 
 factory TelemetryKeysListRequestFiltersType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -129,7 +129,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TelemetryKeysListRequestFiltersType($value)'; } 
  }
-final class TelemetryKeysListRequestFilters {const TelemetryKeysListRequestFilters({required this.key, required this.operation, required this.type, this.value, });
+@immutable final class TelemetryKeysListRequestFilters {const TelemetryKeysListRequestFilters({required this.key, required this.operation, required this.type, this.value, });
 
 factory TelemetryKeysListRequestFilters.fromJson(Map<String, dynamic> json) { return TelemetryKeysListRequestFilters(
   key: json['key'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecretScanningGetScanHistoryResponse503 {const SecretScanningGetScanHistoryResponse503({this.code, this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretScanningGetScanHistoryResponse503 {const SecretScanningGetScanHistoryResponse503({this.code, this.message, this.documentationUrl, });
 
 factory SecretScanningGetScanHistoryResponse503.fromJson(Map<String, dynamic> json) { return SecretScanningGetScanHistoryResponse503(
   code: json['code'] as String?,

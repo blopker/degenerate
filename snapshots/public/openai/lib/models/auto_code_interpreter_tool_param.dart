@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto_code_interpreter_tool_param_network_policy.dart';import 'container_memory_limit.dart';/// Always `auto`.
-final class AutoCodeInterpreterToolParamType {const AutoCodeInterpreterToolParamType._(this.value);
+@immutable final class AutoCodeInterpreterToolParamType {const AutoCodeInterpreterToolParamType._(this.value);
 
 factory AutoCodeInterpreterToolParamType.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AutoCodeInterpreterToolParamType($value)'; } 
  }
 /// Configuration for a code interpreter container. Optionally specify the IDs of the files to run the code on.
-final class AutoCodeInterpreterToolParam {const AutoCodeInterpreterToolParam({this.type = AutoCodeInterpreterToolParamType.auto, this.fileIds, this.memoryLimit, this.networkPolicy, });
+@immutable final class AutoCodeInterpreterToolParam {const AutoCodeInterpreterToolParam({this.type = AutoCodeInterpreterToolParamType.auto, this.fileIds, this.memoryLimit, this.networkPolicy, });
 
 factory AutoCodeInterpreterToolParam.fromJson(Map<String, dynamic> json) { return AutoCodeInterpreterToolParam(
   type: AutoCodeInterpreterToolParamType.fromJson(json['type'] as String),

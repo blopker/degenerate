@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_person_additional_tos_acceptances_account_user_agent.dart';final class PostTokensRequestPersonAdditionalTosAcceptancesAccount {const PostTokensRequestPersonAdditionalTosAcceptancesAccount({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_person_additional_tos_acceptances_account_user_agent.dart';@immutable final class PostTokensRequestPersonAdditionalTosAcceptancesAccount {const PostTokensRequestPersonAdditionalTosAcceptancesAccount({this.date, this.ip, this.userAgent, });
 
 factory PostTokensRequestPersonAdditionalTosAcceptancesAccount.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonAdditionalTosAcceptancesAccount(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

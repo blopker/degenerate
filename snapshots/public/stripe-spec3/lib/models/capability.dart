@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'account_capability_future_requirements.dart';import 'account_capability_requirements.dart';import 'capability_account.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class CapabilityObject {const CapabilityObject._(this.value);
+@immutable final class CapabilityObject {const CapabilityObject._(this.value);
 
 factory CapabilityObject.fromJson(String json) { return switch (json) {
   'capability' => capability,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CapabilityObject($value)'; } 
  }
 /// The status of the capability.
-final class CapabilityStatus {const CapabilityStatus._(this.value);
+@immutable final class CapabilityStatus {const CapabilityStatus._(this.value);
 
 factory CapabilityStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 /// This is an object representing a capability for a Stripe account.
 /// 
 /// Related guide: [Account capabilities](https://docs.stripe.com/connect/account-capabilities)
-final class Capability {const Capability({required this.account, this.futureRequirements, required this.id, required this.object, required this.requested, this.requestedAt, this.requirements, required this.status, });
+@immutable final class Capability {const Capability({required this.account, required this.id, required this.object, required this.requested, required this.status, this.futureRequirements, this.requestedAt, this.requirements, });
 
 factory Capability.fromJson(Map<String, dynamic> json) { return Capability(
   account: OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),

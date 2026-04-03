@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_identifier.dart';final class WorkersTail {const WorkersTail({required this.expiresAt, required this.id, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_identifier.dart';@immutable final class WorkersTail {const WorkersTail({required this.expiresAt, required this.id, required this.url, });
 
 factory WorkersTail.fromJson(Map<String, dynamic> json) { return WorkersTail(
   expiresAt: json['expires_at'] as String,

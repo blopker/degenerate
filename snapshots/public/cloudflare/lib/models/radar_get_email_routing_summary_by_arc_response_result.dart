@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_email_routing_summary_by_arc_response_result_meta.dart';import 'radar_get_email_routing_summary_by_arc_response_result_summary0.dart';final class RadarGetEmailRoutingSummaryByArcResponseResult {const RadarGetEmailRoutingSummaryByArcResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_summary_by_arc_response_result_meta.dart';import 'radar_get_email_routing_summary_by_arc_response_result_summary0.dart';@immutable final class RadarGetEmailRoutingSummaryByArcResponseResult {const RadarGetEmailRoutingSummaryByArcResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetEmailRoutingSummaryByArcResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByArcResponseResult(
   meta: RadarGetEmailRoutingSummaryByArcResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

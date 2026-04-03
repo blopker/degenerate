@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_create_scan_bulk_response_options.dart';/// Submitted visibility status.
-final class UrlscannerCreateScanBulkResponseVisibility {const UrlscannerCreateScanBulkResponseVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_create_scan_bulk_response_options.dart';/// Submitted visibility status.
+@immutable final class UrlscannerCreateScanBulkResponseVisibility {const UrlscannerCreateScanBulkResponseVisibility._(this.value);
 
 factory UrlscannerCreateScanBulkResponseVisibility.fromJson(String json) { return switch (json) {
   'public' => public,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UrlscannerCreateScanBulkResponseVisibility($value)'; } 
  }
-final class UrlscannerCreateScanBulkResponse {const UrlscannerCreateScanBulkResponse({required this.api, this.options, required this.result, required this.url, required this.uuid, required this.visibility, });
+@immutable final class UrlscannerCreateScanBulkResponse {const UrlscannerCreateScanBulkResponse({required this.api, required this.result, required this.url, required this.uuid, required this.visibility, this.options, });
 
 factory UrlscannerCreateScanBulkResponse.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanBulkResponse(
   api: json['api'] as String,

@@ -21,7 +21,7 @@ if (page != null) {
 }
 if (tokenConfiguration != null) {
 for (final item in tokenConfiguration) {
-  queryParametersList.add(ApiQueryParameter(name: 'token_configuration', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'token_configuration', value: item.toJson()));
 }
 }
 if (action != null) {
@@ -150,7 +150,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -221,7 +221,7 @@ return execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/token_validation/rules/preview`
-Future<ApiResult<TokenValidationRulesPreviewResponseResult, Never>> tokenValidationRulesPreview({required ShieldIdentifier zoneId, int? perPage, int? page, List<ShieldSelectorOperationState>? state, List<ShieldHost>? host, List<ShieldHost>? hostname, List<ShieldMethod>? method, List<ShieldEndpoint>? endpoint, required ShieldSelector body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TokenValidationRulesPreviewResponseResult, Never>> tokenValidationRulesPreview({required ShieldIdentifier zoneId, required ShieldSelector body, int? perPage, int? page, List<ShieldSelectorOperationState>? state, List<ShieldHost>? host, List<ShieldHost>? hostname, List<ShieldMethod>? method, List<ShieldEndpoint>? endpoint, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -231,27 +231,27 @@ if (page != null) {
 }
 if (state != null) {
 for (final item in state) {
-  queryParametersList.add(ApiQueryParameter(name: 'state', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'state', value: item.toJson()));
 }
 }
 if (host != null) {
 for (final item in host) {
-  queryParametersList.add(ApiQueryParameter(name: 'host', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'host', value: item.toJson()));
 }
 }
 if (hostname != null) {
 for (final item in hostname) {
-  queryParametersList.add(ApiQueryParameter(name: 'hostname', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'hostname', value: item.toJson()));
 }
 }
 if (method != null) {
 for (final item in method) {
-  queryParametersList.add(ApiQueryParameter(name: 'method', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'method', value: item.toJson()));
 }
 }
 if (endpoint != null) {
 for (final item in endpoint) {
-  queryParametersList.add(ApiQueryParameter(name: 'endpoint', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'endpoint', value: item.toJson()));
 }
 }
 

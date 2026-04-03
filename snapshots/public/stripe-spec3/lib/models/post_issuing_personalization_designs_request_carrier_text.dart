@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_personalization_designs_request_carrier_text_footer_body.dart';import 'post_issuing_personalization_designs_request_carrier_text_footer_title.dart';import 'post_issuing_personalization_designs_request_carrier_text_header_body.dart';import 'post_issuing_personalization_designs_request_carrier_text_header_title.dart';/// Hash containing carrier text, for use with physical bundles that support carrier text.
-final class PostIssuingPersonalizationDesignsRequestCarrierText {const PostIssuingPersonalizationDesignsRequestCarrierText({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
+@immutable final class PostIssuingPersonalizationDesignsRequestCarrierText {const PostIssuingPersonalizationDesignsRequestCarrierText({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
 
 factory PostIssuingPersonalizationDesignsRequestCarrierText.fromJson(Map<String, dynamic> json) { return PostIssuingPersonalizationDesignsRequestCarrierText(
   footerBody: json['footer_body'] != null ? OneOf2.parse(json['footer_body'], fromA: (v) => v as String, fromB: (v) => PostIssuingPersonalizationDesignsRequestCarrierTextFooterBodyVariant2.fromJson(v as String),) : null,

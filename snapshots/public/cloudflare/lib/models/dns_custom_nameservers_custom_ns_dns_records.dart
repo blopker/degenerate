@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// DNS record type.
-final class DnsCustomNameserversCustomNsDnsRecordsType {const DnsCustomNameserversCustomNsDnsRecordsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// DNS record type.
+@immutable final class DnsCustomNameserversCustomNsDnsRecordsType {const DnsCustomNameserversCustomNsDnsRecordsType._(this.value);
 
 factory DnsCustomNameserversCustomNsDnsRecordsType.fromJson(String json) { return switch (json) {
   'A' => a,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DnsCustomNameserversCustomNsDnsRecordsType($value)'; } 
  }
-final class DnsCustomNameserversCustomNsDnsRecords {const DnsCustomNameserversCustomNsDnsRecords({this.type, this.value, });
+@immutable final class DnsCustomNameserversCustomNsDnsRecords {const DnsCustomNameserversCustomNsDnsRecords({this.type, this.value, });
 
 factory DnsCustomNameserversCustomNsDnsRecords.fromJson(Map<String, dynamic> json) { return DnsCustomNameserversCustomNsDnsRecords(
   type: json['type'] != null ? DnsCustomNameserversCustomNsDnsRecordsType.fromJson(json['type'] as String) : null,

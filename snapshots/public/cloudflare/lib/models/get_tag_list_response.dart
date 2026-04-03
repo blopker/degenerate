@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_tag_list_response_pagination.dart';import 'get_tag_list_response_tags.dart';final class GetTagListResponse {const GetTagListResponse({required this.pagination, required this.tags, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_tag_list_response_pagination.dart';import 'get_tag_list_response_tags.dart';@immutable final class GetTagListResponse {const GetTagListResponse({required this.pagination, required this.tags, });
 
 factory GetTagListResponse.fromJson(Map<String, dynamic> json) { return GetTagListResponse(
   pagination: GetTagListResponsePagination.fromJson(json['pagination'] as Map<String, dynamic>),

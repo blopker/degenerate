@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_package_updated_package.dart';final class WebhookPackageUpdatedAction {const WebhookPackageUpdatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_package_updated_package.dart';@immutable final class WebhookPackageUpdatedAction {const WebhookPackageUpdatedAction._(this.value);
 
 factory WebhookPackageUpdatedAction.fromJson(String json) { return switch (json) {
   'updated' => updated,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPackageUpdatedAction($value)'; } 
  }
-final class WebhookPackageUpdated {const WebhookPackageUpdated({required this.action, this.enterprise, this.installation, this.organization, required this.package, required this.repository, required this.sender, });
+@immutable final class WebhookPackageUpdated {const WebhookPackageUpdated({required this.action, required this.package, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPackageUpdated.fromJson(Map<String, dynamic> json) { return WebhookPackageUpdated(
   action: WebhookPackageUpdatedAction.fromJson(json['action'] as String),

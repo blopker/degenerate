@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the release.
-final class ReactionsCreateForReleaseRequestContent {const ReactionsCreateForReleaseRequestContent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the release.
+@immutable final class ReactionsCreateForReleaseRequestContent {const ReactionsCreateForReleaseRequestContent._(this.value);
 
 factory ReactionsCreateForReleaseRequestContent.fromJson(String json) { return switch (json) {
   '+1' => plus1,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReactionsCreateForReleaseRequestContent($value)'; } 
  }
-final class ReactionsCreateForReleaseRequest {const ReactionsCreateForReleaseRequest({required this.content});
+@immutable final class ReactionsCreateForReleaseRequest {const ReactionsCreateForReleaseRequest({required this.content});
 
 factory ReactionsCreateForReleaseRequest.fromJson(Map<String, dynamic> json) { return ReactionsCreateForReleaseRequest(
   content: ReactionsCreateForReleaseRequestContent.fromJson(json['content'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FunctionCallItemStatus {const FunctionCallItemStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FunctionCallItemStatus {const FunctionCallItemStatus._(this.value);
 
 factory FunctionCallItemStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Set the order of the results
-final class WorkersObservabilityQueryParametersOrderByOrder {const WorkersObservabilityQueryParametersOrderByOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set the order of the results
+@immutable final class WorkersObservabilityQueryParametersOrderByOrder {const WorkersObservabilityQueryParametersOrderByOrder._(this.value);
 
 factory WorkersObservabilityQueryParametersOrderByOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkersObservabilityQueryParametersOrderByOrder($value)'; } 
  }
 /// Configure the order of the results returned by the query.
-final class WorkersObservabilityQueryParametersOrderBy {const WorkersObservabilityQueryParametersOrderBy({this.order, required this.value, });
+@immutable final class WorkersObservabilityQueryParametersOrderBy {const WorkersObservabilityQueryParametersOrderBy({required this.value, this.order, });
 
 factory WorkersObservabilityQueryParametersOrderBy.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryParametersOrderBy(
   order: json['order'] != null ? WorkersObservabilityQueryParametersOrderByOrder.fromJson(json['order'] as String) : null,

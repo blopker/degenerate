@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_treasury_transactions_status_transitions_posted_at.dart';import 'range_query_specs60.dart';final class GetTreasuryTransactionsStatusTransitions {const GetTreasuryTransactionsStatusTransitions({this.postedAt});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_treasury_transactions_status_transitions_posted_at.dart';import 'range_query_specs60.dart';@immutable final class GetTreasuryTransactionsStatusTransitions {const GetTreasuryTransactionsStatusTransitions({this.postedAt});
 
 factory GetTreasuryTransactionsStatusTransitions.fromJson(Map<String, dynamic> json) { return GetTreasuryTransactionsStatusTransitions(
   postedAt: json['posted_at'] != null ? OneOf2.parse(json['posted_at'], fromA: (v) => RangeQuerySpecs60.fromJson(v as Map<String, dynamic>), fromB: (v) => (v as num).toInt(),) : null,

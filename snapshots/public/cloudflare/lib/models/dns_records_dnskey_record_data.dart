@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Components of a DNSKEY record.
-final class DnsRecordsDnskeyRecordData {const DnsRecordsDnskeyRecordData({this.algorithm, this.flags, this.protocol, this.publicKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a DNSKEY record.
+@immutable final class DnsRecordsDnskeyRecordData {const DnsRecordsDnskeyRecordData({this.algorithm, this.flags, this.protocol, this.publicKey, });
 
 factory DnsRecordsDnskeyRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsDnskeyRecordData(
   algorithm: json['algorithm'] != null ? (json['algorithm'] as num).toDouble() : null,

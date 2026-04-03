@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'name_collection_params_business.dart';import 'name_collection_params_individual.dart';final class NameCollectionParams {const NameCollectionParams({this.business, this.individual, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'name_collection_params_business.dart';import 'name_collection_params_individual.dart';@immutable final class NameCollectionParams {const NameCollectionParams({this.business, this.individual, });
 
 factory NameCollectionParams.fromJson(Map<String, dynamic> json) { return NameCollectionParams(
   business: json['business'] != null ? NameCollectionParamsBusiness.fromJson(json['business'] as Map<String, dynamic>) : null,

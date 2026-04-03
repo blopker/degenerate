@@ -14,7 +14,7 @@ factory RumSnippet.fromJson(String json) => RumSnippet(json);
 String toJson() => value;
 
 }
-final class RumSite {const RumSite({this.autoInstall, this.created, this.rules, this.ruleset, this.siteTag, this.siteToken, this.snippet, });
+@immutable final class RumSite {const RumSite({this.autoInstall, this.created, this.rules, this.ruleset, this.siteTag, this.siteToken, this.snippet, });
 
 factory RumSite.fromJson(Map<String, dynamic> json) { return RumSite(
   autoInstall: json['auto_install'] != null ? RumAutoInstall.fromJson(json['auto_install'] as bool) : null,

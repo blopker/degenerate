@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The fit property describes how the width and height dimensions should be interpreted.
-final class ImagesImageVariantFit {const ImagesImageVariantFit._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The fit property describes how the width and height dimensions should be interpreted.
+@immutable final class ImagesImageVariantFit {const ImagesImageVariantFit._(this.value);
 
 factory ImagesImageVariantFit.fromJson(String json) { return switch (json) {
   'scale-down' => scaleDown,
@@ -42,7 +42,7 @@ num toJson() => value;
 
 }
 /// What EXIF data should be preserved in the output image.
-final class ImagesImageVariantSchemasMetadata {const ImagesImageVariantSchemasMetadata._(this.value);
+@immutable final class ImagesImageVariantSchemasMetadata {const ImagesImageVariantSchemasMetadata._(this.value);
 
 factory ImagesImageVariantSchemasMetadata.fromJson(String json) { return switch (json) {
   'keep' => keep,
@@ -77,7 +77,7 @@ num toJson() => value;
 
 }
 /// Allows you to define image resizing sizes for different use cases.
-final class ImagesImageVariantOptions {const ImagesImageVariantOptions({required this.fit, required this.height, required this.metadata, required this.width, });
+@immutable final class ImagesImageVariantOptions {const ImagesImageVariantOptions({required this.fit, required this.height, required this.metadata, required this.width, });
 
 factory ImagesImageVariantOptions.fromJson(Map<String, dynamic> json) { return ImagesImageVariantOptions(
   fit: ImagesImageVariantFit.fromJson(json['fit'] as String),

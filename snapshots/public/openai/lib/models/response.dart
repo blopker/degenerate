@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'conversation2.dart';import 'input_item.dart';import 'output_item.dart';import 'response_error.dart';import 'response_incomplete_details.dart';import 'response_instructions.dart';import 'response_usage.dart';import 'service_tier.dart';/// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
 /// 
-final class ResponsePromptCacheRetention {const ResponsePromptCacheRetention._(this.value);
+@immutable final class ResponsePromptCacheRetention {const ResponsePromptCacheRetention._(this.value);
 
 factory ResponsePromptCacheRetention.fromJson(String json) { return switch (json) {
   'in-memory' => inMemory,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The object type of this resource - always set to `response`.
 /// 
-final class ResponseObject {const ResponseObject._(this.value);
+@immutable final class ResponseObject {const ResponseObject._(this.value);
 
 factory ResponseObject.fromJson(String json) { return switch (json) {
   'response' => response,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The status of the response generation. One of `completed`, `failed`,
 /// `in_progress`, `cancelled`, `queued`, or `incomplete`.
 /// 
-final class ResponseStatus {const ResponseStatus._(this.value);
+@immutable final class ResponseStatus {const ResponseStatus._(this.value);
 
 factory ResponseStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -88,7 +88,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ResponseStatus($value)'; } 
  }
-final class Response {const Response({required this.metadata, this.topLogprobs, required this.temperature, required this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, required this.id, required this.object, this.status, required this.createdAt, this.completedAt, required this.error, required this.incompleteDetails, required this.output, required this.instructions, this.outputText, this.usage, this.parallelToolCalls = true, this.conversation, });
+@immutable final class Response {const Response({required this.metadata, required this.temperature, required this.topP, required this.id, required this.object, required this.createdAt, required this.error, required this.incompleteDetails, required this.output, required this.instructions, this.topLogprobs, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, this.status, this.completedAt, this.outputText, this.usage, this.parallelToolCalls = true, this.conversation, });
 
 factory Response.fromJson(Map<String, dynamic> json) { return Response(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

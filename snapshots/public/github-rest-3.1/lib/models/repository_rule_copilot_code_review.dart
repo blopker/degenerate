@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_copilot_code_review_parameters.dart';final class RepositoryRuleCopilotCodeReviewType {const RepositoryRuleCopilotCodeReviewType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_copilot_code_review_parameters.dart';@immutable final class RepositoryRuleCopilotCodeReviewType {const RepositoryRuleCopilotCodeReviewType._(this.value);
 
 factory RepositoryRuleCopilotCodeReviewType.fromJson(String json) { return switch (json) {
   'copilot_code_review' => copilotCodeReview,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleCopilotCodeReviewType($value)'; } 
  }
 /// Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.
-final class RepositoryRuleCopilotCodeReview {const RepositoryRuleCopilotCodeReview({required this.type, this.parameters, });
+@immutable final class RepositoryRuleCopilotCodeReview {const RepositoryRuleCopilotCodeReview({required this.type, this.parameters, });
 
 factory RepositoryRuleCopilotCodeReview.fromJson(Map<String, dynamic> json) { return RepositoryRuleCopilotCodeReview(
   type: RepositoryRuleCopilotCodeReviewType.fromJson(json['type'] as String),

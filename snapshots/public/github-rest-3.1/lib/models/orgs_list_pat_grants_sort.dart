@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrgsListPatGrantsSort {const OrgsListPatGrantsSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsListPatGrantsSort {const OrgsListPatGrantsSort._(this.value);
 
 factory OrgsListPatGrantsSort.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,

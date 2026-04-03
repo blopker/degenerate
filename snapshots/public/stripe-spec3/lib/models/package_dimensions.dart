@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PackageDimensions {const PackageDimensions({required this.height, required this.length, required this.weight, required this.width, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PackageDimensions {const PackageDimensions({required this.height, required this.length, required this.weight, required this.width, });
 
 factory PackageDimensions.fromJson(Map<String, dynamic> json) { return PackageDimensions(
   height: (json['height'] as num).toDouble(),

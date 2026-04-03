@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_enable_sippy_aws_destination.dart';import 'r2_enable_sippy_aws_source.dart';final class R2EnableSippyAws {const R2EnableSippyAws({this.destination, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_enable_sippy_aws_destination.dart';import 'r2_enable_sippy_aws_source.dart';@immutable final class R2EnableSippyAws {const R2EnableSippyAws({this.destination, this.source, });
 
 factory R2EnableSippyAws.fromJson(Map<String, dynamic> json) { return R2EnableSippyAws(
   destination: json['destination'] != null ? R2EnableSippyAwsDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,

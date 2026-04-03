@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Set secrets for Dependabot.
-final class DependabotSecret {const DependabotSecret({required this.name, required this.createdAt, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set secrets for Dependabot.
+@immutable final class DependabotSecret {const DependabotSecret({required this.name, required this.createdAt, required this.updatedAt, });
 
 factory DependabotSecret.fromJson(Map<String, dynamic> json) { return DependabotSecret(
   name: json['name'] as String,

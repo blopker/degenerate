@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zaraz_zaraz_config_return.dart';/// Configuration record correspoding to an ID provided in query params
-final class ZarazZarazConfigHistoryResponseResultValue {const ZarazZarazConfigHistoryResponseResultValue({required this.createdAt, required this.id, required this.updatedAt, required this.userId, required this.config, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_zaraz_config_return.dart';/// Configuration record correspoding to an ID provided in query params
+@immutable final class ZarazZarazConfigHistoryResponseResultValue {const ZarazZarazConfigHistoryResponseResultValue({required this.createdAt, required this.id, required this.updatedAt, required this.userId, required this.config, });
 
 factory ZarazZarazConfigHistoryResponseResultValue.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigHistoryResponseResultValue(
   createdAt: DateTime.parse(json['createdAt'] as String),

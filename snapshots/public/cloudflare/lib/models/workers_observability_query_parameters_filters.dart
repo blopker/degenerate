@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObservabilityQueryParametersFiltersOperation {const WorkersObservabilityQueryParametersFiltersOperation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryParametersFiltersOperation {const WorkersObservabilityQueryParametersFiltersOperation._(this.value);
 
 factory WorkersObservabilityQueryParametersFiltersOperation.fromJson(String json) { return switch (json) {
   'includes' => includes,
@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersObservabilityQueryParametersFiltersOperation($value)'; } 
  }
-final class WorkersObservabilityQueryParametersFiltersType {const WorkersObservabilityQueryParametersFiltersType._(this.value);
+@immutable final class WorkersObservabilityQueryParametersFiltersType {const WorkersObservabilityQueryParametersFiltersType._(this.value);
 
 factory WorkersObservabilityQueryParametersFiltersType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -129,7 +129,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersObservabilityQueryParametersFiltersType($value)'; } 
  }
-final class WorkersObservabilityQueryParametersFilters {const WorkersObservabilityQueryParametersFilters({required this.key, required this.operation, required this.type, this.value, });
+@immutable final class WorkersObservabilityQueryParametersFilters {const WorkersObservabilityQueryParametersFilters({required this.key, required this.operation, required this.type, this.value, });
 
 factory WorkersObservabilityQueryParametersFilters.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryParametersFilters(
   key: json['key'] as String,

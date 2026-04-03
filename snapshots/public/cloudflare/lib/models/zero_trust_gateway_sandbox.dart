@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify the action to take when the system cannot scan the file.
-final class ZeroTrustGatewaySandboxFallbackAction {const ZeroTrustGatewaySandboxFallbackAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the action to take when the system cannot scan the file.
+@immutable final class ZeroTrustGatewaySandboxFallbackAction {const ZeroTrustGatewaySandboxFallbackAction._(this.value);
 
 factory ZeroTrustGatewaySandboxFallbackAction.fromJson(String json) { return switch (json) {
   'allow' => allow,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewaySandboxFallbackAction($value)'; } 
  }
 /// Specify whether to enable the sandbox.
-final class ZeroTrustGatewaySandbox {const ZeroTrustGatewaySandbox({this.enabled, this.fallbackAction, });
+@immutable final class ZeroTrustGatewaySandbox {const ZeroTrustGatewaySandbox({this.enabled, this.fallbackAction, });
 
 factory ZeroTrustGatewaySandbox.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewaySandbox(
   enabled: json['enabled'] as bool?,

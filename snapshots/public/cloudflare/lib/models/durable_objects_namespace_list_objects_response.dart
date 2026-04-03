@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'durable_objects_namespace_list_objects_response_result_info.dart';import 'workers_object.dart';final class DurableObjectsNamespaceListObjectsResponse {const DurableObjectsNamespaceListObjectsResponse({this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'durable_objects_namespace_list_objects_response_result_info.dart';import 'workers_object.dart';@immutable final class DurableObjectsNamespaceListObjectsResponse {const DurableObjectsNamespaceListObjectsResponse({this.result, this.resultInfo, });
 
 factory DurableObjectsNamespaceListObjectsResponse.fromJson(Map<String, dynamic> json) { return DurableObjectsNamespaceListObjectsResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => WorkersObject.fromJson(e as Map<String, dynamic>)).toList(),

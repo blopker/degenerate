@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkerVersionsUploadVersionRequestMetadataAnnotations {const WorkerVersionsUploadVersionRequestMetadataAnnotations({this.workersAlias, this.workersMessage, this.workersTag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkerVersionsUploadVersionRequestMetadataAnnotations {const WorkerVersionsUploadVersionRequestMetadataAnnotations({this.workersAlias, this.workersMessage, this.workersTag, });
 
 factory WorkerVersionsUploadVersionRequestMetadataAnnotations.fromJson(Map<String, dynamic> json) { return WorkerVersionsUploadVersionRequestMetadataAnnotations(
   workersAlias: json['workers/alias'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_queue.dart';final class ListQueueResponse {const ListQueueResponse({this.queues, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_queue.dart';@immutable final class ListQueueResponse {const ListQueueResponse({this.queues, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListQueueResponse.fromJson(Map<String, dynamic> json) { return ListQueueResponse(
   queues: (json['queues'] as List<dynamic>?)?.map((e) => AccountQueue.fromJson(e as Map<String, dynamic>)).toList(),

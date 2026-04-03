@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventDoRevertResponsePropertiesUndoBookmark {const PostEventDoRevertResponsePropertiesUndoBookmark({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventDoRevertResponsePropertiesUndoBookmark {const PostEventDoRevertResponsePropertiesUndoBookmark({required this.type});
 
 factory PostEventDoRevertResponsePropertiesUndoBookmark.fromJson(Map<String, dynamic> json) { return PostEventDoRevertResponsePropertiesUndoBookmark(
   type: json['type'] as String,

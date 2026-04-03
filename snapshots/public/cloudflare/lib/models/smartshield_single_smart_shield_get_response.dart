@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'smartshield_smart_shield_settings_get_response.dart';final class SmartshieldSingleSmartShieldGetResponse {const SmartshieldSingleSmartShieldGetResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_smart_shield_settings_get_response.dart';@immutable final class SmartshieldSingleSmartShieldGetResponse {const SmartshieldSingleSmartShieldGetResponse({this.result});
 
 factory SmartshieldSingleSmartShieldGetResponse.fromJson(Map<String, dynamic> json) { return SmartshieldSingleSmartShieldGetResponse(
   result: json['result'] != null ? SmartshieldSmartShieldSettingsGetResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

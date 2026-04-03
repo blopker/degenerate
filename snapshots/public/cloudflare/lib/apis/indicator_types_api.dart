@@ -15,7 +15,7 @@ Future<ApiResult<GetIndicatorTypesListResponse, GetIndicatorTypesListResponse400
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item));
 }
 }
 

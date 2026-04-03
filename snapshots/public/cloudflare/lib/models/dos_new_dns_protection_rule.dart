@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DosNewDnsProtectionRule {const DosNewDnsProtectionRule({required this.burstSensitivity, required this.mode, required this.name, required this.profileSensitivity, required this.rateSensitivity, required this.scope, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosNewDnsProtectionRule {const DosNewDnsProtectionRule({required this.burstSensitivity, required this.mode, required this.name, required this.profileSensitivity, required this.rateSensitivity, required this.scope, });
 
 factory DosNewDnsProtectionRule.fromJson(Map<String, dynamic> json) { return DosNewDnsProtectionRule(
   burstSensitivity: json['burst_sensitivity'] as String,

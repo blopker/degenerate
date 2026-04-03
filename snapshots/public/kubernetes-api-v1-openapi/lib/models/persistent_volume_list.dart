@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'persistent_volume.dart';/// PersistentVolumeList is a list of PersistentVolume items.
-final class PersistentVolumeList {const PersistentVolumeList({this.apiVersion, required this.items, this.kind, this.metadata, });
+@immutable final class PersistentVolumeList {const PersistentVolumeList({required this.items, this.apiVersion, this.kind, this.metadata, });
 
 factory PersistentVolumeList.fromJson(Map<String, dynamic> json) { return PersistentVolumeList(
   apiVersion: json['apiVersion'] as String?,

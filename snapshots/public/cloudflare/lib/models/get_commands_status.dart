@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCommandsStatus {const GetCommandsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCommandsStatus {const GetCommandsStatus._(this.value);
 
 factory GetCommandsStatus.fromJson(String json) { return switch (json) {
   'PENDING_EXEC' => pendingExec,

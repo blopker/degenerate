@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of identifier.
-final class RepositoryAdvisoryIdentifiersType {const RepositoryAdvisoryIdentifiersType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of identifier.
+@immutable final class RepositoryAdvisoryIdentifiersType {const RepositoryAdvisoryIdentifiersType._(this.value);
 
 factory RepositoryAdvisoryIdentifiersType.fromJson(String json) { return switch (json) {
   'CVE' => cve,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RepositoryAdvisoryIdentifiersType($value)'; } 
  }
-final class RepositoryAdvisoryIdentifiers {const RepositoryAdvisoryIdentifiers({required this.type, required this.value, });
+@immutable final class RepositoryAdvisoryIdentifiers {const RepositoryAdvisoryIdentifiers({required this.type, required this.value, });
 
 factory RepositoryAdvisoryIdentifiers.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryIdentifiers(
   type: RepositoryAdvisoryIdentifiersType.fromJson(json['type'] as String),

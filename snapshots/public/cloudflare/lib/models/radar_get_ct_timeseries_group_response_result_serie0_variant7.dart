@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant7 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant7({required this.dsa, required this.ecdsa, required this.rsa, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant7 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant7({required this.dsa, required this.ecdsa, required this.rsa, });
 
 factory RadarGetCtTimeseriesGroupResponseResultSerie0Variant7.fromJson(Map<String, dynamic> json) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant7(
   dsa: (json['DSA'] as List<dynamic>).map((e) => e as String).toList(),

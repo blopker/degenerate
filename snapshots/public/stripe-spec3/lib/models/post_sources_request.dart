@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_request_mandate.dart';import 'post_sources_request_owner.dart';import 'post_sources_request_receiver.dart';import 'post_sources_request_redirect.dart';import 'post_sources_request_source_order.dart';/// The authentication `flow` of the source to create. `flow` is one of `redirect`, `receiver`, `code_verification`, `none`. It is generally inferred unless a type supports multiple flows.
-final class PostSourcesRequestFlow {const PostSourcesRequestFlow._(this.value);
+@immutable final class PostSourcesRequestFlow {const PostSourcesRequestFlow._(this.value);
 
 factory PostSourcesRequestFlow.fromJson(String json) { return switch (json) {
   'code_verification' => codeVerification,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSourcesRequestFlow($value)'; } 
  }
-final class PostSourcesRequestUsage {const PostSourcesRequestUsage._(this.value);
+@immutable final class PostSourcesRequestUsage {const PostSourcesRequestUsage._(this.value);
 
 factory PostSourcesRequestUsage.fromJson(String json) { return switch (json) {
   'reusable' => reusable,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSourcesRequestUsage($value)'; } 
  }
-final class PostSourcesRequest {const PostSourcesRequest({this.amount, this.currency, this.customer, this.expand, this.flow, this.mandate, this.metadata, this.originalSource, this.owner, this.receiver, this.redirect, this.sourceOrder, this.statementDescriptor, this.token, this.type, this.usage, });
+@immutable final class PostSourcesRequest {const PostSourcesRequest({this.amount, this.currency, this.customer, this.expand, this.flow, this.mandate, this.metadata, this.originalSource, this.owner, this.receiver, this.redirect, this.sourceOrder, this.statementDescriptor, this.token, this.type, this.usage, });
 
 factory PostSourcesRequest.fromJson(Map<String, dynamic> json) { return PostSourcesRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InvoicePaymentMethodOptionsParam41 {const InvoicePaymentMethodOptionsParam41();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicePaymentMethodOptionsParam41 {const InvoicePaymentMethodOptionsParam41();
 
-factory InvoicePaymentMethodOptionsParam41.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam41(
-
-); }
+factory InvoicePaymentMethodOptionsParam41.fromJson(Map<String, dynamic> _) { return const InvoicePaymentMethodOptionsParam41(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-InvoicePaymentMethodOptionsParam41 copyWith() { return InvoicePaymentMethodOptionsParam41(
+InvoicePaymentMethodOptionsParam41 copyWith() { return const InvoicePaymentMethodOptionsParam41(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is InvoicePaymentMethodOptionsParam41; } 

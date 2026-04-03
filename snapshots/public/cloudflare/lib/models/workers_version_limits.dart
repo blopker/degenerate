@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Resource limits enforced at runtime.
-final class WorkersVersionLimits {const WorkersVersionLimits({required this.cpuMs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Resource limits enforced at runtime.
+@immutable final class WorkersVersionLimits {const WorkersVersionLimits({required this.cpuMs});
 
 factory WorkersVersionLimits.fromJson(Map<String, dynamic> json) { return WorkersVersionLimits(
   cpuMs: (json['cpu_ms'] as num).toInt(),

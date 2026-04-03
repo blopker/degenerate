@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'transcript_text_usage_tokens_input_token_details.dart';/// The type of the usage object. Always `tokens` for this variant.
-final class TranscriptTextUsageTokensType {const TranscriptTextUsageTokensType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcript_text_usage_tokens_input_token_details.dart';/// The type of the usage object. Always `tokens` for this variant.
+@immutable final class TranscriptTextUsageTokensType {const TranscriptTextUsageTokensType._(this.value);
 
 factory TranscriptTextUsageTokensType.fromJson(String json) { return switch (json) {
   'tokens' => tokens,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TranscriptTextUsageTokensType($value)'; } 
  }
 /// Usage statistics for models billed by token usage.
-final class TranscriptTextUsageTokens {const TranscriptTextUsageTokens({required this.type, required this.inputTokens, this.inputTokenDetails, required this.outputTokens, required this.totalTokens, });
+@immutable final class TranscriptTextUsageTokens {const TranscriptTextUsageTokens({required this.type, required this.inputTokens, required this.outputTokens, required this.totalTokens, this.inputTokenDetails, });
 
 factory TranscriptTextUsageTokens.fromJson(Map<String, dynamic> json) { return TranscriptTextUsageTokens(
   type: TranscriptTextUsageTokensType.fromJson(json['type'] as String),

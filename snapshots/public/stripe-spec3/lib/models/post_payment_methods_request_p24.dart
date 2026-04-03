@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodsRequestP24Bank {const PostPaymentMethodsRequestP24Bank._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsRequestP24Bank {const PostPaymentMethodsRequestP24Bank._(this.value);
 
 factory PostPaymentMethodsRequestP24Bank.fromJson(String json) { return switch (json) {
   'alior_bank' => aliorBank,
@@ -97,7 +97,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentMethodsRequestP24Bank($value)'; } 
  }
 /// If this is a `p24` PaymentMethod, this hash contains details about the P24 payment method.
-final class PostPaymentMethodsRequestP24 {const PostPaymentMethodsRequestP24({this.bank});
+@immutable final class PostPaymentMethodsRequestP24 {const PostPaymentMethodsRequestP24({this.bank});
 
 factory PostPaymentMethodsRequestP24.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestP24(
   bank: json['bank'] != null ? PostPaymentMethodsRequestP24Bank.fromJson(json['bank'] as String) : null,

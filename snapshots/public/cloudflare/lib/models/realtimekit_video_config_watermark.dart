@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_video_config_watermark_size.dart';/// Position of the watermark
-final class RealtimekitVideoConfigWatermarkPosition {const RealtimekitVideoConfigWatermarkPosition._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_video_config_watermark_size.dart';/// Position of the watermark
+@immutable final class RealtimekitVideoConfigWatermarkPosition {const RealtimekitVideoConfigWatermarkPosition._(this.value);
 
 factory RealtimekitVideoConfigWatermarkPosition.fromJson(String json) { return switch (json) {
   'left top' => leftTop,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitVideoConfigWatermarkPosition($value)'; } 
  }
 /// Watermark to be added to the recording
-final class RealtimekitVideoConfigWatermark {const RealtimekitVideoConfigWatermark({this.position = RealtimekitVideoConfigWatermarkPosition.leftTop, this.size, this.url, });
+@immutable final class RealtimekitVideoConfigWatermark {const RealtimekitVideoConfigWatermark({this.position = RealtimekitVideoConfigWatermarkPosition.leftTop, this.size, this.url, });
 
 factory RealtimekitVideoConfigWatermark.fromJson(Map<String, dynamic> json) { return RealtimekitVideoConfigWatermark(
   position: json.containsKey('position') ? RealtimekitVideoConfigWatermarkPosition.fromJson(json['position'] as String) : RealtimekitVideoConfigWatermarkPosition.leftTop,

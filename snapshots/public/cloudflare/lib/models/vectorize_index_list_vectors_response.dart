@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_list_item.dart';final class VectorizeIndexListVectorsResponse {const VectorizeIndexListVectorsResponse({required this.count, this.cursorExpirationTimestamp, required this.isTruncated, this.nextCursor, required this.totalCount, required this.vectors, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_list_item.dart';@immutable final class VectorizeIndexListVectorsResponse {const VectorizeIndexListVectorsResponse({required this.count, required this.isTruncated, required this.totalCount, required this.vectors, this.cursorExpirationTimestamp, this.nextCursor, });
 
 factory VectorizeIndexListVectorsResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexListVectorsResponse(
   count: (json['count'] as num).toInt(),

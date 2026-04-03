@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'conference_recording_enum_status.dart';/// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, `StartConferenceRecordingAPI`.
-final class ConferenceRecordingEnumSource {const ConferenceRecordingEnumSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'conference_recording_enum_status.dart';/// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, `StartConferenceRecordingAPI`.
+@immutable final class ConferenceRecordingEnumSource {const ConferenceRecordingEnumSource._(this.value);
 
 factory ConferenceRecordingEnumSource.fromJson(String json) { return switch (json) {
   'DialVerb' => dialVerb,
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ConferenceRecordingEnumSource($value)'; } 
  }
-final class AccountConferenceConferenceRecording {const AccountConferenceConferenceRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.priceUnit, this.status, this.channels = 0, this.source, this.errorCode, this.encryptionDetails, this.uri, });
+@immutable final class AccountConferenceConferenceRecording {const AccountConferenceConferenceRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.priceUnit, this.status, this.channels = 0, this.source, this.errorCode, this.encryptionDetails, this.uri, });
 
 factory AccountConferenceConferenceRecording.fromJson(Map<String, dynamic> json) { return AccountConferenceConferenceRecording(
   accountSid: json['account_sid'] as String?,

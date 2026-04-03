@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pod_affinity_term.dart';import 'weighted_pod_affinity_term.dart';/// Pod anti affinity is a group of inter pod anti affinity scheduling rules.
-final class PodAntiAffinity {const PodAntiAffinity({this.preferredDuringSchedulingIgnoredDuringExecution, this.requiredDuringSchedulingIgnoredDuringExecution, });
+@immutable final class PodAntiAffinity {const PodAntiAffinity({this.preferredDuringSchedulingIgnoredDuringExecution, this.requiredDuringSchedulingIgnoredDuringExecution, });
 
 factory PodAntiAffinity.fromJson(Map<String, dynamic> json) { return PodAntiAffinity(
   preferredDuringSchedulingIgnoredDuringExecution: (json['preferredDuringSchedulingIgnoredDuringExecution'] as List<dynamic>?)?.map((e) => WeightedPodAffinityTerm.fromJson(e as Map<String, dynamic>)).toList(),

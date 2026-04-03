@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class HybridSearchOptions {const HybridSearchOptions({required this.embeddingWeight, required this.textWeight, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HybridSearchOptions {const HybridSearchOptions({required this.embeddingWeight, required this.textWeight, });
 
 factory HybridSearchOptions.fromJson(Map<String, dynamic> json) { return HybridSearchOptions(
   embeddingWeight: (json['embedding_weight'] as num).toDouble(),

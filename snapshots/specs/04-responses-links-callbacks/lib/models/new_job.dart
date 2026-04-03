@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class NewJob {const NewJob({required this.name, required this.callbackUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NewJob {const NewJob({required this.name, required this.callbackUrl, });
 
 factory NewJob.fromJson(Map<String, dynamic> json) { return NewJob(
   name: json['name'] as String,

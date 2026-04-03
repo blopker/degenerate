@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AmountDetailsParamLineItemsVariant1PaymentMethodOptionsCard {const AmountDetailsParamLineItemsVariant1PaymentMethodOptionsCard({this.commodityCode});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AmountDetailsParamLineItemsVariant1PaymentMethodOptionsCard {const AmountDetailsParamLineItemsVariant1PaymentMethodOptionsCard({this.commodityCode});
 
 factory AmountDetailsParamLineItemsVariant1PaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return AmountDetailsParamLineItemsVariant1PaymentMethodOptionsCard(
   commodityCode: json['commodity_code'] as String?,

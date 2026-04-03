@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Event data payload.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event data payload.
 /// 
-final class WebhookBatchCompletedData {const WebhookBatchCompletedData({required this.id});
+@immutable final class WebhookBatchCompletedData {const WebhookBatchCompletedData({required this.id});
 
 factory WebhookBatchCompletedData.fromJson(Map<String, dynamic> json) { return WebhookBatchCompletedData(
   id: json['id'] as String,

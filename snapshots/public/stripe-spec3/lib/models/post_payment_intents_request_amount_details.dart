@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_shipping_param.dart';import 'amount_details_tax_param.dart';import 'post_payment_intents_request_amount_details_discount_amount.dart';import 'post_payment_intents_request_amount_details_line_items.dart';import 'post_payment_intents_request_amount_details_line_items_variant1.dart';import 'post_payment_intents_request_amount_details_shipping.dart';import 'post_payment_intents_request_amount_details_tax.dart';/// Provides industry-specific information about the amount.
-final class PostPaymentIntentsRequestAmountDetails {const PostPaymentIntentsRequestAmountDetails({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
+@immutable final class PostPaymentIntentsRequestAmountDetails {const PostPaymentIntentsRequestAmountDetails({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
 
 factory PostPaymentIntentsRequestAmountDetails.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestAmountDetails(
   discountAmount: json['discount_amount'] != null ? OneOf2.parse(json['discount_amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostPaymentIntentsRequestAmountDetailsDiscountAmountVariant2.fromJson(v as String),) : null,

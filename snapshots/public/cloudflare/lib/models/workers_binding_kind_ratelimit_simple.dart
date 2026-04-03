@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The rate limit configuration.
-final class WorkersBindingKindRatelimitSimple {const WorkersBindingKindRatelimitSimple({required this.limit, required this.period, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rate limit configuration.
+@immutable final class WorkersBindingKindRatelimitSimple {const WorkersBindingKindRatelimitSimple({required this.limit, required this.period, });
 
 factory WorkersBindingKindRatelimitSimple.fromJson(Map<String, dynamic> json) { return WorkersBindingKindRatelimitSimple(
   limit: (json['limit'] as num).toDouble(),

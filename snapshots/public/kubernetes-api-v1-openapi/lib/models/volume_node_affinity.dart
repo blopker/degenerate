@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'node_selector.dart';/// VolumeNodeAffinity defines constraints that limit what nodes this volume can be accessed from.
-final class VolumeNodeAffinity {const VolumeNodeAffinity({this.$required});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_selector.dart';/// VolumeNodeAffinity defines constraints that limit what nodes this volume can be accessed from.
+@immutable final class VolumeNodeAffinity {const VolumeNodeAffinity({this.$required});
 
 factory VolumeNodeAffinity.fromJson(Map<String, dynamic> json) { return VolumeNodeAffinity(
   $required: json['required'] != null ? NodeSelector.fromJson(json['required'] as Map<String, dynamic>) : null,

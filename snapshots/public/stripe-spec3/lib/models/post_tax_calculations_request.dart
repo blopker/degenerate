@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_calculations_request_customer_details.dart';import 'post_tax_calculations_request_line_items.dart';import 'post_tax_calculations_request_ship_from_details.dart';import 'post_tax_calculations_request_shipping_cost.dart';final class PostTaxCalculationsRequest {const PostTaxCalculationsRequest({required this.currency, this.customer, this.customerDetails, this.expand, required this.lineItems, this.shipFromDetails, this.shippingCost, this.taxDate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_calculations_request_customer_details.dart';import 'post_tax_calculations_request_line_items.dart';import 'post_tax_calculations_request_ship_from_details.dart';import 'post_tax_calculations_request_shipping_cost.dart';@immutable final class PostTaxCalculationsRequest {const PostTaxCalculationsRequest({required this.currency, required this.lineItems, this.customer, this.customerDetails, this.expand, this.shipFromDetails, this.shippingCost, this.taxDate, });
 
 factory PostTaxCalculationsRequest.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequest(
   currency: json['currency'] as String,

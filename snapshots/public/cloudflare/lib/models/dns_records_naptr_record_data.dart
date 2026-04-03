@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Components of a NAPTR record.
-final class DnsRecordsNaptrRecordData {const DnsRecordsNaptrRecordData({this.flags, this.order, this.preference, this.regex, this.replacement, this.service, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Components of a NAPTR record.
+@immutable final class DnsRecordsNaptrRecordData {const DnsRecordsNaptrRecordData({this.flags, this.order, this.preference, this.regex, this.replacement, this.service, });
 
 factory DnsRecordsNaptrRecordData.fromJson(Map<String, dynamic> json) { return DnsRecordsNaptrRecordData(
   flags: json['flags'] as String?,

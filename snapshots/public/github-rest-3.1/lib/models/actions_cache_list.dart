@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_cache_list_actions_caches.dart';/// Repository actions caches
-final class ActionsCacheList {const ActionsCacheList({required this.totalCount, required this.actionsCaches, });
+@immutable final class ActionsCacheList {const ActionsCacheList({required this.totalCount, required this.actionsCaches, });
 
 factory ActionsCacheList.fromJson(Map<String, dynamic> json) { return ActionsCacheList(
   totalCount: (json['total_count'] as num).toInt(),

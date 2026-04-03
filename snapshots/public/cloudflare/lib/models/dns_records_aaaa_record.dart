@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_ttl.dart';/// Record type.
-final class DnsRecordsAaaaRecordType {const DnsRecordsAaaaRecordType._(this.value);
+@immutable final class DnsRecordsAaaaRecordType {const DnsRecordsAaaaRecordType._(this.value);
 
 factory DnsRecordsAaaaRecordType.fromJson(String json) { return switch (json) {
   'AAAA' => aaaa,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DnsRecordsAaaaRecordType($value)'; } 
  }
-final class DnsRecordsAaaaRecord {const DnsRecordsAaaaRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.type, });
+@immutable final class DnsRecordsAaaaRecord {const DnsRecordsAaaaRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.type, });
 
 factory DnsRecordsAaaaRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsAaaaRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

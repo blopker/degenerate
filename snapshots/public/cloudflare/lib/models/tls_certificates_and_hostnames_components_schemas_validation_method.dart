@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_validation_method_definition.dart';final class TlsCertificatesAndHostnamesComponentsSchemasValidationMethod {const TlsCertificatesAndHostnamesComponentsSchemasValidationMethod({required this.validationMethod});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_validation_method_definition.dart';@immutable final class TlsCertificatesAndHostnamesComponentsSchemasValidationMethod {const TlsCertificatesAndHostnamesComponentsSchemasValidationMethod({required this.validationMethod});
 
 factory TlsCertificatesAndHostnamesComponentsSchemasValidationMethod.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesComponentsSchemasValidationMethod(
   validationMethod: TlsCertificatesAndHostnamesValidationMethodDefinition.fromJson(json['validation_method'] as String),

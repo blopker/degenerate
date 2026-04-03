@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configuration for turn detection. Can be set to `null` to turn off. Server
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for turn detection. Can be set to `null` to turn off. Server
 /// VAD means that the model will detect the start and end of speech based on
 /// audio volume and respond at the end of user speech.
 /// 
-final class RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection {const RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection({this.type, this.threshold, this.prefixPaddingMs, this.silenceDurationMs, });
+@immutable final class RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection {const RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection({this.type, this.threshold, this.prefixPaddingMs, this.silenceDurationMs, });
 
 factory RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateResponseGaAudioInputTurnDetection(
   type: json['type'] as String?,

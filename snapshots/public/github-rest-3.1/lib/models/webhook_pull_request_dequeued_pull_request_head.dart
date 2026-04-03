@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_dequeued_pull_request_head_repo.dart';import 'webhook_pull_request_dequeued_pull_request_head_user.dart';final class WebhookPullRequestDequeuedPullRequestHead {const WebhookPullRequestDequeuedPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_dequeued_pull_request_head_repo.dart';import 'webhook_pull_request_dequeued_pull_request_head_user.dart';@immutable final class WebhookPullRequestDequeuedPullRequestHead {const WebhookPullRequestDequeuedPullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
 factory WebhookPullRequestDequeuedPullRequestHead.fromJson(Map<String, dynamic> json) { return WebhookPullRequestDequeuedPullRequestHead(
   label: json['label'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrgsListPatGrantsDirection {const OrgsListPatGrantsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsListPatGrantsDirection {const OrgsListPatGrantsDirection._(this.value);
 
 factory OrgsListPatGrantsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

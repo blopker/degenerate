@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteIpProfileResponseResult {const DeleteIpProfileResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteIpProfileResponseResult {const DeleteIpProfileResponseResult({this.id});
 
 factory DeleteIpProfileResponseResult.fromJson(Map<String, dynamic> json) { return DeleteIpProfileResponseResult(
   id: json['id'] as String?,

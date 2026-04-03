@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_created_deployment_creator.dart';import 'webhook_deployment_created_deployment_payload.dart';import 'webhook_deployment_created_deployment_performed_via_github_app.dart';/// The [deployment](https://docs.github.com/rest/deployments/deployments#list-deployments).
-final class WebhookDeploymentCreatedDeployment {const WebhookDeploymentCreatedDeployment({required this.createdAt, required this.creator, required this.description, required this.environment, required this.id, required this.nodeId, required this.originalEnvironment, required this.payload, this.performedViaGithubApp, this.productionEnvironment, required this.ref, required this.repositoryUrl, required this.sha, required this.statusesUrl, required this.task, this.transientEnvironment, required this.updatedAt, required this.url, });
+@immutable final class WebhookDeploymentCreatedDeployment {const WebhookDeploymentCreatedDeployment({required this.createdAt, required this.creator, required this.description, required this.environment, required this.id, required this.nodeId, required this.originalEnvironment, required this.payload, required this.ref, required this.repositoryUrl, required this.sha, required this.statusesUrl, required this.task, required this.updatedAt, required this.url, this.performedViaGithubApp, this.productionEnvironment, this.transientEnvironment, });
 
 factory WebhookDeploymentCreatedDeployment.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreatedDeployment(
   createdAt: json['created_at'] as String,
@@ -11,7 +11,7 @@ factory WebhookDeploymentCreatedDeployment.fromJson(Map<String, dynamic> json) {
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   originalEnvironment: json['original_environment'] as String,
-  payload: OneOf2.parse(json['payload'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => v as String,),
+  payload: OneOf2.parse(json['payload'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,),
   performedViaGithubApp: json['performed_via_github_app'] != null ? WebhookDeploymentCreatedDeploymentPerformedViaGithubApp.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   productionEnvironment: json['production_environment'] as bool?,
   ref: json['ref'] as String,

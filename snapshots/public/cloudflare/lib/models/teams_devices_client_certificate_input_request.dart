@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesClientCertificateInputRequest {const TeamsDevicesClientCertificateInputRequest({required this.certificateId, required this.cn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesClientCertificateInputRequest {const TeamsDevicesClientCertificateInputRequest({required this.certificateId, required this.cn, });
 
 factory TeamsDevicesClientCertificateInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesClientCertificateInputRequest(
   certificateId: json['certificate_id'] as String,

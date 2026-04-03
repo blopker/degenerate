@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_payment_method_options_card_installments.dart';import 'post_checkout_sessions_request_payment_method_options_card_restrictions.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsCardCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsCardCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_card_installments.dart';import 'post_checkout_sessions_request_payment_method_options_card_restrictions.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCardCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsCardCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCardCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCardCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestExtendedAuthorization {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestExtendedAuthorization._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestExtendedAuthorization {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestExtendedAuthorization._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestExtendedAuthorization.fromJson(String json) { return switch (json) {
   'if_available' => ifAvailable,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestExtendedAuthorization($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestIncrementalAuthorization {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestIncrementalAuthorization._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestIncrementalAuthorization {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestIncrementalAuthorization._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestIncrementalAuthorization.fromJson(String json) { return switch (json) {
   'if_available' => ifAvailable,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestIncrementalAuthorization($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestMulticapture {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestMulticapture._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestMulticapture {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestMulticapture._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestMulticapture.fromJson(String json) { return switch (json) {
   'if_available' => ifAvailable,
@@ -93,7 +93,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestMulticapture($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestOvercapture {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestOvercapture._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestOvercapture {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestOvercapture._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestOvercapture.fromJson(String json) { return switch (json) {
   'if_available' => ifAvailable,
@@ -117,7 +117,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestOvercapture($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestThreeDSecure {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestThreeDSecure._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestThreeDSecure {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestThreeDSecure._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestThreeDSecure.fromJson(String json) { return switch (json) {
   'any' => any,
@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCardRequestThreeDSecure($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCardSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsCardSetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCardSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsCardSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCardSetupFutureUsage.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
@@ -168,7 +168,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCardSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCard {const PostCheckoutSessionsRequestPaymentMethodOptionsCard({this.captureMethod, this.installments, this.requestExtendedAuthorization, this.requestIncrementalAuthorization, this.requestMulticapture, this.requestOvercapture, this.requestThreeDSecure, this.restrictions, this.setupFutureUsage, this.statementDescriptorSuffixKana, this.statementDescriptorSuffixKanji, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCard {const PostCheckoutSessionsRequestPaymentMethodOptionsCard({this.captureMethod, this.installments, this.requestExtendedAuthorization, this.requestIncrementalAuthorization, this.requestMulticapture, this.requestOvercapture, this.requestThreeDSecure, this.restrictions, this.setupFutureUsage, this.statementDescriptorSuffixKana, this.statementDescriptorSuffixKanji, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsCard(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCardCaptureMethod.fromJson(json['capture_method'] as String) : null,

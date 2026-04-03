@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateSipCredentialRequest {const UpdateSipCredentialRequest({this.password});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateSipCredentialRequest {const UpdateSipCredentialRequest({this.password});
 
 factory UpdateSipCredentialRequest.fromJson(Map<String, dynamic> json) { return UpdateSipCredentialRequest(
   password: json['Password'] as String?,

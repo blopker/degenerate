@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_list.dart';final class ListsListsResponseCollection {const ListsListsResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_list.dart';@immutable final class ListsListsResponseCollection {const ListsListsResponseCollection({this.result});
 
 factory ListsListsResponseCollection.fromJson(Map<String, dynamic> json) { return ListsListsResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => ListsList.fromJson(e as Map<String, dynamic>)).toList(),

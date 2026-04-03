@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StaticChunkingStrategy {const StaticChunkingStrategy({required this.maxChunkSizeTokens, required this.chunkOverlapTokens, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StaticChunkingStrategy {const StaticChunkingStrategy({required this.maxChunkSizeTokens, required this.chunkOverlapTokens, });
 
 factory StaticChunkingStrategy.fromJson(Map<String, dynamic> json) { return StaticChunkingStrategy(
   maxChunkSizeTokens: (json['max_chunk_size_tokens'] as num).toInt(),

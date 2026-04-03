@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProjectsCreateDraftItemForOrgRequest {const ProjectsCreateDraftItemForOrgRequest({required this.title, this.body, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectsCreateDraftItemForOrgRequest {const ProjectsCreateDraftItemForOrgRequest({required this.title, this.body, });
 
 factory ProjectsCreateDraftItemForOrgRequest.fromJson(Map<String, dynamic> json) { return ProjectsCreateDraftItemForOrgRequest(
   title: json['title'] as String,

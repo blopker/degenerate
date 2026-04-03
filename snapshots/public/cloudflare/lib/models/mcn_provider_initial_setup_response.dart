@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_provider_initial_setup_response_result.dart';final class McnProviderInitialSetupResponse {const McnProviderInitialSetupResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_provider_initial_setup_response_result.dart';@immutable final class McnProviderInitialSetupResponse {const McnProviderInitialSetupResponse({this.result});
 
 factory McnProviderInitialSetupResponse.fromJson(Map<String, dynamic> json) { return McnProviderInitialSetupResponse(
   result: json['result'] != null ? McnProviderInitialSetupResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

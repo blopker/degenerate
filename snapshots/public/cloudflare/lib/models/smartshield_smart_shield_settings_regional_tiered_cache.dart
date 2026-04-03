@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the enablement value of Cache Reserve.
-final class SmartshieldSmartShieldSettingsRegionalTieredCacheValue {const SmartshieldSmartShieldSettingsRegionalTieredCacheValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the enablement value of Cache Reserve.
+@immutable final class SmartshieldSmartShieldSettingsRegionalTieredCacheValue {const SmartshieldSmartShieldSettingsRegionalTieredCacheValue._(this.value);
 
 factory SmartshieldSmartShieldSettingsRegionalTieredCacheValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SmartshieldSmartShieldSettingsRegionalTieredCacheValue($value)'; } 
  }
-final class SmartshieldSmartShieldSettingsRegionalTieredCache {const SmartshieldSmartShieldSettingsRegionalTieredCache({this.editable, this.id, this.value, });
+@immutable final class SmartshieldSmartShieldSettingsRegionalTieredCache {const SmartshieldSmartShieldSettingsRegionalTieredCache({this.editable, this.id, this.value, });
 
 factory SmartshieldSmartShieldSettingsRegionalTieredCache.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsRegionalTieredCache(
   editable: json['editable'] as bool?,

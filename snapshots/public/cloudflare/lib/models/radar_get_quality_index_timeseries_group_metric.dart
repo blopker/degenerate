@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines which metric to return (bandwidth, latency, or DNS response time).
-final class RadarGetQualityIndexTimeseriesGroupMetric {const RadarGetQualityIndexTimeseriesGroupMetric._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines which metric to return (bandwidth, latency, or DNS response time).
+@immutable final class RadarGetQualityIndexTimeseriesGroupMetric {const RadarGetQualityIndexTimeseriesGroupMetric._(this.value);
 
 factory RadarGetQualityIndexTimeseriesGroupMetric.fromJson(String json) { return switch (json) {
   'BANDWIDTH' => bandwidth,

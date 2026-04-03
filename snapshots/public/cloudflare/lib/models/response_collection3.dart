@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_messages2.dart';import 'response_collection3_result_info.dart';final class ResponseCollection3 {const ResponseCollection3({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_messages2.dart';import 'response_collection3_result_info.dart';@immutable final class ResponseCollection3 {const ResponseCollection3({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection3.fromJson(Map<String, dynamic> json) { return ResponseCollection3(
   errors: (json['errors'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),

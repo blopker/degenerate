@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_subscriptions_request_automatic_tax_liability.dart';/// Automatic tax settings for this subscription.
-final class PostSubscriptionsRequestAutomaticTax {const PostSubscriptionsRequestAutomaticTax({required this.enabled, this.liability, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_request_automatic_tax_liability.dart';/// Automatic tax settings for this subscription.
+@immutable final class PostSubscriptionsRequestAutomaticTax {const PostSubscriptionsRequestAutomaticTax({required this.enabled, this.liability, });
 
 factory PostSubscriptionsRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestAutomaticTax(
   enabled: json['enabled'] as bool,

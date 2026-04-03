@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsSofortSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsSofortSetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsSofortSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsSofortSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsSofortSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsSofortSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsSofort {const PostCheckoutSessionsRequestPaymentMethodOptionsSofort({this.setupFutureUsage});
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsSofort {const PostCheckoutSessionsRequestPaymentMethodOptionsSofort({this.setupFutureUsage});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsSofort.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsSofort(
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsSofortSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,

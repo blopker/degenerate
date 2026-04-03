@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about the payment attempt refund.
-final class PostPaymentRecordsIdReportRefundRequestRefunded {const PostPaymentRecordsIdReportRefundRequestRefunded({required this.refundedAt});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the payment attempt refund.
+@immutable final class PostPaymentRecordsIdReportRefundRequestRefunded {const PostPaymentRecordsIdReportRefundRequestRefunded({required this.refundedAt});
 
 factory PostPaymentRecordsIdReportRefundRequestRefunded.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportRefundRequestRefunded(
   refundedAt: (json['refunded_at'] as num).toInt(),

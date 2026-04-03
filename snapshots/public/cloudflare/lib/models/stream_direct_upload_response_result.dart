@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_identifier.dart';import 'stream_scheduled_deletion.dart';import 'stream_watermarks.dart';final class StreamDirectUploadResponseResult {const StreamDirectUploadResponseResult({this.scheduledDeletion, this.uid, this.uploadUrl, this.watermark, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_identifier.dart';import 'stream_scheduled_deletion.dart';import 'stream_watermarks.dart';@immutable final class StreamDirectUploadResponseResult {const StreamDirectUploadResponseResult({this.scheduledDeletion, this.uid, this.uploadUrl, this.watermark, });
 
 factory StreamDirectUploadResponseResult.fromJson(Map<String, dynamic> json) { return StreamDirectUploadResponseResult(
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,

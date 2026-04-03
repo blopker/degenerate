@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCustomerSessionsRequestComponentsBuyButton {const PostCustomerSessionsRequestComponentsBuyButton({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomerSessionsRequestComponentsBuyButton {const PostCustomerSessionsRequestComponentsBuyButton({required this.enabled});
 
 factory PostCustomerSessionsRequestComponentsBuyButton.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponentsBuyButton(
   enabled: json['enabled'] as bool,

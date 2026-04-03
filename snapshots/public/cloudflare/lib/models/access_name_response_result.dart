@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_tags_components_schemas_name.dart';final class AccessNameResponseResult {const AccessNameResponseResult({this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_tags_components_schemas_name.dart';@immutable final class AccessNameResponseResult {const AccessNameResponseResult({this.name});
 
 factory AccessNameResponseResult.fromJson(Map<String, dynamic> json) { return AccessNameResponseResult(
   name: json['name'] != null ? AccessTagsComponentsSchemasName.fromJson(json['name'] as String) : null,

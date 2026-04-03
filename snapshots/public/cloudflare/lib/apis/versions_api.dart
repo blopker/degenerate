@@ -46,7 +46,7 @@ return execute(
 /// Create a new version.
 ///
 /// `POST /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<WorkersVersion, Never>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, bool? deploy, required WorkersVersion body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersVersion, Never>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, required WorkersVersion body, bool? deploy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deploy != null) {
   queryParameters['deploy'] = deploy.toString();

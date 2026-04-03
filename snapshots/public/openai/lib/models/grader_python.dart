@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `python`.
-final class GraderPythonType {const GraderPythonType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `python`.
+@immutable final class GraderPythonType {const GraderPythonType._(this.value);
 
 factory GraderPythonType.fromJson(String json) { return switch (json) {
   'python' => python,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A PythonGrader object that runs a python script on the input.
 /// 
-final class GraderPython {const GraderPython({required this.type, required this.name, required this.source, this.imageTag, });
+@immutable final class GraderPython {const GraderPython({required this.type, required this.name, required this.source, this.imageTag, });
 
 factory GraderPython.fromJson(Map<String, dynamic> json) { return GraderPython(
   type: GraderPythonType.fromJson(json['type'] as String),

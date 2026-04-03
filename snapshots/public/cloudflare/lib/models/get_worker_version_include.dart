@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether to include the `modules` property of the version in the response, which contains code and sourcemap content and may add several megabytes to the response size.
-final class GetWorkerVersionInclude {const GetWorkerVersionInclude._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to include the `modules` property of the version in the response, which contains code and sourcemap content and may add several megabytes to the response size.
+@immutable final class GetWorkerVersionInclude {const GetWorkerVersionInclude._(this.value);
 
 factory GetWorkerVersionInclude.fromJson(String json) { return switch (json) {
   'modules' => modules,

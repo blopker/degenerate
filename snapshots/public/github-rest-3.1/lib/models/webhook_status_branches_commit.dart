@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookStatusBranchesCommit {const WebhookStatusBranchesCommit({required this.sha, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookStatusBranchesCommit {const WebhookStatusBranchesCommit({required this.sha, required this.url, });
 
 factory WebhookStatusBranchesCommit.fromJson(Map<String, dynamic> json) { return WebhookStatusBranchesCommit(
   sha: json['sha'] as String?,

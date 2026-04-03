@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_messages2.dart';import 'stream_videos.dart';final class StreamVideoResponseCollection {const StreamVideoResponseCollection({required this.errors, required this.messages, required this.success, this.result, this.range, this.total, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_messages2.dart';import 'stream_videos.dart';@immutable final class StreamVideoResponseCollection {const StreamVideoResponseCollection({required this.errors, required this.messages, required this.success, this.result, this.range, this.total, });
 
 factory StreamVideoResponseCollection.fromJson(Map<String, dynamic> json) { return StreamVideoResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),

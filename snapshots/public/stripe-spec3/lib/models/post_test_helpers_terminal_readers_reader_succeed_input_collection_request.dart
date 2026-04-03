@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This parameter defines the skip behavior for input collection.
-final class PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs {const PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs._(this.value);
+@immutable final class PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs {const PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs._(this.value);
 
 factory PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequestSkipNonRequiredInputs($value)'; } 
  }
-final class PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest {const PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest({this.expand, this.skipNonRequiredInputs, });
+@immutable final class PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest {const PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest({this.expand, this.skipNonRequiredInputs, });
 
 factory PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

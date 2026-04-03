@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_session.dart';/// The event type, must be `session.created`.
-final class RealtimeBetaServerEventSessionCreatedType {const RealtimeBetaServerEventSessionCreatedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_session.dart';/// The event type, must be `session.created`.
+@immutable final class RealtimeBetaServerEventSessionCreatedType {const RealtimeBetaServerEventSessionCreatedType._(this.value);
 
 factory RealtimeBetaServerEventSessionCreatedType.fromJson(String json) { return switch (json) {
   'session.created' => sessionCreated,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// connection is established as the first server event. This event will contain
 /// the default Session configuration.
 /// 
-final class RealtimeBetaServerEventSessionCreated {const RealtimeBetaServerEventSessionCreated({required this.eventId, required this.type, required this.session, });
+@immutable final class RealtimeBetaServerEventSessionCreated {const RealtimeBetaServerEventSessionCreated({required this.eventId, required this.type, required this.session, });
 
 factory RealtimeBetaServerEventSessionCreated.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventSessionCreated(
   eventId: json['event_id'] as String,

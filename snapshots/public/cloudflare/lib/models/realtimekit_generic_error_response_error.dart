@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitGenericErrorResponseError {const RealtimekitGenericErrorResponseError({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitGenericErrorResponseError {const RealtimekitGenericErrorResponseError({required this.code, required this.message, });
 
 factory RealtimekitGenericErrorResponseError.fromJson(Map<String, dynamic> json) { return RealtimekitGenericErrorResponseError(
   code: (json['code'] as num).toDouble(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_credit_grants_resource_scope.dart';/// 
-final class BillingCreditGrantsResourceApplicabilityConfig {const BillingCreditGrantsResourceApplicabilityConfig({required this.scope});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_scope.dart';/// 
+@immutable final class BillingCreditGrantsResourceApplicabilityConfig {const BillingCreditGrantsResourceApplicabilityConfig({required this.scope});
 
 factory BillingCreditGrantsResourceApplicabilityConfig.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceApplicabilityConfig(
   scope: BillingCreditGrantsResourceScope.fromJson(json['scope'] as Map<String, dynamic>),

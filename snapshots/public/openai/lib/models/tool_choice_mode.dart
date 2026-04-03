@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// `none` means the model will not call any tool and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// `none` means the model will not call any tool and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools.
 /// 
-final class ToolChoiceMode {const ToolChoiceMode._(this.value);
+@immutable final class ToolChoiceMode {const ToolChoiceMode._(this.value);
 
 factory ToolChoiceMode.fromJson(String json) { return switch (json) {
   'none' => none,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_content_image_file_object_image_file.dart';/// Always `image_file`.
-final class MessageContentImageFileObjectType {const MessageContentImageFileObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_image_file_object_image_file.dart';/// Always `image_file`.
+@immutable final class MessageContentImageFileObjectType {const MessageContentImageFileObjectType._(this.value);
 
 factory MessageContentImageFileObjectType.fromJson(String json) { return switch (json) {
   'image_file' => imageFile,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageContentImageFileObjectType($value)'; } 
  }
 /// References an image [File](/docs/api-reference/files) in the content of a message.
-final class MessageContentImageFileObject {const MessageContentImageFileObject({required this.type, required this.imageFile, });
+@immutable final class MessageContentImageFileObject {const MessageContentImageFileObject({required this.type, required this.imageFile, });
 
 factory MessageContentImageFileObject.fromJson(Map<String, dynamic> json) { return MessageContentImageFileObject(
   type: MessageContentImageFileObjectType.fromJson(json['type'] as String),

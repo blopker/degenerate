@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_violation_error_metadata_secret_scanning_bypass_placeholders.dart';final class RepositoryRuleViolationErrorMetadataSecretScanning {const RepositoryRuleViolationErrorMetadataSecretScanning({this.bypassPlaceholders});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_violation_error_metadata_secret_scanning_bypass_placeholders.dart';@immutable final class RepositoryRuleViolationErrorMetadataSecretScanning {const RepositoryRuleViolationErrorMetadataSecretScanning({this.bypassPlaceholders});
 
 factory RepositoryRuleViolationErrorMetadataSecretScanning.fromJson(Map<String, dynamic> json) { return RepositoryRuleViolationErrorMetadataSecretScanning(
   bypassPlaceholders: (json['bypass_placeholders'] as List<dynamic>?)?.map((e) => RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholders.fromJson(e as Map<String, dynamic>)).toList(),

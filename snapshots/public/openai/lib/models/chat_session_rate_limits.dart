@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Active per-minute request limit for the session.
-final class ChatSessionRateLimits {const ChatSessionRateLimits({required this.maxRequestsPer1Minute});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Active per-minute request limit for the session.
+@immutable final class ChatSessionRateLimits {const ChatSessionRateLimits({required this.maxRequestsPer1Minute});
 
 factory ChatSessionRateLimits.fromJson(Map<String, dynamic> json) { return ChatSessionRateLimits(
   maxRequestsPer1Minute: (json['max_requests_per_1_minute'] as num).toInt(),

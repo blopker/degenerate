@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_error_meta.dart';import 'mcn_error_source.dart';final class McnErrorCode {const McnErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_error_meta.dart';import 'mcn_error_source.dart';@immutable final class McnErrorCode {const McnErrorCode._(this.value);
 
 factory McnErrorCode.fromJson(int json) { return switch (json) {
   1001 => $1001,
@@ -483,7 +483,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'McnErrorCode($value)'; } 
  }
-final class McnError {const McnError({required this.code, this.documentationUrl, required this.message, this.meta, this.source, });
+@immutable final class McnError {const McnError({required this.code, required this.message, this.documentationUrl, this.meta, this.source, });
 
 factory McnError.fromJson(Map<String, dynamic> json) { return McnError(
   code: McnErrorCode.fromJson((json['code'] as num).toInt()),

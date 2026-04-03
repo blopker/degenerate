@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'images_image_variant_definition.dart';final class ImagesImageVariantResponse {const ImagesImageVariantResponse({this.variant});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_image_variant_definition.dart';@immutable final class ImagesImageVariantResponse {const ImagesImageVariantResponse({this.variant});
 
 factory ImagesImageVariantResponse.fromJson(Map<String, dynamic> json) { return ImagesImageVariantResponse(
   variant: json['variant'] != null ? ImagesImageVariantDefinition.fromJson(json['variant'] as Map<String, dynamic>) : null,

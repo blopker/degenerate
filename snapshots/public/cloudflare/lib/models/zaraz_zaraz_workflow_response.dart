@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_messages2.dart';import 'zaraz_zaraz_workflow.dart';final class ZarazZarazWorkflowResponse {const ZarazZarazWorkflowResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_messages2.dart';import 'zaraz_zaraz_workflow.dart';@immutable final class ZarazZarazWorkflowResponse {const ZarazZarazWorkflowResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory ZarazZarazWorkflowResponse.fromJson(Map<String, dynamic> json) { return ZarazZarazWorkflowResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ZarazMessages2.fromJson(e as Map<String, dynamic>)).toList(),

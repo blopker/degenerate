@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class RadarReviewResourceSession {const RadarReviewResourceSession({this.browser, this.device, this.platform, this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class RadarReviewResourceSession {const RadarReviewResourceSession({this.browser, this.device, this.platform, this.version, });
 
 factory RadarReviewResourceSession.fromJson(Map<String, dynamic> json) { return RadarReviewResourceSession(
   browser: json['browser'] as String?,

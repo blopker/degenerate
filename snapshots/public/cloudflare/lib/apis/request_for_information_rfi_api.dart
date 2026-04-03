@@ -187,7 +187,7 @@ final request = ApiRequest(
   headers: headers,
   body: [
     if (body.source case final source$?)
-      ApiMultipartField.text('source', source$.toJson().toString()),
+      ApiMultipartField.text('source', source$.toJson()),
   ],
   contentType: 'multipart/form-data',
   options: options,

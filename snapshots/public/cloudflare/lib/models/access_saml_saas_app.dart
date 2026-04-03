@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_saml_saas_app_custom_attributes.dart';import 'access_timestamp.dart';/// Optional identifier indicating the authentication protocol used for the saas app. Required for OIDC. Default if unset is "saml"
-final class AccessSamlSaasAppAuthType {const AccessSamlSaasAppAuthType._(this.value);
+@immutable final class AccessSamlSaasAppAuthType {const AccessSamlSaasAppAuthType._(this.value);
 
 factory AccessSamlSaasAppAuthType.fromJson(String json) { return switch (json) {
   'saml' => saml,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccessSamlSaasAppAuthType($value)'; } 
  }
 /// The format of the name identifier sent to the SaaS application.
-final class AccessSamlSaasAppNameIdFormat {const AccessSamlSaasAppNameIdFormat._(this.value);
+@immutable final class AccessSamlSaasAppNameIdFormat {const AccessSamlSaasAppNameIdFormat._(this.value);
 
 factory AccessSamlSaasAppNameIdFormat.fromJson(String json) { return switch (json) {
   'id' => id,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessSamlSaasAppNameIdFormat($value)'; } 
  }
-final class AccessSamlSaasApp {const AccessSamlSaasApp({this.authType, this.consumerServiceUrl, this.createdAt, this.customAttributes, this.defaultRelayState, this.idpEntityId, this.nameIdFormat, this.nameIdTransformJsonata, this.publicKey, this.samlAttributeTransformJsonata, this.spEntityId, this.ssoEndpoint, this.updatedAt, });
+@immutable final class AccessSamlSaasApp {const AccessSamlSaasApp({this.authType, this.consumerServiceUrl, this.createdAt, this.customAttributes, this.defaultRelayState, this.idpEntityId, this.nameIdFormat, this.nameIdTransformJsonata, this.publicKey, this.samlAttributeTransformJsonata, this.spEntityId, this.ssoEndpoint, this.updatedAt, });
 
 factory AccessSamlSaasApp.fromJson(Map<String, dynamic> json) { return AccessSamlSaasApp(
   authType: json['auth_type'] != null ? AccessSamlSaasAppAuthType.fromJson(json['auth_type'] as String) : null,
@@ -94,7 +94,7 @@ final String? nameIdTransformJsonata;
 /// The Access public certificate that will be used to verify your identity.
 final String? publicKey;
 
-/// A [JSONata] (https://jsonata.org/) expression that transforms an application's user identities into attribute assertions in the SAML response. The expression can transform id, email, name, and groups values. It can also transform fields listed in the saml_attributes or oidc_fields of the identity provider used to authenticate. The output of this expression must be a JSON object.
+/// A `[JSONata]` (https://jsonata.org/) expression that transforms an application's user identities into attribute assertions in the SAML response. The expression can transform id, email, name, and groups values. It can also transform fields listed in the saml_attributes or oidc_fields of the identity provider used to authenticate. The output of this expression must be a JSON object.
 /// 
 final String? samlAttributeTransformJsonata;
 

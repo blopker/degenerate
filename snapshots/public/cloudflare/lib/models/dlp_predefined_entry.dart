@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_entry_confidence.dart';import 'dlp_predefined_entry_variant.dart';final class DlpPredefinedEntry {const DlpPredefinedEntry({required this.confidence, required this.enabled, required this.id, required this.name, this.profileId, this.variant, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_entry_confidence.dart';import 'dlp_predefined_entry_variant.dart';@immutable final class DlpPredefinedEntry {const DlpPredefinedEntry({required this.confidence, required this.enabled, required this.id, required this.name, this.profileId, this.variant, });
 
 factory DlpPredefinedEntry.fromJson(Map<String, dynamic> json) { return DlpPredefinedEntry(
   confidence: DlpEntryConfidence.fromJson(json['confidence'] as Map<String, dynamic>),

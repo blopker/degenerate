@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ResponseCommonFailure3Messages {const ResponseCommonFailure3Messages({this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseCommonFailure3Messages {const ResponseCommonFailure3Messages({this.message});
 
 factory ResponseCommonFailure3Messages.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure3Messages(
   message: json['message'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';final class CodespacesListRepositoriesForSecretForAuthenticatedUserResponse {const CodespacesListRepositoriesForSecretForAuthenticatedUserResponse({required this.totalCount, required this.repositories, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';@immutable final class CodespacesListRepositoriesForSecretForAuthenticatedUserResponse {const CodespacesListRepositoriesForSecretForAuthenticatedUserResponse({required this.totalCount, required this.repositories, });
 
 factory CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) { return CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
   totalCount: (json['total_count'] as num).toInt(),

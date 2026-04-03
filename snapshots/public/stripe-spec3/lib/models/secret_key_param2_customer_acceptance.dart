@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secret_key_param2_customer_acceptance_offline.dart';import 'secret_key_param2_customer_acceptance_online.dart';final class SecretKeyParam2CustomerAcceptanceType {const SecretKeyParam2CustomerAcceptanceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_key_param2_customer_acceptance_offline.dart';import 'secret_key_param2_customer_acceptance_online.dart';@immutable final class SecretKeyParam2CustomerAcceptanceType {const SecretKeyParam2CustomerAcceptanceType._(this.value);
 
 factory SecretKeyParam2CustomerAcceptanceType.fromJson(String json) { return switch (json) {
   'offline' => offline,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SecretKeyParam2CustomerAcceptanceType($value)'; } 
  }
-final class SecretKeyParam2CustomerAcceptance {const SecretKeyParam2CustomerAcceptance({this.acceptedAt, this.offline, this.online, required this.type, });
+@immutable final class SecretKeyParam2CustomerAcceptance {const SecretKeyParam2CustomerAcceptance({required this.type, this.acceptedAt, this.offline, this.online, });
 
 factory SecretKeyParam2CustomerAcceptance.fromJson(Map<String, dynamic> json) { return SecretKeyParam2CustomerAcceptance(
   acceptedAt: json['accepted_at'] != null ? (json['accepted_at'] as num).toInt() : null,

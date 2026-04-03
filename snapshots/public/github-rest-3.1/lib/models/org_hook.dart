@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'org_hook_config.dart';/// Org Hook
-final class OrgHook {const OrgHook({required this.id, required this.url, required this.pingUrl, this.deliveriesUrl, required this.name, required this.events, required this.active, required this.config, required this.updatedAt, required this.createdAt, required this.type, });
+@immutable final class OrgHook {const OrgHook({required this.id, required this.url, required this.pingUrl, required this.name, required this.events, required this.active, required this.config, required this.updatedAt, required this.createdAt, required this.type, this.deliveriesUrl, });
 
 factory OrgHook.fromJson(Map<String, dynamic> json) { return OrgHook(
   id: (json['id'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_beta_response.dart';/// The event type, must be `response.created`.
-final class RealtimeBetaServerEventResponseCreatedType {const RealtimeBetaServerEventResponseCreatedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_response.dart';/// The event type, must be `response.created`.
+@immutable final class RealtimeBetaServerEventResponseCreatedType {const RealtimeBetaServerEventResponseCreatedType._(this.value);
 
 factory RealtimeBetaServerEventResponseCreatedType.fromJson(String json) { return switch (json) {
   'response.created' => responseCreated,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Returned when a new Response is created. The first event of response creation,
 /// where the response is in an initial state of `in_progress`.
 /// 
-final class RealtimeBetaServerEventResponseCreated {const RealtimeBetaServerEventResponseCreated({required this.eventId, required this.type, required this.response, });
+@immutable final class RealtimeBetaServerEventResponseCreated {const RealtimeBetaServerEventResponseCreated({required this.eventId, required this.type, required this.response, });
 
 factory RealtimeBetaServerEventResponseCreated.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseCreated(
   eventId: json['event_id'] as String,

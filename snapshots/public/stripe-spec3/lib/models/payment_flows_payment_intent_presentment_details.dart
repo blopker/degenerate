@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentFlowsPaymentIntentPresentmentDetails {const PaymentFlowsPaymentIntentPresentmentDetails({required this.presentmentAmount, required this.presentmentCurrency, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentFlowsPaymentIntentPresentmentDetails {const PaymentFlowsPaymentIntentPresentmentDetails({required this.presentmentAmount, required this.presentmentCurrency, });
 
 factory PaymentFlowsPaymentIntentPresentmentDetails.fromJson(Map<String, dynamic> json) { return PaymentFlowsPaymentIntentPresentmentDetails(
   presentmentAmount: (json['presentment_amount'] as num).toInt(),

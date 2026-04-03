@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostBalanceSettingsRequestPaymentsPayoutsScheduleWeeklyPayoutDays {const PostBalanceSettingsRequestPaymentsPayoutsScheduleWeeklyPayoutDays._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBalanceSettingsRequestPaymentsPayoutsScheduleWeeklyPayoutDays {const PostBalanceSettingsRequestPaymentsPayoutsScheduleWeeklyPayoutDays._(this.value);
 
 factory PostBalanceSettingsRequestPaymentsPayoutsScheduleWeeklyPayoutDays.fromJson(String json) { return switch (json) {
   'friday' => friday,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBalanceSettingsRequestPaymentsPayoutsScheduleWeeklyPayoutDays($value)'; } 
  }
-final class PostBalanceSettingsRequestPaymentsPayoutsScheduleInterval {const PostBalanceSettingsRequestPaymentsPayoutsScheduleInterval._(this.value);
+@immutable final class PostBalanceSettingsRequestPaymentsPayoutsScheduleInterval {const PostBalanceSettingsRequestPaymentsPayoutsScheduleInterval._(this.value);
 
 factory PostBalanceSettingsRequestPaymentsPayoutsScheduleInterval.fromJson(String json) { return switch (json) {
   'daily' => daily,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBalanceSettingsRequestPaymentsPayoutsScheduleInterval($value)'; } 
  }
-final class PostBalanceSettingsRequestPaymentsPayoutsSchedule {const PostBalanceSettingsRequestPaymentsPayoutsSchedule({this.interval, this.monthlyPayoutDays, this.weeklyPayoutDays, });
+@immutable final class PostBalanceSettingsRequestPaymentsPayoutsSchedule {const PostBalanceSettingsRequestPaymentsPayoutsSchedule({this.interval, this.monthlyPayoutDays, this.weeklyPayoutDays, });
 
 factory PostBalanceSettingsRequestPaymentsPayoutsSchedule.fromJson(Map<String, dynamic> json) { return PostBalanceSettingsRequestPaymentsPayoutsSchedule(
   interval: json['interval'] != null ? PostBalanceSettingsRequestPaymentsPayoutsScheduleInterval.fromJson(json['interval'] as String) : null,

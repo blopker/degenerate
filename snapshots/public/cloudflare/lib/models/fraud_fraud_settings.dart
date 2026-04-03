@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether Fraud User Profiles is enabled for the zone.
-final class FraudUserProfilesStatus {const FraudUserProfilesStatus._(this.value);
+@immutable final class FraudUserProfilesStatus {const FraudUserProfilesStatus._(this.value);
 
 factory FraudUserProfilesStatus.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FraudUserProfilesStatus($value)'; } 
  }
-final class FraudFraudSettings {const FraudFraudSettings({this.userProfiles, this.usernameExpressions, });
+@immutable final class FraudFraudSettings {const FraudFraudSettings({this.userProfiles, this.usernameExpressions, });
 
 factory FraudFraudSettings.fromJson(Map<String, dynamic> json) { return FraudFraudSettings(
   userProfiles: json['user_profiles'] != null ? FraudUserProfilesStatus.fromJson(json['user_profiles'] as String) : null,

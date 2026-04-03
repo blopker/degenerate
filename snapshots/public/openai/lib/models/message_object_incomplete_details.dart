@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The reason the message is incomplete.
-final class MessageObjectIncompleteDetailsReason {const MessageObjectIncompleteDetailsReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason the message is incomplete.
+@immutable final class MessageObjectIncompleteDetailsReason {const MessageObjectIncompleteDetailsReason._(this.value);
 
 factory MessageObjectIncompleteDetailsReason.fromJson(String json) { return switch (json) {
   'content_filter' => contentFilter,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageObjectIncompleteDetailsReason($value)'; } 
  }
 /// On an incomplete message, details about why the message is incomplete.
-final class MessageObjectIncompleteDetails {const MessageObjectIncompleteDetails({required this.reason});
+@immutable final class MessageObjectIncompleteDetails {const MessageObjectIncompleteDetails({required this.reason});
 
 factory MessageObjectIncompleteDetails.fromJson(Map<String, dynamic> json) { return MessageObjectIncompleteDetails(
   reason: MessageObjectIncompleteDetailsReason.fromJson(json['reason'] as String),

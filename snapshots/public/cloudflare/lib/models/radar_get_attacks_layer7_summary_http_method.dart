@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryHttpMethod {const RadarGetAttacksLayer7SummaryHttpMethod._(this.value);
 
 factory RadarGetAttacksLayer7SummaryHttpMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,

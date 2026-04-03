@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'custom_pages_messages2_source.dart';final class CustomPagesMessages2 {const CustomPagesMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_pages_messages2_source.dart';@immutable final class CustomPagesMessages2 {const CustomPagesMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory CustomPagesMessages2.fromJson(Map<String, dynamic> json) { return CustomPagesMessages2(
   code: (json['code'] as num).toInt(),

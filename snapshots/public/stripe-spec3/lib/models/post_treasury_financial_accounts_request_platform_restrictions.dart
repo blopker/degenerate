@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTreasuryFinancialAccountsRequestPlatformRestrictionsInboundFlows {const PostTreasuryFinancialAccountsRequestPlatformRestrictionsInboundFlows._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryFinancialAccountsRequestPlatformRestrictionsInboundFlows {const PostTreasuryFinancialAccountsRequestPlatformRestrictionsInboundFlows._(this.value);
 
 factory PostTreasuryFinancialAccountsRequestPlatformRestrictionsInboundFlows.fromJson(String json) { return switch (json) {
   'restricted' => restricted,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTreasuryFinancialAccountsRequestPlatformRestrictionsInboundFlows($value)'; } 
  }
-final class PostTreasuryFinancialAccountsRequestPlatformRestrictionsOutboundFlows {const PostTreasuryFinancialAccountsRequestPlatformRestrictionsOutboundFlows._(this.value);
+@immutable final class PostTreasuryFinancialAccountsRequestPlatformRestrictionsOutboundFlows {const PostTreasuryFinancialAccountsRequestPlatformRestrictionsOutboundFlows._(this.value);
 
 factory PostTreasuryFinancialAccountsRequestPlatformRestrictionsOutboundFlows.fromJson(String json) { return switch (json) {
   'restricted' => restricted,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTreasuryFinancialAccountsRequestPlatformRestrictionsOutboundFlows($value)'; } 
  }
 /// The set of functionalities that the platform can restrict on the FinancialAccount.
-final class PostTreasuryFinancialAccountsRequestPlatformRestrictions {const PostTreasuryFinancialAccountsRequestPlatformRestrictions({this.inboundFlows, this.outboundFlows, });
+@immutable final class PostTreasuryFinancialAccountsRequestPlatformRestrictions {const PostTreasuryFinancialAccountsRequestPlatformRestrictions({this.inboundFlows, this.outboundFlows, });
 
 factory PostTreasuryFinancialAccountsRequestPlatformRestrictions.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsRequestPlatformRestrictions(
   inboundFlows: json['inbound_flows'] != null ? PostTreasuryFinancialAccountsRequestPlatformRestrictionsInboundFlows.fromJson(json['inbound_flows'] as String) : null,

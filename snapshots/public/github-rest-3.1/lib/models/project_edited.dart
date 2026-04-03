@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'organization_simple_webhooks.dart';import 'project_edited_changes.dart';import 'projects.dart';import 'simple_installation.dart';import 'simple_user.dart';final class ProjectEditedAction {const ProjectEditedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'project_edited_changes.dart';import 'projects.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class ProjectEditedAction {const ProjectEditedAction._(this.value);
 
 factory ProjectEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectEditedAction($value)'; } 
  }
-final class ProjectEdited {const ProjectEdited({required this.action, required this.changes, this.installation, required this.organization, required this.projectsV2, required this.sender, });
+@immutable final class ProjectEdited {const ProjectEdited({required this.action, required this.changes, required this.organization, required this.projectsV2, required this.sender, this.installation, });
 
 factory ProjectEdited.fromJson(Map<String, dynamic> json) { return ProjectEdited(
   action: ProjectEditedAction.fromJson(json['action'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_tag.dart';final class AccessTagsComponentsSchemasSingleResponse {const AccessTagsComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_tag.dart';@immutable final class AccessTagsComponentsSchemasSingleResponse {const AccessTagsComponentsSchemasSingleResponse({this.result});
 
 factory AccessTagsComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AccessTagsComponentsSchemasSingleResponse(
   result: json['result'] != null ? AccessTag.fromJson(json['result'] as Map<String, dynamic>) : null,

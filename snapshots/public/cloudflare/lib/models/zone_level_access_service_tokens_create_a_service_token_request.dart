@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_client_secret_version.dart';import 'access_previous_client_secret_expires_at.dart';import 'access_schemas_duration.dart';import 'access_service_tokens_components_schemas_name.dart';final class ZoneLevelAccessServiceTokensCreateAServiceTokenRequest {const ZoneLevelAccessServiceTokensCreateAServiceTokenRequest({this.clientSecretVersion, this.duration, required this.name, this.previousClientSecretExpiresAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_client_secret_version.dart';import 'access_previous_client_secret_expires_at.dart';import 'access_schemas_duration.dart';import 'access_service_tokens_components_schemas_name.dart';@immutable final class ZoneLevelAccessServiceTokensCreateAServiceTokenRequest {const ZoneLevelAccessServiceTokensCreateAServiceTokenRequest({required this.name, this.clientSecretVersion, this.duration, this.previousClientSecretExpiresAt, });
 
 factory ZoneLevelAccessServiceTokensCreateAServiceTokenRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelAccessServiceTokensCreateAServiceTokenRequest(
   clientSecretVersion: json['client_secret_version'] != null ? AccessClientSecretVersion.fromJson(json['client_secret_version'] as num) : null,

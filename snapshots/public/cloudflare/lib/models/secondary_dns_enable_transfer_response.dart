@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The zone transfer status of a primary zone.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The zone transfer status of a primary zone.
 extension type const SecondaryDnsEnableTransferResult(String value) {
 factory SecondaryDnsEnableTransferResult.fromJson(String json) => SecondaryDnsEnableTransferResult(json);
 
 String toJson() => value;
 
 }
-final class SecondaryDnsEnableTransferResponse {const SecondaryDnsEnableTransferResponse({this.result});
+@immutable final class SecondaryDnsEnableTransferResponse {const SecondaryDnsEnableTransferResponse({this.result});
 
 factory SecondaryDnsEnableTransferResponse.fromJson(Map<String, dynamic> json) { return SecondaryDnsEnableTransferResponse(
   result: json['result'] != null ? SecondaryDnsEnableTransferResult.fromJson(json['result'] as String) : null,

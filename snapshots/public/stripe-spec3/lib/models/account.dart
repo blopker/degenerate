@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_business_profile.dart';import 'account_capabilities.dart';import 'account_external_accounts.dart';import 'account_future_requirements.dart';import 'account_group_membership.dart';import 'account_requirements.dart';import 'account_settings.dart';import 'account_tos_acceptance.dart';import 'account_unification_account_controller.dart';import 'legal_entity_company.dart';import 'person.dart';/// The business type.
-final class AccountBusinessType {const AccountBusinessType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_business_profile.dart';import 'account_capabilities.dart';import 'account_external_accounts.dart';import 'account_future_requirements.dart';import 'account_group_membership.dart';import 'account_requirements.dart';import 'account_settings.dart';import 'account_tos_acceptance.dart';import 'account_unification_account_controller.dart';import 'legal_entity_company.dart';import 'person.dart';/// The business type.
+@immutable final class AccountBusinessType {const AccountBusinessType._(this.value);
 
 factory AccountBusinessType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountBusinessType($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class AccountObject {const AccountObject._(this.value);
+@immutable final class AccountObject {const AccountObject._(this.value);
 
 factory AccountObject.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountObject($value)'; } 
  }
 /// The Stripe account type. Can be `standard`, `express`, `custom`, or `none`.
-final class AccountType {const AccountType._(this.value);
+@immutable final class AccountType {const AccountType._(this.value);
 
 factory AccountType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -96,7 +96,7 @@ bool get isUnknown { return !values.contains(this); }
 /// is `stripe`, which includes Standard and Express accounts, some properties are only returned
 /// until you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions)
 /// to start Connect Onboarding. Learn about the [differences between accounts](/connect/accounts).
-final class Account {const Account({this.businessProfile, this.businessType, this.capabilities, this.chargesEnabled, this.company, this.controller, this.country, this.created, this.defaultCurrency, this.detailsSubmitted, this.email, this.externalAccounts, this.futureRequirements, this.groups, required this.id, this.individual, this.metadata, required this.object, this.payoutsEnabled, this.requirements, this.settings, this.tosAcceptance, this.type, });
+@immutable final class Account {const Account({required this.id, required this.object, this.businessProfile, this.businessType, this.capabilities, this.chargesEnabled, this.company, this.controller, this.country, this.created, this.defaultCurrency, this.detailsSubmitted, this.email, this.externalAccounts, this.futureRequirements, this.groups, this.individual, this.metadata, this.payoutsEnabled, this.requirements, this.settings, this.tosAcceptance, this.type, });
 
 factory Account.fromJson(Map<String, dynamic> json) { return Account(
   businessProfile: json['business_profile'] != null ? AccountBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,

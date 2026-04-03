@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Custom Payment Methods represent Payment Method types not modeled directly in
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom Payment Methods represent Payment Method types not modeled directly in
 /// the Stripe API. This resource consists of details about the custom payment method
 /// used for this payment attempt.
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails({required this.displayName, this.type, });
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails({required this.displayName, this.type, });
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(
   displayName: json['display_name'] as String,

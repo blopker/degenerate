@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata({this.effectiveNetworkType, this.reflexiveConnectivity, this.relayConnectivity, this.timestamp, this.turnConnectivity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata({this.effectiveNetworkType, this.reflexiveConnectivity, this.relayConnectivity, this.timestamp, this.turnConnectivity, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata(
   effectiveNetworkType: json['effective_network_type'] as String?,

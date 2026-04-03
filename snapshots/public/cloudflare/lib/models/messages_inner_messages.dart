@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages_inner_messages_content.dart';import 'messages_inner_messages_content_variant2.dart';import 'messages_inner_messages_content_variant3.dart';final class MessagesInnerMessages {const MessagesInnerMessages({this.content, this.role, this.toolCallId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages_inner_messages_content.dart';import 'messages_inner_messages_content_variant2.dart';import 'messages_inner_messages_content_variant3.dart';@immutable final class MessagesInnerMessages {const MessagesInnerMessages({this.content, this.role, this.toolCallId, });
 
 factory MessagesInnerMessages.fromJson(Map<String, dynamic> json) { return MessagesInnerMessages(
   content: json['content'] != null ? OneOf3.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => MessagesInnerMessagesContentVariant2.fromJson(e as Map<String, dynamic>)).toList(), fromC: (v) => MessagesInnerMessagesContentVariant3.fromJson(v as Map<String, dynamic>),) : null,

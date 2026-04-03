@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages28_messages_content_variant3_image_url.dart';final class Messages28MessagesContentVariant3 {const Messages28MessagesContentVariant3({this.imageUrl, this.text, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages28_messages_content_variant3_image_url.dart';@immutable final class Messages28MessagesContentVariant3 {const Messages28MessagesContentVariant3({this.imageUrl, this.text, this.type, });
 
 factory Messages28MessagesContentVariant3.fromJson(Map<String, dynamic> json) { return Messages28MessagesContentVariant3(
   imageUrl: json['image_url'] != null ? Messages28MessagesContentVariant3ImageUrl.fromJson(json['image_url'] as Map<String, dynamic>) : null,

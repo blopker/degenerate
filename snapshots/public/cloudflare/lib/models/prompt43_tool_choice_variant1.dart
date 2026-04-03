@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_tool_choice_variant1_allowed_tools.dart';import 'prompt43_tool_choice_variant1_custom.dart';import 'prompt43_tool_choice_variant1_function.dart';final class Prompt43ToolChoiceVariant1Variant1 {const Prompt43ToolChoiceVariant1Variant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_tool_choice_variant1_allowed_tools.dart';import 'prompt43_tool_choice_variant1_custom.dart';import 'prompt43_tool_choice_variant1_function.dart';@immutable final class Prompt43ToolChoiceVariant1Variant1 {const Prompt43ToolChoiceVariant1Variant1._(this.value);
 
 factory Prompt43ToolChoiceVariant1Variant1.fromJson(String json) { return switch (json) {
   'none' => none,

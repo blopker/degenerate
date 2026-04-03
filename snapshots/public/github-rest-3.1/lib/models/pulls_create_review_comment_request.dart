@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
-final class PullsCreateReviewCommentRequestSide {const PullsCreateReviewCommentRequestSide._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// In a split diff view, the side of the diff that the pull request's changes appear on. Can be `LEFT` or `RIGHT`. Use `LEFT` for deletions that appear in red. Use `RIGHT` for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see "[Diff view options](https://docs.github.com/articles/about-comparing-branches-in-pull-requests#diff-view-options)" in the GitHub Help documentation.
+@immutable final class PullsCreateReviewCommentRequestSide {const PullsCreateReviewCommentRequestSide._(this.value);
 
 factory PullsCreateReviewCommentRequestSide.fromJson(String json) { return switch (json) {
   'LEFT' => left,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PullsCreateReviewCommentRequestSide($value)'; } 
  }
 /// **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
-final class PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide._(this.value);
+@immutable final class PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide._(this.value);
 
 factory PullsCreateReviewCommentRequestStartSide.fromJson(String json) { return switch (json) {
   'LEFT' => left,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PullsCreateReviewCommentRequestStartSide($value)'; } 
  }
 /// The level at which the comment is targeted.
-final class PullsCreateReviewCommentRequestSubjectType {const PullsCreateReviewCommentRequestSubjectType._(this.value);
+@immutable final class PullsCreateReviewCommentRequestSubjectType {const PullsCreateReviewCommentRequestSubjectType._(this.value);
 
 factory PullsCreateReviewCommentRequestSubjectType.fromJson(String json) { return switch (json) {
   'line' => line,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PullsCreateReviewCommentRequestSubjectType($value)'; } 
  }
-final class PullsCreateReviewCommentRequest {const PullsCreateReviewCommentRequest({required this.body, required this.commitId, required this.path, this.position, this.side, this.line, this.startLine, this.startSide, this.inReplyTo, this.subjectType, });
+@immutable final class PullsCreateReviewCommentRequest {const PullsCreateReviewCommentRequest({required this.body, required this.commitId, required this.path, this.position, this.side, this.line, this.startLine, this.startSide, this.inReplyTo, this.subjectType, });
 
 factory PullsCreateReviewCommentRequest.fromJson(Map<String, dynamic> json) { return PullsCreateReviewCommentRequest(
   body: json['body'] as String,

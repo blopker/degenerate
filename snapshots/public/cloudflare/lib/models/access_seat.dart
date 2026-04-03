@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_access_seat.dart';import 'access_gateway_seat.dart';import 'access_seat_uid.dart';final class AccessSeat {const AccessSeat({required this.accessSeat, required this.gatewaySeat, required this.seatUid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_access_seat.dart';import 'access_gateway_seat.dart';import 'access_seat_uid.dart';@immutable final class AccessSeat {const AccessSeat({required this.accessSeat, required this.gatewaySeat, required this.seatUid, });
 
 factory AccessSeat.fromJson(Map<String, dynamic> json) { return AccessSeat(
   accessSeat: AccessAccessSeat.fromJson(json['access_seat'] as bool),

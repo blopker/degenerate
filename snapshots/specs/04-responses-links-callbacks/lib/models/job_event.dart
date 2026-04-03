@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class JobEvent {const JobEvent({this.jobId, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class JobEvent {const JobEvent({this.jobId, this.status, });
 
 factory JobEvent.fromJson(Map<String, dynamic> json) { return JobEvent(
   jobId: json['jobId'] as String?,

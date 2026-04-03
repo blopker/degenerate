@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Requested routing priority
-final class PaymentMethodOptionsCardPresentRoutingRequestedPriority {const PaymentMethodOptionsCardPresentRoutingRequestedPriority._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Requested routing priority
+@immutable final class PaymentMethodOptionsCardPresentRoutingRequestedPriority {const PaymentMethodOptionsCardPresentRoutingRequestedPriority._(this.value);
 
 factory PaymentMethodOptionsCardPresentRoutingRequestedPriority.fromJson(String json) { return switch (json) {
   'domestic' => domestic,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsCardPresentRoutingRequestedPriority($value)'; } 
  }
 /// 
-final class PaymentMethodOptionsCardPresentRouting {const PaymentMethodOptionsCardPresentRouting({this.requestedPriority});
+@immutable final class PaymentMethodOptionsCardPresentRouting {const PaymentMethodOptionsCardPresentRouting({this.requestedPriority});
 
 factory PaymentMethodOptionsCardPresentRouting.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCardPresentRouting(
   requestedPriority: json['requested_priority'] != null ? PaymentMethodOptionsCardPresentRoutingRequestedPriority.fromJson(json['requested_priority'] as String) : null,

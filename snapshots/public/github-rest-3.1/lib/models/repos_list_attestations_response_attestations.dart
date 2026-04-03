@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repos_list_attestations_response_attestations_bundle.dart';final class ReposListAttestationsResponseAttestations {const ReposListAttestationsResponseAttestations({this.bundle, this.repositoryId, this.bundleUrl, this.initiator, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_list_attestations_response_attestations_bundle.dart';@immutable final class ReposListAttestationsResponseAttestations {const ReposListAttestationsResponseAttestations({this.bundle, this.repositoryId, this.bundleUrl, this.initiator, });
 
 factory ReposListAttestationsResponseAttestations.fromJson(Map<String, dynamic> json) { return ReposListAttestationsResponseAttestations(
   bundle: json['bundle'] != null ? ReposListAttestationsResponseAttestationsBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null,

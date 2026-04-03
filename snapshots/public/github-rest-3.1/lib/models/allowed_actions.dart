@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The permissions policy that controls the actions and reusable workflows that are allowed to run.
-final class AllowedActions {const AllowedActions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The permissions policy that controls the actions and reusable workflows that are allowed to run.
+@immutable final class AllowedActions {const AllowedActions._(this.value);
 
 factory AllowedActions.fromJson(String json) { return switch (json) {
   'all' => all,

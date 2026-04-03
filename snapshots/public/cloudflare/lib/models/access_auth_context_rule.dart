@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_auth_context_rule_auth_context.dart';/// Matches an Azure Authentication Context.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_auth_context_rule_auth_context.dart';/// Matches an Azure Authentication Context.
 /// Requires an Azure identity provider.
-final class AccessAuthContextRule {const AccessAuthContextRule({required this.authContext});
+@immutable final class AccessAuthContextRule {const AccessAuthContextRule({required this.authContext});
 
 factory AccessAuthContextRule.fromJson(Map<String, dynamic> json) { return AccessAuthContextRule(
   authContext: AccessAuthContextRuleAuthContext.fromJson(json['auth_context'] as Map<String, dynamic>),

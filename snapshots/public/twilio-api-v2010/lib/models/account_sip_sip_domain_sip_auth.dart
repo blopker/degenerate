@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountSipSipDomainSipAuth {const AccountSipSipDomainSipAuth();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipDomainSipAuth {const AccountSipSipDomainSipAuth();
 
-factory AccountSipSipDomainSipAuth.fromJson(Map<String, dynamic> json) { return AccountSipSipDomainSipAuth(
-
-); }
+factory AccountSipSipDomainSipAuth.fromJson(Map<String, dynamic> _) { return const AccountSipSipDomainSipAuth(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-AccountSipSipDomainSipAuth copyWith() { return AccountSipSipDomainSipAuth(
+AccountSipSipDomainSipAuth copyWith() { return const AccountSipSipDomainSipAuth(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is AccountSipSipDomainSipAuth; } 

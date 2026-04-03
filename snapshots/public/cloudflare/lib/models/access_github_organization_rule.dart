@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_github_organization_rule_github_organization.dart';/// Matches a Github organization.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_github_organization_rule_github_organization.dart';/// Matches a Github organization.
 /// Requires a Github identity provider.
-final class AccessGithubOrganizationRule {const AccessGithubOrganizationRule({required this.githubOrganization});
+@immutable final class AccessGithubOrganizationRule {const AccessGithubOrganizationRule({required this.githubOrganization});
 
 factory AccessGithubOrganizationRule.fromJson(Map<String, dynamic> json) { return AccessGithubOrganizationRule(
   githubOrganization: AccessGithubOrganizationRuleGithubOrganization.fromJson(json['github-organization'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team2.dart';import 'user.dart';import 'webhooks_pull_request5_assignee.dart';import 'webhooks_pull_request5_assignees.dart';import 'webhooks_pull_request5_auto_merge.dart';import 'webhooks_pull_request5_base.dart';import 'webhooks_pull_request5_head.dart';import 'webhooks_pull_request5_labels.dart';import 'webhooks_pull_request5_links.dart';import 'webhooks_pull_request5_merged_by.dart';import 'webhooks_pull_request5_milestone.dart';import 'webhooks_pull_request5_requested_reviewers.dart';import 'webhooks_pull_request5_requested_teams.dart';import 'webhooks_pull_request5_user.dart';final class WebhooksPullRequest5ActiveLockReason {const WebhooksPullRequest5ActiveLockReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team2.dart';import 'user.dart';import 'webhooks_pull_request5_assignee.dart';import 'webhooks_pull_request5_assignees.dart';import 'webhooks_pull_request5_auto_merge.dart';import 'webhooks_pull_request5_base.dart';import 'webhooks_pull_request5_head.dart';import 'webhooks_pull_request5_labels.dart';import 'webhooks_pull_request5_links.dart';import 'webhooks_pull_request5_merged_by.dart';import 'webhooks_pull_request5_milestone.dart';import 'webhooks_pull_request5_requested_reviewers.dart';import 'webhooks_pull_request5_requested_teams.dart';import 'webhooks_pull_request5_user.dart';@immutable final class WebhooksPullRequest5ActiveLockReason {const WebhooksPullRequest5ActiveLockReason._(this.value);
 
 factory WebhooksPullRequest5ActiveLockReason.fromJson(String json) { return switch (json) {
   'resolved' => resolved,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksPullRequest5ActiveLockReason($value)'; } 
  }
 /// How the author is associated with the repository.
-final class WebhooksPullRequest5AuthorAssociation {const WebhooksPullRequest5AuthorAssociation._(this.value);
+@immutable final class WebhooksPullRequest5AuthorAssociation {const WebhooksPullRequest5AuthorAssociation._(this.value);
 
 factory WebhooksPullRequest5AuthorAssociation.fromJson(String json) { return switch (json) {
   'COLLABORATOR' => collaborator,
@@ -77,7 +77,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksPullRequest5AuthorAssociation($value)'; } 
  }
 /// State of this Pull Request. Either `open` or `closed`.
-final class WebhooksPullRequest5State {const WebhooksPullRequest5State._(this.value);
+@immutable final class WebhooksPullRequest5State {const WebhooksPullRequest5State._(this.value);
 
 factory WebhooksPullRequest5State.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -101,7 +101,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksPullRequest5State($value)'; } 
  }
-final class WebhooksPullRequest5 {const WebhooksPullRequest5({required this.links, required this.activeLockReason, this.additions, required this.assignee, required this.assignees, required this.authorAssociation, required this.autoMerge, required this.base, required this.body, this.changedFiles, required this.closedAt, this.comments, required this.commentsUrl, this.commits, required this.commitsUrl, required this.createdAt, this.deletions, required this.diffUrl, required this.draft, required this.head, required this.htmlUrl, required this.id, required this.issueUrl, required this.labels, required this.locked, this.maintainerCanModify, required this.mergeCommitSha, this.mergeable, this.mergeableState, this.merged, required this.mergedAt, this.mergedBy, required this.milestone, required this.nodeId, required this.number, required this.patchUrl, this.rebaseable, required this.requestedReviewers, required this.requestedTeams, required this.reviewCommentUrl, this.reviewComments, required this.reviewCommentsUrl, required this.state, required this.statusesUrl, required this.title, required this.updatedAt, required this.url, required this.user, });
+@immutable final class WebhooksPullRequest5 {const WebhooksPullRequest5({required this.createdAt, required this.activeLockReason, required this.url, required this.assignee, required this.assignees, required this.authorAssociation, required this.autoMerge, required this.base, required this.body, required this.updatedAt, required this.closedAt, required this.title, required this.commentsUrl, required this.statusesUrl, required this.commitsUrl, required this.links, required this.state, required this.diffUrl, required this.draft, required this.head, required this.htmlUrl, required this.id, required this.issueUrl, required this.labels, required this.locked, required this.reviewCommentsUrl, required this.mergeCommitSha, required this.requestedTeams, required this.requestedReviewers, required this.patchUrl, required this.mergedAt, required this.user, required this.milestone, required this.nodeId, required this.number, required this.reviewCommentUrl, this.rebaseable, this.mergeableState, this.mergeable, this.mergedBy, this.reviewComments, this.maintainerCanModify, this.deletions, this.commits, this.comments, this.changedFiles, this.additions, this.merged, });
 
 factory WebhooksPullRequest5.fromJson(Map<String, dynamic> json) { return WebhooksPullRequest5(
   links: WebhooksPullRequest5Links.fromJson(json['_links'] as Map<String, dynamic>),

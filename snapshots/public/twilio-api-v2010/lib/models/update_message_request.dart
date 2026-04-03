@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MessageEnumUpdateStatus {const MessageEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MessageEnumUpdateStatus {const MessageEnumUpdateStatus._(this.value);
 
 factory MessageEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageEnumUpdateStatus($value)'; } 
  }
-final class UpdateMessageRequest {const UpdateMessageRequest({this.body, this.status, });
+@immutable final class UpdateMessageRequest {const UpdateMessageRequest({this.body, this.status, });
 
 factory UpdateMessageRequest.fromJson(Map<String, dynamic> json) { return UpdateMessageRequest(
   body: json['Body'] as String?,

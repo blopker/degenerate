@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Contains request to store catalog credentials.
-final class R2DataCatalogCatalogCredentialRequest {const R2DataCatalogCatalogCredentialRequest({required this.token});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains request to store catalog credentials.
+@immutable final class R2DataCatalogCatalogCredentialRequest {const R2DataCatalogCatalogCredentialRequest({required this.token});
 
 factory R2DataCatalogCatalogCredentialRequest.fromJson(Map<String, dynamic> json) { return R2DataCatalogCatalogCredentialRequest(
   token: json['token'] as String,

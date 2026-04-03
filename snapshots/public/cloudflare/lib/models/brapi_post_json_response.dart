@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_json_response_errors.dart';final class BrapiPostJsonResponse {const BrapiPostJsonResponse({this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_json_response_errors.dart';@immutable final class BrapiPostJsonResponse {const BrapiPostJsonResponse({required this.result, required this.success, this.errors, });
 
 factory BrapiPostJsonResponse.fromJson(Map<String, dynamic> json) { return BrapiPostJsonResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostJsonResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)))),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Map<String, dynamic>)),
   success: json['success'] as bool,
 ); }
 
@@ -17,7 +17,7 @@ final bool success;
 
 Map<String, dynamic> toJson() { return {
   if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
-  'result': result.map((k, v) => MapEntry(k, v)),
+  'result': result,
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&

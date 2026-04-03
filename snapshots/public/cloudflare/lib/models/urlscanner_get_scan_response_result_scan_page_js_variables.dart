@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponseResultScanPageJsVariables {const UrlscannerGetScanResponseResultScanPageJsVariables({required this.name, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanPageJsVariables {const UrlscannerGetScanResponseResultScanPageJsVariables({required this.name, required this.type, });
 
 factory UrlscannerGetScanResponseResultScanPageJsVariables.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanPageJsVariables(
   name: json['name'] as String,

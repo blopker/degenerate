@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_organization_get_your_zero_trust_organization_doh_settings_response_result.dart';final class ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponse {const ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_organization_get_your_zero_trust_organization_doh_settings_response_result.dart';@immutable final class ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponse {const ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponse({this.result});
 
 factory ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponse.fromJson(Map<String, dynamic> json) { return ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponse(
   result: json['result'] != null ? ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

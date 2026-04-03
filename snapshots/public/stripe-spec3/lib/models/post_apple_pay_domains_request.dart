@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostApplePayDomainsRequest {const PostApplePayDomainsRequest({required this.domainName, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostApplePayDomainsRequest {const PostApplePayDomainsRequest({required this.domainName, this.expand, });
 
 factory PostApplePayDomainsRequest.fromJson(Map<String, dynamic> json) { return PostApplePayDomainsRequest(
   domainName: json['domain_name'] as String,

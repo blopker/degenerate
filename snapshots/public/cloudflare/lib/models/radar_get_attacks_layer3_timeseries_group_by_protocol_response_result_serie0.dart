@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0 {const RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0({required this.gre, required this.icmp, required this.tcp, required this.udp, required this.timestamps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0 {const RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0({required this.gre, required this.icmp, required this.tcp, required this.udp, required this.timestamps, });
 
 factory RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0(
   gre: (json['GRE'] as List<dynamic>).map((e) => e as String).toList(),

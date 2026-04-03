@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_data_catalog_catalog_compaction_config.dart';import 'r2_data_catalog_snapshot_expiration_config.dart';/// Configures maintenance for the catalog.
-final class R2DataCatalogCatalogMaintenanceConfig {const R2DataCatalogCatalogMaintenanceConfig({this.compaction, this.snapshotExpiration, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_catalog_compaction_config.dart';import 'r2_data_catalog_snapshot_expiration_config.dart';/// Configures maintenance for the catalog.
+@immutable final class R2DataCatalogCatalogMaintenanceConfig {const R2DataCatalogCatalogMaintenanceConfig({this.compaction, this.snapshotExpiration, });
 
 factory R2DataCatalogCatalogMaintenanceConfig.fromJson(Map<String, dynamic> json) { return R2DataCatalogCatalogMaintenanceConfig(
   compaction: json['compaction'] != null ? R2DataCatalogCatalogCompactionConfig.fromJson(json['compaction'] as Map<String, dynamic>) : null,

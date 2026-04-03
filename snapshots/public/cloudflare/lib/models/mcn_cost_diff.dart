@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnCostDiff {const McnCostDiff({required this.currency, required this.currentMonthlyCost, required this.diff, required this.proposedMonthlyCost, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnCostDiff {const McnCostDiff({required this.currency, required this.currentMonthlyCost, required this.diff, required this.proposedMonthlyCost, });
 
 factory McnCostDiff.fromJson(Map<String, dynamic> json) { return McnCostDiff(
   currency: json['currency'] as String,

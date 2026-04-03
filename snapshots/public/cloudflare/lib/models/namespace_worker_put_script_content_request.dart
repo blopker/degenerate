@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'namespace_worker_put_script_content_request_metadata.dart';final class NamespaceWorkerPutScriptContentRequest {const NamespaceWorkerPutScriptContentRequest({this.files, required this.metadata, });
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'namespace_worker_put_script_content_request_metadata.dart';@immutable final class NamespaceWorkerPutScriptContentRequest {const NamespaceWorkerPutScriptContentRequest({required this.metadata, this.files, });
 
 factory NamespaceWorkerPutScriptContentRequest.fromJson(Map<String, dynamic> json) { return NamespaceWorkerPutScriptContentRequest(
   files: (json['files'] as List<dynamic>?)?.map((e) => base64Decode(e as String)).toList(),
@@ -14,7 +14,7 @@ final List<Uint8List>? files;
 final NamespaceWorkerPutScriptContentRequestMetadata metadata;
 
 Map<String, dynamic> toJson() { return {
-  if (files != null) 'files': files?.map((e) => base64Encode(e)).toList(),
+  if (files != null) 'files': files?.map(base64Encode).toList(),
   'metadata': metadata.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata'); } 

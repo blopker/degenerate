@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class TenantUnit {const TenantUnit({required this.unitMemberships, required this.unitMetadata, required this.unitName, required this.unitStatus, required this.unitTag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TenantUnit {const TenantUnit({required this.unitMemberships, required this.unitMetadata, required this.unitName, required this.unitStatus, required this.unitTag, });
 
 factory TenantUnit.fromJson(Map<String, dynamic> json) { return TenantUnit(
-  unitMemberships: (json['unit_memberships'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
-  unitMetadata: (json['unit_metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  unitMemberships: (json['unit_memberships'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
+  unitMetadata: json['unit_metadata'] as Map<String, dynamic>,
   unitName: json['unit_name'] as String,
   unitStatus: json['unit_status'] as String,
   unitTag: json['unit_tag'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_ttl.dart';final class DnsRecordsDnsRecordSharedFields {const DnsRecordsDnsRecordSharedFields({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_ttl.dart';@immutable final class DnsRecordsDnsRecordSharedFields {const DnsRecordsDnsRecordSharedFields({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, });
 
 factory DnsRecordsDnsRecordSharedFields.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRecordSharedFields(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

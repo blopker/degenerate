@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Reason for the failure.
-final class TreasuryInboundTransfersResourceFailureDetailsCode {const TreasuryInboundTransfersResourceFailureDetailsCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason for the failure.
+@immutable final class TreasuryInboundTransfersResourceFailureDetailsCode {const TreasuryInboundTransfersResourceFailureDetailsCode._(this.value);
 
 factory TreasuryInboundTransfersResourceFailureDetailsCode.fromJson(String json) { return switch (json) {
   'account_closed' => accountClosed,
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryInboundTransfersResourceFailureDetailsCode($value)'; } 
  }
 /// 
-final class TreasuryInboundTransfersResourceFailureDetails {const TreasuryInboundTransfersResourceFailureDetails({required this.code});
+@immutable final class TreasuryInboundTransfersResourceFailureDetails {const TreasuryInboundTransfersResourceFailureDetails({required this.code});
 
 factory TreasuryInboundTransfersResourceFailureDetails.fromJson(Map<String, dynamic> json) { return TreasuryInboundTransfersResourceFailureDetails(
   code: TreasuryInboundTransfersResourceFailureDetailsCode.fromJson(json['code'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'fraud_fraud_settings.dart';final class FraudFraudSettingsResponseBody {const FraudFraudSettingsResponseBody({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fraud_fraud_settings.dart';@immutable final class FraudFraudSettingsResponseBody {const FraudFraudSettingsResponseBody({this.result});
 
 factory FraudFraudSettingsResponseBody.fromJson(Map<String, dynamic> json) { return FraudFraudSettingsResponseBody(
   result: json['result'] != null ? FraudFraudSettings.fromJson(json['result'] as Map<String, dynamic>) : null,

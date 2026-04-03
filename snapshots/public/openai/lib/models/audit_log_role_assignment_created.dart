@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The details for events with this `type`.
-final class AuditLogRoleAssignmentCreated {const AuditLogRoleAssignmentCreated({this.id, this.principalId, this.principalType, this.resourceId, this.resourceType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
+@immutable final class AuditLogRoleAssignmentCreated {const AuditLogRoleAssignmentCreated({this.id, this.principalId, this.principalType, this.resourceId, this.resourceType, });
 
 factory AuditLogRoleAssignmentCreated.fromJson(Map<String, dynamic> json) { return AuditLogRoleAssignmentCreated(
   id: json['id'] as String?,

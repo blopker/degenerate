@@ -3,17 +3,17 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'endpoint_address.dart';import 'endpoint_port.dart';/// EndpointSubset is a group of addresses with a common set of ports. The expanded set of endpoints is the Cartesian product of Addresses x Ports. For example, given:
 /// 
 /// 	{
-/// 	  Addresses: [{"ip": "10.10.1.1"}, {"ip": "10.10.2.2"}],
-/// 	  Ports:     [{"name": "a", "port": 8675}, {"name": "b", "port": 309}]
+/// 	  Addresses: `[{"ip": "10.10.1.1"}, {"ip": "10.10.2.2"}]`,
+/// 	  Ports:     `[{"name": "a", "port": 8675}, {"name": "b", "port": 309}]`
 /// 	}
 /// 
 /// The resulting set of endpoints can be viewed as:
 /// 
-/// 	a: [ 10.10.1.1:8675, 10.10.2.2:8675 ],
-/// 	b: [ 10.10.1.1:309, 10.10.2.2:309 ]
+/// 	a: `[ 10.10.1.1:8675, 10.10.2.2:8675 ]`,
+/// 	b: `[ 10.10.1.1:309, 10.10.2.2:309 ]`
 /// 
 /// Deprecated: This API is deprecated in v1.33+.
-final class EndpointSubset {const EndpointSubset({this.addresses, this.notReadyAddresses, this.ports, });
+@immutable final class EndpointSubset {const EndpointSubset({this.addresses, this.notReadyAddresses, this.ports, });
 
 factory EndpointSubset.fromJson(Map<String, dynamic> json) { return EndpointSubset(
   addresses: (json['addresses'] as List<dynamic>?)?.map((e) => EndpointAddress.fromJson(e as Map<String, dynamic>)).toList(),

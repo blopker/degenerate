@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'comparison_filter.dart';import 'compound_filter.dart';import 'filters.dart';import 'ranking_options.dart';/// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
-final class FileSearchTool {const FileSearchTool({this.type = 'file_search', required this.vectorStoreIds, this.maxNumResults, this.rankingOptions, this.filters, });
+@immutable final class FileSearchTool {const FileSearchTool({required this.vectorStoreIds, this.type = 'file_search', this.maxNumResults, this.rankingOptions, this.filters, });
 
 factory FileSearchTool.fromJson(Map<String, dynamic> json) { return FileSearchTool(
   type: json['type'] as String,

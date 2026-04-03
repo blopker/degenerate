@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringColosResponse2 {const DigitalExperienceMonitoringColosResponse2({required this.airportCode, required this.city, required this.countryCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringColosResponse2 {const DigitalExperienceMonitoringColosResponse2({required this.airportCode, required this.city, required this.countryCode, });
 
 factory DigitalExperienceMonitoringColosResponse2.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringColosResponse2(
   airportCode: json['airportCode'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetPermissionListResponseResourceType {const GetPermissionListResponseResourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPermissionListResponseResourceType {const GetPermissionListResponseResourceType._(this.value);
 
 factory GetPermissionListResponseResourceType.fromJson(String json) { return switch (json) {
   'dataset' => dataset,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetPermissionListResponseResourceType($value)'; } 
  }
-final class GetPermissionListResponseRole {const GetPermissionListResponseRole._(this.value);
+@immutable final class GetPermissionListResponseRole {const GetPermissionListResponseRole._(this.value);
 
 factory GetPermissionListResponseRole.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetPermissionListResponseRole($value)'; } 
  }
-final class GetPermissionListResponseSubjectType {const GetPermissionListResponseSubjectType._(this.value);
+@immutable final class GetPermissionListResponseSubjectType {const GetPermissionListResponseSubjectType._(this.value);
 
 factory GetPermissionListResponseSubjectType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetPermissionListResponseSubjectType($value)'; } 
  }
-final class GetPermissionListResponse {const GetPermissionListResponse({required this.createdAt, this.resourceId, required this.resourceType, required this.role, required this.subjectId, required this.subjectType, required this.updatedAt, required this.uuid, });
+@immutable final class GetPermissionListResponse {const GetPermissionListResponse({required this.createdAt, required this.resourceType, required this.role, required this.subjectId, required this.subjectType, required this.updatedAt, required this.uuid, this.resourceId, });
 
 factory GetPermissionListResponse.fromJson(Map<String, dynamic> json) { return GetPermissionListResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),

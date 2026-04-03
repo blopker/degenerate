@@ -20,12 +20,12 @@ if (providerId != null) {
 }
 if (resourceType != null) {
 for (final item in resourceType) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item.toJson()));
 }
 }
 if (resourceId != null) {
 for (final item in resourceId) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_id', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_id', value: item.toJson()));
 }
 }
 if (region != null) {
@@ -39,7 +39,7 @@ if (managed != null) {
 }
 if (search != null) {
 for (final item in search) {
-  queryParametersList.add(ApiQueryParameter(name: 'search', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'search', value: item));
 }
 }
 if (orderBy != null) {
@@ -128,12 +128,12 @@ if (providerId != null) {
 }
 if (resourceType != null) {
 for (final item in resourceType) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item.toJson()));
 }
 }
 if (resourceId != null) {
 for (final item in resourceId) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_id', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_id', value: item.toJson()));
 }
 }
 if (region != null) {
@@ -144,7 +144,7 @@ if (resourceGroup != null) {
 }
 if (search != null) {
 for (final item in search) {
-  queryParametersList.add(ApiQueryParameter(name: 'search', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'search', value: item));
 }
 }
 if (orderBy != null) {

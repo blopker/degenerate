@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_sending_subdomain_properties.dart';final class EmailSendingSubdomainResponseSingle {const EmailSendingSubdomainResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_sending_subdomain_properties.dart';@immutable final class EmailSendingSubdomainResponseSingle {const EmailSendingSubdomainResponseSingle({this.result});
 
 factory EmailSendingSubdomainResponseSingle.fromJson(Map<String, dynamic> json) { return EmailSendingSubdomainResponseSingle(
   result: json['result'] != null ? EmailSendingSubdomainProperties.fromJson(json['result'] as Map<String, dynamic>) : null,

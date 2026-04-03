@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AuthorFilterSchema {const AuthorFilterSchema({required this.name, required this.slug, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AuthorFilterSchema {const AuthorFilterSchema({required this.name, required this.slug, });
 
 factory AuthorFilterSchema.fromJson(Map<String, dynamic> json) { return AuthorFilterSchema(
   name: json['name'] as String,

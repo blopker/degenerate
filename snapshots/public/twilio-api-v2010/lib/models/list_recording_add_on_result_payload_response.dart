@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_recording_recording_add_on_result_recording_add_on_result_payload.dart';final class ListRecordingAddOnResultPayloadResponse {const ListRecordingAddOnResultPayloadResponse({this.payloads, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_recording_recording_add_on_result_recording_add_on_result_payload.dart';@immutable final class ListRecordingAddOnResultPayloadResponse {const ListRecordingAddOnResultPayloadResponse({this.payloads, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListRecordingAddOnResultPayloadResponse.fromJson(Map<String, dynamic> json) { return ListRecordingAddOnResultPayloadResponse(
   payloads: (json['payloads'] as List<dynamic>?)?.map((e) => AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload.fromJson(e as Map<String, dynamic>)).toList(),

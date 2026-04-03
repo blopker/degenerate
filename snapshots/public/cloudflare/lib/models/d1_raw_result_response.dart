@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'd1_query_meta.dart';import 'd1_raw_result_response_results.dart';final class D1RawResultResponse {const D1RawResultResponse({this.meta, this.results, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_query_meta.dart';import 'd1_raw_result_response_results.dart';@immutable final class D1RawResultResponse {const D1RawResultResponse({this.meta, this.results, this.success, });
 
 factory D1RawResultResponse.fromJson(Map<String, dynamic> json) { return D1RawResultResponse(
   meta: json['meta'] != null ? D1QueryMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,

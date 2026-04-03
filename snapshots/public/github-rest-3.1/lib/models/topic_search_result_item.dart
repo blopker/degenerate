@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'search_result_text_matches2.dart';import 'topic_search_result_item_aliases.dart';import 'topic_search_result_item_related.dart';/// Topic Search Result Item
-final class TopicSearchResultItem {const TopicSearchResultItem({required this.name, required this.displayName, required this.shortDescription, required this.description, required this.createdBy, required this.released, required this.createdAt, required this.updatedAt, required this.featured, required this.curated, required this.score, this.repositoryCount, this.logoUrl, this.textMatches, this.related, this.aliases, });
+@immutable final class TopicSearchResultItem {const TopicSearchResultItem({required this.name, required this.displayName, required this.shortDescription, required this.description, required this.createdBy, required this.released, required this.createdAt, required this.updatedAt, required this.featured, required this.curated, required this.score, this.repositoryCount, this.logoUrl, this.textMatches, this.related, this.aliases, });
 
 factory TopicSearchResultItem.fromJson(Map<String, dynamic> json) { return TopicSearchResultItem(
   name: json['name'] as String,

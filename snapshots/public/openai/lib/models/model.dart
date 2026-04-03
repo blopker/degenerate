@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always "model".
-final class ModelObject {const ModelObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "model".
+@immutable final class ModelObject {const ModelObject._(this.value);
 
 factory ModelObject.fromJson(String json) { return switch (json) {
   'model' => model,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ModelObject($value)'; } 
  }
 /// Describes an OpenAI model offering that can be used with the API.
-final class Model {const Model({required this.id, required this.created, required this.object, required this.ownedBy, });
+@immutable final class Model {const Model({required this.id, required this.created, required this.object, required this.ownedBy, });
 
 factory Model.fromJson(Map<String, dynamic> json) { return Model(
   id: json['id'] as String,

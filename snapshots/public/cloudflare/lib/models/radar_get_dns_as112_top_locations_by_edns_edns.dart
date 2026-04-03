@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// EDNS (Extension Mechanisms for DNS) status.
-final class RadarGetDnsAs112TopLocationsByEdnsEdns {const RadarGetDnsAs112TopLocationsByEdnsEdns._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// EDNS (Extension Mechanisms for DNS) status.
+@immutable final class RadarGetDnsAs112TopLocationsByEdnsEdns {const RadarGetDnsAs112TopLocationsByEdnsEdns._(this.value);
 
 factory RadarGetDnsAs112TopLocationsByEdnsEdns.fromJson(String json) { return switch (json) {
   'SUPPORTED' => supported,

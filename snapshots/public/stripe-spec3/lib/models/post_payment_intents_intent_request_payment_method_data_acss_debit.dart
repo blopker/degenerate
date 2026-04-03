@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentRequestPaymentMethodDataAcssDebit {const PostPaymentIntentsIntentRequestPaymentMethodDataAcssDebit({required this.accountNumber, required this.institutionNumber, required this.transitNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataAcssDebit {const PostPaymentIntentsIntentRequestPaymentMethodDataAcssDebit({required this.accountNumber, required this.institutionNumber, required this.transitNumber, });
 
 factory PostPaymentIntentsIntentRequestPaymentMethodDataAcssDebit.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataAcssDebit(
   accountNumber: json['account_number'] as String,

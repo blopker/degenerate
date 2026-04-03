@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'pub_stripe_spec3_security.dart';
 import '../apis/default_api.dart';
+import 'pub_stripe_spec3_security.dart';
 
 /// Root SDK client providing access to all API groups.
 ///
@@ -11,11 +11,11 @@ import '../apis/default_api.dart';
 /// sdk.$default.getAccount();
 /// ```
 final class PubStripeSpec3Api {
+  PubStripeSpec3Api(this._config);
+
   static const defaultBaseUrl = 'https://api.stripe.com/';
 
   final ApiConfig _config;
-
-  PubStripeSpec3Api(this._config);
 
   late final DefaultApi $default = DefaultApi(_config);
 

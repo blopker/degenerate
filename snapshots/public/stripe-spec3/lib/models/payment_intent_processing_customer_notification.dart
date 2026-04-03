@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentProcessingCustomerNotification {const PaymentIntentProcessingCustomerNotification({this.approvalRequested, this.completesAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentProcessingCustomerNotification {const PaymentIntentProcessingCustomerNotification({this.approvalRequested, this.completesAt, });
 
 factory PaymentIntentProcessingCustomerNotification.fromJson(Map<String, dynamic> json) { return PaymentIntentProcessingCustomerNotification(
   approvalRequested: json['approval_requested'] as bool?,

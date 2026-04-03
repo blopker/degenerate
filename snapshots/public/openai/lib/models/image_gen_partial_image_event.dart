@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `image_generation.partial_image`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `image_generation.partial_image`.
 /// 
-final class ImageGenPartialImageEventType {const ImageGenPartialImageEventType._(this.value);
+@immutable final class ImageGenPartialImageEventType {const ImageGenPartialImageEventType._(this.value);
 
 factory ImageGenPartialImageEventType.fromJson(String json) { return switch (json) {
   'image_generation.partial_image' => imageGenerationPartialImage,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The size of the requested image.
 /// 
-final class ImageGenPartialImageEventSize {const ImageGenPartialImageEventSize._(this.value);
+@immutable final class ImageGenPartialImageEventSize {const ImageGenPartialImageEventSize._(this.value);
 
 factory ImageGenPartialImageEventSize.fromJson(String json) { return switch (json) {
   '1024x1024' => $1024x1024,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The quality setting for the requested image.
 /// 
-final class ImageGenPartialImageEventQuality {const ImageGenPartialImageEventQuality._(this.value);
+@immutable final class ImageGenPartialImageEventQuality {const ImageGenPartialImageEventQuality._(this.value);
 
 factory ImageGenPartialImageEventQuality.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -89,7 +89,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The background setting for the requested image.
 /// 
-final class ImageGenPartialImageEventBackground {const ImageGenPartialImageEventBackground._(this.value);
+@immutable final class ImageGenPartialImageEventBackground {const ImageGenPartialImageEventBackground._(this.value);
 
 factory ImageGenPartialImageEventBackground.fromJson(String json) { return switch (json) {
   'transparent' => transparent,
@@ -118,7 +118,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The output format for the requested image.
 /// 
-final class ImageGenPartialImageEventOutputFormat {const ImageGenPartialImageEventOutputFormat._(this.value);
+@immutable final class ImageGenPartialImageEventOutputFormat {const ImageGenPartialImageEventOutputFormat._(this.value);
 
 factory ImageGenPartialImageEventOutputFormat.fromJson(String json) { return switch (json) {
   'png' => png,
@@ -147,7 +147,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when a partial image is available during image generation streaming.
 /// 
-final class ImageGenPartialImageEvent {const ImageGenPartialImageEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.partialImageIndex, });
+@immutable final class ImageGenPartialImageEvent {const ImageGenPartialImageEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.partialImageIndex, });
 
 factory ImageGenPartialImageEvent.fromJson(Map<String, dynamic> json) { return ImageGenPartialImageEvent(
   type: ImageGenPartialImageEventType.fromJson(json['type'] as String),

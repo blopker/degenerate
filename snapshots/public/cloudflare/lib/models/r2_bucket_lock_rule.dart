@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_bucket_lock_rule_condition.dart';import 'r2_lock_rule_age_condition.dart';import 'r2_lock_rule_date_condition.dart';import 'r2_lock_rule_indefinite_condition.dart';final class R2BucketLockRule {const R2BucketLockRule({required this.condition, required this.enabled, required this.id, this.prefix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_bucket_lock_rule_condition.dart';import 'r2_lock_rule_age_condition.dart';import 'r2_lock_rule_date_condition.dart';import 'r2_lock_rule_indefinite_condition.dart';@immutable final class R2BucketLockRule {const R2BucketLockRule({required this.condition, required this.enabled, required this.id, this.prefix, });
 
 factory R2BucketLockRule.fromJson(Map<String, dynamic> json) { return R2BucketLockRule(
   condition: OneOf3.parse(json['condition'], fromA: (v) => R2LockRuleAgeCondition.fromJson(v as Map<String, dynamic>), fromB: (v) => R2LockRuleDateCondition.fromJson(v as Map<String, dynamic>), fromC: (v) => R2LockRuleIndefiniteCondition.fromJson(v as Map<String, dynamic>),),

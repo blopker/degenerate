@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Scim Error
-final class ScimError {const ScimError({this.message, this.documentationUrl, this.detail, this.status, this.scimType, this.schemas, });
+@immutable final class ScimError {const ScimError({this.message, this.documentationUrl, this.detail, this.status, this.scimType, this.schemas, });
 
 factory ScimError.fromJson(Map<String, dynamic> json) { return ScimError(
   message: json['message'] as String?,

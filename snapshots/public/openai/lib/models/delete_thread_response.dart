@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteThreadResponseObject {const DeleteThreadResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteThreadResponseObject {const DeleteThreadResponseObject._(this.value);
 
 factory DeleteThreadResponseObject.fromJson(String json) { return switch (json) {
   'thread.deleted' => threadDeleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DeleteThreadResponseObject($value)'; } 
  }
-final class DeleteThreadResponse {const DeleteThreadResponse({required this.id, required this.deleted, required this.object, });
+@immutable final class DeleteThreadResponse {const DeleteThreadResponse({required this.id, required this.deleted, required this.object, });
 
 factory DeleteThreadResponse.fromJson(Map<String, dynamic> json) { return DeleteThreadResponse(
   id: json['id'] as String,

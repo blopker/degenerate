@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_cre
 /// either a realtime or a transcription session configuration.
 /// [Learn more about the Realtime API](/docs/guides/realtime).
 /// 
-final class RealtimeCreateClientSecretRequest {const RealtimeCreateClientSecretRequest({this.expiresAfter, this.session, });
+@immutable final class RealtimeCreateClientSecretRequest {const RealtimeCreateClientSecretRequest({this.expiresAfter, this.session, });
 
 factory RealtimeCreateClientSecretRequest.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretRequest(
   expiresAfter: json['expires_after'] != null ? RealtimeCreateClientSecretRequestExpiresAfter.fromJson(json['expires_after'] as Map<String, dynamic>) : null,

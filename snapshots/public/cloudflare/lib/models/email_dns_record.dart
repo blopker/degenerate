@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_dns_record_ttl.dart';/// DNS record type.
-final class EmailDnsRecordType {const EmailDnsRecordType._(this.value);
+@immutable final class EmailDnsRecordType {const EmailDnsRecordType._(this.value);
 
 factory EmailDnsRecordType.fromJson(String json) { return switch (json) {
   'A' => a,
@@ -74,7 +74,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'EmailDnsRecordType($value)'; } 
  }
 /// List of records needed to enable an Email Routing zone.
-final class EmailDnsRecord {const EmailDnsRecord({this.content, this.name, this.priority, this.ttl, this.type, });
+@immutable final class EmailDnsRecord {const EmailDnsRecord({this.content, this.name, this.priority, this.ttl, this.type, });
 
 factory EmailDnsRecord.fromJson(Map<String, dynamic> json) { return EmailDnsRecord(
   content: json['content'] as String?,

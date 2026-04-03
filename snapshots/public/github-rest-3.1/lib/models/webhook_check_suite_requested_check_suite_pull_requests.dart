@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_check_suite_requested_check_suite_pull_requests_base.dart';import 'webhook_check_suite_requested_check_suite_pull_requests_head.dart';final class WebhookCheckSuiteRequestedCheckSuitePullRequests {const WebhookCheckSuiteRequestedCheckSuitePullRequests({required this.base, required this.head, required this.id, required this.number, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_check_suite_requested_check_suite_pull_requests_base.dart';import 'webhook_check_suite_requested_check_suite_pull_requests_head.dart';@immutable final class WebhookCheckSuiteRequestedCheckSuitePullRequests {const WebhookCheckSuiteRequestedCheckSuitePullRequests({required this.base, required this.head, required this.id, required this.number, required this.url, });
 
 factory WebhookCheckSuiteRequestedCheckSuitePullRequests.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRequestedCheckSuitePullRequests(
   base: WebhookCheckSuiteRequestedCheckSuitePullRequestsBase.fromJson(json['base'] as Map<String, dynamic>),

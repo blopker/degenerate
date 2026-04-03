@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'team9_parent.dart';final class Team9Privacy {const Team9Privacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team9_parent.dart';@immutable final class Team9Privacy {const Team9Privacy._(this.value);
 
 factory Team9Privacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Team9Privacy($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-final class Team9 {const Team9({this.deleted, required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, this.parent, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
+@immutable final class Team9 {const Team9({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, this.deleted, this.parent, });
 
 factory Team9.fromJson(Map<String, dynamic> json) { return Team9(
   deleted: json['deleted'] as bool?,

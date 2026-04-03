@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'label_selector.dart';/// Defines a set of pods (namely those matching the labelSelector relative to the given namespace(s)) that this pod should be co-located (affinity) or not co-located (anti-affinity) with, where co-located is defined as running on a node whose value of the label with key `<topologyKey>` matches that of any node on which a pod of the set of pods is running
-final class PodAffinityTerm {const PodAffinityTerm({this.labelSelector, this.matchLabelKeys, this.mismatchLabelKeys, this.namespaceSelector, this.namespaces, this.topologyKey = '', });
+@immutable final class PodAffinityTerm {const PodAffinityTerm({this.labelSelector, this.matchLabelKeys, this.mismatchLabelKeys, this.namespaceSelector, this.namespaces, this.topologyKey = '', });
 
 factory PodAffinityTerm.fromJson(Map<String, dynamic> json) { return PodAffinityTerm(
   labelSelector: json['labelSelector'] != null ? LabelSelector.fromJson(json['labelSelector'] as Map<String, dynamic>) : null,

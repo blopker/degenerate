@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_code_scanning_alert_appeared_in_branch_alert_most_recent_instance_location.dart';import 'webhook_code_scanning_alert_appeared_in_branch_alert_most_recent_instance_message.dart';/// State of a code scanning alert.
-final class WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState {const WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState._(this.value);
+@immutable final class WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState {const WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState._(this.value);
 
 factory WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstanceState($value)'; } 
  }
-final class WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance {const WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance({required this.analysisKey, this.category, this.classifications, this.commitSha, required this.environment, this.location, this.message, required this.ref, required this.state, });
+@immutable final class WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance {const WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance({required this.analysisKey, required this.environment, required this.ref, required this.state, this.category, this.classifications, this.commitSha, this.location, this.message, });
 
 factory WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance(
   analysisKey: json['analysis_key'] as String,

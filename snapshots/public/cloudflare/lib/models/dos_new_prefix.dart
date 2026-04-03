@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DosNewPrefix {const DosNewPrefix({required this.comment, required this.excluded, required this.prefix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosNewPrefix {const DosNewPrefix({required this.comment, required this.excluded, required this.prefix, });
 
 factory DosNewPrefix.fromJson(Map<String, dynamic> json) { return DosNewPrefix(
   comment: json['comment'] as String,

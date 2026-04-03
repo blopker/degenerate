@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_post_request_account.dart';import 'zones_type.dart';/// The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_post_request_account.dart';import 'zones_type.dart';/// The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters.
 extension type const ZonesName(String value) {
 factory ZonesName.fromJson(String json) => ZonesName(json);
 
 String toJson() => value;
 
 }
-final class ZonesPostRequest {const ZonesPostRequest({required this.account, required this.name, this.type, });
+@immutable final class ZonesPostRequest {const ZonesPostRequest({required this.account, required this.name, this.type, });
 
 factory ZonesPostRequest.fromJson(Map<String, dynamic> json) { return ZonesPostRequest(
   account: ZonesPostRequestAccount.fromJson(json['account'] as Map<String, dynamic>),

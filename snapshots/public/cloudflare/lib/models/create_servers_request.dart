@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateServersRequestAuthType {const CreateServersRequestAuthType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateServersRequestAuthType {const CreateServersRequestAuthType._(this.value);
 
 factory CreateServersRequestAuthType.fromJson(String json) { return switch (json) {
   'oauth' => oauth,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateServersRequestAuthType($value)'; } 
  }
-final class CreateServersRequest {const CreateServersRequest({this.authCredentials, required this.authType, this.description, required this.hostname, required this.id, required this.name, });
+@immutable final class CreateServersRequest {const CreateServersRequest({required this.authType, required this.hostname, required this.id, required this.name, this.authCredentials, this.description, });
 
 factory CreateServersRequest.fromJson(Map<String, dynamic> json) { return CreateServersRequest(
   authCredentials: json['auth_credentials'] as String?,

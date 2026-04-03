@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_next_action_cashapp_qr_code.dart';/// 
-final class PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode {const PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode({required this.hostedInstructionsUrl, required this.mobileAuthUrl, required this.qrCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_next_action_cashapp_qr_code.dart';/// 
+@immutable final class PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode {const PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode({required this.hostedInstructionsUrl, required this.mobileAuthUrl, required this.qrCode, });
 
 factory PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionCashappHandleRedirectOrDisplayQrCode(
   hostedInstructionsUrl: json['hosted_instructions_url'] as String,

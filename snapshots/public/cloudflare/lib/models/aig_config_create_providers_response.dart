@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_create_providers_response_result.dart';final class AigConfigCreateProvidersResponse {const AigConfigCreateProvidersResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_create_providers_response_result.dart';@immutable final class AigConfigCreateProvidersResponse {const AigConfigCreateProvidersResponse({required this.result, required this.success, });
 
 factory AigConfigCreateProvidersResponse.fromJson(Map<String, dynamic> json) { return AigConfigCreateProvidersResponse(
   result: AigConfigCreateProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>),

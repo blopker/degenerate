@@ -7,7 +7,7 @@ factory MagicAclPortRange.fromJson(String json) => MagicAclPortRange(json);
 String toJson() => value;
 
 }
-final class MagicLanAclConfiguration {const MagicLanAclConfiguration({required this.lanId, this.lanName, this.portRanges, this.ports, this.subnets, });
+@immutable final class MagicLanAclConfiguration {const MagicLanAclConfiguration({required this.lanId, this.lanName, this.portRanges, this.ports, this.subnets, });
 
 factory MagicLanAclConfiguration.fromJson(Map<String, dynamic> json) { return MagicLanAclConfiguration(
   lanId: json['lan_id'] as String,

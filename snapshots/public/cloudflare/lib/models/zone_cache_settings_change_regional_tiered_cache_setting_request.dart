@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_regional_tiered_cache_value.dart';final class ZoneCacheSettingsChangeRegionalTieredCacheSettingRequest {const ZoneCacheSettingsChangeRegionalTieredCacheSettingRequest({required this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_regional_tiered_cache_value.dart';@immutable final class ZoneCacheSettingsChangeRegionalTieredCacheSettingRequest {const ZoneCacheSettingsChangeRegionalTieredCacheSettingRequest({required this.value});
 
 factory ZoneCacheSettingsChangeRegionalTieredCacheSettingRequest.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsChangeRegionalTieredCacheSettingRequest(
   value: CacheRulesRegionalTieredCacheValue.fromJson(json['value'] as String),

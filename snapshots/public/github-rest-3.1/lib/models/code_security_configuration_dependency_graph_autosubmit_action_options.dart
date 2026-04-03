@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Feature options for Automatic dependency submission
-final class CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions {const CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions({this.labeledRunners});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Feature options for Automatic dependency submission
+@immutable final class CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions {const CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions({this.labeledRunners});
 
 factory CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions.fromJson(Map<String, dynamic> json) { return CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions(
   labeledRunners: json['labeled_runners'] as bool?,

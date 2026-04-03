@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ReposAddAppAccessRestrictionsRequest {const ReposAddAppAccessRestrictionsRequest({required this.apps});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposAddAppAccessRestrictionsRequest {const ReposAddAppAccessRestrictionsRequest({required this.apps});
 
 factory ReposAddAppAccessRestrictionsRequest.fromJson(Map<String, dynamic> json) { return ReposAddAppAccessRestrictionsRequest(
   apps: (json['apps'] as List<dynamic>).map((e) => e as String).toList(),

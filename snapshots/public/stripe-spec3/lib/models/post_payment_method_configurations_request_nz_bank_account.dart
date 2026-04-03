@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_request_nz_bank_account_display_preference.dart';/// Stripe users in New Zealand can accept Bulk Electronic Clearing System (BECS) direct debit payments from customers with a New Zeland bank account. Check this [page](https://docs.stripe.com/payments/nz-bank-account) for more details.
-final class PostPaymentMethodConfigurationsRequestNzBankAccount {const PostPaymentMethodConfigurationsRequestNzBankAccount({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_nz_bank_account_display_preference.dart';/// Stripe users in New Zealand can accept Bulk Electronic Clearing System (BECS) direct debit payments from customers with a New Zeland bank account. Check this [page](https://docs.stripe.com/payments/nz-bank-account) for more details.
+@immutable final class PostPaymentMethodConfigurationsRequestNzBankAccount {const PostPaymentMethodConfigurationsRequestNzBankAccount({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestNzBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestNzBankAccount(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

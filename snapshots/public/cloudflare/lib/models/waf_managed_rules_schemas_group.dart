@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_components_schemas_identifier.dart';import 'waf_managed_rules_description.dart';import 'waf_managed_rules_identifier.dart';import 'waf_managed_rules_mode.dart';import 'waf_managed_rules_modified_rules_count.dart';import 'waf_managed_rules_name.dart';import 'waf_managed_rules_rules_count.dart';final class WafManagedRulesSchemasGroup {const WafManagedRulesSchemasGroup({required this.description, required this.id, this.modifiedRulesCount, required this.name, this.packageId, required this.rulesCount, this.allowedModes, required this.mode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_components_schemas_identifier.dart';import 'waf_managed_rules_description.dart';import 'waf_managed_rules_identifier.dart';import 'waf_managed_rules_mode.dart';import 'waf_managed_rules_modified_rules_count.dart';import 'waf_managed_rules_name.dart';import 'waf_managed_rules_rules_count.dart';@immutable final class WafManagedRulesSchemasGroup {const WafManagedRulesSchemasGroup({required this.description, required this.id, required this.name, required this.rulesCount, required this.mode, this.modifiedRulesCount, this.packageId, this.allowedModes, });
 
 factory WafManagedRulesSchemasGroup.fromJson(Map<String, dynamic> json) { return WafManagedRulesSchemasGroup(
   description: json['description'] != null ? WafManagedRulesDescription.fromJson(json['description'] as String) : null,

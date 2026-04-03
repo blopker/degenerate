@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_rule_action.dart';import 'email_rule_enabled.dart';import 'email_rule_matcher.dart';import 'email_rule_name.dart';import 'email_rule_priority.dart';final class EmailCreateRuleProperties {const EmailCreateRuleProperties({required this.actions, this.enabled, required this.matchers, this.name, this.priority, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_rule_action.dart';import 'email_rule_enabled.dart';import 'email_rule_matcher.dart';import 'email_rule_name.dart';import 'email_rule_priority.dart';@immutable final class EmailCreateRuleProperties {const EmailCreateRuleProperties({required this.actions, required this.matchers, this.enabled, this.name, this.priority, });
 
 factory EmailCreateRuleProperties.fromJson(Map<String, dynamic> json) { return EmailCreateRuleProperties(
   actions: (json['actions'] as List<dynamic>).map((e) => EmailRuleAction.fromJson(e as Map<String, dynamic>)).toList(),

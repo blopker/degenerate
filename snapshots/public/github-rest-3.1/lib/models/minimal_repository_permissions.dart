@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MinimalRepositoryPermissions {const MinimalRepositoryPermissions({this.admin, this.maintain, this.push, this.triage, this.pull, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MinimalRepositoryPermissions {const MinimalRepositoryPermissions({this.admin, this.maintain, this.push, this.triage, this.pull, });
 
 factory MinimalRepositoryPermissions.fromJson(Map<String, dynamic> json) { return MinimalRepositoryPermissions(
   admin: json['admin'] as bool?,

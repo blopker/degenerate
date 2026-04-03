@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a 'discussion_title' secret scanning location type. This location type shows that a secret was detected in the title of a discussion.
-final class SecretScanningLocationDiscussionTitle {const SecretScanningLocationDiscussionTitle({required this.discussionTitleUrl});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a 'discussion_title' secret scanning location type. This location type shows that a secret was detected in the title of a discussion.
+@immutable final class SecretScanningLocationDiscussionTitle {const SecretScanningLocationDiscussionTitle({required this.discussionTitleUrl});
 
 factory SecretScanningLocationDiscussionTitle.fromJson(Map<String, dynamic> json) { return SecretScanningLocationDiscussionTitle(
   discussionTitleUrl: Uri.parse(json['discussion_title_url'] as String),

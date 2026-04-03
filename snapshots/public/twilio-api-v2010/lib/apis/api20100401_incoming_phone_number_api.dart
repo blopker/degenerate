@@ -37,7 +37,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.accountSid case final accountSid$?)
       'AccountSid=${Uri.encodeQueryComponent(accountSid$)}',
     if (body.apiVersion case final apiVersion$?)
@@ -167,7 +167,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.apiVersion case final apiVersion$?)
       'ApiVersion=${Uri.encodeQueryComponent(apiVersion$)}',
     if (body.friendlyName case final friendlyName$?)

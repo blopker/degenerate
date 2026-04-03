@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_optional_item_adjustable_quantity.dart';/// 
-final class PaymentPagesCheckoutSessionOptionalItem {const PaymentPagesCheckoutSessionOptionalItem({this.adjustableQuantity, required this.price, required this.quantity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_optional_item_adjustable_quantity.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionOptionalItem {const PaymentPagesCheckoutSessionOptionalItem({required this.price, required this.quantity, this.adjustableQuantity, });
 
 factory PaymentPagesCheckoutSessionOptionalItem.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionOptionalItem(
   adjustableQuantity: json['adjustable_quantity'] != null ? PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,

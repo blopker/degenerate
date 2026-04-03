@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_text_annotations_file_citation_object.dart';import 'message_content_text_annotations_file_path_object.dart';import 'message_content_text_object_text_annotations.dart';final class MessageContentTextObjectText {const MessageContentTextObjectText({required this.value, required this.annotations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_text_annotations_file_citation_object.dart';import 'message_content_text_annotations_file_path_object.dart';import 'message_content_text_object_text_annotations.dart';@immutable final class MessageContentTextObjectText {const MessageContentTextObjectText({required this.value, required this.annotations, });
 
 factory MessageContentTextObjectText.fromJson(Map<String, dynamic> json) { return MessageContentTextObjectText(
   value: json['value'] as String,

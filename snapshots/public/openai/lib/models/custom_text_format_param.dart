@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Unconstrained text format. Always `text`.
-final class CustomTextFormatParamType {const CustomTextFormatParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Unconstrained text format. Always `text`.
+@immutable final class CustomTextFormatParamType {const CustomTextFormatParamType._(this.value);
 
 factory CustomTextFormatParamType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomTextFormatParamType($value)'; } 
  }
 /// Unconstrained free-form text.
-final class CustomTextFormatParam {const CustomTextFormatParam({this.type = CustomTextFormatParamType.text});
+@immutable final class CustomTextFormatParam {const CustomTextFormatParam({this.type = CustomTextFormatParamType.text});
 
 factory CustomTextFormatParam.fromJson(Map<String, dynamic> json) { return CustomTextFormatParam(
   type: CustomTextFormatParamType.fromJson(json['type'] as String),

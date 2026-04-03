@@ -10,9 +10,9 @@ import '../apis/default_api.dart';
 /// sdk.$default.ping();
 /// ```
 final class Spec01MinimalApi {
-  final ApiConfig _config;
-
   Spec01MinimalApi(this._config);
+
+  final ApiConfig _config;
 
   late final DefaultApi $default = DefaultApi(_config);
 }

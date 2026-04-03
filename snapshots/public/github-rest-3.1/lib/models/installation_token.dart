@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';import 'repository.dart';final class InstallationTokenRepositorySelection {const InstallationTokenRepositorySelection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';import 'repository.dart';@immutable final class InstallationTokenRepositorySelection {const InstallationTokenRepositorySelection._(this.value);
 
 factory InstallationTokenRepositorySelection.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InstallationTokenRepositorySelection($value)'; } 
  }
 /// Authentication token for a GitHub App installed on a user or org.
-final class InstallationToken {const InstallationToken({required this.token, required this.expiresAt, this.permissions, this.repositorySelection, this.repositories, this.singleFile, this.hasMultipleSingleFiles, this.singleFilePaths, });
+@immutable final class InstallationToken {const InstallationToken({required this.token, required this.expiresAt, this.permissions, this.repositorySelection, this.repositories, this.singleFile, this.hasMultipleSingleFiles, this.singleFilePaths, });
 
 factory InstallationToken.fromJson(Map<String, dynamic> json) { return InstallationToken(
   token: json['token'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A citation for a web resource used to generate a model response.
-final class UrlCitationBody {const UrlCitationBody({this.type = 'url_citation', required this.url, required this.startIndex, required this.endIndex, required this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A citation for a web resource used to generate a model response.
+@immutable final class UrlCitationBody {const UrlCitationBody({required this.url, required this.startIndex, required this.endIndex, required this.title, this.type = 'url_citation', });
 
 factory UrlCitationBody.fromJson(Map<String, dynamic> json) { return UrlCitationBody(
   type: json['type'] as String,

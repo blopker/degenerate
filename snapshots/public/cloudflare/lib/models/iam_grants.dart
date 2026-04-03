@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IamGrants {const IamGrants({this.read, this.write, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IamGrants {const IamGrants({this.read, this.write, });
 
 factory IamGrants.fromJson(Map<String, dynamic> json) { return IamGrants(
   read: json['read'] as bool?,

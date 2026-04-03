@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerSearchScansResponse400Messages {const UrlscannerSearchScansResponse400Messages({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerSearchScansResponse400Messages {const UrlscannerSearchScansResponse400Messages({required this.message});
 
 factory UrlscannerSearchScansResponse400Messages.fromJson(Map<String, dynamic> json) { return UrlscannerSearchScansResponse400Messages(
   message: json['message'] as String,

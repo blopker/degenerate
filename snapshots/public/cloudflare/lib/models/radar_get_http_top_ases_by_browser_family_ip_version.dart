@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopAsesByBrowserFamilyIpVersion {const RadarGetHttpTopAsesByBrowserFamilyIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByBrowserFamilyIpVersion {const RadarGetHttpTopAsesByBrowserFamilyIpVersion._(this.value);
 
 factory RadarGetHttpTopAsesByBrowserFamilyIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,

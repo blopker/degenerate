@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Time range for the query execution
-final class TelemetryQueryRequestTimeframe {const TelemetryQueryRequestTimeframe({required this.from, required this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Time range for the query execution
+@immutable final class TelemetryQueryRequestTimeframe {const TelemetryQueryRequestTimeframe({required this.from, required this.to, });
 
 factory TelemetryQueryRequestTimeframe.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequestTimeframe(
   from: (json['from'] as num).toDouble(),

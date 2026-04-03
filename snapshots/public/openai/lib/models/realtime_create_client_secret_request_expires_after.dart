@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The anchor point for the client secret expiration, meaning that `seconds` will be added to the `created_at` time of the client secret to produce an expiration timestamp. Only `created_at` is currently supported.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The anchor point for the client secret expiration, meaning that `seconds` will be added to the `created_at` time of the client secret to produce an expiration timestamp. Only `created_at` is currently supported.
 /// 
-final class RealtimeCreateClientSecretRequestExpiresAfterAnchor {const RealtimeCreateClientSecretRequestExpiresAfterAnchor._(this.value);
+@immutable final class RealtimeCreateClientSecretRequestExpiresAfterAnchor {const RealtimeCreateClientSecretRequestExpiresAfterAnchor._(this.value);
 
 factory RealtimeCreateClientSecretRequestExpiresAfterAnchor.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 /// continue after that time once started. A secret can be used to create multiple sessions
 /// until it expires.
 /// 
-final class RealtimeCreateClientSecretRequestExpiresAfter {const RealtimeCreateClientSecretRequestExpiresAfter({this.anchor = RealtimeCreateClientSecretRequestExpiresAfterAnchor.createdAt, this.seconds = 600, });
+@immutable final class RealtimeCreateClientSecretRequestExpiresAfter {const RealtimeCreateClientSecretRequestExpiresAfter({this.anchor = RealtimeCreateClientSecretRequestExpiresAfterAnchor.createdAt, this.seconds = 600, });
 
 factory RealtimeCreateClientSecretRequestExpiresAfter.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretRequestExpiresAfter(
   anchor: json.containsKey('anchor') ? RealtimeCreateClientSecretRequestExpiresAfterAnchor.fromJson(json['anchor'] as String) : RealtimeCreateClientSecretRequestExpiresAfterAnchor.createdAt,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes {const PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes {const PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes.fromJson(String json) { return switch (json) {
   'india' => india,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsSupportedTypes($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsAmountType {const PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsAmountType._(this.value);
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsAmountType {const PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsAmountType._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsAmountType.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsAmountType($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsInterval {const PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsInterval._(this.value);
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsInterval {const PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsInterval._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptionsInterval($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptions {const PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptions({required this.amount, required this.amountType, required this.currency, this.description, this.endDate, required this.interval, this.intervalCount, required this.reference, required this.startDate, this.supportedTypes, });
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptions {const PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptions({required this.amount, required this.amountType, required this.currency, required this.interval, required this.reference, required this.startDate, this.description, this.endDate, this.intervalCount, this.supportedTypes, });
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsCardMandateOptions(
   amount: (json['amount'] as num).toInt(),

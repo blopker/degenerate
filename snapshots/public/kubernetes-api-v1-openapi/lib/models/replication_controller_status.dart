@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'replication_controller_condition.dart';/// ReplicationControllerStatus represents the current status of a replication controller.
-final class ReplicationControllerStatus {const ReplicationControllerStatus({this.availableReplicas, this.conditions, this.fullyLabeledReplicas, this.observedGeneration, this.readyReplicas, this.replicas = 0, });
+@immutable final class ReplicationControllerStatus {const ReplicationControllerStatus({this.availableReplicas, this.conditions, this.fullyLabeledReplicas, this.observedGeneration, this.readyReplicas, this.replicas = 0, });
 
 factory ReplicationControllerStatus.fromJson(Map<String, dynamic> json) { return ReplicationControllerStatus(
   availableReplicas: json['availableReplicas'] != null ? (json['availableReplicas'] as num).toInt() : null,

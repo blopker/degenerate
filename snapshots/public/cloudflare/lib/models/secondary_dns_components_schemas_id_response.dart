@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secondary_dns_components_schemas_id_response_result.dart';final class SecondaryDnsComponentsSchemasIdResponse {const SecondaryDnsComponentsSchemasIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_components_schemas_id_response_result.dart';@immutable final class SecondaryDnsComponentsSchemasIdResponse {const SecondaryDnsComponentsSchemasIdResponse({this.result});
 
 factory SecondaryDnsComponentsSchemasIdResponse.fromJson(Map<String, dynamic> json) { return SecondaryDnsComponentsSchemasIdResponse(
   result: json['result'] != null ? SecondaryDnsComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

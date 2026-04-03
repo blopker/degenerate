@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'calls_app.dart';final class CallsAppResponseSingle {const CallsAppResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'calls_app.dart';@immutable final class CallsAppResponseSingle {const CallsAppResponseSingle({this.result});
 
 factory CallsAppResponseSingle.fromJson(Map<String, dynamic> json) { return CallsAppResponseSingle(
   result: json['result'] != null ? CallsApp.fromJson(json['result'] as Map<String, dynamic>) : null,

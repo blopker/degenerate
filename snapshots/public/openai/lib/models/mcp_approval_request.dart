@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A request for human approval of a tool invocation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A request for human approval of a tool invocation.
 /// 
-final class McpApprovalRequest {const McpApprovalRequest({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, });
+@immutable final class McpApprovalRequest {const McpApprovalRequest({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, });
 
 factory McpApprovalRequest.fromJson(Map<String, dynamic> json) { return McpApprovalRequest(
   type: json['type'] as String,

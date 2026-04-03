@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_commands_request_commands.dart';final class PostCommandsRequest {const PostCommandsRequest({required this.commands});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_commands_request_commands.dart';@immutable final class PostCommandsRequest {const PostCommandsRequest({required this.commands});
 
 factory PostCommandsRequest.fromJson(Map<String, dynamic> json) { return PostCommandsRequest(
   commands: (json['commands'] as List<dynamic>).map((e) => PostCommandsRequestCommands.fromJson(e as Map<String, dynamic>)).toList(),

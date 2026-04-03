@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'marketplace_account.dart';import 'marketplace_listing_plan.dart';/// User Marketplace Purchase
-final class UserMarketplacePurchase {const UserMarketplacePurchase({required this.billingCycle, required this.nextBillingDate, required this.unitCount, required this.onFreeTrial, required this.freeTrialEndsOn, required this.updatedAt, required this.account, required this.plan, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'marketplace_account.dart';import 'marketplace_listing_plan.dart';/// User Marketplace Purchase
+@immutable final class UserMarketplacePurchase {const UserMarketplacePurchase({required this.billingCycle, required this.nextBillingDate, required this.unitCount, required this.onFreeTrial, required this.freeTrialEndsOn, required this.updatedAt, required this.account, required this.plan, });
 
 factory UserMarketplacePurchase.fromJson(Map<String, dynamic> json) { return UserMarketplacePurchase(
   billingCycle: json['billing_cycle'] as String,

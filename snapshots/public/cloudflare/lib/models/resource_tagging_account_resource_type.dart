@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Identifies the type of account-level resource.
-final class ResourceTaggingAccountResourceType {const ResourceTaggingAccountResourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifies the type of account-level resource.
+@immutable final class ResourceTaggingAccountResourceType {const ResourceTaggingAccountResourceType._(this.value);
 
 factory ResourceTaggingAccountResourceType.fromJson(String json) { return switch (json) {
   'access_application' => accessApplication,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A workflow that must run for this rule to pass
-final class RepositoryRuleParamsWorkflowFileReference {const RepositoryRuleParamsWorkflowFileReference({required this.path, this.ref, required this.repositoryId, this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A workflow that must run for this rule to pass
+@immutable final class RepositoryRuleParamsWorkflowFileReference {const RepositoryRuleParamsWorkflowFileReference({required this.path, required this.repositoryId, this.ref, this.sha, });
 
 factory RepositoryRuleParamsWorkflowFileReference.fromJson(Map<String, dynamic> json) { return RepositoryRuleParamsWorkflowFileReference(
   path: json['path'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarPostReportsDatasetDownloadUrlResponse400Errors {const RadarPostReportsDatasetDownloadUrlResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarPostReportsDatasetDownloadUrlResponse400Errors {const RadarPostReportsDatasetDownloadUrlResponse400Errors({required this.message});
 
 factory RadarPostReportsDatasetDownloadUrlResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarPostReportsDatasetDownloadUrlResponse400Errors(
   message: json['message'] as String,

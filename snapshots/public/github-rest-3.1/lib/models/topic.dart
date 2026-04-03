@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A topic aggregates entities that are related to a subject.
-final class Topic {const Topic({required this.names});
+@immutable final class Topic {const Topic({required this.names});
 
 factory Topic.fromJson(Map<String, dynamic> json) { return Topic(
   names: (json['names'] as List<dynamic>).map((e) => e as String).toList(),

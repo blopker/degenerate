@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters {const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters {const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters._(this.value);
 
 factory PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters($value)'; } 
  }
 /// Enable customers to choose if they wish to remove their saved payment methods. Disabled by default.
-final class PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove {const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove._(this.value);
+@immutable final class PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove {const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove._(this.value);
 
 factory PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove($value)'; } 
  }
 /// Enable customers to choose if they wish to save their payment method for future use. Disabled by default.
-final class PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave {const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave._(this.value);
+@immutable final class PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave {const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave._(this.value);
 
 factory PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionSavedPaymentMethodOptions {const PaymentPagesCheckoutSessionSavedPaymentMethodOptions({this.allowRedisplayFilters, this.paymentMethodRemove, this.paymentMethodSave, });
+@immutable final class PaymentPagesCheckoutSessionSavedPaymentMethodOptions {const PaymentPagesCheckoutSessionSavedPaymentMethodOptions({this.allowRedisplayFilters, this.paymentMethodRemove, this.paymentMethodSave, });
 
 factory PaymentPagesCheckoutSessionSavedPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionSavedPaymentMethodOptions(
   allowRedisplayFilters: (json['allow_redisplay_filters'] as List<dynamic>?)?.map((e) => PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters.fromJson(e as String)).toList(),

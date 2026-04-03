@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_page_build_build_error.dart';import 'webhook_page_build_build_pusher.dart';/// The [List GitHub Pages builds](https://docs.github.com/rest/pages/pages#list-github-pages-builds) itself.
-final class WebhookPageBuildBuild {const WebhookPageBuildBuild({required this.commit, required this.createdAt, required this.duration, required this.error, required this.pusher, required this.status, required this.updatedAt, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_page_build_build_error.dart';import 'webhook_page_build_build_pusher.dart';/// The [List GitHub Pages builds](https://docs.github.com/rest/pages/pages#list-github-pages-builds) itself.
+@immutable final class WebhookPageBuildBuild {const WebhookPageBuildBuild({required this.commit, required this.createdAt, required this.duration, required this.error, required this.pusher, required this.status, required this.updatedAt, required this.url, });
 
 factory WebhookPageBuildBuild.fromJson(Map<String, dynamic> json) { return WebhookPageBuildBuild(
   commit: json['commit'] as String?,

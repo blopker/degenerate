@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_details_card_wallet_apple_pay.dart';import 'payment_method_details_card_wallet_google_pay.dart';/// The type of the card wallet, one of `apple_pay`, `google_pay`, or `link`. An additional hash is included on the Wallet subhash with a name matching this value. It contains additional information specific to the card wallet type.
-final class SetupAttemptPaymentMethodDetailsCardWalletType {const SetupAttemptPaymentMethodDetailsCardWalletType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_card_wallet_apple_pay.dart';import 'payment_method_details_card_wallet_google_pay.dart';/// The type of the card wallet, one of `apple_pay`, `google_pay`, or `link`. An additional hash is included on the Wallet subhash with a name matching this value. It contains additional information specific to the card wallet type.
+@immutable final class SetupAttemptPaymentMethodDetailsCardWalletType {const SetupAttemptPaymentMethodDetailsCardWalletType._(this.value);
 
 factory SetupAttemptPaymentMethodDetailsCardWalletType.fromJson(String json) { return switch (json) {
   'apple_pay' => applePay,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupAttemptPaymentMethodDetailsCardWalletType($value)'; } 
  }
 /// 
-final class SetupAttemptPaymentMethodDetailsCardWallet {const SetupAttemptPaymentMethodDetailsCardWallet({this.applePay, this.googlePay, required this.type, });
+@immutable final class SetupAttemptPaymentMethodDetailsCardWallet {const SetupAttemptPaymentMethodDetailsCardWallet({required this.type, this.applePay, this.googlePay, });
 
 factory SetupAttemptPaymentMethodDetailsCardWallet.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsCardWallet(
   applePay: json['apple_pay'] != null ? PaymentMethodDetailsCardWalletApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>) : null,

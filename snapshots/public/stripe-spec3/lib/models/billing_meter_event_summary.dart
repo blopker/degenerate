@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class BillingMeterEventSummaryObject {const BillingMeterEventSummaryObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class BillingMeterEventSummaryObject {const BillingMeterEventSummaryObject._(this.value);
 
 factory BillingMeterEventSummaryObject.fromJson(String json) { return switch (json) {
   'billing.meter_event_summary' => billingMeterEventSummary,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// usage was accrued by a customer for that period.
 /// 
 /// Note: Meters events are aggregated asynchronously so the meter event summaries provide an eventually consistent view of the reported usage.
-final class BillingMeterEventSummary {const BillingMeterEventSummary({required this.aggregatedValue, required this.endTime, required this.id, required this.livemode, required this.meter, required this.object, required this.startTime, });
+@immutable final class BillingMeterEventSummary {const BillingMeterEventSummary({required this.aggregatedValue, required this.endTime, required this.id, required this.livemode, required this.meter, required this.object, required this.startTime, });
 
 factory BillingMeterEventSummary.fromJson(Map<String, dynamic> json) { return BillingMeterEventSummary(
   aggregatedValue: (json['aggregated_value'] as num).toDouble(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_invoices_invoice_update_lines_request_lines_price_data_product_data.dart';final class PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataTaxBehavior {const PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_update_lines_request_lines_price_data_product_data.dart';@immutable final class PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataTaxBehavior {const PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataTaxBehavior._(this.value);
 
 factory PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataTaxBehavior($value)'; } 
  }
-final class PostInvoicesInvoiceUpdateLinesRequestLinesPriceData {const PostInvoicesInvoiceUpdateLinesRequestLinesPriceData({required this.currency, this.product, this.productData, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostInvoicesInvoiceUpdateLinesRequestLinesPriceData {const PostInvoicesInvoiceUpdateLinesRequestLinesPriceData({required this.currency, this.product, this.productData, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostInvoicesInvoiceUpdateLinesRequestLinesPriceData.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceUpdateLinesRequestLinesPriceData(
   currency: json['currency'] as String,

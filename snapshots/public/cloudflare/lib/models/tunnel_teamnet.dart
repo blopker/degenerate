@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_ip_network.dart';import 'tunnel_route_comment.dart';import 'tunnel_route_id.dart';import 'tunnel_tunnel_id.dart';import 'tunnel_tunnel_name.dart';import 'tunnel_tunnel_type.dart';import 'tunnel_virtual_network_id_computed_optional.dart';import 'tunnel_virtual_network_name.dart';final class TunnelTeamnet {const TunnelTeamnet({this.comment, this.createdAt, this.deletedAt, this.id, this.network, this.tunType, this.tunnelId, this.tunnelName, this.virtualNetworkId, this.virtualNetworkName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_ip_network.dart';import 'tunnel_route_comment.dart';import 'tunnel_route_id.dart';import 'tunnel_tunnel_id.dart';import 'tunnel_tunnel_name.dart';import 'tunnel_tunnel_type.dart';import 'tunnel_virtual_network_id_computed_optional.dart';import 'tunnel_virtual_network_name.dart';@immutable final class TunnelTeamnet {const TunnelTeamnet({this.comment, this.createdAt, this.deletedAt, this.id, this.network, this.tunType, this.tunnelId, this.tunnelName, this.virtualNetworkId, this.virtualNetworkName, });
 
 factory TunnelTeamnet.fromJson(Map<String, dynamic> json) { return TunnelTeamnet(
   comment: json['comment'] != null ? TunnelRouteComment.fromJson(json['comment'] as String) : null,

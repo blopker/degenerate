@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZonesSchemasBase {const ZonesSchemasBase({this.editable, required this.id, this.modifiedOn, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesSchemasBase {const ZonesSchemasBase({required this.id, required this.value, this.editable, this.modifiedOn, });
 
 factory ZonesSchemasBase.fromJson(Map<String, dynamic> json) { return ZonesSchemasBase(
   editable: json['editable'] as bool?,

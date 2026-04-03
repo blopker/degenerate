@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TerminalConfigurationConfigurationResourceEnterprisePeapWifi {const TerminalConfigurationConfigurationResourceEnterprisePeapWifi({this.caCertificateFile, required this.password, required this.ssid, required this.username, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TerminalConfigurationConfigurationResourceEnterprisePeapWifi {const TerminalConfigurationConfigurationResourceEnterprisePeapWifi({required this.password, required this.ssid, required this.username, this.caCertificateFile, });
 
 factory TerminalConfigurationConfigurationResourceEnterprisePeapWifi.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceEnterprisePeapWifi(
   caCertificateFile: json['ca_certificate_file'] as String?,

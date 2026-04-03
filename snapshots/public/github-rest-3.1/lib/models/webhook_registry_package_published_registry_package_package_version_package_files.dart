@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles({required this.contentType, required this.createdAt, required this.downloadUrl, required this.id, required this.md5, required this.name, required this.sha1, required this.sha256, required this.size, required this.state, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles({required this.contentType, required this.createdAt, required this.downloadUrl, required this.id, required this.md5, required this.name, required this.sha1, required this.sha256, required this.size, required this.state, required this.updatedAt, });
 
 factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles(
   contentType: json['content_type'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazLoadRuleOp {const ZarazLoadRuleOp._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazLoadRuleOp {const ZarazLoadRuleOp._(this.value);
 
 factory ZarazLoadRuleOp.fromJson(String json) { return switch (json) {
   'CONTAINS' => contains,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZarazLoadRuleOp($value)'; } 
  }
-final class ZarazLoadRule {const ZarazLoadRule({required this.id, required this.match, required this.op, required this.value, });
+@immutable final class ZarazLoadRule {const ZarazLoadRule({required this.id, required this.match, required this.op, required this.value, });
 
 factory ZarazLoadRule.fromJson(Map<String, dynamic> json) { return ZarazLoadRule(
   id: json['id'] as String,

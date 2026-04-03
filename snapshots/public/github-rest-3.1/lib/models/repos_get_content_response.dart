@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'content_directory2.dart';import 'content_file.dart';import 'content_submodule.dart';import 'content_symlink.dart';sealed class ReposGetContentResponse {const ReposGetContentResponse();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_directory2.dart';import 'content_file.dart';import 'content_submodule.dart';import 'content_symlink.dart';sealed class ReposGetContentResponse {const ReposGetContentResponse();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ReposGetContentResponse.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -17,7 +17,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposGetContentResponse$Unknown; } 
  }
-final class ReposGetContentResponseArray extends ReposGetContentResponse {const ReposGetContentResponseArray(this.listContentDirectory2);
+@immutable final class ReposGetContentResponseArray extends ReposGetContentResponse {const ReposGetContentResponseArray(this.listContentDirectory2);
 
 factory ReposGetContentResponseArray.fromJson(Map<String, dynamic> json) { return ReposGetContentResponseArray((json as List<dynamic>).map((e) => ContentDirectory2.fromJson(e as Map<String, dynamic>)).toList()); }
 
@@ -30,7 +30,7 @@ final List<ContentDirectory2> listContentDirectory2;
 @override int get hashCode { return listContentDirectory2.hashCode; } 
 @override String toString() { return 'ReposGetContentResponseArray(listContentDirectory2: $listContentDirectory2)'; } 
  }
-final class ReposGetContentResponseFile extends ReposGetContentResponse {const ReposGetContentResponseFile(this.contentFile);
+@immutable final class ReposGetContentResponseFile extends ReposGetContentResponse {const ReposGetContentResponseFile(this.contentFile);
 
 factory ReposGetContentResponseFile.fromJson(Map<String, dynamic> json) { return ReposGetContentResponseFile(ContentFile.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final ContentFile contentFile;
 @override int get hashCode { return contentFile.hashCode; } 
 @override String toString() { return 'ReposGetContentResponseFile(contentFile: $contentFile)'; } 
  }
-final class ReposGetContentResponseSymlink extends ReposGetContentResponse {const ReposGetContentResponseSymlink(this.contentSymlink);
+@immutable final class ReposGetContentResponseSymlink extends ReposGetContentResponse {const ReposGetContentResponseSymlink(this.contentSymlink);
 
 factory ReposGetContentResponseSymlink.fromJson(Map<String, dynamic> json) { return ReposGetContentResponseSymlink(ContentSymlink.fromJson(json)); }
 
@@ -56,7 +56,7 @@ final ContentSymlink contentSymlink;
 @override int get hashCode { return contentSymlink.hashCode; } 
 @override String toString() { return 'ReposGetContentResponseSymlink(contentSymlink: $contentSymlink)'; } 
  }
-final class ReposGetContentResponseSubmodule extends ReposGetContentResponse {const ReposGetContentResponseSubmodule(this.contentSubmodule);
+@immutable final class ReposGetContentResponseSubmodule extends ReposGetContentResponse {const ReposGetContentResponseSubmodule(this.contentSubmodule);
 
 factory ReposGetContentResponseSubmodule.fromJson(Map<String, dynamic> json) { return ReposGetContentResponseSubmodule(ContentSubmodule.fromJson(json)); }
 
@@ -71,7 +71,7 @@ final ContentSubmodule contentSubmodule;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ReposGetContentResponse$Unknown extends ReposGetContentResponse {const ReposGetContentResponse$Unknown(this.json);
+@immutable final class ReposGetContentResponse$Unknown extends ReposGetContentResponse {const ReposGetContentResponse$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

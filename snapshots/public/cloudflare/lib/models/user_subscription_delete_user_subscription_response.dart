@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'schemas_identifier.dart';final class UserSubscriptionDeleteUserSubscriptionResponse {const UserSubscriptionDeleteUserSubscriptionResponse({this.subscriptionId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'schemas_identifier.dart';@immutable final class UserSubscriptionDeleteUserSubscriptionResponse {const UserSubscriptionDeleteUserSubscriptionResponse({this.subscriptionId});
 
 factory UserSubscriptionDeleteUserSubscriptionResponse.fromJson(Map<String, dynamic> json) { return UserSubscriptionDeleteUserSubscriptionResponse(
   subscriptionId: json['subscription_id'] != null ? SchemasIdentifier.fromJson(json['subscription_id'] as String) : null,

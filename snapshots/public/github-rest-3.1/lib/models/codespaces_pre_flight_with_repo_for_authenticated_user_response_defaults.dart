@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults {const CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults({required this.location, required this.devcontainerPath, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults {const CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults({required this.location, required this.devcontainerPath, });
 
 factory CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults.fromJson(Map<String, dynamic> json) { return CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults(
   location: json['location'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCreditNotesRequestLinesTaxAmountsVariant1 {const PostCreditNotesRequestLinesTaxAmountsVariant1({required this.amount, required this.taxRate, required this.taxableAmount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCreditNotesRequestLinesTaxAmountsVariant1 {const PostCreditNotesRequestLinesTaxAmountsVariant1({required this.amount, required this.taxRate, required this.taxableAmount, });
 
 factory PostCreditNotesRequestLinesTaxAmountsVariant1.fromJson(Map<String, dynamic> json) { return PostCreditNotesRequestLinesTaxAmountsVariant1(
   amount: (json['amount'] as num).toInt(),

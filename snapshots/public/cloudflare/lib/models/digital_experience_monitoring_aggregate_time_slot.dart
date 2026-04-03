@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringAggregateTimeSlot {const DigitalExperienceMonitoringAggregateTimeSlot({required this.avgMs, required this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringAggregateTimeSlot {const DigitalExperienceMonitoringAggregateTimeSlot({required this.avgMs, required this.timestamp, });
 
 factory DigitalExperienceMonitoringAggregateTimeSlot.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringAggregateTimeSlot(
   avgMs: (json['avgMs'] as num).toInt(),

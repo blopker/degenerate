@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_embedding_request_input.dart';import 'create_embedding_request_model.dart';/// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
-final class CreateEmbeddingRequestEncodingFormat {const CreateEmbeddingRequestEncodingFormat._(this.value);
+@immutable final class CreateEmbeddingRequestEncodingFormat {const CreateEmbeddingRequestEncodingFormat._(this.value);
 
 factory CreateEmbeddingRequestEncodingFormat.fromJson(String json) { return switch (json) {
   'float' => float,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateEmbeddingRequestEncodingFormat($value)'; } 
  }
-final class CreateEmbeddingRequest {const CreateEmbeddingRequest({required this.input, required this.model, this.encodingFormat = CreateEmbeddingRequestEncodingFormat.float, this.dimensions, this.user, });
+@immutable final class CreateEmbeddingRequest {const CreateEmbeddingRequest({required this.input, required this.model, this.encodingFormat = CreateEmbeddingRequestEncodingFormat.float, this.dimensions, this.user, });
 
 factory CreateEmbeddingRequest.fromJson(Map<String, dynamic> json) { return CreateEmbeddingRequest(
   input: OneOf4.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromC: (v) => (v as List<dynamic>).map((e) => (e as num).toInt()).toList(), fromD: (v) => (v as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList()).toList(),),

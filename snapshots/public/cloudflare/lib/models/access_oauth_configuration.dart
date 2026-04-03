@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_oauth_configuration_dynamic_client_registration.dart';import 'access_oauth_configuration_grant.dart';/// **Beta:** Optional configuration for managing an OAuth authorization flow controlled by Access. When set, Access will act as the OAuth authorization server for this application. Only compatible with OAuth clients that support [RFC 8707](https://datatracker.ietf.org/doc/html/rfc8707) (Resource Indicators for OAuth 2.0). This feature is currently in beta.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_oauth_configuration_dynamic_client_registration.dart';import 'access_oauth_configuration_grant.dart';/// **Beta:** Optional configuration for managing an OAuth authorization flow controlled by Access. When set, Access will act as the OAuth authorization server for this application. Only compatible with OAuth clients that support [RFC 8707](https://datatracker.ietf.org/doc/html/rfc8707) (Resource Indicators for OAuth 2.0). This feature is currently in beta.
 /// 
-final class AccessOauthConfiguration {const AccessOauthConfiguration({this.dynamicClientRegistration, this.enabled = true, this.grant, });
+@immutable final class AccessOauthConfiguration {const AccessOauthConfiguration({this.dynamicClientRegistration, this.enabled = true, this.grant, });
 
 factory AccessOauthConfiguration.fromJson(Map<String, dynamic> json) { return AccessOauthConfiguration(
   dynamicClientRegistration: json['dynamic_client_registration'] != null ? AccessOauthConfigurationDynamicClientRegistration.fromJson(json['dynamic_client_registration'] as Map<String, dynamic>) : null,

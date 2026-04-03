@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_invoice.dart';import 'invoice.dart';import 'invoice_payment_invoice.dart';import 'invoices_payments_invoice_payment_associated_payment.dart';import 'invoices_payments_invoice_payment_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class InvoicePaymentObject {const InvoicePaymentObject._(this.value);
+@immutable final class InvoicePaymentObject {const InvoicePaymentObject._(this.value);
 
 factory InvoicePaymentObject.fromJson(String json) { return switch (json) {
   'invoice_payment' => invoicePayment,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Invoice Payments include the mapping between payment objects, such as Payment Intent, and Invoices.
 /// This resource and its endpoints allows you to easily track if a payment is associated with a specific invoice and
 /// monitor the allocation details of the payments.
-final class InvoicePayment {const InvoicePayment({this.amountPaid, required this.amountRequested, required this.created, required this.currency, required this.id, required this.invoice, required this.isDefault, required this.livemode, required this.object, required this.payment, required this.status, required this.statusTransitions, });
+@immutable final class InvoicePayment {const InvoicePayment({required this.amountRequested, required this.created, required this.currency, required this.id, required this.invoice, required this.isDefault, required this.livemode, required this.object, required this.payment, required this.status, required this.statusTransitions, this.amountPaid, });
 
 factory InvoicePayment.fromJson(Map<String, dynamic> json) { return InvoicePayment(
   amountPaid: json['amount_paid'] != null ? (json['amount_paid'] as num).toInt() : null,

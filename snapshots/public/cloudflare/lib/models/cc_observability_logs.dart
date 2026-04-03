@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Observability logging settings.
-final class CcObservabilityLogs {const CcObservabilityLogs({this.enabled = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Observability logging settings.
+@immutable final class CcObservabilityLogs {const CcObservabilityLogs({this.enabled = false});
 
 factory CcObservabilityLogs.fromJson(Map<String, dynamic> json) { return CcObservabilityLogs(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,

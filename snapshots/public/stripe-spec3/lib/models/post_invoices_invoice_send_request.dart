@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoicesInvoiceSendRequest {const PostInvoicesInvoiceSendRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceSendRequest {const PostInvoicesInvoiceSendRequest({this.expand});
 
 factory PostInvoicesInvoiceSendRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceSendRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

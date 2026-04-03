@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_applications_review_status_response_content.dart';final class ZeroTrustGatewayApplicationsReviewStatusResponse {const ZeroTrustGatewayApplicationsReviewStatusResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_applications_review_status_response_content.dart';@immutable final class ZeroTrustGatewayApplicationsReviewStatusResponse {const ZeroTrustGatewayApplicationsReviewStatusResponse({this.result});
 
 factory ZeroTrustGatewayApplicationsReviewStatusResponse.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayApplicationsReviewStatusResponse(
   result: json['result'] != null ? ZeroTrustGatewayApplicationsReviewStatusResponseContent.fromJson(json['result'] as Map<String, dynamic>) : null,

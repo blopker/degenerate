@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'funding_instructions_bank_transfer_financial_address.dart';/// Type of bank transfer
-final class PaymentIntentNextActionDisplayBankTransferInstructionsType {const PaymentIntentNextActionDisplayBankTransferInstructionsType._(this.value);
+@immutable final class PaymentIntentNextActionDisplayBankTransferInstructionsType {const PaymentIntentNextActionDisplayBankTransferInstructionsType._(this.value);
 
 factory PaymentIntentNextActionDisplayBankTransferInstructionsType.fromJson(String json) { return switch (json) {
   'eu_bank_transfer' => euBankTransfer,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentIntentNextActionDisplayBankTransferInstructionsType($value)'; } 
  }
 /// 
-final class PaymentIntentNextActionDisplayBankTransferInstructions {const PaymentIntentNextActionDisplayBankTransferInstructions({this.amountRemaining, this.currency, this.financialAddresses, this.hostedInstructionsUrl, this.reference, required this.type, });
+@immutable final class PaymentIntentNextActionDisplayBankTransferInstructions {const PaymentIntentNextActionDisplayBankTransferInstructions({required this.type, this.amountRemaining, this.currency, this.financialAddresses, this.hostedInstructionsUrl, this.reference, });
 
 factory PaymentIntentNextActionDisplayBankTransferInstructions.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionDisplayBankTransferInstructions(
   amountRemaining: json['amount_remaining'] != null ? (json['amount_remaining'] as num).toInt() : null,

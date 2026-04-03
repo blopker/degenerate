@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether to match all search requirements or at least one (any). If set to `all`, acts like a logical AND between filters. If set to `any`, acts like a logical OR instead. Note that the interaction between tag filters is controlled by the `tag-match` parameter instead.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to match all search requirements or at least one (any). If set to `all`, acts like a logical AND between filters. If set to `any`, acts like a logical OR instead. Note that the interaction between tag filters is controlled by the `tag-match` parameter instead.
 /// 
-final class DnsRecordsMatch {const DnsRecordsMatch._(this.value);
+@immutable final class DnsRecordsMatch {const DnsRecordsMatch._(this.value);
 
 factory DnsRecordsMatch.fromJson(String json) { return switch (json) {
   'any' => any,

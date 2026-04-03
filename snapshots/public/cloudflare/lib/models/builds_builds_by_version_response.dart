@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'builds_build_response.dart';final class BuildsBuildsByVersionResponse {const BuildsBuildsByVersionResponse({this.builds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_response.dart';@immutable final class BuildsBuildsByVersionResponse {const BuildsBuildsByVersionResponse({this.builds});
 
 factory BuildsBuildsByVersionResponse.fromJson(Map<String, dynamic> json) { return BuildsBuildsByVersionResponse(
   builds: (json['builds'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, BuildsBuildResponse.fromJson(v as Map<String, dynamic>))),

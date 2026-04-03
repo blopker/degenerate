@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_rpki_aspa_snapshot_response400_errors.dart';final class RadarGetBgpRpkiAspaSnapshotResponse400 {const RadarGetBgpRpkiAspaSnapshotResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_rpki_aspa_snapshot_response400_errors.dart';@immutable final class RadarGetBgpRpkiAspaSnapshotResponse400 {const RadarGetBgpRpkiAspaSnapshotResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetBgpRpkiAspaSnapshotResponse400.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaSnapshotResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetBgpRpkiAspaSnapshotResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

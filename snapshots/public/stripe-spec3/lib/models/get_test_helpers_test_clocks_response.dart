@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetTestHelpersTestClocksResponseObject {const GetTestHelpersTestClocksResponseObject._(this.value);
+@immutable final class GetTestHelpersTestClocksResponseObject {const GetTestHelpersTestClocksResponseObject._(this.value);
 
 factory GetTestHelpersTestClocksResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetTestHelpersTestClocksResponseObject($value)'; } 
  }
 /// 
-final class GetTestHelpersTestClocksResponse {const GetTestHelpersTestClocksResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetTestHelpersTestClocksResponse {const GetTestHelpersTestClocksResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetTestHelpersTestClocksResponse.fromJson(Map<String, dynamic> json) { return GetTestHelpersTestClocksResponse(
   data: (json['data'] as List<dynamic>).map((e) => TestHelpersTestClock.fromJson(e as Map<String, dynamic>)).toList(),

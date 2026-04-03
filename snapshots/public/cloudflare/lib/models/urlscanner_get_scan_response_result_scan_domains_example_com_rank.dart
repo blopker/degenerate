@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponseResultScanDomainsExampleComRank {const UrlscannerGetScanResponseResultScanDomainsExampleComRank({required this.bucket, required this.name, this.rank, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanDomainsExampleComRank {const UrlscannerGetScanResponseResultScanDomainsExampleComRank({required this.bucket, required this.name, this.rank, });
 
 factory UrlscannerGetScanResponseResultScanDomainsExampleComRank.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanDomainsExampleComRank(
   bucket: json['bucket'] as String,

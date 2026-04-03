@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_migration_step_renamed_classes.dart';import 'workers_migration_step_transferred_classes.dart';final class WorkersMigrationStep {const WorkersMigrationStep({this.deletedClasses, this.newClasses, this.newSqliteClasses, this.renamedClasses, this.transferredClasses, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_migration_step_renamed_classes.dart';import 'workers_migration_step_transferred_classes.dart';@immutable final class WorkersMigrationStep {const WorkersMigrationStep({this.deletedClasses, this.newClasses, this.newSqliteClasses, this.renamedClasses, this.transferredClasses, });
 
 factory WorkersMigrationStep.fromJson(Map<String, dynamic> json) { return WorkersMigrationStep(
   deletedClasses: (json['deleted_classes'] as List<dynamic>?)?.map((e) => e as String).toList(),

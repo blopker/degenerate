@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_configuration.dart';final class TunnelConfigurationResponse {const TunnelConfigurationResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_configuration.dart';@immutable final class TunnelConfigurationResponse {const TunnelConfigurationResponse({this.result});
 
 factory TunnelConfigurationResponse.fromJson(Map<String, dynamic> json) { return TunnelConfigurationResponse(
   result: json['result'] != null ? TunnelConfiguration.fromJson(json['result'] as Map<String, dynamic>) : null,

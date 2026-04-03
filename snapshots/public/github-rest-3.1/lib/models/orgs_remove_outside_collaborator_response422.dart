@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrgsRemoveOutsideCollaboratorResponse422 {const OrgsRemoveOutsideCollaboratorResponse422({this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsRemoveOutsideCollaboratorResponse422 {const OrgsRemoveOutsideCollaboratorResponse422({this.message, this.documentationUrl, });
 
 factory OrgsRemoveOutsideCollaboratorResponse422.fromJson(Map<String, dynamic> json) { return OrgsRemoveOutsideCollaboratorResponse422(
   message: json['message'] as String?,

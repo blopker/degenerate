@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecurityAndAnalysisAdvancedSecurityStatus {const SecurityAndAnalysisAdvancedSecurityStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityAndAnalysisAdvancedSecurityStatus {const SecurityAndAnalysisAdvancedSecurityStatus._(this.value);
 
 factory SecurityAndAnalysisAdvancedSecurityStatus.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// For standalone Code Scanning or Secret Protection products, this parameter cannot be used.
 /// 
-final class SecurityAndAnalysisAdvancedSecurity {const SecurityAndAnalysisAdvancedSecurity({this.status});
+@immutable final class SecurityAndAnalysisAdvancedSecurity {const SecurityAndAnalysisAdvancedSecurity({this.status});
 
 factory SecurityAndAnalysisAdvancedSecurity.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisAdvancedSecurity(
   status: json['status'] != null ? SecurityAndAnalysisAdvancedSecurityStatus.fromJson(json['status'] as String) : null,

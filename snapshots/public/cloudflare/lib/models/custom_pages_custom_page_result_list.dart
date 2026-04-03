@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_pages_custom_page.dart';final class CustomPagesCustomPageResultList {const CustomPagesCustomPageResultList({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_pages_custom_page.dart';@immutable final class CustomPagesCustomPageResultList {const CustomPagesCustomPageResultList({this.result});
 
 factory CustomPagesCustomPageResultList.fromJson(Map<String, dynamic> json) { return CustomPagesCustomPageResultList(
   result: (json['result'] as List<dynamic>?)?.map((e) => CustomPagesCustomPage.fromJson(e as Map<String, dynamic>)).toList(),

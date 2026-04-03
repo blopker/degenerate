@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class NotificationStatus {const NotificationStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NotificationStatus {const NotificationStatus._(this.value);
 
 factory NotificationStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'NotificationStatus($value)'; } 
  }
-final class SendNotificationResponse {const SendNotificationResponse({this.id, this.status, });
+@immutable final class SendNotificationResponse {const SendNotificationResponse({this.id, this.status, });
 
 factory SendNotificationResponse.fromJson(Map<String, dynamic> json) { return SendNotificationResponse(
   id: json['id'] as String?,

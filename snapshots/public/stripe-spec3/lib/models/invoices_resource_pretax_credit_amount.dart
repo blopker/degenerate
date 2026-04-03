@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_transaction.dart';import 'deleted_discount.dart';import 'discount.dart';import 'invoices_resource_pretax_credit_amount_credit_balance_transaction.dart';import 'invoices_resource_pretax_credit_amount_discount.dart';/// Type of the pretax credit amount referenced.
-final class InvoicesResourcePretaxCreditAmountType {const InvoicesResourcePretaxCreditAmountType._(this.value);
+@immutable final class InvoicesResourcePretaxCreditAmountType {const InvoicesResourcePretaxCreditAmountType._(this.value);
 
 factory InvoicesResourcePretaxCreditAmountType.fromJson(String json) { return switch (json) {
   'credit_balance_transaction' => creditBalanceTransaction,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicesResourcePretaxCreditAmountType($value)'; } 
  }
 /// 
-final class InvoicesResourcePretaxCreditAmount {const InvoicesResourcePretaxCreditAmount({required this.amount, this.creditBalanceTransaction, this.discount, required this.type, });
+@immutable final class InvoicesResourcePretaxCreditAmount {const InvoicesResourcePretaxCreditAmount({required this.amount, required this.type, this.creditBalanceTransaction, this.discount, });
 
 factory InvoicesResourcePretaxCreditAmount.fromJson(Map<String, dynamic> json) { return InvoicesResourcePretaxCreditAmount(
   amount: (json['amount'] as num).toInt(),

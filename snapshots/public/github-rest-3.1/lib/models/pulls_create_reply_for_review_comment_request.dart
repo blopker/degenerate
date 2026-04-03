@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullsCreateReplyForReviewCommentRequest {const PullsCreateReplyForReviewCommentRequest({required this.body});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsCreateReplyForReviewCommentRequest {const PullsCreateReplyForReviewCommentRequest({required this.body});
 
 factory PullsCreateReplyForReviewCommentRequest.fromJson(Map<String, dynamic> json) { return PullsCreateReplyForReviewCommentRequest(
   body: json['body'] as String,

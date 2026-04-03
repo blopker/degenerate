@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest {const CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest({required this.selectedRepositoryIds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest {const CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest({required this.selectedRepositoryIds});
 
 factory CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest(
   selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audio_transcription.dart';import 'prompt.dart';import 'realtime_function_tool.dart';import 'realtime_session_input_audio_noise_reduction.dart';import 'realtime_session_max_response_output_tokens.dart';import 'realtime_session_model.dart';import 'realtime_session_tracing.dart';import 'realtime_turn_detection.dart';import 'tracing_configuration.dart';import 'voice_ids_shared.dart';/// The object type. Always `realtime.session`.
-final class RealtimeSessionObject {const RealtimeSessionObject._(this.value);
+@immutable final class RealtimeSessionObject {const RealtimeSessionObject._(this.value);
 
 factory RealtimeSessionObject.fromJson(String json) { return switch (json) {
   'realtime.session' => realtimeSession,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,
 /// single channel (mono), and little-endian byte order.
 /// 
-final class RealtimeSessionInputAudioFormat {const RealtimeSessionInputAudioFormat._(this.value);
+@immutable final class RealtimeSessionInputAudioFormat {const RealtimeSessionInputAudioFormat._(this.value);
 
 factory RealtimeSessionInputAudioFormat.fromJson(String json) { return switch (json) {
   'pcm16' => pcm16,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// For `pcm16`, output audio is sampled at a rate of 24kHz.
 /// 
-final class RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat._(this.value);
+@immutable final class RealtimeSessionOutputAudioFormat {const RealtimeSessionOutputAudioFormat._(this.value);
 
 factory RealtimeSessionOutputAudioFormat.fromJson(String json) { return switch (json) {
   'pcm16' => pcm16,
@@ -83,7 +83,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeSessionOutputAudioFormat($value)'; } 
  }
-final class RealtimeSessionInclude2 {const RealtimeSessionInclude2._(this.value);
+@immutable final class RealtimeSessionInclude2 {const RealtimeSessionInclude2._(this.value);
 
 factory RealtimeSessionInclude2.fromJson(String json) { return switch (json) {
   'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
@@ -105,7 +105,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeSessionInclude2($value)'; } 
  }
 /// Realtime session object for the beta interface.
-final class RealtimeSession {const RealtimeSession({this.id, this.object, this.modalities, this.model, this.instructions, this.voice, this.inputAudioFormat = RealtimeSessionInputAudioFormat.pcm16, this.outputAudioFormat = RealtimeSessionOutputAudioFormat.pcm16, this.inputAudioTranscription, this.turnDetection, this.inputAudioNoiseReduction, this.speed = 1.0, this.tracing, this.tools, this.toolChoice = 'auto', this.temperature = 0.8, this.maxResponseOutputTokens, this.expiresAt, this.prompt, this.include, });
+@immutable final class RealtimeSession {const RealtimeSession({this.id, this.object, this.modalities, this.model, this.instructions, this.voice, this.inputAudioFormat = RealtimeSessionInputAudioFormat.pcm16, this.outputAudioFormat = RealtimeSessionOutputAudioFormat.pcm16, this.inputAudioTranscription, this.turnDetection, this.inputAudioNoiseReduction, this.speed = 1.0, this.tracing, this.tools, this.toolChoice = 'auto', this.temperature = 0.8, this.maxResponseOutputTokens, this.expiresAt, this.prompt, this.include, });
 
 factory RealtimeSession.fromJson(Map<String, dynamic> json) { return RealtimeSession(
   id: json['id'] as String?,
@@ -138,7 +138,7 @@ final String? id;
 final RealtimeSessionObject? object;
 
 /// The set of modalities the model can respond with. To disable audio,
-/// set this to ["text"].
+/// set this to `["text"]`.
 /// 
 final dynamic modalities;
 
@@ -214,7 +214,7 @@ final List<RealtimeFunctionTool>? tools;
 /// 
 final String toolChoice;
 
-/// Sampling temperature for the model, limited to [0.6, 1.2]. For audio models a temperature of 0.8 is highly recommended for best performance.
+/// Sampling temperature for the model, limited to `[0.6, 1.2]`. For audio models a temperature of 0.8 is highly recommended for best performance.
 /// 
 final double temperature;
 

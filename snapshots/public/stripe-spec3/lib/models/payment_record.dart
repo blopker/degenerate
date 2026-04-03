@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payments_primitives_payment_records_resource_amount.dart';import 'payments_primitives_payment_records_resource_customer_details.dart';import 'payments_primitives_payment_records_resource_payment_method_details.dart';import 'payments_primitives_payment_records_resource_processor_details.dart';import 'payments_primitives_payment_records_resource_shipping_details.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
-final class PaymentRecordCustomerPresence {const PaymentRecordCustomerPresence._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payments_primitives_payment_records_resource_amount.dart';import 'payments_primitives_payment_records_resource_customer_details.dart';import 'payments_primitives_payment_records_resource_payment_method_details.dart';import 'payments_primitives_payment_records_resource_processor_details.dart';import 'payments_primitives_payment_records_resource_shipping_details.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
+@immutable final class PaymentRecordCustomerPresence {const PaymentRecordCustomerPresence._(this.value);
 
 factory PaymentRecordCustomerPresence.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentRecordCustomerPresence($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class PaymentRecordObject {const PaymentRecordObject._(this.value);
+@immutable final class PaymentRecordObject {const PaymentRecordObject._(this.value);
 
 factory PaymentRecordObject.fromJson(String json) { return switch (json) {
   'payment_record' => paymentRecord,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentRecordObject($value)'; } 
  }
 /// Indicates who reported the payment.
-final class PaymentRecordReportedBy {const PaymentRecordReportedBy._(this.value);
+@immutable final class PaymentRecordReportedBy {const PaymentRecordReportedBy._(this.value);
 
 factory PaymentRecordReportedBy.fromJson(String json) { return switch (json) {
   'self' => self,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 /// For example, you can create a Payment Record to model a payment made on a different payment processor,
 /// in order to mark an Invoice as paid and a Subscription as active. Payment Records consist of one or
 /// more Payment Attempt Records, which represent individual attempts made on a payment network.
-final class PaymentRecord {const PaymentRecord({required this.amount, required this.amountAuthorized, required this.amountCanceled, required this.amountFailed, required this.amountGuaranteed, required this.amountRefunded, required this.amountRequested, this.application, required this.created, this.customerDetails, this.customerPresence, this.description, required this.id, this.latestPaymentAttemptRecord, required this.livemode, required this.metadata, required this.object, this.paymentMethodDetails, required this.processorDetails, required this.reportedBy, this.shippingDetails, });
+@immutable final class PaymentRecord {const PaymentRecord({required this.amount, required this.amountAuthorized, required this.amountCanceled, required this.amountFailed, required this.amountGuaranteed, required this.amountRefunded, required this.amountRequested, required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.processorDetails, required this.reportedBy, this.application, this.customerDetails, this.customerPresence, this.description, this.latestPaymentAttemptRecord, this.paymentMethodDetails, this.shippingDetails, });
 
 factory PaymentRecord.fromJson(Map<String, dynamic> json) { return PaymentRecord(
   amount: PaymentsPrimitivesPaymentRecordsResourceAmount.fromJson(json['amount'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_event_configure_cloudflared_tunnel.dart';import 'mconn_event_finish_attestation_failure.dart';import 'mconn_event_finish_attestation_success.dart';import 'mconn_event_finish_rotate_crypt_key_failure.dart';import 'mconn_event_finish_rotate_crypt_key_success.dart';import 'mconn_event_finish_rotate_pki_failure.dart';import 'mconn_event_finish_rotate_pki_success.dart';import 'mconn_event_finish_upgrade_failure.dart';import 'mconn_event_finish_upgrade_success.dart';import 'mconn_event_init.dart';import 'mconn_event_leave.dart';import 'mconn_event_reconcile.dart';import 'mconn_event_start_attestation.dart';import 'mconn_event_start_rotate_crypt_key.dart';import 'mconn_event_start_rotate_pki.dart';import 'mconn_event_start_upgrade.dart';/// A value that is one of: `MconnEventInit`, `MconnEventLeave`, `MconnEventStartAttestation`, `MconnEventFinishAttestationSuccess`, `MconnEventFinishAttestationFailure`, `MconnEventStartRotateCryptKey`, `MconnEventFinishRotateCryptKeySuccess`, `MconnEventFinishRotateCryptKeyFailure`, `MconnEventStartRotatePki`, `MconnEventFinishRotatePkiSuccess`, `MconnEventFinishRotatePkiFailure`, `MconnEventStartUpgrade`, `MconnEventFinishUpgradeSuccess`, `MconnEventFinishUpgradeFailure`, `MconnEventReconcile`, `MconnEventConfigureCloudflaredTunnel`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_event_configure_cloudflared_tunnel.dart';import 'mconn_event_finish_attestation_failure.dart';import 'mconn_event_finish_attestation_success.dart';import 'mconn_event_finish_rotate_crypt_key_failure.dart';import 'mconn_event_finish_rotate_crypt_key_success.dart';import 'mconn_event_finish_rotate_pki_failure.dart';import 'mconn_event_finish_rotate_pki_success.dart';import 'mconn_event_finish_upgrade_failure.dart';import 'mconn_event_finish_upgrade_success.dart';import 'mconn_event_init.dart';import 'mconn_event_leave.dart';import 'mconn_event_reconcile.dart';import 'mconn_event_start_attestation.dart';import 'mconn_event_start_rotate_crypt_key.dart';import 'mconn_event_start_rotate_pki.dart';import 'mconn_event_start_upgrade.dart';/// A value that is one of: `MconnEventInit`, `MconnEventLeave`, `MconnEventStartAttestation`, `MconnEventFinishAttestationSuccess`, `MconnEventFinishAttestationFailure`, `MconnEventStartRotateCryptKey`, `MconnEventFinishRotateCryptKeySuccess`, `MconnEventFinishRotateCryptKeyFailure`, `MconnEventStartRotatePki`, `MconnEventFinishRotatePkiSuccess`, `MconnEventFinishRotatePkiFailure`, `MconnEventStartUpgrade`, `MconnEventFinishUpgradeSuccess`, `MconnEventFinishUpgradeFailure`, `MconnEventReconcile`, `MconnEventConfigureCloudflaredTunnel`.
 sealed class MconnEvent {const MconnEvent();
 
 factory MconnEvent.fromJson(Map<String, dynamic> json) {   if (MconnEventInit.canParse(json)) {
@@ -57,7 +57,7 @@ factory MconnEvent.fromJson(Map<String, dynamic> json) {   if (MconnEventInit.ca
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class MconnEventMconnEventInit extends MconnEvent {const MconnEventMconnEventInit(this._value);
+@immutable final class MconnEventMconnEventInit extends MconnEvent {const MconnEventMconnEventInit(this._value);
 
 final MconnEventInit _value;
 
@@ -67,7 +67,7 @@ final MconnEventInit _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventInit($_value)'; } 
  }
-final class MconnEventMconnEventLeave extends MconnEvent {const MconnEventMconnEventLeave(this._value);
+@immutable final class MconnEventMconnEventLeave extends MconnEvent {const MconnEventMconnEventLeave(this._value);
 
 final MconnEventLeave _value;
 
@@ -77,7 +77,7 @@ final MconnEventLeave _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventLeave($_value)'; } 
  }
-final class MconnEventMconnEventStartAttestation extends MconnEvent {const MconnEventMconnEventStartAttestation(this._value);
+@immutable final class MconnEventMconnEventStartAttestation extends MconnEvent {const MconnEventMconnEventStartAttestation(this._value);
 
 final MconnEventStartAttestation _value;
 
@@ -87,7 +87,7 @@ final MconnEventStartAttestation _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventStartAttestation($_value)'; } 
  }
-final class MconnEventMconnEventFinishAttestationSuccess extends MconnEvent {const MconnEventMconnEventFinishAttestationSuccess(this._value);
+@immutable final class MconnEventMconnEventFinishAttestationSuccess extends MconnEvent {const MconnEventMconnEventFinishAttestationSuccess(this._value);
 
 final MconnEventFinishAttestationSuccess _value;
 
@@ -97,7 +97,7 @@ final MconnEventFinishAttestationSuccess _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventFinishAttestationSuccess($_value)'; } 
  }
-final class MconnEventMconnEventFinishAttestationFailure extends MconnEvent {const MconnEventMconnEventFinishAttestationFailure(this._value);
+@immutable final class MconnEventMconnEventFinishAttestationFailure extends MconnEvent {const MconnEventMconnEventFinishAttestationFailure(this._value);
 
 final MconnEventFinishAttestationFailure _value;
 
@@ -107,7 +107,7 @@ final MconnEventFinishAttestationFailure _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventFinishAttestationFailure($_value)'; } 
  }
-final class MconnEventMconnEventStartRotateCryptKey extends MconnEvent {const MconnEventMconnEventStartRotateCryptKey(this._value);
+@immutable final class MconnEventMconnEventStartRotateCryptKey extends MconnEvent {const MconnEventMconnEventStartRotateCryptKey(this._value);
 
 final MconnEventStartRotateCryptKey _value;
 
@@ -117,7 +117,7 @@ final MconnEventStartRotateCryptKey _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventStartRotateCryptKey($_value)'; } 
  }
-final class MconnEventMconnEventFinishRotateCryptKeySuccess extends MconnEvent {const MconnEventMconnEventFinishRotateCryptKeySuccess(this._value);
+@immutable final class MconnEventMconnEventFinishRotateCryptKeySuccess extends MconnEvent {const MconnEventMconnEventFinishRotateCryptKeySuccess(this._value);
 
 final MconnEventFinishRotateCryptKeySuccess _value;
 
@@ -127,7 +127,7 @@ final MconnEventFinishRotateCryptKeySuccess _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventFinishRotateCryptKeySuccess($_value)'; } 
  }
-final class MconnEventMconnEventFinishRotateCryptKeyFailure extends MconnEvent {const MconnEventMconnEventFinishRotateCryptKeyFailure(this._value);
+@immutable final class MconnEventMconnEventFinishRotateCryptKeyFailure extends MconnEvent {const MconnEventMconnEventFinishRotateCryptKeyFailure(this._value);
 
 final MconnEventFinishRotateCryptKeyFailure _value;
 
@@ -137,7 +137,7 @@ final MconnEventFinishRotateCryptKeyFailure _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventFinishRotateCryptKeyFailure($_value)'; } 
  }
-final class MconnEventMconnEventStartRotatePki extends MconnEvent {const MconnEventMconnEventStartRotatePki(this._value);
+@immutable final class MconnEventMconnEventStartRotatePki extends MconnEvent {const MconnEventMconnEventStartRotatePki(this._value);
 
 final MconnEventStartRotatePki _value;
 
@@ -147,7 +147,7 @@ final MconnEventStartRotatePki _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventStartRotatePki($_value)'; } 
  }
-final class MconnEventMconnEventFinishRotatePkiSuccess extends MconnEvent {const MconnEventMconnEventFinishRotatePkiSuccess(this._value);
+@immutable final class MconnEventMconnEventFinishRotatePkiSuccess extends MconnEvent {const MconnEventMconnEventFinishRotatePkiSuccess(this._value);
 
 final MconnEventFinishRotatePkiSuccess _value;
 
@@ -157,7 +157,7 @@ final MconnEventFinishRotatePkiSuccess _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventFinishRotatePkiSuccess($_value)'; } 
  }
-final class MconnEventMconnEventFinishRotatePkiFailure extends MconnEvent {const MconnEventMconnEventFinishRotatePkiFailure(this._value);
+@immutable final class MconnEventMconnEventFinishRotatePkiFailure extends MconnEvent {const MconnEventMconnEventFinishRotatePkiFailure(this._value);
 
 final MconnEventFinishRotatePkiFailure _value;
 
@@ -167,7 +167,7 @@ final MconnEventFinishRotatePkiFailure _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventFinishRotatePkiFailure($_value)'; } 
  }
-final class MconnEventMconnEventStartUpgrade extends MconnEvent {const MconnEventMconnEventStartUpgrade(this._value);
+@immutable final class MconnEventMconnEventStartUpgrade extends MconnEvent {const MconnEventMconnEventStartUpgrade(this._value);
 
 final MconnEventStartUpgrade _value;
 
@@ -177,7 +177,7 @@ final MconnEventStartUpgrade _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventStartUpgrade($_value)'; } 
  }
-final class MconnEventMconnEventFinishUpgradeSuccess extends MconnEvent {const MconnEventMconnEventFinishUpgradeSuccess(this._value);
+@immutable final class MconnEventMconnEventFinishUpgradeSuccess extends MconnEvent {const MconnEventMconnEventFinishUpgradeSuccess(this._value);
 
 final MconnEventFinishUpgradeSuccess _value;
 
@@ -187,7 +187,7 @@ final MconnEventFinishUpgradeSuccess _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventFinishUpgradeSuccess($_value)'; } 
  }
-final class MconnEventMconnEventFinishUpgradeFailure extends MconnEvent {const MconnEventMconnEventFinishUpgradeFailure(this._value);
+@immutable final class MconnEventMconnEventFinishUpgradeFailure extends MconnEvent {const MconnEventMconnEventFinishUpgradeFailure(this._value);
 
 final MconnEventFinishUpgradeFailure _value;
 
@@ -197,7 +197,7 @@ final MconnEventFinishUpgradeFailure _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventFinishUpgradeFailure($_value)'; } 
  }
-final class MconnEventMconnEventReconcile extends MconnEvent {const MconnEventMconnEventReconcile(this._value);
+@immutable final class MconnEventMconnEventReconcile extends MconnEvent {const MconnEventMconnEventReconcile(this._value);
 
 final MconnEventReconcile _value;
 
@@ -207,7 +207,7 @@ final MconnEventReconcile _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'MconnEvent.mconnEventReconcile($_value)'; } 
  }
-final class MconnEventMconnEventConfigureCloudflaredTunnel extends MconnEvent {const MconnEventMconnEventConfigureCloudflaredTunnel(this._value);
+@immutable final class MconnEventMconnEventConfigureCloudflaredTunnel extends MconnEvent {const MconnEventMconnEventConfigureCloudflaredTunnel(this._value);
 
 final MconnEventConfigureCloudflaredTunnel _value;
 
@@ -218,7 +218,7 @@ final MconnEventConfigureCloudflaredTunnel _value;
 @override String toString() { return 'MconnEvent.mconnEventConfigureCloudflaredTunnel($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class MconnEvent$Unknown extends MconnEvent {const MconnEvent$Unknown(this._value);
+@immutable final class MconnEvent$Unknown extends MconnEvent {const MconnEvent$Unknown(this._value);
 
 final dynamic _value;
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secret_key_param3_customer_acceptance.dart';final class SecretKeyParam3 {const SecretKeyParam3({required this.customerAcceptance});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_key_param3_customer_acceptance.dart';@immutable final class SecretKeyParam3 {const SecretKeyParam3({required this.customerAcceptance});
 
 factory SecretKeyParam3.fromJson(Map<String, dynamic> json) { return SecretKeyParam3(
   customerAcceptance: SecretKeyParam3CustomerAcceptance.fromJson(json['customer_acceptance'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_card_installments_plan.dart';/// 
-final class PaymentMethodOptionsCardInstallments {const PaymentMethodOptionsCardInstallments({this.availablePlans, required this.enabled, this.plan, });
+@immutable final class PaymentMethodOptionsCardInstallments {const PaymentMethodOptionsCardInstallments({required this.enabled, this.availablePlans, this.plan, });
 
 factory PaymentMethodOptionsCardInstallments.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCardInstallments(
   availablePlans: (json['available_plans'] as List<dynamic>?)?.map((e) => PaymentMethodDetailsCardInstallmentsPlan.fromJson(e as Map<String, dynamic>)).toList(),

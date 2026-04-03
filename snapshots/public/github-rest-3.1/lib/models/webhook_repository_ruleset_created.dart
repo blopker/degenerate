@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_ruleset.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookRepositoryRulesetCreatedAction {const WebhookRepositoryRulesetCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_ruleset.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookRepositoryRulesetCreatedAction {const WebhookRepositoryRulesetCreatedAction._(this.value);
 
 factory WebhookRepositoryRulesetCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookRepositoryRulesetCreatedAction($value)'; } 
  }
-final class WebhookRepositoryRulesetCreated {const WebhookRepositoryRulesetCreated({required this.action, this.enterprise, this.installation, this.organization, this.repository, required this.repositoryRuleset, required this.sender, });
+@immutable final class WebhookRepositoryRulesetCreated {const WebhookRepositoryRulesetCreated({required this.action, required this.repositoryRuleset, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookRepositoryRulesetCreated.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetCreated(
   action: WebhookRepositoryRulesetCreatedAction.fromJson(json['action'] as String),

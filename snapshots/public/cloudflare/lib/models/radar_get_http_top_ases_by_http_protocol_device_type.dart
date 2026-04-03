@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopAsesByHttpProtocolDeviceType {const RadarGetHttpTopAsesByHttpProtocolDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByHttpProtocolDeviceType {const RadarGetHttpTopAsesByHttpProtocolDeviceType._(this.value);
 
 factory RadarGetHttpTopAsesByHttpProtocolDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,

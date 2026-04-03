@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the client.
-final class RadarGetCrawlersSummaryClientType {const RadarGetCrawlersSummaryClientType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the client.
+@immutable final class RadarGetCrawlersSummaryClientType {const RadarGetCrawlersSummaryClientType._(this.value);
 
 factory RadarGetCrawlersSummaryClientType.fromJson(String json) { return switch (json) {
   'HUMAN' => human,

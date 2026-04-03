@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_build_config.dart';import 'pages_deployment_deployment_trigger.dart';import 'pages_env_vars_value.dart';import 'pages_project_name.dart';import 'pages_source.dart';import 'pages_stage.dart';/// Type of deploy.
-final class PagesDeploymentEnvironment {const PagesDeploymentEnvironment._(this.value);
+@immutable final class PagesDeploymentEnvironment {const PagesDeploymentEnvironment._(this.value);
 
 factory PagesDeploymentEnvironment.fromJson(String json) { return switch (json) {
   'preview' => preview,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesDeploymentEnvironment($value)'; } 
  }
-final class PagesDeployment {const PagesDeployment({required this.aliases, required this.buildConfig, required this.createdOn, required this.deploymentTrigger, required this.envVars, required this.environment, required this.id, required this.isSkipped, required this.latestStage, required this.modifiedOn, required this.projectId, required this.projectName, required this.shortId, required this.source, required this.stages, required this.url, this.usesFunctions, });
+@immutable final class PagesDeployment {const PagesDeployment({required this.aliases, required this.buildConfig, required this.createdOn, required this.deploymentTrigger, required this.envVars, required this.environment, required this.id, required this.isSkipped, required this.latestStage, required this.modifiedOn, required this.projectId, required this.projectName, required this.shortId, required this.source, required this.stages, required this.url, this.usesFunctions, });
 
 factory PagesDeployment.fromJson(Map<String, dynamic> json) { return PagesDeployment(
   aliases: (json['aliases'] as List<dynamic>?)?.map((e) => e as String).toList(),

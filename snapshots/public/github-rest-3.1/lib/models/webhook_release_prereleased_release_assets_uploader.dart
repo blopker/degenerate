@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookReleasePrereleasedReleaseAssetsUploaderType {const WebhookReleasePrereleasedReleaseAssetsUploaderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookReleasePrereleasedReleaseAssetsUploaderType {const WebhookReleasePrereleasedReleaseAssetsUploaderType._(this.value);
 
 factory WebhookReleasePrereleasedReleaseAssetsUploaderType.fromJson(String json) { return switch (json) {
   'Bot' => bot,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookReleasePrereleasedReleaseAssetsUploaderType($value)'; } 
  }
-final class WebhookReleasePrereleasedReleaseAssetsUploader {const WebhookReleasePrereleasedReleaseAssetsUploader({this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, required this.id, required this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
+@immutable final class WebhookReleasePrereleasedReleaseAssetsUploader {const WebhookReleasePrereleasedReleaseAssetsUploader({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
 
 factory WebhookReleasePrereleasedReleaseAssetsUploader.fromJson(Map<String, dynamic> json) { return WebhookReleasePrereleasedReleaseAssetsUploader(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,

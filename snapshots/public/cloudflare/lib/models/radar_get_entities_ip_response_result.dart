@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_entities_ip_response_result_ip.dart';final class RadarGetEntitiesIpResponseResult {const RadarGetEntitiesIpResponseResult({required this.ip});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_ip_response_result_ip.dart';@immutable final class RadarGetEntitiesIpResponseResult {const RadarGetEntitiesIpResponseResult({required this.ip});
 
 factory RadarGetEntitiesIpResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesIpResponseResult(
   ip: RadarGetEntitiesIpResponseResultIp.fromJson(json['ip'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_request_stripe_usage_events.dart';final class AigConfigUpdateGatewayRequestStripe {const AigConfigUpdateGatewayRequestStripe({required this.authorization, required this.usageEvents, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_request_stripe_usage_events.dart';@immutable final class AigConfigUpdateGatewayRequestStripe {const AigConfigUpdateGatewayRequestStripe({required this.authorization, required this.usageEvents, });
 
 factory AigConfigUpdateGatewayRequestStripe.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayRequestStripe(
   authorization: json['authorization'] as String,

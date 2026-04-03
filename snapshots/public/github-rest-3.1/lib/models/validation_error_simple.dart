@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Validation Error Simple
-final class ValidationErrorSimple {const ValidationErrorSimple({required this.message, required this.documentationUrl, this.errors, });
+@immutable final class ValidationErrorSimple {const ValidationErrorSimple({required this.message, required this.documentationUrl, this.errors, });
 
 factory ValidationErrorSimple.fromJson(Map<String, dynamic> json) { return ValidationErrorSimple(
   message: json['message'] as String,

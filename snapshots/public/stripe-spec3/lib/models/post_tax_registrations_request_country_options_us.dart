@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_tax_registrations_request_country_options_us_local_amusement_tax.dart';import 'post_tax_registrations_request_country_options_us_local_lease_tax.dart';import 'post_tax_registrations_request_country_options_us_state_sales_tax.dart';final class PostTaxRegistrationsRequestCountryOptionsUsType {const PostTaxRegistrationsRequestCountryOptionsUsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_registrations_request_country_options_us_local_amusement_tax.dart';import 'post_tax_registrations_request_country_options_us_local_lease_tax.dart';import 'post_tax_registrations_request_country_options_us_state_sales_tax.dart';@immutable final class PostTaxRegistrationsRequestCountryOptionsUsType {const PostTaxRegistrationsRequestCountryOptionsUsType._(this.value);
 
 factory PostTaxRegistrationsRequestCountryOptionsUsType.fromJson(String json) { return switch (json) {
   'local_amusement_tax' => localAmusementTax,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsUsType($value)'; } 
  }
-final class PostTaxRegistrationsRequestCountryOptionsUs {const PostTaxRegistrationsRequestCountryOptionsUs({this.localAmusementTax, this.localLeaseTax, required this.state, this.stateSalesTax, required this.type, });
+@immutable final class PostTaxRegistrationsRequestCountryOptionsUs {const PostTaxRegistrationsRequestCountryOptionsUs({required this.state, required this.type, this.localAmusementTax, this.localLeaseTax, this.stateSalesTax, });
 
 factory PostTaxRegistrationsRequestCountryOptionsUs.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsUs(
   localAmusementTax: json['local_amusement_tax'] != null ? PostTaxRegistrationsRequestCountryOptionsUsLocalAmusementTax.fromJson(json['local_amusement_tax'] as Map<String, dynamic>) : null,

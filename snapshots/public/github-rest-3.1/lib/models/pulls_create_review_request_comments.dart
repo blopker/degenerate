@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullsCreateReviewRequestComments {const PullsCreateReviewRequestComments({required this.path, this.position, required this.body, this.line, this.side, this.startLine, this.startSide, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsCreateReviewRequestComments {const PullsCreateReviewRequestComments({required this.path, required this.body, this.position, this.line, this.side, this.startLine, this.startSide, });
 
 factory PullsCreateReviewRequestComments.fromJson(Map<String, dynamic> json) { return PullsCreateReviewRequestComments(
   path: json['path'] as String,

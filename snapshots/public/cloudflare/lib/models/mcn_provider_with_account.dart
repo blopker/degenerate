@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_account_id.dart';import 'mcn_cloud_type.dart';import 'mcn_provider_discovery_status.dart';import 'mcn_provider_id.dart';import 'mcn_provider_lifecycle_state.dart';import 'mcn_provider_status.dart';final class McnProviderWithAccount {const McnProviderWithAccount({this.awsArn, this.azureSubscriptionId, this.azureTenantId, required this.cloudType, this.description, required this.friendlyName, this.gcpProjectId, this.gcpServiceAccountEmail, required this.id, required this.lastUpdated, required this.lifecycleState, required this.state, required this.stateV2, this.status, required this.accountId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_account_id.dart';import 'mcn_cloud_type.dart';import 'mcn_provider_discovery_status.dart';import 'mcn_provider_id.dart';import 'mcn_provider_lifecycle_state.dart';import 'mcn_provider_status.dart';@immutable final class McnProviderWithAccount {const McnProviderWithAccount({required this.cloudType, required this.friendlyName, required this.id, required this.lastUpdated, required this.lifecycleState, required this.state, required this.stateV2, required this.accountId, this.awsArn, this.azureSubscriptionId, this.azureTenantId, this.description, this.gcpProjectId, this.gcpServiceAccountEmail, this.status, });
 
 factory McnProviderWithAccount.fromJson(Map<String, dynamic> json) { return McnProviderWithAccount(
   awsArn: json['aws_arn'] as String?,

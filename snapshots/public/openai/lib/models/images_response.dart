@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image.dart';import 'image_gen_usage.dart';/// The background parameter used for the image generation. Either `transparent` or `opaque`.
-final class ImagesResponseBackground {const ImagesResponseBackground._(this.value);
+@immutable final class ImagesResponseBackground {const ImagesResponseBackground._(this.value);
 
 factory ImagesResponseBackground.fromJson(String json) { return switch (json) {
   'transparent' => transparent,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ImagesResponseBackground($value)'; } 
  }
 /// The output format of the image generation. Either `png`, `webp`, or `jpeg`.
-final class ImagesResponseOutputFormat {const ImagesResponseOutputFormat._(this.value);
+@immutable final class ImagesResponseOutputFormat {const ImagesResponseOutputFormat._(this.value);
 
 factory ImagesResponseOutputFormat.fromJson(String json) { return switch (json) {
   'png' => png,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ImagesResponseOutputFormat($value)'; } 
  }
 /// The size of the image generated. Either `1024x1024`, `1024x1536`, or `1536x1024`.
-final class ImagesResponseSize {const ImagesResponseSize._(this.value);
+@immutable final class ImagesResponseSize {const ImagesResponseSize._(this.value);
 
 factory ImagesResponseSize.fromJson(String json) { return switch (json) {
   '1024x1024' => $1024x1024,
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ImagesResponseSize($value)'; } 
  }
 /// The quality of the image generated. Either `low`, `medium`, or `high`.
-final class ImagesResponseQuality {const ImagesResponseQuality._(this.value);
+@immutable final class ImagesResponseQuality {const ImagesResponseQuality._(this.value);
 
 factory ImagesResponseQuality.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -110,7 +110,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ImagesResponseQuality($value)'; } 
  }
 /// The response from the image generation endpoint.
-final class ImagesResponse {const ImagesResponse({required this.created, this.data, this.background, this.outputFormat, this.size, this.quality, this.usage, });
+@immutable final class ImagesResponse {const ImagesResponse({required this.created, this.data, this.background, this.outputFormat, this.size, this.quality, this.usage, });
 
 factory ImagesResponse.fromJson(Map<String, dynamic> json) { return ImagesResponse(
   created: (json['created'] as num).toInt(),

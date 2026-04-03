@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'private_user.dart';import 'public_user.dart';sealed class UsersGetByIdResponse {const UsersGetByIdResponse();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'private_user.dart';import 'public_user.dart';sealed class UsersGetByIdResponse {const UsersGetByIdResponse();
 
 /// Deserialize from JSON, dispatching on the `user_view_type` discriminator.
 factory UsersGetByIdResponse.fromJson(Map<String, dynamic> json) { return switch (json['user_view_type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UsersGetByIdResponse$Unknown; } 
  }
-final class UsersGetByIdResponsePublic extends UsersGetByIdResponse {const UsersGetByIdResponsePublic(this.publicUser);
+@immutable final class UsersGetByIdResponsePublic extends UsersGetByIdResponse {const UsersGetByIdResponsePublic(this.publicUser);
 
 factory UsersGetByIdResponsePublic.fromJson(Map<String, dynamic> json) { return UsersGetByIdResponsePublic(PublicUser.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final PublicUser publicUser;
 @override int get hashCode { return publicUser.hashCode; } 
 @override String toString() { return 'UsersGetByIdResponsePublic(publicUser: $publicUser)'; } 
  }
-final class UsersGetByIdResponsePrivate extends UsersGetByIdResponse {const UsersGetByIdResponsePrivate(this.privateUser);
+@immutable final class UsersGetByIdResponsePrivate extends UsersGetByIdResponse {const UsersGetByIdResponsePrivate(this.privateUser);
 
 factory UsersGetByIdResponsePrivate.fromJson(Map<String, dynamic> json) { return UsersGetByIdResponsePrivate(PrivateUser.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final PrivateUser privateUser;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class UsersGetByIdResponse$Unknown extends UsersGetByIdResponse {const UsersGetByIdResponse$Unknown(this.json);
+@immutable final class UsersGetByIdResponse$Unknown extends UsersGetByIdResponse {const UsersGetByIdResponse$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

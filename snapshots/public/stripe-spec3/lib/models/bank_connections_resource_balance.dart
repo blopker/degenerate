@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'resource_cash_balance.dart';import 'resource_credit_balance.dart';/// The `type` of the balance. An additional hash is included on the balance with a name matching this value.
-final class BankConnectionsResourceBalanceType {const BankConnectionsResourceBalanceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_cash_balance.dart';import 'resource_credit_balance.dart';/// The `type` of the balance. An additional hash is included on the balance with a name matching this value.
+@immutable final class BankConnectionsResourceBalanceType {const BankConnectionsResourceBalanceType._(this.value);
 
 factory BankConnectionsResourceBalanceType.fromJson(String json) { return switch (json) {
   'cash' => cash,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BankConnectionsResourceBalanceType($value)'; } 
  }
 /// 
-final class BankConnectionsResourceBalance {const BankConnectionsResourceBalance({required this.asOf, this.cash, this.credit, required this.current, required this.type, });
+@immutable final class BankConnectionsResourceBalance {const BankConnectionsResourceBalance({required this.asOf, required this.current, required this.type, this.cash, this.credit, });
 
 factory BankConnectionsResourceBalance.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceBalance(
   asOf: (json['as_of'] as num).toInt(),

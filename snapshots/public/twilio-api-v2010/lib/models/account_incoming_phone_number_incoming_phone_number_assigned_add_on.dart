@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn {const AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn({this.sid, this.accountSid, this.resourceSid, this.friendlyName, this.description, this.configuration, this.uniqueName, this.dateCreated, this.dateUpdated, this.uri, this.subresourceUris, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn {const AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn({this.sid, this.accountSid, this.resourceSid, this.friendlyName, this.description, this.configuration, this.uniqueName, this.dateCreated, this.dateUpdated, this.uri, this.subresourceUris, });
 
 factory AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(Map<String, dynamic> json) { return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(
   sid: json['sid'] as String?,
@@ -13,7 +13,7 @@ factory AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(Map<
   dateCreated: json['date_created'] as String?,
   dateUpdated: json['date_updated'] as String?,
   uri: json['uri'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
 ); }
 
 /// The unique string that that we created to identify the resource.

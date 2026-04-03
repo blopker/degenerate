@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageVectorStoresResultObject {const UsageVectorStoresResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageVectorStoresResultObject {const UsageVectorStoresResultObject._(this.value);
 
 factory UsageVectorStoresResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.vector_stores.result' => organizationUsageVectorStoresResult,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UsageVectorStoresResultObject($value)'; } 
  }
 /// The aggregated vector stores usage details of the specific time bucket.
-final class UsageVectorStoresResult {const UsageVectorStoresResult({required this.object, required this.usageBytes, this.projectId, });
+@immutable final class UsageVectorStoresResult {const UsageVectorStoresResult({required this.object, required this.usageBytes, this.projectId, });
 
 factory UsageVectorStoresResult.fromJson(Map<String, dynamic> json) { return UsageVectorStoresResult(
   object: UsageVectorStoresResultObject.fromJson(json['object'] as String),

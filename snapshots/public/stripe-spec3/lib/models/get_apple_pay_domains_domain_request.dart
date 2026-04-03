@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetApplePayDomainsDomainRequest {const GetApplePayDomainsDomainRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetApplePayDomainsDomainRequest {const GetApplePayDomainsDomainRequest();
 
-factory GetApplePayDomainsDomainRequest.fromJson(Map<String, dynamic> json) { return GetApplePayDomainsDomainRequest(
-
-); }
+factory GetApplePayDomainsDomainRequest.fromJson(Map<String, dynamic> _) { return const GetApplePayDomainsDomainRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetApplePayDomainsDomainRequest copyWith() { return GetApplePayDomainsDomainRequest(
+GetApplePayDomainsDomainRequest copyWith() { return const GetApplePayDomainsDomainRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetApplePayDomainsDomainRequest; } 

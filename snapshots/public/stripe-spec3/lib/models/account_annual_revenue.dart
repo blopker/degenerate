@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class AccountAnnualRevenue {const AccountAnnualRevenue({this.amount, this.currency, this.fiscalYearEnd, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class AccountAnnualRevenue {const AccountAnnualRevenue({this.amount, this.currency, this.fiscalYearEnd, });
 
 factory AccountAnnualRevenue.fromJson(Map<String, dynamic> json) { return AccountAnnualRevenue(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The environment type. Always `local`.
-final class LocalEnvironmentResourceType {const LocalEnvironmentResourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The environment type. Always `local`.
+@immutable final class LocalEnvironmentResourceType {const LocalEnvironmentResourceType._(this.value);
 
 factory LocalEnvironmentResourceType.fromJson(String json) { return switch (json) {
   'local' => local,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LocalEnvironmentResourceType($value)'; } 
  }
 /// Represents the use of a local environment to perform shell actions.
-final class LocalEnvironmentResource {const LocalEnvironmentResource({this.type = LocalEnvironmentResourceType.local});
+@immutable final class LocalEnvironmentResource {const LocalEnvironmentResource({this.type = LocalEnvironmentResourceType.local});
 
 factory LocalEnvironmentResource.fromJson(Map<String, dynamic> json) { return LocalEnvironmentResource(
   type: LocalEnvironmentResourceType.fromJson(json['type'] as String),

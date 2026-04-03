@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'costs_result_amount.dart';final class CostsResultObject {const CostsResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'costs_result_amount.dart';@immutable final class CostsResultObject {const CostsResultObject._(this.value);
 
 factory CostsResultObject.fromJson(String json) { return switch (json) {
   'organization.costs.result' => organizationCostsResult,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CostsResultObject($value)'; } 
  }
 /// The aggregated costs details of the specific time bucket.
-final class CostsResult {const CostsResult({required this.object, this.amount, this.lineItem, this.projectId, });
+@immutable final class CostsResult {const CostsResult({required this.object, this.amount, this.lineItem, this.projectId, });
 
 factory CostsResult.fromJson(Map<String, dynamic> json) { return CostsResult(
   object: CostsResultObject.fromJson(json['object'] as String),

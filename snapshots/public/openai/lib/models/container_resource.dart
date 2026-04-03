@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'container_resource_expires_after.dart';import 'container_resource_network_policy.dart';/// The memory limit configured for the container.
-final class ContainerResourceMemoryLimit {const ContainerResourceMemoryLimit._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_resource_expires_after.dart';import 'container_resource_network_policy.dart';/// The memory limit configured for the container.
+@immutable final class ContainerResourceMemoryLimit {const ContainerResourceMemoryLimit._(this.value);
 
 factory ContainerResourceMemoryLimit.fromJson(String json) { return switch (json) {
   '1g' => $1g,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ContainerResourceMemoryLimit($value)'; } 
  }
-final class ContainerResource {const ContainerResource({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.lastActiveAt, this.expiresAfter, this.memoryLimit, this.networkPolicy, });
+@immutable final class ContainerResource {const ContainerResource({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.lastActiveAt, this.expiresAfter, this.memoryLimit, this.networkPolicy, });
 
 factory ContainerResource.fromJson(Map<String, dynamic> json) { return ContainerResource(
   id: json['id'] as String,

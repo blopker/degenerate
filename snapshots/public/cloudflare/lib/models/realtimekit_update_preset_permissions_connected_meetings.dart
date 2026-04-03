@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitUpdatePresetPermissionsConnectedMeetings {const RealtimekitUpdatePresetPermissionsConnectedMeetings({this.canAlterConnectedMeetings, this.canSwitchConnectedMeetings, this.canSwitchToParentMeeting, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitUpdatePresetPermissionsConnectedMeetings {const RealtimekitUpdatePresetPermissionsConnectedMeetings({this.canAlterConnectedMeetings, this.canSwitchConnectedMeetings, this.canSwitchToParentMeeting, });
 
 factory RealtimekitUpdatePresetPermissionsConnectedMeetings.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissionsConnectedMeetings(
   canAlterConnectedMeetings: json['can_alter_connected_meetings'] as bool?,

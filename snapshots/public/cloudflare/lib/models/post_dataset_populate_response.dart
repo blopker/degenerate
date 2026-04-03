@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_dataset_populate_response_properties.dart';final class PostDatasetPopulateResponse {const PostDatasetPopulateResponse({required this.properties, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dataset_populate_response_properties.dart';@immutable final class PostDatasetPopulateResponse {const PostDatasetPopulateResponse({required this.properties, required this.type, });
 
 factory PostDatasetPopulateResponse.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponse(
   properties: PostDatasetPopulateResponseProperties.fromJson(json['properties'] as Map<String, dynamic>),

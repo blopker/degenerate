@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_cache_key_fields_value.dart';/// Control specifically what variables to include when deciding which
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_key_fields_value.dart';/// Control specifically what variables to include when deciding which
 /// resources to cache. This allows customers to determine what to cache
 /// based on something other than just the URL.
 /// 
-final class ZonesCacheKeyFieldsId {const ZonesCacheKeyFieldsId._(this.value);
+@immutable final class ZonesCacheKeyFieldsId {const ZonesCacheKeyFieldsId._(this.value);
 
 factory ZonesCacheKeyFieldsId.fromJson(String json) { return switch (json) {
   'cache_key_fields' => cacheKeyFields,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesCacheKeyFieldsId($value)'; } 
  }
-final class ZonesCacheKeyFields {const ZonesCacheKeyFields({this.id, this.value, });
+@immutable final class ZonesCacheKeyFields {const ZonesCacheKeyFields({this.id, this.value, });
 
 factory ZonesCacheKeyFields.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFields(
   id: json['id'] != null ? ZonesCacheKeyFieldsId.fromJson(json['id'] as String) : null,

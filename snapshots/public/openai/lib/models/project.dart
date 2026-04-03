@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `organization.project`
-final class ProjectObject {const ProjectObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project`
+@immutable final class ProjectObject {const ProjectObject._(this.value);
 
 factory ProjectObject.fromJson(String json) { return switch (json) {
   'organization.project' => organizationProject,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectObject($value)'; } 
  }
 /// `active` or `archived`
-final class ProjectStatus {const ProjectStatus._(this.value);
+@immutable final class ProjectStatus {const ProjectStatus._(this.value);
 
 factory ProjectStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectStatus($value)'; } 
  }
 /// Represents an individual project.
-final class Project {const Project({required this.id, required this.object, required this.name, required this.createdAt, this.archivedAt, required this.status, });
+@immutable final class Project {const Project({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.archivedAt, });
 
 factory Project.fromJson(Map<String, dynamic> json) { return Project(
   id: json['id'] as String,

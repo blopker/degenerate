@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookCustomPropertyDeletedDefinition {const WebhookCustomPropertyDeletedDefinition({required this.propertyName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCustomPropertyDeletedDefinition {const WebhookCustomPropertyDeletedDefinition({required this.propertyName});
 
 factory WebhookCustomPropertyDeletedDefinition.fromJson(Map<String, dynamic> json) { return WebhookCustomPropertyDeletedDefinition(
   propertyName: json['property_name'] as String,

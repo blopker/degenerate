@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypalCategory {const AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypalCategory._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypalCategory {const AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypalCategory._(this.value);
 
 factory AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypalCategory.fromJson(String json) { return switch (json) {
   'digital_goods' => digitalGoods,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypalCategory($value)'; } 
  }
-final class AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypal {const AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypal({this.category, this.description, this.soldBy, });
+@immutable final class AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypal {const AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypal({this.category, this.description, this.soldBy, });
 
 factory AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypal.fromJson(Map<String, dynamic> json) { return AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypal(
   category: json['category'] != null ? AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypalCategory.fromJson(json['category'] as String) : null,

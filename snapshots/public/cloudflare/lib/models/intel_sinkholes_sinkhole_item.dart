@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The unique identifier for the sinkhole
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The unique identifier for the sinkhole
 extension type const IntelSinkholesId(int value) {
 factory IntelSinkholesId.fromJson(num json) => IntelSinkholesId(json.toInt());
 
@@ -14,7 +14,7 @@ factory IntelSinkholesName.fromJson(String json) => IntelSinkholesName(json);
 String toJson() => value;
 
 }
-final class IntelSinkholesSinkholeItem {const IntelSinkholesSinkholeItem({this.accountTag, this.createdOn, this.id, this.modifiedOn, this.name, this.r2Bucket, this.r2Id, });
+@immutable final class IntelSinkholesSinkholeItem {const IntelSinkholesSinkholeItem({this.accountTag, this.createdOn, this.id, this.modifiedOn, this.name, this.r2Bucket, this.r2Id, });
 
 factory IntelSinkholesSinkholeItem.fromJson(Map<String, dynamic> json) { return IntelSinkholesSinkholeItem(
   accountTag: json['account_tag'] as String?,

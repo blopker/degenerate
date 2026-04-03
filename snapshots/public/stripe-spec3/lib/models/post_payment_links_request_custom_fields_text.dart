@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksRequestCustomFieldsText {const PostPaymentLinksRequestCustomFieldsText({this.defaultValue, this.maximumLength, this.minimumLength, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestCustomFieldsText {const PostPaymentLinksRequestCustomFieldsText({this.defaultValue, this.maximumLength, this.minimumLength, });
 
 factory PostPaymentLinksRequestCustomFieldsText.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestCustomFieldsText(
   defaultValue: json['default_value'] as String?,

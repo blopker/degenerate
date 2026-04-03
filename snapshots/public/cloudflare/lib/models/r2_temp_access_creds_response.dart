@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2TempAccessCredsResponse {const R2TempAccessCredsResponse({this.accessKeyId, this.secretAccessKey, this.sessionToken, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2TempAccessCredsResponse {const R2TempAccessCredsResponse({this.accessKeyId, this.secretAccessKey, this.sessionToken, });
 
 factory R2TempAccessCredsResponse.fromJson(Map<String, dynamic> json) { return R2TempAccessCredsResponse(
   accessKeyId: json['accessKeyId'] as String?,

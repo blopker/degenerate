@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Current status of the command
-final class DigitalExperienceMonitoringPostCommandsResponseCommandsStatus {const DigitalExperienceMonitoringPostCommandsResponseCommandsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current status of the command
+@immutable final class DigitalExperienceMonitoringPostCommandsResponseCommandsStatus {const DigitalExperienceMonitoringPostCommandsResponseCommandsStatus._(this.value);
 
 factory DigitalExperienceMonitoringPostCommandsResponseCommandsStatus.fromJson(String json) { return switch (json) {
   'PENDING_EXEC' => pendingExec,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DigitalExperienceMonitoringPostCommandsResponseCommandsStatus($value)'; } 
  }
-final class DigitalExperienceMonitoringPostCommandsResponseCommands {const DigitalExperienceMonitoringPostCommandsResponseCommands({this.args, this.deviceId, this.id, this.registrationId, this.status, this.type, });
+@immutable final class DigitalExperienceMonitoringPostCommandsResponseCommands {const DigitalExperienceMonitoringPostCommandsResponseCommands({this.args, this.deviceId, this.id, this.registrationId, this.status, this.type, });
 
 factory DigitalExperienceMonitoringPostCommandsResponseCommands.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringPostCommandsResponseCommands(
   args: (json['args'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

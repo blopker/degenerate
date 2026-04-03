@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_target_id.dart';final class InfraTargetsDeleteBatchPostRequest {const InfraTargetsDeleteBatchPostRequest({required this.targetIds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_target_id.dart';@immutable final class InfraTargetsDeleteBatchPostRequest {const InfraTargetsDeleteBatchPostRequest({required this.targetIds});
 
 factory InfraTargetsDeleteBatchPostRequest.fromJson(Map<String, dynamic> json) { return InfraTargetsDeleteBatchPostRequest(
   targetIds: (json['target_ids'] as List<dynamic>).map((e) => InfraTargetId.fromJson(e as String)).toList(),

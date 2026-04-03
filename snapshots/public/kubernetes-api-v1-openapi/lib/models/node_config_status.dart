@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'node_config_source.dart';/// NodeConfigStatus describes the status of the config assigned by Node.Spec.ConfigSource.
-final class NodeConfigStatus {const NodeConfigStatus({this.active, this.assigned, this.error, this.lastKnownGood, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_config_source.dart';/// NodeConfigStatus describes the status of the config assigned by Node.Spec.ConfigSource.
+@immutable final class NodeConfigStatus {const NodeConfigStatus({this.active, this.assigned, this.error, this.lastKnownGood, });
 
 factory NodeConfigStatus.fromJson(Map<String, dynamic> json) { return NodeConfigStatus(
   active: json['active'] != null ? NodeConfigSource.fromJson(json['active'] as Map<String, dynamic>) : null,

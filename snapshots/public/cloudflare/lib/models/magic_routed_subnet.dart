@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_cidr.dart';import 'magic_ip_address.dart';import 'magic_nat.dart';final class MagicRoutedSubnet {const MagicRoutedSubnet({this.nat, required this.nextHop, required this.prefix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_cidr.dart';import 'magic_ip_address.dart';import 'magic_nat.dart';@immutable final class MagicRoutedSubnet {const MagicRoutedSubnet({required this.nextHop, required this.prefix, this.nat, });
 
 factory MagicRoutedSubnet.fromJson(Map<String, dynamic> json) { return MagicRoutedSubnet(
   nat: json['nat'] != null ? MagicNat.fromJson(json['nat'] as Map<String, dynamic>) : null,

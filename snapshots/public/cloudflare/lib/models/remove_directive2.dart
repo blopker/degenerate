@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_set_cache_control_cloudflare_only.dart';import 'rulesets_set_cache_control_operation.dart';/// Remove the directive.
-final class RemoveDirective2 {const RemoveDirective2({this.cloudflareOnly, required this.operation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_cache_control_cloudflare_only.dart';import 'rulesets_set_cache_control_operation.dart';/// Remove the directive.
+@immutable final class RemoveDirective2 {const RemoveDirective2({required this.operation, this.cloudflareOnly, });
 
 factory RemoveDirective2.fromJson(Map<String, dynamic> json) { return RemoveDirective2(
   cloudflareOnly: json['cloudflare_only'] != null ? RulesetsSetCacheControlCloudflareOnly.fromJson(json['cloudflare_only'] as bool) : null,

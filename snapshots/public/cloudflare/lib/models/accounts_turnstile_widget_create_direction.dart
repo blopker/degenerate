@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Direction to order widgets.
-final class AccountsTurnstileWidgetCreateDirection {const AccountsTurnstileWidgetCreateDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order widgets.
+@immutable final class AccountsTurnstileWidgetCreateDirection {const AccountsTurnstileWidgetCreateDirection._(this.value);
 
 factory AccountsTurnstileWidgetCreateDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

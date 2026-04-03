@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_origin_post_quantum_encryption_value.dart';final class CacheRulesOriginPostQuantumEncryptionResponseValueResult {const CacheRulesOriginPostQuantumEncryptionResponseValueResult({required this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_origin_post_quantum_encryption_value.dart';@immutable final class CacheRulesOriginPostQuantumEncryptionResponseValueResult {const CacheRulesOriginPostQuantumEncryptionResponseValueResult({required this.value});
 
 factory CacheRulesOriginPostQuantumEncryptionResponseValueResult.fromJson(Map<String, dynamic> json) { return CacheRulesOriginPostQuantumEncryptionResponseValueResult(
   value: CacheRulesOriginPostQuantumEncryptionValue.fromJson(json['value'] as String),

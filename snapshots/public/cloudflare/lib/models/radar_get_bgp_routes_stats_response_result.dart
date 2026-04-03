@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_bgp_routes_stats_response_result_meta.dart';import 'radar_get_bgp_routes_stats_response_result_stats.dart';final class RadarGetBgpRoutesStatsResponseResult {const RadarGetBgpRoutesStatsResponseResult({required this.meta, required this.stats, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_routes_stats_response_result_meta.dart';import 'radar_get_bgp_routes_stats_response_result_stats.dart';@immutable final class RadarGetBgpRoutesStatsResponseResult {const RadarGetBgpRoutesStatsResponseResult({required this.meta, required this.stats, });
 
 factory RadarGetBgpRoutesStatsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesStatsResponseResult(
   meta: RadarGetBgpRoutesStatsResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

@@ -1,7 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'profile_avatar_type_enum.dart';
 
+@immutable
 final class UserUpdateSchema {
   const UserUpdateSchema({
     this.name,

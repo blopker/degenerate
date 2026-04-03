@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_message_media.dart';final class ListMediaResponse {const ListMediaResponse({this.mediaList, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_message_media.dart';@immutable final class ListMediaResponse {const ListMediaResponse({this.mediaList, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListMediaResponse.fromJson(Map<String, dynamic> json) { return ListMediaResponse(
   mediaList: (json['media_list'] as List<dynamic>?)?.map((e) => AccountMessageMedia.fromJson(e as Map<String, dynamic>)).toList(),

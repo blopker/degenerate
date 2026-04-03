@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotations {const RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotations {const RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

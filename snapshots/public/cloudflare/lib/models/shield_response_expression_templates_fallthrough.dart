@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ShieldResponseExpressionTemplatesFallthrough {const ShieldResponseExpressionTemplatesFallthrough({required this.expression, required this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldResponseExpressionTemplatesFallthrough {const ShieldResponseExpressionTemplatesFallthrough({required this.expression, required this.title, });
 
 factory ShieldResponseExpressionTemplatesFallthrough.fromJson(Map<String, dynamic> json) { return ShieldResponseExpressionTemplatesFallthrough(
   expression: json['expression'] as String,

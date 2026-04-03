@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web_search_action_search_sources.dart';/// The action type.
 /// 
-final class WebSearchActionSearchType {const WebSearchActionSearchType._(this.value);
+@immutable final class WebSearchActionSearchType {const WebSearchActionSearchType._(this.value);
 
 factory WebSearchActionSearchType.fromJson(String json) { return switch (json) {
   'search' => search,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Action type "search" - Performs a web search query.
 /// 
-final class WebSearchActionSearch {const WebSearchActionSearch({required this.type, required this.query, this.queries, this.sources, });
+@immutable final class WebSearchActionSearch {const WebSearchActionSearch({required this.type, required this.query, this.queries, this.sources, });
 
 factory WebSearchActionSearch.fromJson(Map<String, dynamic> json) { return WebSearchActionSearch(
   type: WebSearchActionSearchType.fromJson(json['type'] as String),
@@ -38,7 +38,7 @@ factory WebSearchActionSearch.fromJson(Map<String, dynamic> json) { return WebSe
 /// 
 final WebSearchActionSearchType type;
 
-/// [DEPRECATED] The search query.
+/// `[DEPRECATED]` The search query.
 /// 
 final String query;
 

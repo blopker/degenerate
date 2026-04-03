@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ChecksUpdateRequestCompleted {const ChecksUpdateRequestCompleted({this.status, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksUpdateRequestCompleted {const ChecksUpdateRequestCompleted({this.status, this.additionalProperties = const {}, });
 
 factory ChecksUpdateRequestCompleted.fromJson(Map<String, dynamic> json) { return ChecksUpdateRequestCompleted(
   status: json['status'],

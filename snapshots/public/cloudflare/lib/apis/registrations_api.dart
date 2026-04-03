@@ -17,7 +17,7 @@ Future<ApiResult<List<TeamsDevicesRegistration>, Never>> listRegistrations({requ
 final queryParametersList = <ApiQueryParameter>[];
 if (userId != null) {
 for (final item in userId) {
-  queryParametersList.add(ApiQueryParameter(name: 'user.id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'user.id', value: item));
 }
 }
 if (seenAfter != null) {
@@ -46,7 +46,7 @@ if (cursor != null) {
 }
 if (id != null) {
 for (final item in id) {
-  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item));
 }
 }
 if (deviceId != null) {
@@ -123,7 +123,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -135,7 +135,7 @@ return execute(
 Future<ApiResult<Map<String, dynamic>?, Never>> revokeRegistrations({required String accountId, required List<String> id, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in id) {
-  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item));
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -153,7 +153,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -165,7 +165,7 @@ return execute(
 Future<ApiResult<Map<String, dynamic>?, Never>> unrevokeRegistrations({required String accountId, required List<String> id, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in id) {
-  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item));
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -183,7 +183,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 

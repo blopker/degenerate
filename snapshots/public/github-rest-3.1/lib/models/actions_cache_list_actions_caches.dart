@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsCacheListActionsCaches {const ActionsCacheListActionsCaches({this.id, this.ref, this.key, this.version, this.lastAccessedAt, this.createdAt, this.sizeInBytes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsCacheListActionsCaches {const ActionsCacheListActionsCaches({this.id, this.ref, this.key, this.version, this.lastAccessedAt, this.createdAt, this.sizeInBytes, });
 
 factory ActionsCacheListActionsCaches.fromJson(Map<String, dynamic> json) { return ActionsCacheListActionsCaches(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

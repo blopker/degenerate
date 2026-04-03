@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_sip_sip_ip_access_control_list.dart';final class ListSipIpAccessControlListResponse {const ListSipIpAccessControlListResponse({this.ipAccessControlLists, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_sip_sip_ip_access_control_list.dart';@immutable final class ListSipIpAccessControlListResponse {const ListSipIpAccessControlListResponse({this.ipAccessControlLists, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListSipIpAccessControlListResponse.fromJson(Map<String, dynamic> json) { return ListSipIpAccessControlListResponse(
   ipAccessControlLists: (json['ip_access_control_lists'] as List<dynamic>?)?.map((e) => AccountSipSipIpAccessControlList.fromJson(e as Map<String, dynamic>)).toList(),

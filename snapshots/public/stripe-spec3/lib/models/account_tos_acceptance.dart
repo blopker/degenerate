@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class AccountTosAcceptance {const AccountTosAcceptance({this.date, this.ip, this.serviceAgreement, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class AccountTosAcceptance {const AccountTosAcceptance({this.date, this.ip, this.serviceAgreement, this.userAgent, });
 
 factory AccountTosAcceptance.fromJson(Map<String, dynamic> json) { return AccountTosAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

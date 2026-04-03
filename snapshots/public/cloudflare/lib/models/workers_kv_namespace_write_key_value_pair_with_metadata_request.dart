@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_any.dart';import 'workers_kv_value.dart';final class WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest {const WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest({this.metadata, required this.value, });
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_any.dart';import 'workers_kv_value.dart';@immutable final class WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest {const WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest({required this.value, this.metadata, });
 
 factory WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest.fromJson(Map<String, dynamic> json) { return WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest(
   metadata: json['metadata'] != null ? WorkersKvAny.fromJson(json['metadata'] as Map<String, dynamic>) : null,

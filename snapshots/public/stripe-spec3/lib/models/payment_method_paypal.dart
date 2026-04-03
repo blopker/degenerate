@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodPaypal {const PaymentMethodPaypal({this.country, this.payerEmail, this.payerId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodPaypal {const PaymentMethodPaypal({this.country, this.payerEmail, this.payerId, });
 
 factory PaymentMethodPaypal.fromJson(Map<String, dynamic> json) { return PaymentMethodPaypal(
   country: json['country'] as String?,

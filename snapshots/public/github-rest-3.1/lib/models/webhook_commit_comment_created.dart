@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_commit_comment_created_comment.dart';/// The action performed. Can be `created`.
-final class WebhookCommitCommentCreatedAction {const WebhookCommitCommentCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_commit_comment_created_comment.dart';/// The action performed. Can be `created`.
+@immutable final class WebhookCommitCommentCreatedAction {const WebhookCommitCommentCreatedAction._(this.value);
 
 factory WebhookCommitCommentCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCommitCommentCreatedAction($value)'; } 
  }
-final class WebhookCommitCommentCreated {const WebhookCommitCommentCreated({required this.action, required this.comment, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookCommitCommentCreated {const WebhookCommitCommentCreated({required this.action, required this.comment, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCommitCommentCreated.fromJson(Map<String, dynamic> json) { return WebhookCommitCommentCreated(
   action: WebhookCommitCommentCreatedAction.fromJson(json['action'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTerminalOnboardingLinksRequestLinkOptionsAppleTermsAndConditions {const PostTerminalOnboardingLinksRequestLinkOptionsAppleTermsAndConditions({this.allowRelinking, required this.merchantDisplayName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalOnboardingLinksRequestLinkOptionsAppleTermsAndConditions {const PostTerminalOnboardingLinksRequestLinkOptionsAppleTermsAndConditions({required this.merchantDisplayName, this.allowRelinking, });
 
 factory PostTerminalOnboardingLinksRequestLinkOptionsAppleTermsAndConditions.fromJson(Map<String, dynamic> json) { return PostTerminalOnboardingLinksRequestLinkOptionsAppleTermsAndConditions(
   allowRelinking: json['allow_relinking'] as bool?,

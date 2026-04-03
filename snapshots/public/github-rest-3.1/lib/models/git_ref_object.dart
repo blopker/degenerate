@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GitRefObject {const GitRefObject({required this.type, required this.sha, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitRefObject {const GitRefObject({required this.type, required this.sha, required this.url, });
 
 factory GitRefObject.fromJson(Map<String, dynamic> json) { return GitRefObject(
   type: json['type'] as String,

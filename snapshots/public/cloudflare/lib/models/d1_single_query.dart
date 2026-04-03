@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// A single query with or without parameters
-final class D1SingleQuery {const D1SingleQuery({this.params, required this.sql, });
+@immutable final class D1SingleQuery {const D1SingleQuery({required this.sql, this.params, });
 
 factory D1SingleQuery.fromJson(Map<String, dynamic> json) { return D1SingleQuery(
   params: (json['params'] as List<dynamic>?)?.map((e) => e as String).toList(),

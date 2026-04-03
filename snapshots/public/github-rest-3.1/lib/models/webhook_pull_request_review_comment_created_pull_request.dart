@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team10.dart';import 'user9.dart';import 'webhook_pull_request_review_comment_created_pull_request_assignee.dart';import 'webhook_pull_request_review_comment_created_pull_request_assignees.dart';import 'webhook_pull_request_review_comment_created_pull_request_auto_merge.dart';import 'webhook_pull_request_review_comment_created_pull_request_base.dart';import 'webhook_pull_request_review_comment_created_pull_request_head.dart';import 'webhook_pull_request_review_comment_created_pull_request_labels.dart';import 'webhook_pull_request_review_comment_created_pull_request_links.dart';import 'webhook_pull_request_review_comment_created_pull_request_milestone.dart';import 'webhook_pull_request_review_comment_created_pull_request_requested_reviewers.dart';import 'webhook_pull_request_review_comment_created_pull_request_requested_teams.dart';import 'webhook_pull_request_review_comment_created_pull_request_user.dart';final class WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason {const WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team10.dart';import 'user9.dart';import 'webhook_pull_request_review_comment_created_pull_request_assignee.dart';import 'webhook_pull_request_review_comment_created_pull_request_assignees.dart';import 'webhook_pull_request_review_comment_created_pull_request_auto_merge.dart';import 'webhook_pull_request_review_comment_created_pull_request_base.dart';import 'webhook_pull_request_review_comment_created_pull_request_head.dart';import 'webhook_pull_request_review_comment_created_pull_request_labels.dart';import 'webhook_pull_request_review_comment_created_pull_request_links.dart';import 'webhook_pull_request_review_comment_created_pull_request_milestone.dart';import 'webhook_pull_request_review_comment_created_pull_request_requested_reviewers.dart';import 'webhook_pull_request_review_comment_created_pull_request_requested_teams.dart';import 'webhook_pull_request_review_comment_created_pull_request_user.dart';@immutable final class WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason {const WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason._(this.value);
 
 factory WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason.fromJson(String json) { return switch (json) {
   'resolved' => resolved,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewCommentCreatedPullRequestActiveLockReason($value)'; } 
  }
 /// How the author is associated with the repository.
-final class WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation {const WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(this.value);
+@immutable final class WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation {const WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation._(this.value);
 
 factory WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation.fromJson(String json) { return switch (json) {
   'COLLABORATOR' => collaborator,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociation($value)'; } 
  }
-final class WebhookPullRequestReviewCommentCreatedPullRequestState {const WebhookPullRequestReviewCommentCreatedPullRequestState._(this.value);
+@immutable final class WebhookPullRequestReviewCommentCreatedPullRequestState {const WebhookPullRequestReviewCommentCreatedPullRequestState._(this.value);
 
 factory WebhookPullRequestReviewCommentCreatedPullRequestState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -100,7 +100,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewCommentCreatedPullRequestState($value)'; } 
  }
-final class WebhookPullRequestReviewCommentCreatedPullRequest {const WebhookPullRequestReviewCommentCreatedPullRequest({required this.links, required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, this.autoMerge, required this.base, required this.body, required this.closedAt, required this.commentsUrl, required this.commitsUrl, required this.createdAt, required this.diffUrl, this.draft, required this.head, required this.htmlUrl, required this.id, required this.issueUrl, required this.labels, required this.locked, required this.mergeCommitSha, required this.mergedAt, required this.milestone, required this.nodeId, required this.number, required this.patchUrl, required this.requestedReviewers, required this.requestedTeams, required this.reviewCommentUrl, required this.reviewCommentsUrl, required this.state, required this.statusesUrl, required this.title, required this.updatedAt, required this.url, required this.user, });
+@immutable final class WebhookPullRequestReviewCommentCreatedPullRequest {const WebhookPullRequestReviewCommentCreatedPullRequest({required this.createdAt, required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.url, required this.base, required this.body, required this.closedAt, required this.commentsUrl, required this.commitsUrl, required this.links, required this.diffUrl, required this.updatedAt, required this.head, required this.htmlUrl, required this.id, required this.issueUrl, required this.labels, required this.locked, required this.mergeCommitSha, required this.mergedAt, required this.milestone, required this.user, required this.number, required this.patchUrl, required this.requestedReviewers, required this.requestedTeams, required this.reviewCommentUrl, required this.reviewCommentsUrl, required this.state, required this.statusesUrl, required this.title, required this.nodeId, this.autoMerge, this.draft, });
 
 factory WebhookPullRequestReviewCommentCreatedPullRequest.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewCommentCreatedPullRequest(
   links: WebhookPullRequestReviewCommentCreatedPullRequestLinks.fromJson(json['_links'] as Map<String, dynamic>),

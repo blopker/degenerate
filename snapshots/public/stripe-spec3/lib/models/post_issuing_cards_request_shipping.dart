@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_issuing_cards_request_shipping_address.dart';import 'post_issuing_cards_request_shipping_address_validation.dart';import 'post_issuing_cards_request_shipping_customs.dart';final class PostIssuingCardsRequestShippingService {const PostIssuingCardsRequestShippingService._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cards_request_shipping_address.dart';import 'post_issuing_cards_request_shipping_address_validation.dart';import 'post_issuing_cards_request_shipping_customs.dart';@immutable final class PostIssuingCardsRequestShippingService {const PostIssuingCardsRequestShippingService._(this.value);
 
 factory PostIssuingCardsRequestShippingService.fromJson(String json) { return switch (json) {
   'express' => express,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingCardsRequestShippingService($value)'; } 
  }
-final class PostIssuingCardsRequestShippingType {const PostIssuingCardsRequestShippingType._(this.value);
+@immutable final class PostIssuingCardsRequestShippingType {const PostIssuingCardsRequestShippingType._(this.value);
 
 factory PostIssuingCardsRequestShippingType.fromJson(String json) { return switch (json) {
   'bulk' => bulk,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostIssuingCardsRequestShippingType($value)'; } 
  }
 /// The address where the card will be shipped.
-final class PostIssuingCardsRequestShipping {const PostIssuingCardsRequestShipping({required this.address, this.addressValidation, this.customs, required this.name, this.phoneNumber, this.requireSignature, this.service, this.type, });
+@immutable final class PostIssuingCardsRequestShipping {const PostIssuingCardsRequestShipping({required this.address, required this.name, this.addressValidation, this.customs, this.phoneNumber, this.requireSignature, this.service, this.type, });
 
 factory PostIssuingCardsRequestShipping.fromJson(Map<String, dynamic> json) { return PostIssuingCardsRequestShipping(
   address: PostIssuingCardsRequestShippingAddress.fromJson(json['address'] as Map<String, dynamic>),

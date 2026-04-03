@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code scanning default setup has been configured or not.
-final class CodeScanningDefaultSetupState {const CodeScanningDefaultSetupState._(this.value);
+@immutable final class CodeScanningDefaultSetupState {const CodeScanningDefaultSetupState._(this.value);
 
 factory CodeScanningDefaultSetupState.fromJson(String json) { return switch (json) {
   'configured' => configured,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeScanningDefaultSetupState($value)'; } 
  }
-final class CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages._(this.value);
+@immutable final class CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages._(this.value);
 
 factory CodeScanningDefaultSetupLanguages.fromJson(String json) { return switch (json) {
   'actions' => actions,
@@ -77,7 +77,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningDefaultSetupLanguages($value)'; } 
  }
 /// Runner type to be used.
-final class CodeScanningDefaultSetupRunnerType {const CodeScanningDefaultSetupRunnerType._(this.value);
+@immutable final class CodeScanningDefaultSetupRunnerType {const CodeScanningDefaultSetupRunnerType._(this.value);
 
 factory CodeScanningDefaultSetupRunnerType.fromJson(String json) { return switch (json) {
   'standard' => standard,
@@ -105,7 +105,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningDefaultSetupRunnerType($value)'; } 
  }
 /// CodeQL query suite to be used.
-final class CodeScanningDefaultSetupQuerySuite {const CodeScanningDefaultSetupQuerySuite._(this.value);
+@immutable final class CodeScanningDefaultSetupQuerySuite {const CodeScanningDefaultSetupQuerySuite._(this.value);
 
 factory CodeScanningDefaultSetupQuerySuite.fromJson(String json) { return switch (json) {
   'default' => $default,
@@ -130,7 +130,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningDefaultSetupQuerySuite($value)'; } 
  }
 /// Threat model to be used for code scanning analysis. Use `remote` to analyze only network sources and `remote_and_local` to include local sources like filesystem access, command-line arguments, database reads, environment variable and standard input.
-final class CodeScanningDefaultSetupThreatModel {const CodeScanningDefaultSetupThreatModel._(this.value);
+@immutable final class CodeScanningDefaultSetupThreatModel {const CodeScanningDefaultSetupThreatModel._(this.value);
 
 factory CodeScanningDefaultSetupThreatModel.fromJson(String json) { return switch (json) {
   'remote' => remote,
@@ -155,7 +155,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningDefaultSetupThreatModel($value)'; } 
  }
 /// The frequency of the periodic analysis.
-final class CodeScanningDefaultSetupSchedule {const CodeScanningDefaultSetupSchedule._(this.value);
+@immutable final class CodeScanningDefaultSetupSchedule {const CodeScanningDefaultSetupSchedule._(this.value);
 
 factory CodeScanningDefaultSetupSchedule.fromJson(String json) { return switch (json) {
   'weekly' => weekly,
@@ -180,7 +180,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningDefaultSetupSchedule($value)'; } 
  }
 /// Configuration for code scanning default setup.
-final class CodeScanningDefaultSetup {const CodeScanningDefaultSetup({this.state, this.languages, this.runnerType, this.runnerLabel, this.querySuite, this.threatModel, this.updatedAt, this.schedule, });
+@immutable final class CodeScanningDefaultSetup {const CodeScanningDefaultSetup({this.state, this.languages, this.runnerType, this.runnerLabel, this.querySuite, this.threatModel, this.updatedAt, this.schedule, });
 
 factory CodeScanningDefaultSetup.fromJson(Map<String, dynamic> json) { return CodeScanningDefaultSetup(
   state: json['state'] != null ? CodeScanningDefaultSetupState.fromJson(json['state'] as String) : null,

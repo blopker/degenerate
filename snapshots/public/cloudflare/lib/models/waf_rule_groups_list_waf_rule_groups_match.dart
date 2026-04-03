@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the condition for search requirements. When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
-final class WafRuleGroupsListWafRuleGroupsMatch {const WafRuleGroupsListWafRuleGroupsMatch._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the condition for search requirements. When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
+@immutable final class WafRuleGroupsListWafRuleGroupsMatch {const WafRuleGroupsListWafRuleGroupsMatch._(this.value);
 
 factory WafRuleGroupsListWafRuleGroupsMatch.fromJson(String json) { return switch (json) {
   'any' => any,

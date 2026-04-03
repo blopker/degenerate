@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_session_chatkit_configuration.dart';import 'chat_session_rate_limits.dart';import 'chatkit_workflow.dart';final class ChatSessionStatus {const ChatSessionStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_session_chatkit_configuration.dart';import 'chat_session_rate_limits.dart';import 'chatkit_workflow.dart';@immutable final class ChatSessionStatus {const ChatSessionStatus._(this.value);
 
 factory ChatSessionStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ChatSessionStatus($value)'; } 
  }
 /// Type discriminator that is always `chatkit.session`.
-final class ChatSessionResourceObject {const ChatSessionResourceObject._(this.value);
+@immutable final class ChatSessionResourceObject {const ChatSessionResourceObject._(this.value);
 
 factory ChatSessionResourceObject.fromJson(String json) { return switch (json) {
   'chatkit.session' => chatkitSession,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ChatSessionResourceObject($value)'; } 
  }
 /// Represents a ChatKit session and its resolved configuration.
-final class ChatSessionResource {const ChatSessionResource({required this.id, this.object = ChatSessionResourceObject.chatkitSession, required this.expiresAt, required this.clientSecret, required this.workflow, required this.user, required this.rateLimits, required this.maxRequestsPer1Minute, required this.status, required this.chatkitConfiguration, });
+@immutable final class ChatSessionResource {const ChatSessionResource({required this.id, required this.expiresAt, required this.clientSecret, required this.workflow, required this.user, required this.rateLimits, required this.maxRequestsPer1Minute, required this.status, required this.chatkitConfiguration, this.object = ChatSessionResourceObject.chatkitSession, });
 
 factory ChatSessionResource.fromJson(Map<String, dynamic> json) { return ChatSessionResource(
   id: json['id'] as String,

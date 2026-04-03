@@ -51,7 +51,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'DomainName=${Uri.encodeQueryComponent(body.domainName)}',
     if (body.friendlyName case final friendlyName$?)
       'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
@@ -117,7 +117,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.friendlyName case final friendlyName$?)
       'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
     if (body.voiceFallbackMethod case final voiceFallbackMethod$?)

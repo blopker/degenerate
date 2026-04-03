@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'computer_action.dart';import 'computer_call_safety_check_param.dart';/// The status of the item. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when items are returned via API.
 /// 
-final class ComputerToolCallStatus {const ComputerToolCallStatus._(this.value);
+@immutable final class ComputerToolCallStatus {const ComputerToolCallStatus._(this.value);
 
 factory ComputerToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A tool call to a computer use tool. See the
 /// [computer use guide](/docs/guides/tools-computer-use) for more information.
 /// 
-final class ComputerToolCall {const ComputerToolCall({this.type = 'computer_call', required this.id, required this.callId, this.action, this.actions, required this.pendingSafetyChecks, required this.status, });
+@immutable final class ComputerToolCall {const ComputerToolCall({required this.id, required this.callId, required this.pendingSafetyChecks, required this.status, this.type = 'computer_call', this.action, this.actions, });
 
 factory ComputerToolCall.fromJson(Map<String, dynamic> json) { return ComputerToolCall(
   type: json['type'] as String,

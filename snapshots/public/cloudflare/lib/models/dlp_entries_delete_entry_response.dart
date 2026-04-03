@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpEntriesDeleteEntryResponse {const DlpEntriesDeleteEntryResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpEntriesDeleteEntryResponse {const DlpEntriesDeleteEntryResponse({this.result});
 
 factory DlpEntriesDeleteEntryResponse.fromJson(Map<String, dynamic> json) { return DlpEntriesDeleteEntryResponse(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 final Map<String,dynamic>? result;

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of turn detection. Only `server_vad` is currently supported for transcription sessions.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of turn detection. Only `server_vad` is currently supported for transcription sessions.
 /// 
-final class RealtimeTranscriptionSessionCreateRequestTurnDetectionType {const RealtimeTranscriptionSessionCreateRequestTurnDetectionType._(this.value);
+@immutable final class RealtimeTranscriptionSessionCreateRequestTurnDetectionType {const RealtimeTranscriptionSessionCreateRequestTurnDetectionType._(this.value);
 
 factory RealtimeTranscriptionSessionCreateRequestTurnDetectionType.fromJson(String json) { return switch (json) {
   'server_vad' => serverVad,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Configuration for turn detection. Can be set to `null` to turn off. Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.
 /// 
-final class RealtimeTranscriptionSessionCreateRequestTurnDetection {const RealtimeTranscriptionSessionCreateRequestTurnDetection({this.type, this.threshold, this.prefixPaddingMs, this.silenceDurationMs, });
+@immutable final class RealtimeTranscriptionSessionCreateRequestTurnDetection {const RealtimeTranscriptionSessionCreateRequestTurnDetection({this.type, this.threshold, this.prefixPaddingMs, this.silenceDurationMs, });
 
 factory RealtimeTranscriptionSessionCreateRequestTurnDetection.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateRequestTurnDetection(
   type: json['type'] != null ? RealtimeTranscriptionSessionCreateRequestTurnDetectionType.fromJson(json['type'] as String) : null,

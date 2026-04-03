@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bound_object_reference.dart';/// TokenRequestSpec contains client provided parameters of a token request.
-final class TokenRequestSpec {const TokenRequestSpec({this.audiences, this.boundObjectRef, this.expirationSeconds, });
+@immutable final class TokenRequestSpec {const TokenRequestSpec({this.audiences, this.boundObjectRef, this.expirationSeconds, });
 
 factory TokenRequestSpec.fromJson(Map<String, dynamic> json) { return TokenRequestSpec(
   audiences: (json['audiences'] as List<dynamic>?)?.map((e) => e as String).toList(),

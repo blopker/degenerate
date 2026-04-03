@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_active_sessions_response_result.dart';final class AccessActiveSessionsResponse {const AccessActiveSessionsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_active_sessions_response_result.dart';@immutable final class AccessActiveSessionsResponse {const AccessActiveSessionsResponse({this.result});
 
 factory AccessActiveSessionsResponse.fromJson(Map<String, dynamic> json) { return AccessActiveSessionsResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessActiveSessionsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

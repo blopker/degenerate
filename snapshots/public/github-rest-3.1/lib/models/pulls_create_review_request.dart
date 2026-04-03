@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pulls_create_review_request_comments.dart';/// The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
-final class PullsCreateReviewRequestEvent {const PullsCreateReviewRequestEvent._(this.value);
+@immutable final class PullsCreateReviewRequestEvent {const PullsCreateReviewRequestEvent._(this.value);
 
 factory PullsCreateReviewRequestEvent.fromJson(String json) { return switch (json) {
   'APPROVE' => approve,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PullsCreateReviewRequestEvent($value)'; } 
  }
-final class PullsCreateReviewRequest {const PullsCreateReviewRequest({this.commitId, this.body, this.event, this.comments, });
+@immutable final class PullsCreateReviewRequest {const PullsCreateReviewRequest({this.commitId, this.body, this.event, this.comments, });
 
 factory PullsCreateReviewRequest.fromJson(Map<String, dynamic> json) { return PullsCreateReviewRequest(
   commitId: json['commit_id'] as String?,

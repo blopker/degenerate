@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigGetGatewayDynamicRouteResponseResultElementsRateOutputsFallback {const AigConfigGetGatewayDynamicRouteResponseResultElementsRateOutputsFallback({required this.elementId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigGetGatewayDynamicRouteResponseResultElementsRateOutputsFallback {const AigConfigGetGatewayDynamicRouteResponseResultElementsRateOutputsFallback({required this.elementId});
 
 factory AigConfigGetGatewayDynamicRouteResponseResultElementsRateOutputsFallback.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteResponseResultElementsRateOutputsFallback(
   elementId: json['elementId'] as String,

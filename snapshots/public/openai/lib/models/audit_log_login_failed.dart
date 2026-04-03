@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The details for events with this `type`.
-final class AuditLogLoginFailed {const AuditLogLoginFailed({this.errorCode, this.errorMessage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
+@immutable final class AuditLogLoginFailed {const AuditLogLoginFailed({this.errorCode, this.errorMessage, });
 
 factory AuditLogLoginFailed.fromJson(Map<String, dynamic> json) { return AuditLogLoginFailed(
   errorCode: json['error_code'] as String?,

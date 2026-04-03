@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountSipSipIpAccessControlList {const AccountSipSipIpAccessControlList({this.sid, this.accountSid, this.friendlyName, this.dateCreated, this.dateUpdated, this.subresourceUris, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipIpAccessControlList {const AccountSipSipIpAccessControlList({this.sid, this.accountSid, this.friendlyName, this.dateCreated, this.dateUpdated, this.subresourceUris, this.uri, });
 
 factory AccountSipSipIpAccessControlList.fromJson(Map<String, dynamic> json) { return AccountSipSipIpAccessControlList(
   sid: json['sid'] as String?,
@@ -8,7 +8,7 @@ factory AccountSipSipIpAccessControlList.fromJson(Map<String, dynamic> json) { r
   friendlyName: json['friendly_name'] as String?,
   dateCreated: json['date_created'] as String?,
   dateUpdated: json['date_updated'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
   uri: json['uri'] as String?,
 ); }
 

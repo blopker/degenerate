@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel.fromJson(String json) { return switch (json) {
   'elevated' => elevated,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk({required this.level, this.score, });
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk({required this.level, this.score, });
 
 factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk(
   level: PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRiskLevel.fromJson(json['level'] as String),

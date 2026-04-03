@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Status discriminator that is always `closed`.
-final class ClosedStatusType {const ClosedStatusType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status discriminator that is always `closed`.
+@immutable final class ClosedStatusType {const ClosedStatusType._(this.value);
 
 factory ClosedStatusType.fromJson(String json) { return switch (json) {
   'closed' => closed,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ClosedStatusType($value)'; } 
  }
 /// Indicates that a thread has been closed.
-final class ClosedStatus {const ClosedStatus({this.type = ClosedStatusType.closed, required this.reason, });
+@immutable final class ClosedStatus {const ClosedStatus({required this.reason, this.type = ClosedStatusType.closed, });
 
 factory ClosedStatus.fromJson(Map<String, dynamic> json) { return ClosedStatus(
   type: ClosedStatusType.fromJson(json['type'] as String),

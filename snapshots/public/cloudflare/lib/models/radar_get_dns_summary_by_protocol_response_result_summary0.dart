@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsSummaryByProtocolResponseResultSummary0 {const RadarGetDnsSummaryByProtocolResponseResultSummary0({required this.https, required this.tcp, required this.tls, required this.udp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByProtocolResponseResultSummary0 {const RadarGetDnsSummaryByProtocolResponseResultSummary0({required this.https, required this.tcp, required this.tls, required this.udp, });
 
 factory RadarGetDnsSummaryByProtocolResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByProtocolResponseResultSummary0(
   https: json['HTTPS'] as String,

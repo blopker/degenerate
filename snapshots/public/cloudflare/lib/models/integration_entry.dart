@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntegrationEntryType {const IntegrationEntryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntegrationEntryType {const IntegrationEntryType._(this.value);
 
 factory IntegrationEntryType.fromJson(String json) { return switch (json) {
   'integration' => integration,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IntegrationEntryType($value)'; } 
  }
-final class IntegrationEntry {const IntegrationEntry({required this.createdAt, required this.enabled, required this.id, required this.name, this.profileId, required this.updatedAt, required this.type, });
+@immutable final class IntegrationEntry {const IntegrationEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.type, this.profileId, });
 
 factory IntegrationEntry.fromJson(Map<String, dynamic> json) { return IntegrationEntry(
   createdAt: DateTime.parse(json['created_at'] as String),

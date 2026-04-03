@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CustomIndicatorFeedsUpdateIndicatorFeedDataRequest {const CustomIndicatorFeedsUpdateIndicatorFeedDataRequest({this.source});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsUpdateIndicatorFeedDataRequest {const CustomIndicatorFeedsUpdateIndicatorFeedDataRequest({this.source});
 
 factory CustomIndicatorFeedsUpdateIndicatorFeedDataRequest.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(
   source: json['source'] as String?,

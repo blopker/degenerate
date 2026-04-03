@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_clipping.dart';import 'stream_messages2.dart';final class StreamClipResponseSingle {const StreamClipResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_clipping.dart';import 'stream_messages2.dart';@immutable final class StreamClipResponseSingle {const StreamClipResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 
 factory StreamClipResponseSingle.fromJson(Map<String, dynamic> json) { return StreamClipResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),

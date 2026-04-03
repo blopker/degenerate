@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_common_components_schemas_identifier.dart';final class AccountUserGroupMemberCreateRequest {const AccountUserGroupMemberCreateRequest({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_common_components_schemas_identifier.dart';@immutable final class AccountUserGroupMemberCreateRequest {const AccountUserGroupMemberCreateRequest({required this.id});
 
 factory AccountUserGroupMemberCreateRequest.fromJson(Map<String, dynamic> json) { return AccountUserGroupMemberCreateRequest(
   id: IamCommonComponentsSchemasIdentifier.fromJson(json['id'] as String),

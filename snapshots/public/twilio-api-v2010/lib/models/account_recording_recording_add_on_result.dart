@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the result. Can be: `canceled`, `completed`, `deleted`, `failed`, `in-progress`, `init`, `processing`, `queued`.
-final class RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the result. Can be: `canceled`, `completed`, `deleted`, `failed`, `in-progress`, `init`, `processing`, `queued`.
+@immutable final class RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus._(this.value);
 
 factory RecordingAddOnResultEnumStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RecordingAddOnResultEnumStatus($value)'; } 
  }
-final class AccountRecordingRecordingAddOnResult {const AccountRecordingRecordingAddOnResult({this.sid, this.accountSid, this.status, this.addOnSid, this.addOnConfigurationSid, this.dateCreated, this.dateUpdated, this.dateCompleted, this.referenceSid, this.subresourceUris, });
+@immutable final class AccountRecordingRecordingAddOnResult {const AccountRecordingRecordingAddOnResult({this.sid, this.accountSid, this.status, this.addOnSid, this.addOnConfigurationSid, this.dateCreated, this.dateUpdated, this.dateCompleted, this.referenceSid, this.subresourceUris, });
 
 factory AccountRecordingRecordingAddOnResult.fromJson(Map<String, dynamic> json) { return AccountRecordingRecordingAddOnResult(
   sid: json['sid'] as String?,
@@ -55,7 +55,7 @@ factory AccountRecordingRecordingAddOnResult.fromJson(Map<String, dynamic> json)
   dateUpdated: json['date_updated'] as String?,
   dateCompleted: json['date_completed'] as String?,
   referenceSid: json['reference_sid'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
 ); }
 
 /// The unique string that that we created to identify the Recording AddOnResult resource.

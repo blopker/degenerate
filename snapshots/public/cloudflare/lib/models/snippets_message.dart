@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Describes an API message.
-final class SnippetsMessage {const SnippetsMessage({this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes an API message.
+@immutable final class SnippetsMessage {const SnippetsMessage({required this.message, this.code, });
 
 factory SnippetsMessage.fromJson(Map<String, dynamic> json) { return SnippetsMessage(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,

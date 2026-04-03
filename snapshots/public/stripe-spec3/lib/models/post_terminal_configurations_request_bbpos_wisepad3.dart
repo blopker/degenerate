@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_configurations_request_bbpos_wisepad3_splashscreen.dart';/// An object containing device type specific settings for BBPOS WisePad 3 readers.
-final class PostTerminalConfigurationsRequestBbposWisepad3 {const PostTerminalConfigurationsRequestBbposWisepad3({this.splashscreen});
+@immutable final class PostTerminalConfigurationsRequestBbposWisepad3 {const PostTerminalConfigurationsRequestBbposWisepad3({this.splashscreen});
 
 factory PostTerminalConfigurationsRequestBbposWisepad3.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsRequestBbposWisepad3(
   splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => PostTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2.fromJson(v as String),) : null,

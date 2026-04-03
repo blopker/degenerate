@@ -13,7 +13,7 @@ String toJson() => value;
 
 }
 /// Infrastructure type of this ASN.
-final class IntelAsnType {const IntelAsnType._(this.value);
+@immutable final class IntelAsnType {const IntelAsnType._(this.value);
 
 factory IntelAsnType.fromJson(String json) { return switch (json) {
   'hosting_provider' => hostingProvider,
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IntelAsnType($value)'; } 
  }
-final class IntelSchemasAsn {const IntelSchemasAsn({this.asn, this.country, this.description, this.domainCount, this.topDomains, this.type, });
+@immutable final class IntelSchemasAsn {const IntelSchemasAsn({this.asn, this.country, this.description, this.domainCount, this.topDomains, this.type, });
 
 factory IntelSchemasAsn.fromJson(Map<String, dynamic> json) { return IntelSchemasAsn(
   asn: json['asn'] != null ? IntelAsn.fromJson(json['asn'] as num) : null,

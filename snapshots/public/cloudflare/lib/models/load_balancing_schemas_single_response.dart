@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'load_balancing_pool.dart';final class LoadBalancingSchemasSingleResponse {const LoadBalancingSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_pool.dart';@immutable final class LoadBalancingSchemasSingleResponse {const LoadBalancingSchemasSingleResponse({this.result});
 
 factory LoadBalancingSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return LoadBalancingSchemasSingleResponse(
   result: json['result'] != null ? LoadBalancingPool.fromJson(json['result'] as Map<String, dynamic>) : null,

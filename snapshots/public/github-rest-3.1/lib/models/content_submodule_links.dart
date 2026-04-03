@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ContentSubmoduleLinks {const ContentSubmoduleLinks({required this.git, required this.html, required this.self, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContentSubmoduleLinks {const ContentSubmoduleLinks({required this.git, required this.html, required this.self, });
 
 factory ContentSubmoduleLinks.fromJson(Map<String, dynamic> json) { return ContentSubmoduleLinks(
   git: json['git'] != null ? Uri.parse(json['git'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsersGetContextForUserSubjectType {const UsersGetContextForUserSubjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersGetContextForUserSubjectType {const UsersGetContextForUserSubjectType._(this.value);
 
 factory UsersGetContextForUserSubjectType.fromJson(String json) { return switch (json) {
   'organization' => organization,

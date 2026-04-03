@@ -53,20 +53,20 @@ return execute(
 ///   "optimize_wordpress": false,
 ///   "suppress_session_score": false
 /// }
-/// ````
+/// ```text
 /// #### Clean up configuration for SBFM Pro plan
 /// ```json`
 /// {
 ///   "sbfm_likely_automated": "allow",
 ///   "fight_mode": false
 /// }
-/// ````
+/// ```text
 /// #### Clean up configuration for SBFM Biz plan
 /// ```json`
 /// {
 ///   "fight_mode": false
 /// }
-/// ````
+/// ```text
 /// #### Clean up configuration for BM Enterprise Subscription plan
 /// It is strongly recommended that you ensure you have [custom rules](https://developers.cloudflare.com/waf/custom-rules/) in place to protect your zone before disabling the SBFM rules. Without these protections, your zone is vulnerable to attacks.
 /// ```json`
@@ -78,7 +78,7 @@ return execute(
 ///   "optimize_wordpress": false,
 ///   "fight_mode": false
 /// }
-/// ````
+/// ```text
 /// 
 ///
 /// `PUT /zones/{zone_id}/bot_management`

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_token_base.dart';final class IamSingleTokenResponse {const IamSingleTokenResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_token_base.dart';@immutable final class IamSingleTokenResponse {const IamSingleTokenResponse({this.result});
 
 factory IamSingleTokenResponse.fromJson(Map<String, dynamic> json) { return IamSingleTokenResponse(
   result: json['result'] != null ? IamTokenBase.fromJson(json['result'] as Map<String, dynamic>) : null,

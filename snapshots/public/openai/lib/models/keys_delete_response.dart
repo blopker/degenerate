@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class KeysDeleteResponse {const KeysDeleteResponse({this.id, this.object, this.deleted, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class KeysDeleteResponse {const KeysDeleteResponse({this.id, this.object, this.deleted, });
 
 factory KeysDeleteResponse.fromJson(Map<String, dynamic> json) { return KeysDeleteResponse(
   id: json['id'] as String?,

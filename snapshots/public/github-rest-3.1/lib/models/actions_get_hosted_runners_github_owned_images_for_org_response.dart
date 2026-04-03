@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner_curated_image.dart';final class ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse {const ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse({required this.totalCount, required this.images, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner_curated_image.dart';@immutable final class ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse {const ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse({required this.totalCount, required this.images, });
 
 factory ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),

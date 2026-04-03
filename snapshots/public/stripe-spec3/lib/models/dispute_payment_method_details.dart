@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dispute_payment_method_details_amazon_pay.dart';import 'dispute_payment_method_details_card.dart';import 'dispute_payment_method_details_klarna.dart';import 'dispute_payment_method_details_paypal.dart';/// Payment method type.
-final class DisputePaymentMethodDetailsType {const DisputePaymentMethodDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dispute_payment_method_details_amazon_pay.dart';import 'dispute_payment_method_details_card.dart';import 'dispute_payment_method_details_klarna.dart';import 'dispute_payment_method_details_paypal.dart';/// Payment method type.
+@immutable final class DisputePaymentMethodDetailsType {const DisputePaymentMethodDetailsType._(this.value);
 
 factory DisputePaymentMethodDetailsType.fromJson(String json) { return switch (json) {
   'amazon_pay' => amazonPay,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DisputePaymentMethodDetailsType($value)'; } 
  }
 /// 
-final class DisputePaymentMethodDetails {const DisputePaymentMethodDetails({this.amazonPay, this.card, this.klarna, this.paypal, required this.type, });
+@immutable final class DisputePaymentMethodDetails {const DisputePaymentMethodDetails({required this.type, this.amazonPay, this.card, this.klarna, this.paypal, });
 
 factory DisputePaymentMethodDetails.fromJson(Map<String, dynamic> json) { return DisputePaymentMethodDetails(
   amazonPay: json['amazon_pay'] != null ? DisputePaymentMethodDetailsAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,

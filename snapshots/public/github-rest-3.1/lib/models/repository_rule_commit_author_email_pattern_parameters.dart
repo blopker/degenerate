@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The operator to use for matching.
-final class RepositoryRuleCommitAuthorEmailPatternParametersOperator {const RepositoryRuleCommitAuthorEmailPatternParametersOperator._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The operator to use for matching.
+@immutable final class RepositoryRuleCommitAuthorEmailPatternParametersOperator {const RepositoryRuleCommitAuthorEmailPatternParametersOperator._(this.value);
 
 factory RepositoryRuleCommitAuthorEmailPatternParametersOperator.fromJson(String json) { return switch (json) {
   'starts_with' => startsWith,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RepositoryRuleCommitAuthorEmailPatternParametersOperator($value)'; } 
  }
-final class RepositoryRuleCommitAuthorEmailPatternParameters {const RepositoryRuleCommitAuthorEmailPatternParameters({this.name, this.negate, required this.$operator, required this.pattern, });
+@immutable final class RepositoryRuleCommitAuthorEmailPatternParameters {const RepositoryRuleCommitAuthorEmailPatternParameters({required this.$operator, required this.pattern, this.name, this.negate, });
 
 factory RepositoryRuleCommitAuthorEmailPatternParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleCommitAuthorEmailPatternParameters(
   name: json['name'] as String?,

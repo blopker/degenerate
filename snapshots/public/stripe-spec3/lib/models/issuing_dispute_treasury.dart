@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingDisputeTreasury {const IssuingDisputeTreasury({this.debitReversal, required this.receivedDebit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingDisputeTreasury {const IssuingDisputeTreasury({required this.receivedDebit, this.debitReversal, });
 
 factory IssuingDisputeTreasury.fromJson(Map<String, dynamic> json) { return IssuingDisputeTreasury(
   debitReversal: json['debit_reversal'] as String?,

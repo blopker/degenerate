@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'inbound_transfers_payment_method_details_us_bank_account.dart';import 'treasury_shared_resource_billing_details.dart';/// The type of the payment method used in the InboundTransfer.
-final class InboundTransfersType {const InboundTransfersType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inbound_transfers_payment_method_details_us_bank_account.dart';import 'treasury_shared_resource_billing_details.dart';/// The type of the payment method used in the InboundTransfer.
+@immutable final class InboundTransfersType {const InboundTransfersType._(this.value);
 
 factory InboundTransfersType.fromJson(String json) { return switch (json) {
   'us_bank_account' => usBankAccount,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InboundTransfersType($value)'; } 
  }
 /// 
-final class InboundTransfers {const InboundTransfers({required this.billingDetails, required this.type, this.usBankAccount, });
+@immutable final class InboundTransfers {const InboundTransfers({required this.billingDetails, required this.type, this.usBankAccount, });
 
 factory InboundTransfers.fromJson(Map<String, dynamic> json) { return InboundTransfers(
   billingDetails: TreasurySharedResourceBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>),

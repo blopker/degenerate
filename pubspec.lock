@@ -218,7 +218,7 @@ packages:
     source: hosted
     version: "0.12.19"
   meta:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: meta
       sha256: df0c643f44ad098eb37988027a8e2b2b5a031fd3977f06bbfd3a76637e8df739
@@ -393,6 +393,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.0"
+  very_good_analysis:
+    dependency: "direct dev"
+    description:
+      name: very_good_analysis
+      sha256: d1cb1d66a5aae2c702d68caca6c8347306d35e728fd94555fa21fa0448a972e0
+      url: "https://pub.dev"
+    source: hosted
+    version: "10.2.0"
   vm_service:
     dependency: transitive
     description:

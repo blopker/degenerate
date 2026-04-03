@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Set the PDF margins. Useful when setting header and footer.
-final class BrapiPostPdfRequestVariant2PdfOptionsMargin {const BrapiPostPdfRequestVariant2PdfOptionsMargin({this.bottom, this.left, this.right, this.top, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set the PDF margins. Useful when setting header and footer.
+@immutable final class BrapiPostPdfRequestVariant2PdfOptionsMargin {const BrapiPostPdfRequestVariant2PdfOptionsMargin({this.bottom, this.left, this.right, this.top, });
 
 factory BrapiPostPdfRequestVariant2PdfOptionsMargin.fromJson(Map<String, dynamic> json) { return BrapiPostPdfRequestVariant2PdfOptionsMargin(
   bottom: json['bottom'],

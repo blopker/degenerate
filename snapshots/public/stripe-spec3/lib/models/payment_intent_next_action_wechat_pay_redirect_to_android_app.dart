@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionWechatPayRedirectToAndroidApp {const PaymentIntentNextActionWechatPayRedirectToAndroidApp({required this.appId, required this.nonceStr, required this.package, required this.partnerId, required this.prepayId, required this.sign, required this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionWechatPayRedirectToAndroidApp {const PaymentIntentNextActionWechatPayRedirectToAndroidApp({required this.appId, required this.nonceStr, required this.package, required this.partnerId, required this.prepayId, required this.sign, required this.timestamp, });
 
 factory PaymentIntentNextActionWechatPayRedirectToAndroidApp.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionWechatPayRedirectToAndroidApp(
   appId: json['app_id'] as String,

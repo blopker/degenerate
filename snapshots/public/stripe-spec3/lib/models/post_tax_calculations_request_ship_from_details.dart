@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_tax_calculations_request_ship_from_details_address.dart';/// Details about the address from which the goods are being shipped.
-final class PostTaxCalculationsRequestShipFromDetails {const PostTaxCalculationsRequestShipFromDetails({required this.address});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_calculations_request_ship_from_details_address.dart';/// Details about the address from which the goods are being shipped.
+@immutable final class PostTaxCalculationsRequestShipFromDetails {const PostTaxCalculationsRequestShipFromDetails({required this.address});
 
 factory PostTaxCalculationsRequestShipFromDetails.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestShipFromDetails(
   address: PostTaxCalculationsRequestShipFromDetailsAddress.fromJson(json['address'] as Map<String, dynamic>),

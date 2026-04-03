@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_configurations_request_stripe_s700_splashscreen.dart';/// An object containing device type specific settings for Stripe S700 readers.
-final class PostTerminalConfigurationsRequestStripeS700 {const PostTerminalConfigurationsRequestStripeS700({this.splashscreen});
+@immutable final class PostTerminalConfigurationsRequestStripeS700 {const PostTerminalConfigurationsRequestStripeS700({this.splashscreen});
 
 factory PostTerminalConfigurationsRequestStripeS700.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsRequestStripeS700(
   splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => PostTerminalConfigurationsRequestStripeS700SplashscreenVariant2.fromJson(v as String),) : null,

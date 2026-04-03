@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_okta_group_rule_okta.dart';/// Matches an Okta group.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_okta_group_rule_okta.dart';/// Matches an Okta group.
 /// Requires an Okta identity provider.
-final class AccessOktaGroupRule {const AccessOktaGroupRule({required this.okta});
+@immutable final class AccessOktaGroupRule {const AccessOktaGroupRule({required this.okta});
 
 factory AccessOktaGroupRule.fromJson(Map<String, dynamic> json) { return AccessOktaGroupRule(
   okta: AccessOktaGroupRuleOkta.fromJson(json['okta'] as Map<String, dynamic>),

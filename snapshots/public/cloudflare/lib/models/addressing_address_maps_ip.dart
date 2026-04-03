@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_timestamp.dart';/// An IPv4 or IPv6 address.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_timestamp.dart';/// An IPv4 or IPv6 address.
 extension type const AddressingIp(String value) {
 factory AddressingIp.fromJson(String json) => AddressingIp(json);
 
 String toJson() => value;
 
 }
-final class AddressingAddressMapsIp {const AddressingAddressMapsIp({this.createdAt, this.ip, });
+@immutable final class AddressingAddressMapsIp {const AddressingAddressMapsIp({this.createdAt, this.ip, });
 
 factory AddressingAddressMapsIp.fromJson(Map<String, dynamic> json) { return AddressingAddressMapsIp(
   createdAt: json['created_at'] != null ? AddressingTimestamp.fromJson(json['created_at'] as String) : null,

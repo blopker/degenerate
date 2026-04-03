@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response202_result_scan_task_errors.dart';final class UrlscannerGetScanHarResponse202ResultScanTask {const UrlscannerGetScanHarResponse202ResultScanTask({required this.effectiveUrl, required this.errors, required this.location, required this.region, required this.status, required this.success, required this.time, required this.url, required this.uuid, required this.visibility, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response202_result_scan_task_errors.dart';@immutable final class UrlscannerGetScanHarResponse202ResultScanTask {const UrlscannerGetScanHarResponse202ResultScanTask({required this.effectiveUrl, required this.errors, required this.location, required this.region, required this.status, required this.success, required this.time, required this.url, required this.uuid, required this.visibility, });
 
 factory UrlscannerGetScanHarResponse202ResultScanTask.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse202ResultScanTask(
   effectiveUrl: json['effectiveUrl'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_config.dart';final class ReposUpdateWebhookRequest {const ReposUpdateWebhookRequest({this.config, this.events, this.addEvents, this.removeEvents, this.active = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_config.dart';@immutable final class ReposUpdateWebhookRequest {const ReposUpdateWebhookRequest({this.config, this.events, this.addEvents, this.removeEvents, this.active = true, });
 
 factory ReposUpdateWebhookRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateWebhookRequest(
   config: json['config'] != null ? WebhookConfig.fromJson(json['config'] as Map<String, dynamic>) : null,

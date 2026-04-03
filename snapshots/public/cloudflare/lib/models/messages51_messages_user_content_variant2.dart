@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages51_messages_user_content_variant2_file.dart';import 'messages51_messages_user_content_variant2_image_url.dart';import 'messages51_messages_user_content_variant2_input_audio.dart';final class Messages51MessagesUserContentVariant2Type {const Messages51MessagesUserContentVariant2Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_user_content_variant2_file.dart';import 'messages51_messages_user_content_variant2_image_url.dart';import 'messages51_messages_user_content_variant2_input_audio.dart';@immutable final class Messages51MessagesUserContentVariant2Type {const Messages51MessagesUserContentVariant2Type._(this.value);
 
 factory Messages51MessagesUserContentVariant2Type.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51MessagesUserContentVariant2Type($value)'; } 
  }
-final class Messages51MessagesUserContentVariant2 {const Messages51MessagesUserContentVariant2({this.file, this.imageUrl, this.inputAudio, this.text, required this.type, });
+@immutable final class Messages51MessagesUserContentVariant2 {const Messages51MessagesUserContentVariant2({required this.type, this.file, this.imageUrl, this.inputAudio, this.text, });
 
 factory Messages51MessagesUserContentVariant2.fromJson(Map<String, dynamic> json) { return Messages51MessagesUserContentVariant2(
   file: json['file'] != null ? Messages51MessagesUserContentVariant2File.fromJson(json['file'] as Map<String, dynamic>) : null,

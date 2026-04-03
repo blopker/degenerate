@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_incoming_phone_number_incoming_phone_number_assigned_add_on_incoming_phone_number_assigned_add_on_extension.dart';final class ListIncomingPhoneNumberAssignedAddOnExtensionResponse {const ListIncomingPhoneNumberAssignedAddOnExtensionResponse({this.extensions, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_incoming_phone_number_incoming_phone_number_assigned_add_on_incoming_phone_number_assigned_add_on_extension.dart';@immutable final class ListIncomingPhoneNumberAssignedAddOnExtensionResponse {const ListIncomingPhoneNumberAssignedAddOnExtensionResponse({this.extensions, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListIncomingPhoneNumberAssignedAddOnExtensionResponse.fromJson(Map<String, dynamic> json) { return ListIncomingPhoneNumberAssignedAddOnExtensionResponse(
   extensions: (json['extensions'] as List<dynamic>?)?.map((e) => AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension.fromJson(e as Map<String, dynamic>)).toList(),

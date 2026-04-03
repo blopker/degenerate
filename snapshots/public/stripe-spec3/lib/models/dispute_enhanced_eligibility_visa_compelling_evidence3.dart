@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions {const DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions {const DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions._(this.value);
 
 factory DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions.fromJson(String json) { return switch (json) {
   'missing_customer_identifiers' => missingCustomerIdentifiers,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions($value)'; } 
  }
 /// Visa Compelling Evidence 3.0 eligibility status.
-final class DisputeEnhancedEligibilityVisaCompellingEvidence3Status {const DisputeEnhancedEligibilityVisaCompellingEvidence3Status._(this.value);
+@immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3Status {const DisputeEnhancedEligibilityVisaCompellingEvidence3Status._(this.value);
 
 factory DisputeEnhancedEligibilityVisaCompellingEvidence3Status.fromJson(String json) { return switch (json) {
   'not_qualified' => notQualified,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DisputeEnhancedEligibilityVisaCompellingEvidence3Status($value)'; } 
  }
 /// 
-final class DisputeEnhancedEligibilityVisaCompellingEvidence3 {const DisputeEnhancedEligibilityVisaCompellingEvidence3({required this.requiredActions, required this.status, });
+@immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3 {const DisputeEnhancedEligibilityVisaCompellingEvidence3({required this.requiredActions, required this.status, });
 
 factory DisputeEnhancedEligibilityVisaCompellingEvidence3.fromJson(Map<String, dynamic> json) { return DisputeEnhancedEligibilityVisaCompellingEvidence3(
   requiredActions: (json['required_actions'] as List<dynamic>).map((e) => DisputeEnhancedEligibilityVisaCompellingEvidence3RequiredActions.fromJson(e as String)).toList(),

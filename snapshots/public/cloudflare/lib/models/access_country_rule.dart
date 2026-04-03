@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_country_rule_geo.dart';/// Matches a specific country
-final class AccessCountryRule {const AccessCountryRule({required this.geo});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_country_rule_geo.dart';/// Matches a specific country
+@immutable final class AccessCountryRule {const AccessCountryRule({required this.geo});
 
 factory AccessCountryRule.fromJson(Map<String, dynamic> json) { return AccessCountryRule(
   geo: AccessCountryRuleGeo.fromJson(json['geo'] as Map<String, dynamic>),

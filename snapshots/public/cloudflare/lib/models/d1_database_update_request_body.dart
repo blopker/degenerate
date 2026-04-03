@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'd1_database_update_request_body_read_replication.dart';final class D1DatabaseUpdateRequestBody {const D1DatabaseUpdateRequestBody({required this.readReplication});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_database_update_request_body_read_replication.dart';@immutable final class D1DatabaseUpdateRequestBody {const D1DatabaseUpdateRequestBody({required this.readReplication});
 
 factory D1DatabaseUpdateRequestBody.fromJson(Map<String, dynamic> json) { return D1DatabaseUpdateRequestBody(
   readReplication: D1DatabaseUpdateRequestBodyReadReplication.fromJson(json['read_replication'] as Map<String, dynamic>),

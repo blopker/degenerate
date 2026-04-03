@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_lan.dart';final class MagicLanModifiedResponse {const MagicLanModifiedResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_lan.dart';@immutable final class MagicLanModifiedResponse {const MagicLanModifiedResponse({this.result});
 
 factory MagicLanModifiedResponse.fromJson(Map<String, dynamic> json) { return MagicLanModifiedResponse(
   result: json['result'] != null ? MagicLan.fromJson(json['result'] as Map<String, dynamic>) : null,

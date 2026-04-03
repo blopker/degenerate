@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateSipAuthCallsIpAccessControlListMappingRequest {const CreateSipAuthCallsIpAccessControlListMappingRequest({required this.ipAccessControlListSid});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateSipAuthCallsIpAccessControlListMappingRequest {const CreateSipAuthCallsIpAccessControlListMappingRequest({required this.ipAccessControlListSid});
 
 factory CreateSipAuthCallsIpAccessControlListMappingRequest.fromJson(Map<String, dynamic> json) { return CreateSipAuthCallsIpAccessControlListMappingRequest(
   ipAccessControlListSid: json['IpAccessControlListSid'] as String,

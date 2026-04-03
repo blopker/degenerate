@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_common_components_schemas_identifier.dart';/// Whether the user is a member of the organization or has an invitation pending.
-final class IamComponentsSchemasStatus {const IamComponentsSchemasStatus._(this.value);
+@immutable final class IamComponentsSchemasStatus {const IamComponentsSchemasStatus._(this.value);
 
 factory IamComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'member' => member,
@@ -32,7 +32,7 @@ factory IamSchemasName.fromJson(String json) => IamSchemasName(json);
 String toJson() => value;
 
 }
-final class IamOrganization {const IamOrganization({this.id, this.name, this.permissions, this.roles, this.status, });
+@immutable final class IamOrganization {const IamOrganization({this.id, this.name, this.permissions, this.roles, this.status, });
 
 factory IamOrganization.fromJson(Map<String, dynamic> json) { return IamOrganization(
   id: json['id'] != null ? IamCommonComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,

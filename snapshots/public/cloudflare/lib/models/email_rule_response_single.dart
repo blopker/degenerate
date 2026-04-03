@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_rule_properties.dart';final class EmailRuleResponseSingle {const EmailRuleResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_rule_properties.dart';@immutable final class EmailRuleResponseSingle {const EmailRuleResponseSingle({this.result});
 
 factory EmailRuleResponseSingle.fromJson(Map<String, dynamic> json) { return EmailRuleResponseSingle(
   result: json['result'] != null ? EmailRuleProperties.fromJson(json['result'] as Map<String, dynamic>) : null,

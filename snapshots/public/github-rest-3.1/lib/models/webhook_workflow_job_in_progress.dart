@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'deployment.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_workflow_job_in_progress_workflow_job.dart';final class WebhookWorkflowJobInProgressAction {const WebhookWorkflowJobInProgressAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_workflow_job_in_progress_workflow_job.dart';@immutable final class WebhookWorkflowJobInProgressAction {const WebhookWorkflowJobInProgressAction._(this.value);
 
 factory WebhookWorkflowJobInProgressAction.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWorkflowJobInProgressAction($value)'; } 
  }
-final class WebhookWorkflowJobInProgress {const WebhookWorkflowJobInProgress({required this.action, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, required this.workflowJob, this.deployment, });
+@immutable final class WebhookWorkflowJobInProgress {const WebhookWorkflowJobInProgress({required this.action, required this.repository, required this.sender, required this.workflowJob, this.enterprise, this.installation, this.organization, this.deployment, });
 
 factory WebhookWorkflowJobInProgress.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobInProgress(
   action: WebhookWorkflowJobInProgressAction.fromJson(json['action'] as String),

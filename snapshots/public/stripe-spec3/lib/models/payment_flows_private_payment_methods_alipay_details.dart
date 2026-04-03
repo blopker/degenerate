@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentFlowsPrivatePaymentMethodsAlipayDetails {const PaymentFlowsPrivatePaymentMethodsAlipayDetails({this.buyerId, this.fingerprint, this.transactionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentFlowsPrivatePaymentMethodsAlipayDetails {const PaymentFlowsPrivatePaymentMethodsAlipayDetails({this.buyerId, this.fingerprint, this.transactionId, });
 
 factory PaymentFlowsPrivatePaymentMethodsAlipayDetails.fromJson(Map<String, dynamic> json) { return PaymentFlowsPrivatePaymentMethodsAlipayDetails(
   buyerId: json['buyer_id'] as String?,

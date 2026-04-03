@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
-final class CodespacesCreateOrUpdateOrgSecretRequestVisibility {const CodespacesCreateOrUpdateOrgSecretRequestVisibility._(this.value);
+@immutable final class CodespacesCreateOrUpdateOrgSecretRequestVisibility {const CodespacesCreateOrUpdateOrgSecretRequestVisibility._(this.value);
 
 factory CodespacesCreateOrUpdateOrgSecretRequestVisibility.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodespacesCreateOrUpdateOrgSecretRequestVisibility($value)'; } 
  }
-final class CodespacesCreateOrUpdateOrgSecretRequest {const CodespacesCreateOrUpdateOrgSecretRequest({this.encryptedValue, this.keyId, required this.visibility, this.selectedRepositoryIds, });
+@immutable final class CodespacesCreateOrUpdateOrgSecretRequest {const CodespacesCreateOrUpdateOrgSecretRequest({required this.visibility, this.encryptedValue, this.keyId, this.selectedRepositoryIds, });
 
 factory CodespacesCreateOrUpdateOrgSecretRequest.fromJson(Map<String, dynamic> json) { return CodespacesCreateOrUpdateOrgSecretRequest(
   encryptedValue: json['encrypted_value'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Constrains effort on reasoning for reasoning models. Currently supported values are low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
-final class Responses2ReasoningEffort {const Responses2ReasoningEffort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains effort on reasoning for reasoning models. Currently supported values are low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
+@immutable final class Responses2ReasoningEffort {const Responses2ReasoningEffort._(this.value);
 
 factory Responses2ReasoningEffort.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Responses2ReasoningEffort($value)'; } 
  }
 /// A summary of the reasoning performed by the model. This can be useful for debugging and understanding the model's reasoning process. One of auto, concise, or detailed.
-final class Responses2ReasoningSummary {const Responses2ReasoningSummary._(this.value);
+@immutable final class Responses2ReasoningSummary {const Responses2ReasoningSummary._(this.value);
 
 factory Responses2ReasoningSummary.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Responses2ReasoningSummary($value)'; } 
  }
-final class Responses2Reasoning {const Responses2Reasoning({this.effort, this.summary, });
+@immutable final class Responses2Reasoning {const Responses2Reasoning({this.effort, this.summary, });
 
 factory Responses2Reasoning.fromJson(Map<String, dynamic> json) { return Responses2Reasoning(
   effort: json['effort'] != null ? Responses2ReasoningEffort.fromJson(json['effort'] as String) : null,

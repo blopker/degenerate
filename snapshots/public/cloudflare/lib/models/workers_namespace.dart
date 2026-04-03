@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersNamespace {const WorkersNamespace({this.$class, this.id, this.name, this.script, this.useSqlite, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersNamespace {const WorkersNamespace({this.$class, this.id, this.name, this.script, this.useSqlite, });
 
 factory WorkersNamespace.fromJson(Map<String, dynamic> json) { return WorkersNamespace(
   $class: json['class'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_preset_permissions_plugins_config.dart';import 'realtimekit_preset_permissions_plugins_config_variant2.dart';/// Plugin permissions
-final class RealtimekitPresetPermissionsPlugins {const RealtimekitPresetPermissionsPlugins({required this.canClose, required this.canEditConfig, required this.canStart, required this.config, });
+@immutable final class RealtimekitPresetPermissionsPlugins {const RealtimekitPresetPermissionsPlugins({required this.canClose, required this.canEditConfig, required this.canStart, required this.config, });
 
 factory RealtimekitPresetPermissionsPlugins.fromJson(Map<String, dynamic> json) { return RealtimekitPresetPermissionsPlugins(
   canClose: json['can_close'] as bool,

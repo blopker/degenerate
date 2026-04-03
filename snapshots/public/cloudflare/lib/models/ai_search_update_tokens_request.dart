@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchUpdateTokensRequest {const AiSearchUpdateTokensRequest({required this.cfApiId, required this.cfApiKey, this.legacy = true, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchUpdateTokensRequest {const AiSearchUpdateTokensRequest({required this.cfApiId, required this.cfApiKey, required this.name, this.legacy = true, });
 
 factory AiSearchUpdateTokensRequest.fromJson(Map<String, dynamic> json) { return AiSearchUpdateTokensRequest(
   cfApiId: json['cf_api_id'] as String,

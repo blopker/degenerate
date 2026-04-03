@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpSummaryByPostQuantumBrowserFamily {const RadarGetHttpSummaryByPostQuantumBrowserFamily._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByPostQuantumBrowserFamily {const RadarGetHttpSummaryByPostQuantumBrowserFamily._(this.value);
 
 factory RadarGetHttpSummaryByPostQuantumBrowserFamily.fromJson(String json) { return switch (json) {
   'CHROME' => chrome,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging({this.checkInAt, this.nights, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging {const PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging({this.checkInAt, this.nights, });
 
 factory PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsLodging(
   checkInAt: json['check_in_at'] != null ? (json['check_in_at'] as num).toInt() : null,

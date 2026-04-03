@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';import 'simple_user.dart';/// Describe whether all repositories have been selected or there's a selection involved
-final class ScopedInstallationRepositorySelection {const ScopedInstallationRepositorySelection._(this.value);
+@immutable final class ScopedInstallationRepositorySelection {const ScopedInstallationRepositorySelection._(this.value);
 
 factory ScopedInstallationRepositorySelection.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ScopedInstallationRepositorySelection($value)'; } 
  }
-final class ScopedInstallation {const ScopedInstallation({required this.permissions, required this.repositorySelection, required this.singleFileName, this.hasMultipleSingleFiles, this.singleFilePaths, required this.repositoriesUrl, required this.account, });
+@immutable final class ScopedInstallation {const ScopedInstallation({required this.permissions, required this.repositorySelection, required this.singleFileName, required this.repositoriesUrl, required this.account, this.hasMultipleSingleFiles, this.singleFilePaths, });
 
 factory ScopedInstallation.fromJson(Map<String, dynamic> json) { return ScopedInstallation(
   permissions: AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>),

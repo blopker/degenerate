@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class GelatoProvidedDetails {const GelatoProvidedDetails({this.email, this.phone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class GelatoProvidedDetails {const GelatoProvidedDetails({this.email, this.phone, });
 
 factory GelatoProvidedDetails.fromJson(Map<String, dynamic> json) { return GelatoProvidedDetails(
   email: json['email'] as String?,

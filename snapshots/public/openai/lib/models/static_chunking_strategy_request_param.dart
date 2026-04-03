@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'static_chunking_strategy.dart';/// Customize your own chunking strategy by setting chunk size and chunk overlap.
-final class StaticChunkingStrategyRequestParam {const StaticChunkingStrategyRequestParam({required this.type, required this.$static, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'static_chunking_strategy.dart';/// Customize your own chunking strategy by setting chunk size and chunk overlap.
+@immutable final class StaticChunkingStrategyRequestParam {const StaticChunkingStrategyRequestParam({required this.type, required this.$static, });
 
 factory StaticChunkingStrategyRequestParam.fromJson(Map<String, dynamic> json) { return StaticChunkingStrategyRequestParam(
   type: json['type'] as String,

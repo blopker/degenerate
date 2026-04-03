@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An enterprise on GitHub.
-final class Enterprise {const Enterprise({this.description, required this.htmlUrl, this.websiteUrl, required this.id, required this.nodeId, required this.name, required this.slug, required this.createdAt, required this.updatedAt, required this.avatarUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An enterprise on GitHub.
+@immutable final class Enterprise {const Enterprise({required this.htmlUrl, required this.id, required this.nodeId, required this.name, required this.slug, required this.createdAt, required this.updatedAt, required this.avatarUrl, this.description, this.websiteUrl, });
 
 factory Enterprise.fromJson(Map<String, dynamic> json) { return Enterprise(
   description: json['description'] as String?,

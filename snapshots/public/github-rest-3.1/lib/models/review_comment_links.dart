@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'link.dart';final class ReviewCommentLinks {const ReviewCommentLinks({required this.self, required this.html, required this.pullRequest, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'link.dart';@immutable final class ReviewCommentLinks {const ReviewCommentLinks({required this.self, required this.html, required this.pullRequest, });
 
 factory ReviewCommentLinks.fromJson(Map<String, dynamic> json) { return ReviewCommentLinks(
   self: Link.fromJson(json['self'] as Map<String, dynamic>),

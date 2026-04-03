@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param30.dart';final class PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsUsBankAccountVariant2 {const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsUsBankAccountVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param30.dart';@immutable final class PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsUsBankAccountVariant2 {const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsUsBankAccountVariant2._(this.value);
 
 factory PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptionsUsBankAccountVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

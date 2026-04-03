@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_test_helpers_treasury_outbound_payments_id_request_tracking_details_ach.dart';import 'post_test_helpers_treasury_outbound_payments_id_request_tracking_details_us_domestic_wire.dart';final class PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType {const PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_outbound_payments_id_request_tracking_details_ach.dart';import 'post_test_helpers_treasury_outbound_payments_id_request_tracking_details_us_domestic_wire.dart';@immutable final class PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType {const PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType._(this.value);
 
 factory PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsType($value)'; } 
  }
 /// Details about network-specific tracking information.
-final class PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails {const PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails({this.ach, required this.type, this.usDomesticWire, });
+@immutable final class PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails {const PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails({required this.type, this.ach, this.usDomesticWire, });
 
 factory PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetails(
   ach: json['ach'] != null ? PostTestHelpersTreasuryOutboundPaymentsIdRequestTrackingDetailsAch.fromJson(json['ach'] as Map<String, dynamic>) : null,

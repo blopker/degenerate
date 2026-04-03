@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping.dart';import 'source_order_item.dart';/// 
-final class SourceOrder {const SourceOrder({required this.amount, required this.currency, this.email, this.items, this.shipping, });
+@immutable final class SourceOrder {const SourceOrder({required this.amount, required this.currency, this.email, this.items, this.shipping, });
 
 factory SourceOrder.fromJson(Map<String, dynamic> json) { return SourceOrder(
   amount: (json['amount'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_auth_id_characteristic.dart';import 'shield_auth_id_characteristic_jwt_claim.dart';import 'shield_auth_id_characteristics2.dart';final class ShieldConfiguration {const ShieldConfiguration({required this.authIdCharacteristics});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_auth_id_characteristic.dart';import 'shield_auth_id_characteristic_jwt_claim.dart';import 'shield_auth_id_characteristics2.dart';@immutable final class ShieldConfiguration {const ShieldConfiguration({required this.authIdCharacteristics});
 
 factory ShieldConfiguration.fromJson(Map<String, dynamic> json) { return ShieldConfiguration(
   authIdCharacteristics: (json['auth_id_characteristics'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => ShieldAuthIdCharacteristic.fromJson(v as Map<String, dynamic>), fromB: (v) => ShieldAuthIdCharacteristicJwtClaim.fromJson(v as Map<String, dynamic>),)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'wor_describe_workflow_instance_response_result_steps_sleep_error.dart';final class WorDescribeWorkflowInstanceResponseResultStepsSleepType {const WorDescribeWorkflowInstanceResponseResultStepsSleepType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_steps_sleep_error.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsSleepType {const WorDescribeWorkflowInstanceResponseResultStepsSleepType._(this.value);
 
 factory WorDescribeWorkflowInstanceResponseResultStepsSleepType.fromJson(String json) { return switch (json) {
   'sleep' => sleep,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorDescribeWorkflowInstanceResponseResultStepsSleepType($value)'; } 
  }
-final class WorDescribeWorkflowInstanceResponseResultStepsSleep {const WorDescribeWorkflowInstanceResponseResultStepsSleep({required this.end, required this.error, required this.finished, required this.name, required this.start, required this.type, });
+@immutable final class WorDescribeWorkflowInstanceResponseResultStepsSleep {const WorDescribeWorkflowInstanceResponseResultStepsSleep({required this.end, required this.error, required this.finished, required this.name, required this.start, required this.type, });
 
 factory WorDescribeWorkflowInstanceResponseResultStepsSleep.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsSleep(
   end: DateTime.parse(json['end'] as String),

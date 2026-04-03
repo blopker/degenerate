@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt43PredictionContentContentVariant2Type {const Prompt43PredictionContentContentVariant2Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43PredictionContentContentVariant2Type {const Prompt43PredictionContentContentVariant2Type._(this.value);
 
 factory Prompt43PredictionContentContentVariant2Type.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43PredictionContentContentVariant2Type($value)'; } 
  }
-final class Prompt43PredictionContentContentVariant2 {const Prompt43PredictionContentContentVariant2({required this.text, required this.type, });
+@immutable final class Prompt43PredictionContentContentVariant2 {const Prompt43PredictionContentContentVariant2({required this.text, required this.type, });
 
 factory Prompt43PredictionContentContentVariant2.fromJson(Map<String, dynamic> json) { return Prompt43PredictionContentContentVariant2(
   text: json['text'] as String,

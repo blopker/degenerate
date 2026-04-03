@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'infra_resolver_network.dart';final class InfraHostnameHost {const InfraHostnameHost({required this.hostname, required this.resolverNetwork, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_resolver_network.dart';@immutable final class InfraHostnameHost {const InfraHostnameHost({required this.hostname, required this.resolverNetwork, });
 
 factory InfraHostnameHost.fromJson(Map<String, dynamic> json) { return InfraHostnameHost(
   hostname: json['hostname'] as String,

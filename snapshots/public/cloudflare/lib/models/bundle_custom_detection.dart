@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bundle_identifier.dart';/// Defines a custom set of username/password expressions to match Leaked Credential Checks on.
-final class BundleCustomDetection {const BundleCustomDetection({this.id, this.password, this.username, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bundle_identifier.dart';/// Defines a custom set of username/password expressions to match Leaked Credential Checks on.
+@immutable final class BundleCustomDetection {const BundleCustomDetection({this.id, this.password, this.username, });
 
 factory BundleCustomDetection.fromJson(Map<String, dynamic> json) { return BundleCustomDetection(
   id: json['id'] != null ? BundleIdentifier.fromJson(json['id'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of advisory identifier.
-final class DependabotAlertSecurityAdvisoryIdentifiersType {const DependabotAlertSecurityAdvisoryIdentifiersType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of advisory identifier.
+@immutable final class DependabotAlertSecurityAdvisoryIdentifiersType {const DependabotAlertSecurityAdvisoryIdentifiersType._(this.value);
 
 factory DependabotAlertSecurityAdvisoryIdentifiersType.fromJson(String json) { return switch (json) {
   'CVE' => cve,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotAlertSecurityAdvisoryIdentifiersType($value)'; } 
  }
 /// An advisory identifier.
-final class DependabotAlertSecurityAdvisoryIdentifiers {const DependabotAlertSecurityAdvisoryIdentifiers({required this.type, required this.value, });
+@immutable final class DependabotAlertSecurityAdvisoryIdentifiers {const DependabotAlertSecurityAdvisoryIdentifiers({required this.type, required this.value, });
 
 factory DependabotAlertSecurityAdvisoryIdentifiers.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisoryIdentifiers(
   type: DependabotAlertSecurityAdvisoryIdentifiersType.fromJson(json['type'] as String),

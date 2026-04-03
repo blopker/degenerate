@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destination_create_response400_errors.dart';import 'destination_create_response400_messages.dart';final class DestinationCreateResponse400 {const DestinationCreateResponse400({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destination_create_response400_errors.dart';import 'destination_create_response400_messages.dart';@immutable final class DestinationCreateResponse400 {const DestinationCreateResponse400({required this.errors, required this.messages, required this.success, });
 
 factory DestinationCreateResponse400.fromJson(Map<String, dynamic> json) { return DestinationCreateResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => DestinationCreateResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

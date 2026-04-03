@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_bill_resource_invoicing_taxes_tax_rate_details.dart';/// Whether this tax is inclusive or exclusive.
-final class BillingBillResourceInvoicingTaxesTaxTaxBehavior {const BillingBillResourceInvoicingTaxesTaxTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_taxes_tax_rate_details.dart';/// Whether this tax is inclusive or exclusive.
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxBehavior {const BillingBillResourceInvoicingTaxesTaxTaxBehavior._(this.value);
 
 factory BillingBillResourceInvoicingTaxesTaxTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingBillResourceInvoicingTaxesTaxTaxBehavior($value)'; } 
  }
 /// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
-final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason._(this.value);
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason._(this.value);
 
 factory BillingBillResourceInvoicingTaxesTaxTaxabilityReason.fromJson(String json) { return switch (json) {
   'customer_exempt' => customerExempt,
@@ -93,7 +93,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingBillResourceInvoicingTaxesTaxTaxabilityReason($value)'; } 
  }
 /// The type of tax information.
-final class BillingBillResourceInvoicingTaxesTaxType {const BillingBillResourceInvoicingTaxesTaxType._(this.value);
+@immutable final class BillingBillResourceInvoicingTaxesTaxType {const BillingBillResourceInvoicingTaxesTaxType._(this.value);
 
 factory BillingBillResourceInvoicingTaxesTaxType.fromJson(String json) { return switch (json) {
   'tax_rate_details' => taxRateDetails,
@@ -115,7 +115,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingBillResourceInvoicingTaxesTaxType($value)'; } 
  }
 /// 
-final class BillingBillResourceInvoicingTaxesTax {const BillingBillResourceInvoicingTaxesTax({required this.amount, required this.taxBehavior, this.taxRateDetails, required this.taxabilityReason, this.taxableAmount, required this.type, });
+@immutable final class BillingBillResourceInvoicingTaxesTax {const BillingBillResourceInvoicingTaxesTax({required this.amount, required this.taxBehavior, required this.taxabilityReason, required this.type, this.taxRateDetails, this.taxableAmount, });
 
 factory BillingBillResourceInvoicingTaxesTax.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingTaxesTax(
   amount: (json['amount'] as num).toInt(),

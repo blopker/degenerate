@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';import 'realtime_response_audio.dart';import 'realtime_response_max_output_tokens.dart';import 'realtime_response_status_details.dart';import 'realtime_response_usage.dart';/// The object type, must be `realtime.response`.
-final class RealtimeResponseObject {const RealtimeResponseObject._(this.value);
+@immutable final class RealtimeResponseObject {const RealtimeResponseObject._(this.value);
 
 factory RealtimeResponseObject.fromJson(String json) { return switch (json) {
   'realtime.response' => realtimeResponse,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The final status of the response (`completed`, `cancelled`, `failed`, or
 /// `incomplete`, `in_progress`).
 /// 
-final class RealtimeResponseStatus {const RealtimeResponseStatus._(this.value);
+@immutable final class RealtimeResponseStatus {const RealtimeResponseStatus._(this.value);
 
 factory RealtimeResponseStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeResponseStatus($value)'; } 
  }
-final class RealtimeResponseOutputModalities {const RealtimeResponseOutputModalities._(this.value);
+@immutable final class RealtimeResponseOutputModalities {const RealtimeResponseOutputModalities._(this.value);
 
 factory RealtimeResponseOutputModalities.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -83,7 +83,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeResponseOutputModalities($value)'; } 
  }
 /// The response resource.
-final class RealtimeResponse {const RealtimeResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata, this.audio, this.usage, this.conversationId, this.outputModalities, this.maxOutputTokens, });
+@immutable final class RealtimeResponse {const RealtimeResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata, this.audio, this.usage, this.conversationId, this.outputModalities, this.maxOutputTokens, });
 
 factory RealtimeResponse.fromJson(Map<String, dynamic> json) { return RealtimeResponse(
   id: json['id'] as String?,

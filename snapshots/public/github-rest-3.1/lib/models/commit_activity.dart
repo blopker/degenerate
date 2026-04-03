@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Commit Activity
-final class CommitActivity {const CommitActivity({required this.days, required this.total, required this.week, });
+@immutable final class CommitActivity {const CommitActivity({required this.days, required this.total, required this.week, });
 
 factory CommitActivity.fromJson(Map<String, dynamic> json) { return CommitActivity(
   days: (json['days'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),

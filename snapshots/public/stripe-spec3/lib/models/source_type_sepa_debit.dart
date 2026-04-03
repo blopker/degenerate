@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeSepaDebit {const SourceTypeSepaDebit({this.bankCode, this.branchCode, this.country, this.fingerprint, this.last4, this.mandateReference, this.mandateUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeSepaDebit {const SourceTypeSepaDebit({this.bankCode, this.branchCode, this.country, this.fingerprint, this.last4, this.mandateReference, this.mandateUrl, });
 
 factory SourceTypeSepaDebit.fromJson(Map<String, dynamic> json) { return SourceTypeSepaDebit(
   bankCode: json['bank_code'] as String?,

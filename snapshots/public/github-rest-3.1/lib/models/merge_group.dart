@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_commit.dart';/// A group of pull requests that the merge queue has grouped together to be merged.
-final class MergeGroup {const MergeGroup({required this.headSha, required this.headRef, required this.baseSha, required this.baseRef, required this.headCommit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_commit.dart';/// A group of pull requests that the merge queue has grouped together to be merged.
+@immutable final class MergeGroup {const MergeGroup({required this.headSha, required this.headRef, required this.baseSha, required this.baseRef, required this.headCommit, });
 
 factory MergeGroup.fromJson(Map<String, dynamic> json) { return MergeGroup(
   headSha: json['head_sha'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration object for the current rule.
-final class FirewallSchemasConfiguration {const FirewallSchemasConfiguration({this.target, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration object for the current rule.
+@immutable final class FirewallSchemasConfiguration {const FirewallSchemasConfiguration({this.target, this.value, });
 
 factory FirewallSchemasConfiguration.fromJson(Map<String, dynamic> json) { return FirewallSchemasConfiguration(
   target: json['target'] as String?,

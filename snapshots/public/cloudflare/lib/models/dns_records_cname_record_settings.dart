@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DnsRecordsCnameRecordSettings {const DnsRecordsCnameRecordSettings({this.flattenCname = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsCnameRecordSettings {const DnsRecordsCnameRecordSettings({this.flattenCname = false});
 
 factory DnsRecordsCnameRecordSettings.fromJson(Map<String, dynamic> json) { return DnsRecordsCnameRecordSettings(
   flattenCname: json.containsKey('flatten_cname') ? json['flatten_cname'] as bool : false,

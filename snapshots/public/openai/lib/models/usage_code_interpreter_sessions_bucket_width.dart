@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageCodeInterpreterSessionsBucketWidth {const UsageCodeInterpreterSessionsBucketWidth._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageCodeInterpreterSessionsBucketWidth {const UsageCodeInterpreterSessionsBucketWidth._(this.value);
 
 factory UsageCodeInterpreterSessionsBucketWidth.fromJson(String json) { return switch (json) {
   '1m' => $1m,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_pull_request5_head_repo.dart';import 'webhooks_pull_request5_head_user.dart';final class WebhooksPullRequest5Head {const WebhooksPullRequest5Head({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_pull_request5_head_repo.dart';import 'webhooks_pull_request5_head_user.dart';@immutable final class WebhooksPullRequest5Head {const WebhooksPullRequest5Head({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
 factory WebhooksPullRequest5Head.fromJson(Map<String, dynamic> json) { return WebhooksPullRequest5Head(
   label: json['label'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits {const WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits({required this.href});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits {const WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits({required this.href});
 
 factory WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAutoMergeDisabledPullRequestLinksCommits(
   href: json['href'] as String,

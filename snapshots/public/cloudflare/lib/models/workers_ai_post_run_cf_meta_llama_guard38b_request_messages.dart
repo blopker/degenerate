@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages {const WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages({required this.content, required this.role, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages {const WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages({required this.content, required this.role, });
 
 factory WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(
   content: json['content'] as String,

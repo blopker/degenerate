@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param4.dart';import 'post_subscription_schedules_request_default_settings_automatic_tax.dart';import 'post_subscription_schedules_request_default_settings_billing_thresholds.dart';import 'post_subscription_schedules_request_default_settings_description.dart';import 'post_subscription_schedules_request_default_settings_invoice_settings.dart';import 'post_subscription_schedules_request_default_settings_on_behalf_of.dart';import 'post_subscription_schedules_request_default_settings_transfer_data.dart';import 'transfer_data_specs5.dart';final class PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor {const PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param4.dart';import 'post_subscription_schedules_request_default_settings_automatic_tax.dart';import 'post_subscription_schedules_request_default_settings_billing_thresholds.dart';import 'post_subscription_schedules_request_default_settings_description.dart';import 'post_subscription_schedules_request_default_settings_invoice_settings.dart';import 'post_subscription_schedules_request_default_settings_on_behalf_of.dart';import 'post_subscription_schedules_request_default_settings_transfer_data.dart';import 'transfer_data_specs5.dart';@immutable final class PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor {const PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor._(this.value);
 
 factory PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor($value)'; } 
  }
-final class PostSubscriptionSchedulesRequestDefaultSettingsCollectionMethod {const PostSubscriptionSchedulesRequestDefaultSettingsCollectionMethod._(this.value);
+@immutable final class PostSubscriptionSchedulesRequestDefaultSettingsCollectionMethod {const PostSubscriptionSchedulesRequestDefaultSettingsCollectionMethod._(this.value);
 
 factory PostSubscriptionSchedulesRequestDefaultSettingsCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSubscriptionSchedulesRequestDefaultSettingsCollectionMethod($value)'; } 
  }
 /// Object representing the subscription schedule's default settings.
-final class PostSubscriptionSchedulesRequestDefaultSettings {const PostSubscriptionSchedulesRequestDefaultSettings({this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.description, this.invoiceSettings, this.onBehalfOf, this.transferData, });
+@immutable final class PostSubscriptionSchedulesRequestDefaultSettings {const PostSubscriptionSchedulesRequestDefaultSettings({this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.description, this.invoiceSettings, this.onBehalfOf, this.transferData, });
 
 factory PostSubscriptionSchedulesRequestDefaultSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestDefaultSettings(
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,

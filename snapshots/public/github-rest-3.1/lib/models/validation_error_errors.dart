@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'validation_error_errors_value.dart';final class ValidationErrorErrors {const ValidationErrorErrors({this.resource, this.field, this.message, required this.code, this.index, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'validation_error_errors_value.dart';@immutable final class ValidationErrorErrors {const ValidationErrorErrors({required this.code, this.resource, this.field, this.message, this.index, this.value, });
 
 factory ValidationErrorErrors.fromJson(Map<String, dynamic> json) { return ValidationErrorErrors(
   resource: json['resource'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_scrape_request_variant2_goto_options_wait_until.dart';/// Check [options](https://pptr.dev/api/puppeteer.gotooptions).
-final class BrapiPostScrapeRequestVariant2GotoOptions {const BrapiPostScrapeRequestVariant2GotoOptions({this.referer, this.referrerPolicy, this.timeout = 30000.0, this.waitUntil, });
+@immutable final class BrapiPostScrapeRequestVariant2GotoOptions {const BrapiPostScrapeRequestVariant2GotoOptions({this.referer, this.referrerPolicy, this.timeout = 30000.0, this.waitUntil, });
 
 factory BrapiPostScrapeRequestVariant2GotoOptions.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeRequestVariant2GotoOptions(
   referer: json['referer'] as String?,

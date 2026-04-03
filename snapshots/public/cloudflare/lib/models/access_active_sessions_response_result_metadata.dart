@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_active_sessions_response_result_metadata_apps_value.dart';final class AccessActiveSessionsResponseResultMetadata {const AccessActiveSessionsResponseResultMetadata({this.apps, this.expires, this.iat, this.nonce, this.ttl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_active_sessions_response_result_metadata_apps_value.dart';@immutable final class AccessActiveSessionsResponseResultMetadata {const AccessActiveSessionsResponseResultMetadata({this.apps, this.expires, this.iat, this.nonce, this.ttl, });
 
 factory AccessActiveSessionsResponseResultMetadata.fromJson(Map<String, dynamic> json) { return AccessActiveSessionsResponseResultMetadata(
   apps: (json['apps'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, AccessActiveSessionsResponseResultMetadataAppsValue.fromJson(v as Map<String, dynamic>))),

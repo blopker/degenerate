@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookStatusCommitParents {const WebhookStatusCommitParents({required this.htmlUrl, required this.sha, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookStatusCommitParents {const WebhookStatusCommitParents({required this.htmlUrl, required this.sha, required this.url, });
 
 factory WebhookStatusCommitParents.fromJson(Map<String, dynamic> json) { return WebhookStatusCommitParents(
   htmlUrl: Uri.parse(json['html_url'] as String),

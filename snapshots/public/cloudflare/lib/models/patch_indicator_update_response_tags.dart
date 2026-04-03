@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PatchIndicatorUpdateResponseTags {const PatchIndicatorUpdateResponseTags({this.categoryName, this.uuid, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchIndicatorUpdateResponseTags {const PatchIndicatorUpdateResponseTags({this.categoryName, this.uuid, this.value, });
 
 factory PatchIndicatorUpdateResponseTags.fromJson(Map<String, dynamic> json) { return PatchIndicatorUpdateResponseTags(
   categoryName: json['categoryName'] as String?,

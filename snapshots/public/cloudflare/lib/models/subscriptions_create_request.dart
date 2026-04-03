@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_event_destination.dart';import 'mq_event_source.dart';import 'mq_event_source_images.dart';import 'mq_event_source_kv.dart';import 'mq_event_source_r2.dart';import 'mq_event_source_super_slurper.dart';import 'mq_event_source_vectorize.dart';import 'mq_event_source_workers_ai_model.dart';import 'mq_event_source_workers_builds_worker.dart';import 'mq_event_source_workflows_workflow.dart';final class SubscriptionsCreateRequest {const SubscriptionsCreateRequest({this.destination, this.enabled, this.events, this.name, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_event_destination.dart';import 'mq_event_source.dart';import 'mq_event_source_images.dart';import 'mq_event_source_kv.dart';import 'mq_event_source_r2.dart';import 'mq_event_source_super_slurper.dart';import 'mq_event_source_vectorize.dart';import 'mq_event_source_workers_ai_model.dart';import 'mq_event_source_workers_builds_worker.dart';import 'mq_event_source_workflows_workflow.dart';@immutable final class SubscriptionsCreateRequest {const SubscriptionsCreateRequest({this.destination, this.enabled, this.events, this.name, this.source, });
 
 factory SubscriptionsCreateRequest.fromJson(Map<String, dynamic> json) { return SubscriptionsCreateRequest(
   destination: json['destination'] != null ? MqEventDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DlpAddinAuthOrgType {const DlpAddinAuthOrgType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpAddinAuthOrgType {const DlpAddinAuthOrgType._(this.value);
 
 factory DlpAddinAuthOrgType.fromJson(String json) { return switch (json) {
   'Org' => org,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpAddinAuthOrgType($value)'; } 
  }
-final class DlpAddinAuthOrg {const DlpAddinAuthOrg({required this.allowedMicrosoftOrganizations, required this.type, });
+@immutable final class DlpAddinAuthOrg {const DlpAddinAuthOrg({required this.allowedMicrosoftOrganizations, required this.type, });
 
 factory DlpAddinAuthOrg.fromJson(Map<String, dynamic> json) { return DlpAddinAuthOrg(
   allowedMicrosoftOrganizations: (json['allowed_microsoft_organizations'] as List<dynamic>).map((e) => e as String).toList(),

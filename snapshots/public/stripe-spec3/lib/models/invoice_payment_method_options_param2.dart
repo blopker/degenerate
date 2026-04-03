@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InvoicePaymentMethodOptionsParam2PreferredLanguage {const InvoicePaymentMethodOptionsParam2PreferredLanguage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicePaymentMethodOptionsParam2PreferredLanguage {const InvoicePaymentMethodOptionsParam2PreferredLanguage._(this.value);
 
 factory InvoicePaymentMethodOptionsParam2PreferredLanguage.fromJson(String json) { return switch (json) {
   'de' => de,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InvoicePaymentMethodOptionsParam2PreferredLanguage($value)'; } 
  }
-final class InvoicePaymentMethodOptionsParam2 {const InvoicePaymentMethodOptionsParam2({this.preferredLanguage});
+@immutable final class InvoicePaymentMethodOptionsParam2 {const InvoicePaymentMethodOptionsParam2({this.preferredLanguage});
 
 factory InvoicePaymentMethodOptionsParam2.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam2(
   preferredLanguage: json['preferred_language'] != null ? InvoicePaymentMethodOptionsParam2PreferredLanguage.fromJson(json['preferred_language'] as String) : null,

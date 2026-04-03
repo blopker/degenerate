@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_reinforcement_hyperparameters.dart';import 'fine_tune_reinforcement_method_grader.dart';import 'grader_multi.dart';import 'grader_python.dart';import 'grader_score_model.dart';import 'grader_string_check.dart';import 'grader_text_similarity.dart';/// Configuration for the reinforcement fine-tuning method.
-final class FineTuneReinforcementMethod {const FineTuneReinforcementMethod({required this.grader, this.hyperparameters, });
+@immutable final class FineTuneReinforcementMethod {const FineTuneReinforcementMethod({required this.grader, this.hyperparameters, });
 
 factory FineTuneReinforcementMethod.fromJson(Map<String, dynamic> json) { return FineTuneReinforcementMethod(
   grader: OneOf5.parse(json['grader'], fromA: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderMulti.fromJson(v as Map<String, dynamic>),),

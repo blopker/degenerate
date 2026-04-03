@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_reviewer_type.dart';import 'environment_protection_rules_variant2_reviewers_reviewer.dart';import 'simple_user.dart';import 'team.dart';final class EnvironmentProtectionRulesVariant2Reviewers {const EnvironmentProtectionRulesVariant2Reviewers({this.type, this.reviewer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_reviewer_type.dart';import 'environment_protection_rules_variant2_reviewers_reviewer.dart';import 'simple_user.dart';import 'team.dart';@immutable final class EnvironmentProtectionRulesVariant2Reviewers {const EnvironmentProtectionRulesVariant2Reviewers({this.type, this.reviewer, });
 
 factory EnvironmentProtectionRulesVariant2Reviewers.fromJson(Map<String, dynamic> json) { return EnvironmentProtectionRulesVariant2Reviewers(
   type: json['type'] != null ? DeploymentReviewerType.fromJson(json['type'] as String) : null,

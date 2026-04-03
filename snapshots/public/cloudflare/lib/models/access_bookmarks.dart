@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_timestamp.dart';/// The name of the Bookmark application.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_timestamp.dart';/// The name of the Bookmark application.
 extension type const AccessBookmarksComponentsSchemasName(String value) {
 factory AccessBookmarksComponentsSchemasName.fromJson(String json) => AccessBookmarksComponentsSchemasName(json);
 
@@ -28,7 +28,7 @@ factory AccessSchemasLogoUrl.fromJson(String json) => AccessSchemasLogoUrl(json)
 String toJson() => value;
 
 }
-final class AccessBookmarks {const AccessBookmarks({this.appLauncherVisible, this.createdAt, this.domain, this.id, this.logoUrl, this.name, this.updatedAt, });
+@immutable final class AccessBookmarks {const AccessBookmarks({this.appLauncherVisible, this.createdAt, this.domain, this.id, this.logoUrl, this.name, this.updatedAt, });
 
 factory AccessBookmarks.fromJson(Map<String, dynamic> json) { return AccessBookmarks(
   appLauncherVisible: json['app_launcher_visible'] != null ? AccessSchemasAppLauncherVisible.fromJson(json['app_launcher_visible'] as bool) : null,

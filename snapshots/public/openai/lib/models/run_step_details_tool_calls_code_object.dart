@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_details_tool_calls_code_object_code_interpreter.dart';/// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
-final class RunStepDetailsToolCallsCodeObjectType {const RunStepDetailsToolCallsCodeObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_details_tool_calls_code_object_code_interpreter.dart';/// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
+@immutable final class RunStepDetailsToolCallsCodeObjectType {const RunStepDetailsToolCallsCodeObjectType._(this.value);
 
 factory RunStepDetailsToolCallsCodeObjectType.fromJson(String json) { return switch (json) {
   'code_interpreter' => codeInterpreter,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepDetailsToolCallsCodeObjectType($value)'; } 
  }
 /// Details of the Code Interpreter tool call the run step was involved in.
-final class RunStepDetailsToolCallsCodeObject {const RunStepDetailsToolCallsCodeObject({required this.id, required this.type, required this.codeInterpreter, });
+@immutable final class RunStepDetailsToolCallsCodeObject {const RunStepDetailsToolCallsCodeObject({required this.id, required this.type, required this.codeInterpreter, });
 
 factory RunStepDetailsToolCallsCodeObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsCodeObject(
   id: json['id'] as String,

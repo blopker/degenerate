@@ -14,8 +14,8 @@ void main() {
     });
 
     test('.a() and .b() constructors', () {
-      final a = OneOf2<String, int>.a('hello');
-      final b = OneOf2<String, int>.b(42);
+      const a = OneOf2<String, int>.a('hello');
+      const b = OneOf2<String, int>.b(42);
       expect(a.value, 'hello');
       expect(b.value, 42);
     });
@@ -41,8 +41,8 @@ void main() {
     test('switch exhaustiveness on value type', () {
       final v = OneOf2<String, int>.from('hello');
       final result = switch (v.value) {
-        String s => 'string: $s',
-        int i => 'int: $i',
+        final String s => 'string: $s',
+        final int i => 'int: $i',
         _ => 'unknown',
       };
       expect(result, 'string: hello');
@@ -61,9 +61,9 @@ void main() {
     });
 
     test('.a(), .b(), .c() constructors', () {
-      final a = OneOf3<String, double, bool>.a('hi');
-      final b = OneOf3<String, double, bool>.b(3.14);
-      final c = OneOf3<String, double, bool>.c(true);
+      const a = OneOf3<String, double, bool>.a('hi');
+      const b = OneOf3<String, double, bool>.b(3.14);
+      const c = OneOf3<String, double, bool>.c(true);
       expect(a.value, 'hi');
       expect(b.value, 3.14);
       expect(c.value, true);
@@ -107,7 +107,7 @@ void main() {
     });
 
     test('OneOf5.parse selects correct variant by type', () {
-      final v = OneOf5.parse<String, int, double, bool, List>(
+      final v = OneOf5.parse<String, int, double, bool, List<dynamic>>(
         42,
         fromA: (v) => v.toString(),
         fromB: (v) => v as int,
@@ -138,21 +138,25 @@ void main() {
 }
 
 class _Cat {
-  final String name;
   _Cat(this.name);
-  static _Cat fromJson(Object? json) {
-    final map = json as Map<String, dynamic>;
-    if (map['type'] != 'cat') throw FormatException('Not a cat');
+
+  factory _Cat.fromJson(Object? json) {
+    final map = json! as Map<String, dynamic>;
+    if (map['type'] != 'cat') throw const FormatException('Not a cat');
     return _Cat(map['name'] as String);
   }
+
+  final String name;
 }
 
 class _Dog {
-  final String name;
   _Dog(this.name);
-  static _Dog fromJson(Object? json) {
-    final map = json as Map<String, dynamic>;
-    if (map['type'] != 'dog') throw FormatException('Not a dog');
+
+  factory _Dog.fromJson(Object? json) {
+    final map = json! as Map<String, dynamic>;
+    if (map['type'] != 'dog') throw const FormatException('Not a dog');
     return _Dog(map['name'] as String);
   }
+
+  final String name;
 }

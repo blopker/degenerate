@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code indicating that the Worker does not exist.
-final class WorkersErrorWorkerNotFoundCode {const WorkersErrorWorkerNotFoundCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker does not exist.
+@immutable final class WorkersErrorWorkerNotFoundCode {const WorkersErrorWorkerNotFoundCode._(this.value);
 
 factory WorkersErrorWorkerNotFoundCode.fromJson(int json) { return switch (json) {
   10007 => $10007,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersErrorWorkerNotFoundCode($value)'; } 
  }
-final class WorkersErrorWorkerNotFound {const WorkersErrorWorkerNotFound({required this.code, required this.message, });
+@immutable final class WorkersErrorWorkerNotFound {const WorkersErrorWorkerNotFound({required this.code, required this.message, });
 
 factory WorkersErrorWorkerNotFound.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerNotFound(
   code: WorkersErrorWorkerNotFoundCode.fromJson((json['code'] as num).toInt()),

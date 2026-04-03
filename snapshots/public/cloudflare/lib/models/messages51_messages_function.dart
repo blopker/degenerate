@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51MessagesFunctionRole {const Messages51MessagesFunctionRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51MessagesFunctionRole {const Messages51MessagesFunctionRole._(this.value);
 
 factory Messages51MessagesFunctionRole.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51MessagesFunctionRole($value)'; } 
  }
-final class Messages51MessagesFunction {const Messages51MessagesFunction({required this.content, required this.name, required this.role, });
+@immutable final class Messages51MessagesFunction {const Messages51MessagesFunction({required this.content, required this.name, required this.role, });
 
 factory Messages51MessagesFunction.fromJson(Map<String, dynamic> json) { return Messages51MessagesFunction(
   content: json['content'] as String,

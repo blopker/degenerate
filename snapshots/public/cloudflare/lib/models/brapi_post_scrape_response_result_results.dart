@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_scrape_response_result_results_attributes.dart';final class BrapiPostScrapeResponseResultResults {const BrapiPostScrapeResponseResultResults({required this.attributes, required this.height, required this.html, required this.left, required this.text, required this.top, required this.width, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_scrape_response_result_results_attributes.dart';@immutable final class BrapiPostScrapeResponseResultResults {const BrapiPostScrapeResponseResultResults({required this.attributes, required this.height, required this.html, required this.left, required this.text, required this.top, required this.width, });
 
 factory BrapiPostScrapeResponseResultResults.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeResponseResultResults(
   attributes: (json['attributes'] as List<dynamic>).map((e) => BrapiPostScrapeResponseResultResultsAttributes.fromJson(e as Map<String, dynamic>)).toList(),

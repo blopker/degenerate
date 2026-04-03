@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `input_audio_buffer.commit`.
-final class RealtimeClientEventInputAudioBufferCommitType {const RealtimeClientEventInputAudioBufferCommitType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.commit`.
+@immutable final class RealtimeClientEventInputAudioBufferCommitType {const RealtimeClientEventInputAudioBufferCommitType._(this.value);
 
 factory RealtimeClientEventInputAudioBufferCommitType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.commit' => inputAudioBufferCommit,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// Committing the input audio buffer will trigger input audio transcription  (if enabled in session configuration), but it will not create a response  from the model. The server will respond with an `input_audio_buffer.committed` event.
 /// 
-final class RealtimeClientEventInputAudioBufferCommit {const RealtimeClientEventInputAudioBufferCommit({this.eventId, required this.type, });
+@immutable final class RealtimeClientEventInputAudioBufferCommit {const RealtimeClientEventInputAudioBufferCommit({required this.type, this.eventId, });
 
 factory RealtimeClientEventInputAudioBufferCommit.fromJson(Map<String, dynamic> json) { return RealtimeClientEventInputAudioBufferCommit(
   eventId: json['event_id'] as String?,

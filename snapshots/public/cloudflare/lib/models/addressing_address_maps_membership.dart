@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_identifier.dart';import 'addressing_kind.dart';import 'addressing_timestamp.dart';/// Controls whether the membership can be deleted via the API or not.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_identifier.dart';import 'addressing_kind.dart';import 'addressing_timestamp.dart';/// Controls whether the membership can be deleted via the API or not.
 extension type const AddressingSchemasCanDelete(bool value) {
 factory AddressingSchemasCanDelete.fromJson(bool json) => AddressingSchemasCanDelete(json);
 
 bool toJson() => value;
 
 }
-final class AddressingAddressMapsMembership {const AddressingAddressMapsMembership({this.canDelete, this.createdAt, this.identifier, this.kind, });
+@immutable final class AddressingAddressMapsMembership {const AddressingAddressMapsMembership({this.canDelete, this.createdAt, this.identifier, this.kind, });
 
 factory AddressingAddressMapsMembership.fromJson(Map<String, dynamic> json) { return AddressingAddressMapsMembership(
   canDelete: json['can_delete'] != null ? AddressingSchemasCanDelete.fromJson(json['can_delete'] as bool) : null,

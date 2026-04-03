@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The custom page state.
-final class CustomPagesState {const CustomPagesState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The custom page state.
+@immutable final class CustomPagesState {const CustomPagesState._(this.value);
 
 factory CustomPagesState.fromJson(String json) { return switch (json) {
   'default' => $default,

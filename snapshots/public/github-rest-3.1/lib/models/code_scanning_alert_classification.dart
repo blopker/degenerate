@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A classification of the file. For example to identify it as generated.
-final class CodeScanningAlertClassification {const CodeScanningAlertClassification._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A classification of the file. For example to identify it as generated.
+@immutable final class CodeScanningAlertClassification {const CodeScanningAlertClassification._(this.value);
 
 factory CodeScanningAlertClassification.fromJson(String json) { return switch (json) {
   'source' => source,

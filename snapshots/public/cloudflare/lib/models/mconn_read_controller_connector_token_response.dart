@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MconnReadControllerConnectorTokenResponse {const MconnReadControllerConnectorTokenResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnReadControllerConnectorTokenResponse {const MconnReadControllerConnectorTokenResponse({this.result});
 
 factory MconnReadControllerConnectorTokenResponse.fromJson(Map<String, dynamic> json) { return MconnReadControllerConnectorTokenResponse(
   result: json['result'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod {const PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod {const PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam42MandateOptions {const PaymentIntentPaymentMethodOptionsParam42MandateOptions({this.collectionMethod});
+@immutable final class PaymentIntentPaymentMethodOptionsParam42MandateOptions {const PaymentIntentPaymentMethodOptionsParam42MandateOptions({this.collectionMethod});
 
 factory PaymentIntentPaymentMethodOptionsParam42MandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam42MandateOptions(
   collectionMethod: json['collection_method'] != null ? PaymentIntentPaymentMethodOptionsParam42MandateOptionsCollectionMethod.fromJson(json['collection_method'] as String) : null,

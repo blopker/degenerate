@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_acl.dart';final class MagicAclModifiedResponse {const MagicAclModifiedResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_acl.dart';@immutable final class MagicAclModifiedResponse {const MagicAclModifiedResponse({this.result});
 
 factory MagicAclModifiedResponse.fromJson(Map<String, dynamic> json) { return MagicAclModifiedResponse(
   result: json['result'] != null ? MagicAcl.fromJson(json['result'] as Map<String, dynamic>) : null,

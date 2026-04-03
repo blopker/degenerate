@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetNetflowsSummaryResponse400Errors {const RadarGetNetflowsSummaryResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetNetflowsSummaryResponse400Errors {const RadarGetNetflowsSummaryResponse400Errors({required this.message});
 
 factory RadarGetNetflowsSummaryResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsSummaryResponse400Errors(
   message: json['message'] as String,

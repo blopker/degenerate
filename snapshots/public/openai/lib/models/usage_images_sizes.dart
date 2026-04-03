@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageImagesSizes {const UsageImagesSizes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageImagesSizes {const UsageImagesSizes._(this.value);
 
 factory UsageImagesSizes.fromJson(String json) { return switch (json) {
   '256x256' => $256x256,

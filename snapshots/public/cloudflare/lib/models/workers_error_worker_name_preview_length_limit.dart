@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code indicating that the Worker name is too long to be used with previews enabled.
-final class WorkersErrorWorkerNamePreviewLengthLimitCode {const WorkersErrorWorkerNamePreviewLengthLimitCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker name is too long to be used with previews enabled.
+@immutable final class WorkersErrorWorkerNamePreviewLengthLimitCode {const WorkersErrorWorkerNamePreviewLengthLimitCode._(this.value);
 
 factory WorkersErrorWorkerNamePreviewLengthLimitCode.fromJson(int json) { return switch (json) {
   100315 => $100315,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersErrorWorkerNamePreviewLengthLimitCode($value)'; } 
  }
-final class WorkersErrorWorkerNamePreviewLengthLimit {const WorkersErrorWorkerNamePreviewLengthLimit({required this.code, required this.message, });
+@immutable final class WorkersErrorWorkerNamePreviewLengthLimit {const WorkersErrorWorkerNamePreviewLengthLimit({required this.code, required this.message, });
 
 factory WorkersErrorWorkerNamePreviewLengthLimit.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerNamePreviewLengthLimit(
   code: WorkersErrorWorkerNamePreviewLengthLimitCode.fromJson((json['code'] as num).toInt()),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'resource_tagging_etag.dart';import 'resource_tagging_resource_id.dart';import 'resource_tagging_resource_name.dart';import 'resource_tagging_worker_id.dart';/// Base schema for worker_version resources (without type discriminator)
-final class ResourceTaggingTaggedResourceObjectWorkerVersionBase {const ResourceTaggingTaggedResourceObjectWorkerVersionBase({required this.etag, required this.id, required this.name, required this.tags, required this.workerId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_etag.dart';import 'resource_tagging_resource_id.dart';import 'resource_tagging_resource_name.dart';import 'resource_tagging_worker_id.dart';/// Base schema for worker_version resources (without type discriminator)
+@immutable final class ResourceTaggingTaggedResourceObjectWorkerVersionBase {const ResourceTaggingTaggedResourceObjectWorkerVersionBase({required this.etag, required this.id, required this.name, required this.tags, required this.workerId, });
 
 factory ResourceTaggingTaggedResourceObjectWorkerVersionBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingTaggedResourceObjectWorkerVersionBase(
   etag: ResourceTaggingEtag.fromJson(json['etag'] as String),

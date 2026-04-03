@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_branch_protection_request_required_status_checks_checks.dart';/// Require status checks to pass before merging. Set to `null` to disable.
-final class ReposUpdateBranchProtectionRequestRequiredStatusChecks {const ReposUpdateBranchProtectionRequestRequiredStatusChecks({required this.strict, required this.contexts, this.checks, });
+@immutable final class ReposUpdateBranchProtectionRequestRequiredStatusChecks {const ReposUpdateBranchProtectionRequestRequiredStatusChecks({required this.strict, required this.contexts, this.checks, });
 
 factory ReposUpdateBranchProtectionRequestRequiredStatusChecks.fromJson(Map<String, dynamic> json) { return ReposUpdateBranchProtectionRequestRequiredStatusChecks(
   strict: json['strict'] as bool,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_resource_postal_address.dart';/// 
-final class TaxProductResourceShipFromDetails {const TaxProductResourceShipFromDetails({required this.address});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_postal_address.dart';/// 
+@immutable final class TaxProductResourceShipFromDetails {const TaxProductResourceShipFromDetails({required this.address});
 
 factory TaxProductResourceShipFromDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceShipFromDetails(
   address: TaxProductResourcePostalAddress.fromJson(json['address'] as Map<String, dynamic>),

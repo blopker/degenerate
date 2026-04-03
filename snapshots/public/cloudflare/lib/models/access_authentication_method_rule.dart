@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_authentication_method_rule_auth_method.dart';/// Enforce different MFA options
-final class AccessAuthenticationMethodRule {const AccessAuthenticationMethodRule({required this.authMethod});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_authentication_method_rule_auth_method.dart';/// Enforce different MFA options
+@immutable final class AccessAuthenticationMethodRule {const AccessAuthenticationMethodRule({required this.authMethod});
 
 factory AccessAuthenticationMethodRule.fromJson(Map<String, dynamic> json) { return AccessAuthenticationMethodRule(
   authMethod: AccessAuthenticationMethodRuleAuthMethod.fromJson(json['auth_method'] as Map<String, dynamic>),

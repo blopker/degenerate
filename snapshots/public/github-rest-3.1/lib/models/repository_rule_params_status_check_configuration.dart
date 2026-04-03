@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Required status check
-final class RepositoryRuleParamsStatusCheckConfiguration {const RepositoryRuleParamsStatusCheckConfiguration({required this.context, this.integrationId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Required status check
+@immutable final class RepositoryRuleParamsStatusCheckConfiguration {const RepositoryRuleParamsStatusCheckConfiguration({required this.context, this.integrationId, });
 
 factory RepositoryRuleParamsStatusCheckConfiguration.fromJson(Map<String, dynamic> json) { return RepositoryRuleParamsStatusCheckConfiguration(
   context: json['context'] as String,

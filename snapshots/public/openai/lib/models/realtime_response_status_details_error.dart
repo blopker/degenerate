@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A description of the error that caused the response to fail,
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A description of the error that caused the response to fail,
 /// populated when the `status` is `failed`.
 /// 
-final class RealtimeResponseStatusDetailsError {const RealtimeResponseStatusDetailsError({this.type, this.code, });
+@immutable final class RealtimeResponseStatusDetailsError {const RealtimeResponseStatusDetailsError({this.type, this.code, });
 
 factory RealtimeResponseStatusDetailsError.fromJson(Map<String, dynamic> json) { return RealtimeResponseStatusDetailsError(
   type: json['type'] as String?,

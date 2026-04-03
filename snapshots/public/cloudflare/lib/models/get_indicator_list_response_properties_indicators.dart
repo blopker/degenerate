@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'get_indicator_list_response_properties_indicators_items.dart';final class GetIndicatorListResponsePropertiesIndicators {const GetIndicatorListResponsePropertiesIndicators({required this.items, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_indicator_list_response_properties_indicators_items.dart';@immutable final class GetIndicatorListResponsePropertiesIndicators {const GetIndicatorListResponsePropertiesIndicators({required this.items, required this.type, });
 
 factory GetIndicatorListResponsePropertiesIndicators.fromJson(Map<String, dynamic> json) { return GetIndicatorListResponsePropertiesIndicators(
   items: GetIndicatorListResponsePropertiesIndicatorsItems.fromJson(json['items'] as Map<String, dynamic>),

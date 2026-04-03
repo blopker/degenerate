@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_email_routing_timeseries_group_by_dmarc_response_result_meta.dart';import 'radar_get_email_routing_timeseries_group_by_dmarc_response_result_serie0.dart';final class RadarGetEmailRoutingTimeseriesGroupByDmarcResponseResult {const RadarGetEmailRoutingTimeseriesGroupByDmarcResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_timeseries_group_by_dmarc_response_result_meta.dart';import 'radar_get_email_routing_timeseries_group_by_dmarc_response_result_serie0.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByDmarcResponseResult {const RadarGetEmailRoutingTimeseriesGroupByDmarcResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetEmailRoutingTimeseriesGroupByDmarcResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupByDmarcResponseResult(
   meta: RadarGetEmailRoutingTimeseriesGroupByDmarcResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

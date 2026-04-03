@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of response format being defined. Always `json_schema`.
-final class TextResponseFormatJsonSchemaType {const TextResponseFormatJsonSchemaType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of response format being defined. Always `json_schema`.
+@immutable final class TextResponseFormatJsonSchemaType {const TextResponseFormatJsonSchemaType._(this.value);
 
 factory TextResponseFormatJsonSchemaType.fromJson(String json) { return switch (json) {
   'json_schema' => jsonSchema,
@@ -25,13 +25,13 @@ bool get isUnknown { return !values.contains(this); }
 /// JSON Schema response format. Used to generate structured JSON responses.
 /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
 /// 
-final class TextResponseFormatJsonSchema {const TextResponseFormatJsonSchema({required this.type, this.description, required this.name, required this.schema, this.strict, });
+@immutable final class TextResponseFormatJsonSchema {const TextResponseFormatJsonSchema({required this.type, required this.name, required this.schema, this.description, this.strict, });
 
 factory TextResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) { return TextResponseFormatJsonSchema(
   type: TextResponseFormatJsonSchemaType.fromJson(json['type'] as String),
   description: json['description'] as String?,
   name: json['name'] as String,
-  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  schema: json['schema'] as Map<String, dynamic>,
   strict: json['strict'] as bool?,
 ); }
 

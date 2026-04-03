@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents._(this.value);
 
 factory RealtimekitPatchWebhookRequestEvents.fromJson(String json) { return switch (json) {
   'meeting.started' => meetingStarted,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitPatchWebhookRequestEvents($value)'; } 
  }
-final class RealtimekitPatchWebhookRequest {const RealtimekitPatchWebhookRequest({this.enabled = true, this.events, this.name, this.url, });
+@immutable final class RealtimekitPatchWebhookRequest {const RealtimekitPatchWebhookRequest({this.enabled = true, this.events, this.name, this.url, });
 
 factory RealtimekitPatchWebhookRequest.fromJson(Map<String, dynamic> json) { return RealtimekitPatchWebhookRequest(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,

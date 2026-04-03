@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_analytics_report_bytime_data.dart';import 'dns_analytics_report_bytime_query.dart';final class DnsAnalyticsReportBytime {const DnsAnalyticsReportBytime({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, required this.timeIntervals, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_analytics_report_bytime_data.dart';import 'dns_analytics_report_bytime_query.dart';@immutable final class DnsAnalyticsReportBytime {const DnsAnalyticsReportBytime({required this.data, required this.dataLag, required this.max, required this.min, required this.query, required this.rows, required this.totals, required this.timeIntervals, });
 
 factory DnsAnalyticsReportBytime.fromJson(Map<String, dynamic> json) { return DnsAnalyticsReportBytime(
   data: (json['data'] as List<dynamic>).map((e) => DnsAnalyticsReportBytimeData.fromJson(e as Map<String, dynamic>)).toList(),
   dataLag: (json['data_lag'] as num).toDouble(),
-  max: (json['max'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  min: (json['min'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  max: json['max'] as Map<String, dynamic>,
+  min: json['min'] as Map<String, dynamic>,
   query: DnsAnalyticsReportBytimeQuery.fromJson(json['query'] as Map<String, dynamic>),
   rows: (json['rows'] as num).toDouble(),
-  totals: (json['totals'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  totals: json['totals'] as Map<String, dynamic>,
   timeIntervals: (json['time_intervals'] as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => DateTime.parse(e as String)).toList()).toList(),
 ); }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposCreateAttestationResponse {const ReposCreateAttestationResponse({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateAttestationResponse {const ReposCreateAttestationResponse({this.id});
 
 factory ReposCreateAttestationResponse.fromJson(Map<String, dynamic> json) { return ReposCreateAttestationResponse(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

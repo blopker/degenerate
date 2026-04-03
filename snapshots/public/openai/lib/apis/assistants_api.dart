@@ -267,11 +267,11 @@ return execute(
 /// Create a run.
 ///
 /// `POST /threads/{thread_id}/runs`
-Future<ApiResult<RunObject, Never>> createRun({required String threadId, List<CreateRunInclude>? include, required CreateRunRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RunObject, Never>> createRun({required String threadId, required CreateRunRequest body, List<CreateRunInclude>? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson()));
 }
 }
 
@@ -373,7 +373,7 @@ if (before != null) {
 }
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson()));
 }
 }
 
@@ -402,7 +402,7 @@ Future<ApiResult<RunStepObject, Never>> getRunStep({required String threadId, re
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include[]', value: item.toJson()));
 }
 }
 

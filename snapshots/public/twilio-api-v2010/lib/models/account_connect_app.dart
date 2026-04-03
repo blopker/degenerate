@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_app_enum_permission.dart';/// The HTTP method we use to call `deauthorize_callback_url`.
-final class AccountConnectAppDeauthorizeCallbackMethod {const AccountConnectAppDeauthorizeCallbackMethod._(this.value);
+@immutable final class AccountConnectAppDeauthorizeCallbackMethod {const AccountConnectAppDeauthorizeCallbackMethod._(this.value);
 
 factory AccountConnectAppDeauthorizeCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountConnectAppDeauthorizeCallbackMethod($value)'; } 
  }
-final class AccountConnectApp {const AccountConnectApp({this.accountSid, this.authorizeRedirectUrl, this.companyName, this.deauthorizeCallbackMethod, this.deauthorizeCallbackUrl, this.description, this.friendlyName, this.homepageUrl, this.permissions, this.sid, this.uri, });
+@immutable final class AccountConnectApp {const AccountConnectApp({this.accountSid, this.authorizeRedirectUrl, this.companyName, this.deauthorizeCallbackMethod, this.deauthorizeCallbackUrl, this.description, this.friendlyName, this.homepageUrl, this.permissions, this.sid, this.uri, });
 
 factory AccountConnectApp.fromJson(Map<String, dynamic> json) { return AccountConnectApp(
   accountSid: json['account_sid'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'terminal_reader_reader_resource_cart.dart';/// Type of information to be displayed by the reader. Only `cart` is currently supported.
-final class TerminalReaderReaderResourceSetReaderDisplayActionType {const TerminalReaderReaderResourceSetReaderDisplayActionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_cart.dart';/// Type of information to be displayed by the reader. Only `cart` is currently supported.
+@immutable final class TerminalReaderReaderResourceSetReaderDisplayActionType {const TerminalReaderReaderResourceSetReaderDisplayActionType._(this.value);
 
 factory TerminalReaderReaderResourceSetReaderDisplayActionType.fromJson(String json) { return switch (json) {
   'cart' => cart,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderReaderResourceSetReaderDisplayActionType($value)'; } 
  }
 /// Represents a reader action to set the reader display
-final class TerminalReaderReaderResourceSetReaderDisplayAction {const TerminalReaderReaderResourceSetReaderDisplayAction({this.cart, required this.type, });
+@immutable final class TerminalReaderReaderResourceSetReaderDisplayAction {const TerminalReaderReaderResourceSetReaderDisplayAction({required this.type, this.cart, });
 
 factory TerminalReaderReaderResourceSetReaderDisplayAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceSetReaderDisplayAction(
   cart: json['cart'] != null ? TerminalReaderReaderResourceCart.fromJson(json['cart'] as Map<String, dynamic>) : null,

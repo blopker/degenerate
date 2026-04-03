@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `response.mcp_call.in_progress`.
-final class RealtimeServerEventResponseMcpCallInProgressType {const RealtimeServerEventResponseMcpCallInProgressType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call.in_progress`.
+@immutable final class RealtimeServerEventResponseMcpCallInProgressType {const RealtimeServerEventResponseMcpCallInProgressType._(this.value);
 
 factory RealtimeServerEventResponseMcpCallInProgressType.fromJson(String json) { return switch (json) {
   'response.mcp_call.in_progress' => responseMcpCallInProgress,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeServerEventResponseMcpCallInProgressType($value)'; } 
  }
 /// Returned when an MCP tool call has started and is in progress.
-final class RealtimeServerEventResponseMcpCallInProgress {const RealtimeServerEventResponseMcpCallInProgress({required this.eventId, required this.type, required this.outputIndex, required this.itemId, });
+@immutable final class RealtimeServerEventResponseMcpCallInProgress {const RealtimeServerEventResponseMcpCallInProgress({required this.eventId, required this.type, required this.outputIndex, required this.itemId, });
 
 factory RealtimeServerEventResponseMcpCallInProgress.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseMcpCallInProgress(
   eventId: json['event_id'] as String,

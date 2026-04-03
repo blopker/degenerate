@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';final class ActionsListSelectedReposForOrgSecretResponse {const ActionsListSelectedReposForOrgSecretResponse({required this.totalCount, required this.repositories, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';@immutable final class ActionsListSelectedReposForOrgSecretResponse {const ActionsListSelectedReposForOrgSecretResponse({required this.totalCount, required this.repositories, });
 
 factory ActionsListSelectedReposForOrgSecretResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelectedReposForOrgSecretResponse(
   totalCount: (json['total_count'] as num).toInt(),

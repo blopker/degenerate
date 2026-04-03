@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_subscription_migrate_request_billing_mode.dart';final class PostSubscriptionsSubscriptionMigrateRequest {const PostSubscriptionsSubscriptionMigrateRequest({required this.billingMode, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_subscription_migrate_request_billing_mode.dart';@immutable final class PostSubscriptionsSubscriptionMigrateRequest {const PostSubscriptionsSubscriptionMigrateRequest({required this.billingMode, this.expand, });
 
 factory PostSubscriptionsSubscriptionMigrateRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionMigrateRequest(
   billingMode: PostSubscriptionsSubscriptionMigrateRequestBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>),

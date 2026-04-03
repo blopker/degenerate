@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_macros_report_exception_result.dart';import 'mconn_coded_message.dart';final class MconnAdminMacrosReportExceptionSuccess {const MconnAdminMacrosReportExceptionSuccess({this.errors, this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_macros_report_exception_result.dart';import 'mconn_coded_message.dart';@immutable final class MconnAdminMacrosReportExceptionSuccess {const MconnAdminMacrosReportExceptionSuccess({required this.success, required this.result, this.errors, this.messages, });
 
 factory MconnAdminMacrosReportExceptionSuccess.fromJson(Map<String, dynamic> json) { return MconnAdminMacrosReportExceptionSuccess(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => MconnCodedMessage.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `input_audio_buffer.speech_stopped`.
-final class RealtimeServerEventInputAudioBufferSpeechStoppedType {const RealtimeServerEventInputAudioBufferSpeechStoppedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.speech_stopped`.
+@immutable final class RealtimeServerEventInputAudioBufferSpeechStoppedType {const RealtimeServerEventInputAudioBufferSpeechStoppedType._(this.value);
 
 factory RealtimeServerEventInputAudioBufferSpeechStoppedType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.speech_stopped' => inputAudioBufferSpeechStopped,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// the audio buffer. The server will also send an `conversation.item.created`
 /// event with the user message item that is created from the audio buffer.
 /// 
-final class RealtimeServerEventInputAudioBufferSpeechStopped {const RealtimeServerEventInputAudioBufferSpeechStopped({required this.eventId, required this.type, required this.audioEndMs, required this.itemId, });
+@immutable final class RealtimeServerEventInputAudioBufferSpeechStopped {const RealtimeServerEventInputAudioBufferSpeechStopped({required this.eventId, required this.type, required this.audioEndMs, required this.itemId, });
 
 factory RealtimeServerEventInputAudioBufferSpeechStopped.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferSpeechStopped(
   eventId: json['event_id'] as String,

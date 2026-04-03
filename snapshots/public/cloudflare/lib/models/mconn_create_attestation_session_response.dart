@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_controller_attestation_session.dart';final class MconnCreateAttestationSessionResponse {const MconnCreateAttestationSessionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_controller_attestation_session.dart';@immutable final class MconnCreateAttestationSessionResponse {const MconnCreateAttestationSessionResponse({this.result});
 
 factory MconnCreateAttestationSessionResponse.fromJson(Map<String, dynamic> json) { return MconnCreateAttestationSessionResponse(
   result: json['result'] != null ? MconnControllerAttestationSession.fromJson(json['result'] as Map<String, dynamic>) : null,

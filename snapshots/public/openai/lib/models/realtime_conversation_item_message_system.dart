@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item_message_system_content.dart';/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
-final class RealtimeConversationItemMessageSystemObject {const RealtimeConversationItemMessageSystemObject._(this.value);
+@immutable final class RealtimeConversationItemMessageSystemObject {const RealtimeConversationItemMessageSystemObject._(this.value);
 
 factory RealtimeConversationItemMessageSystemObject.fromJson(String json) { return switch (json) {
   'realtime.item' => realtimeItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageSystemObject($value)'; } 
  }
 /// The type of the item. Always `message`.
-final class RealtimeConversationItemMessageSystemType {const RealtimeConversationItemMessageSystemType._(this.value);
+@immutable final class RealtimeConversationItemMessageSystemType {const RealtimeConversationItemMessageSystemType._(this.value);
 
 factory RealtimeConversationItemMessageSystemType.fromJson(String json) { return switch (json) {
   'message' => message,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageSystemType($value)'; } 
  }
 /// The status of the item. Has no effect on the conversation.
-final class RealtimeConversationItemMessageSystemStatus {const RealtimeConversationItemMessageSystemStatus._(this.value);
+@immutable final class RealtimeConversationItemMessageSystemStatus {const RealtimeConversationItemMessageSystemStatus._(this.value);
 
 factory RealtimeConversationItemMessageSystemStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageSystemStatus($value)'; } 
  }
 /// The role of the message sender. Always `system`.
-final class RealtimeConversationItemMessageSystemRole {const RealtimeConversationItemMessageSystemRole._(this.value);
+@immutable final class RealtimeConversationItemMessageSystemRole {const RealtimeConversationItemMessageSystemRole._(this.value);
 
 factory RealtimeConversationItemMessageSystemRole.fromJson(String json) { return switch (json) {
   'system' => system,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemMessageSystemRole($value)'; } 
  }
 /// A system message in a Realtime conversation can be used to provide additional context or instructions to the model. This is similar but distinct from the instruction prompt provided at the start of a conversation, as system messages can be added at any point in the conversation. For major changes to the conversation's behavior, use instructions, but for smaller updates (e.g. "the user is now asking about a different topic"), use system messages.
-final class RealtimeConversationItemMessageSystem {const RealtimeConversationItemMessageSystem({this.id, this.object, required this.type, this.status, required this.role, required this.content, });
+@immutable final class RealtimeConversationItemMessageSystem {const RealtimeConversationItemMessageSystem({required this.type, required this.role, required this.content, this.id, this.object, this.status, });
 
 factory RealtimeConversationItemMessageSystem.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageSystem(
   id: json['id'] as String?,

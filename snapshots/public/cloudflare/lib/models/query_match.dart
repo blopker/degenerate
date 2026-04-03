@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class QueryMatch {const QueryMatch({this.matches, this.total, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class QueryMatch {const QueryMatch({this.matches, this.total, });
 
 factory QueryMatch.fromJson(Map<String, dynamic> json) { return QueryMatch(
-  matches: (json['matches'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  matches: (json['matches'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   total: json['total'] != null ? (json['total'] as num).toInt() : null,
 ); }
 

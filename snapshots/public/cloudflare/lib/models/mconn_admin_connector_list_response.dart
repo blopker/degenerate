@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_connector.dart';final class MconnAdminConnectorListResponse {const MconnAdminConnectorListResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_connector.dart';@immutable final class MconnAdminConnectorListResponse {const MconnAdminConnectorListResponse({this.result});
 
 factory MconnAdminConnectorListResponse.fromJson(Map<String, dynamic> json) { return MconnAdminConnectorListResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => MconnAdminConnector.fromJson(e as Map<String, dynamic>)).toList(),

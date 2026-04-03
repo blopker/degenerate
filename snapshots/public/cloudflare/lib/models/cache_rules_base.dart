@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CacheRulesBase {const CacheRulesBase({required this.id, this.modifiedOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CacheRulesBase {const CacheRulesBase({required this.id, this.modifiedOn, });
 
 factory CacheRulesBase.fromJson(Map<String, dynamic> json) { return CacheRulesBase(
   id: json['id'] as String,

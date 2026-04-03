@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_comment.dart';import 'secrets_store_secret_name.dart';final class SecretsStoreDuplicateSecretObject {const SecretsStoreDuplicateSecretObject({this.comment, required this.name, required this.scopes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_comment.dart';import 'secrets_store_secret_name.dart';@immutable final class SecretsStoreDuplicateSecretObject {const SecretsStoreDuplicateSecretObject({required this.name, required this.scopes, this.comment, });
 
 factory SecretsStoreDuplicateSecretObject.fromJson(Map<String, dynamic> json) { return SecretsStoreDuplicateSecretObject(
   comment: json['comment'] != null ? SecretsStoreComment.fromJson(json['comment'] as String) : null,

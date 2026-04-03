@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'insights_resources_payment_evaluation_merchant_blocked.dart';import 'insights_resources_payment_evaluation_rejected.dart';import 'insights_resources_payment_evaluation_succeeded.dart';/// Indicates the outcome of the payment evaluation.
-final class InsightsResourcesPaymentEvaluationOutcomeType {const InsightsResourcesPaymentEvaluationOutcomeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_merchant_blocked.dart';import 'insights_resources_payment_evaluation_rejected.dart';import 'insights_resources_payment_evaluation_succeeded.dart';/// Indicates the outcome of the payment evaluation.
+@immutable final class InsightsResourcesPaymentEvaluationOutcomeType {const InsightsResourcesPaymentEvaluationOutcomeType._(this.value);
 
 factory InsightsResourcesPaymentEvaluationOutcomeType.fromJson(String json) { return switch (json) {
   'failed' => failed,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationOutcomeType($value)'; } 
  }
 /// Outcome details for this payment evaluation.
-final class InsightsResourcesPaymentEvaluationOutcome {const InsightsResourcesPaymentEvaluationOutcome({this.merchantBlocked, this.paymentIntentId, this.rejected, this.succeeded, required this.type, });
+@immutable final class InsightsResourcesPaymentEvaluationOutcome {const InsightsResourcesPaymentEvaluationOutcome({required this.type, this.merchantBlocked, this.paymentIntentId, this.rejected, this.succeeded, });
 
 factory InsightsResourcesPaymentEvaluationOutcome.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationOutcome(
   merchantBlocked: json['merchant_blocked'] != null ? InsightsResourcesPaymentEvaluationMerchantBlocked.fromJson(json['merchant_blocked'] as Map<String, dynamic>) : null,

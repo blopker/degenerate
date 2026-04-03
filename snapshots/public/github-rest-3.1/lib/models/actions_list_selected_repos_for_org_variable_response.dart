@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';final class ActionsListSelectedReposForOrgVariableResponse {const ActionsListSelectedReposForOrgVariableResponse({required this.totalCount, required this.repositories, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';@immutable final class ActionsListSelectedReposForOrgVariableResponse {const ActionsListSelectedReposForOrgVariableResponse({required this.totalCount, required this.repositories, });
 
 factory ActionsListSelectedReposForOrgVariableResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelectedReposForOrgVariableResponse(
   totalCount: (json['total_count'] as num).toInt(),

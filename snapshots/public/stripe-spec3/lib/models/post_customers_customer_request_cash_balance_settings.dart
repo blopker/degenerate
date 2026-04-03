@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCustomersCustomerRequestCashBalanceSettingsReconciliationMode {const PostCustomersCustomerRequestCashBalanceSettingsReconciliationMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerRequestCashBalanceSettingsReconciliationMode {const PostCustomersCustomerRequestCashBalanceSettingsReconciliationMode._(this.value);
 
 factory PostCustomersCustomerRequestCashBalanceSettingsReconciliationMode.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerRequestCashBalanceSettingsReconciliationMode($value)'; } 
  }
-final class PostCustomersCustomerRequestCashBalanceSettings {const PostCustomersCustomerRequestCashBalanceSettings({this.reconciliationMode});
+@immutable final class PostCustomersCustomerRequestCashBalanceSettings {const PostCustomersCustomerRequestCashBalanceSettings({this.reconciliationMode});
 
 factory PostCustomersCustomerRequestCashBalanceSettings.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerRequestCashBalanceSettings(
   reconciliationMode: json['reconciliation_mode'] != null ? PostCustomersCustomerRequestCashBalanceSettingsReconciliationMode.fromJson(json['reconciliation_mode'] as String) : null,

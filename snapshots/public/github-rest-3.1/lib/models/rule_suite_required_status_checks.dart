@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rule_suite_required_status_checks_checks.dart';/// Metadata for a required status checks rule evaluation result.
-final class RuleSuiteRequiredStatusChecks {const RuleSuiteRequiredStatusChecks({this.checks});
+@immutable final class RuleSuiteRequiredStatusChecks {const RuleSuiteRequiredStatusChecks({this.checks});
 
 factory RuleSuiteRequiredStatusChecks.fromJson(Map<String, dynamic> json) { return RuleSuiteRequiredStatusChecks(
   checks: (json['checks'] as List<dynamic>?)?.map((e) => RuleSuiteRequiredStatusChecksChecks.fromJson(e as Map<String, dynamic>)).toList(),

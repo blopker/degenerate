@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_options_customer_balance_bank_transfer.dart';/// The funding method type to be used when there are not enough funds in the customer balance. Permitted values include: `bank_transfer`.
-final class PaymentMethodOptionsCustomerBalanceFundingType {const PaymentMethodOptionsCustomerBalanceFundingType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_customer_balance_bank_transfer.dart';/// The funding method type to be used when there are not enough funds in the customer balance. Permitted values include: `bank_transfer`.
+@immutable final class PaymentMethodOptionsCustomerBalanceFundingType {const PaymentMethodOptionsCustomerBalanceFundingType._(this.value);
 
 factory PaymentMethodOptionsCustomerBalanceFundingType.fromJson(String json) { return switch (json) {
   'bank_transfer' => bankTransfer,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class PaymentMethodOptionsCustomerBalanceSetupFutureUsage {const PaymentMethodOptionsCustomerBalanceSetupFutureUsage._(this.value);
+@immutable final class PaymentMethodOptionsCustomerBalanceSetupFutureUsage {const PaymentMethodOptionsCustomerBalanceSetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsCustomerBalanceSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsCustomerBalanceSetupFutureUsage($value)'; } 
  }
 /// 
-final class PaymentMethodOptionsCustomerBalance {const PaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsCustomerBalance {const PaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsCustomerBalance.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCustomerBalance(
   bankTransfer: json['bank_transfer'] != null ? PaymentMethodOptionsCustomerBalanceBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,

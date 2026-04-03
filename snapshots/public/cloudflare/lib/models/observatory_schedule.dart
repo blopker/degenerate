@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'observatory_region.dart';import 'observatory_schedule_frequency.dart';import 'observatory_url.dart';/// The test schedule.
-final class ObservatorySchedule {const ObservatorySchedule({this.frequency, this.region, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_region.dart';import 'observatory_schedule_frequency.dart';import 'observatory_url.dart';/// The test schedule.
+@immutable final class ObservatorySchedule {const ObservatorySchedule({this.frequency, this.region, this.url, });
 
 factory ObservatorySchedule.fromJson(Map<String, dynamic> json) { return ObservatorySchedule(
   frequency: json['frequency'] != null ? ObservatoryScheduleFrequency.fromJson(json['frequency'] as String) : null,

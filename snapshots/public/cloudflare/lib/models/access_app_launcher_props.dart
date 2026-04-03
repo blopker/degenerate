@@ -28,7 +28,7 @@ factory AccessSkipAppLauncherLoginPage.fromJson(bool json) => AccessSkipAppLaunc
 bool toJson() => value;
 
 }
-final class AccessAppLauncherProps {const AccessAppLauncherProps({this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain, this.name, this.sessionDuration, required this.type, this.appLauncherLogoUrl, this.bgColor, this.footerLinks, this.headerBgColor, this.landingPageDesign, this.skipAppLauncherLoginPage, });
+@immutable final class AccessAppLauncherProps {const AccessAppLauncherProps({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain, this.name, this.sessionDuration, this.appLauncherLogoUrl, this.bgColor, this.footerLinks, this.headerBgColor, this.landingPageDesign, this.skipAppLauncherLoginPage, });
 
 factory AccessAppLauncherProps.fromJson(Map<String, dynamic> json) { return AccessAppLauncherProps(
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),

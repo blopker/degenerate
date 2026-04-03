@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_us_bank_account_financial_connections_filters.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_us_bank_account_financial_connections_filters.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch._(this.value);
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections({this.filters, this.permissions, this.prefetch, this.returnUrl, });
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections({this.filters, this.permissions, this.prefetch, this.returnUrl, });
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnections(
   filters: json['filters'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,

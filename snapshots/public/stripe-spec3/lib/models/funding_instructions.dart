@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'funding_instructions_bank_transfer.dart';/// The `funding_type` of the returned instructions
-final class FundingInstructionsFundingType {const FundingInstructionsFundingType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'funding_instructions_bank_transfer.dart';/// The `funding_type` of the returned instructions
+@immutable final class FundingInstructionsFundingType {const FundingInstructionsFundingType._(this.value);
 
 factory FundingInstructionsFundingType.fromJson(String json) { return switch (json) {
   'bank_transfer' => bankTransfer,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FundingInstructionsFundingType($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class FundingInstructionsObject {const FundingInstructionsObject._(this.value);
+@immutable final class FundingInstructionsObject {const FundingInstructionsObject._(this.value);
 
 factory FundingInstructionsObject.fromJson(String json) { return switch (json) {
   'funding_instructions' => fundingInstructions,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Customers can fund this balance by initiating a bank transfer to any account in the
 /// `financial_addresses` field.
 /// Related guide: [Customer balance funding instructions](https://docs.stripe.com/payments/customer-balance/funding-instructions)
-final class FundingInstructions {const FundingInstructions({required this.bankTransfer, required this.currency, required this.fundingType, required this.livemode, required this.object, });
+@immutable final class FundingInstructions {const FundingInstructions({required this.bankTransfer, required this.currency, required this.fundingType, required this.livemode, required this.object, });
 
 factory FundingInstructions.fromJson(Map<String, dynamic> json) { return FundingInstructions(
   bankTransfer: FundingInstructionsBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'domain_properties.dart';final class DomainResponseCollection {const DomainResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'domain_properties.dart';@immutable final class DomainResponseCollection {const DomainResponseCollection({this.result});
 
 factory DomainResponseCollection.fromJson(Map<String, dynamic> json) { return DomainResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => DomainProperties.fromJson(e as Map<String, dynamic>)).toList(),

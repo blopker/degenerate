@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetSearchGlobalInclude {const RadarGetSearchGlobalInclude._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetSearchGlobalInclude {const RadarGetSearchGlobalInclude._(this.value);
 
 factory RadarGetSearchGlobalInclude.fromJson(String json) { return switch (json) {
   'ADM1S' => adm1S,

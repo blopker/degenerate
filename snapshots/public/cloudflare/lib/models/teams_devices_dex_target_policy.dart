@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesDexTargetPolicy {const TeamsDevicesDexTargetPolicy({this.$default, this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesDexTargetPolicy {const TeamsDevicesDexTargetPolicy({this.$default, this.id, this.name, });
 
 factory TeamsDevicesDexTargetPolicy.fromJson(Map<String, dynamic> json) { return TeamsDevicesDexTargetPolicy(
   $default: json['default'] as bool?,

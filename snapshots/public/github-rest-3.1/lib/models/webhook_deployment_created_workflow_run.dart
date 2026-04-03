@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_created_workflow_run_actor.dart';import 'webhook_deployment_created_workflow_run_head_repository.dart';import 'webhook_deployment_created_workflow_run_pull_requests.dart';import 'webhook_deployment_created_workflow_run_referenced_workflows.dart';import 'webhook_deployment_created_workflow_run_repository.dart';import 'webhook_deployment_created_workflow_run_triggering_actor.dart';final class WebhookDeploymentCreatedWorkflowRunConclusion {const WebhookDeploymentCreatedWorkflowRunConclusion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_created_workflow_run_actor.dart';import 'webhook_deployment_created_workflow_run_head_repository.dart';import 'webhook_deployment_created_workflow_run_pull_requests.dart';import 'webhook_deployment_created_workflow_run_referenced_workflows.dart';import 'webhook_deployment_created_workflow_run_repository.dart';import 'webhook_deployment_created_workflow_run_triggering_actor.dart';@immutable final class WebhookDeploymentCreatedWorkflowRunConclusion {const WebhookDeploymentCreatedWorkflowRunConclusion._(this.value);
 
 factory WebhookDeploymentCreatedWorkflowRunConclusion.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentCreatedWorkflowRunConclusion($value)'; } 
  }
-final class WebhookDeploymentCreatedWorkflowRunStatus {const WebhookDeploymentCreatedWorkflowRunStatus._(this.value);
+@immutable final class WebhookDeploymentCreatedWorkflowRunStatus {const WebhookDeploymentCreatedWorkflowRunStatus._(this.value);
 
 factory WebhookDeploymentCreatedWorkflowRunStatus.fromJson(String json) { return switch (json) {
   'requested' => requested,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentCreatedWorkflowRunStatus($value)'; } 
  }
-final class WebhookDeploymentCreatedWorkflowRun {const WebhookDeploymentCreatedWorkflowRun({required this.actor, this.artifactsUrl, this.cancelUrl, required this.checkSuiteId, required this.checkSuiteNodeId, this.checkSuiteUrl, required this.conclusion, required this.createdAt, required this.displayTitle, required this.event, required this.headBranch, this.headCommit, this.headRepository, required this.headSha, required this.htmlUrl, required this.id, this.jobsUrl, this.logsUrl, required this.name, required this.nodeId, required this.path, this.previousAttemptUrl, required this.pullRequests, this.referencedWorkflows, this.repository, this.rerunUrl, required this.runAttempt, required this.runNumber, required this.runStartedAt, required this.status, this.triggeringActor, required this.updatedAt, required this.url, required this.workflowId, this.workflowUrl, });
+@immutable final class WebhookDeploymentCreatedWorkflowRun {const WebhookDeploymentCreatedWorkflowRun({required this.status, required this.checkSuiteId, required this.checkSuiteNodeId, required this.pullRequests, required this.conclusion, required this.createdAt, required this.displayTitle, required this.event, required this.headBranch, required this.actor, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.path, required this.runStartedAt, required this.runNumber, required this.url, required this.updatedAt, required this.workflowId, required this.runAttempt, this.workflowUrl, this.referencedWorkflows, this.repository, this.rerunUrl, this.previousAttemptUrl, this.logsUrl, this.jobsUrl, this.headRepository, this.triggeringActor, this.headCommit, this.cancelUrl, this.artifactsUrl, this.checkSuiteUrl, });
 
 factory WebhookDeploymentCreatedWorkflowRun.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreatedWorkflowRun(
   actor: json['actor'] != null ? WebhookDeploymentCreatedWorkflowRunActor.fromJson(json['actor'] as Map<String, dynamic>) : null,

@@ -1,3 +1,6 @@
+// Ok to print in this file
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 
 import 'package:degenerate_http/degenerate_http.dart';
@@ -12,10 +15,13 @@ void main() async {
     ApiConfig(
       client: client,
       interceptors: [
-        LoggingInterceptor(),
-        RetryInterceptor(maxRetries: 2, initialDelay: Duration(seconds: 1)),
+        const LoggingInterceptor(),
+        const RetryInterceptor(
+          maxRetries: 2,
+          initialDelay: Duration(seconds: 1),
+        ),
       ],
-      timeout: Duration(seconds: 10),
+      timeout: const Duration(seconds: 10),
     ),
   );
 
@@ -68,7 +74,7 @@ void main() async {
     // ── Place an order ───────────────────────────────────────────
     print('\n=== Placing an order ===');
     final orderResult = await sdk.store.placeOrder(
-      body: Order(
+      body: const Order(
         petId: 1,
         quantity: 1,
         status: OrderStatus.placed,

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'file_expiration_after.dart';/// The intended purpose of the uploaded file.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_expiration_after.dart';/// The intended purpose of the uploaded file.
 /// 
 /// See the [documentation on File
 /// purposes](/docs/api-reference/files/create#files-create-purpose).
 /// 
-final class CreateUploadRequestPurpose {const CreateUploadRequestPurpose._(this.value);
+@immutable final class CreateUploadRequestPurpose {const CreateUploadRequestPurpose._(this.value);
 
 factory CreateUploadRequestPurpose.fromJson(String json) { return switch (json) {
   'assistants' => assistants,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateUploadRequestPurpose($value)'; } 
  }
-final class CreateUploadRequest {const CreateUploadRequest({required this.filename, required this.purpose, required this.bytes, required this.mimeType, this.expiresAfter, });
+@immutable final class CreateUploadRequest {const CreateUploadRequest({required this.filename, required this.purpose, required this.bytes, required this.mimeType, this.expiresAfter, });
 
 factory CreateUploadRequest.fromJson(Map<String, dynamic> json) { return CreateUploadRequest(
   filename: json['filename'] as String,

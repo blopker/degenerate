@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionCardAwaitNotification {const PaymentIntentNextActionCardAwaitNotification({this.chargeAttemptAt, this.customerApprovalRequired, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionCardAwaitNotification {const PaymentIntentNextActionCardAwaitNotification({this.chargeAttemptAt, this.customerApprovalRequired, });
 
 factory PaymentIntentNextActionCardAwaitNotification.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionCardAwaitNotification(
   chargeAttemptAt: json['charge_attempt_at'] != null ? (json['charge_attempt_at'] as num).toInt() : null,

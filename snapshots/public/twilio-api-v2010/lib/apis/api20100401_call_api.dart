@@ -81,7 +81,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'To=${Uri.encodeQueryComponent(body.to)}',
     'From=${Uri.encodeQueryComponent(body.from)}',
     if (body.method case final method$?)
@@ -192,7 +192,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.url case final url$?)
       'Url=${Uri.encodeQueryComponent(url$.toString())}',
     if (body.method case final method$?)

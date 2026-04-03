@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages49_tools_variant2_function_parameters_properties_value.dart';/// Schema defining the parameters accepted by the function.
-final class Messages49ToolsVariant2FunctionParameters {const Messages49ToolsVariant2FunctionParameters({required this.properties, this.$required, required this.type, });
+@immutable final class Messages49ToolsVariant2FunctionParameters {const Messages49ToolsVariant2FunctionParameters({required this.properties, required this.type, this.$required, });
 
 factory Messages49ToolsVariant2FunctionParameters.fromJson(Map<String, dynamic> json) { return Messages49ToolsVariant2FunctionParameters(
   properties: (json['properties'] as Map<String, dynamic>).map((k, v) => MapEntry(k, Messages49ToolsVariant2FunctionParametersPropertiesValue.fromJson(v as Map<String, dynamic>))),

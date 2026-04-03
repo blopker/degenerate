@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposMergeRequest {const ReposMergeRequest({required this.base, required this.head, this.commitMessage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposMergeRequest {const ReposMergeRequest({required this.base, required this.head, this.commitMessage, });
 
 factory ReposMergeRequest.fromJson(Map<String, dynamic> json) { return ReposMergeRequest(
   base: json['base'] as String,

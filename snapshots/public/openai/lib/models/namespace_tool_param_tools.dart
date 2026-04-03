@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'custom_tool_param.dart';import 'function_tool_param.dart';/// A function or custom tool that belongs to a namespace.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_tool_param.dart';import 'function_tool_param.dart';/// A function or custom tool that belongs to a namespace.
 sealed class NamespaceToolParamTools {const NamespaceToolParamTools();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NamespaceToolParamTools$Unknown; } 
  }
-final class NamespaceToolParamToolsFunction extends NamespaceToolParamTools {const NamespaceToolParamToolsFunction(this.functionToolParam);
+@immutable final class NamespaceToolParamToolsFunction extends NamespaceToolParamTools {const NamespaceToolParamToolsFunction(this.functionToolParam);
 
 factory NamespaceToolParamToolsFunction.fromJson(Map<String, dynamic> json) { return NamespaceToolParamToolsFunction(FunctionToolParam.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final FunctionToolParam functionToolParam;
 @override int get hashCode { return functionToolParam.hashCode; } 
 @override String toString() { return 'NamespaceToolParamToolsFunction(functionToolParam: $functionToolParam)'; } 
  }
-final class NamespaceToolParamToolsCustom extends NamespaceToolParamTools {const NamespaceToolParamToolsCustom(this.customToolParam);
+@immutable final class NamespaceToolParamToolsCustom extends NamespaceToolParamTools {const NamespaceToolParamToolsCustom(this.customToolParam);
 
 factory NamespaceToolParamToolsCustom.fromJson(Map<String, dynamic> json) { return NamespaceToolParamToolsCustom(CustomToolParam.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final CustomToolParam customToolParam;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class NamespaceToolParamTools$Unknown extends NamespaceToolParamTools {const NamespaceToolParamTools$Unknown(this.json);
+@immutable final class NamespaceToolParamTools$Unknown extends NamespaceToolParamTools {const NamespaceToolParamTools$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

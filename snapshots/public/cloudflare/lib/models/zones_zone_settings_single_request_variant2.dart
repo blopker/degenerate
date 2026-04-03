@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_setting_value.dart';final class ZonesZoneSettingsSingleRequestVariant2 {const ZonesZoneSettingsSingleRequestVariant2({this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_setting_value.dart';@immutable final class ZonesZoneSettingsSingleRequestVariant2 {const ZonesZoneSettingsSingleRequestVariant2({this.value});
 
 factory ZonesZoneSettingsSingleRequestVariant2.fromJson(Map<String, dynamic> json) { return ZonesZoneSettingsSingleRequestVariant2(
   value: json['value'] != null ? ZonesSettingValue.fromJson(json['value'] as Map<String, dynamic>) : null,

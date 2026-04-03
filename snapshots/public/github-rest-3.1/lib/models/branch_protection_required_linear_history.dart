@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BranchProtectionRequiredLinearHistory {const BranchProtectionRequiredLinearHistory({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BranchProtectionRequiredLinearHistory {const BranchProtectionRequiredLinearHistory({this.enabled});
 
 factory BranchProtectionRequiredLinearHistory.fromJson(Map<String, dynamic> json) { return BranchProtectionRequiredLinearHistory(
   enabled: json['enabled'] as bool?,

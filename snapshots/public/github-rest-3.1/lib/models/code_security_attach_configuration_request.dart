@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
-final class CodeSecurityAttachConfigurationRequestScope {const CodeSecurityAttachConfigurationRequestScope._(this.value);
+@immutable final class CodeSecurityAttachConfigurationRequestScope {const CodeSecurityAttachConfigurationRequestScope._(this.value);
 
 factory CodeSecurityAttachConfigurationRequestScope.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeSecurityAttachConfigurationRequestScope($value)'; } 
  }
-final class CodeSecurityAttachConfigurationRequest {const CodeSecurityAttachConfigurationRequest({required this.scope, this.selectedRepositoryIds, });
+@immutable final class CodeSecurityAttachConfigurationRequest {const CodeSecurityAttachConfigurationRequest({required this.scope, this.selectedRepositoryIds, });
 
 factory CodeSecurityAttachConfigurationRequest.fromJson(Map<String, dynamic> json) { return CodeSecurityAttachConfigurationRequest(
   scope: CodeSecurityAttachConfigurationRequestScope.fromJson(json['scope'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_balance_resource_cash_balance_transaction_resource_refunded_from_payment_transaction_refund.dart';import 'refund.dart';/// 
-final class CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction {const CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction({required this.refund});
+@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction {const CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction({required this.refund});
 
 factory CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(
   refund: OneOf2.parse(json['refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),),

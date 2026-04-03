@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_transcription_session_create_request.dart';/// The event type, must be `transcription_session.update`.
-final class RealtimeClientEventTranscriptionSessionUpdateType {const RealtimeClientEventTranscriptionSessionUpdateType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_transcription_session_create_request.dart';/// The event type, must be `transcription_session.update`.
+@immutable final class RealtimeClientEventTranscriptionSessionUpdateType {const RealtimeClientEventTranscriptionSessionUpdateType._(this.value);
 
 factory RealtimeClientEventTranscriptionSessionUpdateType.fromJson(String json) { return switch (json) {
   'transcription_session.update' => transcriptionSessionUpdate,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Send this event to update a transcription session.
 /// 
-final class RealtimeClientEventTranscriptionSessionUpdate {const RealtimeClientEventTranscriptionSessionUpdate({this.eventId, required this.type, required this.session, });
+@immutable final class RealtimeClientEventTranscriptionSessionUpdate {const RealtimeClientEventTranscriptionSessionUpdate({required this.type, required this.session, this.eventId, });
 
 factory RealtimeClientEventTranscriptionSessionUpdate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventTranscriptionSessionUpdate(
   eventId: json['event_id'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters results by user agent category.
-final class RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory {const RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by user agent category.
+@immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory {const RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory._(this.value);
 
 factory RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory.fromJson(String json) { return switch (json) {
   'AI' => ai,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51MessagesAssistantFunctionCallVariant1 {const Messages51MessagesAssistantFunctionCallVariant1({required this.arguments, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51MessagesAssistantFunctionCallVariant1 {const Messages51MessagesAssistantFunctionCallVariant1({required this.arguments, required this.name, });
 
 factory Messages51MessagesAssistantFunctionCallVariant1.fromJson(Map<String, dynamic> json) { return Messages51MessagesAssistantFunctionCallVariant1(
   arguments: json['arguments'] as String,

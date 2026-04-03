@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_active_session_response_result_idp.dart';import 'access_active_session_response_result_mtls_auth.dart';import 'access_device_session.dart';import 'access_geo.dart';import 'access_schemas_device_posture_rule.dart';final class AccessActiveSessionResponseResult {const AccessActiveSessionResponseResult({this.accountId, this.authStatus, this.commonName, this.deviceId, this.deviceSessions, this.devicePosture, this.email, this.geo, this.iat, this.idp, this.ip, this.isGateway, this.isWarp, this.mtlsAuth, this.serviceTokenId, this.serviceTokenStatus, this.userUuid, this.version, this.isActive, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_active_session_response_result_idp.dart';import 'access_active_session_response_result_mtls_auth.dart';import 'access_device_session.dart';import 'access_geo.dart';import 'access_schemas_device_posture_rule.dart';@immutable final class AccessActiveSessionResponseResult {const AccessActiveSessionResponseResult({this.accountId, this.authStatus, this.commonName, this.deviceId, this.deviceSessions, this.devicePosture, this.email, this.geo, this.iat, this.idp, this.ip, this.isGateway, this.isWarp, this.mtlsAuth, this.serviceTokenId, this.serviceTokenStatus, this.userUuid, this.version, this.isActive, });
 
 factory AccessActiveSessionResponseResult.fromJson(Map<String, dynamic> json) { return AccessActiveSessionResponseResult(
   accountId: json['account_id'] as String?,

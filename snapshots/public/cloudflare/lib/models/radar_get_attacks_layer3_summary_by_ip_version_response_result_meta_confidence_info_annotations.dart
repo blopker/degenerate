@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetAttacksLayer3SummaryByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

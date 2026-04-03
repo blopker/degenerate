@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_attacks_layer3_timeseries_group_by_industry_response_result_meta.dart';import 'radar_get_attacks_layer3_timeseries_group_by_industry_response_result_serie0.dart';final class RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResult {const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_timeseries_group_by_industry_response_result_meta.dart';import 'radar_get_attacks_layer3_timeseries_group_by_industry_response_result_serie0.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResult {const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResult(
   meta: RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

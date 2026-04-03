@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Control options for Audio quality.
-final class RealtimekitPresetConfigMediaAudio {const RealtimekitPresetConfigMediaAudio({this.enableHighBitrate = false, this.enableStereo = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Control options for Audio quality.
+@immutable final class RealtimekitPresetConfigMediaAudio {const RealtimekitPresetConfigMediaAudio({this.enableHighBitrate = false, this.enableStereo = false, });
 
 factory RealtimekitPresetConfigMediaAudio.fromJson(Map<String, dynamic> json) { return RealtimekitPresetConfigMediaAudio(
   enableHighBitrate: json.containsKey('enable_high_bitrate') ? json['enable_high_bitrate'] as bool : false,

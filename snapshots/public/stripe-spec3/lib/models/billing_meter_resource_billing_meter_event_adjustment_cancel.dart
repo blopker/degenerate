@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class BillingMeterResourceBillingMeterEventAdjustmentCancel {const BillingMeterResourceBillingMeterEventAdjustmentCancel({this.identifier});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class BillingMeterResourceBillingMeterEventAdjustmentCancel {const BillingMeterResourceBillingMeterEventAdjustmentCancel({this.identifier});
 
 factory BillingMeterResourceBillingMeterEventAdjustmentCancel.fromJson(Map<String, dynamic> json) { return BillingMeterResourceBillingMeterEventAdjustmentCancel(
   identifier: json['identifier'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Sets the direction by which results are ordered.
-final class SpectrumApplicationsListSpectrumApplicationsDirection {const SpectrumApplicationsListSpectrumApplicationsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sets the direction by which results are ordered.
+@immutable final class SpectrumApplicationsListSpectrumApplicationsDirection {const SpectrumApplicationsListSpectrumApplicationsDirection._(this.value);
 
 factory SpectrumApplicationsListSpectrumApplicationsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

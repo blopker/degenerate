@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ABA Records contain U.S. bank account details per the ABA format.
-final class TreasuryFinancialAccountsResourceAbaRecord {const TreasuryFinancialAccountsResourceAbaRecord({required this.accountHolderName, this.accountNumber, required this.accountNumberLast4, required this.bankName, required this.routingNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ABA Records contain U.S. bank account details per the ABA format.
+@immutable final class TreasuryFinancialAccountsResourceAbaRecord {const TreasuryFinancialAccountsResourceAbaRecord({required this.accountHolderName, required this.accountNumberLast4, required this.bankName, required this.routingNumber, this.accountNumber, });
 
 factory TreasuryFinancialAccountsResourceAbaRecord.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceAbaRecord(
   accountHolderName: json['account_holder_name'] as String,

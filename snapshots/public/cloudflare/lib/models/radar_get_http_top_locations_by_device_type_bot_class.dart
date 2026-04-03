@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopLocationsByDeviceTypeBotClass {const RadarGetHttpTopLocationsByDeviceTypeBotClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByDeviceTypeBotClass {const RadarGetHttpTopLocationsByDeviceTypeBotClass._(this.value);
 
 factory RadarGetHttpTopLocationsByDeviceTypeBotClass.fromJson(String json) { return switch (json) {
   'LIKELY_AUTOMATED' => likelyAutomated,

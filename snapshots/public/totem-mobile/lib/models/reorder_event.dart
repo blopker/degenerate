@@ -3,8 +3,9 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
 /// Keeper reorders the talking order.
+@immutable
 final class ReorderEvent {
-  const ReorderEvent({this.type = 'reorder', required this.talkingOrder});
+  const ReorderEvent({required this.talkingOrder, this.type = 'reorder'});
 
   factory ReorderEvent.fromJson(Map<String, dynamic> json) {
     return ReorderEvent(

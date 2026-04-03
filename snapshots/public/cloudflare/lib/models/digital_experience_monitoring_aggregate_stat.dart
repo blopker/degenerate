@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_aggregate_time_period.dart';final class DigitalExperienceMonitoringAggregateStat {const DigitalExperienceMonitoringAggregateStat({this.avgMs, this.deltaPct, required this.timePeriod, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_aggregate_time_period.dart';@immutable final class DigitalExperienceMonitoringAggregateStat {const DigitalExperienceMonitoringAggregateStat({required this.timePeriod, this.avgMs, this.deltaPct, });
 
 factory DigitalExperienceMonitoringAggregateStat.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringAggregateStat(
   avgMs: json['avgMs'] != null ? (json['avgMs'] as num).toInt() : null,

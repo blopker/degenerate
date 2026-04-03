@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_messages2_source.dart';final class AddressingMessages2 {const AddressingMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_messages2_source.dart';@immutable final class AddressingMessages2 {const AddressingMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory AddressingMessages2.fromJson(Map<String, dynamic> json) { return AddressingMessages2(
   code: (json['code'] as num).toInt(),

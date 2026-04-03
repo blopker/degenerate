@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_variable.dart';final class ActionsListEnvironmentVariablesResponse {const ActionsListEnvironmentVariablesResponse({required this.totalCount, required this.variables, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_variable.dart';@immutable final class ActionsListEnvironmentVariablesResponse {const ActionsListEnvironmentVariablesResponse({required this.totalCount, required this.variables, });
 
 factory ActionsListEnvironmentVariablesResponse.fromJson(Map<String, dynamic> json) { return ActionsListEnvironmentVariablesResponse(
   totalCount: (json['total_count'] as num).toInt(),

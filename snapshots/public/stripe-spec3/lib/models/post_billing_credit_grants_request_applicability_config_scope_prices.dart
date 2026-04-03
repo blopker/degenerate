@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBillingCreditGrantsRequestApplicabilityConfigScopePrices {const PostBillingCreditGrantsRequestApplicabilityConfigScopePrices({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingCreditGrantsRequestApplicabilityConfigScopePrices {const PostBillingCreditGrantsRequestApplicabilityConfigScopePrices({required this.id});
 
 factory PostBillingCreditGrantsRequestApplicabilityConfigScopePrices.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsRequestApplicabilityConfigScopePrices(
   id: json['id'] as String,

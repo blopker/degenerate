@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response2_log_creator.dart';import 'urlscanner_get_scan_har_response2_log_entries.dart';import 'urlscanner_get_scan_har_response2_log_pages.dart';final class UrlscannerGetScanHarResponse2Log {const UrlscannerGetScanHarResponse2Log({required this.creator, required this.entries, required this.pages, required this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response2_log_creator.dart';import 'urlscanner_get_scan_har_response2_log_entries.dart';import 'urlscanner_get_scan_har_response2_log_pages.dart';@immutable final class UrlscannerGetScanHarResponse2Log {const UrlscannerGetScanHarResponse2Log({required this.creator, required this.entries, required this.pages, required this.version, });
 
 factory UrlscannerGetScanHarResponse2Log.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2Log(
   creator: UrlscannerGetScanHarResponse2LogCreator.fromJson(json['creator'] as Map<String, dynamic>),

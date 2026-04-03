@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountSettings {const AccountSettings({required this.abuseContactEmail, required this.accessApprovalExpiry, required this.apiAccessEnabled, required this.defaultNameservers, required this.enforceTwofactor, required this.useAccountCustomNsByDefault, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSettings {const AccountSettings({required this.abuseContactEmail, required this.accessApprovalExpiry, required this.apiAccessEnabled, required this.defaultNameservers, required this.enforceTwofactor, required this.useAccountCustomNsByDefault, });
 
 factory AccountSettings.fromJson(Map<String, dynamic> json) { return AccountSettings(
   abuseContactEmail: json['abuse_contact_email'] as String?,

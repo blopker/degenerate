@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gelato_document_report.dart';import 'gelato_email_report.dart';import 'gelato_id_number_report.dart';import 'gelato_phone_report.dart';import 'gelato_selfie_report.dart';import 'gelato_verification_report_options.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class IdentityVerificationReportObject {const IdentityVerificationReportObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_document_report.dart';import 'gelato_email_report.dart';import 'gelato_id_number_report.dart';import 'gelato_phone_report.dart';import 'gelato_selfie_report.dart';import 'gelato_verification_report_options.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class IdentityVerificationReportObject {const IdentityVerificationReportObject._(this.value);
 
 factory IdentityVerificationReportObject.fromJson(String json) { return switch (json) {
   'identity.verification_report' => identityVerificationReport,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IdentityVerificationReportObject($value)'; } 
  }
 /// Type of report.
-final class IdentityVerificationReportType {const IdentityVerificationReportType._(this.value);
+@immutable final class IdentityVerificationReportType {const IdentityVerificationReportType._(this.value);
 
 factory IdentityVerificationReportType.fromJson(String json) { return switch (json) {
   'document' => document,
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
 /// [VerificationSession](https://docs.stripe.com/api/identity/verification_sessions) API.
 /// 
 /// Related guide: [Accessing verification results](https://docs.stripe.com/identity/verification-sessions#results).
-final class IdentityVerificationReport {const IdentityVerificationReport({this.clientReferenceId, required this.created, this.document, this.email, required this.id, this.idNumber, required this.livemode, required this.object, this.options, this.phone, this.selfie, required this.type, this.verificationFlow, this.verificationSession, });
+@immutable final class IdentityVerificationReport {const IdentityVerificationReport({required this.created, required this.id, required this.livemode, required this.object, required this.type, this.clientReferenceId, this.document, this.email, this.idNumber, this.options, this.phone, this.selfie, this.verificationFlow, this.verificationSession, });
 
 factory IdentityVerificationReport.fromJson(Map<String, dynamic> json) { return IdentityVerificationReport(
   clientReferenceId: json['client_reference_id'] as String?,

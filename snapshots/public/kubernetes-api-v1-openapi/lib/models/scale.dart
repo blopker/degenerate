@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'object_meta.dart';import 'scale_spec.dart';import 'scale_status.dart';/// Scale represents a scaling request for a resource.
-final class Scale {const Scale({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'scale_spec.dart';import 'scale_status.dart';/// Scale represents a scaling request for a resource.
+@immutable final class Scale {const Scale({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
 factory Scale.fromJson(Map<String, dynamic> json) { return Scale(
   apiVersion: json['apiVersion'] as String?,

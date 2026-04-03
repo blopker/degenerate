@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodeScanningCreateAutofixResponse503 {const CodeScanningCreateAutofixResponse503({this.code, this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeScanningCreateAutofixResponse503 {const CodeScanningCreateAutofixResponse503({this.code, this.message, this.documentationUrl, });
 
 factory CodeScanningCreateAutofixResponse503.fromJson(Map<String, dynamic> json) { return CodeScanningCreateAutofixResponse503(
   code: json['code'] as String?,

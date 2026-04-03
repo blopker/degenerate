@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `upload.part`.
-final class UploadPartObject {const UploadPartObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `upload.part`.
+@immutable final class UploadPartObject {const UploadPartObject._(this.value);
 
 factory UploadPartObject.fromJson(String json) { return switch (json) {
   'upload.part' => uploadPart,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The upload Part represents a chunk of bytes we can add to an Upload object.
 /// 
-final class UploadPart {const UploadPart({required this.id, required this.createdAt, required this.uploadId, required this.object, });
+@immutable final class UploadPart {const UploadPart({required this.id, required this.createdAt, required this.uploadId, required this.object, });
 
 factory UploadPart.fromJson(Map<String, dynamic> json) { return UploadPart(
   id: json['id'] as String,

@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `giropay` PaymentMethod, this hash contains details about the Giropay payment method.
-final class PostPaymentMethodsRequestGiropay {const PostPaymentMethodsRequestGiropay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `giropay` PaymentMethod, this hash contains details about the Giropay payment method.
+@immutable final class PostPaymentMethodsRequestGiropay {const PostPaymentMethodsRequestGiropay();
 
-factory PostPaymentMethodsRequestGiropay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestGiropay(
-
-); }
+factory PostPaymentMethodsRequestGiropay.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestGiropay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestGiropay copyWith() { return PostPaymentMethodsRequestGiropay(
+PostPaymentMethodsRequestGiropay copyWith() { return const PostPaymentMethodsRequestGiropay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestGiropay; } 

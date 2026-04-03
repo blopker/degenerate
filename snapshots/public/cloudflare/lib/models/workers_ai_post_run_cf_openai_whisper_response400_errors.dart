@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfOpenaiWhisperResponse400Errors {const WorkersAiPostRunCfOpenaiWhisperResponse400Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfOpenaiWhisperResponse400Errors {const WorkersAiPostRunCfOpenaiWhisperResponse400Errors({required this.code, required this.message, });
 
 factory WorkersAiPostRunCfOpenaiWhisperResponse400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfOpenaiWhisperResponse400Errors(
   code: json['code'] as String,

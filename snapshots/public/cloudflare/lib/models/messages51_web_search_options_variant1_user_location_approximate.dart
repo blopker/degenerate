@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51WebSearchOptionsVariant1UserLocationApproximate {const Messages51WebSearchOptionsVariant1UserLocationApproximate({this.city, this.country, this.region, this.timezone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51WebSearchOptionsVariant1UserLocationApproximate {const Messages51WebSearchOptionsVariant1UserLocationApproximate({this.city, this.country, this.region, this.timezone, });
 
 factory Messages51WebSearchOptionsVariant1UserLocationApproximate.fromJson(Map<String, dynamic> json) { return Messages51WebSearchOptionsVariant1UserLocationApproximate(
   city: json['city'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'field_iteration_configuration.dart';/// The field's data type.
-final class ProjectsAddFieldForUserRequestIterationDataType {const ProjectsAddFieldForUserRequestIterationDataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'field_iteration_configuration.dart';/// The field's data type.
+@immutable final class ProjectsAddFieldForUserRequestIterationDataType {const ProjectsAddFieldForUserRequestIterationDataType._(this.value);
 
 factory ProjectsAddFieldForUserRequestIterationDataType.fromJson(String json) { return switch (json) {
   'iteration' => iteration,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectsAddFieldForUserRequestIterationDataType($value)'; } 
  }
-final class ProjectsAddFieldForUserRequestIteration {const ProjectsAddFieldForUserRequestIteration({required this.name, required this.dataType, required this.iterationConfiguration, });
+@immutable final class ProjectsAddFieldForUserRequestIteration {const ProjectsAddFieldForUserRequestIteration({required this.name, required this.dataType, required this.iterationConfiguration, });
 
 factory ProjectsAddFieldForUserRequestIteration.fromJson(Map<String, dynamic> json) { return ProjectsAddFieldForUserRequestIteration(
   name: json['name'] as String,

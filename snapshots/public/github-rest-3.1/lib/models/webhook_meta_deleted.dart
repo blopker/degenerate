@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_meta_deleted_hook.dart';final class WebhookMetaDeletedAction {const WebhookMetaDeletedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_meta_deleted_hook.dart';@immutable final class WebhookMetaDeletedAction {const WebhookMetaDeletedAction._(this.value);
 
 factory WebhookMetaDeletedAction.fromJson(String json) { return switch (json) {
   'deleted' => deleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMetaDeletedAction($value)'; } 
  }
-final class WebhookMetaDeleted {const WebhookMetaDeleted({required this.action, this.enterprise, required this.hook, required this.hookId, this.installation, this.organization, this.repository, this.sender, });
+@immutable final class WebhookMetaDeleted {const WebhookMetaDeleted({required this.action, required this.hook, required this.hookId, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
 factory WebhookMetaDeleted.fromJson(Map<String, dynamic> json) { return WebhookMetaDeleted(
   action: WebhookMetaDeletedAction.fromJson(json['action'] as String),

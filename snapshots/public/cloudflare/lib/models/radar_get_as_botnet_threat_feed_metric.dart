@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metric to rank ASNs by.
-final class RadarGetAsBotnetThreatFeedMetric {const RadarGetAsBotnetThreatFeedMetric._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metric to rank ASNs by.
+@immutable final class RadarGetAsBotnetThreatFeedMetric {const RadarGetAsBotnetThreatFeedMetric._(this.value);
 
 factory RadarGetAsBotnetThreatFeedMetric.fromJson(String json) { return switch (json) {
   'OFFENSE_COUNT' => offenseCount,

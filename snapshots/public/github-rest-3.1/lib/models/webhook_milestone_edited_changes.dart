@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_milestone_edited_changes_description.dart';import 'webhook_milestone_edited_changes_due_on.dart';import 'webhook_milestone_edited_changes_title.dart';/// The changes to the milestone if the action was `edited`.
-final class WebhookMilestoneEditedChanges {const WebhookMilestoneEditedChanges({this.description, this.dueOn, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_milestone_edited_changes_description.dart';import 'webhook_milestone_edited_changes_due_on.dart';import 'webhook_milestone_edited_changes_title.dart';/// The changes to the milestone if the action was `edited`.
+@immutable final class WebhookMilestoneEditedChanges {const WebhookMilestoneEditedChanges({this.description, this.dueOn, this.title, });
 
 factory WebhookMilestoneEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookMilestoneEditedChanges(
   description: json['description'] != null ? WebhookMilestoneEditedChangesDescription.fromJson(json['description'] as Map<String, dynamic>) : null,

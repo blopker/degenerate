@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_delta_object_delta.dart';/// The object type, which is always `thread.run.step.delta`.
-final class RunStepDeltaObjectObject {const RunStepDeltaObjectObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_delta_object_delta.dart';/// The object type, which is always `thread.run.step.delta`.
+@immutable final class RunStepDeltaObjectObject {const RunStepDeltaObjectObject._(this.value);
 
 factory RunStepDeltaObjectObject.fromJson(String json) { return switch (json) {
   'thread.run.step.delta' => threadRunStepDelta,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Represents a run step delta i.e. any changed fields on a run step during streaming.
 /// 
-final class RunStepDeltaObject {const RunStepDeltaObject({required this.id, required this.object, required this.delta, });
+@immutable final class RunStepDeltaObject {const RunStepDeltaObject({required this.id, required this.object, required this.delta, });
 
 factory RunStepDeltaObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaObject(
   id: json['id'] as String,

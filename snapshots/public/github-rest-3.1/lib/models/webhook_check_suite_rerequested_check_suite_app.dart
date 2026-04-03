@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_check_suite_rerequested_check_suite_app_owner.dart';import 'webhook_check_suite_rerequested_check_suite_app_permissions.dart';final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_check_suite_rerequested_check_suite_app_owner.dart';import 'webhook_check_suite_rerequested_check_suite_app_permissions.dart';@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppEvents.fromJson(String json) { return switch (json) {
   'branch_protection_rule' => branchProtectionRule,
@@ -163,7 +163,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppEvents($value)'; } 
  }
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-final class WebhookCheckSuiteRerequestedCheckSuiteApp {const WebhookCheckSuiteRerequestedCheckSuiteApp({required this.createdAt, required this.description, this.events, required this.externalUrl, required this.htmlUrl, required this.id, this.clientId, required this.name, required this.nodeId, required this.owner, this.permissions, this.slug, required this.updatedAt, });
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteApp {const WebhookCheckSuiteRerequestedCheckSuiteApp({required this.createdAt, required this.description, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, required this.updatedAt, this.events, this.clientId, this.permissions, this.slug, });
 
 factory WebhookCheckSuiteRerequestedCheckSuiteApp.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRerequestedCheckSuiteApp(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

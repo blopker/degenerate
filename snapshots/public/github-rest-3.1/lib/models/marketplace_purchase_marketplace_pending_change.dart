@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'marketplace_listing_plan.dart';final class MarketplacePurchaseMarketplacePendingChange {const MarketplacePurchaseMarketplacePendingChange({this.isInstalled, this.effectiveDate, this.unitCount, this.id, this.plan, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'marketplace_listing_plan.dart';@immutable final class MarketplacePurchaseMarketplacePendingChange {const MarketplacePurchaseMarketplacePendingChange({this.isInstalled, this.effectiveDate, this.unitCount, this.id, this.plan, });
 
 factory MarketplacePurchaseMarketplacePendingChange.fromJson(Map<String, dynamic> json) { return MarketplacePurchaseMarketplacePendingChange(
   isInstalled: json['is_installed'] as bool?,

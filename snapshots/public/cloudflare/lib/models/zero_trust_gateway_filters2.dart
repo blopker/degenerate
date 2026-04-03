@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify the protocol or layer to use.
-final class ZeroTrustGatewayFilters2 {const ZeroTrustGatewayFilters2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the protocol or layer to use.
+@immutable final class ZeroTrustGatewayFilters2 {const ZeroTrustGatewayFilters2._(this.value);
 
 factory ZeroTrustGatewayFilters2.fromJson(String json) { return switch (json) {
   'http' => http,

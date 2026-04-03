@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesFirstPatchedVersion {const WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesFirstPatchedVersion({required this.identifier});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesFirstPatchedVersion {const WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesFirstPatchedVersion({required this.identifier});
 
 factory WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesFirstPatchedVersion.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesFirstPatchedVersion(
   identifier: json['identifier'] as String,

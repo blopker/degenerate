@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodNzBankAccount {const PaymentMethodNzBankAccount({this.accountHolderName, required this.bankCode, required this.bankName, required this.branchCode, required this.last4, this.suffix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodNzBankAccount {const PaymentMethodNzBankAccount({required this.bankCode, required this.bankName, required this.branchCode, required this.last4, this.accountHolderName, this.suffix, });
 
 factory PaymentMethodNzBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodNzBankAccount(
   accountHolderName: json['account_holder_name'] as String?,

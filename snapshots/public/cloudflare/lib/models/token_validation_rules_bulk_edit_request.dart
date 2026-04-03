@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TokenValidationRulesBulkEditRequest {const TokenValidationRulesBulkEditRequest({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TokenValidationRulesBulkEditRequest {const TokenValidationRulesBulkEditRequest({required this.id});
 
 factory TokenValidationRulesBulkEditRequest.fromJson(Map<String, dynamic> json) { return TokenValidationRulesBulkEditRequest(
   id: json['id'] as String,

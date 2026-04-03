@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_messages2.dart';import 'response_collection16_result_info.dart';final class ResponseCollection16 {const ResponseCollection16({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_messages2.dart';import 'response_collection16_result_info.dart';@immutable final class ResponseCollection16 {const ResponseCollection16({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection16.fromJson(Map<String, dynamic> json) { return ResponseCollection16(
   errors: (json['errors'] as List<dynamic>).map((e) => DosMessages2.fromJson(e as Map<String, dynamic>)).toList(),

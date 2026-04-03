@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelIpList {const IntelIpList({this.description, this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelIpList {const IntelIpList({this.description, this.id, this.name, });
 
 factory IntelIpList.fromJson(Map<String, dynamic> json) { return IntelIpList(
   description: json['description'] as String?,

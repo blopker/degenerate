@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_package_updated_package_package_version_author.dart';import 'webhook_package_updated_package_package_version_docker_metadata.dart';import 'webhook_package_updated_package_package_version_package_files.dart';import 'webhook_package_updated_package_package_version_release.dart';import 'webhook_rubygems_metadata.dart';final class WebhookPackageUpdatedPackagePackageVersion {const WebhookPackageUpdatedPackagePackageVersion({required this.author, required this.body, required this.bodyHtml, required this.createdAt, required this.description, this.dockerMetadata, this.draft, required this.htmlUrl, required this.id, required this.installationCommand, this.manifest, required this.metadata, required this.name, required this.packageFiles, this.packageUrl, this.prerelease, this.release, this.rubygemsMetadata, this.sourceUrl, required this.summary, this.tagName, required this.targetCommitish, required this.targetOid, required this.updatedAt, required this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_package_updated_package_package_version_author.dart';import 'webhook_package_updated_package_package_version_docker_metadata.dart';import 'webhook_package_updated_package_package_version_package_files.dart';import 'webhook_package_updated_package_package_version_release.dart';import 'webhook_rubygems_metadata.dart';@immutable final class WebhookPackageUpdatedPackagePackageVersion {const WebhookPackageUpdatedPackagePackageVersion({required this.author, required this.body, required this.bodyHtml, required this.createdAt, required this.description, required this.htmlUrl, required this.id, required this.installationCommand, required this.metadata, required this.name, required this.packageFiles, required this.summary, required this.targetCommitish, required this.targetOid, required this.updatedAt, required this.version, this.dockerMetadata, this.draft, this.manifest, this.packageUrl, this.prerelease, this.release, this.rubygemsMetadata, this.sourceUrl, this.tagName, });
 
 factory WebhookPackageUpdatedPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookPackageUpdatedPackagePackageVersion(
   author: json['author'] != null ? WebhookPackageUpdatedPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
@@ -14,7 +14,7 @@ factory WebhookPackageUpdatedPackagePackageVersion.fromJson(Map<String, dynamic>
   id: (json['id'] as num).toInt(),
   installationCommand: json['installation_command'] as String,
   manifest: json['manifest'] as String?,
-  metadata: (json['metadata'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  metadata: (json['metadata'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   name: json['name'] as String,
   packageFiles: (json['package_files'] as List<dynamic>).map((e) => WebhookPackageUpdatedPackagePackageVersionPackageFiles.fromJson(e as Map<String, dynamic>)).toList(),
   packageUrl: json['package_url'] as String?,

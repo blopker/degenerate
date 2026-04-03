@@ -117,7 +117,7 @@ return execute(
 /// Return a success message after creating new saved string queries
 ///
 /// `POST /accounts/{account_id}/brand-protection/queries`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueries({required String accountId, String? id, String? tag, bool? scan, required Query body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionQueries({required String accountId, required Query body, String? id, String? tag, bool? scan, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;

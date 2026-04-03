@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestAssignedPullRequestHeadRepoLicense {const WebhookPullRequestAssignedPullRequestHeadRepoLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestAssignedPullRequestHeadRepoLicense {const WebhookPullRequestAssignedPullRequestHeadRepoLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url, });
 
 factory WebhookPullRequestAssignedPullRequestHeadRepoLicense.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAssignedPullRequestHeadRepoLicense(
   key: json['key'] as String,

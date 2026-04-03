@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentPagesCheckoutSessionIndividualName {const PaymentPagesCheckoutSessionIndividualName({required this.enabled, required this.optional, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionIndividualName {const PaymentPagesCheckoutSessionIndividualName({required this.enabled, required this.optional, });
 
 factory PaymentPagesCheckoutSessionIndividualName.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionIndividualName(
   enabled: json['enabled'] as bool,

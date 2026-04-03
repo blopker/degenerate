@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Operating System.
-final class TeamsDevicesOsVersionInputRequestOperatingSystem {const TeamsDevicesOsVersionInputRequestOperatingSystem._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating System.
+@immutable final class TeamsDevicesOsVersionInputRequestOperatingSystem {const TeamsDevicesOsVersionInputRequestOperatingSystem._(this.value);
 
 factory TeamsDevicesOsVersionInputRequestOperatingSystem.fromJson(String json) { return switch (json) {
   'windows' => windows,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamsDevicesOsVersionInputRequestOperatingSystem($value)'; } 
  }
 /// Operator.
-final class TeamsDevicesOsVersionInputRequestOperator {const TeamsDevicesOsVersionInputRequestOperator._(this.value);
+@immutable final class TeamsDevicesOsVersionInputRequestOperator {const TeamsDevicesOsVersionInputRequestOperator._(this.value);
 
 factory TeamsDevicesOsVersionInputRequestOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesOsVersionInputRequestOperator($value)'; } 
  }
-final class TeamsDevicesOsVersionInputRequest {const TeamsDevicesOsVersionInputRequest({required this.operatingSystem, required this.$operator, this.osDistroName, this.osDistroRevision, this.osVersionExtra, required this.version, });
+@immutable final class TeamsDevicesOsVersionInputRequest {const TeamsDevicesOsVersionInputRequest({required this.operatingSystem, required this.$operator, required this.version, this.osDistroName, this.osDistroRevision, this.osVersionExtra, });
 
 factory TeamsDevicesOsVersionInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesOsVersionInputRequest(
   operatingSystem: TeamsDevicesOsVersionInputRequestOperatingSystem.fromJson(json['operating_system'] as String),

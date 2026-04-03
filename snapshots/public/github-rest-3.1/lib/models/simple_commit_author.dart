@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about the Git author
-final class SimpleCommitAuthor {const SimpleCommitAuthor({required this.name, required this.email, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the Git author
+@immutable final class SimpleCommitAuthor {const SimpleCommitAuthor({required this.name, required this.email, });
 
 factory SimpleCommitAuthor.fromJson(Map<String, dynamic> json) { return SimpleCommitAuthor(
   name: json['name'] as String,

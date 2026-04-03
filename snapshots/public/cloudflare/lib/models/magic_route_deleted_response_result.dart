@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_route.dart';final class MagicRouteDeletedResponseResult {const MagicRouteDeletedResponseResult({this.deleted, this.deletedRoute, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_route.dart';@immutable final class MagicRouteDeletedResponseResult {const MagicRouteDeletedResponseResult({this.deleted, this.deletedRoute, });
 
 factory MagicRouteDeletedResponseResult.fromJson(Map<String, dynamic> json) { return MagicRouteDeletedResponseResult(
   deleted: json['deleted'] as bool?,

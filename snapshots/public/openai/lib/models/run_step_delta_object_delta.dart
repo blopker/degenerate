@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_delta_object_delta_step_details.dart';import 'run_step_delta_step_details_message_creation_object.dart';import 'run_step_delta_step_details_tool_calls_object.dart';/// The delta containing the fields that have changed on the run step.
-final class RunStepDeltaObjectDelta {const RunStepDeltaObjectDelta({this.stepDetails});
+@immutable final class RunStepDeltaObjectDelta {const RunStepDeltaObjectDelta({this.stepDetails});
 
 factory RunStepDeltaObjectDelta.fromJson(Map<String, dynamic> json) { return RunStepDeltaObjectDelta(
   stepDetails: json['step_details'] != null ? OneOf2.parse(json['step_details'], fromA: (v) => RunStepDeltaStepDetailsMessageCreationObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDeltaStepDetailsToolCallsObject.fromJson(v as Map<String, dynamic>),) : null,

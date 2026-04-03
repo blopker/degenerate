@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class DeletedApplePayDomainObject {const DeletedApplePayDomainObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class DeletedApplePayDomainObject {const DeletedApplePayDomainObject._(this.value);
 
 factory DeletedApplePayDomainObject.fromJson(String json) { return switch (json) {
   'apple_pay_domain' => applePayDomain,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeletedApplePayDomainObject($value)'; } 
  }
 /// 
-final class DeletedApplePayDomain {const DeletedApplePayDomain({required this.deleted, required this.id, required this.object, });
+@immutable final class DeletedApplePayDomain {const DeletedApplePayDomain({required this.deleted, required this.id, required this.object, });
 
 factory DeletedApplePayDomain.fromJson(Map<String, dynamic> json) { return DeletedApplePayDomain(
   deleted: json['deleted'] as bool,

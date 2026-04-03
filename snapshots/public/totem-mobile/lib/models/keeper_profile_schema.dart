@@ -1,7 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'public_user_schema.dart';
 
+@immutable
 final class KeeperProfileSchema {
   const KeeperProfileSchema({
     required this.user,

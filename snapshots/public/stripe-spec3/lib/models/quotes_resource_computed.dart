@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'quotes_resource_recurring.dart';import 'quotes_resource_upfront.dart';/// 
-final class QuotesResourceComputed {const QuotesResourceComputed({this.recurring, required this.upfront, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'quotes_resource_recurring.dart';import 'quotes_resource_upfront.dart';/// 
+@immutable final class QuotesResourceComputed {const QuotesResourceComputed({required this.upfront, this.recurring, });
 
 factory QuotesResourceComputed.fromJson(Map<String, dynamic> json) { return QuotesResourceComputed(
   recurring: json['recurring'] != null ? QuotesResourceRecurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,

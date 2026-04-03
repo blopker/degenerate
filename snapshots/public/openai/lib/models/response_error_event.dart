@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `error`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `error`.
 /// 
-final class ResponseErrorEventType {const ResponseErrorEventType._(this.value);
+@immutable final class ResponseErrorEventType {const ResponseErrorEventType._(this.value);
 
 factory ResponseErrorEventType.fromJson(String json) { return switch (json) {
   'error' => error,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseErrorEventType($value)'; } 
  }
 /// Emitted when an error occurs.
-final class ResponseErrorEvent {const ResponseErrorEvent({required this.type, required this.code, required this.message, required this.param, required this.sequenceNumber, });
+@immutable final class ResponseErrorEvent {const ResponseErrorEvent({required this.type, required this.code, required this.message, required this.param, required this.sequenceNumber, });
 
 factory ResponseErrorEvent.fromJson(Map<String, dynamic> json) { return ResponseErrorEvent(
   type: ResponseErrorEventType.fromJson(json['type'] as String),

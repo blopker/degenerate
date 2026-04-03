@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'role.dart';import 'user.dart';/// Always `user.role`.
-final class UserRoleAssignmentObject {const UserRoleAssignmentObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'role.dart';import 'user.dart';/// Always `user.role`.
+@immutable final class UserRoleAssignmentObject {const UserRoleAssignmentObject._(this.value);
 
 factory UserRoleAssignmentObject.fromJson(String json) { return switch (json) {
   'user.role' => userRole,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UserRoleAssignmentObject($value)'; } 
  }
 /// Role assignment linking a user to a role.
-final class UserRoleAssignment {const UserRoleAssignment({required this.object, required this.user, required this.role, });
+@immutable final class UserRoleAssignment {const UserRoleAssignment({required this.object, required this.user, required this.role, });
 
 factory UserRoleAssignment.fromJson(Map<String, dynamic> json) { return UserRoleAssignment(
   object: UserRoleAssignmentObject.fromJson(json['object'] as String),

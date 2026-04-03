@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Use the `status` property to enable or disable secret scanning delegated bypass for this repository.
-final class ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass {const ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass({this.status});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable secret scanning delegated bypass for this repository.
+@immutable final class ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass {const ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass({this.status});
 
 factory ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass(
   status: json['status'] as String?,

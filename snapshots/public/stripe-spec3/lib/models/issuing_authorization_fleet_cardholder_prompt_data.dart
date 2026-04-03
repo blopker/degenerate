@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingAuthorizationFleetCardholderPromptData {const IssuingAuthorizationFleetCardholderPromptData({this.alphanumericId, this.driverId, this.odometer, this.unspecifiedId, this.userId, this.vehicleNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingAuthorizationFleetCardholderPromptData {const IssuingAuthorizationFleetCardholderPromptData({this.alphanumericId, this.driverId, this.odometer, this.unspecifiedId, this.userId, this.vehicleNumber, });
 
 factory IssuingAuthorizationFleetCardholderPromptData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetCardholderPromptData(
   alphanumericId: json['alphanumeric_id'] as String?,
@@ -12,7 +12,7 @@ factory IssuingAuthorizationFleetCardholderPromptData.fromJson(Map<String, dynam
   vehicleNumber: json['vehicle_number'] as String?,
 ); }
 
-/// [Deprecated] An alphanumeric ID, though typical point of sales only support numeric entry. The card program can be configured to prompt for a vehicle ID, driver ID, or generic ID.
+/// `[Deprecated]` An alphanumeric ID, though typical point of sales only support numeric entry. The card program can be configured to prompt for a vehicle ID, driver ID, or generic ID.
 final String? alphanumericId;
 
 /// Driver ID.

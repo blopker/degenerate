@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCrawlersSummaryResponseResultMetaUnits {const RadarGetCrawlersSummaryResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCrawlersSummaryResponseResultMetaUnits {const RadarGetCrawlersSummaryResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetCrawlersSummaryResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetCrawlersSummaryResponseResultMetaUnits(
   name: json['name'] as String,

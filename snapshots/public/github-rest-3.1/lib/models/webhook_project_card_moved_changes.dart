@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_project_card_moved_changes_column_id.dart';final class WebhookProjectCardMovedChanges {const WebhookProjectCardMovedChanges({required this.columnId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_project_card_moved_changes_column_id.dart';@immutable final class WebhookProjectCardMovedChanges {const WebhookProjectCardMovedChanges({required this.columnId});
 
 factory WebhookProjectCardMovedChanges.fromJson(Map<String, dynamic> json) { return WebhookProjectCardMovedChanges(
   columnId: WebhookProjectCardMovedChangesColumnId.fromJson(json['column_id'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'payment_intent.dart';import 'refund.dart';import 'terminal_reader_reader_resource_refund_payment_action_charge.dart';import 'terminal_reader_reader_resource_refund_payment_action_payment_intent.dart';import 'terminal_reader_reader_resource_refund_payment_action_refund.dart';import 'terminal_reader_reader_resource_refund_payment_config.dart';/// The reason for the refund.
-final class TerminalReaderReaderResourceRefundPaymentActionReason {const TerminalReaderReaderResourceRefundPaymentActionReason._(this.value);
+@immutable final class TerminalReaderReaderResourceRefundPaymentActionReason {const TerminalReaderReaderResourceRefundPaymentActionReason._(this.value);
 
 factory TerminalReaderReaderResourceRefundPaymentActionReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderReaderResourceRefundPaymentActionReason($value)'; } 
  }
 /// Represents a reader action to refund a payment
-final class TerminalReaderReaderResourceRefundPaymentAction {const TerminalReaderReaderResourceRefundPaymentAction({this.amount, this.charge, this.metadata, this.paymentIntent, this.reason, this.refund, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });
+@immutable final class TerminalReaderReaderResourceRefundPaymentAction {const TerminalReaderReaderResourceRefundPaymentAction({this.amount, this.charge, this.metadata, this.paymentIntent, this.reason, this.refund, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });
 
 factory TerminalReaderReaderResourceRefundPaymentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceRefundPaymentAction(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

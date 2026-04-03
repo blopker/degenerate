@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'ai_search_instance_get_job_response_result.dart';final class AiSearchInstanceGetJobResponse {const AiSearchInstanceGetJobResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_get_job_response_result.dart';@immutable final class AiSearchInstanceGetJobResponse {const AiSearchInstanceGetJobResponse({required this.result, required this.success, });
 
 factory AiSearchInstanceGetJobResponse.fromJson(Map<String, dynamic> json) { return AiSearchInstanceGetJobResponse(
   result: AiSearchInstanceGetJobResponseResult.fromJson(json['result'] as Map<String, dynamic>),

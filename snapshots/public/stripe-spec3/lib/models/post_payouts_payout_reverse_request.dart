@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPayoutsPayoutReverseRequest {const PostPayoutsPayoutReverseRequest({this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPayoutsPayoutReverseRequest {const PostPayoutsPayoutReverseRequest({this.expand, this.metadata, });
 
 factory PostPayoutsPayoutReverseRequest.fromJson(Map<String, dynamic> json) { return PostPayoutsPayoutReverseRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

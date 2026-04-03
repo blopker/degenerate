@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_tls_config_response.dart';/// A value that is one of: `TeamsDevicesTlsConfigResponse`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_tls_config_response.dart';/// A value that is one of: `TeamsDevicesTlsConfigResponse`.
 sealed class TeamsDevicesSchemasConfigResponse {const TeamsDevicesSchemasConfigResponse();
 
 factory TeamsDevicesSchemasConfigResponse.fromJson(Map<String, dynamic> json) {   if (TeamsDevicesTlsConfigResponse.canParse(json)) {
@@ -12,7 +12,7 @@ factory TeamsDevicesSchemasConfigResponse.fromJson(Map<String, dynamic> json) { 
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class TeamsDevicesSchemasConfigResponseTeamsDevicesTlsConfigResponse extends TeamsDevicesSchemasConfigResponse {const TeamsDevicesSchemasConfigResponseTeamsDevicesTlsConfigResponse(this._value);
+@immutable final class TeamsDevicesSchemasConfigResponseTeamsDevicesTlsConfigResponse extends TeamsDevicesSchemasConfigResponse {const TeamsDevicesSchemasConfigResponseTeamsDevicesTlsConfigResponse(this._value);
 
 final TeamsDevicesTlsConfigResponse _value;
 
@@ -23,7 +23,7 @@ final TeamsDevicesTlsConfigResponse _value;
 @override String toString() { return 'TeamsDevicesSchemasConfigResponse.teamsDevicesTlsConfigResponse($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class TeamsDevicesSchemasConfigResponse$Unknown extends TeamsDevicesSchemasConfigResponse {const TeamsDevicesSchemasConfigResponse$Unknown(this._value);
+@immutable final class TeamsDevicesSchemasConfigResponse$Unknown extends TeamsDevicesSchemasConfigResponse {const TeamsDevicesSchemasConfigResponse$Unknown(this._value);
 
 final dynamic _value;
 

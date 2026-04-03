@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Strictness of the DOB matching policy to apply.
-final class GelatoSessionMatchingOptionsDob {const GelatoSessionMatchingOptionsDob._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Strictness of the DOB matching policy to apply.
+@immutable final class GelatoSessionMatchingOptionsDob {const GelatoSessionMatchingOptionsDob._(this.value);
 
 factory GelatoSessionMatchingOptionsDob.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoSessionMatchingOptionsDob($value)'; } 
  }
 /// Strictness of the name matching policy to apply.
-final class GelatoSessionMatchingOptionsName {const GelatoSessionMatchingOptionsName._(this.value);
+@immutable final class GelatoSessionMatchingOptionsName {const GelatoSessionMatchingOptionsName._(this.value);
 
 factory GelatoSessionMatchingOptionsName.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoSessionMatchingOptionsName($value)'; } 
  }
 /// 
-final class GelatoSessionMatchingOptions {const GelatoSessionMatchingOptions({this.dob, this.name, });
+@immutable final class GelatoSessionMatchingOptions {const GelatoSessionMatchingOptions({this.dob, this.name, });
 
 factory GelatoSessionMatchingOptions.fromJson(Map<String, dynamic> json) { return GelatoSessionMatchingOptions(
   dob: json['dob'] != null ? GelatoSessionMatchingOptionsDob.fromJson(json['dob'] as String) : null,

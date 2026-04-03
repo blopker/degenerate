@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetRadarValueListItemsItemRequest {const GetRadarValueListItemsItemRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetRadarValueListItemsItemRequest {const GetRadarValueListItemsItemRequest();
 
-factory GetRadarValueListItemsItemRequest.fromJson(Map<String, dynamic> json) { return GetRadarValueListItemsItemRequest(
-
-); }
+factory GetRadarValueListItemsItemRequest.fromJson(Map<String, dynamic> _) { return const GetRadarValueListItemsItemRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetRadarValueListItemsItemRequest copyWith() { return GetRadarValueListItemsItemRequest(
+GetRadarValueListItemsItemRequest copyWith() { return const GetRadarValueListItemsItemRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetRadarValueListItemsItemRequest; } 

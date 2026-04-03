@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_policy_init_resp_result.dart';final class AccessPolicyInitResp {const AccessPolicyInitResp({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_policy_init_resp_result.dart';@immutable final class AccessPolicyInitResp {const AccessPolicyInitResp({this.result});
 
 factory AccessPolicyInitResp.fromJson(Map<String, dynamic> json) { return AccessPolicyInitResp(
   result: json['result'] != null ? AccessPolicyInitRespResult.fromJson(json['result'] as Map<String, dynamic>) : null,

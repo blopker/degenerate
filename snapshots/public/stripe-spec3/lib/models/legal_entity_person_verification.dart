@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'legal_entity_person_verification_document.dart';/// 
-final class LegalEntityPersonVerification {const LegalEntityPersonVerification({this.additionalDocument, this.details, this.detailsCode, this.document, required this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'legal_entity_person_verification_document.dart';/// 
+@immutable final class LegalEntityPersonVerification {const LegalEntityPersonVerification({required this.status, this.additionalDocument, this.details, this.detailsCode, this.document, });
 
 factory LegalEntityPersonVerification.fromJson(Map<String, dynamic> json) { return LegalEntityPersonVerification(
   additionalDocument: json['additional_document'] != null ? LegalEntityPersonVerificationDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null,

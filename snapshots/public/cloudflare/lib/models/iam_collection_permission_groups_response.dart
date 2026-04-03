@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_permission_group.dart';final class IamCollectionPermissionGroupsResponse {const IamCollectionPermissionGroupsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_permission_group.dart';@immutable final class IamCollectionPermissionGroupsResponse {const IamCollectionPermissionGroupsResponse({this.result});
 
 factory IamCollectionPermissionGroupsResponse.fromJson(Map<String, dynamic> json) { return IamCollectionPermissionGroupsResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => IamPermissionGroup.fromJson(e as Map<String, dynamic>)).toList(),

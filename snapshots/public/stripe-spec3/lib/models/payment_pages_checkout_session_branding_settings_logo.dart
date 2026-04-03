@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of image for the logo. Must be one of `file` or `url`.
-final class PaymentPagesCheckoutSessionBrandingSettingsLogoType {const PaymentPagesCheckoutSessionBrandingSettingsLogoType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of image for the logo. Must be one of `file` or `url`.
+@immutable final class PaymentPagesCheckoutSessionBrandingSettingsLogoType {const PaymentPagesCheckoutSessionBrandingSettingsLogoType._(this.value);
 
 factory PaymentPagesCheckoutSessionBrandingSettingsLogoType.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionBrandingSettingsLogoType($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionBrandingSettingsLogo {const PaymentPagesCheckoutSessionBrandingSettingsLogo({this.file, required this.type, this.url, });
+@immutable final class PaymentPagesCheckoutSessionBrandingSettingsLogo {const PaymentPagesCheckoutSessionBrandingSettingsLogo({required this.type, this.file, this.url, });
 
 factory PaymentPagesCheckoutSessionBrandingSettingsLogo.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionBrandingSettingsLogo(
   file: json['file'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_tlsa_record_data.dart';import 'dns_records_ttl.dart';/// Record type.
-final class DnsRecordsTlsaRecordType {const DnsRecordsTlsaRecordType._(this.value);
+@immutable final class DnsRecordsTlsaRecordType {const DnsRecordsTlsaRecordType._(this.value);
 
 factory DnsRecordsTlsaRecordType.fromJson(String json) { return switch (json) {
   'TLSA' => tlsa,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DnsRecordsTlsaRecordType($value)'; } 
  }
-final class DnsRecordsTlsaRecord {const DnsRecordsTlsaRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
+@immutable final class DnsRecordsTlsaRecord {const DnsRecordsTlsaRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
 
 factory DnsRecordsTlsaRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsTlsaRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

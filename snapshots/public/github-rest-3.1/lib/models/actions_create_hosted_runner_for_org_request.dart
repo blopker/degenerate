@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'actions_create_hosted_runner_for_org_request_image.dart';final class ActionsCreateHostedRunnerForOrgRequest {const ActionsCreateHostedRunnerForOrgRequest({required this.name, required this.image, required this.size, required this.runnerGroupId, this.maximumRunners, this.enableStaticIp, this.imageGen = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_create_hosted_runner_for_org_request_image.dart';@immutable final class ActionsCreateHostedRunnerForOrgRequest {const ActionsCreateHostedRunnerForOrgRequest({required this.name, required this.image, required this.size, required this.runnerGroupId, this.maximumRunners, this.enableStaticIp, this.imageGen = false, });
 
 factory ActionsCreateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateHostedRunnerForOrgRequest(
   name: json['name'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'intel_whois.dart';final class IntelSchemasSingleResponse {const IntelSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_whois.dart';@immutable final class IntelSchemasSingleResponse {const IntelSchemasSingleResponse({this.result});
 
 factory IntelSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return IntelSchemasSingleResponse(
   result: json['result'] != null ? IntelWhois.fromJson(json['result'] as Map<String, dynamic>) : null,

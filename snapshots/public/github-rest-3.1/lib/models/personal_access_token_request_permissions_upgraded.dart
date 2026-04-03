@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Requested permissions that elevate access for a previously approved request for access, categorized by type of permission.
-final class PersonalAccessTokenRequestPermissionsUpgraded {const PersonalAccessTokenRequestPermissionsUpgraded({this.organization, this.repository, this.other, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Requested permissions that elevate access for a previously approved request for access, categorized by type of permission.
+@immutable final class PersonalAccessTokenRequestPermissionsUpgraded {const PersonalAccessTokenRequestPermissionsUpgraded({this.organization, this.repository, this.other, });
 
 factory PersonalAccessTokenRequestPermissionsUpgraded.fromJson(Map<String, dynamic> json) { return PersonalAccessTokenRequestPermissionsUpgraded(
   organization: (json['organization'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

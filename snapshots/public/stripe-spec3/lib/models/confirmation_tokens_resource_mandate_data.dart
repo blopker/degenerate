@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'confirmation_tokens_resource_mandate_data_resource_customer_acceptance.dart';/// Data used for generating a Mandate.
-final class ConfirmationTokensResourceMandateData {const ConfirmationTokensResourceMandateData({required this.customerAcceptance});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'confirmation_tokens_resource_mandate_data_resource_customer_acceptance.dart';/// Data used for generating a Mandate.
+@immutable final class ConfirmationTokensResourceMandateData {const ConfirmationTokensResourceMandateData({required this.customerAcceptance});
 
 factory ConfirmationTokensResourceMandateData.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourceMandateData(
   customerAcceptance: ConfirmationTokensResourceMandateDataResourceCustomerAcceptance.fromJson(json['customer_acceptance'] as Map<String, dynamic>),

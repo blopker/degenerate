@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEntitiesAsnByIdResponseResultAsnRelated {const RadarGetEntitiesAsnByIdResponseResultAsnRelated({this.aka, required this.asn, this.estimatedUsers, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEntitiesAsnByIdResponseResultAsnRelated {const RadarGetEntitiesAsnByIdResponseResultAsnRelated({required this.asn, required this.name, this.aka, this.estimatedUsers, });
 
 factory RadarGetEntitiesAsnByIdResponseResultAsnRelated.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesAsnByIdResponseResultAsnRelated(
   aka: json['aka'] as String?,

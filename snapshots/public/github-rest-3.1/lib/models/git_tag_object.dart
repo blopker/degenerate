@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GitTagObject {const GitTagObject({required this.sha, required this.type, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitTagObject {const GitTagObject({required this.sha, required this.type, required this.url, });
 
 factory GitTagObject.fromJson(Map<String, dynamic> json) { return GitTagObject(
   sha: json['sha'] as String,

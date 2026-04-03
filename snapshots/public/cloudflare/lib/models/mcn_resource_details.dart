@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_account_id.dart';import 'mcn_cloud_platform_client.dart';import 'mcn_cloud_type.dart';import 'mcn_cost.dart';import 'mcn_observation.dart';import 'mcn_provider_id.dart';import 'mcn_resource_details_section.dart';import 'mcn_resource_id.dart';import 'mcn_resource_type.dart';final class McnResourceDetails {const McnResourceDetails({required this.accountId, required this.cloudType, required this.config, required this.deploymentProvider, required this.id, required this.managed, this.managedBy, required this.monthlyCostEstimate, required this.name, required this.nativeId, required this.observations, required this.providerIds, required this.providerNamesById, required this.region, required this.resourceGroup, required this.resourceType, required this.sections, required this.state, required this.tags, required this.updatedAt, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_account_id.dart';import 'mcn_cloud_platform_client.dart';import 'mcn_cloud_type.dart';import 'mcn_cost.dart';import 'mcn_observation.dart';import 'mcn_provider_id.dart';import 'mcn_resource_details_section.dart';import 'mcn_resource_id.dart';import 'mcn_resource_type.dart';@immutable final class McnResourceDetails {const McnResourceDetails({required this.accountId, required this.cloudType, required this.config, required this.deploymentProvider, required this.id, required this.managed, required this.monthlyCostEstimate, required this.name, required this.nativeId, required this.observations, required this.providerIds, required this.providerNamesById, required this.region, required this.resourceGroup, required this.resourceType, required this.sections, required this.state, required this.tags, required this.updatedAt, required this.url, this.managedBy, });
 
 factory McnResourceDetails.fromJson(Map<String, dynamic> json) { return McnResourceDetails(
   accountId: McnAccountId.fromJson(json['account_id'] as String),
   cloudType: McnCloudType.fromJson(json['cloud_type'] as String),
-  config: (json['config'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  config: json['config'] as Map<String, dynamic>,
   deploymentProvider: McnProviderId.fromJson(json['deployment_provider'] as String),
   id: McnResourceId.fromJson(json['id'] as String),
   managed: json['managed'] as bool,
@@ -20,7 +20,7 @@ factory McnResourceDetails.fromJson(Map<String, dynamic> json) { return McnResou
   resourceGroup: json['resource_group'] as String,
   resourceType: McnResourceType.fromJson(json['resource_type'] as String),
   sections: (json['sections'] as List<dynamic>).map((e) => McnResourceDetailsSection.fromJson(e as Map<String, dynamic>)).toList(),
-  state: (json['state'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  state: json['state'] as Map<String, dynamic>,
   tags: (json['tags'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   updatedAt: json['updated_at'] as String,
   url: json['url'] as String,

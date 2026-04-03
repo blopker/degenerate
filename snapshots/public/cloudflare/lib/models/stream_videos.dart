@@ -63,7 +63,7 @@ factory StreamUploaded.fromJson(String json) => StreamUploaded(DateTime.parse(js
 String toJson() => value.toIso8601String();
 
 }
-final class StreamVideos {const StreamVideos({this.allowedOrigins, this.created, this.creator, this.duration, this.input, this.liveInput, this.maxDurationSeconds, this.meta, this.modified, this.playback, this.preview, this.readyToStream, this.readyToStreamAt, this.requireSignedUrLs, this.scheduledDeletion, this.size, this.status, this.thumbnail, this.thumbnailTimestampPct, this.uid, this.uploadExpiry, this.uploaded, this.watermark, });
+@immutable final class StreamVideos {const StreamVideos({this.allowedOrigins, this.created, this.creator, this.duration, this.input, this.liveInput, this.maxDurationSeconds, this.meta, this.modified, this.playback, this.preview, this.readyToStream, this.readyToStreamAt, this.requireSignedUrLs, this.scheduledDeletion, this.size, this.status, this.thumbnail, this.thumbnailTimestampPct, this.uid, this.uploadExpiry, this.uploaded, this.watermark, });
 
 factory StreamVideos.fromJson(Map<String, dynamic> json) { return StreamVideos(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -73,7 +73,7 @@ factory StreamVideos.fromJson(Map<String, dynamic> json) { return StreamVideos(
   input: json['input'] != null ? StreamInput.fromJson(json['input'] as Map<String, dynamic>) : null,
   liveInput: json['liveInput'] != null ? StreamLiveInput2.fromJson(json['liveInput'] as String) : null,
   maxDurationSeconds: json['maxDurationSeconds'] != null ? StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>?,
   modified: json['modified'] != null ? StreamModified.fromJson(json['modified'] as String) : null,
   playback: json['playback'] != null ? StreamPlayback.fromJson(json['playback'] as Map<String, dynamic>) : null,
   preview: json['preview'] != null ? StreamPreview.fromJson(json['preview'] as String) : null,

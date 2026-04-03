@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpConfidence {const DlpConfidence._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpConfidence {const DlpConfidence._(this.value);
 
 factory DlpConfidence.fromJson(String json) { return switch (json) {
   'low' => low,

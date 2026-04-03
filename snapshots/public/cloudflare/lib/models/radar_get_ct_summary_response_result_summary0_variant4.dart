@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtSummaryResponseResultSummary0Variant4 {const RadarGetCtSummaryResponseResultSummary0Variant4({required this.certificate, required this.precertificate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtSummaryResponseResultSummary0Variant4 {const RadarGetCtSummaryResponseResultSummary0Variant4({required this.certificate, required this.precertificate, });
 
 factory RadarGetCtSummaryResponseResultSummary0Variant4.fromJson(Map<String, dynamic> json) { return RadarGetCtSummaryResponseResultSummary0Variant4(
   certificate: json['CERTIFICATE'] as String,

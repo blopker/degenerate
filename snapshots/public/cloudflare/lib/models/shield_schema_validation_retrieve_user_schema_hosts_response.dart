@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_response_user_schemas_hosts.dart';final class ShieldSchemaValidationRetrieveUserSchemaHostsResponse {const ShieldSchemaValidationRetrieveUserSchemaHostsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_response_user_schemas_hosts.dart';@immutable final class ShieldSchemaValidationRetrieveUserSchemaHostsResponse {const ShieldSchemaValidationRetrieveUserSchemaHostsResponse({this.result});
 
 factory ShieldSchemaValidationRetrieveUserSchemaHostsResponse.fromJson(Map<String, dynamic> json) { return ShieldSchemaValidationRetrieveUserSchemaHostsResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => ShieldOldResponseUserSchemasHosts.fromJson(e as Map<String, dynamic>)).toList(),

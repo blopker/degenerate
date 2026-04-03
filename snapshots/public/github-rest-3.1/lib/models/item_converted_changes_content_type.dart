@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ItemConvertedChangesContentType {const ItemConvertedChangesContentType({this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ItemConvertedChangesContentType {const ItemConvertedChangesContentType({this.from, this.to, });
 
 factory ItemConvertedChangesContentType.fromJson(Map<String, dynamic> json) { return ItemConvertedChangesContentType(
   from: json['from'] as String?,

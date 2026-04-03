@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfFacebookBartLargeCnnRequest {const WorkersAiPostRunCfFacebookBartLargeCnnRequest({required this.inputText, this.maxLength = 1024, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfFacebookBartLargeCnnRequest {const WorkersAiPostRunCfFacebookBartLargeCnnRequest({required this.inputText, this.maxLength = 1024, });
 
 factory WorkersAiPostRunCfFacebookBartLargeCnnRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfFacebookBartLargeCnnRequest(
   inputText: json['input_text'] as String,

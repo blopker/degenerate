@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetRankingDomainDetailsResponseResultDetails0TopLocations {const RadarGetRankingDomainDetailsResponseResultDetails0TopLocations({required this.locationCode, required this.locationName, required this.rank, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRankingDomainDetailsResponseResultDetails0TopLocations {const RadarGetRankingDomainDetailsResponseResultDetails0TopLocations({required this.locationCode, required this.locationName, required this.rank, });
 
 factory RadarGetRankingDomainDetailsResponseResultDetails0TopLocations.fromJson(Map<String, dynamic> json) { return RadarGetRankingDomainDetailsResponseResultDetails0TopLocations(
   locationCode: json['locationCode'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CallEnumUpdateStatus {const CallEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CallEnumUpdateStatus {const CallEnumUpdateStatus._(this.value);
 
 factory CallEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CallEnumUpdateStatus($value)'; } 
  }
 /// The HTTP method we should use when calling the `url`. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-final class UpdateCallRequestMethod {const UpdateCallRequestMethod._(this.value);
+@immutable final class UpdateCallRequestMethod {const UpdateCallRequestMethod._(this.value);
 
 factory UpdateCallRequestMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UpdateCallRequestMethod($value)'; } 
  }
 /// The HTTP method that we should use to request the `fallback_url`. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-final class UpdateCallRequestFallbackMethod {const UpdateCallRequestFallbackMethod._(this.value);
+@immutable final class UpdateCallRequestFallbackMethod {const UpdateCallRequestFallbackMethod._(this.value);
 
 factory UpdateCallRequestFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UpdateCallRequestFallbackMethod($value)'; } 
  }
 /// The HTTP method we should use when requesting the `status_callback` URL. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-final class UpdateCallRequestStatusCallbackMethod {const UpdateCallRequestStatusCallbackMethod._(this.value);
+@immutable final class UpdateCallRequestStatusCallbackMethod {const UpdateCallRequestStatusCallbackMethod._(this.value);
 
 factory UpdateCallRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -99,7 +99,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UpdateCallRequestStatusCallbackMethod($value)'; } 
  }
-final class UpdateCallRequest {const UpdateCallRequest({this.url, this.method, this.status, this.fallbackUrl, this.fallbackMethod, this.statusCallback, this.statusCallbackMethod, this.twiml, this.timeLimit, });
+@immutable final class UpdateCallRequest {const UpdateCallRequest({this.url, this.method, this.status, this.fallbackUrl, this.fallbackMethod, this.statusCallback, this.statusCallbackMethod, this.twiml, this.timeLimit, });
 
 factory UpdateCallRequest.fromJson(Map<String, dynamic> json) { return UpdateCallRequest(
   url: json['Url'] != null ? Uri.parse(json['Url'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigListEvaluatorsOrderByDirection {const AigConfigListEvaluatorsOrderByDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListEvaluatorsOrderByDirection {const AigConfigListEvaluatorsOrderByDirection._(this.value);
 
 factory AigConfigListEvaluatorsOrderByDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

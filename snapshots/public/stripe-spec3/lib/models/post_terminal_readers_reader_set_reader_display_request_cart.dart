@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_set_reader_display_request_cart_line_items.dart';/// Cart details to display on the reader screen, including line items, amounts, and currency.
-final class PostTerminalReadersReaderSetReaderDisplayRequestCart {const PostTerminalReadersReaderSetReaderDisplayRequestCart({required this.currency, required this.lineItems, this.tax, required this.total, });
+@immutable final class PostTerminalReadersReaderSetReaderDisplayRequestCart {const PostTerminalReadersReaderSetReaderDisplayRequestCart({required this.currency, required this.lineItems, required this.total, this.tax, });
 
 factory PostTerminalReadersReaderSetReaderDisplayRequestCart.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderSetReaderDisplayRequestCart(
   currency: json['currency'] as String,

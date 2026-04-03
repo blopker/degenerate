@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreditCard {const CreditCard({required this.cardNumber, required this.expiryMonth, required this.expiryYear, this.cardholderName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreditCard {const CreditCard({required this.cardNumber, required this.expiryMonth, required this.expiryYear, this.cardholderName, });
 
 factory CreditCard.fromJson(Map<String, dynamic> json) { return CreditCard(
   cardNumber: json['cardNumber'] as String,

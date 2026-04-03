@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit._(this.value);
 
 factory CloudflarePipelinesTimestampUnit.fromJson(String json) { return switch (json) {
   'second' => second,

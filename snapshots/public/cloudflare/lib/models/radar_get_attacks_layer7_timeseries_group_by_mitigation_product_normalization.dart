@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization {const RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization {const RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization._(this.value);
 
 factory RadarGetAttacksLayer7TimeseriesGroupByMitigationProductNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,

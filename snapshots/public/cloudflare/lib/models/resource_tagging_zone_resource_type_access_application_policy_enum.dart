@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Enum for access_application_policy resource type.
-final class ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum {const ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enum for access_application_policy resource type.
+@immutable final class ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum {const ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum._(this.value);
 
 factory ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum.fromJson(String json) { return switch (json) {
   'access_application_policy' => accessApplicationPolicy,

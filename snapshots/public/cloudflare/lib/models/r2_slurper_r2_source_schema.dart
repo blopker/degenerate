@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_jurisdiction.dart';import 'r2_slurper_s3_like_creds_schema.dart';final class R2SlurperR2SourceSchemaVendor {const R2SlurperR2SourceSchemaVendor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_slurper_jurisdiction.dart';import 'r2_slurper_s3_like_creds_schema.dart';@immutable final class R2SlurperR2SourceSchemaVendor {const R2SlurperR2SourceSchemaVendor._(this.value);
 
 factory R2SlurperR2SourceSchemaVendor.fromJson(String json) { return switch (json) {
   'r2' => r2,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2SlurperR2SourceSchemaVendor($value)'; } 
  }
-final class R2SlurperR2SourceSchema {const R2SlurperR2SourceSchema({required this.bucket, this.jurisdiction, this.keys, this.pathPrefix, required this.secret, required this.vendor, });
+@immutable final class R2SlurperR2SourceSchema {const R2SlurperR2SourceSchema({required this.bucket, required this.secret, required this.vendor, this.jurisdiction, this.keys, this.pathPrefix, });
 
 factory R2SlurperR2SourceSchema.fromJson(Map<String, dynamic> json) { return R2SlurperR2SourceSchema(
   bucket: json['bucket'] as String,

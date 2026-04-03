@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_create_request_indicators.dart';import 'post_event_create_request_raw.dart';final class PostEventCreateRequest {const PostEventCreateRequest({this.accountId, this.attacker, this.attackerCountry, required this.category, this.datasetId, required this.date, required this.event, this.indicator, this.indicatorType, this.indicators, this.insight, required this.raw, this.tags, this.targetCountry, this.targetIndustry, required this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_create_request_indicators.dart';import 'post_event_create_request_raw.dart';@immutable final class PostEventCreateRequest {const PostEventCreateRequest({required this.category, required this.date, required this.event, required this.raw, required this.tlp, this.accountId, this.attacker, this.attackerCountry, this.datasetId, this.indicator, this.indicatorType, this.indicators, this.insight, this.tags, this.targetCountry, this.targetIndustry, });
 
 factory PostEventCreateRequest.fromJson(Map<String, dynamic> json) { return PostEventCreateRequest(
   accountId: json['accountId'] != null ? (json['accountId'] as num).toDouble() : null,

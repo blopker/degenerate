@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ranking_domain_details_response_result_meta_date_range.dart';final class RadarGetRankingDomainDetailsResponseResultMeta {const RadarGetRankingDomainDetailsResponseResultMeta({required this.dateRange});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ranking_domain_details_response_result_meta_date_range.dart';@immutable final class RadarGetRankingDomainDetailsResponseResultMeta {const RadarGetRankingDomainDetailsResponseResultMeta({required this.dateRange});
 
 factory RadarGetRankingDomainDetailsResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetRankingDomainDetailsResponseResultMeta(
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetRankingDomainDetailsResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),

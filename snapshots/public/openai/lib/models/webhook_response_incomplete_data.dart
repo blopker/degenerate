@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Event data payload.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Event data payload.
 /// 
-final class WebhookResponseIncompleteData {const WebhookResponseIncompleteData({required this.id});
+@immutable final class WebhookResponseIncompleteData {const WebhookResponseIncompleteData({required this.id});
 
 factory WebhookResponseIncompleteData.fromJson(Map<String, dynamic> json) { return WebhookResponseIncompleteData(
   id: json['id'] as String,

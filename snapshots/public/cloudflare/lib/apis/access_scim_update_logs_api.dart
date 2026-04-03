@@ -13,7 +13,7 @@ final class AccessScimUpdateLogsApi with ApiExecutor {const AccessScimUpdateLogs
 /// Lists Access SCIM update logs that maintain a record of updates made to User and Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
 ///
 /// `GET /accounts/{account_id}/access/logs/scim/updates`
-Future<ApiResult<List<AccessResponses>?, Never>> accessScimUpdateLogsListAccessScimUpdateLogs({required AccessIdentifier accountId, AccessLimit? limit, AccessDirection? direction, AccessSince? since, AccessUntil? until, required List<String> idpId, List<AccessRequestsStatus2>? status, List<AccessResourceType2>? resourceType, List<AccessRequestMethod2>? requestMethod, AccessResourceUserEmail? resourceUserEmail, AccessResourceGroupName? resourceGroupName, AccessRequestsCfResourceId? cfResourceId, AccessRequestsIdpResourceId? idpResourceId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessResponses>?, Never>> accessScimUpdateLogsListAccessScimUpdateLogs({required AccessIdentifier accountId, required List<String> idpId, AccessLimit? limit, AccessDirection? direction, AccessSince? since, AccessUntil? until, List<AccessRequestsStatus2>? status, List<AccessResourceType2>? resourceType, List<AccessRequestMethod2>? requestMethod, AccessResourceUserEmail? resourceUserEmail, AccessResourceGroupName? resourceGroupName, AccessRequestsCfResourceId? cfResourceId, AccessRequestsIdpResourceId? idpResourceId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -28,21 +28,21 @@ if (until != null) {
   queryParameters['until'] = until.toString();
 }
 for (final item in idpId) {
-  queryParametersList.add(ApiQueryParameter(name: 'idp_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'idp_id', value: item));
 }
 if (status != null) {
 for (final item in status) {
-  queryParametersList.add(ApiQueryParameter(name: 'status', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'status', value: item.toJson()));
 }
 }
 if (resourceType != null) {
 for (final item in resourceType) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item.toJson()));
 }
 }
 if (requestMethod != null) {
 for (final item in requestMethod) {
-  queryParametersList.add(ApiQueryParameter(name: 'request_method', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'request_method', value: item.toJson()));
 }
 }
 if (resourceUserEmail != null) {

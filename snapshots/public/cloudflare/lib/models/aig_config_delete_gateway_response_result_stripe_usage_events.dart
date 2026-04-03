@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigDeleteGatewayResponseResultStripeUsageEvents {const AigConfigDeleteGatewayResponseResultStripeUsageEvents({required this.payload});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigDeleteGatewayResponseResultStripeUsageEvents {const AigConfigDeleteGatewayResponseResultStripeUsageEvents({required this.payload});
 
 factory AigConfigDeleteGatewayResponseResultStripeUsageEvents.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayResponseResultStripeUsageEvents(
   payload: json['payload'] as String,

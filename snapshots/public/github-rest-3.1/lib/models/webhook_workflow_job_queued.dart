@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'deployment.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_workflow_job_queued_workflow_job.dart';final class WebhookWorkflowJobQueuedAction {const WebhookWorkflowJobQueuedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_workflow_job_queued_workflow_job.dart';@immutable final class WebhookWorkflowJobQueuedAction {const WebhookWorkflowJobQueuedAction._(this.value);
 
 factory WebhookWorkflowJobQueuedAction.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWorkflowJobQueuedAction($value)'; } 
  }
-final class WebhookWorkflowJobQueued {const WebhookWorkflowJobQueued({required this.action, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, required this.workflowJob, this.deployment, });
+@immutable final class WebhookWorkflowJobQueued {const WebhookWorkflowJobQueued({required this.action, required this.repository, required this.sender, required this.workflowJob, this.enterprise, this.installation, this.organization, this.deployment, });
 
 factory WebhookWorkflowJobQueued.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobQueued(
   action: WebhookWorkflowJobQueuedAction.fromJson(json['action'] as String),

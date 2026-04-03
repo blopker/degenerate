@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_resource_group.dart';final class AccountResourceGroupUpdateResponse {const AccountResourceGroupUpdateResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_resource_group.dart';@immutable final class AccountResourceGroupUpdateResponse {const AccountResourceGroupUpdateResponse({this.result});
 
 factory AccountResourceGroupUpdateResponse.fromJson(Map<String, dynamic> json) { return AccountResourceGroupUpdateResponse(
   result: json['result'] != null ? IamResourceGroup.fromJson(json['result'] as Map<String, dynamic>) : null,

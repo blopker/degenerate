@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data-layout partitioning for sinks.
-final class CloudflarePipelinesR2TablePartitioning {const CloudflarePipelinesR2TablePartitioning({this.timePattern});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data-layout partitioning for sinks.
+@immutable final class CloudflarePipelinesR2TablePartitioning {const CloudflarePipelinesR2TablePartitioning({this.timePattern});
 
 factory CloudflarePipelinesR2TablePartitioning.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2TablePartitioning(
   timePattern: json['time_pattern'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_ip_allowlist_config_activated_configs.dart';/// The details for events with this `type`.
-final class AuditLogIpAllowlistConfigActivated {const AuditLogIpAllowlistConfigActivated({this.configs});
+@immutable final class AuditLogIpAllowlistConfigActivated {const AuditLogIpAllowlistConfigActivated({this.configs});
 
 factory AuditLogIpAllowlistConfigActivated.fromJson(Map<String, dynamic> json) { return AuditLogIpAllowlistConfigActivated(
   configs: (json['configs'] as List<dynamic>?)?.map((e) => AuditLogIpAllowlistConfigActivatedConfigs.fromJson(e as Map<String, dynamic>)).toList(),

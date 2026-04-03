@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_shipping_rates_shipping_rate_token_request_fixed_amount_currency_options_value.dart';/// Describes a fixed amount to charge for shipping. Must be present if type is `fixed_amount`.
-final class PostShippingRatesShippingRateTokenRequestFixedAmount {const PostShippingRatesShippingRateTokenRequestFixedAmount({this.currencyOptions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_shipping_rates_shipping_rate_token_request_fixed_amount_currency_options_value.dart';/// Describes a fixed amount to charge for shipping. Must be present if type is `fixed_amount`.
+@immutable final class PostShippingRatesShippingRateTokenRequestFixedAmount {const PostShippingRatesShippingRateTokenRequestFixedAmount({this.currencyOptions});
 
 factory PostShippingRatesShippingRateTokenRequestFixedAmount.fromJson(Map<String, dynamic> json) { return PostShippingRatesShippingRateTokenRequestFixedAmount(
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),

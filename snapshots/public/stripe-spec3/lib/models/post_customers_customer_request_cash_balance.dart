@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_customers_customer_request_cash_balance_settings.dart';/// Balance information and default balance settings for this customer.
-final class PostCustomersCustomerRequestCashBalance {const PostCustomersCustomerRequestCashBalance({this.settings});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_request_cash_balance_settings.dart';/// Balance information and default balance settings for this customer.
+@immutable final class PostCustomersCustomerRequestCashBalance {const PostCustomersCustomerRequestCashBalance({this.settings});
 
 factory PostCustomersCustomerRequestCashBalance.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerRequestCashBalance(
   settings: json['settings'] != null ? PostCustomersCustomerRequestCashBalanceSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,

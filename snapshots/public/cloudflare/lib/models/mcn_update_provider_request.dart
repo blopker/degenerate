@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnUpdateProviderRequest {const McnUpdateProviderRequest({this.awsArn, this.azureSubscriptionId, this.azureTenantId, this.description, this.friendlyName, this.gcpProjectId, this.gcpServiceAccountEmail, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnUpdateProviderRequest {const McnUpdateProviderRequest({this.awsArn, this.azureSubscriptionId, this.azureTenantId, this.description, this.friendlyName, this.gcpProjectId, this.gcpServiceAccountEmail, });
 
 factory McnUpdateProviderRequest.fromJson(Map<String, dynamic> json) { return McnUpdateProviderRequest(
   awsArn: json['aws_arn'] as String?,

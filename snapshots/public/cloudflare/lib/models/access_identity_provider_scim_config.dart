@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates how a SCIM event updates a user identity used for policy evaluation. Use "automatic" to automatically update a user's identity and augment it with fields from the SCIM user resource. Use "reauth" to force re-authentication on group membership updates, user identity update will only occur after successful re-authentication. With "reauth" identities will not contain fields from the SCIM user resource. With "no_action" identities will not be changed by SCIM updates in any way and users will not be prompted to reauthenticate.
-final class AccessIdentityProviderScimConfigIdentityUpdateBehavior {const AccessIdentityProviderScimConfigIdentityUpdateBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates how a SCIM event updates a user identity used for policy evaluation. Use "automatic" to automatically update a user's identity and augment it with fields from the SCIM user resource. Use "reauth" to force re-authentication on group membership updates, user identity update will only occur after successful re-authentication. With "reauth" identities will not contain fields from the SCIM user resource. With "no_action" identities will not be changed by SCIM updates in any way and users will not be prompted to reauthenticate.
+@immutable final class AccessIdentityProviderScimConfigIdentityUpdateBehavior {const AccessIdentityProviderScimConfigIdentityUpdateBehavior._(this.value);
 
 factory AccessIdentityProviderScimConfigIdentityUpdateBehavior.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccessIdentityProviderScimConfigIdentityUpdateBehavior($value)'; } 
  }
 /// The configuration settings for enabling a System for Cross-Domain Identity Management (SCIM) with the identity provider.
-final class AccessIdentityProviderScimConfig {const AccessIdentityProviderScimConfig({this.enabled = false, this.identityUpdateBehavior = AccessIdentityProviderScimConfigIdentityUpdateBehavior.noAction, this.scimBaseUrl, this.seatDeprovision = false, this.secret, this.userDeprovision = false, });
+@immutable final class AccessIdentityProviderScimConfig {const AccessIdentityProviderScimConfig({this.enabled = false, this.identityUpdateBehavior = AccessIdentityProviderScimConfigIdentityUpdateBehavior.noAction, this.scimBaseUrl, this.seatDeprovision = false, this.secret, this.userDeprovision = false, });
 
 factory AccessIdentityProviderScimConfig.fromJson(Map<String, dynamic> json) { return AccessIdentityProviderScimConfig(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,

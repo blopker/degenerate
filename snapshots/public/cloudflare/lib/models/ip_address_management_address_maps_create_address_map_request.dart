@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_address_maps_membership_request.dart';import 'addressing_enabled.dart';import 'addressing_ip_address.dart';import 'addressing_schemas_description.dart';final class IpAddressManagementAddressMapsCreateAddressMapRequest {const IpAddressManagementAddressMapsCreateAddressMapRequest({this.description, this.enabled, this.ips, this.memberships, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_address_maps_membership_request.dart';import 'addressing_enabled.dart';import 'addressing_ip_address.dart';import 'addressing_schemas_description.dart';@immutable final class IpAddressManagementAddressMapsCreateAddressMapRequest {const IpAddressManagementAddressMapsCreateAddressMapRequest({this.description, this.enabled, this.ips, this.memberships, });
 
 factory IpAddressManagementAddressMapsCreateAddressMapRequest.fromJson(Map<String, dynamic> json) { return IpAddressManagementAddressMapsCreateAddressMapRequest(
   description: json['description'] != null ? AddressingSchemasDescription.fromJson(json['description'] as String) : null,

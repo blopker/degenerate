@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Counters summarizing the outcomes of the evaluation run.
-final class EvalRunResultCounts {const EvalRunResultCounts({required this.total, required this.errored, required this.failed, required this.passed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Counters summarizing the outcomes of the evaluation run.
+@immutable final class EvalRunResultCounts {const EvalRunResultCounts({required this.total, required this.errored, required this.failed, required this.passed, });
 
 factory EvalRunResultCounts.fromJson(Map<String, dynamic> json) { return EvalRunResultCounts(
   total: (json['total'] as num).toInt(),

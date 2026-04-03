@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'personal_access_token_request.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookPersonalAccessTokenRequestDeniedAction {const WebhookPersonalAccessTokenRequestDeniedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'personal_access_token_request.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookPersonalAccessTokenRequestDeniedAction {const WebhookPersonalAccessTokenRequestDeniedAction._(this.value);
 
 factory WebhookPersonalAccessTokenRequestDeniedAction.fromJson(String json) { return switch (json) {
   'denied' => denied,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPersonalAccessTokenRequestDeniedAction($value)'; } 
  }
-final class WebhookPersonalAccessTokenRequestDenied {const WebhookPersonalAccessTokenRequestDenied({required this.action, required this.personalAccessTokenRequest, required this.organization, this.enterprise, required this.sender, required this.installation, });
+@immutable final class WebhookPersonalAccessTokenRequestDenied {const WebhookPersonalAccessTokenRequestDenied({required this.action, required this.personalAccessTokenRequest, required this.organization, required this.sender, required this.installation, this.enterprise, });
 
 factory WebhookPersonalAccessTokenRequestDenied.fromJson(Map<String, dynamic> json) { return WebhookPersonalAccessTokenRequestDenied(
   action: WebhookPersonalAccessTokenRequestDeniedAction.fromJson(json['action'] as String),

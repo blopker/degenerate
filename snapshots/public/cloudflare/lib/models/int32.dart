@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Int32Type {const Int32Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Int32Type {const Int32Type._(this.value);
 
 factory Int32Type.fromJson(String json) { return switch (json) {
   'int32' => int32,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Int32Type($value)'; } 
  }
-final class Int32 {const Int32({required this.type});
+@immutable final class Int32 {const Int32({required this.type});
 
 factory Int32.fromJson(Map<String, dynamic> json) { return Int32(
   type: Int32Type.fromJson(json['type'] as String),

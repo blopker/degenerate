@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpRoutesRealtimeResponse400Errors {const RadarGetBgpRoutesRealtimeResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRoutesRealtimeResponse400Errors {const RadarGetBgpRoutesRealtimeResponse400Errors({required this.message});
 
 factory RadarGetBgpRoutesRealtimeResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesRealtimeResponse400Errors(
   message: json['message'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The response body to return. The value must conform to the configured content type.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The response body to return. The value must conform to the configured content type.
 extension type const FirewallBody(String value) {
 factory FirewallBody.fromJson(String json) => FirewallBody(json);
 
@@ -14,7 +14,7 @@ factory FirewallContentType.fromJson(String json) => FirewallContentType(json);
 String toJson() => value;
 
 }
-final class FirewallCustomResponseVariant1 {const FirewallCustomResponseVariant1({this.body, this.contentType, });
+@immutable final class FirewallCustomResponseVariant1 {const FirewallCustomResponseVariant1({this.body, this.contentType, });
 
 factory FirewallCustomResponseVariant1.fromJson(Map<String, dynamic> json) { return FirewallCustomResponseVariant1(
   body: json['body'] != null ? FirewallBody.fromJson(json['body'] as String) : null,

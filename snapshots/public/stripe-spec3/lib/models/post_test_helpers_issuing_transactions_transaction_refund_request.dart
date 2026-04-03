@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersIssuingTransactionsTransactionRefundRequest {const PostTestHelpersIssuingTransactionsTransactionRefundRequest({this.expand, this.refundAmount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingTransactionsTransactionRefundRequest {const PostTestHelpersIssuingTransactionsTransactionRefundRequest({this.expand, this.refundAmount, });
 
 factory PostTestHelpersIssuingTransactionsTransactionRefundRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsTransactionRefundRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

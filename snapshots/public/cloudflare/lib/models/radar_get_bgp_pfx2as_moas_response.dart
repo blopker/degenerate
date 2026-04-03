@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_bgp_pfx2as_moas_response_result.dart';final class RadarGetBgpPfx2asMoasResponse {const RadarGetBgpPfx2asMoasResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_pfx2as_moas_response_result.dart';@immutable final class RadarGetBgpPfx2asMoasResponse {const RadarGetBgpPfx2asMoasResponse({required this.result, required this.success, });
 
 factory RadarGetBgpPfx2asMoasResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpPfx2asMoasResponse(
   result: RadarGetBgpPfx2asMoasResponseResult.fromJson(json['result'] as Map<String, dynamic>),

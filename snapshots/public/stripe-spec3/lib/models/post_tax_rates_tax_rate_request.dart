@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_rates_tax_rate_request_metadata.dart';/// The high-level tax type, such as `vat` or `sales_tax`.
-final class PostTaxRatesTaxRateRequestTaxType {const PostTaxRatesTaxRateRequestTaxType._(this.value);
+@immutable final class PostTaxRatesTaxRateRequestTaxType {const PostTaxRatesTaxRateRequestTaxType._(this.value);
 
 factory PostTaxRatesTaxRateRequestTaxType.fromJson(String json) { return switch (json) {
   'amusement_tax' => amusementTax,
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxRatesTaxRateRequestTaxType($value)'; } 
  }
-final class PostTaxRatesTaxRateRequest {const PostTaxRatesTaxRateRequest({this.active, this.country, this.description, this.displayName, this.expand, this.jurisdiction, this.metadata, this.state, this.taxType, });
+@immutable final class PostTaxRatesTaxRateRequest {const PostTaxRatesTaxRateRequest({this.active, this.country, this.description, this.displayName, this.expand, this.jurisdiction, this.metadata, this.state, this.taxType, });
 
 factory PostTaxRatesTaxRateRequest.fromJson(Map<String, dynamic> json) { return PostTaxRatesTaxRateRequest(
   active: json['active'] as bool?,

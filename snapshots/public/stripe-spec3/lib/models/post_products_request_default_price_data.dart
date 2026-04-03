@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_products_request_default_price_data_currency_options_value.dart';import 'post_products_request_default_price_data_custom_unit_amount.dart';import 'post_products_request_default_price_data_recurring.dart';final class PostProductsRequestDefaultPriceDataTaxBehavior {const PostProductsRequestDefaultPriceDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_products_request_default_price_data_currency_options_value.dart';import 'post_products_request_default_price_data_custom_unit_amount.dart';import 'post_products_request_default_price_data_recurring.dart';@immutable final class PostProductsRequestDefaultPriceDataTaxBehavior {const PostProductsRequestDefaultPriceDataTaxBehavior._(this.value);
 
 factory PostProductsRequestDefaultPriceDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostProductsRequestDefaultPriceDataTaxBehavior($value)'; } 
  }
 /// Data used to generate a new [Price](https://docs.stripe.com/api/prices) object. This Price will be set as the default price for this product.
-final class PostProductsRequestDefaultPriceData {const PostProductsRequestDefaultPriceData({required this.currency, this.currencyOptions, this.customUnitAmount, this.metadata, this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostProductsRequestDefaultPriceData {const PostProductsRequestDefaultPriceData({required this.currency, this.currencyOptions, this.customUnitAmount, this.metadata, this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostProductsRequestDefaultPriceData.fromJson(Map<String, dynamic> json) { return PostProductsRequestDefaultPriceData(
   currency: json['currency'] as String,

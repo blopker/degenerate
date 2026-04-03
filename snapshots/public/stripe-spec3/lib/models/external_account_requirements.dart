@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_requirements_error.dart';/// 
-final class ExternalAccountRequirements {const ExternalAccountRequirements({this.currentlyDue, this.errors, this.pastDue, this.pendingVerification, });
+@immutable final class ExternalAccountRequirements {const ExternalAccountRequirements({this.currentlyDue, this.errors, this.pastDue, this.pendingVerification, });
 
 factory ExternalAccountRequirements.fromJson(Map<String, dynamic> json) { return ExternalAccountRequirements(
   currentlyDue: (json['currently_due'] as List<dynamic>?)?.map((e) => e as String).toList(),

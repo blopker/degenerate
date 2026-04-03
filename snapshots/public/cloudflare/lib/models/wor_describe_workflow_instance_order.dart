@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Step ordering: "asc" (default, oldest first) or "desc" (newest first).
-final class WorDescribeWorkflowInstanceOrder {const WorDescribeWorkflowInstanceOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Step ordering: "asc" (default, oldest first) or "desc" (newest first).
+@immutable final class WorDescribeWorkflowInstanceOrder {const WorDescribeWorkflowInstanceOrder._(this.value);
 
 factory WorDescribeWorkflowInstanceOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_delete_providers_response_result.dart';final class AigConfigDeleteProvidersResponse {const AigConfigDeleteProvidersResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_providers_response_result.dart';@immutable final class AigConfigDeleteProvidersResponse {const AigConfigDeleteProvidersResponse({required this.result, required this.success, });
 
 factory AigConfigDeleteProvidersResponse.fromJson(Map<String, dynamic> json) { return AigConfigDeleteProvidersResponse(
   result: AigConfigDeleteProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A scoped-resource selector requirement is a selector that contains values, a scope name, and an operator that relates the scope name and values.
-final class ScopedResourceSelectorRequirement {const ScopedResourceSelectorRequirement({this.$operator = '', this.scopeName = '', this.values, });
+@immutable final class ScopedResourceSelectorRequirement {const ScopedResourceSelectorRequirement({this.$operator = '', this.scopeName = '', this.values, });
 
 factory ScopedResourceSelectorRequirement.fromJson(Map<String, dynamic> json) { return ScopedResourceSelectorRequirement(
   $operator: json['operator'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentIntentDataShippingAddress {const PostCheckoutSessionsRequestPaymentIntentDataShippingAddress({this.city, this.country, required this.line1, this.line2, this.postalCode, this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentIntentDataShippingAddress {const PostCheckoutSessionsRequestPaymentIntentDataShippingAddress({required this.line1, this.city, this.country, this.line2, this.postalCode, this.state, });
 
 factory PostCheckoutSessionsRequestPaymentIntentDataShippingAddress.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentIntentDataShippingAddress(
   city: json['city'] as String?,

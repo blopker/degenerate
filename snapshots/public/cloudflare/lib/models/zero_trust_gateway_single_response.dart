@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_certificates.dart';final class ZeroTrustGatewaySingleResponse {const ZeroTrustGatewaySingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_certificates.dart';@immutable final class ZeroTrustGatewaySingleResponse {const ZeroTrustGatewaySingleResponse({this.result});
 
 factory ZeroTrustGatewaySingleResponse.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewaySingleResponse(
   result: json['result'] != null ? ZeroTrustGatewayCertificates.fromJson(json['result'] as Map<String, dynamic>) : null,

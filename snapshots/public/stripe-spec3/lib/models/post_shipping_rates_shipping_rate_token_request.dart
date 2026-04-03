@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_shipping_rates_shipping_rate_token_request_fixed_amount.dart';import 'post_shipping_rates_shipping_rate_token_request_metadata.dart';/// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
-final class PostShippingRatesShippingRateTokenRequestTaxBehavior {const PostShippingRatesShippingRateTokenRequestTaxBehavior._(this.value);
+@immutable final class PostShippingRatesShippingRateTokenRequestTaxBehavior {const PostShippingRatesShippingRateTokenRequestTaxBehavior._(this.value);
 
 factory PostShippingRatesShippingRateTokenRequestTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostShippingRatesShippingRateTokenRequestTaxBehavior($value)'; } 
  }
-final class PostShippingRatesShippingRateTokenRequest {const PostShippingRatesShippingRateTokenRequest({this.active, this.expand, this.fixedAmount, this.metadata, this.taxBehavior, });
+@immutable final class PostShippingRatesShippingRateTokenRequest {const PostShippingRatesShippingRateTokenRequest({this.active, this.expand, this.fixedAmount, this.metadata, this.taxBehavior, });
 
 factory PostShippingRatesShippingRateTokenRequest.fromJson(Map<String, dynamic> json) { return PostShippingRatesShippingRateTokenRequest(
   active: json['active'] as bool?,

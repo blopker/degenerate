@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey._(this.value);
 
 factory AigConfigDeleteGatewayLogsFiltersKey.fromJson(String json) { return switch (json) {
   'id' => id,
@@ -93,7 +93,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigDeleteGatewayLogsFiltersKey($value)'; } 
  }
-final class AigConfigDeleteGatewayLogsFiltersOperator {const AigConfigDeleteGatewayLogsFiltersOperator._(this.value);
+@immutable final class AigConfigDeleteGatewayLogsFiltersOperator {const AigConfigDeleteGatewayLogsFiltersOperator._(this.value);
 
 factory AigConfigDeleteGatewayLogsFiltersOperator.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -126,7 +126,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigDeleteGatewayLogsFiltersOperator($value)'; } 
  }
-final class AigConfigDeleteGatewayLogsFilters {const AigConfigDeleteGatewayLogsFilters({required this.key, required this.$operator, required this.value, });
+@immutable final class AigConfigDeleteGatewayLogsFilters {const AigConfigDeleteGatewayLogsFilters({required this.key, required this.$operator, required this.value, });
 
 factory AigConfigDeleteGatewayLogsFilters.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayLogsFilters(
   key: AigConfigDeleteGatewayLogsFiltersKey.fromJson(json['key'] as String),

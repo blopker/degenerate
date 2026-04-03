@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'ruleset_version_actor.dart';/// The historical version of a ruleset
-final class RulesetVersion {const RulesetVersion({required this.versionId, required this.actor, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ruleset_version_actor.dart';/// The historical version of a ruleset
+@immutable final class RulesetVersion {const RulesetVersion({required this.versionId, required this.actor, required this.updatedAt, });
 
 factory RulesetVersion.fromJson(Map<String, dynamic> json) { return RulesetVersion(
   versionId: (json['version_id'] as num).toInt(),

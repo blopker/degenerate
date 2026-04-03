@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationUpdateResponse500ErrorsMessage {const DestinationUpdateResponse500ErrorsMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationUpdateResponse500ErrorsMessage {const DestinationUpdateResponse500ErrorsMessage._(this.value);
 
 factory DestinationUpdateResponse500ErrorsMessage.fromJson(String json) { return switch (json) {
   'Internal error' => internalError,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationUpdateResponse500ErrorsMessage($value)'; } 
  }
-final class DestinationUpdateResponse500Errors {const DestinationUpdateResponse500Errors({this.detail, required this.message, });
+@immutable final class DestinationUpdateResponse500Errors {const DestinationUpdateResponse500Errors({required this.message, this.detail, });
 
 factory DestinationUpdateResponse500Errors.fromJson(Map<String, dynamic> json) { return DestinationUpdateResponse500Errors(
   detail: json['detail'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ScaleSpec describes the attributes of a scale subresource.
-final class ScaleSpec {const ScaleSpec({this.replicas = 0});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ScaleSpec describes the attributes of a scale subresource.
+@immutable final class ScaleSpec {const ScaleSpec({this.replicas = 0});
 
 factory ScaleSpec.fromJson(Map<String, dynamic> json) { return ScaleSpec(
   replicas: json.containsKey('replicas') ? (json['replicas'] as num).toInt() : 0,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_data_specs.dart';final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2 {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_data_specs.dart';@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2 {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2._(this.value);
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The iteration title, in raw text and HTML formats.
-final class IterationSettingsTitle {const IterationSettingsTitle({required this.raw, required this.html, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The iteration title, in raw text and HTML formats.
+@immutable final class IterationSettingsTitle {const IterationSettingsTitle({required this.raw, required this.html, });
 
 factory IterationSettingsTitle.fromJson(Map<String, dynamic> json) { return IterationSettingsTitle(
   raw: json['raw'] as String,

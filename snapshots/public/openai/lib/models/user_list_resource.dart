@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'user.dart';/// Always `list`.
-final class UserListResourceObject {const UserListResourceObject._(this.value);
+@immutable final class UserListResourceObject {const UserListResourceObject._(this.value);
 
 factory UserListResourceObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UserListResourceObject($value)'; } 
  }
 /// Paginated list of user objects returned when inspecting group membership.
-final class UserListResource {const UserListResource({required this.object, required this.data, required this.hasMore, required this.next, });
+@immutable final class UserListResource {const UserListResource({required this.object, required this.data, required this.hasMore, required this.next, });
 
 factory UserListResource.fromJson(Map<String, dynamic> json) { return UserListResource(
   object: UserListResourceObject.fromJson(json['object'] as String),

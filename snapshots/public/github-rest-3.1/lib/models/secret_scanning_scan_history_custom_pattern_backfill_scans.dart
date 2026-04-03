@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecretScanningScanHistoryCustomPatternBackfillScans {const SecretScanningScanHistoryCustomPatternBackfillScans({this.type, this.status, this.completedAt, this.startedAt, this.patternName, this.patternScope, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretScanningScanHistoryCustomPatternBackfillScans {const SecretScanningScanHistoryCustomPatternBackfillScans({this.type, this.status, this.completedAt, this.startedAt, this.patternName, this.patternScope, });
 
 factory SecretScanningScanHistoryCustomPatternBackfillScans.fromJson(Map<String, dynamic> json) { return SecretScanningScanHistoryCustomPatternBackfillScans(
   type: json['type'] as String?,

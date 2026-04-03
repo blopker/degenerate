@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentIntentsRequestPaymentMethodDataBillingDetailsNameVariant2 {const PostPaymentIntentsRequestPaymentMethodDataBillingDetailsNameVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsRequestPaymentMethodDataBillingDetailsNameVariant2 {const PostPaymentIntentsRequestPaymentMethodDataBillingDetailsNameVariant2._(this.value);
 
 factory PostPaymentIntentsRequestPaymentMethodDataBillingDetailsNameVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

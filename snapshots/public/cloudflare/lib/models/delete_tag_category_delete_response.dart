@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteTagCategoryDeleteResponse {const DeleteTagCategoryDeleteResponse({required this.uuid});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteTagCategoryDeleteResponse {const DeleteTagCategoryDeleteResponse({required this.uuid});
 
 factory DeleteTagCategoryDeleteResponse.fromJson(Map<String, dynamic> json) { return DeleteTagCategoryDeleteResponse(
   uuid: json['uuid'] as String,

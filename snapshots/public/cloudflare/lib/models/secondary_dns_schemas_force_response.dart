@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When force_notify query parameter is set to true, the response is a simple string.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When force_notify query parameter is set to true, the response is a simple string.
 extension type const SecondaryDnsSchemasForceResult(String value) {
 factory SecondaryDnsSchemasForceResult.fromJson(String json) => SecondaryDnsSchemasForceResult(json);
 
 String toJson() => value;
 
 }
-final class SecondaryDnsSchemasForceResponse {const SecondaryDnsSchemasForceResponse({this.result});
+@immutable final class SecondaryDnsSchemasForceResponse {const SecondaryDnsSchemasForceResponse({this.result});
 
 factory SecondaryDnsSchemasForceResponse.fromJson(Map<String, dynamic> json) { return SecondaryDnsSchemasForceResponse(
   result: json['result'] != null ? SecondaryDnsSchemasForceResult.fromJson(json['result'] as String) : null,

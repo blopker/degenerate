@@ -11,17 +11,24 @@
 # (the recommended set includes the core lints).
 # The core lints are also what is used by pub.dev for scoring packages.
 
-include: package:lints/recommended.yaml
+include: package:very_good_analysis/analysis_options.yaml
 
 # Uncomment the following section to specify additional rules.
 
-# linter:
-#   rules:
-#     - camel_case_types
+linter:
+  rules:
+    lines_longer_than_80_chars: false
+    cascade_invocations: false
+    always_use_package_imports: false
+    public_member_api_docs: false
+    avoid_positional_boolean_parameters: false
+    flutter_style_todos: false
+    avoid_bool_literals_in_conditional_expressions: false
+    avoid_js_rounded_ints: false
+    prefer_int_literals: false
 
 analyzer:
   exclude:
-    - snapshots/public/**
     - outputs/**
 
 # For more information about the core and recommended set of lints, see

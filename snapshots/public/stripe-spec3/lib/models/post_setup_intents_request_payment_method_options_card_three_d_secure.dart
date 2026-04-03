@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_setup_intents_request_payment_method_options_card_three_d_secure_network_options.dart';final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_payment_method_options_card_three_d_secure_network_options.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus.fromJson(String json) { return switch (json) {
   'A' => a,
@@ -39,7 +39,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator._(this.value);
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator.fromJson(String json) { return switch (json) {
   '01' => $01,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureElectronicCommerceIndicator($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion._(this.value);
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion.fromJson(String json) { return switch (json) {
   '1.0.2' => $102,
@@ -105,7 +105,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureVersion($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure({this.aresTransStatus, this.cryptogram, this.electronicCommerceIndicator, this.networkOptions, this.requestorChallengeIndicator, this.transactionId, this.version, });
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure({this.aresTransStatus, this.cryptogram, this.electronicCommerceIndicator, this.networkOptions, this.requestorChallengeIndicator, this.transactionId, this.version, });
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecure(
   aresTransStatus: json['ares_trans_status'] != null ? PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureAresTransStatus.fromJson(json['ares_trans_status'] as String) : null,

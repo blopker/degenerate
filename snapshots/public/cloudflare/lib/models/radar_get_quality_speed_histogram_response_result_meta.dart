@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_quality_speed_histogram_response_result_meta_confidence_info.dart';import 'radar_get_quality_speed_histogram_response_result_meta_date_range.dart';import 'radar_get_quality_speed_histogram_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetQualitySpeedHistogramResponseResultMetaNormalization {const RadarGetQualitySpeedHistogramResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetQualitySpeedHistogramResponseResultMetaNormalization {const RadarGetQualitySpeedHistogramResponseResultMetaNormalization._(this.value);
 
 factory RadarGetQualitySpeedHistogramResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetQualitySpeedHistogramResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetQualitySpeedHistogramResponseResultMeta {const RadarGetQualitySpeedHistogramResponseResultMeta({required this.bucketSize, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.totalTests, required this.units, });
+@immutable final class RadarGetQualitySpeedHistogramResponseResultMeta {const RadarGetQualitySpeedHistogramResponseResultMeta({required this.bucketSize, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.totalTests, required this.units, });
 
 factory RadarGetQualitySpeedHistogramResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedHistogramResponseResultMeta(
   bucketSize: (json['bucketSize'] as num).toInt(),

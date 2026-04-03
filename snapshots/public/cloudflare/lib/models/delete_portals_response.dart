@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'delete_portals_response_result.dart';final class DeletePortalsResponse {const DeletePortalsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_portals_response_result.dart';@immutable final class DeletePortalsResponse {const DeletePortalsResponse({required this.result, required this.success, });
 
 factory DeletePortalsResponse.fromJson(Map<String, dynamic> json) { return DeletePortalsResponse(
   result: DeletePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

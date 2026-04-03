@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'custom_indicator_feeds_description.dart';import 'custom_indicator_feeds_id.dart';import 'custom_indicator_feeds_is_attributable.dart';import 'custom_indicator_feeds_is_downloadable.dart';import 'custom_indicator_feeds_is_public.dart';import 'custom_indicator_feeds_name.dart';/// The unique identifier for the provider
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_indicator_feeds_description.dart';import 'custom_indicator_feeds_id.dart';import 'custom_indicator_feeds_is_attributable.dart';import 'custom_indicator_feeds_is_downloadable.dart';import 'custom_indicator_feeds_is_public.dart';import 'custom_indicator_feeds_name.dart';/// The unique identifier for the provider
 extension type const CustomIndicatorFeedsProviderId(String value) {
 factory CustomIndicatorFeedsProviderId.fromJson(String json) => CustomIndicatorFeedsProviderId(json);
 
@@ -15,7 +15,7 @@ String toJson() => value;
 
 }
 /// Status of the latest snapshot uploaded
-final class CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus {const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._(this.value);
+@immutable final class CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus {const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._(this.value);
 
 factory CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus.fromJson(String json) { return switch (json) {
   'Mirroring' => mirroring,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus($value)'; } 
  }
-final class CustomIndicatorFeedsIndicatorFeedMetadata {const CustomIndicatorFeedsIndicatorFeedMetadata({this.createdOn, this.description, this.id, this.isAttributable, this.isDownloadable, this.isPublic, this.latestUploadStatus, this.modifiedOn, this.name, this.providerId, this.providerName, });
+@immutable final class CustomIndicatorFeedsIndicatorFeedMetadata {const CustomIndicatorFeedsIndicatorFeedMetadata({this.createdOn, this.description, this.id, this.isAttributable, this.isDownloadable, this.isPublic, this.latestUploadStatus, this.modifiedOn, this.name, this.providerId, this.providerName, });
 
 factory CustomIndicatorFeedsIndicatorFeedMetadata.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsIndicatorFeedMetadata(
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,

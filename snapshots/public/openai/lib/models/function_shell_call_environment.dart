@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'container_reference_resource.dart';import 'local_environment_resource.dart';sealed class FunctionShellCallEnvironment {const FunctionShellCallEnvironment();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_reference_resource.dart';import 'local_environment_resource.dart';sealed class FunctionShellCallEnvironment {const FunctionShellCallEnvironment();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory FunctionShellCallEnvironment.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is FunctionShellCallEnvironment$Unknown; } 
  }
-final class FunctionShellCallEnvironmentLocal extends FunctionShellCallEnvironment {const FunctionShellCallEnvironmentLocal(this.localEnvironmentResource);
+@immutable final class FunctionShellCallEnvironmentLocal extends FunctionShellCallEnvironment {const FunctionShellCallEnvironmentLocal(this.localEnvironmentResource);
 
 factory FunctionShellCallEnvironmentLocal.fromJson(Map<String, dynamic> json) { return FunctionShellCallEnvironmentLocal(LocalEnvironmentResource.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final LocalEnvironmentResource localEnvironmentResource;
 @override int get hashCode { return localEnvironmentResource.hashCode; } 
 @override String toString() { return 'FunctionShellCallEnvironmentLocal(localEnvironmentResource: $localEnvironmentResource)'; } 
  }
-final class FunctionShellCallEnvironmentContainerReference extends FunctionShellCallEnvironment {const FunctionShellCallEnvironmentContainerReference(this.containerReferenceResource);
+@immutable final class FunctionShellCallEnvironmentContainerReference extends FunctionShellCallEnvironment {const FunctionShellCallEnvironmentContainerReference(this.containerReferenceResource);
 
 factory FunctionShellCallEnvironmentContainerReference.fromJson(Map<String, dynamic> json) { return FunctionShellCallEnvironmentContainerReference(ContainerReferenceResource.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final ContainerReferenceResource containerReferenceResource;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class FunctionShellCallEnvironment$Unknown extends FunctionShellCallEnvironment {const FunctionShellCallEnvironment$Unknown(this.json);
+@immutable final class FunctionShellCallEnvironment$Unknown extends FunctionShellCallEnvironment {const FunctionShellCallEnvironment$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

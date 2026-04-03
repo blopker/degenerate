@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Unit of time to group data by.
-final class DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Unit of time to group data by.
+@immutable final class DnsAnalyticsTimeDelta {const DnsAnalyticsTimeDelta._(this.value);
 
 factory DnsAnalyticsTimeDelta.fromJson(String json) { return switch (json) {
   'all' => all,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'abuse_reports_mitigated_entity_type.dart';import 'abuse_reports_mitigation_status.dart';import 'abuse_reports_mitigation_type.dart';final class AbuseReportsMitigationListItem {const AbuseReportsMitigationListItem({required this.effectiveDate, required this.entityId, required this.entityType, required this.id, required this.status, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_mitigated_entity_type.dart';import 'abuse_reports_mitigation_status.dart';import 'abuse_reports_mitigation_type.dart';@immutable final class AbuseReportsMitigationListItem {const AbuseReportsMitigationListItem({required this.effectiveDate, required this.entityId, required this.entityType, required this.id, required this.status, required this.type, });
 
 factory AbuseReportsMitigationListItem.fromJson(Map<String, dynamic> json) { return AbuseReportsMitigationListItem(
   effectiveDate: json['effective_date'] as String,

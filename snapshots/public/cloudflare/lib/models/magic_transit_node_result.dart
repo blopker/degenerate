@@ -56,7 +56,7 @@ factory MagicTransitStdDevRttMs.fromJson(num json) => MagicTransitStdDevRttMs(js
 num toJson() => value;
 
 }
-final class MagicTransitNodeResult {const MagicTransitNodeResult({this.asn, this.ip, this.labels, this.maxRttMs, this.meanRttMs, this.minRttMs, this.name, this.packetCount, this.stdDevRttMs, });
+@immutable final class MagicTransitNodeResult {const MagicTransitNodeResult({this.asn, this.ip, this.labels, this.maxRttMs, this.meanRttMs, this.minRttMs, this.name, this.packetCount, this.stdDevRttMs, });
 
 factory MagicTransitNodeResult.fromJson(Map<String, dynamic> json) { return MagicTransitNodeResult(
   asn: json['asn'] != null ? MagicTransitAsn.fromJson(json['asn'] as String) : null,

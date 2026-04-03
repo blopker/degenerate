@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secret_scanning_location_details.dart';/// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
-final class SecretScanningLocationType {const SecretScanningLocationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_scanning_location_details.dart';/// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
+@immutable final class SecretScanningLocationType {const SecretScanningLocationType._(this.value);
 
 factory SecretScanningLocationType.fromJson(String json) { return switch (json) {
   'commit' => commit,
@@ -58,11 +58,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationType($value)'; } 
  }
-final class SecretScanningLocation {const SecretScanningLocation({this.type, this.details, });
+@immutable final class SecretScanningLocation {const SecretScanningLocation({this.type, this.details, });
 
 factory SecretScanningLocation.fromJson(Map<String, dynamic> json) { return SecretScanningLocation(
   type: json['type'] != null ? SecretScanningLocationType.fromJson(json['type'] as String) : null,
-  details: json['details'] != null ? SecretScanningLocationDetails.fromJson(json['details']) : null,
+  details: json['details'] != null ? SecretScanningLocationDetails.fromJson(json['details'] as Map<String, dynamic>) : null,
 ); }
 
 /// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.

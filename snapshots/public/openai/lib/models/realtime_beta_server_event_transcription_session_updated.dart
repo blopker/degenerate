@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_transcription_session_create_response.dart';/// The event type, must be `transcription_session.updated`.
-final class RealtimeBetaServerEventTranscriptionSessionUpdatedType {const RealtimeBetaServerEventTranscriptionSessionUpdatedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_transcription_session_create_response.dart';/// The event type, must be `transcription_session.updated`.
+@immutable final class RealtimeBetaServerEventTranscriptionSessionUpdatedType {const RealtimeBetaServerEventTranscriptionSessionUpdatedType._(this.value);
 
 factory RealtimeBetaServerEventTranscriptionSessionUpdatedType.fromJson(String json) { return switch (json) {
   'transcription_session.updated' => transcriptionSessionUpdated,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Returned when a transcription session is updated with a `transcription_session.update` event, unless
 /// there is an error.
 /// 
-final class RealtimeBetaServerEventTranscriptionSessionUpdated {const RealtimeBetaServerEventTranscriptionSessionUpdated({required this.eventId, required this.type, required this.session, });
+@immutable final class RealtimeBetaServerEventTranscriptionSessionUpdated {const RealtimeBetaServerEventTranscriptionSessionUpdated({required this.eventId, required this.type, required this.session, });
 
 factory RealtimeBetaServerEventTranscriptionSessionUpdated.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventTranscriptionSessionUpdated(
   eventId: json['event_id'] as String,

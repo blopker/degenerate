@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Ephemeral key returned by the API.
-final class RealtimeSessionCreateRequestClientSecret {const RealtimeSessionCreateRequestClientSecret({required this.value, required this.expiresAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ephemeral key returned by the API.
+@immutable final class RealtimeSessionCreateRequestClientSecret {const RealtimeSessionCreateRequestClientSecret({required this.value, required this.expiresAt, });
 
 factory RealtimeSessionCreateRequestClientSecret.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestClientSecret(
   value: json['value'] as String,

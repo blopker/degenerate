@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_dispute_request_evidence.dart';import 'post_charges_charge_dispute_request_metadata.dart';final class PostChargesChargeDisputeRequest {const PostChargesChargeDisputeRequest({this.evidence, this.expand, this.metadata, this.submit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_dispute_request_evidence.dart';import 'post_charges_charge_dispute_request_metadata.dart';@immutable final class PostChargesChargeDisputeRequest {const PostChargesChargeDisputeRequest({this.evidence, this.expand, this.metadata, this.submit, });
 
 factory PostChargesChargeDisputeRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeDisputeRequest(
   evidence: json['evidence'] != null ? PostChargesChargeDisputeRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>) : null,

@@ -79,7 +79,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Conferences/${Uri.encodeComponent(conferenceSid)}/Recordings/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'Status=${Uri.encodeQueryComponent(body.status.toJson())}',
     if (body.pauseBehavior case final pauseBehavior$?)
       'PauseBehavior=${Uri.encodeQueryComponent(pauseBehavior$)}',

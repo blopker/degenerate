@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsListWorkflowRunArtifactsDirection {const ActionsListWorkflowRunArtifactsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsListWorkflowRunArtifactsDirection {const ActionsListWorkflowRunArtifactsDirection._(this.value);
 
 factory ActionsListWorkflowRunArtifactsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

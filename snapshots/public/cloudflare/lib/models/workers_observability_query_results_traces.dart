@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WorkersObservabilityQueryResultsTraces {const WorkersObservabilityQueryResultsTraces({this.errors, required this.rootSpanName, required this.rootTransactionName, required this.service, required this.spans, required this.traceDurationMs, required this.traceEndMs, required this.traceId, required this.traceStartMs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryResultsTraces {const WorkersObservabilityQueryResultsTraces({required this.rootSpanName, required this.rootTransactionName, required this.service, required this.spans, required this.traceDurationMs, required this.traceEndMs, required this.traceId, required this.traceStartMs, this.errors, });
 
 factory WorkersObservabilityQueryResultsTraces.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsTraces(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -38,7 +38,7 @@ return execute(
 /// Updates multiple interconnects associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/cf_interconnects`
-Future<ApiResult<MagicComponentsSchemasModifiedTunnelsCollectionResponseResult?, Never>> magicInterconnectsUpdateMultipleInterconnects({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicComponentsSchemasModifiedTunnelsCollectionResponseResult?, Never>> magicInterconnectsUpdateMultipleInterconnects({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -90,7 +90,7 @@ return execute(
 /// Updates a specific interconnect associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}`
-Future<ApiResult<MagicComponentsSchemasTunnelModifiedResponseResult?, Never>> magicInterconnectsUpdateInterconnect({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicInterconnectTunnelUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicComponentsSchemasTunnelModifiedResponseResult?, Never>> magicInterconnectsUpdateInterconnect({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, required MagicInterconnectTunnelUpdateRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();

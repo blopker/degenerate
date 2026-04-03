@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls whether this SetupIntent will accept redirect-based payment methods.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether this SetupIntent will accept redirect-based payment methods.
 /// 
 /// Redirect-based payment methods may require your customer to be redirected to a payment method's app or site for authentication or additional steps. To [confirm](https://docs.stripe.com/api/setup_intents/confirm) this SetupIntent, you may be required to provide a `return_url` to redirect customers back to your site after they authenticate or complete the setup.
-final class PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects {const PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects._(this.value);
+@immutable final class PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects {const PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects._(this.value);
 
 factory PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects($value)'; } 
  }
 /// 
-final class PaymentFlowsAutomaticPaymentMethodsSetupIntent {const PaymentFlowsAutomaticPaymentMethodsSetupIntent({this.allowRedirects, this.enabled, });
+@immutable final class PaymentFlowsAutomaticPaymentMethodsSetupIntent {const PaymentFlowsAutomaticPaymentMethodsSetupIntent({this.allowRedirects, this.enabled, });
 
 factory PaymentFlowsAutomaticPaymentMethodsSetupIntent.fromJson(Map<String, dynamic> json) { return PaymentFlowsAutomaticPaymentMethodsSetupIntent(
   allowRedirects: json['allow_redirects'] != null ? PaymentFlowsAutomaticPaymentMethodsSetupIntentAllowRedirects.fromJson(json['allow_redirects'] as String) : null,

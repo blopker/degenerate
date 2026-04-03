@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookLabelEditedChangesColor {const WebhookLabelEditedChangesColor({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookLabelEditedChangesColor {const WebhookLabelEditedChangesColor({required this.from});
 
 factory WebhookLabelEditedChangesColor.fromJson(Map<String, dynamic> json) { return WebhookLabelEditedChangesColor(
   from: json['from'] as String,

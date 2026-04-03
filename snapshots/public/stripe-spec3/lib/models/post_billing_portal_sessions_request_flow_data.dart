@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_billing_portal_sessions_request_flow_data_after_completion.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_cancel.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_update.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_update_confirm.dart';final class PostBillingPortalSessionsRequestFlowDataType {const PostBillingPortalSessionsRequestFlowDataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_sessions_request_flow_data_after_completion.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_cancel.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_update.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_update_confirm.dart';@immutable final class PostBillingPortalSessionsRequestFlowDataType {const PostBillingPortalSessionsRequestFlowDataType._(this.value);
 
 factory PostBillingPortalSessionsRequestFlowDataType.fromJson(String json) { return switch (json) {
   'payment_method_update' => paymentMethodUpdate,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostBillingPortalSessionsRequestFlowDataType($value)'; } 
  }
 /// Information about a specific flow for the customer to go through. See the [docs](https://docs.stripe.com/customer-management/portal-deep-links) to learn more about using customer portal deep links and flows.
-final class PostBillingPortalSessionsRequestFlowData {const PostBillingPortalSessionsRequestFlowData({this.afterCompletion, this.subscriptionCancel, this.subscriptionUpdate, this.subscriptionUpdateConfirm, required this.type, });
+@immutable final class PostBillingPortalSessionsRequestFlowData {const PostBillingPortalSessionsRequestFlowData({required this.type, this.afterCompletion, this.subscriptionCancel, this.subscriptionUpdate, this.subscriptionUpdateConfirm, });
 
 factory PostBillingPortalSessionsRequestFlowData.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowData(
   afterCompletion: json['after_completion'] != null ? PostBillingPortalSessionsRequestFlowDataAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>) : null,

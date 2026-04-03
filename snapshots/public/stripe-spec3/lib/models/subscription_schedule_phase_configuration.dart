@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'invoice_setting_subscription_schedule_phase_setting.dart';import 'payment_method.dart';import 'schedules_phase_automatic_tax.dart';import 'stackable_discount_with_discount_settings_and_discount_end.dart';import 'subscription_billing_thresholds.dart';import 'subscription_schedule_add_invoice_item.dart';import 'subscription_schedule_configuration_item.dart';import 'subscription_schedule_phase_configuration_default_payment_method.dart';import 'subscription_schedule_phase_configuration_on_behalf_of.dart';import 'subscription_transfer_data.dart';import 'tax_rate.dart';/// Possible values are `phase_start` or `automatic`. If `phase_start` then billing cycle anchor of the subscription is set to the start of the phase when entering the phase. If `automatic` then the billing cycle anchor is automatically modified as needed when entering the phase. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
-final class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor._(this.value);
+@immutable final class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor._(this.value);
 
 factory SubscriptionSchedulePhaseConfigurationBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionSchedulePhaseConfigurationBillingCycleAnchor($value)'; } 
  }
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay the underlying subscription at the end of each billing cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
-final class SubscriptionSchedulePhaseConfigurationCollectionMethod {const SubscriptionSchedulePhaseConfigurationCollectionMethod._(this.value);
+@immutable final class SubscriptionSchedulePhaseConfigurationCollectionMethod {const SubscriptionSchedulePhaseConfigurationCollectionMethod._(this.value);
 
 factory SubscriptionSchedulePhaseConfigurationCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionSchedulePhaseConfigurationCollectionMethod($value)'; } 
  }
 /// When transitioning phases, controls how prorations are handled (if any). Possible values are `create_prorations`, `none`, and `always_invoice`.
-final class SubscriptionSchedulePhaseConfigurationProrationBehavior {const SubscriptionSchedulePhaseConfigurationProrationBehavior._(this.value);
+@immutable final class SubscriptionSchedulePhaseConfigurationProrationBehavior {const SubscriptionSchedulePhaseConfigurationProrationBehavior._(this.value);
 
 factory SubscriptionSchedulePhaseConfigurationProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -79,7 +79,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionSchedulePhaseConfigurationProrationBehavior($value)'; } 
  }
 /// A phase describes the plans, coupon, and trialing status of a subscription for a predefined time period.
-final class SubscriptionSchedulePhaseConfiguration {const SubscriptionSchedulePhaseConfiguration({required this.addInvoiceItems, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, required this.currency, this.defaultPaymentMethod, this.defaultTaxRates, this.description, required this.discounts, required this.endDate, this.invoiceSettings, required this.items, this.metadata, this.onBehalfOf, required this.prorationBehavior, required this.startDate, this.transferData, this.trialEnd, });
+@immutable final class SubscriptionSchedulePhaseConfiguration {const SubscriptionSchedulePhaseConfiguration({required this.addInvoiceItems, required this.currency, required this.discounts, required this.endDate, required this.items, required this.prorationBehavior, required this.startDate, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.defaultTaxRates, this.description, this.invoiceSettings, this.metadata, this.onBehalfOf, this.transferData, this.trialEnd, });
 
 factory SubscriptionSchedulePhaseConfiguration.fromJson(Map<String, dynamic> json) { return SubscriptionSchedulePhaseConfiguration(
   addInvoiceItems: (json['add_invoice_items'] as List<dynamic>).map((e) => SubscriptionScheduleAddInvoiceItem.fromJson(e as Map<String, dynamic>)).toList(),

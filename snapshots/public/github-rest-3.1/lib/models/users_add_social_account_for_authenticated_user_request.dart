@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UsersAddSocialAccountForAuthenticatedUserRequest {const UsersAddSocialAccountForAuthenticatedUserRequest({required this.accountUrls});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersAddSocialAccountForAuthenticatedUserRequest {const UsersAddSocialAccountForAuthenticatedUserRequest({required this.accountUrls});
 
 factory UsersAddSocialAccountForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return UsersAddSocialAccountForAuthenticatedUserRequest(
   accountUrls: (json['account_urls'] as List<dynamic>).map((e) => e as String).toList(),

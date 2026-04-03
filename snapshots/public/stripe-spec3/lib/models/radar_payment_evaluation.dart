@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_client_device_metadata.dart';import 'insights_resources_payment_evaluation_customer_details.dart';import 'insights_resources_payment_evaluation_event.dart';import 'insights_resources_payment_evaluation_insights.dart';import 'insights_resources_payment_evaluation_outcome.dart';import 'insights_resources_payment_evaluation_payment_details.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class RadarPaymentEvaluationObject {const RadarPaymentEvaluationObject._(this.value);
+@immutable final class RadarPaymentEvaluationObject {const RadarPaymentEvaluationObject._(this.value);
 
 factory RadarPaymentEvaluationObject.fromJson(String json) { return switch (json) {
   'radar.payment_evaluation' => radarPaymentEvaluation,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarPaymentEvaluationObject($value)'; } 
  }
 /// Payment Evaluations represent the risk lifecycle of an externally processed payment. It includes the Radar risk score from Stripe, payment outcome taken by the merchant or processor, and any post transaction events, such as refunds or disputes. See the [Radar API guide](/radar/multiprocessor) for integration steps.
-final class RadarPaymentEvaluation {const RadarPaymentEvaluation({this.clientDeviceMetadataDetails, required this.createdAt, this.customerDetails, required this.events, required this.id, required this.insights, required this.livemode, this.metadata, required this.object, this.outcome, this.paymentDetails, });
+@immutable final class RadarPaymentEvaluation {const RadarPaymentEvaluation({required this.createdAt, required this.events, required this.id, required this.insights, required this.livemode, required this.object, this.clientDeviceMetadataDetails, this.customerDetails, this.metadata, this.outcome, this.paymentDetails, });
 
 factory RadarPaymentEvaluation.fromJson(Map<String, dynamic> json) { return RadarPaymentEvaluation(
   clientDeviceMetadataDetails: json['client_device_metadata_details'] != null ? InsightsResourcesPaymentEvaluationClientDeviceMetadata.fromJson(json['client_device_metadata_details'] as Map<String, dynamic>) : null,

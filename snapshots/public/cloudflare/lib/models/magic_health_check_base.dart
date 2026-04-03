@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_health_check_base_target.dart';import 'magic_health_check_target.dart';/// How frequent the health check is run. The default value is `mid`.
-final class MagicHealthCheckBaseRate {const MagicHealthCheckBaseRate._(this.value);
+@immutable final class MagicHealthCheckBaseRate {const MagicHealthCheckBaseRate._(this.value);
 
 factory MagicHealthCheckBaseRate.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MagicHealthCheckBaseRate($value)'; } 
  }
 /// The type of healthcheck to run, reply or request. The default value is `reply`.
-final class MagicHealthCheckBaseType {const MagicHealthCheckBaseType._(this.value);
+@immutable final class MagicHealthCheckBaseType {const MagicHealthCheckBaseType._(this.value);
 
 factory MagicHealthCheckBaseType.fromJson(String json) { return switch (json) {
   'reply' => reply,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MagicHealthCheckBaseType($value)'; } 
  }
-final class MagicHealthCheckBase {const MagicHealthCheckBase({this.enabled = true, this.rate = MagicHealthCheckBaseRate.mid, this.target, this.type = MagicHealthCheckBaseType.reply, });
+@immutable final class MagicHealthCheckBase {const MagicHealthCheckBase({this.enabled = true, this.rate = MagicHealthCheckBaseRate.mid, this.target, this.type = MagicHealthCheckBaseType.reply, });
 
 factory MagicHealthCheckBase.fromJson(Map<String, dynamic> json) { return MagicHealthCheckBase(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,

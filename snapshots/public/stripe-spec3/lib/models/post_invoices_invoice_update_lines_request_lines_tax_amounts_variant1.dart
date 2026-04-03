@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_invoices_invoice_update_lines_request_lines_tax_amounts_variant1_tax_rate_data.dart';final class PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxabilityReason {const PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxabilityReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_update_lines_request_lines_tax_amounts_variant1_tax_rate_data.dart';@immutable final class PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxabilityReason {const PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxabilityReason._(this.value);
 
 factory PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxabilityReason.fromJson(String json) { return switch (json) {
   'customer_exempt' => customerExempt,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1TaxabilityReason($value)'; } 
  }
-final class PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1 {const PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1({required this.amount, required this.taxRateData, this.taxabilityReason, required this.taxableAmount, });
+@immutable final class PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1 {const PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1({required this.amount, required this.taxRateData, required this.taxableAmount, this.taxabilityReason, });
 
 factory PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1(
   amount: (json['amount'] as num).toInt(),

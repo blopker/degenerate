@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchInstanceListJobLogsResponseResult {const AiSearchInstanceListJobLogsResponseResult({required this.createdAt, required this.id, required this.message, required this.messageType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceListJobLogsResponseResult {const AiSearchInstanceListJobLogsResponseResult({required this.createdAt, required this.id, required this.message, required this.messageType, });
 
 factory AiSearchInstanceListJobLogsResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchInstanceListJobLogsResponseResult(
   createdAt: (json['created_at'] as num).toDouble(),

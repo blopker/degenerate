@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookOrganizationRenamedChangesLogin {const WebhookOrganizationRenamedChangesLogin({this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookOrganizationRenamedChangesLogin {const WebhookOrganizationRenamedChangesLogin({this.from});
 
 factory WebhookOrganizationRenamedChangesLogin.fromJson(Map<String, dynamic> json) { return WebhookOrganizationRenamedChangesLogin(
   from: json['from'] as String?,

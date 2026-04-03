@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class VideoSize {const VideoSize._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VideoSize {const VideoSize._(this.value);
 
 factory VideoSize.fromJson(String json) { return switch (json) {
   '720x1280' => $720x1280,

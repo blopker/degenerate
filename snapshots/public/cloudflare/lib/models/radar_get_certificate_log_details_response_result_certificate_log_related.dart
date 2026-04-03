@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html
-final class RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState {const RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html
+@immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState {const RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState._(this.value);
 
 factory RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState.fromJson(String json) { return switch (json) {
   'USABLE' => usable,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RadarGetCertificateLogDetailsResponseResultCertificateLogRelatedState($value)'; } 
  }
-final class RadarGetCertificateLogDetailsResponseResultCertificateLogRelated {const RadarGetCertificateLogDetailsResponseResultCertificateLogRelated({required this.description, required this.endExclusive, required this.slug, required this.startInclusive, required this.state, });
+@immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogRelated {const RadarGetCertificateLogDetailsResponseResultCertificateLogRelated({required this.description, required this.endExclusive, required this.slug, required this.startInclusive, required this.state, });
 
 factory RadarGetCertificateLogDetailsResponseResultCertificateLogRelated.fromJson(Map<String, dynamic> json) { return RadarGetCertificateLogDetailsResponseResultCertificateLogRelated(
   description: json['description'] as String,

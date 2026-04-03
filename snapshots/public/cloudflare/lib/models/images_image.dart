@@ -35,13 +35,13 @@ factory ImagesImageUploaded.fromJson(String json) => ImagesImageUploaded(DateTim
 String toJson() => value.toIso8601String();
 
 }
-final class ImagesImage {const ImagesImage({this.creator, this.filename, this.id, this.meta, this.requireSignedUrLs, this.uploaded, this.variants, });
+@immutable final class ImagesImage {const ImagesImage({this.creator, this.filename, this.id, this.meta, this.requireSignedUrLs, this.uploaded, this.variants, });
 
 factory ImagesImage.fromJson(Map<String, dynamic> json) { return ImagesImage(
   creator: json['creator'] != null ? ImagesImageCreator.fromJson(json['creator'] as String) : null,
   filename: json['filename'] != null ? ImagesImageFilename.fromJson(json['filename'] as String) : null,
   id: json['id'] != null ? ImagesImageIdentifier.fromJson(json['id'] as String) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>?,
   requireSignedUrLs: json['requireSignedURLs'] != null ? ImagesImageRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   uploaded: json['uploaded'] != null ? ImagesImageUploaded.fromJson(json['uploaded'] as String) : null,
   variants: (json['variants'] as List<dynamic>?)?.map((e) => ImagesImageThumbnailUrl.fromJson(e as String)).toList(),

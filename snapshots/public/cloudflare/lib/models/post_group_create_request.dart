@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostGroupCreateRequest {const PostGroupCreateRequest({required this.description, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostGroupCreateRequest {const PostGroupCreateRequest({required this.description, required this.name, });
 
 factory PostGroupCreateRequest.fromJson(Map<String, dynamic> json) { return PostGroupCreateRequest(
   description: json['description'] as String,

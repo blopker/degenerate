@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If enabled, any `http://`` URL is converted to `https://` through a`
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If enabled, any `http://`` URL is converted to `https://` through a`
 /// 301 redirect.
 /// 
-final class ZonesAlwaysUseHttpsId {const ZonesAlwaysUseHttpsId._(this.value);
+@immutable final class ZonesAlwaysUseHttpsId {const ZonesAlwaysUseHttpsId._(this.value);
 
 factory ZonesAlwaysUseHttpsId.fromJson(String json) { return switch (json) {
   'always_use_https' => alwaysUseHttps,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesAlwaysUseHttpsId($value)'; } 
  }
-final class ZonesAlwaysUseHttps {const ZonesAlwaysUseHttps({this.id});
+@immutable final class ZonesAlwaysUseHttps {const ZonesAlwaysUseHttps({this.id});
 
 factory ZonesAlwaysUseHttps.fromJson(Map<String, dynamic> json) { return ZonesAlwaysUseHttps(
   id: json['id'] != null ? ZonesAlwaysUseHttpsId.fromJson(json['id'] as String) : null,

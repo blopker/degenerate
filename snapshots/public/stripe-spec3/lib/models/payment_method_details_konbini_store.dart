@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The name of the convenience store chain where the payment was completed.
-final class PaymentMethodDetailsKonbiniStoreChain {const PaymentMethodDetailsKonbiniStoreChain._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the convenience store chain where the payment was completed.
+@immutable final class PaymentMethodDetailsKonbiniStoreChain {const PaymentMethodDetailsKonbiniStoreChain._(this.value);
 
 factory PaymentMethodDetailsKonbiniStoreChain.fromJson(String json) { return switch (json) {
   'familymart' => familymart,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsKonbiniStoreChain($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsKonbiniStore {const PaymentMethodDetailsKonbiniStore({this.chain});
+@immutable final class PaymentMethodDetailsKonbiniStore {const PaymentMethodDetailsKonbiniStore({this.chain});
 
 factory PaymentMethodDetailsKonbiniStore.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsKonbiniStore(
   chain: json['chain'] != null ? PaymentMethodDetailsKonbiniStoreChain.fromJson(json['chain'] as String) : null,

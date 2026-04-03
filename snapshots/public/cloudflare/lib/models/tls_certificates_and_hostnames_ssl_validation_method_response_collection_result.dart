@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_validation_method_definition.dart';/// Result status.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_validation_method_definition.dart';/// Result status.
 extension type const TlsCertificatesAndHostnamesValidationMethodComponentsSchemasStatus(String value) {
 factory TlsCertificatesAndHostnamesValidationMethodComponentsSchemasStatus.fromJson(String json) => TlsCertificatesAndHostnamesValidationMethodComponentsSchemasStatus(json);
 
 String toJson() => value;
 
 }
-final class TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult {const TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult({this.status, this.validationMethod, });
+@immutable final class TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult {const TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult({this.status, this.validationMethod, });
 
 factory TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult(
   status: json['status'] != null ? TlsCertificatesAndHostnamesValidationMethodComponentsSchemasStatus.fromJson(json['status'] as String) : null,

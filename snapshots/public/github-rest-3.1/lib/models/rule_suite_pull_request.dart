@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rule_suite_pull_request_pull_request.dart';/// Metadata for a pull request rule evaluation result.
-final class RuleSuitePullRequest {const RuleSuitePullRequest({this.pullRequest});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rule_suite_pull_request_pull_request.dart';/// Metadata for a pull request rule evaluation result.
+@immutable final class RuleSuitePullRequest {const RuleSuitePullRequest({this.pullRequest});
 
 factory RuleSuitePullRequest.fromJson(Map<String, dynamic> json) { return RuleSuitePullRequest(
   pullRequest: json['pull_request'] != null ? RuleSuitePullRequestPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,

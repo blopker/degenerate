@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_fork_forkee.dart';/// A user forks a repository.
-final class WebhookFork {const WebhookFork({this.enterprise, required this.forkee, this.installation, this.organization, required this.repository, required this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_fork_forkee.dart';/// A user forks a repository.
+@immutable final class WebhookFork {const WebhookFork({required this.forkee, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookFork.fromJson(Map<String, dynamic> json) { return WebhookFork(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,

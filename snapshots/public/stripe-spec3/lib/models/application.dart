@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class ApplicationObject {const ApplicationObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class ApplicationObject {const ApplicationObject._(this.value);
 
 factory ApplicationObject.fromJson(String json) { return switch (json) {
   'application' => application,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ApplicationObject($value)'; } 
  }
 /// 
-final class Application {const Application({required this.id, this.name, required this.object, });
+@immutable final class Application {const Application({required this.id, required this.object, this.name, });
 
 factory Application.fromJson(Map<String, dynamic> json) { return Application(
   id: json['id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_common_components_schemas_identifier.dart';import 'iam_sso_connector_verification_info.dart';import 'iam_use_fedramp_language.dart';final class IamSsoConnector {const IamSsoConnector({this.createdOn, this.emailDomain, this.enabled, this.id, this.updatedOn, this.useFedrampLanguage, this.verification, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_common_components_schemas_identifier.dart';import 'iam_sso_connector_verification_info.dart';import 'iam_use_fedramp_language.dart';@immutable final class IamSsoConnector {const IamSsoConnector({this.createdOn, this.emailDomain, this.enabled, this.id, this.updatedOn, this.useFedrampLanguage, this.verification, });
 
 factory IamSsoConnector.fromJson(Map<String, dynamic> json) { return IamSsoConnector(
   createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,

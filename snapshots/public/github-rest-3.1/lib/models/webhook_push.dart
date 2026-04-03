@@ -6,7 +6,7 @@ factory WebhooksNullableString.fromJson(String json) => WebhooksNullableString(j
 String toJson() => value;
 
 }
-final class WebhookPush {const WebhookPush({required this.after, required this.baseRef, required this.before, required this.commits, required this.compare, required this.created, required this.deleted, this.enterprise, required this.forced, required this.headCommit, this.installation, this.organization, required this.pusher, required this.ref, required this.repository, this.sender, });
+@immutable final class WebhookPush {const WebhookPush({required this.after, required this.baseRef, required this.before, required this.commits, required this.compare, required this.created, required this.deleted, required this.forced, required this.headCommit, required this.pusher, required this.ref, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookPush.fromJson(Map<String, dynamic> json) { return WebhookPush(
   after: json['after'] as String,

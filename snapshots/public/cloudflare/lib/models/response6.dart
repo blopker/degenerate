@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vectorize_mutation_uuid.dart';final class Response6 {const Response6({this.mutationId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_mutation_uuid.dart';@immutable final class Response6 {const Response6({this.mutationId});
 
 factory Response6.fromJson(Map<String, dynamic> json) { return Response6(
   mutationId: json['mutationId'] != null ? VectorizeMutationUuid.fromJson(json['mutationId'] as dynamic) : null,

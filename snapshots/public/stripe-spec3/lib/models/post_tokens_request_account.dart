@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_tokens_request_account_company.dart';import 'post_tokens_request_account_individual.dart';final class PostTokensRequestAccountBusinessType {const PostTokensRequestAccountBusinessType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_account_company.dart';import 'post_tokens_request_account_individual.dart';@immutable final class PostTokensRequestAccountBusinessType {const PostTokensRequestAccountBusinessType._(this.value);
 
 factory PostTokensRequestAccountBusinessType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTokensRequestAccountBusinessType($value)'; } 
  }
 /// Information for the account this token represents.
-final class PostTokensRequestAccount {const PostTokensRequestAccount({this.businessType, this.company, this.individual, this.tosShownAndAccepted, });
+@immutable final class PostTokensRequestAccount {const PostTokensRequestAccount({this.businessType, this.company, this.individual, this.tosShownAndAccepted, });
 
 factory PostTokensRequestAccount.fromJson(Map<String, dynamic> json) { return PostTokensRequestAccount(
   businessType: json['business_type'] != null ? PostTokensRequestAccountBusinessType.fromJson(json['business_type'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'discussion.dart';import 'repository_webhooks.dart';final class WebhookDiscussionTransferredChanges {const WebhookDiscussionTransferredChanges({required this.newDiscussion, required this.newRepository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'repository_webhooks.dart';@immutable final class WebhookDiscussionTransferredChanges {const WebhookDiscussionTransferredChanges({required this.newDiscussion, required this.newRepository, });
 
 factory WebhookDiscussionTransferredChanges.fromJson(Map<String, dynamic> json) { return WebhookDiscussionTransferredChanges(
   newDiscussion: Discussion.fromJson(json['new_discussion'] as Map<String, dynamic>),

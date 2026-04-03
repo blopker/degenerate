@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_active_sessions_response_result_metadata.dart';final class AccessActiveSessionsResponseResult {const AccessActiveSessionsResponseResult({this.expiration, this.metadata, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_active_sessions_response_result_metadata.dart';@immutable final class AccessActiveSessionsResponseResult {const AccessActiveSessionsResponseResult({this.expiration, this.metadata, this.name, });
 
 factory AccessActiveSessionsResponseResult.fromJson(Map<String, dynamic> json) { return AccessActiveSessionsResponseResult(
   expiration: json['expiration'] != null ? (json['expiration'] as num).toInt() : null,

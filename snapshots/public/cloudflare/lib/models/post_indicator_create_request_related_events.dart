@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostIndicatorCreateRequestRelatedEvents {const PostIndicatorCreateRequestRelatedEvents({required this.datasetId, required this.eventId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIndicatorCreateRequestRelatedEvents {const PostIndicatorCreateRequestRelatedEvents({required this.datasetId, required this.eventId, });
 
 factory PostIndicatorCreateRequestRelatedEvents.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateRequestRelatedEvents(
   datasetId: json['datasetId'] as String,

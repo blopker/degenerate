@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'actor.dart';import 'event_payload.dart';import 'event_repo.dart';/// Event
-final class Event {const Event({required this.id, required this.type, required this.actor, required this.repo, this.org, required this.payload, required this.public, required this.createdAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actor.dart';import 'event_payload.dart';import 'event_repo.dart';/// Event
+@immutable final class Event {const Event({required this.id, required this.type, required this.actor, required this.repo, required this.payload, required this.public, required this.createdAt, this.org, });
 
 factory Event.fromJson(Map<String, dynamic> json) { return Event(
   id: json['id'] as String,
@@ -9,7 +9,7 @@ factory Event.fromJson(Map<String, dynamic> json) { return Event(
   actor: Actor.fromJson(json['actor'] as Map<String, dynamic>),
   repo: EventRepo.fromJson(json['repo'] as Map<String, dynamic>),
   org: json['org'] != null ? Actor.fromJson(json['org'] as Map<String, dynamic>) : null,
-  payload: EventPayload.fromJson(json['payload']),
+  payload: EventPayload.fromJson(json['payload'] as Map<String, dynamic>),
   public: json['public'] as bool,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
 ); }

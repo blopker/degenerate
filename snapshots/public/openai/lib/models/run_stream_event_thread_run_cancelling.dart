@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_object.dart';final class RunStreamEventThreadRunCancellingEvent {const RunStreamEventThreadRunCancellingEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_object.dart';@immutable final class RunStreamEventThreadRunCancellingEvent {const RunStreamEventThreadRunCancellingEvent._(this.value);
 
 factory RunStreamEventThreadRunCancellingEvent.fromJson(String json) { return switch (json) {
   'thread.run.cancelling' => threadRunCancelling,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStreamEventThreadRunCancellingEvent($value)'; } 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
-final class RunStreamEventThreadRunCancelling {const RunStreamEventThreadRunCancelling({required this.event, required this.data, });
+@immutable final class RunStreamEventThreadRunCancelling {const RunStreamEventThreadRunCancelling({required this.event, required this.data, });
 
 factory RunStreamEventThreadRunCancelling.fromJson(Map<String, dynamic> json) { return RunStreamEventThreadRunCancelling(
   event: RunStreamEventThreadRunCancellingEvent.fromJson(json['event'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A short machine-readable string giving the reason for the verification failure.
-final class GelatoPhoneReportErrorCode {const GelatoPhoneReportErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
+@immutable final class GelatoPhoneReportErrorCode {const GelatoPhoneReportErrorCode._(this.value);
 
 factory GelatoPhoneReportErrorCode.fromJson(String json) { return switch (json) {
   'phone_unverified_other' => phoneUnverifiedOther,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoPhoneReportErrorCode($value)'; } 
  }
 /// 
-final class GelatoPhoneReportError {const GelatoPhoneReportError({this.code, this.reason, });
+@immutable final class GelatoPhoneReportError {const GelatoPhoneReportError({this.code, this.reason, });
 
 factory GelatoPhoneReportError.fromJson(Map<String, dynamic> json) { return GelatoPhoneReportError(
   code: json['code'] != null ? GelatoPhoneReportErrorCode.fromJson(json['code'] as String) : null,

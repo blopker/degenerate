@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Field to order DNS views by.
-final class DnsSettingsOrder {const DnsSettingsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order DNS views by.
+@immutable final class DnsSettingsOrder {const DnsSettingsOrder._(this.value);
 
 factory DnsSettingsOrder.fromJson(String json) { return switch (json) {
   'name' => $name,

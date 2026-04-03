@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_branch_policy_settings.dart';import 'environment_protection_rules.dart';import 'environment_protection_rules_variant1.dart';import 'environment_protection_rules_variant2.dart';import 'environment_protection_rules_variant3.dart';/// Details of a deployment environment
-final class Environment {const Environment({required this.id, required this.nodeId, required this.name, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, this.protectionRules, this.deploymentBranchPolicy, });
+@immutable final class Environment {const Environment({required this.id, required this.nodeId, required this.name, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, this.protectionRules, this.deploymentBranchPolicy, });
 
 factory Environment.fromJson(Map<String, dynamic> json) { return Environment(
   id: (json['id'] as num).toInt(),

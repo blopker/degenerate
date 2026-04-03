@@ -127,7 +127,7 @@ if (status != null) {
   queryParameters['status'] = status.toJson();
 }
 if (identifier != null) {
-queryParametersList.add(ApiQueryParameter(name: 'identifier', value: identifier.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'identifier', value: identifier.toString()));
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

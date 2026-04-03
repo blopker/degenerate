@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.
-final class MessageDeltaContentImageFileObjectImageFileDetail {const MessageDeltaContentImageFileObjectImageFileDetail._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.
+@immutable final class MessageDeltaContentImageFileObjectImageFileDetail {const MessageDeltaContentImageFileObjectImageFileDetail._(this.value);
 
 factory MessageDeltaContentImageFileObjectImageFileDetail.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageDeltaContentImageFileObjectImageFileDetail($value)'; } 
  }
-final class MessageDeltaContentImageFileObjectImageFile {const MessageDeltaContentImageFileObjectImageFile({this.fileId, this.detail = MessageDeltaContentImageFileObjectImageFileDetail.auto, });
+@immutable final class MessageDeltaContentImageFileObjectImageFile {const MessageDeltaContentImageFileObjectImageFile({this.fileId, this.detail = MessageDeltaContentImageFileObjectImageFileDetail.auto, });
 
 factory MessageDeltaContentImageFileObjectImageFile.fromJson(Map<String, dynamic> json) { return MessageDeltaContentImageFileObjectImageFile(
   fileId: json['file_id'] as String?,

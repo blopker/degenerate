@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_records_caa_record.dart';import 'dns_records_cert_record.dart';import 'dns_records_dnskey_record.dart';import 'dns_records_ds_record.dart';import 'dns_records_https_record.dart';import 'dns_records_loc_record.dart';import 'dns_records_naptr_record.dart';import 'dns_records_smimea_record.dart';import 'dns_records_srv_record.dart';import 'dns_records_sshfp_record.dart';import 'dns_records_svcb_record.dart';import 'dns_records_tlsa_record.dart';import 'dns_records_uri_record.dart';/// A value that is one of: `DnsRecordsCaaRecord`, `DnsRecordsCertRecord`, `DnsRecordsDnskeyRecord`, `DnsRecordsDsRecord`, `DnsRecordsHttpsRecord`, `DnsRecordsLocRecord`, `DnsRecordsNaptrRecord`, `DnsRecordsSmimeaRecord`, `DnsRecordsSrvRecord`, `DnsRecordsSshfpRecord`, `DnsRecordsSvcbRecord`, `DnsRecordsTlsaRecord`, `DnsRecordsUriRecord`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_caa_record.dart';import 'dns_records_cert_record.dart';import 'dns_records_dnskey_record.dart';import 'dns_records_ds_record.dart';import 'dns_records_https_record.dart';import 'dns_records_loc_record.dart';import 'dns_records_naptr_record.dart';import 'dns_records_smimea_record.dart';import 'dns_records_srv_record.dart';import 'dns_records_sshfp_record.dart';import 'dns_records_svcb_record.dart';import 'dns_records_tlsa_record.dart';import 'dns_records_uri_record.dart';/// A value that is one of: `DnsRecordsCaaRecord`, `DnsRecordsCertRecord`, `DnsRecordsDnskeyRecord`, `DnsRecordsDsRecord`, `DnsRecordsHttpsRecord`, `DnsRecordsLocRecord`, `DnsRecordsNaptrRecord`, `DnsRecordsSmimeaRecord`, `DnsRecordsSrvRecord`, `DnsRecordsSshfpRecord`, `DnsRecordsSvcbRecord`, `DnsRecordsTlsaRecord`, `DnsRecordsUriRecord`.
 sealed class DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithData();
 
 factory DnsRecordsDnsRecordWithData.fromJson(Map<String, dynamic> json) {   if (DnsRecordsCaaRecord.canParse(json)) {
@@ -48,7 +48,7 @@ factory DnsRecordsDnsRecordWithData.fromJson(Map<String, dynamic> json) {   if (
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsCaaRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsCaaRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsCaaRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsCaaRecord(this._value);
 
 final DnsRecordsCaaRecord _value;
 
@@ -58,7 +58,7 @@ final DnsRecordsCaaRecord _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsCaaRecord($_value)'; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsCertRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsCertRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsCertRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsCertRecord(this._value);
 
 final DnsRecordsCertRecord _value;
 
@@ -68,7 +68,7 @@ final DnsRecordsCertRecord _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsCertRecord($_value)'; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord(this._value);
 
 final DnsRecordsDnskeyRecord _value;
 
@@ -78,7 +78,7 @@ final DnsRecordsDnskeyRecord _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsDnskeyRecord($_value)'; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsDsRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsDsRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsDsRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsDsRecord(this._value);
 
 final DnsRecordsDsRecord _value;
 
@@ -88,7 +88,7 @@ final DnsRecordsDsRecord _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsDsRecord($_value)'; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord(this._value);
 
 final DnsRecordsHttpsRecord _value;
 
@@ -98,7 +98,7 @@ final DnsRecordsHttpsRecord _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsHttpsRecord($_value)'; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsLocRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsLocRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsLocRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsLocRecord(this._value);
 
 final DnsRecordsLocRecord _value;
 
@@ -108,7 +108,7 @@ final DnsRecordsLocRecord _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsLocRecord($_value)'; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord(this._value);
 
 final DnsRecordsNaptrRecord _value;
 
@@ -118,7 +118,7 @@ final DnsRecordsNaptrRecord _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsNaptrRecord($_value)'; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord(this._value);
 
 final DnsRecordsSmimeaRecord _value;
 
@@ -128,7 +128,7 @@ final DnsRecordsSmimeaRecord _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsSmimeaRecord($_value)'; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord(this._value);
 
 final DnsRecordsSrvRecord _value;
 
@@ -138,7 +138,7 @@ final DnsRecordsSrvRecord _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsSrvRecord($_value)'; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord(this._value);
 
 final DnsRecordsSshfpRecord _value;
 
@@ -148,7 +148,7 @@ final DnsRecordsSshfpRecord _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsSshfpRecord($_value)'; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord(this._value);
 
 final DnsRecordsSvcbRecord _value;
 
@@ -158,7 +158,7 @@ final DnsRecordsSvcbRecord _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsSvcbRecord($_value)'; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord(this._value);
 
 final DnsRecordsTlsaRecord _value;
 
@@ -168,7 +168,7 @@ final DnsRecordsTlsaRecord _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsTlsaRecord($_value)'; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsUriRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsUriRecord(this._value);
+@immutable final class DnsRecordsDnsRecordWithDataDnsRecordsUriRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsUriRecord(this._value);
 
 final DnsRecordsUriRecord _value;
 
@@ -179,7 +179,7 @@ final DnsRecordsUriRecord _value;
 @override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsUriRecord($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class DnsRecordsDnsRecordWithData$Unknown extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithData$Unknown(this._value);
+@immutable final class DnsRecordsDnsRecordWithData$Unknown extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithData$Unknown(this._value);
 
 final dynamic _value;
 

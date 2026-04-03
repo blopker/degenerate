@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// A Managed Transform object.
-final class RulesetsManagedTransform {const RulesetsManagedTransform({this.conflictsWith, required this.enabled, required this.hasConflict, required this.id, });
+@immutable final class RulesetsManagedTransform {const RulesetsManagedTransform({required this.enabled, required this.hasConflict, required this.id, this.conflictsWith, });
 
 factory RulesetsManagedTransform.fromJson(Map<String, dynamic> json) { return RulesetsManagedTransform(
   conflictsWith: (json['conflicts_with'] as List<dynamic>?)?.map((e) => RulesetsManagedTransformId.fromJson(e as String)).toList(),

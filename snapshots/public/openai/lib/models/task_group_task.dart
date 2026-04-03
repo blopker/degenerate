@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'task_type.dart';/// Task entry that appears within a TaskGroup.
-final class TaskGroupTask {const TaskGroupTask({required this.type, required this.heading, required this.summary, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'task_type.dart';/// Task entry that appears within a TaskGroup.
+@immutable final class TaskGroupTask {const TaskGroupTask({required this.type, required this.heading, required this.summary, });
 
 factory TaskGroupTask.fromJson(Map<String, dynamic> json) { return TaskGroupTask(
   type: TaskType.fromJson(json['type'] as String),

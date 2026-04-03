@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Origin Cache Control is enabled by default for Free, Pro, and
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Origin Cache Control is enabled by default for Free, Pro, and
 /// Business domains and disabled by default for Enterprise domains.
 /// 
-final class ZonesExplicitCacheControlId {const ZonesExplicitCacheControlId._(this.value);
+@immutable final class ZonesExplicitCacheControlId {const ZonesExplicitCacheControlId._(this.value);
 
 factory ZonesExplicitCacheControlId.fromJson(String json) { return switch (json) {
   'explicit_cache_control' => explicitCacheControl,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The status of Origin Cache Control.
 /// 
-final class ZonesExplicitCacheControlValue {const ZonesExplicitCacheControlValue._(this.value);
+@immutable final class ZonesExplicitCacheControlValue {const ZonesExplicitCacheControlValue._(this.value);
 
 factory ZonesExplicitCacheControlValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesExplicitCacheControlValue($value)'; } 
  }
-final class ZonesExplicitCacheControl {const ZonesExplicitCacheControl({this.id, this.value, });
+@immutable final class ZonesExplicitCacheControl {const ZonesExplicitCacheControl({this.id, this.value, });
 
 factory ZonesExplicitCacheControl.fromJson(Map<String, dynamic> json) { return ZonesExplicitCacheControl(
   id: json['id'] != null ? ZonesExplicitCacheControlId.fromJson(json['id'] as String) : null,

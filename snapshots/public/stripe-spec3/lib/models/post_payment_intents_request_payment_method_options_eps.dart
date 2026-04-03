@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param7.dart';final class PostPaymentIntentsRequestPaymentMethodOptionsEpsVariant2 {const PostPaymentIntentsRequestPaymentMethodOptionsEpsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param7.dart';@immutable final class PostPaymentIntentsRequestPaymentMethodOptionsEpsVariant2 {const PostPaymentIntentsRequestPaymentMethodOptionsEpsVariant2._(this.value);
 
 factory PostPaymentIntentsRequestPaymentMethodOptionsEpsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1.dart';final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant2 {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_custom_fields_variant1.dart';@immutable final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant2 {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant2._(this.value);
 
 factory PostPaymentLinksPaymentLinkRequestCustomFieldsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

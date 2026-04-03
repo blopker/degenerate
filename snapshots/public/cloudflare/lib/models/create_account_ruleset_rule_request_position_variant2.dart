@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateAccountRulesetRuleRequestPositionVariant2 {const CreateAccountRulesetRuleRequestPositionVariant2({this.after});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateAccountRulesetRuleRequestPositionVariant2 {const CreateAccountRulesetRuleRequestPositionVariant2({this.after});
 
 factory CreateAccountRulesetRuleRequestPositionVariant2.fromJson(Map<String, dynamic> json) { return CreateAccountRulesetRuleRequestPositionVariant2(
   after: json['after'] as String?,

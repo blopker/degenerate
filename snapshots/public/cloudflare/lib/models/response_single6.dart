@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'argo_config_messages2.dart';import 'argo_config_result_object.dart';final class ResponseSingle6 {const ResponseSingle6({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'argo_config_messages2.dart';import 'argo_config_result_object.dart';@immutable final class ResponseSingle6 {const ResponseSingle6({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseSingle6.fromJson(Map<String, dynamic> json) { return ResponseSingle6(
   errors: (json['errors'] as List<dynamic>).map((e) => ArgoConfigMessages2.fromJson(e as Map<String, dynamic>)).toList(),

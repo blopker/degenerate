@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_get_open_ports_response_result.dart';final class GetGetOpenPortsResponse {const GetGetOpenPortsResponse({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_get_open_ports_response_result.dart';@immutable final class GetGetOpenPortsResponse {const GetGetOpenPortsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory GetGetOpenPortsResponse.fromJson(Map<String, dynamic> json) { return GetGetOpenPortsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => e as String).toList(),

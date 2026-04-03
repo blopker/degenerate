@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Preferred language of the SOFORT authorization page that the customer is redirected to.
-final class PaymentMethodOptionsSofortPreferredLanguage {const PaymentMethodOptionsSofortPreferredLanguage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Preferred language of the SOFORT authorization page that the customer is redirected to.
+@immutable final class PaymentMethodOptionsSofortPreferredLanguage {const PaymentMethodOptionsSofortPreferredLanguage._(this.value);
 
 factory PaymentMethodOptionsSofortPreferredLanguage.fromJson(String json) { return switch (json) {
   'de' => de,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class PaymentMethodOptionsSofortSetupFutureUsage {const PaymentMethodOptionsSofortSetupFutureUsage._(this.value);
+@immutable final class PaymentMethodOptionsSofortSetupFutureUsage {const PaymentMethodOptionsSofortSetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsSofortSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsSofortSetupFutureUsage($value)'; } 
  }
 /// 
-final class PaymentMethodOptionsSofort {const PaymentMethodOptionsSofort({this.preferredLanguage, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsSofort {const PaymentMethodOptionsSofort({this.preferredLanguage, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsSofort.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsSofort(
   preferredLanguage: json['preferred_language'] != null ? PaymentMethodOptionsSofortPreferredLanguage.fromJson(json['preferred_language'] as String) : null,

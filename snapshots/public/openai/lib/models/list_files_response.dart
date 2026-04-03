@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'open_ai_file.dart';final class ListFilesResponse {const ListFilesResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'open_ai_file.dart';@immutable final class ListFilesResponse {const ListFilesResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ListFilesResponse.fromJson(Map<String, dynamic> json) { return ListFilesResponse(
   object: json['object'] as String,

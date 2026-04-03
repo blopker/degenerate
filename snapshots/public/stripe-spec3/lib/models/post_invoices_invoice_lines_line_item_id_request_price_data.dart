@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_invoices_invoice_lines_line_item_id_request_price_data_product_data.dart';final class PostInvoicesInvoiceLinesLineItemIdRequestPriceDataTaxBehavior {const PostInvoicesInvoiceLinesLineItemIdRequestPriceDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_lines_line_item_id_request_price_data_product_data.dart';@immutable final class PostInvoicesInvoiceLinesLineItemIdRequestPriceDataTaxBehavior {const PostInvoicesInvoiceLinesLineItemIdRequestPriceDataTaxBehavior._(this.value);
 
 factory PostInvoicesInvoiceLinesLineItemIdRequestPriceDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostInvoicesInvoiceLinesLineItemIdRequestPriceDataTaxBehavior($value)'; } 
  }
 /// Data used to generate a new [Price](https://docs.stripe.com/api/prices) object inline.
-final class PostInvoicesInvoiceLinesLineItemIdRequestPriceData {const PostInvoicesInvoiceLinesLineItemIdRequestPriceData({required this.currency, this.product, this.productData, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostInvoicesInvoiceLinesLineItemIdRequestPriceData {const PostInvoicesInvoiceLinesLineItemIdRequestPriceData({required this.currency, this.product, this.productData, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostInvoicesInvoiceLinesLineItemIdRequestPriceData.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceLinesLineItemIdRequestPriceData(
   currency: json['currency'] as String,

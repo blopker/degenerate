@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkflowRunUsageBillableWindowsJobRuns {const WorkflowRunUsageBillableWindowsJobRuns({required this.jobId, required this.durationMs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowRunUsageBillableWindowsJobRuns {const WorkflowRunUsageBillableWindowsJobRuns({required this.jobId, required this.durationMs, });
 
 factory WorkflowRunUsageBillableWindowsJobRuns.fromJson(Map<String, dynamic> json) { return WorkflowRunUsageBillableWindowsJobRuns(
   jobId: (json['job_id'] as num).toInt(),

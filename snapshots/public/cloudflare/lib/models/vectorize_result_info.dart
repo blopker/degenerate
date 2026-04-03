@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class VectorizeResultInfo {const VectorizeResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VectorizeResultInfo {const VectorizeResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory VectorizeResultInfo.fromJson(Map<String, dynamic> json) { return VectorizeResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

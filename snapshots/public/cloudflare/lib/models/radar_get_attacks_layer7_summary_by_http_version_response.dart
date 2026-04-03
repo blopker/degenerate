@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_attacks_layer7_summary_by_http_version_response_result.dart';final class RadarGetAttacksLayer7SummaryByHttpVersionResponse {const RadarGetAttacksLayer7SummaryByHttpVersionResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_summary_by_http_version_response_result.dart';@immutable final class RadarGetAttacksLayer7SummaryByHttpVersionResponse {const RadarGetAttacksLayer7SummaryByHttpVersionResponse({required this.result, required this.success, });
 
 factory RadarGetAttacksLayer7SummaryByHttpVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByHttpVersionResponse(
   result: RadarGetAttacksLayer7SummaryByHttpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),

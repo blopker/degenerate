@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Basic Error
-final class BasicError {const BasicError({this.message, this.documentationUrl, this.url, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Basic Error
+@immutable final class BasicError {const BasicError({this.message, this.documentationUrl, this.url, this.status, });
 
 factory BasicError.fromJson(Map<String, dynamic> json) { return BasicError(
   message: json['message'] as String?,

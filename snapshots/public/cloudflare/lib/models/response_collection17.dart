@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_messages2.dart';import 'response_collection17_result_info.dart';final class ResponseCollection17 {const ResponseCollection17({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_messages2.dart';import 'response_collection17_result_info.dart';@immutable final class ResponseCollection17 {const ResponseCollection17({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection17.fromJson(Map<String, dynamic> json) { return ResponseCollection17(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailMessages2.fromJson(e as Map<String, dynamic>)).toList(),

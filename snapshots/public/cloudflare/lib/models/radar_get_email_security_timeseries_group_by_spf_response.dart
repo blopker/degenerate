@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_email_security_timeseries_group_by_spf_response_result.dart';final class RadarGetEmailSecurityTimeseriesGroupBySpfResponse {const RadarGetEmailSecurityTimeseriesGroupBySpfResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_spf_response_result.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpfResponse {const RadarGetEmailSecurityTimeseriesGroupBySpfResponse({required this.result, required this.success, });
 
 factory RadarGetEmailSecurityTimeseriesGroupBySpfResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupBySpfResponse(
   result: RadarGetEmailSecurityTimeseriesGroupBySpfResponseResult.fromJson(json['result'] as Map<String, dynamic>),

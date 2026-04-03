@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateSingleMemberUser {const CreateSingleMemberUser({required this.email});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateSingleMemberUser {const CreateSingleMemberUser({required this.email});
 
 factory CreateSingleMemberUser.fromJson(Map<String, dynamic> json) { return CreateSingleMemberUser(
   email: json['email'] as String,

@@ -34,7 +34,7 @@ return execute(
 /// Put script content from a worker with an environment.
 ///
 /// `PUT /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
-Future<ApiResult<WorkersScriptResponse, Never>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerEnvironmentPutScriptContentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptResponse, Never>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required WorkerEnvironmentPutScriptContentRequest body, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (cfWorkerBodyPart != null) {
   headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
 }

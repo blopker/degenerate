@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_request_payment_settings_payment_method_options.dart';import 'post_subscriptions_request_payment_settings_payment_method_types.dart';final class PostSubscriptionsRequestPaymentSettingsSaveDefaultPaymentMethod {const PostSubscriptionsRequestPaymentSettingsSaveDefaultPaymentMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_request_payment_settings_payment_method_options.dart';import 'post_subscriptions_request_payment_settings_payment_method_types.dart';@immutable final class PostSubscriptionsRequestPaymentSettingsSaveDefaultPaymentMethod {const PostSubscriptionsRequestPaymentSettingsSaveDefaultPaymentMethod._(this.value);
 
 factory PostSubscriptionsRequestPaymentSettingsSaveDefaultPaymentMethod.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSubscriptionsRequestPaymentSettingsSaveDefaultPaymentMethod($value)'; } 
  }
 /// Payment settings to pass to invoices created by the subscription.
-final class PostSubscriptionsRequestPaymentSettings {const PostSubscriptionsRequestPaymentSettings({this.paymentMethodOptions, this.paymentMethodTypes, this.saveDefaultPaymentMethod, });
+@immutable final class PostSubscriptionsRequestPaymentSettings {const PostSubscriptionsRequestPaymentSettings({this.paymentMethodOptions, this.paymentMethodTypes, this.saveDefaultPaymentMethod, });
 
 factory PostSubscriptionsRequestPaymentSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestPaymentSettings(
   paymentMethodOptions: json['payment_method_options'] != null ? PostSubscriptionsRequestPaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,

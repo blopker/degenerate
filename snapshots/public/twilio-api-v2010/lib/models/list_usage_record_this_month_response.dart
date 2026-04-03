@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_usage_usage_record_usage_record_this_month.dart';final class ListUsageRecordThisMonthResponse {const ListUsageRecordThisMonthResponse({this.usageRecords, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_usage_usage_record_usage_record_this_month.dart';@immutable final class ListUsageRecordThisMonthResponse {const ListUsageRecordThisMonthResponse({this.usageRecords, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListUsageRecordThisMonthResponse.fromJson(Map<String, dynamic> json) { return ListUsageRecordThisMonthResponse(
   usageRecords: (json['usage_records'] as List<dynamic>?)?.map((e) => AccountUsageUsageRecordUsageRecordThisMonth.fromJson(e as Map<String, dynamic>)).toList(),

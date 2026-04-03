@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsPrecallNetworkInformation {const GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsPrecallNetworkInformation({this.backendRtt, this.effectiveNetworktype, this.fractionalLoss, this.jitter, this.reflexiveConnectivity, this.relayConnectivity, this.rtt, this.throughput, this.turnConnectivity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsPrecallNetworkInformation {const GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsPrecallNetworkInformation({this.backendRtt, this.effectiveNetworktype, this.fractionalLoss, this.jitter, this.reflexiveConnectivity, this.relayConnectivity, this.rtt, this.throughput, this.turnConnectivity, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsPrecallNetworkInformation.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsPrecallNetworkInformation(
   backendRtt: json['backend_rtt'] != null ? (json['backend_rtt'] as num).toDouble() : null,

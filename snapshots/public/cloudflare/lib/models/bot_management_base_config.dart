@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.
-final class BotManagementAiBotsProtection {const BotManagementAiBotsProtection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.
+@immutable final class BotManagementAiBotsProtection {const BotManagementAiBotsProtection._(this.value);
 
 factory BotManagementAiBotsProtection.fromJson(String json) { return switch (json) {
   'block' => block,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BotManagementAiBotsProtection($value)'; } 
  }
 /// Specifies the Robots Access Control License variant to use.
-final class BotManagementCfRobotsVariant {const BotManagementCfRobotsVariant._(this.value);
+@immutable final class BotManagementCfRobotsVariant {const BotManagementCfRobotsVariant._(this.value);
 
 factory BotManagementCfRobotsVariant.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BotManagementCfRobotsVariant($value)'; } 
  }
 /// Enable rule to punish AI Scrapers and Crawlers via a link maze.
-final class BotManagementCrawlerProtection {const BotManagementCrawlerProtection._(this.value);
+@immutable final class BotManagementCrawlerProtection {const BotManagementCrawlerProtection._(this.value);
 
 factory BotManagementCrawlerProtection.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -100,7 +100,7 @@ factory BotManagementUsingLatestModel.fromJson(bool json) => BotManagementUsingL
 bool toJson() => value;
 
 }
-final class BotManagementBaseConfig {const BotManagementBaseConfig({this.aiBotsProtection, this.cfRobotsVariant, this.crawlerProtection, this.enableJs, this.isRobotsTxtManaged, this.usingLatestModel, });
+@immutable final class BotManagementBaseConfig {const BotManagementBaseConfig({this.aiBotsProtection, this.cfRobotsVariant, this.crawlerProtection, this.enableJs, this.isRobotsTxtManaged, this.usingLatestModel, });
 
 factory BotManagementBaseConfig.fromJson(Map<String, dynamic> json) { return BotManagementBaseConfig(
   aiBotsProtection: json['ai_bots_protection'] != null ? BotManagementAiBotsProtection.fromJson(json['ai_bots_protection'] as String) : null,

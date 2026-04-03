@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'logpush_fields.dart';import 'logpush_sample.dart';import 'logpush_schemas_filter.dart';/// Unique WebSocket address that will receive messages from Cloudflare’s edge.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_fields.dart';import 'logpush_sample.dart';import 'logpush_schemas_filter.dart';/// Unique WebSocket address that will receive messages from Cloudflare’s edge.
 extension type LogpushSchemasDestinationConf(Uri value) {
 factory LogpushSchemasDestinationConf.fromJson(String json) => LogpushSchemasDestinationConf(Uri.parse(json));
 
@@ -14,7 +14,7 @@ factory LogpushSessionId.fromJson(String json) => LogpushSessionId(json);
 String toJson() => value;
 
 }
-final class LogpushInstantLogsJob {const LogpushInstantLogsJob({this.destinationConf, this.fields, this.filter, this.sample, this.sessionId, });
+@immutable final class LogpushInstantLogsJob {const LogpushInstantLogsJob({this.destinationConf, this.fields, this.filter, this.sample, this.sessionId, });
 
 factory LogpushInstantLogsJob.fromJson(Map<String, dynamic> json) { return LogpushInstantLogsJob(
   destinationConf: json['destination_conf'] != null ? LogpushSchemasDestinationConf.fromJson(json['destination_conf'] as String) : null,

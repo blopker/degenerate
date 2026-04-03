@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_accounts_account_external_accounts_id_request_documents_bank_account_ownership_verification.dart';/// Documents that may be submitted to satisfy various informational requests.
-final class PostAccountsAccountExternalAccountsIdRequestDocuments {const PostAccountsAccountExternalAccountsIdRequestDocuments({this.bankAccountOwnershipVerification});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_external_accounts_id_request_documents_bank_account_ownership_verification.dart';/// Documents that may be submitted to satisfy various informational requests.
+@immutable final class PostAccountsAccountExternalAccountsIdRequestDocuments {const PostAccountsAccountExternalAccountsIdRequestDocuments({this.bankAccountOwnershipVerification});
 
 factory PostAccountsAccountExternalAccountsIdRequestDocuments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountExternalAccountsIdRequestDocuments(
   bankAccountOwnershipVerification: json['bank_account_ownership_verification'] != null ? PostAccountsAccountExternalAccountsIdRequestDocumentsBankAccountOwnershipVerification.fromJson(json['bank_account_ownership_verification'] as Map<String, dynamic>) : null,

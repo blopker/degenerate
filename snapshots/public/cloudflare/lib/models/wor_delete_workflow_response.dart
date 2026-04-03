@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_delete_workflow_response_errors.dart';import 'wor_delete_workflow_response_messages.dart';import 'wor_delete_workflow_response_result.dart';import 'wor_delete_workflow_response_result_info.dart';final class WorDeleteWorkflowResponse {const WorDeleteWorkflowResponse({required this.errors, required this.messages, required this.result, this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_delete_workflow_response_errors.dart';import 'wor_delete_workflow_response_messages.dart';import 'wor_delete_workflow_response_result.dart';import 'wor_delete_workflow_response_result_info.dart';@immutable final class WorDeleteWorkflowResponse {const WorDeleteWorkflowResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory WorDeleteWorkflowResponse.fromJson(Map<String, dynamic> json) { return WorDeleteWorkflowResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorDeleteWorkflowResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),

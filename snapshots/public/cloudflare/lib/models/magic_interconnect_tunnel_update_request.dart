@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_automatic_return_routing.dart';import 'magic_gre.dart';import 'magic_health_check_base.dart';import 'magic_interconnect_components_schemas_description.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_schemas_mtu.dart';final class MagicInterconnectTunnelUpdateRequest {const MagicInterconnectTunnelUpdateRequest({this.automaticReturnRouting, this.description, this.gre, this.healthCheck, this.interfaceAddress, this.interfaceAddress6, this.mtu, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_automatic_return_routing.dart';import 'magic_gre.dart';import 'magic_health_check_base.dart';import 'magic_interconnect_components_schemas_description.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_schemas_mtu.dart';@immutable final class MagicInterconnectTunnelUpdateRequest {const MagicInterconnectTunnelUpdateRequest({this.automaticReturnRouting, this.description, this.gre, this.healthCheck, this.interfaceAddress, this.interfaceAddress6, this.mtu, });
 
 factory MagicInterconnectTunnelUpdateRequest.fromJson(Map<String, dynamic> json) { return MagicInterconnectTunnelUpdateRequest(
   automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,

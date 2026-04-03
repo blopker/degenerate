@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Request payload for assigning a role to a group or user.
-final class PublicAssignOrganizationGroupRoleBody {const PublicAssignOrganizationGroupRoleBody({required this.roleId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for assigning a role to a group or user.
+@immutable final class PublicAssignOrganizationGroupRoleBody {const PublicAssignOrganizationGroupRoleBody({required this.roleId});
 
 factory PublicAssignOrganizationGroupRoleBody.fromJson(Map<String, dynamic> json) { return PublicAssignOrganizationGroupRoleBody(
   roleId: json['role_id'] as String,

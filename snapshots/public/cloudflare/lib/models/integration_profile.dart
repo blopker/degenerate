@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';final class IntegrationProfileType {const IntegrationProfileType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';@immutable final class IntegrationProfileType {const IntegrationProfileType._(this.value);
 
 factory IntegrationProfileType.fromJson(String json) { return switch (json) {
   'integration' => integration,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IntegrationProfileType($value)'; } 
  }
-final class IntegrationProfile {const IntegrationProfile({required this.createdAt, this.description, required this.entries, required this.id, required this.name, required this.sharedEntries, required this.updatedAt, required this.type, });
+@immutable final class IntegrationProfile {const IntegrationProfile({required this.createdAt, required this.entries, required this.id, required this.name, required this.sharedEntries, required this.updatedAt, required this.type, this.description, });
 
 factory IntegrationProfile.fromJson(Map<String, dynamic> json) { return IntegrationProfile(
   createdAt: DateTime.parse(json['created_at'] as String),

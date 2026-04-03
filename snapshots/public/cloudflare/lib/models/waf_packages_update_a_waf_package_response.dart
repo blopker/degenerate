@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_anomaly_package.dart';final class WafPackagesUpdateAWafPackageResponse {const WafPackagesUpdateAWafPackageResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_anomaly_package.dart';@immutable final class WafPackagesUpdateAWafPackageResponse {const WafPackagesUpdateAWafPackageResponse({this.result});
 
 factory WafPackagesUpdateAWafPackageResponse.fromJson(Map<String, dynamic> json) { return WafPackagesUpdateAWafPackageResponse(
   result: json['result'] != null ? FirewallAnomalyPackage.fromJson(json['result'] as Map<String, dynamic>) : null,

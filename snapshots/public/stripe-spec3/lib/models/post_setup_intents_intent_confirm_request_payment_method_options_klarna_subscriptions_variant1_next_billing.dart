@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling({required this.amount, required this.date, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling({required this.amount, required this.date, });
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(
   amount: (json['amount'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_settings_messages2_source.dart';final class DnsSettingsMessages2 {const DnsSettingsMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_messages2_source.dart';@immutable final class DnsSettingsMessages2 {const DnsSettingsMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory DnsSettingsMessages2.fromJson(Map<String, dynamic> json) { return DnsSettingsMessages2(
   code: (json['code'] as num).toInt(),

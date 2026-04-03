@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_session_request_collected_information.dart';import 'post_checkout_sessions_session_request_line_items.dart';import 'post_checkout_sessions_session_request_metadata.dart';import 'post_checkout_sessions_session_request_shipping_options.dart';import 'post_checkout_sessions_session_request_shipping_options_variant1.dart';final class PostCheckoutSessionsSessionRequest {const PostCheckoutSessionsSessionRequest({this.collectedInformation, this.expand, this.lineItems, this.metadata, this.shippingOptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_session_request_collected_information.dart';import 'post_checkout_sessions_session_request_line_items.dart';import 'post_checkout_sessions_session_request_metadata.dart';import 'post_checkout_sessions_session_request_shipping_options.dart';import 'post_checkout_sessions_session_request_shipping_options_variant1.dart';@immutable final class PostCheckoutSessionsSessionRequest {const PostCheckoutSessionsSessionRequest({this.collectedInformation, this.expand, this.lineItems, this.metadata, this.shippingOptions, });
 
 factory PostCheckoutSessionsSessionRequest.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequest(
   collectedInformation: json['collected_information'] != null ? PostCheckoutSessionsSessionRequestCollectedInformation.fromJson(json['collected_information'] as Map<String, dynamic>) : null,

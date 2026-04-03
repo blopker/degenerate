@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PauseResumeStopRecordingRequestAction {const PauseResumeStopRecordingRequestAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PauseResumeStopRecordingRequestAction {const PauseResumeStopRecordingRequestAction._(this.value);
 
 factory PauseResumeStopRecordingRequestAction.fromJson(String json) { return switch (json) {
   'stop' => stop,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PauseResumeStopRecordingRequestAction($value)'; } 
  }
-final class PauseResumeStopRecordingRequest {const PauseResumeStopRecordingRequest({required this.action});
+@immutable final class PauseResumeStopRecordingRequest {const PauseResumeStopRecordingRequest({required this.action});
 
 factory PauseResumeStopRecordingRequest.fromJson(Map<String, dynamic> json) { return PauseResumeStopRecordingRequest(
   action: PauseResumeStopRecordingRequestAction.fromJson(json['action'] as String),

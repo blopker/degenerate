@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_dispute_evidence.dart';import 'issuing_dispute_transaction.dart';import 'issuing_dispute_treasury.dart';import 'issuing_transaction.dart';/// The enum that describes the dispute loss outcome. If the dispute is not lost, this field will be absent. New enum values may be added in the future, so be sure to handle unknown values.
-final class IssuingDisputeLossReason {const IssuingDisputeLossReason._(this.value);
+@immutable final class IssuingDisputeLossReason {const IssuingDisputeLossReason._(this.value);
 
 factory IssuingDisputeLossReason.fromJson(String json) { return switch (json) {
   'cardholder_authentication_issuer_liability' => cardholderAuthenticationIssuerLiability,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingDisputeLossReason($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class IssuingDisputeObject {const IssuingDisputeObject._(this.value);
+@immutable final class IssuingDisputeObject {const IssuingDisputeObject._(this.value);
 
 factory IssuingDisputeObject.fromJson(String json) { return switch (json) {
   'issuing.dispute' => issuingDispute,
@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingDisputeObject($value)'; } 
  }
 /// Current status of the dispute.
-final class IssuingDisputeStatus {const IssuingDisputeStatus._(this.value);
+@immutable final class IssuingDisputeStatus {const IssuingDisputeStatus._(this.value);
 
 factory IssuingDisputeStatus.fromJson(String json) { return switch (json) {
   'expired' => expired,
@@ -138,7 +138,7 @@ bool get isUnknown { return !values.contains(this); }
 /// As a [card issuer](https://docs.stripe.com/issuing), you can dispute transactions that the cardholder does not recognize, suspects to be fraudulent, or has other issues with.
 /// 
 /// Related guide: [Issuing disputes](https://docs.stripe.com/issuing/purchases/disputes)
-final class IssuingDispute {const IssuingDispute({required this.amount, this.balanceTransactions, required this.created, required this.currency, required this.evidence, required this.id, required this.livemode, this.lossReason, required this.metadata, required this.object, required this.status, required this.transaction, this.treasury, });
+@immutable final class IssuingDispute {const IssuingDispute({required this.amount, required this.created, required this.currency, required this.evidence, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, required this.transaction, this.balanceTransactions, this.lossReason, this.treasury, });
 
 factory IssuingDispute.fromJson(Map<String, dynamic> json) { return IssuingDispute(
   amount: (json['amount'] as num).toInt(),

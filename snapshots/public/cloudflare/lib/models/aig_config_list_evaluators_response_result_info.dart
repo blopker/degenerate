@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigListEvaluatorsResponseResultInfo {const AigConfigListEvaluatorsResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListEvaluatorsResponseResultInfo {const AigConfigListEvaluatorsResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
 
 factory AigConfigListEvaluatorsResponseResultInfo.fromJson(Map<String, dynamic> json) { return AigConfigListEvaluatorsResponseResultInfo(
   count: (json['count'] as num).toDouble(),

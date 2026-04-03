@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_named_tool_choice_function.dart';/// For function calling, the type is always `function`.
-final class ChatCompletionNamedToolChoiceType {const ChatCompletionNamedToolChoiceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_named_tool_choice_function.dart';/// For function calling, the type is always `function`.
+@immutable final class ChatCompletionNamedToolChoiceType {const ChatCompletionNamedToolChoiceType._(this.value);
 
 factory ChatCompletionNamedToolChoiceType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ChatCompletionNamedToolChoiceType($value)'; } 
  }
 /// Specifies a tool the model should use. Use to force the model to call a specific function.
-final class ChatCompletionNamedToolChoice {const ChatCompletionNamedToolChoice({required this.type, required this.function, });
+@immutable final class ChatCompletionNamedToolChoice {const ChatCompletionNamedToolChoice({required this.type, required this.function, });
 
 factory ChatCompletionNamedToolChoice.fromJson(Map<String, dynamic> json) { return ChatCompletionNamedToolChoice(
   type: ChatCompletionNamedToolChoiceType.fromJson(json['type'] as String),

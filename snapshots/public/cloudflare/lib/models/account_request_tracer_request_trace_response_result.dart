@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'request_tracer_trace2.dart';/// Trace result with an origin status code
-final class AccountRequestTracerRequestTraceResponseResult {const AccountRequestTracerRequestTraceResponseResult({this.statusCode, this.trace, });
+@immutable final class AccountRequestTracerRequestTraceResponseResult {const AccountRequestTracerRequestTraceResponseResult({this.statusCode, this.trace, });
 
 factory AccountRequestTracerRequestTraceResponseResult.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceResponseResult(
   statusCode: json['status_code'] != null ? (json['status_code'] as num).toInt() : null,

@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCountrySpecsRequest {const GetCountrySpecsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCountrySpecsRequest {const GetCountrySpecsRequest();
 
-factory GetCountrySpecsRequest.fromJson(Map<String, dynamic> json) { return GetCountrySpecsRequest(
-
-); }
+factory GetCountrySpecsRequest.fromJson(Map<String, dynamic> _) { return const GetCountrySpecsRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetCountrySpecsRequest copyWith() { return GetCountrySpecsRequest(
+GetCountrySpecsRequest copyWith() { return const GetCountrySpecsRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetCountrySpecsRequest; } 

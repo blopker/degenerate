@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';/// Boolean string indicating if the working directory has uncommitted changes.
-final class PagesDeploymentCreateDeploymentRequestCommitDirty {const PagesDeploymentCreateDeploymentRequestCommitDirty._(this.value);
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';/// Boolean string indicating if the working directory has uncommitted changes.
+@immutable final class PagesDeploymentCreateDeploymentRequestCommitDirty {const PagesDeploymentCreateDeploymentRequestCommitDirty._(this.value);
 
 factory PagesDeploymentCreateDeploymentRequestCommitDirty.fromJson(String json) { return switch (json) {
   'true' => $true,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesDeploymentCreateDeploymentRequestCommitDirty($value)'; } 
  }
-final class PagesDeploymentCreateDeploymentRequest {const PagesDeploymentCreateDeploymentRequest({this.headers, this.redirects, this.routesJson, this.workerBundle, this.workerJs, this.branch, this.commitDirty, this.commitHash, this.commitMessage, this.functionsFilepathRoutingConfigJson, this.manifest, this.pagesBuildOutputDir, this.wranglerConfigHash, });
+@immutable final class PagesDeploymentCreateDeploymentRequest {const PagesDeploymentCreateDeploymentRequest({this.headers, this.redirects, this.routesJson, this.workerBundle, this.workerJs, this.branch, this.commitDirty, this.commitHash, this.commitMessage, this.functionsFilepathRoutingConfigJson, this.manifest, this.pagesBuildOutputDir, this.wranglerConfigHash, });
 
 factory PagesDeploymentCreateDeploymentRequest.fromJson(Map<String, dynamic> json) { return PagesDeploymentCreateDeploymentRequest(
   headers: json['_headers'] != null ? base64Decode(json['_headers'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of characteristic.
-final class ShieldAuthIdCharacteristicType {const ShieldAuthIdCharacteristicType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of characteristic.
+@immutable final class ShieldAuthIdCharacteristicType {const ShieldAuthIdCharacteristicType._(this.value);
 
 factory ShieldAuthIdCharacteristicType.fromJson(String json) { return switch (json) {
   'header' => header,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ShieldAuthIdCharacteristicType($value)'; } 
  }
 /// Auth ID Characteristic
-final class ShieldAuthIdCharacteristic {const ShieldAuthIdCharacteristic({required this.name, required this.type, });
+@immutable final class ShieldAuthIdCharacteristic {const ShieldAuthIdCharacteristic({required this.name, required this.type, });
 
 factory ShieldAuthIdCharacteristic.fromJson(Map<String, dynamic> json) { return ShieldAuthIdCharacteristic(
   name: json['name'] as String,

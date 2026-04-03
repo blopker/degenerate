@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST`, and the default is `POST`.
-final class CreateValidationRequestRequestStatusCallbackMethod {const CreateValidationRequestRequestStatusCallbackMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST`, and the default is `POST`.
+@immutable final class CreateValidationRequestRequestStatusCallbackMethod {const CreateValidationRequestRequestStatusCallbackMethod._(this.value);
 
 factory CreateValidationRequestRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateValidationRequestRequestStatusCallbackMethod($value)'; } 
  }
-final class CreateValidationRequestRequest {const CreateValidationRequestRequest({required this.phoneNumber, this.friendlyName, this.callDelay, this.$extension, this.statusCallback, this.statusCallbackMethod, });
+@immutable final class CreateValidationRequestRequest {const CreateValidationRequestRequest({required this.phoneNumber, this.friendlyName, this.callDelay, this.$extension, this.statusCallback, this.statusCallbackMethod, });
 
 factory CreateValidationRequestRequest.fromJson(Map<String, dynamic> json) { return CreateValidationRequestRequest(
   phoneNumber: json['PhoneNumber'] as String,

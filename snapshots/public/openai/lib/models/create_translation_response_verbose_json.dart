@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcription_segment.dart';final class CreateTranslationResponseVerboseJson {const CreateTranslationResponseVerboseJson({required this.language, required this.duration, required this.text, this.segments, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcription_segment.dart';@immutable final class CreateTranslationResponseVerboseJson {const CreateTranslationResponseVerboseJson({required this.language, required this.duration, required this.text, this.segments, });
 
 factory CreateTranslationResponseVerboseJson.fromJson(Map<String, dynamic> json) { return CreateTranslationResponseVerboseJson(
   language: json['language'] as String,

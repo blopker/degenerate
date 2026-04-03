@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_flows_installment_options.dart';import 'payment_intent_payment_method_options_mandate_options_payto.dart';import 'payment_method_options_card_present_routing.dart';/// Controls when the funds will be captured from the customer's account.
-final class PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod {const PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_installment_options.dart';import 'payment_intent_payment_method_options_mandate_options_payto.dart';import 'payment_method_options_card_present_routing.dart';/// Controls when the funds will be captured from the customer's account.
+@immutable final class PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod {const PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod._(this.value);
 
 factory PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage {const PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage._(this.value);
+@immutable final class PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage {const PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage._(this.value);
 
 factory PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentIntentTypeSpecificPaymentMethodOptionsClientSetupFutureUsage($value)'; } 
  }
 /// Bank account verification method.
-final class PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod {const PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod._(this.value);
+@immutable final class PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod {const PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod._(this.value);
 
 factory PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -88,7 +88,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod($value)'; } 
  }
 /// 
-final class PaymentIntentTypeSpecificPaymentMethodOptionsClient {const PaymentIntentTypeSpecificPaymentMethodOptionsClient({this.captureMethod, this.installments, this.mandateOptions, this.requestIncrementalAuthorizationSupport, this.requireCvcRecollection, this.routing, this.setupFutureUsage, this.verificationMethod, });
+@immutable final class PaymentIntentTypeSpecificPaymentMethodOptionsClient {const PaymentIntentTypeSpecificPaymentMethodOptionsClient({this.captureMethod, this.installments, this.mandateOptions, this.requestIncrementalAuthorizationSupport, this.requireCvcRecollection, this.routing, this.setupFutureUsage, this.verificationMethod, });
 
 factory PaymentIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String, dynamic> json) { return PaymentIntentTypeSpecificPaymentMethodOptionsClient(
   captureMethod: json['capture_method'] != null ? PaymentIntentTypeSpecificPaymentMethodOptionsClientCaptureMethod.fromJson(json['capture_method'] as String) : null,

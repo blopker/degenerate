@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEndType {const PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEndType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEndType {const PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEndType._(this.value);
 
 factory PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEndType.fromJson(String json) { return switch (json) {
   'min_item_period_end' => minItemPeriodEnd,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEndType($value)'; } 
  }
-final class PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEnd {const PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEnd({this.timestamp, required this.type, });
+@immutable final class PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEnd {const PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEnd({required this.type, this.timestamp, });
 
 factory PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEnd.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPeriodEnd(
   timestamp: json['timestamp'] != null ? (json['timestamp'] as num).toInt() : null,

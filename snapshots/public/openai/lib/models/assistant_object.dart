@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_object_tool_resources.dart';import 'assistant_object_tools.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';/// The object type, which is always `assistant`.
-final class AssistantObjectObject {const AssistantObjectObject._(this.value);
+@immutable final class AssistantObjectObject {const AssistantObjectObject._(this.value);
 
 factory AssistantObjectObject.fromJson(String json) { return switch (json) {
   'assistant' => assistant,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AssistantObjectObject($value)'; } 
  }
 /// Represents an `assistant` that can call the model and use tools.
-final class AssistantObject {const AssistantObject({required this.id, required this.object, required this.createdAt, required this.name, required this.description, required this.model, required this.instructions, this.tools = const [], this.toolResources, required this.metadata, this.temperature, this.topP, this.responseFormat, });
+@immutable final class AssistantObject {const AssistantObject({required this.id, required this.object, required this.createdAt, required this.name, required this.description, required this.model, required this.instructions, required this.metadata, this.tools = const [], this.toolResources, this.temperature, this.topP, this.responseFormat, });
 
 factory AssistantObject.fromJson(Map<String, dynamic> json) { return AssistantObject(
   id: json['id'] as String,

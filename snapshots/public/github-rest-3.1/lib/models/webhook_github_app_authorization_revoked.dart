@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';final class WebhookGithubAppAuthorizationRevokedAction {const WebhookGithubAppAuthorizationRevokedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';@immutable final class WebhookGithubAppAuthorizationRevokedAction {const WebhookGithubAppAuthorizationRevokedAction._(this.value);
 
 factory WebhookGithubAppAuthorizationRevokedAction.fromJson(String json) { return switch (json) {
   'revoked' => revoked,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookGithubAppAuthorizationRevokedAction($value)'; } 
  }
-final class WebhookGithubAppAuthorizationRevoked {const WebhookGithubAppAuthorizationRevoked({required this.action, required this.sender, });
+@immutable final class WebhookGithubAppAuthorizationRevoked {const WebhookGithubAppAuthorizationRevoked({required this.action, required this.sender, });
 
 factory WebhookGithubAppAuthorizationRevoked.fromJson(Map<String, dynamic> json) { return WebhookGithubAppAuthorizationRevoked(
   action: WebhookGithubAppAuthorizationRevokedAction.fromJson(json['action'] as String),

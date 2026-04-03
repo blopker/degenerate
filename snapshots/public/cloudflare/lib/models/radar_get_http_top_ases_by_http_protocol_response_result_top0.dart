@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopAsesByHttpProtocolResponseResultTop0 {const RadarGetHttpTopAsesByHttpProtocolResponseResultTop0({required this.clientAsn, required this.clientAsName, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByHttpProtocolResponseResultTop0 {const RadarGetHttpTopAsesByHttpProtocolResponseResultTop0({required this.clientAsn, required this.clientAsName, required this.value, });
 
 factory RadarGetHttpTopAsesByHttpProtocolResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopAsesByHttpProtocolResponseResultTop0(
   clientAsn: (json['clientASN'] as num).toInt(),

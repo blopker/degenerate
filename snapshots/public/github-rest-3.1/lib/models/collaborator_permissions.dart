@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CollaboratorPermissions {const CollaboratorPermissions({required this.pull, this.triage, required this.push, this.maintain, required this.admin, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CollaboratorPermissions {const CollaboratorPermissions({required this.pull, required this.push, required this.admin, this.triage, this.maintain, });
 
 factory CollaboratorPermissions.fromJson(Map<String, dynamic> json) { return CollaboratorPermissions(
   pull: json['pull'] as bool,

@@ -6,9 +6,9 @@ environment:
   sdk: ^3.11.1
 
 dependencies:
+  degenerate_runtime:
   spec_03_operations_parameters_request_body:
     path: ../../../snapshots/specs/03-operations-parameters-request-body
-  degenerate_runtime:
 
 dev_dependencies:
   test: ^1.25.6

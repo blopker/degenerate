@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_admin_macros_provision_physical_connector_result.dart';final class MconnAdminMacrosProvisionPhysicalConnectorResponse {const MconnAdminMacrosProvisionPhysicalConnectorResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_macros_provision_physical_connector_result.dart';@immutable final class MconnAdminMacrosProvisionPhysicalConnectorResponse {const MconnAdminMacrosProvisionPhysicalConnectorResponse({this.result});
 
 factory MconnAdminMacrosProvisionPhysicalConnectorResponse.fromJson(Map<String, dynamic> json) { return MconnAdminMacrosProvisionPhysicalConnectorResponse(
   result: json['result'] != null ? MconnAdminMacrosProvisionPhysicalConnectorResult.fromJson(json['result'] as Map<String, dynamic>) : null,

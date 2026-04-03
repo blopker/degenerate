@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObservabilityQueryParametersHavingsOperation {const WorkersObservabilityQueryParametersHavingsOperation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryParametersHavingsOperation {const WorkersObservabilityQueryParametersHavingsOperation._(this.value);
 
 factory WorkersObservabilityQueryParametersHavingsOperation.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersObservabilityQueryParametersHavingsOperation($value)'; } 
  }
-final class WorkersObservabilityQueryParametersHavings {const WorkersObservabilityQueryParametersHavings({required this.key, required this.operation, required this.value, });
+@immutable final class WorkersObservabilityQueryParametersHavings {const WorkersObservabilityQueryParametersHavings({required this.key, required this.operation, required this.value, });
 
 factory WorkersObservabilityQueryParametersHavings.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryParametersHavings(
   key: json['key'] as String,

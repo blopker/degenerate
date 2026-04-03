@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingPersonalizationDesignsPreferences {const GetIssuingPersonalizationDesignsPreferences({this.isDefault, this.isPlatformDefault, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingPersonalizationDesignsPreferences {const GetIssuingPersonalizationDesignsPreferences({this.isDefault, this.isPlatformDefault, });
 
 factory GetIssuingPersonalizationDesignsPreferences.fromJson(Map<String, dynamic> json) { return GetIssuingPersonalizationDesignsPreferences(
   isDefault: json['is_default'] as bool?,

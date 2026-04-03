@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_service_tokens.dart';final class AccessSchemasSingleResponse {const AccessSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_service_tokens.dart';@immutable final class AccessSchemasSingleResponse {const AccessSchemasSingleResponse({this.result});
 
 factory AccessSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AccessSchemasSingleResponse(
   result: json['result'] != null ? AccessServiceTokens.fromJson(json['result'] as Map<String, dynamic>) : null,

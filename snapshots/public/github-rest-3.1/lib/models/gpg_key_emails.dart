@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GpgKeyEmails {const GpgKeyEmails({this.email, this.verified, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GpgKeyEmails {const GpgKeyEmails({this.email, this.verified, });
 
 factory GpgKeyEmails.fromJson(Map<String, dynamic> json) { return GpgKeyEmails(
   email: json['email'] as String?,

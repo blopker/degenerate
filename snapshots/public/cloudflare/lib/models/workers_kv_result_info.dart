@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersKvResultInfo {const WorkersKvResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersKvResultInfo {const WorkersKvResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory WorkersKvResultInfo.fromJson(Map<String, dynamic> json) { return WorkersKvResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

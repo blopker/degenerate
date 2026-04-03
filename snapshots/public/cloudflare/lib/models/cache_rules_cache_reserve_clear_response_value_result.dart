@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The time that the latest Cache Reserve Clear operation completed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The time that the latest Cache Reserve Clear operation completed.
 extension type CacheRulesCacheReserveClearEndTs(DateTime value) {
 factory CacheRulesCacheReserveClearEndTs.fromJson(String json) => CacheRulesCacheReserveClearEndTs(DateTime.parse(json));
 
@@ -15,7 +15,7 @@ String toJson() => value.toIso8601String();
 
 }
 /// The current state of the Cache Reserve Clear operation.
-final class CacheRulesCacheReserveClearState {const CacheRulesCacheReserveClearState._(this.value);
+@immutable final class CacheRulesCacheReserveClearState {const CacheRulesCacheReserveClearState._(this.value);
 
 factory CacheRulesCacheReserveClearState.fromJson(String json) { return switch (json) {
   'In-progress' => inProgress,
@@ -39,7 +39,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CacheRulesCacheReserveClearState($value)'; } 
  }
-final class CacheRulesCacheReserveClearResponseValueResult {const CacheRulesCacheReserveClearResponseValueResult({this.endTs, required this.startTs, required this.state, });
+@immutable final class CacheRulesCacheReserveClearResponseValueResult {const CacheRulesCacheReserveClearResponseValueResult({required this.startTs, required this.state, this.endTs, });
 
 factory CacheRulesCacheReserveClearResponseValueResult.fromJson(Map<String, dynamic> json) { return CacheRulesCacheReserveClearResponseValueResult(
   endTs: json['end_ts'] != null ? CacheRulesCacheReserveClearEndTs.fromJson(json['end_ts'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_credit_transaction.dart';import 'treasury_received_credits_resource_linked_flows.dart';import 'treasury_received_credits_resource_reversal_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'treasury_transaction.dart';/// Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
-final class TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode._(this.value);
+@immutable final class TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode._(this.value);
 
 factory TreasuryReceivedCreditFailureCode.fromJson(String json) { return switch (json) {
   'account_closed' => accountClosed,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryReceivedCreditFailureCode($value)'; } 
  }
 /// The rails used to send the funds.
-final class TreasuryReceivedCreditNetwork {const TreasuryReceivedCreditNetwork._(this.value);
+@immutable final class TreasuryReceivedCreditNetwork {const TreasuryReceivedCreditNetwork._(this.value);
 
 factory TreasuryReceivedCreditNetwork.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryReceivedCreditNetwork($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class TreasuryReceivedCreditObject {const TreasuryReceivedCreditObject._(this.value);
+@immutable final class TreasuryReceivedCreditObject {const TreasuryReceivedCreditObject._(this.value);
 
 factory TreasuryReceivedCreditObject.fromJson(String json) { return switch (json) {
   'treasury.received_credit' => treasuryReceivedCredit,
@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryReceivedCreditObject($value)'; } 
  }
 /// Status of the ReceivedCredit. ReceivedCredits are created either `succeeded` (approved) or `failed` (declined). If a ReceivedCredit is declined, the failure reason can be found in the `failure_code` field.
-final class TreasuryReceivedCreditStatus {const TreasuryReceivedCreditStatus._(this.value);
+@immutable final class TreasuryReceivedCreditStatus {const TreasuryReceivedCreditStatus._(this.value);
 
 factory TreasuryReceivedCreditStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
@@ -110,7 +110,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryReceivedCreditStatus($value)'; } 
  }
 /// ReceivedCredits represent funds sent to a [FinancialAccount](https://api.stripe.com#financial_accounts) (for example, via ACH or wire). These money movements are not initiated from the FinancialAccount.
-final class TreasuryReceivedCredit {const TreasuryReceivedCredit({required this.amount, required this.created, required this.currency, required this.description, this.failureCode, this.financialAccount, this.hostedRegulatoryReceiptUrl, required this.id, required this.initiatingPaymentMethodDetails, required this.linkedFlows, required this.livemode, required this.network, required this.object, this.reversalDetails, required this.status, this.transaction, });
+@immutable final class TreasuryReceivedCredit {const TreasuryReceivedCredit({required this.amount, required this.created, required this.currency, required this.description, required this.id, required this.initiatingPaymentMethodDetails, required this.linkedFlows, required this.livemode, required this.network, required this.object, required this.status, this.failureCode, this.financialAccount, this.hostedRegulatoryReceiptUrl, this.reversalDetails, this.transaction, });
 
 factory TreasuryReceivedCredit.fromJson(Map<String, dynamic> json) { return TreasuryReceivedCredit(
   amount: (json['amount'] as num).toInt(),

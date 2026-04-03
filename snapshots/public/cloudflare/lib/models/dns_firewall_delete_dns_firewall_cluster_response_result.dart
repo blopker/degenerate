@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_firewall_identifier.dart';final class DnsFirewallDeleteDnsFirewallClusterResponseResult {const DnsFirewallDeleteDnsFirewallClusterResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_firewall_identifier.dart';@immutable final class DnsFirewallDeleteDnsFirewallClusterResponseResult {const DnsFirewallDeleteDnsFirewallClusterResponseResult({this.id});
 
 factory DnsFirewallDeleteDnsFirewallClusterResponseResult.fromJson(Map<String, dynamic> json) { return DnsFirewallDeleteDnsFirewallClusterResponseResult(
   id: json['id'] != null ? DnsFirewallIdentifier.fromJson(json['id'] as String) : null,

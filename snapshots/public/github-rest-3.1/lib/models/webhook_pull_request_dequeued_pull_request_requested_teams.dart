@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_dequeued_pull_request_requested_teams_parent.dart';final class WebhookPullRequestDequeuedPullRequestRequestedTeamsPrivacy {const WebhookPullRequestDequeuedPullRequestRequestedTeamsPrivacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_dequeued_pull_request_requested_teams_parent.dart';@immutable final class WebhookPullRequestDequeuedPullRequestRequestedTeamsPrivacy {const WebhookPullRequestDequeuedPullRequestRequestedTeamsPrivacy._(this.value);
 
 factory WebhookPullRequestDequeuedPullRequestRequestedTeamsPrivacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestDequeuedPullRequestRequestedTeamsPrivacy($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-final class WebhookPullRequestDequeuedPullRequestRequestedTeams {const WebhookPullRequestDequeuedPullRequestRequestedTeams({this.deleted, this.description, this.htmlUrl, required this.id, this.membersUrl, required this.name, this.nodeId, this.parent, this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
+@immutable final class WebhookPullRequestDequeuedPullRequestRequestedTeams {const WebhookPullRequestDequeuedPullRequestRequestedTeams({required this.id, required this.name, this.deleted, this.description, this.htmlUrl, this.membersUrl, this.nodeId, this.parent, this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
 
 factory WebhookPullRequestDequeuedPullRequestRequestedTeams.fromJson(Map<String, dynamic> json) { return WebhookPullRequestDequeuedPullRequestRequestedTeams(
   deleted: json['deleted'] as bool?,

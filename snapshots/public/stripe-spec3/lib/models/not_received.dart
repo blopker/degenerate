@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'not_received_additional_documentation.dart';import 'not_received_expected_at.dart';import 'not_received_explanation.dart';import 'not_received_product_description.dart';final class NotReceivedProductType {const NotReceivedProductType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'not_received_additional_documentation.dart';import 'not_received_expected_at.dart';import 'not_received_explanation.dart';import 'not_received_product_description.dart';@immutable final class NotReceivedProductType {const NotReceivedProductType._(this.value);
 
 factory NotReceivedProductType.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'NotReceivedProductType($value)'; } 
  }
-final class NotReceived {const NotReceived({this.additionalDocumentation, this.expectedAt, this.explanation, this.productDescription, this.productType, });
+@immutable final class NotReceived {const NotReceived({this.additionalDocumentation, this.expectedAt, this.explanation, this.productDescription, this.productType, });
 
 factory NotReceived.fromJson(Map<String, dynamic> json) { return NotReceived(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => NotReceivedAdditionalDocumentationVariant2.fromJson(v as String),) : null,

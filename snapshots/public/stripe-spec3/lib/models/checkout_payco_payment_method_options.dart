@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls when the funds will be captured from the customer's account.
-final class CheckoutPaycoPaymentMethodOptionsCaptureMethod {const CheckoutPaycoPaymentMethodOptionsCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
+@immutable final class CheckoutPaycoPaymentMethodOptionsCaptureMethod {const CheckoutPaycoPaymentMethodOptionsCaptureMethod._(this.value);
 
 factory CheckoutPaycoPaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutPaycoPaymentMethodOptionsCaptureMethod($value)'; } 
  }
 /// 
-final class CheckoutPaycoPaymentMethodOptions {const CheckoutPaycoPaymentMethodOptions({this.captureMethod});
+@immutable final class CheckoutPaycoPaymentMethodOptions {const CheckoutPaycoPaymentMethodOptions({this.captureMethod});
 
 factory CheckoutPaycoPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutPaycoPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? CheckoutPaycoPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,

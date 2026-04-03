@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'climate_removals_location.dart';/// String representing the object’s type. Objects of the same type share the same value.
-final class ClimateSupplierObject {const ClimateSupplierObject._(this.value);
+@immutable final class ClimateSupplierObject {const ClimateSupplierObject._(this.value);
 
 factory ClimateSupplierObject.fromJson(String json) { return switch (json) {
   'climate.supplier' => climateSupplier,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ClimateSupplierObject($value)'; } 
  }
 /// The scientific pathway used for carbon removal.
-final class ClimateSupplierRemovalPathway {const ClimateSupplierRemovalPathway._(this.value);
+@immutable final class ClimateSupplierRemovalPathway {const ClimateSupplierRemovalPathway._(this.value);
 
 factory ClimateSupplierRemovalPathway.fromJson(String json) { return switch (json) {
   'biomass_carbon_removal_and_storage' => biomassCarbonRemovalAndStorage,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ClimateSupplierRemovalPathway($value)'; } 
  }
 /// A supplier of carbon removal.
-final class ClimateSupplier {const ClimateSupplier({required this.id, required this.infoUrl, required this.livemode, required this.locations, required this.name, required this.object, required this.removalPathway, });
+@immutable final class ClimateSupplier {const ClimateSupplier({required this.id, required this.infoUrl, required this.livemode, required this.locations, required this.name, required this.object, required this.removalPathway, });
 
 factory ClimateSupplier.fromJson(Map<String, dynamic> json) { return ClimateSupplier(
   id: json['id'] as String,

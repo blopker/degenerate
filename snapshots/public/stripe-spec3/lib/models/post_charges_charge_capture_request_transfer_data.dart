@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An optional dictionary including the account to automatically transfer to as part of a destination charge. [See the Connect documentation](https://docs.stripe.com/connect/destination-charges) for details.
-final class PostChargesChargeCaptureRequestTransferData {const PostChargesChargeCaptureRequestTransferData({this.amount});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An optional dictionary including the account to automatically transfer to as part of a destination charge. [See the Connect documentation](https://docs.stripe.com/connect/destination-charges) for details.
+@immutable final class PostChargesChargeCaptureRequestTransferData {const PostChargesChargeCaptureRequestTransferData({this.amount});
 
 factory PostChargesChargeCaptureRequestTransferData.fromJson(Map<String, dynamic> json) { return PostChargesChargeCaptureRequestTransferData(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

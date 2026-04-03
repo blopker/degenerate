@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_analytics_result.dart';final class DnsAnalyticsTableResponse {const DnsAnalyticsTableResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_analytics_result.dart';@immutable final class DnsAnalyticsTableResponse {const DnsAnalyticsTableResponse({this.result});
 
 factory DnsAnalyticsTableResponse.fromJson(Map<String, dynamic> json) { return DnsAnalyticsTableResponse(
   result: json['result'] != null ? DnsAnalyticsResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';final class AppsListReposAccessibleToInstallationResponse {const AppsListReposAccessibleToInstallationResponse({required this.totalCount, required this.repositories, this.repositorySelection, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';@immutable final class AppsListReposAccessibleToInstallationResponse {const AppsListReposAccessibleToInstallationResponse({required this.totalCount, required this.repositories, this.repositorySelection, });
 
 factory AppsListReposAccessibleToInstallationResponse.fromJson(Map<String, dynamic> json) { return AppsListReposAccessibleToInstallationResponse(
   totalCount: (json['total_count'] as num).toInt(),

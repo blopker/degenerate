@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_base_mc_actions_value.dart';import 'zaraz_base_mc_neo_events.dart';final class ZarazBaseMc {const ZarazBaseMc({required this.blockingTriggers, required this.defaultFields, this.defaultPurpose, required this.enabled, required this.name, this.vendorName, this.vendorPolicyUrl, this.actions, required this.component, this.neoEvents, required this.permissions, required this.settings, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_base_mc_actions_value.dart';import 'zaraz_base_mc_neo_events.dart';@immutable final class ZarazBaseMc {const ZarazBaseMc({required this.blockingTriggers, required this.defaultFields, required this.enabled, required this.name, required this.component, required this.permissions, required this.settings, this.defaultPurpose, this.vendorName, this.vendorPolicyUrl, this.actions, this.neoEvents, });
 
 factory ZarazBaseMc.fromJson(Map<String, dynamic> json) { return ZarazBaseMc(
   blockingTriggers: (json['blockingTriggers'] as List<dynamic>).map((e) => e as String).toList(),
-  defaultFields: (json['defaultFields'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  defaultFields: json['defaultFields'] as Map<String, dynamic>,
   defaultPurpose: json['defaultPurpose'] as String?,
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
@@ -14,7 +14,7 @@ factory ZarazBaseMc.fromJson(Map<String, dynamic> json) { return ZarazBaseMc(
   component: json['component'] as String,
   neoEvents: (json['neoEvents'] as List<dynamic>?)?.map((e) => ZarazBaseMcNeoEvents.fromJson(e as Map<String, dynamic>)).toList(),
   permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
-  settings: (json['settings'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  settings: json['settings'] as Map<String, dynamic>,
 ); }
 
 /// List of blocking trigger IDs

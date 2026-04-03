@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_access.dart';import 'iam_permission_group_ids2.dart';import 'iam_resource_group_ids2.dart';final class IamUpdateUserGroupBodyPolicies {const IamUpdateUserGroupBodyPolicies({required this.access, required this.permissionGroups, required this.resourceGroups, required this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_access.dart';import 'iam_permission_group_ids2.dart';import 'iam_resource_group_ids2.dart';@immutable final class IamUpdateUserGroupBodyPolicies {const IamUpdateUserGroupBodyPolicies({required this.access, required this.permissionGroups, required this.resourceGroups, required this.id, });
 
 factory IamUpdateUserGroupBodyPolicies.fromJson(Map<String, dynamic> json) { return IamUpdateUserGroupBodyPolicies(
   access: IamAccess.fromJson(json['access'] as String),

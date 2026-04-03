@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_cloud_type.dart';final class McnCreateProviderRequest {const McnCreateProviderRequest({required this.cloudType, this.description, required this.friendlyName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_cloud_type.dart';@immutable final class McnCreateProviderRequest {const McnCreateProviderRequest({required this.cloudType, required this.friendlyName, this.description, });
 
 factory McnCreateProviderRequest.fromJson(Map<String, dynamic> json) { return McnCreateProviderRequest(
   cloudType: McnCloudType.fromJson(json['cloud_type'] as String),

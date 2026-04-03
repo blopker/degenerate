@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_audio_label.dart';final class StreamCopyAudioTrack {const StreamCopyAudioTrack({required this.label, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_audio_label.dart';@immutable final class StreamCopyAudioTrack {const StreamCopyAudioTrack({required this.label, this.url, });
 
 factory StreamCopyAudioTrack.fromJson(Map<String, dynamic> json) { return StreamCopyAudioTrack(
   label: StreamAudioLabel.fromJson(json['label'] as String),

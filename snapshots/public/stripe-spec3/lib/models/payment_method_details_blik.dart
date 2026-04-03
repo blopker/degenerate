@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsBlik {const PaymentMethodDetailsBlik({this.buyerId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsBlik {const PaymentMethodDetailsBlik({this.buyerId});
 
 factory PaymentMethodDetailsBlik.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsBlik(
   buyerId: json['buyer_id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant4 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant4({required this.certificate, required this.precertificate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant4 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant4({required this.certificate, required this.precertificate, });
 
 factory RadarGetCtTimeseriesGroupResponseResultSerie0Variant4.fromJson(Map<String, dynamic> json) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant4(
   certificate: (json['CERTIFICATE'] as List<dynamic>).map((e) => e as String).toList(),

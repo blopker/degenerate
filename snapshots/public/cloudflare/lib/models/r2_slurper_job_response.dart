@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gcs_source_response_schema.dart';import 'r2_slurper_job_response_source.dart';import 'r2_slurper_job_response_target.dart';import 'r2_slurper_job_status.dart';import 'r2_source_response_schema.dart';import 's3_source_response_schema.dart';final class R2SlurperJobResponse {const R2SlurperJobResponse({this.createdAt, this.finishedAt, this.id, this.overwrite, this.source, this.status, this.target, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gcs_source_response_schema.dart';import 'r2_slurper_job_response_source.dart';import 'r2_slurper_job_response_target.dart';import 'r2_slurper_job_status.dart';import 'r2_source_response_schema.dart';import 's3_source_response_schema.dart';@immutable final class R2SlurperJobResponse {const R2SlurperJobResponse({this.createdAt, this.finishedAt, this.id, this.overwrite, this.source, this.status, this.target, });
 
 factory R2SlurperJobResponse.fromJson(Map<String, dynamic> json) { return R2SlurperJobResponse(
   createdAt: json['createdAt'] as String?,

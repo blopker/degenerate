@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_timeseries_group_by_protocol_response_result_meta_confidence_info.dart';import 'radar_get_attacks_layer3_timeseries_group_by_protocol_response_result_meta_date_range.dart';import 'radar_get_attacks_layer3_timeseries_group_by_protocol_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-final class RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaAggInterval {const RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaAggInterval._(this.value);
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaAggInterval {const RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaAggInterval._(this.value);
 
 factory RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaAggInterval($value)'; } 
  }
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaNormalization {const RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaNormalization {const RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaNormalization._(this.value);
 
 factory RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMeta {const RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMeta {const RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMeta(
   aggInterval: RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),

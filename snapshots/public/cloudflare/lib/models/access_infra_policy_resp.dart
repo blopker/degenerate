@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_connection_rules_infra.dart';import 'access_decision.dart';import 'access_policy_components_schemas_name.dart';import 'access_rule.dart';import 'access_schemas_uuid.dart';import 'access_timestamp.dart';final class AccessInfraPolicyResp {const AccessInfraPolicyResp({this.createdAt, this.decision, this.exclude, this.id, this.include, this.name, this.require, this.updatedAt, this.connectionRules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_connection_rules_infra.dart';import 'access_decision.dart';import 'access_policy_components_schemas_name.dart';import 'access_rule.dart';import 'access_schemas_uuid.dart';import 'access_timestamp.dart';@immutable final class AccessInfraPolicyResp {const AccessInfraPolicyResp({this.createdAt, this.decision, this.exclude, this.id, this.include, this.name, this.require, this.updatedAt, this.connectionRules, });
 
 factory AccessInfraPolicyResp.fromJson(Map<String, dynamic> json) { return AccessInfraPolicyResp(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_uuid.dart';final class ShieldSelectorExclude {const ShieldSelectorExclude({this.operationIds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_uuid.dart';@immutable final class ShieldSelectorExclude {const ShieldSelectorExclude({this.operationIds});
 
 factory ShieldSelectorExclude.fromJson(Map<String, dynamic> json) { return ShieldSelectorExclude(
   operationIds: (json['operation_ids'] as List<dynamic>?)?.map((e) => ShieldUuid.fromJson(e as String)).toList(),

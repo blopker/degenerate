@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModelProperties {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModelProperties({required this.model, required this.provider, required this.retries, required this.timeout, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModelProperties {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModelProperties({required this.model, required this.provider, required this.retries, required this.timeout, });
 
 factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModelProperties.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModelProperties(
   model: json['model'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secret_service_resource_scope.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class AppsSecretObject {const AppsSecretObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_service_resource_scope.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class AppsSecretObject {const AppsSecretObject._(this.value);
 
 factory AppsSecretObject.fromJson(String json) { return switch (json) {
   'apps.secret' => appsSecret,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A `user` scoped secret is accessible by the app backend and one specific Dashboard user. Use the `user` scope for per-user secrets like per-user OAuth tokens, where different users might have different permissions.
 /// 
 /// Related guide: [Store data between page reloads](https://docs.stripe.com/stripe-apps/store-auth-data-custom-objects)
-final class AppsSecret {const AppsSecret({required this.created, this.deleted, this.expiresAt, required this.id, required this.livemode, required this.name, required this.object, this.payload, required this.scope, });
+@immutable final class AppsSecret {const AppsSecret({required this.created, required this.id, required this.livemode, required this.name, required this.object, required this.scope, this.deleted, this.expiresAt, this.payload, });
 
 factory AppsSecret.fromJson(Map<String, dynamic> json) { return AppsSecret(
   created: (json['created'] as num).toInt(),

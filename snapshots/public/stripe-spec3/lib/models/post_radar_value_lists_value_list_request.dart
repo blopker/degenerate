@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostRadarValueListsValueListRequest {const PostRadarValueListsValueListRequest({this.alias, this.expand, this.metadata, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostRadarValueListsValueListRequest {const PostRadarValueListsValueListRequest({this.alias, this.expand, this.metadata, this.name, });
 
 factory PostRadarValueListsValueListRequest.fromJson(Map<String, dynamic> json) { return PostRadarValueListsValueListRequest(
   alias: json['alias'] as String?,

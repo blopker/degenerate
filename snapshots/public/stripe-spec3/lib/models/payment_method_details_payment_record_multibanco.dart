@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsPaymentRecordMultibanco {const PaymentMethodDetailsPaymentRecordMultibanco({this.entity, this.reference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsPaymentRecordMultibanco {const PaymentMethodDetailsPaymentRecordMultibanco({this.entity, this.reference, });
 
 factory PaymentMethodDetailsPaymentRecordMultibanco.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordMultibanco(
   entity: json['entity'] as String?,

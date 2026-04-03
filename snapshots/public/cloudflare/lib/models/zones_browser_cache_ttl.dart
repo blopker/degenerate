@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Control how long resources cached by client browsers remain valid.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Control how long resources cached by client browsers remain valid.
 /// 
-final class ZonesBrowserCacheTtlId {const ZonesBrowserCacheTtlId._(this.value);
+@immutable final class ZonesBrowserCacheTtlId {const ZonesBrowserCacheTtlId._(this.value);
 
 factory ZonesBrowserCacheTtlId.fromJson(String json) { return switch (json) {
   'browser_cache_ttl' => browserCacheTtl,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesBrowserCacheTtlId($value)'; } 
  }
-final class ZonesBrowserCacheTtl {const ZonesBrowserCacheTtl({this.id, this.value, });
+@immutable final class ZonesBrowserCacheTtl {const ZonesBrowserCacheTtl({this.id, this.value, });
 
 factory ZonesBrowserCacheTtl.fromJson(Map<String, dynamic> json) { return ZonesBrowserCacheTtl(
   id: json['id'] != null ? ZonesBrowserCacheTtlId.fromJson(json['id'] as String) : null,

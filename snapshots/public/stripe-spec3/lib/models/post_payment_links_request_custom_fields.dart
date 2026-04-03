@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_links_request_custom_fields_dropdown.dart';import 'post_payment_links_request_custom_fields_label.dart';import 'post_payment_links_request_custom_fields_numeric.dart';import 'post_payment_links_request_custom_fields_text.dart';final class PostPaymentLinksRequestCustomFieldsType {const PostPaymentLinksRequestCustomFieldsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_custom_fields_dropdown.dart';import 'post_payment_links_request_custom_fields_label.dart';import 'post_payment_links_request_custom_fields_numeric.dart';import 'post_payment_links_request_custom_fields_text.dart';@immutable final class PostPaymentLinksRequestCustomFieldsType {const PostPaymentLinksRequestCustomFieldsType._(this.value);
 
 factory PostPaymentLinksRequestCustomFieldsType.fromJson(String json) { return switch (json) {
   'dropdown' => dropdown,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksRequestCustomFieldsType($value)'; } 
  }
-final class PostPaymentLinksRequestCustomFields {const PostPaymentLinksRequestCustomFields({this.dropdown, required this.key, required this.label, this.numeric, this.optional, this.text, required this.type, });
+@immutable final class PostPaymentLinksRequestCustomFields {const PostPaymentLinksRequestCustomFields({required this.key, required this.label, required this.type, this.dropdown, this.numeric, this.optional, this.text, });
 
 factory PostPaymentLinksRequestCustomFields.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestCustomFields(
   dropdown: json['dropdown'] != null ? PostPaymentLinksRequestCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,

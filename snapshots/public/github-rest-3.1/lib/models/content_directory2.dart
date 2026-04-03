@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'content_directory2_links.dart';final class ContentDirectory2Type {const ContentDirectory2Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_directory2_links.dart';@immutable final class ContentDirectory2Type {const ContentDirectory2Type._(this.value);
 
 factory ContentDirectory2Type.fromJson(String json) { return switch (json) {
   'dir' => dir,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ContentDirectory2Type($value)'; } 
  }
-final class ContentDirectory2 {const ContentDirectory2({required this.type, required this.size, required this.name, required this.path, this.content, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
+@immutable final class ContentDirectory2 {const ContentDirectory2({required this.type, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, this.content, });
 
 factory ContentDirectory2.fromJson(Map<String, dynamic> json) { return ContentDirectory2(
   type: ContentDirectory2Type.fromJson(json['type'] as String),

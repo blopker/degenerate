@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'conversation_item.dart';/// The type of object returned, must be `list`.
-final class ConversationItemListObject {const ConversationItemListObject._(this.value);
+@immutable final class ConversationItemListObject {const ConversationItemListObject._(this.value);
 
 factory ConversationItemListObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ConversationItemListObject($value)'; } 
  }
 /// A list of Conversation items.
-final class ConversationItemList {const ConversationItemList({required this.object, required this.data, required this.hasMore, required this.firstId, required this.lastId, });
+@immutable final class ConversationItemList {const ConversationItemList({required this.object, required this.data, required this.hasMore, required this.firstId, required this.lastId, });
 
 factory ConversationItemList.fromJson(Map<String, dynamic> json) { return ConversationItemList(
   object: ConversationItemListObject.fromJson(json['object'] as String),

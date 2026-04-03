@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_dpo_hyperparameters_batch_size.dart';import 'fine_tune_dpo_hyperparameters_beta.dart';import 'fine_tune_dpo_hyperparameters_learning_rate_multiplier.dart';import 'fine_tune_dpo_hyperparameters_n_epochs.dart';/// The hyperparameters used for the DPO fine-tuning job.
-final class FineTuneDpoHyperparameters {const FineTuneDpoHyperparameters({this.beta, this.batchSize, this.learningRateMultiplier, this.nEpochs, });
+@immutable final class FineTuneDpoHyperparameters {const FineTuneDpoHyperparameters({this.beta, this.batchSize, this.learningRateMultiplier, this.nEpochs, });
 
 factory FineTuneDpoHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuneDpoHyperparameters(
   beta: json['beta'] != null ? OneOf2.parse(json['beta'], fromA: (v) => FineTuneDpoHyperparametersBetaVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,

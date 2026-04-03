@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ObservatorySchemasMessages2Source {const ObservatorySchemasMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ObservatorySchemasMessages2Source {const ObservatorySchemasMessages2Source({this.pointer});
 
 factory ObservatorySchemasMessages2Source.fromJson(Map<String, dynamic> json) { return ObservatorySchemasMessages2Source(
   pointer: json['pointer'] as String?,

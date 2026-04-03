@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The reason why the run is incomplete. This will point to which specific token limit was reached over the course of the run.
-final class RunObjectIncompleteDetailsReason {const RunObjectIncompleteDetailsReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason why the run is incomplete. This will point to which specific token limit was reached over the course of the run.
+@immutable final class RunObjectIncompleteDetailsReason {const RunObjectIncompleteDetailsReason._(this.value);
 
 factory RunObjectIncompleteDetailsReason.fromJson(String json) { return switch (json) {
   'max_completion_tokens' => maxCompletionTokens,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunObjectIncompleteDetailsReason($value)'; } 
  }
 /// Details on why the run is incomplete. Will be `null` if the run is not incomplete.
-final class RunObjectIncompleteDetails {const RunObjectIncompleteDetails({this.reason});
+@immutable final class RunObjectIncompleteDetails {const RunObjectIncompleteDetails({this.reason});
 
 factory RunObjectIncompleteDetails.fromJson(Map<String, dynamic> json) { return RunObjectIncompleteDetails(
   reason: json['reason'] != null ? RunObjectIncompleteDetailsReason.fromJson(json['reason'] as String) : null,

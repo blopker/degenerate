@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_analytics.dart';final class LoadBalancingComponentsSchemasResponseCollection {const LoadBalancingComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_analytics.dart';@immutable final class LoadBalancingComponentsSchemasResponseCollection {const LoadBalancingComponentsSchemasResponseCollection({this.result});
 
 factory LoadBalancingComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return LoadBalancingComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => LoadBalancingAnalytics.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_coupons_request_applies_to.dart';import 'post_coupons_request_currency_options_value.dart';import 'post_coupons_request_metadata.dart';/// Specifies how long the discount will be in effect if used on a subscription. Defaults to `once`.
-final class PostCouponsRequestDuration {const PostCouponsRequestDuration._(this.value);
+@immutable final class PostCouponsRequestDuration {const PostCouponsRequestDuration._(this.value);
 
 factory PostCouponsRequestDuration.fromJson(String json) { return switch (json) {
   'forever' => forever,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCouponsRequestDuration($value)'; } 
  }
-final class PostCouponsRequest {const PostCouponsRequest({this.amountOff, this.appliesTo, this.currency, this.currencyOptions, this.duration, this.durationInMonths, this.expand, this.id, this.maxRedemptions, this.metadata, this.name, this.percentOff, this.redeemBy, });
+@immutable final class PostCouponsRequest {const PostCouponsRequest({this.amountOff, this.appliesTo, this.currency, this.currencyOptions, this.duration, this.durationInMonths, this.expand, this.id, this.maxRedemptions, this.metadata, this.name, this.percentOff, this.redeemBy, });
 
 factory PostCouponsRequest.fromJson(Map<String, dynamic> json) { return PostCouponsRequest(
   amountOff: json['amount_off'] != null ? (json['amount_off'] as num).toInt() : null,

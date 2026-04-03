@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DependabotListAlertsForRepoDirection {const DependabotListAlertsForRepoDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotListAlertsForRepoDirection {const DependabotListAlertsForRepoDirection._(this.value);
 
 factory DependabotListAlertsForRepoDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

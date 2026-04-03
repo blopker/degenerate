@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Custom page type.
-final class AccessSchemasType {const AccessSchemasType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom page type.
+@immutable final class AccessSchemasType {const AccessSchemasType._(this.value);
 
 factory AccessSchemasType.fromJson(String json) { return switch (json) {
   'identity_denied' => identityDenied,

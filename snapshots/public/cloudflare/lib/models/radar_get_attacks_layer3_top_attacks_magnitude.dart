@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Orders results based on attack magnitude, defined by total mitigated bytes or total mitigated attacks.
-final class RadarGetAttacksLayer3TopAttacksMagnitude {const RadarGetAttacksLayer3TopAttacksMagnitude._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Orders results based on attack magnitude, defined by total mitigated bytes or total mitigated attacks.
+@immutable final class RadarGetAttacksLayer3TopAttacksMagnitude {const RadarGetAttacksLayer3TopAttacksMagnitude._(this.value);
 
 factory RadarGetAttacksLayer3TopAttacksMagnitude.fromJson(String json) { return switch (json) {
   'MITIGATED_BYTES' => mitigatedBytes,

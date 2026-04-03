@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MqWorkerProducerType {const MqWorkerProducerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqWorkerProducerType {const MqWorkerProducerType._(this.value);
 
 factory MqWorkerProducerType.fromJson(String json) { return switch (json) {
   'worker' => worker,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MqWorkerProducerType($value)'; } 
  }
-final class MqWorkerProducer {const MqWorkerProducer({this.script, this.type, });
+@immutable final class MqWorkerProducer {const MqWorkerProducer({this.script, this.type, });
 
 factory MqWorkerProducer.fromJson(Map<String, dynamic> json) { return MqWorkerProducer(
   script: json['script'] as String?,

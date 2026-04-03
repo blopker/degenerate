@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingNetworkTokenMastercard {const IssuingNetworkTokenMastercard({this.cardReferenceId, required this.tokenReferenceId, required this.tokenRequestorId, this.tokenRequestorName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingNetworkTokenMastercard {const IssuingNetworkTokenMastercard({required this.tokenReferenceId, required this.tokenRequestorId, this.cardReferenceId, this.tokenRequestorName, });
 
 factory IssuingNetworkTokenMastercard.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenMastercard(
   cardReferenceId: json['card_reference_id'] as String?,

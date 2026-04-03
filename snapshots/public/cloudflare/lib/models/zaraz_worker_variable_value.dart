@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazWorkerVariableValue {const ZarazWorkerVariableValue({required this.escapedWorkerName, required this.workerTag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazWorkerVariableValue {const ZarazWorkerVariableValue({required this.escapedWorkerName, required this.workerTag, });
 
 factory ZarazWorkerVariableValue.fromJson(Map<String, dynamic> json) { return ZarazWorkerVariableValue(
   escapedWorkerName: json['escapedWorkerName'] as String,

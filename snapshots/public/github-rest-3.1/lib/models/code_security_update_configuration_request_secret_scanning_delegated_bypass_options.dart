@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_security_update_configuration_request_secret_scanning_delegated_bypass_options_reviewers.dart';/// Feature options for secret scanning delegated bypass
-final class CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypassOptions {const CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypassOptions({this.reviewers});
+@immutable final class CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypassOptions {const CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypassOptions({this.reviewers});
 
 factory CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypassOptions.fromJson(Map<String, dynamic> json) { return CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypassOptions(
   reviewers: (json['reviewers'] as List<dynamic>?)?.map((e) => CodeSecurityUpdateConfigurationRequestSecretScanningDelegatedBypassOptionsReviewers.fromJson(e as Map<String, dynamic>)).toList(),

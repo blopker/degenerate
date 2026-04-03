@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_records_report_payment_request_processor_details_custom.dart';final class PostPaymentRecordsReportPaymentRequestProcessorDetailsType {const PostPaymentRecordsReportPaymentRequestProcessorDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_report_payment_request_processor_details_custom.dart';@immutable final class PostPaymentRecordsReportPaymentRequestProcessorDetailsType {const PostPaymentRecordsReportPaymentRequestProcessorDetailsType._(this.value);
 
 factory PostPaymentRecordsReportPaymentRequestProcessorDetailsType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentRecordsReportPaymentRequestProcessorDetailsType($value)'; } 
  }
 /// Processor information for this payment.
-final class PostPaymentRecordsReportPaymentRequestProcessorDetails {const PostPaymentRecordsReportPaymentRequestProcessorDetails({this.custom, required this.type, });
+@immutable final class PostPaymentRecordsReportPaymentRequestProcessorDetails {const PostPaymentRecordsReportPaymentRequestProcessorDetails({required this.type, this.custom, });
 
 factory PostPaymentRecordsReportPaymentRequestProcessorDetails.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequestProcessorDetails(
   custom: json['custom'] != null ? PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom.fromJson(json['custom'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_value.dart';final class OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest {const OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest({required this.repositoryNames, required this.properties, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_value.dart';@immutable final class OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest {const OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest({required this.repositoryNames, required this.properties, });
 
 factory OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest.fromJson(Map<String, dynamic> json) { return OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest(
   repositoryNames: (json['repository_names'] as List<dynamic>).map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_screenshot_response4042_errors.dart';import 'urlscanner_get_scan_screenshot_response4042_task.dart';final class UrlscannerGetScanScreenshotResponse4042 {const UrlscannerGetScanScreenshotResponse4042({required this.errors, required this.message, required this.status, required this.task, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_screenshot_response4042_errors.dart';import 'urlscanner_get_scan_screenshot_response4042_task.dart';@immutable final class UrlscannerGetScanScreenshotResponse4042 {const UrlscannerGetScanScreenshotResponse4042({required this.errors, required this.message, required this.status, required this.task, });
 
 factory UrlscannerGetScanScreenshotResponse4042.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanScreenshotResponse4042(
   errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerGetScanScreenshotResponse4042Errors.fromJson(e as Map<String, dynamic>)).toList(),

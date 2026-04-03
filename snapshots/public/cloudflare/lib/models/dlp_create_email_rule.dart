@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_email_rule_action.dart';import 'dlp_email_rule_condition.dart';final class DlpCreateEmailRule {const DlpCreateEmailRule({required this.action, required this.conditions, this.description, required this.enabled, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_email_rule_action.dart';import 'dlp_email_rule_condition.dart';@immutable final class DlpCreateEmailRule {const DlpCreateEmailRule({required this.action, required this.conditions, required this.enabled, required this.name, this.description, });
 
 factory DlpCreateEmailRule.fromJson(Map<String, dynamic> json) { return DlpCreateEmailRule(
   action: DlpEmailRuleAction.fromJson(json['action'] as Map<String, dynamic>),

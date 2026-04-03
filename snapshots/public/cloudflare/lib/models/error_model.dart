@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ErrorModel {const ErrorModel({this.code, this.errors, this.message, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ErrorModel {const ErrorModel({this.code, this.errors, this.message, this.status, });
 
 factory ErrorModel.fromJson(Map<String, dynamic> json) { return ErrorModel(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,
-  errors: (json['errors'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  errors: json['errors'] as Map<String, dynamic>?,
   message: json['message'] as String?,
   status: json['status'] as String?,
 ); }

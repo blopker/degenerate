@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When true, indicates that Cloudflare should also delete the associated filter if there are no other firewall rules referencing the filter.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When true, indicates that Cloudflare should also delete the associated filter if there are no other firewall rules referencing the filter.
 extension type const FirewallDeleteFilterIfUnused(bool value) {
 factory FirewallDeleteFilterIfUnused.fromJson(bool json) => FirewallDeleteFilterIfUnused(json);
 
 bool toJson() => value;
 
 }
-final class FirewallRulesDeleteAFirewallRuleRequest {const FirewallRulesDeleteAFirewallRuleRequest({this.deleteFilterIfUnused});
+@immutable final class FirewallRulesDeleteAFirewallRuleRequest {const FirewallRulesDeleteAFirewallRuleRequest({this.deleteFilterIfUnused});
 
 factory FirewallRulesDeleteAFirewallRuleRequest.fromJson(Map<String, dynamic> json) { return FirewallRulesDeleteAFirewallRuleRequest(
   deleteFilterIfUnused: json['delete_filter_if_unused'] != null ? FirewallDeleteFilterIfUnused.fromJson(json['delete_filter_if_unused'] as bool) : null,

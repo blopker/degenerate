@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BranchWithProtectionLinks {const BranchWithProtectionLinks({required this.html, required this.self, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BranchWithProtectionLinks {const BranchWithProtectionLinks({required this.html, required this.self, });
 
 factory BranchWithProtectionLinks.fromJson(Map<String, dynamic> json) { return BranchWithProtectionLinks(
   html: json['html'] as String,

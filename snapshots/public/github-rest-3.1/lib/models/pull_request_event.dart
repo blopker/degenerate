@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'label.dart';import 'pull_request_minimal.dart';import 'simple_user.dart';final class PullRequestEvent {const PullRequestEvent({required this.action, required this.number, required this.pullRequest, this.assignee, this.assignees, this.label, this.labels, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'label.dart';import 'pull_request_minimal.dart';import 'simple_user.dart';@immutable final class PullRequestEvent {const PullRequestEvent({required this.action, required this.number, required this.pullRequest, this.assignee, this.assignees, this.label, this.labels, });
 
 factory PullRequestEvent.fromJson(Map<String, dynamic> json) { return PullRequestEvent(
   action: json['action'] as String,

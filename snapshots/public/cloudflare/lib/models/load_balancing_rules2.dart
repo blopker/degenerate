@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'load_balancing_rules2_fixed_response.dart';import 'load_balancing_rules2_overrides.dart';/// A rule object containing conditions and overrides for this load balancer to evaluate.
-final class LoadBalancingRules2 {const LoadBalancingRules2({this.condition, this.disabled = false, this.fixedResponse, this.name, this.overrides, this.priority = 0, this.terminates, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_rules2_fixed_response.dart';import 'load_balancing_rules2_overrides.dart';/// A rule object containing conditions and overrides for this load balancer to evaluate.
+@immutable final class LoadBalancingRules2 {const LoadBalancingRules2({this.condition, this.disabled = false, this.fixedResponse, this.name, this.overrides, this.priority = 0, this.terminates, });
 
 factory LoadBalancingRules2.fromJson(Map<String, dynamic> json) { return LoadBalancingRules2(
   condition: json['condition'] as String?,

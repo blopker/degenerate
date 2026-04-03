@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BuildsGetAccountLimitResponse {const BuildsGetAccountLimitResponse({this.buildMinutesRefreshOn, this.hasReachedBuildMinutesLimit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsGetAccountLimitResponse {const BuildsGetAccountLimitResponse({this.buildMinutesRefreshOn, this.hasReachedBuildMinutesLimit, });
 
 factory BuildsGetAccountLimitResponse.fromJson(Map<String, dynamic> json) { return BuildsGetAccountLimitResponse(
   buildMinutesRefreshOn: json['build_minutes_refresh_on'] != null ? DateTime.parse(json['build_minutes_refresh_on'] as String) : null,

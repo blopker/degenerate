@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_response_incomplete_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_response_incomplete_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookResponseIncompleteObject {const WebhookResponseIncompleteObject._(this.value);
+@immutable final class WebhookResponseIncompleteObject {const WebhookResponseIncompleteObject._(this.value);
 
 factory WebhookResponseIncompleteObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `response.incomplete`.
 /// 
-final class WebhookResponseIncompleteType {const WebhookResponseIncompleteType._(this.value);
+@immutable final class WebhookResponseIncompleteType {const WebhookResponseIncompleteType._(this.value);
 
 factory WebhookResponseIncompleteType.fromJson(String json) { return switch (json) {
   'response.incomplete' => responseIncomplete,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when a background response has been interrupted.
 /// 
-final class WebhookResponseIncomplete {const WebhookResponseIncomplete({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookResponseIncomplete {const WebhookResponseIncomplete({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookResponseIncomplete.fromJson(Map<String, dynamic> json) { return WebhookResponseIncomplete(
   createdAt: (json['created_at'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'alma_installments.dart';/// 
-final class PaymentMethodDetailsAlma {const PaymentMethodDetailsAlma({this.installments, this.transactionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alma_installments.dart';/// 
+@immutable final class PaymentMethodDetailsAlma {const PaymentMethodDetailsAlma({this.installments, this.transactionId, });
 
 factory PaymentMethodDetailsAlma.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAlma(
   installments: json['installments'] != null ? AlmaInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_sources_source_request_source_order_shipping_address.dart';final class PostSourcesSourceRequestSourceOrderShipping {const PostSourcesSourceRequestSourceOrderShipping({required this.address, this.carrier, this.name, this.phone, this.trackingNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_source_request_source_order_shipping_address.dart';@immutable final class PostSourcesSourceRequestSourceOrderShipping {const PostSourcesSourceRequestSourceOrderShipping({required this.address, this.carrier, this.name, this.phone, this.trackingNumber, });
 
 factory PostSourcesSourceRequestSourceOrderShipping.fromJson(Map<String, dynamic> json) { return PostSourcesSourceRequestSourceOrderShipping(
   address: PostSourcesSourceRequestSourceOrderShippingAddress.fromJson(json['address'] as Map<String, dynamic>),

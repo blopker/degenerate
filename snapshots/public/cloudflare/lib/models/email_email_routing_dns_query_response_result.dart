@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_dns_record.dart';import 'email_email_routing_get_response_dns_error.dart';final class EmailEmailRoutingDnsQueryResponseResult {const EmailEmailRoutingDnsQueryResponseResult({this.errors, this.record, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_dns_record.dart';import 'email_email_routing_get_response_dns_error.dart';@immutable final class EmailEmailRoutingDnsQueryResponseResult {const EmailEmailRoutingDnsQueryResponseResult({this.errors, this.record, });
 
 factory EmailEmailRoutingDnsQueryResponseResult.fromJson(Map<String, dynamic> json) { return EmailEmailRoutingDnsQueryResponseResult(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => EmailEmailRoutingGetResponseDnsError.fromJson(e as Map<String, dynamic>)).toList(),

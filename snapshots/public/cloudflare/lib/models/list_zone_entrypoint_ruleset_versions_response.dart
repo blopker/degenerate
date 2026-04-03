@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_zone_entrypoint_ruleset_versions_response_result.dart';import 'rulesets_message.dart';import 'rulesets_result_info.dart';final class ListZoneEntrypointRulesetVersionsResponse {const ListZoneEntrypointRulesetVersionsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_zone_entrypoint_ruleset_versions_response_result.dart';import 'rulesets_message.dart';import 'rulesets_result_info.dart';@immutable final class ListZoneEntrypointRulesetVersionsResponse {const ListZoneEntrypointRulesetVersionsResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ListZoneEntrypointRulesetVersionsResponse.fromJson(Map<String, dynamic> json) { return ListZoneEntrypointRulesetVersionsResponse(
   errors: json['errors'],

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_rule_identifier.dart';import 'rum_timestamp.dart';final class RumRule {const RumRule({this.created, this.host, this.id, this.inclusive, this.isPaused, this.paths, this.priority, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_rule_identifier.dart';import 'rum_timestamp.dart';@immutable final class RumRule {const RumRule({this.created, this.host, this.id, this.inclusive, this.isPaused, this.paths, this.priority, });
 
 factory RumRule.fromJson(Map<String, dynamic> json) { return RumRule(
   created: json['created'] != null ? RumTimestamp.fromJson(json['created'] as String) : null,

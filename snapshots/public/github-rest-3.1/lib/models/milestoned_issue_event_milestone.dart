@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MilestonedIssueEventMilestone {const MilestonedIssueEventMilestone({required this.title});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MilestonedIssueEventMilestone {const MilestonedIssueEventMilestone({required this.title});
 
 factory MilestonedIssueEventMilestone.fromJson(Map<String, dynamic> json) { return MilestonedIssueEventMilestone(
   title: json['title'] as String,

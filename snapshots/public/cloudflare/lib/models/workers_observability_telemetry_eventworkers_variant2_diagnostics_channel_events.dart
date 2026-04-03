@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents {const WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents({required this.channel, required this.message, required this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents {const WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents({required this.channel, required this.message, required this.timestamp, });
 
 factory WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent$workersVariant2DiagnosticsChannelEvents(
   channel: json['channel'] as String,

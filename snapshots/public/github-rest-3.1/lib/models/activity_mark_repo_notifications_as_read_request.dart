@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActivityMarkRepoNotificationsAsReadRequest {const ActivityMarkRepoNotificationsAsReadRequest({this.lastReadAt});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivityMarkRepoNotificationsAsReadRequest {const ActivityMarkRepoNotificationsAsReadRequest({this.lastReadAt});
 
 factory ActivityMarkRepoNotificationsAsReadRequest.fromJson(Map<String, dynamic> json) { return ActivityMarkRepoNotificationsAsReadRequest(
   lastReadAt: json['last_read_at'] != null ? DateTime.parse(json['last_read_at'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_bgp_route_leak_events_response_result.dart';import 'radar_get_bgp_route_leak_events_response_result_info.dart';final class RadarGetBgpRouteLeakEventsResponse {const RadarGetBgpRouteLeakEventsResponse({required this.result, required this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_route_leak_events_response_result.dart';import 'radar_get_bgp_route_leak_events_response_result_info.dart';@immutable final class RadarGetBgpRouteLeakEventsResponse {const RadarGetBgpRouteLeakEventsResponse({required this.result, required this.resultInfo, required this.success, });
 
 factory RadarGetBgpRouteLeakEventsResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpRouteLeakEventsResponse(
   result: RadarGetBgpRouteLeakEventsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

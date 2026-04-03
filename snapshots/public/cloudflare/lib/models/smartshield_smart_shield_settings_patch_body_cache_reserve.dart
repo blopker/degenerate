@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the enablement value of Cache Reserve.
-final class SmartshieldSmartShieldSettingsPatchBodyCacheReserveValue {const SmartshieldSmartShieldSettingsPatchBodyCacheReserveValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the enablement value of Cache Reserve.
+@immutable final class SmartshieldSmartShieldSettingsPatchBodyCacheReserveValue {const SmartshieldSmartShieldSettingsPatchBodyCacheReserveValue._(this.value);
 
 factory SmartshieldSmartShieldSettingsPatchBodyCacheReserveValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SmartshieldSmartShieldSettingsPatchBodyCacheReserveValue($value)'; } 
  }
-final class SmartshieldSmartShieldSettingsPatchBodyCacheReserve {const SmartshieldSmartShieldSettingsPatchBodyCacheReserve({this.value});
+@immutable final class SmartshieldSmartShieldSettingsPatchBodyCacheReserve {const SmartshieldSmartShieldSettingsPatchBodyCacheReserve({this.value});
 
 factory SmartshieldSmartShieldSettingsPatchBodyCacheReserve.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsPatchBodyCacheReserve(
   value: json['value'] != null ? SmartshieldSmartShieldSettingsPatchBodyCacheReserveValue.fromJson(json['value'] as String) : null,

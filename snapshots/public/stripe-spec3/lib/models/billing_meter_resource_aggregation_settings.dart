@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies how events are aggregated.
-final class BillingMeterResourceAggregationSettingsFormula {const BillingMeterResourceAggregationSettingsFormula._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies how events are aggregated.
+@immutable final class BillingMeterResourceAggregationSettingsFormula {const BillingMeterResourceAggregationSettingsFormula._(this.value);
 
 factory BillingMeterResourceAggregationSettingsFormula.fromJson(String json) { return switch (json) {
   'count' => count,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingMeterResourceAggregationSettingsFormula($value)'; } 
  }
 /// 
-final class BillingMeterResourceAggregationSettings {const BillingMeterResourceAggregationSettings({required this.formula});
+@immutable final class BillingMeterResourceAggregationSettings {const BillingMeterResourceAggregationSettings({required this.formula});
 
 factory BillingMeterResourceAggregationSettings.fromJson(Map<String, dynamic> json) { return BillingMeterResourceAggregationSettings(
   formula: BillingMeterResourceAggregationSettingsFormula.fromJson(json['formula'] as String),

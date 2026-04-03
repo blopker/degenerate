@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksRequestAutomaticTaxLiabilityType {const PostPaymentLinksRequestAutomaticTaxLiabilityType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestAutomaticTaxLiabilityType {const PostPaymentLinksRequestAutomaticTaxLiabilityType._(this.value);
 
 factory PostPaymentLinksRequestAutomaticTaxLiabilityType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksRequestAutomaticTaxLiabilityType($value)'; } 
  }
-final class PostPaymentLinksRequestAutomaticTaxLiability {const PostPaymentLinksRequestAutomaticTaxLiability({this.account, required this.type, });
+@immutable final class PostPaymentLinksRequestAutomaticTaxLiability {const PostPaymentLinksRequestAutomaticTaxLiability({required this.type, this.account, });
 
 factory PostPaymentLinksRequestAutomaticTaxLiability.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestAutomaticTaxLiability(
   account: json['account'] as String?,

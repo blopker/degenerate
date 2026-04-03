@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A short machine-readable string giving the reason for the verification failure.
-final class GelatoSelfieReportErrorCode {const GelatoSelfieReportErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
+@immutable final class GelatoSelfieReportErrorCode {const GelatoSelfieReportErrorCode._(this.value);
 
 factory GelatoSelfieReportErrorCode.fromJson(String json) { return switch (json) {
   'selfie_document_missing_photo' => selfieDocumentMissingPhoto,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoSelfieReportErrorCode($value)'; } 
  }
 /// 
-final class GelatoSelfieReportError {const GelatoSelfieReportError({this.code, this.reason, });
+@immutable final class GelatoSelfieReportError {const GelatoSelfieReportError({this.code, this.reason, });
 
 factory GelatoSelfieReportError.fromJson(Map<String, dynamic> json) { return GelatoSelfieReportError(
   code: json['code'] != null ? GelatoSelfieReportErrorCode.fromJson(json['code'] as String) : null,

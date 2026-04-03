@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class BalanceSettingsResourceSettlementTiming {const BalanceSettingsResourceSettlementTiming({required this.delayDays, this.delayDaysOverride, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class BalanceSettingsResourceSettlementTiming {const BalanceSettingsResourceSettlementTiming({required this.delayDays, this.delayDaysOverride, });
 
 factory BalanceSettingsResourceSettlementTiming.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourceSettlementTiming(
   delayDays: (json['delay_days'] as num).toInt(),

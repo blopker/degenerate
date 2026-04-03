@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_asns_rel_response_result_meta.dart';import 'radar_get_asns_rel_response_result_rels.dart';final class RadarGetAsnsRelResponseResult {const RadarGetAsnsRelResponseResult({required this.meta, required this.rels, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_asns_rel_response_result_meta.dart';import 'radar_get_asns_rel_response_result_rels.dart';@immutable final class RadarGetAsnsRelResponseResult {const RadarGetAsnsRelResponseResult({required this.meta, required this.rels, });
 
 factory RadarGetAsnsRelResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAsnsRelResponseResult(
   meta: RadarGetAsnsRelResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

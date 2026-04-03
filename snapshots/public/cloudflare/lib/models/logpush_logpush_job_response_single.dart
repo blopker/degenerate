@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'logpush_logpush_job.dart';final class LogpushLogpushJobResponseSingle {const LogpushLogpushJobResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_logpush_job.dart';@immutable final class LogpushLogpushJobResponseSingle {const LogpushLogpushJobResponseSingle({this.result});
 
 factory LogpushLogpushJobResponseSingle.fromJson(Map<String, dynamic> json) { return LogpushLogpushJobResponseSingle(
   result: json['result'] != null ? LogpushLogpushJob.fromJson(json['result'] as Map<String, dynamic>) : null,

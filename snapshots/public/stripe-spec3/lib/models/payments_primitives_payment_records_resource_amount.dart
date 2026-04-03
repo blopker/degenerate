@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A representation of an amount of money, consisting of an amount and a currency.
-final class PaymentsPrimitivesPaymentRecordsResourceAmount {const PaymentsPrimitivesPaymentRecordsResourceAmount({required this.currency, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A representation of an amount of money, consisting of an amount and a currency.
+@immutable final class PaymentsPrimitivesPaymentRecordsResourceAmount {const PaymentsPrimitivesPaymentRecordsResourceAmount({required this.currency, required this.value, });
 
 factory PaymentsPrimitivesPaymentRecordsResourceAmount.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourceAmount(
   currency: json['currency'] as String,

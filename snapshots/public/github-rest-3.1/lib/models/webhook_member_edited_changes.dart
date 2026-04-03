@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_member_edited_changes_old_permission.dart';import 'webhook_member_edited_changes_permission.dart';/// The changes to the collaborator permissions
-final class WebhookMemberEditedChanges {const WebhookMemberEditedChanges({this.oldPermission, this.permission, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_member_edited_changes_old_permission.dart';import 'webhook_member_edited_changes_permission.dart';/// The changes to the collaborator permissions
+@immutable final class WebhookMemberEditedChanges {const WebhookMemberEditedChanges({this.oldPermission, this.permission, });
 
 factory WebhookMemberEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookMemberEditedChanges(
   oldPermission: json['old_permission'] != null ? WebhookMemberEditedChangesOldPermission.fromJson(json['old_permission'] as Map<String, dynamic>) : null,

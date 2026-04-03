@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_status.dart';import 'host_ip.dart';import 'pod_condition.dart';import 'pod_extended_resource_claim_status.dart';import 'pod_ip.dart';import 'pod_resource_claim_status.dart';import 'resource_quantity.dart';import 'resource_requirements.dart';import 'time.dart';/// PodStatus represents information about the status of a pod. Status may trail the actual state of a system, especially if the node that hosts the pod cannot contact the control plane.
-final class PodStatus {const PodStatus({this.allocatedResources, this.conditions, this.containerStatuses, this.ephemeralContainerStatuses, this.extendedResourceClaimStatus, this.hostIp, this.hostIPs, this.initContainerStatuses, this.message, this.nominatedNodeName, this.observedGeneration, this.phase, this.podIp, this.podIPs, this.qosClass, this.reason, this.resize, this.resourceClaimStatuses, this.resources, this.startTime, });
+@immutable final class PodStatus {const PodStatus({this.allocatedResources, this.conditions, this.containerStatuses, this.ephemeralContainerStatuses, this.extendedResourceClaimStatus, this.hostIp, this.hostIPs, this.initContainerStatuses, this.message, this.nominatedNodeName, this.observedGeneration, this.phase, this.podIp, this.podIPs, this.qosClass, this.reason, this.resize, this.resourceClaimStatuses, this.resources, this.startTime, });
 
 factory PodStatus.fromJson(Map<String, dynamic> json) { return PodStatus(
   allocatedResources: (json['allocatedResources'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),

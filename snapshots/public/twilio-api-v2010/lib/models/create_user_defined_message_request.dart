@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateUserDefinedMessageRequest {const CreateUserDefinedMessageRequest({required this.content, this.idempotencyKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateUserDefinedMessageRequest {const CreateUserDefinedMessageRequest({required this.content, this.idempotencyKey, });
 
 factory CreateUserDefinedMessageRequest.fromJson(Map<String, dynamic> json) { return CreateUserDefinedMessageRequest(
   content: json['Content'] as String,

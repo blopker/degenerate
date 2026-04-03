@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class HovercardContexts {const HovercardContexts({required this.message, required this.octicon, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HovercardContexts {const HovercardContexts({required this.message, required this.octicon, });
 
 factory HovercardContexts.fromJson(Map<String, dynamic> json) { return HovercardContexts(
   message: json['message'] as String,

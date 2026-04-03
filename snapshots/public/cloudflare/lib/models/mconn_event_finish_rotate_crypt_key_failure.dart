@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Failed crypt key rotation
-final class MconnEventFinishRotateCryptKeyFailureK {const MconnEventFinishRotateCryptKeyFailureK._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Failed crypt key rotation
+@immutable final class MconnEventFinishRotateCryptKeyFailureK {const MconnEventFinishRotateCryptKeyFailureK._(this.value);
 
 factory MconnEventFinishRotateCryptKeyFailureK.fromJson(String json) { return switch (json) {
   'FinishRotateCryptKeyFailure' => finishRotateCryptKeyFailure,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MconnEventFinishRotateCryptKeyFailureK($value)'; } 
  }
-final class MconnEventFinishRotateCryptKeyFailure {const MconnEventFinishRotateCryptKeyFailure({required this.k});
+@immutable final class MconnEventFinishRotateCryptKeyFailure {const MconnEventFinishRotateCryptKeyFailure({required this.k});
 
 factory MconnEventFinishRotateCryptKeyFailure.fromJson(Map<String, dynamic> json) { return MconnEventFinishRotateCryptKeyFailure(
   k: MconnEventFinishRotateCryptKeyFailureK.fromJson(json['k'] as String),

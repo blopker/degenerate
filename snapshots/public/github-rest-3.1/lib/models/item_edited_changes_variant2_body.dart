@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ItemEditedChangesVariant2Body {const ItemEditedChangesVariant2Body({this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ItemEditedChangesVariant2Body {const ItemEditedChangesVariant2Body({this.from, this.to, });
 
 factory ItemEditedChangesVariant2Body.fromJson(Map<String, dynamic> json) { return ItemEditedChangesVariant2Body(
   from: json['from'] as String?,

@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('ApiRequest.copyWith', () {
-    final original = ApiRequest(
+    const original = ApiRequest(
       method: 'GET',
       path: '/pets',
       headers: {'Accept': 'application/json'},
@@ -45,25 +45,25 @@ void main() {
 
   group('ApiRequest.resolveUri', () {
     test('concatenates base path with request path', () {
-      final req = ApiRequest(method: 'GET', path: '/pets');
+      const req = ApiRequest(method: 'GET', path: '/pets');
       final uri = req.resolveUri(Uri.parse('https://api.example.com/v1'));
       expect(uri.toString(), 'https://api.example.com/v1/pets');
     });
 
     test('works with no base path', () {
-      final req = ApiRequest(method: 'GET', path: '/pets');
+      const req = ApiRequest(method: 'GET', path: '/pets');
       final uri = req.resolveUri(Uri.parse('https://api.example.com'));
       expect(uri.toString(), 'https://api.example.com/pets');
     });
 
     test('strips trailing slash from base path', () {
-      final req = ApiRequest(method: 'GET', path: '/pets');
+      const req = ApiRequest(method: 'GET', path: '/pets');
       final uri = req.resolveUri(Uri.parse('https://api.example.com/v1/'));
       expect(uri.toString(), 'https://api.example.com/v1/pets');
     });
 
     test('appends query parameters', () {
-      final req = ApiRequest(
+      const req = ApiRequest(
         method: 'GET',
         path: '/pets',
         queryParameters: {'limit': '10'},
@@ -73,10 +73,10 @@ void main() {
     });
 
     test('supports duplicate query parameter names', () {
-      final req = ApiRequest(
+      const req = ApiRequest(
         method: 'GET',
         path: '/pets',
-        queryParametersList: const [
+        queryParametersList: [
           ApiQueryParameter(name: 'tag', value: 'a'),
           ApiQueryParameter(name: 'tag', value: 'b'),
         ],
@@ -87,10 +87,10 @@ void main() {
     });
 
     test('supports allowReserved query parameters', () {
-      final req = ApiRequest(
+      const req = ApiRequest(
         method: 'GET',
         path: '/pets',
-        queryParametersList: const [
+        queryParametersList: [
           ApiQueryParameter(
             name: 'redirect',
             value: 'https://example.com/a?b=c&d=e',
@@ -107,7 +107,7 @@ void main() {
     });
 
     test('synthesizes cookie header from cookies map', () {
-      final req = ApiRequest(
+      const req = ApiRequest(
         method: 'GET',
         path: '/pets',
         headers: {'Accept': 'application/json'},
@@ -119,7 +119,7 @@ void main() {
     });
 
     test('encodes reserved characters in cookie values', () {
-      final req = ApiRequest(
+      const req = ApiRequest(
         method: 'GET',
         path: '/pets',
         cookies: {'session': 'abc;123=xyz%done'},

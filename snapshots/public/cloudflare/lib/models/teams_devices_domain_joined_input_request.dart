@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Operating System.
-final class TeamsDevicesDomainJoinedInputRequestOperatingSystem {const TeamsDevicesDomainJoinedInputRequestOperatingSystem._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating System.
+@immutable final class TeamsDevicesDomainJoinedInputRequestOperatingSystem {const TeamsDevicesDomainJoinedInputRequestOperatingSystem._(this.value);
 
 factory TeamsDevicesDomainJoinedInputRequestOperatingSystem.fromJson(String json) { return switch (json) {
   'windows' => windows,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesDomainJoinedInputRequestOperatingSystem($value)'; } 
  }
-final class TeamsDevicesDomainJoinedInputRequest {const TeamsDevicesDomainJoinedInputRequest({this.domain, required this.operatingSystem, });
+@immutable final class TeamsDevicesDomainJoinedInputRequest {const TeamsDevicesDomainJoinedInputRequest({required this.operatingSystem, this.domain, });
 
 factory TeamsDevicesDomainJoinedInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesDomainJoinedInputRequest(
   domain: json['domain'] as String?,

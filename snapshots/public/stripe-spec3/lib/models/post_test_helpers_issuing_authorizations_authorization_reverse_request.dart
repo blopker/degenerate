@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest({this.expand, this.reverseAmount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest {const PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest({this.expand, this.reverseAmount, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

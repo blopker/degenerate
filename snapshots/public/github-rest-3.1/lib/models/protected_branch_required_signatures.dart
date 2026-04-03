@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProtectedBranchRequiredSignatures {const ProtectedBranchRequiredSignatures({required this.url, required this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProtectedBranchRequiredSignatures {const ProtectedBranchRequiredSignatures({required this.url, required this.enabled, });
 
 factory ProtectedBranchRequiredSignatures.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredSignatures(
   url: Uri.parse(json['url'] as String),

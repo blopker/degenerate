@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// NodeRuntimeHandlerFeatures is a set of features implemented by the runtime handler.
-final class NodeRuntimeHandlerFeatures {const NodeRuntimeHandlerFeatures({this.recursiveReadOnlyMounts, this.userNamespaces, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// NodeRuntimeHandlerFeatures is a set of features implemented by the runtime handler.
+@immutable final class NodeRuntimeHandlerFeatures {const NodeRuntimeHandlerFeatures({this.recursiveReadOnlyMounts, this.userNamespaces, });
 
 factory NodeRuntimeHandlerFeatures.fromJson(Map<String, dynamic> json) { return NodeRuntimeHandlerFeatures(
   recursiveReadOnlyMounts: json['recursiveReadOnlyMounts'] as bool?,

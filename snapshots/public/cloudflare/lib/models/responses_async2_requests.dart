@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'responses_async2_requests_input.dart';import 'responses_async2_requests_reasoning.dart';final class ResponsesAsync2Requests {const ResponsesAsync2Requests({required this.input, this.reasoning, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'responses_async2_requests_input.dart';import 'responses_async2_requests_reasoning.dart';@immutable final class ResponsesAsync2Requests {const ResponsesAsync2Requests({required this.input, this.reasoning, });
 
 factory ResponsesAsync2Requests.fromJson(Map<String, dynamic> json) { return ResponsesAsync2Requests(
   input: OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(),),

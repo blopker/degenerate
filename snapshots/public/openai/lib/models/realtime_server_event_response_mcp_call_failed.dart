@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `response.mcp_call.failed`.
-final class RealtimeServerEventResponseMcpCallFailedType {const RealtimeServerEventResponseMcpCallFailedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call.failed`.
+@immutable final class RealtimeServerEventResponseMcpCallFailedType {const RealtimeServerEventResponseMcpCallFailedType._(this.value);
 
 factory RealtimeServerEventResponseMcpCallFailedType.fromJson(String json) { return switch (json) {
   'response.mcp_call.failed' => responseMcpCallFailed,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeServerEventResponseMcpCallFailedType($value)'; } 
  }
 /// Returned when an MCP tool call has failed.
-final class RealtimeServerEventResponseMcpCallFailed {const RealtimeServerEventResponseMcpCallFailed({required this.eventId, required this.type, required this.outputIndex, required this.itemId, });
+@immutable final class RealtimeServerEventResponseMcpCallFailed {const RealtimeServerEventResponseMcpCallFailed({required this.eventId, required this.type, required this.outputIndex, required this.itemId, });
 
 factory RealtimeServerEventResponseMcpCallFailed.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseMcpCallFailed(
   eventId: json['event_id'] as String,

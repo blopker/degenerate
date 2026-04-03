@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazSecretVariableType {const ZarazSecretVariableType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazSecretVariableType {const ZarazSecretVariableType._(this.value);
 
 factory ZarazSecretVariableType.fromJson(String json) { return switch (json) {
   'secret' => secret,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZarazSecretVariableType($value)'; } 
  }
-final class ZarazSecretVariable {const ZarazSecretVariable({required this.name, required this.type, required this.value, });
+@immutable final class ZarazSecretVariable {const ZarazSecretVariable({required this.name, required this.type, required this.value, });
 
 factory ZarazSecretVariable.fromJson(Map<String, dynamic> json) { return ZarazSecretVariable(
   name: json['name'] as String,

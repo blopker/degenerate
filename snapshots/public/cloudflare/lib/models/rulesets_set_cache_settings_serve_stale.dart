@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When to serve stale content from cache.
-final class RulesetsSetCacheSettingsServeStale {const RulesetsSetCacheSettingsServeStale({this.disableStaleWhileUpdating});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When to serve stale content from cache.
+@immutable final class RulesetsSetCacheSettingsServeStale {const RulesetsSetCacheSettingsServeStale({this.disableStaleWhileUpdating});
 
 factory RulesetsSetCacheSettingsServeStale.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsServeStale(
   disableStaleWhileUpdating: json['disable_stale_while_updating'] as bool?,

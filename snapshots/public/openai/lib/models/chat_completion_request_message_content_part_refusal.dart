@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ChatCompletionRequestMessageContentPartRefusal {const ChatCompletionRequestMessageContentPartRefusal({required this.type, required this.refusal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionRequestMessageContentPartRefusal {const ChatCompletionRequestMessageContentPartRefusal({required this.type, required this.refusal, });
 
 factory ChatCompletionRequestMessageContentPartRefusal.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartRefusal(
   type: json['type'] as String,

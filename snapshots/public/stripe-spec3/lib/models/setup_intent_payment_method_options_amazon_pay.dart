@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SetupIntentPaymentMethodOptionsAmazonPay {const SetupIntentPaymentMethodOptionsAmazonPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SetupIntentPaymentMethodOptionsAmazonPay {const SetupIntentPaymentMethodOptionsAmazonPay();
 
-factory SetupIntentPaymentMethodOptionsAmazonPay.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsAmazonPay(
-
-); }
+factory SetupIntentPaymentMethodOptionsAmazonPay.fromJson(Map<String, dynamic> _) { return const SetupIntentPaymentMethodOptionsAmazonPay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-SetupIntentPaymentMethodOptionsAmazonPay copyWith() { return SetupIntentPaymentMethodOptionsAmazonPay(
+SetupIntentPaymentMethodOptionsAmazonPay copyWith() { return const SetupIntentPaymentMethodOptionsAmazonPay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is SetupIntentPaymentMethodOptionsAmazonPay; } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationUpdateResponse404ErrorsMessage {const DestinationUpdateResponse404ErrorsMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationUpdateResponse404ErrorsMessage {const DestinationUpdateResponse404ErrorsMessage._(this.value);
 
 factory DestinationUpdateResponse404ErrorsMessage.fromJson(String json) { return switch (json) {
   'Not found' => notFound,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationUpdateResponse404ErrorsMessage($value)'; } 
  }
-final class DestinationUpdateResponse404Errors {const DestinationUpdateResponse404Errors({this.detail, required this.message, });
+@immutable final class DestinationUpdateResponse404Errors {const DestinationUpdateResponse404Errors({required this.message, this.detail, });
 
 factory DestinationUpdateResponse404Errors.fromJson(Map<String, dynamic> json) { return DestinationUpdateResponse404Errors(
   detail: json['detail'] as String?,

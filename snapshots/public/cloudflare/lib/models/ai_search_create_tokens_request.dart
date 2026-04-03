@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchCreateTokensRequest {const AiSearchCreateTokensRequest({required this.cfApiId, required this.cfApiKey, this.legacy = true, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchCreateTokensRequest {const AiSearchCreateTokensRequest({required this.cfApiId, required this.cfApiKey, required this.name, this.legacy = true, });
 
 factory AiSearchCreateTokensRequest.fromJson(Map<String, dynamic> json) { return AiSearchCreateTokensRequest(
   cfApiId: json['cf_api_id'] as String,

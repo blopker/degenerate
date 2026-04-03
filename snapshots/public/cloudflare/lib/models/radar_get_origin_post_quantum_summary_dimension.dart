@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the origin post-quantum data dimension by which to group the results.
-final class RadarGetOriginPostQuantumSummaryDimension {const RadarGetOriginPostQuantumSummaryDimension._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the origin post-quantum data dimension by which to group the results.
+@immutable final class RadarGetOriginPostQuantumSummaryDimension {const RadarGetOriginPostQuantumSummaryDimension._(this.value);
 
 factory RadarGetOriginPostQuantumSummaryDimension.fromJson(String json) { return switch (json) {
   'KEY_AGREEMENT' => keyAgreement,

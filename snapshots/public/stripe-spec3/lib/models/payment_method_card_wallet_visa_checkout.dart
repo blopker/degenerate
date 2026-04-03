@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';/// 
-final class PaymentMethodCardWalletVisaCheckout {const PaymentMethodCardWalletVisaCheckout({this.billingAddress, this.email, this.name, this.shippingAddress, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// 
+@immutable final class PaymentMethodCardWalletVisaCheckout {const PaymentMethodCardWalletVisaCheckout({this.billingAddress, this.email, this.name, this.shippingAddress, });
 
 factory PaymentMethodCardWalletVisaCheckout.fromJson(Map<String, dynamic> json) { return PaymentMethodCardWalletVisaCheckout(
   billingAddress: json['billing_address'] != null ? Address.fromJson(json['billing_address'] as Map<String, dynamic>) : null,

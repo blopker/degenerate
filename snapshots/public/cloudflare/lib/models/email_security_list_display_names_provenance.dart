@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityListDisplayNamesProvenance {const EmailSecurityListDisplayNamesProvenance._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityListDisplayNamesProvenance {const EmailSecurityListDisplayNamesProvenance._(this.value);
 
 factory EmailSecurityListDisplayNamesProvenance.fromJson(String json) { return switch (json) {
   'A1S_INTERNAL' => a1SInternal,

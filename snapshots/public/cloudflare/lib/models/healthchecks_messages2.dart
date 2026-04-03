@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class HealthchecksMessages2 {const HealthchecksMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HealthchecksMessages2 {const HealthchecksMessages2({required this.code, required this.message, });
 
 factory HealthchecksMessages2.fromJson(Map<String, dynamic> json) { return HealthchecksMessages2(
   code: (json['code'] as num).toInt(),

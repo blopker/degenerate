@@ -30,7 +30,7 @@ if (orderByDirection != null) {
 }
 if (filters != null) {
 for (final item in filters) {
-  queryParametersList.add(ApiQueryParameter(name: 'filters', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'filters', value: item.toString()));
 }
 }
 if (metaInfo != null) {
@@ -76,7 +76,7 @@ if (maxDuration != null) {
   queryParameters['max_duration'] = maxDuration.toString();
 }
 if (feedback != null) {
-queryParametersList.add(ApiQueryParameter(name: 'feedback', value: feedback.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'feedback', value: feedback.toString()));
 }
 if (success != null) {
   queryParameters['success'] = success.toString();
@@ -135,7 +135,7 @@ if (orderByDirection != null) {
 }
 if (filters != null) {
 for (final item in filters) {
-  queryParametersList.add(ApiQueryParameter(name: 'filters', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'filters', value: item.toString()));
 }
 }
 if (limit != null) {
@@ -208,7 +208,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
   onError: (response) {
     return AigConfigPatchGatewayLogResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -232,7 +232,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return AigConfigGetGatewayLogRequestResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -256,7 +256,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return AigConfigGetGatewayLogResponseResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

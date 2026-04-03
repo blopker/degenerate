@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_price_request_currency_options.dart';import 'post_prices_price_request_currency_options_variant1_value.dart';import 'post_prices_price_request_metadata.dart';/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-final class PostPricesPriceRequestTaxBehavior {const PostPricesPriceRequestTaxBehavior._(this.value);
+@immutable final class PostPricesPriceRequestTaxBehavior {const PostPricesPriceRequestTaxBehavior._(this.value);
 
 factory PostPricesPriceRequestTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPricesPriceRequestTaxBehavior($value)'; } 
  }
-final class PostPricesPriceRequest {const PostPricesPriceRequest({this.active, this.currencyOptions, this.expand, this.lookupKey, this.metadata, this.nickname, this.taxBehavior, this.transferLookupKey, });
+@immutable final class PostPricesPriceRequest {const PostPricesPriceRequest({this.active, this.currencyOptions, this.expand, this.lookupKey, this.metadata, this.nickname, this.taxBehavior, this.transferLookupKey, });
 
 factory PostPricesPriceRequest.fromJson(Map<String, dynamic> json) { return PostPricesPriceRequest(
   active: json['active'] as bool?,

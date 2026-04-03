@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class IssuesAddAssigneesRequest {const IssuesAddAssigneesRequest({this.assignees});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesAddAssigneesRequest {const IssuesAddAssigneesRequest({this.assignees});
 
 factory IssuesAddAssigneesRequest.fromJson(Map<String, dynamic> json) { return IssuesAddAssigneesRequest(
   assignees: (json['assignees'] as List<dynamic>?)?.map((e) => e as String).toList(),

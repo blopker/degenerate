@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTaxRatesTaxRateRequest {const GetTaxRatesTaxRateRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTaxRatesTaxRateRequest {const GetTaxRatesTaxRateRequest();
 
-factory GetTaxRatesTaxRateRequest.fromJson(Map<String, dynamic> json) { return GetTaxRatesTaxRateRequest(
-
-); }
+factory GetTaxRatesTaxRateRequest.fromJson(Map<String, dynamic> _) { return const GetTaxRatesTaxRateRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetTaxRatesTaxRateRequest copyWith() { return GetTaxRatesTaxRateRequest(
+GetTaxRatesTaxRateRequest copyWith() { return const GetTaxRatesTaxRateRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetTaxRatesTaxRateRequest; } 

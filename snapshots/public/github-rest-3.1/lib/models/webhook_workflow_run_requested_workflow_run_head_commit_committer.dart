@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metaproperties for Git author/committer information.
-final class WebhookWorkflowRunRequestedWorkflowRunHeadCommitCommitter {const WebhookWorkflowRunRequestedWorkflowRunHeadCommitCommitter({this.date, required this.email, required this.name, this.username, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metaproperties for Git author/committer information.
+@immutable final class WebhookWorkflowRunRequestedWorkflowRunHeadCommitCommitter {const WebhookWorkflowRunRequestedWorkflowRunHeadCommitCommitter({required this.email, required this.name, this.date, this.username, });
 
 factory WebhookWorkflowRunRequestedWorkflowRunHeadCommitCommitter.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunRequestedWorkflowRunHeadCommitCommitter(
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,

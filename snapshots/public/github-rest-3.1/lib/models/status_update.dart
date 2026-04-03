@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';/// The current status.
-final class StatusUpdateStatus {const StatusUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The current status.
+@immutable final class StatusUpdateStatus {const StatusUpdateStatus._(this.value);
 
 factory StatusUpdateStatus.fromJson(String json) { return switch (json) {
   'INACTIVE' => inactive,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'StatusUpdateStatus($value)'; } 
  }
 /// An status update belonging to a project
-final class StatusUpdate {const StatusUpdate({required this.id, required this.nodeId, this.projectNodeId, this.creator, required this.createdAt, required this.updatedAt, this.status, this.startDate, this.targetDate, this.body, });
+@immutable final class StatusUpdate {const StatusUpdate({required this.id, required this.nodeId, required this.createdAt, required this.updatedAt, this.projectNodeId, this.creator, this.status, this.startDate, this.targetDate, this.body, });
 
 factory StatusUpdate.fromJson(Map<String, dynamic> json) { return StatusUpdate(
   id: (json['id'] as num).toDouble(),

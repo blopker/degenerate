@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DependencyGraphSpdxSbomSbomCreationInfo {const DependencyGraphSpdxSbomSbomCreationInfo({required this.created, required this.creators, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependencyGraphSpdxSbomSbomCreationInfo {const DependencyGraphSpdxSbomSbomCreationInfo({required this.created, required this.creators, });
 
 factory DependencyGraphSpdxSbomSbomCreationInfo.fromJson(Map<String, dynamic> json) { return DependencyGraphSpdxSbomSbomCreationInfo(
   created: json['created'] as String,

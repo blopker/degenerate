@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class NscInterconnectCreatePhysicalBody {const NscInterconnectCreatePhysicalBody({required this.account, required this.type, required this.slotId, this.speed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscInterconnectCreatePhysicalBody {const NscInterconnectCreatePhysicalBody({required this.account, required this.type, required this.slotId, this.speed, });
 
 factory NscInterconnectCreatePhysicalBody.fromJson(Map<String, dynamic> json) { return NscInterconnectCreatePhysicalBody(
   account: json['account'] as String,

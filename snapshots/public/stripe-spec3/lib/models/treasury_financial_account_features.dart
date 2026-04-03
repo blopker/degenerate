@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'treasury_financial_accounts_resource_financial_addresses_features.dart';import 'treasury_financial_accounts_resource_inbound_transfers.dart';import 'treasury_financial_accounts_resource_outbound_payments.dart';import 'treasury_financial_accounts_resource_outbound_transfers.dart';import 'treasury_financial_accounts_resource_toggle_settings.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TreasuryFinancialAccountFeaturesObject {const TreasuryFinancialAccountFeaturesObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_financial_addresses_features.dart';import 'treasury_financial_accounts_resource_inbound_transfers.dart';import 'treasury_financial_accounts_resource_outbound_payments.dart';import 'treasury_financial_accounts_resource_outbound_transfers.dart';import 'treasury_financial_accounts_resource_toggle_settings.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class TreasuryFinancialAccountFeaturesObject {const TreasuryFinancialAccountFeaturesObject._(this.value);
 
 factory TreasuryFinancialAccountFeaturesObject.fromJson(String json) { return switch (json) {
   'treasury.financial_account_features' => treasuryFinancialAccountFeatures,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Encodes whether a FinancialAccount has access to a particular Feature, with a `status` enum and associated `status_details`.
 /// Stripe or the platform can control Features via the requested field.
-final class TreasuryFinancialAccountFeatures {const TreasuryFinancialAccountFeatures({this.cardIssuing, this.depositInsurance, this.financialAddresses, this.inboundTransfers, this.intraStripeFlows, required this.object, this.outboundPayments, this.outboundTransfers, });
+@immutable final class TreasuryFinancialAccountFeatures {const TreasuryFinancialAccountFeatures({required this.object, this.cardIssuing, this.depositInsurance, this.financialAddresses, this.inboundTransfers, this.intraStripeFlows, this.outboundPayments, this.outboundTransfers, });
 
 factory TreasuryFinancialAccountFeatures.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountFeatures(
   cardIssuing: json['card_issuing'] != null ? TreasuryFinancialAccountsResourceToggleSettings.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,

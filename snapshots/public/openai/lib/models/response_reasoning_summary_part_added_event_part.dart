@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the summary part. Always `summary_text`.
-final class ResponseReasoningSummaryPartAddedEventPartType {const ResponseReasoningSummaryPartAddedEventPartType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the summary part. Always `summary_text`.
+@immutable final class ResponseReasoningSummaryPartAddedEventPartType {const ResponseReasoningSummaryPartAddedEventPartType._(this.value);
 
 factory ResponseReasoningSummaryPartAddedEventPartType.fromJson(String json) { return switch (json) {
   'summary_text' => summaryText,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The summary part that was added.
 /// 
-final class ResponseReasoningSummaryPartAddedEventPart {const ResponseReasoningSummaryPartAddedEventPart({required this.type, required this.text, });
+@immutable final class ResponseReasoningSummaryPartAddedEventPart {const ResponseReasoningSummaryPartAddedEventPart({required this.type, required this.text, });
 
 factory ResponseReasoningSummaryPartAddedEventPart.fromJson(Map<String, dynamic> json) { return ResponseReasoningSummaryPartAddedEventPart(
   type: ResponseReasoningSummaryPartAddedEventPartType.fromJson(json['type'] as String),

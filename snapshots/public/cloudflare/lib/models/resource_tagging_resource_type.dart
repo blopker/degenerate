@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Identifies the type of resource.
-final class ResourceTaggingResourceType {const ResourceTaggingResourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifies the type of resource.
+@immutable final class ResourceTaggingResourceType {const ResourceTaggingResourceType._(this.value);
 
 factory ResourceTaggingResourceType.fromJson(String json) { return switch (json) {
   'access_application' => accessApplication,

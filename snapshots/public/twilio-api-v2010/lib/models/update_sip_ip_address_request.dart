@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateSipIpAddressRequest {const UpdateSipIpAddressRequest({this.ipAddress, this.friendlyName, this.cidrPrefixLength, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateSipIpAddressRequest {const UpdateSipIpAddressRequest({this.ipAddress, this.friendlyName, this.cidrPrefixLength, });
 
 factory UpdateSipIpAddressRequest.fromJson(Map<String, dynamic> json) { return UpdateSipIpAddressRequest(
   ipAddress: json['IpAddress'] as String?,

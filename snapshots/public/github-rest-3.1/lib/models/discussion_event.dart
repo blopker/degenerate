@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'discussion.dart';final class DiscussionEvent {const DiscussionEvent({required this.action, required this.discussion, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';@immutable final class DiscussionEvent {const DiscussionEvent({required this.action, required this.discussion, });
 
 factory DiscussionEvent.fromJson(Map<String, dynamic> json) { return DiscussionEvent(
   action: json['action'] as String,

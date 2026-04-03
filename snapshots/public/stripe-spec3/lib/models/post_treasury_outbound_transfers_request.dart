@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_outbound_transfers_request_destination_payment_method_data.dart';import 'post_treasury_outbound_transfers_request_destination_payment_method_options.dart';final class PostTreasuryOutboundTransfersRequest {const PostTreasuryOutboundTransfersRequest({required this.amount, required this.currency, this.description, this.destinationPaymentMethod, this.destinationPaymentMethodData, this.destinationPaymentMethodOptions, this.expand, required this.financialAccount, this.metadata, this.statementDescriptor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_outbound_transfers_request_destination_payment_method_data.dart';import 'post_treasury_outbound_transfers_request_destination_payment_method_options.dart';@immutable final class PostTreasuryOutboundTransfersRequest {const PostTreasuryOutboundTransfersRequest({required this.amount, required this.currency, required this.financialAccount, this.description, this.destinationPaymentMethod, this.destinationPaymentMethodData, this.destinationPaymentMethodOptions, this.expand, this.metadata, this.statementDescriptor, });
 
 factory PostTreasuryOutboundTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundTransfersRequest(
   amount: (json['amount'] as num).toInt(),

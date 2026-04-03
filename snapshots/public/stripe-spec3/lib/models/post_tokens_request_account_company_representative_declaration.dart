@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTokensRequestAccountCompanyRepresentativeDeclaration {const PostTokensRequestAccountCompanyRepresentativeDeclaration({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTokensRequestAccountCompanyRepresentativeDeclaration {const PostTokensRequestAccountCompanyRepresentativeDeclaration({this.date, this.ip, this.userAgent, });
 
 factory PostTokensRequestAccountCompanyRepresentativeDeclaration.fromJson(Map<String, dynamic> json) { return PostTokensRequestAccountCompanyRepresentativeDeclaration(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

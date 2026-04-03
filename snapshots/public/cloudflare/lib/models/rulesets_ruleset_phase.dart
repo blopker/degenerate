@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The phase of the ruleset.
-final class RulesetsRulesetPhase {const RulesetsRulesetPhase._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The phase of the ruleset.
+@immutable final class RulesetsRulesetPhase {const RulesetsRulesetPhase._(this.value);
 
 factory RulesetsRulesetPhase.fromJson(String json) { return switch (json) {
   'ddos_l4' => ddosL4,

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mandate_options_payto.dart';/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate_options_payto.dart';/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
 /// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
 /// 
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class CheckoutPaytoPaymentMethodOptionsSetupFutureUsage {const CheckoutPaytoPaymentMethodOptionsSetupFutureUsage._(this.value);
+@immutable final class CheckoutPaytoPaymentMethodOptionsSetupFutureUsage {const CheckoutPaytoPaymentMethodOptionsSetupFutureUsage._(this.value);
 
 factory CheckoutPaytoPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutPaytoPaymentMethodOptionsSetupFutureUsage($value)'; } 
  }
 /// 
-final class CheckoutPaytoPaymentMethodOptions {const CheckoutPaytoPaymentMethodOptions({this.mandateOptions, this.setupFutureUsage, });
+@immutable final class CheckoutPaytoPaymentMethodOptions {const CheckoutPaytoPaymentMethodOptions({this.mandateOptions, this.setupFutureUsage, });
 
 factory CheckoutPaytoPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutPaytoPaymentMethodOptions(
   mandateOptions: json['mandate_options'] != null ? MandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

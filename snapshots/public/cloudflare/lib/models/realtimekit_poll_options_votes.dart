@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitPollOptionsVotes {const RealtimekitPollOptionsVotes({required this.id, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPollOptionsVotes {const RealtimekitPollOptionsVotes({required this.id, required this.name, });
 
 factory RealtimekitPollOptionsVotes.fromJson(Map<String, dynamic> json) { return RealtimekitPollOptionsVotes(
   id: json['id'] as String,

@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo();
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo(
-
-); }
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo.fromJson(Map<String, dynamic> _) { return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo copyWith() { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo(
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo copyWith() { return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataOxxo; } 

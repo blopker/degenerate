@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rum_auto_install.dart';import 'rum_host.dart';import 'rum_zone_tag.dart';/// Enables or disables RUM. This option can be used only when auto_install is set to true.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_auto_install.dart';import 'rum_host.dart';import 'rum_zone_tag.dart';/// Enables or disables RUM. This option can be used only when auto_install is set to true.
 extension type const RumEnabled(bool value) {
 factory RumEnabled.fromJson(bool json) => RumEnabled(json);
 
@@ -14,7 +14,7 @@ factory RumLite.fromJson(bool json) => RumLite(json);
 bool toJson() => value;
 
 }
-final class RumUpdateSiteRequest {const RumUpdateSiteRequest({this.autoInstall, this.enabled, this.host, this.lite, this.zoneTag, });
+@immutable final class RumUpdateSiteRequest {const RumUpdateSiteRequest({this.autoInstall, this.enabled, this.host, this.lite, this.zoneTag, });
 
 factory RumUpdateSiteRequest.fromJson(Map<String, dynamic> json) { return RumUpdateSiteRequest(
   autoInstall: json['auto_install'] != null ? RumAutoInstall.fromJson(json['auto_install'] as bool) : null,

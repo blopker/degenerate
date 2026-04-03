@@ -44,13 +44,13 @@ final request = ApiRequest(
   body: [
     ApiMultipartField.text('file', body.file),
     if (body.name case final name$?)
-      ApiMultipartField.text('name', name$.toJson().toString()),
+      ApiMultipartField.text('name', name$.toJson()),
     if (body.opacity case final opacity$?)
       ApiMultipartField.text('opacity', opacity$.toJson().toString()),
     if (body.padding case final padding$?)
       ApiMultipartField.text('padding', padding$.toJson().toString()),
     if (body.position case final position$?)
-      ApiMultipartField.text('position', position$.toJson().toString()),
+      ApiMultipartField.text('position', position$.toJson()),
     if (body.scale case final scale$?)
       ApiMultipartField.text('scale', scale$.toJson().toString()),
   ],

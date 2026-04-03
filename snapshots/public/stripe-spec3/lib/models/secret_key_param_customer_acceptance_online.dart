@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecretKeyParamCustomerAcceptanceOnline {const SecretKeyParamCustomerAcceptanceOnline({required this.ipAddress, required this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretKeyParamCustomerAcceptanceOnline {const SecretKeyParamCustomerAcceptanceOnline({required this.ipAddress, required this.userAgent, });
 
 factory SecretKeyParamCustomerAcceptanceOnline.fromJson(Map<String, dynamic> json) { return SecretKeyParamCustomerAcceptanceOnline(
   ipAddress: json['ip_address'] as String,

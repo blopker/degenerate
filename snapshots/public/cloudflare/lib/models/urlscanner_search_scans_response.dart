@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_search_scans_response_errors.dart';import 'urlscanner_search_scans_response_messages.dart';import 'urlscanner_search_scans_response_result.dart';final class UrlscannerSearchScansResponse {const UrlscannerSearchScansResponse({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_search_scans_response_errors.dart';import 'urlscanner_search_scans_response_messages.dart';import 'urlscanner_search_scans_response_result.dart';@immutable final class UrlscannerSearchScansResponse {const UrlscannerSearchScansResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory UrlscannerSearchScansResponse.fromJson(Map<String, dynamic> json) { return UrlscannerSearchScansResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerSearchScansResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),

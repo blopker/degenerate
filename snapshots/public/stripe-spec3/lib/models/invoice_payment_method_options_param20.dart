@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoice_payment_method_options_param20_mandate_options.dart';final class InvoicePaymentMethodOptionsParam20 {const InvoicePaymentMethodOptionsParam20({this.mandateOptions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param20_mandate_options.dart';@immutable final class InvoicePaymentMethodOptionsParam20 {const InvoicePaymentMethodOptionsParam20({this.mandateOptions});
 
 factory InvoicePaymentMethodOptionsParam20.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam20(
   mandateOptions: json['mandate_options'] != null ? InvoicePaymentMethodOptionsParam20MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

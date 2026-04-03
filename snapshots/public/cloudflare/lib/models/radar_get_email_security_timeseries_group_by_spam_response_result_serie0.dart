@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0 {const RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0({required this.notSpam, required this.spam, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0 {const RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0({required this.notSpam, required this.spam, });
 
 factory RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0(
   notSpam: (json['NOT_SPAM'] as List<dynamic>).map((e) => e as String).toList(),

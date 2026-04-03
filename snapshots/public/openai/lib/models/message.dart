@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content.dart';final class MessageStatus {const MessageStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content.dart';@immutable final class MessageStatus {const MessageStatus._(this.value);
 
 factory MessageStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageStatus($value)'; } 
  }
-final class MessageRole {const MessageRole._(this.value);
+@immutable final class MessageRole {const MessageRole._(this.value);
 
 factory MessageRole.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
@@ -70,7 +70,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageRole($value)'; } 
  }
 /// A message to or from the model.
-final class Message {const Message({this.type = 'message', required this.id, required this.status, required this.role, required this.content, });
+@immutable final class Message {const Message({required this.id, required this.status, required this.role, required this.content, this.type = 'message', });
 
 factory Message.fromJson(Map<String, dynamic> json) { return Message(
   type: json['type'] as String,

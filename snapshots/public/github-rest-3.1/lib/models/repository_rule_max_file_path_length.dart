@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_max_file_path_length_parameters.dart';final class RepositoryRuleMaxFilePathLengthType {const RepositoryRuleMaxFilePathLengthType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_max_file_path_length_parameters.dart';@immutable final class RepositoryRuleMaxFilePathLengthType {const RepositoryRuleMaxFilePathLengthType._(this.value);
 
 factory RepositoryRuleMaxFilePathLengthType.fromJson(String json) { return switch (json) {
   'max_file_path_length' => maxFilePathLength,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleMaxFilePathLengthType($value)'; } 
  }
 /// Prevent commits that include file paths that exceed the specified character limit from being pushed to the commit graph.
-final class RepositoryRuleMaxFilePathLength {const RepositoryRuleMaxFilePathLength({required this.type, this.parameters, });
+@immutable final class RepositoryRuleMaxFilePathLength {const RepositoryRuleMaxFilePathLength({required this.type, this.parameters, });
 
 factory RepositoryRuleMaxFilePathLength.fromJson(Map<String, dynamic> json) { return RepositoryRuleMaxFilePathLength(
   type: RepositoryRuleMaxFilePathLengthType.fromJson(json['type'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_request_account_tax_ids.dart';import 'post_invoices_invoice_request_automatic_tax.dart';import 'post_invoices_invoice_request_custom_fields.dart';import 'post_invoices_invoice_request_custom_fields_variant1.dart';import 'post_invoices_invoice_request_default_source.dart';import 'post_invoices_invoice_request_default_tax_rates.dart';import 'post_invoices_invoice_request_discounts.dart';import 'post_invoices_invoice_request_discounts_variant1.dart';import 'post_invoices_invoice_request_effective_at.dart';import 'post_invoices_invoice_request_issuer.dart';import 'post_invoices_invoice_request_metadata.dart';import 'post_invoices_invoice_request_number.dart';import 'post_invoices_invoice_request_on_behalf_of.dart';import 'post_invoices_invoice_request_payment_settings.dart';import 'post_invoices_invoice_request_rendering.dart';import 'post_invoices_invoice_request_shipping_cost.dart';import 'post_invoices_invoice_request_shipping_details.dart';import 'post_invoices_invoice_request_transfer_data.dart';import 'recipient_shipping_with_optional_fields_address.dart';import 'shipping_cost.dart';import 'transfer_data_specs2.dart';/// Either `charge_automatically` or `send_invoice`. This field can be updated only on `draft` invoices.
-final class PostInvoicesInvoiceRequestCollectionMethod {const PostInvoicesInvoiceRequestCollectionMethod._(this.value);
+@immutable final class PostInvoicesInvoiceRequestCollectionMethod {const PostInvoicesInvoiceRequestCollectionMethod._(this.value);
 
 factory PostInvoicesInvoiceRequestCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesInvoiceRequestCollectionMethod($value)'; } 
  }
-final class PostInvoicesInvoiceRequest {const PostInvoicesInvoiceRequest({this.accountTaxIds, this.applicationFeeAmount, this.autoAdvance, this.automaticTax, this.automaticallyFinalizesAt, this.collectionMethod, this.customFields, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.dueDate, this.effectiveAt, this.expand, this.footer, this.issuer, this.metadata, this.number, this.onBehalfOf, this.paymentSettings, this.rendering, this.shippingCost, this.shippingDetails, this.statementDescriptor, this.transferData, });
+@immutable final class PostInvoicesInvoiceRequest {const PostInvoicesInvoiceRequest({this.accountTaxIds, this.applicationFeeAmount, this.autoAdvance, this.automaticTax, this.automaticallyFinalizesAt, this.collectionMethod, this.customFields, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.dueDate, this.effectiveAt, this.expand, this.footer, this.issuer, this.metadata, this.number, this.onBehalfOf, this.paymentSettings, this.rendering, this.shippingCost, this.shippingDetails, this.statementDescriptor, this.transferData, });
 
 factory PostInvoicesInvoiceRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRequest(
   accountTaxIds: json['account_tax_ids'] != null ? OneOf2.parse(json['account_tax_ids'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostInvoicesInvoiceRequestAccountTaxIdsVariant2.fromJson(v as String),) : null,

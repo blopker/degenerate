@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_identifier.dart';import 'magic_psk.dart';import 'magic_psk_metadata.dart';final class MagicPskGenerationResponseResult {const MagicPskGenerationResponseResult({this.ipsecTunnelId, this.psk, this.pskMetadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_identifier.dart';import 'magic_psk.dart';import 'magic_psk_metadata.dart';@immutable final class MagicPskGenerationResponseResult {const MagicPskGenerationResponseResult({this.ipsecTunnelId, this.psk, this.pskMetadata, });
 
 factory MagicPskGenerationResponseResult.fromJson(Map<String, dynamic> json) { return MagicPskGenerationResponseResult(
   ipsecTunnelId: json['ipsec_tunnel_id'] != null ? MagicIdentifier.fromJson(json['ipsec_tunnel_id'] as String) : null,

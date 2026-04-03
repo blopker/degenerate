@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObservabilityQueryResultsCalculationsAggregatesGroups {const WorkersObservabilityQueryResultsCalculationsAggregatesGroups({required this.key, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryResultsCalculationsAggregatesGroups {const WorkersObservabilityQueryResultsCalculationsAggregatesGroups({required this.key, required this.value, });
 
 factory WorkersObservabilityQueryResultsCalculationsAggregatesGroups.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsCalculationsAggregatesGroups(
   key: json['key'] as String,

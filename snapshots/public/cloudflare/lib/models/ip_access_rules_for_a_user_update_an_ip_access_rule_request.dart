@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_notes.dart';import 'firewall_schemas_mode.dart';final class IpAccessRulesForAUserUpdateAnIpAccessRuleRequest {const IpAccessRulesForAUserUpdateAnIpAccessRuleRequest({this.mode, this.notes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_notes.dart';import 'firewall_schemas_mode.dart';@immutable final class IpAccessRulesForAUserUpdateAnIpAccessRuleRequest {const IpAccessRulesForAUserUpdateAnIpAccessRuleRequest({this.mode, this.notes, });
 
 factory IpAccessRulesForAUserUpdateAnIpAccessRuleRequest.fromJson(Map<String, dynamic> json) { return IpAccessRulesForAUserUpdateAnIpAccessRuleRequest(
   mode: json['mode'] != null ? FirewallSchemasMode.fromJson(json['mode'] as String) : null,

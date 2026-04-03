@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_country_read_response_result.dart';final class GetCountryReadResponse {const GetCountryReadResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_country_read_response_result.dart';@immutable final class GetCountryReadResponse {const GetCountryReadResponse({required this.result, required this.success, });
 
 factory GetCountryReadResponse.fromJson(Map<String, dynamic> json) { return GetCountryReadResponse(
   result: (json['result'] as List<dynamic>).map((e) => GetCountryReadResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

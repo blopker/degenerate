@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_system_content.dart';import 'messages51_messages_system_content_variant2.dart';final class Messages51MessagesSystemRole {const Messages51MessagesSystemRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_system_content.dart';import 'messages51_messages_system_content_variant2.dart';@immutable final class Messages51MessagesSystemRole {const Messages51MessagesSystemRole._(this.value);
 
 factory Messages51MessagesSystemRole.fromJson(String json) { return switch (json) {
   'system' => system,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51MessagesSystemRole($value)'; } 
  }
-final class Messages51MessagesSystem {const Messages51MessagesSystem({required this.content, this.name, required this.role, });
+@immutable final class Messages51MessagesSystem {const Messages51MessagesSystem({required this.content, required this.role, this.name, });
 
 factory Messages51MessagesSystem.fromJson(Map<String, dynamic> json) { return Messages51MessagesSystem(
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => Messages51MessagesSystemContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),

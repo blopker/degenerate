@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Field to order zones by.
-final class ZonesGetOrder {const ZonesGetOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order zones by.
+@immutable final class ZonesGetOrder {const ZonesGetOrder._(this.value);
 
 factory ZonesGetOrder.fromJson(String json) { return switch (json) {
   'name' => $name,

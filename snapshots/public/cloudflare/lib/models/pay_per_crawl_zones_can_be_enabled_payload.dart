@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_daric_zone_can_be_enabled.dart';final class PayPerCrawlZonesCanBeEnabledPayload {const PayPerCrawlZonesCanBeEnabledPayload({this.zones});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_daric_zone_can_be_enabled.dart';@immutable final class PayPerCrawlZonesCanBeEnabledPayload {const PayPerCrawlZonesCanBeEnabledPayload({this.zones});
 
 factory PayPerCrawlZonesCanBeEnabledPayload.fromJson(Map<String, dynamic> json) { return PayPerCrawlZonesCanBeEnabledPayload(
   zones: (json['zones'] as List<dynamic>?)?.map((e) => PayPerCrawlDaricZoneCanBeEnabled.fromJson(e as Map<String, dynamic>)).toList(),

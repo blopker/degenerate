@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class BillingBillResourceInvoicingTaxesTaxRateDetails {const BillingBillResourceInvoicingTaxesTaxRateDetails({required this.taxRate});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class BillingBillResourceInvoicingTaxesTaxRateDetails {const BillingBillResourceInvoicingTaxesTaxRateDetails({required this.taxRate});
 
 factory BillingBillResourceInvoicingTaxesTaxRateDetails.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingTaxesTaxRateDetails(
   taxRate: json['tax_rate'] as String,

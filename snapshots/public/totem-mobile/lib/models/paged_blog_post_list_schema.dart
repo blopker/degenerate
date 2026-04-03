@@ -3,6 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'blog_post_list_schema.dart';
 
+@immutable
 final class PagedBlogPostListSchema {
   const PagedBlogPostListSchema({required this.items, required this.count});
 

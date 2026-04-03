@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AmountDetailsShippingParam5AmountVariant2 {const AmountDetailsShippingParam5AmountVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AmountDetailsShippingParam5AmountVariant2 {const AmountDetailsShippingParam5AmountVariant2._(this.value);
 
 factory AmountDetailsShippingParam5AmountVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

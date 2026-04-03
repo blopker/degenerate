@@ -7,7 +7,7 @@ factory StreamClippingCreated.fromJson(String json) => StreamClippingCreated(Dat
 String toJson() => value.toIso8601String();
 
 }
-final class StreamClipping {const StreamClipping({this.allowedOrigins, this.clippedFromVideoUid, this.created, this.creator, this.endTimeSeconds, this.maxDurationSeconds, this.meta, this.modified, this.playback, this.preview, this.requireSignedUrLs, this.startTimeSeconds, this.status, this.thumbnailTimestampPct, this.watermark, });
+@immutable final class StreamClipping {const StreamClipping({this.allowedOrigins, this.clippedFromVideoUid, this.created, this.creator, this.endTimeSeconds, this.maxDurationSeconds, this.meta, this.modified, this.playback, this.preview, this.requireSignedUrLs, this.startTimeSeconds, this.status, this.thumbnailTimestampPct, this.watermark, });
 
 factory StreamClipping.fromJson(Map<String, dynamic> json) { return StreamClipping(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -16,7 +16,7 @@ factory StreamClipping.fromJson(Map<String, dynamic> json) { return StreamClippi
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
   endTimeSeconds: json['endTimeSeconds'] != null ? StreamEndTimeSeconds.fromJson(json['endTimeSeconds'] as num) : null,
   maxDurationSeconds: json['maxDurationSeconds'] != null ? StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>?,
   modified: json['modified'] != null ? StreamLiveInputModified.fromJson(json['modified'] as String) : null,
   playback: json['playback'] != null ? StreamPlayback.fromJson(json['playback'] as Map<String, dynamic>) : null,
   preview: json['preview'] != null ? StreamPreview.fromJson(json['preview'] as String) : null,

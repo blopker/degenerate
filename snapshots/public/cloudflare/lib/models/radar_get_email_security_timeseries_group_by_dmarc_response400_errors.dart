@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecurityTimeseriesGroupByDmarcResponse400Errors {const RadarGetEmailSecurityTimeseriesGroupByDmarcResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByDmarcResponse400Errors {const RadarGetEmailSecurityTimeseriesGroupByDmarcResponse400Errors({required this.message});
 
 factory RadarGetEmailSecurityTimeseriesGroupByDmarcResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByDmarcResponse400Errors(
   message: json['message'] as String,

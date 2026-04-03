@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bundle_custom_scan.dart';final class BundleResponseCustomScanCollection {const BundleResponseCustomScanCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bundle_custom_scan.dart';@immutable final class BundleResponseCustomScanCollection {const BundleResponseCustomScanCollection({this.result});
 
 factory BundleResponseCustomScanCollection.fromJson(Map<String, dynamic> json) { return BundleResponseCustomScanCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => BundleCustomScan.fromJson(e as Map<String, dynamic>)).toList(),

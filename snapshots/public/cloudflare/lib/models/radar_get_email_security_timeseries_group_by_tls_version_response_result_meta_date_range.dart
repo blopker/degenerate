@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaDateRange {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaDateRange({required this.endTime, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaDateRange {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
 factory RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),

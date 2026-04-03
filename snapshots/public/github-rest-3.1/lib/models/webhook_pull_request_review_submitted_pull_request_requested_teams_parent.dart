@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestReviewSubmittedPullRequestRequestedTeamsParentPrivacy {const WebhookPullRequestReviewSubmittedPullRequestRequestedTeamsParentPrivacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewSubmittedPullRequestRequestedTeamsParentPrivacy {const WebhookPullRequestReviewSubmittedPullRequestRequestedTeamsParentPrivacy._(this.value);
 
 factory WebhookPullRequestReviewSubmittedPullRequestRequestedTeamsParentPrivacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewSubmittedPullRequestRequestedTeamsParentPrivacy($value)'; } 
  }
-final class WebhookPullRequestReviewSubmittedPullRequestRequestedTeamsParent {const WebhookPullRequestReviewSubmittedPullRequestRequestedTeamsParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
+@immutable final class WebhookPullRequestReviewSubmittedPullRequestRequestedTeamsParent {const WebhookPullRequestReviewSubmittedPullRequestRequestedTeamsParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
 
 factory WebhookPullRequestReviewSubmittedPullRequestRequestedTeamsParent.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewSubmittedPullRequestRequestedTeamsParent(
   description: json['description'] as String?,

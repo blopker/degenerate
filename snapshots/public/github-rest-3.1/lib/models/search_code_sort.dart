@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SearchCodeSort {const SearchCodeSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchCodeSort {const SearchCodeSort._(this.value);
 
 factory SearchCodeSort.fromJson(String json) { return switch (json) {
   'indexed' => indexed,

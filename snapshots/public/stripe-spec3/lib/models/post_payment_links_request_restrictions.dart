@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_links_request_restrictions_completed_sessions.dart';/// Settings that restrict the usage of a payment link.
-final class PostPaymentLinksRequestRestrictions {const PostPaymentLinksRequestRestrictions({required this.completedSessions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_restrictions_completed_sessions.dart';/// Settings that restrict the usage of a payment link.
+@immutable final class PostPaymentLinksRequestRestrictions {const PostPaymentLinksRequestRestrictions({required this.completedSessions});
 
 factory PostPaymentLinksRequestRestrictions.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestRestrictions(
   completedSessions: PostPaymentLinksRequestRestrictionsCompletedSessions.fromJson(json['completed_sessions'] as Map<String, dynamic>),

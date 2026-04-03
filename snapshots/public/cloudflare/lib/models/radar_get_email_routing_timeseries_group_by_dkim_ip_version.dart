@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingTimeseriesGroupByDkimIpVersion {const RadarGetEmailRoutingTimeseriesGroupByDkimIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByDkimIpVersion {const RadarGetEmailRoutingTimeseriesGroupByDkimIpVersion._(this.value);
 
 factory RadarGetEmailRoutingTimeseriesGroupByDkimIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,

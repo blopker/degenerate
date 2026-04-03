@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteOrganizationResponse {const DeleteOrganizationResponse({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteOrganizationResponse {const DeleteOrganizationResponse({required this.id});
 
 factory DeleteOrganizationResponse.fromJson(Map<String, dynamic> json) { return DeleteOrganizationResponse(
   id: json['id'] as String,

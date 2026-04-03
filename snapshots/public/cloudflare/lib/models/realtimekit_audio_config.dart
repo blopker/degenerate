@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Audio signal pathway within an audio file that carries a specific sound source.
-final class RealtimekitAudioConfigChannel {const RealtimekitAudioConfigChannel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Audio signal pathway within an audio file that carries a specific sound source.
+@immutable final class RealtimekitAudioConfigChannel {const RealtimekitAudioConfigChannel._(this.value);
 
 factory RealtimekitAudioConfigChannel.fromJson(String json) { return switch (json) {
   'mono' => mono,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitAudioConfigChannel($value)'; } 
  }
 /// Codec using which the recording will be encoded. If VP8/VP9 is selected for videoConfig, changing audioConfig is not allowed. In this case, the codec in the audioConfig is automatically set to vorbis.
-final class RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec._(this.value);
+@immutable final class RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec._(this.value);
 
 factory RealtimekitAudioConfigCodec.fromJson(String json) { return switch (json) {
   'MP3' => mp3,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitAudioConfigCodec($value)'; } 
  }
 /// Object containing configuration regarding the audio that is being recorded.
-final class RealtimekitAudioConfig {const RealtimekitAudioConfig({this.channel = RealtimekitAudioConfigChannel.stereo, this.codec = RealtimekitAudioConfigCodec.aac, this.exportFile = true, });
+@immutable final class RealtimekitAudioConfig {const RealtimekitAudioConfig({this.channel = RealtimekitAudioConfigChannel.stereo, this.codec = RealtimekitAudioConfigCodec.aac, this.exportFile = true, });
 
 factory RealtimekitAudioConfig.fromJson(Map<String, dynamic> json) { return RealtimekitAudioConfig(
   channel: json.containsKey('channel') ? RealtimekitAudioConfigChannel.fromJson(json['channel'] as String) : RealtimekitAudioConfigChannel.stereo,

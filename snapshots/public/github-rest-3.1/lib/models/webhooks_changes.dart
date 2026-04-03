@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_changes_body.dart';/// The changes to the comment.
-final class WebhooksChanges {const WebhooksChanges({this.body});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_changes_body.dart';/// The changes to the comment.
+@immutable final class WebhooksChanges {const WebhooksChanges({this.body});
 
 factory WebhooksChanges.fromJson(Map<String, dynamic> json) { return WebhooksChanges(
   body: json['body'] != null ? WebhooksChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,

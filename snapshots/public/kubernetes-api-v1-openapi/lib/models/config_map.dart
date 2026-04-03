@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'object_meta.dart';/// ConfigMap holds configuration data for pods to consume.
-final class ConfigMap {const ConfigMap({this.apiVersion, this.binaryData, this.data, this.immutable, this.kind, this.metadata, });
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';/// ConfigMap holds configuration data for pods to consume.
+@immutable final class ConfigMap {const ConfigMap({this.apiVersion, this.binaryData, this.data, this.immutable, this.kind, this.metadata, });
 
 factory ConfigMap.fromJson(Map<String, dynamic> json) { return ConfigMap(
   apiVersion: json['apiVersion'] as String?,

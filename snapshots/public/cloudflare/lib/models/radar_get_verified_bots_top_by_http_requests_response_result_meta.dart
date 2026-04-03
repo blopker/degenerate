@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_verified_bots_top_by_http_requests_response_result_meta_confidence_info.dart';import 'radar_get_verified_bots_top_by_http_requests_response_result_meta_date_range.dart';import 'radar_get_verified_bots_top_by_http_requests_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaNormalization {const RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaNormalization {const RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaNormalization._(this.value);
 
 factory RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetVerifiedBotsTopByHttpRequestsResponseResultMeta {const RadarGetVerifiedBotsTopByHttpRequestsResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetVerifiedBotsTopByHttpRequestsResponseResultMeta {const RadarGetVerifiedBotsTopByHttpRequestsResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetVerifiedBotsTopByHttpRequestsResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetVerifiedBotsTopByHttpRequestsResponseResultMeta(
   confidenceInfo: json['confidenceInfo'] != null ? RadarGetVerifiedBotsTopByHttpRequestsResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,

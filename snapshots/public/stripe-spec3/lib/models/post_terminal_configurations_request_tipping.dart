@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tipping.dart';final class PostTerminalConfigurationsRequestTippingVariant2 {const PostTerminalConfigurationsRequestTippingVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tipping.dart';@immutable final class PostTerminalConfigurationsRequestTippingVariant2 {const PostTerminalConfigurationsRequestTippingVariant2._(this.value);
 
 factory PostTerminalConfigurationsRequestTippingVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_source.dart';final class PayPerCrawlMsg {const PayPerCrawlMsg({this.code, this.documentationUrl, this.errorChain, this.message, this.meta, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_source.dart';@immutable final class PayPerCrawlMsg {const PayPerCrawlMsg({this.code, this.documentationUrl, this.errorChain, this.message, this.meta, this.source, });
 
 factory PayPerCrawlMsg.fromJson(Map<String, dynamic> json) { return PayPerCrawlMsg(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,

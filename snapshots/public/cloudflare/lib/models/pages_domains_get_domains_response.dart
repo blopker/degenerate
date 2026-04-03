@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_domain.dart';final class PagesDomainsGetDomainsResponse {const PagesDomainsGetDomainsResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_domain.dart';@immutable final class PagesDomainsGetDomainsResponse {const PagesDomainsGetDomainsResponse({required this.result});
 
 factory PagesDomainsGetDomainsResponse.fromJson(Map<String, dynamic> json) { return PagesDomainsGetDomainsResponse(
   result: (json['result'] as List<dynamic>).map((e) => PagesDomain.fromJson(e as Map<String, dynamic>)).toList(),

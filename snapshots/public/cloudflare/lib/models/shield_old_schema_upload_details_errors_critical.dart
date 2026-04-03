@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_schema_upload_log_event.dart';final class ShieldOldSchemaUploadDetailsErrorsCritical {const ShieldOldSchemaUploadDetailsErrorsCritical({this.critical, this.errors, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_schema_upload_log_event.dart';@immutable final class ShieldOldSchemaUploadDetailsErrorsCritical {const ShieldOldSchemaUploadDetailsErrorsCritical({this.critical, this.errors, });
 
 factory ShieldOldSchemaUploadDetailsErrorsCritical.fromJson(Map<String, dynamic> json) { return ShieldOldSchemaUploadDetailsErrorsCritical(
   critical: (json['critical'] as List<dynamic>?)?.map((e) => ShieldOldSchemaUploadLogEvent.fromJson(e as Map<String, dynamic>)).toList(),

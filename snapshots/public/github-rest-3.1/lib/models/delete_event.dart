@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteEvent {const DeleteEvent({required this.ref, required this.refType, required this.fullRef, required this.pusherType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteEvent {const DeleteEvent({required this.ref, required this.refType, required this.fullRef, required this.pusherType, });
 
 factory DeleteEvent.fromJson(Map<String, dynamic> json) { return DeleteEvent(
   ref: json['ref'] as String,

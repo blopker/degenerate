@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_identifier.dart';import 'zones_paused.dart';import 'zones_type.dart';import 'zones_zone_account.dart';import 'zones_zone_meta.dart';import 'zones_zone_owner.dart';import 'zones_zone_plan.dart';import 'zones_zone_tenant.dart';import 'zones_zone_tenant_unit.dart';/// The zone status on Cloudflare.
-final class ZonesZoneStatus {const ZonesZoneStatus._(this.value);
+@immutable final class ZonesZoneStatus {const ZonesZoneStatus._(this.value);
 
 factory ZonesZoneStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesZoneStatus($value)'; } 
  }
-final class ZonesZone {const ZonesZone({required this.account, required this.activatedOn, this.cnameSuffix, required this.createdOn, required this.developmentMode, required this.id, required this.meta, required this.modifiedOn, required this.name, required this.nameServers, required this.originalDnshost, required this.originalNameServers, required this.originalRegistrar, required this.owner, this.paused, this.permissions, required this.plan, this.status, this.tenant, this.tenantUnit, this.type, this.vanityNameServers = const [], this.verificationKey, });
+@immutable final class ZonesZone {const ZonesZone({required this.account, required this.activatedOn, required this.createdOn, required this.developmentMode, required this.id, required this.meta, required this.modifiedOn, required this.name, required this.nameServers, required this.originalDnshost, required this.originalNameServers, required this.originalRegistrar, required this.owner, required this.plan, this.cnameSuffix, this.paused, this.permissions, this.status, this.tenant, this.tenantUnit, this.type, this.vanityNameServers = const [], this.verificationKey, });
 
 factory ZonesZone.fromJson(Map<String, dynamic> json) { return ZonesZone(
   account: ZonesZoneAccount.fromJson(json['account'] as Map<String, dynamic>),

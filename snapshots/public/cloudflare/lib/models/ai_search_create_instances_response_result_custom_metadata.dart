@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchCreateInstancesResponseResultCustomMetadataDataType {const AiSearchCreateInstancesResponseResultCustomMetadataDataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchCreateInstancesResponseResultCustomMetadataDataType {const AiSearchCreateInstancesResponseResultCustomMetadataDataType._(this.value);
 
 factory AiSearchCreateInstancesResponseResultCustomMetadataDataType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchCreateInstancesResponseResultCustomMetadataDataType($value)'; } 
  }
-final class AiSearchCreateInstancesResponseResultCustomMetadata {const AiSearchCreateInstancesResponseResultCustomMetadata({required this.dataType, required this.fieldName, });
+@immutable final class AiSearchCreateInstancesResponseResultCustomMetadata {const AiSearchCreateInstancesResponseResultCustomMetadata({required this.dataType, required this.fieldName, });
 
 factory AiSearchCreateInstancesResponseResultCustomMetadata.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesResponseResultCustomMetadata(
   dataType: AiSearchCreateInstancesResponseResultCustomMetadataDataType.fromJson(json['data_type'] as String),

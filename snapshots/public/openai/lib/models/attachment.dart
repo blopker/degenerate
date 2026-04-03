@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AttachmentType {const AttachmentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AttachmentType {const AttachmentType._(this.value);
 
 factory AttachmentType.fromJson(String json) { return switch (json) {
   'image' => image,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AttachmentType($value)'; } 
  }
 /// Attachment metadata included on thread items.
-final class Attachment {const Attachment({required this.type, required this.id, required this.name, required this.mimeType, required this.previewUrl, });
+@immutable final class Attachment {const Attachment({required this.type, required this.id, required this.name, required this.mimeType, required this.previewUrl, });
 
 factory Attachment.fromJson(Map<String, dynamic> json) { return Attachment(
   type: AttachmentType.fromJson(json['type'] as String),

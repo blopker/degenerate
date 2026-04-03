@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_custom_nameservers_messages2_source.dart';final class DnsCustomNameserversMessages2 {const DnsCustomNameserversMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_custom_nameservers_messages2_source.dart';@immutable final class DnsCustomNameserversMessages2 {const DnsCustomNameserversMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory DnsCustomNameserversMessages2.fromJson(Map<String, dynamic> json) { return DnsCustomNameserversMessages2(
   code: (json['code'] as num).toInt(),

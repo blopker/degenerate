@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class KeysCreateRequest {const KeysCreateRequest({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class KeysCreateRequest {const KeysCreateRequest({required this.name});
 
 factory KeysCreateRequest.fromJson(Map<String, dynamic> json) { return KeysCreateRequest(
   name: json['name'] as String,

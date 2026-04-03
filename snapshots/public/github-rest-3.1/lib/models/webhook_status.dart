@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_status_branches.dart';import 'webhook_status_commit.dart';/// The new state. Can be `pending`, `success`, `failure`, or `error`.
-final class WebhookStatusState {const WebhookStatusState._(this.value);
+@immutable final class WebhookStatusState {const WebhookStatusState._(this.value);
 
 factory WebhookStatusState.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookStatusState($value)'; } 
  }
-final class WebhookStatus {const WebhookStatus({this.avatarUrl, required this.branches, required this.commit, required this.context, required this.createdAt, required this.description, this.enterprise, required this.id, this.installation, required this.name, this.organization, required this.repository, required this.sender, required this.sha, required this.state, required this.targetUrl, required this.updatedAt, });
+@immutable final class WebhookStatus {const WebhookStatus({required this.branches, required this.commit, required this.context, required this.createdAt, required this.description, required this.id, required this.name, required this.repository, required this.sender, required this.sha, required this.state, required this.targetUrl, required this.updatedAt, this.avatarUrl, this.enterprise, this.installation, this.organization, });
 
 factory WebhookStatus.fromJson(Map<String, dynamic> json) { return WebhookStatus(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,

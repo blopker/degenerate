@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetLeakedCredentialChecksTimeseriesGroupBotClass {const RadarGetLeakedCredentialChecksTimeseriesGroupBotClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupBotClass {const RadarGetLeakedCredentialChecksTimeseriesGroupBotClass._(this.value);
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupBotClass.fromJson(String json) { return switch (json) {
   'LIKELY_AUTOMATED' => likelyAutomated,

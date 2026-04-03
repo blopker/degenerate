@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The set of permissions for the GitHub app
-final class AppsCreateFromManifestResponsePermissions {const AppsCreateFromManifestResponsePermissions({this.issues, this.checks, this.metadata, this.contents, this.deployments, this.additionalProperties = const {}, });
+@immutable final class AppsCreateFromManifestResponsePermissions {const AppsCreateFromManifestResponsePermissions({this.issues, this.checks, this.metadata, this.contents, this.deployments, this.additionalProperties = const {}, });
 
 factory AppsCreateFromManifestResponsePermissions.fromJson(Map<String, dynamic> json) { return AppsCreateFromManifestResponsePermissions(
   issues: json['issues'] as String?,

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Used to create a new predefined or integration entry.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used to create a new predefined or integration entry.
 /// 
 /// Predefined or integration entries can not be updated via the API so
 /// these fields will update the entry's settings.
-final class DlpNewPredefinedEntry {const DlpNewPredefinedEntry({required this.enabled, required this.entryId, this.profileId, });
+@immutable final class DlpNewPredefinedEntry {const DlpNewPredefinedEntry({required this.enabled, required this.entryId, this.profileId, });
 
 factory DlpNewPredefinedEntry.fromJson(Map<String, dynamic> json) { return DlpNewPredefinedEntry(
   enabled: json['enabled'] as bool,

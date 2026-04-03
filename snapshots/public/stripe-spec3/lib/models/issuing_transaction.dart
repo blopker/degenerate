@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_authorization.dart';import 'issuing_authorization_merchant_data.dart';import 'issuing_card.dart';import 'issuing_cardholder.dart';import 'issuing_dispute.dart';import 'issuing_token.dart';import 'issuing_transaction_amount_details.dart';import 'issuing_transaction_authorization.dart';import 'issuing_transaction_balance_transaction.dart';import 'issuing_transaction_card.dart';import 'issuing_transaction_cardholder.dart';import 'issuing_transaction_dispute.dart';import 'issuing_transaction_network_data.dart';import 'issuing_transaction_purchase_details.dart';import 'issuing_transaction_token.dart';import 'issuing_transaction_treasury.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class IssuingTransactionObject {const IssuingTransactionObject._(this.value);
+@immutable final class IssuingTransactionObject {const IssuingTransactionObject._(this.value);
 
 factory IssuingTransactionObject.fromJson(String json) { return switch (json) {
   'issuing.transaction' => issuingTransaction,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingTransactionObject($value)'; } 
  }
 /// The nature of the transaction.
-final class IssuingTransactionType {const IssuingTransactionType._(this.value);
+@immutable final class IssuingTransactionType {const IssuingTransactionType._(this.value);
 
 factory IssuingTransactionType.fromJson(String json) { return switch (json) {
   'capture' => capture,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingTransactionType($value)'; } 
  }
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`.
-final class IssuingTransactionWallet {const IssuingTransactionWallet._(this.value);
+@immutable final class IssuingTransactionWallet {const IssuingTransactionWallet._(this.value);
 
 factory IssuingTransactionWallet.fromJson(String json) { return switch (json) {
   'apple_pay' => applePay,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 /// `Transaction` object.
 /// 
 /// Related guide: [Issued card transactions](https://docs.stripe.com/issuing/purchases/transactions)
-final class IssuingTransaction {const IssuingTransaction({required this.amount, this.amountDetails, this.authorization, this.balanceTransaction, required this.card, this.cardholder, required this.created, required this.currency, this.dispute, required this.id, required this.livemode, required this.merchantAmount, required this.merchantCurrency, required this.merchantData, required this.metadata, this.networkData, required this.object, this.purchaseDetails, this.token, this.treasury, required this.type, this.wallet, });
+@immutable final class IssuingTransaction {const IssuingTransaction({required this.amount, required this.card, required this.created, required this.currency, required this.id, required this.livemode, required this.merchantAmount, required this.merchantCurrency, required this.merchantData, required this.metadata, required this.object, required this.type, this.amountDetails, this.authorization, this.balanceTransaction, this.cardholder, this.dispute, this.networkData, this.purchaseDetails, this.token, this.treasury, this.wallet, });
 
 factory IssuingTransaction.fromJson(Map<String, dynamic> json) { return IssuingTransaction(
   amount: (json['amount'] as num).toInt(),

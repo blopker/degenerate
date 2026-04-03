@@ -38,7 +38,7 @@ return execute(
 /// Creates a new GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `POST /accounts/{account_id}/magic/gre_tunnels`
-Future<ApiResult<MagicGreTunnel?, Never>> magicGreTunnelsCreateGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicCreateGreTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicGreTunnel?, Never>> magicGreTunnelsCreateGreTunnels({required MagicIdentifier accountId, required MagicCreateGreTunnelRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -65,7 +65,7 @@ return execute(
 /// Updates multiple GRE tunnels. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/gre_tunnels`
-Future<ApiResult<MagicModifiedTunnelsCollectionResponseResult?, Never>> magicGreTunnelsUpdateMultipleGreTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicModifiedTunnelsCollectionResponseResult?, Never>> magicGreTunnelsUpdateMultipleGreTunnels({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -117,7 +117,7 @@ return execute(
 /// Updates a specific GRE tunnel. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/gre_tunnels/{gre_tunnel_id}`
-Future<ApiResult<MagicTunnelModifiedResponseResult?, Never>> magicGreTunnelsUpdateGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, required MagicGreTunnelAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTunnelModifiedResponseResult?, Never>> magicGreTunnelsUpdateGreTunnel({required MagicIdentifier greTunnelId, required MagicIdentifier accountId, required MagicGreTunnelAddSingleRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();

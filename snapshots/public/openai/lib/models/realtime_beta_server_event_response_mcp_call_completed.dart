@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `response.mcp_call.completed`.
-final class RealtimeBetaServerEventResponseMcpCallCompletedType {const RealtimeBetaServerEventResponseMcpCallCompletedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call.completed`.
+@immutable final class RealtimeBetaServerEventResponseMcpCallCompletedType {const RealtimeBetaServerEventResponseMcpCallCompletedType._(this.value);
 
 factory RealtimeBetaServerEventResponseMcpCallCompletedType.fromJson(String json) { return switch (json) {
   'response.mcp_call.completed' => responseMcpCallCompleted,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaServerEventResponseMcpCallCompletedType($value)'; } 
  }
 /// Returned when an MCP tool call has completed successfully.
-final class RealtimeBetaServerEventResponseMcpCallCompleted {const RealtimeBetaServerEventResponseMcpCallCompleted({required this.eventId, required this.type, required this.outputIndex, required this.itemId, });
+@immutable final class RealtimeBetaServerEventResponseMcpCallCompleted {const RealtimeBetaServerEventResponseMcpCallCompleted({required this.eventId, required this.type, required this.outputIndex, required this.itemId, });
 
 factory RealtimeBetaServerEventResponseMcpCallCompleted.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseMcpCallCompleted(
   eventId: json['event_id'] as String,

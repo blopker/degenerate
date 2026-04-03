@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class SecurityCenterSecurityTxt {const SecurityCenterSecurityTxt({this.acknowledgments, this.canonical, this.contact, this.enabled, this.encryption, this.expires, this.hiring, this.policy, this.preferredLanguages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityCenterSecurityTxt {const SecurityCenterSecurityTxt({this.acknowledgments, this.canonical, this.contact, this.enabled, this.encryption, this.expires, this.hiring, this.policy, this.preferredLanguages, });
 
 factory SecurityCenterSecurityTxt.fromJson(Map<String, dynamic> json) { return SecurityCenterSecurityTxt(
   acknowledgments: (json['acknowledgments'] as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),

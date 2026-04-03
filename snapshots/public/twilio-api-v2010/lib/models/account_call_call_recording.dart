@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'call_recording_enum_status.dart';/// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.
-final class CallRecordingEnumSource {const CallRecordingEnumSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'call_recording_enum_status.dart';/// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.
+@immutable final class CallRecordingEnumSource {const CallRecordingEnumSource._(this.value);
 
 factory CallRecordingEnumSource.fromJson(String json) { return switch (json) {
   'DialVerb' => dialVerb,
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CallRecordingEnumSource($value)'; } 
  }
-final class AccountCallCallRecording {const AccountCallCallRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.uri, this.encryptionDetails, this.priceUnit, this.status, this.channels = 0, this.source, this.errorCode, this.track, });
+@immutable final class AccountCallCallRecording {const AccountCallCallRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.uri, this.encryptionDetails, this.priceUnit, this.status, this.channels = 0, this.source, this.errorCode, this.track, });
 
 factory AccountCallCallRecording.fromJson(Map<String, dynamic> json) { return AccountCallCallRecording(
   accountSid: json['account_sid'] as String?,

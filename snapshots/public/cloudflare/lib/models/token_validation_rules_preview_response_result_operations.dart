@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_endpoint.dart';import 'shield_host.dart';import 'shield_method.dart';import 'shield_selector_operation_state.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';final class TokenValidationRulesPreviewResponseResultOperations {const TokenValidationRulesPreviewResponseResultOperations({this.endpoint, this.host, this.lastUpdated, this.method, this.operationId, this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_endpoint.dart';import 'shield_host.dart';import 'shield_method.dart';import 'shield_selector_operation_state.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';@immutable final class TokenValidationRulesPreviewResponseResultOperations {const TokenValidationRulesPreviewResponseResultOperations({this.endpoint, this.host, this.lastUpdated, this.method, this.operationId, this.state, });
 
 factory TokenValidationRulesPreviewResponseResultOperations.fromJson(Map<String, dynamic> json) { return TokenValidationRulesPreviewResponseResultOperations(
   endpoint: json['endpoint'] != null ? ShieldEndpoint.fromJson(json['endpoint'] as String) : null,

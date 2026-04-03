@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'person_additional_tos_acceptance.dart';/// 
-final class PersonAdditionalTosAcceptances {const PersonAdditionalTosAcceptances({this.account});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'person_additional_tos_acceptance.dart';/// 
+@immutable final class PersonAdditionalTosAcceptances {const PersonAdditionalTosAcceptances({this.account});
 
 factory PersonAdditionalTosAcceptances.fromJson(Map<String, dynamic> json) { return PersonAdditionalTosAcceptances(
   account: json['account'] != null ? PersonAdditionalTosAcceptance.fromJson(json['account'] as Map<String, dynamic>) : null,

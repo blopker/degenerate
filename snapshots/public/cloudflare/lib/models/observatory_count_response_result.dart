@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ObservatoryCountResponseResult {const ObservatoryCountResponseResult({this.count});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ObservatoryCountResponseResult {const ObservatoryCountResponseResult({this.count});
 
 factory ObservatoryCountResponseResult.fromJson(Map<String, dynamic> json) { return ObservatoryCountResponseResult(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

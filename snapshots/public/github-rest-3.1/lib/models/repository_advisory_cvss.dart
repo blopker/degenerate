@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryAdvisoryCvss {const RepositoryAdvisoryCvss({required this.vectorString, required this.score, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryAdvisoryCvss {const RepositoryAdvisoryCvss({required this.vectorString, required this.score, });
 
 factory RepositoryAdvisoryCvss.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCvss(
   vectorString: json['vector_string'] as String?,

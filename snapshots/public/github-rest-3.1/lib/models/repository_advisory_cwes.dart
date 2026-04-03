@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryAdvisoryCwes {const RepositoryAdvisoryCwes({required this.cweId, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryAdvisoryCwes {const RepositoryAdvisoryCwes({required this.cweId, required this.name, });
 
 factory RepositoryAdvisoryCwes.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCwes(
   cweId: json['cwe_id'] as String,

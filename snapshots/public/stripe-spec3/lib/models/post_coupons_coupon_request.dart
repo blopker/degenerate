@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_coupons_coupon_request_currency_options_value.dart';import 'post_coupons_coupon_request_metadata.dart';final class PostCouponsCouponRequest {const PostCouponsCouponRequest({this.currencyOptions, this.expand, this.metadata, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_coupons_coupon_request_currency_options_value.dart';import 'post_coupons_coupon_request_metadata.dart';@immutable final class PostCouponsCouponRequest {const PostCouponsCouponRequest({this.currencyOptions, this.expand, this.metadata, this.name, });
 
 factory PostCouponsCouponRequest.fromJson(Map<String, dynamic> json) { return PostCouponsCouponRequest(
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostCouponsCouponRequestCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),

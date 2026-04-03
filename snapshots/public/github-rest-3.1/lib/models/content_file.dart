@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'content_file_links.dart';final class ContentFileType {const ContentFileType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_file_links.dart';@immutable final class ContentFileType {const ContentFileType._(this.value);
 
 factory ContentFileType.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ContentFileType($value)'; } 
  }
 /// Content File
-final class ContentFile {const ContentFile({required this.type, required this.encoding, required this.size, required this.name, required this.path, required this.content, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, this.target, this.submoduleGitUrl, });
+@immutable final class ContentFile {const ContentFile({required this.type, required this.encoding, required this.size, required this.name, required this.path, required this.content, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, this.target, this.submoduleGitUrl, });
 
 factory ContentFile.fromJson(Map<String, dynamic> json) { return ContentFile(
   type: ContentFileType.fromJson(json['type'] as String),

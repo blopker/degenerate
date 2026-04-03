@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to create the API key.
-final class AuditLogKeyCreatedData {const AuditLogKeyCreatedData({this.scopes});
+@immutable final class AuditLogKeyCreatedData {const AuditLogKeyCreatedData({this.scopes});
 
 factory AuditLogKeyCreatedData.fromJson(Map<String, dynamic> json) { return AuditLogKeyCreatedData(
   scopes: (json['scopes'] as List<dynamic>?)?.map((e) => e as String).toList(),

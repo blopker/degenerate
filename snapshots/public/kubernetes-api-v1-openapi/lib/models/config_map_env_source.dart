@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ConfigMapEnvSource selects a ConfigMap to populate the environment variables with.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ConfigMapEnvSource selects a ConfigMap to populate the environment variables with.
 /// 
 /// The contents of the target ConfigMap's Data field will represent the key-value pairs as environment variables.
-final class ConfigMapEnvSource {const ConfigMapEnvSource({this.name = '', this.optional, });
+@immutable final class ConfigMapEnvSource {const ConfigMapEnvSource({this.name = '', this.optional, });
 
 factory ConfigMapEnvSource.fromJson(Map<String, dynamic> json) { return ConfigMapEnvSource(
   name: json.containsKey('name') ? json['name'] as String : '',

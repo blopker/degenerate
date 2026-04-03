@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_review_dismissed_review_links.dart';import 'webhook_pull_request_review_dismissed_review_user.dart';/// How the author is associated with the repository.
-final class WebhookPullRequestReviewDismissedReviewAuthorAssociation {const WebhookPullRequestReviewDismissedReviewAuthorAssociation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_dismissed_review_links.dart';import 'webhook_pull_request_review_dismissed_review_user.dart';/// How the author is associated with the repository.
+@immutable final class WebhookPullRequestReviewDismissedReviewAuthorAssociation {const WebhookPullRequestReviewDismissedReviewAuthorAssociation._(this.value);
 
 factory WebhookPullRequestReviewDismissedReviewAuthorAssociation.fromJson(String json) { return switch (json) {
   'COLLABORATOR' => collaborator,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewDismissedReviewAuthorAssociation($value)'; } 
  }
-final class WebhookPullRequestReviewDismissedReviewState {const WebhookPullRequestReviewDismissedReviewState._(this.value);
+@immutable final class WebhookPullRequestReviewDismissedReviewState {const WebhookPullRequestReviewDismissedReviewState._(this.value);
 
 factory WebhookPullRequestReviewDismissedReviewState.fromJson(String json) { return switch (json) {
   'dismissed' => dismissed,
@@ -71,7 +71,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewDismissedReviewState($value)'; } 
  }
 /// The review that was affected.
-final class WebhookPullRequestReviewDismissedReview {const WebhookPullRequestReviewDismissedReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, this.updatedAt, required this.user, });
+@immutable final class WebhookPullRequestReviewDismissedReview {const WebhookPullRequestReviewDismissedReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, required this.user, this.updatedAt, });
 
 factory WebhookPullRequestReviewDismissedReview.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewDismissedReview(
   links: WebhookPullRequestReviewDismissedReviewLinks.fromJson(json['_links'] as Map<String, dynamic>),

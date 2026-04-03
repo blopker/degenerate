@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'public_ip_etag.dart';final class PublicIpIpsJdcloud {const PublicIpIpsJdcloud({this.etag, this.ipv4Cidrs, this.ipv6Cidrs, this.jdcloudCidrs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'public_ip_etag.dart';@immutable final class PublicIpIpsJdcloud {const PublicIpIpsJdcloud({this.etag, this.ipv4Cidrs, this.ipv6Cidrs, this.jdcloudCidrs, });
 
 factory PublicIpIpsJdcloud.fromJson(Map<String, dynamic> json) { return PublicIpIpsJdcloud(
   etag: json['etag'] != null ? PublicIpEtag.fromJson(json['etag'] as String) : null,

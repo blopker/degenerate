@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_telemetry_eventworkers_variant2_diagnostics_channel_events.dart';import 'workers_observability_telemetry_eventworkers_variant2_script_version.dart';final class WorkersObservabilityTelemetryEvent$workersVariant2EventType {const WorkersObservabilityTelemetryEvent$workersVariant2EventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_telemetry_eventworkers_variant2_diagnostics_channel_events.dart';import 'workers_observability_telemetry_eventworkers_variant2_script_version.dart';@immutable final class WorkersObservabilityTelemetryEvent$workersVariant2EventType {const WorkersObservabilityTelemetryEvent$workersVariant2EventType._(this.value);
 
 factory WorkersObservabilityTelemetryEvent$workersVariant2EventType.fromJson(String json) { return switch (json) {
   'fetch' => fetch,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersObservabilityTelemetryEvent\$workersVariant2EventType($value)'; } 
  }
-final class WorkersObservabilityTelemetryEvent$workersVariant2ExecutionModel {const WorkersObservabilityTelemetryEvent$workersVariant2ExecutionModel._(this.value);
+@immutable final class WorkersObservabilityTelemetryEvent$workersVariant2ExecutionModel {const WorkersObservabilityTelemetryEvent$workersVariant2ExecutionModel._(this.value);
 
 factory WorkersObservabilityTelemetryEvent$workersVariant2ExecutionModel.fromJson(String json) { return switch (json) {
   'durableObject' => durableObject,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersObservabilityTelemetryEvent\$workersVariant2ExecutionModel($value)'; } 
  }
-final class WorkersObservabilityTelemetryEvent$workersVariant2 {const WorkersObservabilityTelemetryEvent$workersVariant2({required this.cpuTimeMs, this.diagnosticsChannelEvents, this.dispatchNamespace, this.durableObjectId, this.entrypoint, this.event, required this.eventType, this.executionModel, required this.outcome, required this.requestId, required this.scriptName, this.scriptVersion, this.truncated, required this.wallTimeMs, });
+@immutable final class WorkersObservabilityTelemetryEvent$workersVariant2 {const WorkersObservabilityTelemetryEvent$workersVariant2({required this.cpuTimeMs, required this.eventType, required this.outcome, required this.requestId, required this.scriptName, required this.wallTimeMs, this.diagnosticsChannelEvents, this.dispatchNamespace, this.durableObjectId, this.entrypoint, this.event, this.executionModel, this.scriptVersion, this.truncated, });
 
 factory WorkersObservabilityTelemetryEvent$workersVariant2.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent$workersVariant2(
   cpuTimeMs: (json['cpuTimeMs'] as num).toDouble(),
@@ -80,7 +80,7 @@ factory WorkersObservabilityTelemetryEvent$workersVariant2.fromJson(Map<String, 
   dispatchNamespace: json['dispatchNamespace'] as String?,
   durableObjectId: json['durableObjectId'] as String?,
   entrypoint: json['entrypoint'] as String?,
-  event: (json['event'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  event: json['event'] as Map<String, dynamic>?,
   eventType: WorkersObservabilityTelemetryEvent$workersVariant2EventType.fromJson(json['eventType'] as String),
   executionModel: json['executionModel'] != null ? WorkersObservabilityTelemetryEvent$workersVariant2ExecutionModel.fromJson(json['executionModel'] as String) : null,
   outcome: json['outcome'] as String,

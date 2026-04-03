@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscriptions_resource_payment_method_options.dart';final class SubscriptionsResourcePaymentSettingsPaymentMethodTypes {const SubscriptionsResourcePaymentSettingsPaymentMethodTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscriptions_resource_payment_method_options.dart';@immutable final class SubscriptionsResourcePaymentSettingsPaymentMethodTypes {const SubscriptionsResourcePaymentSettingsPaymentMethodTypes._(this.value);
 
 factory SubscriptionsResourcePaymentSettingsPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
@@ -145,7 +145,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionsResourcePaymentSettingsPaymentMethodTypes($value)'; } 
  }
 /// Configure whether Stripe updates `subscription.default_payment_method` when payment succeeds. Defaults to `off`.
-final class SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod {const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod._(this.value);
+@immutable final class SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod {const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod._(this.value);
 
 factory SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -170,7 +170,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod($value)'; } 
  }
 /// 
-final class SubscriptionsResourcePaymentSettings {const SubscriptionsResourcePaymentSettings({this.paymentMethodOptions, this.paymentMethodTypes, this.saveDefaultPaymentMethod, });
+@immutable final class SubscriptionsResourcePaymentSettings {const SubscriptionsResourcePaymentSettings({this.paymentMethodOptions, this.paymentMethodTypes, this.saveDefaultPaymentMethod, });
 
 factory SubscriptionsResourcePaymentSettings.fromJson(Map<String, dynamic> json) { return SubscriptionsResourcePaymentSettings(
   paymentMethodOptions: json['payment_method_options'] != null ? SubscriptionsResourcePaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,

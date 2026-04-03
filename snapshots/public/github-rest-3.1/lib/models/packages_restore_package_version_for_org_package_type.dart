@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PackagesRestorePackageVersionForOrgPackageType {const PackagesRestorePackageVersionForOrgPackageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesRestorePackageVersionForOrgPackageType {const PackagesRestorePackageVersionForOrgPackageType._(this.value);
 
 factory PackagesRestorePackageVersionForOrgPackageType.fromJson(String json) { return switch (json) {
   'npm' => npm,

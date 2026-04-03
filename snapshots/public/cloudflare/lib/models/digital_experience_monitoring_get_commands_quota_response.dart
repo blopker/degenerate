@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringGetCommandsQuotaResponse {const DigitalExperienceMonitoringGetCommandsQuotaResponse({required this.quota, required this.quotaUsage, required this.resetTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringGetCommandsQuotaResponse {const DigitalExperienceMonitoringGetCommandsQuotaResponse({required this.quota, required this.quotaUsage, required this.resetTime, });
 
 factory DigitalExperienceMonitoringGetCommandsQuotaResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringGetCommandsQuotaResponse(
   quota: (json['quota'] as num).toDouble(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_identifier.dart';final class MagicRouteDeleteId {const MagicRouteDeleteId({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_identifier.dart';@immutable final class MagicRouteDeleteId {const MagicRouteDeleteId({required this.id});
 
 factory MagicRouteDeleteId.fromJson(Map<String, dynamic> json) { return MagicRouteDeleteId(
   id: MagicIdentifier.fromJson(json['id'] as String),

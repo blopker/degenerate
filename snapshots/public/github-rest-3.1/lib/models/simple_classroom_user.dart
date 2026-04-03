@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A GitHub user simplified for Classroom.
-final class SimpleClassroomUser {const SimpleClassroomUser({required this.id, required this.login, required this.avatarUrl, required this.htmlUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub user simplified for Classroom.
+@immutable final class SimpleClassroomUser {const SimpleClassroomUser({required this.id, required this.login, required this.avatarUrl, required this.htmlUrl, });
 
 factory SimpleClassroomUser.fromJson(Map<String, dynamic> json) { return SimpleClassroomUser(
   id: (json['id'] as num).toInt(),

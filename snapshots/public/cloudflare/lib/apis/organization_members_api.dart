@@ -17,7 +17,7 @@ Future<ApiResult<List<Member>, Never>> membersList({required OrganizationId orga
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
 for (final item in status) {
-  queryParametersList.add(ApiQueryParameter(name: 'status', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'status', value: item.toJson()));
 }
 }
 if (userEmail != null) {

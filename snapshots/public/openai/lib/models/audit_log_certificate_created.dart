@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The details for events with this `type`.
-final class AuditLogCertificateCreated {const AuditLogCertificateCreated({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
+@immutable final class AuditLogCertificateCreated {const AuditLogCertificateCreated({this.id, this.name, });
 
 factory AuditLogCertificateCreated.fromJson(Map<String, dynamic> json) { return AuditLogCertificateCreated(
   id: json['id'] as String?,

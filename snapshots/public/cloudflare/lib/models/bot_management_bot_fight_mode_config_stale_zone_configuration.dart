@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bot_management_optimize_wordpress_turned_on.dart';import 'bot_management_sbfm_definitely_automated_turned_on.dart';import 'bot_management_sbfm_likely_automated_turned_on.dart';import 'bot_management_sbfm_static_resource_protection_turned_on.dart';import 'bot_management_sbfm_verified_bots_turned_on.dart';/// Indicates that the zone's session score tracking is disabled.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_optimize_wordpress_turned_on.dart';import 'bot_management_sbfm_definitely_automated_turned_on.dart';import 'bot_management_sbfm_likely_automated_turned_on.dart';import 'bot_management_sbfm_static_resource_protection_turned_on.dart';import 'bot_management_sbfm_verified_bots_turned_on.dart';/// Indicates that the zone's session score tracking is disabled.
 extension type const BotManagementSuppressSessionScoreTurnedOff(bool value) {
 factory BotManagementSuppressSessionScoreTurnedOff.fromJson(bool json) => BotManagementSuppressSessionScoreTurnedOff(json);
 
@@ -8,7 +8,7 @@ bool toJson() => value;
 
 }
 /// A read-only field that shows which unauthorized settings are currently active on the zone. These settings typically result from upgrades or downgrades.
-final class BotManagementBotFightModeConfigStaleZoneConfiguration {const BotManagementBotFightModeConfigStaleZoneConfiguration({this.optimizeWordpress, this.sbfmDefinitelyAutomated, this.sbfmLikelyAutomated, this.sbfmStaticResourceProtection, this.sbfmVerifiedBots, this.suppressSessionScore, });
+@immutable final class BotManagementBotFightModeConfigStaleZoneConfiguration {const BotManagementBotFightModeConfigStaleZoneConfiguration({this.optimizeWordpress, this.sbfmDefinitelyAutomated, this.sbfmLikelyAutomated, this.sbfmStaticResourceProtection, this.sbfmVerifiedBots, this.suppressSessionScore, });
 
 factory BotManagementBotFightModeConfigStaleZoneConfiguration.fromJson(Map<String, dynamic> json) { return BotManagementBotFightModeConfigStaleZoneConfiguration(
   optimizeWordpress: json['optimize_wordpress'] != null ? BotManagementOptimizeWordpressTurnedOn.fromJson(json['optimize_wordpress'] as bool) : null,

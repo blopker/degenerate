@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the direction used to sort returned rules.
-final class IpAccessRulesForAnAccountListIpAccessRulesDirection {const IpAccessRulesForAnAccountListIpAccessRulesDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the direction used to sort returned rules.
+@immutable final class IpAccessRulesForAnAccountListIpAccessRulesDirection {const IpAccessRulesForAnAccountListIpAccessRulesDirection._(this.value);
 
 factory IpAccessRulesForAnAccountListIpAccessRulesDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

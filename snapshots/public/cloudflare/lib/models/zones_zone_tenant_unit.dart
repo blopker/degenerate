@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_identifier.dart';/// The immediate parent organizational unit that this zone belongs to (such as under a tenant or sub-organization).
-final class ZonesZoneTenantUnit {const ZonesZoneTenantUnit({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_identifier.dart';/// The immediate parent organizational unit that this zone belongs to (such as under a tenant or sub-organization).
+@immutable final class ZonesZoneTenantUnit {const ZonesZoneTenantUnit({this.id});
 
 factory ZonesZoneTenantUnit.fromJson(Map<String, dynamic> json) { return ZonesZoneTenantUnit(
   id: json['id'] != null ? ZonesIdentifier.fromJson(json['id'] as String) : null,

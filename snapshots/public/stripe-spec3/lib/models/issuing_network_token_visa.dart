@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingNetworkTokenVisa {const IssuingNetworkTokenVisa({required this.cardReferenceId, required this.tokenReferenceId, required this.tokenRequestorId, this.tokenRiskScore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingNetworkTokenVisa {const IssuingNetworkTokenVisa({required this.cardReferenceId, required this.tokenReferenceId, required this.tokenRequestorId, this.tokenRiskScore, });
 
 factory IssuingNetworkTokenVisa.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenVisa(
   cardReferenceId: json['card_reference_id'] as String,

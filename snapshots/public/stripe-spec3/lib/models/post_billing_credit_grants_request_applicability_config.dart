@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_billing_credit_grants_request_applicability_config_scope.dart';/// Configuration specifying what this credit grant applies to. We currently only support `metered` prices that have a [Billing Meter](https://docs.stripe.com/api/billing/meter) attached to them.
-final class PostBillingCreditGrantsRequestApplicabilityConfig {const PostBillingCreditGrantsRequestApplicabilityConfig({required this.scope});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_credit_grants_request_applicability_config_scope.dart';/// Configuration specifying what this credit grant applies to. We currently only support `metered` prices that have a [Billing Meter](https://docs.stripe.com/api/billing/meter) attached to them.
+@immutable final class PostBillingCreditGrantsRequestApplicabilityConfig {const PostBillingCreditGrantsRequestApplicabilityConfig({required this.scope});
 
 factory PostBillingCreditGrantsRequestApplicabilityConfig.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsRequestApplicabilityConfig(
   scope: PostBillingCreditGrantsRequestApplicabilityConfigScope.fromJson(json['scope'] as Map<String, dynamic>),

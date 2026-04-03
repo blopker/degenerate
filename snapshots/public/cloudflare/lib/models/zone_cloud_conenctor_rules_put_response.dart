@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloud_connector_messages2.dart';import 'cloud_connector_rule.dart';final class ZoneCloudConenctorRulesPutResponse {const ZoneCloudConenctorRulesPutResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloud_connector_messages2.dart';import 'cloud_connector_rule.dart';@immutable final class ZoneCloudConenctorRulesPutResponse {const ZoneCloudConenctorRulesPutResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ZoneCloudConenctorRulesPutResponse.fromJson(Map<String, dynamic> json) { return ZoneCloudConenctorRulesPutResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CloudConnectorMessages2.fromJson(e as Map<String, dynamic>)).toList(),

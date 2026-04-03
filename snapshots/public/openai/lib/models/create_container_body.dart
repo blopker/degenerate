@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_container_body_expires_after.dart';import 'create_container_body_network_policy.dart';import 'create_container_body_skills.dart';/// Optional memory limit for the container. Defaults to "1g".
-final class CreateContainerBodyMemoryLimit {const CreateContainerBodyMemoryLimit._(this.value);
+@immutable final class CreateContainerBodyMemoryLimit {const CreateContainerBodyMemoryLimit._(this.value);
 
 factory CreateContainerBodyMemoryLimit.fromJson(String json) { return switch (json) {
   '1g' => $1g,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateContainerBodyMemoryLimit($value)'; } 
  }
-final class CreateContainerBody {const CreateContainerBody({required this.name, this.fileIds, this.expiresAfter, this.skills, this.memoryLimit, this.networkPolicy, });
+@immutable final class CreateContainerBody {const CreateContainerBody({required this.name, this.fileIds, this.expiresAfter, this.skills, this.memoryLimit, this.networkPolicy, });
 
 factory CreateContainerBody.fromJson(Map<String, dynamic> json) { return CreateContainerBody(
   name: json['name'] as String,

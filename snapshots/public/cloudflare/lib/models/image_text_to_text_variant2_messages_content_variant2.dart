@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'image_text_to_text_variant2_messages_content_variant2_image_url.dart';final class ImageTextToTextVariant2MessagesContentVariant2 {const ImageTextToTextVariant2MessagesContentVariant2({this.imageUrl, this.text, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_text_to_text_variant2_messages_content_variant2_image_url.dart';@immutable final class ImageTextToTextVariant2MessagesContentVariant2 {const ImageTextToTextVariant2MessagesContentVariant2({required this.type, this.imageUrl, this.text, });
 
 factory ImageTextToTextVariant2MessagesContentVariant2.fromJson(Map<String, dynamic> json) { return ImageTextToTextVariant2MessagesContentVariant2(
   imageUrl: json['image_url'] != null ? ImageTextToTextVariant2MessagesContentVariant2ImageUrl.fromJson(json['image_url'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CommitSearchResultItemParents {const CommitSearchResultItemParents({this.url, this.htmlUrl, this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CommitSearchResultItemParents {const CommitSearchResultItemParents({this.url, this.htmlUrl, this.sha, });
 
 factory CommitSearchResultItemParents.fromJson(Map<String, dynamic> json) { return CommitSearchResultItemParents(
   url: json['url'] as String?,

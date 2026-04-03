@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_marketplace_purchase_changed_previous_marketplace_purchase.dart';import 'webhooks_marketplace_purchase.dart';final class WebhookMarketplacePurchaseChangedAction {const WebhookMarketplacePurchaseChangedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_marketplace_purchase_changed_previous_marketplace_purchase.dart';import 'webhooks_marketplace_purchase.dart';@immutable final class WebhookMarketplacePurchaseChangedAction {const WebhookMarketplacePurchaseChangedAction._(this.value);
 
 factory WebhookMarketplacePurchaseChangedAction.fromJson(String json) { return switch (json) {
   'changed' => changed,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMarketplacePurchaseChangedAction($value)'; } 
  }
-final class WebhookMarketplacePurchaseChanged {const WebhookMarketplacePurchaseChanged({required this.action, required this.effectiveDate, this.enterprise, this.installation, required this.marketplacePurchase, this.organization, this.previousMarketplacePurchase, this.repository, required this.sender, });
+@immutable final class WebhookMarketplacePurchaseChanged {const WebhookMarketplacePurchaseChanged({required this.action, required this.effectiveDate, required this.marketplacePurchase, required this.sender, this.enterprise, this.installation, this.organization, this.previousMarketplacePurchase, this.repository, });
 
 factory WebhookMarketplacePurchaseChanged.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchaseChanged(
   action: WebhookMarketplacePurchaseChangedAction.fromJson(json['action'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CreateImageEditRequestModelVariant2 {const CreateImageEditRequestModelVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateImageEditRequestModelVariant2 {const CreateImageEditRequestModelVariant2._(this.value);
 
 factory CreateImageEditRequestModelVariant2.fromJson(String json) { return switch (json) {
   'gpt-image-1.5' => gptImage15,

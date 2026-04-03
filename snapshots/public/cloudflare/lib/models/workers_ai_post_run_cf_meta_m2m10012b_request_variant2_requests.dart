@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests {const WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests({this.sourceLang = 'en', required this.targetLang, required this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests {const WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests({required this.targetLang, required this.text, this.sourceLang = 'en', });
 
 factory WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests(
   sourceLang: json.containsKey('source_lang') ? json['source_lang'] as String : 'en',

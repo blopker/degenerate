@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request {const WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request({required this.text});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request {const WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request({required this.text});
 
 factory WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request(
   text: json['text'] as String,

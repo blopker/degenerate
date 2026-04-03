@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiListFinetunesResponseResult {const WorkersAiListFinetunesResponseResult({required this.createdAt, this.description, required this.id, required this.model, required this.modifiedAt, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiListFinetunesResponseResult {const WorkersAiListFinetunesResponseResult({required this.createdAt, required this.id, required this.model, required this.modifiedAt, required this.name, this.description, });
 
 factory WorkersAiListFinetunesResponseResult.fromJson(Map<String, dynamic> json) { return WorkersAiListFinetunesResponseResult(
   createdAt: DateTime.parse(json['created_at'] as String),

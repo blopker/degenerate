@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelSinkholesMessages2Source {const IntelSinkholesMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelSinkholesMessages2Source {const IntelSinkholesMessages2Source({this.pointer});
 
 factory IntelSinkholesMessages2Source.fromJson(Map<String, dynamic> json) { return IntelSinkholesMessages2Source(
   pointer: json['pointer'] as String?,

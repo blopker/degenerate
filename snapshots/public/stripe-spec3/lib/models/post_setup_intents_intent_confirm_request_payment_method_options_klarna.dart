@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_on_demand.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_subscriptions.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_subscriptions_variant1.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_on_demand.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_subscriptions.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_subscriptions_variant1.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale.fromJson(String json) { return switch (json) {
   'cs-CZ' => csCz,
@@ -156,7 +156,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna({this.currency, this.onDemand, this.preferredLocale, this.subscriptions, });
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna({this.currency, this.onDemand, this.preferredLocale, this.subscriptions, });
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna(
   currency: json['currency'] as String?,

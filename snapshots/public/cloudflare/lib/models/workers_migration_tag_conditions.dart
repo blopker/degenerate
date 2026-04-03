@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersMigrationTagConditions {const WorkersMigrationTagConditions({this.newTag, this.oldTag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersMigrationTagConditions {const WorkersMigrationTagConditions({this.newTag, this.oldTag, });
 
 factory WorkersMigrationTagConditions.fromJson(Map<String, dynamic> json) { return WorkersMigrationTagConditions(
   newTag: json['new_tag'] as String?,

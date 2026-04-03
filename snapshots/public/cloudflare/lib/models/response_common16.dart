@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_indicator_feeds_schemas_messages2.dart';final class ResponseCommon16 {const ResponseCommon16({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_indicator_feeds_schemas_messages2.dart';@immutable final class ResponseCommon16 {const ResponseCommon16({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon16.fromJson(Map<String, dynamic> json) { return ResponseCommon16(
   errors: (json['errors'] as List<dynamic>).map((e) => CustomIndicatorFeedsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),

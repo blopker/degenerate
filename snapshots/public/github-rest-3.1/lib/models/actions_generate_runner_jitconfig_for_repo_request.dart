@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ActionsGenerateRunnerJitconfigForRepoRequest {const ActionsGenerateRunnerJitconfigForRepoRequest({required this.name, required this.runnerGroupId, required this.labels, this.workFolder = '_work', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGenerateRunnerJitconfigForRepoRequest {const ActionsGenerateRunnerJitconfigForRepoRequest({required this.name, required this.runnerGroupId, required this.labels, this.workFolder = '_work', });
 
 factory ActionsGenerateRunnerJitconfigForRepoRequest.fromJson(Map<String, dynamic> json) { return ActionsGenerateRunnerJitconfigForRepoRequest(
   name: json['name'] as String,

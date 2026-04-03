@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DependabotListAlertsForRepoHasVariant2 {const DependabotListAlertsForRepoHasVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotListAlertsForRepoHasVariant2 {const DependabotListAlertsForRepoHasVariant2._(this.value);
 
 factory DependabotListAlertsForRepoHasVariant2.fromJson(String json) { return switch (json) {
   'patch' => patch,

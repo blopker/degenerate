@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'deleted_customer.dart';import 'promotion_code_customer.dart';import 'promotion_codes_resource_promotion.dart';import 'promotion_codes_resource_restrictions.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class PromotionCodeObject {const PromotionCodeObject._(this.value);
+@immutable final class PromotionCodeObject {const PromotionCodeObject._(this.value);
 
 factory PromotionCodeObject.fromJson(String json) { return switch (json) {
   'promotion_code' => promotionCode,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// If you enable promotion codes in your [customer portal configuration](https://docs.stripe.com/customer-management/configure-portal), then customers can redeem a code themselves when updating a subscription in the portal.
 /// Customers can also view the currently active promotion codes and coupons on each of their subscriptions in the portal.
-final class PromotionCode {const PromotionCode({required this.active, required this.code, required this.created, this.customer, this.customerAccount, this.expiresAt, required this.id, required this.livemode, this.maxRedemptions, this.metadata, required this.object, required this.promotion, required this.restrictions, required this.timesRedeemed, });
+@immutable final class PromotionCode {const PromotionCode({required this.active, required this.code, required this.created, required this.id, required this.livemode, required this.object, required this.promotion, required this.restrictions, required this.timesRedeemed, this.customer, this.customerAccount, this.expiresAt, this.maxRedemptions, this.metadata, });
 
 factory PromotionCode.fromJson(Map<String, dynamic> json) { return PromotionCode(
   active: json['active'] as bool,

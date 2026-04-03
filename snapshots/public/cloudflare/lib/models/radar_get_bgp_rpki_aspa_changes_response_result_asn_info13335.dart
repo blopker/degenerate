@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpRpkiAspaChangesResponseResultAsnInfo13335 {const RadarGetBgpRpkiAspaChangesResponseResultAsnInfo13335({required this.asn, required this.country, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRpkiAspaChangesResponseResultAsnInfo13335 {const RadarGetBgpRpkiAspaChangesResponseResultAsnInfo13335({required this.asn, required this.country, required this.name, });
 
 factory RadarGetBgpRpkiAspaChangesResponseResultAsnInfo13335.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaChangesResponseResultAsnInfo13335(
   asn: (json['asn'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SchemaValidationDeleteSchemaResponseResult {const SchemaValidationDeleteSchemaResponseResult({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SchemaValidationDeleteSchemaResponseResult {const SchemaValidationDeleteSchemaResponseResult({required this.id});
 
 factory SchemaValidationDeleteSchemaResponseResult.fromJson(Map<String, dynamic> json) { return SchemaValidationDeleteSchemaResponseResult(
   id: json['id'] as String,

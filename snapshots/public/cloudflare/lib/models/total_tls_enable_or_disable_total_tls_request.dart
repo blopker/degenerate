@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_components_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_components_schemas_enabled.dart';final class TotalTlsEnableOrDisableTotalTlsRequest {const TotalTlsEnableOrDisableTotalTlsRequest({this.certificateAuthority, required this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_components_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_components_schemas_enabled.dart';@immutable final class TotalTlsEnableOrDisableTotalTlsRequest {const TotalTlsEnableOrDisableTotalTlsRequest({required this.enabled, this.certificateAuthority, });
 
 factory TotalTlsEnableOrDisableTotalTlsRequest.fromJson(Map<String, dynamic> json) { return TotalTlsEnableOrDisableTotalTlsRequest(
   certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority.fromJson(json['certificate_authority'] as String) : null,

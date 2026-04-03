@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Place of supply scheme used in an EU standard registration.
-final class TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme {const TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Place of supply scheme used in an EU standard registration.
+@immutable final class TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme {const TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme._(this.value);
 
 factory TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme.fromJson(String json) { return switch (json) {
   'inbound_goods' => inboundGoods,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme($value)'; } 
  }
 /// 
-final class TaxProductRegistrationsResourceCountryOptionsEuStandard {const TaxProductRegistrationsResourceCountryOptionsEuStandard({required this.placeOfSupplyScheme});
+@immutable final class TaxProductRegistrationsResourceCountryOptionsEuStandard {const TaxProductRegistrationsResourceCountryOptionsEuStandard({required this.placeOfSupplyScheme});
 
 factory TaxProductRegistrationsResourceCountryOptionsEuStandard.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsEuStandard(
   placeOfSupplyScheme: TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme.fromJson(json['place_of_supply_scheme'] as String),

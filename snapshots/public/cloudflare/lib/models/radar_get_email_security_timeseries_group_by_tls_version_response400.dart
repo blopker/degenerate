@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_tls_version_response400_errors.dart';final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponse400 {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_tls_version_response400_errors.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponse400 {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponse400.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

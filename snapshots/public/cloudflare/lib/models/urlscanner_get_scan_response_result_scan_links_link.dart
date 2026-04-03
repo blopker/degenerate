@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponseResultScanLinksLink {const UrlscannerGetScanResponseResultScanLinksLink({required this.href, required this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanLinksLink {const UrlscannerGetScanResponseResultScanLinksLink({required this.href, required this.text, });
 
 factory UrlscannerGetScanResponseResultScanLinksLink.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanLinksLink(
   href: json['href'] as String,

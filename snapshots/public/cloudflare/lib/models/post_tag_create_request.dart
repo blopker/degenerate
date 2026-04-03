@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTagCreateRequest {const PostTagCreateRequest({this.activeDuration, this.actorCategory, this.aliasGroupNames, this.aliasGroupNamesInternal, this.analyticPriority, this.attributionConfidence, this.attributionOrganization, this.categoryUuid, this.externalReferenceLinks, this.internalDescription, this.motive, this.opsecLevel, this.originCountryIso, this.priority, this.sophisticationLevel, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTagCreateRequest {const PostTagCreateRequest({required this.value, this.activeDuration, this.actorCategory, this.aliasGroupNames, this.aliasGroupNamesInternal, this.analyticPriority, this.attributionConfidence, this.attributionOrganization, this.categoryUuid, this.externalReferenceLinks, this.internalDescription, this.motive, this.opsecLevel, this.originCountryIso, this.priority, this.sophisticationLevel, });
 
 factory PostTagCreateRequest.fromJson(Map<String, dynamic> json) { return PostTagCreateRequest(
   activeDuration: json['activeDuration'] as String?,

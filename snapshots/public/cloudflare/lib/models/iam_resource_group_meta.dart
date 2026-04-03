@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Attributes associated to the resource group.
-final class IamResourceGroupMeta {const IamResourceGroupMeta({this.key, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Attributes associated to the resource group.
+@immutable final class IamResourceGroupMeta {const IamResourceGroupMeta({this.key, this.value, });
 
 factory IamResourceGroupMeta.fromJson(Map<String, dynamic> json) { return IamResourceGroupMeta(
   key: json['key'] as String?,

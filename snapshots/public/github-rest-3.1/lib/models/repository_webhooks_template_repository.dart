@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_w
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final class RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle {const RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(this.value);
+@immutable final class RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle {const RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle._(this.value);
 
 factory RepositoryWebhooksTemplateRepositorySquashMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `PR_BODY` - default to the pull request's body.
 /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
 /// - `BLANK` - default to a blank commit message.
-final class RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage {const RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(this.value);
+@immutable final class RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage {const RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage._(this.value);
 
 factory RepositoryWebhooksTemplateRepositorySquashMergeCommitMessage.fromJson(String json) { return switch (json) {
   'PR_BODY' => prBody,
@@ -64,7 +64,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final class RepositoryWebhooksTemplateRepositoryMergeCommitTitle {const RepositoryWebhooksTemplateRepositoryMergeCommitTitle._(this.value);
+@immutable final class RepositoryWebhooksTemplateRepositoryMergeCommitTitle {const RepositoryWebhooksTemplateRepositoryMergeCommitTitle._(this.value);
 
 factory RepositoryWebhooksTemplateRepositoryMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
@@ -93,7 +93,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `PR_BODY` - default to the pull request's body.
 /// - `BLANK` - default to a blank commit message.
-final class RepositoryWebhooksTemplateRepositoryMergeCommitMessage {const RepositoryWebhooksTemplateRepositoryMergeCommitMessage._(this.value);
+@immutable final class RepositoryWebhooksTemplateRepositoryMergeCommitMessage {const RepositoryWebhooksTemplateRepositoryMergeCommitMessage._(this.value);
 
 factory RepositoryWebhooksTemplateRepositoryMergeCommitMessage.fromJson(String json) { return switch (json) {
   'PR_BODY' => prBody,
@@ -120,7 +120,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RepositoryWebhooksTemplateRepositoryMergeCommitMessage($value)'; } 
  }
-final class RepositoryWebhooksTemplateRepository {const RepositoryWebhooksTemplateRepository({this.id, this.nodeId, this.name, this.fullName, this.owner, this.private, this.htmlUrl, this.description, this.fork, this.url, this.archiveUrl, this.assigneesUrl, this.blobsUrl, this.branchesUrl, this.collaboratorsUrl, this.commentsUrl, this.commitsUrl, this.compareUrl, this.contentsUrl, this.contributorsUrl, this.deploymentsUrl, this.downloadsUrl, this.eventsUrl, this.forksUrl, this.gitCommitsUrl, this.gitRefsUrl, this.gitTagsUrl, this.gitUrl, this.issueCommentUrl, this.issueEventsUrl, this.issuesUrl, this.keysUrl, this.labelsUrl, this.languagesUrl, this.mergesUrl, this.milestonesUrl, this.notificationsUrl, this.pullsUrl, this.releasesUrl, this.sshUrl, this.stargazersUrl, this.statusesUrl, this.subscribersUrl, this.subscriptionUrl, this.tagsUrl, this.teamsUrl, this.treesUrl, this.cloneUrl, this.mirrorUrl, this.hooksUrl, this.svnUrl, this.homepage, this.language, this.forksCount, this.stargazersCount, this.watchersCount, this.size, this.defaultBranch, this.openIssuesCount, this.isTemplate, this.topics, this.hasIssues, this.hasProjects, this.hasWiki, this.hasPages, this.hasDownloads, this.archived, this.disabled, this.visibility, this.pushedAt, this.createdAt, this.updatedAt, this.permissions, this.allowRebaseMerge, this.tempCloneToken, this.allowSquashMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowUpdateBranch, this.useSquashPrTitleAsDefault, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.allowMergeCommit, this.subscribersCount, this.networkCount, });
+@immutable final class RepositoryWebhooksTemplateRepository {const RepositoryWebhooksTemplateRepository({this.issueEventsUrl, this.nodeId, this.name, this.fullName, this.owner, this.private, this.htmlUrl, this.description, this.fork, this.url, this.archiveUrl, this.assigneesUrl, this.blobsUrl, this.branchesUrl, this.collaboratorsUrl, this.commentsUrl, this.commitsUrl, this.compareUrl, this.contentsUrl, this.contributorsUrl, this.deploymentsUrl, this.downloadsUrl, this.eventsUrl, this.forksUrl, this.gitCommitsUrl, this.gitRefsUrl, this.gitTagsUrl, this.gitUrl, this.issueCommentUrl, this.id, this.issuesUrl, this.keysUrl, this.labelsUrl, this.languagesUrl, this.mergesUrl, this.milestonesUrl, this.notificationsUrl, this.pullsUrl, this.releasesUrl, this.sshUrl, this.stargazersUrl, this.statusesUrl, this.subscribersUrl, this.subscriptionUrl, this.tagsUrl, this.teamsUrl, this.treesUrl, this.cloneUrl, this.mirrorUrl, this.hooksUrl, this.svnUrl, this.homepage, this.language, this.forksCount, this.stargazersCount, this.watchersCount, this.size, this.networkCount, this.openIssuesCount, this.isTemplate, this.topics, this.hasIssues, this.hasProjects, this.hasWiki, this.hasPages, this.hasDownloads, this.archived, this.disabled, this.visibility, this.pushedAt, this.createdAt, this.updatedAt, this.permissions, this.allowRebaseMerge, this.tempCloneToken, this.allowSquashMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowUpdateBranch, this.useSquashPrTitleAsDefault, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.allowMergeCommit, this.subscribersCount, this.defaultBranch, });
 
 factory RepositoryWebhooksTemplateRepository.fromJson(Map<String, dynamic> json) { return RepositoryWebhooksTemplateRepository(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

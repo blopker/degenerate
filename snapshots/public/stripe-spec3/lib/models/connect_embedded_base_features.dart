@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class ConnectEmbeddedBaseFeatures {const ConnectEmbeddedBaseFeatures();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class ConnectEmbeddedBaseFeatures {const ConnectEmbeddedBaseFeatures();
 
-factory ConnectEmbeddedBaseFeatures.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedBaseFeatures(
-
-); }
+factory ConnectEmbeddedBaseFeatures.fromJson(Map<String, dynamic> _) { return const ConnectEmbeddedBaseFeatures(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-ConnectEmbeddedBaseFeatures copyWith() { return ConnectEmbeddedBaseFeatures(
+ConnectEmbeddedBaseFeatures copyWith() { return const ConnectEmbeddedBaseFeatures(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is ConnectEmbeddedBaseFeatures; } 

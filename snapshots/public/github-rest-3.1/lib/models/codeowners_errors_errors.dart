@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodeownersErrorsErrors {const CodeownersErrorsErrors({required this.line, required this.column, this.source, required this.kind, this.suggestion, required this.message, required this.path, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeownersErrorsErrors {const CodeownersErrorsErrors({required this.line, required this.column, required this.kind, required this.message, required this.path, this.source, this.suggestion, });
 
 factory CodeownersErrorsErrors.fromJson(Map<String, dynamic> json) { return CodeownersErrorsErrors(
   line: (json['line'] as num).toInt(),

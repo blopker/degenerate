@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Contains response from activating an R2 bucket as a catalog.
-final class R2DataCatalogCatalogActivationResponse {const R2DataCatalogCatalogActivationResponse({required this.id, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains response from activating an R2 bucket as a catalog.
+@immutable final class R2DataCatalogCatalogActivationResponse {const R2DataCatalogCatalogActivationResponse({required this.id, required this.name, });
 
 factory R2DataCatalogCatalogActivationResponse.fromJson(Map<String, dynamic> json) { return R2DataCatalogCatalogActivationResponse(
   id: json['id'] as String,

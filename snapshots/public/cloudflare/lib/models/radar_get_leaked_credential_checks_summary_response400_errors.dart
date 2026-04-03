@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetLeakedCredentialChecksSummaryResponse400Errors {const RadarGetLeakedCredentialChecksSummaryResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksSummaryResponse400Errors {const RadarGetLeakedCredentialChecksSummaryResponse400Errors({required this.message});
 
 factory RadarGetLeakedCredentialChecksSummaryResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksSummaryResponse400Errors(
   message: json['message'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class EnterpriseTeamOrganizationsBulkRemoveRequest {const EnterpriseTeamOrganizationsBulkRemoveRequest({required this.organizationSlugs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnterpriseTeamOrganizationsBulkRemoveRequest {const EnterpriseTeamOrganizationsBulkRemoveRequest({required this.organizationSlugs});
 
 factory EnterpriseTeamOrganizationsBulkRemoveRequest.fromJson(Map<String, dynamic> json) { return EnterpriseTeamOrganizationsBulkRemoveRequest(
   organizationSlugs: (json['organization_slugs'] as List<dynamic>).map((e) => e as String).toList(),

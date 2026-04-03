@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A GitHub organization.
-final class SimpleClassroomOrganization {const SimpleClassroomOrganization({required this.id, required this.login, required this.nodeId, required this.htmlUrl, required this.name, required this.avatarUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub organization.
+@immutable final class SimpleClassroomOrganization {const SimpleClassroomOrganization({required this.id, required this.login, required this.nodeId, required this.htmlUrl, required this.name, required this.avatarUrl, });
 
 factory SimpleClassroomOrganization.fromJson(Map<String, dynamic> json) { return SimpleClassroomOrganization(
   id: (json['id'] as num).toInt(),

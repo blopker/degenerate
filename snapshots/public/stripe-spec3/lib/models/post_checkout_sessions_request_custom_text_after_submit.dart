@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_text_position_param.dart';final class PostCheckoutSessionsRequestCustomTextAfterSubmitVariant2 {const PostCheckoutSessionsRequestCustomTextAfterSubmitVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_text_position_param.dart';@immutable final class PostCheckoutSessionsRequestCustomTextAfterSubmitVariant2 {const PostCheckoutSessionsRequestCustomTextAfterSubmitVariant2._(this.value);
 
 factory PostCheckoutSessionsRequestCustomTextAfterSubmitVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

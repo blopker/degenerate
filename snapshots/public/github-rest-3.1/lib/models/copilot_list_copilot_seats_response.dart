@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_seat_details.dart';final class CopilotListCopilotSeatsResponse {const CopilotListCopilotSeatsResponse({this.totalSeats, this.seats, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_seat_details.dart';@immutable final class CopilotListCopilotSeatsResponse {const CopilotListCopilotSeatsResponse({this.totalSeats, this.seats, });
 
 factory CopilotListCopilotSeatsResponse.fromJson(Map<String, dynamic> json) { return CopilotListCopilotSeatsResponse(
   totalSeats: json['total_seats'] != null ? (json['total_seats'] as num).toInt() : null,

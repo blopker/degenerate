@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rule_suite_required_status_checks_checks_app.dart';final class RuleSuiteRequiredStatusChecksChecks {const RuleSuiteRequiredStatusChecksChecks({this.id, this.context, this.state, this.type, this.app, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rule_suite_required_status_checks_checks_app.dart';@immutable final class RuleSuiteRequiredStatusChecksChecks {const RuleSuiteRequiredStatusChecksChecks({this.id, this.context, this.state, this.type, this.app, });
 
 factory RuleSuiteRequiredStatusChecksChecks.fromJson(Map<String, dynamic> json) { return RuleSuiteRequiredStatusChecksChecks(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

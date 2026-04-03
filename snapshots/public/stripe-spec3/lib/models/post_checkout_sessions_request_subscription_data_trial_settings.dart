@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_subscription_data_trial_settings_end_behavior.dart';final class PostCheckoutSessionsRequestSubscriptionDataTrialSettings {const PostCheckoutSessionsRequestSubscriptionDataTrialSettings({required this.endBehavior});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_subscription_data_trial_settings_end_behavior.dart';@immutable final class PostCheckoutSessionsRequestSubscriptionDataTrialSettings {const PostCheckoutSessionsRequestSubscriptionDataTrialSettings({required this.endBehavior});
 
 factory PostCheckoutSessionsRequestSubscriptionDataTrialSettings.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionDataTrialSettings(
   endBehavior: PostCheckoutSessionsRequestSubscriptionDataTrialSettingsEndBehavior.fromJson(json['end_behavior'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.code_interpreter_call.completed`.
-final class ResponseCodeInterpreterCallCompletedEventType {const ResponseCodeInterpreterCallCompletedEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.code_interpreter_call.completed`.
+@immutable final class ResponseCodeInterpreterCallCompletedEventType {const ResponseCodeInterpreterCallCompletedEventType._(this.value);
 
 factory ResponseCodeInterpreterCallCompletedEventType.fromJson(String json) { return switch (json) {
   'response.code_interpreter_call.completed' => responseCodeInterpreterCallCompleted,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseCodeInterpreterCallCompletedEventType($value)'; } 
  }
 /// Emitted when the code interpreter call is completed.
-final class ResponseCodeInterpreterCallCompletedEvent {const ResponseCodeInterpreterCallCompletedEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
+@immutable final class ResponseCodeInterpreterCallCompletedEvent {const ResponseCodeInterpreterCallCompletedEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseCodeInterpreterCallCompletedEvent.fromJson(Map<String, dynamic> json) { return ResponseCodeInterpreterCallCompletedEvent(
   type: ResponseCodeInterpreterCallCompletedEventType.fromJson(json['type'] as String),

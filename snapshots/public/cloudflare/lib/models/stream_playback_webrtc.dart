@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The URL used to play live video over WebRTC.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The URL used to play live video over WebRTC.
 extension type const StreamPlaybackWebrtcUrl(String value) {
 factory StreamPlaybackWebrtcUrl.fromJson(String json) => StreamPlaybackWebrtcUrl(json);
 
@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// Details for playback from a live input using WebRTC.
-final class StreamPlaybackWebrtc {const StreamPlaybackWebrtc({this.url});
+@immutable final class StreamPlaybackWebrtc {const StreamPlaybackWebrtc({this.url});
 
 factory StreamPlaybackWebrtc.fromJson(Map<String, dynamic> json) { return StreamPlaybackWebrtc(
   url: json['url'] != null ? StreamPlaybackWebrtcUrl.fromJson(json['url'] as String) : null,

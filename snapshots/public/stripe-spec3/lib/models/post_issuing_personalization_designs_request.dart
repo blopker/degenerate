@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_personalization_designs_request_carrier_text.dart';import 'post_issuing_personalization_designs_request_preferences.dart';final class PostIssuingPersonalizationDesignsRequest {const PostIssuingPersonalizationDesignsRequest({this.cardLogo, this.carrierText, this.expand, this.lookupKey, this.metadata, this.name, required this.physicalBundle, this.preferences, this.transferLookupKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_personalization_designs_request_carrier_text.dart';import 'post_issuing_personalization_designs_request_preferences.dart';@immutable final class PostIssuingPersonalizationDesignsRequest {const PostIssuingPersonalizationDesignsRequest({required this.physicalBundle, this.cardLogo, this.carrierText, this.expand, this.lookupKey, this.metadata, this.name, this.preferences, this.transferLookupKey, });
 
 factory PostIssuingPersonalizationDesignsRequest.fromJson(Map<String, dynamic> json) { return PostIssuingPersonalizationDesignsRequest(
   cardLogo: json['card_logo'] as String?,

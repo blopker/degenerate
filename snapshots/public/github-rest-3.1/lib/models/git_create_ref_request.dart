@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GitCreateRefRequest {const GitCreateRefRequest({required this.ref, required this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitCreateRefRequest {const GitCreateRefRequest({required this.ref, required this.sha, });
 
 factory GitCreateRefRequest.fromJson(Map<String, dynamic> json) { return GitCreateRefRequest(
   ref: json['ref'] as String,

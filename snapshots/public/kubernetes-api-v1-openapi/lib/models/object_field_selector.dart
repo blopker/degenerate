@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ObjectFieldSelector selects an APIVersioned field of an object.
-final class ObjectFieldSelector {const ObjectFieldSelector({this.apiVersion, this.fieldPath = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ObjectFieldSelector selects an APIVersioned field of an object.
+@immutable final class ObjectFieldSelector {const ObjectFieldSelector({this.apiVersion, this.fieldPath = '', });
 
 factory ObjectFieldSelector.fromJson(Map<String, dynamic> json) { return ObjectFieldSelector(
   apiVersion: json['apiVersion'] as String?,

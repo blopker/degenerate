@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'protected_branch_pull_request_review_bypass_pull_request_allowances.dart';import 'protected_branch_pull_request_review_dismissal_restrictions.dart';/// Protected Branch Pull Request Review
-final class ProtectedBranchPullRequestReview {const ProtectedBranchPullRequestReview({this.url, this.dismissalRestrictions, this.bypassPullRequestAllowances, required this.dismissStaleReviews, required this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'protected_branch_pull_request_review_bypass_pull_request_allowances.dart';import 'protected_branch_pull_request_review_dismissal_restrictions.dart';/// Protected Branch Pull Request Review
+@immutable final class ProtectedBranchPullRequestReview {const ProtectedBranchPullRequestReview({required this.dismissStaleReviews, required this.requireCodeOwnerReviews, this.url, this.dismissalRestrictions, this.bypassPullRequestAllowances, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, });
 
 factory ProtectedBranchPullRequestReview.fromJson(Map<String, dynamic> json) { return ProtectedBranchPullRequestReview(
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,

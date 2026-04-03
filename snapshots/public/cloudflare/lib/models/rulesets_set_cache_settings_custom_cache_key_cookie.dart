@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which cookies to include in the cache key.
-final class RulesetsSetCacheSettingsCustomCacheKeyCookie {const RulesetsSetCacheSettingsCustomCacheKeyCookie({this.checkPresence, this.include, });
+@immutable final class RulesetsSetCacheSettingsCustomCacheKeyCookie {const RulesetsSetCacheSettingsCustomCacheKeyCookie({this.checkPresence, this.include, });
 
 factory RulesetsSetCacheSettingsCustomCacheKeyCookie.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCustomCacheKeyCookie(
   checkPresence: (json['check_presence'] as List<dynamic>?)?.map((e) => e as String).toList(),

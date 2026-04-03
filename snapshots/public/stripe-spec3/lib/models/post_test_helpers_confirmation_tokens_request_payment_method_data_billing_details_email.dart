@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2 {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2 {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2._(this.value);
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

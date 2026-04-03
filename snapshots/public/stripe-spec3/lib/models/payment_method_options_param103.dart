@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentMethodOptionsParam103AmountIncludesIof {const PaymentMethodOptionsParam103AmountIncludesIof._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam103AmountIncludesIof {const PaymentMethodOptionsParam103AmountIncludesIof._(this.value);
 
 factory PaymentMethodOptionsParam103AmountIncludesIof.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam103AmountIncludesIof($value)'; } 
  }
-final class PaymentMethodOptionsParam103SetupFutureUsage {const PaymentMethodOptionsParam103SetupFutureUsage._(this.value);
+@immutable final class PaymentMethodOptionsParam103SetupFutureUsage {const PaymentMethodOptionsParam103SetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsParam103SetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam103SetupFutureUsage($value)'; } 
  }
-final class PaymentMethodOptionsParam103 {const PaymentMethodOptionsParam103({this.amountIncludesIof, this.expiresAfterSeconds, this.expiresAt, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsParam103 {const PaymentMethodOptionsParam103({this.amountIncludesIof, this.expiresAfterSeconds, this.expiresAt, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam103.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam103(
   amountIncludesIof: json['amount_includes_iof'] != null ? PaymentMethodOptionsParam103AmountIncludesIof.fromJson(json['amount_includes_iof'] as String) : null,

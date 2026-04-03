@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates that the shell call exceeded its configured time limit.
-final class FunctionShellCallOutputTimeoutOutcomeParam {const FunctionShellCallOutputTimeoutOutcomeParam({this.type = 'timeout'});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates that the shell call exceeded its configured time limit.
+@immutable final class FunctionShellCallOutputTimeoutOutcomeParam {const FunctionShellCallOutputTimeoutOutcomeParam({this.type = 'timeout'});
 
 factory FunctionShellCallOutputTimeoutOutcomeParam.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputTimeoutOutcomeParam(
   type: json['type'] as String,

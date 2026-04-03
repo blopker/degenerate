@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.mcp_call.completed'.
-final class ResponseMcpCallCompletedEventType {const ResponseMcpCallCompletedEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.mcp_call.completed'.
+@immutable final class ResponseMcpCallCompletedEventType {const ResponseMcpCallCompletedEventType._(this.value);
 
 factory ResponseMcpCallCompletedEventType.fromJson(String json) { return switch (json) {
   'response.mcp_call.completed' => responseMcpCallCompleted,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when an MCP  tool call has completed successfully.
 /// 
-final class ResponseMcpCallCompletedEvent {const ResponseMcpCallCompletedEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, });
+@immutable final class ResponseMcpCallCompletedEvent {const ResponseMcpCallCompletedEvent({required this.type, required this.itemId, required this.outputIndex, required this.sequenceNumber, });
 
 factory ResponseMcpCallCompletedEvent.fromJson(Map<String, dynamic> json) { return ResponseMcpCallCompletedEvent(
   type: ResponseMcpCallCompletedEventType.fromJson(json['type'] as String),

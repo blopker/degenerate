@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_query_meta.dart';final class D1QueryResultResponse {const D1QueryResultResponse({this.meta, this.results, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_query_meta.dart';@immutable final class D1QueryResultResponse {const D1QueryResultResponse({this.meta, this.results, this.success, });
 
 factory D1QueryResultResponse.fromJson(Map<String, dynamic> json) { return D1QueryResultResponse(
   meta: json['meta'] != null ? D1QueryMeta.fromJson(json['meta'] as Map<String, dynamic>) : null,
-  results: (json['results'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  results: (json['results'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   success: json['success'] as bool?,
 ); }
 

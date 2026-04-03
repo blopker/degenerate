@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAlmaCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsAlmaCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAlmaCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsAlmaCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAlmaCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAlmaCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAlma {const PostCheckoutSessionsRequestPaymentMethodOptionsAlma({this.captureMethod});
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAlma {const PostCheckoutSessionsRequestPaymentMethodOptionsAlma({this.captureMethod});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAlma.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsAlma(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAlmaCaptureMethod.fromJson(json['capture_method'] as String) : null,

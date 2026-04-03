@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages54_functions.dart';import 'messages54_messages.dart';import 'messages54_response_format.dart';import 'messages54_tools.dart';import 'messages54_tools_variant1.dart';import 'messages54_tools_variant2.dart';final class Messages54 {const Messages54({this.frequencyPenalty, this.functions, this.maxTokens = 256, required this.messages, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.tools, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages54_functions.dart';import 'messages54_messages.dart';import 'messages54_response_format.dart';import 'messages54_tools.dart';import 'messages54_tools_variant1.dart';import 'messages54_tools_variant2.dart';@immutable final class Messages54 {const Messages54({required this.messages, this.frequencyPenalty, this.functions, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.tools, this.topK, this.topP, });
 
 factory Messages54.fromJson(Map<String, dynamic> json) { return Messages54(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,

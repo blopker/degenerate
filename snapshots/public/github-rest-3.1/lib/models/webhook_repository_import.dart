@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus._(this.value);
 
 factory WebhookRepositoryImportStatus.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookRepositoryImportStatus($value)'; } 
  }
-final class WebhookRepositoryImport {const WebhookRepositoryImport({this.enterprise, this.installation, this.organization, required this.repository, required this.sender, required this.status, });
+@immutable final class WebhookRepositoryImport {const WebhookRepositoryImport({required this.repository, required this.sender, required this.status, this.enterprise, this.installation, this.organization, });
 
 factory WebhookRepositoryImport.fromJson(Map<String, dynamic> json) { return WebhookRepositoryImport(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,

@@ -12,7 +12,7 @@ void main() {
         terminal: (_) async => ApiResponse(statusCode: 200, body: 'ok'),
       );
 
-      await chain(ApiRequest(method: 'GET', path: '/pets'));
+      await chain(const ApiRequest(method: 'GET', path: '/pets'));
 
       expect(logs.length, 2);
       expect(logs[0], contains('GET'));
@@ -30,7 +30,7 @@ void main() {
       );
 
       expect(
-        () => chain(ApiRequest(method: 'POST', path: '/pets')),
+        () => chain(const ApiRequest(method: 'POST', path: '/pets')),
         throwsException,
       );
 

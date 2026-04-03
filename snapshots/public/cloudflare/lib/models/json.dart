@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class JsonType {const JsonType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class JsonType {const JsonType._(this.value);
 
 factory JsonType.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'JsonType($value)'; } 
  }
-final class Json {const Json({required this.type});
+@immutable final class Json {const Json({required this.type});
 
 factory Json.fromJson(Map<String, dynamic> json) { return Json(
   type: JsonType.fromJson(json['type'] as String),

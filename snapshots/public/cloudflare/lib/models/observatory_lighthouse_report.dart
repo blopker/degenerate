@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'observatory_device_type.dart';import 'observatory_lighthouse_report_error.dart';/// The state of the Lighthouse report.
-final class ObservatoryLighthouseState {const ObservatoryLighthouseState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_device_type.dart';import 'observatory_lighthouse_report_error.dart';/// The state of the Lighthouse report.
+@immutable final class ObservatoryLighthouseState {const ObservatoryLighthouseState._(this.value);
 
 factory ObservatoryLighthouseState.fromJson(String json) { return switch (json) {
   'RUNNING' => running,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ObservatoryLighthouseState($value)'; } 
  }
 /// The Lighthouse report.
-final class ObservatoryLighthouseReport {const ObservatoryLighthouseReport({this.cls, this.deviceType, this.error, this.fcp, this.jsonReportUrl, this.lcp, this.performanceScore, this.si, this.state, this.tbt, this.ttfb, this.tti, });
+@immutable final class ObservatoryLighthouseReport {const ObservatoryLighthouseReport({this.cls, this.deviceType, this.error, this.fcp, this.jsonReportUrl, this.lcp, this.performanceScore, this.si, this.state, this.tbt, this.ttfb, this.tti, });
 
 factory ObservatoryLighthouseReport.fromJson(Map<String, dynamic> json) { return ObservatoryLighthouseReport(
   cls: json['cls'] != null ? (json['cls'] as num).toDouble() : null,

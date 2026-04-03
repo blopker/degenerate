@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LivestreamSessionDetailsResponseDataSessions {const LivestreamSessionDetailsResponseDataSessions({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime, this.livestreamId, this.startedTime, this.stoppedTime, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LivestreamSessionDetailsResponseDataSessions {const LivestreamSessionDetailsResponseDataSessions({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime, this.livestreamId, this.startedTime, this.stoppedTime, this.updatedAt, });
 
 factory LivestreamSessionDetailsResponseDataSessions.fromJson(Map<String, dynamic> json) { return LivestreamSessionDetailsResponseDataSessions(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

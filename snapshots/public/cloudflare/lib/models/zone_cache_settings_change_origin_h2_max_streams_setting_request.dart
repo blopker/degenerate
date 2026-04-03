@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_origin_h2_max_streams_value.dart';final class ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest {const ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest({required this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_origin_h2_max_streams_value.dart';@immutable final class ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest {const ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest({required this.value});
 
 factory ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest(
   value: CacheRulesOriginH2MaxStreamsValue.fromJson(json['value'] as num),

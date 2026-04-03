@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersPlacementTargetVariant2 {const WorkersPlacementTargetVariant2({required this.hostname});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersPlacementTargetVariant2 {const WorkersPlacementTargetVariant2({required this.hostname});
 
 factory WorkersPlacementTargetVariant2.fromJson(Map<String, dynamic> json) { return WorkersPlacementTargetVariant2(
   hostname: json['hostname'] as String,

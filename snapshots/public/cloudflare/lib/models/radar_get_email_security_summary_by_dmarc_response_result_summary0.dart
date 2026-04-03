@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecuritySummaryByDmarcResponseResultSummary0 {const RadarGetEmailSecuritySummaryByDmarcResponseResultSummary0({required this.fail, required this.none, required this.pass, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByDmarcResponseResultSummary0 {const RadarGetEmailSecuritySummaryByDmarcResponseResultSummary0({required this.fail, required this.none, required this.pass, });
 
 factory RadarGetEmailSecuritySummaryByDmarcResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryByDmarcResponseResultSummary0(
   fail: json['FAIL'] as String,

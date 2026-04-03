@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.
-final class VectorStoreExpirationAfterAnchor {const VectorStoreExpirationAfterAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.
+@immutable final class VectorStoreExpirationAfterAnchor {const VectorStoreExpirationAfterAnchor._(this.value);
 
 factory VectorStoreExpirationAfterAnchor.fromJson(String json) { return switch (json) {
   'last_active_at' => lastActiveAt,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VectorStoreExpirationAfterAnchor($value)'; } 
  }
 /// The expiration policy for a vector store.
-final class VectorStoreExpirationAfter {const VectorStoreExpirationAfter({required this.anchor, required this.days, });
+@immutable final class VectorStoreExpirationAfter {const VectorStoreExpirationAfter({required this.anchor, required this.days, });
 
 factory VectorStoreExpirationAfter.fromJson(Map<String, dynamic> json) { return VectorStoreExpirationAfter(
   anchor: VectorStoreExpirationAfterAnchor.fromJson(json['anchor'] as String),

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TurboRequestAudioVariant2 {const TurboRequestAudioVariant2({this.body, this.contentType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TurboRequestAudioVariant2 {const TurboRequestAudioVariant2({this.body, this.contentType, });
 
 factory TurboRequestAudioVariant2.fromJson(Map<String, dynamic> json) { return TurboRequestAudioVariant2(
-  body: (json['body'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  body: json['body'] as Map<String, dynamic>?,
   contentType: json['contentType'] as String?,
 ); }
 

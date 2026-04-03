@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_uuid.dart';final class MconnAdminDeviceCredential {const MconnAdminDeviceCredential({required this.deviceId, required this.id, required this.provisionedAt, required this.type, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_uuid.dart';@immutable final class MconnAdminDeviceCredential {const MconnAdminDeviceCredential({required this.deviceId, required this.id, required this.provisionedAt, required this.type, required this.value, });
 
 factory MconnAdminDeviceCredential.fromJson(Map<String, dynamic> json) { return MconnAdminDeviceCredential(
   deviceId: MconnUuid.fromJson(json['device_id'] as String),

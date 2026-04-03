@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PackagesListPackagesForUserVisibility {const PackagesListPackagesForUserVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesListPackagesForUserVisibility {const PackagesListPackagesForUserVisibility._(this.value);
 
 factory PackagesListPackagesForUserVisibility.fromJson(String json) { return switch (json) {
   'public' => public,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge_outcome_rule.dart';import 'rule.dart';/// An enumerated value providing a more detailed explanation on [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines).
-final class ChargeOutcomeAdviceCode {const ChargeOutcomeAdviceCode._(this.value);
+@immutable final class ChargeOutcomeAdviceCode {const ChargeOutcomeAdviceCode._(this.value);
 
 factory ChargeOutcomeAdviceCode.fromJson(String json) { return switch (json) {
   'confirm_card_data' => confirmCardData,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ChargeOutcomeAdviceCode($value)'; } 
  }
 /// 
-final class ChargeOutcome {const ChargeOutcome({this.adviceCode, this.networkAdviceCode, this.networkDeclineCode, this.networkStatus, this.reason, this.riskLevel, this.riskScore, this.rule, this.sellerMessage, required this.type, });
+@immutable final class ChargeOutcome {const ChargeOutcome({required this.type, this.adviceCode, this.networkAdviceCode, this.networkDeclineCode, this.networkStatus, this.reason, this.riskLevel, this.riskScore, this.rule, this.sellerMessage, });
 
 factory ChargeOutcome.fromJson(Map<String, dynamic> json) { return ChargeOutcome(
   adviceCode: json['advice_code'] != null ? ChargeOutcomeAdviceCode.fromJson(json['advice_code'] as String) : null,

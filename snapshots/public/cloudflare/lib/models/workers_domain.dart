@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_domain_identifier.dart';import 'workers_hostname.dart';import 'workers_schemas_environment.dart';import 'workers_schemas_service.dart';import 'workers_zone_identifier.dart';import 'workers_zone_name.dart';final class WorkersDomain {const WorkersDomain({this.environment, this.hostname, this.id, this.service, this.zoneId, this.zoneName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_domain_identifier.dart';import 'workers_hostname.dart';import 'workers_schemas_environment.dart';import 'workers_schemas_service.dart';import 'workers_zone_identifier.dart';import 'workers_zone_name.dart';@immutable final class WorkersDomain {const WorkersDomain({this.environment, this.hostname, this.id, this.service, this.zoneId, this.zoneName, });
 
 factory WorkersDomain.fromJson(Map<String, dynamic> json) { return WorkersDomain(
   environment: json['environment'] != null ? WorkersSchemasEnvironment.fromJson(json['environment'] as String) : null,

@@ -7,7 +7,7 @@ factory MagicTransitTarget.fromJson(String json) => MagicTransitTarget(json);
 String toJson() => value;
 
 }
-final class MagicTransitTargetResult {const MagicTransitTargetResult({this.colos, this.target, });
+@immutable final class MagicTransitTargetResult {const MagicTransitTargetResult({this.colos, this.target, });
 
 factory MagicTransitTargetResult.fromJson(Map<String, dynamic> json) { return MagicTransitTargetResult(
   colos: (json['colos'] as List<dynamic>?)?.map((e) => MagicTransitColoResult.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ModifyCertificateRequest {const ModifyCertificateRequest({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ModifyCertificateRequest {const ModifyCertificateRequest({required this.name});
 
 factory ModifyCertificateRequest.fromJson(Map<String, dynamic> json) { return ModifyCertificateRequest(
   name: json['name'] as String,

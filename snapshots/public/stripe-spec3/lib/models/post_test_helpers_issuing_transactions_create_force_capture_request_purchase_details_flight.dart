@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details_flight_segments.dart';final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight({this.departureAt, this.passengerName, this.refundable, this.segments, this.travelAgency, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_transactions_create_force_capture_request_purchase_details_flight_segments.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight({this.departureAt, this.passengerName, this.refundable, this.segments, this.travelAgency, });
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight(
   departureAt: json['departure_at'] != null ? (json['departure_at'] as num).toInt() : null,

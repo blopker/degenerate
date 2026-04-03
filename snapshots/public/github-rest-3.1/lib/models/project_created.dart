@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'organization_simple_webhooks.dart';import 'projects.dart';import 'simple_installation.dart';import 'simple_user.dart';final class ProjectCreatedAction {const ProjectCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_simple_webhooks.dart';import 'projects.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class ProjectCreatedAction {const ProjectCreatedAction._(this.value);
 
 factory ProjectCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectCreatedAction($value)'; } 
  }
 /// A project was created
-final class ProjectCreated {const ProjectCreated({required this.action, this.installation, required this.organization, required this.projectsV2, required this.sender, });
+@immutable final class ProjectCreated {const ProjectCreated({required this.action, required this.organization, required this.projectsV2, required this.sender, this.installation, });
 
 factory ProjectCreated.fromJson(Map<String, dynamic> json) { return ProjectCreated(
   action: ProjectCreatedAction.fromJson(json['action'] as String),

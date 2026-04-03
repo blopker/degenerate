@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_fallbackorigin.dart';final class TlsCertificatesAndHostnamesFallbackOriginResponse {const TlsCertificatesAndHostnamesFallbackOriginResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_fallbackorigin.dart';@immutable final class TlsCertificatesAndHostnamesFallbackOriginResponse {const TlsCertificatesAndHostnamesFallbackOriginResponse({this.result});
 
 factory TlsCertificatesAndHostnamesFallbackOriginResponse.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesFallbackOriginResponse(
   result: json['result'] != null ? TlsCertificatesAndHostnamesFallbackorigin.fromJson(json['result'] as Map<String, dynamic>) : null,

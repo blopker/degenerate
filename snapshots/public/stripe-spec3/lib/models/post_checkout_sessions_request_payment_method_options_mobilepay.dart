@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay {const PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay({this.captureMethod, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay {const PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay({this.captureMethod, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod.fromJson(json['capture_method'] as String) : null,

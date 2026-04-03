@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CodespacesUpdateForAuthenticatedUserRequest {const CodespacesUpdateForAuthenticatedUserRequest({this.machine, this.displayName, this.recentFolders, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesUpdateForAuthenticatedUserRequest {const CodespacesUpdateForAuthenticatedUserRequest({this.machine, this.displayName, this.recentFolders, });
 
 factory CodespacesUpdateForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesUpdateForAuthenticatedUserRequest(
   machine: json['machine'] as String?,

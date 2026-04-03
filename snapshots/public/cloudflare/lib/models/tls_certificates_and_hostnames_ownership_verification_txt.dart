@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// DNS Record type.
-final class TlsCertificatesAndHostnamesOwnershipVerificationTxtType {const TlsCertificatesAndHostnamesOwnershipVerificationTxtType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// DNS Record type.
+@immutable final class TlsCertificatesAndHostnamesOwnershipVerificationTxtType {const TlsCertificatesAndHostnamesOwnershipVerificationTxtType._(this.value);
 
 factory TlsCertificatesAndHostnamesOwnershipVerificationTxtType.fromJson(String json) { return switch (json) {
   'txt' => txt,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TlsCertificatesAndHostnamesOwnershipVerificationTxtType($value)'; } 
  }
-final class TlsCertificatesAndHostnamesOwnershipVerificationTxt {const TlsCertificatesAndHostnamesOwnershipVerificationTxt({this.name, this.type, this.value, });
+@immutable final class TlsCertificatesAndHostnamesOwnershipVerificationTxt {const TlsCertificatesAndHostnamesOwnershipVerificationTxt({this.name, this.type, this.value, });
 
 factory TlsCertificatesAndHostnamesOwnershipVerificationTxt.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesOwnershipVerificationTxt(
   name: json['name'] as String?,

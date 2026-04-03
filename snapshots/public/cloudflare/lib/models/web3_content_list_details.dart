@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'web3_content_list_action.dart';final class Web3ContentListDetails {const Web3ContentListDetails({this.action});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_content_list_action.dart';@immutable final class Web3ContentListDetails {const Web3ContentListDetails({this.action});
 
 factory Web3ContentListDetails.fromJson(Map<String, dynamic> json) { return Web3ContentListDetails(
   action: json['action'] != null ? Web3ContentListAction.fromJson(json['action'] as String) : null,

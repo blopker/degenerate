@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'member_id.dart';final class MembersDeleteRequest {const MembersDeleteRequest({required this.memberId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'member_id.dart';@immutable final class MembersDeleteRequest {const MembersDeleteRequest({required this.memberId});
 
 factory MembersDeleteRequest.fromJson(Map<String, dynamic> json) { return MembersDeleteRequest(
   memberId: MemberId.fromJson(json['member_id'] as String),

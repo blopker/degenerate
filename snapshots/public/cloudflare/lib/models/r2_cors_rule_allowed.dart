@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class R2CorsRuleAllowedMethods {const R2CorsRuleAllowedMethods._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2CorsRuleAllowedMethods {const R2CorsRuleAllowedMethods._(this.value);
 
 factory R2CorsRuleAllowedMethods.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2CorsRuleAllowedMethods($value)'; } 
  }
 /// Object specifying allowed origins, methods and headers for this CORS rule.
-final class R2CorsRuleAllowed {const R2CorsRuleAllowed({this.headers, required this.methods, required this.origins, });
+@immutable final class R2CorsRuleAllowed {const R2CorsRuleAllowed({required this.methods, required this.origins, this.headers, });
 
 factory R2CorsRuleAllowed.fromJson(Map<String, dynamic> json) { return R2CorsRuleAllowed(
   headers: (json['headers'] as List<dynamic>?)?.map((e) => e as String).toList(),

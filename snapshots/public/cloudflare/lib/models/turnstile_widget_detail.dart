@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// A Turnstile widget's detailed configuration
-final class TurnstileWidgetDetail {const TurnstileWidgetDetail({required this.botFightMode, required this.clearanceLevel, required this.createdOn, required this.domains, required this.ephemeralId, required this.mode, required this.modifiedOn, required this.name, required this.offlabel, required this.region, required this.secret, required this.sitekey, });
+@immutable final class TurnstileWidgetDetail {const TurnstileWidgetDetail({required this.botFightMode, required this.clearanceLevel, required this.createdOn, required this.domains, required this.ephemeralId, required this.mode, required this.modifiedOn, required this.name, required this.offlabel, required this.region, required this.secret, required this.sitekey, });
 
 factory TurnstileWidgetDetail.fromJson(Map<String, dynamic> json) { return TurnstileWidgetDetail(
   botFightMode: TurnstileBotFightMode.fromJson(json['bot_fight_mode'] as bool),

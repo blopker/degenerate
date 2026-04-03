@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LicenseContentLinks {const LicenseContentLinks({required this.git, required this.html, required this.self, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LicenseContentLinks {const LicenseContentLinks({required this.git, required this.html, required this.self, });
 
 factory LicenseContentLinks.fromJson(Map<String, dynamic> json) { return LicenseContentLinks(
   git: json['git'] != null ? Uri.parse(json['git'] as String) : null,

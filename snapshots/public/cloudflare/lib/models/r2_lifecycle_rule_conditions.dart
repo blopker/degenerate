@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Conditions that apply to all transitions of this rule.
-final class R2LifecycleRuleConditions {const R2LifecycleRuleConditions({required this.prefix});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Conditions that apply to all transitions of this rule.
+@immutable final class R2LifecycleRuleConditions {const R2LifecycleRuleConditions({required this.prefix});
 
 factory R2LifecycleRuleConditions.fromJson(Map<String, dynamic> json) { return R2LifecycleRuleConditions(
   prefix: json['prefix'] as String,

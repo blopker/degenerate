@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `fixed` or `maximum`. If `fixed`, the `amount` param refers to the exact amount to be charged in future payments. If `maximum`, the amount charged can be up to the value passed for the `amount` param.
-final class SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType {const SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType._(this.value);
+@immutable final class SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType {const SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType._(this.value);
 
 factory SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsCardMandateOptionsAmountType($value)'; } 
  }
 /// Specifies payment frequency. One of `day`, `week`, `month`, `year`, or `sporadic`.
-final class SetupIntentPaymentMethodOptionsCardMandateOptionsInterval {const SetupIntentPaymentMethodOptionsCardMandateOptionsInterval._(this.value);
+@immutable final class SetupIntentPaymentMethodOptionsCardMandateOptionsInterval {const SetupIntentPaymentMethodOptionsCardMandateOptionsInterval._(this.value);
 
 factory SetupIntentPaymentMethodOptionsCardMandateOptionsInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SetupIntentPaymentMethodOptionsCardMandateOptionsInterval($value)'; } 
  }
-final class SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes {const SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes._(this.value);
+@immutable final class SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes {const SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes._(this.value);
 
 factory SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes.fromJson(String json) { return switch (json) {
   'india' => india,
@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsCardMandateOptionsSupportedTypes($value)'; } 
  }
 /// 
-final class SetupIntentPaymentMethodOptionsCardMandateOptions {const SetupIntentPaymentMethodOptionsCardMandateOptions({required this.amount, required this.amountType, required this.currency, this.description, this.endDate, required this.interval, this.intervalCount, required this.reference, required this.startDate, this.supportedTypes, });
+@immutable final class SetupIntentPaymentMethodOptionsCardMandateOptions {const SetupIntentPaymentMethodOptionsCardMandateOptions({required this.amount, required this.amountType, required this.currency, required this.interval, required this.reference, required this.startDate, this.description, this.endDate, this.intervalCount, this.supportedTypes, });
 
 factory SetupIntentPaymentMethodOptionsCardMandateOptions.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsCardMandateOptions(
   amount: (json['amount'] as num).toInt(),

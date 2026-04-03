@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Direction to order results.
-final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order results.
+@immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection._(this.value);
 
 factory ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

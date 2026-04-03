@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class NscBgpControl {const NscBgpControl({required this.customerAsn, required this.extraPrefixes, this.md5Key, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscBgpControl {const NscBgpControl({required this.customerAsn, required this.extraPrefixes, this.md5Key, });
 
 factory NscBgpControl.fromJson(Map<String, dynamic> json) { return NscBgpControl(
   customerAsn: (json['customer_asn'] as num).toInt(),

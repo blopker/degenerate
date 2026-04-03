@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'file.dart';import 'sigma_scheduled_query_run_error.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class ScheduledQueryRunObject {const ScheduledQueryRunObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'sigma_scheduled_query_run_error.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class ScheduledQueryRunObject {const ScheduledQueryRunObject._(this.value);
 
 factory ScheduledQueryRunObject.fromJson(String json) { return switch (json) {
   'scheduled_query_run' => scheduledQueryRun,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// receive a `sigma.scheduled_query_run.created` webhook each time the query
 /// runs. The webhook contains a `ScheduledQueryRun` object, which you can use to
 /// retrieve the query results.
-final class ScheduledQueryRun {const ScheduledQueryRun({required this.created, required this.dataLoadTime, this.error, this.file, required this.id, required this.livemode, required this.object, required this.resultAvailableUntil, required this.sql, required this.status, required this.title, });
+@immutable final class ScheduledQueryRun {const ScheduledQueryRun({required this.created, required this.dataLoadTime, required this.id, required this.livemode, required this.object, required this.resultAvailableUntil, required this.sql, required this.status, required this.title, this.error, this.file, });
 
 factory ScheduledQueryRun.fromJson(Map<String, dynamic> json) { return ScheduledQueryRun(
   created: (json['created'] as num).toInt(),

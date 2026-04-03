@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt43StreamOptionsVariant1 {const Prompt43StreamOptionsVariant1({this.includeObfuscation, this.includeUsage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43StreamOptionsVariant1 {const Prompt43StreamOptionsVariant1({this.includeObfuscation, this.includeUsage, });
 
 factory Prompt43StreamOptionsVariant1.fromJson(Map<String, dynamic> json) { return Prompt43StreamOptionsVariant1(
   includeObfuscation: json['include_obfuscation'] as bool?,

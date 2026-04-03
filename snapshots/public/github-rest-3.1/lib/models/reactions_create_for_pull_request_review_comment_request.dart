@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.
-final class ReactionsCreateForPullRequestReviewCommentRequestContent {const ReactionsCreateForPullRequestReviewCommentRequestContent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.
+@immutable final class ReactionsCreateForPullRequestReviewCommentRequestContent {const ReactionsCreateForPullRequestReviewCommentRequestContent._(this.value);
 
 factory ReactionsCreateForPullRequestReviewCommentRequestContent.fromJson(String json) { return switch (json) {
   '+1' => plus1,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReactionsCreateForPullRequestReviewCommentRequestContent($value)'; } 
  }
-final class ReactionsCreateForPullRequestReviewCommentRequest {const ReactionsCreateForPullRequestReviewCommentRequest({required this.content});
+@immutable final class ReactionsCreateForPullRequestReviewCommentRequest {const ReactionsCreateForPullRequestReviewCommentRequest({required this.content});
 
 factory ReactionsCreateForPullRequestReviewCommentRequest.fromJson(Map<String, dynamic> json) { return ReactionsCreateForPullRequestReviewCommentRequest(
   content: ReactionsCreateForPullRequestReviewCommentRequestContent.fromJson(json['content'] as String),

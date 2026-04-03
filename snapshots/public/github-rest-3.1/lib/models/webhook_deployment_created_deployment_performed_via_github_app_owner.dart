@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType {const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType {const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType._(this.value);
 
 factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType.fromJson(String json) { return switch (json) {
   'Bot' => bot,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwnerType($value)'; } 
  }
-final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner {const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner({this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, required this.id, required this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+@immutable final class WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner {const WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
 factory WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,

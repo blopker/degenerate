@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Spoof classification.
-final class RadarGetEmailSecurityTopTldsBySpoofSpoof {const RadarGetEmailSecurityTopTldsBySpoofSpoof._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Spoof classification.
+@immutable final class RadarGetEmailSecurityTopTldsBySpoofSpoof {const RadarGetEmailSecurityTopTldsBySpoofSpoof._(this.value);
 
 factory RadarGetEmailSecurityTopTldsBySpoofSpoof.fromJson(String json) { return switch (json) {
   'SPOOF' => spoof,

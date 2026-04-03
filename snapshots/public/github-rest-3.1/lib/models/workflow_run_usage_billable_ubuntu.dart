@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workflow_run_usage_billable_ubuntu_job_runs.dart';final class WorkflowRunUsageBillableUbuntu {const WorkflowRunUsageBillableUbuntu({required this.totalMs, required this.jobs, this.jobRuns, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workflow_run_usage_billable_ubuntu_job_runs.dart';@immutable final class WorkflowRunUsageBillableUbuntu {const WorkflowRunUsageBillableUbuntu({required this.totalMs, required this.jobs, this.jobRuns, });
 
 factory WorkflowRunUsageBillableUbuntu.fromJson(Map<String, dynamic> json) { return WorkflowRunUsageBillableUbuntu(
   totalMs: (json['total_ms'] as num).toInt(),

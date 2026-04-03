@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_audio_variant1_voice.dart';import 'messages51_audio_variant1_voice_variant2.dart';final class Messages51AudioVariant1Format {const Messages51AudioVariant1Format._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_audio_variant1_voice.dart';import 'messages51_audio_variant1_voice_variant2.dart';@immutable final class Messages51AudioVariant1Format {const Messages51AudioVariant1Format._(this.value);
 
 factory Messages51AudioVariant1Format.fromJson(String json) { return switch (json) {
   'wav' => wav,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Messages51AudioVariant1Format($value)'; } 
  }
 /// Parameters for audio output. Required when modalities includes 'audio'.
-final class Messages51AudioVariant1 {const Messages51AudioVariant1({required this.format, required this.voice, });
+@immutable final class Messages51AudioVariant1 {const Messages51AudioVariant1({required this.format, required this.voice, });
 
 factory Messages51AudioVariant1.fromJson(Map<String, dynamic> json) { return Messages51AudioVariant1(
   format: Messages51AudioVariant1Format.fromJson(json['format'] as String),

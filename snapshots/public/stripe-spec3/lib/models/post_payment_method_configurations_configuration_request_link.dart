@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_link_display_preference.dart';/// [Link](https://docs.stripe.com/payments/link) is a payment method network. With Link, users save their payment details once, then reuse that information to pay with one click for any business on the network.
-final class PostPaymentMethodConfigurationsConfigurationRequestLink {const PostPaymentMethodConfigurationsConfigurationRequestLink({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_link_display_preference.dart';/// [Link](https://docs.stripe.com/payments/link) is a payment method network. With Link, users save their payment details once, then reuse that information to pay with one click for any business on the network.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestLink {const PostPaymentMethodConfigurationsConfigurationRequestLink({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestLink.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestLink(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestLinkDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

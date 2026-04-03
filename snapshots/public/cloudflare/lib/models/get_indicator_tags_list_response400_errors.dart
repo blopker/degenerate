@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIndicatorTagsListResponse400Errors {const GetIndicatorTagsListResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIndicatorTagsListResponse400Errors {const GetIndicatorTagsListResponse400Errors({required this.message});
 
 factory GetIndicatorTagsListResponse400Errors.fromJson(Map<String, dynamic> json) { return GetIndicatorTagsListResponse400Errors(
   message: json['message'] as String,

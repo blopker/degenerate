@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2RemoveCustomDomainResponse {const R2RemoveCustomDomainResponse({required this.domain});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2RemoveCustomDomainResponse {const R2RemoveCustomDomainResponse({required this.domain});
 
 factory R2RemoveCustomDomainResponse.fromJson(Map<String, dynamic> json) { return R2RemoveCustomDomainResponse(
   domain: json['domain'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `audio.voice`.
-final class VoiceResourceObject {const VoiceResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `audio.voice`.
+@immutable final class VoiceResourceObject {const VoiceResourceObject._(this.value);
 
 factory VoiceResourceObject.fromJson(String json) { return switch (json) {
   'audio.voice' => audioVoice,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VoiceResourceObject($value)'; } 
  }
 /// A custom voice that can be used for audio output.
-final class VoiceResource {const VoiceResource({required this.object, required this.id, required this.name, required this.createdAt, });
+@immutable final class VoiceResource {const VoiceResource({required this.object, required this.id, required this.name, required this.createdAt, });
 
 factory VoiceResource.fromJson(Map<String, dynamic> json) { return VoiceResource(
   object: VoiceResourceObject.fromJson(json['object'] as String),

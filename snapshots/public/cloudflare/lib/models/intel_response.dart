@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_domain_history.dart';final class IntelResponse {const IntelResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_domain_history.dart';@immutable final class IntelResponse {const IntelResponse({this.result});
 
 factory IntelResponse.fromJson(Map<String, dynamic> json) { return IntelResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => IntelDomainHistory.fromJson(e as Map<String, dynamic>)).toList(),

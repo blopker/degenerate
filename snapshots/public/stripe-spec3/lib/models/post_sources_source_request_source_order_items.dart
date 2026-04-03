@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSourcesSourceRequestSourceOrderItemsType {const PostSourcesSourceRequestSourceOrderItemsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSourcesSourceRequestSourceOrderItemsType {const PostSourcesSourceRequestSourceOrderItemsType._(this.value);
 
 factory PostSourcesSourceRequestSourceOrderItemsType.fromJson(String json) { return switch (json) {
   'discount' => discount,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSourcesSourceRequestSourceOrderItemsType($value)'; } 
  }
-final class PostSourcesSourceRequestSourceOrderItems {const PostSourcesSourceRequestSourceOrderItems({this.amount, this.currency, this.description, this.parent, this.quantity, this.type, });
+@immutable final class PostSourcesSourceRequestSourceOrderItems {const PostSourcesSourceRequestSourceOrderItems({this.amount, this.currency, this.description, this.parent, this.quantity, this.type, });
 
 factory PostSourcesSourceRequestSourceOrderItems.fromJson(Map<String, dynamic> json) { return PostSourcesSourceRequestSourceOrderItems(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

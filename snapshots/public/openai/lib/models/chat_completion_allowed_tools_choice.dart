@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_allowed_tools.dart';/// Allowed tool configuration type. Always `allowed_tools`.
-final class ChatCompletionAllowedToolsChoiceType {const ChatCompletionAllowedToolsChoiceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_allowed_tools.dart';/// Allowed tool configuration type. Always `allowed_tools`.
+@immutable final class ChatCompletionAllowedToolsChoiceType {const ChatCompletionAllowedToolsChoiceType._(this.value);
 
 factory ChatCompletionAllowedToolsChoiceType.fromJson(String json) { return switch (json) {
   'allowed_tools' => allowedTools,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Constrains the tools available to the model to a pre-defined set.
 /// 
-final class ChatCompletionAllowedToolsChoice {const ChatCompletionAllowedToolsChoice({required this.type, required this.allowedTools, });
+@immutable final class ChatCompletionAllowedToolsChoice {const ChatCompletionAllowedToolsChoice({required this.type, required this.allowedTools, });
 
 factory ChatCompletionAllowedToolsChoice.fromJson(Map<String, dynamic> json) { return ChatCompletionAllowedToolsChoice(
   type: ChatCompletionAllowedToolsChoiceType.fromJson(json['type'] as String),

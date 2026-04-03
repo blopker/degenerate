@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_delete_gateway_dynamic_route_response_result_elements_conditional_outputs.dart';import 'aig_config_delete_gateway_dynamic_route_response_result_elements_conditional_properties.dart';final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_gateway_dynamic_route_response_result_elements_conditional_outputs.dart';import 'aig_config_delete_gateway_dynamic_route_response_result_elements_conditional_properties.dart';@immutable final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType._(this.value);
 
 factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType.fromJson(String json) { return switch (json) {
   'conditional' => conditional,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType($value)'; } 
  }
-final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
+@immutable final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
 
 factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional(
   id: json['id'] as String,

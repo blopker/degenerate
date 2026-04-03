@@ -169,7 +169,7 @@ return execute(
 /// Lists the core web vital metrics trend over time for a specific page.
 ///
 /// `GET /zones/{zone_id}/speed_api/pages/{url}/trend`
-Future<ApiResult<ObservatoryTrend?, Never>> speedListPageTrend({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, required ObservatoryRegion region, required ObservatoryDeviceType deviceType, required ObservatoryTimestamp start, ObservatoryTimestamp? end, required String tz, required String metrics, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ObservatoryTrend?, Never>> speedListPageTrend({required ObservatoryIdentifier zoneId, required ObservatoryUrl url, required ObservatoryRegion region, required ObservatoryDeviceType deviceType, required ObservatoryTimestamp start, required String tz, required String metrics, ObservatoryTimestamp? end, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['region'] = region.toJson();
 queryParameters['deviceType'] = deviceType.toJson();

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_single_member.dart';final class BatchCreateMembersRequest {const BatchCreateMembersRequest({required this.members});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_single_member.dart';@immutable final class BatchCreateMembersRequest {const BatchCreateMembersRequest({required this.members});
 
 factory BatchCreateMembersRequest.fromJson(Map<String, dynamic> json) { return BatchCreateMembersRequest(
   members: (json['members'] as List<dynamic>).map((e) => CreateSingleMember.fromJson(e as Map<String, dynamic>)).toList(),

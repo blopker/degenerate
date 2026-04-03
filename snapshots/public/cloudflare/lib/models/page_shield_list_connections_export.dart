@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Export the list of connections as a file, limited to 50000 entries.
-final class PageShieldListConnectionsExport {const PageShieldListConnectionsExport._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Export the list of connections as a file, limited to 50000 entries.
+@immutable final class PageShieldListConnectionsExport {const PageShieldListConnectionsExport._(this.value);
 
 factory PageShieldListConnectionsExport.fromJson(String json) { return switch (json) {
   'csv' => csv,

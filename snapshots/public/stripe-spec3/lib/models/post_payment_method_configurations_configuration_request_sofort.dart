@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_sofort_display_preference.dart';/// Stripe users in Europe and the United States can use the [Payment Intents API](https://stripe.com/docs/payments/payment-intents)—a single integration path for creating payments using any supported method—to accept [Sofort](https://www.sofort.com/) payments from customers. Check this [page](https://docs.stripe.com/payments/sofort) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestSofort {const PostPaymentMethodConfigurationsConfigurationRequestSofort({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_sofort_display_preference.dart';/// Stripe users in Europe and the United States can use the [Payment Intents API](https://stripe.com/docs/payments/payment-intents)—a single integration path for creating payments using any supported method—to accept [Sofort](https://www.sofort.com/) payments from customers. Check this [page](https://docs.stripe.com/payments/sofort) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestSofort {const PostPaymentMethodConfigurationsConfigurationRequestSofort({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestSofort.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestSofort(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestSofortDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SubIssuesSummary {const SubIssuesSummary({required this.total, required this.completed, required this.percentCompleted, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SubIssuesSummary {const SubIssuesSummary({required this.total, required this.completed, required this.percentCompleted, });
 
 factory SubIssuesSummary.fromJson(Map<String, dynamic> json) { return SubIssuesSummary(
   total: (json['total'] as num).toInt(),

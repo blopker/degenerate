@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class InvoicesResourceStatusTransitions {const InvoicesResourceStatusTransitions({this.finalizedAt, this.markedUncollectibleAt, this.paidAt, this.voidedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class InvoicesResourceStatusTransitions {const InvoicesResourceStatusTransitions({this.finalizedAt, this.markedUncollectibleAt, this.paidAt, this.voidedAt, });
 
 factory InvoicesResourceStatusTransitions.fromJson(Map<String, dynamic> json) { return InvoicesResourceStatusTransitions(
   finalizedAt: json['finalized_at'] != null ? (json['finalized_at'] as num).toInt() : null,

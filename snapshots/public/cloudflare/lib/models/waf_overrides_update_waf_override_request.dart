@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_identifier.dart';import 'firewall_rewrite_action.dart';import 'firewall_waf_action.dart';final class WafOverridesUpdateWafOverrideRequest {const WafOverridesUpdateWafOverrideRequest({required this.id, required this.rewriteAction, required this.rules, required this.urls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_identifier.dart';import 'firewall_rewrite_action.dart';import 'firewall_waf_action.dart';@immutable final class WafOverridesUpdateWafOverrideRequest {const WafOverridesUpdateWafOverrideRequest({required this.id, required this.rewriteAction, required this.rules, required this.urls, });
 
 factory WafOverridesUpdateWafOverrideRequest.fromJson(Map<String, dynamic> json) { return WafOverridesUpdateWafOverrideRequest(
   id: FirewallIdentifier.fromJson(json['id'] as String),

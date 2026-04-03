@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages40ToolsVariant2FunctionParametersPropertiesValue {const Messages40ToolsVariant2FunctionParametersPropertiesValue({required this.description, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages40ToolsVariant2FunctionParametersPropertiesValue {const Messages40ToolsVariant2FunctionParametersPropertiesValue({required this.description, required this.type, });
 
 factory Messages40ToolsVariant2FunctionParametersPropertiesValue.fromJson(Map<String, dynamic> json) { return Messages40ToolsVariant2FunctionParametersPropertiesValue(
   description: json['description'] as String,

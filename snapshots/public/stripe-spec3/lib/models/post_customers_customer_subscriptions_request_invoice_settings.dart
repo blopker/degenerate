@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_subscriptions_request_invoice_settings_account_tax_ids.dart';import 'post_customers_customer_subscriptions_request_invoice_settings_issuer.dart';/// All invoices will be billed using the specified settings.
-final class PostCustomersCustomerSubscriptionsRequestInvoiceSettings {const PostCustomersCustomerSubscriptionsRequestInvoiceSettings({this.accountTaxIds, this.issuer, });
+@immutable final class PostCustomersCustomerSubscriptionsRequestInvoiceSettings {const PostCustomersCustomerSubscriptionsRequestInvoiceSettings({this.accountTaxIds, this.issuer, });
 
 factory PostCustomersCustomerSubscriptionsRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestInvoiceSettings(
   accountTaxIds: json['account_tax_ids'] != null ? OneOf2.parse(json['account_tax_ids'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostCustomersCustomerSubscriptionsRequestInvoiceSettingsAccountTaxIdsVariant2.fromJson(v as String),) : null,

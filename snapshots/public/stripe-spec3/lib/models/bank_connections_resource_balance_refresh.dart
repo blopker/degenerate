@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the last refresh attempt.
-final class BankConnectionsResourceBalanceRefreshStatus {const BankConnectionsResourceBalanceRefreshStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the last refresh attempt.
+@immutable final class BankConnectionsResourceBalanceRefreshStatus {const BankConnectionsResourceBalanceRefreshStatus._(this.value);
 
 factory BankConnectionsResourceBalanceRefreshStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BankConnectionsResourceBalanceRefreshStatus($value)'; } 
  }
 /// 
-final class BankConnectionsResourceBalanceRefresh {const BankConnectionsResourceBalanceRefresh({required this.lastAttemptedAt, this.nextRefreshAvailableAt, required this.status, });
+@immutable final class BankConnectionsResourceBalanceRefresh {const BankConnectionsResourceBalanceRefresh({required this.lastAttemptedAt, required this.status, this.nextRefreshAvailableAt, });
 
 factory BankConnectionsResourceBalanceRefresh.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceBalanceRefresh(
   lastAttemptedAt: (json['last_attempted_at'] as num).toInt(),

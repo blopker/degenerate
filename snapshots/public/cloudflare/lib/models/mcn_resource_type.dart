@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnResourceType {const McnResourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnResourceType {const McnResourceType._(this.value);
 
 factory McnResourceType.fromJson(String json) { return switch (json) {
   'aws_customer_gateway' => awsCustomerGateway,

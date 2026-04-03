@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff {const WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff {const WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff._(this.value);
 
 factory WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff.fromJson(String json) { return switch (json) {
   'constant' => constant,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff($value)'; } 
  }
-final class WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries {const WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries({this.backoff, required this.delay, required this.limit, });
+@immutable final class WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries {const WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries({required this.delay, required this.limit, this.backoff, });
 
 factory WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetries(
   backoff: json['backoff'] != null ? WorDescribeWorkflowInstanceResponseResultStepsStepConfigRetriesBackoff.fromJson(json['backoff'] as String) : null,

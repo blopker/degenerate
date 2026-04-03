@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1._(this.value);
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1.fromJson(String json) { return switch (json) {
   'price' => price,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1($value)'; } 
  }
-final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2._(this.value);
+@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2._(this.value);
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DestinationCreateRequestConfigurationLogpushDataset {const DestinationCreateRequestConfigurationLogpushDataset._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationCreateRequestConfigurationLogpushDataset {const DestinationCreateRequestConfigurationLogpushDataset._(this.value);
 
 factory DestinationCreateRequestConfigurationLogpushDataset.fromJson(String json) { return switch (json) {
   'opentelemetry-traces' => opentelemetryTraces,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationCreateRequestConfigurationLogpushDataset($value)'; } 
  }
-final class DestinationCreateRequestConfigurationType {const DestinationCreateRequestConfigurationType._(this.value);
+@immutable final class DestinationCreateRequestConfigurationType {const DestinationCreateRequestConfigurationType._(this.value);
 
 factory DestinationCreateRequestConfigurationType.fromJson(String json) { return switch (json) {
   'logpush' => logpush,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DestinationCreateRequestConfigurationType($value)'; } 
  }
-final class DestinationCreateRequestConfiguration {const DestinationCreateRequestConfiguration({required this.headers, required this.logpushDataset, required this.type, required this.url, });
+@immutable final class DestinationCreateRequestConfiguration {const DestinationCreateRequestConfiguration({required this.headers, required this.logpushDataset, required this.type, required this.url, });
 
 factory DestinationCreateRequestConfiguration.fromJson(Map<String, dynamic> json) { return DestinationCreateRequestConfiguration(
   headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_email.dart';import 'access_users_components_schemas_name.dart';import 'access_uuid.dart';/// Policy evaluation result for an individual user.
-final class AccessUserResult {const AccessUserResult._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_email.dart';import 'access_users_components_schemas_name.dart';import 'access_uuid.dart';/// Policy evaluation result for an individual user.
+@immutable final class AccessUserResult {const AccessUserResult._(this.value);
 
 factory AccessUserResult.fromJson(String json) { return switch (json) {
   'approved' => approved,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessUserResult($value)'; } 
  }
-final class AccessPolicyUsers {const AccessPolicyUsers({this.email, this.id, this.name, this.status, });
+@immutable final class AccessPolicyUsers {const AccessPolicyUsers({this.email, this.id, this.name, this.status, });
 
 factory AccessPolicyUsers.fromJson(Map<String, dynamic> json) { return AccessPolicyUsers(
   email: json['email'] != null ? AccessSchemasEmail.fromJson(json['email'] as String) : null,

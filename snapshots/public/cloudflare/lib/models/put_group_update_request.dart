@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PutGroupUpdateRequest {const PutGroupUpdateRequest({required this.description, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PutGroupUpdateRequest {const PutGroupUpdateRequest({required this.description, required this.name, });
 
 factory PutGroupUpdateRequest.fromJson(Map<String, dynamic> json) { return PutGroupUpdateRequest(
   description: json['description'] as String,

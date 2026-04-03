@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AppsCheckTokenRequest {const AppsCheckTokenRequest({required this.accessToken});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AppsCheckTokenRequest {const AppsCheckTokenRequest({required this.accessToken});
 
 factory AppsCheckTokenRequest.fromJson(Map<String, dynamic> json) { return AppsCheckTokenRequest(
   accessToken: json['access_token'] as String,

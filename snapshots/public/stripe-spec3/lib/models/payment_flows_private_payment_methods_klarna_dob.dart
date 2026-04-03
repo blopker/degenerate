@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentFlowsPrivatePaymentMethodsKlarnaDob {const PaymentFlowsPrivatePaymentMethodsKlarnaDob({this.day, this.month, this.year, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentFlowsPrivatePaymentMethodsKlarnaDob {const PaymentFlowsPrivatePaymentMethodsKlarnaDob({this.day, this.month, this.year, });
 
 factory PaymentFlowsPrivatePaymentMethodsKlarnaDob.fromJson(Map<String, dynamic> json) { return PaymentFlowsPrivatePaymentMethodsKlarnaDob(
   day: json['day'] != null ? (json['day'] as num).toInt() : null,

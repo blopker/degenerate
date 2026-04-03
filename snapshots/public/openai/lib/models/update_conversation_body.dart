@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateConversationBody {const UpdateConversationBody({required this.metadata});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateConversationBody {const UpdateConversationBody({required this.metadata});
 
 factory UpdateConversationBody.fromJson(Map<String, dynamic> json) { return UpdateConversationBody(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

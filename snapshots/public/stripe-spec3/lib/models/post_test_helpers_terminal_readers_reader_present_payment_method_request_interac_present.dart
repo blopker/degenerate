@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Simulated data for the interac_present payment method.
-final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent({this.number});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Simulated data for the interac_present payment method.
+@immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent({this.number});
 
 factory PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent.fromJson(Map<String, dynamic> json) { return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent(
   number: json['number'] as String?,

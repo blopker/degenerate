@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters._(this.value);
 
 factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters($value)'; } 
  }
 /// Controls whether or not the Payment Element shows saved payment methods. This parameter defaults to `disabled`.
-final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRedisplay {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRedisplay._(this.value);
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRedisplay {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRedisplay._(this.value);
 
 factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRedisplay.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Controls whether the Payment Element displays the option to remove a saved payment method. This parameter defaults to `disabled`.
 /// 
 /// Allowing buyers to remove their saved payment methods impacts subscriptions that depend on that payment method. Removing the payment method detaches the [`customer` object](https://docs.stripe.com/api/payment_methods/object#payment_method_object-customer) from that [PaymentMethod](https://docs.stripe.com/api/payment_methods).
-final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove._(this.value);
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove._(this.value);
 
 factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Controls whether the Payment Element displays a checkbox offering to save a new payment method. This parameter defaults to `disabled`.
 /// 
 /// If a customer checks the box, the [`allow_redisplay`](https://docs.stripe.com/api/payment_methods/object#payment_method_object-allow_redisplay) value on the PaymentMethod is set to `'always'` at confirmation time. For PaymentIntents, the [`setup_future_usage`](https://docs.stripe.com/api/payment_intents/object#payment_intent_object-setup_future_usage) value is also set to the value defined in `payment_method_save_usage`.
-final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSave {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSave._(this.value);
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSave {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSave._(this.value);
 
 factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSave.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -109,7 +109,7 @@ bool get isUnknown { return !values.contains(this); }
 /// When using PaymentIntents and the customer checks the save checkbox, this field determines the [`setup_future_usage`](https://docs.stripe.com/api/payment_intents/object#payment_intent_object-setup_future_usage) value used to confirm the PaymentIntent.
 /// 
 /// When using SetupIntents, directly configure the [`usage`](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-usage) value on SetupIntent creation.
-final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage._(this.value);
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage._(this.value);
 
 factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
@@ -134,7 +134,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage($value)'; } 
  }
 /// This hash contains the features the Payment Element supports.
-final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures({required this.paymentMethodAllowRedisplayFilters, required this.paymentMethodRedisplay, this.paymentMethodRedisplayLimit, required this.paymentMethodRemove, required this.paymentMethodSave, this.paymentMethodSaveUsage, });
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures({required this.paymentMethodAllowRedisplayFilters, required this.paymentMethodRedisplay, required this.paymentMethodRemove, required this.paymentMethodSave, this.paymentMethodRedisplayLimit, this.paymentMethodSaveUsage, });
 
 factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures(
   paymentMethodAllowRedisplayFilters: (json['payment_method_allow_redisplay_filters'] as List<dynamic>).map((e) => CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters.fromJson(e as String)).toList(),
@@ -147,7 +147,7 @@ factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures.
 
 /// A list of [`allow_redisplay`](https://docs.stripe.com/api/payment_methods/object#payment_method_object-allow_redisplay) values that controls which saved payment methods the Payment Element displays by filtering to only show payment methods with an `allow_redisplay` value that is present in this list.
 /// 
-/// If not specified, defaults to ["always"]. In order to display all saved payment methods, specify ["always", "limited", "unspecified"].
+/// If not specified, defaults to `["always"]`. In order to display all saved payment methods, specify `["always", "limited", "unspecified"]`.
 final List<CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodAllowRedisplayFilters> paymentMethodAllowRedisplayFilters;
 
 /// Controls whether or not the Payment Element shows saved payment methods. This parameter defaults to `disabled`.

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secrets_store_usage_quota_object.dart';final class SecretsStoreSecretsUsageObject {const SecretsStoreSecretsUsageObject({required this.secrets});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_usage_quota_object.dart';@immutable final class SecretsStoreSecretsUsageObject {const SecretsStoreSecretsUsageObject({required this.secrets});
 
 factory SecretsStoreSecretsUsageObject.fromJson(Map<String, dynamic> json) { return SecretsStoreSecretsUsageObject(
   secrets: SecretsStoreUsageQuotaObject.fromJson(json['secrets'] as Map<String, dynamic>),

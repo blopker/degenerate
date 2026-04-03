@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'installation.dart';final class AppsListInstallationsForAuthenticatedUserResponse {const AppsListInstallationsForAuthenticatedUserResponse({required this.totalCount, required this.installations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'installation.dart';@immutable final class AppsListInstallationsForAuthenticatedUserResponse {const AppsListInstallationsForAuthenticatedUserResponse({required this.totalCount, required this.installations, });
 
 factory AppsListInstallationsForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) { return AppsListInstallationsForAuthenticatedUserResponse(
   totalCount: (json['total_count'] as num).toInt(),

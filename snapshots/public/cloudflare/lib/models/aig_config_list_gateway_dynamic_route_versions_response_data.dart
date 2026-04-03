@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_gateway_dynamic_route_versions_response_data_versions.dart';final class AigConfigListGatewayDynamicRouteVersionsResponseData {const AigConfigListGatewayDynamicRouteVersionsResponseData({required this.orderBy, required this.orderByDirection, required this.page, required this.perPage, required this.versions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_gateway_dynamic_route_versions_response_data_versions.dart';@immutable final class AigConfigListGatewayDynamicRouteVersionsResponseData {const AigConfigListGatewayDynamicRouteVersionsResponseData({required this.orderBy, required this.orderByDirection, required this.page, required this.perPage, required this.versions, });
 
 factory AigConfigListGatewayDynamicRouteVersionsResponseData.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayDynamicRouteVersionsResponseData(
   orderBy: json['order_by'] as String,

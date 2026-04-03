@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_column.dart';final class DlpDatasetsDefineColumnsResponse {const DlpDatasetsDefineColumnsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_column.dart';@immutable final class DlpDatasetsDefineColumnsResponse {const DlpDatasetsDefineColumnsResponse({this.result});
 
 factory DlpDatasetsDefineColumnsResponse.fromJson(Map<String, dynamic> json) { return DlpDatasetsDefineColumnsResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => DlpDatasetColumn.fromJson(e as Map<String, dynamic>)).toList(),

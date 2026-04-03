@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPageBuildBuildError {const WebhookPageBuildBuildError({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPageBuildBuildError {const WebhookPageBuildBuildError({required this.message});
 
 factory WebhookPageBuildBuildError.fromJson(Map<String, dynamic> json) { return WebhookPageBuildBuildError(
   message: json['message'] as String?,

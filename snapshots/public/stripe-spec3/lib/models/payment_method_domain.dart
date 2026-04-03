@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_domain_resource_payment_method_status.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class PaymentMethodDomainObject {const PaymentMethodDomainObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_domain_resource_payment_method_status.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class PaymentMethodDomainObject {const PaymentMethodDomainObject._(this.value);
 
 factory PaymentMethodDomainObject.fromJson(String json) { return switch (json) {
   'payment_method_domain' => paymentMethodDomain,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Stripe Elements use registered payment method domains to control where certain payment methods are shown.
 /// 
 /// Related guide: [Payment method domains](https://docs.stripe.com/payments/payment-methods/pmd-registration).
-final class PaymentMethodDomain {const PaymentMethodDomain({required this.amazonPay, required this.applePay, required this.created, required this.domainName, required this.enabled, required this.googlePay, required this.id, required this.klarna, required this.link, required this.livemode, required this.object, required this.paypal, });
+@immutable final class PaymentMethodDomain {const PaymentMethodDomain({required this.amazonPay, required this.applePay, required this.created, required this.domainName, required this.enabled, required this.googlePay, required this.id, required this.klarna, required this.link, required this.livemode, required this.object, required this.paypal, });
 
 factory PaymentMethodDomain.fromJson(Map<String, dynamic> json) { return PaymentMethodDomain(
   amazonPay: PaymentMethodDomainResourcePaymentMethodStatus.fromJson(json['amazon_pay'] as Map<String, dynamic>),

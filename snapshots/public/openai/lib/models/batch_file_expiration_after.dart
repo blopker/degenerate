@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`. Note that the anchor is the file creation time, not the time the batch is created.
-final class BatchFileExpirationAfterAnchor {const BatchFileExpirationAfterAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`. Note that the anchor is the file creation time, not the time the batch is created.
+@immutable final class BatchFileExpirationAfterAnchor {const BatchFileExpirationAfterAnchor._(this.value);
 
 factory BatchFileExpirationAfterAnchor.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BatchFileExpirationAfterAnchor($value)'; } 
  }
 /// The expiration policy for the output and/or error file that are generated for a batch.
-final class BatchFileExpirationAfter {const BatchFileExpirationAfter({required this.anchor, required this.seconds, });
+@immutable final class BatchFileExpirationAfter {const BatchFileExpirationAfter({required this.anchor, required this.seconds, });
 
 factory BatchFileExpirationAfter.fromJson(Map<String, dynamic> json) { return BatchFileExpirationAfter(
   anchor: BatchFileExpirationAfterAnchor.fromJson(json['anchor'] as String),

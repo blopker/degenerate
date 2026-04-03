@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_timestamp.dart';import 'shield_uuid.dart';/// Schema active on endpoint.
-final class ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema {const ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema({this.createdAt, this.id, this.isLearned, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';/// Schema active on endpoint.
+@immutable final class ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema {const ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema({this.createdAt, this.id, this.isLearned, this.name, });
 
 factory ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema(
   createdAt: json['created_at'] != null ? ShieldTimestamp.fromJson(json['created_at'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'nsc_interconnect_create_gcp_partner_body.dart';import 'nsc_interconnect_create_physical_body.dart';sealed class NscInterconnectCreate {const NscInterconnectCreate();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_interconnect_create_gcp_partner_body.dart';import 'nsc_interconnect_create_physical_body.dart';sealed class NscInterconnectCreate {const NscInterconnectCreate();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory NscInterconnectCreate.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is NscInterconnectCreate$Unknown; } 
  }
-final class NscInterconnectCreateDirect extends NscInterconnectCreate {const NscInterconnectCreateDirect(this.nscInterconnectCreatePhysicalBody);
+@immutable final class NscInterconnectCreateDirect extends NscInterconnectCreate {const NscInterconnectCreateDirect(this.nscInterconnectCreatePhysicalBody);
 
 factory NscInterconnectCreateDirect.fromJson(Map<String, dynamic> json) { return NscInterconnectCreateDirect(NscInterconnectCreatePhysicalBody.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final NscInterconnectCreatePhysicalBody nscInterconnectCreatePhysicalBody;
 @override int get hashCode { return nscInterconnectCreatePhysicalBody.hashCode; } 
 @override String toString() { return 'NscInterconnectCreateDirect(nscInterconnectCreatePhysicalBody: $nscInterconnectCreatePhysicalBody)'; } 
  }
-final class NscInterconnectCreateGcpPartner extends NscInterconnectCreate {const NscInterconnectCreateGcpPartner(this.nscInterconnectCreateGcpPartnerBody);
+@immutable final class NscInterconnectCreateGcpPartner extends NscInterconnectCreate {const NscInterconnectCreateGcpPartner(this.nscInterconnectCreateGcpPartnerBody);
 
 factory NscInterconnectCreateGcpPartner.fromJson(Map<String, dynamic> json) { return NscInterconnectCreateGcpPartner(NscInterconnectCreateGcpPartnerBody.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final NscInterconnectCreateGcpPartnerBody nscInterconnectCreateGcpPartnerBody;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class NscInterconnectCreate$Unknown extends NscInterconnectCreate {const NscInterconnectCreate$Unknown(this.json);
+@immutable final class NscInterconnectCreate$Unknown extends NscInterconnectCreate {const NscInterconnectCreate$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waitingroom_custom_page_html.dart';final class WaitingroomQueryPreview {const WaitingroomQueryPreview({required this.customHtml});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_custom_page_html.dart';@immutable final class WaitingroomQueryPreview {const WaitingroomQueryPreview({required this.customHtml});
 
 factory WaitingroomQueryPreview.fromJson(Map<String, dynamic> json) { return WaitingroomQueryPreview(
   customHtml: WaitingroomCustomPageHtml.fromJson(json['custom_html'] as String),

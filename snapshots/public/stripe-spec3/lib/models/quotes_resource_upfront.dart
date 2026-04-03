@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'quotes_resource_total_details.dart';import 'quotes_resource_upfront_line_items.dart';/// 
-final class QuotesResourceUpfront {const QuotesResourceUpfront({required this.amountSubtotal, required this.amountTotal, this.lineItems, required this.totalDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'quotes_resource_total_details.dart';import 'quotes_resource_upfront_line_items.dart';/// 
+@immutable final class QuotesResourceUpfront {const QuotesResourceUpfront({required this.amountSubtotal, required this.amountTotal, required this.totalDetails, this.lineItems, });
 
 factory QuotesResourceUpfront.fromJson(Map<String, dynamic> json) { return QuotesResourceUpfront(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_request_message_content_part_refusal.dart';import 'chat_completion_request_message_content_part_text.dart';sealed class ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPart();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_message_content_part_refusal.dart';import 'chat_completion_request_message_content_part_text.dart';sealed class ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPart();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ChatCompletionRequestAssistantMessageContentPart.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChatCompletionRequestAssistantMessageContentPart$Unknown; } 
  }
-final class ChatCompletionRequestAssistantMessageContentPartText extends ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPartText(this.chatCompletionRequestMessageContentPartText);
+@immutable final class ChatCompletionRequestAssistantMessageContentPartText extends ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPartText(this.chatCompletionRequestMessageContentPartText);
 
 factory ChatCompletionRequestAssistantMessageContentPartText.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestAssistantMessageContentPartText(ChatCompletionRequestMessageContentPartText.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final ChatCompletionRequestMessageContentPartText chatCompletionRequestMessageCo
 @override int get hashCode { return chatCompletionRequestMessageContentPartText.hashCode; } 
 @override String toString() { return 'ChatCompletionRequestAssistantMessageContentPartText(chatCompletionRequestMessageContentPartText: $chatCompletionRequestMessageContentPartText)'; } 
  }
-final class ChatCompletionRequestAssistantMessageContentPartRefusal extends ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPartRefusal(this.chatCompletionRequestMessageContentPartRefusal);
+@immutable final class ChatCompletionRequestAssistantMessageContentPartRefusal extends ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPartRefusal(this.chatCompletionRequestMessageContentPartRefusal);
 
 factory ChatCompletionRequestAssistantMessageContentPartRefusal.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestAssistantMessageContentPartRefusal(ChatCompletionRequestMessageContentPartRefusal.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final ChatCompletionRequestMessageContentPartRefusal chatCompletionRequestMessag
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ChatCompletionRequestAssistantMessageContentPart$Unknown extends ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPart$Unknown(this.json);
+@immutable final class ChatCompletionRequestAssistantMessageContentPart$Unknown extends ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPart$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

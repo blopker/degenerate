@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dispute_enhanced_eligibility.dart';/// 
-final class DisputeEvidenceDetails {const DisputeEvidenceDetails({this.dueBy, required this.enhancedEligibility, required this.hasEvidence, required this.pastDue, required this.submissionCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dispute_enhanced_eligibility.dart';/// 
+@immutable final class DisputeEvidenceDetails {const DisputeEvidenceDetails({required this.enhancedEligibility, required this.hasEvidence, required this.pastDue, required this.submissionCount, this.dueBy, });
 
 factory DisputeEvidenceDetails.fromJson(Map<String, dynamic> json) { return DisputeEvidenceDetails(
   dueBy: json['due_by'] != null ? (json['due_by'] as num).toInt() : null,

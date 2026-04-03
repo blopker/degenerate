@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountRequestTracerRequestTraceRequestBody {const AccountRequestTracerRequestTraceRequestBody({this.base64, this.json, this.plainText, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountRequestTracerRequestTraceRequestBody {const AccountRequestTracerRequestTraceRequestBody({this.base64, this.json, this.plainText, });
 
 factory AccountRequestTracerRequestTraceRequestBody.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceRequestBody(
   base64: json['base64'] as String?,
-  json: (json['json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  json: json['json'] as Map<String, dynamic>?,
   plainText: json['plain_text'] as String?,
 ); }
 

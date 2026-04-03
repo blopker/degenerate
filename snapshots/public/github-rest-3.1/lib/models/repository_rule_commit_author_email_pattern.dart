@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_commit_author_email_pattern_parameters.dart';final class RepositoryRuleCommitAuthorEmailPatternType {const RepositoryRuleCommitAuthorEmailPatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_commit_author_email_pattern_parameters.dart';@immutable final class RepositoryRuleCommitAuthorEmailPatternType {const RepositoryRuleCommitAuthorEmailPatternType._(this.value);
 
 factory RepositoryRuleCommitAuthorEmailPatternType.fromJson(String json) { return switch (json) {
   'commit_author_email_pattern' => commitAuthorEmailPattern,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleCommitAuthorEmailPatternType($value)'; } 
  }
 /// Parameters to be used for the commit_author_email_pattern rule
-final class RepositoryRuleCommitAuthorEmailPattern {const RepositoryRuleCommitAuthorEmailPattern({required this.type, this.parameters, });
+@immutable final class RepositoryRuleCommitAuthorEmailPattern {const RepositoryRuleCommitAuthorEmailPattern({required this.type, this.parameters, });
 
 factory RepositoryRuleCommitAuthorEmailPattern.fromJson(Map<String, dynamic> json) { return RepositoryRuleCommitAuthorEmailPattern(
   type: RepositoryRuleCommitAuthorEmailPatternType.fromJson(json['type'] as String),

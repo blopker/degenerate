@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_account_sessions_request_components_instant_payouts_promotion_features.dart';final class PostAccountSessionsRequestComponentsInstantPayoutsPromotion {const PostAccountSessionsRequestComponentsInstantPayoutsPromotion({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components_instant_payouts_promotion_features.dart';@immutable final class PostAccountSessionsRequestComponentsInstantPayoutsPromotion {const PostAccountSessionsRequestComponentsInstantPayoutsPromotion({required this.enabled, this.features, });
 
 factory PostAccountSessionsRequestComponentsInstantPayoutsPromotion.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsInstantPayoutsPromotion(
   enabled: json['enabled'] as bool,

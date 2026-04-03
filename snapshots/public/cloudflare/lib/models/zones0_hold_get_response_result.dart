@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Zones0HoldGetResponseResult {const Zones0HoldGetResponseResult({this.hold, this.holdAfter, this.includeSubdomains, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Zones0HoldGetResponseResult {const Zones0HoldGetResponseResult({this.hold, this.holdAfter, this.includeSubdomains, });
 
 factory Zones0HoldGetResponseResult.fromJson(Map<String, dynamic> json) { return Zones0HoldGetResponseResult(
   hold: json['hold'] as bool?,

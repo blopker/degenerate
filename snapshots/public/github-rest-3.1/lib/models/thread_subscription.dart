@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Thread Subscription
-final class ThreadSubscription {const ThreadSubscription({required this.subscribed, required this.ignored, required this.reason, required this.createdAt, required this.url, this.threadUrl, this.repositoryUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Thread Subscription
+@immutable final class ThreadSubscription {const ThreadSubscription({required this.subscribed, required this.ignored, required this.reason, required this.createdAt, required this.url, this.threadUrl, this.repositoryUrl, });
 
 factory ThreadSubscription.fromJson(Map<String, dynamic> json) { return ThreadSubscription(
   subscribed: json['subscribed'] as bool,

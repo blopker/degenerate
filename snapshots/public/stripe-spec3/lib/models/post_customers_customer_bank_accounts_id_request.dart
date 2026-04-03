@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_bank_accounts_id_request_metadata.dart';import 'post_customers_customer_bank_accounts_id_request_owner.dart';/// The type of entity that holds the account. This can be either `individual` or `company`.
-final class PostCustomersCustomerBankAccountsIdRequestAccountHolderType {const PostCustomersCustomerBankAccountsIdRequestAccountHolderType._(this.value);
+@immutable final class PostCustomersCustomerBankAccountsIdRequestAccountHolderType {const PostCustomersCustomerBankAccountsIdRequestAccountHolderType._(this.value);
 
 factory PostCustomersCustomerBankAccountsIdRequestAccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerBankAccountsIdRequestAccountHolderType($value)'; } 
  }
-final class PostCustomersCustomerBankAccountsIdRequest {const PostCustomersCustomerBankAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.expMonth, this.expYear, this.expand, this.metadata, this.name, this.owner, });
+@immutable final class PostCustomersCustomerBankAccountsIdRequest {const PostCustomersCustomerBankAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.expMonth, this.expYear, this.expand, this.metadata, this.name, this.owner, });
 
 factory PostCustomersCustomerBankAccountsIdRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerBankAccountsIdRequest(
   accountHolderName: json['account_holder_name'] as String?,

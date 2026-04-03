@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WorkersKvBulkResult {const WorkersKvBulkResult({this.successfulKeyCount, this.unsuccessfulKeys, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersKvBulkResult {const WorkersKvBulkResult({this.successfulKeyCount, this.unsuccessfulKeys, });
 
 factory WorkersKvBulkResult.fromJson(Map<String, dynamic> json) { return WorkersKvBulkResult(
   successfulKeyCount: json['successful_key_count'] != null ? (json['successful_key_count'] as num).toDouble() : null,

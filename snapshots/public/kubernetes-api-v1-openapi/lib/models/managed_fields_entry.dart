@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'time.dart';/// ManagedFieldsEntry is a workflow-id, a FieldSet and the group version of the resource that the fieldset applies to.
-final class ManagedFieldsEntry {const ManagedFieldsEntry({this.apiVersion, this.fieldsType, this.fieldsV1, this.manager, this.operation, this.subresource, this.time, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// ManagedFieldsEntry is a workflow-id, a FieldSet and the group version of the resource that the fieldset applies to.
+@immutable final class ManagedFieldsEntry {const ManagedFieldsEntry({this.apiVersion, this.fieldsType, this.fieldsV1, this.manager, this.operation, this.subresource, this.time, });
 
 factory ManagedFieldsEntry.fromJson(Map<String, dynamic> json) { return ManagedFieldsEntry(
   apiVersion: json['apiVersion'] as String?,
   fieldsType: json['fieldsType'] as String?,
-  fieldsV1: (json['fieldsV1'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  fieldsV1: json['fieldsV1'] as Map<String, dynamic>?,
   manager: json['manager'] as String?,
   operation: json['operation'] as String?,
   subresource: json['subresource'] as String?,

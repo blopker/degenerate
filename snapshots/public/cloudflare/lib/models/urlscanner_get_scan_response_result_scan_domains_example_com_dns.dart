@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponseResultScanDomainsExampleComDns {const UrlscannerGetScanResponseResultScanDomainsExampleComDns({required this.address, required this.dnssecValid, required this.name, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanDomainsExampleComDns {const UrlscannerGetScanResponseResultScanDomainsExampleComDns({required this.address, required this.dnssecValid, required this.name, required this.type, });
 
 factory UrlscannerGetScanResponseResultScanDomainsExampleComDns.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanDomainsExampleComDns(
   address: json['address'] as String,

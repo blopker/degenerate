@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'reasoning_effort.dart';/// The sampling parameters for the model.
-final class EvalGraderScoreModelSamplingParams {const EvalGraderScoreModelSamplingParams({this.seed, this.topP, this.temperature, this.maxCompletionsTokens, this.reasoningEffort, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reasoning_effort.dart';/// The sampling parameters for the model.
+@immutable final class EvalGraderScoreModelSamplingParams {const EvalGraderScoreModelSamplingParams({this.seed, this.topP, this.temperature, this.maxCompletionsTokens, this.reasoningEffort, });
 
 factory EvalGraderScoreModelSamplingParams.fromJson(Map<String, dynamic> json) { return EvalGraderScoreModelSamplingParams(
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,

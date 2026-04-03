@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_response_usage_input_token_details_cached_tokens_details.dart';/// Details about the input tokens used in the Response. Cached tokens are tokens from previous turns in the conversation that are included as context for the current response. Cached tokens here are counted as a subset of input tokens, meaning input tokens will include cached and uncached tokens.
-final class RealtimeResponseUsageInputTokenDetails {const RealtimeResponseUsageInputTokenDetails({this.cachedTokens, this.textTokens, this.imageTokens, this.audioTokens, this.cachedTokensDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_response_usage_input_token_details_cached_tokens_details.dart';/// Details about the input tokens used in the Response. Cached tokens are tokens from previous turns in the conversation that are included as context for the current response. Cached tokens here are counted as a subset of input tokens, meaning input tokens will include cached and uncached tokens.
+@immutable final class RealtimeResponseUsageInputTokenDetails {const RealtimeResponseUsageInputTokenDetails({this.cachedTokens, this.textTokens, this.imageTokens, this.audioTokens, this.cachedTokensDetails, });
 
 factory RealtimeResponseUsageInputTokenDetails.fromJson(Map<String, dynamic> json) { return RealtimeResponseUsageInputTokenDetails(
   cachedTokens: json['cached_tokens'] != null ? (json['cached_tokens'] as num).toInt() : null,

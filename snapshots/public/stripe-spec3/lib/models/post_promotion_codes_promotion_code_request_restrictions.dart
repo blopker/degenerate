@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_promotion_codes_promotion_code_request_restrictions_currency_options_value.dart';/// Settings that restrict the redemption of the promotion code.
-final class PostPromotionCodesPromotionCodeRequestRestrictions {const PostPromotionCodesPromotionCodeRequestRestrictions({this.currencyOptions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_promotion_codes_promotion_code_request_restrictions_currency_options_value.dart';/// Settings that restrict the redemption of the promotion code.
+@immutable final class PostPromotionCodesPromotionCodeRequestRestrictions {const PostPromotionCodesPromotionCodeRequestRestrictions({this.currencyOptions});
 
 factory PostPromotionCodesPromotionCodeRequestRestrictions.fromJson(Map<String, dynamic> json) { return PostPromotionCodesPromotionCodeRequestRestrictions(
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),

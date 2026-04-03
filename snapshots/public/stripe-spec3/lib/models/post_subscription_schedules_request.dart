@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_billing_mode.dart';import 'post_subscription_schedules_request_default_settings.dart';import 'post_subscription_schedules_request_metadata.dart';import 'post_subscription_schedules_request_phases.dart';import 'post_subscription_schedules_request_start_date.dart';/// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
-final class PostSubscriptionSchedulesRequestEndBehavior {const PostSubscriptionSchedulesRequestEndBehavior._(this.value);
+@immutable final class PostSubscriptionSchedulesRequestEndBehavior {const PostSubscriptionSchedulesRequestEndBehavior._(this.value);
 
 factory PostSubscriptionSchedulesRequestEndBehavior.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesRequestEndBehavior($value)'; } 
  }
-final class PostSubscriptionSchedulesRequest {const PostSubscriptionSchedulesRequest({this.billingMode, this.customer, this.customerAccount, this.defaultSettings, this.endBehavior, this.expand, this.fromSubscription, this.metadata, this.phases, this.startDate, });
+@immutable final class PostSubscriptionSchedulesRequest {const PostSubscriptionSchedulesRequest({this.billingMode, this.customer, this.customerAccount, this.defaultSettings, this.endBehavior, this.expand, this.fromSubscription, this.metadata, this.phases, this.startDate, });
 
 factory PostSubscriptionSchedulesRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequest(
   billingMode: json['billing_mode'] != null ? PostSubscriptionSchedulesRequestBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,

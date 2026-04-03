@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZonesCacheRulesBase {const ZonesCacheRulesBase({required this.id, this.modifiedOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZonesCacheRulesBase {const ZonesCacheRulesBase({required this.id, this.modifiedOn, });
 
 factory ZonesCacheRulesBase.fromJson(Map<String, dynamic> json) { return ZonesCacheRulesBase(
   id: json['id'] as String,

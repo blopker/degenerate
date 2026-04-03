@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_risk_score_integration_type.dart';final class DlpCreateIntegrationBody {const DlpCreateIntegrationBody({required this.integrationType, this.referenceId, required this.tenantUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_risk_score_integration_type.dart';@immutable final class DlpCreateIntegrationBody {const DlpCreateIntegrationBody({required this.integrationType, required this.tenantUrl, this.referenceId, });
 
 factory DlpCreateIntegrationBody.fromJson(Map<String, dynamic> json) { return DlpCreateIntegrationBody(
   integrationType: DlpRiskScoreIntegrationType.fromJson(json['integration_type'] as String),

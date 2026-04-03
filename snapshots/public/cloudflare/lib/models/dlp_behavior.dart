@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_risk_level.dart';final class DlpBehavior {const DlpBehavior({required this.description, required this.enabled, required this.name, required this.riskLevel, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_risk_level.dart';@immutable final class DlpBehavior {const DlpBehavior({required this.description, required this.enabled, required this.name, required this.riskLevel, });
 
 factory DlpBehavior.fromJson(Map<String, dynamic> json) { return DlpBehavior(
   description: json['description'] as String,

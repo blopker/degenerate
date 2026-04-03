@@ -2,6 +2,33 @@
 
 Important user-facing changes only. For full details see commit log.
 
+## 0.4.1
+
+**Generated code is now lint-clean under `very_good_analysis`.**
+
+### Breaking changes
+
+- **`OneOf.parse` callback signature**: callback parameter type changed from `Object?` to `Object` (with `json!` assertion in runtime). Callers passing nullable values to parse callbacks will need to add a `!` assertion.
+- **`@immutable` annotation**: re-exported from `degenerate_runtime`. Generated model, enum, and union variant classes are now annotated `@immutable`.
+
+### Improvements
+
+- **Lint-clean generated output**: generated Dart code now passes `dart analyze` with zero issues under `very_good_analysis` for all tested specs (Stripe, GitHub, Cloudflare, Twilio, etc.).
+  - Constructors ordered before fields/methods (`sort_constructors_first`)
+  - Required named parameters before optional (`always_put_required_named_parameters_first`)
+  - Files end with exactly one trailing newline (`eol_at_end_of_file`)
+  - Imports/exports sorted alphabetically (`directives_ordering`)
+  - Security scheme literals omit redundant default values and use `const` (`avoid_redundant_argument_values`, `prefer_const_constructors`)
+  - Raw strings and double-quoted strings used to avoid unnecessary escapes (`use_raw_strings`, `avoid_escaping_inner_quotes`)
+  - Identity map transforms like `.map((k, v) => MapEntry(k, v))` are elided (`unnecessary_lambdas`)
+  - Simple closures like `(e) => base64Encode(e)` emit tearoffs (`unnecessary_lambdas`)
+  - Empty model `fromJson` uses `_` for unused parameter and `const` return (`avoid_unused_constructor_parameters`, `prefer_const_constructors`)
+  - Doc comment `[references]` escaped to avoid false Dart doc links (`comment_references`)
+  - Fenced code blocks in doc comments get a language specifier (`missing_code_block_language_in_doc_comment`)
+  - Form-urlencoded body list literals are explicitly typed (`inference_failure_on_collection_literal`)
+  - Untagged union `fromJson` casts accessor to `Map<String, dynamic>` for object variants (`argument_type_not_assignable`)
+  - Extension type multipart serialization skips redundant `.toString()` when `toJson()` already returns `String` (`noop_primitive_operations`)
+
 ## 0.4.0
 
 **Critical fixes for discriminated unions, streaming, and runtime ergonomics.**

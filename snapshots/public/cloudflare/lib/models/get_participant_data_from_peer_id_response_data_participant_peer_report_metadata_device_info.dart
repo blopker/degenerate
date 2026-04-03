@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo({this.cpus, this.isMobile, this.os, this.osVersion, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo({this.cpus, this.isMobile, this.os, this.osVersion, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo(
   cpus: json['cpus'] != null ? (json['cpus'] as num).toInt() : null,

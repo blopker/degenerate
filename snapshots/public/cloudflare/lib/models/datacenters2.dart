@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'timeseries_by_colo2.dart';import 'totals_by_colo.dart';final class Datacenters2 {const Datacenters2({this.coloId, this.timeseries, this.totals, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'timeseries_by_colo2.dart';import 'totals_by_colo.dart';@immutable final class Datacenters2 {const Datacenters2({this.coloId, this.timeseries, this.totals, });
 
 factory Datacenters2.fromJson(Map<String, dynamic> json) { return Datacenters2(
   coloId: json['colo_id'] as String?,

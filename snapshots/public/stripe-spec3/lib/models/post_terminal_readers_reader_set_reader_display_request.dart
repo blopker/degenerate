@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_set_reader_display_request_cart.dart';/// Type of information to display. Only `cart` is currently supported.
-final class PostTerminalReadersReaderSetReaderDisplayRequestType {const PostTerminalReadersReaderSetReaderDisplayRequestType._(this.value);
+@immutable final class PostTerminalReadersReaderSetReaderDisplayRequestType {const PostTerminalReadersReaderSetReaderDisplayRequestType._(this.value);
 
 factory PostTerminalReadersReaderSetReaderDisplayRequestType.fromJson(String json) { return switch (json) {
   'cart' => cart,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTerminalReadersReaderSetReaderDisplayRequestType($value)'; } 
  }
-final class PostTerminalReadersReaderSetReaderDisplayRequest {const PostTerminalReadersReaderSetReaderDisplayRequest({this.cart, this.expand, required this.type, });
+@immutable final class PostTerminalReadersReaderSetReaderDisplayRequest {const PostTerminalReadersReaderSetReaderDisplayRequest({required this.type, this.cart, this.expand, });
 
 factory PostTerminalReadersReaderSetReaderDisplayRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderSetReaderDisplayRequest(
   cart: json['cart'] != null ? PostTerminalReadersReaderSetReaderDisplayRequestCart.fromJson(json['cart'] as Map<String, dynamic>) : null,

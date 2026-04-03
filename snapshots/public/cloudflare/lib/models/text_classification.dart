@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TextClassification {const TextClassification({required this.text});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextClassification {const TextClassification({required this.text});
 
 factory TextClassification.fromJson(Map<String, dynamic> json) { return TextClassification(
   text: json['text'] as String,

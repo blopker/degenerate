@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An SSH key granting access to a single repository.
-final class DeployKey {const DeployKey({required this.id, required this.key, required this.url, required this.title, required this.verified, required this.createdAt, required this.readOnly, this.addedBy, this.lastUsed, this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An SSH key granting access to a single repository.
+@immutable final class DeployKey {const DeployKey({required this.id, required this.key, required this.url, required this.title, required this.verified, required this.createdAt, required this.readOnly, this.addedBy, this.lastUsed, this.enabled, });
 
 factory DeployKey.fromJson(Map<String, dynamic> json) { return DeployKey(
   id: (json['id'] as num).toInt(),

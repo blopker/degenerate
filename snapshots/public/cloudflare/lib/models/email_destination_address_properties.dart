@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_created.dart';import 'email_destination_address_identifier.dart';import 'email_email.dart';import 'email_modified.dart';/// Destination address tag. (Deprecated, replaced by destination address identifier)
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_created.dart';import 'email_destination_address_identifier.dart';import 'email_email.dart';import 'email_modified.dart';/// Destination address tag. (Deprecated, replaced by destination address identifier)
 extension type const EmailDestinationAddressTag(String value) {
 factory EmailDestinationAddressTag.fromJson(String json) => EmailDestinationAddressTag(json);
 
@@ -14,7 +14,7 @@ factory EmailVerified.fromJson(String json) => EmailVerified(DateTime.parse(json
 String toJson() => value.toIso8601String();
 
 }
-final class EmailDestinationAddressProperties {const EmailDestinationAddressProperties({this.created, this.email, this.id, this.modified, this.tag, this.verified, });
+@immutable final class EmailDestinationAddressProperties {const EmailDestinationAddressProperties({this.created, this.email, this.id, this.modified, this.tag, this.verified, });
 
 factory EmailDestinationAddressProperties.fromJson(Map<String, dynamic> json) { return EmailDestinationAddressProperties(
   created: json['created'] != null ? EmailCreated.fromJson(json['created'] as String) : null,

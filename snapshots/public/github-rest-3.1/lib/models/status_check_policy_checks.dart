@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StatusCheckPolicyChecks {const StatusCheckPolicyChecks({required this.context, required this.appId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StatusCheckPolicyChecks {const StatusCheckPolicyChecks({required this.context, required this.appId, });
 
 factory StatusCheckPolicyChecks.fromJson(Map<String, dynamic> json) { return StatusCheckPolicyChecks(
   context: json['context'] as String,

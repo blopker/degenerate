@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_dex_targeted_test_.dart';import 'digital_experience_monitoring_uuid.dart';final class DigitalExperienceMonitoringDexRule {const DigitalExperienceMonitoringDexRule({required this.createdAt, this.description, required this.id, required this.match, required this.name, this.targetedTests, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_dex_targeted_test_.dart';import 'digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringDexRule {const DigitalExperienceMonitoringDexRule({required this.createdAt, required this.id, required this.match, required this.name, this.description, this.targetedTests, this.updatedAt, });
 
 factory DigitalExperienceMonitoringDexRule.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDexRule(
   createdAt: json['created_at'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_schedule_details_billing_mode.dart';import 'post_invoices_create_preview_request_schedule_details_phases.dart';final class PostInvoicesCreatePreviewRequestScheduleDetailsEndBehavior {const PostInvoicesCreatePreviewRequestScheduleDetailsEndBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_schedule_details_billing_mode.dart';import 'post_invoices_create_preview_request_schedule_details_phases.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsEndBehavior {const PostInvoicesCreatePreviewRequestScheduleDetailsEndBehavior._(this.value);
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsEndBehavior.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsEndBehavior($value)'; } 
  }
-final class PostInvoicesCreatePreviewRequestScheduleDetailsProrationBehavior {const PostInvoicesCreatePreviewRequestScheduleDetailsProrationBehavior._(this.value);
+@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsProrationBehavior {const PostInvoicesCreatePreviewRequestScheduleDetailsProrationBehavior._(this.value);
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsProrationBehavior($value)'; } 
  }
 /// The schedule creation or modification params to apply as a preview. Cannot be used with `subscription` or `subscription_` prefixed fields.
-final class PostInvoicesCreatePreviewRequestScheduleDetails {const PostInvoicesCreatePreviewRequestScheduleDetails({this.billingMode, this.endBehavior, this.phases, this.prorationBehavior, });
+@immutable final class PostInvoicesCreatePreviewRequestScheduleDetails {const PostInvoicesCreatePreviewRequestScheduleDetails({this.billingMode, this.endBehavior, this.phases, this.prorationBehavior, });
 
 factory PostInvoicesCreatePreviewRequestScheduleDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetails(
   billingMode: json['billing_mode'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,

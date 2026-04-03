@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Started upgrade
-final class MconnEventStartUpgradeK {const MconnEventStartUpgradeK._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started upgrade
+@immutable final class MconnEventStartUpgradeK {const MconnEventStartUpgradeK._(this.value);
 
 factory MconnEventStartUpgradeK.fromJson(String json) { return switch (json) {
   'StartUpgrade' => startUpgrade,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MconnEventStartUpgradeK($value)'; } 
  }
-final class MconnEventStartUpgrade {const MconnEventStartUpgrade({required this.k, required this.url, });
+@immutable final class MconnEventStartUpgrade {const MconnEventStartUpgrade({required this.k, required this.url, });
 
 factory MconnEventStartUpgrade.fromJson(Map<String, dynamic> json) { return MconnEventStartUpgrade(
   k: MconnEventStartUpgradeK.fromJson(json['k'] as String),

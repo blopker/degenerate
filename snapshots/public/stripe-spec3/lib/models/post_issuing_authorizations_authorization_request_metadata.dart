@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostIssuingAuthorizationsAuthorizationRequestMetadataVariant2 {const PostIssuingAuthorizationsAuthorizationRequestMetadataVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIssuingAuthorizationsAuthorizationRequestMetadataVariant2 {const PostIssuingAuthorizationsAuthorizationRequestMetadataVariant2._(this.value);
 
 factory PostIssuingAuthorizationsAuthorizationRequestMetadataVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

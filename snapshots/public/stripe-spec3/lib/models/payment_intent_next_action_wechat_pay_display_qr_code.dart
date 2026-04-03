@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionWechatPayDisplayQrCode {const PaymentIntentNextActionWechatPayDisplayQrCode({required this.data, required this.hostedInstructionsUrl, required this.imageDataUrl, required this.imageUrlPng, required this.imageUrlSvg, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionWechatPayDisplayQrCode {const PaymentIntentNextActionWechatPayDisplayQrCode({required this.data, required this.hostedInstructionsUrl, required this.imageDataUrl, required this.imageUrlPng, required this.imageUrlSvg, });
 
 factory PaymentIntentNextActionWechatPayDisplayQrCode.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionWechatPayDisplayQrCode(
   data: json['data'] as String,

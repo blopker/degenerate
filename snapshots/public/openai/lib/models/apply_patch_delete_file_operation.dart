@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Delete the specified file.
-final class ApplyPatchDeleteFileOperationType {const ApplyPatchDeleteFileOperationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Delete the specified file.
+@immutable final class ApplyPatchDeleteFileOperationType {const ApplyPatchDeleteFileOperationType._(this.value);
 
 factory ApplyPatchDeleteFileOperationType.fromJson(String json) { return switch (json) {
   'delete_file' => deleteFile,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ApplyPatchDeleteFileOperationType($value)'; } 
  }
 /// Instruction describing how to delete a file via the apply_patch tool.
-final class ApplyPatchDeleteFileOperation {const ApplyPatchDeleteFileOperation({this.type = ApplyPatchDeleteFileOperationType.deleteFile, required this.path, });
+@immutable final class ApplyPatchDeleteFileOperation {const ApplyPatchDeleteFileOperation({required this.path, this.type = ApplyPatchDeleteFileOperationType.deleteFile, });
 
 factory ApplyPatchDeleteFileOperation.fromJson(Map<String, dynamic> json) { return ApplyPatchDeleteFileOperation(
   type: ApplyPatchDeleteFileOperationType.fromJson(json['type'] as String),

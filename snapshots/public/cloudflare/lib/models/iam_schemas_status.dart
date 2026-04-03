@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Status of this membership.
-final class IamSchemasStatus {const IamSchemasStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of this membership.
+@immutable final class IamSchemasStatus {const IamSchemasStatus._(this.value);
 
 factory IamSchemasStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,

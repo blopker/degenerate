@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2SlurperS3LikeCredsSchema {const R2SlurperS3LikeCredsSchema({required this.accessKeyId, required this.secretAccessKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperS3LikeCredsSchema {const R2SlurperS3LikeCredsSchema({required this.accessKeyId, required this.secretAccessKey, });
 
 factory R2SlurperS3LikeCredsSchema.fromJson(Map<String, dynamic> json) { return R2SlurperS3LikeCredsSchema(
   accessKeyId: json['accessKeyId'] as String,

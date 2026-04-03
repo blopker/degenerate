@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of payment being captured. One of `credit-card` or `ach-debit`. The default value is `credit-card`.
-final class PaymentsEnumPaymentMethod {const PaymentsEnumPaymentMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of payment being captured. One of `credit-card` or `ach-debit`. The default value is `credit-card`.
+@immutable final class PaymentsEnumPaymentMethod {const PaymentsEnumPaymentMethod._(this.value);
 
 factory PaymentsEnumPaymentMethod.fromJson(String json) { return switch (json) {
   'credit-card' => creditCard,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsEnumPaymentMethod($value)'; } 
  }
 /// Type of bank account if payment source is ACH. One of `consumer-checking`, `consumer-savings`, or `commercial-checking`. The default value is `consumer-checking`.
-final class PaymentsEnumBankAccountType {const PaymentsEnumBankAccountType._(this.value);
+@immutable final class PaymentsEnumBankAccountType {const PaymentsEnumBankAccountType._(this.value);
 
 factory PaymentsEnumBankAccountType.fromJson(String json) { return switch (json) {
   'consumer-checking' => consumerChecking,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsEnumBankAccountType($value)'; } 
  }
 /// Indicates whether the payment method should be tokenized as a `one-time`, `reusable`, or `payment-method` token. The default value is `reusable`. Do not enter a charge amount when tokenizing. If a charge amount is entered, the payment method will be charged and not tokenized.
-final class PaymentsEnumTokenType {const PaymentsEnumTokenType._(this.value);
+@immutable final class PaymentsEnumTokenType {const PaymentsEnumTokenType._(this.value);
 
 factory PaymentsEnumTokenType.fromJson(String json) { return switch (json) {
   'one-time' => oneTime,
@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentsEnumTokenType($value)'; } 
  }
-final class CreatePaymentsRequest {const CreatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.bankAccountType, this.chargeAmount, this.currency, this.description, this.input, this.minPostalCodeLength, this.parameter, this.paymentConnector, this.paymentMethod, this.postalCode, this.securityCode, this.timeout, this.tokenType, this.validCardTypes, });
+@immutable final class CreatePaymentsRequest {const CreatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.bankAccountType, this.chargeAmount, this.currency, this.description, this.input, this.minPostalCodeLength, this.parameter, this.paymentConnector, this.paymentMethod, this.postalCode, this.securityCode, this.timeout, this.tokenType, this.validCardTypes, });
 
 factory CreatePaymentsRequest.fromJson(Map<String, dynamic> json) { return CreatePaymentsRequest(
   idempotencyKey: json['IdempotencyKey'] as String,

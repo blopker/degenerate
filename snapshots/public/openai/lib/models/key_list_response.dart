@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key3.dart';final class KeyListResponseObject {const KeyListResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key3.dart';@immutable final class KeyListResponseObject {const KeyListResponseObject._(this.value);
 
 factory KeyListResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'KeyListResponseObject($value)'; } 
  }
-final class KeyListResponse {const KeyListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+@immutable final class KeyListResponse {const KeyListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory KeyListResponse.fromJson(Map<String, dynamic> json) { return KeyListResponse(
   object: KeyListResponseObject.fromJson(json['object'] as String),

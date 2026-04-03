@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A short machine-readable string giving the reason for the verification or user-session failure.
-final class GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification or user-session failure.
+@immutable final class GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode._(this.value);
 
 factory GelatoSessionLastErrorCode.fromJson(String json) { return switch (json) {
   'abandoned' => abandoned,
@@ -77,7 +77,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoSessionLastErrorCode($value)'; } 
  }
 /// Shows last VerificationSession error
-final class GelatoSessionLastError {const GelatoSessionLastError({this.code, this.reason, });
+@immutable final class GelatoSessionLastError {const GelatoSessionLastError({this.code, this.reason, });
 
 factory GelatoSessionLastError.fromJson(Map<String, dynamic> json) { return GelatoSessionLastError(
   code: json['code'] != null ? GelatoSessionLastErrorCode.fromJson(json['code'] as String) : null,

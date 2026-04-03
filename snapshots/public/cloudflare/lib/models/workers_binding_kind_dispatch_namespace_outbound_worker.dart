@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Outbound worker.
-final class WorkersBindingKindDispatchNamespaceOutboundWorker {const WorkersBindingKindDispatchNamespaceOutboundWorker({this.entrypoint, this.environment, this.service, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Outbound worker.
+@immutable final class WorkersBindingKindDispatchNamespaceOutboundWorker {const WorkersBindingKindDispatchNamespaceOutboundWorker({this.entrypoint, this.environment, this.service, });
 
 factory WorkersBindingKindDispatchNamespaceOutboundWorker.fromJson(Map<String, dynamic> json) { return WorkersBindingKindDispatchNamespaceOutboundWorker(
   entrypoint: json['entrypoint'] as String?,

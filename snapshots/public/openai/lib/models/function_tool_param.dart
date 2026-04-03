@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'empty_model_param.dart';final class FunctionToolParamType {const FunctionToolParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'empty_model_param.dart';@immutable final class FunctionToolParamType {const FunctionToolParamType._(this.value);
 
 factory FunctionToolParamType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FunctionToolParamType($value)'; } 
  }
-final class FunctionToolParam {const FunctionToolParam({required this.name, this.description, this.parameters, this.strict, this.type = FunctionToolParamType.function, });
+@immutable final class FunctionToolParam {const FunctionToolParam({required this.name, this.description, this.parameters, this.strict, this.type = FunctionToolParamType.function, });
 
 factory FunctionToolParam.fromJson(Map<String, dynamic> json) { return FunctionToolParam(
   name: json['name'] as String,

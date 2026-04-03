@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_registry_package_updated_registry_package_owner.dart';import 'webhook_registry_package_updated_registry_package_package_version.dart';final class WebhookRegistryPackageUpdatedRegistryPackage {const WebhookRegistryPackageUpdatedRegistryPackage({required this.createdAt, required this.description, required this.ecosystem, required this.htmlUrl, required this.id, required this.name, required this.namespace, required this.owner, required this.packageType, required this.packageVersion, required this.registry, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_updated_registry_package_owner.dart';import 'webhook_registry_package_updated_registry_package_package_version.dart';@immutable final class WebhookRegistryPackageUpdatedRegistryPackage {const WebhookRegistryPackageUpdatedRegistryPackage({required this.createdAt, required this.description, required this.ecosystem, required this.htmlUrl, required this.id, required this.name, required this.namespace, required this.owner, required this.packageType, required this.packageVersion, required this.registry, required this.updatedAt, });
 
 factory WebhookRegistryPackageUpdatedRegistryPackage.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackageUpdatedRegistryPackage(
   createdAt: json['created_at'] as String,
@@ -13,7 +13,7 @@ factory WebhookRegistryPackageUpdatedRegistryPackage.fromJson(Map<String, dynami
   owner: WebhookRegistryPackageUpdatedRegistryPackageOwner.fromJson(json['owner'] as Map<String, dynamic>),
   packageType: json['package_type'] as String,
   packageVersion: WebhookRegistryPackageUpdatedRegistryPackagePackageVersion.fromJson(json['package_version'] as Map<String, dynamic>),
-  registry: (json['registry'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  registry: json['registry'] as Map<String, dynamic>?,
   updatedAt: json['updated_at'] as String,
 ); }
 

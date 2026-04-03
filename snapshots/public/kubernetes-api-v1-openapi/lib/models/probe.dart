@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'exec_action.dart';import 'grpc_action.dart';import 'http_get_action.dart';import 'tcp_socket_action.dart';/// Probe describes a health check to be performed against a container to determine whether it is alive or ready to receive traffic.
-final class Probe {const Probe({this.exec, this.failureThreshold, this.grpc, this.httpGet, this.initialDelaySeconds, this.periodSeconds, this.successThreshold, this.tcpSocket, this.terminationGracePeriodSeconds, this.timeoutSeconds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'exec_action.dart';import 'grpc_action.dart';import 'http_get_action.dart';import 'tcp_socket_action.dart';/// Probe describes a health check to be performed against a container to determine whether it is alive or ready to receive traffic.
+@immutable final class Probe {const Probe({this.exec, this.failureThreshold, this.grpc, this.httpGet, this.initialDelaySeconds, this.periodSeconds, this.successThreshold, this.tcpSocket, this.terminationGracePeriodSeconds, this.timeoutSeconds, });
 
 factory Probe.fromJson(Map<String, dynamic> json) { return Probe(
   exec: json['exec'] != null ? ExecAction.fromJson(json['exec'] as Map<String, dynamic>) : null,

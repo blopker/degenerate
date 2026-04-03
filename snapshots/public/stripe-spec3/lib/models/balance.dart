@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_amount.dart';import 'balance_amount_net.dart';import 'balance_detail.dart';import 'balance_detail_ungated.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class BalanceObject {const BalanceObject._(this.value);
+@immutable final class BalanceObject {const BalanceObject._(this.value);
 
 factory BalanceObject.fromJson(String json) { return switch (json) {
   'balance' => balance,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The top-level `available` and `pending` comprise your "payments balance."
 /// 
 /// Related guide: [Balances and settlement time](https://docs.stripe.com/payments/balances), [Understanding Connect account balances](https://docs.stripe.com/connect/account-balances)
-final class Balance {const Balance({required this.available, this.connectReserved, this.instantAvailable, this.issuing, required this.livemode, required this.object, required this.pending, this.refundAndDisputePrefunding, });
+@immutable final class Balance {const Balance({required this.available, required this.livemode, required this.object, required this.pending, this.connectReserved, this.instantAvailable, this.issuing, this.refundAndDisputePrefunding, });
 
 factory Balance.fromJson(Map<String, dynamic> json) { return Balance(
   available: (json['available'] as List<dynamic>).map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),

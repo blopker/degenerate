@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_bgp_rpki_aspa_timeseries_response_result_meta.dart';import 'radar_get_bgp_rpki_aspa_timeseries_response_result_serie0.dart';final class RadarGetBgpRpkiAspaTimeseriesResponseResult {const RadarGetBgpRpkiAspaTimeseriesResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_rpki_aspa_timeseries_response_result_meta.dart';import 'radar_get_bgp_rpki_aspa_timeseries_response_result_serie0.dart';@immutable final class RadarGetBgpRpkiAspaTimeseriesResponseResult {const RadarGetBgpRpkiAspaTimeseriesResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetBgpRpkiAspaTimeseriesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaTimeseriesResponseResult(
   meta: RadarGetBgpRpkiAspaTimeseriesResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

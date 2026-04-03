@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Field to order widgets by.
-final class AccountsTurnstileWidgetCreateOrder {const AccountsTurnstileWidgetCreateOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order widgets by.
+@immutable final class AccountsTurnstileWidgetCreateOrder {const AccountsTurnstileWidgetCreateOrder._(this.value);
 
 factory AccountsTurnstileWidgetCreateOrder.fromJson(String json) { return switch (json) {
   'id' => id,

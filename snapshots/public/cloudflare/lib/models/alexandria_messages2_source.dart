@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AlexandriaMessages2Source {const AlexandriaMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AlexandriaMessages2Source {const AlexandriaMessages2Source({this.pointer});
 
 factory AlexandriaMessages2Source.fromJson(Map<String, dynamic> json) { return AlexandriaMessages2Source(
   pointer: json['pointer'] as String?,

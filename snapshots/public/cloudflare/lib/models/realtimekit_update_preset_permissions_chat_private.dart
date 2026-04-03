@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitUpdatePresetPermissionsChatPrivate {const RealtimekitUpdatePresetPermissionsChatPrivate({this.canReceive, this.canSend, this.files, this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitUpdatePresetPermissionsChatPrivate {const RealtimekitUpdatePresetPermissionsChatPrivate({this.canReceive, this.canSend, this.files, this.text, });
 
 factory RealtimekitUpdatePresetPermissionsChatPrivate.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissionsChatPrivate(
   canReceive: json['can_receive'] as bool?,

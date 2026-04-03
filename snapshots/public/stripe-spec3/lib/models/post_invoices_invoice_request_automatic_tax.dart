@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_invoices_invoice_request_automatic_tax_liability.dart';/// Settings for automatic tax lookup for this invoice.
-final class PostInvoicesInvoiceRequestAutomaticTax {const PostInvoicesInvoiceRequestAutomaticTax({required this.enabled, this.liability, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_request_automatic_tax_liability.dart';/// Settings for automatic tax lookup for this invoice.
+@immutable final class PostInvoicesInvoiceRequestAutomaticTax {const PostInvoicesInvoiceRequestAutomaticTax({required this.enabled, this.liability, });
 
 factory PostInvoicesInvoiceRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRequestAutomaticTax(
   enabled: json['enabled'] as bool,

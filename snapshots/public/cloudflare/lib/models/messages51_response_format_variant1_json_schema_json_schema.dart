@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51ResponseFormatVariant1JsonSchemaJsonSchema {const Messages51ResponseFormatVariant1JsonSchemaJsonSchema({this.description, required this.name, this.schema, this.strict, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51ResponseFormatVariant1JsonSchemaJsonSchema {const Messages51ResponseFormatVariant1JsonSchemaJsonSchema({required this.name, this.description, this.schema, this.strict, });
 
 factory Messages51ResponseFormatVariant1JsonSchemaJsonSchema.fromJson(Map<String, dynamic> json) { return Messages51ResponseFormatVariant1JsonSchemaJsonSchema(
   description: json['description'] as String?,
   name: json['name'] as String,
-  schema: (json['schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  schema: json['schema'] as Map<String, dynamic>?,
   strict: json['strict'] as bool?,
 ); }
 

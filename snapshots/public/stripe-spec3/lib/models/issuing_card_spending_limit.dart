@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class IssuingCardSpendingLimitCategories {const IssuingCardSpendingLimitCategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuingCardSpendingLimitCategories {const IssuingCardSpendingLimitCategories._(this.value);
 
 factory IssuingCardSpendingLimitCategories.fromJson(String json) { return switch (json) {
   'ac_refrigeration_repair' => acRefrigerationRepair,
@@ -904,7 +904,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardSpendingLimitCategories($value)'; } 
  }
 /// Interval (or event) to which the amount applies.
-final class IssuingCardSpendingLimitInterval {const IssuingCardSpendingLimitInterval._(this.value);
+@immutable final class IssuingCardSpendingLimitInterval {const IssuingCardSpendingLimitInterval._(this.value);
 
 factory IssuingCardSpendingLimitInterval.fromJson(String json) { return switch (json) {
   'all_time' => allTime,
@@ -941,7 +941,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardSpendingLimitInterval($value)'; } 
  }
 /// 
-final class IssuingCardSpendingLimit {const IssuingCardSpendingLimit({required this.amount, this.categories, required this.interval, });
+@immutable final class IssuingCardSpendingLimit {const IssuingCardSpendingLimit({required this.amount, required this.interval, this.categories, });
 
 factory IssuingCardSpendingLimit.fromJson(Map<String, dynamic> json) { return IssuingCardSpendingLimit(
   amount: (json['amount'] as num).toInt(),

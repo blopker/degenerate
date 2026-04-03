@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_for
 /// - [Text inputs and outputs](/docs/guides/text)
 /// - [Structured Outputs](/docs/guides/structured-outputs)
 /// 
-final class CreateEvalResponsesRunDataSourceSamplingParamsText {const CreateEvalResponsesRunDataSourceSamplingParamsText({this.format});
+@immutable final class CreateEvalResponsesRunDataSourceSamplingParamsText {const CreateEvalResponsesRunDataSourceSamplingParamsText({this.format});
 
 factory CreateEvalResponsesRunDataSourceSamplingParamsText.fromJson(Map<String, dynamic> json) { return CreateEvalResponsesRunDataSourceSamplingParamsText(
   format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromB: (v) => TextResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,

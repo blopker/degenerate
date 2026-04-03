@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSessionParticipantsSortOrder {const GetSessionParticipantsSortOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSessionParticipantsSortOrder {const GetSessionParticipantsSortOrder._(this.value);
 
 factory GetSessionParticipantsSortOrder.fromJson(String json) { return switch (json) {
   'ASC' => asc,

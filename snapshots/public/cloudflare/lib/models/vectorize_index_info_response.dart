@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vectorize_index_dimensions.dart';import 'vectorize_mutation_uuid.dart';final class VectorizeIndexInfoResponse {const VectorizeIndexInfoResponse({this.dimensions, this.processedUpToDatetime, this.processedUpToMutation, this.vectorCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_index_dimensions.dart';import 'vectorize_mutation_uuid.dart';@immutable final class VectorizeIndexInfoResponse {const VectorizeIndexInfoResponse({this.dimensions, this.processedUpToDatetime, this.processedUpToMutation, this.vectorCount, });
 
 factory VectorizeIndexInfoResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexInfoResponse(
   dimensions: json['dimensions'] != null ? VectorizeIndexDimensions.fromJson(json['dimensions'] as num) : null,

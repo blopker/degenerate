@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_create_bulk_request_data.dart';final class PostEventCreateBulkRequest {const PostEventCreateBulkRequest({required this.data, required this.datasetId, this.includeCreatedEvents, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_create_bulk_request_data.dart';@immutable final class PostEventCreateBulkRequest {const PostEventCreateBulkRequest({required this.data, required this.datasetId, this.includeCreatedEvents, });
 
 factory PostEventCreateBulkRequest.fromJson(Map<String, dynamic> json) { return PostEventCreateBulkRequest(
   data: (json['data'] as List<dynamic>).map((e) => PostEventCreateBulkRequestData.fromJson(e as Map<String, dynamic>)).toList(),

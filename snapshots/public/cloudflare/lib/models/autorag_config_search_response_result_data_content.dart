@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AutoragConfigSearchResponseResultDataContent {const AutoragConfigSearchResponseResultDataContent({this.text, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigSearchResponseResultDataContent {const AutoragConfigSearchResponseResultDataContent({this.text, this.type, });
 
 factory AutoragConfigSearchResponseResultDataContent.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchResponseResultDataContent(
   text: json['text'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_assets_config_run_worker_first.dart';/// Determines the redirects and rewrites of requests for HTML content.
-final class WorkersAssetsConfigHtmlHandling {const WorkersAssetsConfigHtmlHandling._(this.value);
+@immutable final class WorkersAssetsConfigHtmlHandling {const WorkersAssetsConfigHtmlHandling._(this.value);
 
 factory WorkersAssetsConfigHtmlHandling.fromJson(String json) { return switch (json) {
   'auto-trailing-slash' => autoTrailingSlash,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkersAssetsConfigHtmlHandling($value)'; } 
  }
 /// Determines the response when a request does not match a static asset, and there is no Worker script.
-final class WorkersAssetsConfigNotFoundHandling {const WorkersAssetsConfigNotFoundHandling._(this.value);
+@immutable final class WorkersAssetsConfigNotFoundHandling {const WorkersAssetsConfigNotFoundHandling._(this.value);
 
 factory WorkersAssetsConfigNotFoundHandling.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkersAssetsConfigNotFoundHandling($value)'; } 
  }
 /// Configuration for assets within a Worker.
-final class WorkersAssetsConfig {const WorkersAssetsConfig({this.headers, this.redirects, this.htmlHandling, this.notFoundHandling, this.runWorkerFirst, this.serveDirectly, });
+@immutable final class WorkersAssetsConfig {const WorkersAssetsConfig({this.headers, this.redirects, this.htmlHandling, this.notFoundHandling, this.runWorkerFirst, this.serveDirectly, });
 
 factory WorkersAssetsConfig.fromJson(Map<String, dynamic> json) { return WorkersAssetsConfig(
   headers: json['_headers'] as String?,

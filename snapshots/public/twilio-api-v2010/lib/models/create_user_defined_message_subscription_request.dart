@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The HTTP method Twilio will use when requesting the above `Url`. Either `GET` or `POST`. Default is `POST`.
-final class CreateUserDefinedMessageSubscriptionRequestMethod {const CreateUserDefinedMessageSubscriptionRequestMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method Twilio will use when requesting the above `Url`. Either `GET` or `POST`. Default is `POST`.
+@immutable final class CreateUserDefinedMessageSubscriptionRequestMethod {const CreateUserDefinedMessageSubscriptionRequestMethod._(this.value);
 
 factory CreateUserDefinedMessageSubscriptionRequestMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateUserDefinedMessageSubscriptionRequestMethod($value)'; } 
  }
-final class CreateUserDefinedMessageSubscriptionRequest {const CreateUserDefinedMessageSubscriptionRequest({required this.callback, this.idempotencyKey, this.method, });
+@immutable final class CreateUserDefinedMessageSubscriptionRequest {const CreateUserDefinedMessageSubscriptionRequest({required this.callback, this.idempotencyKey, this.method, });
 
 factory CreateUserDefinedMessageSubscriptionRequest.fromJson(Map<String, dynamic> json) { return CreateUserDefinedMessageSubscriptionRequest(
   callback: Uri.parse(json['Callback'] as String),

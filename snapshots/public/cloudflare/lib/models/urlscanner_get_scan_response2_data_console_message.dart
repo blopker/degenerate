@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2DataConsoleMessage {const UrlscannerGetScanResponse2DataConsoleMessage({required this.level, required this.source, required this.text, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2DataConsoleMessage {const UrlscannerGetScanResponse2DataConsoleMessage({required this.level, required this.source, required this.text, required this.url, });
 
 factory UrlscannerGetScanResponse2DataConsoleMessage.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataConsoleMessage(
   level: json['level'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsTopAsesResponseTtl {const RadarGetDnsTopAsesResponseTtl._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTopAsesResponseTtl {const RadarGetDnsTopAsesResponseTtl._(this.value);
 
 factory RadarGetDnsTopAsesResponseTtl.fromJson(String json) { return switch (json) {
   'LTE_1M' => lte1M,

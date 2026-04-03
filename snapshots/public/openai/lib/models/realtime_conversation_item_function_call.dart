@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
-final class RealtimeConversationItemFunctionCallObject {const RealtimeConversationItemFunctionCallObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
+@immutable final class RealtimeConversationItemFunctionCallObject {const RealtimeConversationItemFunctionCallObject._(this.value);
 
 factory RealtimeConversationItemFunctionCallObject.fromJson(String json) { return switch (json) {
   'realtime.item' => realtimeItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemFunctionCallObject($value)'; } 
  }
 /// The type of the item. Always `function_call`.
-final class RealtimeConversationItemFunctionCallType {const RealtimeConversationItemFunctionCallType._(this.value);
+@immutable final class RealtimeConversationItemFunctionCallType {const RealtimeConversationItemFunctionCallType._(this.value);
 
 factory RealtimeConversationItemFunctionCallType.fromJson(String json) { return switch (json) {
   'function_call' => functionCall,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemFunctionCallType($value)'; } 
  }
 /// The status of the item. Has no effect on the conversation.
-final class RealtimeConversationItemFunctionCallStatus {const RealtimeConversationItemFunctionCallStatus._(this.value);
+@immutable final class RealtimeConversationItemFunctionCallStatus {const RealtimeConversationItemFunctionCallStatus._(this.value);
 
 factory RealtimeConversationItemFunctionCallStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemFunctionCallStatus($value)'; } 
  }
 /// A function call item in a Realtime conversation.
-final class RealtimeConversationItemFunctionCall {const RealtimeConversationItemFunctionCall({this.id, this.object, required this.type, this.status, this.callId, required this.name, required this.arguments, });
+@immutable final class RealtimeConversationItemFunctionCall {const RealtimeConversationItemFunctionCall({required this.type, required this.name, required this.arguments, this.id, this.object, this.status, this.callId, });
 
 factory RealtimeConversationItemFunctionCall.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemFunctionCall(
   id: json['id'] as String?,

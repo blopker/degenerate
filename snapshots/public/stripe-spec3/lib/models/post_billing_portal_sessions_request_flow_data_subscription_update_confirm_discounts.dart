@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts {const PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts({this.coupon, this.promotionCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts {const PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts({this.coupon, this.promotionCode, });
 
 factory PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts(
   coupon: json['coupon'] as String?,

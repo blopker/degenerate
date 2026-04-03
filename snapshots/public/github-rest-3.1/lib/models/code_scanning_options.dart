@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Security Configuration feature options for code scanning
-final class CodeScanningOptions {const CodeScanningOptions({this.allowAdvanced});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Security Configuration feature options for code scanning
+@immutable final class CodeScanningOptions {const CodeScanningOptions({this.allowAdvanced});
 
 factory CodeScanningOptions.fromJson(Map<String, dynamic> json) { return CodeScanningOptions(
   allowAdvanced: json['allow_advanced'] as bool?,

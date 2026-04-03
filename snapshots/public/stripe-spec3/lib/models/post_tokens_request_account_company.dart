@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_account_company_address.dart';import 'post_tokens_request_account_company_address_kana.dart';import 'post_tokens_request_account_company_address_kanji.dart';import 'post_tokens_request_account_company_directorship_declaration.dart';import 'post_tokens_request_account_company_ownership_declaration.dart';import 'post_tokens_request_account_company_registration_date.dart';import 'post_tokens_request_account_company_representative_declaration.dart';import 'post_tokens_request_account_company_verification.dart';import 'registration_date_specs3.dart';final class PostTokensRequestAccountCompanyOwnershipExemptionReason {const PostTokensRequestAccountCompanyOwnershipExemptionReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_account_company_address.dart';import 'post_tokens_request_account_company_address_kana.dart';import 'post_tokens_request_account_company_address_kanji.dart';import 'post_tokens_request_account_company_directorship_declaration.dart';import 'post_tokens_request_account_company_ownership_declaration.dart';import 'post_tokens_request_account_company_registration_date.dart';import 'post_tokens_request_account_company_representative_declaration.dart';import 'post_tokens_request_account_company_verification.dart';import 'registration_date_specs3.dart';@immutable final class PostTokensRequestAccountCompanyOwnershipExemptionReason {const PostTokensRequestAccountCompanyOwnershipExemptionReason._(this.value);
 
 factory PostTokensRequestAccountCompanyOwnershipExemptionReason.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTokensRequestAccountCompanyOwnershipExemptionReason($value)'; } 
  }
-final class PostTokensRequestAccountCompanyStructure {const PostTokensRequestAccountCompanyStructure._(this.value);
+@immutable final class PostTokensRequestAccountCompanyStructure {const PostTokensRequestAccountCompanyStructure._(this.value);
 
 factory PostTokensRequestAccountCompanyStructure.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -117,7 +117,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTokensRequestAccountCompanyStructure($value)'; } 
  }
-final class PostTokensRequestAccountCompany {const PostTokensRequestAccountCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipDeclarationShownAndSigned, this.ownershipExemptionReason, this.phone, this.registrationDate, this.registrationNumber, this.representativeDeclaration, this.structure, this.taxId, this.taxIdRegistrar, this.vatId, this.verification, });
+@immutable final class PostTokensRequestAccountCompany {const PostTokensRequestAccountCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipDeclarationShownAndSigned, this.ownershipExemptionReason, this.phone, this.registrationDate, this.registrationNumber, this.representativeDeclaration, this.structure, this.taxId, this.taxIdRegistrar, this.vatId, this.verification, });
 
 factory PostTokensRequestAccountCompany.fromJson(Map<String, dynamic> json) { return PostTokensRequestAccountCompany(
   address: json['address'] != null ? PostTokensRequestAccountCompanyAddress.fromJson(json['address'] as Map<String, dynamic>) : null,

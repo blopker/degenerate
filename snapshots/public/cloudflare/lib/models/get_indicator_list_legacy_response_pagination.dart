@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIndicatorListLegacyResponsePagination {const GetIndicatorListLegacyResponsePagination({required this.page, required this.pageSize, required this.totalCount, required this.totalPages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIndicatorListLegacyResponsePagination {const GetIndicatorListLegacyResponsePagination({required this.page, required this.pageSize, required this.totalCount, required this.totalPages, });
 
 factory GetIndicatorListLegacyResponsePagination.fromJson(Map<String, dynamic> json) { return GetIndicatorListLegacyResponsePagination(
   page: (json['page'] as num).toDouble(),

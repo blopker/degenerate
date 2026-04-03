@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode._(this.value);
 
 factory ListsItemRedirectStatusCode.fromJson(int json) { return switch (json) {
   301 => $301,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ListsItemRedirectStatusCode($value)'; } 
  }
 /// The definition of the redirect.
-final class ListsItemRedirect {const ListsItemRedirect({this.includeSubdomains = false, this.preservePathSuffix = false, this.preserveQueryString = false, required this.sourceUrl, this.statusCode, this.subpathMatching = false, required this.targetUrl, });
+@immutable final class ListsItemRedirect {const ListsItemRedirect({required this.sourceUrl, required this.targetUrl, this.includeSubdomains = false, this.preservePathSuffix = false, this.preserveQueryString = false, this.statusCode, this.subpathMatching = false, });
 
 factory ListsItemRedirect.fromJson(Map<String, dynamic> json) { return ListsItemRedirect(
   includeSubdomains: json.containsKey('include_subdomains') ? json['include_subdomains'] as bool : false,

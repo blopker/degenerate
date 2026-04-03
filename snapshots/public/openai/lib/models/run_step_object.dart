@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_completion_usage.dart';import 'run_step_details_message_creation_object.dart';import 'run_step_details_tool_calls_object.dart';import 'run_step_object_last_error.dart';import 'run_step_object_step_details.dart';/// The object type, which is always `thread.run.step`.
-final class RunStepObjectObject {const RunStepObjectObject._(this.value);
+@immutable final class RunStepObjectObject {const RunStepObjectObject._(this.value);
 
 factory RunStepObjectObject.fromJson(String json) { return switch (json) {
   'thread.run.step' => threadRunStep,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepObjectObject($value)'; } 
  }
 /// The type of run step, which can be either `message_creation` or `tool_calls`.
-final class RunStepObjectType {const RunStepObjectType._(this.value);
+@immutable final class RunStepObjectType {const RunStepObjectType._(this.value);
 
 factory RunStepObjectType.fromJson(String json) { return switch (json) {
   'message_creation' => messageCreation,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepObjectType($value)'; } 
  }
 /// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
-final class RunStepObjectStatus {const RunStepObjectStatus._(this.value);
+@immutable final class RunStepObjectStatus {const RunStepObjectStatus._(this.value);
 
 factory RunStepObjectStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -83,7 +83,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Represents a step in execution of a run.
 /// 
-final class RunStepObject {const RunStepObject({required this.id, required this.object, required this.createdAt, required this.assistantId, required this.threadId, required this.runId, required this.type, required this.status, required this.stepDetails, required this.lastError, required this.expiredAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.metadata, required this.usage, });
+@immutable final class RunStepObject {const RunStepObject({required this.id, required this.object, required this.createdAt, required this.assistantId, required this.threadId, required this.runId, required this.type, required this.status, required this.stepDetails, required this.lastError, required this.expiredAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.metadata, required this.usage, });
 
 factory RunStepObject.fromJson(Map<String, dynamic> json) { return RunStepObject(
   id: json['id'] as String,

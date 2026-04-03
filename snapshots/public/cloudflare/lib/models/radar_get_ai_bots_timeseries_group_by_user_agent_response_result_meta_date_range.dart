@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaDateRange {const RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaDateRange({required this.endTime, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaDateRange {const RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
 factory RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetAiBotsTimeseriesGroupByUserAgentResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),

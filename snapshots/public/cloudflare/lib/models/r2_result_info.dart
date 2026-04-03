@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2ResultInfo {const R2ResultInfo({this.cursor, this.perPage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2ResultInfo {const R2ResultInfo({this.cursor, this.perPage, });
 
 factory R2ResultInfo.fromJson(Map<String, dynamic> json) { return R2ResultInfo(
   cursor: json['cursor'] as String?,

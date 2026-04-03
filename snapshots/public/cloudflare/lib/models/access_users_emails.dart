@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessUsersEmails {const AccessUsersEmails({this.primary, this.type, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessUsersEmails {const AccessUsersEmails({this.primary, this.type, this.value, });
 
 factory AccessUsersEmails.fromJson(Map<String, dynamic> json) { return AccessUsersEmails(
   primary: json['primary'] as bool?,

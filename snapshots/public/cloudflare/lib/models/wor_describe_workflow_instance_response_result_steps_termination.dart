@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'wor_describe_workflow_instance_response_result_steps_termination_trigger.dart';final class WorDescribeWorkflowInstanceResponseResultStepsTerminationType {const WorDescribeWorkflowInstanceResponseResultStepsTerminationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_steps_termination_trigger.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsTerminationType {const WorDescribeWorkflowInstanceResponseResultStepsTerminationType._(this.value);
 
 factory WorDescribeWorkflowInstanceResponseResultStepsTerminationType.fromJson(String json) { return switch (json) {
   'termination' => termination,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorDescribeWorkflowInstanceResponseResultStepsTerminationType($value)'; } 
  }
-final class WorDescribeWorkflowInstanceResponseResultStepsTermination {const WorDescribeWorkflowInstanceResponseResultStepsTermination({required this.trigger, required this.type, });
+@immutable final class WorDescribeWorkflowInstanceResponseResultStepsTermination {const WorDescribeWorkflowInstanceResponseResultStepsTermination({required this.trigger, required this.type, });
 
 factory WorDescribeWorkflowInstanceResponseResultStepsTermination.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsTermination(
   trigger: WorDescribeWorkflowInstanceResponseResultStepsTerminationTrigger.fromJson(json['trigger'] as Map<String, dynamic>),

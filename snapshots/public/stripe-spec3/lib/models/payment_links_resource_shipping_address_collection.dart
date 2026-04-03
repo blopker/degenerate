@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentLinksResourceShippingAddressCollectionAllowedCountries {const PaymentLinksResourceShippingAddressCollectionAllowedCountries._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentLinksResourceShippingAddressCollectionAllowedCountries {const PaymentLinksResourceShippingAddressCollectionAllowedCountries._(this.value);
 
 factory PaymentLinksResourceShippingAddressCollectionAllowedCountries.fromJson(String json) { return switch (json) {
   'AC' => ac,
@@ -733,7 +733,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinksResourceShippingAddressCollectionAllowedCountries($value)'; } 
  }
 /// 
-final class PaymentLinksResourceShippingAddressCollection {const PaymentLinksResourceShippingAddressCollection({required this.allowedCountries});
+@immutable final class PaymentLinksResourceShippingAddressCollection {const PaymentLinksResourceShippingAddressCollection({required this.allowedCountries});
 
 factory PaymentLinksResourceShippingAddressCollection.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceShippingAddressCollection(
   allowedCountries: (json['allowed_countries'] as List<dynamic>).map((e) => PaymentLinksResourceShippingAddressCollectionAllowedCountries.fromJson(e as String)).toList(),

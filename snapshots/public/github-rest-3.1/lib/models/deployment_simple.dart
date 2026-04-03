@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'integration.dart';/// A deployment created as the result of an Actions check run from a workflow that references an environment
-final class DeploymentSimple {const DeploymentSimple({required this.url, required this.id, required this.nodeId, required this.task, this.originalEnvironment, required this.environment, required this.description, required this.createdAt, required this.updatedAt, required this.statusesUrl, required this.repositoryUrl, this.transientEnvironment, this.productionEnvironment, this.performedViaGithubApp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';/// A deployment created as the result of an Actions check run from a workflow that references an environment
+@immutable final class DeploymentSimple {const DeploymentSimple({required this.url, required this.id, required this.nodeId, required this.task, required this.environment, required this.description, required this.createdAt, required this.updatedAt, required this.statusesUrl, required this.repositoryUrl, this.originalEnvironment, this.transientEnvironment, this.productionEnvironment, this.performedViaGithubApp, });
 
 factory DeploymentSimple.fromJson(Map<String, dynamic> json) { return DeploymentSimple(
   url: Uri.parse(json['url'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_workers_pipelines_pipeline_destination_batch.dart';import 'cloudflare_pipelines_workers_pipelines_pipeline_destination_compression.dart';import 'cloudflare_pipelines_workers_pipelines_pipeline_destination_path.dart';/// Specifies the format of data to deliver.
-final class CloudflarePipelinesWorkersPipelinesPipelineDestinationFormat {const CloudflarePipelinesWorkersPipelinesPipelineDestinationFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_workers_pipelines_pipeline_destination_batch.dart';import 'cloudflare_pipelines_workers_pipelines_pipeline_destination_compression.dart';import 'cloudflare_pipelines_workers_pipelines_pipeline_destination_path.dart';/// Specifies the format of data to deliver.
+@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestinationFormat {const CloudflarePipelinesWorkersPipelinesPipelineDestinationFormat._(this.value);
 
 factory CloudflarePipelinesWorkersPipelinesPipelineDestinationFormat.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CloudflarePipelinesWorkersPipelinesPipelineDestinationFormat($value)'; } 
  }
 /// Specifies the type of destination.
-final class CloudflarePipelinesWorkersPipelinesPipelineDestinationType {const CloudflarePipelinesWorkersPipelinesPipelineDestinationType._(this.value);
+@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestinationType {const CloudflarePipelinesWorkersPipelinesPipelineDestinationType._(this.value);
 
 factory CloudflarePipelinesWorkersPipelinesPipelineDestinationType.fromJson(String json) { return switch (json) {
   'r2' => r2,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CloudflarePipelinesWorkersPipelinesPipelineDestinationType($value)'; } 
  }
-final class CloudflarePipelinesWorkersPipelinesPipelineDestination {const CloudflarePipelinesWorkersPipelinesPipelineDestination({required this.batch, required this.compression, required this.format, required this.path, required this.type, });
+@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestination {const CloudflarePipelinesWorkersPipelinesPipelineDestination({required this.batch, required this.compression, required this.format, required this.path, required this.type, });
 
 factory CloudflarePipelinesWorkersPipelinesPipelineDestination.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesPipelineDestination(
   batch: CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch.fromJson(json['batch'] as Map<String, dynamic>),

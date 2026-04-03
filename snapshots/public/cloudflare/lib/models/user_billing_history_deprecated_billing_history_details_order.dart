@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Field to order billing history by.
-final class UserBillingHistoryDeprecatedBillingHistoryDetailsOrder {const UserBillingHistoryDeprecatedBillingHistoryDetailsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order billing history by.
+@immutable final class UserBillingHistoryDeprecatedBillingHistoryDetailsOrder {const UserBillingHistoryDeprecatedBillingHistoryDetailsOrder._(this.value);
 
 factory UserBillingHistoryDeprecatedBillingHistoryDetailsOrder.fromJson(String json) { return switch (json) {
   'type' => type,

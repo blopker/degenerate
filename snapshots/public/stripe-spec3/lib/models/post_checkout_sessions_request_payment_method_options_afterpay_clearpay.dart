@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpayCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpayCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpayCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpayCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpaySetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpaySetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpaySetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpaySetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpay {const PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpay({this.captureMethod, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpay {const PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpay({this.captureMethod, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpay(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAfterpayClearpayCaptureMethod.fromJson(json['capture_method'] as String) : null,

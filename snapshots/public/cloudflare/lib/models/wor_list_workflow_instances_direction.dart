@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// should only be used when `cursor` is used, defines a new direction for the cursor
-final class WorListWorkflowInstancesDirection {const WorListWorkflowInstancesDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// should only be used when `cursor` is used, defines a new direction for the cursor
+@immutable final class WorListWorkflowInstancesDirection {const WorListWorkflowInstancesDirection._(this.value);
 
 factory WorListWorkflowInstancesDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Commit an autofix for a code scanning alert
-final class CodeScanningAutofixCommits {const CodeScanningAutofixCommits({this.targetRef, this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Commit an autofix for a code scanning alert
+@immutable final class CodeScanningAutofixCommits {const CodeScanningAutofixCommits({this.targetRef, this.message, });
 
 factory CodeScanningAutofixCommits.fromJson(Map<String, dynamic> json) { return CodeScanningAutofixCommits(
   targetRef: json['target_ref'] as String?,

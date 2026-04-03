@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'context_management_param.dart';import 'conversation_param.dart';import 'conversation_param2.dart';import 'include_enum.dart';import 'input_item.dart';import 'input_param.dart';import 'response_stream_options.dart';final class CreateResponse {const CreateResponse({this.input, this.include, this.parallelToolCalls, this.store, this.instructions, this.stream, this.streamOptions, this.conversation, this.contextManagement, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'context_management_param.dart';import 'conversation_param.dart';import 'conversation_param2.dart';import 'include_enum.dart';import 'input_item.dart';import 'input_param.dart';import 'response_stream_options.dart';@immutable final class CreateResponse {const CreateResponse({this.input, this.include, this.parallelToolCalls, this.store, this.instructions, this.stream, this.streamOptions, this.conversation, this.contextManagement, });
 
 factory CreateResponse.fromJson(Map<String, dynamic> json) { return CreateResponse(
   input: json['input'] != null ? OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => InputItem.fromJson(e as Map<String, dynamic>)).toList(),) : null,

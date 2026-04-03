@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetZonesZoneIdentifierZarazHistorySortOrder {const GetZonesZoneIdentifierZarazHistorySortOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetZonesZoneIdentifierZarazHistorySortOrder {const GetZonesZoneIdentifierZarazHistorySortOrder._(this.value);
 
 factory GetZonesZoneIdentifierZarazHistorySortOrder.fromJson(String json) { return switch (json) {
   'DESC' => desc,

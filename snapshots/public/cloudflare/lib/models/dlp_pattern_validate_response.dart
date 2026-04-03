@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_regex_validation_result.dart';final class DlpPatternValidateResponse {const DlpPatternValidateResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_regex_validation_result.dart';@immutable final class DlpPatternValidateResponse {const DlpPatternValidateResponse({this.result});
 
 factory DlpPatternValidateResponse.fromJson(Map<String, dynamic> json) { return DlpPatternValidateResponse(
   result: json['result'] != null ? DlpRegexValidationResult.fromJson(json['result'] as Map<String, dynamic>) : null,

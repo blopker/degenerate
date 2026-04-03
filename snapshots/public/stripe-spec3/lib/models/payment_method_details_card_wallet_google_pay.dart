@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsCardWalletGooglePay {const PaymentMethodDetailsCardWalletGooglePay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsCardWalletGooglePay {const PaymentMethodDetailsCardWalletGooglePay();
 
-factory PaymentMethodDetailsCardWalletGooglePay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardWalletGooglePay(
-
-); }
+factory PaymentMethodDetailsCardWalletGooglePay.fromJson(Map<String, dynamic> _) { return const PaymentMethodDetailsCardWalletGooglePay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PaymentMethodDetailsCardWalletGooglePay copyWith() { return PaymentMethodDetailsCardWalletGooglePay(
+PaymentMethodDetailsCardWalletGooglePay copyWith() { return const PaymentMethodDetailsCardWalletGooglePay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PaymentMethodDetailsCardWalletGooglePay; } 

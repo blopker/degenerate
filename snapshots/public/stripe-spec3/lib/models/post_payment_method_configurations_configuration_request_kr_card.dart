@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_kr_card_display_preference.dart';/// Korean cards let users pay using locally issued cards from South Korea.
-final class PostPaymentMethodConfigurationsConfigurationRequestKrCard {const PostPaymentMethodConfigurationsConfigurationRequestKrCard({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_kr_card_display_preference.dart';/// Korean cards let users pay using locally issued cards from South Korea.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestKrCard {const PostPaymentMethodConfigurationsConfigurationRequestKrCard({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestKrCard.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestKrCard(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestKrCardDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

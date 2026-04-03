@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_transcript.dart';final class GetSessionTranscriptResponse {const GetSessionTranscriptResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_transcript.dart';@immutable final class GetSessionTranscriptResponse {const GetSessionTranscriptResponse({this.data, this.success, });
 
 factory GetSessionTranscriptResponse.fromJson(Map<String, dynamic> json) { return GetSessionTranscriptResponse(
   data: json['data'] != null ? RealtimekitTranscript.fromJson(json['data'] as Map<String, dynamic>) : null,

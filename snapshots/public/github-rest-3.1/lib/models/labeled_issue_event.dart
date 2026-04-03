@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'integration.dart';import 'labeled_issue_event_label.dart';import 'simple_user.dart';/// Labeled Issue Event
-final class LabeledIssueEvent {const LabeledIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.label, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'labeled_issue_event_label.dart';import 'simple_user.dart';/// Labeled Issue Event
+@immutable final class LabeledIssueEvent {const LabeledIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.label, });
 
 factory LabeledIssueEvent.fromJson(Map<String, dynamic> json) { return LabeledIssueEvent(
   id: (json['id'] as num).toInt(),

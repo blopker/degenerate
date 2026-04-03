@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingAuthorizationNetworkData {const IssuingAuthorizationNetworkData({this.acquiringInstitutionId, this.systemTraceAuditNumber, this.transactionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingAuthorizationNetworkData {const IssuingAuthorizationNetworkData({this.acquiringInstitutionId, this.systemTraceAuditNumber, this.transactionId, });
 
 factory IssuingAuthorizationNetworkData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationNetworkData(
   acquiringInstitutionId: json['acquiring_institution_id'] as String?,

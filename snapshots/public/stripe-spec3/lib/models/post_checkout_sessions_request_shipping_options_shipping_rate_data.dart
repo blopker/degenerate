@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_shipping_options_shipping_rate_data_delivery_estimate.dart';import 'post_checkout_sessions_request_shipping_options_shipping_rate_data_fixed_amount.dart';final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_shipping_options_shipping_rate_data_delivery_estimate.dart';import 'post_checkout_sessions_request_shipping_options_shipping_rate_data_fixed_amount.dart';@immutable final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior._(this.value);
 
 factory PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior($value)'; } 
  }
-final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataType {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataType._(this.value);
+@immutable final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataType {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataType._(this.value);
 
 factory PostCheckoutSessionsRequestShippingOptionsShippingRateDataType.fromJson(String json) { return switch (json) {
   'fixed_amount' => fixedAmount,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestShippingOptionsShippingRateDataType($value)'; } 
  }
-final class PostCheckoutSessionsRequestShippingOptionsShippingRateData {const PostCheckoutSessionsRequestShippingOptionsShippingRateData({this.deliveryEstimate, required this.displayName, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
+@immutable final class PostCheckoutSessionsRequestShippingOptionsShippingRateData {const PostCheckoutSessionsRequestShippingOptionsShippingRateData({required this.displayName, this.deliveryEstimate, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
 
 factory PostCheckoutSessionsRequestShippingOptionsShippingRateData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestShippingOptionsShippingRateData(
   deliveryEstimate: json['delivery_estimate'] != null ? PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_service_not_as_described_evidence_additional_documentation.dart';/// 
-final class IssuingDisputeServiceNotAsDescribedEvidence {const IssuingDisputeServiceNotAsDescribedEvidence({this.additionalDocumentation, this.canceledAt, this.cancellationReason, this.explanation, this.receivedAt, });
+@immutable final class IssuingDisputeServiceNotAsDescribedEvidence {const IssuingDisputeServiceNotAsDescribedEvidence({this.additionalDocumentation, this.canceledAt, this.cancellationReason, this.explanation, this.receivedAt, });
 
 factory IssuingDisputeServiceNotAsDescribedEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeServiceNotAsDescribedEvidence(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,

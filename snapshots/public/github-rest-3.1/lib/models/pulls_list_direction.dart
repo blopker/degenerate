@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullsListDirection {const PullsListDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsListDirection {const PullsListDirection._(this.value);
 
 factory PullsListDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

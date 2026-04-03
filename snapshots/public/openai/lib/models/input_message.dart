@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_content.dart';/// The role of the message input. One of `user`, `system`, or `developer`.
 /// 
-final class InputMessageRole {const InputMessageRole._(this.value);
+@immutable final class InputMessageRole {const InputMessageRole._(this.value);
 
 factory InputMessageRole.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The status of item. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when items are returned via API.
 /// 
-final class InputMessageStatus {const InputMessageStatus._(this.value);
+@immutable final class InputMessageStatus {const InputMessageStatus._(this.value);
 
 factory InputMessageStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 /// hierarchy. Instructions given with the `developer` or `system` role take
 /// precedence over instructions given with the `user` role.
 /// 
-final class InputMessage {const InputMessage({this.type, required this.role, this.status, required this.content, });
+@immutable final class InputMessage {const InputMessage({required this.role, required this.content, this.type, this.status, });
 
 factory InputMessage.fromJson(Map<String, dynamic> json) { return InputMessage(
   type: json['type'] as String?,

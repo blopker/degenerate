@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_predefined_profile_config.dart';final class DlpProfilesCreatePredefinedProfileConfigResponse {const DlpProfilesCreatePredefinedProfileConfigResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_predefined_profile_config.dart';@immutable final class DlpProfilesCreatePredefinedProfileConfigResponse {const DlpProfilesCreatePredefinedProfileConfigResponse({this.result});
 
 factory DlpProfilesCreatePredefinedProfileConfigResponse.fromJson(Map<String, dynamic> json) { return DlpProfilesCreatePredefinedProfileConfigResponse(
   result: json['result'] != null ? DlpPredefinedProfileConfig.fromJson(json['result'] as Map<String, dynamic>) : null,

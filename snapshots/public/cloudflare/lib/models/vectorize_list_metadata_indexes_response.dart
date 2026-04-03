@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vectorize_list_metadata_index_response.dart';final class VectorizeListMetadataIndexesResponse {const VectorizeListMetadataIndexesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_list_metadata_index_response.dart';@immutable final class VectorizeListMetadataIndexesResponse {const VectorizeListMetadataIndexesResponse({this.result});
 
 factory VectorizeListMetadataIndexesResponse.fromJson(Map<String, dynamic> json) { return VectorizeListMetadataIndexesResponse(
   result: json['result'] != null ? VectorizeListMetadataIndexResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

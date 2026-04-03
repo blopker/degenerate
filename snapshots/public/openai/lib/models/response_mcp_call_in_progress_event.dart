@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.mcp_call.in_progress'.
-final class ResponseMcpCallInProgressEventType {const ResponseMcpCallInProgressEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.mcp_call.in_progress'.
+@immutable final class ResponseMcpCallInProgressEventType {const ResponseMcpCallInProgressEventType._(this.value);
 
 factory ResponseMcpCallInProgressEventType.fromJson(String json) { return switch (json) {
   'response.mcp_call.in_progress' => responseMcpCallInProgress,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when an MCP  tool call is in progress.
 /// 
-final class ResponseMcpCallInProgressEvent {const ResponseMcpCallInProgressEvent({required this.type, required this.sequenceNumber, required this.outputIndex, required this.itemId, });
+@immutable final class ResponseMcpCallInProgressEvent {const ResponseMcpCallInProgressEvent({required this.type, required this.sequenceNumber, required this.outputIndex, required this.itemId, });
 
 factory ResponseMcpCallInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseMcpCallInProgressEvent(
   type: ResponseMcpCallInProgressEventType.fromJson(json['type'] as String),

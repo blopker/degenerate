@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_description_item.dart';import 'zero_trust_gateway_value.dart';final class ZeroTrustGatewayItemsInput2 {const ZeroTrustGatewayItemsInput2({this.description, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_description_item.dart';import 'zero_trust_gateway_value.dart';@immutable final class ZeroTrustGatewayItemsInput2 {const ZeroTrustGatewayItemsInput2({this.description, this.value, });
 
 factory ZeroTrustGatewayItemsInput2.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayItemsInput2(
   description: json['description'] != null ? ZeroTrustGatewayDescriptionItem.fromJson(json['description'] as String) : null,

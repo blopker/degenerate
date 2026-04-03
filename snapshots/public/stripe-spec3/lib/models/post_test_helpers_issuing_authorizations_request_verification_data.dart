@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_test_helpers_issuing_authorizations_request_verification_data_authentication_exemption.dart';import 'post_test_helpers_issuing_authorizations_request_verification_data_three_d_secure.dart';final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_request_verification_data_authentication_exemption.dart';import 'post_test_helpers_issuing_authorizations_request_verification_data_three_d_secure.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check.fromJson(String json) { return switch (json) {
   'match' => match,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck._(this.value);
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck.fromJson(String json) { return switch (json) {
   'match' => match,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressPostalCodeCheck($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck._(this.value);
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck.fromJson(String json) { return switch (json) {
   'match' => match,
@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataCvcCheck($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck._(this.value);
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck {const PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck.fromJson(String json) { return switch (json) {
   'match' => match,
@@ -109,7 +109,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestVerificationDataExpiryCheck($value)'; } 
  }
 /// Verifications that Stripe performed on information that the cardholder provided to the merchant.
-final class PostTestHelpersIssuingAuthorizationsRequestVerificationData {const PostTestHelpersIssuingAuthorizationsRequestVerificationData({this.addressLine1Check, this.addressPostalCodeCheck, this.authenticationExemption, this.cvcCheck, this.expiryCheck, this.threeDSecure, });
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestVerificationData {const PostTestHelpersIssuingAuthorizationsRequestVerificationData({this.addressLine1Check, this.addressPostalCodeCheck, this.authenticationExemption, this.cvcCheck, this.expiryCheck, this.threeDSecure, });
 
 factory PostTestHelpersIssuingAuthorizationsRequestVerificationData.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestVerificationData(
   addressLine1Check: json['address_line1_check'] != null ? PostTestHelpersIssuingAuthorizationsRequestVerificationDataAddressLine1Check.fromJson(json['address_line1_check'] as String) : null,

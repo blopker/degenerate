@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_share_recipient_object.dart';final class ResourceSharingShareRecipientResponseCollection {const ResourceSharingShareRecipientResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_share_recipient_object.dart';@immutable final class ResourceSharingShareRecipientResponseCollection {const ResourceSharingShareRecipientResponseCollection({this.result});
 
 factory ResourceSharingShareRecipientResponseCollection.fromJson(Map<String, dynamic> json) { return ResourceSharingShareRecipientResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => ResourceSharingShareRecipientObject.fromJson(e as Map<String, dynamic>)).toList(),

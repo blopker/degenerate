@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsSummaryDnssec {const RadarGetDnsSummaryDnssec._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryDnssec {const RadarGetDnsSummaryDnssec._(this.value);
 
 factory RadarGetDnsSummaryDnssec.fromJson(String json) { return switch (json) {
   'INVALID' => invalid,

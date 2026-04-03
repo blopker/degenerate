@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_bots_response_result.dart';final class RadarGetBotsResponse {const RadarGetBotsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bots_response_result.dart';@immutable final class RadarGetBotsResponse {const RadarGetBotsResponse({required this.result, required this.success, });
 
 factory RadarGetBotsResponse.fromJson(Map<String, dynamic> json) { return RadarGetBotsResponse(
   result: RadarGetBotsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityBatchBlockedSendersRequestDeletes {const EmailSecurityBatchBlockedSendersRequestDeletes({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityBatchBlockedSendersRequestDeletes {const EmailSecurityBatchBlockedSendersRequestDeletes({required this.id});
 
 factory EmailSecurityBatchBlockedSendersRequestDeletes.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchBlockedSendersRequestDeletes(
   id: (json['id'] as num).toInt(),

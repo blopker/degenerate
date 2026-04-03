@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_linked_app_token_rule_linked_app_token.dart';/// Matches OAuth 2.0 access tokens issued by the specified Access OIDC SaaS application. Only compatible with non_identity and bypass decisions.
-final class AccessLinkedAppTokenRule {const AccessLinkedAppTokenRule({required this.linkedAppToken});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_linked_app_token_rule_linked_app_token.dart';/// Matches OAuth 2.0 access tokens issued by the specified Access OIDC SaaS application. Only compatible with non_identity and bypass decisions.
+@immutable final class AccessLinkedAppTokenRule {const AccessLinkedAppTokenRule({required this.linkedAppToken});
 
 factory AccessLinkedAppTokenRule.fromJson(Map<String, dynamic> json) { return AccessLinkedAppTokenRule(
   linkedAppToken: AccessLinkedAppTokenRuleLinkedAppToken.fromJson(json['linked_app_token'] as Map<String, dynamic>),

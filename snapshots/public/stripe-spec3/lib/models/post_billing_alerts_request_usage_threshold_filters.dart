@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBillingAlertsRequestUsageThresholdFiltersType {const PostBillingAlertsRequestUsageThresholdFiltersType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingAlertsRequestUsageThresholdFiltersType {const PostBillingAlertsRequestUsageThresholdFiltersType._(this.value);
 
 factory PostBillingAlertsRequestUsageThresholdFiltersType.fromJson(String json) { return switch (json) {
   'customer' => customer,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingAlertsRequestUsageThresholdFiltersType($value)'; } 
  }
-final class PostBillingAlertsRequestUsageThresholdFilters {const PostBillingAlertsRequestUsageThresholdFilters({this.customer, required this.type, });
+@immutable final class PostBillingAlertsRequestUsageThresholdFilters {const PostBillingAlertsRequestUsageThresholdFilters({required this.type, this.customer, });
 
 factory PostBillingAlertsRequestUsageThresholdFilters.fromJson(Map<String, dynamic> json) { return PostBillingAlertsRequestUsageThresholdFilters(
   customer: json['customer'] as String?,

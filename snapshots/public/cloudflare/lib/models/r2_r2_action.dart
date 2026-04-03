@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2R2Action {const R2R2Action._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2R2Action {const R2R2Action._(this.value);
 
 factory R2R2Action.fromJson(String json) { return switch (json) {
   'PutObject' => putObject,

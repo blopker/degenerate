@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_base.dart';import 'zones_cache_rules_aegis.dart';import 'zones_cache_rules_origin_h2_max_streams.dart';import 'zones_cache_rules_origin_max_http_version.dart';import 'zones_development_mode.dart';import 'zones_messages2.dart';import 'zones_schemas_base.dart';import 'zones_ssl_recommender.dart';import 'zones_zone_settings_response_collection_result.dart';final class ZonesZoneSettingsResponseCollection {const ZonesZoneSettingsResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_base.dart';import 'zones_cache_rules_aegis.dart';import 'zones_cache_rules_origin_h2_max_streams.dart';import 'zones_cache_rules_origin_max_http_version.dart';import 'zones_development_mode.dart';import 'zones_messages2.dart';import 'zones_schemas_base.dart';import 'zones_ssl_recommender.dart';import 'zones_zone_settings_response_collection_result.dart';@immutable final class ZonesZoneSettingsResponseCollection {const ZonesZoneSettingsResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ZonesZoneSettingsResponseCollection.fromJson(Map<String, dynamic> json) { return ZonesZoneSettingsResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => ZonesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

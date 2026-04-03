@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An iteration setting for an iteration field
-final class IterationSetting {const IterationSetting({required this.id, required this.title, this.titleHtml, this.duration, this.startDate, this.completed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An iteration setting for an iteration field
+@immutable final class IterationSetting {const IterationSetting({required this.id, required this.title, this.titleHtml, this.duration, this.startDate, this.completed, });
 
 factory IterationSetting.fromJson(Map<String, dynamic> json) { return IterationSetting(
   id: json['id'] as String,

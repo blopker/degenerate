@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages47_functions.dart';import 'messages47_messages.dart';import 'messages47_tools.dart';import 'messages47_tools_variant1.dart';import 'messages47_tools_variant2.dart';final class Messages47 {const Messages47({this.frequencyPenalty, this.functions, this.guidedJson, this.maxTokens = 256, required this.messages, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.seed, this.stream = false, this.temperature = 0.15, this.tools, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages47_functions.dart';import 'messages47_messages.dart';import 'messages47_tools.dart';import 'messages47_tools_variant1.dart';import 'messages47_tools_variant2.dart';@immutable final class Messages47 {const Messages47({required this.messages, this.frequencyPenalty, this.functions, this.guidedJson, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.seed, this.stream = false, this.temperature = 0.15, this.tools, this.topK, this.topP, });
 
 factory Messages47.fromJson(Map<String, dynamic> json) { return Messages47(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => Messages47Functions.fromJson(e as Map<String, dynamic>)).toList(),
-  guidedJson: (json['guided_json'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  guidedJson: json['guided_json'] as Map<String, dynamic>?,
   maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
   messages: (json['messages'] as List<dynamic>).map((e) => Messages47Messages.fromJson(e as Map<String, dynamic>)).toList(),
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,

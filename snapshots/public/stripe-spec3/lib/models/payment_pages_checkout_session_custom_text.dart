@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_custom_text_position.dart';/// 
-final class PaymentPagesCheckoutSessionCustomText {const PaymentPagesCheckoutSessionCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_custom_text_position.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionCustomText {const PaymentPagesCheckoutSessionCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
 
 factory PaymentPagesCheckoutSessionCustomText.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomText(
   afterSubmit: json['after_submit'] != null ? PaymentPagesCheckoutSessionCustomTextPosition.fromJson(json['after_submit'] as Map<String, dynamic>) : null,

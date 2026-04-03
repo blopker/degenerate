@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alert_auto_dismissed_at.dart';import 'alert_created_at.dart';import 'alert_dismissed_at.dart';import 'alert_fixed_at.dart';import 'alert_html_url.dart';import 'alert_number.dart';import 'alert_updated_at.dart';import 'alert_url.dart';import 'dependabot_alert_dismissal_request_simple.dart';import 'dependabot_alert_security_advisory.dart';import 'dependabot_alert_security_vulnerability.dart';import 'dependabot_alert_with_repository_dependency.dart';import 'simple_repository.dart';import 'simple_user.dart';/// The state of the Dependabot alert.
-final class DependabotAlertWithRepositoryState {const DependabotAlertWithRepositoryState._(this.value);
+@immutable final class DependabotAlertWithRepositoryState {const DependabotAlertWithRepositoryState._(this.value);
 
 factory DependabotAlertWithRepositoryState.fromJson(String json) { return switch (json) {
   'auto_dismissed' => autoDismissed,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotAlertWithRepositoryState($value)'; } 
  }
 /// The reason that the alert was dismissed.
-final class DependabotAlertWithRepositoryDismissedReason {const DependabotAlertWithRepositoryDismissedReason._(this.value);
+@immutable final class DependabotAlertWithRepositoryDismissedReason {const DependabotAlertWithRepositoryDismissedReason._(this.value);
 
 factory DependabotAlertWithRepositoryDismissedReason.fromJson(String json) { return switch (json) {
   'fix_started' => fixStarted,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotAlertWithRepositoryDismissedReason($value)'; } 
  }
 /// A Dependabot alert.
-final class DependabotAlertWithRepository {const DependabotAlertWithRepository({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, this.autoDismissedAt, this.dismissalRequest, this.assignees, required this.repository, });
+@immutable final class DependabotAlertWithRepository {const DependabotAlertWithRepository({required this.number, required this.state, required this.dependency, required this.securityAdvisory, required this.securityVulnerability, required this.url, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.dismissedComment, required this.fixedAt, required this.repository, this.autoDismissedAt, this.dismissalRequest, this.assignees, });
 
 factory DependabotAlertWithRepository.fromJson(Map<String, dynamic> json) { return DependabotAlertWithRepository(
   number: AlertNumber.fromJson(json['number'] as num),

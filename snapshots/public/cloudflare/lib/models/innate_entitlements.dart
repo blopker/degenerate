@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bool_allocation.dart';import 'entitlement.dart';import 'max_count_allocation.dart';final class InnateEntitlements {const InnateEntitlements({required this.allowAddSubdomain, required this.allowAutoAcceptInvites, required this.cnameSetupAllowed, required this.customEntitlements, required this.mhsCertificateCount, required this.partialSetupAllowed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bool_allocation.dart';import 'entitlement.dart';import 'max_count_allocation.dart';@immutable final class InnateEntitlements {const InnateEntitlements({required this.allowAddSubdomain, required this.allowAutoAcceptInvites, required this.cnameSetupAllowed, required this.customEntitlements, required this.mhsCertificateCount, required this.partialSetupAllowed, });
 
 factory InnateEntitlements.fromJson(Map<String, dynamic> json) { return InnateEntitlements(
   allowAddSubdomain: BoolAllocation.fromJson(json['allow_add_subdomain'] as Map<String, dynamic>),

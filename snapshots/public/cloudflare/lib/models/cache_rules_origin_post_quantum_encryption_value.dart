@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the Origin Post Quantum Encryption Setting.
-final class CacheRulesOriginPostQuantumEncryptionValue {const CacheRulesOriginPostQuantumEncryptionValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Origin Post Quantum Encryption Setting.
+@immutable final class CacheRulesOriginPostQuantumEncryptionValue {const CacheRulesOriginPostQuantumEncryptionValue._(this.value);
 
 factory CacheRulesOriginPostQuantumEncryptionValue.fromJson(String json) { return switch (json) {
   'preferred' => preferred,

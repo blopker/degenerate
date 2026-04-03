@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_description.dart';import 'firewall_schemas_mode.dart';import 'firewall_schemas_paused.dart';import 'firewall_ua_configuration.dart';final class UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest {const UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest({required this.configuration, this.description, required this.mode, this.paused, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_description.dart';import 'firewall_schemas_mode.dart';import 'firewall_schemas_paused.dart';import 'firewall_ua_configuration.dart';@immutable final class UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest {const UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest({required this.configuration, required this.mode, this.description, this.paused, });
 
 factory UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest.fromJson(Map<String, dynamic> json) { return UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest(
   configuration: FirewallUaConfiguration.fromJson(json['configuration'] as Map<String, dynamic>),

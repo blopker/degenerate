@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BranchRestrictionPolicyAppsOwner {const BranchRestrictionPolicyAppsOwner({this.login, this.id, this.nodeId, this.url, this.reposUrl, this.eventsUrl, this.hooksUrl, this.issuesUrl, this.membersUrl, this.publicMembersUrl, this.avatarUrl, this.description, this.gravatarId, this.htmlUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.starredUrl, this.subscriptionsUrl, this.organizationsUrl, this.receivedEventsUrl, this.type, this.siteAdmin, this.userViewType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BranchRestrictionPolicyAppsOwner {const BranchRestrictionPolicyAppsOwner({this.login, this.id, this.nodeId, this.url, this.reposUrl, this.eventsUrl, this.hooksUrl, this.issuesUrl, this.membersUrl, this.publicMembersUrl, this.avatarUrl, this.description, this.gravatarId, this.htmlUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.starredUrl, this.subscriptionsUrl, this.organizationsUrl, this.receivedEventsUrl, this.type, this.siteAdmin, this.userViewType, });
 
 factory BranchRestrictionPolicyAppsOwner.fromJson(Map<String, dynamic> json) { return BranchRestrictionPolicyAppsOwner(
   login: json['login'] as String?,

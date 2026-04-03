@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_kv_any.dart';import 'workers_kv_key_name.dart';/// A name for a value. A value stored under a given key may be retrieved via the same key.
-final class WorkersKvKey {const WorkersKvKey({this.expiration, this.metadata, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_any.dart';import 'workers_kv_key_name.dart';/// A name for a value. A value stored under a given key may be retrieved via the same key.
+@immutable final class WorkersKvKey {const WorkersKvKey({required this.name, this.expiration, this.metadata, });
 
 factory WorkersKvKey.fromJson(Map<String, dynamic> json) { return WorkersKvKey(
   expiration: json['expiration'] != null ? (json['expiration'] as num).toDouble() : null,

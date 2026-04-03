@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class QuotesResourceUpfrontLineItemsObject {const QuotesResourceUpfrontLineItemsObject._(this.value);
+@immutable final class QuotesResourceUpfrontLineItemsObject {const QuotesResourceUpfrontLineItemsObject._(this.value);
 
 factory QuotesResourceUpfrontLineItemsObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'QuotesResourceUpfrontLineItemsObject($value)'; } 
  }
 /// The line items that will appear on the next invoice after this quote is accepted. This does not include pending invoice items that exist on the customer but may still be included in the next invoice.
-final class QuotesResourceUpfrontLineItems {const QuotesResourceUpfrontLineItems({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class QuotesResourceUpfrontLineItems {const QuotesResourceUpfrontLineItems({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory QuotesResourceUpfrontLineItems.fromJson(Map<String, dynamic> json) { return QuotesResourceUpfrontLineItems(
   data: (json['data'] as List<dynamic>).map((e) => Item.fromJson(e as Map<String, dynamic>)).toList(),

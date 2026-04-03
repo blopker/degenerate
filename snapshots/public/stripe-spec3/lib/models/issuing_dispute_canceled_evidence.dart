@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_canceled_evidence_additional_documentation.dart';/// Whether the product was a merchandise or service.
-final class IssuingDisputeCanceledEvidenceProductType {const IssuingDisputeCanceledEvidenceProductType._(this.value);
+@immutable final class IssuingDisputeCanceledEvidenceProductType {const IssuingDisputeCanceledEvidenceProductType._(this.value);
 
 factory IssuingDisputeCanceledEvidenceProductType.fromJson(String json) { return switch (json) {
   'merchandise' => merchandise,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingDisputeCanceledEvidenceProductType($value)'; } 
  }
 /// Result of cardholder's attempt to return the product.
-final class IssuingDisputeCanceledEvidenceReturnStatus {const IssuingDisputeCanceledEvidenceReturnStatus._(this.value);
+@immutable final class IssuingDisputeCanceledEvidenceReturnStatus {const IssuingDisputeCanceledEvidenceReturnStatus._(this.value);
 
 factory IssuingDisputeCanceledEvidenceReturnStatus.fromJson(String json) { return switch (json) {
   'merchant_rejected' => merchantRejected,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingDisputeCanceledEvidenceReturnStatus($value)'; } 
  }
 /// 
-final class IssuingDisputeCanceledEvidence {const IssuingDisputeCanceledEvidence({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
+@immutable final class IssuingDisputeCanceledEvidence {const IssuingDisputeCanceledEvidence({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
 
 factory IssuingDisputeCanceledEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeCanceledEvidence(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,

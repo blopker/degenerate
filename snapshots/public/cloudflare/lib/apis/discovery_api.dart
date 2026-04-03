@@ -45,12 +45,12 @@ if (perPage != null) {
 }
 if (host != null) {
 for (final item in host) {
-  queryParametersList.add(ApiQueryParameter(name: 'host', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'host', value: item));
 }
 }
 if (method != null) {
 for (final item in method) {
-  queryParametersList.add(ApiQueryParameter(name: 'method', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'method', value: item));
 }
 }
 if (endpoint != null) {

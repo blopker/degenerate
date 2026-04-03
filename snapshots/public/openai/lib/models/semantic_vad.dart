@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`. `low`, `medium`, and `high` have max timeouts of 8s, 4s, and 2s respectively.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`. `low`, `medium`, and `high` have max timeouts of 8s, 4s, and 2s respectively.
 /// 
-final class SemanticVadEagerness {const SemanticVadEagerness._(this.value);
+@immutable final class SemanticVadEagerness {const SemanticVadEagerness._(this.value);
 
 factory SemanticVadEagerness.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SemanticVadEagerness($value)'; } 
  }
 /// Server-side semantic turn detection which uses a model to determine when the user has finished speaking.
-final class SemanticVad {const SemanticVad({required this.type, this.eagerness = SemanticVadEagerness.auto, this.createResponse = true, this.interruptResponse = true, });
+@immutable final class SemanticVad {const SemanticVad({required this.type, this.eagerness = SemanticVadEagerness.auto, this.createResponse = true, this.interruptResponse = true, });
 
 factory SemanticVad.fromJson(Map<String, dynamic> json) { return SemanticVad(
   type: json['type'] as String,

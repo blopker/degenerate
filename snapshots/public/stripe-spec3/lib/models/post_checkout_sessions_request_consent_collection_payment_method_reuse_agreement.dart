@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreementPosition {const PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreementPosition._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreementPosition {const PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreementPosition._(this.value);
 
 factory PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreementPosition.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreementPosition($value)'; } 
  }
-final class PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreement {const PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreement({required this.position});
+@immutable final class PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreement {const PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreement({required this.position});
 
 factory PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreement.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreement(
   position: PostCheckoutSessionsRequestConsentCollectionPaymentMethodReuseAgreementPosition.fromJson(json['position'] as String),

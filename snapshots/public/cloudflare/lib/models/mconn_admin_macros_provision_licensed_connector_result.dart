@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_admin_connector.dart';import 'mconn_admin_device.dart';final class MconnAdminMacrosProvisionLicensedConnectorResult {const MconnAdminMacrosProvisionLicensedConnectorResult({required this.connector, required this.device, required this.licenseKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_connector.dart';import 'mconn_admin_device.dart';@immutable final class MconnAdminMacrosProvisionLicensedConnectorResult {const MconnAdminMacrosProvisionLicensedConnectorResult({required this.connector, required this.device, required this.licenseKey, });
 
 factory MconnAdminMacrosProvisionLicensedConnectorResult.fromJson(Map<String, dynamic> json) { return MconnAdminMacrosProvisionLicensedConnectorResult(
   connector: MconnAdminConnector.fromJson(json['connector'] as Map<String, dynamic>),

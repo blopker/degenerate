@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrgsConvertMemberToOutsideCollaboratorRequest {const OrgsConvertMemberToOutsideCollaboratorRequest({this.$async = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsConvertMemberToOutsideCollaboratorRequest {const OrgsConvertMemberToOutsideCollaboratorRequest({this.$async = false});
 
 factory OrgsConvertMemberToOutsideCollaboratorRequest.fromJson(Map<String, dynamic> json) { return OrgsConvertMemberToOutsideCollaboratorRequest(
   $async: json.containsKey('async') ? json['async'] as bool : false,

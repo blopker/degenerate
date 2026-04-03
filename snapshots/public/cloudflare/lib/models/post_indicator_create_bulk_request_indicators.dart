@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_bulk_request_indicators_related_events.dart';import 'post_indicator_create_bulk_request_indicators_tags.dart';import 'post_indicator_create_bulk_request_indicators_tags_variant2.dart';final class PostIndicatorCreateBulkRequestIndicators {const PostIndicatorCreateBulkRequestIndicators({this.autoCreateType, required this.indicatorType, this.relatedEvents, this.tags, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_bulk_request_indicators_related_events.dart';import 'post_indicator_create_bulk_request_indicators_tags.dart';import 'post_indicator_create_bulk_request_indicators_tags_variant2.dart';@immutable final class PostIndicatorCreateBulkRequestIndicators {const PostIndicatorCreateBulkRequestIndicators({required this.indicatorType, required this.value, this.autoCreateType, this.relatedEvents, this.tags, });
 
 factory PostIndicatorCreateBulkRequestIndicators.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateBulkRequestIndicators(
   autoCreateType: json['autoCreateType'] as bool?,

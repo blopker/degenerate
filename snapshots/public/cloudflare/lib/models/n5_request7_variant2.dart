@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'n5_request7_variant2_requests.dart';final class $5Request7Variant2 {const $5Request7Variant2({required this.requests});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'n5_request7_variant2_requests.dart';@immutable final class $5Request7Variant2 {const $5Request7Variant2({required this.requests});
 
 factory $5Request7Variant2.fromJson(Map<String, dynamic> json) { return $5Request7Variant2(
   requests: (json['requests'] as List<dynamic>).map((e) => $5Request7Variant2Requests.fromJson(e as Map<String, dynamic>)).toList(),

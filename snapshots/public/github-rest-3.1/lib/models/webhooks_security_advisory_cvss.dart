@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksSecurityAdvisoryCvss {const WebhooksSecurityAdvisoryCvss({required this.score, required this.vectorString, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksSecurityAdvisoryCvss {const WebhooksSecurityAdvisoryCvss({required this.score, required this.vectorString, });
 
 factory WebhooksSecurityAdvisoryCvss.fromJson(Map<String, dynamic> json) { return WebhooksSecurityAdvisoryCvss(
   score: (json['score'] as num).toDouble(),

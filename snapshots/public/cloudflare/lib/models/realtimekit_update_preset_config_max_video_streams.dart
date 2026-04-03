@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Maximum number of streams that are visible on a device
-final class RealtimekitUpdatePresetConfigMaxVideoStreams {const RealtimekitUpdatePresetConfigMaxVideoStreams({this.desktop, this.mobile, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Maximum number of streams that are visible on a device
+@immutable final class RealtimekitUpdatePresetConfigMaxVideoStreams {const RealtimekitUpdatePresetConfigMaxVideoStreams({this.desktop, this.mobile, });
 
 factory RealtimekitUpdatePresetConfigMaxVideoStreams.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetConfigMaxVideoStreams(
   desktop: json['desktop'] != null ? (json['desktop'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_access.dart';import 'iam_permission_group.dart';import 'iam_policy_identifier.dart';import 'iam_resource_group.dart';final class IamListMemberPolicy {const IamListMemberPolicy({this.access, this.id, this.permissionGroups, this.resourceGroups, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_access.dart';import 'iam_permission_group.dart';import 'iam_policy_identifier.dart';import 'iam_resource_group.dart';@immutable final class IamListMemberPolicy {const IamListMemberPolicy({this.access, this.id, this.permissionGroups, this.resourceGroups, });
 
 factory IamListMemberPolicy.fromJson(Map<String, dynamic> json) { return IamListMemberPolicy(
   access: json['access'] != null ? IamAccess.fromJson(json['access'] as String) : null,

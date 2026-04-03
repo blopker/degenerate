@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_token_configuration.dart';final class TokenValidationConfigListResponse {const TokenValidationConfigListResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_token_configuration.dart';@immutable final class TokenValidationConfigListResponse {const TokenValidationConfigListResponse({required this.result});
 
 factory TokenValidationConfigListResponse.fromJson(Map<String, dynamic> json) { return TokenValidationConfigListResponse(
   result: (json['result'] as List<dynamic>).map((e) => ShieldTokenConfiguration.fromJson(e as Map<String, dynamic>)).toList(),

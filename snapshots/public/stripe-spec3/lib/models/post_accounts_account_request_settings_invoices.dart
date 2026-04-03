@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_invoices_default_account_tax_ids.dart';final class PostAccountsAccountRequestSettingsInvoicesHostedPaymentMethodSave {const PostAccountsAccountRequestSettingsInvoicesHostedPaymentMethodSave._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_invoices_default_account_tax_ids.dart';@immutable final class PostAccountsAccountRequestSettingsInvoicesHostedPaymentMethodSave {const PostAccountsAccountRequestSettingsInvoicesHostedPaymentMethodSave._(this.value);
 
 factory PostAccountsAccountRequestSettingsInvoicesHostedPaymentMethodSave.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountRequestSettingsInvoicesHostedPaymentMethodSave($value)'; } 
  }
-final class PostAccountsAccountRequestSettingsInvoices {const PostAccountsAccountRequestSettingsInvoices({this.defaultAccountTaxIds, this.hostedPaymentMethodSave, });
+@immutable final class PostAccountsAccountRequestSettingsInvoices {const PostAccountsAccountRequestSettingsInvoices({this.defaultAccountTaxIds, this.hostedPaymentMethodSave, });
 
 factory PostAccountsAccountRequestSettingsInvoices.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsInvoices(
   defaultAccountTaxIds: json['default_account_tax_ids'] != null ? OneOf2.parse(json['default_account_tax_ids'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2.fromJson(v as String),) : null,

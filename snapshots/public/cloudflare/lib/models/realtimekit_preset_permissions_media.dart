@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_preset_permissions_media_audio.dart';import 'realtimekit_preset_permissions_media_screenshare.dart';import 'realtimekit_preset_permissions_media_video.dart';/// Media permissions
-final class RealtimekitPresetPermissionsMedia {const RealtimekitPresetPermissionsMedia({required this.audio, required this.screenshare, required this.video, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_preset_permissions_media_audio.dart';import 'realtimekit_preset_permissions_media_screenshare.dart';import 'realtimekit_preset_permissions_media_video.dart';/// Media permissions
+@immutable final class RealtimekitPresetPermissionsMedia {const RealtimekitPresetPermissionsMedia({required this.audio, required this.screenshare, required this.video, });
 
 factory RealtimekitPresetPermissionsMedia.fromJson(Map<String, dynamic> json) { return RealtimekitPresetPermissionsMedia(
   audio: RealtimekitPresetPermissionsMediaAudio.fromJson(json['audio'] as Map<String, dynamic>),

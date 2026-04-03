@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_payment_method_options_acss_debit_mandate_options.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_acss_debit_mandate_options.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency.fromJson(String json) { return switch (json) {
   'cad' => cad,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit({this.currency, this.mandateOptions, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit({this.currency, this.mandateOptions, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit(
   currency: json['currency'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency.fromJson(json['currency'] as String) : null,

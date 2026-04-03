@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class UrlscannerGetScanResponse2DataRequestsResponseResponseSecurityDetails {const UrlscannerGetScanResponse2DataRequestsResponseResponseSecurityDetails({required this.certificateId, required this.certificateTransparencyCompliance, required this.cipher, required this.encryptedClientHello, required this.issuer, required this.keyExchange, required this.keyExchangeGroup, required this.protocol, required this.sanList, required this.serverSignatureAlgorithm, required this.subjectName, required this.validFrom, required this.validTo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsResponseResponseSecurityDetails {const UrlscannerGetScanResponse2DataRequestsResponseResponseSecurityDetails({required this.certificateId, required this.certificateTransparencyCompliance, required this.cipher, required this.encryptedClientHello, required this.issuer, required this.keyExchange, required this.keyExchangeGroup, required this.protocol, required this.sanList, required this.serverSignatureAlgorithm, required this.subjectName, required this.validFrom, required this.validTo, });
 
 factory UrlscannerGetScanResponse2DataRequestsResponseResponseSecurityDetails.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsResponseResponseSecurityDetails(
   certificateId: (json['certificateId'] as num).toDouble(),

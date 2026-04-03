@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'topic_search_result_item_aliases_topic_relation.dart';final class TopicSearchResultItemAliases {const TopicSearchResultItemAliases({this.topicRelation});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'topic_search_result_item_aliases_topic_relation.dart';@immutable final class TopicSearchResultItemAliases {const TopicSearchResultItemAliases({this.topicRelation});
 
 factory TopicSearchResultItemAliases.fromJson(Map<String, dynamic> json) { return TopicSearchResultItemAliases(
   topicRelation: json['topic_relation'] != null ? TopicSearchResultItemAliasesTopicRelation.fromJson(json['topic_relation'] as Map<String, dynamic>) : null,

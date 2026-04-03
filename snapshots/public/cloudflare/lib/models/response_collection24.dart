@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_messages2.dart';import 'intel_result_info.dart';import 'response_collection24_result.dart';final class ResponseCollection24 {const ResponseCollection24({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_messages2.dart';import 'intel_result_info.dart';import 'response_collection24_result.dart';@immutable final class ResponseCollection24 {const ResponseCollection24({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ResponseCollection24.fromJson(Map<String, dynamic> json) { return ResponseCollection24(
   errors: (json['errors'] as List<dynamic>).map((e) => IntelMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => IntelMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),)).toList(),
+  result: (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => v as Map<String, dynamic>,)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? IntelResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
 ); }

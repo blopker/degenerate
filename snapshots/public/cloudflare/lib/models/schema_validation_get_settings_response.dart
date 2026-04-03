@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_global_settings.dart';final class SchemaValidationGetSettingsResponse {const SchemaValidationGetSettingsResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_global_settings.dart';@immutable final class SchemaValidationGetSettingsResponse {const SchemaValidationGetSettingsResponse({required this.result});
 
 factory SchemaValidationGetSettingsResponse.fromJson(Map<String, dynamic> json) { return SchemaValidationGetSettingsResponse(
   result: ShieldGlobalSettings.fromJson(json['result'] as Map<String, dynamic>),

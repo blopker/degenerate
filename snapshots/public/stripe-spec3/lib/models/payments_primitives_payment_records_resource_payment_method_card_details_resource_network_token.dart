@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken({required this.used});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken({required this.used});
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken(
   used: json['used'] as bool,

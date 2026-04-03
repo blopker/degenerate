@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateEvalRequest {const UpdateEvalRequest({this.name, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateEvalRequest {const UpdateEvalRequest({this.name, this.metadata, });
 
 factory UpdateEvalRequest.fromJson(Map<String, dynamic> json) { return UpdateEvalRequest(
   name: json['name'] as String?,

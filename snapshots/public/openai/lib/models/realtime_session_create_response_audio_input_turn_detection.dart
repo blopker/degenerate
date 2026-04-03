@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configuration for turn detection.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for turn detection.
 /// 
-final class RealtimeSessionCreateResponseAudioInputTurnDetection {const RealtimeSessionCreateResponseAudioInputTurnDetection({this.type, this.threshold, this.prefixPaddingMs, this.silenceDurationMs, });
+@immutable final class RealtimeSessionCreateResponseAudioInputTurnDetection {const RealtimeSessionCreateResponseAudioInputTurnDetection({this.type, this.threshold, this.prefixPaddingMs, this.silenceDurationMs, });
 
 factory RealtimeSessionCreateResponseAudioInputTurnDetection.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseAudioInputTurnDetection(
   type: json['type'] as String?,

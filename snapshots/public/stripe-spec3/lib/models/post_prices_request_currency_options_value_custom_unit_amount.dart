@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPricesRequestCurrencyOptionsValueCustomUnitAmount {const PostPricesRequestCurrencyOptionsValueCustomUnitAmount({required this.enabled, this.maximum, this.minimum, this.preset, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPricesRequestCurrencyOptionsValueCustomUnitAmount {const PostPricesRequestCurrencyOptionsValueCustomUnitAmount({required this.enabled, this.maximum, this.minimum, this.preset, });
 
 factory PostPricesRequestCurrencyOptionsValueCustomUnitAmount.fromJson(Map<String, dynamic> json) { return PostPricesRequestCurrencyOptionsValueCustomUnitAmount(
   enabled: json['enabled'] as bool,

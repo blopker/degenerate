@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksMarketplacePurchaseAccount {const WebhooksMarketplacePurchaseAccount({required this.id, required this.login, required this.nodeId, required this.organizationBillingEmail, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksMarketplacePurchaseAccount {const WebhooksMarketplacePurchaseAccount({required this.id, required this.login, required this.nodeId, required this.organizationBillingEmail, required this.type, });
 
 factory WebhooksMarketplacePurchaseAccount.fromJson(Map<String, dynamic> json) { return WebhooksMarketplacePurchaseAccount(
   id: (json['id'] as num).toInt(),

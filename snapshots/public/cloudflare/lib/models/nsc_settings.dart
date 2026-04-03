@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class NscSettings {const NscSettings({required this.defaultAsn});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscSettings {const NscSettings({required this.defaultAsn});
 
 factory NscSettings.fromJson(Map<String, dynamic> json) { return NscSettings(
   defaultAsn: (json['default_asn'] as num).toInt(),

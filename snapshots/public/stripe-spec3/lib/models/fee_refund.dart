@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application_fee.dart';import 'balance_transaction.dart';import 'fee_refund_balance_transaction.dart';import 'fee_refund_fee.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class FeeRefundObject {const FeeRefundObject._(this.value);
+@immutable final class FeeRefundObject {const FeeRefundObject._(this.value);
 
 factory FeeRefundObject.fromJson(String json) { return switch (json) {
   'fee_refund' => feeRefund,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 /// the Stripe account from which the fee was originally collected.
 /// 
 /// Related guide: [Refunding application fees](https://docs.stripe.com/connect/destination-charges#refunding-app-fee)
-final class FeeRefund {const FeeRefund({required this.amount, this.balanceTransaction, required this.created, required this.currency, required this.fee, required this.id, this.metadata, required this.object, });
+@immutable final class FeeRefund {const FeeRefund({required this.amount, required this.created, required this.currency, required this.fee, required this.id, required this.object, this.balanceTransaction, this.metadata, });
 
 factory FeeRefund.fromJson(Map<String, dynamic> json) { return FeeRefund(
   amount: (json['amount'] as num).toInt(),

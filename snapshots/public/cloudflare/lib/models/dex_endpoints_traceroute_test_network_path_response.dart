@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_traceroute_test_network_path_response.dart';final class DexEndpointsTracerouteTestNetworkPathResponse {const DexEndpointsTracerouteTestNetworkPathResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_test_network_path_response.dart';@immutable final class DexEndpointsTracerouteTestNetworkPathResponse {const DexEndpointsTracerouteTestNetworkPathResponse({this.result});
 
 factory DexEndpointsTracerouteTestNetworkPathResponse.fromJson(Map<String, dynamic> json) { return DexEndpointsTracerouteTestNetworkPathResponse(
   result: json['result'] != null ? DigitalExperienceMonitoringTracerouteTestNetworkPathResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

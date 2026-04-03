@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'update_portals_request_servers.dart';final class UpdatePortalsRequest {const UpdatePortalsRequest({this.description, this.hostname, this.name, this.secureWebGateway, this.servers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'update_portals_request_servers.dart';@immutable final class UpdatePortalsRequest {const UpdatePortalsRequest({this.description, this.hostname, this.name, this.secureWebGateway, this.servers, });
 
 factory UpdatePortalsRequest.fromJson(Map<String, dynamic> json) { return UpdatePortalsRequest(
   description: json['description'] as String?,

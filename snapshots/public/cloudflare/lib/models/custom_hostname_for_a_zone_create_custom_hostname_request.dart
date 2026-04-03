@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_sslpost.dart';/// The custom hostname that will point to your hostname via CNAME.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_sslpost.dart';/// The custom hostname that will point to your hostname via CNAME.
 extension type const TlsCertificatesAndHostnamesHostnamePost(String value) {
 factory TlsCertificatesAndHostnamesHostnamePost.fromJson(String json) => TlsCertificatesAndHostnamesHostnamePost(json);
 
 String toJson() => value;
 
 }
-final class CustomHostnameForAZoneCreateCustomHostnameRequest {const CustomHostnameForAZoneCreateCustomHostnameRequest({this.customMetadata, required this.hostname, this.ssl, });
+@immutable final class CustomHostnameForAZoneCreateCustomHostnameRequest {const CustomHostnameForAZoneCreateCustomHostnameRequest({required this.hostname, this.customMetadata, this.ssl, });
 
 factory CustomHostnameForAZoneCreateCustomHostnameRequest.fromJson(Map<String, dynamic> json) { return CustomHostnameForAZoneCreateCustomHostnameRequest(
   customMetadata: (json['custom_metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

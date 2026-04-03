@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_next_action_swish_qr_code.dart';/// 
-final class PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode {const PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode({required this.hostedInstructionsUrl, required this.qrCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_next_action_swish_qr_code.dart';/// 
+@immutable final class PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode {const PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode({required this.hostedInstructionsUrl, required this.qrCode, });
 
 factory PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode(
   hostedInstructionsUrl: json['hosted_instructions_url'] as String,

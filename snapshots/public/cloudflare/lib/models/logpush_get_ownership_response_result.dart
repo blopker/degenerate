@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LogpushGetOwnershipResponseResult {const LogpushGetOwnershipResponseResult({this.filename, this.message, this.valid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LogpushGetOwnershipResponseResult {const LogpushGetOwnershipResponseResult({this.filename, this.message, this.valid, });
 
 factory LogpushGetOwnershipResponseResult.fromJson(Map<String, dynamic> json) { return LogpushGetOwnershipResponseResult(
   filename: json['filename'] as String?,

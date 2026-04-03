@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsAccountLoginLinksRequest {const PostAccountsAccountLoginLinksRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountLoginLinksRequest {const PostAccountsAccountLoginLinksRequest({this.expand});
 
 factory PostAccountsAccountLoginLinksRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountLoginLinksRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

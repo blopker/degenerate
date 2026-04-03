@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_beta_response_create_params.dart';/// The event type, must be `response.create`.
-final class RealtimeBetaClientEventResponseCreateType {const RealtimeBetaClientEventResponseCreateType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_response_create_params.dart';/// The event type, must be `response.create`.
+@immutable final class RealtimeBetaClientEventResponseCreateType {const RealtimeBetaClientEventResponseCreateType._(this.value);
 
 factory RealtimeBetaClientEventResponseCreateType.fromJson(String json) { return switch (json) {
   'response.create' => responseCreate,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Conversation. Arbitrary input can be provided with the `input` field, which is an array accepting
 /// raw Items and references to existing Items.
 /// 
-final class RealtimeBetaClientEventResponseCreate {const RealtimeBetaClientEventResponseCreate({this.eventId, required this.type, this.response, });
+@immutable final class RealtimeBetaClientEventResponseCreate {const RealtimeBetaClientEventResponseCreate({required this.type, this.eventId, this.response, });
 
 factory RealtimeBetaClientEventResponseCreate.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventResponseCreate(
   eventId: json['event_id'] as String?,

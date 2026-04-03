@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'url_annotation_source.dart';/// Type discriminator that is always `url` for this annotation.
-final class UrlAnnotationType {const UrlAnnotationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'url_annotation_source.dart';/// Type discriminator that is always `url` for this annotation.
+@immutable final class UrlAnnotationType {const UrlAnnotationType._(this.value);
 
 factory UrlAnnotationType.fromJson(String json) { return switch (json) {
   'url' => url,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UrlAnnotationType($value)'; } 
  }
 /// Annotation that references a URL.
-final class UrlAnnotation {const UrlAnnotation({this.type = UrlAnnotationType.url, required this.source, });
+@immutable final class UrlAnnotation {const UrlAnnotation({required this.source, this.type = UrlAnnotationType.url, });
 
 factory UrlAnnotation.fromJson(Map<String, dynamic> json) { return UrlAnnotation(
   type: UrlAnnotationType.fromJson(json['type'] as String),

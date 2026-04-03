@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'installation.dart';final class OrgsListAppInstallationsResponse {const OrgsListAppInstallationsResponse({required this.totalCount, required this.installations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'installation.dart';@immutable final class OrgsListAppInstallationsResponse {const OrgsListAppInstallationsResponse({required this.totalCount, required this.installations, });
 
 factory OrgsListAppInstallationsResponse.fromJson(Map<String, dynamic> json) { return OrgsListAppInstallationsResponse(
   totalCount: (json['total_count'] as num).toInt(),

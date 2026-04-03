@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_invoices_request_shipping_cost_shipping_rate_data.dart';/// Settings for the cost of shipping for this invoice.
-final class PostInvoicesRequestShippingCost {const PostInvoicesRequestShippingCost({this.shippingRate, this.shippingRateData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_request_shipping_cost_shipping_rate_data.dart';/// Settings for the cost of shipping for this invoice.
+@immutable final class PostInvoicesRequestShippingCost {const PostInvoicesRequestShippingCost({this.shippingRate, this.shippingRateData, });
 
 factory PostInvoicesRequestShippingCost.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestShippingCost(
   shippingRate: json['shipping_rate'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_old_schema_upload_response.dart';final class ShieldSchemaValidationPostSchemaResponse {const ShieldSchemaValidationPostSchemaResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_old_schema_upload_response.dart';@immutable final class ShieldSchemaValidationPostSchemaResponse {const ShieldSchemaValidationPostSchemaResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory ShieldSchemaValidationPostSchemaResponse.fromJson(Map<String, dynamic> json) { return ShieldSchemaValidationPostSchemaResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),

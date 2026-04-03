@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitParticipantPeerStatsPeerStatsIpInformation {const RealtimekitParticipantPeerStatsPeerStatsIpInformation({this.city, this.country, this.ipLocation, this.ipv4, this.org, this.portal, this.region, this.timezone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStatsIpInformation {const RealtimekitParticipantPeerStatsPeerStatsIpInformation({this.city, this.country, this.ipLocation, this.ipv4, this.org, this.portal, this.region, this.timezone, });
 
 factory RealtimekitParticipantPeerStatsPeerStatsIpInformation.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStatsPeerStatsIpInformation(
   city: json['city'] as String?,

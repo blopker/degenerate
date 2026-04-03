@@ -18,7 +18,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Siprec.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.name case final name$?)
       'Name=${Uri.encodeQueryComponent(name$)}',
     if (body.connectorName case final connectorName$?)
@@ -446,7 +446,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Siprec/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'Status=${Uri.encodeQueryComponent(body.status.toJson())}',
   ].join('&'),
   options: options,

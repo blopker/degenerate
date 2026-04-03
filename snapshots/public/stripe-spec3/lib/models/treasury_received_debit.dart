@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_debit_transaction.dart';import 'treasury_received_debits_resource_linked_flows.dart';import 'treasury_received_debits_resource_reversal_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'treasury_transaction.dart';/// Reason for the failure. A ReceivedDebit might fail because the FinancialAccount doesn't have sufficient funds, is closed, or is frozen.
-final class TreasuryReceivedDebitFailureCode {const TreasuryReceivedDebitFailureCode._(this.value);
+@immutable final class TreasuryReceivedDebitFailureCode {const TreasuryReceivedDebitFailureCode._(this.value);
 
 factory TreasuryReceivedDebitFailureCode.fromJson(String json) { return switch (json) {
   'account_closed' => accountClosed,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryReceivedDebitFailureCode($value)'; } 
  }
 /// The network used for the ReceivedDebit.
-final class TreasuryReceivedDebitNetwork {const TreasuryReceivedDebitNetwork._(this.value);
+@immutable final class TreasuryReceivedDebitNetwork {const TreasuryReceivedDebitNetwork._(this.value);
 
 factory TreasuryReceivedDebitNetwork.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryReceivedDebitNetwork($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class TreasuryReceivedDebitObject {const TreasuryReceivedDebitObject._(this.value);
+@immutable final class TreasuryReceivedDebitObject {const TreasuryReceivedDebitObject._(this.value);
 
 factory TreasuryReceivedDebitObject.fromJson(String json) { return switch (json) {
   'treasury.received_debit' => treasuryReceivedDebit,
@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryReceivedDebitObject($value)'; } 
  }
 /// Status of the ReceivedDebit. ReceivedDebits are created with a status of either `succeeded` (approved) or `failed` (declined). The failure reason can be found under the `failure_code`.
-final class TreasuryReceivedDebitStatus {const TreasuryReceivedDebitStatus._(this.value);
+@immutable final class TreasuryReceivedDebitStatus {const TreasuryReceivedDebitStatus._(this.value);
 
 factory TreasuryReceivedDebitStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
@@ -110,7 +110,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryReceivedDebitStatus($value)'; } 
  }
 /// ReceivedDebits represent funds pulled from a [FinancialAccount](https://api.stripe.com#financial_accounts). These are not initiated from the FinancialAccount.
-final class TreasuryReceivedDebit {const TreasuryReceivedDebit({required this.amount, required this.created, required this.currency, required this.description, this.failureCode, this.financialAccount, this.hostedRegulatoryReceiptUrl, required this.id, this.initiatingPaymentMethodDetails, required this.linkedFlows, required this.livemode, required this.network, required this.object, this.reversalDetails, required this.status, this.transaction, });
+@immutable final class TreasuryReceivedDebit {const TreasuryReceivedDebit({required this.amount, required this.created, required this.currency, required this.description, required this.id, required this.linkedFlows, required this.livemode, required this.network, required this.object, required this.status, this.failureCode, this.financialAccount, this.hostedRegulatoryReceiptUrl, this.initiatingPaymentMethodDetails, this.reversalDetails, this.transaction, });
 
 factory TreasuryReceivedDebit.fromJson(Map<String, dynamic> json) { return TreasuryReceivedDebit(
   amount: (json['amount'] as num).toInt(),

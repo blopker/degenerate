@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesSignatureAlgorithm {const RadarGetCtTimeseriesSignatureAlgorithm._(this.value);
 
 factory RadarGetCtTimeseriesSignatureAlgorithm.fromJson(String json) { return switch (json) {
   'DSA_SHA_1' => dsaSha1,

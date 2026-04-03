@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessDeviceSession {const AccessDeviceSession({this.lastAuthenticated});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessDeviceSession {const AccessDeviceSession({this.lastAuthenticated});
 
 factory AccessDeviceSession.fromJson(Map<String, dynamic> json) { return AccessDeviceSession(
   lastAuthenticated: json['last_authenticated'] != null ? (json['last_authenticated'] as num).toDouble() : null,

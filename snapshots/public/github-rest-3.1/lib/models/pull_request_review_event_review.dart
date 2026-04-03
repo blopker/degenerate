@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pull_request_review_event_review_links.dart';import 'simple_user.dart';final class PullRequestReviewEventReview {const PullRequestReviewEventReview({this.id, this.nodeId, this.user, this.body, this.commitId, this.submittedAt, this.state, this.htmlUrl, this.pullRequestUrl, this.links, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pull_request_review_event_review_links.dart';import 'simple_user.dart';@immutable final class PullRequestReviewEventReview {const PullRequestReviewEventReview({this.id, this.nodeId, this.user, this.body, this.commitId, this.submittedAt, this.state, this.htmlUrl, this.pullRequestUrl, this.links, this.updatedAt, });
 
 factory PullRequestReviewEventReview.fromJson(Map<String, dynamic> json) { return PullRequestReviewEventReview(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

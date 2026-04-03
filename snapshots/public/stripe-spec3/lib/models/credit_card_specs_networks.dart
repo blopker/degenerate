@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreditCardSpecsNetworksPreferred {const CreditCardSpecsNetworksPreferred._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreditCardSpecsNetworksPreferred {const CreditCardSpecsNetworksPreferred._(this.value);
 
 factory CreditCardSpecsNetworksPreferred.fromJson(String json) { return switch (json) {
   'cartes_bancaires' => cartesBancaires,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreditCardSpecsNetworksPreferred($value)'; } 
  }
-final class CreditCardSpecsNetworks {const CreditCardSpecsNetworks({this.preferred});
+@immutable final class CreditCardSpecsNetworks {const CreditCardSpecsNetworks({this.preferred});
 
 factory CreditCardSpecsNetworks.fromJson(Map<String, dynamic> json) { return CreditCardSpecsNetworks(
   preferred: json['preferred'] != null ? CreditCardSpecsNetworksPreferred.fromJson(json['preferred'] as String) : null,

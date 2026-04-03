@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailDetails {const EmailDetails({required this.emailAddress, required this.subject, this.body, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailDetails {const EmailDetails({required this.emailAddress, required this.subject, this.body, });
 
 factory EmailDetails.fromJson(Map<String, dynamic> json) { return EmailDetails(
   emailAddress: json['emailAddress'] as String,

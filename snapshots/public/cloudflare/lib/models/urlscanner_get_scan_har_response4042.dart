@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response4042_errors.dart';import 'urlscanner_get_scan_har_response4042_task.dart';final class UrlscannerGetScanHarResponse4042 {const UrlscannerGetScanHarResponse4042({required this.errors, required this.message, required this.status, required this.task, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response4042_errors.dart';import 'urlscanner_get_scan_har_response4042_task.dart';@immutable final class UrlscannerGetScanHarResponse4042 {const UrlscannerGetScanHarResponse4042({required this.errors, required this.message, required this.status, required this.task, });
 
 factory UrlscannerGetScanHarResponse4042.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse4042(
   errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerGetScanHarResponse4042Errors.fromJson(e as Map<String, dynamic>)).toList(),

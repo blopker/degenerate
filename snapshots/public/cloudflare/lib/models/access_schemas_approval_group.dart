@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A group of email addresses that can approve a temporary authentication request.
-final class AccessSchemasApprovalGroup {const AccessSchemasApprovalGroup({required this.approvalsNeeded, this.emailAddresses, this.emailListUuid, });
+@immutable final class AccessSchemasApprovalGroup {const AccessSchemasApprovalGroup({required this.approvalsNeeded, this.emailAddresses, this.emailListUuid, });
 
 factory AccessSchemasApprovalGroup.fromJson(Map<String, dynamic> json) { return AccessSchemasApprovalGroup(
   approvalsNeeded: (json['approvals_needed'] as num).toDouble(),

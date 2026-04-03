@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSigmaSavedQueriesIdRequest {const PostSigmaSavedQueriesIdRequest({this.expand, this.name, this.sql, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSigmaSavedQueriesIdRequest {const PostSigmaSavedQueriesIdRequest({this.expand, this.name, this.sql, });
 
 factory PostSigmaSavedQueriesIdRequest.fromJson(Map<String, dynamic> json) { return PostSigmaSavedQueriesIdRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

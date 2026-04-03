@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'security_and_analysis.dart';final class WebhookSecurityAndAnalysisChangesFrom {const WebhookSecurityAndAnalysisChangesFrom({this.securityAndAnalysis});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_and_analysis.dart';@immutable final class WebhookSecurityAndAnalysisChangesFrom {const WebhookSecurityAndAnalysisChangesFrom({this.securityAndAnalysis});
 
 factory WebhookSecurityAndAnalysisChangesFrom.fromJson(Map<String, dynamic> json) { return WebhookSecurityAndAnalysisChangesFrom(
   securityAndAnalysis: json['security_and_analysis'] != null ? SecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null,

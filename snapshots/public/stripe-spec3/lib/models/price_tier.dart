@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PriceTier {const PriceTier({this.flatAmount, this.flatAmountDecimal, this.unitAmount, this.unitAmountDecimal, this.upTo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PriceTier {const PriceTier({this.flatAmount, this.flatAmountDecimal, this.unitAmount, this.unitAmountDecimal, this.upTo, });
 
 factory PriceTier.fromJson(Map<String, dynamic> json) { return PriceTier(
   flatAmount: json['flat_amount'] != null ? (json['flat_amount'] as num).toInt() : null,

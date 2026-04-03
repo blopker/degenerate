@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpEntryUpdateTypePredefinedType {const DlpEntryUpdateTypePredefinedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpEntryUpdateTypePredefinedType {const DlpEntryUpdateTypePredefinedType._(this.value);
 
 factory DlpEntryUpdateTypePredefinedType.fromJson(String json) { return switch (json) {
   'predefined' => predefined,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpEntryUpdateTypePredefinedType($value)'; } 
  }
-final class DlpEntryUpdateTypePredefined {const DlpEntryUpdateTypePredefined({required this.type});
+@immutable final class DlpEntryUpdateTypePredefined {const DlpEntryUpdateTypePredefined({required this.type});
 
 factory DlpEntryUpdateTypePredefined.fromJson(Map<String, dynamic> json) { return DlpEntryUpdateTypePredefined(
   type: DlpEntryUpdateTypePredefinedType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventQueryCreateResponse {const PostEventQueryCreateResponse({required this.accountId, required this.alertEnabled, required this.alertRollupEnabled, required this.createdAt, required this.id, required this.name, required this.queryJson, required this.ruleEnabled, this.ruleScope, required this.updatedAt, required this.userEmail, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventQueryCreateResponse {const PostEventQueryCreateResponse({required this.accountId, required this.alertEnabled, required this.alertRollupEnabled, required this.createdAt, required this.id, required this.name, required this.queryJson, required this.ruleEnabled, required this.updatedAt, required this.userEmail, this.ruleScope, });
 
 factory PostEventQueryCreateResponse.fromJson(Map<String, dynamic> json) { return PostEventQueryCreateResponse(
   accountId: (json['account_id'] as num).toInt(),

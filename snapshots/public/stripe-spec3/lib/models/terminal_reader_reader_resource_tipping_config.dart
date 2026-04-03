@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a per-transaction tipping configuration
-final class TerminalReaderReaderResourceTippingConfig {const TerminalReaderReaderResourceTippingConfig({this.amountEligible});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a per-transaction tipping configuration
+@immutable final class TerminalReaderReaderResourceTippingConfig {const TerminalReaderReaderResourceTippingConfig({this.amountEligible});
 
 factory TerminalReaderReaderResourceTippingConfig.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceTippingConfig(
   amountEligible: json['amount_eligible'] != null ? (json['amount_eligible'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zone_activation_messages2.dart';final class ResponseCommon83 {const ResponseCommon83({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zone_activation_messages2.dart';@immutable final class ResponseCommon83 {const ResponseCommon83({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon83.fromJson(Map<String, dynamic> json) { return ResponseCommon83(
   errors: (json['errors'] as List<dynamic>).map((e) => ZoneActivationMessages2.fromJson(e as Map<String, dynamic>)).toList(),

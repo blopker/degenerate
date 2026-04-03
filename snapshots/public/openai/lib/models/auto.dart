@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Enables tracing and sets default values for tracing configuration options. Always `auto`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enables tracing and sets default values for tracing configuration options. Always `auto`.
 /// 
-final class Auto {const Auto._(this.value);
+@immutable final class Auto {const Auto._(this.value);
 
 factory Auto.fromJson(String json) { return switch (json) {
   'auto' => auto,

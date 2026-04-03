@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The public key used for setting Dependabot Secrets.
-final class DependabotPublicKey {const DependabotPublicKey({required this.keyId, required this.key, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The public key used for setting Dependabot Secrets.
+@immutable final class DependabotPublicKey {const DependabotPublicKey({required this.keyId, required this.key, });
 
 factory DependabotPublicKey.fromJson(Map<String, dynamic> json) { return DependabotPublicKey(
   keyId: json['key_id'] as String,

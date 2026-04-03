@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ViaMcpServerPortalDestinationType {const ViaMcpServerPortalDestinationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ViaMcpServerPortalDestinationType {const ViaMcpServerPortalDestinationType._(this.value);
 
 factory ViaMcpServerPortalDestinationType.fromJson(String json) { return switch (json) {
   'via_mcp_server_portal' => viaMcpServerPortal,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A MCP server id configured in ai-controls. Access will secure the MCP server if accessed through a MCP portal.
 /// 
-final class ViaMcpServerPortalDestination {const ViaMcpServerPortalDestination({this.mcpServerId, this.type, });
+@immutable final class ViaMcpServerPortalDestination {const ViaMcpServerPortalDestination({this.mcpServerId, this.type, });
 
 factory ViaMcpServerPortalDestination.fromJson(Map<String, dynamic> json) { return ViaMcpServerPortalDestination(
   mcpServerId: json['mcp_server_id'] as String?,

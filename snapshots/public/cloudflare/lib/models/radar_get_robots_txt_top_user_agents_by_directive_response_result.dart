@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_robots_txt_top_user_agents_by_directive_response_result_meta.dart';import 'radar_get_robots_txt_top_user_agents_by_directive_response_result_top0.dart';final class RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult {const RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult({required this.meta, required this.top0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_robots_txt_top_user_agents_by_directive_response_result_meta.dart';import 'radar_get_robots_txt_top_user_agents_by_directive_response_result_top0.dart';@immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult {const RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult({required this.meta, required this.top0, });
 
 factory RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult(
   meta: RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

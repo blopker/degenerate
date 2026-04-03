@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';/// The proxy endpoint kind
-final class ZeroTrustGatewayProxyEndpointIpCreateKind {const ZeroTrustGatewayProxyEndpointIpCreateKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';/// The proxy endpoint kind
+@immutable final class ZeroTrustGatewayProxyEndpointIpCreateKind {const ZeroTrustGatewayProxyEndpointIpCreateKind._(this.value);
 
 factory ZeroTrustGatewayProxyEndpointIpCreateKind.fromJson(String json) { return switch (json) {
   'ip' => ip,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZeroTrustGatewayProxyEndpointIpCreateKind($value)'; } 
  }
-final class ZeroTrustGatewayProxyEndpointIpCreate {const ZeroTrustGatewayProxyEndpointIpCreate({this.kind, required this.name, });
+@immutable final class ZeroTrustGatewayProxyEndpointIpCreate {const ZeroTrustGatewayProxyEndpointIpCreate({required this.name, this.kind, });
 
 factory ZeroTrustGatewayProxyEndpointIpCreate.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProxyEndpointIpCreate(
   kind: json['kind'] != null ? ZeroTrustGatewayProxyEndpointIpCreateKind.fromJson(json['kind'] as String) : null,

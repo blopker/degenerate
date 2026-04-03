@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval._(this.value);
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval($value)'; } 
  }
-final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring({required this.interval, this.intervalCount, });
+@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring({required this.interval, this.intervalCount, });
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring(
   interval: PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval.fromJson(json['interval'] as String),

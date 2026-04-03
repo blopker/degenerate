@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_dns_summary_by_dnssec_awareness_response_result.dart';final class RadarGetDnsSummaryByDnssecAwarenessResponse {const RadarGetDnsSummaryByDnssecAwarenessResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_dnssec_awareness_response_result.dart';@immutable final class RadarGetDnsSummaryByDnssecAwarenessResponse {const RadarGetDnsSummaryByDnssecAwarenessResponse({required this.result, required this.success, });
 
 factory RadarGetDnsSummaryByDnssecAwarenessResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByDnssecAwarenessResponse(
   result: RadarGetDnsSummaryByDnssecAwarenessResponseResult.fromJson(json['result'] as Map<String, dynamic>),

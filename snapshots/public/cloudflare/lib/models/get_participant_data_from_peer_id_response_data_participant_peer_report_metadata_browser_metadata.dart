@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata({this.browser, this.browserVersion, this.engine, this.userAgent, this.webglSupport, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata({this.browser, this.browserVersion, this.engine, this.userAgent, this.webglSupport, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata(
   browser: json['browser'] as String?,

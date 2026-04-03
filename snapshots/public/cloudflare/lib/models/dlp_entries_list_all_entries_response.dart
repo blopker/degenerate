@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_entry_with_upload_status.dart';final class DlpEntriesListAllEntriesResponse {const DlpEntriesListAllEntriesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_entry_with_upload_status.dart';@immutable final class DlpEntriesListAllEntriesResponse {const DlpEntriesListAllEntriesResponse({this.result});
 
 factory DlpEntriesListAllEntriesResponse.fromJson(Map<String, dynamic> json) { return DlpEntriesListAllEntriesResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => DlpEntryWithUploadStatus.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullsMergeResponse409 {const PullsMergeResponse409({this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsMergeResponse409 {const PullsMergeResponse409({this.message, this.documentationUrl, });
 
 factory PullsMergeResponse409.fromJson(Map<String, dynamic> json) { return PullsMergeResponse409(
   message: json['message'] as String?,

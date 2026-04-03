@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Count Operator.
-final class TeamsDevicesKolideInputRequestCountOperator {const TeamsDevicesKolideInputRequestCountOperator._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Count Operator.
+@immutable final class TeamsDevicesKolideInputRequestCountOperator {const TeamsDevicesKolideInputRequestCountOperator._(this.value);
 
 factory TeamsDevicesKolideInputRequestCountOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesKolideInputRequestCountOperator($value)'; } 
  }
-final class TeamsDevicesKolideInputRequest {const TeamsDevicesKolideInputRequest({required this.connectionId, required this.countOperator, required this.issueCount, });
+@immutable final class TeamsDevicesKolideInputRequest {const TeamsDevicesKolideInputRequest({required this.connectionId, required this.countOperator, required this.issueCount, });
 
 factory TeamsDevicesKolideInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesKolideInputRequest(
   connectionId: json['connection_id'] as String,

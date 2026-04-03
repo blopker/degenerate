@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waf_managed_rules_mode.dart';final class WafRuleGroupsUpdateAWafRuleGroupRequest {const WafRuleGroupsUpdateAWafRuleGroupRequest({this.mode});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_mode.dart';@immutable final class WafRuleGroupsUpdateAWafRuleGroupRequest {const WafRuleGroupsUpdateAWafRuleGroupRequest({this.mode});
 
 factory WafRuleGroupsUpdateAWafRuleGroupRequest.fromJson(Map<String, dynamic> json) { return WafRuleGroupsUpdateAWafRuleGroupRequest(
   mode: json['mode'] != null ? WafManagedRulesMode.fromJson(json['mode'] as String) : null,

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The TLS Setting name. The value type depends on the setting:
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The TLS Setting name. The value type depends on the setting:
 /// - `ciphers`: value is an array of cipher suite strings (e.g., `["ECDHE-RSA-AES128-GCM-SHA256", "AES128-GCM-SHA256"]`)
 /// - `min_tls_version`: value is a TLS version string (`"1.0"`, `"1.1"`, `"1.2"`, or `"1.3"`)
 /// - `http2`: value is `"on"` or `"off"`
-final class TlsCertificatesAndHostnamesSettingId {const TlsCertificatesAndHostnamesSettingId._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSettingId {const TlsCertificatesAndHostnamesSettingId._(this.value);
 
 factory TlsCertificatesAndHostnamesSettingId.fromJson(String json) { return switch (json) {
   'ciphers' => ciphers,

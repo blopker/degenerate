@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Enable re-ranking; set to `none` to disable, which can help reduce latency.
-final class VectorStoreSearchRequestRankingOptionsRanker {const VectorStoreSearchRequestRankingOptionsRanker._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable re-ranking; set to `none` to disable, which can help reduce latency.
+@immutable final class VectorStoreSearchRequestRankingOptionsRanker {const VectorStoreSearchRequestRankingOptionsRanker._(this.value);
 
 factory VectorStoreSearchRequestRankingOptionsRanker.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VectorStoreSearchRequestRankingOptionsRanker($value)'; } 
  }
 /// Ranking options for search.
-final class VectorStoreSearchRequestRankingOptions {const VectorStoreSearchRequestRankingOptions({this.ranker = VectorStoreSearchRequestRankingOptionsRanker.auto, this.scoreThreshold = 0.0, });
+@immutable final class VectorStoreSearchRequestRankingOptions {const VectorStoreSearchRequestRankingOptions({this.ranker = VectorStoreSearchRequestRankingOptionsRanker.auto, this.scoreThreshold = 0.0, });
 
 factory VectorStoreSearchRequestRankingOptions.fromJson(Map<String, dynamic> json) { return VectorStoreSearchRequestRankingOptions(
   ranker: json.containsKey('ranker') ? VectorStoreSearchRequestRankingOptionsRanker.fromJson(json['ranker'] as String) : VectorStoreSearchRequestRankingOptionsRanker.auto,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class HyperdriveOverAccessOrigin {const HyperdriveOverAccessOrigin({required this.accessClientId, required this.accessClientSecret, required this.host, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HyperdriveOverAccessOrigin {const HyperdriveOverAccessOrigin({required this.accessClientId, required this.accessClientSecret, required this.host, });
 
 factory HyperdriveOverAccessOrigin.fromJson(Map<String, dynamic> json) { return HyperdriveOverAccessOrigin(
   accessClientId: json['access_client_id'] as String,

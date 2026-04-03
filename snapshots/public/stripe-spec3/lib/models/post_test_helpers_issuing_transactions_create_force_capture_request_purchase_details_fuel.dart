@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType._(this.value);
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType.fromJson(String json) { return switch (json) {
   'diesel' => diesel,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelType($value)'; } 
  }
-final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit._(this.value);
+@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit._(this.value);
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit.fromJson(String json) { return switch (json) {
   'charging_minute' => chargingMinute,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuelUnit($value)'; } 
  }
-final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuel {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuel({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
+@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuel {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuel({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuel.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFuel(
   industryProductCode: json['industry_product_code'] as String?,

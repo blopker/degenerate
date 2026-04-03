@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_cursor_with_legacy_result_info.dart';import 'email_security_mailsearch_message.dart';import 'email_security_message.dart';final class EmailSecurityInvestigateResponse {const EmailSecurityInvestigateResponse({required this.errors, required this.messages, required this.success, required this.result, required this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_cursor_with_legacy_result_info.dart';import 'email_security_mailsearch_message.dart';import 'email_security_message.dart';@immutable final class EmailSecurityInvestigateResponse {const EmailSecurityInvestigateResponse({required this.errors, required this.messages, required this.success, required this.result, required this.resultInfo, });
 
 factory EmailSecurityInvestigateResponse.fromJson(Map<String, dynamic> json) { return EmailSecurityInvestigateResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),

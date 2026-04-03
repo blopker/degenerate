@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages51_messages_assistant_tool_calls_custom_custom.dart';final class Messages51MessagesAssistantToolCallsCustomType {const Messages51MessagesAssistantToolCallsCustomType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_assistant_tool_calls_custom_custom.dart';@immutable final class Messages51MessagesAssistantToolCallsCustomType {const Messages51MessagesAssistantToolCallsCustomType._(this.value);
 
 factory Messages51MessagesAssistantToolCallsCustomType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51MessagesAssistantToolCallsCustomType($value)'; } 
  }
-final class Messages51MessagesAssistantToolCallsCustom {const Messages51MessagesAssistantToolCallsCustom({required this.custom, required this.id, required this.type, });
+@immutable final class Messages51MessagesAssistantToolCallsCustom {const Messages51MessagesAssistantToolCallsCustom({required this.custom, required this.id, required this.type, });
 
 factory Messages51MessagesAssistantToolCallsCustom.fromJson(Map<String, dynamic> json) { return Messages51MessagesAssistantToolCallsCustom(
   custom: Messages51MessagesAssistantToolCallsCustomCustom.fromJson(json['custom'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// For all L7 requests to this hostname, cloudflared will validate each request's Cf-Access-Jwt-Assertion request header.
-final class TunnelOriginRequestAccess {const TunnelOriginRequestAccess({required this.audTag, this.$required, required this.teamName, });
+@immutable final class TunnelOriginRequestAccess {const TunnelOriginRequestAccess({required this.audTag, required this.teamName, this.$required, });
 
 factory TunnelOriginRequestAccess.fromJson(Map<String, dynamic> json) { return TunnelOriginRequestAccess(
   audTag: (json['audTag'] as List<dynamic>).map((e) => e as String).toList(),

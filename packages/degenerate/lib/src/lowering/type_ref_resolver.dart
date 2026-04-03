@@ -1,4 +1,4 @@
-import '../ir/ir_types.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Resolves [IrTypeRef] nodes within IR type trees.
 ///
@@ -11,13 +11,13 @@ import '../ir/ir_types.dart';
 /// Refs to emittable types (objects, unions) are kept as [IrTypeRef] since
 /// those types get their own generated files.
 class TypeRefResolver {
+  /// Creates a resolver backed by the given type registry.
+  TypeRefResolver(this._typeRegistry);
   final Map<String, IrType> _typeRegistry;
 
   /// Tracks types currently being resolved to prevent infinite recursion
   /// from circular references.
   final Set<String> _resolving = {};
-
-  TypeRefResolver(this._typeRegistry);
 
   /// Resolve all [IrTypeRef] nodes within a type tree.
   IrType resolve(IrType type) => _resolveInType(type);
@@ -58,7 +58,7 @@ class TypeRefResolver {
             description: f.description,
           );
         }).toList();
-        IrType? newAdditionalProps = type.additionalProperties;
+        var newAdditionalProps = type.additionalProperties;
         if (newAdditionalProps != null) {
           var resolved = resolveRef(newAdditionalProps);
           resolved = _resolveInType(resolved);
@@ -177,7 +177,8 @@ class TypeRefResolver {
         }
         return resolved;
       }
-      // For non-emittable types (IrEnum, IrList, IrMap, IrPrimitive, IrTypeRef),
+      // For non-emittable types (IrEnum, IrList, IrMap, IrPrimitive,
+      // IrTypeRef),
       // resolve to the actual type.
       current = resolved;
     }

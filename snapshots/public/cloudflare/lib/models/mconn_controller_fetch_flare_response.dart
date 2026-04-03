@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_controller_flare.dart';final class MconnControllerFetchFlareResponse {const MconnControllerFetchFlareResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_controller_flare.dart';@immutable final class MconnControllerFetchFlareResponse {const MconnControllerFetchFlareResponse({this.result});
 
 factory MconnControllerFetchFlareResponse.fromJson(Map<String, dynamic> json) { return MconnControllerFetchFlareResponse(
   result: json['result'] != null ? MconnControllerFlare.fromJson(json['result'] as Map<String, dynamic>) : null,

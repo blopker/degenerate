@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_messages2.dart';final class ResponseCommonNoResult {const ResponseCommonNoResult({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_messages2.dart';@immutable final class ResponseCommonNoResult {const ResponseCommonNoResult({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ResponseCommonNoResult.fromJson(Map<String, dynamic> json) { return ResponseCommonNoResult(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersKvMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 final List<WorkersKvMessages2> errors;

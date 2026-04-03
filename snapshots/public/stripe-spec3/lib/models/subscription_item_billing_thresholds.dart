@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SubscriptionItemBillingThresholds {const SubscriptionItemBillingThresholds({this.usageGte});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SubscriptionItemBillingThresholds {const SubscriptionItemBillingThresholds({this.usageGte});
 
 factory SubscriptionItemBillingThresholds.fromJson(Map<String, dynamic> json) { return SubscriptionItemBillingThresholds(
   usageGte: json['usage_gte'] != null ? (json['usage_gte'] as num).toInt() : null,

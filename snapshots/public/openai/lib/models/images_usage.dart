@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'images_usage_input_tokens_details.dart';/// For the GPT image models only, the token usage information for the image generation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_usage_input_tokens_details.dart';/// For the GPT image models only, the token usage information for the image generation.
 /// 
-final class ImagesUsage {const ImagesUsage({required this.totalTokens, required this.inputTokens, required this.outputTokens, required this.inputTokensDetails, });
+@immutable final class ImagesUsage {const ImagesUsage({required this.totalTokens, required this.inputTokens, required this.outputTokens, required this.inputTokensDetails, });
 
 factory ImagesUsage.fromJson(Map<String, dynamic> json) { return ImagesUsage(
   totalTokens: (json['total_tokens'] as num).toInt(),

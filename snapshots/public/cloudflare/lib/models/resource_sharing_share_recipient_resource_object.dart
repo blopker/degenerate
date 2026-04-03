@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'resource_sharing_resource_resource_id.dart';import 'resource_sharing_resource_version.dart';/// Share Recipient error message.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_resource_resource_id.dart';import 'resource_sharing_resource_version.dart';/// Share Recipient error message.
 extension type const ResourceSharingRecipientResourceError(String value) {
 factory ResourceSharingRecipientResourceError.fromJson(String json) => ResourceSharingRecipientResourceError(json);
 
@@ -14,7 +14,7 @@ factory ResourceSharingRecipientResourceErrorTerminal.fromJson(bool json) => Res
 bool toJson() => value;
 
 }
-final class ResourceSharingShareRecipientResourceObject {const ResourceSharingShareRecipientResourceObject({required this.error, required this.resourceId, required this.resourceVersion, required this.terminal, });
+@immutable final class ResourceSharingShareRecipientResourceObject {const ResourceSharingShareRecipientResourceObject({required this.error, required this.resourceId, required this.resourceVersion, required this.terminal, });
 
 factory ResourceSharingShareRecipientResourceObject.fromJson(Map<String, dynamic> json) { return ResourceSharingShareRecipientResourceObject(
   error: ResourceSharingRecipientResourceError.fromJson(json['error'] as String),

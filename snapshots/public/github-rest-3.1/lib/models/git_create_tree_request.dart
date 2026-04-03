@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'git_create_tree_request_tree.dart';final class GitCreateTreeRequest {const GitCreateTreeRequest({required this.tree, this.baseTree, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'git_create_tree_request_tree.dart';@immutable final class GitCreateTreeRequest {const GitCreateTreeRequest({required this.tree, this.baseTree, });
 
 factory GitCreateTreeRequest.fromJson(Map<String, dynamic> json) { return GitCreateTreeRequest(
   tree: (json['tree'] as List<dynamic>).map((e) => GitCreateTreeRequestTree.fromJson(e as Map<String, dynamic>)).toList(),

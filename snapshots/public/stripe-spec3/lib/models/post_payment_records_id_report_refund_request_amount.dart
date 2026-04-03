@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A positive integer in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) representing how much of this payment to refund. Can refund only up to the remaining, unrefunded amount of the payment.
-final class PostPaymentRecordsIdReportRefundRequestAmount {const PostPaymentRecordsIdReportRefundRequestAmount({required this.currency, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A positive integer in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) representing how much of this payment to refund. Can refund only up to the remaining, unrefunded amount of the payment.
+@immutable final class PostPaymentRecordsIdReportRefundRequestAmount {const PostPaymentRecordsIdReportRefundRequestAmount({required this.currency, required this.value, });
 
 factory PostPaymentRecordsIdReportRefundRequestAmount.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportRefundRequestAmount(
   currency: json['currency'] as String,

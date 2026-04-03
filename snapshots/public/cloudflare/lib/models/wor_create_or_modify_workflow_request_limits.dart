@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorCreateOrModifyWorkflowRequestLimits {const WorCreateOrModifyWorkflowRequestLimits({this.steps});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorCreateOrModifyWorkflowRequestLimits {const WorCreateOrModifyWorkflowRequestLimits({this.steps});
 
 factory WorCreateOrModifyWorkflowRequestLimits.fromJson(Map<String, dynamic> json) { return WorCreateOrModifyWorkflowRequestLimits(
   steps: json['steps'] != null ? (json['steps'] as num).toInt() : null,

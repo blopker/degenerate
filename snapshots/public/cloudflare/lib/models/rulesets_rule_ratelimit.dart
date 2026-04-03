@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An object configuring the rule's rate limit behavior.
-final class RulesetsRuleRatelimit {const RulesetsRuleRatelimit({required this.characteristics, this.countingExpression, this.mitigationTimeout, required this.period, this.requestsPerPeriod, this.requestsToOrigin = false, this.scorePerPeriod, this.scoreResponseHeaderName, });
+@immutable final class RulesetsRuleRatelimit {const RulesetsRuleRatelimit({required this.characteristics, required this.period, this.countingExpression, this.mitigationTimeout, this.requestsPerPeriod, this.requestsToOrigin = false, this.scorePerPeriod, this.scoreResponseHeaderName, });
 
 factory RulesetsRuleRatelimit.fromJson(Map<String, dynamic> json) { return RulesetsRuleRatelimit(
   characteristics: (json['characteristics'] as List<dynamic>).map((e) => e as String).toList(),

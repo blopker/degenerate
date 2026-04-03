@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_branding_settings_background_color.dart';import 'post_checkout_sessions_request_branding_settings_button_color.dart';import 'post_checkout_sessions_request_branding_settings_icon.dart';import 'post_checkout_sessions_request_branding_settings_logo.dart';final class PostCheckoutSessionsRequestBrandingSettingsBorderStyle {const PostCheckoutSessionsRequestBrandingSettingsBorderStyle._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_branding_settings_background_color.dart';import 'post_checkout_sessions_request_branding_settings_button_color.dart';import 'post_checkout_sessions_request_branding_settings_icon.dart';import 'post_checkout_sessions_request_branding_settings_logo.dart';@immutable final class PostCheckoutSessionsRequestBrandingSettingsBorderStyle {const PostCheckoutSessionsRequestBrandingSettingsBorderStyle._(this.value);
 
 factory PostCheckoutSessionsRequestBrandingSettingsBorderStyle.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestBrandingSettingsBorderStyle($value)'; } 
  }
-final class PostCheckoutSessionsRequestBrandingSettingsFontFamily {const PostCheckoutSessionsRequestBrandingSettingsFontFamily._(this.value);
+@immutable final class PostCheckoutSessionsRequestBrandingSettingsFontFamily {const PostCheckoutSessionsRequestBrandingSettingsFontFamily._(this.value);
 
 factory PostCheckoutSessionsRequestBrandingSettingsFontFamily.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -130,7 +130,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestBrandingSettingsFontFamily($value)'; } 
  }
 /// The branding settings for the Checkout Session. This parameter is not allowed if ui_mode is `custom`.
-final class PostCheckoutSessionsRequestBrandingSettings {const PostCheckoutSessionsRequestBrandingSettings({this.backgroundColor, this.borderStyle, this.buttonColor, this.displayName, this.fontFamily, this.icon, this.logo, });
+@immutable final class PostCheckoutSessionsRequestBrandingSettings {const PostCheckoutSessionsRequestBrandingSettings({this.backgroundColor, this.borderStyle, this.buttonColor, this.displayName, this.fontFamily, this.icon, this.logo, });
 
 factory PostCheckoutSessionsRequestBrandingSettings.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestBrandingSettings(
   backgroundColor: json['background_color'] != null ? OneOf2.parse(json['background_color'], fromA: (v) => v as String, fromB: (v) => PostCheckoutSessionsRequestBrandingSettingsBackgroundColorVariant2.fromJson(v as String),) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Always `refusal`.
-final class MessageDeltaContentRefusalObjectType {const MessageDeltaContentRefusalObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `refusal`.
+@immutable final class MessageDeltaContentRefusalObjectType {const MessageDeltaContentRefusalObjectType._(this.value);
 
 factory MessageDeltaContentRefusalObjectType.fromJson(String json) { return switch (json) {
   'refusal' => refusal,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageDeltaContentRefusalObjectType($value)'; } 
  }
 /// The refusal content that is part of a message.
-final class MessageDeltaContentRefusalObject {const MessageDeltaContentRefusalObject({required this.index, required this.type, this.refusal, });
+@immutable final class MessageDeltaContentRefusalObject {const MessageDeltaContentRefusalObject({required this.index, required this.type, this.refusal, });
 
 factory MessageDeltaContentRefusalObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentRefusalObject(
   index: (json['index'] as num).toInt(),

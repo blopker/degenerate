@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify mode='smart' for Smart Placement, or one of region/hostname/host.
-final class WorkersPlacementMode {const WorkersPlacementMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify mode='smart' for Smart Placement, or one of region/hostname/host.
+@immutable final class WorkersPlacementMode {const WorkersPlacementMode._(this.value);
 
 factory WorkersPlacementMode.fromJson(String json) { return switch (json) {
   'smart' => smart,

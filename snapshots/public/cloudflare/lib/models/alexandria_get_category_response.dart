@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alexandria_category.dart';import 'alexandria_messages2.dart';final class AlexandriaGetCategoryResponse {const AlexandriaGetCategoryResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'alexandria_category.dart';import 'alexandria_messages2.dart';@immutable final class AlexandriaGetCategoryResponse {const AlexandriaGetCategoryResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory AlexandriaGetCategoryResponse.fromJson(Map<String, dynamic> json) { return AlexandriaGetCategoryResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => AlexandriaMessages2.fromJson(e as Map<String, dynamic>)).toList(),

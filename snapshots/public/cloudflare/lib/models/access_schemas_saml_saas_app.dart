@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_saml_saas_app_custom_attributes.dart';import 'access_timestamp.dart';/// Optional identifier indicating the authentication protocol used for the saas app. Required for OIDC. Default if unset is "saml"
-final class AccessSchemasSamlSaasAppAuthType {const AccessSchemasSamlSaasAppAuthType._(this.value);
+@immutable final class AccessSchemasSamlSaasAppAuthType {const AccessSchemasSamlSaasAppAuthType._(this.value);
 
 factory AccessSchemasSamlSaasAppAuthType.fromJson(String json) { return switch (json) {
   'saml' => saml,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccessSchemasSamlSaasAppAuthType($value)'; } 
  }
 /// The format of the name identifier sent to the SaaS application.
-final class AccessSchemasSamlSaasAppNameIdFormat {const AccessSchemasSamlSaasAppNameIdFormat._(this.value);
+@immutable final class AccessSchemasSamlSaasAppNameIdFormat {const AccessSchemasSamlSaasAppNameIdFormat._(this.value);
 
 factory AccessSchemasSamlSaasAppNameIdFormat.fromJson(String json) { return switch (json) {
   'id' => id,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessSchemasSamlSaasAppNameIdFormat($value)'; } 
  }
-final class AccessSchemasSamlSaasApp {const AccessSchemasSamlSaasApp({this.authType, this.consumerServiceUrl, this.createdAt, this.customAttributes, this.idpEntityId, this.nameIdFormat, this.nameIdTransformJsonata, this.publicKey, this.spEntityId, this.ssoEndpoint, this.updatedAt, });
+@immutable final class AccessSchemasSamlSaasApp {const AccessSchemasSamlSaasApp({this.authType, this.consumerServiceUrl, this.createdAt, this.customAttributes, this.idpEntityId, this.nameIdFormat, this.nameIdTransformJsonata, this.publicKey, this.spEntityId, this.ssoEndpoint, this.updatedAt, });
 
 factory AccessSchemasSamlSaasApp.fromJson(Map<String, dynamic> json) { return AccessSchemasSamlSaasApp(
   authType: json['auth_type'] != null ? AccessSchemasSamlSaasAppAuthType.fromJson(json['auth_type'] as String) : null,

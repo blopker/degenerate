@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependency_graph_spdx_sbom_sbom_packages_external_refs.dart';final class DependencyGraphSpdxSbomSbomPackages {const DependencyGraphSpdxSbomSbomPackages({this.spdxid, this.name, this.versionInfo, this.downloadLocation, this.filesAnalyzed, this.licenseConcluded, this.licenseDeclared, this.supplier, this.copyrightText, this.externalRefs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependency_graph_spdx_sbom_sbom_packages_external_refs.dart';@immutable final class DependencyGraphSpdxSbomSbomPackages {const DependencyGraphSpdxSbomSbomPackages({this.spdxid, this.name, this.versionInfo, this.downloadLocation, this.filesAnalyzed, this.licenseConcluded, this.licenseDeclared, this.supplier, this.copyrightText, this.externalRefs, });
 
 factory DependencyGraphSpdxSbomSbomPackages.fromJson(Map<String, dynamic> json) { return DependencyGraphSpdxSbomSbomPackages(
   spdxid: json['SPDXID'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'linked_account_options_common.dart';import 'payment_method_options_us_bank_account_mandate_options.dart';/// Bank account verification method.
-final class SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod {const SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'linked_account_options_common.dart';import 'payment_method_options_us_bank_account_mandate_options.dart';/// Bank account verification method.
+@immutable final class SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod {const SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
 
 factory SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsUsBankAccountVerificationMethod($value)'; } 
  }
 /// 
-final class SetupIntentPaymentMethodOptionsUsBankAccount {const SetupIntentPaymentMethodOptionsUsBankAccount({this.financialConnections, this.mandateOptions, this.verificationMethod, });
+@immutable final class SetupIntentPaymentMethodOptionsUsBankAccount {const SetupIntentPaymentMethodOptionsUsBankAccount({this.financialConnections, this.mandateOptions, this.verificationMethod, });
 
 factory SetupIntentPaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsUsBankAccount(
   financialConnections: json['financial_connections'] != null ? LinkedAccountOptionsCommon.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,

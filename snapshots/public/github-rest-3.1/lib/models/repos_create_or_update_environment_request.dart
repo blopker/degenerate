@@ -7,7 +7,7 @@ factory PreventSelfReview.fromJson(bool json) => PreventSelfReview(json);
 bool toJson() => value;
 
 }
-final class ReposCreateOrUpdateEnvironmentRequest {const ReposCreateOrUpdateEnvironmentRequest({this.waitTimer, this.preventSelfReview, this.reviewers, this.deploymentBranchPolicy, });
+@immutable final class ReposCreateOrUpdateEnvironmentRequest {const ReposCreateOrUpdateEnvironmentRequest({this.waitTimer, this.preventSelfReview, this.reviewers, this.deploymentBranchPolicy, });
 
 factory ReposCreateOrUpdateEnvironmentRequest.fromJson(Map<String, dynamic> json) { return ReposCreateOrUpdateEnvironmentRequest(
   waitTimer: json['wait_timer'] != null ? WaitTimer.fromJson(json['wait_timer'] as num) : null,

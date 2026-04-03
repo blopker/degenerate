@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// PodIP represents a single IP address allocated to the pod.
-final class PodIp {const PodIp({this.ip = ''});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodIP represents a single IP address allocated to the pod.
+@immutable final class PodIp {const PodIp({this.ip = ''});
 
 factory PodIp.fromJson(Map<String, dynamic> json) { return PodIp(
   ip: json['ip'] as String,

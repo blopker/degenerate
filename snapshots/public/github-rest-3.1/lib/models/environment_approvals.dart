@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'environment_approvals_environments.dart';import 'simple_user.dart';/// Whether deployment to the environment(s) was approved or rejected or pending (with comments)
-final class EnvironmentApprovalsState {const EnvironmentApprovalsState._(this.value);
+@immutable final class EnvironmentApprovalsState {const EnvironmentApprovalsState._(this.value);
 
 factory EnvironmentApprovalsState.fromJson(String json) { return switch (json) {
   'approved' => approved,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'EnvironmentApprovalsState($value)'; } 
  }
 /// An entry in the reviews log for environment deployments
-final class EnvironmentApprovals {const EnvironmentApprovals({required this.environments, required this.state, required this.user, required this.comment, });
+@immutable final class EnvironmentApprovals {const EnvironmentApprovals({required this.environments, required this.state, required this.user, required this.comment, });
 
 factory EnvironmentApprovals.fromJson(Map<String, dynamic> json) { return EnvironmentApprovals(
   environments: (json['environments'] as List<dynamic>).map((e) => EnvironmentApprovalsEnvironments.fromJson(e as Map<String, dynamic>)).toList(),

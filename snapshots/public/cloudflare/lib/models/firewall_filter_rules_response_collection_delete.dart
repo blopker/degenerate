@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_filter_rule_response.dart';final class FirewallFilterRulesResponseCollectionDelete {const FirewallFilterRulesResponseCollectionDelete({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_filter_rule_response.dart';@immutable final class FirewallFilterRulesResponseCollectionDelete {const FirewallFilterRulesResponseCollectionDelete({required this.result});
 
 factory FirewallFilterRulesResponseCollectionDelete.fromJson(Map<String, dynamic> json) { return FirewallFilterRulesResponseCollectionDelete(
   result: (json['result'] as List<dynamic>).map((e) => FirewallFilterRuleResponse.fromJson(e as Map<String, dynamic>)).toList(),

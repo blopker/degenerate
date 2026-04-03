@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProtectedBranchRequiredConversationResolution {const ProtectedBranchRequiredConversationResolution({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProtectedBranchRequiredConversationResolution {const ProtectedBranchRequiredConversationResolution({this.enabled});
 
 factory ProtectedBranchRequiredConversationResolution.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredConversationResolution(
   enabled: json['enabled'] as bool?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of source
-final class MqEventSourceSuperSlurperType {const MqEventSourceSuperSlurperType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
+@immutable final class MqEventSourceSuperSlurperType {const MqEventSourceSuperSlurperType._(this.value);
 
 factory MqEventSourceSuperSlurperType.fromJson(String json) { return switch (json) {
   'superSlurper' => superSlurper,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MqEventSourceSuperSlurperType($value)'; } 
  }
-final class MqEventSourceSuperSlurper {const MqEventSourceSuperSlurper({this.type});
+@immutable final class MqEventSourceSuperSlurper {const MqEventSourceSuperSlurper({this.type});
 
 factory MqEventSourceSuperSlurper.fromJson(Map<String, dynamic> json) { return MqEventSourceSuperSlurper(
   type: json['type'] != null ? MqEventSourceSuperSlurperType.fromJson(json['type'] as String) : null,

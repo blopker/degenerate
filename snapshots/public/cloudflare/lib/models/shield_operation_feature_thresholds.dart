@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_operation_feature_thresholds_thresholds.dart';final class ShieldOperationFeatureThresholds {const ShieldOperationFeatureThresholds({this.thresholds});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_operation_feature_thresholds_thresholds.dart';@immutable final class ShieldOperationFeatureThresholds {const ShieldOperationFeatureThresholds({this.thresholds});
 
 factory ShieldOperationFeatureThresholds.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureThresholds(
   thresholds: json['thresholds'] != null ? ShieldOperationFeatureThresholdsThresholds.fromJson(json['thresholds'] as Map<String, dynamic>) : null,

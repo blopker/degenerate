@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `bacs_debit` PaymentMethod, this hash contains details about the Bacs Direct Debit bank account.
-final class PostPaymentMethodsRequestBacsDebit {const PostPaymentMethodsRequestBacsDebit({this.accountNumber, this.sortCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `bacs_debit` PaymentMethod, this hash contains details about the Bacs Direct Debit bank account.
+@immutable final class PostPaymentMethodsRequestBacsDebit {const PostPaymentMethodsRequestBacsDebit({this.accountNumber, this.sortCode, });
 
 factory PostPaymentMethodsRequestBacsDebit.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestBacsDebit(
   accountNumber: json['account_number'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_participants_list.dart';final class GetParticipantDetailsResponseData {const GetParticipantDetailsResponseData({this.participant});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_participants_list.dart';@immutable final class GetParticipantDetailsResponseData {const GetParticipantDetailsResponseData({this.participant});
 
 factory GetParticipantDetailsResponseData.fromJson(Map<String, dynamic> json) { return GetParticipantDetailsResponseData(
   participant: json['participant'] != null ? RealtimekitParticipantsList.fromJson(json['participant'] as Map<String, dynamic>) : null,

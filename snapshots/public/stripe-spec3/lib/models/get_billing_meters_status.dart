@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBillingMetersStatus {const GetBillingMetersStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingMetersStatus {const GetBillingMetersStatus._(this.value);
 
 factory GetBillingMetersStatus.fromJson(String json) { return switch (json) {
   'active' => active,

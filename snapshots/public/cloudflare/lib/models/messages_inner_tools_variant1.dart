@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages_inner_tools_variant1_parameters.dart';final class MessagesInnerToolsVariant1 {const MessagesInnerToolsVariant1({required this.description, required this.name, required this.parameters, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages_inner_tools_variant1_parameters.dart';@immutable final class MessagesInnerToolsVariant1 {const MessagesInnerToolsVariant1({required this.description, required this.name, required this.parameters, });
 
 factory MessagesInnerToolsVariant1.fromJson(Map<String, dynamic> json) { return MessagesInnerToolsVariant1(
   description: json['description'] as String,

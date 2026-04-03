@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dnssec_messages2.dart';final class ResponseCommonFailure32 {const ResponseCommonFailure32({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dnssec_messages2.dart';@immutable final class ResponseCommonFailure32 {const ResponseCommonFailure32({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommonFailure32.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure32(
   errors: (json['errors'] as List<dynamic>).map((e) => DnssecMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DnssecMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
 ); }
 

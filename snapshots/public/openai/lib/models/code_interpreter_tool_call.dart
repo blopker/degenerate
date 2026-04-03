@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_interpreter_tool_call_outputs2.dart';/// The status of the code interpreter tool call. Valid values are `in_progress`, `completed`, `incomplete`, `interpreting`, and `failed`.
 /// 
-final class CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus._(this.value);
+@immutable final class CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus._(this.value);
 
 factory CodeInterpreterToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A tool call to run code.
 /// 
-final class CodeInterpreterToolCall {const CodeInterpreterToolCall({this.type = 'code_interpreter_call', required this.id, required this.status, required this.containerId, required this.code, required this.outputs, });
+@immutable final class CodeInterpreterToolCall {const CodeInterpreterToolCall({required this.id, required this.status, required this.containerId, required this.code, required this.outputs, this.type = 'code_interpreter_call', });
 
 factory CodeInterpreterToolCall.fromJson(Map<String, dynamic> json) { return CodeInterpreterToolCall(
   type: json['type'] as String,

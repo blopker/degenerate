@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_collect_inputs_request_inputs_custom_text.dart';import 'post_terminal_readers_reader_collect_inputs_request_inputs_selection.dart';import 'post_terminal_readers_reader_collect_inputs_request_inputs_toggles.dart';final class PostTerminalReadersReaderCollectInputsRequestInputsType {const PostTerminalReadersReaderCollectInputsRequestInputsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_collect_inputs_request_inputs_custom_text.dart';import 'post_terminal_readers_reader_collect_inputs_request_inputs_selection.dart';import 'post_terminal_readers_reader_collect_inputs_request_inputs_toggles.dart';@immutable final class PostTerminalReadersReaderCollectInputsRequestInputsType {const PostTerminalReadersReaderCollectInputsRequestInputsType._(this.value);
 
 factory PostTerminalReadersReaderCollectInputsRequestInputsType.fromJson(String json) { return switch (json) {
   'email' => email,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTerminalReadersReaderCollectInputsRequestInputsType($value)'; } 
  }
-final class PostTerminalReadersReaderCollectInputsRequestInputs {const PostTerminalReadersReaderCollectInputsRequestInputs({required this.customText, this.$required, this.selection, this.toggles, required this.type, });
+@immutable final class PostTerminalReadersReaderCollectInputsRequestInputs {const PostTerminalReadersReaderCollectInputsRequestInputs({required this.customText, required this.type, this.$required, this.selection, this.toggles, });
 
 factory PostTerminalReadersReaderCollectInputsRequestInputs.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectInputsRequestInputs(
   customText: PostTerminalReadersReaderCollectInputsRequestInputsCustomText.fromJson(json['custom_text'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'livestreams_livestream_session_id_response_data.dart';final class LivestreamsLivestreamSessionIdResponse {const LivestreamsLivestreamSessionIdResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'livestreams_livestream_session_id_response_data.dart';@immutable final class LivestreamsLivestreamSessionIdResponse {const LivestreamsLivestreamSessionIdResponse({this.data, this.success, });
 
 factory LivestreamsLivestreamSessionIdResponse.fromJson(Map<String, dynamic> json) { return LivestreamsLivestreamSessionIdResponse(
   data: json['data'] != null ? LivestreamsLivestreamSessionIdResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

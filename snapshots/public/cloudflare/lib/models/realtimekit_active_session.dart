@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// current status of session
-final class RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus._(this.value);
+@immutable final class RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus._(this.value);
 
 factory RealtimekitActiveSessionStatus.fromJson(String json) { return switch (json) {
   'LIVE' => live,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitActiveSessionStatus($value)'; } 
  }
 /// type of session
-final class RealtimekitActiveSessionType {const RealtimekitActiveSessionType._(this.value);
+@immutable final class RealtimekitActiveSessionType {const RealtimekitActiveSessionType._(this.value);
 
 factory RealtimekitActiveSessionType.fromJson(String json) { return switch (json) {
   'meeting' => meeting,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitActiveSessionType($value)'; } 
  }
-final class RealtimekitActiveSession {const RealtimekitActiveSession({required this.associatedId, this.breakoutRooms, required this.createdAt, this.endedAt, required this.id, required this.liveParticipants, required this.maxConcurrentParticipants, required this.meetingDisplayName, this.meta, required this.minutesConsumed, required this.organizationId, required this.startedAt, required this.status, required this.type, required this.updatedAt, });
+@immutable final class RealtimekitActiveSession {const RealtimekitActiveSession({required this.associatedId, required this.createdAt, required this.id, required this.liveParticipants, required this.maxConcurrentParticipants, required this.meetingDisplayName, required this.minutesConsumed, required this.organizationId, required this.startedAt, required this.status, required this.type, required this.updatedAt, this.breakoutRooms, this.endedAt, this.meta, });
 
 factory RealtimekitActiveSession.fromJson(Map<String, dynamic> json) { return RealtimekitActiveSession(
   associatedId: json['associated_id'] as String,
@@ -64,7 +64,7 @@ factory RealtimekitActiveSession.fromJson(Map<String, dynamic> json) { return Re
   liveParticipants: (json['live_participants'] as num).toDouble(),
   maxConcurrentParticipants: (json['max_concurrent_participants'] as num).toDouble(),
   meetingDisplayName: json['meeting_display_name'] as String,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>?,
   minutesConsumed: (json['minutes_consumed'] as num).toDouble(),
   organizationId: json['organization_id'] as String,
   startedAt: json['started_at'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the action/mode a rule has been overridden to perform.
-final class WafRulesListWafRulesMode {const WafRulesListWafRulesMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the action/mode a rule has been overridden to perform.
+@immutable final class WafRulesListWafRulesMode {const WafRulesListWafRulesMode._(this.value);
 
 factory WafRulesListWafRulesMode.fromJson(String json) { return switch (json) {
   'DIS' => dis,

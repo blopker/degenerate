@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Resource Type.
-final class ResourceSharingResourceType {const ResourceSharingResourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Resource Type.
+@immutable final class ResourceSharingResourceType {const ResourceSharingResourceType._(this.value);
 
 factory ResourceSharingResourceType.fromJson(String json) { return switch (json) {
   'custom-ruleset' => customRuleset,

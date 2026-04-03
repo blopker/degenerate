@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_request_discounts_variant1.dart';final class PostInvoicesRequestDiscountsVariant2 {const PostInvoicesRequestDiscountsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_request_discounts_variant1.dart';@immutable final class PostInvoicesRequestDiscountsVariant2 {const PostInvoicesRequestDiscountsVariant2._(this.value);
 
 factory PostInvoicesRequestDiscountsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

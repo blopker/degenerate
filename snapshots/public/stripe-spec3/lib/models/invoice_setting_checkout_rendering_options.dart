@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class InvoiceSettingCheckoutRenderingOptions {const InvoiceSettingCheckoutRenderingOptions({this.amountTaxDisplay, this.template, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class InvoiceSettingCheckoutRenderingOptions {const InvoiceSettingCheckoutRenderingOptions({this.amountTaxDisplay, this.template, });
 
 factory InvoiceSettingCheckoutRenderingOptions.fromJson(Map<String, dynamic> json) { return InvoiceSettingCheckoutRenderingOptions(
   amountTaxDisplay: json['amount_tax_display'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'custom_tool_chat_completions_custom.dart';/// The type of the custom tool. Always `custom`.
-final class CustomToolChatCompletionsType {const CustomToolChatCompletionsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_tool_chat_completions_custom.dart';/// The type of the custom tool. Always `custom`.
+@immutable final class CustomToolChatCompletionsType {const CustomToolChatCompletionsType._(this.value);
 
 factory CustomToolChatCompletionsType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A custom tool that processes input using a specified format.
 /// 
-final class CustomToolChatCompletions {const CustomToolChatCompletions({required this.type, required this.custom, });
+@immutable final class CustomToolChatCompletions {const CustomToolChatCompletions({required this.type, required this.custom, });
 
 factory CustomToolChatCompletions.fromJson(Map<String, dynamic> json) { return CustomToolChatCompletions(
   type: CustomToolChatCompletionsType.fromJson(json['type'] as String),

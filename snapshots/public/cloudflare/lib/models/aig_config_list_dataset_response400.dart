@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_dataset_response400_errors.dart';final class AigConfigListDatasetResponse400 {const AigConfigListDatasetResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_dataset_response400_errors.dart';@immutable final class AigConfigListDatasetResponse400 {const AigConfigListDatasetResponse400({required this.errors, required this.result, required this.success, });
 
 factory AigConfigListDatasetResponse400.fromJson(Map<String, dynamic> json) { return AigConfigListDatasetResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AigConfigListDatasetResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

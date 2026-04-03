@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_project_column_edited_changes_name.dart';final class WebhookProjectColumnEditedChanges {const WebhookProjectColumnEditedChanges({this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_project_column_edited_changes_name.dart';@immutable final class WebhookProjectColumnEditedChanges {const WebhookProjectColumnEditedChanges({this.name});
 
 factory WebhookProjectColumnEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookProjectColumnEditedChanges(
   name: json['name'] != null ? WebhookProjectColumnEditedChangesName.fromJson(json['name'] as Map<String, dynamic>) : null,

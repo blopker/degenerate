@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0 {const RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0({required this.brandImpersonation, required this.credentialHarvester, required this.identityDeception, required this.link, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0 {const RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0({required this.brandImpersonation, required this.credentialHarvester, required this.identityDeception, required this.link, });
 
 factory RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0(
   brandImpersonation: json['BrandImpersonation'] as String,

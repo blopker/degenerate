@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AiSearchCreateInstancesRequestRewriteModelVariant1 {const AiSearchCreateInstancesRequestRewriteModelVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchCreateInstancesRequestRewriteModelVariant1 {const AiSearchCreateInstancesRequestRewriteModelVariant1._(this.value);
 
 factory AiSearchCreateInstancesRequestRewriteModelVariant1.fromJson(String json) { return switch (json) {
   '@cf/meta/llama-3.3-70b-instruct-fp8-fast' => cfMetaLlama3370bInstructFp8Fast,
@@ -99,7 +99,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchCreateInstancesRequestRewriteModelVariant1($value)'; } 
  }
-final class AiSearchCreateInstancesRequestRewriteModelVariant2 {const AiSearchCreateInstancesRequestRewriteModelVariant2._(this.value);
+@immutable final class AiSearchCreateInstancesRequestRewriteModelVariant2 {const AiSearchCreateInstancesRequestRewriteModelVariant2._(this.value);
 
 factory AiSearchCreateInstancesRequestRewriteModelVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

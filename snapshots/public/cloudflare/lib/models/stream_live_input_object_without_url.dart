@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_live_input_created.dart';import 'stream_live_input_enabled.dart';import 'stream_live_input_identifier.dart';import 'stream_live_input_modified.dart';import 'stream_live_input_recording_deletion.dart';final class StreamLiveInputObjectWithoutUrl {const StreamLiveInputObjectWithoutUrl({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.uid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_live_input_created.dart';import 'stream_live_input_enabled.dart';import 'stream_live_input_identifier.dart';import 'stream_live_input_modified.dart';import 'stream_live_input_recording_deletion.dart';@immutable final class StreamLiveInputObjectWithoutUrl {const StreamLiveInputObjectWithoutUrl({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.uid, });
 
 factory StreamLiveInputObjectWithoutUrl.fromJson(Map<String, dynamic> json) { return StreamLiveInputObjectWithoutUrl(
   created: json['created'] != null ? StreamLiveInputCreated.fromJson(json['created'] as String) : null,
   deleteRecordingAfterDays: json['deleteRecordingAfterDays'] != null ? StreamLiveInputRecordingDeletion.fromJson(json['deleteRecordingAfterDays'] as num) : null,
   enabled: json['enabled'] != null ? StreamLiveInputEnabled.fromJson(json['enabled'] as bool) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>?,
   modified: json['modified'] != null ? StreamLiveInputModified.fromJson(json['modified'] as String) : null,
   uid: json['uid'] != null ? StreamLiveInputIdentifier.fromJson(json['uid'] as String) : null,
 ); }

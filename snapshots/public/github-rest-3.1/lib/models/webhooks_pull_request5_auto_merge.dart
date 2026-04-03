@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_pull_request5_auto_merge_enabled_by.dart';/// The merge method to use.
-final class WebhooksPullRequest5AutoMergeMergeMethod {const WebhooksPullRequest5AutoMergeMergeMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_pull_request5_auto_merge_enabled_by.dart';/// The merge method to use.
+@immutable final class WebhooksPullRequest5AutoMergeMergeMethod {const WebhooksPullRequest5AutoMergeMergeMethod._(this.value);
 
 factory WebhooksPullRequest5AutoMergeMergeMethod.fromJson(String json) { return switch (json) {
   'merge' => merge,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksPullRequest5AutoMergeMergeMethod($value)'; } 
  }
 /// The status of auto merging a pull request.
-final class WebhooksPullRequest5AutoMerge {const WebhooksPullRequest5AutoMerge({required this.commitMessage, required this.commitTitle, required this.enabledBy, required this.mergeMethod, });
+@immutable final class WebhooksPullRequest5AutoMerge {const WebhooksPullRequest5AutoMerge({required this.commitMessage, required this.commitTitle, required this.enabledBy, required this.mergeMethod, });
 
 factory WebhooksPullRequest5AutoMerge.fromJson(Map<String, dynamic> json) { return WebhooksPullRequest5AutoMerge(
   commitMessage: json['commit_message'] as String?,

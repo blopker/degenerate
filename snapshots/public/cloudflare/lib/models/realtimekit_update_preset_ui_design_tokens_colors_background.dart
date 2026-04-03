@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitUpdatePresetUiDesignTokensColorsBackground {const RealtimekitUpdatePresetUiDesignTokensColorsBackground({this.$600 = '#222222', this.$700 = '#1f1f1f', this.$800 = '#1b1b1b', this.$900 = '#181818', this.$1000 = '#141414', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitUpdatePresetUiDesignTokensColorsBackground {const RealtimekitUpdatePresetUiDesignTokensColorsBackground({this.$600 = '#222222', this.$700 = '#1f1f1f', this.$800 = '#1b1b1b', this.$900 = '#181818', this.$1000 = '#141414', });
 
 factory RealtimekitUpdatePresetUiDesignTokensColorsBackground.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetUiDesignTokensColorsBackground(
   $600: json.containsKey('600') ? json['600'] as String : '#222222',

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_deepseek_ai_deepseek_r1_distill_qwen32b_response400_errors.dart';final class WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400 {const WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_deepseek_ai_deepseek_r1_distill_qwen32b_response400_errors.dart';@immutable final class WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400 {const WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

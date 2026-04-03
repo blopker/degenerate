@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The network policy mode.
-final class ContainerResourceNetworkPolicyType {const ContainerResourceNetworkPolicyType._(this.value);
+@immutable final class ContainerResourceNetworkPolicyType {const ContainerResourceNetworkPolicyType._(this.value);
 
 factory ContainerResourceNetworkPolicyType.fromJson(String json) { return switch (json) {
   'allowlist' => allowlist,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ContainerResourceNetworkPolicyType($value)'; } 
  }
 /// Network access policy for the container.
-final class ContainerResourceNetworkPolicy {const ContainerResourceNetworkPolicy({required this.type, this.allowedDomains, });
+@immutable final class ContainerResourceNetworkPolicy {const ContainerResourceNetworkPolicy({required this.type, this.allowedDomains, });
 
 factory ContainerResourceNetworkPolicy.fromJson(Map<String, dynamic> json) { return ContainerResourceNetworkPolicy(
   type: ContainerResourceNetworkPolicyType.fromJson(json['type'] as String),

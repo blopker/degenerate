@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_param3_installments.dart';import 'payment_intent_param3_mandate_options.dart';import 'payment_intent_param3_statement_descriptor_suffix_kana.dart';import 'payment_intent_param3_statement_descriptor_suffix_kanji.dart';import 'payment_intent_param3_three_d_secure.dart';final class PaymentIntentParam3CaptureMethod {const PaymentIntentParam3CaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_param3_installments.dart';import 'payment_intent_param3_mandate_options.dart';import 'payment_intent_param3_statement_descriptor_suffix_kana.dart';import 'payment_intent_param3_statement_descriptor_suffix_kanji.dart';import 'payment_intent_param3_three_d_secure.dart';@immutable final class PaymentIntentParam3CaptureMethod {const PaymentIntentParam3CaptureMethod._(this.value);
 
 factory PaymentIntentParam3CaptureMethod.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParam3CaptureMethod($value)'; } 
  }
-final class PaymentIntentParam3Network {const PaymentIntentParam3Network._(this.value);
+@immutable final class PaymentIntentParam3Network {const PaymentIntentParam3Network._(this.value);
 
 factory PaymentIntentParam3Network.fromJson(String json) { return switch (json) {
   'amex' => amex,
@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParam3Network($value)'; } 
  }
-final class PaymentIntentParam3RequestExtendedAuthorization {const PaymentIntentParam3RequestExtendedAuthorization._(this.value);
+@immutable final class PaymentIntentParam3RequestExtendedAuthorization {const PaymentIntentParam3RequestExtendedAuthorization._(this.value);
 
 factory PaymentIntentParam3RequestExtendedAuthorization.fromJson(String json) { return switch (json) {
   'if_available' => ifAvailable,
@@ -105,7 +105,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParam3RequestExtendedAuthorization($value)'; } 
  }
-final class PaymentIntentParam3RequestIncrementalAuthorization {const PaymentIntentParam3RequestIncrementalAuthorization._(this.value);
+@immutable final class PaymentIntentParam3RequestIncrementalAuthorization {const PaymentIntentParam3RequestIncrementalAuthorization._(this.value);
 
 factory PaymentIntentParam3RequestIncrementalAuthorization.fromJson(String json) { return switch (json) {
   'if_available' => ifAvailable,
@@ -129,7 +129,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParam3RequestIncrementalAuthorization($value)'; } 
  }
-final class PaymentIntentParam3RequestMulticapture {const PaymentIntentParam3RequestMulticapture._(this.value);
+@immutable final class PaymentIntentParam3RequestMulticapture {const PaymentIntentParam3RequestMulticapture._(this.value);
 
 factory PaymentIntentParam3RequestMulticapture.fromJson(String json) { return switch (json) {
   'if_available' => ifAvailable,
@@ -153,7 +153,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParam3RequestMulticapture($value)'; } 
  }
-final class PaymentIntentParam3RequestOvercapture {const PaymentIntentParam3RequestOvercapture._(this.value);
+@immutable final class PaymentIntentParam3RequestOvercapture {const PaymentIntentParam3RequestOvercapture._(this.value);
 
 factory PaymentIntentParam3RequestOvercapture.fromJson(String json) { return switch (json) {
   'if_available' => ifAvailable,
@@ -177,7 +177,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParam3RequestOvercapture($value)'; } 
  }
-final class PaymentIntentParam3RequestThreeDSecure {const PaymentIntentParam3RequestThreeDSecure._(this.value);
+@immutable final class PaymentIntentParam3RequestThreeDSecure {const PaymentIntentParam3RequestThreeDSecure._(this.value);
 
 factory PaymentIntentParam3RequestThreeDSecure.fromJson(String json) { return switch (json) {
   'any' => any,
@@ -204,7 +204,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParam3RequestThreeDSecure($value)'; } 
  }
-final class PaymentIntentParam3SetupFutureUsage {const PaymentIntentParam3SetupFutureUsage._(this.value);
+@immutable final class PaymentIntentParam3SetupFutureUsage {const PaymentIntentParam3SetupFutureUsage._(this.value);
 
 factory PaymentIntentParam3SetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -234,7 +234,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParam3SetupFutureUsage($value)'; } 
  }
-final class PaymentIntentParam3 {const PaymentIntentParam3({this.captureMethod, this.cvcToken, this.installments, this.mandateOptions, this.network, this.requestExtendedAuthorization, this.requestIncrementalAuthorization, this.requestMulticapture, this.requestOvercapture, this.requestThreeDSecure, this.requireCvcRecollection, this.setupFutureUsage, this.statementDescriptorSuffixKana, this.statementDescriptorSuffixKanji, this.threeDSecure, });
+@immutable final class PaymentIntentParam3 {const PaymentIntentParam3({this.captureMethod, this.cvcToken, this.installments, this.mandateOptions, this.network, this.requestExtendedAuthorization, this.requestIncrementalAuthorization, this.requestMulticapture, this.requestOvercapture, this.requestThreeDSecure, this.requireCvcRecollection, this.setupFutureUsage, this.statementDescriptorSuffixKana, this.statementDescriptorSuffixKanji, this.threeDSecure, });
 
 factory PaymentIntentParam3.fromJson(Map<String, dynamic> json) { return PaymentIntentParam3(
   captureMethod: json['capture_method'] != null ? PaymentIntentParam3CaptureMethod.fromJson(json['capture_method'] as String) : null,

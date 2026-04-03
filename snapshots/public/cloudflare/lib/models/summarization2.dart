@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Summarization2 {const Summarization2({this.summary});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Summarization2 {const Summarization2({this.summary});
 
 factory Summarization2.fromJson(Map<String, dynamic> json) { return Summarization2(
   summary: json['summary'] as String?,

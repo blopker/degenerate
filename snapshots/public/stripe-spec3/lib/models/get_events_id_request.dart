@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetEventsIdRequest {const GetEventsIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventsIdRequest {const GetEventsIdRequest();
 
-factory GetEventsIdRequest.fromJson(Map<String, dynamic> json) { return GetEventsIdRequest(
-
-); }
+factory GetEventsIdRequest.fromJson(Map<String, dynamic> _) { return const GetEventsIdRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetEventsIdRequest copyWith() { return GetEventsIdRequest(
+GetEventsIdRequest copyWith() { return const GetEventsIdRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetEventsIdRequest; } 

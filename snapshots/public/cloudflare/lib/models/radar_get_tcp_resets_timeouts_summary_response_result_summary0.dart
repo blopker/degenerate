@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0 {const RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0({required this.laterInFlow, required this.noMatch, required this.postAck, required this.postPsh, required this.postSyn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0 {const RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0({required this.laterInFlow, required this.noMatch, required this.postAck, required this.postPsh, required this.postSyn, });
 
 factory RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0(
   laterInFlow: json['later_in_flow'] as String,

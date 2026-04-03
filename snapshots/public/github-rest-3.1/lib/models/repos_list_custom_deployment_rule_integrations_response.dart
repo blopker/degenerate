@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_deployment_rule_app.dart';final class ReposListCustomDeploymentRuleIntegrationsResponse {const ReposListCustomDeploymentRuleIntegrationsResponse({this.totalCount, this.availableCustomDeploymentProtectionRuleIntegrations, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_deployment_rule_app.dart';@immutable final class ReposListCustomDeploymentRuleIntegrationsResponse {const ReposListCustomDeploymentRuleIntegrationsResponse({this.totalCount, this.availableCustomDeploymentProtectionRuleIntegrations, });
 
 factory ReposListCustomDeploymentRuleIntegrationsResponse.fromJson(Map<String, dynamic> json) { return ReposListCustomDeploymentRuleIntegrationsResponse(
   totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,

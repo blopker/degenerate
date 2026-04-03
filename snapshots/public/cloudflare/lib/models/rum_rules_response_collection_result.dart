@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_rule.dart';import 'rum_ruleset.dart';final class RumRulesResponseCollectionResult {const RumRulesResponseCollectionResult({this.rules, this.ruleset, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_rule.dart';import 'rum_ruleset.dart';@immutable final class RumRulesResponseCollectionResult {const RumRulesResponseCollectionResult({this.rules, this.ruleset, });
 
 factory RumRulesResponseCollectionResult.fromJson(Map<String, dynamic> json) { return RumRulesResponseCollectionResult(
   rules: (json['rules'] as List<dynamic>?)?.map((e) => RumRule.fromJson(e as Map<String, dynamic>)).toList(),

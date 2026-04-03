@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the zone setting.
-final class ZonesIpGeolocationValue {const ZonesIpGeolocationValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
+@immutable final class ZonesIpGeolocationValue {const ZonesIpGeolocationValue._(this.value);
 
 factory ZonesIpGeolocationValue.fromJson(String json) { return switch (json) {
   'on' => $on,

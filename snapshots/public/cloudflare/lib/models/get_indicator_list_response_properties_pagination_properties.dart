@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'get_indicator_list_response_properties_pagination_properties_count.dart';import 'get_indicator_list_response_properties_pagination_properties_page.dart';import 'get_indicator_list_response_properties_pagination_properties_per_page.dart';import 'get_indicator_list_response_properties_pagination_properties_total_count.dart';final class GetIndicatorListResponsePropertiesPaginationProperties {const GetIndicatorListResponsePropertiesPaginationProperties({required this.count, required this.page, required this.perPage, required this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_indicator_list_response_properties_pagination_properties_count.dart';import 'get_indicator_list_response_properties_pagination_properties_page.dart';import 'get_indicator_list_response_properties_pagination_properties_per_page.dart';import 'get_indicator_list_response_properties_pagination_properties_total_count.dart';@immutable final class GetIndicatorListResponsePropertiesPaginationProperties {const GetIndicatorListResponsePropertiesPaginationProperties({required this.count, required this.page, required this.perPage, required this.totalCount, });
 
 factory GetIndicatorListResponsePropertiesPaginationProperties.fromJson(Map<String, dynamic> json) { return GetIndicatorListResponsePropertiesPaginationProperties(
   count: GetIndicatorListResponsePropertiesPaginationPropertiesCount.fromJson(json['count'] as Map<String, dynamic>),

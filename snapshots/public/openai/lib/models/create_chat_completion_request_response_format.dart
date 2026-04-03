@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_text.dart';/// An object specifying the format that the model must output.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_text.dart';/// An object specifying the format that the model must output.
 /// 
 /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables
 /// Structured Outputs which ensures the model will match your supplied JSON
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateChatCompletionRequestResponseFormat$Unknown; } 
  }
-final class CreateChatCompletionRequestResponseFormatText extends CreateChatCompletionRequestResponseFormat {const CreateChatCompletionRequestResponseFormatText(this.responseFormatText);
+@immutable final class CreateChatCompletionRequestResponseFormatText extends CreateChatCompletionRequestResponseFormat {const CreateChatCompletionRequestResponseFormatText(this.responseFormatText);
 
 factory CreateChatCompletionRequestResponseFormatText.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequestResponseFormatText(ResponseFormatText.fromJson(json)); }
 
@@ -40,7 +40,7 @@ final ResponseFormatText responseFormatText;
 @override int get hashCode { return responseFormatText.hashCode; } 
 @override String toString() { return 'CreateChatCompletionRequestResponseFormatText(responseFormatText: $responseFormatText)'; } 
  }
-final class CreateChatCompletionRequestResponseFormatJsonSchema extends CreateChatCompletionRequestResponseFormat {const CreateChatCompletionRequestResponseFormatJsonSchema(this.responseFormatJsonSchema);
+@immutable final class CreateChatCompletionRequestResponseFormatJsonSchema extends CreateChatCompletionRequestResponseFormat {const CreateChatCompletionRequestResponseFormatJsonSchema(this.responseFormatJsonSchema);
 
 factory CreateChatCompletionRequestResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequestResponseFormatJsonSchema(ResponseFormatJsonSchema.fromJson(json)); }
 
@@ -53,7 +53,7 @@ final ResponseFormatJsonSchema responseFormatJsonSchema;
 @override int get hashCode { return responseFormatJsonSchema.hashCode; } 
 @override String toString() { return 'CreateChatCompletionRequestResponseFormatJsonSchema(responseFormatJsonSchema: $responseFormatJsonSchema)'; } 
  }
-final class CreateChatCompletionRequestResponseFormatJsonObject extends CreateChatCompletionRequestResponseFormat {const CreateChatCompletionRequestResponseFormatJsonObject(this.responseFormatJsonObject);
+@immutable final class CreateChatCompletionRequestResponseFormatJsonObject extends CreateChatCompletionRequestResponseFormat {const CreateChatCompletionRequestResponseFormatJsonObject(this.responseFormatJsonObject);
 
 factory CreateChatCompletionRequestResponseFormatJsonObject.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequestResponseFormatJsonObject(ResponseFormatJsonObject.fromJson(json)); }
 
@@ -68,7 +68,7 @@ final ResponseFormatJsonObject responseFormatJsonObject;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class CreateChatCompletionRequestResponseFormat$Unknown extends CreateChatCompletionRequestResponseFormat {const CreateChatCompletionRequestResponseFormat$Unknown(this.json);
+@immutable final class CreateChatCompletionRequestResponseFormat$Unknown extends CreateChatCompletionRequestResponseFormat {const CreateChatCompletionRequestResponseFormat$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

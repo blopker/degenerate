@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'smartshield_smart_shield_settings_get_response_cache_reserve.dart';import 'smartshield_smart_shield_settings_get_response_regional_tiered_cache.dart';import 'smartshield_smart_shield_settings_get_response_smart_routing.dart';import 'smartshield_smart_shield_settings_get_response_smart_tiered_cache.dart';/// The full Smart Shield response from the GET and PATCH operations.
-final class SmartshieldSmartShieldSettingsGetResponse {const SmartshieldSmartShieldSettingsGetResponse({required this.cacheReserve, required this.regionalTieredCache, required this.smartRouting, required this.smartTieredCache, required this.healthchecksCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_smart_shield_settings_get_response_cache_reserve.dart';import 'smartshield_smart_shield_settings_get_response_regional_tiered_cache.dart';import 'smartshield_smart_shield_settings_get_response_smart_routing.dart';import 'smartshield_smart_shield_settings_get_response_smart_tiered_cache.dart';/// The full Smart Shield response from the GET and PATCH operations.
+@immutable final class SmartshieldSmartShieldSettingsGetResponse {const SmartshieldSmartShieldSettingsGetResponse({required this.cacheReserve, required this.regionalTieredCache, required this.smartRouting, required this.smartTieredCache, required this.healthchecksCount, });
 
 factory SmartshieldSmartShieldSettingsGetResponse.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsGetResponse(
   cacheReserve: SmartshieldSmartShieldSettingsGetResponseCacheReserve.fromJson(json['cache_reserve'] as Map<String, dynamic>),

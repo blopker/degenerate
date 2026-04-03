@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RenamedIssueEventRename {const RenamedIssueEventRename({required this.from, required this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RenamedIssueEventRename {const RenamedIssueEventRename({required this.from, required this.to, });
 
 factory RenamedIssueEventRename.fromJson(Map<String, dynamic> json) { return RenamedIssueEventRename(
   from: json['from'] as String,

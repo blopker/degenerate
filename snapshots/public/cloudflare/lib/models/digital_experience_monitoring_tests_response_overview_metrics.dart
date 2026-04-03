@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringTestsResponseOverviewMetrics {const DigitalExperienceMonitoringTestsResponseOverviewMetrics({this.avgHttpAvailabilityPct, this.avgTracerouteAvailabilityPct, required this.testsTotal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringTestsResponseOverviewMetrics {const DigitalExperienceMonitoringTestsResponseOverviewMetrics({required this.testsTotal, this.avgHttpAvailabilityPct, this.avgTracerouteAvailabilityPct, });
 
 factory DigitalExperienceMonitoringTestsResponseOverviewMetrics.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTestsResponseOverviewMetrics(
   avgHttpAvailabilityPct: json['avgHttpAvailabilityPct'] != null ? (json['avgHttpAvailabilityPct'] as num).toDouble() : null,

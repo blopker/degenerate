@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_top_asns_by_prefixes_response_result_asns.dart';import 'radar_get_bgp_top_asns_by_prefixes_response_result_meta.dart';final class RadarGetBgpTopAsnsByPrefixesResponseResult {const RadarGetBgpTopAsnsByPrefixesResponseResult({required this.asns, required this.meta, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_top_asns_by_prefixes_response_result_asns.dart';import 'radar_get_bgp_top_asns_by_prefixes_response_result_meta.dart';@immutable final class RadarGetBgpTopAsnsByPrefixesResponseResult {const RadarGetBgpTopAsnsByPrefixesResponseResult({required this.asns, required this.meta, });
 
 factory RadarGetBgpTopAsnsByPrefixesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopAsnsByPrefixesResponseResult(
   asns: (json['asns'] as List<dynamic>).map((e) => RadarGetBgpTopAsnsByPrefixesResponseResultAsns.fromJson(e as Map<String, dynamic>)).toList(),

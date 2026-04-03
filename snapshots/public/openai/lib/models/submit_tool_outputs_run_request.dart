@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'submit_tool_outputs_run_request_tool_outputs.dart';final class SubmitToolOutputsRunRequest {const SubmitToolOutputsRunRequest({required this.toolOutputs, this.stream, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'submit_tool_outputs_run_request_tool_outputs.dart';@immutable final class SubmitToolOutputsRunRequest {const SubmitToolOutputsRunRequest({required this.toolOutputs, this.stream, });
 
 factory SubmitToolOutputsRunRequest.fromJson(Map<String, dynamic> json) { return SubmitToolOutputsRunRequest(
   toolOutputs: (json['tool_outputs'] as List<dynamic>).map((e) => SubmitToolOutputsRunRequestToolOutputs.fromJson(e as Map<String, dynamic>)).toList(),

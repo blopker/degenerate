@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of mobile wallet, one of `apple_pay`, `google_pay`, `samsung_pay`, or `unknown`.
-final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of mobile wallet, one of `apple_pay`, `google_pay`, `samsung_pay`, or `unknown`.
+@immutable final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType._(this.value);
 
 factory PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType.fromJson(String json) { return switch (json) {
   'apple_pay' => applePay,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType($value)'; } 
  }
 /// 
-final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet({required this.type});
+@immutable final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet({required this.type});
 
 factory PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet.fromJson(Map<String, dynamic> json) { return PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet(
   type: PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType.fromJson(json['type'] as String),

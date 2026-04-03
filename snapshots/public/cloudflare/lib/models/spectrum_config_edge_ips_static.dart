@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of edge IP configuration specified. Statically allocated edge IPs use customer IPs in accordance with the ips array you specify. Only valid with ADDRESS DNS names.
-final class SpectrumConfigEdgeIpsStaticType {const SpectrumConfigEdgeIpsStaticType._(this.value);
+@immutable final class SpectrumConfigEdgeIpsStaticType {const SpectrumConfigEdgeIpsStaticType._(this.value);
 
 factory SpectrumConfigEdgeIpsStaticType.fromJson(String json) { return switch (json) {
   'static' => $static,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SpectrumConfigEdgeIpsStaticType($value)'; } 
  }
-final class SpectrumConfigEdgeIpsStatic {const SpectrumConfigEdgeIpsStatic({this.ips, this.type, });
+@immutable final class SpectrumConfigEdgeIpsStatic {const SpectrumConfigEdgeIpsStatic({this.ips, this.type, });
 
 factory SpectrumConfigEdgeIpsStatic.fromJson(Map<String, dynamic> json) { return SpectrumConfigEdgeIpsStatic(
   ips: (json['ips'] as List<dynamic>?)?.map((e) => e as String).toList(),

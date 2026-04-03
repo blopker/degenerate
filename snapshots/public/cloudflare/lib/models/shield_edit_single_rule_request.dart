@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_action.dart';import 'shield_after.dart';import 'shield_before.dart';import 'shield_enabled.dart';import 'shield_expression.dart';import 'shield_index.dart';import 'shield_position.dart';import 'shield_schemas_description.dart';import 'shield_schemas_title.dart';import 'shield_selector.dart';final class ShieldEditSingleRuleRequest {const ShieldEditSingleRuleRequest({this.action, this.description, this.enabled, this.expression, this.selector, this.title, this.position, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_action.dart';import 'shield_after.dart';import 'shield_before.dart';import 'shield_enabled.dart';import 'shield_expression.dart';import 'shield_index.dart';import 'shield_position.dart';import 'shield_schemas_description.dart';import 'shield_schemas_title.dart';import 'shield_selector.dart';@immutable final class ShieldEditSingleRuleRequest {const ShieldEditSingleRuleRequest({this.action, this.description, this.enabled, this.expression, this.selector, this.title, this.position, });
 
 factory ShieldEditSingleRuleRequest.fromJson(Map<String, dynamic> json) { return ShieldEditSingleRuleRequest(
   action: json['action'] != null ? ShieldAction.fromJson(json['action'] as String) : null,

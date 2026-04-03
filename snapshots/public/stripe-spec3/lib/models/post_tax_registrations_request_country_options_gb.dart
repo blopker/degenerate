@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_tax_registrations_request_country_options_gb_standard.dart';final class PostTaxRegistrationsRequestCountryOptionsGbType {const PostTaxRegistrationsRequestCountryOptionsGbType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_registrations_request_country_options_gb_standard.dart';@immutable final class PostTaxRegistrationsRequestCountryOptionsGbType {const PostTaxRegistrationsRequestCountryOptionsGbType._(this.value);
 
 factory PostTaxRegistrationsRequestCountryOptionsGbType.fromJson(String json) { return switch (json) {
   'standard' => standard,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsGbType($value)'; } 
  }
-final class PostTaxRegistrationsRequestCountryOptionsGb {const PostTaxRegistrationsRequestCountryOptionsGb({this.standard, required this.type, });
+@immutable final class PostTaxRegistrationsRequestCountryOptionsGb {const PostTaxRegistrationsRequestCountryOptionsGb({required this.type, this.standard, });
 
 factory PostTaxRegistrationsRequestCountryOptionsGb.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsGb(
   standard: json['standard'] != null ? PostTaxRegistrationsRequestCountryOptionsGbStandard.fromJson(json['standard'] as Map<String, dynamic>) : null,

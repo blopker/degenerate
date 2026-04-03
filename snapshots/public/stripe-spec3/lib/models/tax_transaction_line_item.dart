@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_resource_tax_transaction_line_item_resource_reversal.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TaxTransactionLineItemObject {const TaxTransactionLineItemObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_tax_transaction_line_item_resource_reversal.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class TaxTransactionLineItemObject {const TaxTransactionLineItemObject._(this.value);
 
 factory TaxTransactionLineItemObject.fromJson(String json) { return switch (json) {
   'tax.transaction_line_item' => taxTransactionLineItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxTransactionLineItemObject($value)'; } 
  }
 /// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
-final class TaxTransactionLineItemTaxBehavior {const TaxTransactionLineItemTaxBehavior._(this.value);
+@immutable final class TaxTransactionLineItemTaxBehavior {const TaxTransactionLineItemTaxBehavior._(this.value);
 
 factory TaxTransactionLineItemTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxTransactionLineItemTaxBehavior($value)'; } 
  }
 /// If `reversal`, this line item reverses an earlier transaction.
-final class TaxTransactionLineItemType {const TaxTransactionLineItemType._(this.value);
+@immutable final class TaxTransactionLineItemType {const TaxTransactionLineItemType._(this.value);
 
 factory TaxTransactionLineItemType.fromJson(String json) { return switch (json) {
   'reversal' => reversal,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxTransactionLineItemType($value)'; } 
  }
 /// 
-final class TaxTransactionLineItem {const TaxTransactionLineItem({required this.amount, required this.amountTax, required this.id, required this.livemode, this.metadata, required this.object, this.product, required this.quantity, required this.reference, this.reversal, required this.taxBehavior, required this.taxCode, required this.type, });
+@immutable final class TaxTransactionLineItem {const TaxTransactionLineItem({required this.amount, required this.amountTax, required this.id, required this.livemode, required this.object, required this.quantity, required this.reference, required this.taxBehavior, required this.taxCode, required this.type, this.metadata, this.product, this.reversal, });
 
 factory TaxTransactionLineItem.fromJson(Map<String, dynamic> json) { return TaxTransactionLineItem(
   amount: (json['amount'] as num).toInt(),

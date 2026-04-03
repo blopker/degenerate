@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersWorkerReferencesDurableObjects {const WorkersWorkerReferencesDurableObjects({required this.namespaceId, required this.namespaceName, required this.workerId, required this.workerName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersWorkerReferencesDurableObjects {const WorkersWorkerReferencesDurableObjects({required this.namespaceId, required this.namespaceName, required this.workerId, required this.workerName, });
 
 factory WorkersWorkerReferencesDurableObjects.fromJson(Map<String, dynamic> json) { return WorkersWorkerReferencesDurableObjects(
   namespaceId: json['namespace_id'] as String,

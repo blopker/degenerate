@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repos_list_attestations_response_attestations_bundle_dsse_envelope.dart';import 'repos_list_attestations_response_attestations_bundle_verification_material.dart';/// The attestation's Sigstore Bundle.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_list_attestations_response_attestations_bundle_dsse_envelope.dart';import 'repos_list_attestations_response_attestations_bundle_verification_material.dart';/// The attestation's Sigstore Bundle.
 /// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
-final class ReposListAttestationsResponseAttestationsBundle {const ReposListAttestationsResponseAttestationsBundle({this.mediaType, this.verificationMaterial, this.dsseEnvelope, });
+@immutable final class ReposListAttestationsResponseAttestationsBundle {const ReposListAttestationsResponseAttestationsBundle({this.mediaType, this.verificationMaterial, this.dsseEnvelope, });
 
 factory ReposListAttestationsResponseAttestationsBundle.fromJson(Map<String, dynamic> json) { return ReposListAttestationsResponseAttestationsBundle(
   mediaType: json['mediaType'] as String?,

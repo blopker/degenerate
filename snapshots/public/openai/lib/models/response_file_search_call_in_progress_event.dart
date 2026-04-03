@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.file_search_call.in_progress`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.file_search_call.in_progress`.
 /// 
-final class ResponseFileSearchCallInProgressEventType {const ResponseFileSearchCallInProgressEventType._(this.value);
+@immutable final class ResponseFileSearchCallInProgressEventType {const ResponseFileSearchCallInProgressEventType._(this.value);
 
 factory ResponseFileSearchCallInProgressEventType.fromJson(String json) { return switch (json) {
   'response.file_search_call.in_progress' => responseFileSearchCallInProgress,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseFileSearchCallInProgressEventType($value)'; } 
  }
 /// Emitted when a file search call is initiated.
-final class ResponseFileSearchCallInProgressEvent {const ResponseFileSearchCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
+@immutable final class ResponseFileSearchCallInProgressEvent {const ResponseFileSearchCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseFileSearchCallInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseFileSearchCallInProgressEvent(
   type: ResponseFileSearchCallInProgressEventType.fromJson(json['type'] as String),

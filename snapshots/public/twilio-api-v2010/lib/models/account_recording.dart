@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the recording. Can be: `processing`, `completed`, `absent` or `deleted`. For information about more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
-final class RecordingEnumStatus {const RecordingEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the recording. Can be: `processing`, `completed`, `absent` or `deleted`. For information about more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
+@immutable final class RecordingEnumStatus {const RecordingEnumStatus._(this.value);
 
 factory RecordingEnumStatus.fromJson(String json) { return switch (json) {
   'in-progress' => inProgress,
@@ -41,7 +41,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RecordingEnumStatus($value)'; } 
  }
 /// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.
-final class RecordingEnumSource {const RecordingEnumSource._(this.value);
+@immutable final class RecordingEnumSource {const RecordingEnumSource._(this.value);
 
 factory RecordingEnumSource.fromJson(String json) { return switch (json) {
   'DialVerb' => dialVerb,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RecordingEnumSource($value)'; } 
  }
-final class AccountRecording {const AccountRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.priceUnit, this.status, this.channels, this.source, this.errorCode, this.uri, this.encryptionDetails, this.subresourceUris, this.mediaUrl, });
+@immutable final class AccountRecording {const AccountRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.priceUnit, this.status, this.channels, this.source, this.errorCode, this.uri, this.encryptionDetails, this.subresourceUris, this.mediaUrl, });
 
 factory AccountRecording.fromJson(Map<String, dynamic> json) { return AccountRecording(
   accountSid: json['account_sid'] as String?,
@@ -100,7 +100,7 @@ factory AccountRecording.fromJson(Map<String, dynamic> json) { return AccountRec
   errorCode: json['error_code'] != null ? (json['error_code'] as num).toInt() : null,
   uri: json['uri'] as String?,
   encryptionDetails: json['encryption_details'],
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
   mediaUrl: json['media_url'] != null ? Uri.parse(json['media_url'] as String) : null,
 ); }
 

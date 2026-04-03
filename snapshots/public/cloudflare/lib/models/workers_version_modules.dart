@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';final class WorkersVersionModules {const WorkersVersionModules({required this.contentBase64, required this.contentType, required this.name, });
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersVersionModules {const WorkersVersionModules({required this.contentBase64, required this.contentType, required this.name, });
 
 factory WorkersVersionModules.fromJson(Map<String, dynamic> json) { return WorkersVersionModules(
   contentBase64: base64Decode(json['content_base64'] as String),

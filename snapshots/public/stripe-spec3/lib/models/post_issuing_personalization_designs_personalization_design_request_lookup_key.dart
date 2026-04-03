@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2 {const PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2 {const PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2._(this.value);
 
 factory PostIssuingPersonalizationDesignsPersonalizationDesignRequestLookupKeyVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

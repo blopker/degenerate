@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ReposAddTeamAccessRestrictionsRequestVariant1 {const ReposAddTeamAccessRestrictionsRequestVariant1({required this.teams});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposAddTeamAccessRestrictionsRequestVariant1 {const ReposAddTeamAccessRestrictionsRequestVariant1({required this.teams});
 
 factory ReposAddTeamAccessRestrictionsRequestVariant1.fromJson(Map<String, dynamic> json) { return ReposAddTeamAccessRestrictionsRequestVariant1(
   teams: (json['teams'] as List<dynamic>).map((e) => e as String).toList(),

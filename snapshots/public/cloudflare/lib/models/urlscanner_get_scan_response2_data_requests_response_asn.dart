@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2DataRequestsResponseAsn {const UrlscannerGetScanResponse2DataRequestsResponseAsn({required this.asn, required this.country, required this.description, required this.ip, required this.name, required this.org, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsResponseAsn {const UrlscannerGetScanResponse2DataRequestsResponseAsn({required this.asn, required this.country, required this.description, required this.ip, required this.name, required this.org, });
 
 factory UrlscannerGetScanResponse2DataRequestsResponseAsn.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsResponseAsn(
   asn: json['asn'] as String,

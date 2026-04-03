@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class BbposWisePad3SplashscreenVariant2 {const BbposWisePad3SplashscreenVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BbposWisePad3SplashscreenVariant2 {const BbposWisePad3SplashscreenVariant2._(this.value);
 
 factory BbposWisePad3SplashscreenVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

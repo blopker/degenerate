@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The dimensions of this product for shipping purposes.
-final class PostProductsRequestPackageDimensions {const PostProductsRequestPackageDimensions({required this.height, required this.length, required this.weight, required this.width, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The dimensions of this product for shipping purposes.
+@immutable final class PostProductsRequestPackageDimensions {const PostProductsRequestPackageDimensions({required this.height, required this.length, required this.weight, required this.width, });
 
 factory PostProductsRequestPackageDimensions.fromJson(Map<String, dynamic> json) { return PostProductsRequestPackageDimensions(
   height: (json['height'] as num).toDouble(),

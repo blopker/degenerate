@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Breakdown of totals for pageviews.
-final class Pageviews {const Pageviews({this.all, this.searchEngine, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of totals for pageviews.
+@immutable final class Pageviews {const Pageviews({this.all, this.searchEngine, });
 
 factory Pageviews.fromJson(Map<String, dynamic> json) { return Pageviews(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,
-  searchEngine: (json['search_engine'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  searchEngine: json['search_engine'] as Map<String, dynamic>?,
 ); }
 
 /// The total number of pageviews served within the time range.

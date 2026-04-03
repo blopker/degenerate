@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_messages2.dart';final class CloudforceOneRequestTypesResponse {const CloudforceOneRequestTypesResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_messages2.dart';@immutable final class CloudforceOneRequestTypesResponse {const CloudforceOneRequestTypesResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory CloudforceOneRequestTypesResponse.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestTypesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => CloudforceOneRequestsMessages2.fromJson(e as Map<String, dynamic>)).toList(),

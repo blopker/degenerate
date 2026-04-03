@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class RadarReviewResourceLocation {const RadarReviewResourceLocation({this.city, this.country, this.latitude, this.longitude, this.region, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class RadarReviewResourceLocation {const RadarReviewResourceLocation({this.city, this.country, this.latitude, this.longitude, this.region, });
 
 factory RadarReviewResourceLocation.fromJson(Map<String, dynamic> json) { return RadarReviewResourceLocation(
   city: json['city'] as String?,

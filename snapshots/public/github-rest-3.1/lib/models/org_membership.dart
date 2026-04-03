@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'org_membership_permissions.dart';import 'organization_simple.dart';import 'simple_user.dart';/// The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.
-final class OrgMembershipState {const OrgMembershipState._(this.value);
+@immutable final class OrgMembershipState {const OrgMembershipState._(this.value);
 
 factory OrgMembershipState.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrgMembershipState($value)'; } 
  }
 /// The user's membership type in the organization.
-final class OrgMembershipRole {const OrgMembershipRole._(this.value);
+@immutable final class OrgMembershipRole {const OrgMembershipRole._(this.value);
 
 factory OrgMembershipRole.fromJson(String json) { return switch (json) {
   'admin' => admin,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrgMembershipRole($value)'; } 
  }
 /// Org Membership
-final class OrgMembership {const OrgMembership({required this.url, required this.state, required this.role, this.directMembership, this.enterpriseTeamsProvidingIndirectMembership, required this.organizationUrl, required this.organization, required this.user, this.permissions, });
+@immutable final class OrgMembership {const OrgMembership({required this.url, required this.state, required this.role, required this.organizationUrl, required this.organization, required this.user, this.directMembership, this.enterpriseTeamsProvidingIndirectMembership, this.permissions, });
 
 factory OrgMembership.fromJson(Map<String, dynamic> json) { return OrgMembership(
   url: Uri.parse(json['url'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_param2.dart';import 'client_key_param.dart';import 'optional_fields_shipping2.dart';import 'payment_details2.dart';import 'post_payment_intents_intent_confirm_request_amount_details.dart';import 'post_payment_intents_intent_confirm_request_excluded_payment_method_types.dart';import 'post_payment_intents_intent_confirm_request_hooks.dart';import 'post_payment_intents_intent_confirm_request_mandate_data.dart';import 'post_payment_intents_intent_confirm_request_off_session.dart';import 'post_payment_intents_intent_confirm_request_payment_details.dart';import 'post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'post_payment_intents_intent_confirm_request_payment_method_options.dart';import 'post_payment_intents_intent_confirm_request_radar_options.dart';import 'post_payment_intents_intent_confirm_request_receipt_email.dart';import 'post_payment_intents_intent_confirm_request_shipping.dart';import 'secret_key_param2.dart';/// Controls when the funds will be captured from the customer's account.
-final class PostPaymentIntentsIntentConfirmRequestCaptureMethod {const PostPaymentIntentsIntentConfirmRequestCaptureMethod._(this.value);
+@immutable final class PostPaymentIntentsIntentConfirmRequestCaptureMethod {const PostPaymentIntentsIntentConfirmRequestCaptureMethod._(this.value);
 
 factory PostPaymentIntentsIntentConfirmRequestCaptureMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 /// 
 /// If you've already set `setup_future_usage` and you're performing a request using a publishable key, you can only update the value from `on_session` to `off_session`.
-final class PostPaymentIntentsIntentConfirmRequestSetupFutureUsage {const PostPaymentIntentsIntentConfirmRequestSetupFutureUsage._(this.value);
+@immutable final class PostPaymentIntentsIntentConfirmRequestSetupFutureUsage {const PostPaymentIntentsIntentConfirmRequestSetupFutureUsage._(this.value);
 
 factory PostPaymentIntentsIntentConfirmRequestSetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -64,7 +64,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentConfirmRequestSetupFutureUsage($value)'; } 
  }
-final class PostPaymentIntentsIntentConfirmRequest {const PostPaymentIntentsIntentConfirmRequest({this.amountDetails, this.captureMethod, this.clientSecret, this.confirmationToken, this.errorOnRequiresAction, this.excludedPaymentMethodTypes, this.expand, this.hooks, this.mandate, this.mandateData, this.offSession, this.paymentDetails, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.radarOptions, this.receiptEmail, this.returnUrl, this.setupFutureUsage, this.shipping, this.useStripeSdk, });
+@immutable final class PostPaymentIntentsIntentConfirmRequest {const PostPaymentIntentsIntentConfirmRequest({this.amountDetails, this.captureMethod, this.clientSecret, this.confirmationToken, this.errorOnRequiresAction, this.excludedPaymentMethodTypes, this.expand, this.hooks, this.mandate, this.mandateData, this.offSession, this.paymentDetails, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.radarOptions, this.receiptEmail, this.returnUrl, this.setupFutureUsage, this.shipping, this.useStripeSdk, });
 
 factory PostPaymentIntentsIntentConfirmRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequest(
   amountDetails: json['amount_details'] != null ? OneOf2.parse(json['amount_details'], fromA: (v) => AmountDetailsParam2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentConfirmRequestAmountDetailsVariant2.fromJson(v as String),) : null,

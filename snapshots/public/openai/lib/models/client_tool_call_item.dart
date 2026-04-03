@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ClientToolCallStatus {const ClientToolCallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ClientToolCallStatus {const ClientToolCallStatus._(this.value);
 
 factory ClientToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ClientToolCallStatus($value)'; } 
  }
 /// Type discriminator that is always `chatkit.thread_item`.
-final class ClientToolCallItemObject {const ClientToolCallItemObject._(this.value);
+@immutable final class ClientToolCallItemObject {const ClientToolCallItemObject._(this.value);
 
 factory ClientToolCallItemObject.fromJson(String json) { return switch (json) {
   'chatkit.thread_item' => chatkitThreadItem,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ClientToolCallItemObject($value)'; } 
  }
 /// Record of a client side tool invocation initiated by the assistant.
-final class ClientToolCallItem {const ClientToolCallItem({required this.id, this.object = ClientToolCallItemObject.chatkitThreadItem, required this.createdAt, required this.threadId, this.type = 'chatkit.client_tool_call', required this.status, required this.callId, required this.name, required this.arguments, required this.output, });
+@immutable final class ClientToolCallItem {const ClientToolCallItem({required this.id, required this.createdAt, required this.threadId, required this.status, required this.callId, required this.name, required this.arguments, required this.output, this.object = ClientToolCallItemObject.chatkitThreadItem, this.type = 'chatkit.client_tool_call', });
 
 factory ClientToolCallItem.fromJson(Map<String, dynamic> json) { return ClientToolCallItem(
   id: json['id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The rendering mode.
-final class MarkdownRenderRequestMode {const MarkdownRenderRequestMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rendering mode.
+@immutable final class MarkdownRenderRequestMode {const MarkdownRenderRequestMode._(this.value);
 
 factory MarkdownRenderRequestMode.fromJson(String json) { return switch (json) {
   'markdown' => markdown,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MarkdownRenderRequestMode($value)'; } 
  }
-final class MarkdownRenderRequest {const MarkdownRenderRequest({required this.text, this.mode = MarkdownRenderRequestMode.markdown, this.context, });
+@immutable final class MarkdownRenderRequest {const MarkdownRenderRequest({required this.text, this.mode = MarkdownRenderRequestMode.markdown, this.context, });
 
 factory MarkdownRenderRequest.fromJson(Map<String, dynamic> json) { return MarkdownRenderRequest(
   text: json['text'] as String,

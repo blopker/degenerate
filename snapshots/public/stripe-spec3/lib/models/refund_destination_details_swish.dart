@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class RefundDestinationDetailsSwish {const RefundDestinationDetailsSwish({this.networkDeclineCode, this.reference, this.referenceStatus, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class RefundDestinationDetailsSwish {const RefundDestinationDetailsSwish({this.networkDeclineCode, this.reference, this.referenceStatus, });
 
 factory RefundDestinationDetailsSwish.fromJson(Map<String, dynamic> json) { return RefundDestinationDetailsSwish(
   networkDeclineCode: json['network_decline_code'] as String?,

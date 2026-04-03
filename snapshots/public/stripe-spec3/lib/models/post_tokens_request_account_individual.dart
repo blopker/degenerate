@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'date_of_birth_specs7.dart';import 'post_tokens_request_account_individual_address.dart';import 'post_tokens_request_account_individual_address_kana.dart';import 'post_tokens_request_account_individual_address_kanji.dart';import 'post_tokens_request_account_individual_dob.dart';import 'post_tokens_request_account_individual_full_name_aliases.dart';import 'post_tokens_request_account_individual_metadata.dart';import 'post_tokens_request_account_individual_registered_address.dart';import 'post_tokens_request_account_individual_relationship.dart';import 'post_tokens_request_account_individual_verification.dart';final class PostTokensRequestAccountIndividualPoliticalExposure {const PostTokensRequestAccountIndividualPoliticalExposure._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'date_of_birth_specs7.dart';import 'post_tokens_request_account_individual_address.dart';import 'post_tokens_request_account_individual_address_kana.dart';import 'post_tokens_request_account_individual_address_kanji.dart';import 'post_tokens_request_account_individual_dob.dart';import 'post_tokens_request_account_individual_full_name_aliases.dart';import 'post_tokens_request_account_individual_metadata.dart';import 'post_tokens_request_account_individual_registered_address.dart';import 'post_tokens_request_account_individual_relationship.dart';import 'post_tokens_request_account_individual_verification.dart';@immutable final class PostTokensRequestAccountIndividualPoliticalExposure {const PostTokensRequestAccountIndividualPoliticalExposure._(this.value);
 
 factory PostTokensRequestAccountIndividualPoliticalExposure.fromJson(String json) { return switch (json) {
   'existing' => existing,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTokensRequestAccountIndividualPoliticalExposure($value)'; } 
  }
-final class PostTokensRequestAccountIndividual {const PostTokensRequestAccountIndividual({this.address, this.addressKana, this.addressKanji, this.dob, this.email, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.gender, this.idNumber, this.idNumberSecondary, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.ssnLast4, this.verification, });
+@immutable final class PostTokensRequestAccountIndividual {const PostTokensRequestAccountIndividual({this.address, this.addressKana, this.addressKanji, this.dob, this.email, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.gender, this.idNumber, this.idNumberSecondary, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.ssnLast4, this.verification, });
 
 factory PostTokensRequestAccountIndividual.fromJson(Map<String, dynamic> json) { return PostTokensRequestAccountIndividual(
   address: json['address'] != null ? PostTokensRequestAccountIndividualAddress.fromJson(json['address'] as Map<String, dynamic>) : null,

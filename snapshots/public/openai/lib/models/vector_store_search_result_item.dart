@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_search_result_content_object.dart';final class VectorStoreSearchResultItem {const VectorStoreSearchResultItem({required this.fileId, required this.filename, required this.score, required this.attributes, required this.content, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_search_result_content_object.dart';@immutable final class VectorStoreSearchResultItem {const VectorStoreSearchResultItem({required this.fileId, required this.filename, required this.score, required this.attributes, required this.content, });
 
 factory VectorStoreSearchResultItem.fromJson(Map<String, dynamic> json) { return VectorStoreSearchResultItem(
   fileId: json['file_id'] as String,
   filename: json['filename'] as String,
   score: (json['score'] as num).toDouble(),
-  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  attributes: json['attributes'] as Map<String, dynamic>?,
   content: (json['content'] as List<dynamic>).map((e) => VectorStoreSearchResultContentObject.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

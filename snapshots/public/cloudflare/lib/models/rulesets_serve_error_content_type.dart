@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The content type header to set with the error response.
-final class RulesetsServeErrorContentType {const RulesetsServeErrorContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type header to set with the error response.
+@immutable final class RulesetsServeErrorContentType {const RulesetsServeErrorContentType._(this.value);
 
 factory RulesetsServeErrorContentType.fromJson(String json) { return switch (json) {
   'application/json' => applicationJson,

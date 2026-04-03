@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2Errors2 {const R2Errors2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2Errors2 {const R2Errors2({required this.code, required this.message, });
 
 factory R2Errors2.fromJson(Map<String, dynamic> json) { return R2Errors2(
   code: (json['code'] as num).toInt(),

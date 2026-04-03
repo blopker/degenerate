@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Reboot time settings for readers. that support customized reboot time configuration.
-final class PostTerminalConfigurationsRequestRebootWindow {const PostTerminalConfigurationsRequestRebootWindow({required this.endHour, required this.startHour, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reboot time settings for readers. that support customized reboot time configuration.
+@immutable final class PostTerminalConfigurationsRequestRebootWindow {const PostTerminalConfigurationsRequestRebootWindow({required this.endHour, required this.startHour, });
 
 factory PostTerminalConfigurationsRequestRebootWindow.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsRequestRebootWindow(
   endHour: (json['end_hour'] as num).toInt(),

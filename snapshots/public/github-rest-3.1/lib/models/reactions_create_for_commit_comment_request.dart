@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the commit comment.
-final class ReactionsCreateForCommitCommentRequestContent {const ReactionsCreateForCommitCommentRequestContent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the commit comment.
+@immutable final class ReactionsCreateForCommitCommentRequestContent {const ReactionsCreateForCommitCommentRequestContent._(this.value);
 
 factory ReactionsCreateForCommitCommentRequestContent.fromJson(String json) { return switch (json) {
   '+1' => plus1,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReactionsCreateForCommitCommentRequestContent($value)'; } 
  }
-final class ReactionsCreateForCommitCommentRequest {const ReactionsCreateForCommitCommentRequest({required this.content});
+@immutable final class ReactionsCreateForCommitCommentRequest {const ReactionsCreateForCommitCommentRequest({required this.content});
 
 factory ReactionsCreateForCommitCommentRequest.fromJson(Map<String, dynamic> json) { return ReactionsCreateForCommitCommentRequest(
   content: ReactionsCreateForCommitCommentRequestContent.fromJson(json['content'] as String),

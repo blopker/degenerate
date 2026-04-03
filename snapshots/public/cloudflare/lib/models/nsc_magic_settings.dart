@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class NscMagicSettings {const NscMagicSettings({required this.conduitName, required this.description, required this.mtu, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscMagicSettings {const NscMagicSettings({required this.conduitName, required this.description, required this.mtu, });
 
 factory NscMagicSettings.fromJson(Map<String, dynamic> json) { return NscMagicSettings(
   conduitName: json['conduit_name'] as String,

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_schemas_messages2.dart';final class AvailablePageRulesSettingsListAvailablePageRulesSettingsResponse {const AvailablePageRulesSettingsListAvailablePageRulesSettingsResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_schemas_messages2.dart';@immutable final class AvailablePageRulesSettingsListAvailablePageRulesSettingsResponse {const AvailablePageRulesSettingsListAvailablePageRulesSettingsResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory AvailablePageRulesSettingsListAvailablePageRulesSettingsResponse.fromJson(Map<String, dynamic> json) { return AvailablePageRulesSettingsListAvailablePageRulesSettingsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ZonesSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZonesSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: (json['result'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  result: (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 final List<ZonesSchemasMessages2> errors;

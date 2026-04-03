@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateAppRequest {const CreateAppRequest({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateAppRequest {const CreateAppRequest({required this.name});
 
 factory CreateAppRequest.fromJson(Map<String, dynamic> json) { return CreateAppRequest(
   name: json['name'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LogpushDestinationExistsResponseResult {const LogpushDestinationExistsResponseResult({this.exists});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LogpushDestinationExistsResponseResult {const LogpushDestinationExistsResponseResult({this.exists});
 
 factory LogpushDestinationExistsResponseResult.fromJson(Map<String, dynamic> json) { return LogpushDestinationExistsResponseResult(
   exists: json['exists'] as bool?,

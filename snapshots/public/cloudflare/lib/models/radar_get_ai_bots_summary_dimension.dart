@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the attribute by which to group the results.
-final class RadarGetAiBotsSummaryDimension {const RadarGetAiBotsSummaryDimension._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
+@immutable final class RadarGetAiBotsSummaryDimension {const RadarGetAiBotsSummaryDimension._(this.value);
 
 factory RadarGetAiBotsSummaryDimension.fromJson(String json) { return switch (json) {
   'USER_AGENT' => userAgent,

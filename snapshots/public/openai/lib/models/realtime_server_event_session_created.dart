@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_session_created_session.dart';import 'realtime_session_create_request_ga.dart';import 'realtime_transcription_session_create_request_ga.dart';/// The event type, must be `session.created`.
-final class RealtimeServerEventSessionCreatedType {const RealtimeServerEventSessionCreatedType._(this.value);
+@immutable final class RealtimeServerEventSessionCreatedType {const RealtimeServerEventSessionCreatedType._(this.value);
 
 factory RealtimeServerEventSessionCreatedType.fromJson(String json) { return switch (json) {
   'session.created' => sessionCreated,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// connection is established as the first server event. This event will contain
 /// the default Session configuration.
 /// 
-final class RealtimeServerEventSessionCreated {const RealtimeServerEventSessionCreated({required this.eventId, required this.type, required this.session, });
+@immutable final class RealtimeServerEventSessionCreated {const RealtimeServerEventSessionCreated({required this.eventId, required this.type, required this.session, });
 
 factory RealtimeServerEventSessionCreated.fromJson(Map<String, dynamic> json) { return RealtimeServerEventSessionCreated(
   eventId: json['event_id'] as String,

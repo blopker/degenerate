@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class AlmaInstallments {const AlmaInstallments({required this.count});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class AlmaInstallments {const AlmaInstallments({required this.count});
 
 factory AlmaInstallments.fromJson(Map<String, dynamic> json) { return AlmaInstallments(
   count: (json['count'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'bank_account_account.dart';import 'bank_account_customer.dart';import 'customer.dart';import 'deleted_customer.dart';import 'external_account_requirements.dart';final class BankAccountAvailablePayoutMethods {const BankAccountAvailablePayoutMethods._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'bank_account_account.dart';import 'bank_account_customer.dart';import 'customer.dart';import 'deleted_customer.dart';import 'external_account_requirements.dart';@immutable final class BankAccountAvailablePayoutMethods {const BankAccountAvailablePayoutMethods._(this.value);
 
 factory BankAccountAvailablePayoutMethods.fromJson(String json) { return switch (json) {
   'instant' => instant,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BankAccountAvailablePayoutMethods($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class BankAccountObject {const BankAccountObject._(this.value);
+@immutable final class BankAccountObject {const BankAccountObject._(this.value);
 
 factory BankAccountObject.fromJson(String json) { return switch (json) {
   'bank_account' => bankAccount,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 /// They can be bank accounts or debit cards as well, and are documented in the links above.
 /// 
 /// Related guide: [Bank debits and transfers](/payments/bank-debits-transfers)
-final class BankAccount {const BankAccount({this.account, this.accountHolderName, this.accountHolderType, this.accountType, this.availablePayoutMethods, this.bankName, required this.country, required this.currency, this.customer, this.defaultForCurrency, this.fingerprint, this.futureRequirements, required this.id, required this.last4, this.metadata, required this.object, this.requirements, this.routingNumber, required this.status, });
+@immutable final class BankAccount {const BankAccount({required this.country, required this.currency, required this.id, required this.last4, required this.object, required this.status, this.account, this.accountHolderName, this.accountHolderType, this.accountType, this.availablePayoutMethods, this.bankName, this.customer, this.defaultForCurrency, this.fingerprint, this.futureRequirements, this.metadata, this.requirements, this.routingNumber, });
 
 factory BankAccount.fromJson(Map<String, dynamic> json) { return BankAccount(
   account: json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,

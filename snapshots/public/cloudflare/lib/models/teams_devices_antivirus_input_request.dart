@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesAntivirusInputRequest {const TeamsDevicesAntivirusInputRequest({this.updateWindowDays});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesAntivirusInputRequest {const TeamsDevicesAntivirusInputRequest({this.updateWindowDays});
 
 factory TeamsDevicesAntivirusInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesAntivirusInputRequest(
   updateWindowDays: json['update_window_days'] != null ? (json['update_window_days'] as num).toDouble() : null,

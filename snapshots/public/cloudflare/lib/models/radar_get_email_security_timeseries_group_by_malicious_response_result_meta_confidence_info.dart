@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_malicious_response_result_meta_confidence_info_annotations.dart';final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaConfidenceInfo {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_malicious_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaConfidenceInfo {const RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetEmailSecurityTimeseriesGroupByMaliciousResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

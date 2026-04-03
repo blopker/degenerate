@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class BalanceAmountBySourceType {const BalanceAmountBySourceType({this.bankAccount, this.card, this.fpx, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class BalanceAmountBySourceType {const BalanceAmountBySourceType({this.bankAccount, this.card, this.fpx, });
 
 factory BalanceAmountBySourceType.fromJson(Map<String, dynamic> json) { return BalanceAmountBySourceType(
   bankAccount: json['bank_account'] != null ? (json['bank_account'] as num).toInt() : null,

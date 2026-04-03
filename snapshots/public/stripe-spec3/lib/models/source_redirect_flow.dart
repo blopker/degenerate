@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SourceRedirectFlow {const SourceRedirectFlow({this.failureReason, required this.returnUrl, required this.status, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SourceRedirectFlow {const SourceRedirectFlow({required this.returnUrl, required this.status, required this.url, this.failureReason, });
 
 factory SourceRedirectFlow.fromJson(Map<String, dynamic> json) { return SourceRedirectFlow(
   failureReason: json['failure_reason'] as String?,

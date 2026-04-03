@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'transcript_text_usage_duration.dart';import 'transcript_text_usage_tokens.dart';/// Token or duration usage statistics for the request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcript_text_usage_duration.dart';import 'transcript_text_usage_tokens.dart';/// Token or duration usage statistics for the request.
 sealed class CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsage();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateTranscriptionResponseDiarizedJsonUsage$Unknown; } 
  }
-final class CreateTranscriptionResponseDiarizedJsonUsageTokens extends CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsageTokens(this.transcriptTextUsageTokens);
+@immutable final class CreateTranscriptionResponseDiarizedJsonUsageTokens extends CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsageTokens(this.transcriptTextUsageTokens);
 
 factory CreateTranscriptionResponseDiarizedJsonUsageTokens.fromJson(Map<String, dynamic> json) { return CreateTranscriptionResponseDiarizedJsonUsageTokens(TranscriptTextUsageTokens.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final TranscriptTextUsageTokens transcriptTextUsageTokens;
 @override int get hashCode { return transcriptTextUsageTokens.hashCode; } 
 @override String toString() { return 'CreateTranscriptionResponseDiarizedJsonUsageTokens(transcriptTextUsageTokens: $transcriptTextUsageTokens)'; } 
  }
-final class CreateTranscriptionResponseDiarizedJsonUsageDuration extends CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsageDuration(this.transcriptTextUsageDuration);
+@immutable final class CreateTranscriptionResponseDiarizedJsonUsageDuration extends CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsageDuration(this.transcriptTextUsageDuration);
 
 factory CreateTranscriptionResponseDiarizedJsonUsageDuration.fromJson(Map<String, dynamic> json) { return CreateTranscriptionResponseDiarizedJsonUsageDuration(TranscriptTextUsageDuration.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final TranscriptTextUsageDuration transcriptTextUsageDuration;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class CreateTranscriptionResponseDiarizedJsonUsage$Unknown extends CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsage$Unknown(this.json);
+@immutable final class CreateTranscriptionResponseDiarizedJsonUsage$Unknown extends CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsage$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

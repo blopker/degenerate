@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TreasuryReceivedCreditsResourceStatusTransitions {const TreasuryReceivedCreditsResourceStatusTransitions({this.postedAt});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TreasuryReceivedCreditsResourceStatusTransitions {const TreasuryReceivedCreditsResourceStatusTransitions({this.postedAt});
 
 factory TreasuryReceivedCreditsResourceStatusTransitions.fromJson(Map<String, dynamic> json) { return TreasuryReceivedCreditsResourceStatusTransitions(
   postedAt: json['posted_at'] != null ? (json['posted_at'] as num).toInt() : null,

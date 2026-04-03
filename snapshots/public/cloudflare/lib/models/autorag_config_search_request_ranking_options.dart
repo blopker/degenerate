@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AutoragConfigSearchRequestRankingOptions {const AutoragConfigSearchRequestRankingOptions({this.ranker, this.scoreThreshold = 0.4, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigSearchRequestRankingOptions {const AutoragConfigSearchRequestRankingOptions({this.ranker, this.scoreThreshold = 0.4, });
 
 factory AutoragConfigSearchRequestRankingOptions.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchRequestRankingOptions(
   ranker: json['ranker'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_test_stat_pct_over_time_slots.dart';final class DigitalExperienceMonitoringTestStatPctOverTime {const DigitalExperienceMonitoringTestStatPctOverTime({this.avg, this.max, this.min, required this.slots, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_test_stat_pct_over_time_slots.dart';@immutable final class DigitalExperienceMonitoringTestStatPctOverTime {const DigitalExperienceMonitoringTestStatPctOverTime({required this.slots, this.avg, this.max, this.min, });
 
 factory DigitalExperienceMonitoringTestStatPctOverTime.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTestStatPctOverTime(
   avg: json['avg'] != null ? (json['avg'] as num).toDouble() : null,

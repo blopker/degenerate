@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class TippingGbp {const TippingGbp({this.fixedAmounts, this.percentages, this.smartTipThreshold, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TippingGbp {const TippingGbp({this.fixedAmounts, this.percentages, this.smartTipThreshold, });
 
 factory TippingGbp.fromJson(Map<String, dynamic> json) { return TippingGbp(
   fixedAmounts: (json['fixed_amounts'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

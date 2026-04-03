@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'snippets_snippet_rules2.dart';/// Define a snippet rules object.
-final class UpdateZoneSnippetRulesRequest {const UpdateZoneSnippetRulesRequest({required this.rules});
+@immutable final class UpdateZoneSnippetRulesRequest {const UpdateZoneSnippetRulesRequest({required this.rules});
 
 factory UpdateZoneSnippetRulesRequest.fromJson(Map<String, dynamic> json) { return UpdateZoneSnippetRulesRequest(
   rules: (json['rules'] as List<dynamic>).map((e) => SnippetsSnippetRules2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountsMoveAccountsRequest {const AccountsMoveAccountsRequest({required this.destinationOrganizationId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsMoveAccountsRequest {const AccountsMoveAccountsRequest({required this.destinationOrganizationId});
 
 factory AccountsMoveAccountsRequest.fromJson(Map<String, dynamic> json) { return AccountsMoveAccountsRequest(
   destinationOrganizationId: json['destination_organization_id'] as String,

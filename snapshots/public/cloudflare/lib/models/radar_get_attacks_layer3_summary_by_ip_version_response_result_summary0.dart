@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0({required this.iPv4, required this.iPv6, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0({required this.iPv4, required this.iPv6, });
 
 factory RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByIpVersionResponseResultSummary0(
   iPv4: json['IPv4'] as String,

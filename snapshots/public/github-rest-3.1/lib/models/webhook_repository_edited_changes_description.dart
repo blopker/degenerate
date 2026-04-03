@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookRepositoryEditedChangesDescription {const WebhookRepositoryEditedChangesDescription({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRepositoryEditedChangesDescription {const WebhookRepositoryEditedChangesDescription({required this.from});
 
 factory WebhookRepositoryEditedChangesDescription.fromJson(Map<String, dynamic> json) { return WebhookRepositoryEditedChangesDescription(
   from: json['from'] as String?,

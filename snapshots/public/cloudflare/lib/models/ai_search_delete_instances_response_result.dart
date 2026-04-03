@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_delete_instances_response_result_ai_search_model.dart';import 'ai_search_delete_instances_response_result_custom_metadata.dart';import 'ai_search_delete_instances_response_result_embedding_model.dart';import 'ai_search_delete_instances_response_result_metadata.dart';import 'ai_search_delete_instances_response_result_public_endpoint_params.dart';import 'ai_search_delete_instances_response_result_retrieval_options.dart';import 'ai_search_delete_instances_response_result_rewrite_model.dart';import 'ai_search_delete_instances_response_result_source_params.dart';final class AiSearchDeleteInstancesResponseResultRerankingModel {const AiSearchDeleteInstancesResponseResultRerankingModel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_delete_instances_response_result_ai_search_model.dart';import 'ai_search_delete_instances_response_result_custom_metadata.dart';import 'ai_search_delete_instances_response_result_embedding_model.dart';import 'ai_search_delete_instances_response_result_metadata.dart';import 'ai_search_delete_instances_response_result_public_endpoint_params.dart';import 'ai_search_delete_instances_response_result_retrieval_options.dart';import 'ai_search_delete_instances_response_result_rewrite_model.dart';import 'ai_search_delete_instances_response_result_source_params.dart';@immutable final class AiSearchDeleteInstancesResponseResultRerankingModel {const AiSearchDeleteInstancesResponseResultRerankingModel._(this.value);
 
 factory AiSearchDeleteInstancesResponseResultRerankingModel.fromJson(String json) { return switch (json) {
   '@cf/baai/bge-reranker-base' => cfBaaiBgeRerankerBase,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchDeleteInstancesResponseResultRerankingModel($value)'; } 
  }
-final class AiSearchDeleteInstancesResponseResultCacheThreshold {const AiSearchDeleteInstancesResponseResultCacheThreshold._(this.value);
+@immutable final class AiSearchDeleteInstancesResponseResultCacheThreshold {const AiSearchDeleteInstancesResponseResultCacheThreshold._(this.value);
 
 factory AiSearchDeleteInstancesResponseResultCacheThreshold.fromJson(String json) { return switch (json) {
   'super_strict_match' => superStrictMatch,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchDeleteInstancesResponseResultCacheThreshold($value)'; } 
  }
-final class AiSearchDeleteInstancesResponseResultFusionMethod {const AiSearchDeleteInstancesResponseResultFusionMethod._(this.value);
+@immutable final class AiSearchDeleteInstancesResponseResultFusionMethod {const AiSearchDeleteInstancesResponseResultFusionMethod._(this.value);
 
 factory AiSearchDeleteInstancesResponseResultFusionMethod.fromJson(String json) { return switch (json) {
   'max' => max,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchDeleteInstancesResponseResultFusionMethod($value)'; } 
  }
-final class AiSearchDeleteInstancesResponseResultType {const AiSearchDeleteInstancesResponseResultType._(this.value);
+@immutable final class AiSearchDeleteInstancesResponseResultType {const AiSearchDeleteInstancesResponseResultType._(this.value);
 
 factory AiSearchDeleteInstancesResponseResultType.fromJson(String json) { return switch (json) {
   'r2' => r2,
@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchDeleteInstancesResponseResultType($value)'; } 
  }
-final class AiSearchDeleteInstancesResponseResult {const AiSearchDeleteInstancesResponseResult({this.aiGatewayId, this.aiSearchModel, this.cache = true, this.cacheThreshold = AiSearchDeleteInstancesResponseResultCacheThreshold.closeEnough, this.chunkOverlap = 10, this.chunkSize = 256, required this.createdAt, this.createdBy, this.customMetadata, this.embeddingModel, this.enable = true, this.fusionMethod = AiSearchDeleteInstancesResponseResultFusionMethod.rrf, this.hybridSearchEnabled = false, required this.id, this.lastActivity, this.maxNumResults = 10, this.metadata, required this.modifiedAt, this.modifiedBy, this.paused = false, this.publicEndpointId, this.publicEndpointParams, this.reranking = false, this.rerankingModel, this.retrievalOptions, this.rewriteModel, this.rewriteQuery = false, this.scoreThreshold = 0.4, this.source, this.sourceParams, this.status = 'waiting', this.tokenId, this.type, required this.vectorizeName, });
+@immutable final class AiSearchDeleteInstancesResponseResult {const AiSearchDeleteInstancesResponseResult({required this.vectorizeName, required this.createdAt, required this.id, required this.modifiedAt, this.fusionMethod = AiSearchDeleteInstancesResponseResultFusionMethod.rrf, this.chunkSize = 256, this.aiSearchModel, this.createdBy, this.customMetadata, this.embeddingModel, this.enable = true, this.aiGatewayId, this.hybridSearchEnabled = false, this.cache = true, this.lastActivity, this.maxNumResults = 10, this.metadata, this.cacheThreshold = AiSearchDeleteInstancesResponseResultCacheThreshold.closeEnough, this.modifiedBy, this.paused = false, this.publicEndpointId, this.chunkOverlap = 10, this.reranking = false, this.rerankingModel, this.retrievalOptions, this.rewriteModel, this.rewriteQuery = false, this.scoreThreshold = 0.4, this.source, this.sourceParams, this.status = 'waiting', this.tokenId, this.type, this.publicEndpointParams, });
 
 factory AiSearchDeleteInstancesResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchDeleteInstancesResponseResult(
   aiGatewayId: json['ai_gateway_id'] as String?,

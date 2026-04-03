@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class OnlineAcceptance {const OnlineAcceptance({this.ipAddress, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class OnlineAcceptance {const OnlineAcceptance({this.ipAddress, this.userAgent, });
 
 factory OnlineAcceptance.fromJson(Map<String, dynamic> json) { return OnlineAcceptance(
   ipAddress: json['ip_address'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType {const PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType {const PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType._(this.value);
 
 factory PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType.fromJson(String json) { return switch (json) {
   'local_use_tax' => localUseTax,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElectionsType($value)'; } 
  }
-final class PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections {const PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections({this.jurisdiction, required this.type, });
+@immutable final class PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections {const PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections({required this.type, this.jurisdiction, });
 
 factory PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsUsStateSalesTaxElections(
   jurisdiction: json['jurisdiction'] as String?,

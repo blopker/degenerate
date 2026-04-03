@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `input_audio_buffer.cleared`.
-final class RealtimeBetaServerEventInputAudioBufferClearedType {const RealtimeBetaServerEventInputAudioBufferClearedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.cleared`.
+@immutable final class RealtimeBetaServerEventInputAudioBufferClearedType {const RealtimeBetaServerEventInputAudioBufferClearedType._(this.value);
 
 factory RealtimeBetaServerEventInputAudioBufferClearedType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.cleared' => inputAudioBufferCleared,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Returned when the input audio buffer is cleared by the client with a
 /// `input_audio_buffer.clear` event.
 /// 
-final class RealtimeBetaServerEventInputAudioBufferCleared {const RealtimeBetaServerEventInputAudioBufferCleared({required this.eventId, required this.type, });
+@immutable final class RealtimeBetaServerEventInputAudioBufferCleared {const RealtimeBetaServerEventInputAudioBufferCleared({required this.eventId, required this.type, });
 
 factory RealtimeBetaServerEventInputAudioBufferCleared.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventInputAudioBufferCleared(
   eventId: json['event_id'] as String,

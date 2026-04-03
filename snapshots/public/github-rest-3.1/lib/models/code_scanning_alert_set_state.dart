@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
-final class CodeScanningAlertSetState {const CodeScanningAlertSetState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
+@immutable final class CodeScanningAlertSetState {const CodeScanningAlertSetState._(this.value);
 
 factory CodeScanningAlertSetState.fromJson(String json) { return switch (json) {
   'open' => open,

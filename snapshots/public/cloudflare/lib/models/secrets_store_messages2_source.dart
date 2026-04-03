@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecretsStoreMessages2Source {const SecretsStoreMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretsStoreMessages2Source {const SecretsStoreMessages2Source({this.pointer});
 
 factory SecretsStoreMessages2Source.fromJson(Map<String, dynamic> json) { return SecretsStoreMessages2Source(
   pointer: json['pointer'] as String?,

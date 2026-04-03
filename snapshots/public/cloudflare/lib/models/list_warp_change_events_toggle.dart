@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ListWarpChangeEventsToggle {const ListWarpChangeEventsToggle._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListWarpChangeEventsToggle {const ListWarpChangeEventsToggle._(this.value);
 
 factory ListWarpChangeEventsToggle.fromJson(String json) { return switch (json) {
   'on' => $on,

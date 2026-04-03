@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of fuel that was purchased.
-final class IssuingAuthorizationFuelDataType {const IssuingAuthorizationFuelDataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of fuel that was purchased.
+@immutable final class IssuingAuthorizationFuelDataType {const IssuingAuthorizationFuelDataType._(this.value);
 
 factory IssuingAuthorizationFuelDataType.fromJson(String json) { return switch (json) {
   'diesel' => diesel,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationFuelDataType($value)'; } 
  }
 /// The units for `quantity_decimal`.
-final class IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit._(this.value);
+@immutable final class IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit._(this.value);
 
 factory IssuingAuthorizationFuelDataUnit.fromJson(String json) { return switch (json) {
   'charging_minute' => chargingMinute,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationFuelDataUnit($value)'; } 
  }
 /// 
-final class IssuingAuthorizationFuelData {const IssuingAuthorizationFuelData({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
+@immutable final class IssuingAuthorizationFuelData {const IssuingAuthorizationFuelData({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
 
 factory IssuingAuthorizationFuelData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFuelData(
   industryProductCode: json['industry_product_code'] as String?,

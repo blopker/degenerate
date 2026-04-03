@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'compound_filter_filters.dart';/// Type of operation: `and` or `or`.
-final class CompoundFilterType {const CompoundFilterType._(this.value);
+@immutable final class CompoundFilterType {const CompoundFilterType._(this.value);
 
 factory CompoundFilterType.fromJson(String json) { return switch (json) {
   'and' => and,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CompoundFilterType($value)'; } 
  }
 /// Combine multiple filters using `and` or `or`.
-final class CompoundFilter {const CompoundFilter({required this.type, required this.filters, });
+@immutable final class CompoundFilter {const CompoundFilter({required this.type, required this.filters, });
 
 factory CompoundFilter.fromJson(Map<String, dynamic> json) { return CompoundFilter(
   type: CompoundFilterType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpPromptTopicType {const DlpPromptTopicType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpPromptTopicType {const DlpPromptTopicType._(this.value);
 
 factory DlpPromptTopicType.fromJson(String json) { return switch (json) {
   'Intent' => intent,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpPromptTopicType($value)'; } 
  }
-final class DlpPredefinedEntryVariantPromptTopicType {const DlpPredefinedEntryVariantPromptTopicType._(this.value);
+@immutable final class DlpPredefinedEntryVariantPromptTopicType {const DlpPredefinedEntryVariantPromptTopicType._(this.value);
 
 factory DlpPredefinedEntryVariantPromptTopicType.fromJson(String json) { return switch (json) {
   'PromptTopic' => promptTopic,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpPredefinedEntryVariantPromptTopicType($value)'; } 
  }
-final class DlpPredefinedEntryVariantPromptTopic {const DlpPredefinedEntryVariantPromptTopic({this.description, required this.topicType, required this.type, });
+@immutable final class DlpPredefinedEntryVariantPromptTopic {const DlpPredefinedEntryVariantPromptTopic({required this.topicType, required this.type, this.description, });
 
 factory DlpPredefinedEntryVariantPromptTopic.fromJson(Map<String, dynamic> json) { return DlpPredefinedEntryVariantPromptTopic(
   description: json['description'] as String?,

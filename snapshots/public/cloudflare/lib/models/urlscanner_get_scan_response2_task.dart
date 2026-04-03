@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_response2_task_options.dart';final class UrlscannerGetScanResponse2Task {const UrlscannerGetScanResponse2Task({required this.apexDomain, required this.domUrl, required this.domain, required this.method, required this.options, required this.reportUrl, required this.screenshotUrl, required this.source, required this.success, required this.time, required this.url, required this.uuid, required this.visibility, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_task_options.dart';@immutable final class UrlscannerGetScanResponse2Task {const UrlscannerGetScanResponse2Task({required this.apexDomain, required this.domUrl, required this.domain, required this.method, required this.options, required this.reportUrl, required this.screenshotUrl, required this.source, required this.success, required this.time, required this.url, required this.uuid, required this.visibility, });
 
 factory UrlscannerGetScanResponse2Task.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2Task(
   apexDomain: json['apexDomain'] as String,

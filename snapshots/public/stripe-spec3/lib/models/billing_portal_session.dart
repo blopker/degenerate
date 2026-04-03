@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_portal_configuration.dart';import 'billing_portal_session_configuration.dart';import 'portal_flows_flow.dart';/// The IETF language tag of the locale Customer Portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
-final class BillingPortalSessionLocale {const BillingPortalSessionLocale._(this.value);
+@immutable final class BillingPortalSessionLocale {const BillingPortalSessionLocale._(this.value);
 
 factory BillingPortalSessionLocale.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -161,7 +161,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingPortalSessionLocale($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class BillingPortalSessionObject {const BillingPortalSessionObject._(this.value);
+@immutable final class BillingPortalSessionObject {const BillingPortalSessionObject._(this.value);
 
 factory BillingPortalSessionObject.fromJson(String json) { return switch (json) {
   'billing_portal.session' => billingPortalSession,
@@ -196,7 +196,7 @@ bool get isUnknown { return !values.contains(this); }
 /// and billing details.
 /// 
 /// Related guide: [Customer management](/customer-management)
-final class BillingPortalSession {const BillingPortalSession({required this.configuration, required this.created, required this.customer, this.customerAccount, this.flow, required this.id, required this.livemode, this.locale, required this.object, this.onBehalfOf, this.returnUrl, required this.url, });
+@immutable final class BillingPortalSession {const BillingPortalSession({required this.configuration, required this.created, required this.customer, required this.id, required this.livemode, required this.object, required this.url, this.customerAccount, this.flow, this.locale, this.onBehalfOf, this.returnUrl, });
 
 factory BillingPortalSession.fromJson(Map<String, dynamic> json) { return BillingPortalSession(
   configuration: OneOf2.parse(json['configuration'], fromA: (v) => v as String, fromB: (v) => BillingPortalConfiguration.fromJson(v as Map<String, dynamic>),),

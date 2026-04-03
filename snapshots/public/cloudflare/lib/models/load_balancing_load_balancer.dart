@@ -6,7 +6,7 @@ factory LoadBalancingComponentsSchemasZoneName.fromJson(String json) => LoadBala
 String toJson() => value;
 
 }
-final class LoadBalancingLoadBalancer {const LoadBalancingLoadBalancer({this.adaptiveRouting, this.countryPools, this.createdOn, this.defaultPools, this.description, this.enabled, this.fallbackPool, this.id, this.locationStrategy, this.modifiedOn, this.name, this.networks, this.popPools, this.proxied, this.randomSteering, this.regionPools, this.rules, this.sessionAffinity, this.sessionAffinityAttributes, this.sessionAffinityTtl, this.steeringPolicy, this.ttl, this.zoneName, });
+@immutable final class LoadBalancingLoadBalancer {const LoadBalancingLoadBalancer({this.adaptiveRouting, this.countryPools, this.createdOn, this.defaultPools, this.description, this.enabled, this.fallbackPool, this.id, this.locationStrategy, this.modifiedOn, this.name, this.networks, this.popPools, this.proxied, this.randomSteering, this.regionPools, this.rules, this.sessionAffinity, this.sessionAffinityAttributes, this.sessionAffinityTtl, this.steeringPolicy, this.ttl, this.zoneName, });
 
 factory LoadBalancingLoadBalancer.fromJson(Map<String, dynamic> json) { return LoadBalancingLoadBalancer(
   adaptiveRouting: json['adaptive_routing'] != null ? LoadBalancingAdaptiveRouting.fromJson(json['adaptive_routing'] as Map<String, dynamic>) : null,
@@ -88,7 +88,7 @@ final LoadBalancingComponentsSchemasZoneName? zoneName;
 
 Map<String, dynamic> toJson() { return {
   if (adaptiveRouting != null) 'adaptive_routing': adaptiveRouting?.toJson(),
-  if (countryPools != null) 'country_pools': countryPools?.map((k, v) => MapEntry(k, v)),
+  'country_pools': ?countryPools,
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   'default_pools': ?defaultPools,
   if (description != null) 'description': description?.toJson(),
@@ -99,10 +99,10 @@ Map<String, dynamic> toJson() { return {
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
   if (name != null) 'name': name?.toJson(),
   'networks': ?networks,
-  if (popPools != null) 'pop_pools': popPools?.map((k, v) => MapEntry(k, v)),
+  'pop_pools': ?popPools,
   if (proxied != null) 'proxied': proxied?.toJson(),
   if (randomSteering != null) 'random_steering': randomSteering?.toJson(),
-  if (regionPools != null) 'region_pools': regionPools?.map((k, v) => MapEntry(k, v)),
+  'region_pools': ?regionPools,
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
   if (sessionAffinity != null) 'session_affinity': sessionAffinity?.toJson(),
   if (sessionAffinityAttributes != null) 'session_affinity_attributes': sessionAffinityAttributes?.toJson(),

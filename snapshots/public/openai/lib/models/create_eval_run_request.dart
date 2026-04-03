@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_completions_run_data_source.dart';import 'create_eval_jsonl_run_data_source.dart';import 'create_eval_responses_run_data_source.dart';import 'create_eval_run_request_data_source.dart';final class CreateEvalRunRequest {const CreateEvalRunRequest({this.name, this.metadata, required this.dataSource, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_completions_run_data_source.dart';import 'create_eval_jsonl_run_data_source.dart';import 'create_eval_responses_run_data_source.dart';import 'create_eval_run_request_data_source.dart';@immutable final class CreateEvalRunRequest {const CreateEvalRunRequest({required this.dataSource, this.name, this.metadata, });
 
 factory CreateEvalRunRequest.fromJson(Map<String, dynamic> json) { return CreateEvalRunRequest(
   name: json['name'] as String?,

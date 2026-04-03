@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the format of source data.
-final class CloudflarePipelinesWorkersPipelinesBindingSourceFormat {const CloudflarePipelinesWorkersPipelinesBindingSourceFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the format of source data.
+@immutable final class CloudflarePipelinesWorkersPipelinesBindingSourceFormat {const CloudflarePipelinesWorkersPipelinesBindingSourceFormat._(this.value);
 
 factory CloudflarePipelinesWorkersPipelinesBindingSourceFormat.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -22,8 +22,8 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CloudflarePipelinesWorkersPipelinesBindingSourceFormat($value)'; } 
  }
-/// [DEPRECATED] Worker binding source configuration. Use the new streams API instead.
-final class CloudflarePipelinesWorkersPipelinesBindingSource {const CloudflarePipelinesWorkersPipelinesBindingSource({required this.format, required this.type, });
+/// `[DEPRECATED]` Worker binding source configuration. Use the new streams API instead.
+@immutable final class CloudflarePipelinesWorkersPipelinesBindingSource {const CloudflarePipelinesWorkersPipelinesBindingSource({required this.format, required this.type, });
 
 factory CloudflarePipelinesWorkersPipelinesBindingSource.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesBindingSource(
   format: CloudflarePipelinesWorkersPipelinesBindingSourceFormat.fromJson(json['format'] as String),

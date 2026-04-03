@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secret_scanning_location_commit.dart';import 'secret_scanning_location_discussion_body.dart';import 'secret_scanning_location_discussion_comment.dart';import 'secret_scanning_location_discussion_title.dart';import 'secret_scanning_location_issue_body.dart';import 'secret_scanning_location_issue_comment.dart';import 'secret_scanning_location_issue_title.dart';import 'secret_scanning_location_pull_request_body.dart';import 'secret_scanning_location_pull_request_comment.dart';import 'secret_scanning_location_pull_request_review.dart';import 'secret_scanning_location_pull_request_review_comment.dart';import 'secret_scanning_location_pull_request_title.dart';import 'secret_scanning_location_wiki_commit.dart';/// A value that is one of: `SecretScanningLocationCommit`, `SecretScanningLocationWikiCommit`, `SecretScanningLocationIssueTitle`, `SecretScanningLocationIssueBody`, `SecretScanningLocationIssueComment`, `SecretScanningLocationDiscussionTitle`, `SecretScanningLocationDiscussionBody`, `SecretScanningLocationDiscussionComment`, `SecretScanningLocationPullRequestTitle`, `SecretScanningLocationPullRequestBody`, `SecretScanningLocationPullRequestComment`, `SecretScanningLocationPullRequestReview`, `SecretScanningLocationPullRequestReviewComment`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_scanning_location_commit.dart';import 'secret_scanning_location_discussion_body.dart';import 'secret_scanning_location_discussion_comment.dart';import 'secret_scanning_location_discussion_title.dart';import 'secret_scanning_location_issue_body.dart';import 'secret_scanning_location_issue_comment.dart';import 'secret_scanning_location_issue_title.dart';import 'secret_scanning_location_pull_request_body.dart';import 'secret_scanning_location_pull_request_comment.dart';import 'secret_scanning_location_pull_request_review.dart';import 'secret_scanning_location_pull_request_review_comment.dart';import 'secret_scanning_location_pull_request_title.dart';import 'secret_scanning_location_wiki_commit.dart';/// A value that is one of: `SecretScanningLocationCommit`, `SecretScanningLocationWikiCommit`, `SecretScanningLocationIssueTitle`, `SecretScanningLocationIssueBody`, `SecretScanningLocationIssueComment`, `SecretScanningLocationDiscussionTitle`, `SecretScanningLocationDiscussionBody`, `SecretScanningLocationDiscussionComment`, `SecretScanningLocationPullRequestTitle`, `SecretScanningLocationPullRequestBody`, `SecretScanningLocationPullRequestComment`, `SecretScanningLocationPullRequestReview`, `SecretScanningLocationPullRequestReviewComment`.
 sealed class SecretScanningLocationDetails {const SecretScanningLocationDetails();
 
 factory SecretScanningLocationDetails.fromJson(Map<String, dynamic> json) {   if (SecretScanningLocationCommit.canParse(json)) {
@@ -48,7 +48,7 @@ factory SecretScanningLocationDetails.fromJson(Map<String, dynamic> json) {   if
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationCommit extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationCommit(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationCommit extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationCommit(this._value);
 
 final SecretScanningLocationCommit _value;
 
@@ -58,7 +58,7 @@ final SecretScanningLocationCommit _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationCommit($_value)'; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationWikiCommit extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationWikiCommit(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationWikiCommit extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationWikiCommit(this._value);
 
 final SecretScanningLocationWikiCommit _value;
 
@@ -68,7 +68,7 @@ final SecretScanningLocationWikiCommit _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationWikiCommit($_value)'; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationIssueTitle extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationIssueTitle(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationIssueTitle extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationIssueTitle(this._value);
 
 final SecretScanningLocationIssueTitle _value;
 
@@ -78,7 +78,7 @@ final SecretScanningLocationIssueTitle _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationIssueTitle($_value)'; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationIssueBody extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationIssueBody(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationIssueBody extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationIssueBody(this._value);
 
 final SecretScanningLocationIssueBody _value;
 
@@ -88,7 +88,7 @@ final SecretScanningLocationIssueBody _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationIssueBody($_value)'; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationIssueComment extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationIssueComment(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationIssueComment extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationIssueComment(this._value);
 
 final SecretScanningLocationIssueComment _value;
 
@@ -98,7 +98,7 @@ final SecretScanningLocationIssueComment _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationIssueComment($_value)'; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle(this._value);
 
 final SecretScanningLocationDiscussionTitle _value;
 
@@ -108,7 +108,7 @@ final SecretScanningLocationDiscussionTitle _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationDiscussionTitle($_value)'; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationDiscussionBody extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationDiscussionBody(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationDiscussionBody extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationDiscussionBody(this._value);
 
 final SecretScanningLocationDiscussionBody _value;
 
@@ -118,7 +118,7 @@ final SecretScanningLocationDiscussionBody _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationDiscussionBody($_value)'; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationDiscussionComment extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationDiscussionComment(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationDiscussionComment extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationDiscussionComment(this._value);
 
 final SecretScanningLocationDiscussionComment _value;
 
@@ -128,7 +128,7 @@ final SecretScanningLocationDiscussionComment _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationDiscussionComment($_value)'; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle(this._value);
 
 final SecretScanningLocationPullRequestTitle _value;
 
@@ -138,7 +138,7 @@ final SecretScanningLocationPullRequestTitle _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationPullRequestTitle($_value)'; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationPullRequestBody extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestBody(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationPullRequestBody extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestBody(this._value);
 
 final SecretScanningLocationPullRequestBody _value;
 
@@ -148,7 +148,7 @@ final SecretScanningLocationPullRequestBody _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationPullRequestBody($_value)'; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationPullRequestComment extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestComment(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationPullRequestComment extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestComment(this._value);
 
 final SecretScanningLocationPullRequestComment _value;
 
@@ -158,7 +158,7 @@ final SecretScanningLocationPullRequestComment _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationPullRequestComment($_value)'; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationPullRequestReview extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestReview(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationPullRequestReview extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestReview(this._value);
 
 final SecretScanningLocationPullRequestReview _value;
 
@@ -168,7 +168,7 @@ final SecretScanningLocationPullRequestReview _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationPullRequestReview($_value)'; } 
  }
-final class SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment(this._value);
+@immutable final class SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment(this._value);
 
 final SecretScanningLocationPullRequestReviewComment _value;
 
@@ -179,7 +179,7 @@ final SecretScanningLocationPullRequestReviewComment _value;
 @override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationPullRequestReviewComment($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class SecretScanningLocationDetails$Unknown extends SecretScanningLocationDetails {const SecretScanningLocationDetails$Unknown(this._value);
+@immutable final class SecretScanningLocationDetails$Unknown extends SecretScanningLocationDetails {const SecretScanningLocationDetails$Unknown(this._value);
 
 final dynamic _value;
 

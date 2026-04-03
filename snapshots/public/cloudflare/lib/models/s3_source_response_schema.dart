@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class S3SourceResponseSchemaVendor {const S3SourceResponseSchemaVendor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class S3SourceResponseSchemaVendor {const S3SourceResponseSchemaVendor._(this.value);
 
 factory S3SourceResponseSchemaVendor.fromJson(String json) { return switch (json) {
   's3' => s3,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'S3SourceResponseSchemaVendor($value)'; } 
  }
-final class S3SourceResponseSchema {const S3SourceResponseSchema({this.bucket, this.endpoint, this.keys, this.pathPrefix, this.vendor, });
+@immutable final class S3SourceResponseSchema {const S3SourceResponseSchema({this.bucket, this.endpoint, this.keys, this.pathPrefix, this.vendor, });
 
 factory S3SourceResponseSchema.fromJson(Map<String, dynamic> json) { return S3SourceResponseSchema(
   bucket: json['bucket'] as String?,

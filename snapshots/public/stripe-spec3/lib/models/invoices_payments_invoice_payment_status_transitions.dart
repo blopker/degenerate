@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class InvoicesPaymentsInvoicePaymentStatusTransitions {const InvoicesPaymentsInvoicePaymentStatusTransitions({this.canceledAt, this.paidAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class InvoicesPaymentsInvoicePaymentStatusTransitions {const InvoicesPaymentsInvoicePaymentStatusTransitions({this.canceledAt, this.paidAt, });
 
 factory InvoicesPaymentsInvoicePaymentStatusTransitions.fromJson(Map<String, dynamic> json) { return InvoicesPaymentsInvoicePaymentStatusTransitions(
   canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,

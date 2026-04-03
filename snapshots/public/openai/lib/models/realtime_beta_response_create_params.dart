@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt.dart';import 'realtime_beta_response_create_params_conversation.dart';import 'realtime_beta_response_create_params_max_output_tokens.dart';import 'realtime_beta_response_create_params_tool_choice.dart';import 'realtime_beta_response_create_params_tools.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'voice_ids_or_custom_voice.dart';import 'voice_ids_or_custom_voice_variant2.dart';import 'voice_ids_shared.dart';final class RealtimeBetaResponseCreateParamsModalities {const RealtimeBetaResponseCreateParamsModalities._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt.dart';import 'realtime_beta_response_create_params_conversation.dart';import 'realtime_beta_response_create_params_max_output_tokens.dart';import 'realtime_beta_response_create_params_tool_choice.dart';import 'realtime_beta_response_create_params_tools.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'voice_ids_or_custom_voice.dart';import 'voice_ids_or_custom_voice_variant2.dart';import 'voice_ids_shared.dart';@immutable final class RealtimeBetaResponseCreateParamsModalities {const RealtimeBetaResponseCreateParamsModalities._(this.value);
 
 factory RealtimeBetaResponseCreateParamsModalities.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// 
-final class RealtimeBetaResponseCreateParamsOutputAudioFormat {const RealtimeBetaResponseCreateParamsOutputAudioFormat._(this.value);
+@immutable final class RealtimeBetaResponseCreateParamsOutputAudioFormat {const RealtimeBetaResponseCreateParamsOutputAudioFormat._(this.value);
 
 factory RealtimeBetaResponseCreateParamsOutputAudioFormat.fromJson(String json) { return switch (json) {
   'pcm16' => pcm16,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaResponseCreateParamsOutputAudioFormat($value)'; } 
  }
 /// Create a new Realtime response with these parameters
-final class RealtimeBetaResponseCreateParams {const RealtimeBetaResponseCreateParams({this.modalities, this.instructions, this.voice, this.outputAudioFormat, this.tools, this.toolChoice, this.temperature, this.maxOutputTokens, this.conversation, this.metadata, this.prompt, this.input, });
+@immutable final class RealtimeBetaResponseCreateParams {const RealtimeBetaResponseCreateParams({this.modalities, this.instructions, this.voice, this.outputAudioFormat, this.tools, this.toolChoice, this.temperature, this.maxOutputTokens, this.conversation, this.metadata, this.prompt, this.input, });
 
 factory RealtimeBetaResponseCreateParams.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponseCreateParams(
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => RealtimeBetaResponseCreateParamsModalities.fromJson(e as String)).toList(),
@@ -72,7 +72,7 @@ factory RealtimeBetaResponseCreateParams.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// The set of modalities the model can respond with. To disable audio,
-/// set this to ["text"].
+/// set this to `["text"]`.
 /// 
 final List<RealtimeBetaResponseCreateParamsModalities>? modalities;
 
@@ -111,7 +111,7 @@ final List<RealtimeBetaResponseCreateParamsTools>? tools;
 /// 
 final RealtimeBetaResponseCreateParamsToolChoice? toolChoice;
 
-/// Sampling temperature for the model, limited to [0.6, 1.2]. Defaults to 0.8.
+/// Sampling temperature for the model, limited to `[0.6, 1.2]`. Defaults to 0.8.
 /// 
 final double? temperature;
 

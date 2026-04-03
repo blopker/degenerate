@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryRuleUpdateParameters {const RepositoryRuleUpdateParameters({required this.updateAllowsFetchAndMerge});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleUpdateParameters {const RepositoryRuleUpdateParameters({required this.updateAllowsFetchAndMerge});
 
 factory RepositoryRuleUpdateParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleUpdateParameters(
   updateAllowsFetchAndMerge: json['update_allows_fetch_and_merge'] as bool,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether the feature is enabled or disabled.
-final class SpeedCloudflareFontsValue {const SpeedCloudflareFontsValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the feature is enabled or disabled.
+@immutable final class SpeedCloudflareFontsValue {const SpeedCloudflareFontsValue._(this.value);
 
 factory SpeedCloudflareFontsValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SpeedCloudflareFontsValue($value)'; } 
  }
-final class ZoneSettingsChangeFontsSettingRequest {const ZoneSettingsChangeFontsSettingRequest({required this.value});
+@immutable final class ZoneSettingsChangeFontsSettingRequest {const ZoneSettingsChangeFontsSettingRequest({required this.value});
 
 factory ZoneSettingsChangeFontsSettingRequest.fromJson(Map<String, dynamic> json) { return ZoneSettingsChangeFontsSettingRequest(
   value: SpeedCloudflareFontsValue.fromJson(json['value'] as String),

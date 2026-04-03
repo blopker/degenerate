@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudforce_one_requests_message_content.dart';final class CloudforceOneRequestsRequestMessageEdit {const CloudforceOneRequestsRequestMessageEdit({this.content});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_message_content.dart';@immutable final class CloudforceOneRequestsRequestMessageEdit {const CloudforceOneRequestsRequestMessageEdit({this.content});
 
 factory CloudforceOneRequestsRequestMessageEdit.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestMessageEdit(
   content: json['content'] != null ? CloudforceOneRequestsMessageContent.fromJson(json['content'] as String) : null,

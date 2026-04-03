@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_create_providers_response400_errors.dart';final class AigConfigCreateProvidersResponse400 {const AigConfigCreateProvidersResponse400({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_create_providers_response400_errors.dart';@immutable final class AigConfigCreateProvidersResponse400 {const AigConfigCreateProvidersResponse400({required this.errors, required this.success, });
 
 factory AigConfigCreateProvidersResponse400.fromJson(Map<String, dynamic> json) { return AigConfigCreateProvidersResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AigConfigCreateProvidersResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Describes the presence of the customer during the payment.
-final class InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence {const InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes the presence of the customer during the payment.
+@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence {const InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence._(this.value);
 
 factory InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence($value)'; } 
  }
 /// Describes the type of payment.
-final class InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType {const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType._(this.value);
+@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType {const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType._(this.value);
 
 factory InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType.fromJson(String json) { return switch (json) {
   'one_off' => oneOff,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType($value)'; } 
  }
 /// Money Movement card details attached to this payment.
-final class InsightsResourcesPaymentEvaluationMoneyMovementCard {const InsightsResourcesPaymentEvaluationMoneyMovementCard({this.customerPresence, this.paymentType, });
+@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCard {const InsightsResourcesPaymentEvaluationMoneyMovementCard({this.customerPresence, this.paymentType, });
 
 factory InsightsResourcesPaymentEvaluationMoneyMovementCard.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationMoneyMovementCard(
   customerPresence: json['customer_presence'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementCardCustomerPresence.fromJson(json['customer_presence'] as String) : null,

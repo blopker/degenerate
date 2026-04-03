@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_messages2.dart';import 'pages_project.dart';final class PagesProjectCreateProjectResponse {const PagesProjectCreateProjectResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_messages2.dart';import 'pages_project.dart';@immutable final class PagesProjectCreateProjectResponse {const PagesProjectCreateProjectResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory PagesProjectCreateProjectResponse.fromJson(Map<String, dynamic> json) { return PagesProjectCreateProjectResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => PagesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

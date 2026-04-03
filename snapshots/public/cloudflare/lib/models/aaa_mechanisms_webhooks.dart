@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_uuid.dart';final class AaaMechanismsWebhooks {const AaaMechanismsWebhooks({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_uuid.dart';@immutable final class AaaMechanismsWebhooks {const AaaMechanismsWebhooks({this.id});
 
 factory AaaMechanismsWebhooks.fromJson(Map<String, dynamic> json) { return AaaMechanismsWebhooks(
   id: json['id'] != null ? AaaUuid.fromJson(json['id'] as String) : null,

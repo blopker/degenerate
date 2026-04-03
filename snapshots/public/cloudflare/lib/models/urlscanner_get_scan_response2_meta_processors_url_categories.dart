@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_url_categories_data.dart';final class UrlscannerGetScanResponse2MetaProcessorsUrlCategories {const UrlscannerGetScanResponse2MetaProcessorsUrlCategories({required this.data});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_url_categories_data.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsUrlCategories {const UrlscannerGetScanResponse2MetaProcessorsUrlCategories({required this.data});
 
 factory UrlscannerGetScanResponse2MetaProcessorsUrlCategories.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsUrlCategories(
   data: (json['data'] as List<dynamic>).map((e) => UrlscannerGetScanResponse2MetaProcessorsUrlCategoriesData.fromJson(e as Map<String, dynamic>)).toList(),

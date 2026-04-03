@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazScrollDepthRuleSettings {const ZarazScrollDepthRuleSettings({required this.positions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazScrollDepthRuleSettings {const ZarazScrollDepthRuleSettings({required this.positions});
 
 factory ZarazScrollDepthRuleSettings.fromJson(Map<String, dynamic> json) { return ZarazScrollDepthRuleSettings(
   positions: json['positions'] as String,

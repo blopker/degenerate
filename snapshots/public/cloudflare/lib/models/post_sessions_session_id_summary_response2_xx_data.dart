@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSessionsSessionIdSummaryResponse2XxData {const PostSessionsSessionIdSummaryResponse2XxData({this.message, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSessionsSessionIdSummaryResponse2XxData {const PostSessionsSessionIdSummaryResponse2XxData({this.message, this.success, });
 
 factory PostSessionsSessionIdSummaryResponse2XxData.fromJson(Map<String, dynamic> json) { return PostSessionsSessionIdSummaryResponse2XxData(
   message: json['message'] as String?,

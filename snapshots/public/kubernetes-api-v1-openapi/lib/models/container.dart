@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_port.dart';import 'container_resize_policy.dart';import 'container_restart_rule.dart';import 'env_from_source.dart';import 'env_var.dart';import 'lifecycle.dart';import 'probe.dart';import 'resource_requirements.dart';import 'security_context.dart';import 'volume_device.dart';import 'volume_mount.dart';/// A single application container that you want to run within a pod.
-final class Container {const Container({this.args, this.command, this.env, this.envFrom, this.image, this.imagePullPolicy, this.lifecycle, this.livenessProbe, this.name = '', this.ports, this.readinessProbe, this.resizePolicy, this.resources, this.restartPolicy, this.restartPolicyRules, this.securityContext, this.startupProbe, this.stdin, this.stdinOnce, this.terminationMessagePath, this.terminationMessagePolicy, this.tty, this.volumeDevices, this.volumeMounts, this.workingDir, });
+@immutable final class Container {const Container({this.args, this.command, this.env, this.envFrom, this.image, this.imagePullPolicy, this.lifecycle, this.livenessProbe, this.name = '', this.ports, this.readinessProbe, this.resizePolicy, this.resources, this.restartPolicy, this.restartPolicyRules, this.securityContext, this.startupProbe, this.stdin, this.stdinOnce, this.terminationMessagePath, this.terminationMessagePolicy, this.tty, this.volumeDevices, this.volumeMounts, this.workingDir, });
 
 factory Container.fromJson(Map<String, dynamic> json) { return Container(
   args: (json['args'] as List<dynamic>?)?.map((e) => e as String).toList(),

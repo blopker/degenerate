@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'speech_audio_done_event_usage.dart';/// The type of the event. Always `speech.audio.done`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'speech_audio_done_event_usage.dart';/// The type of the event. Always `speech.audio.done`.
 /// 
-final class SpeechAudioDoneEventType {const SpeechAudioDoneEventType._(this.value);
+@immutable final class SpeechAudioDoneEventType {const SpeechAudioDoneEventType._(this.value);
 
 factory SpeechAudioDoneEventType.fromJson(String json) { return switch (json) {
   'speech.audio.done' => speechAudioDone,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SpeechAudioDoneEventType($value)'; } 
  }
 /// Emitted when the speech synthesis is complete and all audio has been streamed.
-final class SpeechAudioDoneEvent {const SpeechAudioDoneEvent({required this.type, required this.usage, });
+@immutable final class SpeechAudioDoneEvent {const SpeechAudioDoneEvent({required this.type, required this.usage, });
 
 factory SpeechAudioDoneEvent.fromJson(Map<String, dynamic> json) { return SpeechAudioDoneEvent(
   type: SpeechAudioDoneEventType.fromJson(json['type'] as String),

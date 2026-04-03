@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_msg.dart';import 'pay_per_crawl_result_info.dart';import 'pay_per_crawl_stripe_connection.dart';final class PayPerCrawlGetStripeConfigResponse {const PayPerCrawlGetStripeConfigResponse({this.errors, this.messages, this.result, this.resultInfo, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_msg.dart';import 'pay_per_crawl_result_info.dart';import 'pay_per_crawl_stripe_connection.dart';@immutable final class PayPerCrawlGetStripeConfigResponse {const PayPerCrawlGetStripeConfigResponse({this.errors, this.messages, this.result, this.resultInfo, this.success, });
 
 factory PayPerCrawlGetStripeConfigResponse.fromJson(Map<String, dynamic> json) { return PayPerCrawlGetStripeConfigResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),

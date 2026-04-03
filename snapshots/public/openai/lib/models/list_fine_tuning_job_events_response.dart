@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_job_event.dart';final class ListFineTuningJobEventsResponseObject {const ListFineTuningJobEventsResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tuning_job_event.dart';@immutable final class ListFineTuningJobEventsResponseObject {const ListFineTuningJobEventsResponseObject._(this.value);
 
 factory ListFineTuningJobEventsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ListFineTuningJobEventsResponseObject($value)'; } 
  }
-final class ListFineTuningJobEventsResponse {const ListFineTuningJobEventsResponse({required this.data, required this.object, required this.hasMore, });
+@immutable final class ListFineTuningJobEventsResponse {const ListFineTuningJobEventsResponse({required this.data, required this.object, required this.hasMore, });
 
 factory ListFineTuningJobEventsResponse.fromJson(Map<String, dynamic> json) { return ListFineTuningJobEventsResponse(
   data: (json['data'] as List<dynamic>).map((e) => FineTuningJobEvent.fromJson(e as Map<String, dynamic>)).toList(),

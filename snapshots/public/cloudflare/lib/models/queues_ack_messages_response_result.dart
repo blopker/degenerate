@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class QueuesAckMessagesResponseResult {const QueuesAckMessagesResponseResult({this.ackCount, this.retryCount, this.warnings, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class QueuesAckMessagesResponseResult {const QueuesAckMessagesResponseResult({this.ackCount, this.retryCount, this.warnings, });
 
 factory QueuesAckMessagesResponseResult.fromJson(Map<String, dynamic> json) { return QueuesAckMessagesResponseResult(
   ackCount: json['ackCount'] != null ? (json['ackCount'] as num).toDouble() : null,

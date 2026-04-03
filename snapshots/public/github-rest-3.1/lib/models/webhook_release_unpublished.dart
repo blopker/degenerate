@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_release1.dart';final class WebhookReleaseUnpublishedAction {const WebhookReleaseUnpublishedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_release1.dart';@immutable final class WebhookReleaseUnpublishedAction {const WebhookReleaseUnpublishedAction._(this.value);
 
 factory WebhookReleaseUnpublishedAction.fromJson(String json) { return switch (json) {
   'unpublished' => unpublished,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookReleaseUnpublishedAction($value)'; } 
  }
-final class WebhookReleaseUnpublished {const WebhookReleaseUnpublished({required this.action, this.enterprise, this.installation, this.organization, required this.release, required this.repository, this.sender, });
+@immutable final class WebhookReleaseUnpublished {const WebhookReleaseUnpublished({required this.action, required this.release, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookReleaseUnpublished.fromJson(Map<String, dynamic> json) { return WebhookReleaseUnpublished(
   action: WebhookReleaseUnpublishedAction.fromJson(json['action'] as String),

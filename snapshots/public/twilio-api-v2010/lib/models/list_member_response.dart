@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_queue_member.dart';final class ListMemberResponse {const ListMemberResponse({this.queueMembers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_queue_member.dart';@immutable final class ListMemberResponse {const ListMemberResponse({this.queueMembers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListMemberResponse.fromJson(Map<String, dynamic> json) { return ListMemberResponse(
   queueMembers: (json['queue_members'] as List<dynamic>?)?.map((e) => AccountQueueMember.fromJson(e as Map<String, dynamic>)).toList(),

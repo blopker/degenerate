@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used when `setting_id` is `min_tls_version`. The minimum TLS version.
-final class TlsCertificatesAndHostnamesValueVariant2 {const TlsCertificatesAndHostnamesValueVariant2._(this.value);
+@immutable final class TlsCertificatesAndHostnamesValueVariant2 {const TlsCertificatesAndHostnamesValueVariant2._(this.value);
 
 factory TlsCertificatesAndHostnamesValueVariant2.fromJson(String json) { return switch (json) {
   '1.0' => $10,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesValueVariant2($value)'; } 
  }
 /// Used when `setting_id` is `http2`. Whether HTTP/2 is enabled.
-final class TlsCertificatesAndHostnamesValueVariant3 {const TlsCertificatesAndHostnamesValueVariant3._(this.value);
+@immutable final class TlsCertificatesAndHostnamesValueVariant3 {const TlsCertificatesAndHostnamesValueVariant3._(this.value);
 
 factory TlsCertificatesAndHostnamesValueVariant3.fromJson(String json) { return switch (json) {
   'on' => $on,

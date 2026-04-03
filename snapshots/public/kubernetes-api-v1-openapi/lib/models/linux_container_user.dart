@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// LinuxContainerUser represents user identity information in Linux containers
-final class LinuxContainerUser {const LinuxContainerUser({this.gid = 0, this.supplementalGroups, this.uid = 0, });
+@immutable final class LinuxContainerUser {const LinuxContainerUser({this.gid = 0, this.supplementalGroups, this.uid = 0, });
 
 factory LinuxContainerUser.fromJson(Map<String, dynamic> json) { return LinuxContainerUser(
   gid: (json['gid'] as num).toInt(),

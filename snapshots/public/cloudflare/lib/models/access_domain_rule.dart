@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_domain_rule_email_domain.dart';/// Match an entire email domain.
-final class AccessDomainRule {const AccessDomainRule({required this.emailDomain});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_domain_rule_email_domain.dart';/// Match an entire email domain.
+@immutable final class AccessDomainRule {const AccessDomainRule({required this.emailDomain});
 
 factory AccessDomainRule.fromJson(Map<String, dynamic> json) { return AccessDomainRule(
   emailDomain: AccessDomainRuleEmailDomain.fromJson(json['email_domain'] as Map<String, dynamic>),

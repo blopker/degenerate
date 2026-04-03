@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitChatMessage {const RealtimekitChatMessage({required this.chatDownloadUrl, required this.chatDownloadUrlExpiry, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitChatMessage {const RealtimekitChatMessage({required this.chatDownloadUrl, required this.chatDownloadUrlExpiry, });
 
 factory RealtimekitChatMessage.fromJson(Map<String, dynamic> json) { return RealtimekitChatMessage(
   chatDownloadUrl: json['chat_download_url'] as String,

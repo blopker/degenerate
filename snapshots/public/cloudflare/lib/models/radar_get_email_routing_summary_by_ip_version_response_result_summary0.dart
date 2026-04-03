@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingSummaryByIpVersionResponseResultSummary0 {const RadarGetEmailRoutingSummaryByIpVersionResponseResultSummary0({required this.iPv4, required this.iPv6, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByIpVersionResponseResultSummary0 {const RadarGetEmailRoutingSummaryByIpVersionResponseResultSummary0({required this.iPv4, required this.iPv6, });
 
 factory RadarGetEmailRoutingSummaryByIpVersionResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByIpVersionResponseResultSummary0(
   iPv4: json['IPv4'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model22.dart';final class Success {const Success({this.errors, this.messages, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model22.dart';@immutable final class Success {const Success({this.errors, this.messages, this.success, });
 
 factory Success.fromJson(Map<String, dynamic> json) { return Success(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => ErrorModel22.fromJson(e as Map<String, dynamic>)).toList(),

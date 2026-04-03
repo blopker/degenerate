@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';/// Organization Invitation
-final class OrganizationInvitation {const OrganizationInvitation({required this.id, required this.login, required this.email, required this.role, required this.createdAt, this.failedAt, this.failedReason, required this.inviter, required this.teamCount, required this.nodeId, required this.invitationTeamsUrl, this.invitationSource, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// Organization Invitation
+@immutable final class OrganizationInvitation {const OrganizationInvitation({required this.id, required this.login, required this.email, required this.role, required this.createdAt, required this.inviter, required this.teamCount, required this.nodeId, required this.invitationTeamsUrl, this.failedAt, this.failedReason, this.invitationSource, });
 
 factory OrganizationInvitation.fromJson(Map<String, dynamic> json) { return OrganizationInvitation(
   id: (json['id'] as num).toInt(),

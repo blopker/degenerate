@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_ruleset_links_html.dart';import 'repository_ruleset_links_self.dart';final class RepositoryRulesetLinks {const RepositoryRulesetLinks({this.self, this.html, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_ruleset_links_html.dart';import 'repository_ruleset_links_self.dart';@immutable final class RepositoryRulesetLinks {const RepositoryRulesetLinks({this.self, this.html, });
 
 factory RepositoryRulesetLinks.fromJson(Map<String, dynamic> json) { return RepositoryRulesetLinks(
   self: json['self'] != null ? RepositoryRulesetLinksSelf.fromJson(json['self'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).
-final class RadarGetHttpTopLocationsByBotClassBotClass {const RadarGetHttpTopLocationsByBotClassBotClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).
+@immutable final class RadarGetHttpTopLocationsByBotClassBotClass {const RadarGetHttpTopLocationsByBotClassBotClass._(this.value);
 
 factory RadarGetHttpTopLocationsByBotClassBotClass.fromJson(String json) { return switch (json) {
   'LIKELY_AUTOMATED' => likelyAutomated,

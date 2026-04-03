@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of device managed network.
-final class TeamsDevicesComponentsSchemasType {const TeamsDevicesComponentsSchemasType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device managed network.
+@immutable final class TeamsDevicesComponentsSchemasType {const TeamsDevicesComponentsSchemasType._(this.value);
 
 factory TeamsDevicesComponentsSchemasType.fromJson(String json) { return switch (json) {
   'tls' => tls,

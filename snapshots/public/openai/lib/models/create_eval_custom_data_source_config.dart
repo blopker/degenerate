@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of data source. Always `custom`.
-final class CreateEvalCustomDataSourceConfigType {const CreateEvalCustomDataSourceConfigType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of data source. Always `custom`.
+@immutable final class CreateEvalCustomDataSourceConfigType {const CreateEvalCustomDataSourceConfigType._(this.value);
 
 factory CreateEvalCustomDataSourceConfigType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -27,11 +27,11 @@ bool get isUnknown { return !values.contains(this); }
 /// - Used to define your testing criteria and
 /// - What data is required when creating a run
 /// 
-final class CreateEvalCustomDataSourceConfig {const CreateEvalCustomDataSourceConfig({this.type = CreateEvalCustomDataSourceConfigType.custom, required this.itemSchema, this.includeSampleSchema = false, });
+@immutable final class CreateEvalCustomDataSourceConfig {const CreateEvalCustomDataSourceConfig({required this.itemSchema, this.type = CreateEvalCustomDataSourceConfigType.custom, this.includeSampleSchema = false, });
 
 factory CreateEvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalCustomDataSourceConfig(
   type: CreateEvalCustomDataSourceConfigType.fromJson(json['type'] as String),
-  itemSchema: (json['item_schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  itemSchema: json['item_schema'] as Map<String, dynamic>,
   includeSampleSchema: json.containsKey('include_sample_schema') ? json['include_sample_schema'] as bool : false,
 ); }
 

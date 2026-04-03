@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_rule.dart';final class TokenValidationRulesEditResponse {const TokenValidationRulesEditResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_rule.dart';@immutable final class TokenValidationRulesEditResponse {const TokenValidationRulesEditResponse({required this.result});
 
 factory TokenValidationRulesEditResponse.fromJson(Map<String, dynamic> json) { return TokenValidationRulesEditResponse(
   result: ShieldRule.fromJson(json['result'] as Map<String, dynamic>),

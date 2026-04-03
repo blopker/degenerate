@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt52ResponseFormatType {const Prompt52ResponseFormatType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt52ResponseFormatType {const Prompt52ResponseFormatType._(this.value);
 
 factory Prompt52ResponseFormatType.fromJson(String json) { return switch (json) {
   'json_object' => jsonObject,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt52ResponseFormatType($value)'; } 
  }
-final class Prompt52ResponseFormat {const Prompt52ResponseFormat({this.jsonSchema, this.type, });
+@immutable final class Prompt52ResponseFormat {const Prompt52ResponseFormat({this.jsonSchema, this.type, });
 
 factory Prompt52ResponseFormat.fromJson(Map<String, dynamic> json) { return Prompt52ResponseFormat(
   jsonSchema: json['json_schema'],

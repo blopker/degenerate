@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.
-final class ZeroTrustGatewayAction {const ZeroTrustGatewayAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.
+@immutable final class ZeroTrustGatewayAction {const ZeroTrustGatewayAction._(this.value);
 
 factory ZeroTrustGatewayAction.fromJson(String json) { return switch (json) {
   'on' => $on,

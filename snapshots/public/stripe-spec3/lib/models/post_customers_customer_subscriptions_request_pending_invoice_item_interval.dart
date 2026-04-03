@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pending_invoice_item_interval_params.dart';final class PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2 {const PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pending_invoice_item_interval_params.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2 {const PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2._(this.value);
 
 factory PostCustomersCustomerSubscriptionsRequestPendingInvoiceItemIntervalVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

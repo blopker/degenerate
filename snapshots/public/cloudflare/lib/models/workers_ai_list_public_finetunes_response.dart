@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_list_public_finetunes_response_result.dart';final class WorkersAiListPublicFinetunesResponse {const WorkersAiListPublicFinetunesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_list_public_finetunes_response_result.dart';@immutable final class WorkersAiListPublicFinetunesResponse {const WorkersAiListPublicFinetunesResponse({required this.result, required this.success, });
 
 factory WorkersAiListPublicFinetunesResponse.fromJson(Map<String, dynamic> json) { return WorkersAiListPublicFinetunesResponse(
   result: (json['result'] as List<dynamic>).map((e) => WorkersAiListPublicFinetunesResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

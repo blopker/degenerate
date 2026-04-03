@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class InvoiceRenderingTemplateObject {const InvoiceRenderingTemplateObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class InvoiceRenderingTemplateObject {const InvoiceRenderingTemplateObject._(this.value);
 
 factory InvoiceRenderingTemplateObject.fromJson(String json) { return switch (json) {
   'invoice_rendering_template' => invoiceRenderingTemplate,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoiceRenderingTemplateObject($value)'; } 
  }
 /// The status of the template, one of `active` or `archived`.
-final class InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus._(this.value);
+@immutable final class InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus._(this.value);
 
 factory InvoiceRenderingTemplateStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Invoice Rendering Templates are used to configure how invoices are rendered on surfaces like the PDF. Invoice Rendering Templates
 /// can be created from within the Dashboard, and they can be used over the API when creating invoices.
-final class InvoiceRenderingTemplate {const InvoiceRenderingTemplate({required this.created, required this.id, required this.livemode, this.metadata, this.nickname, required this.object, required this.status, required this.version, });
+@immutable final class InvoiceRenderingTemplate {const InvoiceRenderingTemplate({required this.created, required this.id, required this.livemode, required this.object, required this.status, required this.version, this.metadata, this.nickname, });
 
 factory InvoiceRenderingTemplate.fromJson(Map<String, dynamic> json) { return InvoiceRenderingTemplate(
   created: (json['created'] as num).toInt(),

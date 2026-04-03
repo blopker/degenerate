@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_email_obfuscation_value.dart';/// Turn on or off **Email Obfuscation**.
-final class ZonesEmailObfuscationId {const ZonesEmailObfuscationId._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_email_obfuscation_value.dart';/// Turn on or off **Email Obfuscation**.
+@immutable final class ZonesEmailObfuscationId {const ZonesEmailObfuscationId._(this.value);
 
 factory ZonesEmailObfuscationId.fromJson(String json) { return switch (json) {
   'email_obfuscation' => emailObfuscation,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesEmailObfuscationId($value)'; } 
  }
-final class ZonesEmailObfuscation {const ZonesEmailObfuscation({this.id, this.value, });
+@immutable final class ZonesEmailObfuscation {const ZonesEmailObfuscation({this.id, this.value, });
 
 factory ZonesEmailObfuscation.fromJson(Map<String, dynamic> json) { return ZonesEmailObfuscation(
   id: json['id'] != null ? ZonesEmailObfuscationId.fromJson(json['id'] as String) : null,

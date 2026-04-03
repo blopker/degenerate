@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origin_post_quantum_timeseries_groups_response_result_meta_confidence_info.dart';import 'radar_get_origin_post_quantum_timeseries_groups_response_result_meta_date_range.dart';import 'radar_get_origin_post_quantum_timeseries_groups_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-final class RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaAggInterval {const RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaAggInterval._(this.value);
+@immutable final class RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaAggInterval {const RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaAggInterval._(this.value);
 
 factory RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaAggInterval($value)'; } 
  }
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaNormalization {const RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaNormalization {const RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaNormalization._(this.value);
 
 factory RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMeta {const RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMeta {const RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMeta(
   aggInterval: RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),

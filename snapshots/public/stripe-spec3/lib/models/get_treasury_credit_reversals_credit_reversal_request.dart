@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTreasuryCreditReversalsCreditReversalRequest {const GetTreasuryCreditReversalsCreditReversalRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryCreditReversalsCreditReversalRequest {const GetTreasuryCreditReversalsCreditReversalRequest();
 
-factory GetTreasuryCreditReversalsCreditReversalRequest.fromJson(Map<String, dynamic> json) { return GetTreasuryCreditReversalsCreditReversalRequest(
-
-); }
+factory GetTreasuryCreditReversalsCreditReversalRequest.fromJson(Map<String, dynamic> _) { return const GetTreasuryCreditReversalsCreditReversalRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetTreasuryCreditReversalsCreditReversalRequest copyWith() { return GetTreasuryCreditReversalsCreditReversalRequest(
+GetTreasuryCreditReversalsCreditReversalRequest copyWith() { return const GetTreasuryCreditReversalsCreditReversalRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetTreasuryCreditReversalsCreditReversalRequest; } 

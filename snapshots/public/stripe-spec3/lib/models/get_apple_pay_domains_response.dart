@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apple_pay_domain.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetApplePayDomainsResponseObject {const GetApplePayDomainsResponseObject._(this.value);
+@immutable final class GetApplePayDomainsResponseObject {const GetApplePayDomainsResponseObject._(this.value);
 
 factory GetApplePayDomainsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetApplePayDomainsResponseObject($value)'; } 
  }
 /// 
-final class GetApplePayDomainsResponse {const GetApplePayDomainsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetApplePayDomainsResponse {const GetApplePayDomainsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetApplePayDomainsResponse.fromJson(Map<String, dynamic> json) { return GetApplePayDomainsResponse(
   data: (json['data'] as List<dynamic>).map((e) => ApplePayDomain.fromJson(e as Map<String, dynamic>)).toList(),

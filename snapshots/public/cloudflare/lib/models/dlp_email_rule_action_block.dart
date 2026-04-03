@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpEmailRuleActionBlockAction {const DlpEmailRuleActionBlockAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpEmailRuleActionBlockAction {const DlpEmailRuleActionBlockAction._(this.value);
 
 factory DlpEmailRuleActionBlockAction.fromJson(String json) { return switch (json) {
   'Block' => block,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpEmailRuleActionBlockAction($value)'; } 
  }
-final class DlpEmailRuleActionBlock {const DlpEmailRuleActionBlock({required this.action, this.message, });
+@immutable final class DlpEmailRuleActionBlock {const DlpEmailRuleActionBlock({required this.action, this.message, });
 
 factory DlpEmailRuleActionBlock.fromJson(Map<String, dynamic> json) { return DlpEmailRuleActionBlock(
   action: DlpEmailRuleActionBlockAction.fromJson(json['action'] as String),

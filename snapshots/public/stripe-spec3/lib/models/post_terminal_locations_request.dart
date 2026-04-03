@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_locations_request_address.dart';import 'post_terminal_locations_request_address_kana.dart';import 'post_terminal_locations_request_address_kanji.dart';import 'post_terminal_locations_request_metadata.dart';final class PostTerminalLocationsRequest {const PostTerminalLocationsRequest({this.address, this.addressKana, this.addressKanji, this.configurationOverrides, this.displayName, this.displayNameKana, this.displayNameKanji, this.expand, this.metadata, this.phone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_locations_request_address.dart';import 'post_terminal_locations_request_address_kana.dart';import 'post_terminal_locations_request_address_kanji.dart';import 'post_terminal_locations_request_metadata.dart';@immutable final class PostTerminalLocationsRequest {const PostTerminalLocationsRequest({this.address, this.addressKana, this.addressKanji, this.configurationOverrides, this.displayName, this.displayNameKana, this.displayNameKanji, this.expand, this.metadata, this.phone, });
 
 factory PostTerminalLocationsRequest.fromJson(Map<String, dynamic> json) { return PostTerminalLocationsRequest(
   address: json['address'] != null ? PostTerminalLocationsRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,

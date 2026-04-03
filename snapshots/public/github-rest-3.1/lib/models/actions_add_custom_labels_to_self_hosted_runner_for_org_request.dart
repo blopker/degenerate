@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest {const ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest({required this.labels});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest {const ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest({required this.labels});
 
 factory ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest(
   labels: (json['labels'] as List<dynamic>).map((e) => e as String).toList(),

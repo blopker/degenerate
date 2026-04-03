@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_records_report_payment_request_payment_method_details_billing_details.dart';import 'post_payment_records_report_payment_request_payment_method_details_custom.dart';final class PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsType {const PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_report_payment_request_payment_method_details_billing_details.dart';import 'post_payment_records_report_payment_request_payment_method_details_custom.dart';@immutable final class PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsType {const PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsType._(this.value);
 
 factory PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsType($value)'; } 
  }
 /// Information about the Payment Method debited for this payment.
-final class PostPaymentRecordsReportPaymentRequestPaymentMethodDetails {const PostPaymentRecordsReportPaymentRequestPaymentMethodDetails({this.billingDetails, this.custom, this.paymentMethod, this.type, });
+@immutable final class PostPaymentRecordsReportPaymentRequestPaymentMethodDetails {const PostPaymentRecordsReportPaymentRequestPaymentMethodDetails({this.billingDetails, this.custom, this.paymentMethod, this.type, });
 
 factory PostPaymentRecordsReportPaymentRequestPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequestPaymentMethodDetails(
   billingDetails: json['billing_details'] != null ? PostPaymentRecordsReportPaymentRequestPaymentMethodDetailsBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,

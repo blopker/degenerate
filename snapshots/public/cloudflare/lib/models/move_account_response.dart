@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MoveAccountResponse {const MoveAccountResponse({required this.accountId, required this.destinationOrganizationId, required this.sourceOrganizationId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MoveAccountResponse {const MoveAccountResponse({required this.accountId, required this.destinationOrganizationId, required this.sourceOrganizationId, });
 
 factory MoveAccountResponse.fromJson(Map<String, dynamic> json) { return MoveAccountResponse(
   accountId: json['account_id'] as String,

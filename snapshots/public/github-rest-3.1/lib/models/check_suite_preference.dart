@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'check_suite_preference_preferences.dart';import 'minimal_repository.dart';/// Check suite configuration preferences for a repository.
-final class CheckSuitePreference {const CheckSuitePreference({required this.preferences, required this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_suite_preference_preferences.dart';import 'minimal_repository.dart';/// Check suite configuration preferences for a repository.
+@immutable final class CheckSuitePreference {const CheckSuitePreference({required this.preferences, required this.repository, });
 
 factory CheckSuitePreference.fromJson(Map<String, dynamic> json) { return CheckSuitePreference(
   preferences: CheckSuitePreferencePreferences.fromJson(json['preferences'] as Map<String, dynamic>),

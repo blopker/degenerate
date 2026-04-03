@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The syntax of the grammar definition. One of `lark` or `regex`.
-final class GrammarFormatGrammarSyntax {const GrammarFormatGrammarSyntax._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The syntax of the grammar definition. One of `lark` or `regex`.
+@immutable final class GrammarFormatGrammarSyntax {const GrammarFormatGrammarSyntax._(this.value);
 
 factory GrammarFormatGrammarSyntax.fromJson(String json) { return switch (json) {
   'lark' => lark,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GrammarFormatGrammarSyntax($value)'; } 
  }
 /// Your chosen grammar.
-final class GrammarFormatGrammar {const GrammarFormatGrammar({required this.definition, required this.syntax, });
+@immutable final class GrammarFormatGrammar {const GrammarFormatGrammar({required this.definition, required this.syntax, });
 
 factory GrammarFormatGrammar.fromJson(Map<String, dynamic> json) { return GrammarFormatGrammar(
   definition: json['definition'] as String,

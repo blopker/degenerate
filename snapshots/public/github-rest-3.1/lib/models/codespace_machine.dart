@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.
-final class CodespaceMachinePrebuildAvailability {const CodespaceMachinePrebuildAvailability._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.
+@immutable final class CodespaceMachinePrebuildAvailability {const CodespaceMachinePrebuildAvailability._(this.value);
 
 factory CodespaceMachinePrebuildAvailability.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodespaceMachinePrebuildAvailability($value)'; } 
  }
 /// A description of the machine powering a codespace.
-final class CodespaceMachine {const CodespaceMachine({required this.name, required this.displayName, required this.operatingSystem, required this.storageInBytes, required this.memoryInBytes, required this.cpus, required this.prebuildAvailability, });
+@immutable final class CodespaceMachine {const CodespaceMachine({required this.name, required this.displayName, required this.operatingSystem, required this.storageInBytes, required this.memoryInBytes, required this.cpus, required this.prebuildAvailability, });
 
 factory CodespaceMachine.fromJson(Map<String, dynamic> json) { return CodespaceMachine(
   name: json['name'] as String,

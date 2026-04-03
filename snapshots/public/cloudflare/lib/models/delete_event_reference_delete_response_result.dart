@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteEventReferenceDeleteResponseResult {const DeleteEventReferenceDeleteResponseResult({required this.success});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteEventReferenceDeleteResponseResult {const DeleteEventReferenceDeleteResponseResult({required this.success});
 
 factory DeleteEventReferenceDeleteResponseResult.fromJson(Map<String, dynamic> json) { return DeleteEventReferenceDeleteResponseResult(
   success: json['success'] as bool,

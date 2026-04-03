@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'voice_consent_resource.dart';final class VoiceConsentListResourceObject {const VoiceConsentListResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'voice_consent_resource.dart';@immutable final class VoiceConsentListResourceObject {const VoiceConsentListResourceObject._(this.value);
 
 factory VoiceConsentListResourceObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VoiceConsentListResourceObject($value)'; } 
  }
-final class VoiceConsentListResource {const VoiceConsentListResource({required this.object, required this.data, this.firstId, this.lastId, required this.hasMore, });
+@immutable final class VoiceConsentListResource {const VoiceConsentListResource({required this.object, required this.data, required this.hasMore, this.firstId, this.lastId, });
 
 factory VoiceConsentListResource.fromJson(Map<String, dynamic> json) { return VoiceConsentListResource(
   object: VoiceConsentListResourceObject.fromJson(json['object'] as String),

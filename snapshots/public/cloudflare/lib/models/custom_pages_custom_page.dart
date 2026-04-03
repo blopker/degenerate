@@ -6,7 +6,7 @@ factory CustomPagesTimestamp.fromJson(String json) => CustomPagesTimestamp(DateT
 String toJson() => value.toIso8601String();
 
 }
-final class CustomPagesCustomPage {const CustomPagesCustomPage({this.createdOn, this.description, this.id, this.modifiedOn, this.previewTarget, this.requiredTokens, this.state, this.url, });
+@immutable final class CustomPagesCustomPage {const CustomPagesCustomPage({this.createdOn, this.description, this.id, this.modifiedOn, this.previewTarget, this.requiredTokens, this.state, this.url, });
 
 factory CustomPagesCustomPage.fromJson(Map<String, dynamic> json) { return CustomPagesCustomPage(
   createdOn: json['created_on'] != null ? CustomPagesTimestamp.fromJson(json['created_on'] as String) : null,

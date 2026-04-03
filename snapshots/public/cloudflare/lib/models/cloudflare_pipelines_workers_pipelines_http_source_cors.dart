@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CloudflarePipelinesWorkersPipelinesHttpSourceCors {const CloudflarePipelinesWorkersPipelinesHttpSourceCors({this.origins});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesWorkersPipelinesHttpSourceCors {const CloudflarePipelinesWorkersPipelinesHttpSourceCors({this.origins});
 
 factory CloudflarePipelinesWorkersPipelinesHttpSourceCors.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesHttpSourceCors(
   origins: (json['origins'] as List<dynamic>?)?.map((e) => e as String).toList(),

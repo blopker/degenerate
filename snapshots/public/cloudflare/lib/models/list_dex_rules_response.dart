@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_list_rules_response.dart';final class ListDexRulesResponse {const ListDexRulesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_list_rules_response.dart';@immutable final class ListDexRulesResponse {const ListDexRulesResponse({this.result});
 
 factory ListDexRulesResponse.fromJson(Map<String, dynamic> json) { return ListDexRulesResponse(
   result: json['result'] != null ? DigitalExperienceMonitoringListRulesResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetOriginsTimeseriesResponseResultMetaDateRange {const RadarGetOriginsTimeseriesResponseResultMetaDateRange({required this.endTime, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetOriginsTimeseriesResponseResultMetaDateRange {const RadarGetOriginsTimeseriesResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
 factory RadarGetOriginsTimeseriesResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetOriginsTimeseriesResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),

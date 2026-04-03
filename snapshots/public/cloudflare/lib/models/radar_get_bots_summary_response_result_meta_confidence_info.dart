@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bots_summary_response_result_meta_confidence_info_annotations.dart';final class RadarGetBotsSummaryResponseResultMetaConfidenceInfo {const RadarGetBotsSummaryResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bots_summary_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetBotsSummaryResponseResultMetaConfidenceInfo {const RadarGetBotsSummaryResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetBotsSummaryResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetBotsSummaryResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetBotsSummaryResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

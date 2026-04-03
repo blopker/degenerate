@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Key Type
-final class ShieldCredentialsJwtKeyEcCommonKty {const ShieldCredentialsJwtKeyEcCommonKty._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Key Type
+@immutable final class ShieldCredentialsJwtKeyEcCommonKty {const ShieldCredentialsJwtKeyEcCommonKty._(this.value);
 
 factory ShieldCredentialsJwtKeyEcCommonKty.fromJson(String json) { return switch (json) {
   'EC' => ec,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShieldCredentialsJwtKeyEcCommonKty($value)'; } 
  }
-final class ShieldCredentialsJwtKeyEcCommon {const ShieldCredentialsJwtKeyEcCommon({required this.kty, required this.x, required this.y, });
+@immutable final class ShieldCredentialsJwtKeyEcCommon {const ShieldCredentialsJwtKeyEcCommon({required this.kty, required this.x, required this.y, });
 
 factory ShieldCredentialsJwtKeyEcCommon.fromJson(Map<String, dynamic> json) { return ShieldCredentialsJwtKeyEcCommon(
   kty: ShieldCredentialsJwtKeyEcCommonKty.fromJson(json['kty'] as String),

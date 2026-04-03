@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_alerts_request_usage_threshold_filters.dart';final class PostBillingAlertsRequestUsageThresholdRecurrence {const PostBillingAlertsRequestUsageThresholdRecurrence._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_alerts_request_usage_threshold_filters.dart';@immutable final class PostBillingAlertsRequestUsageThresholdRecurrence {const PostBillingAlertsRequestUsageThresholdRecurrence._(this.value);
 
 factory PostBillingAlertsRequestUsageThresholdRecurrence.fromJson(String json) { return switch (json) {
   'one_time' => oneTime,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostBillingAlertsRequestUsageThresholdRecurrence($value)'; } 
  }
 /// The configuration of the usage threshold.
-final class PostBillingAlertsRequestUsageThreshold {const PostBillingAlertsRequestUsageThreshold({this.filters, required this.gte, required this.meter, required this.recurrence, });
+@immutable final class PostBillingAlertsRequestUsageThreshold {const PostBillingAlertsRequestUsageThreshold({required this.gte, required this.meter, required this.recurrence, this.filters, });
 
 factory PostBillingAlertsRequestUsageThreshold.fromJson(Map<String, dynamic> json) { return PostBillingAlertsRequestUsageThreshold(
   filters: (json['filters'] as List<dynamic>?)?.map((e) => PostBillingAlertsRequestUsageThresholdFilters.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateAddressRequest {const UpdateAddressRequest({this.friendlyName, this.customerName, this.street, this.city, this.region, this.postalCode, this.emergencyEnabled, this.autoCorrectAddress, this.streetSecondary, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateAddressRequest {const UpdateAddressRequest({this.friendlyName, this.customerName, this.street, this.city, this.region, this.postalCode, this.emergencyEnabled, this.autoCorrectAddress, this.streetSecondary, });
 
 factory UpdateAddressRequest.fromJson(Map<String, dynamic> json) { return UpdateAddressRequest(
   friendlyName: json['FriendlyName'] as String?,

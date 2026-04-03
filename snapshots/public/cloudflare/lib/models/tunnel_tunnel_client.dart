@@ -22,7 +22,7 @@ String toJson() => value.toIso8601String();
 
 }
 /// A client (typically cloudflared) that maintains connections to a Cloudflare data center.
-final class TunnelTunnelClient {const TunnelTunnelClient({this.arch, this.configVersion, this.conns, this.features, this.id, this.runAt, this.version, });
+@immutable final class TunnelTunnelClient {const TunnelTunnelClient({this.arch, this.configVersion, this.conns, this.features, this.id, this.runAt, this.version, });
 
 factory TunnelTunnelClient.fromJson(Map<String, dynamic> json) { return TunnelTunnelClient(
   arch: json['arch'] != null ? TunnelArch.fromJson(json['arch'] as String) : null,

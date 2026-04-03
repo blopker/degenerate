@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DosInfraPrefix {const DosInfraPrefix({required this.comment, required this.createdOn, required this.enabled, required this.id, required this.modifiedOn, required this.prefix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosInfraPrefix {const DosInfraPrefix({required this.comment, required this.createdOn, required this.enabled, required this.id, required this.modifiedOn, required this.prefix, });
 
 factory DosInfraPrefix.fromJson(Map<String, dynamic> json) { return DosInfraPrefix(
   comment: json['comment'] as String,

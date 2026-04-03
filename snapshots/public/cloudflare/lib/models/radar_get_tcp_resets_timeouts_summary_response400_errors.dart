@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetTcpResetsTimeoutsSummaryResponse400Errors {const RadarGetTcpResetsTimeoutsSummaryResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetTcpResetsTimeoutsSummaryResponse400Errors {const RadarGetTcpResetsTimeoutsSummaryResponse400Errors({required this.message});
 
 factory RadarGetTcpResetsTimeoutsSummaryResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetTcpResetsTimeoutsSummaryResponse400Errors(
   message: json['message'] as String,

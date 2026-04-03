@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PagesHttpsCertificateState {const PagesHttpsCertificateState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesHttpsCertificateState {const PagesHttpsCertificateState._(this.value);
 
 factory PagesHttpsCertificateState.fromJson(String json) { return switch (json) {
   'new' => $new,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesHttpsCertificateState($value)'; } 
  }
-final class PagesHttpsCertificate {const PagesHttpsCertificate({required this.state, required this.description, required this.domains, this.expiresAt, });
+@immutable final class PagesHttpsCertificate {const PagesHttpsCertificate({required this.state, required this.description, required this.domains, this.expiresAt, });
 
 factory PagesHttpsCertificate.fromJson(Map<String, dynamic> json) { return PagesHttpsCertificate(
   state: PagesHttpsCertificateState.fromJson(json['state'] as String),

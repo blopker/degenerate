@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pull_request_review_comment.dart';/// Timeline Line Commented Event
-final class TimelineLineCommentedEvent {const TimelineLineCommentedEvent({this.event, this.nodeId, this.comments, });
+@immutable final class TimelineLineCommentedEvent {const TimelineLineCommentedEvent({this.event, this.nodeId, this.comments, });
 
 factory TimelineLineCommentedEvent.fromJson(Map<String, dynamic> json) { return TimelineLineCommentedEvent(
   event: json['event'] as String?,

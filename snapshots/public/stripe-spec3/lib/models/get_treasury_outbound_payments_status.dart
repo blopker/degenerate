@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTreasuryOutboundPaymentsStatus {const GetTreasuryOutboundPaymentsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryOutboundPaymentsStatus {const GetTreasuryOutboundPaymentsStatus._(this.value);
 
 factory GetTreasuryOutboundPaymentsStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,

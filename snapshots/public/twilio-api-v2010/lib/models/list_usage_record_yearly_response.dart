@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_usage_usage_record_usage_record_yearly.dart';final class ListUsageRecordYearlyResponse {const ListUsageRecordYearlyResponse({this.usageRecords, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_usage_usage_record_usage_record_yearly.dart';@immutable final class ListUsageRecordYearlyResponse {const ListUsageRecordYearlyResponse({this.usageRecords, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListUsageRecordYearlyResponse.fromJson(Map<String, dynamic> json) { return ListUsageRecordYearlyResponse(
   usageRecords: (json['usage_records'] as List<dynamic>?)?.map((e) => AccountUsageUsageRecordUsageRecordYearly.fromJson(e as Map<String, dynamic>)).toList(),

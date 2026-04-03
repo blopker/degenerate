@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_branch.dart';import 'builds_build_seed_repo_input_file.dart';import 'builds_scm_provider_type.dart';final class BuildsBuildSeedRepoInput {const BuildsBuildSeedRepoInput({required this.branch, this.files, required this.owner, required this.path, required this.provider, required this.repository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_branch.dart';import 'builds_build_seed_repo_input_file.dart';import 'builds_scm_provider_type.dart';@immutable final class BuildsBuildSeedRepoInput {const BuildsBuildSeedRepoInput({required this.branch, required this.owner, required this.path, required this.provider, required this.repository, this.files, });
 
 factory BuildsBuildSeedRepoInput.fromJson(Map<String, dynamic> json) { return BuildsBuildSeedRepoInput(
   branch: BuildsBranch.fromJson(json['branch'] as String),

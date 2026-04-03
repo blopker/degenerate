@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'delete_servers_response_result.dart';final class DeleteServersResponse {const DeleteServersResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_servers_response_result.dart';@immutable final class DeleteServersResponse {const DeleteServersResponse({required this.result, required this.success, });
 
 factory DeleteServersResponse.fromJson(Map<String, dynamic> json) { return DeleteServersResponse(
   result: DeleteServersResponseResult.fromJson(json['result'] as Map<String, dynamic>),

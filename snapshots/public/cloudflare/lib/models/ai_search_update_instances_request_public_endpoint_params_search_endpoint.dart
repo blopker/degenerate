@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchUpdateInstancesRequestPublicEndpointParamsSearchEndpoint {const AiSearchUpdateInstancesRequestPublicEndpointParamsSearchEndpoint({this.disabled = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchUpdateInstancesRequestPublicEndpointParamsSearchEndpoint {const AiSearchUpdateInstancesRequestPublicEndpointParamsSearchEndpoint({this.disabled = false});
 
 factory AiSearchUpdateInstancesRequestPublicEndpointParamsSearchEndpoint.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesRequestPublicEndpointParamsSearchEndpoint(
   disabled: json.containsKey('disabled') ? json['disabled'] as bool : false,

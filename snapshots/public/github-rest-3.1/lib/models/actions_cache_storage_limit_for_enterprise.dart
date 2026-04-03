@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// GitHub Actions cache storage policy for an enterprise.
-final class ActionsCacheStorageLimitForEnterprise {const ActionsCacheStorageLimitForEnterprise({this.maxCacheSizeGb});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// GitHub Actions cache storage policy for an enterprise.
+@immutable final class ActionsCacheStorageLimitForEnterprise {const ActionsCacheStorageLimitForEnterprise({this.maxCacheSizeGb});
 
 factory ActionsCacheStorageLimitForEnterprise.fromJson(Map<String, dynamic> json) { return ActionsCacheStorageLimitForEnterprise(
   maxCacheSizeGb: json['max_cache_size_gb'] != null ? (json['max_cache_size_gb'] as num).toInt() : null,

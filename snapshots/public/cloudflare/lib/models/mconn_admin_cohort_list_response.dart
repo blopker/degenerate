@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_cohort.dart';final class MconnAdminCohortListResponse {const MconnAdminCohortListResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_admin_cohort.dart';@immutable final class MconnAdminCohortListResponse {const MconnAdminCohortListResponse({this.result});
 
 factory MconnAdminCohortListResponse.fromJson(Map<String, dynamic> json) { return MconnAdminCohortListResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => MconnAdminCohort.fromJson(e as Map<String, dynamic>)).toList(),

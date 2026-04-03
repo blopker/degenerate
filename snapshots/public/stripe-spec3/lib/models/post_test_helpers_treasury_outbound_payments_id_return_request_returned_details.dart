@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode {const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode {const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._(this.value);
 
 factory PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode.fromJson(String json) { return switch (json) {
   'account_closed' => accountClosed,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode($value)'; } 
  }
 /// Optional hash to set the return code.
-final class PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails {const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails({this.code});
+@immutable final class PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails {const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails({this.code});
 
 factory PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails(
   code: json['code'] != null ? PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode.fromJson(json['code'] as String) : null,

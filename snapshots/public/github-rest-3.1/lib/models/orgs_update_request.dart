@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Default permission level members have for organization repositories.
-final class OrgsUpdateRequestDefaultRepositoryPermission {const OrgsUpdateRequestDefaultRepositoryPermission._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Default permission level members have for organization repositories.
+@immutable final class OrgsUpdateRequestDefaultRepositoryPermission {const OrgsUpdateRequestDefaultRepositoryPermission._(this.value);
 
 factory OrgsUpdateRequestDefaultRepositoryPermission.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud.
 /// **Note:** This parameter is closing down and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
-final class OrgsUpdateRequestMembersAllowedRepositoryCreationType {const OrgsUpdateRequestMembersAllowedRepositoryCreationType._(this.value);
+@immutable final class OrgsUpdateRequestMembersAllowedRepositoryCreationType {const OrgsUpdateRequestMembersAllowedRepositoryCreationType._(this.value);
 
 factory OrgsUpdateRequestMembersAllowedRepositoryCreationType.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsUpdateRequestMembersAllowedRepositoryCreationType($value)'; } 
  }
-final class OrgsUpdateRequest {const OrgsUpdateRequest({this.billingEmail, this.company, this.email, this.twitterUsername, this.location, this.name, this.description, this.hasOrganizationProjects, this.hasRepositoryProjects, this.defaultRepositoryPermission = OrgsUpdateRequestDefaultRepositoryPermission.read, this.membersCanCreateRepositories = true, this.membersCanCreateInternalRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreatePublicRepositories, this.membersAllowedRepositoryCreationType, this.membersCanCreatePages = true, this.membersCanCreatePublicPages = true, this.membersCanCreatePrivatePages = true, this.membersCanForkPrivateRepositories = false, this.webCommitSignoffRequired = false, this.blog, this.advancedSecurityEnabledForNewRepositories, this.dependabotAlertsEnabledForNewRepositories, this.dependabotSecurityUpdatesEnabledForNewRepositories, this.dependencyGraphEnabledForNewRepositories, this.secretScanningEnabledForNewRepositories, this.secretScanningPushProtectionEnabledForNewRepositories, this.secretScanningPushProtectionCustomLinkEnabled, this.secretScanningPushProtectionCustomLink, this.deployKeysEnabledForRepositories, });
+@immutable final class OrgsUpdateRequest {const OrgsUpdateRequest({this.billingEmail, this.company, this.email, this.twitterUsername, this.location, this.name, this.description, this.hasOrganizationProjects, this.hasRepositoryProjects, this.defaultRepositoryPermission = OrgsUpdateRequestDefaultRepositoryPermission.read, this.membersCanCreateRepositories = true, this.membersCanCreateInternalRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreatePublicRepositories, this.membersAllowedRepositoryCreationType, this.membersCanCreatePages = true, this.membersCanCreatePublicPages = true, this.membersCanCreatePrivatePages = true, this.membersCanForkPrivateRepositories = false, this.webCommitSignoffRequired = false, this.blog, this.advancedSecurityEnabledForNewRepositories, this.dependabotAlertsEnabledForNewRepositories, this.dependabotSecurityUpdatesEnabledForNewRepositories, this.dependencyGraphEnabledForNewRepositories, this.secretScanningEnabledForNewRepositories, this.secretScanningPushProtectionEnabledForNewRepositories, this.secretScanningPushProtectionCustomLinkEnabled, this.secretScanningPushProtectionCustomLink, this.deployKeysEnabledForRepositories, });
 
 factory OrgsUpdateRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdateRequest(
   billingEmail: json['billing_email'] as String?,

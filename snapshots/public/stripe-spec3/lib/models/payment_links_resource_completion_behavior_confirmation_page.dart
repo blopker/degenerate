@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentLinksResourceCompletionBehaviorConfirmationPage {const PaymentLinksResourceCompletionBehaviorConfirmationPage({this.customMessage});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentLinksResourceCompletionBehaviorConfirmationPage {const PaymentLinksResourceCompletionBehaviorConfirmationPage({this.customMessage});
 
 factory PaymentLinksResourceCompletionBehaviorConfirmationPage.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCompletionBehaviorConfirmationPage(
   customMessage: json['custom_message'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GitCommitTree {const GitCommitTree({required this.sha, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitCommitTree {const GitCommitTree({required this.sha, required this.url, });
 
 factory GitCommitTree.fromJson(Map<String, dynamic> json) { return GitCommitTree(
   sha: json['sha'] as String,

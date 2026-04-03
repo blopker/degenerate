@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'classroom.dart';import 'simple_classroom_repository.dart';/// Whether it's a group assignment or individual assignment.
-final class ClassroomAssignmentType {const ClassroomAssignmentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'classroom.dart';import 'simple_classroom_repository.dart';/// Whether it's a group assignment or individual assignment.
+@immutable final class ClassroomAssignmentType {const ClassroomAssignmentType._(this.value);
 
 factory ClassroomAssignmentType.fromJson(String json) { return switch (json) {
   'individual' => individual,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ClassroomAssignmentType($value)'; } 
  }
 /// A GitHub Classroom assignment
-final class ClassroomAssignment {const ClassroomAssignment({required this.id, required this.publicRepo, required this.title, required this.type, required this.inviteLink, required this.invitationsEnabled, required this.slug, required this.studentsAreRepoAdmins, required this.feedbackPullRequestsEnabled, required this.maxTeams, required this.maxMembers, required this.editor, required this.accepted, required this.submitted, required this.passing, required this.language, required this.deadline, required this.starterCodeRepository, required this.classroom, });
+@immutable final class ClassroomAssignment {const ClassroomAssignment({required this.id, required this.publicRepo, required this.title, required this.type, required this.inviteLink, required this.invitationsEnabled, required this.slug, required this.studentsAreRepoAdmins, required this.feedbackPullRequestsEnabled, required this.maxTeams, required this.maxMembers, required this.editor, required this.accepted, required this.submitted, required this.passing, required this.language, required this.deadline, required this.starterCodeRepository, required this.classroom, });
 
 factory ClassroomAssignment.fromJson(Map<String, dynamic> json) { return ClassroomAssignment(
   id: (json['id'] as num).toInt(),

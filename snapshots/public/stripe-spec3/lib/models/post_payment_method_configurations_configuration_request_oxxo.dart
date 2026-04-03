@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_oxxo_display_preference.dart';/// OXXO is a Mexican chain of convenience stores with thousands of locations across Latin America and represents nearly 20% of online transactions in Mexico. OXXO allows customers to pay bills and online purchases in-store with cash. Check this [page](https://docs.stripe.com/payments/oxxo) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestOxxo {const PostPaymentMethodConfigurationsConfigurationRequestOxxo({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_oxxo_display_preference.dart';/// OXXO is a Mexican chain of convenience stores with thousands of locations across Latin America and represents nearly 20% of online transactions in Mexico. OXXO allows customers to pay bills and online purchases in-store with cash. Check this [page](https://docs.stripe.com/payments/oxxo) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestOxxo {const PostPaymentMethodConfigurationsConfigurationRequestOxxo({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestOxxo.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestOxxo(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestOxxoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

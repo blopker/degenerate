@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Initialized process
-final class MconnEventInitK {const MconnEventInitK._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Initialized process
+@immutable final class MconnEventInitK {const MconnEventInitK._(this.value);
 
 factory MconnEventInitK.fromJson(String json) { return switch (json) {
   'Init' => init,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MconnEventInitK($value)'; } 
  }
-final class MconnEventInit {const MconnEventInit({required this.k});
+@immutable final class MconnEventInit {const MconnEventInit({required this.k});
 
 factory MconnEventInit.fromJson(Map<String, dynamic> json) { return MconnEventInit(
   k: MconnEventInitK.fromJson(json['k'] as String),

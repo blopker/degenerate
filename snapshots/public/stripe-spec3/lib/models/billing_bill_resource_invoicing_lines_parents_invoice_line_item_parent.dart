@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_invoice_item_parent.dart';import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_subscription_item_parent.dart';/// The type of parent that generated this line item
-final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_invoice_item_parent.dart';import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_subscription_item_parent.dart';/// The type of parent that generated this line item
+@immutable final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType._(this.value);
 
 factory BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType.fromJson(String json) { return switch (json) {
   'invoice_item_details' => invoiceItemDetails,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType($value)'; } 
  }
 /// 
-final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent({this.invoiceItemDetails, this.subscriptionItemDetails, required this.type, });
+@immutable final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent({required this.type, this.invoiceItemDetails, this.subscriptionItemDetails, });
 
 factory BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent(
   invoiceItemDetails: json['invoice_item_details'] != null ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent.fromJson(json['invoice_item_details'] as Map<String, dynamic>) : null,

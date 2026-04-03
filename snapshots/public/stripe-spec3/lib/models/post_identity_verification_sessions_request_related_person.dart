@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Tokens referencing a Person resource and it's associated account.
-final class PostIdentityVerificationSessionsRequestRelatedPerson {const PostIdentityVerificationSessionsRequestRelatedPerson({required this.account, required this.person, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Tokens referencing a Person resource and it's associated account.
+@immutable final class PostIdentityVerificationSessionsRequestRelatedPerson {const PostIdentityVerificationSessionsRequestRelatedPerson({required this.account, required this.person, });
 
 factory PostIdentityVerificationSessionsRequestRelatedPerson.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsRequestRelatedPerson(
   account: json['account'] as String,

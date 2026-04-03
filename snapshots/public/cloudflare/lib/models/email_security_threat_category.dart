@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityThreatCategory {const EmailSecurityThreatCategory({this.description, required this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityThreatCategory {const EmailSecurityThreatCategory({required this.id, this.description, this.name, });
 
 factory EmailSecurityThreatCategory.fromJson(Map<String, dynamic> json) { return EmailSecurityThreatCategory(
   description: json['description'] as String?,

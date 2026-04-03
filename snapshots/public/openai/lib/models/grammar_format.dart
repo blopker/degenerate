@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'grammar_format_grammar.dart';/// Grammar format. Always `grammar`.
-final class GrammarFormatType {const GrammarFormatType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'grammar_format_grammar.dart';/// Grammar format. Always `grammar`.
+@immutable final class GrammarFormatType {const GrammarFormatType._(this.value);
 
 factory GrammarFormatType.fromJson(String json) { return switch (json) {
   'grammar' => grammar,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GrammarFormatType($value)'; } 
  }
 /// A grammar defined by the user.
-final class GrammarFormat {const GrammarFormat({required this.type, required this.grammar, });
+@immutable final class GrammarFormat {const GrammarFormat({required this.type, required this.grammar, });
 
 factory GrammarFormat.fromJson(Map<String, dynamic> json) { return GrammarFormat(
   type: GrammarFormatType.fromJson(json['type'] as String),

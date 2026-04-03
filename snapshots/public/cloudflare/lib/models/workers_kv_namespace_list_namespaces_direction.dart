@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Direction to order namespaces.
-final class WorkersKvNamespaceListNamespacesDirection {const WorkersKvNamespaceListNamespacesDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order namespaces.
+@immutable final class WorkersKvNamespaceListNamespacesDirection {const WorkersKvNamespaceListNamespacesDirection._(this.value);
 
 factory WorkersKvNamespaceListNamespacesDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

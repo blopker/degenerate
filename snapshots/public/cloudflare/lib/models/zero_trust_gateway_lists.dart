@@ -7,7 +7,7 @@ factory ZeroTrustGatewayCount.fromJson(num json) => ZeroTrustGatewayCount(json.t
 num toJson() => value;
 
 }
-final class ZeroTrustGatewayLists {const ZeroTrustGatewayLists({this.count, this.createdAt, this.description, this.id, this.items, this.name, this.type, this.updatedAt, });
+@immutable final class ZeroTrustGatewayLists {const ZeroTrustGatewayLists({this.count, this.createdAt, this.description, this.id, this.items, this.name, this.type, this.updatedAt, });
 
 factory ZeroTrustGatewayLists.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayLists(
   count: json['count'] != null ? ZeroTrustGatewayCount.fromJson(json['count'] as num) : null,

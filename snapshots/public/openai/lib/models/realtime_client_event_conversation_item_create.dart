@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';/// The event type, must be `conversation.item.create`.
-final class RealtimeClientEventConversationItemCreateType {const RealtimeClientEventConversationItemCreateType._(this.value);
+@immutable final class RealtimeClientEventConversationItemCreateType {const RealtimeClientEventConversationItemCreateType._(this.value);
 
 factory RealtimeClientEventConversationItemCreateType.fromJson(String json) { return switch (json) {
   'conversation.item.create' => conversationItemCreate,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If successful, the server will respond with a `conversation.item.created`
 /// event, otherwise an `error` event will be sent.
 /// 
-final class RealtimeClientEventConversationItemCreate {const RealtimeClientEventConversationItemCreate({this.eventId, required this.type, this.previousItemId, required this.item, });
+@immutable final class RealtimeClientEventConversationItemCreate {const RealtimeClientEventConversationItemCreate({required this.type, required this.item, this.eventId, this.previousItemId, });
 
 factory RealtimeClientEventConversationItemCreate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventConversationItemCreate(
   eventId: json['event_id'] as String?,

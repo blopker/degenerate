@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tag_category_create_response409_errors.dart';final class PostTagCategoryCreateResponse409 {const PostTagCategoryCreateResponse409({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tag_category_create_response409_errors.dart';@immutable final class PostTagCategoryCreateResponse409 {const PostTagCategoryCreateResponse409({required this.errors, required this.result, required this.success, });
 
 factory PostTagCategoryCreateResponse409.fromJson(Map<String, dynamic> json) { return PostTagCategoryCreateResponse409(
   errors: (json['errors'] as List<dynamic>).map((e) => PostTagCategoryCreateResponse409Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

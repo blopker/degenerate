@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class KeyDeleteResponseObject {const KeyDeleteResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class KeyDeleteResponseObject {const KeyDeleteResponseObject._(this.value);
 
 factory KeyDeleteResponseObject.fromJson(String json) { return switch (json) {
   'organization.project.api_key.deleted' => organizationProjectApiKeyDeleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'KeyDeleteResponseObject($value)'; } 
  }
-final class KeyDeleteResponse {const KeyDeleteResponse({required this.object, required this.id, required this.deleted, });
+@immutable final class KeyDeleteResponse {const KeyDeleteResponse({required this.object, required this.id, required this.deleted, });
 
 factory KeyDeleteResponse.fromJson(Map<String, dynamic> json) { return KeyDeleteResponse(
   object: KeyDeleteResponseObject.fromJson(json['object'] as String),

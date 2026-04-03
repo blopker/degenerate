@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsLink {const PaymentMethodDetailsLink({this.country});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsLink {const PaymentMethodDetailsLink({this.country});
 
 factory PaymentMethodDetailsLink.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsLink(
   country: json['country'] as String?,

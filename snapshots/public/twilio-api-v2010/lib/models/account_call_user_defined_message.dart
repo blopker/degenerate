@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountCallUserDefinedMessage {const AccountCallUserDefinedMessage({this.accountSid, this.callSid, this.sid, this.dateCreated, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountCallUserDefinedMessage {const AccountCallUserDefinedMessage({this.accountSid, this.callSid, this.sid, this.dateCreated, });
 
 factory AccountCallUserDefinedMessage.fromJson(Map<String, dynamic> json) { return AccountCallUserDefinedMessage(
   accountSid: json['account_sid'] as String?,

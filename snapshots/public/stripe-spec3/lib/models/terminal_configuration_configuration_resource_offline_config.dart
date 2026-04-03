@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TerminalConfigurationConfigurationResourceOfflineConfig {const TerminalConfigurationConfigurationResourceOfflineConfig({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TerminalConfigurationConfigurationResourceOfflineConfig {const TerminalConfigurationConfigurationResourceOfflineConfig({this.enabled});
 
 factory TerminalConfigurationConfigurationResourceOfflineConfig.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceOfflineConfig(
   enabled: json['enabled'] as bool?,

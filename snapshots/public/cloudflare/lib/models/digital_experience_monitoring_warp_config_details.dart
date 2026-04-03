@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_uuid.dart';final class DigitalExperienceMonitoringWarpConfigDetails {const DigitalExperienceMonitoringWarpConfigDetails({this.accountName, this.accountTag, this.configName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringWarpConfigDetails {const DigitalExperienceMonitoringWarpConfigDetails({this.accountName, this.accountTag, this.configName, });
 
 factory DigitalExperienceMonitoringWarpConfigDetails.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringWarpConfigDetails(
   accountName: json['account_name'] as String?,

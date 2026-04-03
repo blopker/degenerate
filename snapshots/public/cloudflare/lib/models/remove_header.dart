@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_rewrite_header_operation.dart';/// A header to remove.
-final class RemoveHeader {const RemoveHeader({required this.operation});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rewrite_header_operation.dart';/// A header to remove.
+@immutable final class RemoveHeader {const RemoveHeader({required this.operation});
 
 factory RemoveHeader.fromJson(Map<String, dynamic> json) { return RemoveHeader(
   operation: RulesetsRewriteHeaderOperation.fromJson(json['operation'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customer_sessions_request_components.dart';final class PostCustomerSessionsRequest {const PostCustomerSessionsRequest({required this.components, this.customer, this.customerAccount, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customer_sessions_request_components.dart';@immutable final class PostCustomerSessionsRequest {const PostCustomerSessionsRequest({required this.components, this.customer, this.customerAccount, this.expand, });
 
 factory PostCustomerSessionsRequest.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequest(
   components: PostCustomerSessionsRequestComponents.fromJson(json['components'] as Map<String, dynamic>),

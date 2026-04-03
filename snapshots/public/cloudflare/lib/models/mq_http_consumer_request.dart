@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mq_http_consumer_request_settings.dart';import 'mq_queue_name.dart';final class MqHttpConsumerRequest {const MqHttpConsumerRequest({this.deadLetterQueue, this.settings, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_http_consumer_request_settings.dart';import 'mq_queue_name.dart';@immutable final class MqHttpConsumerRequest {const MqHttpConsumerRequest({required this.type, this.deadLetterQueue, this.settings, });
 
 factory MqHttpConsumerRequest.fromJson(Map<String, dynamic> json) { return MqHttpConsumerRequest(
   deadLetterQueue: json['dead_letter_queue'] != null ? MqQueueName.fromJson(json['dead_letter_queue'] as String) : null,

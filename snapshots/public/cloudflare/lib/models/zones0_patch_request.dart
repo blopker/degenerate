@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones0_patch
 /// parameter is only available to Enterprise customers or if it has
 /// been explicitly enabled on a zone.
 /// 
-final class Zones0PatchRequestType {const Zones0PatchRequestType._(this.value);
+@immutable final class Zones0PatchRequestType {const Zones0PatchRequestType._(this.value);
 
 factory Zones0PatchRequestType.fromJson(String json) { return switch (json) {
   'full' => full,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Zones0PatchRequestType($value)'; } 
  }
-final class Zones0PatchRequest {const Zones0PatchRequest({this.paused, this.plan, this.type, this.vanityNameServers, });
+@immutable final class Zones0PatchRequest {const Zones0PatchRequest({this.paused, this.plan, this.type, this.vanityNameServers, });
 
 factory Zones0PatchRequest.fromJson(Map<String, dynamic> json) { return Zones0PatchRequest(
   paused: json['paused'] != null ? ZonesPaused.fromJson(json['paused'] as bool) : null,

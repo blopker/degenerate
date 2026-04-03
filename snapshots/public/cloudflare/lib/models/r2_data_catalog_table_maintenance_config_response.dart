@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_data_catalog_table_maintenance_config.dart';/// Contains table maintenance configuration.
-final class R2DataCatalogTableMaintenanceConfigResponse {const R2DataCatalogTableMaintenanceConfigResponse({required this.maintenanceConfig});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_table_maintenance_config.dart';/// Contains table maintenance configuration.
+@immutable final class R2DataCatalogTableMaintenanceConfigResponse {const R2DataCatalogTableMaintenanceConfigResponse({required this.maintenanceConfig});
 
 factory R2DataCatalogTableMaintenanceConfigResponse.fromJson(Map<String, dynamic> json) { return R2DataCatalogTableMaintenanceConfigResponse(
   maintenanceConfig: R2DataCatalogTableMaintenanceConfig.fromJson(json['maintenance_config'] as Map<String, dynamic>),

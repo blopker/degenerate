@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'scheduled_query_run.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetSigmaScheduledQueryRunsResponseObject {const GetSigmaScheduledQueryRunsResponseObject._(this.value);
+@immutable final class GetSigmaScheduledQueryRunsResponseObject {const GetSigmaScheduledQueryRunsResponseObject._(this.value);
 
 factory GetSigmaScheduledQueryRunsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetSigmaScheduledQueryRunsResponseObject($value)'; } 
  }
 /// 
-final class GetSigmaScheduledQueryRunsResponse {const GetSigmaScheduledQueryRunsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetSigmaScheduledQueryRunsResponse {const GetSigmaScheduledQueryRunsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetSigmaScheduledQueryRunsResponse.fromJson(Map<String, dynamic> json) { return GetSigmaScheduledQueryRunsResponse(
   data: (json['data'] as List<dynamic>).map((e) => ScheduledQueryRun.fromJson(e as Map<String, dynamic>)).toList(),

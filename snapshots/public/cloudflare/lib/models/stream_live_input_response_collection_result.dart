@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_live_input_object_without_url.dart';final class StreamLiveInputResponseCollectionResult {const StreamLiveInputResponseCollectionResult({this.liveInputs, this.range, this.total, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_live_input_object_without_url.dart';@immutable final class StreamLiveInputResponseCollectionResult {const StreamLiveInputResponseCollectionResult({this.liveInputs, this.range, this.total, });
 
 factory StreamLiveInputResponseCollectionResult.fromJson(Map<String, dynamic> json) { return StreamLiveInputResponseCollectionResult(
   liveInputs: (json['liveInputs'] as List<dynamic>?)?.map((e) => StreamLiveInputObjectWithoutUrl.fromJson(e as Map<String, dynamic>)).toList(),

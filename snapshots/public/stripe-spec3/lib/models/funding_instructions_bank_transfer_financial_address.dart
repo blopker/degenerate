@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'funding_instructions_bank_transfer_aba_record.dart';import 'funding_instructions_bank_transfer_iban_record.dart';import 'funding_instructions_bank_transfer_sort_code_record.dart';import 'funding_instructions_bank_transfer_spei_record.dart';import 'funding_instructions_bank_transfer_swift_record.dart';import 'funding_instructions_bank_transfer_zengin_record.dart';final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'funding_instructions_bank_transfer_aba_record.dart';import 'funding_instructions_bank_transfer_iban_record.dart';import 'funding_instructions_bank_transfer_sort_code_record.dart';import 'funding_instructions_bank_transfer_spei_record.dart';import 'funding_instructions_bank_transfer_swift_record.dart';import 'funding_instructions_bank_transfer_zengin_record.dart';@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks._(this.value);
 
 factory FundingInstructionsBankTransferFinancialAddressSupportedNetworks.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FundingInstructionsBankTransferFinancialAddressSupportedNetworks($value)'; } 
  }
 /// The type of financial address
-final class FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType._(this.value);
+@immutable final class FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType._(this.value);
 
 factory FundingInstructionsBankTransferFinancialAddressType.fromJson(String json) { return switch (json) {
   'aba' => aba,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FundingInstructionsBankTransferFinancialAddressType($value)'; } 
  }
 /// FinancialAddresses contain identifying information that resolves to a FinancialAccount.
-final class FundingInstructionsBankTransferFinancialAddress {const FundingInstructionsBankTransferFinancialAddress({this.aba, this.iban, this.sortCode, this.spei, this.supportedNetworks, this.swift, required this.type, this.zengin, });
+@immutable final class FundingInstructionsBankTransferFinancialAddress {const FundingInstructionsBankTransferFinancialAddress({required this.type, this.aba, this.iban, this.sortCode, this.spei, this.supportedNetworks, this.swift, this.zengin, });
 
 factory FundingInstructionsBankTransferFinancialAddress.fromJson(Map<String, dynamic> json) { return FundingInstructionsBankTransferFinancialAddress(
   aba: json['aba'] != null ? FundingInstructionsBankTransferAbaRecord.fromJson(json['aba'] as Map<String, dynamic>) : null,

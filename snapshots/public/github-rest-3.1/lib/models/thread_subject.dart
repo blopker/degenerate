@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ThreadSubject {const ThreadSubject({required this.title, required this.url, required this.latestCommentUrl, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ThreadSubject {const ThreadSubject({required this.title, required this.url, required this.latestCommentUrl, required this.type, });
 
 factory ThreadSubject.fromJson(Map<String, dynamic> json) { return ThreadSubject(
   title: json['title'] as String,

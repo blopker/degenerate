@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchInstanceListJobsResponse400Errors {const AiSearchInstanceListJobsResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceListJobsResponse400Errors {const AiSearchInstanceListJobsResponse400Errors({required this.message});
 
 factory AiSearchInstanceListJobsResponse400Errors.fromJson(Map<String, dynamic> json) { return AiSearchInstanceListJobsResponse400Errors(
   message: json['message'] as String,

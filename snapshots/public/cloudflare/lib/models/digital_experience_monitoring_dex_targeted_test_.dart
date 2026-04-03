@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_device_dex_test_schemas_data.dart';final class DigitalExperienceMonitoringDexTargetedTest {const DigitalExperienceMonitoringDexTargetedTest({required this.data, required this.enabled, required this.name, required this.testId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_device_dex_test_schemas_data.dart';@immutable final class DigitalExperienceMonitoringDexTargetedTest {const DigitalExperienceMonitoringDexTargetedTest({required this.data, required this.enabled, required this.name, required this.testId, });
 
 factory DigitalExperienceMonitoringDexTargetedTest.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDexTargetedTest(
   data: DigitalExperienceMonitoringDeviceDexTestSchemasData.fromJson(json['data'] as Map<String, dynamic>),

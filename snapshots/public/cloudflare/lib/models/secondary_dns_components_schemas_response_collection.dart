@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_acl.dart';final class SecondaryDnsComponentsSchemasResponseCollection {const SecondaryDnsComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_acl.dart';@immutable final class SecondaryDnsComponentsSchemasResponseCollection {const SecondaryDnsComponentsSchemasResponseCollection({this.result});
 
 factory SecondaryDnsComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return SecondaryDnsComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => SecondaryDnsAcl.fromJson(e as Map<String, dynamic>)).toList(),

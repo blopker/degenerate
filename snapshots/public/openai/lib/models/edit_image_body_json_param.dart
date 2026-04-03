@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'edit_image_body_json_param_model.dart';import 'image_ref_param.dart';import 'partial_images.dart';final class EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'edit_image_body_json_param_model.dart';import 'image_ref_param.dart';import 'partial_images.dart';@immutable final class EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality._(this.value);
 
 factory EditImageBodyJsonParamQuality.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EditImageBodyJsonParamQuality($value)'; } 
  }
-final class EditImageBodyJsonParamInputFidelity {const EditImageBodyJsonParamInputFidelity._(this.value);
+@immutable final class EditImageBodyJsonParamInputFidelity {const EditImageBodyJsonParamInputFidelity._(this.value);
 
 factory EditImageBodyJsonParamInputFidelity.fromJson(String json) { return switch (json) {
   'high' => high,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EditImageBodyJsonParamInputFidelity($value)'; } 
  }
-final class EditImageBodyJsonParamSize {const EditImageBodyJsonParamSize._(this.value);
+@immutable final class EditImageBodyJsonParamSize {const EditImageBodyJsonParamSize._(this.value);
 
 factory EditImageBodyJsonParamSize.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EditImageBodyJsonParamSize($value)'; } 
  }
-final class EditImageBodyJsonParamOutputFormat {const EditImageBodyJsonParamOutputFormat._(this.value);
+@immutable final class EditImageBodyJsonParamOutputFormat {const EditImageBodyJsonParamOutputFormat._(this.value);
 
 factory EditImageBodyJsonParamOutputFormat.fromJson(String json) { return switch (json) {
   'png' => png,
@@ -111,7 +111,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EditImageBodyJsonParamOutputFormat($value)'; } 
  }
-final class EditImageBodyJsonParamModeration {const EditImageBodyJsonParamModeration._(this.value);
+@immutable final class EditImageBodyJsonParamModeration {const EditImageBodyJsonParamModeration._(this.value);
 
 factory EditImageBodyJsonParamModeration.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -135,7 +135,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EditImageBodyJsonParamModeration($value)'; } 
  }
-final class EditImageBodyJsonParamBackground {const EditImageBodyJsonParamBackground._(this.value);
+@immutable final class EditImageBodyJsonParamBackground {const EditImageBodyJsonParamBackground._(this.value);
 
 factory EditImageBodyJsonParamBackground.fromJson(String json) { return switch (json) {
   'transparent' => transparent,
@@ -168,7 +168,7 @@ bool get isUnknown { return !values.contains(this); }
 /// You can reference images via external URLs, data URLs, or uploaded file IDs.
 /// JSON edits support GPT image models only; DALL-E edits require multipart (`dall-e-2` only).
 /// 
-final class EditImageBodyJsonParam {const EditImageBodyJsonParam({this.model, required this.images, this.mask, required this.prompt, this.n = 1, this.quality = EditImageBodyJsonParamQuality.auto, this.inputFidelity, this.size = EditImageBodyJsonParamSize.auto, this.user, this.outputFormat = EditImageBodyJsonParamOutputFormat.png, this.outputCompression, this.moderation = EditImageBodyJsonParamModeration.auto, this.background = EditImageBodyJsonParamBackground.auto, this.stream = false, this.partialImages, });
+@immutable final class EditImageBodyJsonParam {const EditImageBodyJsonParam({required this.images, required this.prompt, this.model, this.mask, this.n = 1, this.quality = EditImageBodyJsonParamQuality.auto, this.inputFidelity, this.size = EditImageBodyJsonParamSize.auto, this.user, this.outputFormat = EditImageBodyJsonParamOutputFormat.png, this.outputCompression, this.moderation = EditImageBodyJsonParamModeration.auto, this.background = EditImageBodyJsonParamBackground.auto, this.stream = false, this.partialImages, });
 
 factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return EditImageBodyJsonParam(
   model: json['model'] != null ? OneOf3.parse(json['model'], fromA: (v) => v as String, fromB: (v) => EditImageBodyJsonParamModelVariant2.fromJson(v as String), fromC: (v) => v,) : null,

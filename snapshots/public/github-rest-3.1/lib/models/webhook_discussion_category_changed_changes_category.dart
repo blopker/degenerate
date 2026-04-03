@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_discussion_category_changed_changes_category_from.dart';final class WebhookDiscussionCategoryChangedChangesCategory {const WebhookDiscussionCategoryChangedChangesCategory({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_discussion_category_changed_changes_category_from.dart';@immutable final class WebhookDiscussionCategoryChangedChangesCategory {const WebhookDiscussionCategoryChangedChangesCategory({required this.from});
 
 factory WebhookDiscussionCategoryChangedChangesCategory.fromJson(Map<String, dynamic> json) { return WebhookDiscussionCategoryChangedChangesCategory(
   from: WebhookDiscussionCategoryChangedChangesCategoryFrom.fromJson(json['from'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetItemFilter {const GetItemFilter({required this.status, required this.limit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetItemFilter {const GetItemFilter({required this.status, required this.limit, });
 
 factory GetItemFilter.fromJson(Map<String, dynamic> json) { return GetItemFilter(
   status: json['status'] as String,

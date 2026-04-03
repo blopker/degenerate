@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify additional output data to include in the model response. Currently supported values are:
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify additional output data to include in the model response. Currently supported values are:
 /// - `web_search_call.action.sources`: Include the sources of the web search tool call.
 /// - `code_interpreter_call.outputs`: Includes the outputs of python code execution in code interpreter tool call items.
 /// - `computer_call_output.output.image_url`: Include image urls from the computer call output.
@@ -8,7 +8,7 @@
 /// - `message.input_image.image_url`: Include image urls from the input message.
 /// - `message.output_text.logprobs`: Include logprobs with assistant messages.
 /// - `reasoning.encrypted_content`: Includes an encrypted version of reasoning tokens in reasoning item outputs. This enables reasoning items to be used in multi-turn conversations when using the Responses API statelessly (like when the `store` parameter is set to `false`, or when an organization is enrolled in the zero data retention program).
-final class IncludeEnum {const IncludeEnum._(this.value);
+@immutable final class IncludeEnum {const IncludeEnum._(this.value);
 
 factory IncludeEnum.fromJson(String json) { return switch (json) {
   'file_search_call.results' => fileSearchCallResults,

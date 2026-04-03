@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_ruleset_conditions_repository_id_target_repository_id.dart';/// Parameters for a repository ID condition
-final class RepositoryRulesetConditionsRepositoryIdTarget {const RepositoryRulesetConditionsRepositoryIdTarget({required this.repositoryId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_ruleset_conditions_repository_id_target_repository_id.dart';/// Parameters for a repository ID condition
+@immutable final class RepositoryRulesetConditionsRepositoryIdTarget {const RepositoryRulesetConditionsRepositoryIdTarget({required this.repositoryId});
 
 factory RepositoryRulesetConditionsRepositoryIdTarget.fromJson(Map<String, dynamic> json) { return RepositoryRulesetConditionsRepositoryIdTarget(
   repositoryId: RepositoryRulesetConditionsRepositoryIdTargetRepositoryId.fromJson(json['repository_id'] as Map<String, dynamic>),

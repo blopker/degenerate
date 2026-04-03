@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response2_log_entries_request_headers.dart';final class UrlscannerGetScanHarResponse2LogEntriesRequest {const UrlscannerGetScanHarResponse2LogEntriesRequest({required this.bodySize, required this.headers, required this.headersSize, required this.httpVersion, required this.method, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response2_log_entries_request_headers.dart';@immutable final class UrlscannerGetScanHarResponse2LogEntriesRequest {const UrlscannerGetScanHarResponse2LogEntriesRequest({required this.bodySize, required this.headers, required this.headersSize, required this.httpVersion, required this.method, required this.url, });
 
 factory UrlscannerGetScanHarResponse2LogEntriesRequest.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2LogEntriesRequest(
   bodySize: (json['bodySize'] as num).toDouble(),

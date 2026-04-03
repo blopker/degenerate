@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_custom_response.dart';/// The action to perform.
-final class FirewallMode {const FirewallMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_custom_response.dart';/// The action to perform.
+@immutable final class FirewallMode {const FirewallMode._(this.value);
 
 factory FirewallMode.fromJson(String json) { return switch (json) {
   'simulate' => simulate,
@@ -42,7 +42,7 @@ factory FirewallTimeout.fromJson(num json) => FirewallTimeout(json.toDouble());
 num toJson() => value;
 
 }
-final class FirewallActionVariant1 {const FirewallActionVariant1({this.mode, this.response, this.timeout, });
+@immutable final class FirewallActionVariant1 {const FirewallActionVariant1({this.mode, this.response, this.timeout, });
 
 factory FirewallActionVariant1.fromJson(Map<String, dynamic> json) { return FirewallActionVariant1(
   mode: json['mode'] != null ? FirewallMode.fromJson(json['mode'] as String) : null,

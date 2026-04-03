@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MconnControllerFlare {const MconnControllerFlare({required this.triggeredAt});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnControllerFlare {const MconnControllerFlare({required this.triggeredAt});
 
 factory MconnControllerFlare.fromJson(Map<String, dynamic> json) { return MconnControllerFlare(
   triggeredAt: json['triggered_at'] as String,

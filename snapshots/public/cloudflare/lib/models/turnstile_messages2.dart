@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TurnstileMessages2 {const TurnstileMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TurnstileMessages2 {const TurnstileMessages2({required this.code, required this.message, });
 
 factory TurnstileMessages2.fromJson(Map<String, dynamic> json) { return TurnstileMessages2(
   code: (json['code'] as num).toInt(),

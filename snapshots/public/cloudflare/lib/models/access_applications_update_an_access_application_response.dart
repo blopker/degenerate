@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_app_response.dart';final class AccessApplicationsUpdateAnAccessApplicationResponse {const AccessApplicationsUpdateAnAccessApplicationResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_response.dart';@immutable final class AccessApplicationsUpdateAnAccessApplicationResponse {const AccessApplicationsUpdateAnAccessApplicationResponse({this.result});
 
 factory AccessApplicationsUpdateAnAccessApplicationResponse.fromJson(Map<String, dynamic> json) { return AccessApplicationsUpdateAnAccessApplicationResponse(
   result: json['result'] != null ? AccessAppResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

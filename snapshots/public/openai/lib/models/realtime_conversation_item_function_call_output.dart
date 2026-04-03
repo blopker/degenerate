@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
-final class RealtimeConversationItemFunctionCallOutputObject {const RealtimeConversationItemFunctionCallOutputObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
+@immutable final class RealtimeConversationItemFunctionCallOutputObject {const RealtimeConversationItemFunctionCallOutputObject._(this.value);
 
 factory RealtimeConversationItemFunctionCallOutputObject.fromJson(String json) { return switch (json) {
   'realtime.item' => realtimeItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemFunctionCallOutputObject($value)'; } 
  }
 /// The type of the item. Always `function_call_output`.
-final class RealtimeConversationItemFunctionCallOutputType {const RealtimeConversationItemFunctionCallOutputType._(this.value);
+@immutable final class RealtimeConversationItemFunctionCallOutputType {const RealtimeConversationItemFunctionCallOutputType._(this.value);
 
 factory RealtimeConversationItemFunctionCallOutputType.fromJson(String json) { return switch (json) {
   'function_call_output' => functionCallOutput,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemFunctionCallOutputType($value)'; } 
  }
 /// The status of the item. Has no effect on the conversation.
-final class RealtimeConversationItemFunctionCallOutputStatus {const RealtimeConversationItemFunctionCallOutputStatus._(this.value);
+@immutable final class RealtimeConversationItemFunctionCallOutputStatus {const RealtimeConversationItemFunctionCallOutputStatus._(this.value);
 
 factory RealtimeConversationItemFunctionCallOutputStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemFunctionCallOutputStatus($value)'; } 
  }
 /// A function call output item in a Realtime conversation.
-final class RealtimeConversationItemFunctionCallOutput {const RealtimeConversationItemFunctionCallOutput({this.id, this.object, required this.type, this.status, required this.callId, required this.output, });
+@immutable final class RealtimeConversationItemFunctionCallOutput {const RealtimeConversationItemFunctionCallOutput({required this.type, required this.callId, required this.output, this.id, this.object, this.status, });
 
 factory RealtimeConversationItemFunctionCallOutput.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemFunctionCallOutput(
   id: json['id'] as String?,

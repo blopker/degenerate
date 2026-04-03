@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_lan.dart';final class MagicLansCollectionResponse {const MagicLansCollectionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_lan.dart';@immutable final class MagicLansCollectionResponse {const MagicLansCollectionResponse({this.result});
 
 factory MagicLansCollectionResponse.fromJson(Map<String, dynamic> json) { return MagicLansCollectionResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => MagicLan.fromJson(e as Map<String, dynamic>)).toList(),

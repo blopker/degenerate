@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StreamDeletedResponse {const StreamDeletedResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamDeletedResponse {const StreamDeletedResponse({this.result});
 
 factory StreamDeletedResponse.fromJson(Map<String, dynamic> json) { return StreamDeletedResponse(
   result: json['result'] as String?,

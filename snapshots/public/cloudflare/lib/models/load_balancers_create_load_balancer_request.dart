@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_adaptive_routing.dart';import 'load_balancing_components_schemas_description.dart';import 'load_balancing_components_schemas_name.dart';import 'load_balancing_fallback_pool.dart';import 'load_balancing_location_strategy.dart';import 'load_balancing_proxied.dart';import 'load_balancing_random_steering.dart';import 'load_balancing_rules2.dart';import 'load_balancing_session_affinity.dart';import 'load_balancing_session_affinity_attributes.dart';import 'load_balancing_session_affinity_ttl.dart';import 'load_balancing_steering_policy.dart';import 'load_balancing_ttl.dart';final class LoadBalancersCreateLoadBalancerRequest {const LoadBalancersCreateLoadBalancerRequest({this.adaptiveRouting, this.countryPools, required this.defaultPools, this.description, required this.fallbackPool, this.locationStrategy, required this.name, this.networks, this.popPools, this.proxied, this.randomSteering, this.regionPools, this.rules, this.sessionAffinity, this.sessionAffinityAttributes, this.sessionAffinityTtl, this.steeringPolicy, this.ttl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_adaptive_routing.dart';import 'load_balancing_components_schemas_description.dart';import 'load_balancing_components_schemas_name.dart';import 'load_balancing_fallback_pool.dart';import 'load_balancing_location_strategy.dart';import 'load_balancing_proxied.dart';import 'load_balancing_random_steering.dart';import 'load_balancing_rules2.dart';import 'load_balancing_session_affinity.dart';import 'load_balancing_session_affinity_attributes.dart';import 'load_balancing_session_affinity_ttl.dart';import 'load_balancing_steering_policy.dart';import 'load_balancing_ttl.dart';@immutable final class LoadBalancersCreateLoadBalancerRequest {const LoadBalancersCreateLoadBalancerRequest({required this.defaultPools, required this.fallbackPool, required this.name, this.adaptiveRouting, this.countryPools, this.description, this.locationStrategy, this.networks, this.popPools, this.proxied, this.randomSteering, this.regionPools, this.rules, this.sessionAffinity, this.sessionAffinityAttributes, this.sessionAffinityTtl, this.steeringPolicy, this.ttl, });
 
 factory LoadBalancersCreateLoadBalancerRequest.fromJson(Map<String, dynamic> json) { return LoadBalancersCreateLoadBalancerRequest(
   adaptiveRouting: json['adaptive_routing'] != null ? LoadBalancingAdaptiveRouting.fromJson(json['adaptive_routing'] as Map<String, dynamic>) : null,
@@ -64,7 +64,7 @@ final LoadBalancingSessionAffinity? sessionAffinity;
 
 final LoadBalancingSessionAffinityAttributes? sessionAffinityAttributes;
 
-/// Time, in seconds, until a client's session expires after being created. Once the expiry time has been reached, subsequent requests may get sent to a different origin server. The accepted ranges per `session_affinity` policy are: - `"cookie"` / `"ip_cookie"`: The current default of 23 hours will be used unless explicitly set. The accepted range of values is between [1800, 604800]. - `"header"`: The current default of 1800 seconds will be used unless explicitly set. The accepted range of values is between [30, 3600]. Note: With session affinity by header, sessions only expire after they haven't been used for the number of seconds specified.
+/// Time, in seconds, until a client's session expires after being created. Once the expiry time has been reached, subsequent requests may get sent to a different origin server. The accepted ranges per `session_affinity` policy are: - `"cookie"` / `"ip_cookie"`: The current default of 23 hours will be used unless explicitly set. The accepted range of values is between `[1800, 604800]`. - `"header"`: The current default of 1800 seconds will be used unless explicitly set. The accepted range of values is between `[30, 3600]`. Note: With session affinity by header, sessions only expire after they haven't been used for the number of seconds specified.
 final LoadBalancingSessionAffinityTtl? sessionAffinityTtl;
 
 /// Steering Policy for this load balancer.
@@ -83,17 +83,17 @@ final LoadBalancingTtl? ttl;
 
 Map<String, dynamic> toJson() { return {
   if (adaptiveRouting != null) 'adaptive_routing': adaptiveRouting?.toJson(),
-  if (countryPools != null) 'country_pools': countryPools?.map((k, v) => MapEntry(k, v)),
+  'country_pools': ?countryPools,
   'default_pools': defaultPools,
   if (description != null) 'description': description?.toJson(),
   'fallback_pool': fallbackPool.toJson(),
   if (locationStrategy != null) 'location_strategy': locationStrategy?.toJson(),
   'name': name.toJson(),
   'networks': ?networks,
-  if (popPools != null) 'pop_pools': popPools?.map((k, v) => MapEntry(k, v)),
+  'pop_pools': ?popPools,
   if (proxied != null) 'proxied': proxied?.toJson(),
   if (randomSteering != null) 'random_steering': randomSteering?.toJson(),
-  if (regionPools != null) 'region_pools': regionPools?.map((k, v) => MapEntry(k, v)),
+  'region_pools': ?regionPools,
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
   if (sessionAffinity != null) 'session_affinity': sessionAffinity?.toJson(),
   if (sessionAffinityAttributes != null) 'session_affinity_attributes': sessionAffinityAttributes?.toJson(),

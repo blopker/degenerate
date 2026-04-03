@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_email_setting_name.dart';final class EmailEmailSettingDnsRequestBody {const EmailEmailSettingDnsRequestBody({this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_email_setting_name.dart';@immutable final class EmailEmailSettingDnsRequestBody {const EmailEmailSettingDnsRequestBody({this.name});
 
 factory EmailEmailSettingDnsRequestBody.fromJson(Map<String, dynamic> json) { return EmailEmailSettingDnsRequestBody(
   name: json['name'] != null ? EmailEmailSettingName.fromJson(json['name'] as String) : null,

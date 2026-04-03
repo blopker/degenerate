@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSepaDebit {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSepaDebit({required this.iban});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSepaDebit {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSepaDebit({required this.iban});
 
 factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSepaDebit.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataSepaDebit(
   iban: json['iban'] as String,

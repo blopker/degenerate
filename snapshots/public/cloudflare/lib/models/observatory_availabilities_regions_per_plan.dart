@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_labeled_region.dart';/// Available regions.
-final class ObservatoryAvailabilitiesRegionsPerPlan {const ObservatoryAvailabilitiesRegionsPerPlan({this.business, this.enterprise, this.free, this.pro, });
+@immutable final class ObservatoryAvailabilitiesRegionsPerPlan {const ObservatoryAvailabilitiesRegionsPerPlan({this.business, this.enterprise, this.free, this.pro, });
 
 factory ObservatoryAvailabilitiesRegionsPerPlan.fromJson(Map<String, dynamic> json) { return ObservatoryAvailabilitiesRegionsPerPlan(
   business: (json['business'] as List<dynamic>?)?.map((e) => ObservatoryLabeledRegion.fromJson(e as Map<String, dynamic>)).toList(),

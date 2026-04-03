@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The conversation resource.
-final class RealtimeServerEventConversationCreatedConversation {const RealtimeServerEventConversationCreatedConversation({this.id, this.object, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The conversation resource.
+@immutable final class RealtimeServerEventConversationCreatedConversation {const RealtimeServerEventConversationCreatedConversation({this.id, this.object, });
 
 factory RealtimeServerEventConversationCreatedConversation.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationCreatedConversation(
   id: json['id'] as String?,

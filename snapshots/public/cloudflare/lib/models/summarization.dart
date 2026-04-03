@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Summarization {const Summarization({required this.inputText, this.maxLength = 1024, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Summarization {const Summarization({required this.inputText, this.maxLength = 1024, });
 
 factory Summarization.fromJson(Map<String, dynamic> json) { return Summarization(
   inputText: json['input_text'] as String,

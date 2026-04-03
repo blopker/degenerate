@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_firewall_dns_firewall_cluster_response.dart';final class DnsFirewallDnsFirewallResponseCollection {const DnsFirewallDnsFirewallResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_firewall_dns_firewall_cluster_response.dart';@immutable final class DnsFirewallDnsFirewallResponseCollection {const DnsFirewallDnsFirewallResponseCollection({this.result});
 
 factory DnsFirewallDnsFirewallResponseCollection.fromJson(Map<String, dynamic> json) { return DnsFirewallDnsFirewallResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => DnsFirewallDnsFirewallClusterResponse.fromJson(e as Map<String, dynamic>)).toList(),

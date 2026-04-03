@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentMethodOptionsParam110Client {const PaymentMethodOptionsParam110Client._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam110Client {const PaymentMethodOptionsParam110Client._(this.value);
 
 factory PaymentMethodOptionsParam110Client.fromJson(String json) { return switch (json) {
   'android' => android,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam110Client($value)'; } 
  }
-final class PaymentMethodOptionsParam110SetupFutureUsage {const PaymentMethodOptionsParam110SetupFutureUsage._(this.value);
+@immutable final class PaymentMethodOptionsParam110SetupFutureUsage {const PaymentMethodOptionsParam110SetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsParam110SetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam110SetupFutureUsage($value)'; } 
  }
-final class PaymentMethodOptionsParam110 {const PaymentMethodOptionsParam110({this.appId, this.client, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsParam110 {const PaymentMethodOptionsParam110({this.appId, this.client, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam110.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam110(
   appId: json['app_id'] as String?,

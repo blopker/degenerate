@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityMessage {const EmailSecurityMessage({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityMessage {const EmailSecurityMessage({required this.code, required this.message, });
 
 factory EmailSecurityMessage.fromJson(Map<String, dynamic> json) { return EmailSecurityMessage(
   code: (json['code'] as num).toInt(),

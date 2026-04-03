@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTreasuryFinancialAccountsStatus {const GetTreasuryFinancialAccountsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryFinancialAccountsStatus {const GetTreasuryFinancialAccountsStatus._(this.value);
 
 factory GetTreasuryFinancialAccountsStatus.fromJson(String json) { return switch (json) {
   'closed' => closed,

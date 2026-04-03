@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The local credit or debit card brand.
-final class PaymentMethodDetailsKrCardBrand {const PaymentMethodDetailsKrCardBrand._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The local credit or debit card brand.
+@immutable final class PaymentMethodDetailsKrCardBrand {const PaymentMethodDetailsKrCardBrand._(this.value);
 
 factory PaymentMethodDetailsKrCardBrand.fromJson(String json) { return switch (json) {
   'bc' => bc,
@@ -86,7 +86,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsKrCardBrand($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsKrCard {const PaymentMethodDetailsKrCard({this.brand, this.buyerId, this.last4, this.transactionId, });
+@immutable final class PaymentMethodDetailsKrCard {const PaymentMethodDetailsKrCard({this.brand, this.buyerId, this.last4, this.transactionId, });
 
 factory PaymentMethodDetailsKrCard.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsKrCard(
   brand: json['brand'] != null ? PaymentMethodDetailsKrCardBrand.fromJson(json['brand'] as String) : null,

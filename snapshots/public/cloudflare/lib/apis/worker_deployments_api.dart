@@ -35,7 +35,7 @@ return execute(
 /// Deployments configure how [Worker Versions](https://developers.cloudflare.com/api/operations/worker-versions-list-versions) are deployed to traffic. A deployment can consist of one or two versions of a Worker.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/deployments`
-Future<ApiResult<WorkersDeployment, Never>> workerDeploymentsCreateDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, bool? force, required WorkersDeployment body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersDeployment, Never>> workerDeploymentsCreateDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersDeployment body, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (force != null) {
   queryParameters['force'] = force.toString();

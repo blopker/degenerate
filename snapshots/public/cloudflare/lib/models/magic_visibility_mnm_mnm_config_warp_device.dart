@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Object representing a warp device with an ID and name.
-final class MagicVisibilityMnmMnmConfigWarpDevice {const MagicVisibilityMnmMnmConfigWarpDevice({required this.id, required this.name, required this.routerIp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Object representing a warp device with an ID and name.
+@immutable final class MagicVisibilityMnmMnmConfigWarpDevice {const MagicVisibilityMnmMnmConfigWarpDevice({required this.id, required this.name, required this.routerIp, });
 
 factory MagicVisibilityMnmMnmConfigWarpDevice.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmConfigWarpDevice(
   id: json['id'] as String,

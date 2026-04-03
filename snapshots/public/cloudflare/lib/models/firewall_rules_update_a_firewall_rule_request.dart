@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_action.dart';import 'firewall_components_schemas_identifier.dart';import 'firewall_filter.dart';final class FirewallRulesUpdateAFirewallRuleRequest {const FirewallRulesUpdateAFirewallRuleRequest({required this.action, required this.filter, required this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_action.dart';import 'firewall_components_schemas_identifier.dart';import 'firewall_filter.dart';@immutable final class FirewallRulesUpdateAFirewallRuleRequest {const FirewallRulesUpdateAFirewallRuleRequest({required this.action, required this.filter, required this.id, });
 
 factory FirewallRulesUpdateAFirewallRuleRequest.fromJson(Map<String, dynamic> json) { return FirewallRulesUpdateAFirewallRuleRequest(
   action: FirewallAction.fromJson(json['action'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Encodes the FinancialAccount's ability to be used with the Issuing product, including attaching cards to and drawing funds from the FinancialAccount.
-final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing({required this.requested});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Encodes the FinancialAccount's ability to be used with the Issuing product, including attaching cards to and drawing funds from the FinancialAccount.
+@immutable final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing({required this.requested});
 
 factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestCardIssuing(
   requested: json['requested'] as bool,

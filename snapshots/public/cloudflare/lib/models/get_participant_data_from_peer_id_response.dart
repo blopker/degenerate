@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'get_participant_data_from_peer_id_response_data.dart';final class GetParticipantDataFromPeerIdResponse {const GetParticipantDataFromPeerIdResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_participant_data_from_peer_id_response_data.dart';@immutable final class GetParticipantDataFromPeerIdResponse {const GetParticipantDataFromPeerIdResponse({this.data, this.success, });
 
 factory GetParticipantDataFromPeerIdResponse.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponse(
   data: json['data'] != null ? GetParticipantDataFromPeerIdResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

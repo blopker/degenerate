@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class KeyOwner {const KeyOwner({this.type, this.object, this.id, this.name, this.createdAt, this.role, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class KeyOwner {const KeyOwner({this.type, this.object, this.id, this.name, this.createdAt, this.role, });
 
 factory KeyOwner.fromJson(Map<String, dynamic> json) { return KeyOwner(
   type: json['type'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessFooterLinks2 {const AccessFooterLinks2({required this.name, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessFooterLinks2 {const AccessFooterLinks2({required this.name, required this.url, });
 
 factory AccessFooterLinks2.fromJson(Map<String, dynamic> json) { return AccessFooterLinks2(
   name: json['name'] as String,

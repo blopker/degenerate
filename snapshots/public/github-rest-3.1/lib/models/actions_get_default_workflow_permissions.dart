@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'actions_can_approve_pull_request_reviews.dart';import 'actions_default_workflow_permissions.dart';final class ActionsGetDefaultWorkflowPermissions {const ActionsGetDefaultWorkflowPermissions({required this.defaultWorkflowPermissions, required this.canApprovePullRequestReviews, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_can_approve_pull_request_reviews.dart';import 'actions_default_workflow_permissions.dart';@immutable final class ActionsGetDefaultWorkflowPermissions {const ActionsGetDefaultWorkflowPermissions({required this.defaultWorkflowPermissions, required this.canApprovePullRequestReviews, });
 
 factory ActionsGetDefaultWorkflowPermissions.fromJson(Map<String, dynamic> json) { return ActionsGetDefaultWorkflowPermissions(
   defaultWorkflowPermissions: ActionsDefaultWorkflowPermissions.fromJson(json['default_workflow_permissions'] as String),

@@ -1,5 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+
+@immutable
 final class ReferralChoices {
   const ReferralChoices._(this.value);
 
@@ -76,6 +79,7 @@ final class ReferralChoices {
   }
 }
 
+@immutable
 final class OnboardSchema {
   const OnboardSchema({
     this.referralSource = ReferralChoices.$default,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_catalog_sync_id.dart';final class McnDeletedCatalogSync {const McnDeletedCatalogSync({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_catalog_sync_id.dart';@immutable final class McnDeletedCatalogSync {const McnDeletedCatalogSync({required this.id});
 
 factory McnDeletedCatalogSync.fromJson(Map<String, dynamic> json) { return McnDeletedCatalogSync(
   id: McnCatalogSyncId.fromJson(json['id'] as String),

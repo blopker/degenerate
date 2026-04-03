@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentIntentPaymentMethodOptionsParam35SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam35SetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam35SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam35SetupFutureUsage._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam35SetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam35SetupFutureUsage($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam35 {const PaymentIntentPaymentMethodOptionsParam35({this.setupFutureUsage});
+@immutable final class PaymentIntentPaymentMethodOptionsParam35 {const PaymentIntentPaymentMethodOptionsParam35({this.setupFutureUsage});
 
 factory PaymentIntentPaymentMethodOptionsParam35.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam35(
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam35SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,

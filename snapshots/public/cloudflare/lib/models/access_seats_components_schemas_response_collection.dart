@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_seats.dart';final class AccessSeatsComponentsSchemasResponseCollection {const AccessSeatsComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_seats.dart';@immutable final class AccessSeatsComponentsSchemasResponseCollection {const AccessSeatsComponentsSchemasResponseCollection({this.result});
 
 factory AccessSeatsComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AccessSeatsComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessSeats.fromJson(e as Map<String, dynamic>)).toList(),

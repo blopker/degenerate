@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'import_project_choices.dart';final class ImportStatus {const ImportStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'import_project_choices.dart';@immutable final class ImportStatus {const ImportStatus._(this.value);
 
 factory ImportStatus.fromJson(String json) { return switch (json) {
   'auth' => auth,
@@ -67,7 +67,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ImportStatus($value)'; } 
  }
 /// A repository import from an external source.
-final class Import {const Import({required this.vcs, this.useLfs, required this.vcsUrl, this.svcRoot, this.tfvcProject, required this.status, this.statusText, this.failedStep, this.errorMessage, this.importPercent, this.commitCount, this.pushPercent, this.hasLargeFiles, this.largeFilesSize, this.largeFilesCount, this.projectChoices, this.message, this.authorsCount, required this.url, required this.htmlUrl, required this.authorsUrl, required this.repositoryUrl, this.svnRoot, });
+@immutable final class Import {const Import({required this.vcs, required this.vcsUrl, required this.status, required this.url, required this.htmlUrl, required this.authorsUrl, required this.repositoryUrl, this.useLfs, this.svcRoot, this.tfvcProject, this.statusText, this.failedStep, this.errorMessage, this.importPercent, this.commitCount, this.pushPercent, this.hasLargeFiles, this.largeFilesSize, this.largeFilesCount, this.projectChoices, this.message, this.authorsCount, this.svnRoot, });
 
 factory Import.fromJson(Map<String, dynamic> json) { return Import(
   vcs: json['vcs'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ImageTextToText2 {const ImageTextToText2({this.description});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageTextToText2 {const ImageTextToText2({this.description});
 
 factory ImageTextToText2.fromJson(Map<String, dynamic> json) { return ImageTextToText2(
   description: json['description'] as String?,

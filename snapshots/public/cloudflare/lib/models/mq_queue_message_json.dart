@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MqQueueMessageJsonContentType {const MqQueueMessageJsonContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqQueueMessageJsonContentType {const MqQueueMessageJsonContentType._(this.value);
 
 factory MqQueueMessageJsonContentType.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -21,10 +21,10 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MqQueueMessageJsonContentType($value)'; } 
  }
-final class MqQueueMessageJson {const MqQueueMessageJson({this.body, this.contentType, });
+@immutable final class MqQueueMessageJson {const MqQueueMessageJson({this.body, this.contentType, });
 
 factory MqQueueMessageJson.fromJson(Map<String, dynamic> json) { return MqQueueMessageJson(
-  body: (json['body'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  body: json['body'] as Map<String, dynamic>?,
   contentType: json['content_type'] != null ? MqQueueMessageJsonContentType.fromJson(json['content_type'] as String) : null,
 ); }
 

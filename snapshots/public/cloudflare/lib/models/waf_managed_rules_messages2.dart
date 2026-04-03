@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WafManagedRulesMessages2 {const WafManagedRulesMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WafManagedRulesMessages2 {const WafManagedRulesMessages2({required this.code, required this.message, });
 
 factory WafManagedRulesMessages2.fromJson(Map<String, dynamic> json) { return WafManagedRulesMessages2(
   code: (json['code'] as num).toInt(),

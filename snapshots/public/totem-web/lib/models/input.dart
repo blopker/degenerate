@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Input {const Input({this.limit = 100, this.offset = 0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Input {const Input({this.limit = 100, this.offset = 0, });
 
 factory Input.fromJson(Map<String, dynamic> json) { return Input(
   limit: json.containsKey('limit') ? (json['limit'] as num).toInt() : 100,

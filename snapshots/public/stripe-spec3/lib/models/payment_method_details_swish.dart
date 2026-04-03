@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsSwish {const PaymentMethodDetailsSwish({this.fingerprint, this.paymentReference, this.verifiedPhoneLast4, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsSwish {const PaymentMethodDetailsSwish({this.fingerprint, this.paymentReference, this.verifiedPhoneLast4, });
 
 factory PaymentMethodDetailsSwish.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsSwish(
   fingerprint: json['fingerprint'] as String?,

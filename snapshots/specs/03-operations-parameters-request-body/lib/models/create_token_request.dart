@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateTokenRequest {const CreateTokenRequest({required this.grantType, this.scope, this.timeout, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateTokenRequest {const CreateTokenRequest({required this.grantType, this.scope, this.timeout, });
 
 factory CreateTokenRequest.fromJson(Map<String, dynamic> json) { return CreateTokenRequest(
   grantType: json['grant_type'] as String,

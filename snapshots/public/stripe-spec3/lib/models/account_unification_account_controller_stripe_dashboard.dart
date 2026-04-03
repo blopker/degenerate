@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A value indicating the Stripe dashboard this account has access to independent of the Connect application.
-final class AccountUnificationAccountControllerStripeDashboardType {const AccountUnificationAccountControllerStripeDashboardType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A value indicating the Stripe dashboard this account has access to independent of the Connect application.
+@immutable final class AccountUnificationAccountControllerStripeDashboardType {const AccountUnificationAccountControllerStripeDashboardType._(this.value);
 
 factory AccountUnificationAccountControllerStripeDashboardType.fromJson(String json) { return switch (json) {
   'express' => express,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountUnificationAccountControllerStripeDashboardType($value)'; } 
  }
 /// 
-final class AccountUnificationAccountControllerStripeDashboard {const AccountUnificationAccountControllerStripeDashboard({required this.type});
+@immutable final class AccountUnificationAccountControllerStripeDashboard {const AccountUnificationAccountControllerStripeDashboard({required this.type});
 
 factory AccountUnificationAccountControllerStripeDashboard.fromJson(Map<String, dynamic> json) { return AccountUnificationAccountControllerStripeDashboard(
   type: AccountUnificationAccountControllerStripeDashboardType.fromJson(json['type'] as String),

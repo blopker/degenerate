@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_refund_request_metadata.dart';/// String indicating the reason for the refund. If set, possible values are `duplicate`, `fraudulent`, and `requested_by_customer`. If you believe the charge to be fraudulent, specifying `fraudulent` as the reason will add the associated card and email to your [block lists](https://docs.stripe.com/radar/lists), and will also help us improve our fraud detection algorithms.
-final class PostChargesChargeRefundRequestReason {const PostChargesChargeRefundRequestReason._(this.value);
+@immutable final class PostChargesChargeRefundRequestReason {const PostChargesChargeRefundRequestReason._(this.value);
 
 factory PostChargesChargeRefundRequestReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostChargesChargeRefundRequestReason($value)'; } 
  }
-final class PostChargesChargeRefundRequest {const PostChargesChargeRefundRequest({this.amount, this.expand, this.instructionsEmail, this.metadata, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
+@immutable final class PostChargesChargeRefundRequest {const PostChargesChargeRefundRequest({this.amount, this.expand, this.instructionsEmail, this.metadata, this.paymentIntent, this.reason, this.refundApplicationFee, this.reverseTransfer, });
 
 factory PostChargesChargeRefundRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeRefundRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

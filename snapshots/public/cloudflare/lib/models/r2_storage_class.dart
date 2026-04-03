@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Storage class for newly uploaded objects, unless specified otherwise.
-final class R2StorageClass {const R2StorageClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Storage class for newly uploaded objects, unless specified otherwise.
+@immutable final class R2StorageClass {const R2StorageClass._(this.value);
 
 factory R2StorageClass.fromJson(String json) { return switch (json) {
   'Standard' => standard,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code indicating that the Worker request contains invalid data.
-final class WorkersErrorWorkerInvalidCode {const WorkersErrorWorkerInvalidCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker request contains invalid data.
+@immutable final class WorkersErrorWorkerInvalidCode {const WorkersErrorWorkerInvalidCode._(this.value);
 
 factory WorkersErrorWorkerInvalidCode.fromJson(int json) { return switch (json) {
   10021 => $10021,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersErrorWorkerInvalidCode($value)'; } 
  }
-final class WorkersErrorWorkerInvalid {const WorkersErrorWorkerInvalid({required this.code, required this.message, });
+@immutable final class WorkersErrorWorkerInvalid {const WorkersErrorWorkerInvalid({required this.code, required this.message, });
 
 factory WorkersErrorWorkerInvalid.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerInvalid(
   code: WorkersErrorWorkerInvalidCode.fromJson((json['code'] as num).toInt()),

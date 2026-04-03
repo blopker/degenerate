@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelPhishingUrlSubmitExcludedUrls {const IntelPhishingUrlSubmitExcludedUrls({this.url});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelPhishingUrlSubmitExcludedUrls {const IntelPhishingUrlSubmitExcludedUrls({this.url});
 
 factory IntelPhishingUrlSubmitExcludedUrls.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlSubmitExcludedUrls(
   url: json['url'] as String?,

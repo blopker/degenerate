@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Targeted placement mode.
-final class WorkersPlacementInfoTargeted3Mode {const WorkersPlacementInfoTargeted3Mode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Targeted placement mode.
+@immutable final class WorkersPlacementInfoTargeted3Mode {const WorkersPlacementInfoTargeted3Mode._(this.value);
 
 factory WorkersPlacementInfoTargeted3Mode.fromJson(String json) { return switch (json) {
   'targeted' => targeted,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersPlacementInfoTargeted3Mode($value)'; } 
  }
-final class WorkersPlacementInfoTargeted3 {const WorkersPlacementInfoTargeted3({required this.host, required this.mode, });
+@immutable final class WorkersPlacementInfoTargeted3 {const WorkersPlacementInfoTargeted3({required this.host, required this.mode, });
 
 factory WorkersPlacementInfoTargeted3.fromJson(Map<String, dynamic> json) { return WorkersPlacementInfoTargeted3(
   host: json['host'] as String,

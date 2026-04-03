@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelPhishingUrlSubmitSubmittedUrls {const IntelPhishingUrlSubmitSubmittedUrls({this.url, this.urlId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelPhishingUrlSubmitSubmittedUrls {const IntelPhishingUrlSubmitSubmittedUrls({this.url, this.urlId, });
 
 factory IntelPhishingUrlSubmitSubmittedUrls.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlSubmitSubmittedUrls(
   url: json['url'] as String?,

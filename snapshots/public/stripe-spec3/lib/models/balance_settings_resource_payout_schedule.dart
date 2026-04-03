@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// How frequently funds will be paid out. One of `manual` (payouts only created via API call), `daily`, `weekly`, or `monthly`.
-final class BalanceSettingsResourcePayoutScheduleInterval {const BalanceSettingsResourcePayoutScheduleInterval._(this.value);
+@immutable final class BalanceSettingsResourcePayoutScheduleInterval {const BalanceSettingsResourcePayoutScheduleInterval._(this.value);
 
 factory BalanceSettingsResourcePayoutScheduleInterval.fromJson(String json) { return switch (json) {
   'daily' => daily,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BalanceSettingsResourcePayoutScheduleInterval($value)'; } 
  }
-final class BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays {const BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays._(this.value);
+@immutable final class BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays {const BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays._(this.value);
 
 factory BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays.fromJson(String json) { return switch (json) {
   'friday' => friday,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays($value)'; } 
  }
 /// 
-final class BalanceSettingsResourcePayoutSchedule {const BalanceSettingsResourcePayoutSchedule({this.interval, this.monthlyPayoutDays, this.weeklyPayoutDays, });
+@immutable final class BalanceSettingsResourcePayoutSchedule {const BalanceSettingsResourcePayoutSchedule({this.interval, this.monthlyPayoutDays, this.weeklyPayoutDays, });
 
 factory BalanceSettingsResourcePayoutSchedule.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayoutSchedule(
   interval: json['interval'] != null ? BalanceSettingsResourcePayoutScheduleInterval.fromJson(json['interval'] as String) : null,

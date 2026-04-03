@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_reporting_report_runs_request_parameters.dart';final class PostReportingReportRunsRequest {const PostReportingReportRunsRequest({this.expand, this.parameters, required this.reportType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_reporting_report_runs_request_parameters.dart';@immutable final class PostReportingReportRunsRequest {const PostReportingReportRunsRequest({required this.reportType, this.expand, this.parameters, });
 
 factory PostReportingReportRunsRequest.fromJson(Map<String, dynamic> json) { return PostReportingReportRunsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

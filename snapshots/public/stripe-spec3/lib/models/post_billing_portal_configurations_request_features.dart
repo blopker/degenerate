@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_billing_portal_configurations_request_features_customer_update.dart';import 'post_billing_portal_configurations_request_features_invoice_history.dart';import 'post_billing_portal_configurations_request_features_payment_method_update.dart';import 'post_billing_portal_configurations_request_features_subscription_cancel.dart';import 'post_billing_portal_configurations_request_features_subscription_update.dart';/// Information about the features available in the portal.
-final class PostBillingPortalConfigurationsRequestFeatures {const PostBillingPortalConfigurationsRequestFeatures({this.customerUpdate, this.invoiceHistory, this.paymentMethodUpdate, this.subscriptionCancel, this.subscriptionUpdate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_customer_update.dart';import 'post_billing_portal_configurations_request_features_invoice_history.dart';import 'post_billing_portal_configurations_request_features_payment_method_update.dart';import 'post_billing_portal_configurations_request_features_subscription_cancel.dart';import 'post_billing_portal_configurations_request_features_subscription_update.dart';/// Information about the features available in the portal.
+@immutable final class PostBillingPortalConfigurationsRequestFeatures {const PostBillingPortalConfigurationsRequestFeatures({this.customerUpdate, this.invoiceHistory, this.paymentMethodUpdate, this.subscriptionCancel, this.subscriptionUpdate, });
 
 factory PostBillingPortalConfigurationsRequestFeatures.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeatures(
   customerUpdate: json['customer_update'] != null ? PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate.fromJson(json['customer_update'] as Map<String, dynamic>) : null,

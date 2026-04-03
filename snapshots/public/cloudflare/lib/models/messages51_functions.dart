@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51Functions {const Messages51Functions({this.description, required this.name, this.parameters, this.strict, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51Functions {const Messages51Functions({required this.name, this.description, this.parameters, this.strict, });
 
 factory Messages51Functions.fromJson(Map<String, dynamic> json) { return Messages51Functions(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  parameters: json['parameters'] as Map<String, dynamic>?,
   strict: json['strict'] as bool?,
 ); }
 

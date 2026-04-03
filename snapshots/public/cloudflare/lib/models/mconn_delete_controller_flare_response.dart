@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_controller_flare.dart';final class MconnDeleteControllerFlareResponse {const MconnDeleteControllerFlareResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_controller_flare.dart';@immutable final class MconnDeleteControllerFlareResponse {const MconnDeleteControllerFlareResponse({this.result});
 
 factory MconnDeleteControllerFlareResponse.fromJson(Map<String, dynamic> json) { return MconnDeleteControllerFlareResponse(
   result: json['result'] != null ? MconnControllerFlare.fromJson(json['result'] as Map<String, dynamic>) : null,

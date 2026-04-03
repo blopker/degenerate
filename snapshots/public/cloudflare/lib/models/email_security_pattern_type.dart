@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityPatternType {const EmailSecurityPatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityPatternType {const EmailSecurityPatternType._(this.value);
 
 factory EmailSecurityPatternType.fromJson(String json) { return switch (json) {
   'EMAIL' => email,

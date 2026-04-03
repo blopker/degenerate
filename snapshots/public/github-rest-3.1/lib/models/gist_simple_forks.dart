@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'public_user.dart';final class GistSimpleForks {const GistSimpleForks({this.id, this.url, this.user, this.createdAt, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'public_user.dart';@immutable final class GistSimpleForks {const GistSimpleForks({this.id, this.url, this.user, this.createdAt, this.updatedAt, });
 
 factory GistSimpleForks.fromJson(Map<String, dynamic> json) { return GistSimpleForks(
   id: json['id'] as String?,

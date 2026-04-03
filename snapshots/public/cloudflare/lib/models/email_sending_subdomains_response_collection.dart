@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_sending_subdomain_properties.dart';final class EmailSendingSubdomainsResponseCollection {const EmailSendingSubdomainsResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_sending_subdomain_properties.dart';@immutable final class EmailSendingSubdomainsResponseCollection {const EmailSendingSubdomainsResponseCollection({this.result});
 
 factory EmailSendingSubdomainsResponseCollection.fromJson(Map<String, dynamic> json) { return EmailSendingSubdomainsResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => EmailSendingSubdomainProperties.fromJson(e as Map<String, dynamic>)).toList(),

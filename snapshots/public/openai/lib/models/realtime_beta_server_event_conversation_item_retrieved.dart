@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';/// The event type, must be `conversation.item.retrieved`.
-final class RealtimeBetaServerEventConversationItemRetrievedType {const RealtimeBetaServerEventConversationItemRetrievedType._(this.value);
+@immutable final class RealtimeBetaServerEventConversationItemRetrievedType {const RealtimeBetaServerEventConversationItemRetrievedType._(this.value);
 
 factory RealtimeBetaServerEventConversationItemRetrievedType.fromJson(String json) { return switch (json) {
   'conversation.item.retrieved' => conversationItemRetrieved,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Returned when a conversation item is retrieved with `conversation.item.retrieve`.
 /// 
-final class RealtimeBetaServerEventConversationItemRetrieved {const RealtimeBetaServerEventConversationItemRetrieved({required this.eventId, required this.type, required this.item, });
+@immutable final class RealtimeBetaServerEventConversationItemRetrieved {const RealtimeBetaServerEventConversationItemRetrieved({required this.eventId, required this.type, required this.item, });
 
 factory RealtimeBetaServerEventConversationItemRetrieved.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventConversationItemRetrieved(
   eventId: json['event_id'] as String,

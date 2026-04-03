@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_fine_tuning_job_cancelled_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_fine_tuning_job_cancelled_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookFineTuningJobCancelledObject {const WebhookFineTuningJobCancelledObject._(this.value);
+@immutable final class WebhookFineTuningJobCancelledObject {const WebhookFineTuningJobCancelledObject._(this.value);
 
 factory WebhookFineTuningJobCancelledObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `fine_tuning.job.cancelled`.
 /// 
-final class WebhookFineTuningJobCancelledType {const WebhookFineTuningJobCancelledType._(this.value);
+@immutable final class WebhookFineTuningJobCancelledType {const WebhookFineTuningJobCancelledType._(this.value);
 
 factory WebhookFineTuningJobCancelledType.fromJson(String json) { return switch (json) {
   'fine_tuning.job.cancelled' => fineTuningJobCancelled,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when a fine-tuning job has been cancelled.
 /// 
-final class WebhookFineTuningJobCancelled {const WebhookFineTuningJobCancelled({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookFineTuningJobCancelled {const WebhookFineTuningJobCancelled({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookFineTuningJobCancelled.fromJson(Map<String, dynamic> json) { return WebhookFineTuningJobCancelled(
   createdAt: (json['created_at'] as num).toInt(),

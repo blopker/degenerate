@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Format in which results will be returned.
-final class RadarGetCertificateLogDetailsFormat {const RadarGetCertificateLogDetailsFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
+@immutable final class RadarGetCertificateLogDetailsFormat {const RadarGetCertificateLogDetailsFormat._(this.value);
 
 factory RadarGetCertificateLogDetailsFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,

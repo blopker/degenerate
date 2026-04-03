@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_shipping4.dart';import 'optional_fields_address.dart';import 'post_invoices_create_preview_request_customer_details_address.dart';import 'post_invoices_create_preview_request_customer_details_shipping.dart';import 'post_invoices_create_preview_request_customer_details_tax.dart';import 'post_invoices_create_preview_request_customer_details_tax_ids.dart';final class PostInvoicesCreatePreviewRequestCustomerDetailsTaxExempt {const PostInvoicesCreatePreviewRequestCustomerDetailsTaxExempt._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_shipping4.dart';import 'optional_fields_address.dart';import 'post_invoices_create_preview_request_customer_details_address.dart';import 'post_invoices_create_preview_request_customer_details_shipping.dart';import 'post_invoices_create_preview_request_customer_details_tax.dart';import 'post_invoices_create_preview_request_customer_details_tax_ids.dart';@immutable final class PostInvoicesCreatePreviewRequestCustomerDetailsTaxExempt {const PostInvoicesCreatePreviewRequestCustomerDetailsTaxExempt._(this.value);
 
 factory PostInvoicesCreatePreviewRequestCustomerDetailsTaxExempt.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostInvoicesCreatePreviewRequestCustomerDetailsTaxExempt($value)'; } 
  }
 /// Details about the customer you want to invoice or overrides for an existing customer. If `automatic_tax` is enabled then one of `customer`, `customer_details`, `subscription`, or `schedule` must be set.
-final class PostInvoicesCreatePreviewRequestCustomerDetails {const PostInvoicesCreatePreviewRequestCustomerDetails({this.address, this.shipping, this.tax, this.taxExempt, this.taxIds, });
+@immutable final class PostInvoicesCreatePreviewRequestCustomerDetails {const PostInvoicesCreatePreviewRequestCustomerDetails({this.address, this.shipping, this.tax, this.taxExempt, this.taxIds, });
 
 factory PostInvoicesCreatePreviewRequestCustomerDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestCustomerDetails(
   address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => OptionalFieldsAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesCreatePreviewRequestCustomerDetailsAddressVariant2.fromJson(v as String),) : null,

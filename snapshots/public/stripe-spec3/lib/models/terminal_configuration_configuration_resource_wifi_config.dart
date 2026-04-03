@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'terminal_configuration_configuration_resource_enterprise_peap_wifi.dart';import 'terminal_configuration_configuration_resource_enterprise_tls_wifi.dart';import 'terminal_configuration_configuration_resource_personal_psk_wifi.dart';/// Security type of the WiFi network. The hash with the corresponding name contains the credentials for this security type.
-final class TerminalConfigurationConfigurationResourceWifiConfigType {const TerminalConfigurationConfigurationResourceWifiConfigType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_configuration_configuration_resource_enterprise_peap_wifi.dart';import 'terminal_configuration_configuration_resource_enterprise_tls_wifi.dart';import 'terminal_configuration_configuration_resource_personal_psk_wifi.dart';/// Security type of the WiFi network. The hash with the corresponding name contains the credentials for this security type.
+@immutable final class TerminalConfigurationConfigurationResourceWifiConfigType {const TerminalConfigurationConfigurationResourceWifiConfigType._(this.value);
 
 factory TerminalConfigurationConfigurationResourceWifiConfigType.fromJson(String json) { return switch (json) {
   'enterprise_eap_peap' => enterpriseEapPeap,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalConfigurationConfigurationResourceWifiConfigType($value)'; } 
  }
 /// 
-final class TerminalConfigurationConfigurationResourceWifiConfig {const TerminalConfigurationConfigurationResourceWifiConfig({this.enterpriseEapPeap, this.enterpriseEapTls, this.personalPsk, required this.type, });
+@immutable final class TerminalConfigurationConfigurationResourceWifiConfig {const TerminalConfigurationConfigurationResourceWifiConfig({required this.type, this.enterpriseEapPeap, this.enterpriseEapTls, this.personalPsk, });
 
 factory TerminalConfigurationConfigurationResourceWifiConfig.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceWifiConfig(
   enterpriseEapPeap: json['enterprise_eap_peap'] != null ? TerminalConfigurationConfigurationResourceEnterprisePeapWifi.fromJson(json['enterprise_eap_peap'] as Map<String, dynamic>) : null,

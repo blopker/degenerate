@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_payment_method_options_customer_balance_bank_transfer.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_customer_balance_bank_transfer.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType.fromJson(String json) { return switch (json) {
   'bank_transfer' => bankTransfer,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceFundingType($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance {const PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalance(
   bankTransfer: json['bank_transfer'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCustomerBalanceBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,

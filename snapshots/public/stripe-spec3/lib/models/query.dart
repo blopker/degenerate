@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class QueryObject {const QueryObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class QueryObject {const QueryObject._(this.value);
 
 factory QueryObject.fromJson(String json) { return switch (json) {
   'sigma.sigma_api_query' => sigmaSigmaApiQuery,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'QueryObject($value)'; } 
  }
 /// A saved query object represents a query that can be executed for a run.
-final class Query {const Query({required this.created, required this.id, required this.livemode, required this.name, required this.object, required this.sql, });
+@immutable final class Query {const Query({required this.created, required this.id, required this.livemode, required this.name, required this.object, required this.sql, });
 
 factory Query.fromJson(Map<String, dynamic> json) { return Query(
   created: (json['created'] as num).toInt(),

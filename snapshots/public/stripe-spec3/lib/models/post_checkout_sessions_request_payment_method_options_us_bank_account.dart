@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_payment_method_options_us_bank_account_financial_connections.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_us_bank_account_financial_connections.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount({this.financialConnections, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount({this.financialConnections, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount(
   financialConnections: json['financial_connections'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,

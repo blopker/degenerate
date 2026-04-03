@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class ExchangeRateObject {const ExchangeRateObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class ExchangeRateObject {const ExchangeRateObject._(this.value);
 
 factory ExchangeRateObject.fromJson(String json) { return switch (json) {
   'exchange_rate' => exchangeRate,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ExchangeRateObject($value)'; } 
  }
-/// [Deprecated] The `ExchangeRate` APIs are deprecated. Please use the [FX Quotes API](https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api) instead.
+/// `[Deprecated]` The `ExchangeRate` APIs are deprecated. Please use the [FX Quotes API](https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api) instead.
 /// 
 /// `ExchangeRate` objects allow you to determine the rates that Stripe is currently
 /// using to convert from one currency to another. Since this number is variable
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// Please refer to our [Exchange Rates API](https://docs.stripe.com/fx-rates) guide for more details.
 /// 
-/// *[Note: this integration path is supported but no longer recommended]* Additionally,
+/// *`[Note: this integration path is supported but no longer recommended]`* Additionally,
 /// you can guarantee that a charge is made with an exchange rate that you expect is
 /// current. To do so, you must pass in the exchange_rate to charges endpoints. If the
 /// value is no longer up to date, the charge won't go through. Please refer to our
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - *determine app fees to charge a connected account*
 /// 
 /// *Using this Exchange Rates API beta for any purpose other than to transact on Stripe is strictly prohibited and constitutes a violation of Stripe's terms of service.*
-final class ExchangeRate {const ExchangeRate({required this.id, required this.object, required this.rates, });
+@immutable final class ExchangeRate {const ExchangeRate({required this.id, required this.object, required this.rates, });
 
 factory ExchangeRate.fromJson(Map<String, dynamic> json) { return ExchangeRate(
   id: json['id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Unconstrained text format. Always `text`.
-final class TextFormatType {const TextFormatType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Unconstrained text format. Always `text`.
+@immutable final class TextFormatType {const TextFormatType._(this.value);
 
 factory TextFormatType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TextFormatType($value)'; } 
  }
 /// Unconstrained free-form text.
-final class TextFormat {const TextFormat({required this.type});
+@immutable final class TextFormat {const TextFormat({required this.type});
 
 factory TextFormat.fromJson(Map<String, dynamic> json) { return TextFormat(
   type: TextFormatType.fromJson(json['type'] as String),

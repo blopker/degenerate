@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The output token details for the image generation.
-final class ImageGenOutputTokensDetails {const ImageGenOutputTokensDetails({required this.imageTokens, required this.textTokens, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The output token details for the image generation.
+@immutable final class ImageGenOutputTokensDetails {const ImageGenOutputTokensDetails({required this.imageTokens, required this.textTokens, });
 
 factory ImageGenOutputTokensDetails.fromJson(Map<String, dynamic> json) { return ImageGenOutputTokensDetails(
   imageTokens: (json['image_tokens'] as num).toInt(),

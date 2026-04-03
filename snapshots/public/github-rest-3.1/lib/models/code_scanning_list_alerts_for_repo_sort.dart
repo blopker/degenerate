@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodeScanningListAlertsForRepoSort {const CodeScanningListAlertsForRepoSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeScanningListAlertsForRepoSort {const CodeScanningListAlertsForRepoSort._(this.value);
 
 factory CodeScanningListAlertsForRepoSort.fromJson(String json) { return switch (json) {
   'created' => created,

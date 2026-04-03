@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsRequestDocumentsProofOfAddress {const PostAccountsRequestDocumentsProofOfAddress({this.files});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestDocumentsProofOfAddress {const PostAccountsRequestDocumentsProofOfAddress({this.files});
 
 factory PostAccountsRequestDocumentsProofOfAddress.fromJson(Map<String, dynamic> json) { return PostAccountsRequestDocumentsProofOfAddress(
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),

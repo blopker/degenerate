@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_update_instances_request_source_params_web_crawler.dart';final class AiSearchUpdateInstancesRequestSourceParams {const AiSearchUpdateInstancesRequestSourceParams({this.excludeItems, this.includeItems, this.prefix, this.r2Jurisdiction = 'default', this.webCrawler, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_update_instances_request_source_params_web_crawler.dart';@immutable final class AiSearchUpdateInstancesRequestSourceParams {const AiSearchUpdateInstancesRequestSourceParams({this.excludeItems, this.includeItems, this.prefix, this.r2Jurisdiction = 'default', this.webCrawler, });
 
 factory AiSearchUpdateInstancesRequestSourceParams.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesRequestSourceParams(
   excludeItems: (json['exclude_items'] as List<dynamic>?)?.map((e) => e as String).toList(),

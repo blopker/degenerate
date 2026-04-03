@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'link.dart';final class PullRequestSimpleLinks {const PullRequestSimpleLinks({required this.comments, required this.commits, required this.statuses, required this.html, required this.issue, required this.reviewComments, required this.reviewComment, required this.self, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'link.dart';@immutable final class PullRequestSimpleLinks {const PullRequestSimpleLinks({required this.comments, required this.commits, required this.statuses, required this.html, required this.issue, required this.reviewComments, required this.reviewComment, required this.self, });
 
 factory PullRequestSimpleLinks.fromJson(Map<String, dynamic> json) { return PullRequestSimpleLinks(
   comments: Link.fromJson(json['comments'] as Map<String, dynamic>),

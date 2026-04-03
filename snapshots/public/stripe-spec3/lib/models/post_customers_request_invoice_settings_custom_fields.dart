@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_request_invoice_settings_custom_fields_variant1.dart';final class PostCustomersRequestInvoiceSettingsCustomFieldsVariant2 {const PostCustomersRequestInvoiceSettingsCustomFieldsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_request_invoice_settings_custom_fields_variant1.dart';@immutable final class PostCustomersRequestInvoiceSettingsCustomFieldsVariant2 {const PostCustomersRequestInvoiceSettingsCustomFieldsVariant2._(this.value);
 
 factory PostCustomersRequestInvoiceSettingsCustomFieldsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

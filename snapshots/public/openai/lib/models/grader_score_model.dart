@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_item.dart';import 'grader_score_model_sampling_params.dart';/// The object type, which is always `score_model`.
-final class GraderScoreModelType {const GraderScoreModelType._(this.value);
+@immutable final class GraderScoreModelType {const GraderScoreModelType._(this.value);
 
 factory GraderScoreModelType.fromJson(String json) { return switch (json) {
   'score_model' => scoreModel,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A ScoreModelGrader object that uses a model to assign a score to the input.
 /// 
-final class GraderScoreModel {const GraderScoreModel({required this.type, required this.name, required this.model, this.samplingParams, required this.input, this.range, });
+@immutable final class GraderScoreModel {const GraderScoreModel({required this.type, required this.name, required this.model, required this.input, this.samplingParams, this.range, });
 
 factory GraderScoreModel.fromJson(Map<String, dynamic> json) { return GraderScoreModel(
   type: GraderScoreModelType.fromJson(json['type'] as String),

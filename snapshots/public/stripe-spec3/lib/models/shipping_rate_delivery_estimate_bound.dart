@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A unit of time.
-final class ShippingRateDeliveryEstimateBoundUnit {const ShippingRateDeliveryEstimateBoundUnit._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A unit of time.
+@immutable final class ShippingRateDeliveryEstimateBoundUnit {const ShippingRateDeliveryEstimateBoundUnit._(this.value);
 
 factory ShippingRateDeliveryEstimateBoundUnit.fromJson(String json) { return switch (json) {
   'business_day' => businessDay,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ShippingRateDeliveryEstimateBoundUnit($value)'; } 
  }
 /// 
-final class ShippingRateDeliveryEstimateBound {const ShippingRateDeliveryEstimateBound({required this.unit, required this.value, });
+@immutable final class ShippingRateDeliveryEstimateBound {const ShippingRateDeliveryEstimateBound({required this.unit, required this.value, });
 
 factory ShippingRateDeliveryEstimateBound.fromJson(Map<String, dynamic> json) { return ShippingRateDeliveryEstimateBound(
   unit: ShippingRateDeliveryEstimateBoundUnit.fromJson(json['unit'] as String),

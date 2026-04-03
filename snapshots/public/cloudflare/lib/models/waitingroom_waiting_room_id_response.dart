@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waitingroom_waiting_room_id_response_result.dart';final class WaitingroomWaitingRoomIdResponse {const WaitingroomWaitingRoomIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_waiting_room_id_response_result.dart';@immutable final class WaitingroomWaitingRoomIdResponse {const WaitingroomWaitingRoomIdResponse({this.result});
 
 factory WaitingroomWaitingRoomIdResponse.fromJson(Map<String, dynamic> json) { return WaitingroomWaitingRoomIdResponse(
   result: json['result'] != null ? WaitingroomWaitingRoomIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

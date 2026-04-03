@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lists_created_on.dart';import 'lists_item_comment.dart';import 'lists_item_id.dart';import 'lists_modified_on.dart';final class ListsItemBase {const ListsItemBase({this.comment, required this.createdOn, required this.id, required this.modifiedOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_created_on.dart';import 'lists_item_comment.dart';import 'lists_item_id.dart';import 'lists_modified_on.dart';@immutable final class ListsItemBase {const ListsItemBase({required this.createdOn, required this.id, required this.modifiedOn, this.comment, });
 
 factory ListsItemBase.fromJson(Map<String, dynamic> json) { return ListsItemBase(
   comment: json['comment'] != null ? ListsItemComment.fromJson(json['comment'] as String) : null,

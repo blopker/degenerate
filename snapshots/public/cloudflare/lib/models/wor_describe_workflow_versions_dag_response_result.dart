@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorDescribeWorkflowVersionsDagResponseResult {const WorDescribeWorkflowVersionsDagResponseResult({required this.className, required this.createdOn, required this.dag, required this.id, required this.modifiedOn, required this.workflowId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowVersionsDagResponseResult {const WorDescribeWorkflowVersionsDagResponseResult({required this.className, required this.createdOn, required this.dag, required this.id, required this.modifiedOn, required this.workflowId, });
 
 factory WorDescribeWorkflowVersionsDagResponseResult.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowVersionsDagResponseResult(
   className: json['class_name'] as String,
   createdOn: DateTime.parse(json['created_on'] as String),
-  dag: (json['dag'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  dag: json['dag'] as Map<String, dynamic>?,
   id: json['id'] as String,
   modifiedOn: DateTime.parse(json['modified_on'] as String),
   workflowId: json['workflow_id'] as String,

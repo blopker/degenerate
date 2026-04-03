@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param112.dart';final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptionsUsBankAccountVariant2 {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptionsUsBankAccountVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param112.dart';@immutable final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptionsUsBankAccountVariant2 {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptionsUsBankAccountVariant2._(this.value);
 
 factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptionsUsBankAccountVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

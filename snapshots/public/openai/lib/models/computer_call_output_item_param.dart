@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'computer_call_safety_check_param.dart';import 'computer_screenshot_image.dart';import 'function_call_item_status.dart';/// The output of a computer tool call.
-final class ComputerCallOutputItemParam {const ComputerCallOutputItemParam({this.id, required this.callId, this.type = 'computer_call_output', required this.output, this.acknowledgedSafetyChecks, this.status, });
+@immutable final class ComputerCallOutputItemParam {const ComputerCallOutputItemParam({required this.callId, required this.output, this.id, this.type = 'computer_call_output', this.acknowledgedSafetyChecks, this.status, });
 
 factory ComputerCallOutputItemParam.fromJson(Map<String, dynamic> json) { return ComputerCallOutputItemParam(
   id: json['id'] as String?,

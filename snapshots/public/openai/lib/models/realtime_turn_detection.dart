@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'semantic_vad.dart';import 'server_vad.dart';/// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'semantic_vad.dart';import 'server_vad.dart';/// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.
 /// 
 /// Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.
 /// 
@@ -21,7 +21,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RealtimeTurnDetection$Unknown; } 
  }
-final class RealtimeTurnDetectionServerVad extends RealtimeTurnDetection {const RealtimeTurnDetectionServerVad(this.serverVad);
+@immutable final class RealtimeTurnDetectionServerVad extends RealtimeTurnDetection {const RealtimeTurnDetectionServerVad(this.serverVad);
 
 factory RealtimeTurnDetectionServerVad.fromJson(Map<String, dynamic> json) { return RealtimeTurnDetectionServerVad(ServerVad.fromJson(json)); }
 
@@ -34,7 +34,7 @@ final ServerVad serverVad;
 @override int get hashCode { return serverVad.hashCode; } 
 @override String toString() { return 'RealtimeTurnDetectionServerVad(serverVad: $serverVad)'; } 
  }
-final class RealtimeTurnDetectionSemanticVad extends RealtimeTurnDetection {const RealtimeTurnDetectionSemanticVad(this.semanticVad);
+@immutable final class RealtimeTurnDetectionSemanticVad extends RealtimeTurnDetection {const RealtimeTurnDetectionSemanticVad(this.semanticVad);
 
 factory RealtimeTurnDetectionSemanticVad.fromJson(Map<String, dynamic> json) { return RealtimeTurnDetectionSemanticVad(SemanticVad.fromJson(json)); }
 
@@ -49,7 +49,7 @@ final SemanticVad semanticVad;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class RealtimeTurnDetection$Unknown extends RealtimeTurnDetection {const RealtimeTurnDetection$Unknown(this.json);
+@immutable final class RealtimeTurnDetection$Unknown extends RealtimeTurnDetection {const RealtimeTurnDetection$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_financial_connections_sessions_request_account_holder.dart';import 'post_financial_connections_sessions_request_filters.dart';final class PostFinancialConnectionsSessionsRequestPermissions {const PostFinancialConnectionsSessionsRequestPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_financial_connections_sessions_request_account_holder.dart';import 'post_financial_connections_sessions_request_filters.dart';@immutable final class PostFinancialConnectionsSessionsRequestPermissions {const PostFinancialConnectionsSessionsRequestPermissions._(this.value);
 
 factory PostFinancialConnectionsSessionsRequestPermissions.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostFinancialConnectionsSessionsRequestPermissions($value)'; } 
  }
-final class PostFinancialConnectionsSessionsRequestPrefetch {const PostFinancialConnectionsSessionsRequestPrefetch._(this.value);
+@immutable final class PostFinancialConnectionsSessionsRequestPrefetch {const PostFinancialConnectionsSessionsRequestPrefetch._(this.value);
 
 factory PostFinancialConnectionsSessionsRequestPrefetch.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostFinancialConnectionsSessionsRequestPrefetch($value)'; } 
  }
-final class PostFinancialConnectionsSessionsRequest {const PostFinancialConnectionsSessionsRequest({required this.accountHolder, this.expand, this.filters, required this.permissions, this.prefetch, this.returnUrl, });
+@immutable final class PostFinancialConnectionsSessionsRequest {const PostFinancialConnectionsSessionsRequest({required this.accountHolder, required this.permissions, this.expand, this.filters, this.prefetch, this.returnUrl, });
 
 factory PostFinancialConnectionsSessionsRequest.fromJson(Map<String, dynamic> json) { return PostFinancialConnectionsSessionsRequest(
   accountHolder: PostFinancialConnectionsSessionsRequestAccountHolder.fromJson(json['account_holder'] as Map<String, dynamic>),

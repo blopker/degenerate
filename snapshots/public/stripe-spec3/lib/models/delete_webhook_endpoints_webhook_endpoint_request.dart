@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteWebhookEndpointsWebhookEndpointRequest {const DeleteWebhookEndpointsWebhookEndpointRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteWebhookEndpointsWebhookEndpointRequest {const DeleteWebhookEndpointsWebhookEndpointRequest();
 
-factory DeleteWebhookEndpointsWebhookEndpointRequest.fromJson(Map<String, dynamic> json) { return DeleteWebhookEndpointsWebhookEndpointRequest(
-
-); }
+factory DeleteWebhookEndpointsWebhookEndpointRequest.fromJson(Map<String, dynamic> _) { return const DeleteWebhookEndpointsWebhookEndpointRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-DeleteWebhookEndpointsWebhookEndpointRequest copyWith() { return DeleteWebhookEndpointsWebhookEndpointRequest(
+DeleteWebhookEndpointsWebhookEndpointRequest copyWith() { return const DeleteWebhookEndpointsWebhookEndpointRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is DeleteWebhookEndpointsWebhookEndpointRequest; } 

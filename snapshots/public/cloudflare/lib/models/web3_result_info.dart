@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Web3ResultInfo {const Web3ResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Web3ResultInfo {const Web3ResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory Web3ResultInfo.fromJson(Map<String, dynamic> json) { return Web3ResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigCreateGatewayRequestLogManagementStrategy {const AigConfigCreateGatewayRequestLogManagementStrategy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateGatewayRequestLogManagementStrategy {const AigConfigCreateGatewayRequestLogManagementStrategy._(this.value);
 
 factory AigConfigCreateGatewayRequestLogManagementStrategy.fromJson(String json) { return switch (json) {
   'STOP_INSERTING' => stopInserting,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigCreateGatewayRequestLogManagementStrategy($value)'; } 
  }
-final class AigConfigCreateGatewayRequestRateLimitingTechnique {const AigConfigCreateGatewayRequestRateLimitingTechnique._(this.value);
+@immutable final class AigConfigCreateGatewayRequestRateLimitingTechnique {const AigConfigCreateGatewayRequestRateLimitingTechnique._(this.value);
 
 factory AigConfigCreateGatewayRequestRateLimitingTechnique.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AigConfigCreateGatewayRequestRateLimitingTechnique($value)'; } 
  }
 /// Controls how Workers AI inference calls routed through this gateway are billed
-final class AigConfigCreateGatewayRequestWorkersAiBillingMode {const AigConfigCreateGatewayRequestWorkersAiBillingMode._(this.value);
+@immutable final class AigConfigCreateGatewayRequestWorkersAiBillingMode {const AigConfigCreateGatewayRequestWorkersAiBillingMode._(this.value);
 
 factory AigConfigCreateGatewayRequestWorkersAiBillingMode.fromJson(String json) { return switch (json) {
   'postpaid' => postpaid,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigCreateGatewayRequestWorkersAiBillingMode($value)'; } 
  }
-final class AigConfigCreateGatewayRequest {const AigConfigCreateGatewayRequest({this.authentication, required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.id, this.logManagement, this.logManagementStrategy, this.logpush, this.logpushPublicKey, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.workersAiBillingMode = AigConfigCreateGatewayRequestWorkersAiBillingMode.postpaid, this.zdr, });
+@immutable final class AigConfigCreateGatewayRequest {const AigConfigCreateGatewayRequest({required this.cacheInvalidateOnUpdate, required this.cacheTtl, required this.collectLogs, required this.id, required this.rateLimitingInterval, required this.rateLimitingLimit, required this.rateLimitingTechnique, this.authentication, this.logManagement, this.logManagementStrategy, this.logpush, this.logpushPublicKey, this.workersAiBillingMode = AigConfigCreateGatewayRequestWorkersAiBillingMode.postpaid, this.zdr, });
 
 factory AigConfigCreateGatewayRequest.fromJson(Map<String, dynamic> json) { return AigConfigCreateGatewayRequest(
   authentication: json['authentication'] as bool?,

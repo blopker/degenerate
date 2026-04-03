@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountSipSipCredentialListSipCredential {const AccountSipSipCredentialListSipCredential({this.sid, this.accountSid, this.credentialListSid, this.username, this.dateCreated, this.dateUpdated, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipCredentialListSipCredential {const AccountSipSipCredentialListSipCredential({this.sid, this.accountSid, this.credentialListSid, this.username, this.dateCreated, this.dateUpdated, this.uri, });
 
 factory AccountSipSipCredentialListSipCredential.fromJson(Map<String, dynamic> json) { return AccountSipSipCredentialListSipCredential(
   sid: json['sid'] as String?,

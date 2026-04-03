@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_account_sessions_request_components_account_management_features.dart';final class PostAccountSessionsRequestComponentsAccountManagement {const PostAccountSessionsRequestComponentsAccountManagement({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components_account_management_features.dart';@immutable final class PostAccountSessionsRequestComponentsAccountManagement {const PostAccountSessionsRequestComponentsAccountManagement({required this.enabled, this.features, });
 
 factory PostAccountSessionsRequestComponentsAccountManagement.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsAccountManagement(
   enabled: json['enabled'] as bool,

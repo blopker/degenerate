@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigDeleteEvaluationsResponseResultResults {const AigConfigDeleteEvaluationsResponseResultResults({required this.createdAt, required this.evaluationId, required this.evaluationTypeId, required this.id, required this.modifiedAt, required this.result, required this.status, required this.statusDescription, required this.totalLogs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigDeleteEvaluationsResponseResultResults {const AigConfigDeleteEvaluationsResponseResultResults({required this.createdAt, required this.evaluationId, required this.evaluationTypeId, required this.id, required this.modifiedAt, required this.result, required this.status, required this.statusDescription, required this.totalLogs, });
 
 factory AigConfigDeleteEvaluationsResponseResultResults.fromJson(Map<String, dynamic> json) { return AigConfigDeleteEvaluationsResponseResultResults(
   createdAt: DateTime.parse(json['created_at'] as String),

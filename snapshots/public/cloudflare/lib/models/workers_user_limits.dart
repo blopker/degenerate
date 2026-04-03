@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// User-defined resource limits for Workers with standard usage model.
-final class WorkersUserLimits {const WorkersUserLimits({this.cpuMs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// User-defined resource limits for Workers with standard usage model.
+@immutable final class WorkersUserLimits {const WorkersUserLimits({this.cpuMs});
 
 factory WorkersUserLimits.fromJson(Map<String, dynamic> json) { return WorkersUserLimits(
   cpuMs: json['cpu_ms'] != null ? (json['cpu_ms'] as num).toInt() : null,

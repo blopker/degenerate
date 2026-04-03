@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_call.dart';final class ListCallResponse {const ListCallResponse({this.calls, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_call.dart';@immutable final class ListCallResponse {const ListCallResponse({this.calls, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListCallResponse.fromJson(Map<String, dynamic> json) { return ListCallResponse(
   calls: (json['calls'] as List<dynamic>?)?.map((e) => AccountCall.fromJson(e as Map<String, dynamic>)).toList(),

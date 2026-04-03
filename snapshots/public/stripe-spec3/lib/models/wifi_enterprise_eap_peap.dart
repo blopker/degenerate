@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WifiEnterpriseEapPeap {const WifiEnterpriseEapPeap({this.caCertificateFile, required this.password, required this.ssid, required this.username, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WifiEnterpriseEapPeap {const WifiEnterpriseEapPeap({required this.password, required this.ssid, required this.username, this.caCertificateFile, });
 
 factory WifiEnterpriseEapPeap.fromJson(Map<String, dynamic> json) { return WifiEnterpriseEapPeap(
   caCertificateFile: json['ca_certificate_file'] as String?,

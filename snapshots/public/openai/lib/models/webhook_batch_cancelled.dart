@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_batch_cancelled_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_batch_cancelled_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookBatchCancelledObject {const WebhookBatchCancelledObject._(this.value);
+@immutable final class WebhookBatchCancelledObject {const WebhookBatchCancelledObject._(this.value);
 
 factory WebhookBatchCancelledObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `batch.cancelled`.
 /// 
-final class WebhookBatchCancelledType {const WebhookBatchCancelledType._(this.value);
+@immutable final class WebhookBatchCancelledType {const WebhookBatchCancelledType._(this.value);
 
 factory WebhookBatchCancelledType.fromJson(String json) { return switch (json) {
   'batch.cancelled' => batchCancelled,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when a batch API request has been cancelled.
 /// 
-final class WebhookBatchCancelled {const WebhookBatchCancelled({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookBatchCancelled {const WebhookBatchCancelled({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookBatchCancelled.fromJson(Map<String, dynamic> json) { return WebhookBatchCancelled(
   createdAt: (json['created_at'] as num).toInt(),

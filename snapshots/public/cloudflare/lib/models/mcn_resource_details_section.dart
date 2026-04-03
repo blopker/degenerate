@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_resource_details_section_item.dart';final class McnResourceDetailsSection {const McnResourceDetailsSection({this.helpText, required this.hiddenItems, required this.name, required this.visibleItems, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_resource_details_section_item.dart';@immutable final class McnResourceDetailsSection {const McnResourceDetailsSection({required this.hiddenItems, required this.name, required this.visibleItems, this.helpText, });
 
 factory McnResourceDetailsSection.fromJson(Map<String, dynamic> json) { return McnResourceDetailsSection(
   helpText: json['help_text'] as String?,

@@ -1,16 +1,23 @@
 import 'package:code_builder/code_builder.dart';
-
-import '../ir/ir_types.dart';
-import 'emit_utils.dart';
+import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Emits a `final class` from an [IrObject].
 ///
 /// Generates: const constructor, fromJson factory, toJson, copyWith,
 /// operator ==, hashCode, toString, canParse.
 class ModelEmitter {
+  /// Creates an emitter for the given [model].
+  const ModelEmitter(
+    this.model, {
+    this.typeRegistry = const {},
+  });
+
+  /// The object IR to emit.
   final IrObject model;
+
+  /// Registry of all known IR types for resolution.
   final Map<String, IrType> typeRegistry;
-  const ModelEmitter(this.model, {this.typeRegistry = const {}});
 
   /// Field name for the overflow map, avoiding collisions with fixed fields.
   String get _overflowFieldName {
@@ -30,16 +37,18 @@ class ModelEmitter {
     );
   }
 
+  /// Emit the model class as code_builder specs.
   List<Spec> emit() {
     return [
       Class(
         (b) => b
           ..name = model.name
           ..modifier = ClassModifier.final$
+          ..annotations.add(refer('immutable'))
           ..docs.addAll(_buildDocs())
-          ..fields.addAll(_buildFields())
           ..constructors.add(_buildConstructor())
           ..constructors.add(_buildFromJson())
+          ..fields.addAll(_buildFields())
           ..methods.add(_buildToJson())
           ..methods.add(_buildCanParse())
           ..methods.add(_buildCopyWith())
@@ -83,20 +92,27 @@ class ModelEmitter {
   }
 
   Constructor _buildConstructor() {
+    final fieldParams = model.fields.map((f) {
+      return Parameter(
+        (p) => p
+          ..name = f.name
+          ..named = true
+          ..toThis = true
+          ..required = f.isRequired && !_hasDefault(f)
+          ..defaultTo = _defaultCode(f),
+      );
+    }).toList();
+    // Sort required named parameters before optional ones.
+    fieldParams.sort((a, b) {
+      final aReq = a.required ? 0 : 1;
+      final bReq = b.required ? 0 : 1;
+      return aReq.compareTo(bReq);
+    });
     return Constructor(
       (b) => b
         ..constant = true
         ..optionalParameters.addAll([
-          ...model.fields.map((f) {
-            return Parameter(
-              (p) => p
-                ..name = f.name
-                ..named = true
-                ..toThis = true
-                ..required = f.isRequired && !_hasDefault(f)
-                ..defaultTo = _defaultCode(f),
-            );
-          }),
+          ...fieldParams,
           if (model.additionalProperties != null)
             Parameter(
               (p) => p
@@ -112,11 +128,13 @@ class ModelEmitter {
   Constructor _buildFromJson() {
     var args = model.fields
         .map((f) {
-          final accessor = "json['${escapeDartString(f.originalName)}']";
+          final accessor = 'json[${dartStringLiteral(f.originalName)}]';
           // A field is "nullable in fromJson" if:
           // 1. It's not required AND has no default, OR
-          // 2. Its type is explicitly nullable (required + nullable is valid in OpenAPI).
-          // Fields with defaults have non-nullable types, so fromJson must not produce null.
+          // 2. Its type is explicitly nullable (required + nullable is valid in
+          // OpenAPI).
+          // Fields with defaults have non-nullable types, so fromJson must not
+          // produce null.
           final isOptional =
               (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
           final code = buildFromJsonCode(
@@ -130,7 +148,7 @@ class ModelEmitter {
             // The constructor default handles missing values.
             final defaultCode = _defaultCode(f);
             final defaultStr = defaultCode?.toString() ?? 'null';
-            return '  ${f.name}: json.containsKey(\'${escapeDartString(f.originalName)}\') ? $code : $defaultStr,';
+            return '  ${f.name}: json.containsKey(${dartStringLiteral(f.originalName)}) ? $code : $defaultStr,';
           }
           return '  ${f.name}: $code,';
         })
@@ -139,7 +157,7 @@ class ModelEmitter {
     // Append overflow map extraction if additionalProperties is defined.
     if (model.additionalProperties != null) {
       final knownKeysList = model.fields
-          .map((f) => "'${escapeDartString(f.originalName)}'")
+          .map((f) => dartStringLiteral(f.originalName))
           .toList();
       // Use explicit <String>{} to avoid Dart parsing empty const {} as a Map.
       final knownKeys = knownKeysList.isEmpty
@@ -152,13 +170,18 @@ class ModelEmitter {
         args +=
             '\n  $_overflowFieldName: Map.fromEntries(json.entries.where((e) => !const $knownKeys.contains(e.key))),';
       } else {
-        final valueExpr = buildFromJsonCode(valueType, 'e.value',
-            isOptional: false, typeRegistry: typeRegistry);
+        final valueExpr = buildFromJsonCode(
+          valueType,
+          'e.value',
+          typeRegistry: typeRegistry,
+        );
         args +=
             '\n  $_overflowFieldName: Map.fromEntries(json.entries.where((e) => !const $knownKeys.contains(e.key)).map((e) => MapEntry(e.key, $valueExpr))),';
       }
     }
 
+    final hasAnyArgs =
+        model.fields.isNotEmpty || model.additionalProperties != null;
     return Constructor(
       (b) => b
         ..name = 'fromJson'
@@ -166,18 +189,23 @@ class ModelEmitter {
         ..requiredParameters.add(
           Parameter(
             (p) => p
-              ..name = 'json'
+              // Use _ for unused parameter when model has no fields.
+              ..name = hasAnyArgs ? 'json' : '_'
               ..type = refer('Map<String, dynamic>'),
           ),
         )
-        ..body = Code('return ${model.name}(\n$args\n);'),
+        ..body = Code(
+          hasAnyArgs
+              ? 'return ${model.name}(\n$args\n);'
+              : 'return const ${model.name}();',
+        ),
     );
   }
 
   Method _buildToJson() {
     final entries = model.fields
         .map((f) {
-          final key = "'${escapeDartString(f.originalName)}'";
+          final key = dartStringLiteral(f.originalName);
 
           final value = buildToJsonCode(f.type, f.name);
           // Only use null check if the Dart field type is actually nullable.
@@ -188,9 +216,9 @@ class ModelEmitter {
             final nullableValue = _toJsonValueNullable(f);
             if (nullableValue == f.name) {
               // Use null-aware element syntax when value is the field itself.
-              return "  $key: ?${f.name},";
+              return '  $key: ?${f.name},';
             }
-            return "  if (${f.name} != null) $key: $nullableValue,";
+            return '  if (${f.name} != null) $key: $nullableValue,';
           }
           return '  $key: $value,';
         })
@@ -208,7 +236,10 @@ class ModelEmitter {
     if (model.additionalProperties == null) return '';
     final valueType = model.additionalProperties!;
     if (mapValueNeedsToJson(valueType)) {
-      return '  ...$_overflowFieldName.map((k, v) => MapEntry(k, ${buildToJsonCode(valueType, 'v')})),\n';
+      final valueExpr = buildToJsonCode(valueType, 'v');
+      if (valueExpr != 'v') {
+        return '  ...$_overflowFieldName.map((k, v) => MapEntry(k, $valueExpr)),\n';
+      }
     }
     return '  ...$_overflowFieldName,\n';
   }
@@ -225,14 +256,23 @@ class ModelEmitter {
         _ => f.name,
       },
       IrEnum() => '${f.name}${_q}toJson()',
-      IrList(:final items) =>
-        listItemNeedsToJson(items)
-            ? '${f.name}${_q}map((e) => ${buildToJsonCode(items, 'e', nullable: items.isNullable)}).toList()'
-            : f.name,
-      IrMap(:final values) =>
-        mapValueNeedsToJson(values)
-            ? '${f.name}${_q}map((k, v) => MapEntry(k, ${buildToJsonCode(values, 'v', nullable: values.isNullable)}))'
-            : f.name,
+      IrList(:final items) => () {
+        if (!listItemNeedsToJson(items)) return f.name;
+        final itemExpr =
+            buildToJsonCode(items, 'e', nullable: items.isNullable);
+        final tearoff = asTearoff(itemExpr, 'e');
+        if (tearoff != null) {
+          return '${f.name}${_q}map($tearoff).toList()';
+        }
+        return '${f.name}${_q}map((e) => $itemExpr).toList()';
+      }(),
+      IrMap(:final values) => () {
+        if (!mapValueNeedsToJson(values)) return f.name;
+        final valueExpr =
+            buildToJsonCode(values, 'v', nullable: values.isNullable);
+        if (valueExpr == 'v') return f.name;
+        return '${f.name}${_q}map((k, v) => MapEntry(k, $valueExpr))';
+      }(),
       IrObject() => '${f.name}${_q}toJson()',
       IrTypeRef() => '${f.name}${_q}toJson()',
       IrDiscriminatedUnion() => '${f.name}${_q}toJson()',
@@ -252,10 +292,10 @@ class ModelEmitter {
     final checks = requiredFieldObjects
         .map((f) {
           final keyCheck =
-              "json.containsKey('${escapeDartString(f.originalName)}')";
+              'json.containsKey(${dartStringLiteral(f.originalName)})';
           final typeCheck = _canParseTypeCheck(
             f.type,
-            "json['${escapeDartString(f.originalName)}']",
+            'json[${dartStringLiteral(f.originalName)}]',
           );
           if (typeCheck != null) {
             return '$keyCheck && $typeCheck';
@@ -269,7 +309,7 @@ class ModelEmitter {
     } else if (model.fields.isNotEmpty) {
       // No required fields — check that at least one known property key exists.
       final knownKeys = model.fields
-          .map((f) => "'${escapeDartString(f.originalName)}'")
+          .map((f) => dartStringLiteral(f.originalName))
           .join(', ');
       body = 'return json.keys.any((key) => const {$knownKeys}.contains(key));';
     } else {
@@ -348,22 +388,25 @@ class ModelEmitter {
     var allAssignments = assignments;
     if (model.additionalProperties != null) {
       final valueTypeName = irTypeName(model.additionalProperties!);
-      allParams.add(Parameter(
-        (p) => p
-          ..name = _overflowFieldName
-          ..named = true
-          ..type = refer('Map<String, $valueTypeName>?'),
-      ));
+      allParams.add(
+        Parameter(
+          (p) => p
+            ..name = _overflowFieldName
+            ..named = true
+            ..type = refer('Map<String, $valueTypeName>?'),
+        ),
+      );
       allAssignments +=
           '\n  $_overflowFieldName: $_overflowFieldName ?? this.$_overflowFieldName,';
     }
 
+    final constPrefix = allParams.isEmpty ? 'const ' : '';
     return Method(
       (m) => m
         ..name = 'copyWith'
         ..returns = refer(model.name)
         ..optionalParameters.addAll(allParams)
-        ..body = Code('return ${model.name}(\n$allAssignments\n);'),
+        ..body = Code('return $constPrefix${model.name}(\n$allAssignments\n);'),
     );
   }
 
@@ -388,8 +431,11 @@ class ModelEmitter {
 
     var allComparisons = comparisons;
     if (model.additionalProperties != null) {
-      final mapCmp = 'mapEquals($_overflowFieldName, other.$_overflowFieldName)';
-      allComparisons = allComparisons.isEmpty ? mapCmp : '$allComparisons &&\n          $mapCmp';
+      final mapCmp =
+          'mapEquals($_overflowFieldName, other.$_overflowFieldName)';
+      allComparisons = allComparisons.isEmpty
+          ? mapCmp
+          : '$allComparisons &&\n          $mapCmp';
     }
 
     final body = allComparisons.isEmpty
@@ -469,7 +515,7 @@ class ModelEmitter {
       if (f.type is IrPrimitive) {
         final kind = (f.type as IrPrimitive).kind;
         if (kind == PrimitiveKind.string) {
-          return Code("'${escapeDartString(v)}'");
+          return Code(dartStringLiteral(v));
         }
         if (kind == PrimitiveKind.dynamic_) {
           return null;
@@ -477,7 +523,8 @@ class ModelEmitter {
         // Non-string primitive with string default → skip
         return null;
       }
-      // Non-primitive type with string default (e.g., IrTypeRef to enum, IrList) → skip
+      // Non-primitive type with string default (e.g., IrTypeRef to enum,
+      // IrList) → skip
       return null;
     }
     if (v is bool) {

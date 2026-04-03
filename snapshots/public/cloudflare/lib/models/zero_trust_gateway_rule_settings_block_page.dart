@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configure custom block page settings. If missing or null, use the account settings. Settable only for `http` rules with the action set to `block`.
-final class ZeroTrustGatewayRuleSettingsBlockPage {const ZeroTrustGatewayRuleSettingsBlockPage({this.includeContext, required this.targetUri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure custom block page settings. If missing or null, use the account settings. Settable only for `http` rules with the action set to `block`.
+@immutable final class ZeroTrustGatewayRuleSettingsBlockPage {const ZeroTrustGatewayRuleSettingsBlockPage({required this.targetUri, this.includeContext, });
 
 factory ZeroTrustGatewayRuleSettingsBlockPage.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsBlockPage(
   includeContext: json['include_context'] as bool?,

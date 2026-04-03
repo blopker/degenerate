@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_entry_confidence.dart';import 'dlp_predefined_entry_variant.dart';final class PredefinedEntryType {const PredefinedEntryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_entry_confidence.dart';import 'dlp_predefined_entry_variant.dart';@immutable final class PredefinedEntryType {const PredefinedEntryType._(this.value);
 
 factory PredefinedEntryType.fromJson(String json) { return switch (json) {
   'predefined' => predefined,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PredefinedEntryType($value)'; } 
  }
-final class PredefinedEntry {const PredefinedEntry({required this.confidence, required this.enabled, required this.id, required this.name, this.profileId, this.variant, required this.type, });
+@immutable final class PredefinedEntry {const PredefinedEntry({required this.confidence, required this.enabled, required this.id, required this.name, required this.type, this.profileId, this.variant, });
 
 factory PredefinedEntry.fromJson(Map<String, dynamic> json) { return PredefinedEntry(
   confidence: DlpEntryConfidence.fromJson(json['confidence'] as Map<String, dynamic>),

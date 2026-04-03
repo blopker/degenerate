@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssuesCreateLabelRequest {const IssuesCreateLabelRequest({required this.name, this.color, this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesCreateLabelRequest {const IssuesCreateLabelRequest({required this.name, this.color, this.description, });
 
 factory IssuesCreateLabelRequest.fromJson(Map<String, dynamic> json) { return IssuesCreateLabelRequest(
   name: json['name'] as String,

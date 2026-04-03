@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BranchRestrictionPolicyAppsPermissions {const BranchRestrictionPolicyAppsPermissions({this.metadata, this.contents, this.issues, this.singleFile, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BranchRestrictionPolicyAppsPermissions {const BranchRestrictionPolicyAppsPermissions({this.metadata, this.contents, this.issues, this.singleFile, });
 
 factory BranchRestrictionPolicyAppsPermissions.fromJson(Map<String, dynamic> json) { return BranchRestrictionPolicyAppsPermissions(
   metadata: json['metadata'] as String?,

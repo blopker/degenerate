@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'custom_indicator_feeds_update_feed.dart';final class CustomIndicatorFeedsUpdateFeedResponse {const CustomIndicatorFeedsUpdateFeedResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_indicator_feeds_update_feed.dart';@immutable final class CustomIndicatorFeedsUpdateFeedResponse {const CustomIndicatorFeedsUpdateFeedResponse({this.result});
 
 factory CustomIndicatorFeedsUpdateFeedResponse.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsUpdateFeedResponse(
   result: json['result'] != null ? CustomIndicatorFeedsUpdateFeed.fromJson(json['result'] as Map<String, dynamic>) : null,

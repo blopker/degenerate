@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dispute_transaction_shipping_address.dart';/// Categorization of disputed payment.
-final class DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices {const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dispute_transaction_shipping_address.dart';/// Categorization of disputed payment.
+@immutable final class DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices {const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices._(this.value);
 
 factory DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices.fromJson(String json) { return switch (json) {
   'merchandise' => merchandise,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices($value)'; } 
  }
 /// 
-final class DisputeVisaCompellingEvidence3DisputedTransaction {const DisputeVisaCompellingEvidence3DisputedTransaction({this.customerAccountId, this.customerDeviceFingerprint, this.customerDeviceId, this.customerEmailAddress, this.customerPurchaseIp, this.merchandiseOrServices, this.productDescription, this.shippingAddress, });
+@immutable final class DisputeVisaCompellingEvidence3DisputedTransaction {const DisputeVisaCompellingEvidence3DisputedTransaction({this.customerAccountId, this.customerDeviceFingerprint, this.customerDeviceId, this.customerEmailAddress, this.customerPurchaseIp, this.merchandiseOrServices, this.productDescription, this.shippingAddress, });
 
 factory DisputeVisaCompellingEvidence3DisputedTransaction.fromJson(Map<String, dynamic> json) { return DisputeVisaCompellingEvidence3DisputedTransaction(
   customerAccountId: json['customer_account_id'] as String?,
@@ -45,7 +45,7 @@ final String? customerAccountId;
 /// Unique identifier of the cardholder’s device derived from a combination of at least two hardware and software attributes. Must be at least 20 characters.
 final String? customerDeviceFingerprint;
 
-/// Unique identifier of the cardholder’s device such as a device serial number (e.g., International Mobile Equipment Identity [IMEI]). Must be at least 15 characters.
+/// Unique identifier of the cardholder’s device such as a device serial number (e.g., International Mobile Equipment Identity `[IMEI]`). Must be at least 15 characters.
 final String? customerDeviceId;
 
 /// The email address of the customer.

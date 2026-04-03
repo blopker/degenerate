@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_participant_peer_stats_peer_stats_device_info.dart';import 'realtimekit_participant_peer_stats_peer_stats_events.dart';import 'realtimekit_participant_peer_stats_peer_stats_ip_information.dart';import 'realtimekit_participant_peer_stats_peer_stats_precall_network_information.dart';final class RealtimekitParticipantPeerStatsPeerStats {const RealtimekitParticipantPeerStatsPeerStats({this.config, this.deviceInfo, this.events, this.ipInformation, this.precallNetworkInformation, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_participant_peer_stats_peer_stats_device_info.dart';import 'realtimekit_participant_peer_stats_peer_stats_events.dart';import 'realtimekit_participant_peer_stats_peer_stats_ip_information.dart';import 'realtimekit_participant_peer_stats_peer_stats_precall_network_information.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStats {const RealtimekitParticipantPeerStatsPeerStats({this.config, this.deviceInfo, this.events, this.ipInformation, this.precallNetworkInformation, this.status, });
 
 factory RealtimekitParticipantPeerStatsPeerStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStatsPeerStats(
   config: json['config'] as String?,

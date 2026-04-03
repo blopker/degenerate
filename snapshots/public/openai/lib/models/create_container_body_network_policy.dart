@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'container_network_policy_allowlist_param.dart';import 'container_network_policy_disabled_param.dart';/// Network access policy for the container.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_network_policy_allowlist_param.dart';import 'container_network_policy_disabled_param.dart';/// Network access policy for the container.
 sealed class CreateContainerBodyNetworkPolicy {const CreateContainerBodyNetworkPolicy();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateContainerBodyNetworkPolicy$Unknown; } 
  }
-final class CreateContainerBodyNetworkPolicyDisabled extends CreateContainerBodyNetworkPolicy {const CreateContainerBodyNetworkPolicyDisabled(this.containerNetworkPolicyDisabledParam);
+@immutable final class CreateContainerBodyNetworkPolicyDisabled extends CreateContainerBodyNetworkPolicy {const CreateContainerBodyNetworkPolicyDisabled(this.containerNetworkPolicyDisabledParam);
 
 factory CreateContainerBodyNetworkPolicyDisabled.fromJson(Map<String, dynamic> json) { return CreateContainerBodyNetworkPolicyDisabled(ContainerNetworkPolicyDisabledParam.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final ContainerNetworkPolicyDisabledParam containerNetworkPolicyDisabledParam;
 @override int get hashCode { return containerNetworkPolicyDisabledParam.hashCode; } 
 @override String toString() { return 'CreateContainerBodyNetworkPolicyDisabled(containerNetworkPolicyDisabledParam: $containerNetworkPolicyDisabledParam)'; } 
  }
-final class CreateContainerBodyNetworkPolicyAllowlist extends CreateContainerBodyNetworkPolicy {const CreateContainerBodyNetworkPolicyAllowlist(this.containerNetworkPolicyAllowlistParam);
+@immutable final class CreateContainerBodyNetworkPolicyAllowlist extends CreateContainerBodyNetworkPolicy {const CreateContainerBodyNetworkPolicyAllowlist(this.containerNetworkPolicyAllowlistParam);
 
 factory CreateContainerBodyNetworkPolicyAllowlist.fromJson(Map<String, dynamic> json) { return CreateContainerBodyNetworkPolicyAllowlist(ContainerNetworkPolicyAllowlistParam.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final ContainerNetworkPolicyAllowlistParam containerNetworkPolicyAllowlistParam;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class CreateContainerBodyNetworkPolicy$Unknown extends CreateContainerBodyNetworkPolicy {const CreateContainerBodyNetworkPolicy$Unknown(this.json);
+@immutable final class CreateContainerBodyNetworkPolicy$Unknown extends CreateContainerBodyNetworkPolicy {const CreateContainerBodyNetworkPolicy$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

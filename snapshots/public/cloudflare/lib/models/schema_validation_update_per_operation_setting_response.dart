@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_per_operation_setting.dart';final class SchemaValidationUpdatePerOperationSettingResponse {const SchemaValidationUpdatePerOperationSettingResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_per_operation_setting.dart';@immutable final class SchemaValidationUpdatePerOperationSettingResponse {const SchemaValidationUpdatePerOperationSettingResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory SchemaValidationUpdatePerOperationSettingResponse.fromJson(Map<String, dynamic> json) { return SchemaValidationUpdatePerOperationSettingResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),

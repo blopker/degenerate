@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `mcp_list_tools.completed`.
-final class RealtimeBetaServerEventMcpListToolsCompletedType {const RealtimeBetaServerEventMcpListToolsCompletedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `mcp_list_tools.completed`.
+@immutable final class RealtimeBetaServerEventMcpListToolsCompletedType {const RealtimeBetaServerEventMcpListToolsCompletedType._(this.value);
 
 factory RealtimeBetaServerEventMcpListToolsCompletedType.fromJson(String json) { return switch (json) {
   'mcp_list_tools.completed' => mcpListToolsCompleted,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaServerEventMcpListToolsCompletedType($value)'; } 
  }
 /// Returned when listing MCP tools has completed for an item.
-final class RealtimeBetaServerEventMcpListToolsCompleted {const RealtimeBetaServerEventMcpListToolsCompleted({required this.eventId, required this.type, required this.itemId, });
+@immutable final class RealtimeBetaServerEventMcpListToolsCompleted {const RealtimeBetaServerEventMcpListToolsCompleted({required this.eventId, required this.type, required this.itemId, });
 
 factory RealtimeBetaServerEventMcpListToolsCompleted.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventMcpListToolsCompleted(
   eventId: json['event_id'] as String,

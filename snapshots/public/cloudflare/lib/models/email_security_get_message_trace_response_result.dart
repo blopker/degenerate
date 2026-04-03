@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_security_get_message_trace_response_result_inbound.dart';import 'email_security_get_message_trace_response_result_outbound.dart';final class EmailSecurityGetMessageTraceResponseResult {const EmailSecurityGetMessageTraceResponseResult({required this.inbound, required this.outbound, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_get_message_trace_response_result_inbound.dart';import 'email_security_get_message_trace_response_result_outbound.dart';@immutable final class EmailSecurityGetMessageTraceResponseResult {const EmailSecurityGetMessageTraceResponseResult({required this.inbound, required this.outbound, });
 
 factory EmailSecurityGetMessageTraceResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageTraceResponseResult(
   inbound: EmailSecurityGetMessageTraceResponseResultInbound.fromJson(json['inbound'] as Map<String, dynamic>),

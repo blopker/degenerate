@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zaraz_custom_managed_component_worker.dart';final class ZarazCustomManagedComponentType {const ZarazCustomManagedComponentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_custom_managed_component_worker.dart';@immutable final class ZarazCustomManagedComponentType {const ZarazCustomManagedComponentType._(this.value);
 
 factory ZarazCustomManagedComponentType.fromJson(String json) { return switch (json) {
   'custom-mc' => customMc,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZarazCustomManagedComponentType($value)'; } 
  }
-final class ZarazCustomManagedComponent {const ZarazCustomManagedComponent({required this.type, required this.worker, });
+@immutable final class ZarazCustomManagedComponent {const ZarazCustomManagedComponent({required this.type, required this.worker, });
 
 factory ZarazCustomManagedComponent.fromJson(Map<String, dynamic> json) { return ZarazCustomManagedComponent(
   type: ZarazCustomManagedComponentType.fromJson(json['type'] as String),

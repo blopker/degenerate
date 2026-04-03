@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_summary_by_industry_response_result_meta_confidence_info.dart';import 'radar_get_attacks_layer7_summary_by_industry_response_result_meta_date_range.dart';import 'radar_get_attacks_layer7_summary_by_industry_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetAttacksLayer7SummaryByIndustryResponseResultMetaNormalization {const RadarGetAttacksLayer7SummaryByIndustryResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetAttacksLayer7SummaryByIndustryResponseResultMetaNormalization {const RadarGetAttacksLayer7SummaryByIndustryResponseResultMetaNormalization._(this.value);
 
 factory RadarGetAttacksLayer7SummaryByIndustryResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer7SummaryByIndustryResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetAttacksLayer7SummaryByIndustryResponseResultMeta {const RadarGetAttacksLayer7SummaryByIndustryResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetAttacksLayer7SummaryByIndustryResponseResultMeta {const RadarGetAttacksLayer7SummaryByIndustryResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetAttacksLayer7SummaryByIndustryResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByIndustryResponseResultMeta(
   confidenceInfo: RadarGetAttacksLayer7SummaryByIndustryResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),

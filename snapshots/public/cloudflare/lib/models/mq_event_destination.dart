@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mq_event_destination_queue.dart';/// A value that is one of: `MqEventDestinationQueue`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_event_destination_queue.dart';/// A value that is one of: `MqEventDestinationQueue`.
 sealed class MqEventDestination {const MqEventDestination();
 
 factory MqEventDestination.fromJson(Map<String, dynamic> json) {   if (MqEventDestinationQueue.canParse(json)) {
@@ -12,7 +12,7 @@ factory MqEventDestination.fromJson(Map<String, dynamic> json) {   if (MqEventDe
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class MqEventDestinationMqEventDestinationQueue extends MqEventDestination {const MqEventDestinationMqEventDestinationQueue(this._value);
+@immutable final class MqEventDestinationMqEventDestinationQueue extends MqEventDestination {const MqEventDestinationMqEventDestinationQueue(this._value);
 
 final MqEventDestinationQueue _value;
 
@@ -23,7 +23,7 @@ final MqEventDestinationQueue _value;
 @override String toString() { return 'MqEventDestination.mqEventDestinationQueue($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class MqEventDestination$Unknown extends MqEventDestination {const MqEventDestination$Unknown(this._value);
+@immutable final class MqEventDestination$Unknown extends MqEventDestination {const MqEventDestination$Unknown(this._value);
 
 final dynamic _value;
 

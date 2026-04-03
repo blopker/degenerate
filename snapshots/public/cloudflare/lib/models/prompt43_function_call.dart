@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_function_call_variant2.dart';final class Prompt43FunctionCallVariant1 {const Prompt43FunctionCallVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_function_call_variant2.dart';@immutable final class Prompt43FunctionCallVariant1 {const Prompt43FunctionCallVariant1._(this.value);
 
 factory Prompt43FunctionCallVariant1.fromJson(String json) { return switch (json) {
   'none' => none,

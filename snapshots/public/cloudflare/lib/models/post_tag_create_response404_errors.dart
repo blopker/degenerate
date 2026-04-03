@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTagCreateResponse404Errors {const PostTagCreateResponse404Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTagCreateResponse404Errors {const PostTagCreateResponse404Errors({required this.message});
 
 factory PostTagCreateResponse404Errors.fromJson(Map<String, dynamic> json) { return PostTagCreateResponse404Errors(
   message: json['message'] as String,

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Custom resource allocation with explicit vcpu, memory, and disk. Custom resource allocations must adhere to the following limits:
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom resource allocation with explicit vcpu, memory, and disk. Custom resource allocations must adhere to the following limits:
 /// - At least 1 vCPU
 /// - At least 3 GiB memory for each vCPU
 /// - Disk GB can be at most 2x memory in GiB
 /// 
-final class CcCustomResourceAllocation {const CcCustomResourceAllocation({required this.diskMb, required this.memoryMib, required this.vcpu, });
+@immutable final class CcCustomResourceAllocation {const CcCustomResourceAllocation({required this.diskMb, required this.memoryMib, required this.vcpu, });
 
 factory CcCustomResourceAllocation.fromJson(Map<String, dynamic> json) { return CcCustomResourceAllocation(
   diskMb: (json['disk_mb'] as num).toInt(),

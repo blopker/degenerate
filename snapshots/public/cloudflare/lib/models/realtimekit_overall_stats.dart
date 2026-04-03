@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitOverallStats {const RealtimekitOverallStats({this.recordingsMinutesConsumed, this.sessionsCount, this.sessionsMinutesConsumed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitOverallStats {const RealtimekitOverallStats({this.recordingsMinutesConsumed, this.sessionsCount, this.sessionsMinutesConsumed, });
 
 factory RealtimekitOverallStats.fromJson(Map<String, dynamic> json) { return RealtimekitOverallStats(
   recordingsMinutesConsumed: json['recordings_minutes_consumed'] != null ? (json['recordings_minutes_consumed'] as num).toDouble() : null,

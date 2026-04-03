@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpDocumentFingerprintEntry {const DlpDocumentFingerprintEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDocumentFingerprintEntry {const DlpDocumentFingerprintEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, });
 
 factory DlpDocumentFingerprintEntry.fromJson(Map<String, dynamic> json) { return DlpDocumentFingerprintEntry(
   createdAt: DateTime.parse(json['created_at'] as String),

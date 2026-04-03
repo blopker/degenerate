@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpHijacksEventsResponseResultInfo {const RadarGetBgpHijacksEventsResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpHijacksEventsResponseResultInfo {const RadarGetBgpHijacksEventsResponseResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, });
 
 factory RadarGetBgpHijacksEventsResponseResultInfo.fromJson(Map<String, dynamic> json) { return RadarGetBgpHijacksEventsResponseResultInfo(
   count: (json['count'] as num).toInt(),

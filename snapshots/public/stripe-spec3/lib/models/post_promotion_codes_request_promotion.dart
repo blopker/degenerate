@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPromotionCodesRequestPromotionType {const PostPromotionCodesRequestPromotionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPromotionCodesRequestPromotionType {const PostPromotionCodesRequestPromotionType._(this.value);
 
 factory PostPromotionCodesRequestPromotionType.fromJson(String json) { return switch (json) {
   'coupon' => coupon,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPromotionCodesRequestPromotionType($value)'; } 
  }
 /// The promotion referenced by this promotion code.
-final class PostPromotionCodesRequestPromotion {const PostPromotionCodesRequestPromotion({this.coupon, required this.type, });
+@immutable final class PostPromotionCodesRequestPromotion {const PostPromotionCodesRequestPromotion({required this.type, this.coupon, });
 
 factory PostPromotionCodesRequestPromotion.fromJson(Map<String, dynamic> json) { return PostPromotionCodesRequestPromotion(
   coupon: json['coupon'] as String?,

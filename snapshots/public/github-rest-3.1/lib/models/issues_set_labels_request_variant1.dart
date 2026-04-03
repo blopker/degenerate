@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class IssuesSetLabelsRequestVariant1 {const IssuesSetLabelsRequestVariant1({this.labels});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesSetLabelsRequestVariant1 {const IssuesSetLabelsRequestVariant1({this.labels});
 
 factory IssuesSetLabelsRequestVariant1.fromJson(Map<String, dynamic> json) { return IssuesSetLabelsRequestVariant1(
   labels: (json['labels'] as List<dynamic>?)?.map((e) => e as String).toList(),

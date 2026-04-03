@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_registrations_resource_country_options_default_standard.dart';/// Type of registration in `country`.
-final class TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType {const TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_registrations_resource_country_options_default_standard.dart';/// Type of registration in `country`.
+@immutable final class TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType {const TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType._(this.value);
 
 factory TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType.fromJson(String json) { return switch (json) {
   'standard' => standard,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType($value)'; } 
  }
 /// 
-final class TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods {const TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods({this.standard, required this.type, });
+@immutable final class TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods {const TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods({required this.type, this.standard, });
 
 factory TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoods(
   standard: json['standard'] != null ? TaxProductRegistrationsResourceCountryOptionsDefaultStandard.fromJson(json['standard'] as Map<String, dynamic>) : null,

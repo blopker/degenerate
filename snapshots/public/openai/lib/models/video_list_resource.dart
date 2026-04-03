@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'video_resource.dart';/// The type of object returned, must be `list`.
-final class VideoListResourceObject {const VideoListResourceObject._(this.value);
+@immutable final class VideoListResourceObject {const VideoListResourceObject._(this.value);
 
 factory VideoListResourceObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VideoListResourceObject($value)'; } 
  }
-final class VideoListResource {const VideoListResource({this.object = VideoListResourceObject.list, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+@immutable final class VideoListResource {const VideoListResource({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = VideoListResourceObject.list, });
 
 factory VideoListResource.fromJson(Map<String, dynamic> json) { return VideoListResource(
   object: VideoListResourceObject.fromJson(json['object'] as String),

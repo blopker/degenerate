@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the zone setting.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
 /// Notes: Default value depends on the zone's plan level.
-final class ZonesOpportunisticEncryptionValue {const ZonesOpportunisticEncryptionValue._(this.value);
+@immutable final class ZonesOpportunisticEncryptionValue {const ZonesOpportunisticEncryptionValue._(this.value);
 
 factory ZonesOpportunisticEncryptionValue.fromJson(String json) { return switch (json) {
   'on' => $on,

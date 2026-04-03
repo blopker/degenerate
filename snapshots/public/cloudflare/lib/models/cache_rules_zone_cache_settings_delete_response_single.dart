@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_messages2.dart';import 'cache_rules_result_object_delete.dart';final class CacheRulesZoneCacheSettingsDeleteResponseSingle {const CacheRulesZoneCacheSettingsDeleteResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_messages2.dart';import 'cache_rules_result_object_delete.dart';@immutable final class CacheRulesZoneCacheSettingsDeleteResponseSingle {const CacheRulesZoneCacheSettingsDeleteResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 
 factory CacheRulesZoneCacheSettingsDeleteResponseSingle.fromJson(Map<String, dynamic> json) { return CacheRulesZoneCacheSettingsDeleteResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => CacheRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SubscriptionScheduleCurrentPhase {const SubscriptionScheduleCurrentPhase({required this.endDate, required this.startDate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SubscriptionScheduleCurrentPhase {const SubscriptionScheduleCurrentPhase({required this.endDate, required this.startDate, });
 
 factory SubscriptionScheduleCurrentPhase.fromJson(Map<String, dynamic> json) { return SubscriptionScheduleCurrentPhase(
   endDate: (json['end_date'] as num).toInt(),

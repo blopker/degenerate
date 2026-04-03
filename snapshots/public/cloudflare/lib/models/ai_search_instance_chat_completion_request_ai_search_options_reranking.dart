@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel._(this.value);
 
 factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel.fromJson(String json) { return switch (json) {
   '@cf/baai/bge-reranker-base' => cfBaaiBgeRerankerBase,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel($value)'; } 
  }
-final class AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking {const AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking({this.enabled, this.matchThreshold = 0.4, this.model, });
+@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking {const AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking({this.enabled, this.matchThreshold = 0.4, this.model, });
 
 factory AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(
   enabled: json['enabled'] as bool?,

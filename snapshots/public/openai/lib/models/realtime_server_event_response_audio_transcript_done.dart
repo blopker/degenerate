@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `response.output_audio_transcript.done`.
-final class RealtimeServerEventResponseAudioTranscriptDoneType {const RealtimeServerEventResponseAudioTranscriptDoneType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_audio_transcript.done`.
+@immutable final class RealtimeServerEventResponseAudioTranscriptDoneType {const RealtimeServerEventResponseAudioTranscriptDoneType._(this.value);
 
 factory RealtimeServerEventResponseAudioTranscriptDoneType.fromJson(String json) { return switch (json) {
   'response.output_audio_transcript.done' => responseOutputAudioTranscriptDone,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// streaming. Also emitted when a Response is interrupted, incomplete, or
 /// cancelled.
 /// 
-final class RealtimeServerEventResponseAudioTranscriptDone {const RealtimeServerEventResponseAudioTranscriptDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.transcript, });
+@immutable final class RealtimeServerEventResponseAudioTranscriptDone {const RealtimeServerEventResponseAudioTranscriptDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.transcript, });
 
 factory RealtimeServerEventResponseAudioTranscriptDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseAudioTranscriptDone(
   eventId: json['event_id'] as String,

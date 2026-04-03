@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_ssl_dv.dart';/// A value that is one of: `TlsCertificatesAndHostnamesSslDv`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_ssl_dv.dart';/// A value that is one of: `TlsCertificatesAndHostnamesSslDv`.
 sealed class TlsCertificatesAndHostnamesSsl {const TlsCertificatesAndHostnamesSsl();
 
 factory TlsCertificatesAndHostnamesSsl.fromJson(Map<String, dynamic> json) {   if (TlsCertificatesAndHostnamesSslDv.canParse(json)) {
@@ -12,7 +12,7 @@ factory TlsCertificatesAndHostnamesSsl.fromJson(Map<String, dynamic> json) {   i
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class TlsCertificatesAndHostnamesSslTlsCertificatesAndHostnamesSslDv extends TlsCertificatesAndHostnamesSsl {const TlsCertificatesAndHostnamesSslTlsCertificatesAndHostnamesSslDv(this._value);
+@immutable final class TlsCertificatesAndHostnamesSslTlsCertificatesAndHostnamesSslDv extends TlsCertificatesAndHostnamesSsl {const TlsCertificatesAndHostnamesSslTlsCertificatesAndHostnamesSslDv(this._value);
 
 final TlsCertificatesAndHostnamesSslDv _value;
 
@@ -23,7 +23,7 @@ final TlsCertificatesAndHostnamesSslDv _value;
 @override String toString() { return 'TlsCertificatesAndHostnamesSsl.tlsCertificatesAndHostnamesSslDv($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class TlsCertificatesAndHostnamesSsl$Unknown extends TlsCertificatesAndHostnamesSsl {const TlsCertificatesAndHostnamesSsl$Unknown(this._value);
+@immutable final class TlsCertificatesAndHostnamesSsl$Unknown extends TlsCertificatesAndHostnamesSsl {const TlsCertificatesAndHostnamesSsl$Unknown(this._value);
 
 final dynamic _value;
 

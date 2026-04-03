@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_log_prob.dart';/// The type of the event. Always `response.output_text.delta`.
 /// 
-final class ResponseTextDeltaEventType {const ResponseTextDeltaEventType._(this.value);
+@immutable final class ResponseTextDeltaEventType {const ResponseTextDeltaEventType._(this.value);
 
 factory ResponseTextDeltaEventType.fromJson(String json) { return switch (json) {
   'response.output_text.delta' => responseOutputTextDelta,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseTextDeltaEventType($value)'; } 
  }
 /// Emitted when there is an additional text delta.
-final class ResponseTextDeltaEvent {const ResponseTextDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, required this.sequenceNumber, required this.logprobs, });
+@immutable final class ResponseTextDeltaEvent {const ResponseTextDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, required this.sequenceNumber, required this.logprobs, });
 
 factory ResponseTextDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseTextDeltaEvent(
   type: ResponseTextDeltaEventType.fromJson(json['type'] as String),

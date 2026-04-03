@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Kind of schema
-final class ShieldOldKind {const ShieldOldKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Kind of schema
+@immutable final class ShieldOldKind {const ShieldOldKind._(this.value);
 
 factory ShieldOldKind.fromJson(String json) { return switch (json) {
   'openapi_v3' => openapiV3,

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_summary_by_bot_class_response400_errors.dart';final class RadarGetHttpSummaryByBotClassResponse400 {const RadarGetHttpSummaryByBotClassResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_summary_by_bot_class_response400_errors.dart';@immutable final class RadarGetHttpSummaryByBotClassResponse400 {const RadarGetHttpSummaryByBotClassResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetHttpSummaryByBotClassResponse400.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByBotClassResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetHttpSummaryByBotClassResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RepositoryRuleRequiredDeploymentsParameters {const RepositoryRuleRequiredDeploymentsParameters({required this.requiredDeploymentEnvironments});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleRequiredDeploymentsParameters {const RepositoryRuleRequiredDeploymentsParameters({required this.requiredDeploymentEnvironments});
 
 factory RepositoryRuleRequiredDeploymentsParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredDeploymentsParameters(
   requiredDeploymentEnvironments: (json['required_deployment_environments'] as List<dynamic>).map((e) => e as String).toList(),

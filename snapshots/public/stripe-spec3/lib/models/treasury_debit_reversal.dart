@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_debit_reversal_transaction.dart';import 'treasury_received_debits_resource_debit_reversal_linked_flows.dart';import 'treasury_received_debits_resource_status_transitions.dart';import 'treasury_transaction.dart';/// The rails used to reverse the funds.
-final class TreasuryDebitReversalNetwork {const TreasuryDebitReversalNetwork._(this.value);
+@immutable final class TreasuryDebitReversalNetwork {const TreasuryDebitReversalNetwork._(this.value);
 
 factory TreasuryDebitReversalNetwork.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryDebitReversalNetwork($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class TreasuryDebitReversalObject {const TreasuryDebitReversalObject._(this.value);
+@immutable final class TreasuryDebitReversalObject {const TreasuryDebitReversalObject._(this.value);
 
 factory TreasuryDebitReversalObject.fromJson(String json) { return switch (json) {
   'treasury.debit_reversal' => treasuryDebitReversal,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryDebitReversalObject($value)'; } 
  }
 /// Status of the DebitReversal
-final class TreasuryDebitReversalStatus {const TreasuryDebitReversalStatus._(this.value);
+@immutable final class TreasuryDebitReversalStatus {const TreasuryDebitReversalStatus._(this.value);
 
 factory TreasuryDebitReversalStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryDebitReversalStatus($value)'; } 
  }
 /// You can reverse some [ReceivedDebits](https://api.stripe.com#received_debits) depending on their network and source flow. Reversing a ReceivedDebit leads to the creation of a new object known as a DebitReversal.
-final class TreasuryDebitReversal {const TreasuryDebitReversal({required this.amount, required this.created, required this.currency, this.financialAccount, this.hostedRegulatoryReceiptUrl, required this.id, this.linkedFlows, required this.livemode, required this.metadata, required this.network, required this.object, required this.receivedDebit, required this.status, required this.statusTransitions, this.transaction, });
+@immutable final class TreasuryDebitReversal {const TreasuryDebitReversal({required this.amount, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.network, required this.object, required this.receivedDebit, required this.status, required this.statusTransitions, this.financialAccount, this.hostedRegulatoryReceiptUrl, this.linkedFlows, this.transaction, });
 
 factory TreasuryDebitReversal.fromJson(Map<String, dynamic> json) { return TreasuryDebitReversal(
   amount: (json['amount'] as num).toInt(),

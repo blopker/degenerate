@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesCustomS2sConfigRequest {const TeamsDevicesCustomS2sConfigRequest({required this.accessClientId, required this.accessClientSecret, required this.apiUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesCustomS2sConfigRequest {const TeamsDevicesCustomS2sConfigRequest({required this.accessClientId, required this.accessClientSecret, required this.apiUrl, });
 
 factory TeamsDevicesCustomS2sConfigRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesCustomS2sConfigRequest(
   accessClientId: json['access_client_id'] as String,

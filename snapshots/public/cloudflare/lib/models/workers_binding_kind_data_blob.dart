@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_name.dart';final class WorkersBindingKindDataBlob {const WorkersBindingKindDataBlob({required this.name, required this.$part, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindDataBlob {const WorkersBindingKindDataBlob({required this.name, required this.$part, required this.type, });
 
 factory WorkersBindingKindDataBlob.fromJson(Map<String, dynamic> json) { return WorkersBindingKindDataBlob(
   name: WorkersBindingName.fromJson(json['name'] as String),

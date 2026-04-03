@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_config_content_type.dart';import 'webhook_config_insecure_ssl.dart';import 'webhook_config_secret.dart';import 'webhook_config_url.dart';final class WebhookPingHookConfig {const WebhookPingHookConfig({this.contentType, this.insecureSsl, this.secret, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_config_content_type.dart';import 'webhook_config_insecure_ssl.dart';import 'webhook_config_secret.dart';import 'webhook_config_url.dart';@immutable final class WebhookPingHookConfig {const WebhookPingHookConfig({this.contentType, this.insecureSsl, this.secret, this.url, });
 
 factory WebhookPingHookConfig.fromJson(Map<String, dynamic> json) { return WebhookPingHookConfig(
   contentType: json['content_type'] != null ? WebhookConfigContentType.fromJson(json['content_type'] as String) : null,

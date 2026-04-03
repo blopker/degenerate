@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';/// The reaction to use
-final class ReactionContent {const ReactionContent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The reaction to use
+@immutable final class ReactionContent {const ReactionContent._(this.value);
 
 factory ReactionContent.fromJson(String json) { return switch (json) {
   '+1' => plus1,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ReactionContent($value)'; } 
  }
 /// Reactions to conversations provide a way to help people express their feelings more simply and effectively.
-final class Reaction {const Reaction({required this.id, required this.nodeId, required this.user, required this.content, required this.createdAt, });
+@immutable final class Reaction {const Reaction({required this.id, required this.nodeId, required this.user, required this.content, required this.createdAt, });
 
 factory Reaction.fromJson(Map<String, dynamic> json) { return Reaction(
   id: (json['id'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsSummaryByResponseTtlQueryType {const RadarGetDnsSummaryByResponseTtlQueryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByResponseTtlQueryType {const RadarGetDnsSummaryByResponseTtlQueryType._(this.value);
 
 factory RadarGetDnsSummaryByResponseTtlQueryType.fromJson(String json) { return switch (json) {
   'A' => a,

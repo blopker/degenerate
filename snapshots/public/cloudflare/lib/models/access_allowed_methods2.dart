@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessAllowedMethods2 {const AccessAllowedMethods2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessAllowedMethods2 {const AccessAllowedMethods2._(this.value);
 
 factory AccessAllowedMethods2.fromJson(String json) { return switch (json) {
   'GET' => $get,

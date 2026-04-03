@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ai_inference_timeseries_group_by_task_response_result_meta_confidence_info.dart';import 'radar_get_ai_inference_timeseries_group_by_task_response_result_meta_date_range.dart';import 'radar_get_ai_inference_timeseries_group_by_task_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-final class RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaAggInterval {const RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaAggInterval._(this.value);
+@immutable final class RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaAggInterval {const RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaAggInterval._(this.value);
 
 factory RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaAggInterval($value)'; } 
  }
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaNormalization {const RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaNormalization {const RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaNormalization._(this.value);
 
 factory RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMeta {const RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMeta {const RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMeta(
   aggInterval: RadarGetAiInferenceTimeseriesGroupByTaskResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),

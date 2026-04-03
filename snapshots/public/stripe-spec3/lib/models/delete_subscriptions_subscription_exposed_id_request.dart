@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_subscriptions_subscription_exposed_id_request_cancellation_details.dart';final class DeleteSubscriptionsSubscriptionExposedIdRequest {const DeleteSubscriptionsSubscriptionExposedIdRequest({this.cancellationDetails, this.expand, this.invoiceNow, this.prorate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_subscriptions_subscription_exposed_id_request_cancellation_details.dart';@immutable final class DeleteSubscriptionsSubscriptionExposedIdRequest {const DeleteSubscriptionsSubscriptionExposedIdRequest({this.cancellationDetails, this.expand, this.invoiceNow, this.prorate, });
 
 factory DeleteSubscriptionsSubscriptionExposedIdRequest.fromJson(Map<String, dynamic> json) { return DeleteSubscriptionsSubscriptionExposedIdRequest(
   cancellationDetails: json['cancellation_details'] != null ? DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails.fromJson(json['cancellation_details'] as Map<String, dynamic>) : null,

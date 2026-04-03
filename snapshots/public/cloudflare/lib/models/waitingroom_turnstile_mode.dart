@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Which Turnstile widget type to use for detecting bot traffic. See
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which Turnstile widget type to use for detecting bot traffic. See
 /// [the Turnstile documentation](https://developers.cloudflare.com/turnstile/concepts/widget/#widget-types)
 /// for the definitions of these widget types. Set to `off` to disable the
 /// Turnstile integration entirely. Setting this to anything other than
 /// `off` or `invisible` requires Advanced Waiting Room.
 /// 
-final class WaitingroomTurnstileMode {const WaitingroomTurnstileMode._(this.value);
+@immutable final class WaitingroomTurnstileMode {const WaitingroomTurnstileMode._(this.value);
 
 factory WaitingroomTurnstileMode.fromJson(String json) { return switch (json) {
   'off' => off,

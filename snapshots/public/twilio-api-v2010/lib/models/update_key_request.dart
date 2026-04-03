@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateKeyRequest {const UpdateKeyRequest({this.friendlyName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateKeyRequest {const UpdateKeyRequest({this.friendlyName});
 
 factory UpdateKeyRequest.fromJson(Map<String, dynamic> json) { return UpdateKeyRequest(
   friendlyName: json['FriendlyName'] as String?,

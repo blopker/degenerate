@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloud_connector_rule_parameters.dart';/// Cloud Provider type
-final class CloudConnectorProvider {const CloudConnectorProvider._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloud_connector_rule_parameters.dart';/// Cloud Provider type
+@immutable final class CloudConnectorProvider {const CloudConnectorProvider._(this.value);
 
 factory CloudConnectorProvider.fromJson(String json) { return switch (json) {
   'aws_s3' => awsS3,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CloudConnectorProvider($value)'; } 
  }
-final class CloudConnectorRule {const CloudConnectorRule({this.description, this.enabled, this.expression, this.id, this.parameters, this.provider, });
+@immutable final class CloudConnectorRule {const CloudConnectorRule({this.description, this.enabled, this.expression, this.id, this.parameters, this.provider, });
 
 factory CloudConnectorRule.fromJson(Map<String, dynamic> json) { return CloudConnectorRule(
   description: json['description'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The content type. Always `input_text` for system messages.
-final class RealtimeConversationItemMessageSystemContentType {const RealtimeConversationItemMessageSystemContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type. Always `input_text` for system messages.
+@immutable final class RealtimeConversationItemMessageSystemContentType {const RealtimeConversationItemMessageSystemContentType._(this.value);
 
 factory RealtimeConversationItemMessageSystemContentType.fromJson(String json) { return switch (json) {
   'input_text' => inputText,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeConversationItemMessageSystemContentType($value)'; } 
  }
-final class RealtimeConversationItemMessageSystemContent {const RealtimeConversationItemMessageSystemContent({this.type, this.text, });
+@immutable final class RealtimeConversationItemMessageSystemContent {const RealtimeConversationItemMessageSystemContent({this.type, this.text, });
 
 factory RealtimeConversationItemMessageSystemContent.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageSystemContent(
   type: json['type'] != null ? RealtimeConversationItemMessageSystemContentType.fromJson(json['type'] as String) : null,

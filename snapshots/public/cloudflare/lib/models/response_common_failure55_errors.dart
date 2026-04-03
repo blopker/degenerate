@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ResponseCommonFailure55Errors {const ResponseCommonFailure55Errors({this.code, this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseCommonFailure55Errors {const ResponseCommonFailure55Errors({this.code, this.message, });
 
 factory ResponseCommonFailure55Errors.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure55Errors(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,

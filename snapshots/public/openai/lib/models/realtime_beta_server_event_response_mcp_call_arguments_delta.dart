@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `response.mcp_call_arguments.delta`.
-final class RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType {const RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call_arguments.delta`.
+@immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType {const RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType._(this.value);
 
 factory RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType.fromJson(String json) { return switch (json) {
   'response.mcp_call_arguments.delta' => responseMcpCallArgumentsDelta,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType($value)'; } 
  }
 /// Returned when MCP tool call arguments are updated during response generation.
-final class RealtimeBetaServerEventResponseMcpCallArgumentsDelta {const RealtimeBetaServerEventResponseMcpCallArgumentsDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.delta, this.obfuscation, });
+@immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDelta {const RealtimeBetaServerEventResponseMcpCallArgumentsDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.delta, this.obfuscation, });
 
 factory RealtimeBetaServerEventResponseMcpCallArgumentsDelta.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseMcpCallArgumentsDelta(
   eventId: json['event_id'] as String,

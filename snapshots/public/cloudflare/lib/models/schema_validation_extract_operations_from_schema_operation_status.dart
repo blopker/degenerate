@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SchemaValidationExtractOperationsFromSchemaOperationStatus {const SchemaValidationExtractOperationsFromSchemaOperationStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SchemaValidationExtractOperationsFromSchemaOperationStatus {const SchemaValidationExtractOperationsFromSchemaOperationStatus._(this.value);
 
 factory SchemaValidationExtractOperationsFromSchemaOperationStatus.fromJson(String json) { return switch (json) {
   'new' => $new,

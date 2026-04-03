@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ShippingCostShippingRateDataDeliveryEstimateMaximumUnit {const ShippingCostShippingRateDataDeliveryEstimateMaximumUnit._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShippingCostShippingRateDataDeliveryEstimateMaximumUnit {const ShippingCostShippingRateDataDeliveryEstimateMaximumUnit._(this.value);
 
 factory ShippingCostShippingRateDataDeliveryEstimateMaximumUnit.fromJson(String json) { return switch (json) {
   'business_day' => businessDay,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShippingCostShippingRateDataDeliveryEstimateMaximumUnit($value)'; } 
  }
-final class ShippingCostShippingRateDataDeliveryEstimateMaximum {const ShippingCostShippingRateDataDeliveryEstimateMaximum({required this.unit, required this.value, });
+@immutable final class ShippingCostShippingRateDataDeliveryEstimateMaximum {const ShippingCostShippingRateDataDeliveryEstimateMaximum({required this.unit, required this.value, });
 
 factory ShippingCostShippingRateDataDeliveryEstimateMaximum.fromJson(Map<String, dynamic> json) { return ShippingCostShippingRateDataDeliveryEstimateMaximum(
   unit: ShippingCostShippingRateDataDeliveryEstimateMaximumUnit.fromJson(json['unit'] as String),

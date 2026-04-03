@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ImagesImagePatchRequest {const ImagesImagePatchRequest({this.creator, this.metadata, this.requireSignedUrLs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImagePatchRequest {const ImagesImagePatchRequest({this.creator, this.metadata, this.requireSignedUrLs, });
 
 factory ImagesImagePatchRequest.fromJson(Map<String, dynamic> json) { return ImagesImagePatchRequest(
   creator: json['creator'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   requireSignedUrLs: json['requireSignedURLs'] as bool?,
 ); }
 

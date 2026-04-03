@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TelemetryQueryRequestParametersCalculationsKeyType {const TelemetryQueryRequestParametersCalculationsKeyType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryQueryRequestParametersCalculationsKeyType {const TelemetryQueryRequestParametersCalculationsKeyType._(this.value);
 
 factory TelemetryQueryRequestParametersCalculationsKeyType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TelemetryQueryRequestParametersCalculationsKeyType($value)'; } 
  }
-final class TelemetryQueryRequestParametersCalculationsOperator {const TelemetryQueryRequestParametersCalculationsOperator._(this.value);
+@immutable final class TelemetryQueryRequestParametersCalculationsOperator {const TelemetryQueryRequestParametersCalculationsOperator._(this.value);
 
 factory TelemetryQueryRequestParametersCalculationsOperator.fromJson(String json) { return switch (json) {
   'uniq' => uniq,
@@ -159,7 +159,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TelemetryQueryRequestParametersCalculationsOperator($value)'; } 
  }
-final class TelemetryQueryRequestParametersCalculations {const TelemetryQueryRequestParametersCalculations({this.alias, this.key, this.keyType, required this.$operator, });
+@immutable final class TelemetryQueryRequestParametersCalculations {const TelemetryQueryRequestParametersCalculations({required this.$operator, this.alias, this.key, this.keyType, });
 
 factory TelemetryQueryRequestParametersCalculations.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequestParametersCalculations(
   alias: json['alias'] as String?,

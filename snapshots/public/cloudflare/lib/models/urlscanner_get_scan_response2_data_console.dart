@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_response2_data_console_message.dart';final class UrlscannerGetScanResponse2DataConsole {const UrlscannerGetScanResponse2DataConsole({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_data_console_message.dart';@immutable final class UrlscannerGetScanResponse2DataConsole {const UrlscannerGetScanResponse2DataConsole({required this.message});
 
 factory UrlscannerGetScanResponse2DataConsole.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataConsole(
   message: UrlscannerGetScanResponse2DataConsoleMessage.fromJson(json['message'] as Map<String, dynamic>),

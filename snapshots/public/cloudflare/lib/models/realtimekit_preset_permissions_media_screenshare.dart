@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Can produce screen share video
-final class RealtimekitPresetPermissionsMediaScreenshareCanProduce {const RealtimekitPresetPermissionsMediaScreenshareCanProduce._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Can produce screen share video
+@immutable final class RealtimekitPresetPermissionsMediaScreenshareCanProduce {const RealtimekitPresetPermissionsMediaScreenshareCanProduce._(this.value);
 
 factory RealtimekitPresetPermissionsMediaScreenshareCanProduce.fromJson(String json) { return switch (json) {
   'ALLOWED' => allowed,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitPresetPermissionsMediaScreenshareCanProduce($value)'; } 
  }
 /// Screenshare permissions
-final class RealtimekitPresetPermissionsMediaScreenshare {const RealtimekitPresetPermissionsMediaScreenshare({required this.canProduce});
+@immutable final class RealtimekitPresetPermissionsMediaScreenshare {const RealtimekitPresetPermissionsMediaScreenshare({required this.canProduce});
 
 factory RealtimekitPresetPermissionsMediaScreenshare.fromJson(Map<String, dynamic> json) { return RealtimekitPresetPermissionsMediaScreenshare(
   canProduce: RealtimekitPresetPermissionsMediaScreenshareCanProduce.fromJson(json['can_produce'] as String),

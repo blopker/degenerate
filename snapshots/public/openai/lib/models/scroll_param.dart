@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A scroll action.
-final class ScrollParam {const ScrollParam({this.type = 'scroll', required this.x, required this.y, required this.scrollX, required this.scrollY, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A scroll action.
+@immutable final class ScrollParam {const ScrollParam({required this.x, required this.y, required this.scrollX, required this.scrollY, this.type = 'scroll', });
 
 factory ScrollParam.fromJson(Map<String, dynamic> json) { return ScrollParam(
   type: json['type'] as String,

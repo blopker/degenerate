@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'completion_usage_completion_tokens_details.dart';import 'completion_usage_prompt_tokens_details.dart';/// Usage statistics for the completion request.
-final class CompletionUsage {const CompletionUsage({this.completionTokens = 0, this.promptTokens = 0, this.totalTokens = 0, this.completionTokensDetails, this.promptTokensDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'completion_usage_completion_tokens_details.dart';import 'completion_usage_prompt_tokens_details.dart';/// Usage statistics for the completion request.
+@immutable final class CompletionUsage {const CompletionUsage({this.completionTokens = 0, this.promptTokens = 0, this.totalTokens = 0, this.completionTokensDetails, this.promptTokensDetails, });
 
 factory CompletionUsage.fromJson(Map<String, dynamic> json) { return CompletionUsage(
   completionTokens: (json['completion_tokens'] as num).toInt(),

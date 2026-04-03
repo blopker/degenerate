@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_response2_page_screenshot.dart';final class UrlscannerGetScanResponse2Page {const UrlscannerGetScanResponse2Page({required this.apexDomain, required this.asn, required this.asnname, required this.city, required this.country, required this.domain, required this.ip, required this.mimeType, this.screenshot, required this.server, required this.status, required this.title, required this.tlsAgeDays, required this.tlsIssuer, required this.tlsValidDays, required this.tlsValidFrom, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_page_screenshot.dart';@immutable final class UrlscannerGetScanResponse2Page {const UrlscannerGetScanResponse2Page({required this.apexDomain, required this.asn, required this.asnname, required this.city, required this.country, required this.domain, required this.ip, required this.mimeType, required this.server, required this.status, required this.title, required this.tlsAgeDays, required this.tlsIssuer, required this.tlsValidDays, required this.tlsValidFrom, required this.url, this.screenshot, });
 
 factory UrlscannerGetScanResponse2Page.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2Page(
   apexDomain: json['apexDomain'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_webhook_endpoints_request_description.dart';import 'post_webhook_endpoints_request_metadata.dart';final class PostWebhookEndpointsRequestEnabledEvents {const PostWebhookEndpointsRequestEnabledEvents._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_webhook_endpoints_request_description.dart';import 'post_webhook_endpoints_request_metadata.dart';@immutable final class PostWebhookEndpointsRequestEnabledEvents {const PostWebhookEndpointsRequestEnabledEvents._(this.value);
 
 factory PostWebhookEndpointsRequestEnabledEvents.fromJson(String json) { return switch (json) {
   '*' => $empty,
@@ -784,7 +784,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostWebhookEndpointsRequestEnabledEvents($value)'; } 
  }
 /// Events sent to this endpoint will be generated with this Stripe Version instead of your account's default Stripe Version.
-final class PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion._(this.value);
+@immutable final class PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion._(this.value);
 
 factory PostWebhookEndpointsRequestVersion.fromJson(String json) { return switch (json) {
   '2011-01-01' => $20110101,
@@ -1165,7 +1165,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostWebhookEndpointsRequestVersion($value)'; } 
  }
-final class PostWebhookEndpointsRequest {const PostWebhookEndpointsRequest({this.apiVersion, this.connect, this.description, required this.enabledEvents, this.expand, this.metadata, required this.url, });
+@immutable final class PostWebhookEndpointsRequest {const PostWebhookEndpointsRequest({required this.enabledEvents, required this.url, this.apiVersion, this.connect, this.description, this.expand, this.metadata, });
 
 factory PostWebhookEndpointsRequest.fromJson(Map<String, dynamic> json) { return PostWebhookEndpointsRequest(
   apiVersion: json['api_version'] != null ? PostWebhookEndpointsRequestVersion.fromJson(json['api_version'] as String) : null,

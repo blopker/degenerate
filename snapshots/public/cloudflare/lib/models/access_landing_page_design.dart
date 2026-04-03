@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The background color of the log in button on the landing page.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The background color of the log in button on the landing page.
 extension type const AccessButtonColor(String value) {
 factory AccessButtonColor.fromJson(String json) => AccessButtonColor(json);
 
@@ -36,7 +36,7 @@ String toJson() => value;
 
 }
 /// The design of the App Launcher landing page shown to users when they log in.
-final class AccessLandingPageDesign {const AccessLandingPageDesign({this.buttonColor, this.buttonTextColor, this.imageUrl, this.message, this.title, });
+@immutable final class AccessLandingPageDesign {const AccessLandingPageDesign({this.buttonColor, this.buttonTextColor, this.imageUrl, this.message, this.title, });
 
 factory AccessLandingPageDesign.fromJson(Map<String, dynamic> json) { return AccessLandingPageDesign(
   buttonColor: json['button_color'] != null ? AccessButtonColor.fromJson(json['button_color'] as String) : null,

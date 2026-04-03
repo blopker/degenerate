@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metadata about the zone.
-final class ZonesZoneMeta {const ZonesZoneMeta({this.cdnOnly, this.customCertificateQuota, this.dnsOnly, this.foundationDns, this.pageRuleQuota, this.phishingDetected, this.step, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metadata about the zone.
+@immutable final class ZonesZoneMeta {const ZonesZoneMeta({this.cdnOnly, this.customCertificateQuota, this.dnsOnly, this.foundationDns, this.pageRuleQuota, this.phishingDetected, this.step, });
 
 factory ZonesZoneMeta.fromJson(Map<String, dynamic> json) { return ZonesZoneMeta(
   cdnOnly: json['cdn_only'] as bool?,

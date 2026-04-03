@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_http_top_browsers_response_result.dart';final class RadarGetHttpTopBrowsersResponse {const RadarGetHttpTopBrowsersResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_browsers_response_result.dart';@immutable final class RadarGetHttpTopBrowsersResponse {const RadarGetHttpTopBrowsersResponse({required this.result, required this.success, });
 
 factory RadarGetHttpTopBrowsersResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopBrowsersResponse(
   result: RadarGetHttpTopBrowsersResponseResult.fromJson(json['result'] as Map<String, dynamic>),

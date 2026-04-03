@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bundle_custom_scan_payload.dart';import 'bundle_identifier.dart';/// Defines a custom scan expression to match Content Scanning on.
-final class BundleCustomScan {const BundleCustomScan({this.id, this.payload, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bundle_custom_scan_payload.dart';import 'bundle_identifier.dart';/// Defines a custom scan expression to match Content Scanning on.
+@immutable final class BundleCustomScan {const BundleCustomScan({this.id, this.payload, });
 
 factory BundleCustomScan.fromJson(Map<String, dynamic> json) { return BundleCustomScan(
   id: json['id'] != null ? BundleIdentifier.fromJson(json['id'] as String) : null,

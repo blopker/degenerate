@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTimeseriesGroupByBotClassDeviceType {const RadarGetHttpTimeseriesGroupByBotClassDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByBotClassDeviceType {const RadarGetHttpTimeseriesGroupByBotClassDeviceType._(this.value);
 
 factory RadarGetHttpTimeseriesGroupByBotClassDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,

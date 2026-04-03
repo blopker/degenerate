@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCheckoutSessionsSessionRequest {const GetCheckoutSessionsSessionRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCheckoutSessionsSessionRequest {const GetCheckoutSessionsSessionRequest();
 
-factory GetCheckoutSessionsSessionRequest.fromJson(Map<String, dynamic> json) { return GetCheckoutSessionsSessionRequest(
-
-); }
+factory GetCheckoutSessionsSessionRequest.fromJson(Map<String, dynamic> _) { return const GetCheckoutSessionsSessionRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetCheckoutSessionsSessionRequest copyWith() { return GetCheckoutSessionsSessionRequest(
+GetCheckoutSessionsSessionRequest copyWith() { return const GetCheckoutSessionsSessionRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetCheckoutSessionsSessionRequest; } 

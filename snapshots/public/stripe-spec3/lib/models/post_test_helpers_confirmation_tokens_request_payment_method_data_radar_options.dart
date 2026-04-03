@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataRadarOptions {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataRadarOptions({this.session});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataRadarOptions {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataRadarOptions({this.session});
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataRadarOptions.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataRadarOptions(
   session: json['session'] as String?,

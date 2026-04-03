@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';/// State of the release asset.
-final class ReleaseAssetState {const ReleaseAssetState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// State of the release asset.
+@immutable final class ReleaseAssetState {const ReleaseAssetState._(this.value);
 
 factory ReleaseAssetState.fromJson(String json) { return switch (json) {
   'uploaded' => uploaded,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ReleaseAssetState($value)'; } 
  }
 /// Data related to a release.
-final class ReleaseAsset {const ReleaseAsset({required this.url, required this.browserDownloadUrl, required this.id, required this.nodeId, required this.name, required this.label, required this.state, required this.contentType, required this.size, required this.digest, required this.downloadCount, required this.createdAt, required this.updatedAt, required this.uploader, });
+@immutable final class ReleaseAsset {const ReleaseAsset({required this.url, required this.browserDownloadUrl, required this.id, required this.nodeId, required this.name, required this.label, required this.state, required this.contentType, required this.size, required this.digest, required this.downloadCount, required this.createdAt, required this.updatedAt, required this.uploader, });
 
 factory ReleaseAsset.fromJson(Map<String, dynamic> json) { return ReleaseAsset(
   url: Uri.parse(json['url'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The customer's bank. Can be one of `ing`, `citi_handlowy`, `tmobile_usbugi_bankowe`, `plus_bank`, `etransfer_pocztowy24`, `banki_spbdzielcze`, `bank_nowy_bfg_sa`, `getin_bank`, `velobank`, `blik`, `noble_pay`, `ideabank`, `envelobank`, `santander_przelew24`, `nest_przelew`, `mbank_mtransfer`, `inteligo`, `pbac_z_ipko`, `bnp_paribas`, `credit_agricole`, `toyota_bank`, `bank_pekao_sa`, `volkswagen_bank`, `bank_millennium`, `alior_bank`, or `boz`.
-final class PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer's bank. Can be one of `ing`, `citi_handlowy`, `tmobile_usbugi_bankowe`, `plus_bank`, `etransfer_pocztowy24`, `banki_spbdzielcze`, `bank_nowy_bfg_sa`, `getin_bank`, `velobank`, `blik`, `noble_pay`, `ideabank`, `envelobank`, `santander_przelew24`, `nest_przelew`, `mbank_mtransfer`, `inteligo`, `pbac_z_ipko`, `bnp_paribas`, `credit_agricole`, `toyota_bank`, `bank_pekao_sa`, `volkswagen_bank`, `bank_millennium`, `alior_bank`, or `boz`.
+@immutable final class PaymentMethodDetailsP24Bank {const PaymentMethodDetailsP24Bank._(this.value);
 
 factory PaymentMethodDetailsP24Bank.fromJson(String json) { return switch (json) {
   'alior_bank' => aliorBank,
@@ -98,7 +98,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsP24Bank($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsP24 {const PaymentMethodDetailsP24({this.bank, this.reference, this.verifiedName, });
+@immutable final class PaymentMethodDetailsP24 {const PaymentMethodDetailsP24({this.bank, this.reference, this.verifiedName, });
 
 factory PaymentMethodDetailsP24.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsP24(
   bank: json['bank'] != null ? PaymentMethodDetailsP24Bank.fromJson(json['bank'] as String) : null,

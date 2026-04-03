@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreference {const PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreference {const PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestBacsDebitDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersSchemasSubdomain {const WorkersSchemasSubdomain({required this.subdomain});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersSchemasSubdomain {const WorkersSchemasSubdomain({required this.subdomain});
 
 factory WorkersSchemasSubdomain.fromJson(Map<String, dynamic> json) { return WorkersSchemasSubdomain(
   subdomain: json['subdomain'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secondary_dns_acl_components_schemas_name.dart';import 'secondary_dns_ip_range.dart';final class SecondaryDnsAclCreateAclRequest {const SecondaryDnsAclCreateAclRequest({required this.ipRange, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_acl_components_schemas_name.dart';import 'secondary_dns_ip_range.dart';@immutable final class SecondaryDnsAclCreateAclRequest {const SecondaryDnsAclCreateAclRequest({required this.ipRange, required this.name, });
 
 factory SecondaryDnsAclCreateAclRequest.fromJson(Map<String, dynamic> json) { return SecondaryDnsAclCreateAclRequest(
   ipRange: SecondaryDnsIpRange.fromJson(json['ip_range'] as String),

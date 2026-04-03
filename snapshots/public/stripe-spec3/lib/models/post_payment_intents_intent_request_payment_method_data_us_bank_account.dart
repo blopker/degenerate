@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType {const PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType {const PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType._(this.value);
 
 factory PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType($value)'; } 
  }
-final class PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType {const PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType._(this.value);
+@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType {const PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType._(this.value);
 
 factory PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountType($value)'; } 
  }
-final class PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount {const PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount({this.accountHolderType, this.accountNumber, this.accountType, this.financialConnectionsAccount, this.routingNumber, });
+@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount {const PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount({this.accountHolderType, this.accountNumber, this.accountType, this.financialConnectionsAccount, this.routingNumber, });
 
 factory PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccount(
   accountHolderType: json['account_holder_type'] != null ? PostPaymentIntentsIntentRequestPaymentMethodDataUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,

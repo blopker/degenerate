@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waf_overrides_delete_a_waf_override_response_result.dart';final class WafOverridesDeleteAWafOverrideResponse {const WafOverridesDeleteAWafOverrideResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_overrides_delete_a_waf_override_response_result.dart';@immutable final class WafOverridesDeleteAWafOverrideResponse {const WafOverridesDeleteAWafOverrideResponse({this.result});
 
 factory WafOverridesDeleteAWafOverrideResponse.fromJson(Map<String, dynamic> json) { return WafOverridesDeleteAWafOverrideResponse(
   result: json['result'] != null ? WafOverridesDeleteAWafOverrideResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

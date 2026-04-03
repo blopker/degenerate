@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logcontrol_messages2.dart';final class DeleteAccountsAccountIdLogsControlCmbConfigResponse {const DeleteAccountsAccountIdLogsControlCmbConfigResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logcontrol_messages2.dart';@immutable final class DeleteAccountsAccountIdLogsControlCmbConfigResponse {const DeleteAccountsAccountIdLogsControlCmbConfigResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory DeleteAccountsAccountIdLogsControlCmbConfigResponse.fromJson(Map<String, dynamic> json) { return DeleteAccountsAccountIdLogsControlCmbConfigResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => LogcontrolMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LogcontrolMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 final List<LogcontrolMessages2> errors;

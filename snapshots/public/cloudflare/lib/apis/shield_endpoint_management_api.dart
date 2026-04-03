@@ -29,12 +29,12 @@ if (direction != null) {
 }
 if (host != null) {
 for (final item in host) {
-  queryParametersList.add(ApiQueryParameter(name: 'host', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'host', value: item));
 }
 }
 if (method != null) {
 for (final item in method) {
-  queryParametersList.add(ApiQueryParameter(name: 'method', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'method', value: item));
 }
 }
 if (endpoint != null) {
@@ -42,7 +42,7 @@ if (endpoint != null) {
 }
 if (feature != null) {
 for (final item in feature) {
-  queryParametersList.add(ApiQueryParameter(name: 'feature', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'feature', value: item.toJson()));
 }
 }
 
@@ -121,7 +121,7 @@ Future<ApiResult<ShieldOperation, Never>> apiShieldEndpointManagementRetrieveInf
 final queryParametersList = <ApiQueryParameter>[];
 if (feature != null) {
 for (final item in feature) {
-  queryParametersList.add(ApiQueryParameter(name: 'feature', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'feature', value: item.toJson()));
 }
 }
 
@@ -196,12 +196,12 @@ Future<ApiResult<ShieldSchemaResponseWithThresholdsResult, Never>> apiShieldEndp
 final queryParametersList = <ApiQueryParameter>[];
 if (host != null) {
 for (final item in host) {
-  queryParametersList.add(ApiQueryParameter(name: 'host', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'host', value: item));
 }
 }
 if (feature != null) {
 for (final item in feature) {
-  queryParametersList.add(ApiQueryParameter(name: 'feature', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'feature', value: item.toJson()));
 }
 }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ImageClassification2 {const ImageClassification2({this.label, this.score, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageClassification2 {const ImageClassification2({this.label, this.score, });
 
 factory ImageClassification2.fromJson(Map<String, dynamic> json) { return ImageClassification2(
   label: json['label'] as String?,

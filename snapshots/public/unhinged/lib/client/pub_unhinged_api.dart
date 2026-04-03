@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'pub_unhinged_security.dart';
-import '../apis/incidents_api.dart';
-import '../apis/default_api.dart';
 import '../apis/class_api.dart';
+import '../apis/default_api.dart';
+import '../apis/incidents_api.dart';
+import 'pub_unhinged_security.dart';
 
 /// Root SDK client providing access to all API groups.
 ///
@@ -13,11 +13,11 @@ import '../apis/class_api.dart';
 /// sdk.incidents.listIncidentsV2draft();
 /// ```
 final class PubUnhingedApi {
+  PubUnhingedApi(this._config);
+
   static const defaultBaseUrl = 'https://api.bplm.gov/v6';
 
   final ApiConfig _config;
-
-  PubUnhingedApi(this._config);
 
   late final IncidentsApi incidents = IncidentsApi(_config);
   late final DefaultApi $default = DefaultApi(_config);

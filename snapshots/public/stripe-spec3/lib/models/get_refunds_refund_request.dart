@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetRefundsRefundRequest {const GetRefundsRefundRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetRefundsRefundRequest {const GetRefundsRefundRequest();
 
-factory GetRefundsRefundRequest.fromJson(Map<String, dynamic> json) { return GetRefundsRefundRequest(
-
-); }
+factory GetRefundsRefundRequest.fromJson(Map<String, dynamic> _) { return const GetRefundsRefundRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetRefundsRefundRequest copyWith() { return GetRefundsRefundRequest(
+GetRefundsRefundRequest copyWith() { return const GetRefundsRefundRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetRefundsRefundRequest; } 

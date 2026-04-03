@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about the submitter of the report.
-final class AbuseReportsSubmitterDetails {const AbuseReportsSubmitterDetails({this.company, this.email, this.name, this.telephone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the submitter of the report.
+@immutable final class AbuseReportsSubmitterDetails {const AbuseReportsSubmitterDetails({this.company, this.email, this.name, this.telephone, });
 
 factory AbuseReportsSubmitterDetails.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitterDetails(
   company: json['company'] as String?,

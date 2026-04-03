@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
-final class ReposUpdateBranchProtectionRequestRestrictions {const ReposUpdateBranchProtectionRequestRestrictions({required this.users, required this.teams, this.apps, });
+@immutable final class ReposUpdateBranchProtectionRequestRestrictions {const ReposUpdateBranchProtectionRequestRestrictions({required this.users, required this.teams, this.apps, });
 
 factory ReposUpdateBranchProtectionRequestRestrictions.fromJson(Map<String, dynamic> json) { return ReposUpdateBranchProtectionRequestRestrictions(
   users: (json['users'] as List<dynamic>).map((e) => e as String).toList(),

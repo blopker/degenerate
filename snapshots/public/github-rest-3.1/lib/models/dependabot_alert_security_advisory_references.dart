@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A link to additional advisory information.
-final class DependabotAlertSecurityAdvisoryReferences {const DependabotAlertSecurityAdvisoryReferences({required this.url});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A link to additional advisory information.
+@immutable final class DependabotAlertSecurityAdvisoryReferences {const DependabotAlertSecurityAdvisoryReferences({required this.url});
 
 factory DependabotAlertSecurityAdvisoryReferences.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisoryReferences(
   url: Uri.parse(json['url'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'credit_note_customer.dart';import 'credit_note_customer_balance_transaction.dart';import 'credit_note_invoice.dart';import 'credit_note_lines.dart';import 'credit_note_refund.dart';import 'credit_notes_pretax_credit_amount.dart';import 'customer.dart';import 'customer_balance_transaction.dart';import 'deleted_customer.dart';import 'discounts_resource_discount_amount.dart';import 'invoice.dart';import 'invoices_resource_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class CreditNoteObject {const CreditNoteObject._(this.value);
+@immutable final class CreditNoteObject {const CreditNoteObject._(this.value);
 
 factory CreditNoteObject.fromJson(String json) { return switch (json) {
   'credit_note' => creditNote,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreditNoteObject($value)'; } 
  }
 /// Reason for issuing this credit note, one of `duplicate`, `fraudulent`, `order_change`, or `product_unsatisfactory`
-final class CreditNoteReason {const CreditNoteReason._(this.value);
+@immutable final class CreditNoteReason {const CreditNoteReason._(this.value);
 
 factory CreditNoteReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreditNoteReason($value)'; } 
  }
 /// Status of this credit note, one of `issued` or `void`. Learn more about [voiding credit notes](https://docs.stripe.com/billing/invoices/credit-notes#voiding).
-final class CreditNoteStatus {const CreditNoteStatus._(this.value);
+@immutable final class CreditNoteStatus {const CreditNoteStatus._(this.value);
 
 factory CreditNoteStatus.fromJson(String json) { return switch (json) {
   'issued' => issued,
@@ -79,7 +79,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreditNoteStatus($value)'; } 
  }
 /// Type of this credit note, one of `pre_payment` or `post_payment`. A `pre_payment` credit note means it was issued when the invoice was open. A `post_payment` credit note means it was issued when the invoice was paid.
-final class CreditNoteType {const CreditNoteType._(this.value);
+@immutable final class CreditNoteType {const CreditNoteType._(this.value);
 
 factory CreditNoteType.fromJson(String json) { return switch (json) {
   'mixed' => mixed,
@@ -109,7 +109,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Issue a credit note to adjust an invoice's amount after the invoice is finalized.
 /// 
 /// Related guide: [Credit notes](https://docs.stripe.com/billing/invoices/credit-notes)
-final class CreditNote {const CreditNote({required this.amount, required this.amountShipping, required this.created, required this.currency, required this.customer, this.customerAccount, this.customerBalanceTransaction, required this.discountAmount, required this.discountAmounts, this.effectiveAt, required this.id, required this.invoice, required this.lines, required this.livemode, this.memo, this.metadata, required this.number, required this.object, this.outOfBandAmount, required this.pdf, required this.postPaymentAmount, required this.prePaymentAmount, required this.pretaxCreditAmounts, this.reason, required this.refunds, this.shippingCost, required this.status, required this.subtotal, this.subtotalExcludingTax, required this.total, this.totalExcludingTax, this.totalTaxes, required this.type, this.voidedAt, });
+@immutable final class CreditNote {const CreditNote({required this.number, required this.amountShipping, required this.created, required this.currency, required this.customer, required this.invoice, required this.discountAmount, required this.discountAmounts, required this.id, required this.amount, required this.lines, required this.livemode, required this.prePaymentAmount, required this.object, required this.pdf, required this.postPaymentAmount, required this.type, required this.total, required this.refunds, required this.subtotal, required this.status, required this.pretaxCreditAmounts, this.voidedAt, this.reason, this.outOfBandAmount, this.shippingCost, this.metadata, this.memo, this.subtotalExcludingTax, this.effectiveAt, this.totalExcludingTax, this.totalTaxes, this.customerBalanceTransaction, this.customerAccount, });
 
 factory CreditNote.fromJson(Map<String, dynamic> json) { return CreditNote(
   amount: (json['amount'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An x/y coordinate pair, e.g. `{ x: 100, y: 200 }`.
-final class DragPoint {const DragPoint({required this.x, required this.y, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An x/y coordinate pair, e.g. `{ x: 100, y: 200 }`.
+@immutable final class DragPoint {const DragPoint({required this.x, required this.y, });
 
 factory DragPoint.fromJson(Map<String, dynamic> json) { return DragPoint(
   x: (json['x'] as num).toInt(),

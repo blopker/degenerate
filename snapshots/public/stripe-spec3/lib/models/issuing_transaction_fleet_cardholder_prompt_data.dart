@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingTransactionFleetCardholderPromptData {const IssuingTransactionFleetCardholderPromptData({this.driverId, this.odometer, this.unspecifiedId, this.userId, this.vehicleNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingTransactionFleetCardholderPromptData {const IssuingTransactionFleetCardholderPromptData({this.driverId, this.odometer, this.unspecifiedId, this.userId, this.vehicleNumber, });
 
 factory IssuingTransactionFleetCardholderPromptData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFleetCardholderPromptData(
   driverId: json['driver_id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CachePurgeEverything {const CachePurgeEverything({this.purgeEverything});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CachePurgeEverything {const CachePurgeEverything({this.purgeEverything});
 
 factory CachePurgeEverything.fromJson(Map<String, dynamic> json) { return CachePurgeEverything(
   purgeEverything: json['purge_everything'] as bool?,

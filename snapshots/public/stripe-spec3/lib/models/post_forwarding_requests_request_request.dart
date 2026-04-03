@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_forwarding_requests_request_request_headers.dart';/// The request body and headers to be sent to the destination endpoint.
-final class PostForwardingRequestsRequestRequest {const PostForwardingRequestsRequestRequest({this.body, this.headers, });
+@immutable final class PostForwardingRequestsRequestRequest {const PostForwardingRequestsRequestRequest({this.body, this.headers, });
 
 factory PostForwardingRequestsRequestRequest.fromJson(Map<String, dynamic> json) { return PostForwardingRequestsRequestRequest(
   body: json['body'] as String?,

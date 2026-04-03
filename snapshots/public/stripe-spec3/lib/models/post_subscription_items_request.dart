@@ -7,7 +7,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_billing
 /// Use `pending_if_incomplete` to update the subscription using [pending updates](https://docs.stripe.com/billing/subscriptions/pending-updates). When you use `pending_if_incomplete` you can only pass the parameters [supported by pending updates](https://docs.stripe.com/billing/pending-updates-reference#supported-attributes).
 /// 
 /// Use `error_if_incomplete` if you want Stripe to return an HTTP 402 status code if a subscription's invoice cannot be paid. For example, if a payment method requires 3DS authentication due to SCA regulation and further user action is needed, this parameter does not update the subscription and returns an error instead. This was the default behavior for API versions prior to 2019-03-14. See the [changelog](https://docs.stripe.com/changelog/2019-03-14) to learn more.
-final class PostSubscriptionItemsRequestPaymentBehavior {const PostSubscriptionItemsRequestPaymentBehavior._(this.value);
+@immutable final class PostSubscriptionItemsRequestPaymentBehavior {const PostSubscriptionItemsRequestPaymentBehavior._(this.value);
 
 factory PostSubscriptionItemsRequestPaymentBehavior.fromJson(String json) { return switch (json) {
   'allow_incomplete' => allowIncomplete,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSubscriptionItemsRequestPaymentBehavior($value)'; } 
  }
 /// Determines how to handle [prorations](https://docs.stripe.com/billing/subscriptions/prorations) when the billing cycle changes (e.g., when switching plans, resetting `billing_cycle_anchor=now`, or starting a trial), or if an item's `quantity` changes. The default value is `create_prorations`.
-final class PostSubscriptionItemsRequestProrationBehavior {const PostSubscriptionItemsRequestProrationBehavior._(this.value);
+@immutable final class PostSubscriptionItemsRequestProrationBehavior {const PostSubscriptionItemsRequestProrationBehavior._(this.value);
 
 factory PostSubscriptionItemsRequestProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionItemsRequestProrationBehavior($value)'; } 
  }
-final class PostSubscriptionItemsRequest {const PostSubscriptionItemsRequest({this.billingThresholds, this.discounts, this.expand, this.metadata, this.paymentBehavior, this.price, this.priceData, this.prorationBehavior, this.prorationDate, this.quantity, required this.subscription, this.taxRates, });
+@immutable final class PostSubscriptionItemsRequest {const PostSubscriptionItemsRequest({required this.subscription, this.billingThresholds, this.discounts, this.expand, this.metadata, this.paymentBehavior, this.price, this.priceData, this.prorationBehavior, this.prorationDate, this.quantity, this.taxRates, });
 
 factory PostSubscriptionItemsRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionItemsRequest(
   billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => ItemBillingThresholdsParam5.fromJson(v as Map<String, dynamic>), fromB: (v) => PostSubscriptionItemsRequestBillingThresholdsVariant2.fromJson(v as String),) : null,

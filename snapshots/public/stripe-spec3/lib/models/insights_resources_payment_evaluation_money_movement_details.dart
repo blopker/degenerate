@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'insights_resources_payment_evaluation_money_movement_card.dart';/// Describes the type of money movement. Currently only `card` is supported.
-final class InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType {const InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_money_movement_card.dart';/// Describes the type of money movement. Currently only `card` is supported.
+@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType {const InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType._(this.value);
 
 factory InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType.fromJson(String json) { return switch (json) {
   'card' => card,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType($value)'; } 
  }
 /// Money Movement details attached to this payment.
-final class InsightsResourcesPaymentEvaluationMoneyMovementDetails {const InsightsResourcesPaymentEvaluationMoneyMovementDetails({this.card, required this.moneyMovementType, });
+@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementDetails {const InsightsResourcesPaymentEvaluationMoneyMovementDetails({required this.moneyMovementType, this.card, });
 
 factory InsightsResourcesPaymentEvaluationMoneyMovementDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationMoneyMovementDetails(
   card: json['card'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementCard.fromJson(json['card'] as Map<String, dynamic>) : null,

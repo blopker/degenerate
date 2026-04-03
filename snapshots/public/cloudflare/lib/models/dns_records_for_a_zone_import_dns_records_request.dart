@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DnsRecordsForAZoneImportDnsRecordsRequest {const DnsRecordsForAZoneImportDnsRecordsRequest({required this.file, this.proxied = 'false', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsForAZoneImportDnsRecordsRequest {const DnsRecordsForAZoneImportDnsRecordsRequest({required this.file, this.proxied = 'false', });
 
 factory DnsRecordsForAZoneImportDnsRecordsRequest.fromJson(Map<String, dynamic> json) { return DnsRecordsForAZoneImportDnsRecordsRequest(
   file: json['file'] as String,

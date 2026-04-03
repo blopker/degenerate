@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls when the funds will be captured from the customer's account.
-final class PaymentMethodOptionsBillieCaptureMethod {const PaymentMethodOptionsBillieCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
+@immutable final class PaymentMethodOptionsBillieCaptureMethod {const PaymentMethodOptionsBillieCaptureMethod._(this.value);
 
 factory PaymentMethodOptionsBillieCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsBillieCaptureMethod($value)'; } 
  }
 /// 
-final class PaymentMethodOptionsBillie {const PaymentMethodOptionsBillie({this.captureMethod});
+@immutable final class PaymentMethodOptionsBillie {const PaymentMethodOptionsBillie({this.captureMethod});
 
 factory PaymentMethodOptionsBillie.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsBillie(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsBillieCaptureMethod.fromJson(json['capture_method'] as String) : null,

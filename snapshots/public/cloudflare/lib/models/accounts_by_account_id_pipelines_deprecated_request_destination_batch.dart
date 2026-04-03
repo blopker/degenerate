@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationBatch {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationBatch({this.maxBytes = 100000000, this.maxDurationS = 300.0, this.maxRows = 10000000, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationBatch {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationBatch({this.maxBytes = 100000000, this.maxDurationS = 300.0, this.maxRows = 10000000, });
 
 factory AccountsByAccountIdPipelinesDeprecatedRequestDestinationBatch.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedRequestDestinationBatch(
   maxBytes: json.containsKey('max_bytes') ? (json['max_bytes'] as num).toInt() : 100000000,

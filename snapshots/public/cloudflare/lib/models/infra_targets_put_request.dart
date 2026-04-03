@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'infra_ip_info.dart';final class InfraTargetsPutRequest {const InfraTargetsPutRequest({required this.hostname, required this.ip, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_ip_info.dart';@immutable final class InfraTargetsPutRequest {const InfraTargetsPutRequest({required this.hostname, required this.ip, });
 
 factory InfraTargetsPutRequest.fromJson(Map<String, dynamic> json) { return InfraTargetsPutRequest(
   hostname: json['hostname'] as String,

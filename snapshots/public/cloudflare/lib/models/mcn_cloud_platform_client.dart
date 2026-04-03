@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-extension type const McnPlatformClientId(String value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const McnPlatformClientId(String value) {
 factory McnPlatformClientId.fromJson(String json) => McnPlatformClientId(json);
 
 String toJson() => value;
 
 }
-final class McnCloudPlatformClientClientType {const McnCloudPlatformClientClientType._(this.value);
+@immutable final class McnCloudPlatformClientClientType {const McnCloudPlatformClientClientType._(this.value);
 
 factory McnCloudPlatformClientClientType.fromJson(String json) { return switch (json) {
   'MAGIC_WAN_CLOUD_ONRAMP' => magicWanCloudOnramp,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'McnCloudPlatformClientClientType($value)'; } 
  }
-final class McnCloudPlatformClient {const McnCloudPlatformClient({required this.clientType, required this.id, required this.name, });
+@immutable final class McnCloudPlatformClient {const McnCloudPlatformClient({required this.clientType, required this.id, required this.name, });
 
 factory McnCloudPlatformClient.fromJson(Map<String, dynamic> json) { return McnCloudPlatformClient(
   clientType: McnCloudPlatformClientClientType.fromJson(json['client_type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_attacks_layer3_summary_by_protocol_response_result_meta.dart';import 'radar_get_attacks_layer3_summary_by_protocol_response_result_summary0.dart';final class RadarGetAttacksLayer3SummaryByProtocolResponseResult {const RadarGetAttacksLayer3SummaryByProtocolResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_summary_by_protocol_response_result_meta.dart';import 'radar_get_attacks_layer3_summary_by_protocol_response_result_summary0.dart';@immutable final class RadarGetAttacksLayer3SummaryByProtocolResponseResult {const RadarGetAttacksLayer3SummaryByProtocolResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetAttacksLayer3SummaryByProtocolResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByProtocolResponseResult(
   meta: RadarGetAttacksLayer3SummaryByProtocolResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

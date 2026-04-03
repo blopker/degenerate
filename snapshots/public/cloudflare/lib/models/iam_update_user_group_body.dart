@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_update_user_group_body_policies.dart';final class IamUpdateUserGroupBody {const IamUpdateUserGroupBody({this.name, this.policies, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_update_user_group_body_policies.dart';@immutable final class IamUpdateUserGroupBody {const IamUpdateUserGroupBody({this.name, this.policies, });
 
 factory IamUpdateUserGroupBody.fromJson(Map<String, dynamic> json) { return IamUpdateUserGroupBody(
   name: json['name'] as String?,

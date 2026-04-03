@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// List of steps acting on request/response
-final class RequestTracerTrace2 {const RequestTracerTrace2({this.action, this.actionParameters, this.description, this.expression, this.kind, this.matched, this.name, this.stepName, this.trace, this.type, });
+@immutable final class RequestTracerTrace2 {const RequestTracerTrace2({this.action, this.actionParameters, this.description, this.expression, this.kind, this.matched, this.name, this.stepName, this.trace, this.type, });
 
 factory RequestTracerTrace2.fromJson(Map<String, dynamic> json) { return RequestTracerTrace2(
   action: json['action'] as String?,
-  actionParameters: (json['action_parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  actionParameters: json['action_parameters'] as Map<String, dynamic>?,
   description: json['description'] as String?,
   expression: json['expression'] as String?,
   kind: json['kind'] as String?,

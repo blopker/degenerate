@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ClickButtonType {const ClickButtonType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ClickButtonType {const ClickButtonType._(this.value);
 
 factory ClickButtonType.fromJson(String json) { return switch (json) {
   'left' => left,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ClickButtonType($value)'; } 
  }
 /// A click action.
-final class ClickParam {const ClickParam({this.type = 'click', required this.button, required this.x, required this.y, });
+@immutable final class ClickParam {const ClickParam({required this.button, required this.x, required this.y, this.type = 'click', });
 
 factory ClickParam.fromJson(Map<String, dynamic> json) { return ClickParam(
   type: json['type'] as String,

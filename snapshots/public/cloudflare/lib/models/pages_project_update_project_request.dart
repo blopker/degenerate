@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pages_project_update_project_request_build_config.dart';import 'pages_project_update_project_request_deployment_configs.dart';import 'pages_project_update_project_request_source.dart';final class PagesProjectUpdateProjectRequest {const PagesProjectUpdateProjectRequest({this.buildConfig, this.deploymentConfigs, this.name, this.productionBranch, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_project_update_project_request_build_config.dart';import 'pages_project_update_project_request_deployment_configs.dart';import 'pages_project_update_project_request_source.dart';@immutable final class PagesProjectUpdateProjectRequest {const PagesProjectUpdateProjectRequest({this.buildConfig, this.deploymentConfigs, this.name, this.productionBranch, this.source, });
 
 factory PagesProjectUpdateProjectRequest.fromJson(Map<String, dynamic> json) { return PagesProjectUpdateProjectRequest(
   buildConfig: json['build_config'] != null ? PagesProjectUpdateProjectRequestBuildConfig.fromJson(json['build_config'] as Map<String, dynamic>) : null,

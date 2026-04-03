@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ignore all query string parameters.
 /// 
-final class ZonesCacheKeyFieldsValueQueryStringExcludeVariant1 {const ZonesCacheKeyFieldsValueQueryStringExcludeVariant1._(this.value);
+@immutable final class ZonesCacheKeyFieldsValueQueryStringExcludeVariant1 {const ZonesCacheKeyFieldsValueQueryStringExcludeVariant1._(this.value);
 
 factory ZonesCacheKeyFieldsValueQueryStringExcludeVariant1.fromJson(String json) { return switch (json) {
   '*' => $empty,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DosExpressionFilterUpdate {const DosExpressionFilterUpdate({this.expression, this.mode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosExpressionFilterUpdate {const DosExpressionFilterUpdate({this.expression, this.mode, });
 
 factory DosExpressionFilterUpdate.fromJson(Map<String, dynamic> json) { return DosExpressionFilterUpdate(
   expression: json['expression'] as String?,

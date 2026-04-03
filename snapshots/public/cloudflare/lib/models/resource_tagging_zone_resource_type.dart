@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Identifies the type of zone-level resource.
-final class ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifies the type of zone-level resource.
+@immutable final class ResourceTaggingZoneResourceType {const ResourceTaggingZoneResourceType._(this.value);
 
 factory ResourceTaggingZoneResourceType.fromJson(String json) { return switch (json) {
   'access_application_policy' => accessApplicationPolicy,

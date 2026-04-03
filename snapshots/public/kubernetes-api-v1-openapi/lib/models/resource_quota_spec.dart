@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_quantity.dart';import 'scope_selector.dart';/// ResourceQuotaSpec defines the desired hard limits to enforce for Quota.
-final class ResourceQuotaSpec {const ResourceQuotaSpec({this.hard, this.scopeSelector, this.scopes, });
+@immutable final class ResourceQuotaSpec {const ResourceQuotaSpec({this.hard, this.scopeSelector, this.scopes, });
 
 factory ResourceQuotaSpec.fromJson(Map<String, dynamic> json) { return ResourceQuotaSpec(
   hard: (json['hard'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),

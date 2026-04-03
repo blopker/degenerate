@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposCreateDispatchEventRequest {const ReposCreateDispatchEventRequest({required this.eventType, this.clientPayload, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateDispatchEventRequest {const ReposCreateDispatchEventRequest({required this.eventType, this.clientPayload, });
 
 factory ReposCreateDispatchEventRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDispatchEventRequest(
   eventType: json['event_type'] as String,
-  clientPayload: (json['client_payload'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  clientPayload: json['client_payload'] as Map<String, dynamic>?,
 ); }
 
 /// A custom webhook event name. Must be 100 characters or fewer.

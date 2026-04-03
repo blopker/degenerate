@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ResourceTaggingCursorResultInfo {const ResourceTaggingCursorResultInfo({this.count, this.cursor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResourceTaggingCursorResultInfo {const ResourceTaggingCursorResultInfo({this.count, this.cursor, });
 
 factory ResourceTaggingCursorResultInfo.fromJson(Map<String, dynamic> json) { return ResourceTaggingCursorResultInfo(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

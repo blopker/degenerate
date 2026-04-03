@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0 {const RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0({required this.laterInFlow, required this.noMatch, required this.postAck, required this.postPsh, required this.postSyn, required this.timestamps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0 {const RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0({required this.laterInFlow, required this.noMatch, required this.postAck, required this.postPsh, required this.postSyn, required this.timestamps, });
 
 factory RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0(
   laterInFlow: (json['later_in_flow'] as List<dynamic>).map((e) => e as String).toList(),

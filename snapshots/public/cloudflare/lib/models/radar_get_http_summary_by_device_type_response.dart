@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_http_summary_by_device_type_response_result.dart';final class RadarGetHttpSummaryByDeviceTypeResponse {const RadarGetHttpSummaryByDeviceTypeResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_summary_by_device_type_response_result.dart';@immutable final class RadarGetHttpSummaryByDeviceTypeResponse {const RadarGetHttpSummaryByDeviceTypeResponse({required this.result, required this.success, });
 
 factory RadarGetHttpSummaryByDeviceTypeResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByDeviceTypeResponse(
   result: RadarGetHttpSummaryByDeviceTypeResponseResult.fromJson(json['result'] as Map<String, dynamic>),

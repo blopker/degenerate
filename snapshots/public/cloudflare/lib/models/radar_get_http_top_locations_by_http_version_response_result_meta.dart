@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_locations_by_http_version_response_result_meta_confidence_info.dart';import 'radar_get_http_top_locations_by_http_version_response_result_meta_date_range.dart';import 'radar_get_http_top_locations_by_http_version_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetHttpTopLocationsByHttpVersionResponseResultMetaNormalization {const RadarGetHttpTopLocationsByHttpVersionResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetHttpTopLocationsByHttpVersionResponseResultMetaNormalization {const RadarGetHttpTopLocationsByHttpVersionResponseResultMetaNormalization._(this.value);
 
 factory RadarGetHttpTopLocationsByHttpVersionResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetHttpTopLocationsByHttpVersionResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetHttpTopLocationsByHttpVersionResponseResultMeta {const RadarGetHttpTopLocationsByHttpVersionResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetHttpTopLocationsByHttpVersionResponseResultMeta {const RadarGetHttpTopLocationsByHttpVersionResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetHttpTopLocationsByHttpVersionResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopLocationsByHttpVersionResponseResultMeta(
   confidenceInfo: json['confidenceInfo'] != null ? RadarGetHttpTopLocationsByHttpVersionResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_url_target.dart';/// A value that is one of: `ZonesUrlTarget`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_url_target.dart';/// A value that is one of: `ZonesUrlTarget`.
 sealed class ZonesTarget {const ZonesTarget();
 
 factory ZonesTarget.fromJson(Map<String, dynamic> json) {   if (ZonesUrlTarget.canParse(json)) {
@@ -12,7 +12,7 @@ factory ZonesTarget.fromJson(Map<String, dynamic> json) {   if (ZonesUrlTarget.c
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class ZonesTargetZonesUrlTarget extends ZonesTarget {const ZonesTargetZonesUrlTarget(this._value);
+@immutable final class ZonesTargetZonesUrlTarget extends ZonesTarget {const ZonesTargetZonesUrlTarget(this._value);
 
 final ZonesUrlTarget _value;
 
@@ -23,7 +23,7 @@ final ZonesUrlTarget _value;
 @override String toString() { return 'ZonesTarget.zonesUrlTarget($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class ZonesTarget$Unknown extends ZonesTarget {const ZonesTarget$Unknown(this._value);
+@immutable final class ZonesTarget$Unknown extends ZonesTarget {const ZonesTarget$Unknown(this._value);
 
 final dynamic _value;
 

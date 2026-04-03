@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_invoices_create_preview_request_automatic_tax_liability.dart';/// Settings for automatic tax lookup for this invoice preview.
-final class PostInvoicesCreatePreviewRequestAutomaticTax {const PostInvoicesCreatePreviewRequestAutomaticTax({required this.enabled, this.liability, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_automatic_tax_liability.dart';/// Settings for automatic tax lookup for this invoice preview.
+@immutable final class PostInvoicesCreatePreviewRequestAutomaticTax {const PostInvoicesCreatePreviewRequestAutomaticTax({required this.enabled, this.liability, });
 
 factory PostInvoicesCreatePreviewRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestAutomaticTax(
   enabled: json['enabled'] as bool,

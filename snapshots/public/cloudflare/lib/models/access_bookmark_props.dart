@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_launcher_visible.dart';import 'access_apps_components_schemas_name.dart';import 'access_logo_url.dart';import 'access_type.dart';final class AccessBookmarkProps {const AccessBookmarkProps({this.appLauncherVisible, this.domain, this.logoUrl, this.name, this.tags, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_launcher_visible.dart';import 'access_apps_components_schemas_name.dart';import 'access_logo_url.dart';import 'access_type.dart';@immutable final class AccessBookmarkProps {const AccessBookmarkProps({this.appLauncherVisible, this.domain, this.logoUrl, this.name, this.tags, this.type, });
 
 factory AccessBookmarkProps.fromJson(Map<String, dynamic> json) { return AccessBookmarkProps(
   appLauncherVisible: json['app_launcher_visible'] != null ? AccessAppLauncherVisible.fromJson(json['app_launcher_visible'] as bool) : null,

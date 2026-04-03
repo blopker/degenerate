@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_condition.dart';import 'iam_expires_on.dart';import 'iam_name.dart';import 'iam_not_before.dart';import 'iam_policy_with_permission_groups_and_resources.dart';final class IamCreatePayload {const IamCreatePayload({this.condition, this.expiresOn, required this.name, this.notBefore, required this.policies, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_condition.dart';import 'iam_expires_on.dart';import 'iam_name.dart';import 'iam_not_before.dart';import 'iam_policy_with_permission_groups_and_resources.dart';@immutable final class IamCreatePayload {const IamCreatePayload({required this.name, required this.policies, this.condition, this.expiresOn, this.notBefore, });
 
 factory IamCreatePayload.fromJson(Map<String, dynamic> json) { return IamCreatePayload(
   condition: json['condition'] != null ? IamCondition.fromJson(json['condition'] as Map<String, dynamic>) : null,

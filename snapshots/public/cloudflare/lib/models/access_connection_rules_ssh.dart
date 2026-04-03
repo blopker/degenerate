@@ -8,7 +8,7 @@ bool toJson() => value;
 
 }
 /// The SSH-specific rules that define how users may connect to the targets secured by your application.
-final class AccessConnectionRulesSsh {const AccessConnectionRulesSsh({this.allowEmailAlias, required this.usernames, });
+@immutable final class AccessConnectionRulesSsh {const AccessConnectionRulesSsh({required this.usernames, this.allowEmailAlias, });
 
 factory AccessConnectionRulesSsh.fromJson(Map<String, dynamic> json) { return AccessConnectionRulesSsh(
   allowEmailAlias: json['allow_email_alias'] != null ? AccessAllowEmailAlias.fromJson(json['allow_email_alias'] as bool) : null,

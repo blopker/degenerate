@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of repositories in the organization that the secret is visible to
-final class CodespacesSecretVisibility {const CodespacesSecretVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of repositories in the organization that the secret is visible to
+@immutable final class CodespacesSecretVisibility {const CodespacesSecretVisibility._(this.value);
 
 factory CodespacesSecretVisibility.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodespacesSecretVisibility($value)'; } 
  }
 /// Secrets for a GitHub Codespace.
-final class CodespacesSecret {const CodespacesSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, required this.selectedRepositoriesUrl, });
+@immutable final class CodespacesSecret {const CodespacesSecret({required this.name, required this.createdAt, required this.updatedAt, required this.visibility, required this.selectedRepositoriesUrl, });
 
 factory CodespacesSecret.fromJson(Map<String, dynamic> json) { return CodespacesSecret(
   name: json['name'] as String,

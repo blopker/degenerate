@@ -37,7 +37,7 @@ if (epssPercentage != null) {
   queryParameters['epss_percentage'] = epssPercentage;
 }
 if (has != null) {
-queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString()));
 }
 if (assignee != null) {
   queryParameters['assignee'] = assignee;
@@ -86,7 +86,7 @@ return execute(
 /// Lists the repositories Dependabot can access in an organization
 ///
 /// Lists repositories that organization admins have allowed Dependabot to access when updating dependencies.
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// >    This operation supports both server-to-server and user-to-server access.
 /// Unauthorized users will not see the existence of this endpoint.
 ///
@@ -125,17 +125,17 @@ return execute(
 ///
 /// Updates repositories according to the list of repositories that organization admins have given Dependabot access to when they've updated dependencies.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// >    This operation supports both server-to-server and user-to-server access.
 /// Unauthorized users will not see the existence of this endpoint.
 /// 
 /// **Example request body:**
 /// ```json`
 /// {
-///   "repository_ids_to_add": [123, 456],
-///   "repository_ids_to_remove": [789]
+///   "repository_ids_to_add": `[123, 456]`,
+///   "repository_ids_to_remove": `[789]`
 /// }
-/// ````
+/// ```text
 ///
 /// `PATCH /organizations/{org}/dependabot/repository-access`
 Future<ApiResult<void, BasicError>> dependabotUpdateRepositoryAccessForOrg({required String org, required DependabotUpdateRepositoryAccessForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -220,7 +220,7 @@ if (artifactRegistry != null) {
   queryParameters['artifact_registry'] = artifactRegistry;
 }
 if (has != null) {
-queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString()));
 }
 if (assignee != null) {
   queryParameters['assignee'] = assignee;
@@ -530,7 +530,7 @@ if (epssPercentage != null) {
   queryParameters['epss_percentage'] = epssPercentage;
 }
 if (has != null) {
-queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'has', value: has.toString()));
 }
 if (assignee != null) {
   queryParameters['assignee'] = assignee;

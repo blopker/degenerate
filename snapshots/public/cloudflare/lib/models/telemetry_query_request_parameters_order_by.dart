@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Set the order of the results
-final class TelemetryQueryRequestParametersOrderByOrder {const TelemetryQueryRequestParametersOrderByOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set the order of the results
+@immutable final class TelemetryQueryRequestParametersOrderByOrder {const TelemetryQueryRequestParametersOrderByOrder._(this.value);
 
 factory TelemetryQueryRequestParametersOrderByOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TelemetryQueryRequestParametersOrderByOrder($value)'; } 
  }
 /// Configure the order of the results returned by the query.
-final class TelemetryQueryRequestParametersOrderBy {const TelemetryQueryRequestParametersOrderBy({this.order, required this.value, });
+@immutable final class TelemetryQueryRequestParametersOrderBy {const TelemetryQueryRequestParametersOrderBy({required this.value, this.order, });
 
 factory TelemetryQueryRequestParametersOrderBy.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequestParametersOrderBy(
   order: json['order'] != null ? TelemetryQueryRequestParametersOrderByOrder.fromJson(json['order'] as String) : null,

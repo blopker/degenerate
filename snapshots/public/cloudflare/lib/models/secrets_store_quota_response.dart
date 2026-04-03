@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secrets_store_secrets_usage_object.dart';final class SecretsStoreQuotaResponse {const SecretsStoreQuotaResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_secrets_usage_object.dart';@immutable final class SecretsStoreQuotaResponse {const SecretsStoreQuotaResponse({this.result});
 
 factory SecretsStoreQuotaResponse.fromJson(Map<String, dynamic> json) { return SecretsStoreQuotaResponse(
   result: json['result'] != null ? SecretsStoreSecretsUsageObject.fromJson(json['result'] as Map<String, dynamic>) : null,

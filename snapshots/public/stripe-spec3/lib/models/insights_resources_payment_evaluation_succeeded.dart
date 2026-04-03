@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'insights_resources_payment_evaluation_succeeded_card.dart';/// Details of a succeeded outcome attached to this payment evaluation.
-final class InsightsResourcesPaymentEvaluationSucceeded {const InsightsResourcesPaymentEvaluationSucceeded({this.card});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_succeeded_card.dart';/// Details of a succeeded outcome attached to this payment evaluation.
+@immutable final class InsightsResourcesPaymentEvaluationSucceeded {const InsightsResourcesPaymentEvaluationSucceeded({this.card});
 
 factory InsightsResourcesPaymentEvaluationSucceeded.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationSucceeded(
   card: json['card'] != null ? InsightsResourcesPaymentEvaluationSucceededCard.fromJson(json['card'] as Map<String, dynamic>) : null,

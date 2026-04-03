@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WorkersAiSearchTaskResponse {const WorkersAiSearchTaskResponse({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiSearchTaskResponse {const WorkersAiSearchTaskResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory WorkersAiSearchTaskResponse.fromJson(Map<String, dynamic> json) { return WorkersAiSearchTaskResponse(
-  errors: (json['errors'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  errors: (json['errors'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   success: json['success'] as bool,
 ); }
 

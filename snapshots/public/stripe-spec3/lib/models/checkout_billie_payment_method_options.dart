@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls when the funds will be captured from the customer's account.
-final class CheckoutBilliePaymentMethodOptionsCaptureMethod {const CheckoutBilliePaymentMethodOptionsCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
+@immutable final class CheckoutBilliePaymentMethodOptionsCaptureMethod {const CheckoutBilliePaymentMethodOptionsCaptureMethod._(this.value);
 
 factory CheckoutBilliePaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutBilliePaymentMethodOptionsCaptureMethod($value)'; } 
  }
 /// 
-final class CheckoutBilliePaymentMethodOptions {const CheckoutBilliePaymentMethodOptions({this.captureMethod});
+@immutable final class CheckoutBilliePaymentMethodOptions {const CheckoutBilliePaymentMethodOptions({this.captureMethod});
 
 factory CheckoutBilliePaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutBilliePaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? CheckoutBilliePaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,

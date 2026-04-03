@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_image_variation_request_model.dart';/// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
-final class CreateImageVariationRequestResponseFormat {const CreateImageVariationRequestResponseFormat._(this.value);
+@immutable final class CreateImageVariationRequestResponseFormat {const CreateImageVariationRequestResponseFormat._(this.value);
 
 factory CreateImageVariationRequestResponseFormat.fromJson(String json) { return switch (json) {
   'url' => url,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateImageVariationRequestResponseFormat($value)'; } 
  }
 /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
-final class CreateImageVariationRequestSize {const CreateImageVariationRequestSize._(this.value);
+@immutable final class CreateImageVariationRequestSize {const CreateImageVariationRequestSize._(this.value);
 
 factory CreateImageVariationRequestSize.fromJson(String json) { return switch (json) {
   '256x256' => $256x256,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateImageVariationRequestSize($value)'; } 
  }
-final class CreateImageVariationRequest {const CreateImageVariationRequest({required this.image, this.model, this.n = 1, this.responseFormat = CreateImageVariationRequestResponseFormat.url, this.size = CreateImageVariationRequestSize.$1024x1024, this.user, });
+@immutable final class CreateImageVariationRequest {const CreateImageVariationRequest({required this.image, this.model, this.n = 1, this.responseFormat = CreateImageVariationRequestResponseFormat.url, this.size = CreateImageVariationRequestSize.$1024x1024, this.user, });
 
 factory CreateImageVariationRequest.fromJson(Map<String, dynamic> json) { return CreateImageVariationRequest(
   image: base64Decode(json['image'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EventCalendarSchema {const EventCalendarSchema({required this.title, required this.start, required this.slug, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EventCalendarSchema {const EventCalendarSchema({required this.title, required this.start, required this.slug, required this.url, });
 
 factory EventCalendarSchema.fromJson(Map<String, dynamic> json) { return EventCalendarSchema(
   title: json['title'] as String,

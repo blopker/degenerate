@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_display_name.dart';import 'email_security_message.dart';import 'email_security_result_info.dart';final class EmailSecurityListDisplayNamesResponse {const EmailSecurityListDisplayNamesResponse({required this.errors, required this.messages, required this.success, required this.result, required this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_display_name.dart';import 'email_security_message.dart';import 'email_security_result_info.dart';@immutable final class EmailSecurityListDisplayNamesResponse {const EmailSecurityListDisplayNamesResponse({required this.errors, required this.messages, required this.success, required this.result, required this.resultInfo, });
 
 factory EmailSecurityListDisplayNamesResponse.fromJson(Map<String, dynamic> json) { return EmailSecurityListDisplayNamesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),

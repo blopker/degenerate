@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetGroupListResponse {const GetGroupListResponse({required this.createdAt, required this.description, required this.name, required this.updatedAt, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetGroupListResponse {const GetGroupListResponse({required this.createdAt, required this.description, required this.name, required this.updatedAt, required this.uuid, });
 
 factory GetGroupListResponse.fromJson(Map<String, dynamic> json) { return GetGroupListResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),

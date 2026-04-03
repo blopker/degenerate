@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityLink {const EmailSecurityLink({required this.href, this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityLink {const EmailSecurityLink({required this.href, this.text, });
 
 factory EmailSecurityLink.fromJson(Map<String, dynamic> json) { return EmailSecurityLink(
   href: json['href'] as String,

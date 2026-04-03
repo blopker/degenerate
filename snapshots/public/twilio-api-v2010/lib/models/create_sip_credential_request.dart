@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateSipCredentialRequest {const CreateSipCredentialRequest({required this.username, required this.password, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateSipCredentialRequest {const CreateSipCredentialRequest({required this.username, required this.password, });
 
 factory CreateSipCredentialRequest.fromJson(Map<String, dynamic> json) { return CreateSipCredentialRequest(
   username: json['Username'] as String,

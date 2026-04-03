@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of source
-final class MqEventSourceWorkersAiModelType {const MqEventSourceWorkersAiModelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
+@immutable final class MqEventSourceWorkersAiModelType {const MqEventSourceWorkersAiModelType._(this.value);
 
 factory MqEventSourceWorkersAiModelType.fromJson(String json) { return switch (json) {
   'workersAi.model' => workersAiModel,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MqEventSourceWorkersAiModelType($value)'; } 
  }
-final class MqEventSourceWorkersAiModel {const MqEventSourceWorkersAiModel({this.modelName, this.type, });
+@immutable final class MqEventSourceWorkersAiModel {const MqEventSourceWorkersAiModel({this.modelName, this.type, });
 
 factory MqEventSourceWorkersAiModel.fromJson(Map<String, dynamic> json) { return MqEventSourceWorkersAiModel(
   modelName: json['model_name'] as String?,

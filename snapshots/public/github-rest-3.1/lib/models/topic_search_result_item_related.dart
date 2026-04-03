@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'topic_search_result_item_related_topic_relation.dart';final class TopicSearchResultItemRelated {const TopicSearchResultItemRelated({this.topicRelation});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'topic_search_result_item_related_topic_relation.dart';@immutable final class TopicSearchResultItemRelated {const TopicSearchResultItemRelated({this.topicRelation});
 
 factory TopicSearchResultItemRelated.fromJson(Map<String, dynamic> json) { return TopicSearchResultItemRelated(
   topicRelation: json['topic_relation'] != null ? TopicSearchResultItemRelatedTopicRelation.fromJson(json['topic_relation'] as Map<String, dynamic>) : null,

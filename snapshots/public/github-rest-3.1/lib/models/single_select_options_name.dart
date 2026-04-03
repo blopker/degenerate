@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The display name of the option, in raw text and HTML formats.
-final class SingleSelectOptionsName {const SingleSelectOptionsName({required this.raw, required this.html, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The display name of the option, in raw text and HTML formats.
+@immutable final class SingleSelectOptionsName {const SingleSelectOptionsName({required this.raw, required this.html, });
 
 factory SingleSelectOptionsName.fromJson(Map<String, dynamic> json) { return SingleSelectOptionsName(
   raw: json['raw'] as String,

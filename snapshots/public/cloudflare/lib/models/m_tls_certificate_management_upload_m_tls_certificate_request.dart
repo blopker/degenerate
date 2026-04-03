@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_ca.dart';import 'tls_certificates_and_hostnames_schemas_certificates.dart';import 'tls_certificates_and_hostnames_schemas_name.dart';/// The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust's block page.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_ca.dart';import 'tls_certificates_and_hostnames_schemas_certificates.dart';import 'tls_certificates_and_hostnames_schemas_name.dart';/// The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust's block page.
 extension type const TlsCertificatesAndHostnamesComponentsSchemasPrivateKey(String value) {
 factory TlsCertificatesAndHostnamesComponentsSchemasPrivateKey.fromJson(String json) => TlsCertificatesAndHostnamesComponentsSchemasPrivateKey(json);
 
 String toJson() => value;
 
 }
-final class MTlsCertificateManagementUploadMTlsCertificateRequest {const MTlsCertificateManagementUploadMTlsCertificateRequest({required this.ca, required this.certificates, this.name, this.privateKey, });
+@immutable final class MTlsCertificateManagementUploadMTlsCertificateRequest {const MTlsCertificateManagementUploadMTlsCertificateRequest({required this.ca, required this.certificates, this.name, this.privateKey, });
 
 factory MTlsCertificateManagementUploadMTlsCertificateRequest.fromJson(Map<String, dynamic> json) { return MTlsCertificateManagementUploadMTlsCertificateRequest(
   ca: TlsCertificatesAndHostnamesCa.fromJson(json['ca'] as bool),

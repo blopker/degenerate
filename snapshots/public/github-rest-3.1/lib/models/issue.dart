@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'integration.dart';import 'issue_comment.dart';import 'issue_dependencies_summary.dart';import 'issue_field_value.dart';import 'issue_labels.dart';import 'issue_labels_variant2.dart';import 'issue_pull_request.dart';import 'issue_type.dart';import 'milestone.dart';import 'reaction_rollup.dart';import 'repository.dart';import 'simple_user.dart';import 'sub_issues_summary.dart';/// The reason for the current state
-final class IssueStateReason {const IssueStateReason._(this.value);
+@immutable final class IssueStateReason {const IssueStateReason._(this.value);
 
 factory IssueStateReason.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssueStateReason($value)'; } 
  }
 /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
-final class Issue {const Issue({required this.id, required this.nodeId, required this.url, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.number, required this.state, this.stateReason, required this.title, this.body, required this.user, required this.labels, required this.assignee, this.assignees, required this.milestone, required this.locked, this.activeLockReason, required this.comments, this.pullRequest, required this.closedAt, required this.createdAt, required this.updatedAt, this.draft, this.closedBy, this.bodyHtml, this.bodyText, this.timelineUrl, this.type, this.repository, this.performedViaGithubApp, this.authorAssociation, this.reactions, this.subIssuesSummary, this.parentIssueUrl, this.pinnedComment, this.issueDependenciesSummary, this.issueFieldValues, });
+@immutable final class Issue {const Issue({required this.user, required this.nodeId, required this.url, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.number, required this.state, required this.title, required this.id, required this.labels, required this.assignee, required this.milestone, required this.locked, required this.closedAt, required this.createdAt, required this.updatedAt, required this.comments, this.activeLockReason, this.pullRequest, this.assignees, this.body, this.stateReason, this.issueFieldValues, this.closedBy, this.bodyHtml, this.bodyText, this.timelineUrl, this.type, this.repository, this.performedViaGithubApp, this.authorAssociation, this.reactions, this.subIssuesSummary, this.parentIssueUrl, this.pinnedComment, this.issueDependenciesSummary, this.draft, });
 
 factory Issue.fromJson(Map<String, dynamic> json) { return Issue(
   id: (json['id'] as num).toInt(),

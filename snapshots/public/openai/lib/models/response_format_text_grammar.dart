@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of response format being defined. Always `grammar`.
-final class ResponseFormatTextGrammarType {const ResponseFormatTextGrammarType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of response format being defined. Always `grammar`.
+@immutable final class ResponseFormatTextGrammarType {const ResponseFormatTextGrammarType._(this.value);
 
 factory ResponseFormatTextGrammarType.fromJson(String json) { return switch (json) {
   'grammar' => grammar,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A custom grammar for the model to follow when generating text.
 /// Learn more in the [custom grammars guide](/docs/guides/custom-grammars).
 /// 
-final class ResponseFormatTextGrammar {const ResponseFormatTextGrammar({required this.type, required this.grammar, });
+@immutable final class ResponseFormatTextGrammar {const ResponseFormatTextGrammar({required this.type, required this.grammar, });
 
 factory ResponseFormatTextGrammar.fromJson(Map<String, dynamic> json) { return ResponseFormatTextGrammar(
   type: ResponseFormatTextGrammarType.fromJson(json['type'] as String),

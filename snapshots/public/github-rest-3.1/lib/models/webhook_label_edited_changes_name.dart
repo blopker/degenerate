@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookLabelEditedChangesName {const WebhookLabelEditedChangesName({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookLabelEditedChangesName {const WebhookLabelEditedChangesName({required this.from});
 
 factory WebhookLabelEditedChangesName.fromJson(Map<String, dynamic> json) { return WebhookLabelEditedChangesName(
   from: json['from'] as String,

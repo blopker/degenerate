@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Computed entry field for a profile that an entry is shared into.
-final class DlpEntryProfile {const DlpEntryProfile({required this.id, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Computed entry field for a profile that an entry is shared into.
+@immutable final class DlpEntryProfile {const DlpEntryProfile({required this.id, required this.name, });
 
 factory DlpEntryProfile.fromJson(Map<String, dynamic> json) { return DlpEntryProfile(
   id: json['id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Direction to order zones.
-final class ZonesGetDirection {const ZonesGetDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order zones.
+@immutable final class ZonesGetDirection {const ZonesGetDirection._(this.value);
 
 factory ZonesGetDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

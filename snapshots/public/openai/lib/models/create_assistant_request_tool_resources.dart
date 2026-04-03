@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'create_assistant_request_tool_resources_code_interpreter.dart';/// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_assistant_request_tool_resources_code_interpreter.dart';/// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 /// 
-final class CreateAssistantRequestToolResources {const CreateAssistantRequestToolResources({this.codeInterpreter, this.fileSearch, });
+@immutable final class CreateAssistantRequestToolResources {const CreateAssistantRequestToolResources({this.codeInterpreter, this.fileSearch, });
 
 factory CreateAssistantRequestToolResources.fromJson(Map<String, dynamic> json) { return CreateAssistantRequestToolResources(
   codeInterpreter: json['code_interpreter'] != null ? CreateAssistantRequestToolResourcesCodeInterpreter.fromJson(json['code_interpreter'] as Map<String, dynamic>) : null,

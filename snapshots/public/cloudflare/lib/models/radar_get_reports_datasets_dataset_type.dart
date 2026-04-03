@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters results by dataset type.
-final class RadarGetReportsDatasetsDatasetType {const RadarGetReportsDatasetsDatasetType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by dataset type.
+@immutable final class RadarGetReportsDatasetsDatasetType {const RadarGetReportsDatasetsDatasetType._(this.value);
 
 factory RadarGetReportsDatasetsDatasetType.fromJson(String json) { return switch (json) {
   'RANKING_BUCKET' => rankingBucket,

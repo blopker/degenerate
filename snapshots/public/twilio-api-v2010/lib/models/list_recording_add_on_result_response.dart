@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_recording_recording_add_on_result.dart';final class ListRecordingAddOnResultResponse {const ListRecordingAddOnResultResponse({this.addOnResults, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_recording_recording_add_on_result.dart';@immutable final class ListRecordingAddOnResultResponse {const ListRecordingAddOnResultResponse({this.addOnResults, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListRecordingAddOnResultResponse.fromJson(Map<String, dynamic> json) { return ListRecordingAddOnResultResponse(
   addOnResults: (json['add_on_results'] as List<dynamic>?)?.map((e) => AccountRecordingRecordingAddOnResult.fromJson(e as Map<String, dynamic>)).toList(),

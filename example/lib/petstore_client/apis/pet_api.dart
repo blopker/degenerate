@@ -88,7 +88,7 @@ return execute(
 Future<ApiResult<List<Pet>, Never>> findPetsByTags({required List<String> tags, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 for (final item in tags) {
-  queryParametersList.add(ApiQueryParameter(name: 'tags', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tags', value: item));
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

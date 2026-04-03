@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_keys_list_request_filters.dart';import 'telemetry_keys_list_request_key_needle.dart';import 'telemetry_keys_list_request_needle.dart';final class TelemetryKeysListRequest {const TelemetryKeysListRequest({this.datasets = const [], this.filters = const [], this.from, this.keyNeedle, this.limit, this.needle, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_keys_list_request_filters.dart';import 'telemetry_keys_list_request_key_needle.dart';import 'telemetry_keys_list_request_needle.dart';@immutable final class TelemetryKeysListRequest {const TelemetryKeysListRequest({this.datasets = const [], this.filters = const [], this.from, this.keyNeedle, this.limit, this.needle, this.to, });
 
 factory TelemetryKeysListRequest.fromJson(Map<String, dynamic> json) { return TelemetryKeysListRequest(
   datasets: json.containsKey('datasets') ? (json['datasets'] as List<dynamic>).map((e) => e as String).toList() : const [],

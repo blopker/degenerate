@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt43Functions {const Prompt43Functions({this.description, required this.name, this.parameters, this.strict, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43Functions {const Prompt43Functions({required this.name, this.description, this.parameters, this.strict, });
 
 factory Prompt43Functions.fromJson(Map<String, dynamic> json) { return Prompt43Functions(
   description: json['description'] as String?,
   name: json['name'] as String,
-  parameters: (json['parameters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  parameters: json['parameters'] as Map<String, dynamic>?,
   strict: json['strict'] as bool?,
 ); }
 

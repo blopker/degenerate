@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Authentication method used for "sftp" type storage medium
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Authentication method used for "sftp" type storage medium
 /// 
-final class RealtimekitStorageConfigAuthMethod {const RealtimekitStorageConfigAuthMethod._(this.value);
+@immutable final class RealtimekitStorageConfigAuthMethod {const RealtimekitStorageConfigAuthMethod._(this.value);
 
 factory RealtimekitStorageConfigAuthMethod.fromJson(String json) { return switch (json) {
   'KEY' => key,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitStorageConfigAuthMethod($value)'; } 
  }
 /// Type of storage media.
-final class RealtimekitStorageConfigType {const RealtimekitStorageConfigType._(this.value);
+@immutable final class RealtimekitStorageConfigType {const RealtimekitStorageConfigType._(this.value);
 
 factory RealtimekitStorageConfigType.fromJson(String json) { return switch (json) {
   'aws' => aws,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitStorageConfigType($value)'; } 
  }
-final class RealtimekitStorageConfig {const RealtimekitStorageConfig({this.accessKey, this.authMethod, this.bucket, this.host, this.password, this.path, this.port, this.privateKey, this.region, this.secret, required this.type, this.username, });
+@immutable final class RealtimekitStorageConfig {const RealtimekitStorageConfig({required this.type, this.accessKey, this.authMethod, this.bucket, this.host, this.password, this.path, this.port, this.privateKey, this.region, this.secret, this.username, });
 
 factory RealtimekitStorageConfig.fromJson(Map<String, dynamic> json) { return RealtimekitStorageConfig(
   accessKey: json['access_key'] as String?,

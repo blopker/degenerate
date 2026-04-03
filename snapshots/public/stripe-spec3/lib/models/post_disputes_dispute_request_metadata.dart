@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostDisputesDisputeRequestMetadataVariant2 {const PostDisputesDisputeRequestMetadataVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDisputesDisputeRequestMetadataVariant2 {const PostDisputesDisputeRequestMetadataVariant2._(this.value);
 
 factory PostDisputesDisputeRequestMetadataVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';import 'team.dart';/// Pull Request Review Request
-final class PullRequestReviewRequest {const PullRequestReviewRequest({required this.users, required this.teams, });
+@immutable final class PullRequestReviewRequest {const PullRequestReviewRequest({required this.users, required this.teams, });
 
 factory PullRequestReviewRequest.fromJson(Map<String, dynamic> json) { return PullRequestReviewRequest(
   users: (json['users'] as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),

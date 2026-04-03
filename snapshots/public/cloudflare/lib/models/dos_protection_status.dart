@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DosProtectionStatus {const DosProtectionStatus({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosProtectionStatus {const DosProtectionStatus({required this.enabled});
 
 factory DosProtectionStatus.fromJson(Map<String, dynamic> json) { return DosProtectionStatus(
   enabled: json['enabled'] as bool,

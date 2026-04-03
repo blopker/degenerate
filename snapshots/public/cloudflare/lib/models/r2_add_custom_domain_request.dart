@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.
-final class R2AddCustomDomainRequestMinTls {const R2AddCustomDomainRequestMinTls._(this.value);
+@immutable final class R2AddCustomDomainRequestMinTls {const R2AddCustomDomainRequestMinTls._(this.value);
 
 factory R2AddCustomDomainRequestMinTls.fromJson(String json) { return switch (json) {
   '1.0' => $10,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2AddCustomDomainRequestMinTls($value)'; } 
  }
-final class R2AddCustomDomainRequest {const R2AddCustomDomainRequest({this.ciphers, required this.domain, required this.enabled, this.minTls, required this.zoneId, });
+@immutable final class R2AddCustomDomainRequest {const R2AddCustomDomainRequest({required this.domain, required this.enabled, required this.zoneId, this.ciphers, this.minTls, });
 
 factory R2AddCustomDomainRequest.fromJson(Map<String, dynamic> json) { return R2AddCustomDomainRequest(
   ciphers: (json['ciphers'] as List<dynamic>?)?.map((e) => e as String).toList(),

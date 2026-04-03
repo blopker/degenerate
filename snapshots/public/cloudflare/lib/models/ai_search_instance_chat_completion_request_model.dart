@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AiSearchInstanceChatCompletionRequestModelVariant1 {const AiSearchInstanceChatCompletionRequestModelVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceChatCompletionRequestModelVariant1 {const AiSearchInstanceChatCompletionRequestModelVariant1._(this.value);
 
 factory AiSearchInstanceChatCompletionRequestModelVariant1.fromJson(String json) { return switch (json) {
   '@cf/meta/llama-3.3-70b-instruct-fp8-fast' => cfMetaLlama3370bInstructFp8Fast,
@@ -99,7 +99,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceChatCompletionRequestModelVariant1($value)'; } 
  }
-final class AiSearchInstanceChatCompletionRequestModelVariant2 {const AiSearchInstanceChatCompletionRequestModelVariant2._(this.value);
+@immutable final class AiSearchInstanceChatCompletionRequestModelVariant2 {const AiSearchInstanceChatCompletionRequestModelVariant2._(this.value);
 
 factory AiSearchInstanceChatCompletionRequestModelVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

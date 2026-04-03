@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventRawUpdateResponse {const PostEventRawUpdateResponse({required this.data, required this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventRawUpdateResponse {const PostEventRawUpdateResponse({required this.data, required this.id, });
 
 factory PostEventRawUpdateResponse.fromJson(Map<String, dynamic> json) { return PostEventRawUpdateResponse(
-  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  data: json['data'] as Map<String, dynamic>,
   id: json['id'] as String,
 ); }
 

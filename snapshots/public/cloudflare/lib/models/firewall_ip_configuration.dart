@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration target. You must set the target to `ip` when specifying an IP address in the rule.
-final class FirewallIpConfigurationTarget {const FirewallIpConfigurationTarget._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ip` when specifying an IP address in the rule.
+@immutable final class FirewallIpConfigurationTarget {const FirewallIpConfigurationTarget._(this.value);
 
 factory FirewallIpConfigurationTarget.fromJson(String json) { return switch (json) {
   'ip' => ip,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FirewallIpConfigurationTarget($value)'; } 
  }
-final class FirewallIpConfiguration {const FirewallIpConfiguration({this.target, this.value, });
+@immutable final class FirewallIpConfiguration {const FirewallIpConfiguration({this.target, this.value, });
 
 factory FirewallIpConfiguration.fromJson(Map<String, dynamic> json) { return FirewallIpConfiguration(
   target: json['target'] != null ? FirewallIpConfigurationTarget.fromJson(json['target'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class EmailDnsRecordTtlVariant2 {const EmailDnsRecordTtlVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailDnsRecordTtlVariant2 {const EmailDnsRecordTtlVariant2._(this.value);
 
 factory EmailDnsRecordTtlVariant2.fromJson(double json) { return switch (json) {
   1 => $1,

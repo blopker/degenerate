@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecretScanningUpdateOrgPatternConfigsResponse {const SecretScanningUpdateOrgPatternConfigsResponse({this.patternConfigVersion});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretScanningUpdateOrgPatternConfigsResponse {const SecretScanningUpdateOrgPatternConfigsResponse({this.patternConfigVersion});
 
 factory SecretScanningUpdateOrgPatternConfigsResponse.fromJson(Map<String, dynamic> json) { return SecretScanningUpdateOrgPatternConfigsResponse(
   patternConfigVersion: json['pattern_config_version'] as String?,

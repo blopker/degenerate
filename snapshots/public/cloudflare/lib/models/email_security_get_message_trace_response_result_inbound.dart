@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_trace_line.dart';final class EmailSecurityGetMessageTraceResponseResultInbound {const EmailSecurityGetMessageTraceResponseResultInbound({this.lines, this.pending, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_trace_line.dart';@immutable final class EmailSecurityGetMessageTraceResponseResultInbound {const EmailSecurityGetMessageTraceResponseResultInbound({this.lines, this.pending, });
 
 factory EmailSecurityGetMessageTraceResponseResultInbound.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageTraceResponseResultInbound(
   lines: (json['lines'] as List<dynamic>?)?.map((e) => EmailSecurityTraceLine.fromJson(e as Map<String, dynamic>)).toList(),

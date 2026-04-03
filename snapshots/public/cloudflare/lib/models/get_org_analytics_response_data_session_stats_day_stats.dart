@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetOrgAnalyticsResponseDataSessionStatsDayStats {const GetOrgAnalyticsResponseDataSessionStatsDayStats({this.day, this.totalSessionMinutes, this.totalSessions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetOrgAnalyticsResponseDataSessionStatsDayStats {const GetOrgAnalyticsResponseDataSessionStatsDayStats({this.day, this.totalSessionMinutes, this.totalSessions, });
 
 factory GetOrgAnalyticsResponseDataSessionStatsDayStats.fromJson(Map<String, dynamic> json) { return GetOrgAnalyticsResponseDataSessionStatsDayStats(
   day: json['day'] as String?,

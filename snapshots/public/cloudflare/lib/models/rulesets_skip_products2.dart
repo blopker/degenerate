@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The name of a legacy security product to skip the execution of.
-final class RulesetsSkipProducts2 {const RulesetsSkipProducts2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of a legacy security product to skip the execution of.
+@immutable final class RulesetsSkipProducts2 {const RulesetsSkipProducts2._(this.value);
 
 factory RulesetsSkipProducts2.fromJson(String json) { return switch (json) {
   'bic' => bic,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_catch_all_rule.dart';final class EmailCatchAllRuleResponseSingle {const EmailCatchAllRuleResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_catch_all_rule.dart';@immutable final class EmailCatchAllRuleResponseSingle {const EmailCatchAllRuleResponseSingle({this.result});
 
 factory EmailCatchAllRuleResponseSingle.fromJson(Map<String, dynamic> json) { return EmailCatchAllRuleResponseSingle(
   result: json['result'] != null ? EmailCatchAllRule.fromJson(json['result'] as Map<String, dynamic>) : null,

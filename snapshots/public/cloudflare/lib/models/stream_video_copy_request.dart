@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_creator.dart';import 'stream_require_signed_ur_ls.dart';import 'stream_scheduled_deletion.dart';import 'stream_thumbnail_timestamp_pct.dart';import 'stream_watermark_at_upload.dart';final class StreamVideoCopyRequest {const StreamVideoCopyRequest({this.allowedOrigins, this.creator, this.meta, this.requireSignedUrLs, this.scheduledDeletion, this.thumbnailTimestampPct, required this.url, this.watermark, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_creator.dart';import 'stream_require_signed_ur_ls.dart';import 'stream_scheduled_deletion.dart';import 'stream_thumbnail_timestamp_pct.dart';import 'stream_watermark_at_upload.dart';@immutable final class StreamVideoCopyRequest {const StreamVideoCopyRequest({required this.url, this.allowedOrigins, this.creator, this.meta, this.requireSignedUrLs, this.scheduledDeletion, this.thumbnailTimestampPct, this.watermark, });
 
 factory StreamVideoCopyRequest.fromJson(Map<String, dynamic> json) { return StreamVideoCopyRequest(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>?,
   requireSignedUrLs: json['requireSignedURLs'] != null ? StreamRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
   thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,

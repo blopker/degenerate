@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_shipping_rates_request_delivery_estimate_maximum.dart';import 'post_shipping_rates_request_delivery_estimate_minimum.dart';/// The estimated range for how long shipping will take, meant to be displayable to the customer. This will appear on CheckoutSessions.
-final class PostShippingRatesRequestDeliveryEstimate {const PostShippingRatesRequestDeliveryEstimate({this.maximum, this.minimum, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_shipping_rates_request_delivery_estimate_maximum.dart';import 'post_shipping_rates_request_delivery_estimate_minimum.dart';/// The estimated range for how long shipping will take, meant to be displayable to the customer. This will appear on CheckoutSessions.
+@immutable final class PostShippingRatesRequestDeliveryEstimate {const PostShippingRatesRequestDeliveryEstimate({this.maximum, this.minimum, });
 
 factory PostShippingRatesRequestDeliveryEstimate.fromJson(Map<String, dynamic> json) { return PostShippingRatesRequestDeliveryEstimate(
   maximum: json['maximum'] != null ? PostShippingRatesRequestDeliveryEstimateMaximum.fromJson(json['maximum'] as Map<String, dynamic>) : null,

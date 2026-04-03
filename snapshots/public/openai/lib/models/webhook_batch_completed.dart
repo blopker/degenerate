@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_batch_completed_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_batch_completed_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookBatchCompletedObject {const WebhookBatchCompletedObject._(this.value);
+@immutable final class WebhookBatchCompletedObject {const WebhookBatchCompletedObject._(this.value);
 
 factory WebhookBatchCompletedObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `batch.completed`.
 /// 
-final class WebhookBatchCompletedType {const WebhookBatchCompletedType._(this.value);
+@immutable final class WebhookBatchCompletedType {const WebhookBatchCompletedType._(this.value);
 
 factory WebhookBatchCompletedType.fromJson(String json) { return switch (json) {
   'batch.completed' => batchCompleted,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when a batch API request has been completed.
 /// 
-final class WebhookBatchCompleted {const WebhookBatchCompleted({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookBatchCompleted {const WebhookBatchCompleted({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookBatchCompleted.fromJson(Map<String, dynamic> json) { return WebhookBatchCompleted(
   createdAt: (json['created_at'] as num).toInt(),

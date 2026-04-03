@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Status discriminator that is always `locked`.
-final class LockedStatusType {const LockedStatusType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status discriminator that is always `locked`.
+@immutable final class LockedStatusType {const LockedStatusType._(this.value);
 
 factory LockedStatusType.fromJson(String json) { return switch (json) {
   'locked' => locked,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LockedStatusType($value)'; } 
  }
 /// Indicates that a thread is locked and cannot accept new input.
-final class LockedStatus {const LockedStatus({this.type = LockedStatusType.locked, required this.reason, });
+@immutable final class LockedStatus {const LockedStatus({required this.reason, this.type = LockedStatusType.locked, });
 
 factory LockedStatus.fromJson(Map<String, dynamic> json) { return LockedStatus(
   type: LockedStatusType.fromJson(json['type'] as String),

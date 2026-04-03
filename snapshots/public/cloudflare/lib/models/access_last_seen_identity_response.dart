@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_identity.dart';final class AccessLastSeenIdentityResponse {const AccessLastSeenIdentityResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_identity.dart';@immutable final class AccessLastSeenIdentityResponse {const AccessLastSeenIdentityResponse({this.result});
 
 factory AccessLastSeenIdentityResponse.fromJson(Map<String, dynamic> json) { return AccessLastSeenIdentityResponse(
   result: json['result'] != null ? AccessIdentity.fromJson(json['result'] as Map<String, dynamic>) : null,

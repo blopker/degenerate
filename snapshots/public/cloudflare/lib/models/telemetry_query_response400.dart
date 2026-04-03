@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_query_response400_errors.dart';import 'telemetry_query_response400_messages.dart';final class TelemetryQueryResponse400 {const TelemetryQueryResponse400({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_query_response400_errors.dart';import 'telemetry_query_response400_messages.dart';@immutable final class TelemetryQueryResponse400 {const TelemetryQueryResponse400({required this.errors, required this.messages, required this.success, });
 
 factory TelemetryQueryResponse400.fromJson(Map<String, dynamic> json) { return TelemetryQueryResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => TelemetryQueryResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

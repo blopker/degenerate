@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';/// SPEI Records contain Mexico bank account details per the SPEI format.
-final class FundingInstructionsBankTransferSpeiRecord {const FundingInstructionsBankTransferSpeiRecord({required this.accountHolderAddress, required this.accountHolderName, required this.bankAddress, required this.bankCode, required this.bankName, required this.clabe, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// SPEI Records contain Mexico bank account details per the SPEI format.
+@immutable final class FundingInstructionsBankTransferSpeiRecord {const FundingInstructionsBankTransferSpeiRecord({required this.accountHolderAddress, required this.accountHolderName, required this.bankAddress, required this.bankCode, required this.bankName, required this.clabe, });
 
 factory FundingInstructionsBankTransferSpeiRecord.fromJson(Map<String, dynamic> json) { return FundingInstructionsBankTransferSpeiRecord(
   accountHolderAddress: Address.fromJson(json['account_holder_address'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_configuration.dart';import 'shield_messages2.dart';final class ShieldConfigurationSingleResponse {const ShieldConfigurationSingleResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_configuration.dart';import 'shield_messages2.dart';@immutable final class ShieldConfigurationSingleResponse {const ShieldConfigurationSingleResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory ShieldConfigurationSingleResponse.fromJson(Map<String, dynamic> json) { return ShieldConfigurationSingleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_automatic_https_rewrites_value.dart';/// Turn on or off Automatic HTTPS Rewrites.
-final class ZonesAutomaticHttpsRewritesId {const ZonesAutomaticHttpsRewritesId._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_automatic_https_rewrites_value.dart';/// Turn on or off Automatic HTTPS Rewrites.
+@immutable final class ZonesAutomaticHttpsRewritesId {const ZonesAutomaticHttpsRewritesId._(this.value);
 
 factory ZonesAutomaticHttpsRewritesId.fromJson(String json) { return switch (json) {
   'automatic_https_rewrites' => automaticHttpsRewrites,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesAutomaticHttpsRewritesId($value)'; } 
  }
-final class ZonesAutomaticHttpsRewrites {const ZonesAutomaticHttpsRewrites({this.id, this.value, });
+@immutable final class ZonesAutomaticHttpsRewrites {const ZonesAutomaticHttpsRewrites({this.id, this.value, });
 
 factory ZonesAutomaticHttpsRewrites.fromJson(Map<String, dynamic> json) { return ZonesAutomaticHttpsRewrites(
   id: json['id'] != null ? ZonesAutomaticHttpsRewritesId.fromJson(json['id'] as String) : null,

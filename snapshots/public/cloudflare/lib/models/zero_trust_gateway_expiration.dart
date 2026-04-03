@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_timestamp.dart';/// Defines the expiration time stamp and default duration of a DNS policy. Takes precedence over the policy's `schedule` configuration, if any. This  does not apply to HTTP or network policies. Settable only for `dns` rules.
-final class ZeroTrustGatewayExpiration {const ZeroTrustGatewayExpiration({this.duration, this.expired, required this.expiresAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_timestamp.dart';/// Defines the expiration time stamp and default duration of a DNS policy. Takes precedence over the policy's `schedule` configuration, if any. This  does not apply to HTTP or network policies. Settable only for `dns` rules.
+@immutable final class ZeroTrustGatewayExpiration {const ZeroTrustGatewayExpiration({required this.expiresAt, this.duration, this.expired, });
 
 factory ZeroTrustGatewayExpiration.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayExpiration(
   duration: json['duration'] != null ? (json['duration'] as num).toInt() : null,

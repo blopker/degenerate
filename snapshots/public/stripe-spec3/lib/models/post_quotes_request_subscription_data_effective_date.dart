@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostQuotesRequestSubscriptionDataEffectiveDateVariant1 {const PostQuotesRequestSubscriptionDataEffectiveDateVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostQuotesRequestSubscriptionDataEffectiveDateVariant1 {const PostQuotesRequestSubscriptionDataEffectiveDateVariant1._(this.value);
 
 factory PostQuotesRequestSubscriptionDataEffectiveDateVariant1.fromJson(String json) { return switch (json) {
   'current_period_end' => currentPeriodEnd,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostQuotesRequestSubscriptionDataEffectiveDateVariant1($value)'; } 
  }
-final class PostQuotesRequestSubscriptionDataEffectiveDateVariant3 {const PostQuotesRequestSubscriptionDataEffectiveDateVariant3._(this.value);
+@immutable final class PostQuotesRequestSubscriptionDataEffectiveDateVariant3 {const PostQuotesRequestSubscriptionDataEffectiveDateVariant3._(this.value);
 
 factory PostQuotesRequestSubscriptionDataEffectiveDateVariant3.fromJson(String json) { return switch (json) {
   '' => $empty,

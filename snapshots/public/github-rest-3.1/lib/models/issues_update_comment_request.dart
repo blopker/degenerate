@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssuesUpdateCommentRequest {const IssuesUpdateCommentRequest({required this.body});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesUpdateCommentRequest {const IssuesUpdateCommentRequest({required this.body});
 
 factory IssuesUpdateCommentRequest.fromJson(Map<String, dynamic> json) { return IssuesUpdateCommentRequest(
   body: json['body'] as String,

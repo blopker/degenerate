@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_addin_account_mapping.dart';final class DlpEmailScannerCreateAccountMappingResponse {const DlpEmailScannerCreateAccountMappingResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_addin_account_mapping.dart';@immutable final class DlpEmailScannerCreateAccountMappingResponse {const DlpEmailScannerCreateAccountMappingResponse({this.result});
 
 factory DlpEmailScannerCreateAccountMappingResponse.fromJson(Map<String, dynamic> json) { return DlpEmailScannerCreateAccountMappingResponse(
   result: json['result'] != null ? DlpAddinAccountMapping.fromJson(json['result'] as Map<String, dynamic>) : null,

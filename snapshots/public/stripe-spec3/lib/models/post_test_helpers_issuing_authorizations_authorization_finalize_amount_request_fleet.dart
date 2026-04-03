@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fleet_cardholder_prompt_data.dart';import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fleet_reported_breakdown.dart';final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fleet_cardholder_prompt_data.dart';import 'post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fleet_reported_breakdown.dart';@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType.fromJson(String json) { return switch (json) {
   'fuel_and_non_fuel_purchase' => fuelAndNonFuelPurchase,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetPurchaseType($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType._(this.value);
+@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType.fromJson(String json) { return switch (json) {
   'full_service' => fullService,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetServiceType($value)'; } 
  }
 /// Fleet-specific information for authorizations using Fleet cards.
-final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
+@immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
 
 factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleet(
   cardholderPromptData: json['cardholder_prompt_data'] != null ? PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,

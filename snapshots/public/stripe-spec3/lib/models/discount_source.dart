@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coupon.dart';import 'discount_source_coupon.dart';/// The source type of the discount.
-final class DiscountSourceType {const DiscountSourceType._(this.value);
+@immutable final class DiscountSourceType {const DiscountSourceType._(this.value);
 
 factory DiscountSourceType.fromJson(String json) { return switch (json) {
   'coupon' => coupon,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DiscountSourceType($value)'; } 
  }
 /// 
-final class DiscountSource {const DiscountSource({this.coupon, required this.type, });
+@immutable final class DiscountSource {const DiscountSource({required this.type, this.coupon, });
 
 factory DiscountSource.fromJson(Map<String, dynamic> json) { return DiscountSource(
   coupon: json['coupon'] != null ? OneOf2.parse(json['coupon'], fromA: (v) => v as String, fromB: (v) => Coupon.fromJson(v as Map<String, dynamic>),) : null,

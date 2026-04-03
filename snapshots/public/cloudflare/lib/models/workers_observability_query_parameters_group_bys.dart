@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObservabilityQueryParametersGroupBysType {const WorkersObservabilityQueryParametersGroupBysType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryParametersGroupBysType {const WorkersObservabilityQueryParametersGroupBysType._(this.value);
 
 factory WorkersObservabilityQueryParametersGroupBysType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersObservabilityQueryParametersGroupBysType($value)'; } 
  }
-final class WorkersObservabilityQueryParametersGroupBys {const WorkersObservabilityQueryParametersGroupBys({required this.type, required this.value, });
+@immutable final class WorkersObservabilityQueryParametersGroupBys {const WorkersObservabilityQueryParametersGroupBys({required this.type, required this.value, });
 
 factory WorkersObservabilityQueryParametersGroupBys.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryParametersGroupBys(
   type: WorkersObservabilityQueryParametersGroupBysType.fromJson(json['type'] as String),

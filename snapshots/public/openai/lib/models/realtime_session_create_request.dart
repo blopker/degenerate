@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt.dart';import 'realtime_session_create_request_client_secret.dart';import 'realtime_session_create_request_input_audio_transcription.dart';import 'realtime_session_create_request_max_response_output_tokens.dart';import 'realtime_session_create_request_tools.dart';import 'realtime_session_create_request_tracing.dart';import 'realtime_session_create_request_turn_detection.dart';import 'realtime_truncation.dart';import 'retention_ratio_truncation.dart';import 'tracing_configuration2.dart';import 'voice_ids_or_custom_voice.dart';import 'voice_ids_or_custom_voice_variant2.dart';import 'voice_ids_shared.dart';/// A new Realtime session configuration, with an ephemeral key. Default TTL
 /// for keys is one minute.
 /// 
-final class RealtimeSessionCreateRequest {const RealtimeSessionCreateRequest({required this.clientSecret, this.modalities, this.instructions, this.voice, this.inputAudioFormat, this.outputAudioFormat, this.inputAudioTranscription, this.speed = 1.0, this.tracing, this.turnDetection, this.tools, this.toolChoice, this.temperature, this.maxResponseOutputTokens, this.truncation, this.prompt, });
+@immutable final class RealtimeSessionCreateRequest {const RealtimeSessionCreateRequest({required this.clientSecret, this.modalities, this.instructions, this.voice, this.inputAudioFormat, this.outputAudioFormat, this.inputAudioTranscription, this.speed = 1.0, this.tracing, this.turnDetection, this.tools, this.toolChoice, this.temperature, this.maxResponseOutputTokens, this.truncation, this.prompt, });
 
 factory RealtimeSessionCreateRequest.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequest(
   clientSecret: RealtimeSessionCreateRequestClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
@@ -28,7 +28,7 @@ factory RealtimeSessionCreateRequest.fromJson(Map<String, dynamic> json) { retur
 final RealtimeSessionCreateRequestClientSecret clientSecret;
 
 /// The set of modalities the model can respond with. To disable audio,
-/// set this to ["text"].
+/// set this to `["text"]`.
 /// 
 final dynamic modalities;
 
@@ -89,7 +89,7 @@ final List<RealtimeSessionCreateRequestTools>? tools;
 /// 
 final String? toolChoice;
 
-/// Sampling temperature for the model, limited to [0.6, 1.2]. Defaults to 0.8.
+/// Sampling temperature for the model, limited to `[0.6, 1.2]`. Defaults to 0.8.
 /// 
 final double? temperature;
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_named_tool_choice_custom_custom.dart';/// For custom tool calling, the type is always `custom`.
-final class ChatCompletionNamedToolChoiceCustomType {const ChatCompletionNamedToolChoiceCustomType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_named_tool_choice_custom_custom.dart';/// For custom tool calling, the type is always `custom`.
+@immutable final class ChatCompletionNamedToolChoiceCustomType {const ChatCompletionNamedToolChoiceCustomType._(this.value);
 
 factory ChatCompletionNamedToolChoiceCustomType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ChatCompletionNamedToolChoiceCustomType($value)'; } 
  }
 /// Specifies a tool the model should use. Use to force the model to call a specific custom tool.
-final class ChatCompletionNamedToolChoiceCustom {const ChatCompletionNamedToolChoiceCustom({required this.type, required this.custom, });
+@immutable final class ChatCompletionNamedToolChoiceCustom {const ChatCompletionNamedToolChoiceCustom({required this.type, required this.custom, });
 
 factory ChatCompletionNamedToolChoiceCustom.fromJson(Map<String, dynamic> json) { return ChatCompletionNamedToolChoiceCustom(
   type: ChatCompletionNamedToolChoiceCustomType.fromJson(json['type'] as String),

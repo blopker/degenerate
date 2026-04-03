@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The code for the type of error.
-final class AccountRequirementsErrorCode {const AccountRequirementsErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The code for the type of error.
+@immutable final class AccountRequirementsErrorCode {const AccountRequirementsErrorCode._(this.value);
 
 factory AccountRequirementsErrorCode.fromJson(String json) { return switch (json) {
   'external_request' => externalRequest,
@@ -308,7 +308,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountRequirementsErrorCode($value)'; } 
  }
 /// 
-final class AccountRequirementsError {const AccountRequirementsError({required this.code, required this.reason, required this.requirement, });
+@immutable final class AccountRequirementsError {const AccountRequirementsError({required this.code, required this.reason, required this.requirement, });
 
 factory AccountRequirementsError.fromJson(Map<String, dynamic> json) { return AccountRequirementsError(
   code: AccountRequirementsErrorCode.fromJson(json['code'] as String),

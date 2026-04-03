@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiBotsSummaryContentType {const RadarGetAiBotsSummaryContentType._(this.value);
 
 factory RadarGetAiBotsSummaryContentType.fromJson(String json) { return switch (json) {
   'HTML' => html,

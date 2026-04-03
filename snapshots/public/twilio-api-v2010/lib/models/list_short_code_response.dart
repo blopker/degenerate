@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_short_code.dart';final class ListShortCodeResponse {const ListShortCodeResponse({this.shortCodes, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_short_code.dart';@immutable final class ListShortCodeResponse {const ListShortCodeResponse({this.shortCodes, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListShortCodeResponse.fromJson(Map<String, dynamic> json) { return ListShortCodeResponse(
   shortCodes: (json['short_codes'] as List<dynamic>?)?.map((e) => AccountShortCode.fromJson(e as Map<String, dynamic>)).toList(),

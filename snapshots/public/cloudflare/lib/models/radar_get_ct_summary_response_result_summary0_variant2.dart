@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCtSummaryResponseResultSummary0Variant2 {const RadarGetCtSummaryResponseResultSummary0Variant2({required this.rfc6962, required this.$static, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtSummaryResponseResultSummary0Variant2 {const RadarGetCtSummaryResponseResultSummary0Variant2({required this.rfc6962, required this.$static, });
 
 factory RadarGetCtSummaryResponseResultSummary0Variant2.fromJson(Map<String, dynamic> json) { return RadarGetCtSummaryResponseResultSummary0Variant2(
   rfc6962: json['rfc6962'] as String,

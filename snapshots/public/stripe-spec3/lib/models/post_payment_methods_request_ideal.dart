@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodsRequestIdealBank {const PostPaymentMethodsRequestIdealBank._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsRequestIdealBank {const PostPaymentMethodsRequestIdealBank._(this.value);
 
 factory PostPaymentMethodsRequestIdealBank.fromJson(String json) { return switch (json) {
   'abn_amro' => abnAmro,
@@ -79,7 +79,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentMethodsRequestIdealBank($value)'; } 
  }
 /// If this is an `ideal` PaymentMethod, this hash contains details about the iDEAL payment method.
-final class PostPaymentMethodsRequestIdeal {const PostPaymentMethodsRequestIdeal({this.bank});
+@immutable final class PostPaymentMethodsRequestIdeal {const PostPaymentMethodsRequestIdeal({this.bank});
 
 factory PostPaymentMethodsRequestIdeal.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestIdeal(
   bank: json['bank'] != null ? PostPaymentMethodsRequestIdealBank.fromJson(json['bank'] as String) : null,

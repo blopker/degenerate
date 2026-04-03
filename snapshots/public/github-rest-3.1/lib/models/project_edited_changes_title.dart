@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProjectEditedChangesTitle {const ProjectEditedChangesTitle({this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectEditedChangesTitle {const ProjectEditedChangesTitle({this.from, this.to, });
 
 factory ProjectEditedChangesTitle.fromJson(Map<String, dynamic> json) { return ProjectEditedChangesTitle(
   from: json['from'] as String?,

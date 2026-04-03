@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'page_shield_cryptomining_score.dart';import 'page_shield_dataflow_score.dart';import 'page_shield_fetched_at.dart';import 'page_shield_hash.dart';import 'page_shield_js_integrity_score.dart';import 'page_shield_magecart_score.dart';import 'page_shield_malware_score.dart';import 'page_shield_obfuscation_score.dart';/// The version of the analyzed script.
-final class PageShieldVersion {const PageShieldVersion({this.cryptominingScore, this.dataflowScore, this.fetchedAt, this.hash, this.jsIntegrityScore, this.magecartScore, this.malwareScore, this.obfuscationScore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_cryptomining_score.dart';import 'page_shield_dataflow_score.dart';import 'page_shield_fetched_at.dart';import 'page_shield_hash.dart';import 'page_shield_js_integrity_score.dart';import 'page_shield_magecart_score.dart';import 'page_shield_malware_score.dart';import 'page_shield_obfuscation_score.dart';/// The version of the analyzed script.
+@immutable final class PageShieldVersion {const PageShieldVersion({this.cryptominingScore, this.dataflowScore, this.fetchedAt, this.hash, this.jsIntegrityScore, this.magecartScore, this.malwareScore, this.obfuscationScore, });
 
 factory PageShieldVersion.fromJson(Map<String, dynamic> json) { return PageShieldVersion(
   cryptominingScore: json['cryptomining_score'] != null ? PageShieldCryptominingScore.fromJson(json['cryptomining_score'] as num) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_aba_record.dart';final class TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks {const TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_aba_record.dart';@immutable final class TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks {const TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks._(this.value);
 
 factory TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks($value)'; } 
  }
 /// The type of financial address
-final class TreasuryFinancialAccountsResourceFinancialAddressType {const TreasuryFinancialAccountsResourceFinancialAddressType._(this.value);
+@immutable final class TreasuryFinancialAccountsResourceFinancialAddressType {const TreasuryFinancialAccountsResourceFinancialAddressType._(this.value);
 
 factory TreasuryFinancialAccountsResourceFinancialAddressType.fromJson(String json) { return switch (json) {
   'aba' => aba,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourceFinancialAddressType($value)'; } 
  }
 /// FinancialAddresses contain identifying information that resolves to a FinancialAccount.
-final class TreasuryFinancialAccountsResourceFinancialAddress {const TreasuryFinancialAccountsResourceFinancialAddress({this.aba, this.supportedNetworks, required this.type, });
+@immutable final class TreasuryFinancialAccountsResourceFinancialAddress {const TreasuryFinancialAccountsResourceFinancialAddress({required this.type, this.aba, this.supportedNetworks, });
 
 factory TreasuryFinancialAccountsResourceFinancialAddress.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceFinancialAddress(
   aba: json['aba'] != null ? TreasuryFinancialAccountsResourceAbaRecord.fromJson(json['aba'] as Map<String, dynamic>) : null,

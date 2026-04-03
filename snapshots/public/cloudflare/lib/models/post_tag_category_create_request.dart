@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTagCategoryCreateRequest {const PostTagCategoryCreateRequest({this.description, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTagCategoryCreateRequest {const PostTagCategoryCreateRequest({required this.name, this.description, });
 
 factory PostTagCategoryCreateRequest.fromJson(Map<String, dynamic> json) { return PostTagCategoryCreateRequest(
   description: json['description'] as String?,

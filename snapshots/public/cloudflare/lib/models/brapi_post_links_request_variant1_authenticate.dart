@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Provide credentials for HTTP authentication.
-final class BrapiPostLinksRequestVariant1Authenticate {const BrapiPostLinksRequestVariant1Authenticate({required this.password, required this.username, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provide credentials for HTTP authentication.
+@immutable final class BrapiPostLinksRequestVariant1Authenticate {const BrapiPostLinksRequestVariant1Authenticate({required this.password, required this.username, });
 
 factory BrapiPostLinksRequestVariant1Authenticate.fromJson(Map<String, dynamic> json) { return BrapiPostLinksRequestVariant1Authenticate(
   password: json['password'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'actions_hosted_runner_limits_public_ips.dart';final class ActionsHostedRunnerLimits {const ActionsHostedRunnerLimits({required this.publicIps});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner_limits_public_ips.dart';@immutable final class ActionsHostedRunnerLimits {const ActionsHostedRunnerLimits({required this.publicIps});
 
 factory ActionsHostedRunnerLimits.fromJson(Map<String, dynamic> json) { return ActionsHostedRunnerLimits(
   publicIps: ActionsHostedRunnerLimitsPublicIps.fromJson(json['public_ips'] as Map<String, dynamic>),

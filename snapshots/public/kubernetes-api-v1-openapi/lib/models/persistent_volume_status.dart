@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'time.dart';/// PersistentVolumeStatus is the current status of a persistent volume.
-final class PersistentVolumeStatus {const PersistentVolumeStatus({this.lastPhaseTransitionTime, this.message, this.phase, this.reason, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// PersistentVolumeStatus is the current status of a persistent volume.
+@immutable final class PersistentVolumeStatus {const PersistentVolumeStatus({this.lastPhaseTransitionTime, this.message, this.phase, this.reason, });
 
 factory PersistentVolumeStatus.fromJson(Map<String, dynamic> json) { return PersistentVolumeStatus(
   lastPhaseTransitionTime: json['lastPhaseTransitionTime'] != null ? Time.fromJson(json['lastPhaseTransitionTime'] as String) : null,

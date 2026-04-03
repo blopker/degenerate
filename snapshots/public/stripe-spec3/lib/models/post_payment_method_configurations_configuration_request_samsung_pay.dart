@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_samsung_pay_display_preference.dart';/// Samsung Pay is a [single-use](https://docs.stripe.com/payments/payment-methods#usage local wallet available in South Korea.
-final class PostPaymentMethodConfigurationsConfigurationRequestSamsungPay {const PostPaymentMethodConfigurationsConfigurationRequestSamsungPay({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_samsung_pay_display_preference.dart';/// Samsung Pay is a [single-use](https://docs.stripe.com/payments/payment-methods#usage local wallet available in South Korea.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestSamsungPay {const PostPaymentMethodConfigurationsConfigurationRequestSamsungPay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestSamsungPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestSamsungPay(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestSamsungPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

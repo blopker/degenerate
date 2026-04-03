@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_membership_with_policies.dart';final class IamCollectionMembershipResponseWithPolicies {const IamCollectionMembershipResponseWithPolicies({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_membership_with_policies.dart';@immutable final class IamCollectionMembershipResponseWithPolicies {const IamCollectionMembershipResponseWithPolicies({this.result});
 
 factory IamCollectionMembershipResponseWithPolicies.fromJson(Map<String, dynamic> json) { return IamCollectionMembershipResponseWithPolicies(
   result: (json['result'] as List<dynamic>?)?.map((e) => IamMembershipWithPolicies.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'user_message_input_text.dart';import 'user_message_quoted_text.dart';/// Content blocks that comprise a user message.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'user_message_input_text.dart';import 'user_message_quoted_text.dart';/// Content blocks that comprise a user message.
 sealed class UserMessageItemContent {const UserMessageItemContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UserMessageItemContent$Unknown; } 
  }
-final class UserMessageItemContentInputText extends UserMessageItemContent {const UserMessageItemContentInputText(this.userMessageInputText);
+@immutable final class UserMessageItemContentInputText extends UserMessageItemContent {const UserMessageItemContentInputText(this.userMessageInputText);
 
 factory UserMessageItemContentInputText.fromJson(Map<String, dynamic> json) { return UserMessageItemContentInputText(UserMessageInputText.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final UserMessageInputText userMessageInputText;
 @override int get hashCode { return userMessageInputText.hashCode; } 
 @override String toString() { return 'UserMessageItemContentInputText(userMessageInputText: $userMessageInputText)'; } 
  }
-final class UserMessageItemContentQuotedText extends UserMessageItemContent {const UserMessageItemContentQuotedText(this.userMessageQuotedText);
+@immutable final class UserMessageItemContentQuotedText extends UserMessageItemContent {const UserMessageItemContentQuotedText(this.userMessageQuotedText);
 
 factory UserMessageItemContentQuotedText.fromJson(Map<String, dynamic> json) { return UserMessageItemContentQuotedText(UserMessageQuotedText.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final UserMessageQuotedText userMessageQuotedText;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class UserMessageItemContent$Unknown extends UserMessageItemContent {const UserMessageItemContent$Unknown(this.json);
+@immutable final class UserMessageItemContent$Unknown extends UserMessageItemContent {const UserMessageItemContent$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A ruleset to skip the execution of. This option is incompatible with the rulesets option.
-final class RulesetsSkipRuleset {const RulesetsSkipRuleset._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A ruleset to skip the execution of. This option is incompatible with the rulesets option.
+@immutable final class RulesetsSkipRuleset {const RulesetsSkipRuleset._(this.value);
 
 factory RulesetsSkipRuleset.fromJson(String json) { return switch (json) {
   'current' => current,

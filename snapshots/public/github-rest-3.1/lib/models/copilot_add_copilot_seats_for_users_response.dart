@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The total number of seats created for the specified user(s).
-final class CopilotAddCopilotSeatsForUsersResponse {const CopilotAddCopilotSeatsForUsersResponse({required this.seatsCreated});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The total number of seats created for the specified user(s).
+@immutable final class CopilotAddCopilotSeatsForUsersResponse {const CopilotAddCopilotSeatsForUsersResponse({required this.seatsCreated});
 
 factory CopilotAddCopilotSeatsForUsersResponse.fromJson(Map<String, dynamic> json) { return CopilotAddCopilotSeatsForUsersResponse(
   seatsCreated: (json['seats_created'] as num).toInt(),

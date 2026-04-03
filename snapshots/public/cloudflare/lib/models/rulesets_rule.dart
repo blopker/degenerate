@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rule_action.dart';import 'rulesets_rule_category.dart';import 'rulesets_rule_enabled.dart';import 'rulesets_rule_exposed_credential_check.dart';import 'rulesets_rule_id.dart';import 'rulesets_rule_logging.dart';import 'rulesets_rule_ratelimit.dart';final class RulesetsRule {const RulesetsRule({this.action, this.actionParameters = const {}, this.categories, this.description = '', this.enabled, this.exposedCredentialCheck, this.expression, this.id, required this.lastUpdated, this.logging, this.ratelimit, this.ref, required this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rule_action.dart';import 'rulesets_rule_category.dart';import 'rulesets_rule_enabled.dart';import 'rulesets_rule_exposed_credential_check.dart';import 'rulesets_rule_id.dart';import 'rulesets_rule_logging.dart';import 'rulesets_rule_ratelimit.dart';@immutable final class RulesetsRule {const RulesetsRule({required this.lastUpdated, required this.version, this.action, this.actionParameters = const {}, this.categories, this.description = '', this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
 
 factory RulesetsRule.fromJson(Map<String, dynamic> json) { return RulesetsRule(
   action: json['action'] != null ? RulesetsRuleAction.fromJson(json['action'] as String) : null,
-  actionParameters: json.containsKey('action_parameters') ? (json['action_parameters'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)) : const {},
+  actionParameters: json.containsKey('action_parameters') ? json['action_parameters'] as Map<String, dynamic> : const {},
   categories: (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList(),
   description: json.containsKey('description') ? json['description'] as String : '',
   enabled: json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null,

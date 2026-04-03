@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'batch_file_expiration_after.dart';/// The endpoint to be used for all requests in the batch. Currently `/v1/responses`, `/v1/chat/completions`, `/v1/embeddings`, `/v1/completions`, `/v1/moderations`, `/v1/images/generations`, and `/v1/images/edits` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
-final class CreateBatchRequestEndpoint {const CreateBatchRequestEndpoint._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'batch_file_expiration_after.dart';/// The endpoint to be used for all requests in the batch. Currently `/v1/responses`, `/v1/chat/completions`, `/v1/embeddings`, `/v1/completions`, `/v1/moderations`, `/v1/images/generations`, and `/v1/images/edits` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.
+@immutable final class CreateBatchRequestEndpoint {const CreateBatchRequestEndpoint._(this.value);
 
 factory CreateBatchRequestEndpoint.fromJson(String json) { return switch (json) {
   '/v1/responses' => v1Responses,
@@ -41,7 +41,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateBatchRequestEndpoint($value)'; } 
  }
 /// The time frame within which the batch should be processed. Currently only `24h` is supported.
-final class CreateBatchRequestCompletionWindow {const CreateBatchRequestCompletionWindow._(this.value);
+@immutable final class CreateBatchRequestCompletionWindow {const CreateBatchRequestCompletionWindow._(this.value);
 
 factory CreateBatchRequestCompletionWindow.fromJson(String json) { return switch (json) {
   '24h' => $24h,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateBatchRequestCompletionWindow($value)'; } 
  }
-final class CreateBatchRequest {const CreateBatchRequest({required this.inputFileId, required this.endpoint, required this.completionWindow, this.metadata, this.outputExpiresAfter, });
+@immutable final class CreateBatchRequest {const CreateBatchRequest({required this.inputFileId, required this.endpoint, required this.completionWindow, this.metadata, this.outputExpiresAfter, });
 
 factory CreateBatchRequest.fromJson(Map<String, dynamic> json) { return CreateBatchRequest(
   inputFileId: json['input_file_id'] as String,

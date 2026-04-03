@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiUploadFinetuneAssetResponse {const WorkersAiUploadFinetuneAssetResponse({required this.success});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiUploadFinetuneAssetResponse {const WorkersAiUploadFinetuneAssetResponse({required this.success});
 
 factory WorkersAiUploadFinetuneAssetResponse.fromJson(Map<String, dynamic> json) { return WorkersAiUploadFinetuneAssetResponse(
   success: json['success'] as bool,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_after_expiration_recovery.dart';/// 
-final class PaymentPagesCheckoutSessionAfterExpiration {const PaymentPagesCheckoutSessionAfterExpiration({this.recovery});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_after_expiration_recovery.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionAfterExpiration {const PaymentPagesCheckoutSessionAfterExpiration({this.recovery});
 
 factory PaymentPagesCheckoutSessionAfterExpiration.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionAfterExpiration(
   recovery: json['recovery'] != null ? PaymentPagesCheckoutSessionAfterExpirationRecovery.fromJson(json['recovery'] as Map<String, dynamic>) : null,

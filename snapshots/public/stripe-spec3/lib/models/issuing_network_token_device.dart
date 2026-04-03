@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of device used for tokenization.
-final class IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device used for tokenization.
+@immutable final class IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType._(this.value);
 
 factory IssuingNetworkTokenDeviceType.fromJson(String json) { return switch (json) {
   'other' => $other,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingNetworkTokenDeviceType($value)'; } 
  }
 /// 
-final class IssuingNetworkTokenDevice {const IssuingNetworkTokenDevice({this.deviceFingerprint, this.ipAddress, this.location, this.name, this.phoneNumber, this.type, });
+@immutable final class IssuingNetworkTokenDevice {const IssuingNetworkTokenDevice({this.deviceFingerprint, this.ipAddress, this.location, this.name, this.phoneNumber, this.type, });
 
 factory IssuingNetworkTokenDevice.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenDevice(
   deviceFingerprint: json['device_fingerprint'] as String?,
@@ -46,7 +46,7 @@ final String? deviceFingerprint;
 /// The IP address of the device at provisioning time.
 final String? ipAddress;
 
-/// The geographic latitude/longitude coordinates of the device at provisioning time. The format is [+-]decimal/[+-]decimal.
+/// The geographic latitude/longitude coordinates of the device at provisioning time. The format is `[+-]`decimal/`[+-]`decimal.
 final String? location;
 
 /// The name of the device used for tokenization.

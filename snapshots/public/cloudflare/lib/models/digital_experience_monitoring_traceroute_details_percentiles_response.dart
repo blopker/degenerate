@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_percentiles.dart';final class DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse {const DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse({this.hopsCount, this.packetLossPct, this.roundTripTimeMs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_percentiles.dart';@immutable final class DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse {const DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse({this.hopsCount, this.packetLossPct, this.roundTripTimeMs, });
 
 factory DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse(
   hopsCount: json['hopsCount'] != null ? DigitalExperienceMonitoringPercentiles.fromJson(json['hopsCount'] as Map<String, dynamic>) : null,

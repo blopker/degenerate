@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActivitySetThreadSubscriptionRequest {const ActivitySetThreadSubscriptionRequest({this.ignored = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivitySetThreadSubscriptionRequest {const ActivitySetThreadSubscriptionRequest({this.ignored = false});
 
 factory ActivitySetThreadSubscriptionRequest.fromJson(Map<String, dynamic> json) { return ActivitySetThreadSubscriptionRequest(
   ignored: json.containsKey('ignored') ? json['ignored'] as bool : false,

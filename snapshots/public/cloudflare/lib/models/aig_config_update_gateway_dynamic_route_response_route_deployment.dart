@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigUpdateGatewayDynamicRouteResponseRouteDeployment {const AigConfigUpdateGatewayDynamicRouteResponseRouteDeployment({this.comment, required this.createdAt, required this.deploymentId, required this.versionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponseRouteDeployment {const AigConfigUpdateGatewayDynamicRouteResponseRouteDeployment({required this.createdAt, required this.deploymentId, required this.versionId, this.comment, });
 
 factory AigConfigUpdateGatewayDynamicRouteResponseRouteDeployment.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponseRouteDeployment(
   comment: json['comment'] as String?,

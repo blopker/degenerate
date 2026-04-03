@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostForwardingRequestsRequestRequestHeaders {const PostForwardingRequestsRequestRequestHeaders({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostForwardingRequestsRequestRequestHeaders {const PostForwardingRequestsRequestRequestHeaders({required this.name, required this.value, });
 
 factory PostForwardingRequestsRequestRequestHeaders.fromJson(Map<String, dynamic> json) { return PostForwardingRequestsRequestRequestHeaders(
   name: json['name'] as String,

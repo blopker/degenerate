@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_schema_upload_log_event.dart';final class ShieldOldSchemaUploadDetailsWarningsOnly {const ShieldOldSchemaUploadDetailsWarningsOnly({this.warnings});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_schema_upload_log_event.dart';@immutable final class ShieldOldSchemaUploadDetailsWarningsOnly {const ShieldOldSchemaUploadDetailsWarningsOnly({this.warnings});
 
 factory ShieldOldSchemaUploadDetailsWarningsOnly.fromJson(Map<String, dynamic> json) { return ShieldOldSchemaUploadDetailsWarningsOnly(
   warnings: (json['warnings'] as List<dynamic>?)?.map((e) => ShieldOldSchemaUploadLogEvent.fromJson(e as Map<String, dynamic>)).toList(),

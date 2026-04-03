@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelCategoryWithSuperCategoryId {const IntelCategoryWithSuperCategoryId({this.id, this.name, this.superCategoryId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelCategoryWithSuperCategoryId {const IntelCategoryWithSuperCategoryId({this.id, this.name, this.superCategoryId, });
 
 factory IntelCategoryWithSuperCategoryId.fromJson(Map<String, dynamic> json) { return IntelCategoryWithSuperCategoryId(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

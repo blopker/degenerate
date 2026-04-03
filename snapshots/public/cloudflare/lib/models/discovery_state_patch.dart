@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Mark state of operation in API Discovery
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Mark state of operation in API Discovery
 ///   * `review` - Mark operation as for review
 ///   * `ignored` - Mark operation as ignored
 /// 
-final class DiscoveryStatePatch {const DiscoveryStatePatch._(this.value);
+@immutable final class DiscoveryStatePatch {const DiscoveryStatePatch._(this.value);
 
 factory DiscoveryStatePatch.fromJson(String json) { return switch (json) {
   'review' => review,

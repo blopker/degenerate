@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultMetaUnits {const RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultMetaUnits {const RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultMetaUnits(
   name: json['name'] as String,

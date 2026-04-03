@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The GitHub Pages deployment status.
-final class PageDeployment {const PageDeployment({required this.id, required this.statusUrl, required this.pageUrl, this.previewUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The GitHub Pages deployment status.
+@immutable final class PageDeployment {const PageDeployment({required this.id, required this.statusUrl, required this.pageUrl, this.previewUrl, });
 
 factory PageDeployment.fromJson(Map<String, dynamic> json) { return PageDeployment(
   id: json['id'],

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_errors3.dart';import 'response_messages2.dart';import 'response_success.dart';final class ResponseSingle39 {const ResponseSingle39({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_errors3.dart';import 'response_messages2.dart';import 'response_success.dart';@immutable final class ResponseSingle39 {const ResponseSingle39({required this.errors, required this.messages, required this.success, });
 
 factory ResponseSingle39.fromJson(Map<String, dynamic> json) { return ResponseSingle39(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseErrors3.fromJson(e as Map<String, dynamic>)).toList(),

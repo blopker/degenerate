@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_links_payment_link_request_invoice_creation_invoice_data.dart';/// Generate a post-purchase Invoice for one-time payments.
-final class PostPaymentLinksPaymentLinkRequestInvoiceCreation {const PostPaymentLinksPaymentLinkRequestInvoiceCreation({required this.enabled, this.invoiceData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_invoice_creation_invoice_data.dart';/// Generate a post-purchase Invoice for one-time payments.
+@immutable final class PostPaymentLinksPaymentLinkRequestInvoiceCreation {const PostPaymentLinksPaymentLinkRequestInvoiceCreation({required this.enabled, this.invoiceData, });
 
 factory PostPaymentLinksPaymentLinkRequestInvoiceCreation.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestInvoiceCreation(
   enabled: json['enabled'] as bool,

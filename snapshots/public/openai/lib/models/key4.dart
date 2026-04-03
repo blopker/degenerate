@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `organization.project.service_account.api_key`
-final class Key4Object {const Key4Object._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project.service_account.api_key`
+@immutable final class Key4Object {const Key4Object._(this.value);
 
 factory Key4Object.fromJson(String json) { return switch (json) {
   'organization.project.service_account.api_key' => organizationProjectServiceAccountApiKey,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Key4Object($value)'; } 
  }
-final class Key4 {const Key4({required this.object, required this.value, required this.name, required this.createdAt, required this.id, });
+@immutable final class Key4 {const Key4({required this.object, required this.value, required this.name, required this.createdAt, required this.id, });
 
 factory Key4.fromJson(Map<String, dynamic> json) { return Key4(
   object: Key4Object.fromJson(json['object'] as String),

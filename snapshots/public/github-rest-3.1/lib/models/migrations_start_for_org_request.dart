@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class MigrationsStartForOrgRequestExclude {const MigrationsStartForOrgRequestExclude._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MigrationsStartForOrgRequestExclude {const MigrationsStartForOrgRequestExclude._(this.value);
 
 factory MigrationsStartForOrgRequestExclude.fromJson(String json) { return switch (json) {
   'repositories' => repositories,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MigrationsStartForOrgRequestExclude($value)'; } 
  }
-final class MigrationsStartForOrgRequest {const MigrationsStartForOrgRequest({required this.repositories, this.lockRepositories = false, this.excludeMetadata = false, this.excludeGitData = false, this.excludeAttachments = false, this.excludeReleases = false, this.excludeOwnerProjects = false, this.orgMetadataOnly = false, this.exclude, });
+@immutable final class MigrationsStartForOrgRequest {const MigrationsStartForOrgRequest({required this.repositories, this.lockRepositories = false, this.excludeMetadata = false, this.excludeGitData = false, this.excludeAttachments = false, this.excludeReleases = false, this.excludeOwnerProjects = false, this.orgMetadataOnly = false, this.exclude, });
 
 factory MigrationsStartForOrgRequest.fromJson(Map<String, dynamic> json) { return MigrationsStartForOrgRequest(
   repositories: (json['repositories'] as List<dynamic>).map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ChatCompletionNamedToolChoiceFunction {const ChatCompletionNamedToolChoiceFunction({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChatCompletionNamedToolChoiceFunction {const ChatCompletionNamedToolChoiceFunction({required this.name});
 
 factory ChatCompletionNamedToolChoiceFunction.fromJson(Map<String, dynamic> json) { return ChatCompletionNamedToolChoiceFunction(
   name: json['name'] as String,

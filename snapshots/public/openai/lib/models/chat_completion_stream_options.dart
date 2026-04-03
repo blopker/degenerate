@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Options for streaming response. Only set this when you set `stream: true`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Options for streaming response. Only set this when you set `stream: true`.
 /// 
-final class ChatCompletionStreamOptions {const ChatCompletionStreamOptions({this.includeUsage, this.includeObfuscation, });
+@immutable final class ChatCompletionStreamOptions {const ChatCompletionStreamOptions({this.includeUsage, this.includeObfuscation, });
 
 factory ChatCompletionStreamOptions.fromJson(Map<String, dynamic> json) { return ChatCompletionStreamOptions(
   includeUsage: json['include_usage'] as bool?,

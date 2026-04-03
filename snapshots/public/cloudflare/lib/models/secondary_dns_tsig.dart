@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secondary_dns_schemas_identifier.dart';/// TSIG algorithm.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_schemas_identifier.dart';/// TSIG algorithm.
 extension type const SecondaryDnsAlgo(String value) {
 factory SecondaryDnsAlgo.fromJson(String json) => SecondaryDnsAlgo(json);
 
@@ -21,7 +21,7 @@ factory SecondaryDnsSecret.fromJson(String json) => SecondaryDnsSecret(json);
 String toJson() => value;
 
 }
-final class SecondaryDnsTsig {const SecondaryDnsTsig({required this.algo, required this.id, required this.name, required this.secret, });
+@immutable final class SecondaryDnsTsig {const SecondaryDnsTsig({required this.algo, required this.id, required this.name, required this.secret, });
 
 factory SecondaryDnsTsig.fromJson(Map<String, dynamic> json) { return SecondaryDnsTsig(
   algo: SecondaryDnsAlgo.fromJson(json['algo'] as String),

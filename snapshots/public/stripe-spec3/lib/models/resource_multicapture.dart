@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates whether or not multiple captures are supported.
-final class ResourceMulticaptureStatus {const ResourceMulticaptureStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether or not multiple captures are supported.
+@immutable final class ResourceMulticaptureStatus {const ResourceMulticaptureStatus._(this.value);
 
 factory ResourceMulticaptureStatus.fromJson(String json) { return switch (json) {
   'available' => available,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResourceMulticaptureStatus($value)'; } 
  }
 /// 
-final class ResourceMulticapture {const ResourceMulticapture({required this.status});
+@immutable final class ResourceMulticapture {const ResourceMulticapture({required this.status});
 
 factory ResourceMulticapture.fromJson(Map<String, dynamic> json) { return ResourceMulticapture(
   status: ResourceMulticaptureStatus.fromJson(json['status'] as String),

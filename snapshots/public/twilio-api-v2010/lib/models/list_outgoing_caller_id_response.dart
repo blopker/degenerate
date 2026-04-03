@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_outgoing_caller_id.dart';final class ListOutgoingCallerIdResponse {const ListOutgoingCallerIdResponse({this.outgoingCallerIds, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_outgoing_caller_id.dart';@immutable final class ListOutgoingCallerIdResponse {const ListOutgoingCallerIdResponse({this.outgoingCallerIds, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListOutgoingCallerIdResponse.fromJson(Map<String, dynamic> json) { return ListOutgoingCallerIdResponse(
   outgoingCallerIds: (json['outgoing_caller_ids'] as List<dynamic>?)?.map((e) => AccountOutgoingCallerId.fromJson(e as Map<String, dynamic>)).toList(),

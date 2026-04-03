@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpSummaryByHttpVersionResponseResultSummary0 {const RadarGetHttpSummaryByHttpVersionResponseResultSummary0({required this.http1X, required this.http2, required this.http3, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByHttpVersionResponseResultSummary0 {const RadarGetHttpSummaryByHttpVersionResponseResultSummary0({required this.http1X, required this.http2, required this.http3, });
 
 factory RadarGetHttpSummaryByHttpVersionResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByHttpVersionResponseResultSummary0(
   http1X: json['HTTP/1.x'] as String,

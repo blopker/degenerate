@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class NscFacilityInfo {const NscFacilityInfo({required this.address, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NscFacilityInfo {const NscFacilityInfo({required this.address, required this.name, });
 
 factory NscFacilityInfo.fromJson(Map<String, dynamic> json) { return NscFacilityInfo(
   address: (json['address'] as List<dynamic>).map((e) => e as String).toList(),

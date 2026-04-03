@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'insights_resources_payment_evaluation_dispute_opened.dart';import 'insights_resources_payment_evaluation_early_fraud_warning_received.dart';import 'insights_resources_payment_evaluation_refunded.dart';import 'insights_resources_payment_evaluation_user_intervention_raised.dart';import 'insights_resources_payment_evaluation_user_intervention_resolved.dart';/// Indicates the type of event attached to the payment evaluation.
-final class InsightsResourcesPaymentEvaluationEventType {const InsightsResourcesPaymentEvaluationEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_dispute_opened.dart';import 'insights_resources_payment_evaluation_early_fraud_warning_received.dart';import 'insights_resources_payment_evaluation_refunded.dart';import 'insights_resources_payment_evaluation_user_intervention_raised.dart';import 'insights_resources_payment_evaluation_user_intervention_resolved.dart';/// Indicates the type of event attached to the payment evaluation.
+@immutable final class InsightsResourcesPaymentEvaluationEventType {const InsightsResourcesPaymentEvaluationEventType._(this.value);
 
 factory InsightsResourcesPaymentEvaluationEventType.fromJson(String json) { return switch (json) {
   'dispute_opened' => disputeOpened,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationEventType($value)'; } 
  }
 /// Event reported for this payment evaluation.
-final class InsightsResourcesPaymentEvaluationEvent {const InsightsResourcesPaymentEvaluationEvent({this.disputeOpened, this.earlyFraudWarningReceived, required this.occurredAt, this.refunded, required this.type, this.userInterventionRaised, this.userInterventionResolved, });
+@immutable final class InsightsResourcesPaymentEvaluationEvent {const InsightsResourcesPaymentEvaluationEvent({required this.occurredAt, required this.type, this.disputeOpened, this.earlyFraudWarningReceived, this.refunded, this.userInterventionRaised, this.userInterventionResolved, });
 
 factory InsightsResourcesPaymentEvaluationEvent.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationEvent(
   disputeOpened: json['dispute_opened'] != null ? InsightsResourcesPaymentEvaluationDisputeOpened.fromJson(json['dispute_opened'] as Map<String, dynamic>) : null,

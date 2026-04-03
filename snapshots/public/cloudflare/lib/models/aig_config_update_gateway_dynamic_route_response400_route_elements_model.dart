@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_update_gateway_dynamic_route_response400_route_elements_model_outputs.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements_model_properties.dart';final class AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelType {const AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements_model_outputs.dart';import 'aig_config_update_gateway_dynamic_route_response400_route_elements_model_properties.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelType {const AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelType._(this.value);
 
 factory AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelType.fromJson(String json) { return switch (json) {
   'model' => model,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModelType($value)'; } 
  }
-final class AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModel {const AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModel({required this.id, required this.outputs, required this.properties, required this.type, });
+@immutable final class AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModel {const AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModel({required this.id, required this.outputs, required this.properties, required this.type, });
 
 factory AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModel.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponse400RouteElementsModel(
   id: json['id'] as String,

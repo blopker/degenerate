@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The PII this token represents.
-final class PostTokensRequestPii {const PostTokensRequestPii({this.idNumber});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The PII this token represents.
+@immutable final class PostTokensRequestPii {const PostTokensRequestPii({this.idNumber});
 
 factory PostTokensRequestPii.fromJson(Map<String, dynamic> json) { return PostTokensRequestPii(
   idNumber: json['id_number'] as String?,

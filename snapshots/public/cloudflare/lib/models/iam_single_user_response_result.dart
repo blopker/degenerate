@@ -7,7 +7,7 @@ factory IamTwoFactorAuthenticationLocked.fromJson(bool json) => IamTwoFactorAuth
 bool toJson() => value;
 
 }
-final class IamSingleUserResponseResult {const IamSingleUserResponseResult({this.betas, this.country, this.firstName, this.hasBusinessZones = false, this.hasEnterpriseZones = false, this.hasProZones = false, this.id, this.lastName, this.organizations, this.suspended = false, this.telephone, this.twoFactorAuthenticationEnabled, this.twoFactorAuthenticationLocked, this.zipcode, });
+@immutable final class IamSingleUserResponseResult {const IamSingleUserResponseResult({this.betas, this.country, this.firstName, this.hasBusinessZones = false, this.hasEnterpriseZones = false, this.hasProZones = false, this.id, this.lastName, this.organizations, this.suspended = false, this.telephone, this.twoFactorAuthenticationEnabled, this.twoFactorAuthenticationLocked, this.zipcode, });
 
 factory IamSingleUserResponseResult.fromJson(Map<String, dynamic> json) { return IamSingleUserResponseResult(
   betas: (json['betas'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The certificate log endpoint names used in performance metrics.
-final class RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint {const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The certificate log endpoint names used in performance metrics.
+@immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint {const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._(this.value);
 
 factory RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint.fromJson(String json) { return switch (json) {
   'add-chain (new)' => addChainNew,
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint($value)'; } 
  }
-final class RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints {const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints({required this.endpoint, required this.responseTime, required this.uptime, });
+@immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints {const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints({required this.endpoint, required this.responseTime, required this.uptime, });
 
 factory RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints.fromJson(Map<String, dynamic> json) { return RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints(
   endpoint: RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint.fromJson(json['endpoint'] as String),

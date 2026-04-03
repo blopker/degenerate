@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CacheRulesMessages2 {const CacheRulesMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CacheRulesMessages2 {const CacheRulesMessages2({required this.code, required this.message, });
 
 factory CacheRulesMessages2.fromJson(Map<String, dynamic> json) { return CacheRulesMessages2(
   code: (json['code'] as num).toInt(),

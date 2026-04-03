@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemandPurchaseInterval {const PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemandPurchaseInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemandPurchaseInterval {const PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemandPurchaseInterval._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemandPurchaseInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemandPurchaseInterval($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemand {const PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemand({this.averageAmount, this.maximumAmount, this.minimumAmount, this.purchaseInterval, this.purchaseIntervalCount, });
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemand {const PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemand({this.averageAmount, this.maximumAmount, this.minimumAmount, this.purchaseInterval, this.purchaseIntervalCount, });
 
 factory PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemand.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsKlarnaOnDemand(
   averageAmount: json['average_amount'] != null ? (json['average_amount'] as num).toInt() : null,

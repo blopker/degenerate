@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_resource_schedule_update_at_period_end.dart';import 'portal_subscription_update_product.dart';/// Determines the value to use for the billing cycle anchor on subscription updates. Valid values are `now` or `unchanged`, and the default value is `unchanged`. Setting the value to `now` resets the subscription's billing cycle anchor to the current time (in UTC). For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
-final class PortalSubscriptionUpdateBillingCycleAnchor {const PortalSubscriptionUpdateBillingCycleAnchor._(this.value);
+@immutable final class PortalSubscriptionUpdateBillingCycleAnchor {const PortalSubscriptionUpdateBillingCycleAnchor._(this.value);
 
 factory PortalSubscriptionUpdateBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'now' => now,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PortalSubscriptionUpdateBillingCycleAnchor($value)'; } 
  }
-final class PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates._(this.value);
+@immutable final class PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates._(this.value);
 
 factory PortalSubscriptionUpdateDefaultAllowedUpdates.fromJson(String json) { return switch (json) {
   'price' => price,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalSubscriptionUpdateDefaultAllowedUpdates($value)'; } 
  }
 /// Determines how to handle prorations resulting from subscription updates. Valid values are `none`, `create_prorations`, and `always_invoice`. Defaults to a value of `none` if you don't set it during creation.
-final class PortalSubscriptionUpdateProrationBehavior {const PortalSubscriptionUpdateProrationBehavior._(this.value);
+@immutable final class PortalSubscriptionUpdateProrationBehavior {const PortalSubscriptionUpdateProrationBehavior._(this.value);
 
 factory PortalSubscriptionUpdateProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalSubscriptionUpdateProrationBehavior($value)'; } 
  }
 /// Determines how handle updates to trialing subscriptions. Valid values are `end_trial` and `continue_trial`. Defaults to a value of `end_trial` if you don't set it during creation.
-final class PortalSubscriptionUpdateTrialUpdateBehavior {const PortalSubscriptionUpdateTrialUpdateBehavior._(this.value);
+@immutable final class PortalSubscriptionUpdateTrialUpdateBehavior {const PortalSubscriptionUpdateTrialUpdateBehavior._(this.value);
 
 factory PortalSubscriptionUpdateTrialUpdateBehavior.fromJson(String json) { return switch (json) {
   'continue_trial' => continueTrial,
@@ -106,7 +106,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalSubscriptionUpdateTrialUpdateBehavior($value)'; } 
  }
 /// 
-final class PortalSubscriptionUpdate {const PortalSubscriptionUpdate({this.billingCycleAnchor, required this.defaultAllowedUpdates, required this.enabled, this.products, required this.prorationBehavior, required this.scheduleAtPeriodEnd, required this.trialUpdateBehavior, });
+@immutable final class PortalSubscriptionUpdate {const PortalSubscriptionUpdate({required this.defaultAllowedUpdates, required this.enabled, required this.prorationBehavior, required this.scheduleAtPeriodEnd, required this.trialUpdateBehavior, this.billingCycleAnchor, this.products, });
 
 factory PortalSubscriptionUpdate.fromJson(Map<String, dynamic> json) { return PortalSubscriptionUpdate(
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PortalSubscriptionUpdateBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,

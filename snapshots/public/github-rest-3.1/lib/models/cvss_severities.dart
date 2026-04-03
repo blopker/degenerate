@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cvss_severities_cvss.dart';import 'cvss_severities_cvss2.dart';final class CvssSeverities {const CvssSeverities({this.cvssV3, this.cvssV4, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities_cvss.dart';import 'cvss_severities_cvss2.dart';@immutable final class CvssSeverities {const CvssSeverities({this.cvssV3, this.cvssV4, });
 
 factory CvssSeverities.fromJson(Map<String, dynamic> json) { return CvssSeverities(
   cvssV3: json['cvss_v3'] != null ? CvssSeveritiesCvss.fromJson(json['cvss_v3'] as Map<String, dynamic>) : null,

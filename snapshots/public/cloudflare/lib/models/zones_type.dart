@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A full zone implies that DNS is hosted with Cloudflare. A partial zone is
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A full zone implies that DNS is hosted with Cloudflare. A partial zone is
 /// typically a partner-hosted zone or a CNAME setup.
 /// 
-final class ZonesType {const ZonesType._(this.value);
+@immutable final class ZonesType {const ZonesType._(this.value);
 
 factory ZonesType.fromJson(String json) { return switch (json) {
   'full' => full,

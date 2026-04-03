@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The total number of seats set to "pending cancellation" for members of the specified team(s).
-final class CopilotCancelCopilotSeatAssignmentForTeamsResponse {const CopilotCancelCopilotSeatAssignmentForTeamsResponse({required this.seatsCancelled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The total number of seats set to "pending cancellation" for members of the specified team(s).
+@immutable final class CopilotCancelCopilotSeatAssignmentForTeamsResponse {const CopilotCancelCopilotSeatAssignmentForTeamsResponse({required this.seatsCancelled});
 
 factory CopilotCancelCopilotSeatAssignmentForTeamsResponse.fromJson(Map<String, dynamic> json) { return CopilotCancelCopilotSeatAssignmentForTeamsResponse(
   seatsCancelled: (json['seats_cancelled'] as num).toInt(),

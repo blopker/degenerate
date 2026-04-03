@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_incoming_phone_number_incoming_phone_number_assigned_add_on.dart';final class ListIncomingPhoneNumberAssignedAddOnResponse {const ListIncomingPhoneNumberAssignedAddOnResponse({this.assignedAddOns, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_incoming_phone_number_incoming_phone_number_assigned_add_on.dart';@immutable final class ListIncomingPhoneNumberAssignedAddOnResponse {const ListIncomingPhoneNumberAssignedAddOnResponse({this.assignedAddOns, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListIncomingPhoneNumberAssignedAddOnResponse.fromJson(Map<String, dynamic> json) { return ListIncomingPhoneNumberAssignedAddOnResponse(
   assignedAddOns: (json['assigned_add_ons'] as List<dynamic>?)?.map((e) => AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(e as Map<String, dynamic>)).toList(),

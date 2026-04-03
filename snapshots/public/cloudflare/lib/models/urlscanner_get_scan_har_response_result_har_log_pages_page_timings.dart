@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanHarResponseResultHarLogPagesPageTimings {const UrlscannerGetScanHarResponseResultHarLogPagesPageTimings({required this.onContentLoad, required this.onLoad, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanHarResponseResultHarLogPagesPageTimings {const UrlscannerGetScanHarResponseResultHarLogPagesPageTimings({required this.onContentLoad, required this.onLoad, });
 
 factory UrlscannerGetScanHarResponseResultHarLogPagesPageTimings.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponseResultHarLogPagesPageTimings(
   onContentLoad: (json['onContentLoad'] as num).toDouble(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigCreateEvaluationsRequest {const AigConfigCreateEvaluationsRequest({required this.datasetIds, required this.evaluationTypeIds, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateEvaluationsRequest {const AigConfigCreateEvaluationsRequest({required this.datasetIds, required this.evaluationTypeIds, required this.name, });
 
 factory AigConfigCreateEvaluationsRequest.fromJson(Map<String, dynamic> json) { return AigConfigCreateEvaluationsRequest(
   datasetIds: (json['dataset_ids'] as List<dynamic>).map((e) => e as String).toList(),

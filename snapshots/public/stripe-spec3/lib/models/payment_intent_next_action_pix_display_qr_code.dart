@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionPixDisplayQrCode {const PaymentIntentNextActionPixDisplayQrCode({this.data, this.expiresAt, this.hostedInstructionsUrl, this.imageUrlPng, this.imageUrlSvg, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionPixDisplayQrCode {const PaymentIntentNextActionPixDisplayQrCode({this.data, this.expiresAt, this.hostedInstructionsUrl, this.imageUrlPng, this.imageUrlSvg, });
 
 factory PaymentIntentNextActionPixDisplayQrCode.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionPixDisplayQrCode(
   data: json['data'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_r2_table_credentials.dart';import 'cloudflare_pipelines_r2_table_file_naming.dart';import 'cloudflare_pipelines_r2_table_partitioning.dart';import 'cloudflare_pipelines_r2_table_rolling_policy.dart';final class CloudflarePipelinesR2Table {const CloudflarePipelinesR2Table({required this.accountId, required this.bucket, required this.credentials, this.fileNaming, this.jurisdiction, this.partitioning, this.path, this.rollingPolicy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_r2_table_credentials.dart';import 'cloudflare_pipelines_r2_table_file_naming.dart';import 'cloudflare_pipelines_r2_table_partitioning.dart';import 'cloudflare_pipelines_r2_table_rolling_policy.dart';@immutable final class CloudflarePipelinesR2Table {const CloudflarePipelinesR2Table({required this.accountId, required this.bucket, required this.credentials, this.fileNaming, this.jurisdiction, this.partitioning, this.path, this.rollingPolicy, });
 
 factory CloudflarePipelinesR2Table.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2Table(
   accountId: json['account_id'] as String,

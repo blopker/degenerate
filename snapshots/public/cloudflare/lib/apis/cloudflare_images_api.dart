@@ -110,7 +110,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -177,28 +177,28 @@ return execute(
 /// - Supports string, number, and boolean value types
 /// 
 /// **Examples:**
-/// ````
+/// ```text
 /// # List all images
 /// /images/v2
 /// 
-/// # Filter by metadata [eq]
-/// /images/v2?meta.status[eq:string]=active
+/// # Filter by metadata `[eq]`
+/// /images/v2?meta.status`[eq:string]`=active
 /// 
-/// # Filter by metadata [in]
-/// /images/v2?meta.status[in]=pending|deleted|flagged
+/// # Filter by metadata `[in]`
+/// /images/v2?meta.status`[in]`=pending|deleted|flagged
 /// 
-/// # Filter by metadata [in:number]
-/// /images/v2?meta.ratings[in:number]=4|5
+/// # Filter by metadata `[in:number]`
+/// /images/v2?meta.ratings`[in:number]`=4|5
 /// 
 /// # Filter by nested metadata
-/// /images/v2?meta.region.name[eq]=eu-west
+/// /images/v2?meta.region.name`[eq]`=eu-west
 /// 
 /// # Combine metadata filters with creator
-/// /images/v2?meta.status[eq]=active&creator=user123
+/// /images/v2?meta.status`[eq]`=active&creator=user123
 /// 
 /// # Multiple metadata filters (AND logic)
-/// /images/v2?meta.status[eq]=active&meta.priority[eq:number]=5
-/// ````
+/// /images/v2?meta.status`[eq]`=active&meta.priority`[eq:number]`=5
+/// ```text
 /// 
 ///
 /// `GET /accounts/{account_id}/images/v2`

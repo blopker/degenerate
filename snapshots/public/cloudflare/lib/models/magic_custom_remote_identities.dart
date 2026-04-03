@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MagicCustomRemoteIdentities {const MagicCustomRemoteIdentities({this.fqdnId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicCustomRemoteIdentities {const MagicCustomRemoteIdentities({this.fqdnId});
 
 factory MagicCustomRemoteIdentities.fromJson(Map<String, dynamic> json) { return MagicCustomRemoteIdentities(
   fqdnId: json['fqdn_id'] as String?,

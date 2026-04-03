@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'discussion.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhooks_answer.dart';final class WebhookDiscussionUnansweredAction {const WebhookDiscussionUnansweredAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhooks_answer.dart';@immutable final class WebhookDiscussionUnansweredAction {const WebhookDiscussionUnansweredAction._(this.value);
 
 factory WebhookDiscussionUnansweredAction.fromJson(String json) { return switch (json) {
   'unanswered' => unanswered,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDiscussionUnansweredAction($value)'; } 
  }
-final class WebhookDiscussionUnanswered {const WebhookDiscussionUnanswered({required this.action, required this.discussion, required this.oldAnswer, this.organization, required this.repository, this.sender, });
+@immutable final class WebhookDiscussionUnanswered {const WebhookDiscussionUnanswered({required this.action, required this.discussion, required this.oldAnswer, required this.repository, this.organization, this.sender, });
 
 factory WebhookDiscussionUnanswered.fromJson(Map<String, dynamic> json) { return WebhookDiscussionUnanswered(
   action: WebhookDiscussionUnansweredAction.fromJson(json['action'] as String),

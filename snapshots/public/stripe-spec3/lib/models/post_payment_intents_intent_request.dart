@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_param.dart';import 'optional_fields_shipping.dart';import 'payment_details.dart';import 'post_payment_intents_intent_request_amount_details.dart';import 'post_payment_intents_intent_request_application_fee_amount.dart';import 'post_payment_intents_intent_request_excluded_payment_method_types.dart';import 'post_payment_intents_intent_request_hooks.dart';import 'post_payment_intents_intent_request_metadata.dart';import 'post_payment_intents_intent_request_payment_details.dart';import 'post_payment_intents_intent_request_payment_method_data.dart';import 'post_payment_intents_intent_request_payment_method_options.dart';import 'post_payment_intents_intent_request_receipt_email.dart';import 'post_payment_intents_intent_request_shipping.dart';import 'post_payment_intents_intent_request_transfer_data.dart';/// Controls when the funds will be captured from the customer's account.
-final class PostPaymentIntentsIntentRequestCaptureMethod {const PostPaymentIntentsIntentRequestCaptureMethod._(this.value);
+@immutable final class PostPaymentIntentsIntentRequestCaptureMethod {const PostPaymentIntentsIntentRequestCaptureMethod._(this.value);
 
 factory PostPaymentIntentsIntentRequestCaptureMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
 /// 
 /// If you've already set `setup_future_usage` and you're performing a request using a publishable key, you can only update the value from `on_session` to `off_session`.
-final class PostPaymentIntentsIntentRequestSetupFutureUsage {const PostPaymentIntentsIntentRequestSetupFutureUsage._(this.value);
+@immutable final class PostPaymentIntentsIntentRequestSetupFutureUsage {const PostPaymentIntentsIntentRequestSetupFutureUsage._(this.value);
 
 factory PostPaymentIntentsIntentRequestSetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -64,7 +64,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentRequestSetupFutureUsage($value)'; } 
  }
-final class PostPaymentIntentsIntentRequest {const PostPaymentIntentsIntentRequest({this.amount, this.amountDetails, this.applicationFeeAmount, this.captureMethod, this.currency, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.hooks, this.metadata, this.paymentDetails, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.receiptEmail, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
+@immutable final class PostPaymentIntentsIntentRequest {const PostPaymentIntentsIntentRequest({this.amount, this.amountDetails, this.applicationFeeAmount, this.captureMethod, this.currency, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.hooks, this.metadata, this.paymentDetails, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.receiptEmail, this.setupFutureUsage, this.shipping, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
 factory PostPaymentIntentsIntentRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_list_custom_domains_response_domains.dart';final class R2ListCustomDomainsResponse {const R2ListCustomDomainsResponse({required this.domains});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_list_custom_domains_response_domains.dart';@immutable final class R2ListCustomDomainsResponse {const R2ListCustomDomainsResponse({required this.domains});
 
 factory R2ListCustomDomainsResponse.fromJson(Map<String, dynamic> json) { return R2ListCustomDomainsResponse(
   domains: (json['domains'] as List<dynamic>).map((e) => R2ListCustomDomainsResponseDomains.fromJson(e as Map<String, dynamic>)).toList(),

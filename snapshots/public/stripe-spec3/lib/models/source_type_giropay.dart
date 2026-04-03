@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeGiropay {const SourceTypeGiropay({this.bankCode, this.bankName, this.bic, this.statementDescriptor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeGiropay {const SourceTypeGiropay({this.bankCode, this.bankName, this.bic, this.statementDescriptor, });
 
 factory SourceTypeGiropay.fromJson(Map<String, dynamic> json) { return SourceTypeGiropay(
   bankCode: json['bank_code'] as String?,

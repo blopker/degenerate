@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSubscriptionsRequestAddInvoiceItemsPeriodStartType {const PostSubscriptionsRequestAddInvoiceItemsPeriodStartType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionsRequestAddInvoiceItemsPeriodStartType {const PostSubscriptionsRequestAddInvoiceItemsPeriodStartType._(this.value);
 
 factory PostSubscriptionsRequestAddInvoiceItemsPeriodStartType.fromJson(String json) { return switch (json) {
   'max_item_period_start' => maxItemPeriodStart,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionsRequestAddInvoiceItemsPeriodStartType($value)'; } 
  }
-final class PostSubscriptionsRequestAddInvoiceItemsPeriodStart {const PostSubscriptionsRequestAddInvoiceItemsPeriodStart({this.timestamp, required this.type, });
+@immutable final class PostSubscriptionsRequestAddInvoiceItemsPeriodStart {const PostSubscriptionsRequestAddInvoiceItemsPeriodStart({required this.type, this.timestamp, });
 
 factory PostSubscriptionsRequestAddInvoiceItemsPeriodStart.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestAddInvoiceItemsPeriodStart(
   timestamp: json['timestamp'] != null ? (json['timestamp'] as num).toInt() : null,

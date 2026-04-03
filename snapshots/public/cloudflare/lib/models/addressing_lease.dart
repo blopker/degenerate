@@ -35,7 +35,7 @@ factory AddressingSchemasCidr.fromJson(String json) => AddressingSchemasCidr(jso
 String toJson() => value;
 
 }
-final class AddressingLease {const AddressingLease({this.activeFrom, this.cidrs, this.createdAt, this.id, this.modifiedAt, this.ownerId, this.purpose, });
+@immutable final class AddressingLease {const AddressingLease({this.activeFrom, this.cidrs, this.createdAt, this.id, this.modifiedAt, this.ownerId, this.purpose, });
 
 factory AddressingLease.fromJson(Map<String, dynamic> json) { return AddressingLease(
   activeFrom: json['active_from'] != null ? DateTime.parse(json['active_from'] as String) : null,

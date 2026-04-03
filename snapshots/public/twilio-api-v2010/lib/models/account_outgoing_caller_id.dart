@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountOutgoingCallerId {const AccountOutgoingCallerId({this.sid, this.dateCreated, this.dateUpdated, this.friendlyName, this.accountSid, this.phoneNumber, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountOutgoingCallerId {const AccountOutgoingCallerId({this.sid, this.dateCreated, this.dateUpdated, this.friendlyName, this.accountSid, this.phoneNumber, this.uri, });
 
 factory AccountOutgoingCallerId.fromJson(Map<String, dynamic> json) { return AccountOutgoingCallerId(
   sid: json['sid'] as String?,

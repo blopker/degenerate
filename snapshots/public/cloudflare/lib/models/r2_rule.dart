@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_r2_action.dart';final class R2Rule {const R2Rule({required this.actions, this.description, this.prefix, this.suffix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_r2_action.dart';@immutable final class R2Rule {const R2Rule({required this.actions, this.description, this.prefix, this.suffix, });
 
 factory R2Rule.fromJson(Map<String, dynamic> json) { return R2Rule(
   actions: (json['actions'] as List<dynamic>).map((e) => R2R2Action.fromJson(e as String)).toList(),

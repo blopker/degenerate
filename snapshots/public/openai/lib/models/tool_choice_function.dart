@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// For function calling, the type is always `function`.
-final class ToolChoiceFunctionType {const ToolChoiceFunctionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// For function calling, the type is always `function`.
+@immutable final class ToolChoiceFunctionType {const ToolChoiceFunctionType._(this.value);
 
 factory ToolChoiceFunctionType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Use this option to force the model to call a specific function.
 /// 
-final class ToolChoiceFunction {const ToolChoiceFunction({required this.type, required this.name, });
+@immutable final class ToolChoiceFunction {const ToolChoiceFunction({required this.type, required this.name, });
 
 factory ToolChoiceFunction.fromJson(Map<String, dynamic> json) { return ToolChoiceFunction(
   type: ToolChoiceFunctionType.fromJson(json['type'] as String),

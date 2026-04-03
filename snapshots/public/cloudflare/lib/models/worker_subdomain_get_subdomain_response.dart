@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_messages2.dart';import 'workers_schemas_subdomain.dart';final class WorkerSubdomainGetSubdomainResponse {const WorkerSubdomainGetSubdomainResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_messages2.dart';import 'workers_schemas_subdomain.dart';@immutable final class WorkerSubdomainGetSubdomainResponse {const WorkerSubdomainGetSubdomainResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory WorkerSubdomainGetSubdomainResponse.fromJson(Map<String, dynamic> json) { return WorkerSubdomainGetSubdomainResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),

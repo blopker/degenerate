@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_run_output_item.dart';/// The type of this object. It is always set to "list".
 /// 
-final class EvalRunOutputItemListObject {const EvalRunOutputItemListObject._(this.value);
+@immutable final class EvalRunOutputItemListObject {const EvalRunOutputItemListObject._(this.value);
 
 factory EvalRunOutputItemListObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An object representing a list of output items for an evaluation run.
 /// 
-final class EvalRunOutputItemList {const EvalRunOutputItemList({this.object = EvalRunOutputItemListObject.list, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+@immutable final class EvalRunOutputItemList {const EvalRunOutputItemList({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = EvalRunOutputItemListObject.list, });
 
 factory EvalRunOutputItemList.fromJson(Map<String, dynamic> json) { return EvalRunOutputItemList(
   object: EvalRunOutputItemListObject.fromJson(json['object'] as String),

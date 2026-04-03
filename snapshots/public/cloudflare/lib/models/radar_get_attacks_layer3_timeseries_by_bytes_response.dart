@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_attacks_layer3_timeseries_by_bytes_response_result.dart';final class RadarGetAttacksLayer3TimeseriesByBytesResponse {const RadarGetAttacksLayer3TimeseriesByBytesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_timeseries_by_bytes_response_result.dart';@immutable final class RadarGetAttacksLayer3TimeseriesByBytesResponse {const RadarGetAttacksLayer3TimeseriesByBytesResponse({required this.result, required this.success, });
 
 factory RadarGetAttacksLayer3TimeseriesByBytesResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesByBytesResponse(
   result: RadarGetAttacksLayer3TimeseriesByBytesResponseResult.fromJson(json['result'] as Map<String, dynamic>),

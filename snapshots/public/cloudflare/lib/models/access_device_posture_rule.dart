@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_device_posture_rule_device_posture.dart';/// Enforces a device posture rule has run successfully
-final class AccessDevicePostureRule {const AccessDevicePostureRule({required this.devicePosture});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_device_posture_rule_device_posture.dart';/// Enforces a device posture rule has run successfully
+@immutable final class AccessDevicePostureRule {const AccessDevicePostureRule({required this.devicePosture});
 
 factory AccessDevicePostureRule.fromJson(Map<String, dynamic> json) { return AccessDevicePostureRule(
   devicePosture: AccessDevicePostureRuleDevicePosture.fromJson(json['device_posture'] as Map<String, dynamic>),

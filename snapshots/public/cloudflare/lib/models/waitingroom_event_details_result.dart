@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waitingroom_event_description.dart';import 'waitingroom_event_end_time.dart';import 'waitingroom_event_id.dart';import 'waitingroom_event_name.dart';import 'waitingroom_event_prequeue_start_time.dart';import 'waitingroom_event_shuffle_at_event_start.dart';import 'waitingroom_event_start_time.dart';import 'waitingroom_event_suspended.dart';import 'waitingroom_timestamp.dart';extension type const WaitingroomEventDetailsCustomPageHtml(String value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_event_description.dart';import 'waitingroom_event_end_time.dart';import 'waitingroom_event_id.dart';import 'waitingroom_event_name.dart';import 'waitingroom_event_prequeue_start_time.dart';import 'waitingroom_event_shuffle_at_event_start.dart';import 'waitingroom_event_start_time.dart';import 'waitingroom_event_suspended.dart';import 'waitingroom_timestamp.dart';extension type const WaitingroomEventDetailsCustomPageHtml(String value) {
 factory WaitingroomEventDetailsCustomPageHtml.fromJson(String json) => WaitingroomEventDetailsCustomPageHtml(json);
 
 String toJson() => value;
@@ -36,7 +36,7 @@ factory WaitingroomEventDetailsTotalActiveUsers.fromJson(num json) => Waitingroo
 num toJson() => value;
 
 }
-final class WaitingroomEventDetailsResult {const WaitingroomEventDetailsResult({this.createdOn, this.customPageHtml, this.description, this.disableSessionRenewal, this.eventEndTime, this.eventStartTime, this.id, this.modifiedOn, this.name, this.newUsersPerMinute, this.prequeueStartTime, this.queueingMethod, this.sessionDuration, this.shuffleAtEventStart, this.suspended, this.totalActiveUsers, });
+@immutable final class WaitingroomEventDetailsResult {const WaitingroomEventDetailsResult({this.createdOn, this.customPageHtml, this.description, this.disableSessionRenewal, this.eventEndTime, this.eventStartTime, this.id, this.modifiedOn, this.name, this.newUsersPerMinute, this.prequeueStartTime, this.queueingMethod, this.sessionDuration, this.shuffleAtEventStart, this.suspended, this.totalActiveUsers, });
 
 factory WaitingroomEventDetailsResult.fromJson(Map<String, dynamic> json) { return WaitingroomEventDetailsResult(
   createdOn: json['created_on'] != null ? WaitingroomTimestamp.fromJson(json['created_on'] as String) : null,

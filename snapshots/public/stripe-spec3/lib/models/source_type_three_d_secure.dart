@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeThreeDSecure {const SourceTypeThreeDSecure({this.addressLine1Check, this.addressZipCheck, this.authenticated, this.brand, this.card, this.country, this.customer, this.cvcCheck, this.dynamicLast4, this.expMonth, this.expYear, this.fingerprint, this.funding, this.last4, this.name, this.threeDSecure, this.tokenizationMethod, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeThreeDSecure {const SourceTypeThreeDSecure({this.addressLine1Check, this.addressZipCheck, this.authenticated, this.brand, this.card, this.country, this.customer, this.cvcCheck, this.dynamicLast4, this.expMonth, this.expYear, this.fingerprint, this.funding, this.last4, this.name, this.threeDSecure, this.tokenizationMethod, });
 
 factory SourceTypeThreeDSecure.fromJson(Map<String, dynamic> json) { return SourceTypeThreeDSecure(
   addressLine1Check: json['address_line1_check'] as String?,

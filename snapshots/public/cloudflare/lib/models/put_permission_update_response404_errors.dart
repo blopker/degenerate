@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PutPermissionUpdateResponse404Errors {const PutPermissionUpdateResponse404Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PutPermissionUpdateResponse404Errors {const PutPermissionUpdateResponse404Errors({required this.message});
 
 factory PutPermissionUpdateResponse404Errors.fromJson(Map<String, dynamic> json) { return PutPermissionUpdateResponse404Errors(
   message: json['message'] as String,

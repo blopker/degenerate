@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'computer_call_safety_check_param.dart';import 'computer_screenshot_image.dart';/// The type of the computer tool call output. Always `computer_call_output`.
 /// 
-final class ComputerToolCallOutputType {const ComputerToolCallOutputType._(this.value);
+@immutable final class ComputerToolCallOutputType {const ComputerToolCallOutputType._(this.value);
 
 factory ComputerToolCallOutputType.fromJson(String json) { return switch (json) {
   'computer_call_output' => computerCallOutput,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The status of the message input. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when input items are returned via API.
 /// 
-final class ComputerToolCallOutputStatus {const ComputerToolCallOutputStatus._(this.value);
+@immutable final class ComputerToolCallOutputStatus {const ComputerToolCallOutputStatus._(this.value);
 
 factory ComputerToolCallOutputStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The output of a computer tool call.
 /// 
-final class ComputerToolCallOutput {const ComputerToolCallOutput({this.type = ComputerToolCallOutputType.computerCallOutput, this.id, required this.callId, this.acknowledgedSafetyChecks, required this.output, this.status, });
+@immutable final class ComputerToolCallOutput {const ComputerToolCallOutput({required this.callId, required this.output, this.type = ComputerToolCallOutputType.computerCallOutput, this.id, this.acknowledgedSafetyChecks, this.status, });
 
 factory ComputerToolCallOutput.fromJson(Map<String, dynamic> json) { return ComputerToolCallOutput(
   type: ComputerToolCallOutputType.fromJson(json['type'] as String),

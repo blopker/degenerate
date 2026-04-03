@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secondary_dns_messages2_source.dart';final class SecondaryDnsMessages2 {const SecondaryDnsMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_messages2_source.dart';@immutable final class SecondaryDnsMessages2 {const SecondaryDnsMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory SecondaryDnsMessages2.fromJson(Map<String, dynamic> json) { return SecondaryDnsMessages2(
   code: (json['code'] as num).toInt(),

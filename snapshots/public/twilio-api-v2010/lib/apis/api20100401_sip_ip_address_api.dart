@@ -51,7 +51,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists/${Uri.encodeComponent(ipAccessControlListSid)}/IpAddresses.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
     'IpAddress=${Uri.encodeQueryComponent(body.ipAddress)}',
     if (body.cidrPrefixLength case final cidrPrefixLength$?)
@@ -96,7 +96,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/IpAccessControlLists/${Uri.encodeComponent(ipAccessControlListSid)}/IpAddresses/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.ipAddress case final ipAddress$?)
       'IpAddress=${Uri.encodeQueryComponent(ipAddress$)}',
     if (body.friendlyName case final friendlyName$?)

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The action to take if the expression matches
-final class PageShieldPolicyAction {const PageShieldPolicyAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to take if the expression matches
+@immutable final class PageShieldPolicyAction {const PageShieldPolicyAction._(this.value);
 
 factory PageShieldPolicyAction.fromJson(String json) { return switch (json) {
   'allow' => allow,

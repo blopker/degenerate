@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51ResponseFormatVariant1JsonObjectType {const Messages51ResponseFormatVariant1JsonObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51ResponseFormatVariant1JsonObjectType {const Messages51ResponseFormatVariant1JsonObjectType._(this.value);
 
 factory Messages51ResponseFormatVariant1JsonObjectType.fromJson(String json) { return switch (json) {
   'json_object' => jsonObject,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51ResponseFormatVariant1JsonObjectType($value)'; } 
  }
-final class Messages51ResponseFormatVariant1JsonObject {const Messages51ResponseFormatVariant1JsonObject({required this.type});
+@immutable final class Messages51ResponseFormatVariant1JsonObject {const Messages51ResponseFormatVariant1JsonObject({required this.type});
 
 factory Messages51ResponseFormatVariant1JsonObject.fromJson(Map<String, dynamic> json) { return Messages51ResponseFormatVariant1JsonObject(
   type: Messages51ResponseFormatVariant1JsonObjectType.fromJson(json['type'] as String),

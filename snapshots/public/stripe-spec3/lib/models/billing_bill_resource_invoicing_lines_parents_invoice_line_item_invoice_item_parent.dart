@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_bill_resource_invoicing_lines_common_proration_details.dart';/// 
-final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent({required this.invoiceItem, required this.proration, this.prorationDetails, this.subscription, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_lines_common_proration_details.dart';/// 
+@immutable final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent({required this.invoiceItem, required this.proration, this.prorationDetails, this.subscription, });
 
 factory BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent(
   invoiceItem: json['invoice_item'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Porter Large File
-final class PorterLargeFile {const PorterLargeFile({required this.refName, required this.path, required this.oid, required this.size, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Porter Large File
+@immutable final class PorterLargeFile {const PorterLargeFile({required this.refName, required this.path, required this.oid, required this.size, });
 
 factory PorterLargeFile.fromJson(Map<String, dynamic> json) { return PorterLargeFile(
   refName: json['ref_name'] as String,

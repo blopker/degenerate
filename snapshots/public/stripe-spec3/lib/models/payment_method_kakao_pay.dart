@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodKakaoPay {const PaymentMethodKakaoPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodKakaoPay {const PaymentMethodKakaoPay();
 
-factory PaymentMethodKakaoPay.fromJson(Map<String, dynamic> json) { return PaymentMethodKakaoPay(
-
-); }
+factory PaymentMethodKakaoPay.fromJson(Map<String, dynamic> _) { return const PaymentMethodKakaoPay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PaymentMethodKakaoPay copyWith() { return PaymentMethodKakaoPay(
+PaymentMethodKakaoPay copyWith() { return const PaymentMethodKakaoPay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PaymentMethodKakaoPay; } 

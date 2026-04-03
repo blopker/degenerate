@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_response2_data_requests_requests_request_headers.dart';final class UrlscannerGetScanResponse2DataRequestsRequestsRequest {const UrlscannerGetScanResponse2DataRequestsRequestsRequest({required this.headers, required this.initialPriority, required this.isSameSite, required this.method, required this.mixedContentType, required this.referrerPolicy, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_data_requests_requests_request_headers.dart';@immutable final class UrlscannerGetScanResponse2DataRequestsRequestsRequest {const UrlscannerGetScanResponse2DataRequestsRequestsRequest({required this.headers, required this.initialPriority, required this.isSameSite, required this.method, required this.mixedContentType, required this.referrerPolicy, required this.url, });
 
 factory UrlscannerGetScanResponse2DataRequestsRequestsRequest.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsRequestsRequest(
   headers: UrlscannerGetScanResponse2DataRequestsRequestsRequestHeaders.fromJson(json['headers'] as Map<String, dynamic>),

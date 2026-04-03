@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt({this.$100msOrGreaterEventFraction, this.$250msOrGreaterEventFraction, this.$500msOrGreaterEventFraction, this.avg, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt({this.$100msOrGreaterEventFraction, this.$250msOrGreaterEventFraction, this.$500msOrGreaterEventFraction, this.avg, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativeRtt(
   $100msOrGreaterEventFraction: json['100ms_or_greater_event_fraction'] != null ? (json['100ms_or_greater_event_fraction'] as num).toDouble() : null,

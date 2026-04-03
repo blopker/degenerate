@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetInvoicePaymentsStatus {const GetInvoicePaymentsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetInvoicePaymentsStatus {const GetInvoicePaymentsStatus._(this.value);
 
 factory GetInvoicePaymentsStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,

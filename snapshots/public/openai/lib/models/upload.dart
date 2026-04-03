@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'open_ai_file.dart';/// The status of the Upload.
-final class UploadStatus {const UploadStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'open_ai_file.dart';/// The status of the Upload.
+@immutable final class UploadStatus {const UploadStatus._(this.value);
 
 factory UploadStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UploadStatus($value)'; } 
  }
 /// The object type, which is always "upload".
-final class UploadObject {const UploadObject._(this.value);
+@immutable final class UploadObject {const UploadObject._(this.value);
 
 factory UploadObject.fromJson(String json) { return switch (json) {
   'upload' => upload,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The Upload object can accept byte chunks in the form of Parts.
 /// 
-final class Upload {const Upload({required this.id, required this.createdAt, required this.filename, required this.bytes, required this.purpose, required this.status, required this.expiresAt, this.object, this.file, });
+@immutable final class Upload {const Upload({required this.id, required this.createdAt, required this.filename, required this.bytes, required this.purpose, required this.status, required this.expiresAt, this.object, this.file, });
 
 factory Upload.fromJson(Map<String, dynamic> json) { return Upload(
   id: json['id'] as String,

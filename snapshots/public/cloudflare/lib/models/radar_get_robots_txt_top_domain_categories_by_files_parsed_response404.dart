@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404 {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404({required this.error});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404 {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404({required this.error});
 
 factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404.fromJson(Map<String, dynamic> json) { return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404(
   error: json['error'] as String,

@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `bancontact` PaymentMethod, this hash contains details about the Bancontact payment method.
-final class PostPaymentMethodsRequestBancontact {const PostPaymentMethodsRequestBancontact();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `bancontact` PaymentMethod, this hash contains details about the Bancontact payment method.
+@immutable final class PostPaymentMethodsRequestBancontact {const PostPaymentMethodsRequestBancontact();
 
-factory PostPaymentMethodsRequestBancontact.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestBancontact(
-
-); }
+factory PostPaymentMethodsRequestBancontact.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestBancontact(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestBancontact copyWith() { return PostPaymentMethodsRequestBancontact(
+PostPaymentMethodsRequestBancontact copyWith() { return const PostPaymentMethodsRequestBancontact(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestBancontact; } 

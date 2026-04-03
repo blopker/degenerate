@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_virtual_network.dart';final class TunnelVnetResponseCollection {const TunnelVnetResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_virtual_network.dart';@immutable final class TunnelVnetResponseCollection {const TunnelVnetResponseCollection({this.result});
 
 factory TunnelVnetResponseCollection.fromJson(Map<String, dynamic> json) { return TunnelVnetResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TunnelVirtualNetwork.fromJson(e as Map<String, dynamic>)).toList(),

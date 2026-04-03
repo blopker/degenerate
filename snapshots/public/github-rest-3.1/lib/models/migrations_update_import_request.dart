@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of version control system you are migrating from.
-final class MigrationsUpdateImportRequestVcs {const MigrationsUpdateImportRequestVcs._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of version control system you are migrating from.
+@immutable final class MigrationsUpdateImportRequestVcs {const MigrationsUpdateImportRequestVcs._(this.value);
 
 factory MigrationsUpdateImportRequestVcs.fromJson(String json) { return switch (json) {
   'subversion' => subversion,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MigrationsUpdateImportRequestVcs($value)'; } 
  }
-final class MigrationsUpdateImportRequest {const MigrationsUpdateImportRequest({this.vcsUsername, this.vcsPassword, this.vcs, this.tfvcProject, });
+@immutable final class MigrationsUpdateImportRequest {const MigrationsUpdateImportRequest({this.vcsUsername, this.vcsPassword, this.vcs, this.tfvcProject, });
 
 factory MigrationsUpdateImportRequest.fromJson(Map<String, dynamic> json) { return MigrationsUpdateImportRequest(
   vcsUsername: json['vcs_username'] as String?,

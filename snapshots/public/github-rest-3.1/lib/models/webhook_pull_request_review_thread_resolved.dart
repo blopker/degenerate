@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_thread_resolved_pull_request.dart';import 'webhook_pull_request_review_thread_resolved_thread.dart';final class WebhookPullRequestReviewThreadResolvedAction {const WebhookPullRequestReviewThreadResolvedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_thread_resolved_pull_request.dart';import 'webhook_pull_request_review_thread_resolved_thread.dart';@immutable final class WebhookPullRequestReviewThreadResolvedAction {const WebhookPullRequestReviewThreadResolvedAction._(this.value);
 
 factory WebhookPullRequestReviewThreadResolvedAction.fromJson(String json) { return switch (json) {
   'resolved' => resolved,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewThreadResolvedAction($value)'; } 
  }
-final class WebhookPullRequestReviewThreadResolved {const WebhookPullRequestReviewThreadResolved({required this.action, this.enterprise, this.installation, this.organization, required this.pullRequest, required this.repository, this.sender, required this.thread, this.updatedAt, });
+@immutable final class WebhookPullRequestReviewThreadResolved {const WebhookPullRequestReviewThreadResolved({required this.action, required this.pullRequest, required this.repository, required this.thread, this.enterprise, this.installation, this.organization, this.sender, this.updatedAt, });
 
 factory WebhookPullRequestReviewThreadResolved.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadResolved(
   action: WebhookPullRequestReviewThreadResolvedAction.fromJson(json['action'] as String),

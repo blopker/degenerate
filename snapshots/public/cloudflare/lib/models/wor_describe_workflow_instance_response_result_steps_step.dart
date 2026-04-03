@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_steps_step_attempts.dart';import 'wor_describe_workflow_instance_response_result_steps_step_config.dart';final class WorDescribeWorkflowInstanceResponseResultStepsStepType {const WorDescribeWorkflowInstanceResponseResultStepsStepType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_steps_step_attempts.dart';import 'wor_describe_workflow_instance_response_result_steps_step_config.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsStepType {const WorDescribeWorkflowInstanceResponseResultStepsStepType._(this.value);
 
 factory WorDescribeWorkflowInstanceResponseResultStepsStepType.fromJson(String json) { return switch (json) {
   'step' => step,
@@ -21,14 +21,14 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorDescribeWorkflowInstanceResponseResultStepsStepType($value)'; } 
  }
-final class WorDescribeWorkflowInstanceResponseResultStepsStep {const WorDescribeWorkflowInstanceResponseResultStepsStep({required this.attempts, required this.config, required this.end, required this.name, required this.output, required this.start, required this.success, required this.type, });
+@immutable final class WorDescribeWorkflowInstanceResponseResultStepsStep {const WorDescribeWorkflowInstanceResponseResultStepsStep({required this.attempts, required this.config, required this.end, required this.name, required this.output, required this.start, required this.success, required this.type, });
 
 factory WorDescribeWorkflowInstanceResponseResultStepsStep.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStep(
   attempts: (json['attempts'] as List<dynamic>).map((e) => WorDescribeWorkflowInstanceResponseResultStepsStepAttempts.fromJson(e as Map<String, dynamic>)).toList(),
   config: WorDescribeWorkflowInstanceResponseResultStepsStepConfig.fromJson(json['config'] as Map<String, dynamic>),
   end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
   name: json['name'] as String,
-  output: (json['output'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  output: json['output'] as Map<String, dynamic>,
   start: DateTime.parse(json['start'] as String),
   success: json['success'] as bool?,
   type: WorDescribeWorkflowInstanceResponseResultStepsStepType.fromJson(json['type'] as String),

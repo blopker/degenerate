@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_comment_edited_pull_request.dart';import 'webhooks_changes.dart';import 'webhooks_review_comment.dart';final class WebhookPullRequestReviewCommentEditedAction {const WebhookPullRequestReviewCommentEditedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_comment_edited_pull_request.dart';import 'webhooks_changes.dart';import 'webhooks_review_comment.dart';@immutable final class WebhookPullRequestReviewCommentEditedAction {const WebhookPullRequestReviewCommentEditedAction._(this.value);
 
 factory WebhookPullRequestReviewCommentEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewCommentEditedAction($value)'; } 
  }
-final class WebhookPullRequestReviewCommentEdited {const WebhookPullRequestReviewCommentEdited({required this.action, required this.changes, required this.comment, this.enterprise, this.installation, this.organization, required this.pullRequest, required this.repository, required this.sender, });
+@immutable final class WebhookPullRequestReviewCommentEdited {const WebhookPullRequestReviewCommentEdited({required this.action, required this.changes, required this.comment, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestReviewCommentEdited.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewCommentEdited(
   action: WebhookPullRequestReviewCommentEditedAction.fromJson(json['action'] as String),

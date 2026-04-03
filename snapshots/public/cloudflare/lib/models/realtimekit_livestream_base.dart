@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the livestream.
-final class RealtimekitLivestreamBaseStatus {const RealtimekitLivestreamBaseStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the livestream.
+@immutable final class RealtimekitLivestreamBaseStatus {const RealtimekitLivestreamBaseStatus._(this.value);
 
 factory RealtimekitLivestreamBaseStatus.fromJson(String json) { return switch (json) {
   'LIVE' => live,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitLivestreamBaseStatus($value)'; } 
  }
-final class RealtimekitLivestreamBase {const RealtimekitLivestreamBase({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.orgId, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
+@immutable final class RealtimekitLivestreamBase {const RealtimekitLivestreamBase({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.orgId, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
 
 factory RealtimekitLivestreamBase.fromJson(Map<String, dynamic> json) { return RealtimekitLivestreamBase(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

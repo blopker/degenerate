@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_payment_method_options_klarna_subscriptions_variant1_next_billing.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_klarna_subscriptions_variant1_next_billing.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1 {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1({required this.interval, this.intervalCount, this.name, required this.nextBilling, required this.reference, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1 {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1({required this.interval, required this.nextBilling, required this.reference, this.intervalCount, this.name, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1(
   interval: PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1Interval.fromJson(json['interval'] as String),

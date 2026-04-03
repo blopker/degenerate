@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpUpdateIntegrationBody {const DlpUpdateIntegrationBody({required this.active, this.referenceId, required this.tenantUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpUpdateIntegrationBody {const DlpUpdateIntegrationBody({required this.active, required this.tenantUrl, this.referenceId, });
 
 factory DlpUpdateIntegrationBody.fromJson(Map<String, dynamic> json) { return DlpUpdateIntegrationBody(
   active: json['active'] as bool,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_branding_settings_icon.dart';import 'account_branding_settings_logo.dart';import 'file.dart';/// 
-final class AccountBrandingSettings {const AccountBrandingSettings({this.icon, this.logo, this.primaryColor, this.secondaryColor, });
+@immutable final class AccountBrandingSettings {const AccountBrandingSettings({this.icon, this.logo, this.primaryColor, this.secondaryColor, });
 
 factory AccountBrandingSettings.fromJson(Map<String, dynamic> json) { return AccountBrandingSettings(
   icon: json['icon'] != null ? OneOf2.parse(json['icon'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,

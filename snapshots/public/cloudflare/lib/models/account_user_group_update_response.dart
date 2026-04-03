@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_user_group.dart';final class AccountUserGroupUpdateResponse {const AccountUserGroupUpdateResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_user_group.dart';@immutable final class AccountUserGroupUpdateResponse {const AccountUserGroupUpdateResponse({this.result});
 
 factory AccountUserGroupUpdateResponse.fromJson(Map<String, dynamic> json) { return AccountUserGroupUpdateResponse(
   result: json['result'] != null ? IamUserGroup.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_identifier.dart';final class VectorizeIndexGetVectorsByIdRequest {const VectorizeIndexGetVectorsByIdRequest({this.ids});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_identifier.dart';@immutable final class VectorizeIndexGetVectorsByIdRequest {const VectorizeIndexGetVectorsByIdRequest({this.ids});
 
 factory VectorizeIndexGetVectorsByIdRequest.fromJson(Map<String, dynamic> json) { return VectorizeIndexGetVectorsByIdRequest(
   ids: (json['ids'] as List<dynamic>?)?.map((e) => VectorizeVectorIdentifier.fromJson(e as String)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'code_scanning_variant_analysis_repository.dart';import 'code_scanning_variant_analysis_status.dart';final class CodeScanningVariantAnalysisScannedRepositories {const CodeScanningVariantAnalysisScannedRepositories({required this.repository, required this.analysisStatus, this.resultCount, this.artifactSizeInBytes, this.failureMessage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_variant_analysis_repository.dart';import 'code_scanning_variant_analysis_status.dart';@immutable final class CodeScanningVariantAnalysisScannedRepositories {const CodeScanningVariantAnalysisScannedRepositories({required this.repository, required this.analysisStatus, this.resultCount, this.artifactSizeInBytes, this.failureMessage, });
 
 factory CodeScanningVariantAnalysisScannedRepositories.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysisScannedRepositories(
   repository: CodeScanningVariantAnalysisRepository.fromJson(json['repository'] as Map<String, dynamic>),

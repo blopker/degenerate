@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'object_meta.dart';import 'pod_spec.dart';import 'pod_status.dart';/// Pod is a collection of containers that can run on a host. This resource is created by clients and scheduled onto hosts.
-final class Pod {const Pod({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'pod_spec.dart';import 'pod_status.dart';/// Pod is a collection of containers that can run on a host. This resource is created by clients and scheduled onto hosts.
+@immutable final class Pod {const Pod({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
 factory Pod.fromJson(Map<String, dynamic> json) { return Pod(
   apiVersion: json['apiVersion'] as String?,

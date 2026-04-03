@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'web3_content_list_entry_collection_response_result.dart';final class Web3ContentListEntryCollectionResponse {const Web3ContentListEntryCollectionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_content_list_entry_collection_response_result.dart';@immutable final class Web3ContentListEntryCollectionResponse {const Web3ContentListEntryCollectionResponse({this.result});
 
 factory Web3ContentListEntryCollectionResponse.fromJson(Map<String, dynamic> json) { return Web3ContentListEntryCollectionResponse(
   result: json['result'] != null ? Web3ContentListEntryCollectionResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1._(this.value);
 
 factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1.fromJson(String json) { return switch (json) {
   'affirm' => affirm,
@@ -135,7 +135,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant1($value)'; } 
  }
-final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2._(this.value);
+@immutable final class PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2 {const PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2._(this.value);
 
 factory PostPaymentLinksPaymentLinkRequestPaymentMethodTypesVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

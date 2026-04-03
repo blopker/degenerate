@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A hosted compute network settings resource.
-final class NetworkSettings {const NetworkSettings({required this.id, this.networkConfigurationId, required this.name, required this.subnetId, required this.region, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A hosted compute network settings resource.
+@immutable final class NetworkSettings {const NetworkSettings({required this.id, required this.name, required this.subnetId, required this.region, this.networkConfigurationId, });
 
 factory NetworkSettings.fromJson(Map<String, dynamic> json) { return NetworkSettings(
   id: json['id'] as String,

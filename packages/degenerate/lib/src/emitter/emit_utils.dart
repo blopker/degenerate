@@ -1,7 +1,7 @@
 import 'package:code_builder/code_builder.dart';
 
-import '../ir/ir_types.dart';
-import '../naming.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
+import 'package:degenerate/src/naming.dart';
 
 final _dartEmitter = DartEmitter(
   allocator: Allocator.simplePrefixing(),
@@ -9,8 +9,11 @@ final _dartEmitter = DartEmitter(
 );
 
 /// Emit a [Library] to raw (unformatted) Dart source.
+///
+/// Ensures the output ends with exactly one trailing newline.
 String emitRaw(Library library) {
-  return library.accept(_dartEmitter).toString();
+  final raw = library.accept(_dartEmitter).toString();
+  return '${raw.trimRight()}\n';
 }
 
 /// Build a type [Reference] from an [IrType].
@@ -112,7 +115,8 @@ String irTypeName(IrType type) {
 }
 
 /// Build the fromJson expression string for a given [IrType].
-/// [accessor] is the expression that accesses the JSON value, e.g. "json['key']".
+/// [accessor] is the expression that accesses the JSON value,
+/// e.g. `json['key']`.
 String buildFromJsonCode(
   IrType type,
   String accessor, {
@@ -124,7 +128,8 @@ String buildFromJsonCode(
   final resolving = <String>{};
   final resolved = _resolveOneOfRef(type, typeRegistry, resolving);
 
-  // For simple cast types (String, num, bool), nullable cast syntax works directly.
+  // For simple cast types (String, num, bool), nullable
+  // cast syntax works directly.
   if (isOptional) {
     final simpleCast = _simpleCastFromJson(
       resolved,
@@ -147,7 +152,8 @@ String buildFromJsonCode(
 }
 
 /// If [type] is an [IrTypeRef] whose target in [registry] is a OneOf-eligible
-/// union, return the target type so we emit parse code instead of `.fromJson()`.
+/// union, return the target type so we emit parse code
+/// instead of `.fromJson()`.
 /// [resolving] tracks names being resolved to prevent infinite recursion on
 /// circular type references.
 IrType _resolveOneOfRef(
@@ -201,10 +207,27 @@ String? _simpleCastFromJson(
     },
     IrList(:final items) =>
       '($accessor as List<dynamic>?)?.map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
-    IrMap(:final values) =>
-      '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+    IrMap(:final values) => _isIdentityMapValue(values)
+        ? '$accessor as Map<String, dynamic>?'
+        : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
     _ => null,
   };
+}
+
+/// Whether a map value type produces an identity transform in `.map()`.
+bool _isIdentityMapValue(IrType type) =>
+    type is IrPrimitive && type.kind == PrimitiveKind.dynamic_;
+
+/// If [expr] is a simple function call `funcName(accessor)`, returns the
+/// function name for use as a tearoff. Returns null otherwise.
+String? asTearoff(String expr, String accessor) {
+  // Match pattern: identifier(accessor) — no dots, no chaining.
+  if (!expr.endsWith('($accessor)')) return null;
+  final funcName = expr.substring(0, expr.length - accessor.length - 2);
+  if (funcName.isEmpty) return null;
+  // Must be a simple identifier (no dots, spaces, etc.)
+  if (!RegExp(r'^[a-zA-Z_]\w*$').hasMatch(funcName)) return null;
+  return funcName;
 }
 
 /// Core non-null fromJson expression for a given type.
@@ -220,14 +243,15 @@ String _buildFromJsonNonNull(
   return switch (resolved) {
     IrPrimitive(:final kind) => primitiveFromJsonExpr(kind, accessor),
     IrEnum(:final name, :final valueKind) => switch (valueKind) {
-        PrimitiveKind.int => '$name.fromJson(($accessor as num).toInt())',
-        PrimitiveKind.double => '$name.fromJson(($accessor as num).toDouble())',
-        _ => '$name.fromJson($accessor as String)',
-      },
+      PrimitiveKind.int => '$name.fromJson(($accessor as num).toInt())',
+      PrimitiveKind.double => '$name.fromJson(($accessor as num).toDouble())',
+      _ => '$name.fromJson($accessor as String)',
+    },
     IrList(:final items) =>
       '($accessor as List<dynamic>).map((e) => ${_buildFromJsonNonNull(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
-    IrMap(:final values) =>
-      '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+    IrMap(:final values) => _isIdentityMapValue(values)
+        ? '$accessor as Map<String, dynamic>'
+        : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
     IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
       buildOneOfParseCode(
         variants,
@@ -235,7 +259,10 @@ String _buildFromJsonNonNull(
         typeRegistry: typeRegistry,
         resolving: resolving,
       ),
-    IrUntaggedUnion(:final name) => '$name.fromJson($accessor)',
+    IrUntaggedUnion(:final name, :final variants) =>
+      variants.every((v) => v is IrPrimitive)
+          ? '$name.fromJson($accessor)'
+          : '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
     IrExtensionType(:final name, :final inner) =>
       '$name.fromJson(${_extensionTypeJsonCast(inner, accessor)})',
     IrAnyOf(:final variants) when isOneOfEligible(variants) =>
@@ -264,14 +291,23 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
   final q = nullable ? '?' : '';
   return switch (type) {
     IrPrimitive(:final kind) => primitiveToJsonExpr(kind, accessor, q: q),
-    IrList(:final items) =>
-      listItemNeedsToJson(items)
-          ? '$accessor$q.map((e) => ${buildToJsonCode(items, 'e', nullable: items.isNullable)}).toList()'
-          : accessor,
-    IrMap(:final values) =>
-      mapValueNeedsToJson(values)
-          ? '$accessor$q.map((k, v) => MapEntry(k, ${buildToJsonCode(values, 'v', nullable: values.isNullable)}))'
-          : accessor,
+    IrList(:final items) => () {
+      if (!listItemNeedsToJson(items)) return accessor;
+      final itemExpr = buildToJsonCode(items, 'e', nullable: items.isNullable);
+      // Use tearoff when the expression is a simple function call: func(e).
+      final tearoff = asTearoff(itemExpr, 'e');
+      if (tearoff != null) {
+        return '$accessor$q.map($tearoff).toList()';
+      }
+      return '$accessor$q.map((e) => $itemExpr).toList()';
+    }(),
+    IrMap(:final values) => () {
+      if (!mapValueNeedsToJson(values)) return accessor;
+      final valueExpr = buildToJsonCode(values, 'v', nullable: values.isNullable);
+      // Skip identity map transform.
+      if (valueExpr == 'v') return accessor;
+      return '$accessor$q.map((k, v) => MapEntry(k, $valueExpr))';
+    }(),
     // All named types with .toJson()
     IrEnum() ||
     IrObject() ||
@@ -283,6 +319,7 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
   };
 }
 
+/// Whether a list item type requires a `.toJson()` call.
 bool listItemNeedsToJson(IrType type) {
   return switch (type) {
     IrPrimitive(:final kind) => switch (kind) {
@@ -304,6 +341,7 @@ bool listItemNeedsToJson(IrType type) {
   };
 }
 
+/// Whether a map value type requires a `.toJson()` call.
 bool mapValueNeedsToJson(IrType type) => listItemNeedsToJson(type);
 
 /// Cast an accessor to the JSON wire type for an extension type's fromJson.
@@ -346,7 +384,7 @@ bool _isOneOfInRegistry(String name, Map<String, IrType> registry) {
 /// Check whether an [IrType] represents a list (used for equality checks).
 bool isListType(IrType type) => type is IrList;
 
-// ─── OneOf helpers ───────────────────────────────────────────────
+// ─── OneOf helpers ──────────────────────────────────────
 
 const _oneOfLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 
@@ -362,7 +400,7 @@ Reference oneOfTypeReference(List<IrType> variants, {bool nullable = false}) {
     TypeReference(
       (b) => b
         ..symbol = 'OneOf$n'
-        ..types.addAll(variants.map((v) => irTypeToReference(v))),
+        ..types.addAll(variants.map(irTypeToReference)),
     ),
     nullable,
   );
@@ -417,9 +455,44 @@ String escapeDartString(String value) {
       .replaceAll('\r', r'\r')
       .replaceAll('\t', r'\t')
       .replaceAllMapped(_unicodeControlChars, (m) {
-    final code = m[0]!.codeUnitAt(0).toRadixString(16).toUpperCase();
-    return '\\u${code.padLeft(4, '0')}';
-  });
+        final code = m[0]!.codeUnitAt(0).toRadixString(16).toUpperCase();
+        return '\\u${code.padLeft(4, '0')}';
+      });
+}
+
+/// Produce a Dart string literal for [value], preferring raw strings when
+/// the value contains characters that would otherwise need escaping.
+///
+/// Tries in order:
+/// 1. `'...'` — plain single-quoted when nothing needs escaping
+/// 2. `"..."` — plain double-quoted when value has `'` but no `"` or `$`
+/// 3. `r'...'` — raw single-quoted when value has `$` or `\` but no `'`
+/// 4. `r"..."` — raw double-quoted when value has `$`/`\` and `'` but no `"`
+/// 5. `'${escaped}'` — fallback with escapes
+String dartStringLiteral(String value) {
+  final hasSingleQuote = value.contains("'");
+  final hasDoubleQuote = value.contains('"');
+  final hasDollar = value.contains(r'$');
+  final hasBackslash = value.contains(r'\');
+  final hasControl = value.contains('\n') ||
+      value.contains('\r') ||
+      value.contains('\t') ||
+      _unicodeControlChars.hasMatch(value);
+
+  // Plain single-quoted when nothing needs escaping.
+  if (!hasSingleQuote && !hasDollar && !hasBackslash && !hasControl) {
+    return "'$value'";
+  }
+  // Plain double-quoted when value has ' but no " or $ or control chars.
+  if (hasSingleQuote && !hasDoubleQuote && !hasDollar && !hasControl) {
+    return '"$value"';
+  }
+  // Raw strings for values with $ or \ (but no control chars).
+  if ((hasDollar || hasBackslash) && !hasControl) {
+    if (!hasSingleQuote) return "r'$value'";
+    if (!hasDoubleQuote) return 'r"$value"';
+  }
+  return "'${escapeDartString(value)}'";
 }
 
 /// Convert an enum string value to a valid Dart enum constant name.
@@ -428,12 +501,14 @@ final _nonIdentChars = RegExp(r'[^a-zA-Z0-9_\-.\s/+]');
 // and would corrupt casing. Strip it before passing to toCamelCase.
 // Only matches at the start of the string to preserve interior hyphens
 // that serve as word separators (e.g. 'google-apps' → 'googleApps').
-final _leadingSignBeforeLetter = RegExp(r'^[+-](?=[a-zA-Z])');
+final _leadingSignBeforeLetter = RegExp('^[+-](?=[a-zA-Z])');
 
+/// Convert an enum string value to a valid Dart enum constant name.
 String enumValueName(String value) {
   // Strip characters that are invalid in identifiers and not recognized as
   // word separators by _splitWords, so they don't interfere with casing.
-  // e.g. "[DONE]" → "DONE" → toCamelCase → "done" (not "[Done]" → "Done").
+  // e.g. "[DONE]" -> "DONE" -> toCamelCase -> "done"
+  // (not "[Done]" -> "Done").
   var cleaned = value.replaceAll(_nonIdentChars, '');
   cleaned = cleaned.replaceFirst(_leadingSignBeforeLetter, '');
   var name = toCamelCase(cleaned);
@@ -450,7 +525,8 @@ String enumValueName(String value) {
 /// Names like `$0Request` need `$` escaped to avoid string interpolation.
 String escapeNameForString(String name) => name.replaceAll(r'$', r'\$');
 
-/// Escape angle brackets in doc comments to prevent unintended HTML interpretation.
+/// Escape angle brackets in doc comments to prevent
+/// unintended HTML interpretation.
 /// Wraps `<content>` in backticks: `<content>` → `` `<content>` ``.
 /// Skips content already inside backtick-delimited code spans.
 String escapeDocComment(String line) {
@@ -462,23 +538,40 @@ String escapeDocComment(String line) {
       // Inside backticks - pass through unchanged.
       buf.write('`${parts[i]}`');
     } else {
-      // Outside backticks - escape bare <...> tags.
-      buf.write(
-        parts[i].replaceAllMapped(RegExp(r'<([^>]+)>'), (m) => '`<${m[1]}>`'),
+      // Outside backticks - escape bare <...> tags and [references].
+      var prose = parts[i];
+      prose = prose.replaceAllMapped(
+        RegExp('<([^>]+)>'),
+        (m) => '`<${m[1]}>`',
       );
+      // Escape bare [text] that aren't markdown links [text](...).
+      prose = prose.replaceAllMapped(
+        RegExp(r'\[([^\]]+)\](?!\()'),
+        (m) => '`[${m[1]}]`',
+      );
+      buf.write(prose);
     }
   }
   return buf.toString();
 }
 
+/// Regex matching a fenced code block opening without a language specifier.
+final _bareCodeFence = RegExp(r'^(`{3,})$');
+
 /// Format a description string as `///` doc comment lines.
 ///
 /// Splits on newlines, trims trailing whitespace, and escapes HTML-like tags.
+/// Adds a `text` language hint to fenced code blocks that lack one.
 List<String> formatDocComment(String description) {
-  return description
-      .split('\n')
-      .map((l) => '/// ${escapeDocComment(l.trimRight())}')
-      .toList();
+  return description.split('\n').map((l) {
+    final trimmed = l.trimRight();
+    // Add language to bare fenced code blocks (``` or ```` without language).
+    final fenceMatch = _bareCodeFence.firstMatch(trimmed);
+    if (fenceMatch != null) {
+      return '/// ${fenceMatch[1]!}text';
+    }
+    return '/// ${escapeDocComment(trimmed)}';
+  }).toList();
 }
 
 /// Convert a field name to a file-system-friendly snake_case name.
@@ -487,7 +580,7 @@ String toSnakeCase(String input) {
   // Strip characters that are not valid in file names / Dart identifiers
   // before converting to snake_case. This handles $-prefixed names (from
   // sanitizeDartName) and apostrophes/special chars from spec names.
-  final cleaned = input.replaceAll(RegExp(r'[^a-zA-Z0-9_]'), '');
+  final cleaned = input.replaceAll(RegExp('[^a-zA-Z0-9_]'), '');
   if (cleaned.isEmpty) return 'unnamed';
   final buf = StringBuffer();
   for (var i = 0; i < cleaned.length; i++) {
@@ -499,7 +592,7 @@ String toSnakeCase(String input) {
   }
   var result = buf.toString();
   // Ensure the result doesn't start with a digit (for valid Dart file names)
-  if (RegExp(r'^[0-9]').hasMatch(result)) {
+  if (RegExp('^[0-9]').hasMatch(result)) {
     result = 'n$result';
   }
   // Avoid _test suffix - dart test would pick up these files as test files.
@@ -509,44 +602,44 @@ String toSnakeCase(String input) {
   return result;
 }
 
-// ─── Shared code_builder Method helpers ──────────────────────────
+// ─── Shared code_builder Method helpers ─────────────────
 
 /// Build an `operator ==` override with the given [body].
 Method buildEqualsOverride(String body) => Method(
-      (m) => m
-        ..name = 'operator =='
-        ..annotations.add(refer('override'))
-        ..returns = refer('bool')
-        ..requiredParameters.add(
-          Parameter(
-            (p) => p
-              ..name = 'other'
-              ..type = refer('Object'),
-          ),
-        )
-        ..body = Code(body),
-    );
+  (m) => m
+    ..name = 'operator =='
+    ..annotations.add(refer('override'))
+    ..returns = refer('bool')
+    ..requiredParameters.add(
+      Parameter(
+        (p) => p
+          ..name = 'other'
+          ..type = refer('Object'),
+      ),
+    )
+    ..body = Code(body),
+);
 
 /// Build a `hashCode` getter override with the given [body].
 Method buildHashCodeOverride(String body) => Method(
-      (m) => m
-        ..name = 'hashCode'
-        ..type = MethodType.getter
-        ..annotations.add(refer('override'))
-        ..returns = refer('int')
-        ..body = Code(body),
-    );
+  (m) => m
+    ..name = 'hashCode'
+    ..type = MethodType.getter
+    ..annotations.add(refer('override'))
+    ..returns = refer('int')
+    ..body = Code(body),
+);
 
 /// Build a `toString` override with the given [body].
 Method buildToStringOverride(String body) => Method(
-      (m) => m
-        ..name = 'toString'
-        ..annotations.add(refer('override'))
-        ..returns = refer('String')
-        ..body = Code(body),
-    );
+  (m) => m
+    ..name = 'toString'
+    ..annotations.add(refer('override'))
+    ..returns = refer('String')
+    ..body = Code(body),
+);
 
-// ─── PrimitiveKind codec helpers ─────────────────────────────────
+// ─── PrimitiveKind codec helpers ─────────────────────────
 
 /// Core fromJson expression for a [PrimitiveKind] value.
 /// Returns the Dart expression that converts a JSON value to the Dart type.
@@ -568,13 +661,15 @@ String primitiveFromJsonExpr(PrimitiveKind kind, String accessor) =>
 
 /// Core toJson expression for a [PrimitiveKind] value.
 /// [q] is the null-aware operator (`?` or empty string).
-String primitiveToJsonExpr(PrimitiveKind kind, String accessor,
-        {String q = ''}) =>
-    switch (kind) {
-      PrimitiveKind.dynamic_ => accessor,
-      PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
-      PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
-      PrimitiveKind.duration => '$accessor$q.inMilliseconds',
-      PrimitiveKind.bytes => 'base64Encode($accessor)',
-      _ => accessor,
-    };
+String primitiveToJsonExpr(
+  PrimitiveKind kind,
+  String accessor, {
+  String q = '',
+}) => switch (kind) {
+  PrimitiveKind.dynamic_ => accessor,
+  PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
+  PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
+  PrimitiveKind.duration => '$accessor$q.inMilliseconds',
+  PrimitiveKind.bytes => 'base64Encode($accessor)',
+  _ => accessor,
+};

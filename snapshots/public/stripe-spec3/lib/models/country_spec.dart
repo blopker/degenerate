@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'country_spec_verification_fields.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class CountrySpecObject {const CountrySpecObject._(this.value);
+@immutable final class CountrySpecObject {const CountrySpecObject._(this.value);
 
 factory CountrySpecObject.fromJson(String json) { return switch (json) {
   'country_spec' => countrySpec,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// You can also view the information from this API call as [an online
 /// guide](/docs/connect/required-verification-information).
-final class CountrySpec {const CountrySpec({required this.defaultCurrency, required this.id, required this.object, required this.supportedBankAccountCurrencies, required this.supportedPaymentCurrencies, required this.supportedPaymentMethods, required this.supportedTransferCountries, required this.verificationFields, });
+@immutable final class CountrySpec {const CountrySpec({required this.defaultCurrency, required this.id, required this.object, required this.supportedBankAccountCurrencies, required this.supportedPaymentCurrencies, required this.supportedPaymentMethods, required this.supportedTransferCountries, required this.verificationFields, });
 
 factory CountrySpec.fromJson(Map<String, dynamic> json) { return CountrySpec(
   defaultCurrency: json['default_currency'] as String,
@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'default_currency': defaultCurrency,
   'id': id,
   'object': object.toJson(),
-  'supported_bank_account_currencies': supportedBankAccountCurrencies.map((k, v) => MapEntry(k, v)),
+  'supported_bank_account_currencies': supportedBankAccountCurrencies,
   'supported_payment_currencies': supportedPaymentCurrencies,
   'supported_payment_methods': supportedPaymentMethods,
   'supported_transfer_countries': supportedTransferCountries,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Clone an existing quote. The new quote will be created in `status=draft`. When using this parameter, you cannot specify any other parameters except for `expires_at`.
-final class PostQuotesRequestFromQuote {const PostQuotesRequestFromQuote({this.isRevision, required this.quote, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Clone an existing quote. The new quote will be created in `status=draft`. When using this parameter, you cannot specify any other parameters except for `expires_at`.
+@immutable final class PostQuotesRequestFromQuote {const PostQuotesRequestFromQuote({required this.quote, this.isRevision, });
 
 factory PostQuotesRequestFromQuote.fromJson(Map<String, dynamic> json) { return PostQuotesRequestFromQuote(
   isRevision: json['is_revision'] as bool?,

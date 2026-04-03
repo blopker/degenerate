@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `project.rate_limit`
-final class ProjectRateLimitObject {const ProjectRateLimitObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `project.rate_limit`
+@immutable final class ProjectRateLimitObject {const ProjectRateLimitObject._(this.value);
 
 factory ProjectRateLimitObject.fromJson(String json) { return switch (json) {
   'project.rate_limit' => projectRateLimit,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectRateLimitObject($value)'; } 
  }
 /// Represents a project rate limit config.
-final class ProjectRateLimit {const ProjectRateLimit({required this.object, required this.id, required this.model, required this.maxRequestsPer1Minute, required this.maxTokensPer1Minute, this.maxImagesPer1Minute, this.maxAudioMegabytesPer1Minute, this.maxRequestsPer1Day, this.batch1DayMaxInputTokens, });
+@immutable final class ProjectRateLimit {const ProjectRateLimit({required this.object, required this.id, required this.model, required this.maxRequestsPer1Minute, required this.maxTokensPer1Minute, this.maxImagesPer1Minute, this.maxAudioMegabytesPer1Minute, this.maxRequestsPer1Day, this.batch1DayMaxInputTokens, });
 
 factory ProjectRateLimit.fromJson(Map<String, dynamic> json) { return ProjectRateLimit(
   object: ProjectRateLimitObject.fromJson(json['object'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_catalog_syncs_prebuilt_policy.dart';final class McnCatalogSyncsPrebuiltPoliciesResponse {const McnCatalogSyncsPrebuiltPoliciesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_catalog_syncs_prebuilt_policy.dart';@immutable final class McnCatalogSyncsPrebuiltPoliciesResponse {const McnCatalogSyncsPrebuiltPoliciesResponse({this.result});
 
 factory McnCatalogSyncsPrebuiltPoliciesResponse.fromJson(Map<String, dynamic> json) { return McnCatalogSyncsPrebuiltPoliciesResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => McnCatalogSyncsPrebuiltPolicy.fromJson(e as Map<String, dynamic>)).toList(),

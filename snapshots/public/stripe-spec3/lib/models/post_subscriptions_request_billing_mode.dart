@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_subscriptions_request_billing_mode_flexible.dart';final class PostSubscriptionsRequestBillingModeType {const PostSubscriptionsRequestBillingModeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_request_billing_mode_flexible.dart';@immutable final class PostSubscriptionsRequestBillingModeType {const PostSubscriptionsRequestBillingModeType._(this.value);
 
 factory PostSubscriptionsRequestBillingModeType.fromJson(String json) { return switch (json) {
   'classic' => classic,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSubscriptionsRequestBillingModeType($value)'; } 
  }
 /// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
-final class PostSubscriptionsRequestBillingMode {const PostSubscriptionsRequestBillingMode({this.flexible, required this.type, });
+@immutable final class PostSubscriptionsRequestBillingMode {const PostSubscriptionsRequestBillingMode({required this.type, this.flexible, });
 
 factory PostSubscriptionsRequestBillingMode.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestBillingMode(
   flexible: json['flexible'] != null ? PostSubscriptionsRequestBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,

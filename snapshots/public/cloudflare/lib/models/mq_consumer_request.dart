@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mq_http_consumer_request.dart';import 'mq_worker_consumer_request.dart';/// Request body for creating or updating a consumer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_http_consumer_request.dart';import 'mq_worker_consumer_request.dart';/// Request body for creating or updating a consumer
 sealed class MqConsumerRequest {const MqConsumerRequest();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MqConsumerRequest$Unknown; } 
  }
-final class MqConsumerRequestHttpPull extends MqConsumerRequest {const MqConsumerRequestHttpPull(this.mqHttpConsumerRequest);
+@immutable final class MqConsumerRequestHttpPull extends MqConsumerRequest {const MqConsumerRequestHttpPull(this.mqHttpConsumerRequest);
 
 factory MqConsumerRequestHttpPull.fromJson(Map<String, dynamic> json) { return MqConsumerRequestHttpPull(MqHttpConsumerRequest.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final MqHttpConsumerRequest mqHttpConsumerRequest;
 @override int get hashCode { return mqHttpConsumerRequest.hashCode; } 
 @override String toString() { return 'MqConsumerRequestHttpPull(mqHttpConsumerRequest: $mqHttpConsumerRequest)'; } 
  }
-final class MqConsumerRequestWorker extends MqConsumerRequest {const MqConsumerRequestWorker(this.mqWorkerConsumerRequest);
+@immutable final class MqConsumerRequestWorker extends MqConsumerRequest {const MqConsumerRequestWorker(this.mqWorkerConsumerRequest);
 
 factory MqConsumerRequestWorker.fromJson(Map<String, dynamic> json) { return MqConsumerRequestWorker(MqWorkerConsumerRequest.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final MqWorkerConsumerRequest mqWorkerConsumerRequest;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class MqConsumerRequest$Unknown extends MqConsumerRequest {const MqConsumerRequest$Unknown(this.json);
+@immutable final class MqConsumerRequest$Unknown extends MqConsumerRequest {const MqConsumerRequest$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

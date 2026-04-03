@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'calls_app_with_secret.dart';final class CallsAppResponseSingleWithSecret {const CallsAppResponseSingleWithSecret({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'calls_app_with_secret.dart';@immutable final class CallsAppResponseSingleWithSecret {const CallsAppResponseSingleWithSecret({this.result});
 
 factory CallsAppResponseSingleWithSecret.fromJson(Map<String, dynamic> json) { return CallsAppResponseSingleWithSecret(
   result: json['result'] != null ? CallsAppWithSecret.fromJson(json['result'] as Map<String, dynamic>) : null,

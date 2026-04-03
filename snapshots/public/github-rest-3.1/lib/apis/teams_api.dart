@@ -79,7 +79,7 @@ return execute(
 ///
 /// Gets a team using the team's `slug`. To create the `slug`, GitHub replaces special characters in the `name` string, changes all words to lowercase, and replaces spaces with a `-` separator. For example, `"My TEam Näme"` would become `my-team-name`.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}`
@@ -106,7 +106,7 @@ return execute(
 ///
 /// To edit a team, the authenticated user must either be an organization owner or a team maintainer.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.
 ///
 /// `PATCH /orgs/{org}/teams/{team_slug}`
@@ -137,7 +137,7 @@ return execute(
 /// 
 /// If you are an organization owner, deleting a parent team will delete all of its child teams as well.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}`.
 ///
 /// `DELETE /orgs/{org}/teams/{team_slug}`
@@ -159,7 +159,7 @@ return execute(
 ///
 /// The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/invitations`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/invitations`
@@ -235,10 +235,10 @@ return execute(
 /// 
 /// To get a user's membership with a team, the team must be visible to the authenticated user.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/memberships/{username}`.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > The response contains the `state` of the membership and the member's `role`.
 /// 
 /// The `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see [Create a team](https://docs.github.com/rest/teams/teams#create-a-team).
@@ -266,14 +266,14 @@ return execute(
 /// 
 /// Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://docs.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
 /// 
 /// An organization owner can add someone who is not part of the team's organization to a team. When an organization owner adds someone to a team who is not an organization member, this endpoint will send an invitation to the person via email. This newly-created membership will be in the "pending" state until the person accepts the invitation, at which point the membership will transition to the "active" state and the user will be added as a member of the team.
 /// 
 /// If the user is already a member of the team, this endpoint will update the role of the team member's role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/memberships/{username}`.
 ///
 /// `PUT /orgs/{org}/teams/{team_slug}/memberships/{username}`
@@ -301,10 +301,10 @@ return execute(
 /// 
 /// Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > When you have team synchronization set up for a team with your organization's identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team's membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see "[Synchronizing teams between your identity provider and GitHub](https://docs.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/)."
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/memberships/{username}`.
 ///
 /// `DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}`
@@ -326,7 +326,7 @@ return execute(
 ///
 /// Lists a team's repositories visible to the authenticated user.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/repos`
@@ -368,7 +368,7 @@ return execute(
 /// 
 /// If the repository is private, you must have at least `read` permission for that repository, and your token must have the `repo` or `admin:org` scope. Otherwise, you will receive a `404 Not Found` response status.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}`
@@ -392,7 +392,7 @@ return execute(
 ///
 /// To add a repository to a team or update the team's permission on a repository, the authenticated user must have admin access to the repository, and must be able to see the team. The repository must be owned by the organization, or a direct fork of a repository owned by the organization. You will get a `422 Unprocessable Entity` status if you attempt to add a repository to a team that is not owned by the organization. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.
 /// 
 /// For more information about the permission levels, see "[Repository permission levels for an organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization#permission-levels-for-repositories-owned-by-an-organization)".
@@ -418,7 +418,7 @@ return execute(
 ///
 /// If the authenticated user is an organization owner or a team maintainer, they can remove any repositories from the team. To remove a repository from a team as an organization member, the authenticated user must have admin access to the repository and must be able to see the team. This does not delete the repository, it just removes it from the team.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/repos/{owner}/{repo}`.
 ///
 /// `DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}`
@@ -440,7 +440,7 @@ return execute(
 ///
 /// Lists the child teams of the team specified by `{team_slug}`.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
 ///
 /// `GET /orgs/{org}/teams/{team_slug}/teams`

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_alert_dismissed_comment.dart';import 'simple_user.dart';import 'webhook_code_scanning_alert_created_alert_most_recent_instance.dart';import 'webhook_code_scanning_alert_created_alert_rule.dart';import 'webhook_code_scanning_alert_created_alert_tool.dart';/// State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed.
-final class WebhookCodeScanningAlertCreatedAlertState {const WebhookCodeScanningAlertCreatedAlertState._(this.value);
+@immutable final class WebhookCodeScanningAlertCreatedAlertState {const WebhookCodeScanningAlertCreatedAlertState._(this.value);
 
 factory WebhookCodeScanningAlertCreatedAlertState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookCodeScanningAlertCreatedAlertState($value)'; } 
  }
 /// The code scanning alert involved in the event.
-final class WebhookCodeScanningAlertCreatedAlert {const WebhookCodeScanningAlertCreatedAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, this.dismissedComment, required this.dismissedReason, this.fixedAt, required this.htmlUrl, this.instancesUrl, this.mostRecentInstance, required this.number, required this.rule, required this.state, required this.tool, this.updatedAt, required this.url, this.dismissalApprovedBy, this.assignees, });
+@immutable final class WebhookCodeScanningAlertCreatedAlert {const WebhookCodeScanningAlertCreatedAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.dismissedComment, this.fixedAt, this.instancesUrl, this.mostRecentInstance, this.updatedAt, this.dismissalApprovedBy, this.assignees, });
 
 factory WebhookCodeScanningAlertCreatedAlert.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertCreatedAlert(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

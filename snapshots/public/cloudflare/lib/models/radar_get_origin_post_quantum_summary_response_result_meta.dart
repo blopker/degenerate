@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origin_post_quantum_summary_response_result_meta_confidence_info.dart';import 'radar_get_origin_post_quantum_summary_response_result_meta_date_range.dart';import 'radar_get_origin_post_quantum_summary_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetOriginPostQuantumSummaryResponseResultMetaNormalization {const RadarGetOriginPostQuantumSummaryResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetOriginPostQuantumSummaryResponseResultMetaNormalization {const RadarGetOriginPostQuantumSummaryResponseResultMetaNormalization._(this.value);
 
 factory RadarGetOriginPostQuantumSummaryResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetOriginPostQuantumSummaryResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetOriginPostQuantumSummaryResponseResultMeta {const RadarGetOriginPostQuantumSummaryResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetOriginPostQuantumSummaryResponseResultMeta {const RadarGetOriginPostQuantumSummaryResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetOriginPostQuantumSummaryResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetOriginPostQuantumSummaryResponseResultMeta(
   confidenceInfo: RadarGetOriginPostQuantumSummaryResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),

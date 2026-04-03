@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookMemberEditedChangesPermission {const WebhookMemberEditedChangesPermission({this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookMemberEditedChangesPermission {const WebhookMemberEditedChangesPermission({this.from, this.to, });
 
 factory WebhookMemberEditedChangesPermission.fromJson(Map<String, dynamic> json) { return WebhookMemberEditedChangesPermission(
   from: json['from'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoice_payment_method_options_param14_financial_connections.dart';final class InvoicePaymentMethodOptionsParam14VerificationMethod {const InvoicePaymentMethodOptionsParam14VerificationMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param14_financial_connections.dart';@immutable final class InvoicePaymentMethodOptionsParam14VerificationMethod {const InvoicePaymentMethodOptionsParam14VerificationMethod._(this.value);
 
 factory InvoicePaymentMethodOptionsParam14VerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InvoicePaymentMethodOptionsParam14VerificationMethod($value)'; } 
  }
-final class InvoicePaymentMethodOptionsParam14 {const InvoicePaymentMethodOptionsParam14({this.financialConnections, this.verificationMethod, });
+@immutable final class InvoicePaymentMethodOptionsParam14 {const InvoicePaymentMethodOptionsParam14({this.financialConnections, this.verificationMethod, });
 
 factory InvoicePaymentMethodOptionsParam14.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam14(
   financialConnections: json['financial_connections'] != null ? InvoicePaymentMethodOptionsParam14FinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,

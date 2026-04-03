@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostDatasetPopulateResponsePropertiesSummaryPropertiesTotalDatasets {const PostDatasetPopulateResponsePropertiesSummaryPropertiesTotalDatasets({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDatasetPopulateResponsePropertiesSummaryPropertiesTotalDatasets {const PostDatasetPopulateResponsePropertiesSummaryPropertiesTotalDatasets({required this.type});
 
 factory PostDatasetPopulateResponsePropertiesSummaryPropertiesTotalDatasets.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponsePropertiesSummaryPropertiesTotalDatasets(
   type: json['type'] as String,

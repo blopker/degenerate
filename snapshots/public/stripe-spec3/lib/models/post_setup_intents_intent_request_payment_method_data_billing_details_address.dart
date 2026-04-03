@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details_address8.dart';final class PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2 {const PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details_address8.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2 {const PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2._(this.value);
 
 factory PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

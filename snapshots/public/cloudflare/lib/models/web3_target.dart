@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify the target gateway of the hostname.
-final class Web3Target {const Web3Target._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the target gateway of the hostname.
+@immutable final class Web3Target {const Web3Target._(this.value);
 
 factory Web3Target.fromJson(String json) { return switch (json) {
   'ethereum' => ethereum,

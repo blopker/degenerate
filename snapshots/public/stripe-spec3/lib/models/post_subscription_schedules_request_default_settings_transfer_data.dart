@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_data_specs5.dart';final class PostSubscriptionSchedulesRequestDefaultSettingsTransferDataVariant2 {const PostSubscriptionSchedulesRequestDefaultSettingsTransferDataVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_data_specs5.dart';@immutable final class PostSubscriptionSchedulesRequestDefaultSettingsTransferDataVariant2 {const PostSubscriptionSchedulesRequestDefaultSettingsTransferDataVariant2._(this.value);
 
 factory PostSubscriptionSchedulesRequestDefaultSettingsTransferDataVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestAfterExpirationRecovery {const PostCheckoutSessionsRequestAfterExpirationRecovery({this.allowPromotionCodes, required this.enabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestAfterExpirationRecovery {const PostCheckoutSessionsRequestAfterExpirationRecovery({required this.enabled, this.allowPromotionCodes, });
 
 factory PostCheckoutSessionsRequestAfterExpirationRecovery.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestAfterExpirationRecovery(
   allowPromotionCodes: json['allow_promotion_codes'] as bool?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WaitingroomEnabledOriginCommands2 {const WaitingroomEnabledOriginCommands2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WaitingroomEnabledOriginCommands2 {const WaitingroomEnabledOriginCommands2._(this.value);
 
 factory WaitingroomEnabledOriginCommands2.fromJson(String json) { return switch (json) {
   'revoke' => revoke,

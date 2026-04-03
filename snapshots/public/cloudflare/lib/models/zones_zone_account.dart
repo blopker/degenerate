@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_identifier.dart';/// The account the zone belongs to.
-final class ZonesZoneAccount {const ZonesZoneAccount({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_identifier.dart';/// The account the zone belongs to.
+@immutable final class ZonesZoneAccount {const ZonesZoneAccount({this.id, this.name, });
 
 factory ZonesZoneAccount.fromJson(Map<String, dynamic> json) { return ZonesZoneAccount(
   id: json['id'] != null ? ZonesIdentifier.fromJson(json['id'] as String) : null,

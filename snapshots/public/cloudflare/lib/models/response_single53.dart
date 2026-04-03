@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_single53_result.dart';import 'waf_managed_rules_messages2.dart';final class ResponseSingle53 {const ResponseSingle53({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_single53_result.dart';import 'waf_managed_rules_messages2.dart';@immutable final class ResponseSingle53 {const ResponseSingle53({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory ResponseSingle53.fromJson(Map<String, dynamic> json) { return ResponseSingle53(
   errors: (json['errors'] as List<dynamic>).map((e) => WafManagedRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => WafManagedRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: OneOf2.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => v as String,),
+  result: OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,),
 ); }
 
 final List<WafManagedRulesMessages2> errors;

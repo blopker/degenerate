@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_bill_resource_invoicing_pricing_pricing_price_details.dart';/// The type of the pricing details.
-final class BillingBillResourceInvoicingPricingPricingType {const BillingBillResourceInvoicingPricingPricingType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_pricing_pricing_price_details.dart';/// The type of the pricing details.
+@immutable final class BillingBillResourceInvoicingPricingPricingType {const BillingBillResourceInvoicingPricingPricingType._(this.value);
 
 factory BillingBillResourceInvoicingPricingPricingType.fromJson(String json) { return switch (json) {
   'price_details' => priceDetails,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingBillResourceInvoicingPricingPricingType($value)'; } 
  }
 /// 
-final class BillingBillResourceInvoicingPricingPricing {const BillingBillResourceInvoicingPricingPricing({this.priceDetails, required this.type, this.unitAmountDecimal, });
+@immutable final class BillingBillResourceInvoicingPricingPricing {const BillingBillResourceInvoicingPricingPricing({required this.type, this.priceDetails, this.unitAmountDecimal, });
 
 factory BillingBillResourceInvoicingPricingPricing.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingPricingPricing(
   priceDetails: json['price_details'] != null ? BillingBillResourceInvoicingPricingPricingPriceDetails.fromJson(json['price_details'] as Map<String, dynamic>) : null,

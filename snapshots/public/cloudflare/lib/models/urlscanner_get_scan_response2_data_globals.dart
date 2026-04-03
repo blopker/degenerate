@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2DataGlobals {const UrlscannerGetScanResponse2DataGlobals({required this.prop, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2DataGlobals {const UrlscannerGetScanResponse2DataGlobals({required this.prop, required this.type, });
 
 factory UrlscannerGetScanResponse2DataGlobals.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataGlobals(
   prop: json['prop'] as String,

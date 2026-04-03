@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_uuid.dart';final class WorkersNamespaceScriptDeleteBulkResponseDeleted {const WorkersNamespaceScriptDeleteBulkResponseDeleted({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_uuid.dart';@immutable final class WorkersNamespaceScriptDeleteBulkResponseDeleted {const WorkersNamespaceScriptDeleteBulkResponseDeleted({this.id});
 
 factory WorkersNamespaceScriptDeleteBulkResponseDeleted.fromJson(Map<String, dynamic> json) { return WorkersNamespaceScriptDeleteBulkResponseDeleted(
   id: json['id'] != null ? WorkersUuid.fromJson(json['id'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_recording_recording_transcription.dart';final class ListRecordingTranscriptionResponse {const ListRecordingTranscriptionResponse({this.transcriptions, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_recording_recording_transcription.dart';@immutable final class ListRecordingTranscriptionResponse {const ListRecordingTranscriptionResponse({this.transcriptions, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListRecordingTranscriptionResponse.fromJson(Map<String, dynamic> json) { return ListRecordingTranscriptionResponse(
   transcriptions: (json['transcriptions'] as List<dynamic>?)?.map((e) => AccountRecordingRecordingTranscription.fromJson(e as Map<String, dynamic>)).toList(),

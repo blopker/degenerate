@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_list_instances_response_result_source_params_web_crawler_parse_options_content_selector.dart';final class AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions {const AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions({this.contentSelector, this.includeHeaders, this.includeImages = false, this.specificSitemaps, this.useBrowserRendering = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_list_instances_response_result_source_params_web_crawler_parse_options_content_selector.dart';@immutable final class AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions {const AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions({this.contentSelector, this.includeHeaders, this.includeImages = false, this.specificSitemaps, this.useBrowserRendering = false, });
 
 factory AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions.fromJson(Map<String, dynamic> json) { return AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions(
   contentSelector: (json['content_selector'] as List<dynamic>?)?.map((e) => AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector.fromJson(e as Map<String, dynamic>)).toList(),

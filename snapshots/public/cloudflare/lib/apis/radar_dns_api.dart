@@ -17,88 +17,88 @@ Future<ApiResult<RadarGetDnsSummaryResponseResult, RadarGetDnsSummaryResponse400
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (asn != null) {
 for (final item in asn) {
-  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (continent != null) {
 for (final item in continent) {
-  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item));
 }
 }
 if (cacheHit != null) {
 for (final item in cacheHit) {
-  queryParametersList.add(ApiQueryParameter(name: 'cacheHit', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'cacheHit', value: item.toString()));
 }
 }
 if (nodata != null) {
 for (final item in nodata) {
-  queryParametersList.add(ApiQueryParameter(name: 'nodata', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'nodata', value: item.toString()));
 }
 }
 if (protocol != null) {
 for (final item in protocol) {
-  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson()));
 }
 }
 if (queryType != null) {
 for (final item in queryType) {
   if (item == null) continue;
-  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson()));
 }
 }
 if (responseCode != null) {
 for (final item in responseCode) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson()));
 }
 }
 if (responseTtl != null) {
 for (final item in responseTtl) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseTtl', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseTtl', value: item.toJson()));
 }
 }
 if (dnssec != null) {
 for (final item in dnssec) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssec', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssec', value: item.toJson()));
 }
 }
 if (dnssecAware != null) {
 for (final item in dnssecAware) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssecAware', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssecAware', value: item.toJson()));
 }
 }
 if (dnssecE2e != null) {
 for (final item in dnssecE2e) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssecE2e', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssecE2e', value: item.toString()));
 }
 }
 if (ipVersion != null) {
 for (final item in ipVersion) {
-  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson()));
 }
 }
 if (limitPerGroup != null) {
@@ -106,12 +106,12 @@ if (limitPerGroup != null) {
 }
 if (matchingAnswer != null) {
 for (final item in matchingAnswer) {
-  queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString()));
 }
 }
 if (tld != null) {
 for (final item in tld) {
-  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item));
 }
 }
 if (format != null) {
@@ -152,98 +152,98 @@ if (aggInterval != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (asn != null) {
 for (final item in asn) {
-  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (continent != null) {
 for (final item in continent) {
-  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item));
 }
 }
 if (cacheHit != null) {
 for (final item in cacheHit) {
-  queryParametersList.add(ApiQueryParameter(name: 'cacheHit', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'cacheHit', value: item.toString()));
 }
 }
 if (nodata != null) {
 for (final item in nodata) {
-  queryParametersList.add(ApiQueryParameter(name: 'nodata', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'nodata', value: item.toString()));
 }
 }
 if (protocol != null) {
 for (final item in protocol) {
-  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson()));
 }
 }
 if (queryType != null) {
 for (final item in queryType) {
   if (item == null) continue;
-  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson()));
 }
 }
 if (responseCode != null) {
 for (final item in responseCode) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson()));
 }
 }
 if (responseTtl != null) {
 for (final item in responseTtl) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseTtl', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseTtl', value: item.toJson()));
 }
 }
 if (dnssec != null) {
 for (final item in dnssec) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssec', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssec', value: item.toJson()));
 }
 }
 if (dnssecAware != null) {
 for (final item in dnssecAware) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssecAware', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssecAware', value: item.toJson()));
 }
 }
 if (dnssecE2e != null) {
 for (final item in dnssecE2e) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssecE2e', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssecE2e', value: item.toString()));
 }
 }
 if (ipVersion != null) {
 for (final item in ipVersion) {
-  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson()));
 }
 }
 if (matchingAnswer != null) {
 for (final item in matchingAnswer) {
-  queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString()));
 }
 }
 if (tld != null) {
 for (final item in tld) {
-  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item));
 }
 }
 if (format != null) {
@@ -284,88 +284,88 @@ if (aggInterval != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (asn != null) {
 for (final item in asn) {
-  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (continent != null) {
 for (final item in continent) {
-  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item));
 }
 }
 if (cacheHit != null) {
 for (final item in cacheHit) {
-  queryParametersList.add(ApiQueryParameter(name: 'cacheHit', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'cacheHit', value: item.toString()));
 }
 }
 if (nodata != null) {
 for (final item in nodata) {
-  queryParametersList.add(ApiQueryParameter(name: 'nodata', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'nodata', value: item.toString()));
 }
 }
 if (protocol != null) {
 for (final item in protocol) {
-  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson()));
 }
 }
 if (queryType != null) {
 for (final item in queryType) {
   if (item == null) continue;
-  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson()));
 }
 }
 if (responseCode != null) {
 for (final item in responseCode) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson()));
 }
 }
 if (responseTtl != null) {
 for (final item in responseTtl) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseTtl', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseTtl', value: item.toJson()));
 }
 }
 if (dnssec != null) {
 for (final item in dnssec) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssec', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssec', value: item.toJson()));
 }
 }
 if (dnssecAware != null) {
 for (final item in dnssecAware) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssecAware', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssecAware', value: item.toJson()));
 }
 }
 if (dnssecE2e != null) {
 for (final item in dnssecE2e) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssecE2e', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssecE2e', value: item.toString()));
 }
 }
 if (ipVersion != null) {
 for (final item in ipVersion) {
-  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson()));
 }
 }
 if (limitPerGroup != null) {
@@ -373,12 +373,12 @@ if (limitPerGroup != null) {
 }
 if (matchingAnswer != null) {
 for (final item in matchingAnswer) {
-  queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString()));
 }
 }
 if (tld != null) {
 for (final item in tld) {
-  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item));
 }
 }
 if (normalization != null) {
@@ -422,98 +422,98 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (asn != null) {
 for (final item in asn) {
-  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (continent != null) {
 for (final item in continent) {
-  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item));
 }
 }
 if (domain != null) {
 for (final item in domain) {
-  queryParametersList.add(ApiQueryParameter(name: 'domain', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'domain', value: item));
 }
 }
 if (cacheHit != null) {
 for (final item in cacheHit) {
-  queryParametersList.add(ApiQueryParameter(name: 'cacheHit', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'cacheHit', value: item.toString()));
 }
 }
 if (nodata != null) {
 for (final item in nodata) {
-  queryParametersList.add(ApiQueryParameter(name: 'nodata', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'nodata', value: item.toString()));
 }
 }
 if (protocol != null) {
 for (final item in protocol) {
-  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson()));
 }
 }
 if (queryType != null) {
 for (final item in queryType) {
   if (item == null) continue;
-  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson()));
 }
 }
 if (responseCode != null) {
 for (final item in responseCode) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson()));
 }
 }
 if (responseTtl != null) {
 for (final item in responseTtl) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseTtl', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseTtl', value: item.toJson()));
 }
 }
 if (dnssec != null) {
 for (final item in dnssec) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssec', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssec', value: item.toJson()));
 }
 }
 if (dnssecAware != null) {
 for (final item in dnssecAware) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssecAware', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssecAware', value: item.toJson()));
 }
 }
 if (dnssecE2e != null) {
 for (final item in dnssecE2e) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssecE2e', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssecE2e', value: item.toString()));
 }
 }
 if (ipVersion != null) {
 for (final item in ipVersion) {
-  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson()));
 }
 }
 if (matchingAnswer != null) {
 for (final item in matchingAnswer) {
-  queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString()));
 }
 }
 if (format != null) {
@@ -554,103 +554,103 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (asn != null) {
 for (final item in asn) {
-  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (continent != null) {
 for (final item in continent) {
-  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item));
 }
 }
 if (domain != null) {
 for (final item in domain) {
-  queryParametersList.add(ApiQueryParameter(name: 'domain', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'domain', value: item));
 }
 }
 if (cacheHit != null) {
 for (final item in cacheHit) {
-  queryParametersList.add(ApiQueryParameter(name: 'cacheHit', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'cacheHit', value: item.toString()));
 }
 }
 if (nodata != null) {
 for (final item in nodata) {
-  queryParametersList.add(ApiQueryParameter(name: 'nodata', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'nodata', value: item.toString()));
 }
 }
 if (protocol != null) {
 for (final item in protocol) {
-  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'protocol', value: item.toJson()));
 }
 }
 if (queryType != null) {
 for (final item in queryType) {
   if (item == null) continue;
-  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'queryType', value: item.toJson()));
 }
 }
 if (responseCode != null) {
 for (final item in responseCode) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseCode', value: item.toJson()));
 }
 }
 if (responseTtl != null) {
 for (final item in responseTtl) {
-  queryParametersList.add(ApiQueryParameter(name: 'responseTtl', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'responseTtl', value: item.toJson()));
 }
 }
 if (dnssec != null) {
 for (final item in dnssec) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssec', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssec', value: item.toJson()));
 }
 }
 if (dnssecAware != null) {
 for (final item in dnssecAware) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssecAware', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssecAware', value: item.toJson()));
 }
 }
 if (dnssecE2e != null) {
 for (final item in dnssecE2e) {
-  queryParametersList.add(ApiQueryParameter(name: 'dnssecE2e', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dnssecE2e', value: item.toString()));
 }
 }
 if (ipVersion != null) {
 for (final item in ipVersion) {
-  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson()));
 }
 }
 if (matchingAnswer != null) {
 for (final item in matchingAnswer) {
-  queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'matchingAnswer', value: item.toString()));
 }
 }
 if (tld != null) {
 for (final item in tld) {
-  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item));
 }
 }
 if (format != null) {

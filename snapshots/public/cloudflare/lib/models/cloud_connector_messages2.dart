@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloud_connector_messages2_source.dart';final class CloudConnectorMessages2 {const CloudConnectorMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloud_connector_messages2_source.dart';@immutable final class CloudConnectorMessages2 {const CloudConnectorMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory CloudConnectorMessages2.fromJson(Map<String, dynamic> json) { return CloudConnectorMessages2(
   code: (json['code'] as num).toInt(),

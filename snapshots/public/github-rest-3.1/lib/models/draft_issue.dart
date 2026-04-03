@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';/// A draft issue in a project
-final class DraftIssue {const DraftIssue({required this.id, required this.nodeId, required this.title, this.body, required this.user, required this.createdAt, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// A draft issue in a project
+@immutable final class DraftIssue {const DraftIssue({required this.id, required this.nodeId, required this.title, required this.user, required this.createdAt, required this.updatedAt, this.body, });
 
 factory DraftIssue.fromJson(Map<String, dynamic> json) { return DraftIssue(
   id: (json['id'] as num).toDouble(),

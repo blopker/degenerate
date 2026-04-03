@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_input.dart';/// Represents a reader action to collect customer inputs
-final class TerminalReaderReaderResourceCollectInputsAction {const TerminalReaderReaderResourceCollectInputsAction({required this.inputs, this.metadata, });
+@immutable final class TerminalReaderReaderResourceCollectInputsAction {const TerminalReaderReaderResourceCollectInputsAction({required this.inputs, this.metadata, });
 
 factory TerminalReaderReaderResourceCollectInputsAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceCollectInputsAction(
   inputs: (json['inputs'] as List<dynamic>).map((e) => TerminalReaderReaderResourceInput.fromJson(e as Map<String, dynamic>)).toList(),

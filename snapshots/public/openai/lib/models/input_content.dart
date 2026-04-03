@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'input_file_content.dart';import 'input_image_content.dart';import 'input_text_content.dart';sealed class InputContent {const InputContent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_file_content.dart';import 'input_image_content.dart';import 'input_text_content.dart';sealed class InputContent {const InputContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InputContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is InputContent$Unknown; } 
  }
-final class InputContentInputText extends InputContent {const InputContentInputText(this.inputTextContent);
+@immutable final class InputContentInputText extends InputContent {const InputContentInputText(this.inputTextContent);
 
 factory InputContentInputText.fromJson(Map<String, dynamic> json) { return InputContentInputText(InputTextContent.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final InputTextContent inputTextContent;
 @override int get hashCode { return inputTextContent.hashCode; } 
 @override String toString() { return 'InputContentInputText(inputTextContent: $inputTextContent)'; } 
  }
-final class InputContentInputImage extends InputContent {const InputContentInputImage(this.inputImageContent);
+@immutable final class InputContentInputImage extends InputContent {const InputContentInputImage(this.inputImageContent);
 
 factory InputContentInputImage.fromJson(Map<String, dynamic> json) { return InputContentInputImage(InputImageContent.fromJson(json)); }
 
@@ -42,7 +42,7 @@ final InputImageContent inputImageContent;
 @override int get hashCode { return inputImageContent.hashCode; } 
 @override String toString() { return 'InputContentInputImage(inputImageContent: $inputImageContent)'; } 
  }
-final class InputContentInputFile extends InputContent {const InputContentInputFile(this.inputFileContent);
+@immutable final class InputContentInputFile extends InputContent {const InputContentInputFile(this.inputFileContent);
 
 factory InputContentInputFile.fromJson(Map<String, dynamic> json) { return InputContentInputFile(InputFileContent.fromJson(json)); }
 
@@ -57,7 +57,7 @@ final InputFileContent inputFileContent;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class InputContent$Unknown extends InputContent {const InputContent$Unknown(this.json);
+@immutable final class InputContent$Unknown extends InputContent {const InputContent$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

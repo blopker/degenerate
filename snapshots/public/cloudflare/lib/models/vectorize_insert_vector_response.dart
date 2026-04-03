@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'response4.dart';final class VectorizeInsertVectorResponse {const VectorizeInsertVectorResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response4.dart';@immutable final class VectorizeInsertVectorResponse {const VectorizeInsertVectorResponse({this.result});
 
 factory VectorizeInsertVectorResponse.fromJson(Map<String, dynamic> json) { return VectorizeInsertVectorResponse(
   result: json['result'] != null ? Response4.fromJson(json['result'] as Map<String, dynamic>) : null,

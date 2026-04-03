@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AutoragConfigSyncResponse429Errors {const AutoragConfigSyncResponse429Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigSyncResponse429Errors {const AutoragConfigSyncResponse429Errors({required this.code, required this.message, });
 
 factory AutoragConfigSyncResponse429Errors.fromJson(Map<String, dynamic> json) { return AutoragConfigSyncResponse429Errors(
   code: (json['code'] as num).toDouble(),

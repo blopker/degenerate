@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-final class CouponAppliesTo {const CouponAppliesTo({required this.products});
+@immutable final class CouponAppliesTo {const CouponAppliesTo({required this.products});
 
 factory CouponAppliesTo.fromJson(Map<String, dynamic> json) { return CouponAppliesTo(
   products: (json['products'] as List<dynamic>).map((e) => e as String).toList(),

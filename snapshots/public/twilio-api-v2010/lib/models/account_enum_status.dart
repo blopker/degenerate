@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of this account. Usually `active`, but can be `suspended` or `closed`.
-final class AccountEnumStatus {const AccountEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of this account. Usually `active`, but can be `suspended` or `closed`.
+@immutable final class AccountEnumStatus {const AccountEnumStatus._(this.value);
 
 factory AccountEnumStatus.fromJson(String json) { return switch (json) {
   'active' => active,

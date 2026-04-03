@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_intents_intent_confirm_request_hooks_inputs_tax.dart';final class PostPaymentIntentsIntentConfirmRequestHooksInputs {const PostPaymentIntentsIntentConfirmRequestHooksInputs({this.tax});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_confirm_request_hooks_inputs_tax.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestHooksInputs {const PostPaymentIntentsIntentConfirmRequestHooksInputs({this.tax});
 
 factory PostPaymentIntentsIntentConfirmRequestHooksInputs.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestHooksInputs(
   tax: json['tax'] != null ? PostPaymentIntentsIntentConfirmRequestHooksInputsTax.fromJson(json['tax'] as Map<String, dynamic>) : null,

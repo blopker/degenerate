@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_summary_response_result_meta_confidence_info_annotations.dart';final class RadarGetHttpSummaryResponseResultMetaConfidenceInfo {const RadarGetHttpSummaryResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_summary_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetHttpSummaryResponseResultMetaConfidenceInfo {const RadarGetHttpSummaryResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetHttpSummaryResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetHttpSummaryResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

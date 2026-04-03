@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_decline_charge_on.dart';/// 
-final class AccountCardPaymentsSettings {const AccountCardPaymentsSettings({this.declineOn, this.statementDescriptorPrefix, this.statementDescriptorPrefixKana, this.statementDescriptorPrefixKanji, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_decline_charge_on.dart';/// 
+@immutable final class AccountCardPaymentsSettings {const AccountCardPaymentsSettings({this.declineOn, this.statementDescriptorPrefix, this.statementDescriptorPrefixKana, this.statementDescriptorPrefixKanji, });
 
 factory AccountCardPaymentsSettings.fromJson(Map<String, dynamic> json) { return AccountCardPaymentsSettings(
   declineOn: json['decline_on'] != null ? AccountDeclineChargeOn.fromJson(json['decline_on'] as Map<String, dynamic>) : null,

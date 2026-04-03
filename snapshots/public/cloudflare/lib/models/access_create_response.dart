@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_create_response_result.dart';final class AccessCreateResponse {const AccessCreateResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_create_response_result.dart';@immutable final class AccessCreateResponse {const AccessCreateResponse({this.result});
 
 factory AccessCreateResponse.fromJson(Map<String, dynamic> json) { return AccessCreateResponse(
   result: json['result'] != null ? AccessCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

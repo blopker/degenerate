@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Geodata for tracing request
-final class AccountRequestTracerRequestTraceRequestContextGeoloc {const AccountRequestTracerRequestTraceRequestContextGeoloc({this.city, this.continent, this.isEuCountry, this.isoCode, this.latitude, this.longitude, this.postalCode, this.regionCode, this.subdivision2IsoCode, this.timezone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Geodata for tracing request
+@immutable final class AccountRequestTracerRequestTraceRequestContextGeoloc {const AccountRequestTracerRequestTraceRequestContextGeoloc({this.city, this.continent, this.isEuCountry, this.isoCode, this.latitude, this.longitude, this.postalCode, this.regionCode, this.subdivision2IsoCode, this.timezone, });
 
 factory AccountRequestTracerRequestTraceRequestContextGeoloc.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceRequestContextGeoloc(
   city: json['city'] as String?,

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_start_reason_caller.dart';/// Specifies if the recording was started using the "Start a Recording"API or using the parameter RECORD_ON_START in the "Create a meeting" API.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_start_reason_caller.dart';/// Specifies if the recording was started using the "Start a Recording"API or using the parameter RECORD_ON_START in the "Create a meeting" API.
 /// 
 /// If the recording is initiated using the "RECORD_ON_START" parameter, the user details will not be populated.
-final class RealtimekitStartReasonReason {const RealtimekitStartReasonReason._(this.value);
+@immutable final class RealtimekitStartReasonReason {const RealtimekitStartReasonReason._(this.value);
 
 factory RealtimekitStartReasonReason.fromJson(String json) { return switch (json) {
   'API_CALL' => apiCall,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitStartReasonReason($value)'; } 
  }
-final class RealtimekitStartReason {const RealtimekitStartReason({this.caller, this.reason, });
+@immutable final class RealtimekitStartReason {const RealtimekitStartReason({this.caller, this.reason, });
 
 factory RealtimekitStartReason.fromJson(Map<String, dynamic> json) { return RealtimekitStartReason(
   caller: json['caller'] != null ? RealtimekitStartReasonCaller.fromJson(json['caller'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_test_helpers_confirmation_tokens_request_payment_method_options_card_installments_plan.dart';final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments({required this.plan});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_options_card_installments_plan.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments {const PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments({required this.plan});
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments(
   plan: PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallmentsPlan.fromJson(json['plan'] as Map<String, dynamic>),

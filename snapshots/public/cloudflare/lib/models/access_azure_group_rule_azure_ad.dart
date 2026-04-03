@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessAzureGroupRuleAzureAd {const AccessAzureGroupRuleAzureAd({required this.id, required this.identityProviderId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessAzureGroupRuleAzureAd {const AccessAzureGroupRuleAzureAd({required this.id, required this.identityProviderId, });
 
 factory AccessAzureGroupRuleAzureAd.fromJson(Map<String, dynamic> json) { return AccessAzureGroupRuleAzureAd(
   id: json['id'] as String,

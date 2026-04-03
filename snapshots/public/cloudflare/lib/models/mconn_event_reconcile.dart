@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Reconciled
-final class MconnEventReconcileK {const MconnEventReconcileK._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reconciled
+@immutable final class MconnEventReconcileK {const MconnEventReconcileK._(this.value);
 
 factory MconnEventReconcileK.fromJson(String json) { return switch (json) {
   'Reconcile' => reconcile,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MconnEventReconcileK($value)'; } 
  }
-final class MconnEventReconcile {const MconnEventReconcile({required this.k});
+@immutable final class MconnEventReconcile {const MconnEventReconcile({required this.k});
 
 factory MconnEventReconcile.fromJson(Map<String, dynamic> json) { return MconnEventReconcile(
   k: MconnEventReconcileK.fromJson(json['k'] as String),

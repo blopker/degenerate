@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_selector_requirement.dart';/// A null or empty node selector term matches no objects. The requirements of them are ANDed. The TopologySelectorTerm type implements a subset of the NodeSelectorTerm.
-final class NodeSelectorTerm {const NodeSelectorTerm({this.matchExpressions, this.matchFields, });
+@immutable final class NodeSelectorTerm {const NodeSelectorTerm({this.matchExpressions, this.matchFields, });
 
 factory NodeSelectorTerm.fromJson(Map<String, dynamic> json) { return NodeSelectorTerm(
   matchExpressions: (json['matchExpressions'] as List<dynamic>?)?.map((e) => NodeSelectorRequirement.fromJson(e as Map<String, dynamic>)).toList(),

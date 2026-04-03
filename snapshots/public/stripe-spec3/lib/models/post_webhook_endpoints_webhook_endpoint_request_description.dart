@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostWebhookEndpointsWebhookEndpointRequestDescriptionVariant2 {const PostWebhookEndpointsWebhookEndpointRequestDescriptionVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostWebhookEndpointsWebhookEndpointRequestDescriptionVariant2 {const PostWebhookEndpointsWebhookEndpointRequestDescriptionVariant2._(this.value);
 
 factory PostWebhookEndpointsWebhookEndpointRequestDescriptionVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

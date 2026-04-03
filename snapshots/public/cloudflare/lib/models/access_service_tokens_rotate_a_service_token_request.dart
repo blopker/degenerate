@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessServiceTokensRotateAServiceTokenRequest {const AccessServiceTokensRotateAServiceTokenRequest({this.previousClientSecretExpiresAt});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessServiceTokensRotateAServiceTokenRequest {const AccessServiceTokensRotateAServiceTokenRequest({this.previousClientSecretExpiresAt});
 
 factory AccessServiceTokensRotateAServiceTokenRequest.fromJson(Map<String, dynamic> json) { return AccessServiceTokensRotateAServiceTokenRequest(
   previousClientSecretExpiresAt: json['previous_client_secret_expires_at'] != null ? DateTime.parse(json['previous_client_secret_expires_at'] as String) : null,

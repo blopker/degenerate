@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfDeepgramNova3RequestAudio {const WorkersAiPostRunCfDeepgramNova3RequestAudio({required this.body, required this.contentType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfDeepgramNova3RequestAudio {const WorkersAiPostRunCfDeepgramNova3RequestAudio({required this.body, required this.contentType, });
 
 factory WorkersAiPostRunCfDeepgramNova3RequestAudio.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramNova3RequestAudio(
-  body: (json['body'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  body: json['body'] as Map<String, dynamic>,
   contentType: json['contentType'] as String,
 ); }
 

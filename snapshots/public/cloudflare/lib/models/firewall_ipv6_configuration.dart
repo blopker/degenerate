@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration target. You must set the target to `ip6` when specifying an IPv6 address in the rule.
-final class FirewallIpv6ConfigurationTarget {const FirewallIpv6ConfigurationTarget._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ip6` when specifying an IPv6 address in the rule.
+@immutable final class FirewallIpv6ConfigurationTarget {const FirewallIpv6ConfigurationTarget._(this.value);
 
 factory FirewallIpv6ConfigurationTarget.fromJson(String json) { return switch (json) {
   'ip6' => ip6,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FirewallIpv6ConfigurationTarget($value)'; } 
  }
-final class FirewallIpv6Configuration {const FirewallIpv6Configuration({this.target, this.value, });
+@immutable final class FirewallIpv6Configuration {const FirewallIpv6Configuration({this.target, this.value, });
 
 factory FirewallIpv6Configuration.fromJson(Map<String, dynamic> json) { return FirewallIpv6Configuration(
   target: json['target'] != null ? FirewallIpv6ConfigurationTarget.fromJson(json['target'] as String) : null,

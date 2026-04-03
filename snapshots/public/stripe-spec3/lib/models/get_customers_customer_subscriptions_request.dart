@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCustomersCustomerSubscriptionsRequest {const GetCustomersCustomerSubscriptionsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCustomersCustomerSubscriptionsRequest {const GetCustomersCustomerSubscriptionsRequest();
 
-factory GetCustomersCustomerSubscriptionsRequest.fromJson(Map<String, dynamic> json) { return GetCustomersCustomerSubscriptionsRequest(
-
-); }
+factory GetCustomersCustomerSubscriptionsRequest.fromJson(Map<String, dynamic> _) { return const GetCustomersCustomerSubscriptionsRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetCustomersCustomerSubscriptionsRequest copyWith() { return GetCustomersCustomerSubscriptionsRequest(
+GetCustomersCustomerSubscriptionsRequest copyWith() { return const GetCustomersCustomerSubscriptionsRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetCustomersCustomerSubscriptionsRequest; } 

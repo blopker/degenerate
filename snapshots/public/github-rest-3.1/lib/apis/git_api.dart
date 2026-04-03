@@ -183,7 +183,7 @@ return execute(
 /// 
 /// When you use this endpoint without providing a `:ref`, it will return an array of all the references from your Git database, including notes and stashes if they exist on the server. Anything in the namespace is returned, not just `heads` and `tags`.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You need to explicitly [request a pull request](https://docs.github.com/rest/pulls/pulls#get-a-pull-request) to trigger a test merge commit, which checks the mergeability of pull requests. For more information, see "[Checking mergeability of pull requests](https://docs.github.com/rest/guides/getting-started-with-the-git-database-api#checking-mergeability-of-pull-requests)".
 /// 
 /// If you request matching references for a branch named `feature` but the branch `feature` doesn't exist, the response can still include other matching head refs that start with the word `feature`, such as `featureA` and `featureB`.
@@ -213,7 +213,7 @@ return execute(
 ///
 /// Returns a single reference from your Git database. The `:ref` in the URL must be formatted as `heads/<branch name>` for branches and `tags/<tag name>` for tags. If the `:ref` doesn't match an existing ref, a `404` is returned.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > You need to explicitly [request a pull request](https://docs.github.com/rest/pulls/pulls#get-a-pull-request) to trigger a test merge commit, which checks the mergeability of pull requests. For more information, see "[Checking mergeability of pull requests](https://docs.github.com/rest/guides/getting-started-with-the-git-database-api#checking-mergeability-of-pull-requests)".
 ///
 /// `GET /repos/{owner}/{repo}/git/ref/{ref}`
@@ -454,7 +454,7 @@ return execute(
 /// 
 /// If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.
 ///
 /// `GET /repos/{owner}/{repo}/git/trees/{tree_sha}`

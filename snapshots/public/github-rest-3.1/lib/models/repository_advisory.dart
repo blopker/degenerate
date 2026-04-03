@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities.dart';import 'repository_advisory_credit.dart';import 'repository_advisory_credits.dart';import 'repository_advisory_cvss.dart';import 'repository_advisory_cwes.dart';import 'repository_advisory_identifiers.dart';import 'repository_advisory_submission.dart';import 'repository_advisory_vulnerability.dart';import 'simple_repository.dart';import 'simple_user.dart';import 'team.dart';/// The severity of the advisory.
-final class RepositoryAdvisorySeverity {const RepositoryAdvisorySeverity._(this.value);
+@immutable final class RepositoryAdvisorySeverity {const RepositoryAdvisorySeverity._(this.value);
 
 factory RepositoryAdvisorySeverity.fromJson(String json) { return switch (json) {
   'critical' => critical,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryAdvisorySeverity($value)'; } 
  }
 /// The state of the advisory.
-final class RepositoryAdvisoryState {const RepositoryAdvisoryState._(this.value);
+@immutable final class RepositoryAdvisoryState {const RepositoryAdvisoryState._(this.value);
 
 factory RepositoryAdvisoryState.fromJson(String json) { return switch (json) {
   'published' => published,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryAdvisoryState($value)'; } 
  }
 /// A repository security advisory.
-final class RepositoryAdvisory {const RepositoryAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.summary, required this.description, required this.severity, required this.author, required this.publisher, required this.identifiers, required this.state, required this.createdAt, required this.updatedAt, required this.publishedAt, required this.closedAt, required this.withdrawnAt, required this.submission, required this.vulnerabilities, required this.cvss, this.cvssSeverities, required this.cwes, required this.cweIds, required this.credits, required this.creditsDetailed, required this.collaboratingUsers, required this.collaboratingTeams, required this.privateFork, });
+@immutable final class RepositoryAdvisory {const RepositoryAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.summary, required this.description, required this.severity, required this.author, required this.publisher, required this.identifiers, required this.state, required this.createdAt, required this.updatedAt, required this.publishedAt, required this.closedAt, required this.withdrawnAt, required this.submission, required this.vulnerabilities, required this.cvss, required this.cwes, required this.cweIds, required this.credits, required this.creditsDetailed, required this.collaboratingUsers, required this.collaboratingTeams, required this.privateFork, this.cvssSeverities, });
 
 factory RepositoryAdvisory.fromJson(Map<String, dynamic> json) { return RepositoryAdvisory(
   ghsaId: json['ghsa_id'] as String,

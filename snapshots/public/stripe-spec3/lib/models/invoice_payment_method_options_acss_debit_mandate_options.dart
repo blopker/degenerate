@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Transaction type of the mandate.
-final class InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType {const InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Transaction type of the mandate.
+@immutable final class InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType {const InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType._(this.value);
 
 factory InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType.fromJson(String json) { return switch (json) {
   'business' => business,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType($value)'; } 
  }
 /// 
-final class InvoicePaymentMethodOptionsAcssDebitMandateOptions {const InvoicePaymentMethodOptionsAcssDebitMandateOptions({this.transactionType});
+@immutable final class InvoicePaymentMethodOptionsAcssDebitMandateOptions {const InvoicePaymentMethodOptionsAcssDebitMandateOptions({this.transactionType});
 
 factory InvoicePaymentMethodOptionsAcssDebitMandateOptions.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsAcssDebitMandateOptions(
   transactionType: json['transaction_type'] != null ? InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType.fromJson(json['transaction_type'] as String) : null,

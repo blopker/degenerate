@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param34.dart';final class PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2 {const PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param34.dart';@immutable final class PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2 {const PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2._(this.value);
 
 factory PostSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

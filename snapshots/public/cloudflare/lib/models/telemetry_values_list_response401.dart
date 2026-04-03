@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_values_list_response401_errors.dart';import 'telemetry_values_list_response401_messages.dart';final class TelemetryValuesListResponse401 {const TelemetryValuesListResponse401({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_values_list_response401_errors.dart';import 'telemetry_values_list_response401_messages.dart';@immutable final class TelemetryValuesListResponse401 {const TelemetryValuesListResponse401({required this.errors, required this.messages, required this.success, });
 
 factory TelemetryValuesListResponse401.fromJson(Map<String, dynamic> json) { return TelemetryValuesListResponse401(
   errors: (json['errors'] as List<dynamic>).map((e) => TelemetryValuesListResponse401Errors.fromJson(e as Map<String, dynamic>)).toList(),

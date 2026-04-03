@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_basic_operation.dart';import 'shield_operation.dart';import 'shield_schema_validation_extract_operations_from_schema_response_result.dart';final class ShieldSchemaValidationExtractOperationsFromSchemaResponse {const ShieldSchemaValidationExtractOperationsFromSchemaResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_basic_operation.dart';import 'shield_operation.dart';import 'shield_schema_validation_extract_operations_from_schema_response_result.dart';@immutable final class ShieldSchemaValidationExtractOperationsFromSchemaResponse {const ShieldSchemaValidationExtractOperationsFromSchemaResponse({required this.result});
 
 factory ShieldSchemaValidationExtractOperationsFromSchemaResponse.fromJson(Map<String, dynamic> json) { return ShieldSchemaValidationExtractOperationsFromSchemaResponse(
   result: (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => ShieldOperation.fromJson(v as Map<String, dynamic>), fromB: (v) => ShieldBasicOperation.fromJson(v as Map<String, dynamic>),)).toList(),

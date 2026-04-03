@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'identifier.dart';/// The domain name
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'identifier.dart';/// The domain name
 extension type const Name(String value) {
 factory Name.fromJson(String json) => Name(json);
 
@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// A simple zone object. May have null properties if not a zone subscription.
-final class Zone {const Zone({this.id, this.name, });
+@immutable final class Zone {const Zone({this.id, this.name, });
 
 factory Zone.fromJson(Map<String, dynamic> json) { return Zone(
   id: json['id'] != null ? Identifier.fromJson(json['id'] as String) : null,

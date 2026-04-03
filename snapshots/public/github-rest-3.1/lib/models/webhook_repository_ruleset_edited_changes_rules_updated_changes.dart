@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_repository_ruleset_edited_changes_rules_updated_changes_configuration.dart';import 'webhook_repository_ruleset_edited_changes_rules_updated_changes_pattern.dart';import 'webhook_repository_ruleset_edited_changes_rules_updated_changes_rule_type.dart';final class WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges {const WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges({this.configuration, this.ruleType, this.pattern, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_repository_ruleset_edited_changes_rules_updated_changes_configuration.dart';import 'webhook_repository_ruleset_edited_changes_rules_updated_changes_pattern.dart';import 'webhook_repository_ruleset_edited_changes_rules_updated_changes_rule_type.dart';@immutable final class WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges {const WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges({this.configuration, this.ruleType, this.pattern, });
 
 factory WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetEditedChangesRulesUpdatedChanges(
   configuration: json['configuration'] != null ? WebhookRepositoryRulesetEditedChangesRulesUpdatedChangesConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,

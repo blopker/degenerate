@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_identifier.dart';import 'firewall_status.dart';/// The mode that defines how rules within the package are evaluated during the course of a request. When a package uses anomaly detection mode (`anomaly` value), each rule is given a score when triggered. If the total score of all triggered rules exceeds the sensitivity defined in the WAF package, the action configured in the package will be performed. Traditional detection mode (`traditional` value) will decide the action to take when it is triggered by the request. If multiple rules are triggered, the action providing the highest protection will be applied (for example, a 'block' action will win over a 'challenge' action).
-final class FirewallDetectionMode {const FirewallDetectionMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_identifier.dart';import 'firewall_status.dart';/// The mode that defines how rules within the package are evaluated during the course of a request. When a package uses anomaly detection mode (`anomaly` value), each rule is given a score when triggered. If the total score of all triggered rules exceeds the sensitivity defined in the WAF package, the action configured in the package will be performed. Traditional detection mode (`traditional` value) will decide the action to take when it is triggered by the request. If multiple rules are triggered, the action providing the highest protection will be applied (for example, a 'block' action will win over a 'challenge' action).
+@immutable final class FirewallDetectionMode {const FirewallDetectionMode._(this.value);
 
 factory FirewallDetectionMode.fromJson(String json) { return switch (json) {
   'anomaly' => anomaly,
@@ -39,7 +39,7 @@ factory FirewallSchemasDescription.fromJson(String json) => FirewallSchemasDescr
 String toJson() => value;
 
 }
-final class FirewallPackageDefinition {const FirewallPackageDefinition({required this.description, required this.detectionMode, required this.id, required this.name, this.status, required this.zoneId, });
+@immutable final class FirewallPackageDefinition {const FirewallPackageDefinition({required this.description, required this.detectionMode, required this.id, required this.name, required this.zoneId, this.status, });
 
 factory FirewallPackageDefinition.fromJson(Map<String, dynamic> json) { return FirewallPackageDefinition(
   description: FirewallSchemasDescription.fromJson(json['description'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The breakdown of Copilot Business seats for the organization.
-final class CopilotOrganizationSeatBreakdown {const CopilotOrganizationSeatBreakdown({this.total, this.addedThisCycle, this.pendingCancellation, this.pendingInvitation, this.activeThisCycle, this.inactiveThisCycle, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The breakdown of Copilot Business seats for the organization.
+@immutable final class CopilotOrganizationSeatBreakdown {const CopilotOrganizationSeatBreakdown({this.total, this.addedThisCycle, this.pendingCancellation, this.pendingInvitation, this.activeThisCycle, this.inactiveThisCycle, });
 
 factory CopilotOrganizationSeatBreakdown.fromJson(Map<String, dynamic> json) { return CopilotOrganizationSeatBreakdown(
   total: json['total'] != null ? (json['total'] as num).toInt() : null,

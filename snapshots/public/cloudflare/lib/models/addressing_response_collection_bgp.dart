@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_ipam_bgp_prefixes.dart';final class AddressingResponseCollectionBgp {const AddressingResponseCollectionBgp({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_ipam_bgp_prefixes.dart';@immutable final class AddressingResponseCollectionBgp {const AddressingResponseCollectionBgp({this.result});
 
 factory AddressingResponseCollectionBgp.fromJson(Map<String, dynamic> json) { return AddressingResponseCollectionBgp(
   result: (json['result'] as List<dynamic>?)?.map((e) => AddressingIpamBgpPrefixes.fromJson(e as Map<String, dynamic>)).toList(),

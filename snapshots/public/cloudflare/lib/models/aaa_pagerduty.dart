@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_uuid.dart';/// The name of the pagerduty service.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_uuid.dart';/// The name of the pagerduty service.
 extension type const AaaName(String value) {
 factory AaaName.fromJson(String json) => AaaName(json);
 
 String toJson() => value;
 
 }
-final class AaaPagerduty {const AaaPagerduty({this.id, this.name, });
+@immutable final class AaaPagerduty {const AaaPagerduty({this.id, this.name, });
 
 factory AaaPagerduty.fromJson(Map<String, dynamic> json) { return AaaPagerduty(
   id: json['id'] != null ? AaaUuid.fromJson(json['id'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the NetFlows attribute by which to group the results.
-final class RadarGetNetflowsTimeseriesGroupDimension {const RadarGetNetflowsTimeseriesGroupDimension._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the NetFlows attribute by which to group the results.
+@immutable final class RadarGetNetflowsTimeseriesGroupDimension {const RadarGetNetflowsTimeseriesGroupDimension._(this.value);
 
 factory RadarGetNetflowsTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
   'ADM1' => adm1,

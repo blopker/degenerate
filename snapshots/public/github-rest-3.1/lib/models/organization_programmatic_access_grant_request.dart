@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'organization_programmatic_access_grant_request_permissions.dart';import 'simple_user.dart';/// Type of repository selection requested.
-final class OrganizationProgrammaticAccessGrantRequestRepositorySelection {const OrganizationProgrammaticAccessGrantRequestRepositorySelection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_programmatic_access_grant_request_permissions.dart';import 'simple_user.dart';/// Type of repository selection requested.
+@immutable final class OrganizationProgrammaticAccessGrantRequestRepositorySelection {const OrganizationProgrammaticAccessGrantRequestRepositorySelection._(this.value);
 
 factory OrganizationProgrammaticAccessGrantRequestRepositorySelection.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrganizationProgrammaticAccessGrantRequestRepositorySelection($value)'; } 
  }
 /// Minimal representation of an organization programmatic access grant request for enumerations
-final class OrganizationProgrammaticAccessGrantRequest {const OrganizationProgrammaticAccessGrantRequest({required this.id, required this.reason, required this.owner, required this.repositorySelection, required this.repositoriesUrl, required this.permissions, required this.createdAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt, });
+@immutable final class OrganizationProgrammaticAccessGrantRequest {const OrganizationProgrammaticAccessGrantRequest({required this.id, required this.reason, required this.owner, required this.repositorySelection, required this.repositoriesUrl, required this.permissions, required this.createdAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt, });
 
 factory OrganizationProgrammaticAccessGrantRequest.fromJson(Map<String, dynamic> json) { return OrganizationProgrammaticAccessGrantRequest(
   id: (json['id'] as num).toInt(),

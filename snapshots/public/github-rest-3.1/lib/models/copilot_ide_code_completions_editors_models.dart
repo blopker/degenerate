@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_ide_code_completions_editors_models_languages.dart';final class CopilotIdeCodeCompletionsEditorsModels {const CopilotIdeCodeCompletionsEditorsModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalEngagedUsers, this.languages, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_ide_code_completions_editors_models_languages.dart';@immutable final class CopilotIdeCodeCompletionsEditorsModels {const CopilotIdeCodeCompletionsEditorsModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalEngagedUsers, this.languages, });
 
 factory CopilotIdeCodeCompletionsEditorsModels.fromJson(Map<String, dynamic> json) { return CopilotIdeCodeCompletionsEditorsModels(
   name: json['name'] as String?,

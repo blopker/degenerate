@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountSipSipIpAccessControlListSipIpAddress {const AccountSipSipIpAccessControlListSipIpAddress({this.sid, this.accountSid, this.friendlyName, this.ipAddress, this.cidrPrefixLength = 0, this.ipAccessControlListSid, this.dateCreated, this.dateUpdated, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountSipSipIpAccessControlListSipIpAddress {const AccountSipSipIpAccessControlListSipIpAddress({this.sid, this.accountSid, this.friendlyName, this.ipAddress, this.cidrPrefixLength = 0, this.ipAccessControlListSid, this.dateCreated, this.dateUpdated, this.uri, });
 
 factory AccountSipSipIpAccessControlListSipIpAddress.fromJson(Map<String, dynamic> json) { return AccountSipSipIpAccessControlListSipIpAddress(
   sid: json['sid'] as String?,

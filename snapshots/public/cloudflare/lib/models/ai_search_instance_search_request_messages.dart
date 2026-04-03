@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AiSearchInstanceSearchRequestMessagesRole {const AiSearchInstanceSearchRequestMessagesRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceSearchRequestMessagesRole {const AiSearchInstanceSearchRequestMessagesRole._(this.value);
 
 factory AiSearchInstanceSearchRequestMessagesRole.fromJson(String json) { return switch (json) {
   'system' => system,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceSearchRequestMessagesRole($value)'; } 
  }
-final class AiSearchInstanceSearchRequestMessages {const AiSearchInstanceSearchRequestMessages({required this.content, required this.role, this.additionalProperties = const {}, });
+@immutable final class AiSearchInstanceSearchRequestMessages {const AiSearchInstanceSearchRequestMessages({required this.content, required this.role, this.additionalProperties = const {}, });
 
 factory AiSearchInstanceSearchRequestMessages.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestMessages(
   content: json['content'] as String?,

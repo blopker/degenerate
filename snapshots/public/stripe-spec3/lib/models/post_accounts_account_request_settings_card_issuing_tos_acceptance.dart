@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_card_issuing_tos_acceptance_user_agent.dart';final class PostAccountsAccountRequestSettingsCardIssuingTosAcceptance {const PostAccountsAccountRequestSettingsCardIssuingTosAcceptance({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_settings_card_issuing_tos_acceptance_user_agent.dart';@immutable final class PostAccountsAccountRequestSettingsCardIssuingTosAcceptance {const PostAccountsAccountRequestSettingsCardIssuingTosAcceptance({this.date, this.ip, this.userAgent, });
 
 factory PostAccountsAccountRequestSettingsCardIssuingTosAcceptance.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsCardIssuingTosAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

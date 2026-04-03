@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StartLivestreamingRequestVideoConfig {const StartLivestreamingRequestVideoConfig({this.height, this.width, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StartLivestreamingRequestVideoConfig {const StartLivestreamingRequestVideoConfig({this.height, this.width, });
 
 factory StartLivestreamingRequestVideoConfig.fromJson(Map<String, dynamic> json) { return StartLivestreamingRequestVideoConfig(
   height: json['height'] != null ? (json['height'] as num).toInt() : null,

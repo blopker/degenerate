@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Verification status, one of `pending`, `verified`, `unverified`, or `unavailable`.
-final class TaxIdVerificationStatus {const TaxIdVerificationStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Verification status, one of `pending`, `verified`, `unverified`, or `unavailable`.
+@immutable final class TaxIdVerificationStatus {const TaxIdVerificationStatus._(this.value);
 
 factory TaxIdVerificationStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxIdVerificationStatus($value)'; } 
  }
 /// 
-final class TaxIdVerification {const TaxIdVerification({required this.status, this.verifiedAddress, this.verifiedName, });
+@immutable final class TaxIdVerification {const TaxIdVerification({required this.status, this.verifiedAddress, this.verifiedName, });
 
 factory TaxIdVerification.fromJson(Map<String, dynamic> json) { return TaxIdVerification(
   status: TaxIdVerificationStatus.fromJson(json['status'] as String),

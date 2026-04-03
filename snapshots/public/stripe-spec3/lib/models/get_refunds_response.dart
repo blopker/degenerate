@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'refund.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetRefundsResponseObject {const GetRefundsResponseObject._(this.value);
+@immutable final class GetRefundsResponseObject {const GetRefundsResponseObject._(this.value);
 
 factory GetRefundsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetRefundsResponseObject($value)'; } 
  }
 /// 
-final class GetRefundsResponse {const GetRefundsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetRefundsResponse {const GetRefundsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetRefundsResponse.fromJson(Map<String, dynamic> json) { return GetRefundsResponse(
   data: (json['data'] as List<dynamic>).map((e) => Refund.fromJson(e as Map<String, dynamic>)).toList(),

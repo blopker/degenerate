@@ -218,7 +218,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -542,7 +542,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
 );
  } 

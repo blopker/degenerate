@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_check_suite_completed_check_suite.dart';final class WebhookCheckSuiteCompletedAction {const WebhookCheckSuiteCompletedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_check_suite_completed_check_suite.dart';@immutable final class WebhookCheckSuiteCompletedAction {const WebhookCheckSuiteCompletedAction._(this.value);
 
 factory WebhookCheckSuiteCompletedAction.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteCompletedAction($value)'; } 
  }
-final class WebhookCheckSuiteCompleted {const WebhookCheckSuiteCompleted({required this.action, required this.checkSuite, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookCheckSuiteCompleted {const WebhookCheckSuiteCompleted({required this.action, required this.checkSuite, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCheckSuiteCompleted.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteCompleted(
   action: WebhookCheckSuiteCompletedAction.fromJson(json['action'] as String),

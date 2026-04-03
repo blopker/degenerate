@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotations {const RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotations {const RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

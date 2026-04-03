@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_schemas_csr.dart';import 'tls_certificates_and_hostnames_schemas_validity_days.dart';final class ClientCertificateForAZoneCreateClientCertificateRequest {const ClientCertificateForAZoneCreateClientCertificateRequest({required this.csr, required this.validityDays, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_schemas_csr.dart';import 'tls_certificates_and_hostnames_schemas_validity_days.dart';@immutable final class ClientCertificateForAZoneCreateClientCertificateRequest {const ClientCertificateForAZoneCreateClientCertificateRequest({required this.csr, required this.validityDays, });
 
 factory ClientCertificateForAZoneCreateClientCertificateRequest.fromJson(Map<String, dynamic> json) { return ClientCertificateForAZoneCreateClientCertificateRequest(
   csr: TlsCertificatesAndHostnamesSchemasCsr.fromJson(json['csr'] as String),

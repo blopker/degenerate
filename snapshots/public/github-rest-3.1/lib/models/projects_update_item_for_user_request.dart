@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'projects_update_item_for_user_request_fields.dart';final class ProjectsUpdateItemForUserRequest {const ProjectsUpdateItemForUserRequest({required this.fields});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'projects_update_item_for_user_request_fields.dart';@immutable final class ProjectsUpdateItemForUserRequest {const ProjectsUpdateItemForUserRequest({required this.fields});
 
 factory ProjectsUpdateItemForUserRequest.fromJson(Map<String, dynamic> json) { return ProjectsUpdateItemForUserRequest(
   fields: (json['fields'] as List<dynamic>).map((e) => ProjectsUpdateItemForUserRequestFields.fromJson(e as Map<String, dynamic>)).toList(),

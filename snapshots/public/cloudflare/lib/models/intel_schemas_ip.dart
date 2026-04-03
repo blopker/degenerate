@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_ip.dart';import 'intel_schemas_ip_belongs_to_ref.dart';import 'intel_schemas_ip_risk_types.dart';final class IntelSchemasIp {const IntelSchemasIp({this.belongsToRef, this.ip, this.riskTypes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_ip.dart';import 'intel_schemas_ip_belongs_to_ref.dart';import 'intel_schemas_ip_risk_types.dart';@immutable final class IntelSchemasIp {const IntelSchemasIp({this.belongsToRef, this.ip, this.riskTypes, });
 
 factory IntelSchemasIp.fromJson(Map<String, dynamic> json) { return IntelSchemasIp(
   belongsToRef: json['belongs_to_ref'] != null ? IntelSchemasIpBelongsToRef.fromJson(json['belongs_to_ref'] as Map<String, dynamic>) : null,

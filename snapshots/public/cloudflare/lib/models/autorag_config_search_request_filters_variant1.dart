@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AutoragConfigSearchRequestFiltersVariant1Type {const AutoragConfigSearchRequestFiltersVariant1Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigSearchRequestFiltersVariant1Type {const AutoragConfigSearchRequestFiltersVariant1Type._(this.value);
 
 factory AutoragConfigSearchRequestFiltersVariant1Type.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AutoragConfigSearchRequestFiltersVariant1Type($value)'; } 
  }
-final class AutoragConfigSearchRequestFiltersVariant1 {const AutoragConfigSearchRequestFiltersVariant1({required this.key, required this.type, required this.value, });
+@immutable final class AutoragConfigSearchRequestFiltersVariant1 {const AutoragConfigSearchRequestFiltersVariant1({required this.key, required this.type, required this.value, });
 
 factory AutoragConfigSearchRequestFiltersVariant1.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchRequestFiltersVariant1(
   key: json['key'] as String,

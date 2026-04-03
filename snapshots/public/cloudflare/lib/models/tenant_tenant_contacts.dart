@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TenantTenantContacts {const TenantTenantContacts({this.email, this.website, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TenantTenantContacts {const TenantTenantContacts({this.email, this.website, });
 
 factory TenantTenantContacts.fromJson(Map<String, dynamic> json) { return TenantTenantContacts(
   email: json['email'] as String?,

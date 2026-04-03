@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about text being collected using a reader
-final class TerminalReaderReaderResourceText {const TerminalReaderReaderResourceText({this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about text being collected using a reader
+@immutable final class TerminalReaderReaderResourceText {const TerminalReaderReaderResourceText({this.value});
 
 factory TerminalReaderReaderResourceText.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceText(
   value: json['value'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetAppsSecretsScopeType {const GetAppsSecretsScopeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAppsSecretsScopeType {const GetAppsSecretsScopeType._(this.value);
 
 factory GetAppsSecretsScopeType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetAppsSecretsScopeType($value)'; } 
  }
-final class GetAppsSecretsScope {const GetAppsSecretsScope({required this.type, this.user, });
+@immutable final class GetAppsSecretsScope {const GetAppsSecretsScope({required this.type, this.user, });
 
 factory GetAppsSecretsScope.fromJson(Map<String, dynamic> json) { return GetAppsSecretsScope(
   type: GetAppsSecretsScopeType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostContentRequestVariant2CookiesPriority {const BrapiPostContentRequestVariant2CookiesPriority._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostContentRequestVariant2CookiesPriority {const BrapiPostContentRequestVariant2CookiesPriority._(this.value);
 
 factory BrapiPostContentRequestVariant2CookiesPriority.fromJson(String json) { return switch (json) {
   'Low' => low,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostContentRequestVariant2CookiesPriority($value)'; } 
  }
-final class BrapiPostContentRequestVariant2CookiesSameSite {const BrapiPostContentRequestVariant2CookiesSameSite._(this.value);
+@immutable final class BrapiPostContentRequestVariant2CookiesSameSite {const BrapiPostContentRequestVariant2CookiesSameSite._(this.value);
 
 factory BrapiPostContentRequestVariant2CookiesSameSite.fromJson(String json) { return switch (json) {
   'Strict' => strict,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostContentRequestVariant2CookiesSameSite($value)'; } 
  }
-final class BrapiPostContentRequestVariant2CookiesSourceScheme {const BrapiPostContentRequestVariant2CookiesSourceScheme._(this.value);
+@immutable final class BrapiPostContentRequestVariant2CookiesSourceScheme {const BrapiPostContentRequestVariant2CookiesSourceScheme._(this.value);
 
 factory BrapiPostContentRequestVariant2CookiesSourceScheme.fromJson(String json) { return switch (json) {
   'Unset' => unset,
@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostContentRequestVariant2CookiesSourceScheme($value)'; } 
  }
-final class BrapiPostContentRequestVariant2Cookies {const BrapiPostContentRequestVariant2Cookies({this.domain, this.expires, this.httpOnly, required this.name, this.partitionKey, this.path, this.priority, this.sameParty, this.sameSite, this.secure, this.sourcePort, this.sourceScheme, this.url, required this.value, });
+@immutable final class BrapiPostContentRequestVariant2Cookies {const BrapiPostContentRequestVariant2Cookies({required this.name, required this.value, this.domain, this.expires, this.httpOnly, this.partitionKey, this.path, this.priority, this.sameParty, this.sameSite, this.secure, this.sourcePort, this.sourceScheme, this.url, });
 
 factory BrapiPostContentRequestVariant2Cookies.fromJson(Map<String, dynamic> json) { return BrapiPostContentRequestVariant2Cookies(
   domain: json['domain'] as String?,

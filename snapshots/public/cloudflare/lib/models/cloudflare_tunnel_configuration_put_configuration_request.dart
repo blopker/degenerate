@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_config.dart';final class CloudflareTunnelConfigurationPutConfigurationRequest {const CloudflareTunnelConfigurationPutConfigurationRequest({this.config});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_config.dart';@immutable final class CloudflareTunnelConfigurationPutConfigurationRequest {const CloudflareTunnelConfigurationPutConfigurationRequest({this.config});
 
 factory CloudflareTunnelConfigurationPutConfigurationRequest.fromJson(Map<String, dynamic> json) { return CloudflareTunnelConfigurationPutConfigurationRequest(
   config: json['config'] != null ? TunnelConfig.fromJson(json['config'] as Map<String, dynamic>) : null,

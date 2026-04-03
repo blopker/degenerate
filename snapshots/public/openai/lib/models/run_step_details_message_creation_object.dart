@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_details_message_creation_object_message_creation.dart';/// Always `message_creation`.
-final class RunStepDetailsMessageCreationObjectType {const RunStepDetailsMessageCreationObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_details_message_creation_object_message_creation.dart';/// Always `message_creation`.
+@immutable final class RunStepDetailsMessageCreationObjectType {const RunStepDetailsMessageCreationObjectType._(this.value);
 
 factory RunStepDetailsMessageCreationObjectType.fromJson(String json) { return switch (json) {
   'message_creation' => messageCreation,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepDetailsMessageCreationObjectType($value)'; } 
  }
 /// Details of the message creation by the run step.
-final class RunStepDetailsMessageCreationObject {const RunStepDetailsMessageCreationObject({required this.type, required this.messageCreation, });
+@immutable final class RunStepDetailsMessageCreationObject {const RunStepDetailsMessageCreationObject({required this.type, required this.messageCreation, });
 
 factory RunStepDetailsMessageCreationObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsMessageCreationObject(
   type: RunStepDetailsMessageCreationObjectType.fromJson(json['type'] as String),

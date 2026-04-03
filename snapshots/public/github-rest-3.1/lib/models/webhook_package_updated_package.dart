@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_package_updated_package_owner.dart';import 'webhook_package_updated_package_package_version.dart';import 'webhook_package_updated_package_registry.dart';/// Information about the package.
-final class WebhookPackageUpdatedPackage {const WebhookPackageUpdatedPackage({required this.createdAt, required this.description, required this.ecosystem, required this.htmlUrl, required this.id, required this.name, required this.namespace, required this.owner, required this.packageType, required this.packageVersion, required this.registry, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_package_updated_package_owner.dart';import 'webhook_package_updated_package_package_version.dart';import 'webhook_package_updated_package_registry.dart';/// Information about the package.
+@immutable final class WebhookPackageUpdatedPackage {const WebhookPackageUpdatedPackage({required this.createdAt, required this.description, required this.ecosystem, required this.htmlUrl, required this.id, required this.name, required this.namespace, required this.owner, required this.packageType, required this.packageVersion, required this.registry, required this.updatedAt, });
 
 factory WebhookPackageUpdatedPackage.fromJson(Map<String, dynamic> json) { return WebhookPackageUpdatedPackage(
   createdAt: json['created_at'] as String,

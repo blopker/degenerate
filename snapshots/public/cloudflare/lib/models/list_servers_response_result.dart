@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ListServersResponseResultAuthType {const ListServersResponseResultAuthType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListServersResponseResultAuthType {const ListServersResponseResultAuthType._(this.value);
 
 factory ListServersResponseResultAuthType.fromJson(String json) { return switch (json) {
   'oauth' => oauth,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ListServersResponseResultAuthType($value)'; } 
  }
-final class ListServersResponseResult {const ListServersResponseResult({required this.authType, this.createdAt, this.createdBy, this.description, this.error, required this.hostname, required this.id, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, required this.name, required this.prompts, this.status = 'waiting', required this.tools, });
+@immutable final class ListServersResponseResult {const ListServersResponseResult({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, this.createdAt, this.createdBy, this.description, this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.status = 'waiting', });
 
 factory ListServersResponseResult.fromJson(Map<String, dynamic> json) { return ListServersResponseResult(
   authType: ListServersResponseResultAuthType.fromJson(json['auth_type'] as String),
@@ -42,9 +42,9 @@ factory ListServersResponseResult.fromJson(Map<String, dynamic> json) { return L
   modifiedAt: json['modified_at'] != null ? DateTime.parse(json['modified_at'] as String) : null,
   modifiedBy: json['modified_by'] as String?,
   name: json['name'] as String,
-  prompts: (json['prompts'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  prompts: (json['prompts'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   status: json.containsKey('status') ? json['status'] as String : 'waiting',
-  tools: (json['tools'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  tools: (json['tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 final ListServersResponseResultAuthType authType;

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Management resources the token will have access to.
-final class TunnelManagementResources {const TunnelManagementResources._(this.value);
+@immutable final class TunnelManagementResources {const TunnelManagementResources._(this.value);
 
 factory TunnelManagementResources.fromJson(String json) { return switch (json) {
   'logs' => logs,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TunnelManagementResources($value)'; } 
  }
-final class CloudflareTunnelGetACloudflareTunnelManagementTokenRequest {const CloudflareTunnelGetACloudflareTunnelManagementTokenRequest({required this.resources});
+@immutable final class CloudflareTunnelGetACloudflareTunnelManagementTokenRequest {const CloudflareTunnelGetACloudflareTunnelManagementTokenRequest({required this.resources});
 
 factory CloudflareTunnelGetACloudflareTunnelManagementTokenRequest.fromJson(Map<String, dynamic> json) { return CloudflareTunnelGetACloudflareTunnelManagementTokenRequest(
   resources: (json['resources'] as List<dynamic>).map((e) => TunnelManagementResources.fromJson(e as String)).toList(),

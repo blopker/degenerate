@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsSummaryByProtocolResponseResultMetaUnits {const RadarGetDnsSummaryByProtocolResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByProtocolResponseResultMetaUnits {const RadarGetDnsSummaryByProtocolResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetDnsSummaryByProtocolResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByProtocolResponseResultMetaUnits(
   name: json['name'] as String,

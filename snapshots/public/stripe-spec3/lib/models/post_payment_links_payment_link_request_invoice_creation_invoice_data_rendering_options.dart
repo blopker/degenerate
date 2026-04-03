@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_rendering_options_param3.dart';final class PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2 {const PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_rendering_options_param3.dart';@immutable final class PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2 {const PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2._(this.value);
 
 factory PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

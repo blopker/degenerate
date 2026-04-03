@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ImagesImageDirectUploadResponseResult {const ImagesImageDirectUploadResponseResult({this.id, this.uploadUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImageDirectUploadResponseResult {const ImagesImageDirectUploadResponseResult({this.id, this.uploadUrl, });
 
 factory ImagesImageDirectUploadResponseResult.fromJson(Map<String, dynamic> json) { return ImagesImageDirectUploadResponseResult(
   id: json['id'] as String?,

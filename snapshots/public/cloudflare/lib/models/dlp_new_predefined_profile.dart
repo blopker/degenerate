@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_context_awareness.dart';import 'dlp_predefined_profile_entry_update.dart';final class DlpNewPredefinedProfile {const DlpNewPredefinedProfile({this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = 'low', this.contextAwareness, this.entries, this.ocrEnabled = false, required this.profileId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_context_awareness.dart';import 'dlp_predefined_profile_entry_update.dart';@immutable final class DlpNewPredefinedProfile {const DlpNewPredefinedProfile({required this.profileId, this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = 'low', this.contextAwareness, this.entries, this.ocrEnabled = false, });
 
 factory DlpNewPredefinedProfile.fromJson(Map<String, dynamic> json) { return DlpNewPredefinedProfile(
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,

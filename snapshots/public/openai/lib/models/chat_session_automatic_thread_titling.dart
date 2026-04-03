@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Automatic thread title preferences for the session.
-final class ChatSessionAutomaticThreadTitling {const ChatSessionAutomaticThreadTitling({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Automatic thread title preferences for the session.
+@immutable final class ChatSessionAutomaticThreadTitling {const ChatSessionAutomaticThreadTitling({required this.enabled});
 
 factory ChatSessionAutomaticThreadTitling.fromJson(Map<String, dynamic> json) { return ChatSessionAutomaticThreadTitling(
   enabled: json['enabled'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_details_customer_reference.dart';import 'payment_details_order_reference.dart';final class PaymentDetails {const PaymentDetails({this.customerReference, this.orderReference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_details_customer_reference.dart';import 'payment_details_order_reference.dart';@immutable final class PaymentDetails {const PaymentDetails({this.customerReference, this.orderReference, });
 
 factory PaymentDetails.fromJson(Map<String, dynamic> json) { return PaymentDetails(
   customerReference: json['customer_reference'] != null ? OneOf2.parse(json['customer_reference'], fromA: (v) => v as String, fromB: (v) => PaymentDetailsCustomerReferenceVariant2.fromJson(v as String),) : null,

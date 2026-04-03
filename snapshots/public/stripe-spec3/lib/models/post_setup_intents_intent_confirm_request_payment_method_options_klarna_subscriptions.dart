@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_subscriptions_variant1.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_subscriptions_variant1.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -180,9 +180,9 @@ return execute(
 ///
 /// ### Purge All Cached Content
 /// Removes ALL files from Cloudflare's cache. All tiers can purge everything.
-/// ````
+/// ```text
 /// {"purge_everything": true}
-/// ````
+/// ```text
 /// 
 /// ### Purge Cached Content by URL
 /// Granularly removes one or more files from Cloudflare's cache by specifying URLs. All tiers can purge by URL.
@@ -192,29 +192,29 @@ return execute(
 /// **NB:** When including the Origin header, be sure to include the **scheme** and **hostname**. The port number can be omitted if it is the default port (80 for http, 443 for https), but must be included otherwise.
 /// 
 /// Single file purge example with files:
-/// ````
-/// {"files": ["http://www.example.com/css/styles.css", "http://www.example.com/js/index.js"]}
-/// ````
+/// ```text
+/// {"files": `["http://www.example.com/css/styles.css", "http://www.example.com/js/index.js"]`}
+/// ```text
 /// Single file purge example with url and header pairs:
-/// ````
-/// {"files": [{url: "http://www.example.com/cat_picture.jpg", headers: { "CF-IPCountry": "US", "CF-Device-Type": "desktop", "Accept-Language": "zh-CN" }}, {url: "http://www.example.com/dog_picture.jpg", headers: { "CF-IPCountry": "EU", "CF-Device-Type": "mobile", "Accept-Language": "en-US" }}]}
-/// ````
+/// ```text
+/// {"files": `[{url: "http://www.example.com/cat_picture.jpg", headers: { "CF-IPCountry": "US", "CF-Device-Type": "desktop", "Accept-Language": "zh-CN" }}, {url: "http://www.example.com/dog_picture.jpg", headers: { "CF-IPCountry": "EU", "CF-Device-Type": "mobile", "Accept-Language": "en-US" }}]`}
+/// ```text
 /// 
 /// ### Purge Cached Content by Tag, Host or Prefix
 /// Granularly removes one or more files from Cloudflare's cache either by specifying the host, the associated Cache-Tag, or a Prefix.
 /// 
 /// Flex purge with tags:
-/// ````
-/// {"tags": ["a-cache-tag", "another-cache-tag"]}
-/// ````
+/// ```text
+/// {"tags": `["a-cache-tag", "another-cache-tag"]`}
+/// ```text
 /// Flex purge with hosts:
-/// ````
-/// {"hosts": ["www.example.com", "images.example.com"]}
-/// ````
+/// ```text
+/// {"hosts": `["www.example.com", "images.example.com"]`}
+/// ```text
 /// Flex purge with prefixes:
-/// ````
-/// {"prefixes": ["www.example.com/foo", "images.example.com/bar/baz"]}
-/// ````
+/// ```text
+/// {"prefixes": `["www.example.com/foo", "images.example.com/bar/baz"]`}
+/// ```text
 /// 
 /// ### Availability and limits
 /// please refer to [purge cache availability and limits documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/#availability-and-limits).

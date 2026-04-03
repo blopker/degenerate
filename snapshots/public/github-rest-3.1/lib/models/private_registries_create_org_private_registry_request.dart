@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The registry type.
-final class PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType {const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._(this.value);
+@immutable final class PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType {const PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType._(this.value);
 
 factory PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType.fromJson(String json) { return switch (json) {
   'maven_repository' => mavenRepository,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType($value)'; } 
  }
 /// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
-final class PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility {const PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility._(this.value);
+@immutable final class PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility {const PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility._(this.value);
 
 factory PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -92,7 +92,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PrivateRegistriesCreateOrgPrivateRegistryRequestVisibility($value)'; } 
  }
-final class PrivateRegistriesCreateOrgPrivateRegistryRequest {const PrivateRegistriesCreateOrgPrivateRegistryRequest({required this.registryType, required this.url, this.username, this.replacesBase = false, required this.encryptedValue, required this.keyId, required this.visibility, this.selectedRepositoryIds, });
+@immutable final class PrivateRegistriesCreateOrgPrivateRegistryRequest {const PrivateRegistriesCreateOrgPrivateRegistryRequest({required this.registryType, required this.url, required this.encryptedValue, required this.keyId, required this.visibility, this.username, this.replacesBase = false, this.selectedRepositoryIds, });
 
 factory PrivateRegistriesCreateOrgPrivateRegistryRequest.fromJson(Map<String, dynamic> json) { return PrivateRegistriesCreateOrgPrivateRegistryRequest(
   registryType: PrivateRegistriesCreateOrgPrivateRegistryRequestRegistryType.fromJson(json['registry_type'] as String),

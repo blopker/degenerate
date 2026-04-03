@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A short machine-readable string giving the reason for the verification failure.
-final class GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
+@immutable final class GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode._(this.value);
 
 factory GelatoDocumentReportErrorCode.fromJson(String json) { return switch (json) {
   'document_expired' => documentExpired,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoDocumentReportErrorCode($value)'; } 
  }
 /// 
-final class GelatoDocumentReportError {const GelatoDocumentReportError({this.code, this.reason, });
+@immutable final class GelatoDocumentReportError {const GelatoDocumentReportError({this.code, this.reason, });
 
 factory GelatoDocumentReportError.fromJson(Map<String, dynamic> json) { return GelatoDocumentReportError(
   code: json['code'] != null ? GelatoDocumentReportErrorCode.fromJson(json['code'] as String) : null,

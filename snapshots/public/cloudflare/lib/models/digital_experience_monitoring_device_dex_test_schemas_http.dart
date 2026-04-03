@@ -28,7 +28,7 @@ factory DigitalExperienceMonitoringDeviceDexTestSchemasName.fromJson(String json
 String toJson() => value;
 
 }
-final class DigitalExperienceMonitoringDeviceDexTestSchemasHttp {const DigitalExperienceMonitoringDeviceDexTestSchemasHttp({required this.data, this.description, required this.enabled, required this.interval, required this.name, this.targetPolicies, this.targeted, this.testId, });
+@immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasHttp {const DigitalExperienceMonitoringDeviceDexTestSchemasHttp({required this.data, required this.enabled, required this.interval, required this.name, this.description, this.targetPolicies, this.targeted, this.testId, });
 
 factory DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDeviceDexTestSchemasHttp(
   data: DigitalExperienceMonitoringDeviceDexTestSchemasData.fromJson(json['data'] as Map<String, dynamic>),

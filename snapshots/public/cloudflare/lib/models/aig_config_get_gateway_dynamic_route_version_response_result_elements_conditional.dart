@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_conditional_outputs.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_conditional_properties.dart';final class AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalType {const AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_conditional_outputs.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_conditional_properties.dart';@immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalType {const AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalType._(this.value);
 
 factory AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalType.fromJson(String json) { return switch (json) {
   'conditional' => conditional,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalType($value)'; } 
  }
-final class AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditional {const AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
+@immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditional {const AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
 
 factory AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditional.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditional(
   id: json['id'] as String,

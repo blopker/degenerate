@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metaproperties for Git author/committer information.
-final class GitUser {const GitUser({this.name, this.email, this.date, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metaproperties for Git author/committer information.
+@immutable final class GitUser {const GitUser({this.name, this.email, this.date, });
 
 factory GitUser.fromJson(Map<String, dynamic> json) { return GitUser(
   name: json['name'] as String?,

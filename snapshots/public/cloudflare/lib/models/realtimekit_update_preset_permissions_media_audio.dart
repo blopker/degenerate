@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Can produce audio
-final class RealtimekitUpdatePresetPermissionsMediaAudioCanProduce {const RealtimekitUpdatePresetPermissionsMediaAudioCanProduce._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Can produce audio
+@immutable final class RealtimekitUpdatePresetPermissionsMediaAudioCanProduce {const RealtimekitUpdatePresetPermissionsMediaAudioCanProduce._(this.value);
 
 factory RealtimekitUpdatePresetPermissionsMediaAudioCanProduce.fromJson(String json) { return switch (json) {
   'ALLOWED' => allowed,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitUpdatePresetPermissionsMediaAudioCanProduce($value)'; } 
  }
 /// Audio permissions
-final class RealtimekitUpdatePresetPermissionsMediaAudio {const RealtimekitUpdatePresetPermissionsMediaAudio({this.canProduce});
+@immutable final class RealtimekitUpdatePresetPermissionsMediaAudio {const RealtimekitUpdatePresetPermissionsMediaAudio({this.canProduce});
 
 factory RealtimekitUpdatePresetPermissionsMediaAudio.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissionsMediaAudio(
   canProduce: json['can_produce'] != null ? RealtimekitUpdatePresetPermissionsMediaAudioCanProduce.fromJson(json['can_produce'] as String) : null,

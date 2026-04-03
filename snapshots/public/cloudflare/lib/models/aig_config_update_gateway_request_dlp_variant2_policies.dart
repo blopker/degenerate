@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigUpdateGatewayRequestDlpVariant2PoliciesCheck {const AigConfigUpdateGatewayRequestDlpVariant2PoliciesCheck._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateGatewayRequestDlpVariant2PoliciesCheck {const AigConfigUpdateGatewayRequestDlpVariant2PoliciesCheck._(this.value);
 
 factory AigConfigUpdateGatewayRequestDlpVariant2PoliciesCheck.fromJson(String json) { return switch (json) {
   'REQUEST' => request,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateGatewayRequestDlpVariant2PoliciesCheck($value)'; } 
  }
-final class AigConfigUpdateGatewayRequestDlpVariant2PoliciesAction {const AigConfigUpdateGatewayRequestDlpVariant2PoliciesAction._(this.value);
+@immutable final class AigConfigUpdateGatewayRequestDlpVariant2PoliciesAction {const AigConfigUpdateGatewayRequestDlpVariant2PoliciesAction._(this.value);
 
 factory AigConfigUpdateGatewayRequestDlpVariant2PoliciesAction.fromJson(String json) { return switch (json) {
   'FLAG' => flag,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateGatewayRequestDlpVariant2PoliciesAction($value)'; } 
  }
-final class AigConfigUpdateGatewayRequestDlpVariant2Policies {const AigConfigUpdateGatewayRequestDlpVariant2Policies({required this.action, required this.check, required this.enabled, required this.id, required this.profiles, });
+@immutable final class AigConfigUpdateGatewayRequestDlpVariant2Policies {const AigConfigUpdateGatewayRequestDlpVariant2Policies({required this.action, required this.check, required this.enabled, required this.id, required this.profiles, });
 
 factory AigConfigUpdateGatewayRequestDlpVariant2Policies.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayRequestDlpVariant2Policies(
   action: AigConfigUpdateGatewayRequestDlpVariant2PoliciesAction.fromJson(json['action'] as String),

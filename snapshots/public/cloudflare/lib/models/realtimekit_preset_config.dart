@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_preset_config_max_video_streams.dart';import 'realtimekit_preset_config_media.dart';/// Type of the meeting
-final class RealtimekitPresetConfigViewType {const RealtimekitPresetConfigViewType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_preset_config_max_video_streams.dart';import 'realtimekit_preset_config_media.dart';/// Type of the meeting
+@immutable final class RealtimekitPresetConfigViewType {const RealtimekitPresetConfigViewType._(this.value);
 
 factory RealtimekitPresetConfigViewType.fromJson(String json) { return switch (json) {
   'GROUP_CALL' => groupCall,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitPresetConfigViewType($value)'; } 
  }
-final class RealtimekitPresetConfig {const RealtimekitPresetConfig({required this.maxScreenshareCount, required this.maxVideoStreams, required this.media, required this.viewType, });
+@immutable final class RealtimekitPresetConfig {const RealtimekitPresetConfig({required this.maxScreenshareCount, required this.maxVideoStreams, required this.media, required this.viewType, });
 
 factory RealtimekitPresetConfig.fromJson(Map<String, dynamic> json) { return RealtimekitPresetConfig(
   maxScreenshareCount: (json['max_screenshare_count'] as num).toInt(),

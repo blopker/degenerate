@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersPlacementRegion {const WorkersPlacementRegion({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersPlacementRegion {const WorkersPlacementRegion({required this.id});
 
 factory WorkersPlacementRegion.fromJson(Map<String, dynamic> json) { return WorkersPlacementRegion(
   id: json['id'] as String,

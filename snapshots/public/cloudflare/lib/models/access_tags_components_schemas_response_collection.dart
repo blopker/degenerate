@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_tag.dart';final class AccessTagsComponentsSchemasResponseCollection {const AccessTagsComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_tag.dart';@immutable final class AccessTagsComponentsSchemasResponseCollection {const AccessTagsComponentsSchemasResponseCollection({this.result});
 
 factory AccessTagsComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AccessTagsComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessTag.fromJson(e as Map<String, dynamic>)).toList(),

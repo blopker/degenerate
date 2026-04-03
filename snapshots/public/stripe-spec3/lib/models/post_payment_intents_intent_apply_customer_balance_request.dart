@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentIntentsIntentApplyCustomerBalanceRequest {const PostPaymentIntentsIntentApplyCustomerBalanceRequest({this.amount, this.currency, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentApplyCustomerBalanceRequest {const PostPaymentIntentsIntentApplyCustomerBalanceRequest({this.amount, this.currency, this.expand, });
 
 factory PostPaymentIntentsIntentApplyCustomerBalanceRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentApplyCustomerBalanceRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

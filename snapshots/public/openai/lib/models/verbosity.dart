@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Constrains the verbosity of the model's response. Lower values will result in
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains the verbosity of the model's response. Lower values will result in
 /// more concise responses, while higher values will result in more verbose responses.
 /// Currently supported values are `low`, `medium`, and `high`.
 /// 
-final class Verbosity {const Verbosity._(this.value);
+@immutable final class Verbosity {const Verbosity._(this.value);
 
 factory Verbosity.fromJson(String json) { return switch (json) {
   'low' => low,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_details_card_checks.dart';import 'payment_method_details_card_installments.dart';import 'payment_method_details_card_network_token.dart';import 'payment_method_details_card_wallet.dart';import 'resource_enterprise_features_extended_authorization_extended_authorization.dart';import 'resource_enterprise_features_incremental_authorization_incremental_authorization.dart';import 'resource_enterprise_features_overcapture_overcapture.dart';import 'resource_multicapture.dart';import 'three_d_secure_details_charge.dart';/// Status of a card based on the card issuer.
-final class PaymentMethodDetailsCardRegulatedStatus {const PaymentMethodDetailsCardRegulatedStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_card_checks.dart';import 'payment_method_details_card_installments.dart';import 'payment_method_details_card_network_token.dart';import 'payment_method_details_card_wallet.dart';import 'resource_enterprise_features_extended_authorization_extended_authorization.dart';import 'resource_enterprise_features_incremental_authorization_incremental_authorization.dart';import 'resource_enterprise_features_overcapture_overcapture.dart';import 'resource_multicapture.dart';import 'three_d_secure_details_charge.dart';/// Status of a card based on the card issuer.
+@immutable final class PaymentMethodDetailsCardRegulatedStatus {const PaymentMethodDetailsCardRegulatedStatus._(this.value);
 
 factory PaymentMethodDetailsCardRegulatedStatus.fromJson(String json) { return switch (json) {
   'regulated' => regulated,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsCardRegulatedStatus($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsCard {const PaymentMethodDetailsCard({this.amountAuthorized, this.authorizationCode, this.brand, this.captureBefore, this.checks, this.country, required this.expMonth, required this.expYear, this.extendedAuthorization, this.fingerprint, this.funding, this.incrementalAuthorization, this.installments, this.last4, this.mandate, this.multicapture, this.network, this.networkToken, this.networkTransactionId, this.overcapture, this.regulatedStatus, this.threeDSecure, this.wallet, });
+@immutable final class PaymentMethodDetailsCard {const PaymentMethodDetailsCard({required this.expMonth, required this.expYear, this.amountAuthorized, this.authorizationCode, this.brand, this.captureBefore, this.checks, this.country, this.extendedAuthorization, this.fingerprint, this.funding, this.incrementalAuthorization, this.installments, this.last4, this.mandate, this.multicapture, this.network, this.networkToken, this.networkTransactionId, this.overcapture, this.regulatedStatus, this.threeDSecure, this.wallet, });
 
 factory PaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCard(
   amountAuthorized: json['amount_authorized'] != null ? (json['amount_authorized'] as num).toInt() : null,

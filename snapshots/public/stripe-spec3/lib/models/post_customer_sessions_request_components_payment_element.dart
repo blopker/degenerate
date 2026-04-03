@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_customer_sessions_request_components_payment_element_features.dart';final class PostCustomerSessionsRequestComponentsPaymentElement {const PostCustomerSessionsRequestComponentsPaymentElement({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customer_sessions_request_components_payment_element_features.dart';@immutable final class PostCustomerSessionsRequestComponentsPaymentElement {const PostCustomerSessionsRequestComponentsPaymentElement({required this.enabled, this.features, });
 
 factory PostCustomerSessionsRequestComponentsPaymentElement.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponentsPaymentElement(
   enabled: json['enabled'] as bool,

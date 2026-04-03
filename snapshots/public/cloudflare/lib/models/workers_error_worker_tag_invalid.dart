@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code indicating that the Worker has a tag containing invalid characters.
-final class WorkersErrorWorkerTagInvalidCode {const WorkersErrorWorkerTagInvalidCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker has a tag containing invalid characters.
+@immutable final class WorkersErrorWorkerTagInvalidCode {const WorkersErrorWorkerTagInvalidCode._(this.value);
 
 factory WorkersErrorWorkerTagInvalidCode.fromJson(int json) { return switch (json) {
   100134 => $100134,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersErrorWorkerTagInvalidCode($value)'; } 
  }
-final class WorkersErrorWorkerTagInvalid {const WorkersErrorWorkerTagInvalid({required this.code, required this.message, });
+@immutable final class WorkersErrorWorkerTagInvalid {const WorkersErrorWorkerTagInvalid({required this.code, required this.message, });
 
 factory WorkersErrorWorkerTagInvalid.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerTagInvalid(
   code: WorkersErrorWorkerTagInvalidCode.fromJson((json['code'] as num).toInt()),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.
-final class ZeroTrustGatewayBlockPageSettingsMode {const ZeroTrustGatewayBlockPageSettingsMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.
+@immutable final class ZeroTrustGatewayBlockPageSettingsMode {const ZeroTrustGatewayBlockPageSettingsMode._(this.value);
 
 factory ZeroTrustGatewayBlockPageSettingsMode.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayBlockPageSettingsMode($value)'; } 
  }
 /// Specify block page layout settings.
-final class ZeroTrustGatewayBlockPageSettings {const ZeroTrustGatewayBlockPageSettings({this.backgroundColor, this.enabled, this.footerText, this.headerText, this.includeContext, this.logoPath, this.mailtoAddress, this.mailtoSubject, this.mode = ZeroTrustGatewayBlockPageSettingsMode.$empty, this.name, this.readOnly, this.sourceAccount, this.suppressFooter, this.targetUri, this.version, });
+@immutable final class ZeroTrustGatewayBlockPageSettings {const ZeroTrustGatewayBlockPageSettings({this.backgroundColor, this.enabled, this.footerText, this.headerText, this.includeContext, this.logoPath, this.mailtoAddress, this.mailtoSubject, this.mode = ZeroTrustGatewayBlockPageSettingsMode.$empty, this.name, this.readOnly, this.sourceAccount, this.suppressFooter, this.targetUri, this.version, });
 
 factory ZeroTrustGatewayBlockPageSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayBlockPageSettings(
   backgroundColor: json['background_color'] as String?,

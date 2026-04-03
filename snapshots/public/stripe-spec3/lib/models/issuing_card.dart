@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_card_authorization_controls.dart';import 'issuing_card_fraud_warning.dart';import 'issuing_card_personalization_design.dart';import 'issuing_card_replaced_by.dart';import 'issuing_card_replacement_for.dart';import 'issuing_card_shipping.dart';import 'issuing_card_wallets.dart';import 'issuing_cardholder.dart';import 'issuing_personalization_design.dart';/// The reason why the card was canceled.
-final class IssuingCardCancellationReason {const IssuingCardCancellationReason._(this.value);
+@immutable final class IssuingCardCancellationReason {const IssuingCardCancellationReason._(this.value);
 
 factory IssuingCardCancellationReason.fromJson(String json) { return switch (json) {
   'design_rejected' => designRejected,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardCancellationReason($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class IssuingCardObject {const IssuingCardObject._(this.value);
+@immutable final class IssuingCardObject {const IssuingCardObject._(this.value);
 
 factory IssuingCardObject.fromJson(String json) { return switch (json) {
   'issuing.card' => issuingCard,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardObject($value)'; } 
  }
 /// The reason why the previous card needed to be replaced.
-final class IssuingCardReplacementReason {const IssuingCardReplacementReason._(this.value);
+@immutable final class IssuingCardReplacementReason {const IssuingCardReplacementReason._(this.value);
 
 factory IssuingCardReplacementReason.fromJson(String json) { return switch (json) {
   'damaged' => damaged,
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardReplacementReason($value)'; } 
  }
 /// Whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`.
-final class IssuingCardStatus {const IssuingCardStatus._(this.value);
+@immutable final class IssuingCardStatus {const IssuingCardStatus._(this.value);
 
 factory IssuingCardStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -110,7 +110,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardStatus($value)'; } 
  }
 /// The type of the card.
-final class IssuingCardType {const IssuingCardType._(this.value);
+@immutable final class IssuingCardType {const IssuingCardType._(this.value);
 
 factory IssuingCardType.fromJson(String json) { return switch (json) {
   'physical' => physical,
@@ -135,7 +135,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardType($value)'; } 
  }
 /// You can [create physical or virtual cards](https://docs.stripe.com/issuing) that are issued to cardholders.
-final class IssuingCard {const IssuingCard({required this.brand, this.cancellationReason, required this.cardholder, required this.created, required this.currency, this.cvc, required this.expMonth, required this.expYear, this.financialAccount, required this.id, required this.last4, this.latestFraudWarning, required this.livemode, required this.metadata, this.number, required this.object, this.personalizationDesign, this.replacedBy, this.replacementFor, this.replacementReason, this.secondLine, this.shipping, required this.spendingControls, required this.status, required this.type, this.wallets, });
+@immutable final class IssuingCard {const IssuingCard({required this.brand, required this.cardholder, required this.created, required this.currency, required this.expMonth, required this.expYear, required this.id, required this.last4, required this.livemode, required this.metadata, required this.object, required this.spendingControls, required this.status, required this.type, this.cancellationReason, this.cvc, this.financialAccount, this.latestFraudWarning, this.number, this.personalizationDesign, this.replacedBy, this.replacementFor, this.replacementReason, this.secondLine, this.shipping, this.wallets, });
 
 factory IssuingCard.fromJson(Map<String, dynamic> json) { return IssuingCard(
   brand: json['brand'] as String,

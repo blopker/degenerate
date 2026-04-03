@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProjectsCreateDraftItemForAuthenticatedUserRequest {const ProjectsCreateDraftItemForAuthenticatedUserRequest({required this.title, this.body, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectsCreateDraftItemForAuthenticatedUserRequest {const ProjectsCreateDraftItemForAuthenticatedUserRequest({required this.title, this.body, });
 
 factory ProjectsCreateDraftItemForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return ProjectsCreateDraftItemForAuthenticatedUserRequest(
   title: json['title'] as String,

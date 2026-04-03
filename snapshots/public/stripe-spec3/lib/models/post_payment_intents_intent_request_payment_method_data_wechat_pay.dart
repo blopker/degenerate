@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay {const PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay {const PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay();
 
-factory PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay(
-
-); }
+factory PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay.fromJson(Map<String, dynamic> _) { return const PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay copyWith() { return PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay(
+PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay copyWith() { return const PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentIntentsIntentRequestPaymentMethodDataWechatPay; } 

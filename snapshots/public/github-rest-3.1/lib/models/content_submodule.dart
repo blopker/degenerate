@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'content_submodule_links.dart';final class ContentSubmoduleType {const ContentSubmoduleType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_submodule_links.dart';@immutable final class ContentSubmoduleType {const ContentSubmoduleType._(this.value);
 
 factory ContentSubmoduleType.fromJson(String json) { return switch (json) {
   'submodule' => submodule,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ContentSubmoduleType($value)'; } 
  }
 /// An object describing a submodule
-final class ContentSubmodule {const ContentSubmodule({required this.type, required this.submoduleGitUrl, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
+@immutable final class ContentSubmodule {const ContentSubmodule({required this.type, required this.submoduleGitUrl, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
 
 factory ContentSubmodule.fromJson(Map<String, dynamic> json) { return ContentSubmodule(
   type: ContentSubmoduleType.fromJson(json['type'] as String),

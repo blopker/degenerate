@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss({this.$5OrGreaterEventFraction, this.$10OrGreaterEventFraction, this.$25OrGreaterEventFraction, this.$50OrGreaterEventFraction, this.avg, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss({this.$5OrGreaterEventFraction, this.$10OrGreaterEventFraction, this.$25OrGreaterEventFraction, this.$50OrGreaterEventFraction, this.avg, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulativePacketLoss(
   $5OrGreaterEventFraction: json['5_or_greater_event_fraction'] != null ? (json['5_or_greater_event_fraction'] as num).toInt() : null,

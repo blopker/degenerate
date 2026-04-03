@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestCustomFieldsLabelType {const PostCheckoutSessionsRequestCustomFieldsLabelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestCustomFieldsLabelType {const PostCheckoutSessionsRequestCustomFieldsLabelType._(this.value);
 
 factory PostCheckoutSessionsRequestCustomFieldsLabelType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestCustomFieldsLabelType($value)'; } 
  }
-final class PostCheckoutSessionsRequestCustomFieldsLabel {const PostCheckoutSessionsRequestCustomFieldsLabel({required this.custom, required this.type, });
+@immutable final class PostCheckoutSessionsRequestCustomFieldsLabel {const PostCheckoutSessionsRequestCustomFieldsLabel({required this.custom, required this.type, });
 
 factory PostCheckoutSessionsRequestCustomFieldsLabel.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestCustomFieldsLabel(
   custom: json['custom'] as String,

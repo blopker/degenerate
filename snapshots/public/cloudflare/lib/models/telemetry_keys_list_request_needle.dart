@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Search for a specific substring in any of the events
-final class TelemetryKeysListRequestNeedle {const TelemetryKeysListRequestNeedle({this.isRegex, this.matchCase, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Search for a specific substring in any of the events
+@immutable final class TelemetryKeysListRequestNeedle {const TelemetryKeysListRequestNeedle({required this.value, this.isRegex, this.matchCase, });
 
 factory TelemetryKeysListRequestNeedle.fromJson(Map<String, dynamic> json) { return TelemetryKeysListRequestNeedle(
   isRegex: json['isRegex'] as bool?,

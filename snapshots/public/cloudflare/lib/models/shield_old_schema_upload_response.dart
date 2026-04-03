@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_old_public_schema.dart';import 'shield_old_schema_upload_details_warnings_only.dart';final class ShieldOldSchemaUploadResponse {const ShieldOldSchemaUploadResponse({required this.schema, this.uploadDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_public_schema.dart';import 'shield_old_schema_upload_details_warnings_only.dart';@immutable final class ShieldOldSchemaUploadResponse {const ShieldOldSchemaUploadResponse({required this.schema, this.uploadDetails, });
 
 factory ShieldOldSchemaUploadResponse.fromJson(Map<String, dynamic> json) { return ShieldOldSchemaUploadResponse(
   schema: ShieldOldPublicSchema.fromJson(json['schema'] as Map<String, dynamic>),

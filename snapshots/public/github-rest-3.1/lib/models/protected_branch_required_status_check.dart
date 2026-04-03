@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'protected_branch_required_status_check_checks.dart';/// Protected Branch Required Status Check
-final class ProtectedBranchRequiredStatusCheck {const ProtectedBranchRequiredStatusCheck({this.url, this.enforcementLevel, required this.contexts, required this.checks, this.contextsUrl, this.strict, });
+@immutable final class ProtectedBranchRequiredStatusCheck {const ProtectedBranchRequiredStatusCheck({required this.contexts, required this.checks, this.url, this.enforcementLevel, this.contextsUrl, this.strict, });
 
 factory ProtectedBranchRequiredStatusCheck.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredStatusCheck(
   url: json['url'] as String?,

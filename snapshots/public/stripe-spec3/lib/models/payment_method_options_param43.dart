@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentMethodOptionsParam43PreferredLanguage {const PaymentMethodOptionsParam43PreferredLanguage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam43PreferredLanguage {const PaymentMethodOptionsParam43PreferredLanguage._(this.value);
 
 factory PaymentMethodOptionsParam43PreferredLanguage.fromJson(String json) { return switch (json) {
   'de' => de,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam43PreferredLanguage($value)'; } 
  }
-final class PaymentMethodOptionsParam43SetupFutureUsage {const PaymentMethodOptionsParam43SetupFutureUsage._(this.value);
+@immutable final class PaymentMethodOptionsParam43SetupFutureUsage {const PaymentMethodOptionsParam43SetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsParam43SetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam43SetupFutureUsage($value)'; } 
  }
-final class PaymentMethodOptionsParam43 {const PaymentMethodOptionsParam43({this.preferredLanguage, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsParam43 {const PaymentMethodOptionsParam43({this.preferredLanguage, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam43.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam43(
   preferredLanguage: json['preferred_language'] != null ? PaymentMethodOptionsParam43PreferredLanguage.fromJson(json['preferred_language'] as String) : null,

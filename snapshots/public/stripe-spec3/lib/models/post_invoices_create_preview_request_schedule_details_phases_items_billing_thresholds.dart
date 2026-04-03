@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_billing_thresholds_param3.dart';final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholdsVariant2 {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholdsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_billing_thresholds_param3.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholdsVariant2 {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholdsVariant2._(this.value);
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholdsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

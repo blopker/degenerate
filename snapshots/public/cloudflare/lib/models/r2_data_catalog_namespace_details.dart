@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains namespace with metadata details.
-final class R2DataCatalogNamespaceDetails {const R2DataCatalogNamespaceDetails({this.createdAt, required this.namespace, required this.namespaceUuid, this.updatedAt, });
+@immutable final class R2DataCatalogNamespaceDetails {const R2DataCatalogNamespaceDetails({required this.namespace, required this.namespaceUuid, this.createdAt, this.updatedAt, });
 
 factory R2DataCatalogNamespaceDetails.fromJson(Map<String, dynamic> json) { return R2DataCatalogNamespaceDetails(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

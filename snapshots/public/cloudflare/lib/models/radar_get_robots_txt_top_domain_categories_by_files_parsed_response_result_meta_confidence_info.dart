@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_robots_txt_top_domain_categories_by_files_parsed_response_result_meta_confidence_info_annotations.dart';final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfo {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_robots_txt_top_domain_categories_by_files_parsed_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfo {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

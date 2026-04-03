@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_visibility_mnm_mnm_config.dart';final class MagicVisibilityMnmMnmConfigSingleResponse {const MagicVisibilityMnmMnmConfigSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_config.dart';@immutable final class MagicVisibilityMnmMnmConfigSingleResponse {const MagicVisibilityMnmMnmConfigSingleResponse({this.result});
 
 factory MagicVisibilityMnmMnmConfigSingleResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmConfigSingleResponse(
   result: json['result'] != null ? MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>) : null,

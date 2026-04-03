@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The origin ipv4/ipv6 address or domain name mapped to its health data.
-final class LoadBalancingOriginHealthData {const LoadBalancingOriginHealthData({this.failureReason, this.healthy, this.responseCode, this.rtt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The origin ipv4/ipv6 address or domain name mapped to its health data.
+@immutable final class LoadBalancingOriginHealthData {const LoadBalancingOriginHealthData({this.failureReason, this.healthy, this.responseCode, this.rtt, });
 
 factory LoadBalancingOriginHealthData.fromJson(Map<String, dynamic> json) { return LoadBalancingOriginHealthData(
   failureReason: json['failure_reason'] as String?,

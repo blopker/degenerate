@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_token_configuration.dart';final class TokenValidationConfigCreateResponse {const TokenValidationConfigCreateResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_token_configuration.dart';@immutable final class TokenValidationConfigCreateResponse {const TokenValidationConfigCreateResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory TokenValidationConfigCreateResponse.fromJson(Map<String, dynamic> json) { return TokenValidationConfigCreateResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The ranker to use for the file search. If not specified will use the `auto` ranker.
-final class FileSearchRanker {const FileSearchRanker._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ranker to use for the file search. If not specified will use the `auto` ranker.
+@immutable final class FileSearchRanker {const FileSearchRanker._(this.value);
 
 factory FileSearchRanker.fromJson(String json) { return switch (json) {
   'auto' => auto,

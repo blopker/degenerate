@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `input_audio_buffer.timeout_triggered`.
-final class RealtimeServerEventInputAudioBufferTimeoutTriggeredType {const RealtimeServerEventInputAudioBufferTimeoutTriggeredType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.timeout_triggered`.
+@immutable final class RealtimeServerEventInputAudioBufferTimeoutTriggeredType {const RealtimeServerEventInputAudioBufferTimeoutTriggeredType._(this.value);
 
 factory RealtimeServerEventInputAudioBufferTimeoutTriggeredType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.timeout_triggered' => inputAudioBufferTimeoutTriggered,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 /// that didn't trigger VAD but is still detected by the model, so the model may respond with
 /// something relevant to the conversation or a prompt to continue speaking.
 /// 
-final class RealtimeServerEventInputAudioBufferTimeoutTriggered {const RealtimeServerEventInputAudioBufferTimeoutTriggered({required this.eventId, required this.type, required this.audioStartMs, required this.audioEndMs, required this.itemId, });
+@immutable final class RealtimeServerEventInputAudioBufferTimeoutTriggered {const RealtimeServerEventInputAudioBufferTimeoutTriggered({required this.eventId, required this.type, required this.audioStartMs, required this.audioEndMs, required this.itemId, });
 
 factory RealtimeServerEventInputAudioBufferTimeoutTriggered.fromJson(Map<String, dynamic> json) { return RealtimeServerEventInputAudioBufferTimeoutTriggered(
   eventId: json['event_id'] as String,

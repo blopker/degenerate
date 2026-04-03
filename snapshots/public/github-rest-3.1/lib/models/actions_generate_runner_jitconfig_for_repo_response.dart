@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'runner.dart';final class ActionsGenerateRunnerJitconfigForRepoResponse {const ActionsGenerateRunnerJitconfigForRepoResponse({required this.runner, required this.encodedJitConfig, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'runner.dart';@immutable final class ActionsGenerateRunnerJitconfigForRepoResponse {const ActionsGenerateRunnerJitconfigForRepoResponse({required this.runner, required this.encodedJitConfig, });
 
 factory ActionsGenerateRunnerJitconfigForRepoResponse.fromJson(Map<String, dynamic> json) { return ActionsGenerateRunnerJitconfigForRepoResponse(
   runner: Runner.fromJson(json['runner'] as Map<String, dynamic>),

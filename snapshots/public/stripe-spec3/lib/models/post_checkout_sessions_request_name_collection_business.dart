@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestNameCollectionBusiness {const PostCheckoutSessionsRequestNameCollectionBusiness({required this.enabled, this.optional, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestNameCollectionBusiness {const PostCheckoutSessionsRequestNameCollectionBusiness({required this.enabled, this.optional, });
 
 factory PostCheckoutSessionsRequestNameCollectionBusiness.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestNameCollectionBusiness(
   enabled: json['enabled'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBillingPortalConfigurationsRequestFeaturesInvoiceHistory {const PostBillingPortalConfigurationsRequestFeaturesInvoiceHistory({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesInvoiceHistory {const PostBillingPortalConfigurationsRequestFeaturesInvoiceHistory({required this.enabled});
 
 factory PostBillingPortalConfigurationsRequestFeaturesInvoiceHistory.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesInvoiceHistory(
   enabled: json['enabled'] as bool,

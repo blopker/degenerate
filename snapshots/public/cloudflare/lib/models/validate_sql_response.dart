@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_worker_pipelines_common_success.dart';import 'validate_sql_response_result.dart';final class ValidateSqlResponse {const ValidateSqlResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_worker_pipelines_common_success.dart';import 'validate_sql_response_result.dart';@immutable final class ValidateSqlResponse {const ValidateSqlResponse({required this.result, required this.success, });
 
 factory ValidateSqlResponse.fromJson(Map<String, dynamic> json) { return ValidateSqlResponse(
   result: ValidateSqlResponseResult.fromJson(json['result'] as Map<String, dynamic>),

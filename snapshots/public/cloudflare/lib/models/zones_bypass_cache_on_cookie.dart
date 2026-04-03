@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Bypass cache and fetch resources from the origin server if a regular
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Bypass cache and fetch resources from the origin server if a regular
 /// expression matches against a cookie name present in the request.
 /// 
-final class ZonesBypassCacheOnCookieId {const ZonesBypassCacheOnCookieId._(this.value);
+@immutable final class ZonesBypassCacheOnCookieId {const ZonesBypassCacheOnCookieId._(this.value);
 
 factory ZonesBypassCacheOnCookieId.fromJson(String json) { return switch (json) {
   'bypass_cache_on_cookie' => bypassCacheOnCookie,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesBypassCacheOnCookieId($value)'; } 
  }
-final class ZonesBypassCacheOnCookie {const ZonesBypassCacheOnCookie({this.id, this.value, });
+@immutable final class ZonesBypassCacheOnCookie {const ZonesBypassCacheOnCookie({this.id, this.value, });
 
 factory ZonesBypassCacheOnCookie.fromJson(Map<String, dynamic> json) { return ZonesBypassCacheOnCookie(
   id: json['id'] != null ? ZonesBypassCacheOnCookieId.fromJson(json['id'] as String) : null,

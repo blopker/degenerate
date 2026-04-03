@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_embedded_financial_account_features.dart';/// 
-final class ConnectEmbeddedFinancialAccountConfigClaim {const ConnectEmbeddedFinancialAccountConfigClaim({required this.enabled, required this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_embedded_financial_account_features.dart';/// 
+@immutable final class ConnectEmbeddedFinancialAccountConfigClaim {const ConnectEmbeddedFinancialAccountConfigClaim({required this.enabled, required this.features, });
 
 factory ConnectEmbeddedFinancialAccountConfigClaim.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedFinancialAccountConfigClaim(
   enabled: json['enabled'] as bool,

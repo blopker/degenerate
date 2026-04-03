@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_har_response2_log_pages_page_timings.dart';final class UrlscannerGetScanHarResponse2LogPages {const UrlscannerGetScanHarResponse2LogPages({required this.id, required this.pageTimings, required this.startedDateTime, required this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response2_log_pages_page_timings.dart';@immutable final class UrlscannerGetScanHarResponse2LogPages {const UrlscannerGetScanHarResponse2LogPages({required this.id, required this.pageTimings, required this.startedDateTime, required this.title, });
 
 factory UrlscannerGetScanHarResponse2LogPages.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2LogPages(
   id: json['id'] as String,

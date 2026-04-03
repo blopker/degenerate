@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZarazZarazConfigBaseConsentPurposesValue {const ZarazZarazConfigBaseConsentPurposesValue({required this.description, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazZarazConfigBaseConsentPurposesValue {const ZarazZarazConfigBaseConsentPurposesValue({required this.description, required this.name, });
 
 factory ZarazZarazConfigBaseConsentPurposesValue.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigBaseConsentPurposesValue(
   description: json['description'] as String,

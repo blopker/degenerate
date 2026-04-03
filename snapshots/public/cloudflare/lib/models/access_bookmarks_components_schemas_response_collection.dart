@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_bookmarks.dart';final class AccessBookmarksComponentsSchemasResponseCollection {const AccessBookmarksComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_bookmarks.dart';@immutable final class AccessBookmarksComponentsSchemasResponseCollection {const AccessBookmarksComponentsSchemasResponseCollection({this.result});
 
 factory AccessBookmarksComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return AccessBookmarksComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessBookmarks.fromJson(e as Map<String, dynamic>)).toList(),

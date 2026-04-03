@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'linked_account_options_common.dart';/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'linked_account_options_common.dart';/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
 /// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
 /// 
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage {const CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage._(this.value);
+@immutable final class CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage {const CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage._(this.value);
 
 factory CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutUsBankAccountPaymentMethodOptionsSetupFutureUsage($value)'; } 
  }
 /// Bank account verification method.
-final class CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod {const CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod._(this.value);
+@immutable final class CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod {const CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod._(this.value);
 
 factory CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutUsBankAccountPaymentMethodOptionsVerificationMethod($value)'; } 
  }
 /// 
-final class CheckoutUsBankAccountPaymentMethodOptions {const CheckoutUsBankAccountPaymentMethodOptions({this.financialConnections, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
+@immutable final class CheckoutUsBankAccountPaymentMethodOptions {const CheckoutUsBankAccountPaymentMethodOptions({this.financialConnections, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
 
 factory CheckoutUsBankAccountPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutUsBankAccountPaymentMethodOptions(
   financialConnections: json['financial_connections'] != null ? LinkedAccountOptionsCommon.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,

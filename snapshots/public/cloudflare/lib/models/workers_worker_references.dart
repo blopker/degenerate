@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_worker_references_dispatch_namespace_outbounds.dart';import 'workers_worker_references_domains.dart';import 'workers_worker_references_durable_objects.dart';import 'workers_worker_references_queues.dart';import 'workers_worker_references_workers.dart';/// Other resources that reference the Worker and depend on it existing.
-final class WorkersWorkerReferences {const WorkersWorkerReferences({required this.dispatchNamespaceOutbounds, required this.domains, required this.durableObjects, required this.queues, required this.workers, });
+@immutable final class WorkersWorkerReferences {const WorkersWorkerReferences({required this.dispatchNamespaceOutbounds, required this.domains, required this.durableObjects, required this.queues, required this.workers, });
 
 factory WorkersWorkerReferences.fromJson(Map<String, dynamic> json) { return WorkersWorkerReferences(
   dispatchNamespaceOutbounds: (json['dispatch_namespace_outbounds'] as List<dynamic>).map((e) => WorkersWorkerReferencesDispatchNamespaceOutbounds.fromJson(e as Map<String, dynamic>)).toList(),

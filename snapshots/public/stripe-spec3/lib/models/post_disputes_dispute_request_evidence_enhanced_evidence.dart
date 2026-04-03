@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enhanced_evidence2.dart';final class PostDisputesDisputeRequestEvidenceEnhancedEvidenceVariant2 {const PostDisputesDisputeRequestEvidenceEnhancedEvidenceVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enhanced_evidence2.dart';@immutable final class PostDisputesDisputeRequestEvidenceEnhancedEvidenceVariant2 {const PostDisputesDisputeRequestEvidenceEnhancedEvidenceVariant2._(this.value);
 
 factory PostDisputesDisputeRequestEvidenceEnhancedEvidenceVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

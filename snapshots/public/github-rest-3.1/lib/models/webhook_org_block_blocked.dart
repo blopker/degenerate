@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_user.dart';final class WebhookOrgBlockBlockedAction {const WebhookOrgBlockBlockedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_user.dart';@immutable final class WebhookOrgBlockBlockedAction {const WebhookOrgBlockBlockedAction._(this.value);
 
 factory WebhookOrgBlockBlockedAction.fromJson(String json) { return switch (json) {
   'blocked' => blocked,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookOrgBlockBlockedAction($value)'; } 
  }
-final class WebhookOrgBlockBlocked {const WebhookOrgBlockBlocked({required this.action, required this.blockedUser, this.enterprise, this.installation, required this.organization, this.repository, required this.sender, });
+@immutable final class WebhookOrgBlockBlocked {const WebhookOrgBlockBlocked({required this.action, required this.blockedUser, required this.organization, required this.sender, this.enterprise, this.installation, this.repository, });
 
 factory WebhookOrgBlockBlocked.fromJson(Map<String, dynamic> json) { return WebhookOrgBlockBlocked(
   action: WebhookOrgBlockBlockedAction.fromJson(json['action'] as String),

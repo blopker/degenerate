@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_components_ua_rule_id.dart';final class UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponseResult {const UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_components_ua_rule_id.dart';@immutable final class UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponseResult {const UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponseResult({this.id});
 
 factory UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponseResult.fromJson(Map<String, dynamic> json) { return UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponseResult(
   id: json['id'] != null ? FirewallComponentsUaRuleId.fromJson(json['id'] as String) : null,

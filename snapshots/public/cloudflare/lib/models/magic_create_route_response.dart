@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_route.dart';final class MagicCreateRouteResponse {const MagicCreateRouteResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_route.dart';@immutable final class MagicCreateRouteResponse {const MagicCreateRouteResponse({this.result});
 
 factory MagicCreateRouteResponse.fromJson(Map<String, dynamic> json) { return MagicCreateRouteResponse(
   result: json['result'] != null ? MagicRoute.fromJson(json['result'] as Map<String, dynamic>) : null,

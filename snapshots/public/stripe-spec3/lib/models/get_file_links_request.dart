@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetFileLinksRequest {const GetFileLinksRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetFileLinksRequest {const GetFileLinksRequest();
 
-factory GetFileLinksRequest.fromJson(Map<String, dynamic> json) { return GetFileLinksRequest(
-
-); }
+factory GetFileLinksRequest.fromJson(Map<String, dynamic> _) { return const GetFileLinksRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetFileLinksRequest copyWith() { return GetFileLinksRequest(
+GetFileLinksRequest copyWith() { return const GetFileLinksRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetFileLinksRequest; } 

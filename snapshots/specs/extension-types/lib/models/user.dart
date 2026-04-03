@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'user_id.dart';/// An ISO 8601 timestamp.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'user_id.dart';/// An ISO 8601 timestamp.
 extension type Timestamp(DateTime value) {
 factory Timestamp.fromJson(String json) => Timestamp(DateTime.parse(json));
 
@@ -26,7 +26,7 @@ factory Active.fromJson(bool json) => Active(json);
 bool toJson() => value;
 
 }
-final class User {const User({required this.id, required this.name, required this.createdAt, this.score, this.ratio, this.active, });
+@immutable final class User {const User({required this.id, required this.name, required this.createdAt, this.score, this.ratio, this.active, });
 
 factory User.fromJson(Map<String, dynamic> json) { return User(
   id: UserId.fromJson(json['id'] as String),

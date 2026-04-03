@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'audit_log_actor_session.dart';import 'key2.dart';/// The type of actor. Is either `session` or `api_key`.
-final class AuditLogActorType {const AuditLogActorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_actor_session.dart';import 'key2.dart';/// The type of actor. Is either `session` or `api_key`.
+@immutable final class AuditLogActorType {const AuditLogActorType._(this.value);
 
 factory AuditLogActorType.fromJson(String json) { return switch (json) {
   'session' => session,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AuditLogActorType($value)'; } 
  }
 /// The actor who performed the audit logged action.
-final class AuditLogActor {const AuditLogActor({this.type, this.session, this.apiKey, });
+@immutable final class AuditLogActor {const AuditLogActor({this.type, this.session, this.apiKey, });
 
 factory AuditLogActor.fromJson(Map<String, dynamic> json) { return AuditLogActor(
   type: json['type'] != null ? AuditLogActorType.fromJson(json['type'] as String) : null,

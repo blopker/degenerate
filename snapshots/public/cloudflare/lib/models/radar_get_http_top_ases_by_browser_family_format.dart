@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Format in which results will be returned.
-final class RadarGetHttpTopAsesByBrowserFamilyFormat {const RadarGetHttpTopAsesByBrowserFamilyFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
+@immutable final class RadarGetHttpTopAsesByBrowserFamilyFormat {const RadarGetHttpTopAsesByBrowserFamilyFormat._(this.value);
 
 factory RadarGetHttpTopAsesByBrowserFamilyFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,

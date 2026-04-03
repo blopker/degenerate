@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_risk_level.dart';final class DlpRiskEvent {const DlpRiskEvent({this.eventDetails, required this.id, required this.name, required this.riskLevel, required this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_risk_level.dart';@immutable final class DlpRiskEvent {const DlpRiskEvent({required this.id, required this.name, required this.riskLevel, required this.timestamp, this.eventDetails, });
 
 factory DlpRiskEvent.fromJson(Map<String, dynamic> json) { return DlpRiskEvent(
   eventDetails: json['event_details'],

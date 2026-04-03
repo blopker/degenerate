@@ -1,13 +1,15 @@
-import '../ir/ir_types.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
 
 const _textPlainMediaType = 'text/plain';
 const _multipartFormDataMediaType = 'multipart/form-data';
 const _formUrlencodedMediaType = 'application/x-www-form-urlencoded';
 
+/// Normalize a media type by stripping parameters.
 String normalizeMediaType(String mediaType) {
   return mediaType.split(';').first.trim().toLowerCase();
 }
 
+/// Whether the media type is JSON-like.
 bool isJsonLikeMediaType(String mediaType) {
   final normalized = normalizeMediaType(mediaType);
   return normalized == 'application/json' ||
@@ -42,22 +44,27 @@ bool isJsonLikeMediaType(String mediaType) {
   return (first.key, first.value);
 }
 
+/// Whether the media type is multipart/form-data.
 bool isMultipartMediaType(String mediaType) {
   return normalizeMediaType(mediaType) == _multipartFormDataMediaType;
 }
 
+/// Whether the media type is form-urlencoded.
 bool isFormUrlencodedMediaType(String mediaType) {
   return normalizeMediaType(mediaType) == _formUrlencodedMediaType;
 }
 
+/// Whether the media type is application/octet-stream.
 bool isOctetStreamMediaType(String mediaType) {
   return normalizeMediaType(mediaType) == 'application/octet-stream';
 }
 
+/// Whether the media type is text/event-stream (SSE).
 bool isEventStreamMediaType(String mediaType) {
   return normalizeMediaType(mediaType) == 'text/event-stream';
 }
 
+/// Whether the media type is JSONL/NDJSON.
 bool isJsonlMediaType(String mediaType) {
   final normalized = normalizeMediaType(mediaType);
   return normalized == 'application/jsonl' ||
@@ -66,7 +73,13 @@ bool isJsonlMediaType(String mediaType) {
 }
 
 /// The kind of streaming format.
-enum StreamKind { sse, jsonl }
+enum StreamKind {
+  /// Server-Sent Events.
+  sse,
+
+  /// JSON Lines / NDJSON.
+  jsonl,
+}
 
 /// Find the `text/event-stream` response content for an operation, if any.
 (String, IrMediaType)? eventStreamContent(IrOperation op) {

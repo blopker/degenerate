@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The payload used to update the organization settings.
-final class AuditLogOrganizationUpdatedChangesRequested {const AuditLogOrganizationUpdatedChangesRequested({this.title, this.description, this.name, this.threadsUiVisibility, this.usageDashboardVisibility, this.apiCallLogging, this.apiCallLoggingProjectIds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the organization settings.
+@immutable final class AuditLogOrganizationUpdatedChangesRequested {const AuditLogOrganizationUpdatedChangesRequested({this.title, this.description, this.name, this.threadsUiVisibility, this.usageDashboardVisibility, this.apiCallLogging, this.apiCallLoggingProjectIds, });
 
 factory AuditLogOrganizationUpdatedChangesRequested.fromJson(Map<String, dynamic> json) { return AuditLogOrganizationUpdatedChangesRequested(
   title: json['title'] as String?,

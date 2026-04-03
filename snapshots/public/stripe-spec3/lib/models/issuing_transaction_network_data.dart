@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingTransactionNetworkData {const IssuingTransactionNetworkData({this.authorizationCode, this.processingDate, this.transactionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingTransactionNetworkData {const IssuingTransactionNetworkData({this.authorizationCode, this.processingDate, this.transactionId, });
 
 factory IssuingTransactionNetworkData.fromJson(Map<String, dynamic> json) { return IssuingTransactionNetworkData(
   authorizationCode: json['authorization_code'] as String?,

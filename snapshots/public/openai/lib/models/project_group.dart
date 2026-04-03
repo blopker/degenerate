@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Always `project.group`.
-final class ProjectGroupObject {const ProjectGroupObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `project.group`.
+@immutable final class ProjectGroupObject {const ProjectGroupObject._(this.value);
 
 factory ProjectGroupObject.fromJson(String json) { return switch (json) {
   'project.group' => projectGroup,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectGroupObject($value)'; } 
  }
 /// Details about a group's membership in a project.
-final class ProjectGroup {const ProjectGroup({required this.object, required this.projectId, required this.groupId, required this.groupName, required this.createdAt, });
+@immutable final class ProjectGroup {const ProjectGroup({required this.object, required this.projectId, required this.groupId, required this.groupName, required this.createdAt, });
 
 factory ProjectGroup.fromJson(Map<String, dynamic> json) { return ProjectGroup(
   object: ProjectGroupObject.fromJson(json['object'] as String),

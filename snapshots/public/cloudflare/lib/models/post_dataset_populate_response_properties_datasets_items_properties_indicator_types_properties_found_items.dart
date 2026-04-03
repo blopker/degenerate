@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesFoundItems {const PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesFoundItems({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesFoundItems {const PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesFoundItems({required this.type});
 
 factory PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesFoundItems.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesFoundItems(
   type: json['type'] as String,

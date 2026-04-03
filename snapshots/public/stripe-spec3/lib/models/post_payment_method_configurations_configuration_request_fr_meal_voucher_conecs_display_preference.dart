@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestFrMealVoucherConecsDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Instruction for deleting an existing file via the apply_patch tool.
-final class ApplyPatchDeleteFileOperationParam {const ApplyPatchDeleteFileOperationParam({this.type = 'delete_file', required this.path, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Instruction for deleting an existing file via the apply_patch tool.
+@immutable final class ApplyPatchDeleteFileOperationParam {const ApplyPatchDeleteFileOperationParam({required this.path, this.type = 'delete_file', });
 
 factory ApplyPatchDeleteFileOperationParam.fromJson(Map<String, dynamic> json) { return ApplyPatchDeleteFileOperationParam(
   type: json['type'] as String,

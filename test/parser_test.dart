@@ -1,8 +1,7 @@
 import 'dart:io';
 
-import 'package:test/test.dart';
-
 import 'package:degenerate/src/parser/openapi_document.dart';
+import 'package:test/test.dart';
 
 void main() {
   late OpenApiDocument doc;
@@ -55,7 +54,7 @@ void main() {
       final petMap = pet as Map<String, dynamic>;
       expect(petMap['type'], equals('object'));
       expect(
-        (petMap['properties'] as Map<String, dynamic>),
+        petMap['properties'] as Map<String, dynamic>,
         contains('name'),
       );
     });
@@ -65,7 +64,7 @@ void main() {
       expect(error, isA<Map<String, dynamic>>());
       final errorMap = error as Map<String, dynamic>;
       expect(
-        (errorMap['required'] as List),
+        errorMap['required'] as List,
         containsAll(['code', 'message']),
       );
     });
@@ -114,17 +113,17 @@ void main() {
 
   group('missing components', () {
     test('returns empty schemas when components is missing', () {
-      final minimal = OpenApiDocument({'openapi': '3.0.0', 'info': {}});
+      final minimal = OpenApiDocument({'openapi': '3.0.0', 'info': <String, dynamic>{}});
       expect(minimal.schemas, isEmpty);
     });
 
     test('returns empty paths when paths is missing', () {
-      final minimal = OpenApiDocument({'openapi': '3.0.0', 'info': {}});
+      final minimal = OpenApiDocument({'openapi': '3.0.0', 'info': <String, dynamic>{}});
       expect(minimal.paths, isEmpty);
     });
 
     test('returns empty servers when servers is missing', () {
-      final minimal = OpenApiDocument({'openapi': '3.0.0', 'info': {}});
+      final minimal = OpenApiDocument({'openapi': '3.0.0', 'info': <String, dynamic>{}});
       expect(minimal.servers, isEmpty);
     });
   });

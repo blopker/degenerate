@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class DeletedAccountObject {const DeletedAccountObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class DeletedAccountObject {const DeletedAccountObject._(this.value);
 
 factory DeletedAccountObject.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeletedAccountObject($value)'; } 
  }
 /// 
-final class DeletedAccount {const DeletedAccount({required this.deleted, required this.id, required this.object, });
+@immutable final class DeletedAccount {const DeletedAccount({required this.deleted, required this.id, required this.object, });
 
 factory DeletedAccount.fromJson(Map<String, dynamic> json) { return DeletedAccount(
   deleted: json['deleted'] as bool,

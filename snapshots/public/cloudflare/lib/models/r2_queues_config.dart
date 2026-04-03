@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_queues_config_rules.dart';final class R2QueuesConfig {const R2QueuesConfig({this.queueId, this.queueName, this.rules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_queues_config_rules.dart';@immutable final class R2QueuesConfig {const R2QueuesConfig({this.queueId, this.queueName, this.rules, });
 
 factory R2QueuesConfig.fromJson(Map<String, dynamic> json) { return R2QueuesConfig(
   queueId: json['queueId'] as String?,

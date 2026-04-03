@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsCardChecks {const PaymentMethodDetailsCardChecks({this.addressLine1Check, this.addressPostalCodeCheck, this.cvcCheck, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsCardChecks {const PaymentMethodDetailsCardChecks({this.addressLine1Check, this.addressPostalCodeCheck, this.cvcCheck, });
 
 factory PaymentMethodDetailsCardChecks.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardChecks(
   addressLine1Check: json['address_line1_check'] as String?,

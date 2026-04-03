@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_subscriptions_subscription_exposed_id_request_cancellation_details_comment.dart';final class DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback {const DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_subscriptions_subscription_exposed_id_request_cancellation_details_comment.dart';@immutable final class DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback {const DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._(this.value);
 
 factory DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -46,7 +46,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback($value)'; } 
  }
 /// Details about why this subscription was cancelled
-final class DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails {const DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails({this.comment, this.feedback, });
+@immutable final class DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails {const DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails({this.comment, this.feedback, });
 
 factory DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails.fromJson(Map<String, dynamic> json) { return DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails(
   comment: json['comment'] != null ? OneOf2.parse(json['comment'], fromA: (v) => v as String, fromB: (v) => DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2.fromJson(v as String),) : null,

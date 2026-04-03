@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TenantMembership {const TenantMembership({required this.userEmail, required this.userName, required this.userTag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TenantMembership {const TenantMembership({required this.userEmail, required this.userName, required this.userTag, });
 
 factory TenantMembership.fromJson(Map<String, dynamic> json) { return TenantMembership(
   userEmail: json['user_email'] as String,

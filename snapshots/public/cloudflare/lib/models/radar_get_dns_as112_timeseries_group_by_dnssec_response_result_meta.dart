@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_timeseries_group_by_dnssec_response_result_meta_confidence_info.dart';import 'radar_get_dns_as112_timeseries_group_by_dnssec_response_result_meta_date_range.dart';import 'radar_get_dns_as112_timeseries_group_by_dnssec_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-final class RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaAggInterval {const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaAggInterval._(this.value);
+@immutable final class RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaAggInterval {const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaAggInterval._(this.value);
 
 factory RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaAggInterval($value)'; } 
  }
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaNormalization {const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaNormalization {const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaNormalization._(this.value);
 
 factory RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMeta {const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMeta {const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMeta(
   aggInterval: RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),

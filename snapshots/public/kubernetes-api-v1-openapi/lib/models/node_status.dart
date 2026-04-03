@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'attached_volume.dart';import 'container_image.dart';import 'node_address.dart';import 'node_condition.dart';import 'node_config_status.dart';import 'node_daemon_endpoints.dart';import 'node_features.dart';import 'node_runtime_handler.dart';import 'node_system_info.dart';import 'resource_quantity.dart';/// NodeStatus is information about the current status of a node.
-final class NodeStatus {const NodeStatus({this.addresses, this.allocatable, this.capacity, this.conditions, this.config, this.daemonEndpoints, this.declaredFeatures, this.features, this.images, this.nodeInfo, this.phase, this.runtimeHandlers, this.volumesAttached, this.volumesInUse, });
+@immutable final class NodeStatus {const NodeStatus({this.addresses, this.allocatable, this.capacity, this.conditions, this.config, this.daemonEndpoints, this.declaredFeatures, this.features, this.images, this.nodeInfo, this.phase, this.runtimeHandlers, this.volumesAttached, this.volumesInUse, });
 
 factory NodeStatus.fromJson(Map<String, dynamic> json) { return NodeStatus(
   addresses: (json['addresses'] as List<dynamic>?)?.map((e) => NodeAddress.fromJson(e as Map<String, dynamic>)).toList(),

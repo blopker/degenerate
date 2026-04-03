@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_messages2.dart';import 'teams_devices_result_info.dart';final class ResponseCollection38 {const ResponseCollection38({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_messages2.dart';import 'teams_devices_result_info.dart';@immutable final class ResponseCollection38 {const ResponseCollection38({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ResponseCollection38.fromJson(Map<String, dynamic> json) { return ResponseCollection38(
   errors: (json['errors'] as List<dynamic>).map((e) => TeamsDevicesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TeamsDevicesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  result: (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? TeamsDevicesResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
 ); }

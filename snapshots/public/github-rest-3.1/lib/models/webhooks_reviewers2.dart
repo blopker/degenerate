@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_reviewers2_reviewer.dart';final class WebhooksReviewers2Type {const WebhooksReviewers2Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_reviewers2_reviewer.dart';@immutable final class WebhooksReviewers2Type {const WebhooksReviewers2Type._(this.value);
 
 factory WebhooksReviewers2Type.fromJson(String json) { return switch (json) {
   'User' => user,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksReviewers2Type($value)'; } 
  }
-final class WebhooksReviewers2 {const WebhooksReviewers2({this.reviewer, this.type, });
+@immutable final class WebhooksReviewers2 {const WebhooksReviewers2({this.reviewer, this.type, });
 
 factory WebhooksReviewers2.fromJson(Map<String, dynamic> json) { return WebhooksReviewers2(
   reviewer: json['reviewer'] != null ? WebhooksReviewers2Reviewer.fromJson(json['reviewer'] as Map<String, dynamic>) : null,

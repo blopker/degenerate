@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCustomersCustomerSubscriptionsRequestCancelAtVariant2 {const PostCustomersCustomerSubscriptionsRequestCancelAtVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsRequestCancelAtVariant2 {const PostCustomersCustomerSubscriptionsRequestCancelAtVariant2._(this.value);
 
 factory PostCustomersCustomerSubscriptionsRequestCancelAtVariant2.fromJson(String json) { return switch (json) {
   'max_period_end' => maxPeriodEnd,

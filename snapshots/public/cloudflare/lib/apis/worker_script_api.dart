@@ -114,7 +114,7 @@ throw UnsupportedError('Cannot decode multipart/form-data response into Map<Stri
 /// Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}`
-Future<ApiResult<WorkersScriptResponseUpload, Never>> workerScriptUploadWorkerModule({required WorkersIdentifier accountId, required WorkersScriptName scriptName, WorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, required WorkersMultipartScript body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersScriptResponseUpload, Never>> workerScriptUploadWorkerModule({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersMultipartScript body, WorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bindingsInherit != null) {
   queryParameters['bindings_inherit'] = bindingsInherit.toJson();
@@ -171,7 +171,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -204,7 +204,7 @@ return execute(
 /// Put script content without touching config or metadata.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/content`
-Future<ApiResult<WorkersScriptResponse, Never>> workerScriptPutContent({required WorkersIdentifier accountId, required WorkersScriptName scriptName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerScriptPutContentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptResponse, Never>> workerScriptPutContent({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptPutContentRequest body, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (cfWorkerBodyPart != null) {
   headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
 }
@@ -402,7 +402,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_transaction_credit_grant.dart';import 'billing_credit_balance_transaction_test_clock.dart';import 'billing_credit_grant.dart';import 'billing_credit_grants_resource_balance_credit.dart';import 'billing_credit_grants_resource_balance_debit.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class BillingCreditBalanceTransactionObject {const BillingCreditBalanceTransactionObject._(this.value);
+@immutable final class BillingCreditBalanceTransactionObject {const BillingCreditBalanceTransactionObject._(this.value);
 
 factory BillingCreditBalanceTransactionObject.fromJson(String json) { return switch (json) {
   'billing.credit_balance_transaction' => billingCreditBalanceTransaction,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingCreditBalanceTransactionObject($value)'; } 
  }
 /// The type of credit balance transaction (credit or debit).
-final class BillingCreditBalanceTransactionType {const BillingCreditBalanceTransactionType._(this.value);
+@immutable final class BillingCreditBalanceTransactionType {const BillingCreditBalanceTransactionType._(this.value);
 
 factory BillingCreditBalanceTransactionType.fromJson(String json) { return switch (json) {
   'credit' => credit,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingCreditBalanceTransactionType($value)'; } 
  }
 /// A credit balance transaction is a resource representing a transaction (either a credit or a debit) against an existing credit grant.
-final class BillingCreditBalanceTransaction {const BillingCreditBalanceTransaction({required this.created, this.credit, required this.creditGrant, this.debit, required this.effectiveAt, required this.id, required this.livemode, required this.object, this.testClock, this.type, });
+@immutable final class BillingCreditBalanceTransaction {const BillingCreditBalanceTransaction({required this.created, required this.creditGrant, required this.effectiveAt, required this.id, required this.livemode, required this.object, this.credit, this.debit, this.testClock, this.type, });
 
 factory BillingCreditBalanceTransaction.fromJson(Map<String, dynamic> json) { return BillingCreditBalanceTransaction(
   created: (json['created'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookRepositoryTransferredChangesOwnerFromOrganization {const WebhookRepositoryTransferredChangesOwnerFromOrganization({required this.avatarUrl, required this.description, required this.eventsUrl, required this.hooksUrl, this.htmlUrl, required this.id, required this.issuesUrl, required this.login, required this.membersUrl, required this.nodeId, required this.publicMembersUrl, required this.reposUrl, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRepositoryTransferredChangesOwnerFromOrganization {const WebhookRepositoryTransferredChangesOwnerFromOrganization({required this.avatarUrl, required this.description, required this.eventsUrl, required this.hooksUrl, required this.id, required this.issuesUrl, required this.login, required this.membersUrl, required this.nodeId, required this.publicMembersUrl, required this.reposUrl, required this.url, this.htmlUrl, });
 
 factory WebhookRepositoryTransferredChangesOwnerFromOrganization.fromJson(Map<String, dynamic> json) { return WebhookRepositoryTransferredChangesOwnerFromOrganization(
   avatarUrl: Uri.parse(json['avatar_url'] as String),

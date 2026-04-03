@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'async_batch2_requests.dart';final class AsyncBatch2 {const AsyncBatch2({this.requests});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'async_batch2_requests.dart';@immutable final class AsyncBatch2 {const AsyncBatch2({this.requests});
 
 factory AsyncBatch2.fromJson(Map<String, dynamic> json) { return AsyncBatch2(
   requests: (json['requests'] as List<dynamic>?)?.map((e) => AsyncBatch2Requests.fromJson(e as Map<String, dynamic>)).toList(),

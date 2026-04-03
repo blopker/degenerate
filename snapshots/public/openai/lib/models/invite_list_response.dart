@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invite.dart';/// The object type, which is always `list`
-final class InviteListResponseObject {const InviteListResponseObject._(this.value);
+@immutable final class InviteListResponseObject {const InviteListResponseObject._(this.value);
 
 factory InviteListResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InviteListResponseObject($value)'; } 
  }
-final class InviteListResponse {const InviteListResponse({required this.object, required this.data, this.firstId, this.lastId, this.hasMore, });
+@immutable final class InviteListResponse {const InviteListResponse({required this.object, required this.data, this.firstId, this.lastId, this.hasMore, });
 
 factory InviteListResponse.fromJson(Map<String, dynamic> json) { return InviteListResponse(
   object: InviteListResponseObject.fromJson(json['object'] as String),

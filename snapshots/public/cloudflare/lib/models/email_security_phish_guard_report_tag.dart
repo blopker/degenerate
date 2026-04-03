@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityPhishGuardReportTag {const EmailSecurityPhishGuardReportTag({required this.category, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityPhishGuardReportTag {const EmailSecurityPhishGuardReportTag({required this.category, required this.value, });
 
 factory EmailSecurityPhishGuardReportTag.fromJson(Map<String, dynamic> json) { return EmailSecurityPhishGuardReportTag(
   category: json['category'] as String,

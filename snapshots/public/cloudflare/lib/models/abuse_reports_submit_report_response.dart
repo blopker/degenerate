@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'abuse_reports_submit_report_response_request.dart';final class AbuseReportsSubmitReportResponse {const AbuseReportsSubmitReportResponse({required this.abuseRand, required this.request, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_submit_report_response_request.dart';@immutable final class AbuseReportsSubmitReportResponse {const AbuseReportsSubmitReportResponse({required this.abuseRand, required this.request, required this.result, });
 
 factory AbuseReportsSubmitReportResponse.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitReportResponse(
   abuseRand: json['abuse_rand'] as String,

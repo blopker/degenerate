@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_params_status_check_configuration.dart';final class RepositoryRuleRequiredStatusChecksParameters {const RepositoryRuleRequiredStatusChecksParameters({this.doNotEnforceOnCreate, required this.requiredStatusChecks, required this.strictRequiredStatusChecksPolicy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_params_status_check_configuration.dart';@immutable final class RepositoryRuleRequiredStatusChecksParameters {const RepositoryRuleRequiredStatusChecksParameters({required this.requiredStatusChecks, required this.strictRequiredStatusChecksPolicy, this.doNotEnforceOnCreate, });
 
 factory RepositoryRuleRequiredStatusChecksParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredStatusChecksParameters(
   doNotEnforceOnCreate: json['do_not_enforce_on_create'] as bool?,

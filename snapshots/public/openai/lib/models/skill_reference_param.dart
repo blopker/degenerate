@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// References a skill created with the /v1/skills endpoint.
-final class SkillReferenceParamType {const SkillReferenceParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// References a skill created with the /v1/skills endpoint.
+@immutable final class SkillReferenceParamType {const SkillReferenceParamType._(this.value);
 
 factory SkillReferenceParamType.fromJson(String json) { return switch (json) {
   'skill_reference' => skillReference,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SkillReferenceParamType($value)'; } 
  }
-final class SkillReferenceParam {const SkillReferenceParam({this.type = SkillReferenceParamType.skillReference, required this.skillId, this.version, });
+@immutable final class SkillReferenceParam {const SkillReferenceParam({required this.skillId, this.type = SkillReferenceParamType.skillReference, this.version, });
 
 factory SkillReferenceParam.fromJson(Map<String, dynamic> json) { return SkillReferenceParam(
   type: SkillReferenceParamType.fromJson(json['type'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_cardholder_address.dart';import 'issuing_cardholder_authorization_controls.dart';import 'issuing_cardholder_company.dart';import 'issuing_cardholder_individual.dart';import 'issuing_cardholder_requirements.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class IssuingCardholderObject {const IssuingCardholderObject._(this.value);
+@immutable final class IssuingCardholderObject {const IssuingCardholderObject._(this.value);
 
 factory IssuingCardholderObject.fromJson(String json) { return switch (json) {
   'issuing.cardholder' => issuingCardholder,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuingCardholderObject($value)'; } 
  }
-final class IssuingCardholderPreferredLocales {const IssuingCardholderPreferredLocales._(this.value);
+@immutable final class IssuingCardholderPreferredLocales {const IssuingCardholderPreferredLocales._(this.value);
 
 factory IssuingCardholderPreferredLocales.fromJson(String json) { return switch (json) {
   'de' => de,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardholderPreferredLocales($value)'; } 
  }
 /// Specifies whether to permit authorizations on this cardholder's cards.
-final class IssuingCardholderStatus {const IssuingCardholderStatus._(this.value);
+@immutable final class IssuingCardholderStatus {const IssuingCardholderStatus._(this.value);
 
 factory IssuingCardholderStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardholderStatus($value)'; } 
  }
 /// One of `individual` or `company`. See [Choose a cardholder type](https://docs.stripe.com/issuing/other/choose-cardholder) for more details.
-final class IssuingCardholderType {const IssuingCardholderType._(this.value);
+@immutable final class IssuingCardholderType {const IssuingCardholderType._(this.value);
 
 factory IssuingCardholderType.fromJson(String json) { return switch (json) {
   'company' => company,
@@ -111,7 +111,7 @@ bool get isUnknown { return !values.contains(this); }
 /// An Issuing `Cardholder` object represents an individual or business entity who is [issued](https://docs.stripe.com/issuing) cards.
 /// 
 /// Related guide: [How to create a cardholder](https://docs.stripe.com/issuing/cards/virtual/issue-cards#create-cardholder)
-final class IssuingCardholder {const IssuingCardholder({required this.billing, this.company, required this.created, this.email, required this.id, this.individual, required this.livemode, required this.metadata, required this.name, required this.object, this.phoneNumber, this.preferredLocales, required this.requirements, this.spendingControls, required this.status, required this.type, });
+@immutable final class IssuingCardholder {const IssuingCardholder({required this.billing, required this.created, required this.id, required this.livemode, required this.metadata, required this.name, required this.object, required this.requirements, required this.status, required this.type, this.company, this.email, this.individual, this.phoneNumber, this.preferredLocales, this.spendingControls, });
 
 factory IssuingCardholder.fromJson(Map<String, dynamic> json) { return IssuingCardholder(
   billing: IssuingCardholderAddress.fromJson(json['billing'] as Map<String, dynamic>),

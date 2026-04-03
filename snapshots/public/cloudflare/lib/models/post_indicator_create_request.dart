@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_request_related_events.dart';import 'post_indicator_create_request_tags.dart';import 'post_indicator_create_request_tags_variant2.dart';final class PostIndicatorCreateRequest {const PostIndicatorCreateRequest({this.autoCreateType, required this.indicatorType, this.relatedEvents, this.tags, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_request_related_events.dart';import 'post_indicator_create_request_tags.dart';import 'post_indicator_create_request_tags_variant2.dart';@immutable final class PostIndicatorCreateRequest {const PostIndicatorCreateRequest({required this.indicatorType, required this.value, this.autoCreateType, this.relatedEvents, this.tags, });
 
 factory PostIndicatorCreateRequest.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateRequest(
   autoCreateType: json['autoCreateType'] as bool?,

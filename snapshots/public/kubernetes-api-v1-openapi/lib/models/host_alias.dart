@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// HostAlias holds the mapping between IP and hostnames that will be injected as an entry in the pod's hosts file.
-final class HostAlias {const HostAlias({this.hostnames, this.ip = '', });
+@immutable final class HostAlias {const HostAlias({this.hostnames, this.ip = '', });
 
 factory HostAlias.fromJson(Map<String, dynamic> json) { return HostAlias(
   hostnames: (json['hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),

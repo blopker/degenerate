@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'd1_query_meta_timings.dart';/// The three letters airport code of the colo that handled the query.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_query_meta_timings.dart';/// The three letters airport code of the colo that handled the query.
 extension type const D1ServedByColo(String value) {
 factory D1ServedByColo.fromJson(String json) => D1ServedByColo(json);
 
@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// Region location hint of the database instance that handled the query.
-final class D1ServedByRegion {const D1ServedByRegion._(this.value);
+@immutable final class D1ServedByRegion {const D1ServedByRegion._(this.value);
 
 factory D1ServedByRegion.fromJson(String json) { return switch (json) {
   'WNAM' => wnam,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'D1ServedByRegion($value)'; } 
  }
-final class D1QueryMeta {const D1QueryMeta({this.changedDb, this.changes, this.duration, this.lastRowId, this.rowsRead, this.rowsWritten, this.servedByColo, this.servedByPrimary, this.servedByRegion, this.sizeAfter, this.timings, });
+@immutable final class D1QueryMeta {const D1QueryMeta({this.changedDb, this.changes, this.duration, this.lastRowId, this.rowsRead, this.rowsWritten, this.servedByColo, this.servedByPrimary, this.servedByRegion, this.sizeAfter, this.timings, });
 
 factory D1QueryMeta.fromJson(Map<String, dynamic> json) { return D1QueryMeta(
   changedDb: json['changed_db'] as bool?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Category {const Category({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Category {const Category({this.id, this.name, });
 
 factory Category.fromJson(Map<String, dynamic> json) { return Category(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

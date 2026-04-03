@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issue.dart';import 'organization_simple_webhooks.dart';import 'repository.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookIssueDependenciesBlockingRemovedAction {const WebhookIssueDependenciesBlockingRemovedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue.dart';import 'organization_simple_webhooks.dart';import 'repository.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookIssueDependenciesBlockingRemovedAction {const WebhookIssueDependenciesBlockingRemovedAction._(this.value);
 
 factory WebhookIssueDependenciesBlockingRemovedAction.fromJson(String json) { return switch (json) {
   'blocking_removed' => blockingRemoved,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookIssueDependenciesBlockingRemovedAction($value)'; } 
  }
-final class WebhookIssueDependenciesBlockingRemoved {const WebhookIssueDependenciesBlockingRemoved({required this.action, this.blockedIssueId, this.blockedIssue, this.blockedIssueRepo, this.blockingIssueId, this.blockingIssue, this.installation, required this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookIssueDependenciesBlockingRemoved {const WebhookIssueDependenciesBlockingRemoved({required this.action, required this.organization, required this.repository, required this.sender, this.blockedIssueId, this.blockedIssue, this.blockedIssueRepo, this.blockingIssueId, this.blockingIssue, this.installation, });
 
 factory WebhookIssueDependenciesBlockingRemoved.fromJson(Map<String, dynamic> json) { return WebhookIssueDependenciesBlockingRemoved(
   action: WebhookIssueDependenciesBlockingRemovedAction.fromJson(json['action'] as String),

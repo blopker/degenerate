@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_request_ip.dart';final class IamCondition {const IamCondition({this.requestIp});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_request_ip.dart';@immutable final class IamCondition {const IamCondition({this.requestIp});
 
 factory IamCondition.fromJson(Map<String, dynamic> json) { return IamCondition(
   requestIp: json['request_ip'] != null ? IamRequestIp.fromJson(json['request_ip'] as Map<String, dynamic>) : null,

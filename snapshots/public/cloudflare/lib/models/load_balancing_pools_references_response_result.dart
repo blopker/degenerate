@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LoadBalancingPoolsReferencesResponseResultReferenceType {const LoadBalancingPoolsReferencesResponseResultReferenceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LoadBalancingPoolsReferencesResponseResultReferenceType {const LoadBalancingPoolsReferencesResponseResultReferenceType._(this.value);
 
 factory LoadBalancingPoolsReferencesResponseResultReferenceType.fromJson(String json) { return switch (json) {
   '*' => $empty,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'LoadBalancingPoolsReferencesResponseResultReferenceType($value)'; } 
  }
-final class LoadBalancingPoolsReferencesResponseResult {const LoadBalancingPoolsReferencesResponseResult({this.referenceType, this.resourceId, this.resourceName, this.resourceType, });
+@immutable final class LoadBalancingPoolsReferencesResponseResult {const LoadBalancingPoolsReferencesResponseResult({this.referenceType, this.resourceId, this.resourceName, this.resourceType, });
 
 factory LoadBalancingPoolsReferencesResponseResult.fromJson(Map<String, dynamic> json) { return LoadBalancingPoolsReferencesResponseResult(
   referenceType: json['reference_type'] != null ? LoadBalancingPoolsReferencesResponseResultReferenceType.fromJson(json['reference_type'] as String) : null,

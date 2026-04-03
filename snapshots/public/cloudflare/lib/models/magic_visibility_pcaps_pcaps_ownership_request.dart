@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_visibility_pcaps_pcaps_destination_conf.dart';final class MagicVisibilityPcapsPcapsOwnershipRequest {const MagicVisibilityPcapsPcapsOwnershipRequest({required this.destinationConf});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_pcaps_pcaps_destination_conf.dart';@immutable final class MagicVisibilityPcapsPcapsOwnershipRequest {const MagicVisibilityPcapsPcapsOwnershipRequest({required this.destinationConf});
 
 factory MagicVisibilityPcapsPcapsOwnershipRequest.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsOwnershipRequest(
   destinationConf: MagicVisibilityPcapsPcapsDestinationConf.fromJson(json['destination_conf'] as String),

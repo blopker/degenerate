@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformationAsn {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformationAsn({this.asn});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformationAsn {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformationAsn({this.asn});
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformationAsn.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataIpInformationAsn(
   asn: json['asn'] as String?,

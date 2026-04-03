@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_embedding_response_usage.dart';import 'embedding.dart';/// The object type, which is always "list".
-final class CreateEmbeddingResponseObject {const CreateEmbeddingResponseObject._(this.value);
+@immutable final class CreateEmbeddingResponseObject {const CreateEmbeddingResponseObject._(this.value);
 
 factory CreateEmbeddingResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateEmbeddingResponseObject($value)'; } 
  }
-final class CreateEmbeddingResponse {const CreateEmbeddingResponse({required this.data, required this.model, required this.object, required this.usage, });
+@immutable final class CreateEmbeddingResponse {const CreateEmbeddingResponse({required this.data, required this.model, required this.object, required this.usage, });
 
 factory CreateEmbeddingResponse.fromJson(Map<String, dynamic> json) { return CreateEmbeddingResponse(
   data: (json['data'] as List<dynamic>).map((e) => Embedding.fromJson(e as Map<String, dynamic>)).toList(),

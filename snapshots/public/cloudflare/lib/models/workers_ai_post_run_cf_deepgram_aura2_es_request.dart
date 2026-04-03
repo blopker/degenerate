@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Container specifies the file format wrapper for the output audio. The available options depend on the encoding type..
-final class WorkersAiPostRunCfDeepgramAura2EsRequestContainer {const WorkersAiPostRunCfDeepgramAura2EsRequestContainer._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Container specifies the file format wrapper for the output audio. The available options depend on the encoding type..
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestContainer {const WorkersAiPostRunCfDeepgramAura2EsRequestContainer._(this.value);
 
 factory WorkersAiPostRunCfDeepgramAura2EsRequestContainer.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkersAiPostRunCfDeepgramAura2EsRequestContainer($value)'; } 
  }
 /// Encoding of the output audio.
-final class WorkersAiPostRunCfDeepgramAura2EsRequestEncoding {const WorkersAiPostRunCfDeepgramAura2EsRequestEncoding._(this.value);
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestEncoding {const WorkersAiPostRunCfDeepgramAura2EsRequestEncoding._(this.value);
 
 factory WorkersAiPostRunCfDeepgramAura2EsRequestEncoding.fromJson(String json) { return switch (json) {
   'linear16' => linear16,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkersAiPostRunCfDeepgramAura2EsRequestEncoding($value)'; } 
  }
 /// Speaker used to produce the audio.
-final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._(this.value);
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._(this.value);
 
 factory WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker.fromJson(String json) { return switch (json) {
   'sirio' => sirio,
@@ -117,7 +117,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker($value)'; } 
  }
-final class WorkersAiPostRunCfDeepgramAura2EsRequest {const WorkersAiPostRunCfDeepgramAura2EsRequest({this.bitRate, this.container, this.encoding, this.sampleRate, this.speaker = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker.aquila, required this.text, });
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequest {const WorkersAiPostRunCfDeepgramAura2EsRequest({required this.text, this.bitRate, this.container, this.encoding, this.sampleRate, this.speaker = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker.aquila, });
 
 factory WorkersAiPostRunCfDeepgramAura2EsRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramAura2EsRequest(
   bitRate: json['bit_rate'] != null ? (json['bit_rate'] as num).toDouble() : null,

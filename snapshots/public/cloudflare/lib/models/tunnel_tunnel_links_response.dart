@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_tunnel_link.dart';final class TunnelTunnelLinksResponse {const TunnelTunnelLinksResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_tunnel_link.dart';@immutable final class TunnelTunnelLinksResponse {const TunnelTunnelLinksResponse({this.result});
 
 factory TunnelTunnelLinksResponse.fromJson(Map<String, dynamic> json) { return TunnelTunnelLinksResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => TunnelTunnelLink.fromJson(e as Map<String, dynamic>)).toList(),

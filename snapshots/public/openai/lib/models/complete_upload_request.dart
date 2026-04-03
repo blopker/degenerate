@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CompleteUploadRequest {const CompleteUploadRequest({required this.partIds, this.md5, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CompleteUploadRequest {const CompleteUploadRequest({required this.partIds, this.md5, });
 
 factory CompleteUploadRequest.fromJson(Map<String, dynamic> json) { return CompleteUploadRequest(
   partIds: (json['part_ids'] as List<dynamic>).map((e) => e as String).toList(),

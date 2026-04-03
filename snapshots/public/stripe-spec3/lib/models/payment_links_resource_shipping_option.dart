@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_shipping_option_shipping_rate.dart';import 'shipping_rate.dart';/// 
-final class PaymentLinksResourceShippingOption {const PaymentLinksResourceShippingOption({required this.shippingAmount, required this.shippingRate, });
+@immutable final class PaymentLinksResourceShippingOption {const PaymentLinksResourceShippingOption({required this.shippingAmount, required this.shippingRate, });
 
 factory PaymentLinksResourceShippingOption.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceShippingOption(
   shippingAmount: (json['shipping_amount'] as num).toInt(),

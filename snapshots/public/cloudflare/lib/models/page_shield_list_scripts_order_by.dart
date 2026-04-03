@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The field used to sort returned scripts.
-final class PageShieldListScriptsOrderBy {const PageShieldListScriptsOrderBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned scripts.
+@immutable final class PageShieldListScriptsOrderBy {const PageShieldListScriptsOrderBy._(this.value);
 
 factory PageShieldListScriptsOrderBy.fromJson(String json) { return switch (json) {
   'first_seen_at' => firstSeenAt,

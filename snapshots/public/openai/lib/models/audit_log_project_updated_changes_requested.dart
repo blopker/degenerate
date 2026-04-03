@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The payload used to update the project.
-final class AuditLogProjectUpdatedChangesRequested {const AuditLogProjectUpdatedChangesRequested({this.title});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the project.
+@immutable final class AuditLogProjectUpdatedChangesRequested {const AuditLogProjectUpdatedChangesRequested({this.title});
 
 factory AuditLogProjectUpdatedChangesRequested.fromJson(Map<String, dynamic> json) { return AuditLogProjectUpdatedChangesRequested(
   title: json['title'] as String?,

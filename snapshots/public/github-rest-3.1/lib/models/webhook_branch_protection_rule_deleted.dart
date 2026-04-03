@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_rule.dart';final class WebhookBranchProtectionRuleDeletedAction {const WebhookBranchProtectionRuleDeletedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_rule.dart';@immutable final class WebhookBranchProtectionRuleDeletedAction {const WebhookBranchProtectionRuleDeletedAction._(this.value);
 
 factory WebhookBranchProtectionRuleDeletedAction.fromJson(String json) { return switch (json) {
   'deleted' => deleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookBranchProtectionRuleDeletedAction($value)'; } 
  }
-final class WebhookBranchProtectionRuleDeleted {const WebhookBranchProtectionRuleDeleted({required this.action, this.enterprise, this.installation, this.organization, required this.repository, required this.rule, required this.sender, });
+@immutable final class WebhookBranchProtectionRuleDeleted {const WebhookBranchProtectionRuleDeleted({required this.action, required this.repository, required this.rule, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookBranchProtectionRuleDeleted.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleDeleted(
   action: WebhookBranchProtectionRuleDeletedAction.fromJson(json['action'] as String),

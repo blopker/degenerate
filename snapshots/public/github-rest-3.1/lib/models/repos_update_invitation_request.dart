@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
-final class ReposUpdateInvitationRequestPermissions {const ReposUpdateInvitationRequestPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
+@immutable final class ReposUpdateInvitationRequestPermissions {const ReposUpdateInvitationRequestPermissions._(this.value);
 
 factory ReposUpdateInvitationRequestPermissions.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposUpdateInvitationRequestPermissions($value)'; } 
  }
-final class ReposUpdateInvitationRequest {const ReposUpdateInvitationRequest({this.permissions});
+@immutable final class ReposUpdateInvitationRequest {const ReposUpdateInvitationRequest({this.permissions});
 
 factory ReposUpdateInvitationRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateInvitationRequest(
   permissions: json['permissions'] != null ? ReposUpdateInvitationRequestPermissions.fromJson(json['permissions'] as String) : null,

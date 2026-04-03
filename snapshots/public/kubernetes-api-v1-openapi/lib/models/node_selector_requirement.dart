@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A node selector requirement is a selector that contains values, a key, and an operator that relates the key and values.
-final class NodeSelectorRequirement {const NodeSelectorRequirement({this.key = '', this.$operator = '', this.values, });
+@immutable final class NodeSelectorRequirement {const NodeSelectorRequirement({this.key = '', this.$operator = '', this.values, });
 
 factory NodeSelectorRequirement.fromJson(Map<String, dynamic> json) { return NodeSelectorRequirement(
   key: json['key'] as String,

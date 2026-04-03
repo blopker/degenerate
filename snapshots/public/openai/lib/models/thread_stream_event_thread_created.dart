@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'thread_object.dart';final class ThreadStreamEventThreadCreatedEvent {const ThreadStreamEventThreadCreatedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thread_object.dart';@immutable final class ThreadStreamEventThreadCreatedEvent {const ThreadStreamEventThreadCreatedEvent._(this.value);
 
 factory ThreadStreamEventThreadCreatedEvent.fromJson(String json) { return switch (json) {
   'thread.created' => threadCreated,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreadStreamEventThreadCreatedEvent($value)'; } 
  }
 /// Occurs when a new [thread](/docs/api-reference/threads/object) is created.
-final class ThreadStreamEventThreadCreated {const ThreadStreamEventThreadCreated({this.enabled, required this.event, required this.data, });
+@immutable final class ThreadStreamEventThreadCreated {const ThreadStreamEventThreadCreated({required this.event, required this.data, this.enabled, });
 
 factory ThreadStreamEventThreadCreated.fromJson(Map<String, dynamic> json) { return ThreadStreamEventThreadCreated(
   enabled: json['enabled'] as bool?,

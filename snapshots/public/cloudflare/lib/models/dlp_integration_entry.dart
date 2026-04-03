@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpIntegrationEntry {const DlpIntegrationEntry({required this.createdAt, required this.enabled, required this.id, required this.name, this.profileId, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpIntegrationEntry {const DlpIntegrationEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, this.profileId, });
 
 factory DlpIntegrationEntry.fromJson(Map<String, dynamic> json) { return DlpIntegrationEntry(
   createdAt: DateTime.parse(json['created_at'] as String),

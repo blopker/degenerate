@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProjectsAddFieldForOrgRequestVariant1 {const ProjectsAddFieldForOrgRequestVariant1({required this.issueFieldId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectsAddFieldForOrgRequestVariant1 {const ProjectsAddFieldForOrgRequestVariant1({required this.issueFieldId});
 
 factory ProjectsAddFieldForOrgRequestVariant1.fromJson(Map<String, dynamic> json) { return ProjectsAddFieldForOrgRequestVariant1(
   issueFieldId: (json['issue_field_id'] as num).toInt(),

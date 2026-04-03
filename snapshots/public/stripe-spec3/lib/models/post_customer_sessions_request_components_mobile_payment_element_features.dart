@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodAllowRedisplayFilters {const PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodAllowRedisplayFilters._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodAllowRedisplayFilters {const PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodAllowRedisplayFilters._(this.value);
 
 factory PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodAllowRedisplayFilters.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodAllowRedisplayFilters($value)'; } 
  }
-final class PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRedisplay {const PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRedisplay._(this.value);
+@immutable final class PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRedisplay {const PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRedisplay._(this.value);
 
 factory PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRedisplay.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRedisplay($value)'; } 
  }
-final class PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRemove {const PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRemove._(this.value);
+@immutable final class PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRemove {const PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRemove._(this.value);
 
 factory PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRemove.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodRemove($value)'; } 
  }
-final class PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSave {const PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSave._(this.value);
+@immutable final class PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSave {const PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSave._(this.value);
 
 factory PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSave.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -99,7 +99,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSave($value)'; } 
  }
-final class PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSaveAllowRedisplayOverride {const PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSaveAllowRedisplayOverride._(this.value);
+@immutable final class PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSaveAllowRedisplayOverride {const PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSaveAllowRedisplayOverride._(this.value);
 
 factory PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSaveAllowRedisplayOverride.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -126,7 +126,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodSaveAllowRedisplayOverride($value)'; } 
  }
-final class PostCustomerSessionsRequestComponentsMobilePaymentElementFeatures {const PostCustomerSessionsRequestComponentsMobilePaymentElementFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRedisplay, this.paymentMethodRemove, this.paymentMethodSave, this.paymentMethodSaveAllowRedisplayOverride, });
+@immutable final class PostCustomerSessionsRequestComponentsMobilePaymentElementFeatures {const PostCustomerSessionsRequestComponentsMobilePaymentElementFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRedisplay, this.paymentMethodRemove, this.paymentMethodSave, this.paymentMethodSaveAllowRedisplayOverride, });
 
 factory PostCustomerSessionsRequestComponentsMobilePaymentElementFeatures.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponentsMobilePaymentElementFeatures(
   paymentMethodAllowRedisplayFilters: (json['payment_method_allow_redisplay_filters'] as List<dynamic>?)?.map((e) => PostCustomerSessionsRequestComponentsMobilePaymentElementFeaturesPaymentMethodAllowRedisplayFilters.fromJson(e as String)).toList(),

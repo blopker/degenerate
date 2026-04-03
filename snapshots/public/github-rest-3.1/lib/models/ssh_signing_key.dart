@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A public SSH key used to sign Git commits
-final class SshSigningKey {const SshSigningKey({required this.key, required this.id, required this.title, required this.createdAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A public SSH key used to sign Git commits
+@immutable final class SshSigningKey {const SshSigningKey({required this.key, required this.id, required this.title, required this.createdAt, });
 
 factory SshSigningKey.fromJson(Map<String, dynamic> json) { return SshSigningKey(
   key: json['key'] as String,

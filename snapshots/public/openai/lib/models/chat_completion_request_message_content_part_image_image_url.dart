@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).
-final class ChatCompletionRequestMessageContentPartImageImageUrlDetail {const ChatCompletionRequestMessageContentPartImageImageUrlDetail._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).
+@immutable final class ChatCompletionRequestMessageContentPartImageImageUrlDetail {const ChatCompletionRequestMessageContentPartImageImageUrlDetail._(this.value);
 
 factory ChatCompletionRequestMessageContentPartImageImageUrlDetail.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ChatCompletionRequestMessageContentPartImageImageUrlDetail($value)'; } 
  }
-final class ChatCompletionRequestMessageContentPartImageImageUrl {const ChatCompletionRequestMessageContentPartImageImageUrl({required this.url, this.detail = ChatCompletionRequestMessageContentPartImageImageUrlDetail.auto, });
+@immutable final class ChatCompletionRequestMessageContentPartImageImageUrl {const ChatCompletionRequestMessageContentPartImageImageUrl({required this.url, this.detail = ChatCompletionRequestMessageContentPartImageImageUrlDetail.auto, });
 
 factory ChatCompletionRequestMessageContentPartImageImageUrl.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartImageImageUrl(
   url: Uri.parse(json['url'] as String),

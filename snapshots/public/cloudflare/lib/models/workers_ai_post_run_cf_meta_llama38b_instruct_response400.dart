@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_meta_llama38b_instruct_response400_errors.dart';final class WorkersAiPostRunCfMetaLlama38bInstructResponse400 {const WorkersAiPostRunCfMetaLlama38bInstructResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_meta_llama38b_instruct_response400_errors.dart';@immutable final class WorkersAiPostRunCfMetaLlama38bInstructResponse400 {const WorkersAiPostRunCfMetaLlama38bInstructResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfMetaLlama38bInstructResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaLlama38bInstructResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfMetaLlama38bInstructResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelPhishingUrlSubmitSkippedUrls {const IntelPhishingUrlSubmitSkippedUrls({this.url, this.urlId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelPhishingUrlSubmitSkippedUrls {const IntelPhishingUrlSubmitSkippedUrls({this.url, this.urlId, });
 
 factory IntelPhishingUrlSubmitSkippedUrls.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlSubmitSkippedUrls(
   url: json['url'] as String?,

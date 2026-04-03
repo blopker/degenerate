@@ -51,7 +51,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SIP/Domains/${Uri.encodeComponent(domainSid)}/Auth/Calls/IpAccessControlListMappings.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'IpAccessControlListSid=${Uri.encodeQueryComponent(body.ipAccessControlListSid)}',
   ].join('&'),
   options: options,

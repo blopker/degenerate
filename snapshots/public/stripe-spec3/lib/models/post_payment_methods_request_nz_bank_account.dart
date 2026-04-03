@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is an nz_bank_account PaymentMethod, this hash contains details about the nz_bank_account payment method.
-final class PostPaymentMethodsRequestNzBankAccount {const PostPaymentMethodsRequestNzBankAccount({this.accountHolderName, required this.accountNumber, required this.bankCode, required this.branchCode, this.reference, required this.suffix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is an nz_bank_account PaymentMethod, this hash contains details about the nz_bank_account payment method.
+@immutable final class PostPaymentMethodsRequestNzBankAccount {const PostPaymentMethodsRequestNzBankAccount({required this.accountNumber, required this.bankCode, required this.branchCode, required this.suffix, this.accountHolderName, this.reference, });
 
 factory PostPaymentMethodsRequestNzBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestNzBankAccount(
   accountHolderName: json['account_holder_name'] as String?,

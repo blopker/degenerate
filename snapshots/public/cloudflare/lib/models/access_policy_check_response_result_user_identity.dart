@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_policy_check_response_result_user_identity_geo.dart';import 'access_uuid.dart';final class AccessPolicyCheckResponseResultUserIdentity {const AccessPolicyCheckResponseResultUserIdentity({this.accountId, this.deviceSessions, this.email, this.geo, this.iat, this.id, this.isGateway, this.isWarp, this.name, this.userUuid, this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_policy_check_response_result_user_identity_geo.dart';import 'access_uuid.dart';@immutable final class AccessPolicyCheckResponseResultUserIdentity {const AccessPolicyCheckResponseResultUserIdentity({this.accountId, this.deviceSessions, this.email, this.geo, this.iat, this.id, this.isGateway, this.isWarp, this.name, this.userUuid, this.version, });
 
 factory AccessPolicyCheckResponseResultUserIdentity.fromJson(Map<String, dynamic> json) { return AccessPolicyCheckResponseResultUserIdentity(
   accountId: json['account_id'] as String?,
-  deviceSessions: (json['device_sessions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  deviceSessions: json['device_sessions'] as Map<String, dynamic>?,
   email: json['email'] as String?,
   geo: json['geo'] != null ? AccessPolicyCheckResponseResultUserIdentityGeo.fromJson(json['geo'] as Map<String, dynamic>) : null,
   iat: json['iat'] != null ? (json['iat'] as num).toInt() : null,

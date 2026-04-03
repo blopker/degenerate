@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'autorag_config_search_response_result.dart';final class AutoragConfigSearchResponse {const AutoragConfigSearchResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_search_response_result.dart';@immutable final class AutoragConfigSearchResponse {const AutoragConfigSearchResponse({required this.result, required this.success, });
 
 factory AutoragConfigSearchResponse.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchResponse(
   result: AutoragConfigSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>),

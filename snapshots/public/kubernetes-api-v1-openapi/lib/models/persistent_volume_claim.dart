@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'object_meta.dart';import 'persistent_volume_claim_spec.dart';import 'persistent_volume_claim_status.dart';/// PersistentVolumeClaim is a user's request for and claim to a persistent volume
-final class PersistentVolumeClaim {const PersistentVolumeClaim({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'persistent_volume_claim_spec.dart';import 'persistent_volume_claim_status.dart';/// PersistentVolumeClaim is a user's request for and claim to a persistent volume
+@immutable final class PersistentVolumeClaim {const PersistentVolumeClaim({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
 factory PersistentVolumeClaim.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaim(
   apiVersion: json['apiVersion'] as String?,

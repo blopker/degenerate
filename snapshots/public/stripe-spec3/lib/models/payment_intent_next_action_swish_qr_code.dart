@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionSwishQrCode {const PaymentIntentNextActionSwishQrCode({required this.data, required this.imageUrlPng, required this.imageUrlSvg, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionSwishQrCode {const PaymentIntentNextActionSwishQrCode({required this.data, required this.imageUrlPng, required this.imageUrlSvg, });
 
 factory PaymentIntentNextActionSwishQrCode.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionSwishQrCode(
   data: json['data'] as String,

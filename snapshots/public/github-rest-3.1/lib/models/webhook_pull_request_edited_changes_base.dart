@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_edited_changes_base_ref.dart';import 'webhook_pull_request_edited_changes_base_sha.dart';final class WebhookPullRequestEditedChangesBase {const WebhookPullRequestEditedChangesBase({required this.ref, required this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_edited_changes_base_ref.dart';import 'webhook_pull_request_edited_changes_base_sha.dart';@immutable final class WebhookPullRequestEditedChangesBase {const WebhookPullRequestEditedChangesBase({required this.ref, required this.sha, });
 
 factory WebhookPullRequestEditedChangesBase.fromJson(Map<String, dynamic> json) { return WebhookPullRequestEditedChangesBase(
   ref: WebhookPullRequestEditedChangesBaseRef.fromJson(json['ref'] as Map<String, dynamic>),

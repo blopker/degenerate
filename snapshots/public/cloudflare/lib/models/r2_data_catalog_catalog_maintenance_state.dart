@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the state of maintenance operations.
-final class R2DataCatalogCatalogMaintenanceState {const R2DataCatalogCatalogMaintenanceState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the state of maintenance operations.
+@immutable final class R2DataCatalogCatalogMaintenanceState {const R2DataCatalogCatalogMaintenanceState._(this.value);
 
 factory R2DataCatalogCatalogMaintenanceState.fromJson(String json) { return switch (json) {
   'enabled' => enabled,

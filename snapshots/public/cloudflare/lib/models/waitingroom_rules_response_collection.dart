@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_rule_result.dart';final class WaitingroomRulesResponseCollection {const WaitingroomRulesResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_rule_result.dart';@immutable final class WaitingroomRulesResponseCollection {const WaitingroomRulesResponseCollection({this.result});
 
 factory WaitingroomRulesResponseCollection.fromJson(Map<String, dynamic> json) { return WaitingroomRulesResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => WaitingroomRuleResult.fromJson(e as Map<String, dynamic>)).toList(),

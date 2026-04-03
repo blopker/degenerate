@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_line_items_adjustable_quantity.dart';import 'post_checkout_sessions_request_line_items_price_data.dart';final class PostCheckoutSessionsRequestLineItems {const PostCheckoutSessionsRequestLineItems({this.adjustableQuantity, this.dynamicTaxRates, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_line_items_adjustable_quantity.dart';import 'post_checkout_sessions_request_line_items_price_data.dart';@immutable final class PostCheckoutSessionsRequestLineItems {const PostCheckoutSessionsRequestLineItems({this.adjustableQuantity, this.dynamicTaxRates, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostCheckoutSessionsRequestLineItems.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestLineItems(
   adjustableQuantity: json['adjustable_quantity'] != null ? PostCheckoutSessionsRequestLineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,

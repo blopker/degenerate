@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_output_enabled.dart';import 'stream_output_stream_key.dart';import 'stream_output_url.dart';final class StreamCreateOutputRequest {const StreamCreateOutputRequest({this.enabled, required this.streamKey, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_output_enabled.dart';import 'stream_output_stream_key.dart';import 'stream_output_url.dart';@immutable final class StreamCreateOutputRequest {const StreamCreateOutputRequest({required this.streamKey, required this.url, this.enabled, });
 
 factory StreamCreateOutputRequest.fromJson(Map<String, dynamic> json) { return StreamCreateOutputRequest(
   enabled: json['enabled'] != null ? StreamOutputEnabled.fromJson(json['enabled'] as bool) : null,

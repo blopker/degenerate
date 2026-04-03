@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_netflows_timeseries_group_response_result_meta.dart';import 'radar_get_netflows_timeseries_group_response_result_serie0.dart';final class RadarGetNetflowsTimeseriesGroupResponseResult {const RadarGetNetflowsTimeseriesGroupResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_netflows_timeseries_group_response_result_meta.dart';import 'radar_get_netflows_timeseries_group_response_result_serie0.dart';@immutable final class RadarGetNetflowsTimeseriesGroupResponseResult {const RadarGetNetflowsTimeseriesGroupResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetNetflowsTimeseriesGroupResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsTimeseriesGroupResponseResult(
   meta: RadarGetNetflowsTimeseriesGroupResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

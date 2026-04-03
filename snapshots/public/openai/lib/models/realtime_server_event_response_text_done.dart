@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `response.output_text.done`.
-final class RealtimeServerEventResponseTextDoneType {const RealtimeServerEventResponseTextDoneType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_text.done`.
+@immutable final class RealtimeServerEventResponseTextDoneType {const RealtimeServerEventResponseTextDoneType._(this.value);
 
 factory RealtimeServerEventResponseTextDoneType.fromJson(String json) { return switch (json) {
   'response.output_text.done' => responseOutputTextDone,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Returned when the text value of an "output_text" content part is done streaming. Also
 /// emitted when a Response is interrupted, incomplete, or cancelled.
 /// 
-final class RealtimeServerEventResponseTextDone {const RealtimeServerEventResponseTextDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.text, });
+@immutable final class RealtimeServerEventResponseTextDone {const RealtimeServerEventResponseTextDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.text, });
 
 factory RealtimeServerEventResponseTextDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseTextDone(
   eventId: json['event_id'] as String,

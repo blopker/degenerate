@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudforce_one_requests_request_status.dart';import 'cloudforce_one_requests_request_type.dart';import 'cloudforce_one_requests_time.dart';/// Sort order (asc or desc).
-final class CloudforceOneRequestsRequestListSortOrder {const CloudforceOneRequestsRequestListSortOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_request_status.dart';import 'cloudforce_one_requests_request_type.dart';import 'cloudforce_one_requests_time.dart';/// Sort order (asc or desc).
+@immutable final class CloudforceOneRequestsRequestListSortOrder {const CloudforceOneRequestsRequestListSortOrder._(this.value);
 
 factory CloudforceOneRequestsRequestListSortOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CloudforceOneRequestsRequestListSortOrder($value)'; } 
  }
-final class CloudforceOneRequestsRequestList {const CloudforceOneRequestsRequestList({this.completedAfter, this.completedBefore, this.createdAfter, this.createdBefore, required this.page, required this.perPage, this.requestType, this.sortBy, this.sortOrder, this.status, });
+@immutable final class CloudforceOneRequestsRequestList {const CloudforceOneRequestsRequestList({required this.page, required this.perPage, this.completedAfter, this.completedBefore, this.createdAfter, this.createdBefore, this.requestType, this.sortBy, this.sortOrder, this.status, });
 
 factory CloudforceOneRequestsRequestList.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestList(
   completedAfter: json['completed_after'] != null ? CloudforceOneRequestsTime.fromJson(json['completed_after'] as String) : null,

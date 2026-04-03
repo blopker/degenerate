@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zaraz_element_visibility_rule_settings.dart';final class ZarazElementVisibilityRuleAction {const ZarazElementVisibilityRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_element_visibility_rule_settings.dart';@immutable final class ZarazElementVisibilityRuleAction {const ZarazElementVisibilityRuleAction._(this.value);
 
 factory ZarazElementVisibilityRuleAction.fromJson(String json) { return switch (json) {
   'elementVisibility' => elementVisibility,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZarazElementVisibilityRuleAction($value)'; } 
  }
-final class ZarazElementVisibilityRule {const ZarazElementVisibilityRule({required this.action, required this.id, required this.settings, });
+@immutable final class ZarazElementVisibilityRule {const ZarazElementVisibilityRule({required this.action, required this.id, required this.settings, });
 
 factory ZarazElementVisibilityRule.fromJson(Map<String, dynamic> json) { return ZarazElementVisibilityRule(
   action: ZarazElementVisibilityRuleAction.fromJson(json['action'] as String),

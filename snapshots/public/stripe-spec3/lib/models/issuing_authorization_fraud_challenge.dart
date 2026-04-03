@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The method by which the fraud challenge was delivered to the cardholder.
-final class IssuingAuthorizationFraudChallengeChannel {const IssuingAuthorizationFraudChallengeChannel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method by which the fraud challenge was delivered to the cardholder.
+@immutable final class IssuingAuthorizationFraudChallengeChannel {const IssuingAuthorizationFraudChallengeChannel._(this.value);
 
 factory IssuingAuthorizationFraudChallengeChannel.fromJson(String json) { return switch (json) {
   'sms' => sms,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationFraudChallengeChannel($value)'; } 
  }
 /// The status of the fraud challenge.
-final class IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus._(this.value);
+@immutable final class IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus._(this.value);
 
 factory IssuingAuthorizationFraudChallengeStatus.fromJson(String json) { return switch (json) {
   'expired' => expired,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationFraudChallengeStatus($value)'; } 
  }
 /// If the challenge is not deliverable, the reason why.
-final class IssuingAuthorizationFraudChallengeUndeliverableReason {const IssuingAuthorizationFraudChallengeUndeliverableReason._(this.value);
+@immutable final class IssuingAuthorizationFraudChallengeUndeliverableReason {const IssuingAuthorizationFraudChallengeUndeliverableReason._(this.value);
 
 factory IssuingAuthorizationFraudChallengeUndeliverableReason.fromJson(String json) { return switch (json) {
   'no_phone_number' => noPhoneNumber,
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationFraudChallengeUndeliverableReason($value)'; } 
  }
 /// 
-final class IssuingAuthorizationFraudChallenge {const IssuingAuthorizationFraudChallenge({required this.channel, required this.status, this.undeliverableReason, });
+@immutable final class IssuingAuthorizationFraudChallenge {const IssuingAuthorizationFraudChallenge({required this.channel, required this.status, this.undeliverableReason, });
 
 factory IssuingAuthorizationFraudChallenge.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFraudChallenge(
   channel: IssuingAuthorizationFraudChallengeChannel.fromJson(json['channel'] as String),

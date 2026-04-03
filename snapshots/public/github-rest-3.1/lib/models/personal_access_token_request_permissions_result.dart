@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Permissions requested, categorized by type of permission. This field incorporates `permissions_added` and `permissions_upgraded`.
-final class PersonalAccessTokenRequestPermissionsResult {const PersonalAccessTokenRequestPermissionsResult({this.organization, this.repository, this.other, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Permissions requested, categorized by type of permission. This field incorporates `permissions_added` and `permissions_upgraded`.
+@immutable final class PersonalAccessTokenRequestPermissionsResult {const PersonalAccessTokenRequestPermissionsResult({this.organization, this.repository, this.other, });
 
 factory PersonalAccessTokenRequestPermissionsResult.fromJson(Map<String, dynamic> json) { return PersonalAccessTokenRequestPermissionsResult(
   organization: (json['organization'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

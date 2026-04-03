@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_authorized_connect_app.dart';final class ListAuthorizedConnectAppResponse {const ListAuthorizedConnectAppResponse({this.authorizedConnectApps, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_authorized_connect_app.dart';@immutable final class ListAuthorizedConnectAppResponse {const ListAuthorizedConnectAppResponse({this.authorizedConnectApps, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListAuthorizedConnectAppResponse.fromJson(Map<String, dynamic> json) { return ListAuthorizedConnectAppResponse(
   authorizedConnectApps: (json['authorized_connect_apps'] as List<dynamic>?)?.map((e) => AccountAuthorizedConnectApp.fromJson(e as Map<String, dynamic>)).toList(),

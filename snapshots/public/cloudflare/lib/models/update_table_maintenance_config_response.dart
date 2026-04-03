@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_table_maintenance_config.dart';import 'response_errors3.dart';import 'response_messages2.dart';import 'response_success.dart';final class UpdateTableMaintenanceConfigResponse {const UpdateTableMaintenanceConfigResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_table_maintenance_config.dart';import 'response_errors3.dart';import 'response_messages2.dart';import 'response_success.dart';@immutable final class UpdateTableMaintenanceConfigResponse {const UpdateTableMaintenanceConfigResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory UpdateTableMaintenanceConfigResponse.fromJson(Map<String, dynamic> json) { return UpdateTableMaintenanceConfigResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseErrors3.fromJson(e as Map<String, dynamic>)).toList(),

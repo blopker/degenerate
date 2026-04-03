@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_create_or_modify_workflow_response400_errors.dart';final class WorCreateOrModifyWorkflowResponse400 {const WorCreateOrModifyWorkflowResponse400({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_create_or_modify_workflow_response400_errors.dart';@immutable final class WorCreateOrModifyWorkflowResponse400 {const WorCreateOrModifyWorkflowResponse400({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory WorCreateOrModifyWorkflowResponse400.fromJson(Map<String, dynamic> json) { return WorCreateOrModifyWorkflowResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorCreateOrModifyWorkflowResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
 ); }
 

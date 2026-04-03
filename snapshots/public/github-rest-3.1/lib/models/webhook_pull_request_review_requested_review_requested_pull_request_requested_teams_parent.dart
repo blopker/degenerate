@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestReviewRequestedReviewRequestedPullRequestRequestedTeamsParentPrivacy {const WebhookPullRequestReviewRequestedReviewRequestedPullRequestRequestedTeamsParentPrivacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestReviewRequestedReviewRequestedPullRequestRequestedTeamsParentPrivacy {const WebhookPullRequestReviewRequestedReviewRequestedPullRequestRequestedTeamsParentPrivacy._(this.value);
 
 factory WebhookPullRequestReviewRequestedReviewRequestedPullRequestRequestedTeamsParentPrivacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewRequestedReviewRequestedPullRequestRequestedTeamsParentPrivacy($value)'; } 
  }
-final class WebhookPullRequestReviewRequestedReviewRequestedPullRequestRequestedTeamsParent {const WebhookPullRequestReviewRequestedReviewRequestedPullRequestRequestedTeamsParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
+@immutable final class WebhookPullRequestReviewRequestedReviewRequestedPullRequestRequestedTeamsParent {const WebhookPullRequestReviewRequestedReviewRequestedPullRequestRequestedTeamsParent({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
 
 factory WebhookPullRequestReviewRequestedReviewRequestedPullRequestRequestedTeamsParent.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestedReviewRequestedPullRequestRequestedTeamsParent(
   description: json['description'] as String?,

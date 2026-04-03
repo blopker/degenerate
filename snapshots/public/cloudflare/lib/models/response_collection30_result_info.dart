@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ResponseCollection30ResultInfo {const ResponseCollection30ResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseCollection30ResultInfo {const ResponseCollection30ResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory ResponseCollection30ResultInfo.fromJson(Map<String, dynamic> json) { return ResponseCollection30ResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

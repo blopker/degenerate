@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_workspace_one_config_response.dart';/// A value that is one of: `TeamsDevicesWorkspaceOneConfigResponse`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_workspace_one_config_response.dart';/// A value that is one of: `TeamsDevicesWorkspaceOneConfigResponse`.
 sealed class TeamsDevicesConfigResponse {const TeamsDevicesConfigResponse();
 
 factory TeamsDevicesConfigResponse.fromJson(Map<String, dynamic> json) {   if (TeamsDevicesWorkspaceOneConfigResponse.canParse(json)) {
@@ -12,7 +12,7 @@ factory TeamsDevicesConfigResponse.fromJson(Map<String, dynamic> json) {   if (T
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class TeamsDevicesConfigResponseTeamsDevicesWorkspaceOneConfigResponse extends TeamsDevicesConfigResponse {const TeamsDevicesConfigResponseTeamsDevicesWorkspaceOneConfigResponse(this._value);
+@immutable final class TeamsDevicesConfigResponseTeamsDevicesWorkspaceOneConfigResponse extends TeamsDevicesConfigResponse {const TeamsDevicesConfigResponseTeamsDevicesWorkspaceOneConfigResponse(this._value);
 
 final TeamsDevicesWorkspaceOneConfigResponse _value;
 
@@ -23,7 +23,7 @@ final TeamsDevicesWorkspaceOneConfigResponse _value;
 @override String toString() { return 'TeamsDevicesConfigResponse.teamsDevicesWorkspaceOneConfigResponse($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class TeamsDevicesConfigResponse$Unknown extends TeamsDevicesConfigResponse {const TeamsDevicesConfigResponse$Unknown(this._value);
+@immutable final class TeamsDevicesConfigResponse$Unknown extends TeamsDevicesConfigResponse {const TeamsDevicesConfigResponse$Unknown(this._value);
 
 final dynamic _value;
 

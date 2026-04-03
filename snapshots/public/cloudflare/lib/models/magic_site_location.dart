@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Location of site in latitude and longitude.
-final class MagicSiteLocation {const MagicSiteLocation({this.lat, this.lon, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Location of site in latitude and longitude.
+@immutable final class MagicSiteLocation {const MagicSiteLocation({this.lat, this.lon, });
 
 factory MagicSiteLocation.fromJson(Map<String, dynamic> json) { return MagicSiteLocation(
   lat: json['lat'] as String?,

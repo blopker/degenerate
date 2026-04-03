@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class RadarValueListItemObject {const RadarValueListItemObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class RadarValueListItemObject {const RadarValueListItemObject._(this.value);
 
 factory RadarValueListItemObject.fromJson(String json) { return switch (json) {
   'radar.value_list_item' => radarValueListItem,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Value list items allow you to add specific values to a given Radar value list, which can then be used in rules.
 /// 
 /// Related guide: [Managing list items](https://docs.stripe.com/radar/lists#managing-list-items)
-final class RadarValueListItem {const RadarValueListItem({required this.created, required this.createdBy, required this.id, required this.livemode, required this.object, required this.value, required this.valueList, });
+@immutable final class RadarValueListItem {const RadarValueListItem({required this.created, required this.createdBy, required this.id, required this.livemode, required this.object, required this.value, required this.valueList, });
 
 factory RadarValueListItem.fromJson(Map<String, dynamic> json) { return RadarValueListItem(
   created: (json['created'] as num).toInt(),

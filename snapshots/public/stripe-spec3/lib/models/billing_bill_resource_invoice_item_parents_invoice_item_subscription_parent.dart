@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent {const BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent({required this.subscription, this.subscriptionItem, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent {const BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent({required this.subscription, this.subscriptionItem, });
 
 factory BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent(
   subscription: json['subscription'] as String,

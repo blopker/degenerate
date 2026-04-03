@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_selector_term.dart';/// A node selector represents the union of the results of one or more label queries over a set of nodes; that is, it represents the OR of the selectors represented by the node selector terms.
-final class NodeSelector {const NodeSelector({required this.nodeSelectorTerms});
+@immutable final class NodeSelector {const NodeSelector({required this.nodeSelectorTerms});
 
 factory NodeSelector.fromJson(Map<String, dynamic> json) { return NodeSelector(
   nodeSelectorTerms: (json['nodeSelectorTerms'] as List<dynamic>).map((e) => NodeSelectorTerm.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LoadBalancingOriginHealthIp {const LoadBalancingOriginHealthIp({this.failureReason, this.healthy, this.responseCode, this.rtt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LoadBalancingOriginHealthIp {const LoadBalancingOriginHealthIp({this.failureReason, this.healthy, this.responseCode, this.rtt, });
 
 factory LoadBalancingOriginHealthIp.fromJson(Map<String, dynamic> json) { return LoadBalancingOriginHealthIp(
   failureReason: json['failure_reason'] as String?,

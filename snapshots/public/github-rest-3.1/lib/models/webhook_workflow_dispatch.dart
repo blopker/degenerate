@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookWorkflowDispatch {const WebhookWorkflowDispatch({this.enterprise, required this.inputs, this.installation, this.organization, required this.ref, required this.repository, required this.sender, required this.workflow, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookWorkflowDispatch {const WebhookWorkflowDispatch({required this.inputs, required this.ref, required this.repository, required this.sender, required this.workflow, this.enterprise, this.installation, this.organization, });
 
 factory WebhookWorkflowDispatch.fromJson(Map<String, dynamic> json) { return WebhookWorkflowDispatch(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
-  inputs: (json['inputs'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  inputs: json['inputs'] as Map<String, dynamic>?,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   ref: json['ref'] as String,

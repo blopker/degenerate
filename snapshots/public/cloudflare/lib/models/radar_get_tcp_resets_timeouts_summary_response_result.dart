@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_tcp_resets_timeouts_summary_response_result_meta.dart';import 'radar_get_tcp_resets_timeouts_summary_response_result_summary0.dart';final class RadarGetTcpResetsTimeoutsSummaryResponseResult {const RadarGetTcpResetsTimeoutsSummaryResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_tcp_resets_timeouts_summary_response_result_meta.dart';import 'radar_get_tcp_resets_timeouts_summary_response_result_summary0.dart';@immutable final class RadarGetTcpResetsTimeoutsSummaryResponseResult {const RadarGetTcpResetsTimeoutsSummaryResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetTcpResetsTimeoutsSummaryResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetTcpResetsTimeoutsSummaryResponseResult(
   meta: RadarGetTcpResetsTimeoutsSummaryResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

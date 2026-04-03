@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';final class DependabotListSelectedReposForOrgSecretResponse {const DependabotListSelectedReposForOrgSecretResponse({required this.totalCount, required this.repositories, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';@immutable final class DependabotListSelectedReposForOrgSecretResponse {const DependabotListSelectedReposForOrgSecretResponse({required this.totalCount, required this.repositories, });
 
 factory DependabotListSelectedReposForOrgSecretResponse.fromJson(Map<String, dynamic> json) { return DependabotListSelectedReposForOrgSecretResponse(
   totalCount: (json['total_count'] as num).toInt(),

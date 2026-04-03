@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The parameter displays if emergency calling is enabled for this number. Active numbers may place emergency calls by dialing valid emergency numbers for the country.
-final class IncomingPhoneNumberLocalEnumEmergencyStatus {const IncomingPhoneNumberLocalEnumEmergencyStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The parameter displays if emergency calling is enabled for this number. Active numbers may place emergency calls by dialing valid emergency numbers for the country.
+@immutable final class IncomingPhoneNumberLocalEnumEmergencyStatus {const IncomingPhoneNumberLocalEnumEmergencyStatus._(this.value);
 
 factory IncomingPhoneNumberLocalEnumEmergencyStatus.fromJson(String json) { return switch (json) {
   'Active' => active,

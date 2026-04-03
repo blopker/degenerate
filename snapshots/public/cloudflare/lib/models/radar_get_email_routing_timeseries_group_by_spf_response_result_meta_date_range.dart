@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaDateRange {const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaDateRange({required this.endTime, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaDateRange {const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
 factory RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),

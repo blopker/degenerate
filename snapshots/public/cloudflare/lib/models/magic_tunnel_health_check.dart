@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_health_check_target.dart';import 'magic_tunnel_health_check_target.dart';/// How frequent the health check is run. The default value is `mid`.
-final class MagicTunnelHealthCheckRate {const MagicTunnelHealthCheckRate._(this.value);
+@immutable final class MagicTunnelHealthCheckRate {const MagicTunnelHealthCheckRate._(this.value);
 
 factory MagicTunnelHealthCheckRate.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MagicTunnelHealthCheckRate($value)'; } 
  }
 /// The type of healthcheck to run, reply or request. The default value is `reply`.
-final class MagicTunnelHealthCheckType {const MagicTunnelHealthCheckType._(this.value);
+@immutable final class MagicTunnelHealthCheckType {const MagicTunnelHealthCheckType._(this.value);
 
 factory MagicTunnelHealthCheckType.fromJson(String json) { return switch (json) {
   'reply' => reply,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MagicTunnelHealthCheckType($value)'; } 
  }
 /// The direction of the flow of the healthcheck. Either unidirectional, where the probe comes to you via the tunnel and the result comes back to Cloudflare via the open Internet, or bidirectional where both the probe and result come and go via the tunnel.
-final class MagicTunnelHealthCheckDirection {const MagicTunnelHealthCheckDirection._(this.value);
+@immutable final class MagicTunnelHealthCheckDirection {const MagicTunnelHealthCheckDirection._(this.value);
 
 factory MagicTunnelHealthCheckDirection.fromJson(String json) { return switch (json) {
   'unidirectional' => unidirectional,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MagicTunnelHealthCheckDirection($value)'; } 
  }
-final class MagicTunnelHealthCheck {const MagicTunnelHealthCheck({this.enabled = true, this.rate = MagicTunnelHealthCheckRate.mid, this.target, this.type = MagicTunnelHealthCheckType.reply, this.direction = MagicTunnelHealthCheckDirection.unidirectional, });
+@immutable final class MagicTunnelHealthCheck {const MagicTunnelHealthCheck({this.enabled = true, this.rate = MagicTunnelHealthCheckRate.mid, this.target, this.type = MagicTunnelHealthCheckType.reply, this.direction = MagicTunnelHealthCheckDirection.unidirectional, });
 
 factory MagicTunnelHealthCheck.fromJson(Map<String, dynamic> json) { return MagicTunnelHealthCheck(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MeetingProviderEnum {const MeetingProviderEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MeetingProviderEnum {const MeetingProviderEnum._(this.value);
 
 factory MeetingProviderEnum.fromJson(String json) { return switch (json) {
   'google_meet' => googleMeet,

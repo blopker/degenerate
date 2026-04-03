@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the language code for transcription to ensure accurate results.
-final class RealtimekitTranscriptionConfigLanguage {const RealtimekitTranscriptionConfigLanguage._(this.value);
+@immutable final class RealtimekitTranscriptionConfigLanguage {const RealtimekitTranscriptionConfigLanguage._(this.value);
 
 factory RealtimekitTranscriptionConfigLanguage.fromJson(String json) { return switch (json) {
   'en-US' => enUs,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitTranscriptionConfigLanguage($value)'; } 
  }
 /// Transcription Configurations
-final class RealtimekitTranscriptionConfig {const RealtimekitTranscriptionConfig({this.keywords, this.language = RealtimekitTranscriptionConfigLanguage.enUs, this.profanityFilter = false, });
+@immutable final class RealtimekitTranscriptionConfig {const RealtimekitTranscriptionConfig({this.keywords, this.language = RealtimekitTranscriptionConfigLanguage.enUs, this.profanityFilter = false, });
 
 factory RealtimekitTranscriptionConfig.fromJson(Map<String, dynamic> json) { return RealtimekitTranscriptionConfig(
   keywords: (json['keywords'] as List<dynamic>?)?.map((e) => e as String).toList(),

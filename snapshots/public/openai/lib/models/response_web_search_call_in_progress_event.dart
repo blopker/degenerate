@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.web_search_call.in_progress`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.web_search_call.in_progress`.
 /// 
-final class ResponseWebSearchCallInProgressEventType {const ResponseWebSearchCallInProgressEventType._(this.value);
+@immutable final class ResponseWebSearchCallInProgressEventType {const ResponseWebSearchCallInProgressEventType._(this.value);
 
 factory ResponseWebSearchCallInProgressEventType.fromJson(String json) { return switch (json) {
   'response.web_search_call.in_progress' => responseWebSearchCallInProgress,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseWebSearchCallInProgressEventType($value)'; } 
  }
 /// Emitted when a web search call is initiated.
-final class ResponseWebSearchCallInProgressEvent {const ResponseWebSearchCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
+@immutable final class ResponseWebSearchCallInProgressEvent {const ResponseWebSearchCallInProgressEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseWebSearchCallInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseWebSearchCallInProgressEvent(
   type: ResponseWebSearchCallInProgressEventType.fromJson(json['type'] as String),

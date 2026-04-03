@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_name.dart';final class WorkersBindingKindMtlsCertificate {const WorkersBindingKindMtlsCertificate({required this.certificateId, required this.name, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindMtlsCertificate {const WorkersBindingKindMtlsCertificate({required this.certificateId, required this.name, required this.type, });
 
 factory WorkersBindingKindMtlsCertificate.fromJson(Map<String, dynamic> json) { return WorkersBindingKindMtlsCertificate(
   certificateId: json['certificate_id'] as String,

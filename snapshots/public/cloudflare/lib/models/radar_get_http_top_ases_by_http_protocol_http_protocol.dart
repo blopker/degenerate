@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// HTTP protocol (HTTP vs. HTTPS).
-final class RadarGetHttpTopAsesByHttpProtocolHttpProtocol {const RadarGetHttpTopAsesByHttpProtocolHttpProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// HTTP protocol (HTTP vs. HTTPS).
+@immutable final class RadarGetHttpTopAsesByHttpProtocolHttpProtocol {const RadarGetHttpTopAsesByHttpProtocolHttpProtocol._(this.value);
 
 factory RadarGetHttpTopAsesByHttpProtocolHttpProtocol.fromJson(String json) { return switch (json) {
   'HTTP' => http,

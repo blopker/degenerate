@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_delete_gateway_dynamic_route_response_result_elements_start_outputs_next.dart';final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs({required this.next});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_gateway_dynamic_route_response_result_elements_start_outputs_next.dart';@immutable final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs({required this.next});
 
 factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputs(
   next: AigConfigDeleteGatewayDynamicRouteResponseResultElementsStartOutputsNext.fromJson(json['next'] as Map<String, dynamic>),

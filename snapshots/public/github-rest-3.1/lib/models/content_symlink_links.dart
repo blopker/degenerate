@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ContentSymlinkLinks {const ContentSymlinkLinks({required this.git, required this.html, required this.self, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContentSymlinkLinks {const ContentSymlinkLinks({required this.git, required this.html, required this.self, });
 
 factory ContentSymlinkLinks.fromJson(Map<String, dynamic> json) { return ContentSymlinkLinks(
   git: json['git'] != null ? Uri.parse(json['git'] as String) : null,

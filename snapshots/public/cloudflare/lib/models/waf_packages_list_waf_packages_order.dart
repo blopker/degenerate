@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The field used to sort returned packages.
-final class WafPackagesListWafPackagesOrder {const WafPackagesListWafPackagesOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned packages.
+@immutable final class WafPackagesListWafPackagesOrder {const WafPackagesListWafPackagesOrder._(this.value);
 
 factory WafPackagesListWafPackagesOrder.fromJson(String json) { return switch (json) {
   'name' => $name,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'usage_trigger_enum_recurring.dart';import 'usage_trigger_enum_trigger_field.dart';/// The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is `POST`.
-final class CreateUsageTriggerRequestCallbackMethod {const CreateUsageTriggerRequestCallbackMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'usage_trigger_enum_recurring.dart';import 'usage_trigger_enum_trigger_field.dart';/// The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is `POST`.
+@immutable final class CreateUsageTriggerRequestCallbackMethod {const CreateUsageTriggerRequestCallbackMethod._(this.value);
 
 factory CreateUsageTriggerRequestCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateUsageTriggerRequestCallbackMethod($value)'; } 
  }
-final class CreateUsageTriggerRequest {const CreateUsageTriggerRequest({required this.callbackUrl, required this.triggerValue, required this.usageCategory, this.callbackMethod, this.friendlyName, this.recurring, this.triggerBy, });
+@immutable final class CreateUsageTriggerRequest {const CreateUsageTriggerRequest({required this.callbackUrl, required this.triggerValue, required this.usageCategory, this.callbackMethod, this.friendlyName, this.recurring, this.triggerBy, });
 
 factory CreateUsageTriggerRequest.fromJson(Map<String, dynamic> json) { return CreateUsageTriggerRequest(
   callbackUrl: Uri.parse(json['CallbackUrl'] as String),

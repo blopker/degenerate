@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository.dart';import 'simple_user.dart';final class PullRequestHead {const PullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';import 'simple_user.dart';@immutable final class PullRequestHead {const PullRequestHead({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
 
 factory PullRequestHead.fromJson(Map<String, dynamic> json) { return PullRequestHead(
   label: json['label'] as String,

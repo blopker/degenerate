@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'security_center_issue_class.dart';import 'security_center_issue_payload.dart';import 'security_center_issue_type.dart';import 'security_center_subject.dart';final class SecurityCenterIssueSeverity {const SecurityCenterIssueSeverity._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_center_issue_class.dart';import 'security_center_issue_payload.dart';import 'security_center_issue_type.dart';import 'security_center_subject.dart';@immutable final class SecurityCenterIssueSeverity {const SecurityCenterIssueSeverity._(this.value);
 
 factory SecurityCenterIssueSeverity.fromJson(String json) { return switch (json) {
   'Low' => low,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SecurityCenterIssueSeverity($value)'; } 
  }
-final class SecurityCenterIssue {const SecurityCenterIssue({this.dismissed, this.id, this.issueClass, this.issueType, this.payload, this.resolveLink, this.resolveText, this.severity, this.since, this.subject, this.timestamp, });
+@immutable final class SecurityCenterIssue {const SecurityCenterIssue({this.dismissed, this.id, this.issueClass, this.issueType, this.payload, this.resolveLink, this.resolveText, this.severity, this.since, this.subject, this.timestamp, });
 
 factory SecurityCenterIssue.fromJson(Map<String, dynamic> json) { return SecurityCenterIssue(
   dismissed: json['dismissed'] as bool?,

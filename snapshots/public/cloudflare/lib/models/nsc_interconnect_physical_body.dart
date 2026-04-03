@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'nsc_facility_info.dart';/// A Cloudflare site name.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_facility_info.dart';/// A Cloudflare site name.
 extension type const NscCloudflareSite(String value) {
 factory NscCloudflareSite.fromJson(String json) => NscCloudflareSite(json);
 
 String toJson() => value;
 
 }
-final class NscInterconnectPhysicalBody {const NscInterconnectPhysicalBody({required this.account, required this.name, this.owner, required this.type, required this.facility, required this.site, required this.slotId, required this.speed, });
+@immutable final class NscInterconnectPhysicalBody {const NscInterconnectPhysicalBody({required this.account, required this.name, required this.type, required this.facility, required this.site, required this.slotId, required this.speed, this.owner, });
 
 factory NscInterconnectPhysicalBody.fromJson(Map<String, dynamic> json) { return NscInterconnectPhysicalBody(
   account: json['account'] as String,

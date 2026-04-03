@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mute_participants_response_data.dart';final class MuteParticipantsResponse {const MuteParticipantsResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mute_participants_response_data.dart';@immutable final class MuteParticipantsResponse {const MuteParticipantsResponse({this.data, this.success, });
 
 factory MuteParticipantsResponse.fromJson(Map<String, dynamic> json) { return MuteParticipantsResponse(
   data: json['data'] != null ? MuteParticipantsResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

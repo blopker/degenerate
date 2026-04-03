@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_meter.dart';import 'thresholds_resource_usage_alert_filter.dart';import 'thresholds_resource_usage_threshold_config_meter.dart';/// Defines how the alert will behave.
-final class ThresholdsResourceUsageThresholdConfigRecurrence {const ThresholdsResourceUsageThresholdConfigRecurrence._(this.value);
+@immutable final class ThresholdsResourceUsageThresholdConfigRecurrence {const ThresholdsResourceUsageThresholdConfigRecurrence._(this.value);
 
 factory ThresholdsResourceUsageThresholdConfigRecurrence.fromJson(String json) { return switch (json) {
   'one_time' => oneTime,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThresholdsResourceUsageThresholdConfigRecurrence($value)'; } 
  }
 /// The usage threshold alert configuration enables setting up alerts for when a certain usage threshold on a specific meter is crossed.
-final class ThresholdsResourceUsageThresholdConfig {const ThresholdsResourceUsageThresholdConfig({this.filters, required this.gte, required this.meter, required this.recurrence, });
+@immutable final class ThresholdsResourceUsageThresholdConfig {const ThresholdsResourceUsageThresholdConfig({required this.gte, required this.meter, required this.recurrence, this.filters, });
 
 factory ThresholdsResourceUsageThresholdConfig.fromJson(Map<String, dynamic> json) { return ThresholdsResourceUsageThresholdConfig(
   filters: (json['filters'] as List<dynamic>?)?.map((e) => ThresholdsResourceUsageAlertFilter.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of grader.
-final class GraderTextSimilarityType {const GraderTextSimilarityType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of grader.
+@immutable final class GraderTextSimilarityType {const GraderTextSimilarityType._(this.value);
 
 factory GraderTextSimilarityType.fromJson(String json) { return switch (json) {
   'text_similarity' => textSimilarity,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// `gleu`, `meteor`, `rouge_1`, `rouge_2`, `rouge_3`, `rouge_4`, `rouge_5`,
 /// or `rouge_l`.
 /// 
-final class GraderTextSimilarityEvaluationMetric {const GraderTextSimilarityEvaluationMetric._(this.value);
+@immutable final class GraderTextSimilarityEvaluationMetric {const GraderTextSimilarityEvaluationMetric._(this.value);
 
 factory GraderTextSimilarityEvaluationMetric.fromJson(String json) { return switch (json) {
   'cosine' => cosine,
@@ -79,7 +79,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A TextSimilarityGrader object which grades text based on similarity metrics.
 /// 
-final class GraderTextSimilarity {const GraderTextSimilarity({this.type = GraderTextSimilarityType.textSimilarity, required this.name, required this.input, required this.reference, required this.evaluationMetric, });
+@immutable final class GraderTextSimilarity {const GraderTextSimilarity({required this.name, required this.input, required this.reference, required this.evaluationMetric, this.type = GraderTextSimilarityType.textSimilarity, });
 
 factory GraderTextSimilarity.fromJson(Map<String, dynamic> json) { return GraderTextSimilarity(
   type: GraderTextSimilarityType.fromJson(json['type'] as String),

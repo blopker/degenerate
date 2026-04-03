@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
-final class DependencyRelationship {const DependencyRelationship._(this.value);
+@immutable final class DependencyRelationship {const DependencyRelationship._(this.value);
 
 factory DependencyRelationship.fromJson(String json) { return switch (json) {
   'direct' => direct,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependencyRelationship($value)'; } 
  }
 /// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
-final class DependencyScope {const DependencyScope._(this.value);
+@immutable final class DependencyScope {const DependencyScope._(this.value);
 
 factory DependencyScope.fromJson(String json) { return switch (json) {
   'runtime' => runtime,
@@ -50,11 +50,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DependencyScope($value)'; } 
  }
-final class Dependency {const Dependency({this.packageUrl, this.metadata, this.relationship, this.scope, this.dependencies, });
+@immutable final class Dependency {const Dependency({this.packageUrl, this.metadata, this.relationship, this.scope, this.dependencies, });
 
 factory Dependency.fromJson(Map<String, dynamic> json) { return Dependency(
   packageUrl: json['package_url'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   relationship: json['relationship'] != null ? DependencyRelationship.fromJson(json['relationship'] as String) : null,
   scope: json['scope'] != null ? DependencyScope.fromJson(json['scope'] as String) : null,
   dependencies: (json['dependencies'] as List<dynamic>?)?.map((e) => e as String).toList(),

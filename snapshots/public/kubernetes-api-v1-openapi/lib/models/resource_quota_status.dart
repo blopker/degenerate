@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_quantity.dart';/// ResourceQuotaStatus defines the enforced hard limits and observed use.
-final class ResourceQuotaStatus {const ResourceQuotaStatus({this.hard, this.used, });
+@immutable final class ResourceQuotaStatus {const ResourceQuotaStatus({this.hard, this.used, });
 
 factory ResourceQuotaStatus.fromJson(Map<String, dynamic> json) { return ResourceQuotaStatus(
   hard: (json['hard'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),

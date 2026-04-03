@@ -1,7 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 /// Machine-readable error codes. Clients switch on these, not on messages.
 /// Add new codes here as needed — the OpenAPI spec will update automatically.
+@immutable
 final class ErrorCode {
   const ErrorCode._(this.value);
 
@@ -101,6 +104,7 @@ final class ErrorCode {
 
 /// Structured error. Clients switch on `code`, display `message`.
 /// `detail` is optional extra context for debugging.
+@immutable
 final class RoomErrorResponse {
   const RoomErrorResponse({
     required this.code,

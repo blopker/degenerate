@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProjectUpdateRequest {const ProjectUpdateRequest({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectUpdateRequest {const ProjectUpdateRequest({required this.name});
 
 factory ProjectUpdateRequest.fromJson(Map<String, dynamic> json) { return ProjectUpdateRequest(
   name: json['name'] as String,

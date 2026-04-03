@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_session.dart';import 'credit_note.dart';import 'customer.dart';import 'customer_balance_transaction_checkout_session.dart';import 'customer_balance_transaction_credit_note.dart';import 'customer_balance_transaction_customer.dart';import 'customer_balance_transaction_invoice.dart';import 'invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject._(this.value);
+@immutable final class CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject._(this.value);
 
 factory CustomerBalanceTransactionObject.fromJson(String json) { return switch (json) {
   'customer_balance_transaction' => customerBalanceTransaction,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerBalanceTransactionObject($value)'; } 
  }
 /// Transaction type: `adjustment`, `applied_to_invoice`, `credit_note`, `initial`, `invoice_overpaid`, `invoice_too_large`, `invoice_too_small`, `unspent_receiver_credit`, `unapplied_from_invoice`, `checkout_session_subscription_payment`, or `checkout_session_subscription_payment_canceled`. See the [Customer Balance page](https://docs.stripe.com/billing/customer/balance#types) to learn more about transaction types.
-final class CustomerBalanceTransactionType {const CustomerBalanceTransactionType._(this.value);
+@immutable final class CustomerBalanceTransactionType {const CustomerBalanceTransactionType._(this.value);
 
 factory CustomerBalanceTransactionType.fromJson(String json) { return switch (json) {
   'adjustment' => adjustment,
@@ -83,7 +83,7 @@ bool get isUnknown { return !values.contains(this); }
 /// or by creating a Customer Balance Transaction, which increments or decrements the customer's `balance` by the specified `amount`.
 /// 
 /// Related guide: [Customer balance](https://docs.stripe.com/billing/customer/balance)
-final class CustomerBalanceTransaction {const CustomerBalanceTransaction({required this.amount, this.checkoutSession, required this.created, this.creditNote, required this.currency, required this.customer, this.customerAccount, this.description, required this.endingBalance, required this.id, this.invoice, required this.livemode, this.metadata, required this.object, required this.type, });
+@immutable final class CustomerBalanceTransaction {const CustomerBalanceTransaction({required this.amount, required this.created, required this.currency, required this.customer, required this.endingBalance, required this.id, required this.livemode, required this.object, required this.type, this.checkoutSession, this.creditNote, this.customerAccount, this.description, this.invoice, this.metadata, });
 
 factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceTransaction(
   amount: (json['amount'] as num).toInt(),

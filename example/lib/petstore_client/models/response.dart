@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Response {const Response({this.code, this.type, this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Response {const Response({this.code, this.type, this.message, });
 
 factory Response.fromJson(Map<String, dynamic> json) { return Response(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,

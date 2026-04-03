@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ReposReplaceAllTopicsRequest {const ReposReplaceAllTopicsRequest({required this.names});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposReplaceAllTopicsRequest {const ReposReplaceAllTopicsRequest({required this.names});
 
 factory ReposReplaceAllTopicsRequest.fromJson(Map<String, dynamic> json) { return ReposReplaceAllTopicsRequest(
   names: (json['names'] as List<dynamic>).map((e) => e as String).toList(),

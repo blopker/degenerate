@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ExactDataEntryType {const ExactDataEntryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ExactDataEntryType {const ExactDataEntryType._(this.value);
 
 factory ExactDataEntryType.fromJson(String json) { return switch (json) {
   'exact_data' => exactData,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ExactDataEntryType($value)'; } 
  }
-final class ExactDataEntry {const ExactDataEntry({required this.caseSensitive, required this.createdAt, required this.enabled, required this.id, required this.name, required this.secret, required this.updatedAt, required this.type, });
+@immutable final class ExactDataEntry {const ExactDataEntry({required this.caseSensitive, required this.createdAt, required this.enabled, required this.id, required this.name, required this.secret, required this.updatedAt, required this.type, });
 
 factory ExactDataEntry.fromJson(Map<String, dynamic> json) { return ExactDataEntry(
   caseSensitive: json['case_sensitive'] as bool,

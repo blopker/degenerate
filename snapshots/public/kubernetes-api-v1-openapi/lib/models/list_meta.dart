@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
-final class ListMeta {const ListMeta({this.$continue, this.remainingItemCount, this.resourceVersion, this.selfLink, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
+@immutable final class ListMeta {const ListMeta({this.$continue, this.remainingItemCount, this.resourceVersion, this.selfLink, });
 
 factory ListMeta.fromJson(Map<String, dynamic> json) { return ListMeta(
   $continue: json['continue'] as String?,

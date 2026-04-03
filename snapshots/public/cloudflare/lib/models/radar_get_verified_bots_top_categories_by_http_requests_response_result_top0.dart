@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResultTop0 {const RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResultTop0({required this.botCategory, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResultTop0 {const RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResultTop0({required this.botCategory, required this.value, });
 
 factory RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResultTop0(
   botCategory: json['botCategory'] as String,

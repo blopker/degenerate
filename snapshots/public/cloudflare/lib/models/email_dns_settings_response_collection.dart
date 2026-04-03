@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_dns_record.dart';final class EmailDnsSettingsResponseCollection {const EmailDnsSettingsResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_dns_record.dart';@immutable final class EmailDnsSettingsResponseCollection {const EmailDnsSettingsResponseCollection({this.result});
 
 factory EmailDnsSettingsResponseCollection.fromJson(Map<String, dynamic> json) { return EmailDnsSettingsResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => EmailDnsRecord.fromJson(e as Map<String, dynamic>)).toList(),

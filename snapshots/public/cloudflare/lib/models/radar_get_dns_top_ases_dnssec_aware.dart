@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsTopAsesDnssecAware {const RadarGetDnsTopAsesDnssecAware._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTopAsesDnssecAware {const RadarGetDnsTopAsesDnssecAware._(this.value);
 
 factory RadarGetDnsTopAsesDnssecAware.fromJson(String json) { return switch (json) {
   'SUPPORTED' => supported,

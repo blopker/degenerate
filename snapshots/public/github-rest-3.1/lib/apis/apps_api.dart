@@ -186,7 +186,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -533,7 +533,7 @@ return execute(
  } 
 /// Get an app
 ///
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > The `:app_slug` is just the URL-friendly name of your GitHub App. You can find this on the settings page for your GitHub App (e.g., `https://github.com/settings/apps/:app_slug`).
 ///
 /// `GET /apps/{app_slug}`

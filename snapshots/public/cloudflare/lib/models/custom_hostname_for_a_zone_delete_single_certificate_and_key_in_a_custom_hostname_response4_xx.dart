@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_messages2.dart';final class CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse4Xx {const CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_messages2.dart';@immutable final class CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse4Xx {const CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, this.id, });
 
 factory CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse4Xx.fromJson(Map<String, dynamic> json) { return CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
   id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,
 ); }

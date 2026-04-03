@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_org_analytics_response_data_session_stats_day_stats.dart';/// Session statistics of an App during the range specified
-final class GetOrgAnalyticsResponseDataSessionStats {const GetOrgAnalyticsResponseDataSessionStats({this.dayStats, this.sessionsCount, this.sessionsMinutesConsumed, });
+@immutable final class GetOrgAnalyticsResponseDataSessionStats {const GetOrgAnalyticsResponseDataSessionStats({this.dayStats, this.sessionsCount, this.sessionsMinutesConsumed, });
 
 factory GetOrgAnalyticsResponseDataSessionStats.fromJson(Map<String, dynamic> json) { return GetOrgAnalyticsResponseDataSessionStats(
   dayStats: (json['day_stats'] as List<dynamic>?)?.map((e) => GetOrgAnalyticsResponseDataSessionStatsDayStats.fromJson(e as Map<String, dynamic>)).toList(),

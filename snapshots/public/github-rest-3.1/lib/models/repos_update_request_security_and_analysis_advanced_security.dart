@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Use the `status` property to enable or disable GitHub Advanced Security for this repository.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable GitHub Advanced Security for this repository.
 /// For more information, see "[About GitHub Advanced
 /// Security](/github/getting-started-with-github/learning-about-github/about-github-advanced-security)."
 /// 
 /// For standalone Code Scanning or Secret Protection products, this parameter cannot be used.
-final class ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity {const ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity({this.status});
+@immutable final class ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity {const ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity({this.status});
 
 factory ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity(
   status: json['status'] as String?,

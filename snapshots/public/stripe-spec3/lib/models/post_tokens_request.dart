@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_card_specs.dart';import 'post_tokens_request_account.dart';import 'post_tokens_request_bank_account.dart';import 'post_tokens_request_card.dart';import 'post_tokens_request_cvc_update.dart';import 'post_tokens_request_person.dart';import 'post_tokens_request_pii.dart';final class PostTokensRequest {const PostTokensRequest({this.account, this.bankAccount, this.card, this.customer, this.cvcUpdate, this.expand, this.person, this.pii, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_card_specs.dart';import 'post_tokens_request_account.dart';import 'post_tokens_request_bank_account.dart';import 'post_tokens_request_card.dart';import 'post_tokens_request_cvc_update.dart';import 'post_tokens_request_person.dart';import 'post_tokens_request_pii.dart';@immutable final class PostTokensRequest {const PostTokensRequest({this.account, this.bankAccount, this.card, this.customer, this.cvcUpdate, this.expand, this.person, this.pii, });
 
 factory PostTokensRequest.fromJson(Map<String, dynamic> json) { return PostTokensRequest(
   account: json['account'] != null ? PostTokensRequestAccount.fromJson(json['account'] as Map<String, dynamic>) : null,

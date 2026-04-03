@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The truncation strategy to use for the thread. The default is `auto`. If set to `last_messages`, the thread will be truncated to the n most recent messages in the thread. When set to `auto`, messages in the middle of the thread will be dropped to fit the context length of the model, `max_prompt_tokens`.
-final class TruncationObjectType {const TruncationObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The truncation strategy to use for the thread. The default is `auto`. If set to `last_messages`, the thread will be truncated to the n most recent messages in the thread. When set to `auto`, messages in the middle of the thread will be dropped to fit the context length of the model, `max_prompt_tokens`.
+@immutable final class TruncationObjectType {const TruncationObjectType._(this.value);
 
 factory TruncationObjectType.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TruncationObjectType($value)'; } 
  }
 /// Controls for how a thread will be truncated prior to the run. Use this to control the initial context window of the run.
-final class TruncationObject {const TruncationObject({required this.type, this.lastMessages, });
+@immutable final class TruncationObject {const TruncationObject({required this.type, this.lastMessages, });
 
 factory TruncationObject.fromJson(Map<String, dynamic> json) { return TruncationObject(
   type: TruncationObjectType.fromJson(json['type'] as String),

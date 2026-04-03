@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When force_axfr query parameter is set to true, the response is a simple string.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When force_axfr query parameter is set to true, the response is a simple string.
 extension type const SecondaryDnsForceResult(String value) {
 factory SecondaryDnsForceResult.fromJson(String json) => SecondaryDnsForceResult(json);
 
 String toJson() => value;
 
 }
-final class SecondaryDnsForceResponse {const SecondaryDnsForceResponse({this.result});
+@immutable final class SecondaryDnsForceResponse {const SecondaryDnsForceResponse({this.result});
 
 factory SecondaryDnsForceResponse.fromJson(Map<String, dynamic> json) { return SecondaryDnsForceResponse(
   result: json['result'] != null ? SecondaryDnsForceResult.fromJson(json['result'] as String) : null,

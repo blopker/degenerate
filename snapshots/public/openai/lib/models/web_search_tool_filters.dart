@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters for the search.
 /// 
-final class WebSearchToolFilters {const WebSearchToolFilters({this.allowedDomains});
+@immutable final class WebSearchToolFilters {const WebSearchToolFilters({this.allowedDomains});
 
 factory WebSearchToolFilters.fromJson(Map<String, dynamic> json) { return WebSearchToolFilters(
   allowedDomains: (json['allowed_domains'] as List<dynamic>?)?.map((e) => e as String).toList(),

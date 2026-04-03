@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_database_response.dart';import 'd1_list_databases_response_result_info.dart';import 'd1_messages2.dart';final class D1ListDatabasesResponse {const D1ListDatabasesResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_database_response.dart';import 'd1_list_databases_response_result_info.dart';import 'd1_messages2.dart';@immutable final class D1ListDatabasesResponse {const D1ListDatabasesResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory D1ListDatabasesResponse.fromJson(Map<String, dynamic> json) { return D1ListDatabasesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => D1Messages2.fromJson(e as Map<String, dynamic>)).toList(),

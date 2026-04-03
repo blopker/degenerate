@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_universal.dart';final class TlsCertificatesAndHostnamesSslUniversalSettingsResponse {const TlsCertificatesAndHostnamesSslUniversalSettingsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_universal.dart';@immutable final class TlsCertificatesAndHostnamesSslUniversalSettingsResponse {const TlsCertificatesAndHostnamesSslUniversalSettingsResponse({this.result});
 
 factory TlsCertificatesAndHostnamesSslUniversalSettingsResponse.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslUniversalSettingsResponse(
   result: json['result'] != null ? TlsCertificatesAndHostnamesUniversal.fromJson(json['result'] as Map<String, dynamic>) : null,

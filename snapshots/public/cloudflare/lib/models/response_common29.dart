@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_message.dart';final class ResponseCommon29 {const ResponseCommon29({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_message.dart';@immutable final class ResponseCommon29 {const ResponseCommon29({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon29.fromJson(Map<String, dynamic> json) { return ResponseCommon29(
   errors: (json['errors'] as List<dynamic>).map((e) => EmailSecurityMessage.fromJson(e as Map<String, dynamic>)).toList(),

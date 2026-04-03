@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecurityCenterValueCountsResponseResultVariant1 {const SecurityCenterValueCountsResponseResultVariant1({this.count, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityCenterValueCountsResponseResultVariant1 {const SecurityCenterValueCountsResponseResultVariant1({this.count, this.value, });
 
 factory SecurityCenterValueCountsResponseResultVariant1.fromJson(Map<String, dynamic> json) { return SecurityCenterValueCountsResponseResultVariant1(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

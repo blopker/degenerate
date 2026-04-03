@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringUniqueDevicesResponse {const DigitalExperienceMonitoringUniqueDevicesResponse({required this.uniqueDevicesTotal});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringUniqueDevicesResponse {const DigitalExperienceMonitoringUniqueDevicesResponse({required this.uniqueDevicesTotal});
 
 factory DigitalExperienceMonitoringUniqueDevicesResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringUniqueDevicesResponse(
   uniqueDevicesTotal: (json['uniqueDevicesTotal'] as num).toInt(),

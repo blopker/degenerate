@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_process_setup_intent_request_process_config.dart';/// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow.
-final class PostTerminalReadersReaderProcessSetupIntentRequestAllowRedisplay {const PostTerminalReadersReaderProcessSetupIntentRequestAllowRedisplay._(this.value);
+@immutable final class PostTerminalReadersReaderProcessSetupIntentRequestAllowRedisplay {const PostTerminalReadersReaderProcessSetupIntentRequestAllowRedisplay._(this.value);
 
 factory PostTerminalReadersReaderProcessSetupIntentRequestAllowRedisplay.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTerminalReadersReaderProcessSetupIntentRequestAllowRedisplay($value)'; } 
  }
-final class PostTerminalReadersReaderProcessSetupIntentRequest {const PostTerminalReadersReaderProcessSetupIntentRequest({required this.allowRedisplay, this.expand, this.processConfig, required this.setupIntent, });
+@immutable final class PostTerminalReadersReaderProcessSetupIntentRequest {const PostTerminalReadersReaderProcessSetupIntentRequest({required this.allowRedisplay, required this.setupIntent, this.expand, this.processConfig, });
 
 factory PostTerminalReadersReaderProcessSetupIntentRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderProcessSetupIntentRequest(
   allowRedisplay: PostTerminalReadersReaderProcessSetupIntentRequestAllowRedisplay.fromJson(json['allow_redisplay'] as String),

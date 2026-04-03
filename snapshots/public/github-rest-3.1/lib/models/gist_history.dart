@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gist_history_change_status.dart';import 'simple_user.dart';/// Gist History
-final class GistHistory {const GistHistory({this.user, this.version, this.committedAt, this.changeStatus, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gist_history_change_status.dart';import 'simple_user.dart';/// Gist History
+@immutable final class GistHistory {const GistHistory({this.user, this.version, this.committedAt, this.changeStatus, this.url, });
 
 factory GistHistory.fromJson(Map<String, dynamic> json) { return GistHistory(
   user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "embedding".
-final class EmbeddingObject {const EmbeddingObject._(this.value);
+@immutable final class EmbeddingObject {const EmbeddingObject._(this.value);
 
 factory EmbeddingObject.fromJson(String json) { return switch (json) {
   'embedding' => embedding,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Represents an embedding vector returned by embedding endpoint.
 /// 
-final class Embedding {const Embedding({required this.index, required this.embedding, required this.object, });
+@immutable final class Embedding {const Embedding({required this.index, required this.embedding, required this.object, });
 
 factory Embedding.fromJson(Map<String, dynamic> json) { return Embedding(
   index: (json['index'] as num).toInt(),

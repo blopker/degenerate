@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A redirect based on a bulk list lookup.
-final class RulesetsRedirectFromList {const RulesetsRedirectFromList({required this.key, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A redirect based on a bulk list lookup.
+@immutable final class RulesetsRedirectFromList {const RulesetsRedirectFromList({required this.key, required this.name, });
 
 factory RulesetsRedirectFromList.fromJson(Map<String, dynamic> json) { return RulesetsRedirectFromList(
   key: json['key'] as String,

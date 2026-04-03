@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bot_management_metric_requests.dart';/// Type of feedback report.
-final class BotManagementFeedbackType {const BotManagementFeedbackType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_metric_requests.dart';/// Type of feedback report.
+@immutable final class BotManagementFeedbackType {const BotManagementFeedbackType._(this.value);
 
 factory BotManagementFeedbackType.fromJson(String json) { return switch (json) {
   'false_positive' => falsePositive,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BotManagementFeedbackType($value)'; } 
  }
-final class BotManagementFeedbackReport {const BotManagementFeedbackReport({this.createdAt, required this.description, required this.expression, required this.firstRequestSeenAt, required this.lastRequestSeenAt, required this.requests, required this.requestsByAttribute, required this.requestsByScore, required this.requestsByScoreSrc, this.subtype, required this.type, });
+@immutable final class BotManagementFeedbackReport {const BotManagementFeedbackReport({required this.description, required this.expression, required this.firstRequestSeenAt, required this.lastRequestSeenAt, required this.requests, required this.requestsByAttribute, required this.requestsByScore, required this.requestsByScoreSrc, required this.type, this.createdAt, this.subtype, });
 
 factory BotManagementFeedbackReport.fromJson(Map<String, dynamic> json) { return BotManagementFeedbackReport(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

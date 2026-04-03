@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The tool to call. Always `shell`.
-final class SpecificFunctionShellParamType {const SpecificFunctionShellParamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tool to call. Always `shell`.
+@immutable final class SpecificFunctionShellParamType {const SpecificFunctionShellParamType._(this.value);
 
 factory SpecificFunctionShellParamType.fromJson(String json) { return switch (json) {
   'shell' => shell,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SpecificFunctionShellParamType($value)'; } 
  }
 /// Forces the model to call the shell tool when a tool call is required.
-final class SpecificFunctionShellParam {const SpecificFunctionShellParam({this.type = SpecificFunctionShellParamType.shell});
+@immutable final class SpecificFunctionShellParam {const SpecificFunctionShellParam({this.type = SpecificFunctionShellParamType.shell});
 
 factory SpecificFunctionShellParam.fromJson(Map<String, dynamic> json) { return SpecificFunctionShellParam(
   type: SpecificFunctionShellParamType.fromJson(json['type'] as String),

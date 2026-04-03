@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'pub_kubernetes_api_v1_openapi_security.dart';
 import '../apis/core_api.dart';
+import 'pub_kubernetes_api_v1_openapi_security.dart';
 
 /// Root SDK client providing access to all API groups.
 ///
@@ -11,9 +11,9 @@ import '../apis/core_api.dart';
 /// sdk.core.getCoreV1ApiResources();
 /// ```
 final class OpenapiApi {
-  final ApiConfig _config;
-
   OpenapiApi(this._config);
+
+  final ApiConfig _config;
 
   late final CoreApi core = CoreApi(_config);
 

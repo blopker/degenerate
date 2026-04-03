@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rum_site_tag.dart';final class RumSiteTagResponseSingleResult {const RumSiteTagResponseSingleResult({this.siteTag});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_site_tag.dart';@immutable final class RumSiteTagResponseSingleResult {const RumSiteTagResponseSingleResult({this.siteTag});
 
 factory RumSiteTagResponseSingleResult.fromJson(Map<String, dynamic> json) { return RumSiteTagResponseSingleResult(
   siteTag: json['site_tag'] != null ? RumSiteTag.fromJson(json['site_tag'] as String) : null,

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_catalog_sync_destination_type.dart';import 'mcn_catalog_sync_id.dart';import 'mcn_catalog_sync_update_mode.dart';import 'mcn_error.dart';extension type const McnCatalogSyncDestinationId(String value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_catalog_sync_destination_type.dart';import 'mcn_catalog_sync_id.dart';import 'mcn_catalog_sync_update_mode.dart';import 'mcn_error.dart';extension type const McnCatalogSyncDestinationId(String value) {
 factory McnCatalogSyncDestinationId.fromJson(String json) => McnCatalogSyncDestinationId(json);
 
 String toJson() => value;
 
 }
-final class McnCatalogSync {const McnCatalogSync({required this.description, required this.destinationId, required this.destinationType, this.errors, required this.id, this.includesDiscoveriesUntil, this.lastAttemptedUpdateAt, this.lastSuccessfulUpdateAt, required this.lastUserUpdateAt, required this.name, required this.policy, required this.updateMode, });
+@immutable final class McnCatalogSync {const McnCatalogSync({required this.description, required this.destinationId, required this.destinationType, required this.id, required this.lastUserUpdateAt, required this.name, required this.policy, required this.updateMode, this.errors, this.includesDiscoveriesUntil, this.lastAttemptedUpdateAt, this.lastSuccessfulUpdateAt, });
 
 factory McnCatalogSync.fromJson(Map<String, dynamic> json) { return McnCatalogSync(
   description: json['description'] as String,

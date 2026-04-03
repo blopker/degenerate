@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WifiPersonalPsk {const WifiPersonalPsk({required this.password, required this.ssid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WifiPersonalPsk {const WifiPersonalPsk({required this.password, required this.ssid, });
 
 factory WifiPersonalPsk.fromJson(Map<String, dynamic> json) { return WifiPersonalPsk(
   password: json['password'] as String,

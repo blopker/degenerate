@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The data source used to infer the customer's location.
-final class CustomerTaxLocationSource {const CustomerTaxLocationSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The data source used to infer the customer's location.
+@immutable final class CustomerTaxLocationSource {const CustomerTaxLocationSource._(this.value);
 
 factory CustomerTaxLocationSource.fromJson(String json) { return switch (json) {
   'billing_address' => billingAddress,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerTaxLocationSource($value)'; } 
  }
 /// 
-final class CustomerTaxLocation {const CustomerTaxLocation({required this.country, required this.source, this.state, });
+@immutable final class CustomerTaxLocation {const CustomerTaxLocation({required this.country, required this.source, this.state, });
 
 factory CustomerTaxLocation.fromJson(Map<String, dynamic> json) { return CustomerTaxLocation(
   country: json['country'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BaseGistFilesValue {const BaseGistFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, this.encoding = 'utf-8', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BaseGistFilesValue {const BaseGistFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, this.encoding = 'utf-8', });
 
 factory BaseGistFilesValue.fromJson(Map<String, dynamic> json) { return BaseGistFilesValue(
   filename: json['filename'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_har_response_result_har_log_entries_request.dart';import 'urlscanner_get_scan_har_response_result_har_log_entries_response.dart';final class UrlscannerGetScanHarResponseResultHarLogEntries {const UrlscannerGetScanHarResponseResultHarLogEntries({required this.initialPriority, required this.initiatorType, required this.priority, required this.requestId, required this.requestTime, required this.resourceType, required this.cache, required this.connection, required this.pageref, required this.request, required this.response, required this.serverIpAddress, required this.startedDateTime, required this.time, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response_result_har_log_entries_request.dart';import 'urlscanner_get_scan_har_response_result_har_log_entries_response.dart';@immutable final class UrlscannerGetScanHarResponseResultHarLogEntries {const UrlscannerGetScanHarResponseResultHarLogEntries({required this.initialPriority, required this.initiatorType, required this.priority, required this.requestId, required this.requestTime, required this.resourceType, required this.cache, required this.connection, required this.pageref, required this.request, required this.response, required this.serverIpAddress, required this.startedDateTime, required this.time, });
 
 factory UrlscannerGetScanHarResponseResultHarLogEntries.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponseResultHarLogEntries(
   initialPriority: json['_initialPriority'] as String,
@@ -9,7 +9,7 @@ factory UrlscannerGetScanHarResponseResultHarLogEntries.fromJson(Map<String, dyn
   requestId: json['_requestId'] as String,
   requestTime: (json['_requestTime'] as num).toDouble(),
   resourceType: json['_resourceType'] as String,
-  cache: (json['cache'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  cache: json['cache'] as Map<String, dynamic>,
   connection: json['connection'] as String,
   pageref: json['pageref'] as String,
   request: UrlscannerGetScanHarResponseResultHarLogEntriesRequest.fromJson(json['request'] as Map<String, dynamic>),

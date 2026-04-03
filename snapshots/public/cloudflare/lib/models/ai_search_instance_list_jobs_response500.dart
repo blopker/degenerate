@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_list_jobs_response500_errors.dart';final class AiSearchInstanceListJobsResponse500 {const AiSearchInstanceListJobsResponse500({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_list_jobs_response500_errors.dart';@immutable final class AiSearchInstanceListJobsResponse500 {const AiSearchInstanceListJobsResponse500({required this.errors, required this.success, });
 
 factory AiSearchInstanceListJobsResponse500.fromJson(Map<String, dynamic> json) { return AiSearchInstanceListJobsResponse500(
   errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceListJobsResponse500Errors.fromJson(e as Map<String, dynamic>)).toList(),

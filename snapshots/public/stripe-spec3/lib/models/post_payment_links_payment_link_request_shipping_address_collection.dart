@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_address_collection_params.dart';final class PostPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2 {const PostPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_address_collection_params.dart';@immutable final class PostPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2 {const PostPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2._(this.value);
 
 factory PostPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'prompt43_tool_choice_variant1_allowed_tools_allowed_tools.dart';final class Prompt43ToolChoiceVariant1AllowedToolsType {const Prompt43ToolChoiceVariant1AllowedToolsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_tool_choice_variant1_allowed_tools_allowed_tools.dart';@immutable final class Prompt43ToolChoiceVariant1AllowedToolsType {const Prompt43ToolChoiceVariant1AllowedToolsType._(this.value);
 
 factory Prompt43ToolChoiceVariant1AllowedToolsType.fromJson(String json) { return switch (json) {
   'allowed_tools' => allowedTools,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Prompt43ToolChoiceVariant1AllowedToolsType($value)'; } 
  }
 /// Constrain to an allowed subset of tools.
-final class Prompt43ToolChoiceVariant1AllowedTools {const Prompt43ToolChoiceVariant1AllowedTools({required this.allowedTools, required this.type, });
+@immutable final class Prompt43ToolChoiceVariant1AllowedTools {const Prompt43ToolChoiceVariant1AllowedTools({required this.allowedTools, required this.type, });
 
 factory Prompt43ToolChoiceVariant1AllowedTools.fromJson(Map<String, dynamic> json) { return Prompt43ToolChoiceVariant1AllowedTools(
   allowedTools: Prompt43ToolChoiceVariant1AllowedToolsAllowedTools.fromJson(json['allowed_tools'] as Map<String, dynamic>),

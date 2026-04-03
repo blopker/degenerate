@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_apps_response_data.dart';final class GetAppsResponse {const GetAppsResponse({this.data, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_apps_response_data.dart';@immutable final class GetAppsResponse {const GetAppsResponse({this.data, this.success, });
 
 factory GetAppsResponse.fromJson(Map<String, dynamic> json) { return GetAppsResponse(
   data: (json['data'] as List<dynamic>?)?.map((e) => GetAppsResponseData.fromJson(e as Map<String, dynamic>)).toList(),

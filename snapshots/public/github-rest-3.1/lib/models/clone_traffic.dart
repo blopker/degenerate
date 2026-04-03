@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'traffic.dart';/// Clone Traffic
-final class CloneTraffic {const CloneTraffic({required this.count, required this.uniques, required this.clones, });
+@immutable final class CloneTraffic {const CloneTraffic({required this.count, required this.uniques, required this.clones, });
 
 factory CloneTraffic.fromJson(Map<String, dynamic> json) { return CloneTraffic(
   count: (json['count'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IntelStartEndParams {const IntelStartEndParams({this.end, this.start, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelStartEndParams {const IntelStartEndParams({this.end, this.start, });
 
 factory IntelStartEndParams.fromJson(Map<String, dynamic> json) { return IntelStartEndParams(
   end: json['end'] as String?,

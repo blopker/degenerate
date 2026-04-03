@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'card_account.dart';import 'card_customer.dart';import 'customer.dart';import 'deleted_customer.dart';import 'token_card_networks.dart';/// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to “unspecified”.
-final class CardAllowRedisplay {const CardAllowRedisplay._(this.value);
+@immutable final class CardAllowRedisplay {const CardAllowRedisplay._(this.value);
 
 factory CardAllowRedisplay.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CardAllowRedisplay($value)'; } 
  }
-final class CardAvailablePayoutMethods {const CardAvailablePayoutMethods._(this.value);
+@immutable final class CardAvailablePayoutMethods {const CardAvailablePayoutMethods._(this.value);
 
 factory CardAvailablePayoutMethods.fromJson(String json) { return switch (json) {
   'instant' => instant,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CardAvailablePayoutMethods($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class CardObject {const CardObject._(this.value);
+@immutable final class CardObject {const CardObject._(this.value);
 
 factory CardObject.fromJson(String json) { return switch (json) {
   'card' => card,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CardObject($value)'; } 
  }
 /// Status of a card based on the card issuer.
-final class CardRegulatedStatus {const CardRegulatedStatus._(this.value);
+@immutable final class CardRegulatedStatus {const CardRegulatedStatus._(this.value);
 
 factory CardRegulatedStatus.fromJson(String json) { return switch (json) {
   'regulated' => regulated,
@@ -104,7 +104,7 @@ bool get isUnknown { return !values.contains(this); }
 /// transfer to those cards later.
 /// 
 /// Related guide: [Card payments with Sources](https://docs.stripe.com/sources/cards)
-final class Card {const Card({this.account, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine1Check, this.addressLine2, this.addressState, this.addressZip, this.addressZipCheck, this.allowRedisplay, this.availablePayoutMethods, required this.brand, this.country, this.currency, this.customer, this.cvcCheck, this.defaultForCurrency, this.dynamicLast4, required this.expMonth, required this.expYear, this.fingerprint, required this.funding, required this.id, this.iin, required this.last4, this.metadata, this.name, this.networks, required this.object, this.regulatedStatus, this.status, this.tokenizationMethod, });
+@immutable final class Card {const Card({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.id, required this.last4, required this.object, this.account, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine1Check, this.addressLine2, this.addressState, this.addressZip, this.addressZipCheck, this.allowRedisplay, this.availablePayoutMethods, this.country, this.currency, this.customer, this.cvcCheck, this.defaultForCurrency, this.dynamicLast4, this.fingerprint, this.iin, this.metadata, this.name, this.networks, this.regulatedStatus, this.status, this.tokenizationMethod, });
 
 factory Card.fromJson(Map<String, dynamic> json) { return Card(
   account: json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,

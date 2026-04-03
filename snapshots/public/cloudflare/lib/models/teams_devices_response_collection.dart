@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_device_posture_rules.dart';final class TeamsDevicesResponseCollection {const TeamsDevicesResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_device_posture_rules.dart';@immutable final class TeamsDevicesResponseCollection {const TeamsDevicesResponseCollection({this.result});
 
 factory TeamsDevicesResponseCollection.fromJson(Map<String, dynamic> json) { return TeamsDevicesResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TeamsDevicesDevicePostureRules.fromJson(e as Map<String, dynamic>)).toList(),

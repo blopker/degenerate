@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the enablement value of Smart Tiered Cache.
-final class SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue {const SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the enablement value of Smart Tiered Cache.
+@immutable final class SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue {const SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue._(this.value);
 
 factory SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue($value)'; } 
  }
-final class SmartshieldSmartShieldSettingsPatchBodySmartTieredCache {const SmartshieldSmartShieldSettingsPatchBodySmartTieredCache({this.value});
+@immutable final class SmartshieldSmartShieldSettingsPatchBodySmartTieredCache {const SmartshieldSmartShieldSettingsPatchBodySmartTieredCache({this.value});
 
 factory SmartshieldSmartShieldSettingsPatchBodySmartTieredCache.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsPatchBodySmartTieredCache(
   value: json['value'] != null ? SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue.fromJson(json['value'] as String) : null,

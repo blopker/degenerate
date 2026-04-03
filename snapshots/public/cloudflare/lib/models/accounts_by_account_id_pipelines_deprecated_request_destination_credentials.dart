@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials({required this.accessKeyId, required this.endpoint, required this.secretAccessKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials({required this.accessKeyId, required this.endpoint, required this.secretAccessKey, });
 
 factory AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials(
   accessKeyId: json['access_key_id'] as String,

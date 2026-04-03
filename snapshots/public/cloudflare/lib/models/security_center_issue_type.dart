@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecurityCenterIssueType {const SecurityCenterIssueType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityCenterIssueType {const SecurityCenterIssueType._(this.value);
 
 factory SecurityCenterIssueType.fromJson(String json) { return switch (json) {
   'compliance_violation' => complianceViolation,

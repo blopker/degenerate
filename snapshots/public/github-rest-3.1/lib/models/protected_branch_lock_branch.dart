@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
-final class ProtectedBranchLockBranch {const ProtectedBranchLockBranch({this.enabled = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
+@immutable final class ProtectedBranchLockBranch {const ProtectedBranchLockBranch({this.enabled = false});
 
 factory ProtectedBranchLockBranch.fromJson(Map<String, dynamic> json) { return ProtectedBranchLockBranch(
   enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,

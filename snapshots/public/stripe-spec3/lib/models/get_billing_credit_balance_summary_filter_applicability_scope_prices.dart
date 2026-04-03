@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBillingCreditBalanceSummaryFilterApplicabilityScopePrices {const GetBillingCreditBalanceSummaryFilterApplicabilityScopePrices({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingCreditBalanceSummaryFilterApplicabilityScopePrices {const GetBillingCreditBalanceSummaryFilterApplicabilityScopePrices({required this.id});
 
 factory GetBillingCreditBalanceSummaryFilterApplicabilityScopePrices.fromJson(Map<String, dynamic> json) { return GetBillingCreditBalanceSummaryFilterApplicabilityScopePrices(
   id: json['id'] as String,

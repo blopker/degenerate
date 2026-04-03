@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetailsUsBankAccount {const PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetailsUsBankAccount({this.accountHolderName, this.accountNumber, this.routingNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetailsUsBankAccount {const PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetailsUsBankAccount({this.accountHolderName, this.accountNumber, this.routingNumber, });
 
 factory PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetailsUsBankAccount.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetailsUsBankAccount(
   accountHolderName: json['account_holder_name'] as String?,

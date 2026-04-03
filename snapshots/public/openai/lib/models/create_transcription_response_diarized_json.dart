@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_transcription_response_diarized_json_usage.dart';import 'transcription_diarized_segment.dart';/// The type of task that was run. Always `transcribe`.
-final class CreateTranscriptionResponseDiarizedJsonTask {const CreateTranscriptionResponseDiarizedJsonTask._(this.value);
+@immutable final class CreateTranscriptionResponseDiarizedJsonTask {const CreateTranscriptionResponseDiarizedJsonTask._(this.value);
 
 factory CreateTranscriptionResponseDiarizedJsonTask.fromJson(String json) { return switch (json) {
   'transcribe' => transcribe,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Represents a diarized transcription response returned by the model, including the combined transcript and speaker-segment annotations.
 /// 
-final class CreateTranscriptionResponseDiarizedJson {const CreateTranscriptionResponseDiarizedJson({required this.task, required this.duration, required this.text, required this.segments, this.usage, });
+@immutable final class CreateTranscriptionResponseDiarizedJson {const CreateTranscriptionResponseDiarizedJson({required this.task, required this.duration, required this.text, required this.segments, this.usage, });
 
 factory CreateTranscriptionResponseDiarizedJson.fromJson(Map<String, dynamic> json) { return CreateTranscriptionResponseDiarizedJson(
   task: CreateTranscriptionResponseDiarizedJsonTask.fromJson(json['task'] as String),

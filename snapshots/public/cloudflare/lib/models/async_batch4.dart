@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'async_batch4_requests.dart';import 'messages46.dart';import 'prompt38.dart';final class AsyncBatch4 {const AsyncBatch4({required this.requests});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'async_batch4_requests.dart';import 'messages46.dart';import 'prompt38.dart';@immutable final class AsyncBatch4 {const AsyncBatch4({required this.requests});
 
 factory AsyncBatch4.fromJson(Map<String, dynamic> json) { return AsyncBatch4(
   requests: (json['requests'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => Prompt38.fromJson(v as Map<String, dynamic>), fromB: (v) => Messages46.fromJson(v as Map<String, dynamic>),)).toList(),

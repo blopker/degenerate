@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_account.dart';import 'teams_devices_created.dart';import 'teams_devices_deleted.dart';import 'teams_devices_ip.dart';import 'teams_devices_key.dart';import 'teams_devices_last_seen.dart';import 'teams_devices_mac_address.dart';import 'teams_devices_model.dart';import 'teams_devices_os_version.dart';import 'teams_devices_registration_id.dart';import 'teams_devices_schemas_name.dart';import 'teams_devices_serial_number.dart';import 'teams_devices_updated.dart';import 'teams_devices_user.dart';import 'teams_devices_version.dart';extension type const TeamsDevicesDeviceType(String value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_account.dart';import 'teams_devices_created.dart';import 'teams_devices_deleted.dart';import 'teams_devices_ip.dart';import 'teams_devices_key.dart';import 'teams_devices_last_seen.dart';import 'teams_devices_mac_address.dart';import 'teams_devices_model.dart';import 'teams_devices_os_version.dart';import 'teams_devices_registration_id.dart';import 'teams_devices_schemas_name.dart';import 'teams_devices_serial_number.dart';import 'teams_devices_updated.dart';import 'teams_devices_user.dart';import 'teams_devices_version.dart';extension type const TeamsDevicesDeviceType(String value) {
 factory TeamsDevicesDeviceType.fromJson(String json) => TeamsDevicesDeviceType(json);
 
 String toJson() => value;
@@ -26,7 +26,7 @@ factory TeamsDevicesTunnelType.fromJson(String json) => TeamsDevicesTunnelType(j
 String toJson() => value;
 
 }
-final class TeamsDevicesDevice {const TeamsDevicesDevice({this.account, this.created, this.deleted, this.deviceType, this.gatewayDeviceId, this.id, this.ip, this.key, this.keyType, this.lastSeen, this.macAddress, this.model, this.name, this.osVersion, this.serialNumber, this.tunnelType, this.updated, this.user, this.version, });
+@immutable final class TeamsDevicesDevice {const TeamsDevicesDevice({this.account, this.created, this.deleted, this.deviceType, this.gatewayDeviceId, this.id, this.ip, this.key, this.keyType, this.lastSeen, this.macAddress, this.model, this.name, this.osVersion, this.serialNumber, this.tunnelType, this.updated, this.user, this.version, });
 
 factory TeamsDevicesDevice.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevice(
   account: json['account'] != null ? TeamsDevicesAccount.fromJson(json['account'] as Map<String, dynamic>) : null,

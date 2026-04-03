@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If set, the types of subnets to include, separated by comma.
-final class ZeroTrustNetworksSubnetsListSubnetTypes {const ZeroTrustNetworksSubnetsListSubnetTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If set, the types of subnets to include, separated by comma.
+@immutable final class ZeroTrustNetworksSubnetsListSubnetTypes {const ZeroTrustNetworksSubnetsListSubnetTypes._(this.value);
 
 factory ZeroTrustNetworksSubnetsListSubnetTypes.fromJson(String json) { return switch (json) {
   'cloudflare_source' => cloudflareSource,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'smartshield_smart_shield_settings_cache_reserve.dart';import 'smartshield_smart_shield_settings_regional_tiered_cache.dart';import 'smartshield_smart_shield_settings_smart_routing.dart';import 'smartshield_smart_shield_settings_smart_tiered_cache.dart';/// A consolidated object containing settings from multiple APIs for partial updates.
-final class SmartshieldSmartShieldSettings {const SmartshieldSmartShieldSettings({this.cacheReserve, this.regionalTieredCache, this.smartRouting, this.smartTieredCache, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_smart_shield_settings_cache_reserve.dart';import 'smartshield_smart_shield_settings_regional_tiered_cache.dart';import 'smartshield_smart_shield_settings_smart_routing.dart';import 'smartshield_smart_shield_settings_smart_tiered_cache.dart';/// A consolidated object containing settings from multiple APIs for partial updates.
+@immutable final class SmartshieldSmartShieldSettings {const SmartshieldSmartShieldSettings({this.cacheReserve, this.regionalTieredCache, this.smartRouting, this.smartTieredCache, });
 
 factory SmartshieldSmartShieldSettings.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettings(
   cacheReserve: json['cache_reserve'] != null ? SmartshieldSmartShieldSettingsCacheReserve.fromJson(json['cache_reserve'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'member_id.dart';import 'member_subject_user.dart';final class MemberStatus {const MemberStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'member_id.dart';import 'member_subject_user.dart';@immutable final class MemberStatus {const MemberStatus._(this.value);
 
 factory MemberStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -24,12 +24,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MemberStatus($value)'; } 
  }
-final class Member {const Member({required this.createTime, required this.id, required this.meta, required this.status, required this.updateTime, required this.user, });
+@immutable final class Member {const Member({required this.createTime, required this.id, required this.meta, required this.status, required this.updateTime, required this.user, });
 
 factory Member.fromJson(Map<String, dynamic> json) { return Member(
   createTime: DateTime.parse(json['create_time'] as String),
   id: MemberId.fromJson(json['id'] as String),
-  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)))),
+  meta: (json['meta'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Map<String, dynamic>)),
   status: MemberStatus.fromJson(json['status'] as String),
   updateTime: DateTime.parse(json['update_time'] as String),
   user: MemberSubjectUser.fromJson(json['user'] as Map<String, dynamic>),
@@ -50,7 +50,7 @@ final MemberSubjectUser user;
 Map<String, dynamic> toJson() { return {
   'create_time': createTime.toIso8601String(),
   'id': id.toJson(),
-  'meta': meta.map((k, v) => MapEntry(k, v)),
+  'meta': meta,
   'status': status.toJson(),
   'update_time': updateTime.toIso8601String(),
   'user': user.toJson(),

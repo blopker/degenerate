@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_sso_connector.dart';final class IamSsoConnectorCollectionResponse {const IamSsoConnectorCollectionResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_sso_connector.dart';@immutable final class IamSsoConnectorCollectionResponse {const IamSsoConnectorCollectionResponse({this.result});
 
 factory IamSsoConnectorCollectionResponse.fromJson(Map<String, dynamic> json) { return IamSsoConnectorCollectionResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => IamSsoConnector.fromJson(e as Map<String, dynamic>)).toList(),

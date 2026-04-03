@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_customer_details_tax_ip_address.dart';final class PostInvoicesCreatePreviewRequestCustomerDetailsTax {const PostInvoicesCreatePreviewRequestCustomerDetailsTax({this.ipAddress});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_customer_details_tax_ip_address.dart';@immutable final class PostInvoicesCreatePreviewRequestCustomerDetailsTax {const PostInvoicesCreatePreviewRequestCustomerDetailsTax({this.ipAddress});
 
 factory PostInvoicesCreatePreviewRequestCustomerDetailsTax.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestCustomerDetailsTax(
   ipAddress: json['ip_address'] != null ? OneOf2.parse(json['ip_address'], fromA: (v) => v as String, fromB: (v) => PostInvoicesCreatePreviewRequestCustomerDetailsTaxIpAddressVariant2.fromJson(v as String),) : null,

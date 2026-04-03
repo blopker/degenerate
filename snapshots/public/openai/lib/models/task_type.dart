@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TaskType {const TaskType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TaskType {const TaskType._(this.value);
 
 factory TaskType.fromJson(String json) { return switch (json) {
   'custom' => custom,

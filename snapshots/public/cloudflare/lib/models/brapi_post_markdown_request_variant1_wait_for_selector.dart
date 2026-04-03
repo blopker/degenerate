@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Wait for the selector to appear in page. Check [options](https://pptr.dev/api/puppeteer.page.waitforselector).
-final class BrapiPostMarkdownRequestVariant1WaitForSelector {const BrapiPostMarkdownRequestVariant1WaitForSelector({this.hidden, required this.selector, this.timeout, this.visible, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Wait for the selector to appear in page. Check [options](https://pptr.dev/api/puppeteer.page.waitforselector).
+@immutable final class BrapiPostMarkdownRequestVariant1WaitForSelector {const BrapiPostMarkdownRequestVariant1WaitForSelector({required this.selector, this.hidden, this.timeout, this.visible, });
 
 factory BrapiPostMarkdownRequestVariant1WaitForSelector.fromJson(Map<String, dynamic> json) { return BrapiPostMarkdownRequestVariant1WaitForSelector(
   hidden: json['hidden'] as bool?,

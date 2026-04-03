@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A URL to redirect the request to.
-final class RulesetsRedirectFromValueTargetUrl {const RulesetsRedirectFromValueTargetUrl({this.expression, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A URL to redirect the request to.
+@immutable final class RulesetsRedirectFromValueTargetUrl {const RulesetsRedirectFromValueTargetUrl({this.expression, this.value, });
 
 factory RulesetsRedirectFromValueTargetUrl.fromJson(Map<String, dynamic> json) { return RulesetsRedirectFromValueTargetUrl(
   expression: json['expression'] as String?,

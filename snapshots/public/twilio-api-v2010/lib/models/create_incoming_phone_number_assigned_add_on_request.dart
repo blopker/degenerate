@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateIncomingPhoneNumberAssignedAddOnRequest {const CreateIncomingPhoneNumberAssignedAddOnRequest({required this.installedAddOnSid});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateIncomingPhoneNumberAssignedAddOnRequest {const CreateIncomingPhoneNumberAssignedAddOnRequest({required this.installedAddOnSid});
 
 factory CreateIncomingPhoneNumberAssignedAddOnRequest.fromJson(Map<String, dynamic> json) { return CreateIncomingPhoneNumberAssignedAddOnRequest(
   installedAddOnSid: json['InstalledAddOnSid'] as String,

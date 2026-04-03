@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal();
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal(
-
-); }
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal.fromJson(Map<String, dynamic> _) { return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal copyWith() { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal(
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal copyWith() { return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataPaypal; } 

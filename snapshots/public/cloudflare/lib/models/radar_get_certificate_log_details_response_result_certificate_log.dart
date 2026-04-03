@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_certificate_log_details_response_result_certificate_log_performance.dart';import 'radar_get_certificate_log_details_response_result_certificate_log_related.dart';/// The API standard that the certificate log follows.
-final class RadarGetCertificateLogDetailsResponseResultCertificateLogApi {const RadarGetCertificateLogDetailsResponseResultCertificateLogApi._(this.value);
+@immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogApi {const RadarGetCertificateLogDetailsResponseResultCertificateLogApi._(this.value);
 
 factory RadarGetCertificateLogDetailsResponseResultCertificateLogApi.fromJson(String json) { return switch (json) {
   'RFC6962' => rfc6962,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetCertificateLogDetailsResponseResultCertificateLogApi($value)'; } 
  }
 /// The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html
-final class RadarGetCertificateLogDetailsResponseResultCertificateLogState {const RadarGetCertificateLogDetailsResponseResultCertificateLogState._(this.value);
+@immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLogState {const RadarGetCertificateLogDetailsResponseResultCertificateLogState._(this.value);
 
 factory RadarGetCertificateLogDetailsResponseResultCertificateLogState.fromJson(String json) { return switch (json) {
   'USABLE' => usable,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RadarGetCertificateLogDetailsResponseResultCertificateLogState($value)'; } 
  }
-final class RadarGetCertificateLogDetailsResponseResultCertificateLog {const RadarGetCertificateLogDetailsResponseResultCertificateLog({required this.api, required this.avgThroughput, required this.description, required this.endExclusive, required this.lastUpdate, required this.$operator, required this.performance, required this.related, required this.slug, required this.startInclusive, required this.state, required this.stateTimestamp, required this.submittableCertCount, required this.submittedCertCount, required this.url, });
+@immutable final class RadarGetCertificateLogDetailsResponseResultCertificateLog {const RadarGetCertificateLogDetailsResponseResultCertificateLog({required this.api, required this.avgThroughput, required this.description, required this.endExclusive, required this.lastUpdate, required this.$operator, required this.performance, required this.related, required this.slug, required this.startInclusive, required this.state, required this.stateTimestamp, required this.submittableCertCount, required this.submittedCertCount, required this.url, });
 
 factory RadarGetCertificateLogDetailsResponseResultCertificateLog.fromJson(Map<String, dynamic> json) { return RadarGetCertificateLogDetailsResponseResultCertificateLog(
   api: RadarGetCertificateLogDetailsResponseResultCertificateLogApi.fromJson(json['api'] as String),

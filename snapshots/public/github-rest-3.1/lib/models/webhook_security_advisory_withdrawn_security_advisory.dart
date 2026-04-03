@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities.dart';import 'webhook_security_advisory_withdrawn_security_advisory_cvss.dart';import 'webhook_security_advisory_withdrawn_security_advisory_cwes.dart';import 'webhook_security_advisory_withdrawn_security_advisory_identifiers.dart';import 'webhook_security_advisory_withdrawn_security_advisory_references.dart';import 'webhook_security_advisory_withdrawn_security_advisory_vulnerabilities.dart';/// The details of the security advisory, including summary, description, and severity.
-final class WebhookSecurityAdvisoryWithdrawnSecurityAdvisory {const WebhookSecurityAdvisoryWithdrawnSecurityAdvisory({required this.cvss, this.cvssSeverities, required this.cwes, required this.description, required this.ghsaId, required this.identifiers, required this.publishedAt, required this.references, required this.severity, required this.summary, required this.updatedAt, required this.vulnerabilities, required this.withdrawnAt, });
+@immutable final class WebhookSecurityAdvisoryWithdrawnSecurityAdvisory {const WebhookSecurityAdvisoryWithdrawnSecurityAdvisory({required this.cvss, required this.cwes, required this.description, required this.ghsaId, required this.identifiers, required this.publishedAt, required this.references, required this.severity, required this.summary, required this.updatedAt, required this.vulnerabilities, required this.withdrawnAt, this.cvssSeverities, });
 
 factory WebhookSecurityAdvisoryWithdrawnSecurityAdvisory.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryWithdrawnSecurityAdvisory(
   cvss: WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>),

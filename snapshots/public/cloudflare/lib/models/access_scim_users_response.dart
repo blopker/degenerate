@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_users.dart';final class AccessScimUsersResponse {const AccessScimUsersResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_users.dart';@immutable final class AccessScimUsersResponse {const AccessScimUsersResponse({this.result});
 
 factory AccessScimUsersResponse.fromJson(Map<String, dynamic> json) { return AccessScimUsersResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessUsers.fromJson(e as Map<String, dynamic>)).toList(),

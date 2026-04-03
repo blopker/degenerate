@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_tax_association_transaction_attempts.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TaxAssociationObject {const TaxAssociationObject._(this.value);
+@immutable final class TaxAssociationObject {const TaxAssociationObject._(this.value);
 
 factory TaxAssociationObject.fromJson(String json) { return switch (json) {
   'tax.association' => taxAssociation,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxAssociationObject($value)'; } 
  }
 /// A Tax Association exposes the Tax Transactions that Stripe attempted to create on your behalf based on the PaymentIntent input
-final class TaxAssociation {const TaxAssociation({required this.calculation, required this.id, required this.object, required this.paymentIntent, this.taxTransactionAttempts, });
+@immutable final class TaxAssociation {const TaxAssociation({required this.calculation, required this.id, required this.object, required this.paymentIntent, this.taxTransactionAttempts, });
 
 factory TaxAssociation.fromJson(Map<String, dynamic> json) { return TaxAssociation(
   calculation: json['calculation'] as String,

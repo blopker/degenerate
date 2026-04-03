@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksPaymentLinkRequestOptionalItemsVariant1AdjustableQuantity {const PostPaymentLinksPaymentLinkRequestOptionalItemsVariant1AdjustableQuantity({required this.enabled, this.maximum, this.minimum, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksPaymentLinkRequestOptionalItemsVariant1AdjustableQuantity {const PostPaymentLinksPaymentLinkRequestOptionalItemsVariant1AdjustableQuantity({required this.enabled, this.maximum, this.minimum, });
 
 factory PostPaymentLinksPaymentLinkRequestOptionalItemsVariant1AdjustableQuantity.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestOptionalItemsVariant1AdjustableQuantity(
   enabled: json['enabled'] as bool,

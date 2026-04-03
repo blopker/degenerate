@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsSummaryByIpVersionResponseResultSummary0 {const RadarGetDnsSummaryByIpVersionResponseResultSummary0({required this.iPv4, required this.iPv6, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByIpVersionResponseResultSummary0 {const RadarGetDnsSummaryByIpVersionResponseResultSummary0({required this.iPv4, required this.iPv6, });
 
 factory RadarGetDnsSummaryByIpVersionResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByIpVersionResponseResultSummary0(
   iPv4: json['IPv4'] as String,

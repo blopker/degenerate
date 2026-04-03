@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_disable_for_time.dart';final class TeamsDevicesOverrideCodesResponseResult {const TeamsDevicesOverrideCodesResponseResult({this.disableForTime});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_disable_for_time.dart';@immutable final class TeamsDevicesOverrideCodesResponseResult {const TeamsDevicesOverrideCodesResponseResult({this.disableForTime});
 
 factory TeamsDevicesOverrideCodesResponseResult.fromJson(Map<String, dynamic> json) { return TeamsDevicesOverrideCodesResponseResult(
   disableForTime: json['disable_for_time'] != null ? TeamsDevicesDisableForTime.fromJson(json['disable_for_time'] as Map<String, dynamic>) : null,

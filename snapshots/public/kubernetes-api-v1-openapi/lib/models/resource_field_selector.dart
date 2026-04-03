@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_quantity.dart';/// ResourceFieldSelector represents container resources (cpu, memory) and their output format
-final class ResourceFieldSelector {const ResourceFieldSelector({this.containerName, this.divisor, this.resource = '', });
+@immutable final class ResourceFieldSelector {const ResourceFieldSelector({this.containerName, this.divisor, this.resource = '', });
 
 factory ResourceFieldSelector.fromJson(Map<String, dynamic> json) { return ResourceFieldSelector(
   containerName: json['containerName'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_release1_assets_uploader.dart';/// State of the release asset.
-final class WebhooksRelease1AssetsState {const WebhooksRelease1AssetsState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_release1_assets_uploader.dart';/// State of the release asset.
+@immutable final class WebhooksRelease1AssetsState {const WebhooksRelease1AssetsState._(this.value);
 
 factory WebhooksRelease1AssetsState.fromJson(String json) { return switch (json) {
   'uploaded' => uploaded,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksRelease1AssetsState($value)'; } 
  }
 /// Data related to a release.
-final class WebhooksRelease1Assets {const WebhooksRelease1Assets({required this.browserDownloadUrl, required this.contentType, required this.createdAt, required this.downloadCount, required this.id, required this.label, required this.name, required this.nodeId, required this.size, required this.digest, required this.state, required this.updatedAt, this.uploader, required this.url, });
+@immutable final class WebhooksRelease1Assets {const WebhooksRelease1Assets({required this.browserDownloadUrl, required this.contentType, required this.createdAt, required this.downloadCount, required this.id, required this.label, required this.name, required this.nodeId, required this.size, required this.digest, required this.state, required this.updatedAt, required this.url, this.uploader, });
 
 factory WebhooksRelease1Assets.fromJson(Map<String, dynamic> json) { return WebhooksRelease1Assets(
   browserDownloadUrl: Uri.parse(json['browser_download_url'] as String),

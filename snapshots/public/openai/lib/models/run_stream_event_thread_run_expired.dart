@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_object.dart';final class RunStreamEventThreadRunExpiredEvent {const RunStreamEventThreadRunExpiredEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_object.dart';@immutable final class RunStreamEventThreadRunExpiredEvent {const RunStreamEventThreadRunExpiredEvent._(this.value);
 
 factory RunStreamEventThreadRunExpiredEvent.fromJson(String json) { return switch (json) {
   'thread.run.expired' => threadRunExpired,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStreamEventThreadRunExpiredEvent($value)'; } 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) expires.
-final class RunStreamEventThreadRunExpired {const RunStreamEventThreadRunExpired({required this.event, required this.data, });
+@immutable final class RunStreamEventThreadRunExpired {const RunStreamEventThreadRunExpired({required this.event, required this.data, });
 
 factory RunStreamEventThreadRunExpired.fromJson(Map<String, dynamic> json) { return RunStreamEventThreadRunExpired(
   event: RunStreamEventThreadRunExpiredEvent.fromJson(json['event'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_common_components_schemas_identifier.dart';/// A named group of permissions that map to a group of operations against resources.
-final class IamPermissionGroupIds2 {const IamPermissionGroupIds2({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_common_components_schemas_identifier.dart';/// A named group of permissions that map to a group of operations against resources.
+@immutable final class IamPermissionGroupIds2 {const IamPermissionGroupIds2({required this.id});
 
 factory IamPermissionGroupIds2.fromJson(Map<String, dynamic> json) { return IamPermissionGroupIds2(
   id: IamCommonComponentsSchemasIdentifier.fromJson(json['id'] as String),

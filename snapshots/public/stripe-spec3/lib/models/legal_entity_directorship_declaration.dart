@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class LegalEntityDirectorshipDeclaration {const LegalEntityDirectorshipDeclaration({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class LegalEntityDirectorshipDeclaration {const LegalEntityDirectorshipDeclaration({this.date, this.ip, this.userAgent, });
 
 factory LegalEntityDirectorshipDeclaration.fromJson(Map<String, dynamic> json) { return LegalEntityDirectorshipDeclaration(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

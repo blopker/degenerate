@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_param2_three_d_secure_network_options_cartes_bancaires.dart';final class PaymentIntentParam2ThreeDSecureNetworkOptions {const PaymentIntentParam2ThreeDSecureNetworkOptions({this.cartesBancaires});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_param2_three_d_secure_network_options_cartes_bancaires.dart';@immutable final class PaymentIntentParam2ThreeDSecureNetworkOptions {const PaymentIntentParam2ThreeDSecureNetworkOptions({this.cartesBancaires});
 
 factory PaymentIntentParam2ThreeDSecureNetworkOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentParam2ThreeDSecureNetworkOptions(
   cartesBancaires: json['cartes_bancaires'] != null ? PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancaires.fromJson(json['cartes_bancaires'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'service_not_as_described_additional_documentation.dart';import 'service_not_as_described_canceled_at.dart';import 'service_not_as_described_cancellation_reason.dart';import 'service_not_as_described_explanation.dart';import 'service_not_as_described_received_at.dart';final class ServiceNotAsDescribed {const ServiceNotAsDescribed({this.additionalDocumentation, this.canceledAt, this.cancellationReason, this.explanation, this.receivedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'service_not_as_described_additional_documentation.dart';import 'service_not_as_described_canceled_at.dart';import 'service_not_as_described_cancellation_reason.dart';import 'service_not_as_described_explanation.dart';import 'service_not_as_described_received_at.dart';@immutable final class ServiceNotAsDescribed {const ServiceNotAsDescribed({this.additionalDocumentation, this.canceledAt, this.cancellationReason, this.explanation, this.receivedAt, });
 
 factory ServiceNotAsDescribed.fromJson(Map<String, dynamic> json) { return ServiceNotAsDescribed(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => ServiceNotAsDescribedAdditionalDocumentationVariant2.fromJson(v as String),) : null,

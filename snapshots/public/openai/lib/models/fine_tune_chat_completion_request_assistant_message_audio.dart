@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data about a previous audio response from the model.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data about a previous audio response from the model.
 /// [Learn more](/docs/guides/audio).
 /// 
-final class FineTuneChatCompletionRequestAssistantMessageAudio {const FineTuneChatCompletionRequestAssistantMessageAudio({required this.id});
+@immutable final class FineTuneChatCompletionRequestAssistantMessageAudio {const FineTuneChatCompletionRequestAssistantMessageAudio({required this.id});
 
 factory FineTuneChatCompletionRequestAssistantMessageAudio.fromJson(Map<String, dynamic> json) { return FineTuneChatCompletionRequestAssistantMessageAudio(
   id: json['id'] as String,

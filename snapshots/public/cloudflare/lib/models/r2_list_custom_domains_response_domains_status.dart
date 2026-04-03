@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Ownership status of the domain.
-final class R2ListCustomDomainsResponseDomainsStatusOwnership {const R2ListCustomDomainsResponseDomainsStatusOwnership._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ownership status of the domain.
+@immutable final class R2ListCustomDomainsResponseDomainsStatusOwnership {const R2ListCustomDomainsResponseDomainsStatusOwnership._(this.value);
 
 factory R2ListCustomDomainsResponseDomainsStatusOwnership.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2ListCustomDomainsResponseDomainsStatusOwnership($value)'; } 
  }
 /// SSL certificate status.
-final class R2ListCustomDomainsResponseDomainsStatusSsl {const R2ListCustomDomainsResponseDomainsStatusSsl._(this.value);
+@immutable final class R2ListCustomDomainsResponseDomainsStatusSsl {const R2ListCustomDomainsResponseDomainsStatusSsl._(this.value);
 
 factory R2ListCustomDomainsResponseDomainsStatusSsl.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -74,7 +74,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2ListCustomDomainsResponseDomainsStatusSsl($value)'; } 
  }
-final class R2ListCustomDomainsResponseDomainsStatus {const R2ListCustomDomainsResponseDomainsStatus({required this.ownership, required this.ssl, });
+@immutable final class R2ListCustomDomainsResponseDomainsStatus {const R2ListCustomDomainsResponseDomainsStatus({required this.ownership, required this.ssl, });
 
 factory R2ListCustomDomainsResponseDomainsStatus.fromJson(Map<String, dynamic> json) { return R2ListCustomDomainsResponseDomainsStatus(
   ownership: R2ListCustomDomainsResponseDomainsStatusOwnership.fromJson(json['ownership'] as String),

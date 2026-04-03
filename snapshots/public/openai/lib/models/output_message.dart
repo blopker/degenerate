@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_phase.dart';import 'output_message_content.dart';/// The role of the output message. Always `assistant`.
 /// 
-final class OutputMessageRole {const OutputMessageRole._(this.value);
+@immutable final class OutputMessageRole {const OutputMessageRole._(this.value);
 
 factory OutputMessageRole.fromJson(String json) { return switch (json) {
   'assistant' => assistant,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The status of the message input. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when input items are returned via API.
 /// 
-final class OutputMessageStatus {const OutputMessageStatus._(this.value);
+@immutable final class OutputMessageStatus {const OutputMessageStatus._(this.value);
 
 factory OutputMessageStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An output message from the model.
 /// 
-final class OutputMessage {const OutputMessage({required this.id, required this.type, required this.role, required this.content, this.phase, required this.status, });
+@immutable final class OutputMessage {const OutputMessage({required this.id, required this.type, required this.role, required this.content, required this.status, this.phase, });
 
 factory OutputMessage.fromJson(Map<String, dynamic> json) { return OutputMessage(
   id: json['id'] as String,

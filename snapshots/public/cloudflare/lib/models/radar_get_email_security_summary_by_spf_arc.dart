@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecuritySummaryBySpfArc {const RadarGetEmailSecuritySummaryBySpfArc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryBySpfArc {const RadarGetEmailSecuritySummaryBySpfArc._(this.value);
 
 factory RadarGetEmailSecuritySummaryBySpfArc.fromJson(String json) { return switch (json) {
   'PASS' => pass,

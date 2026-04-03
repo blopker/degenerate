@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workflow_run_usage_billable_macos_job_runs.dart';final class WorkflowRunUsageBillableMacos {const WorkflowRunUsageBillableMacos({required this.totalMs, required this.jobs, this.jobRuns, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workflow_run_usage_billable_macos_job_runs.dart';@immutable final class WorkflowRunUsageBillableMacos {const WorkflowRunUsageBillableMacos({required this.totalMs, required this.jobs, this.jobRuns, });
 
 factory WorkflowRunUsageBillableMacos.fromJson(Map<String, dynamic> json) { return WorkflowRunUsageBillableMacos(
   totalMs: (json['total_ms'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsVariable {const ActionsVariable({required this.name, required this.value, required this.createdAt, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsVariable {const ActionsVariable({required this.name, required this.value, required this.createdAt, required this.updatedAt, });
 
 factory ActionsVariable.fromJson(Map<String, dynamic> json) { return ActionsVariable(
   name: json['name'] as String,

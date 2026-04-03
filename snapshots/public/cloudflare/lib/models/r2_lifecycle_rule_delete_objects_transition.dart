@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_lifecycle_age_condition.dart';import 'r2_lifecycle_date_condition.dart';import 'r2_lifecycle_rule_delete_objects_transition_condition.dart';/// Transition to delete objects.
-final class R2LifecycleRuleDeleteObjectsTransition {const R2LifecycleRuleDeleteObjectsTransition({this.condition});
+@immutable final class R2LifecycleRuleDeleteObjectsTransition {const R2LifecycleRuleDeleteObjectsTransition({this.condition});
 
 factory R2LifecycleRuleDeleteObjectsTransition.fromJson(Map<String, dynamic> json) { return R2LifecycleRuleDeleteObjectsTransition(
   condition: json['condition'] != null ? OneOf2.parse(json['condition'], fromA: (v) => R2LifecycleAgeCondition.fromJson(v as Map<String, dynamic>), fromB: (v) => R2LifecycleDateCondition.fromJson(v as Map<String, dynamic>),) : null,

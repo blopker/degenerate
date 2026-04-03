@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'd1_export_database_request_dump_options.dart';/// Specifies that you will poll this endpoint until the export completes
-final class D1ExportDatabaseRequestOutputFormat {const D1ExportDatabaseRequestOutputFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_export_database_request_dump_options.dart';/// Specifies that you will poll this endpoint until the export completes
+@immutable final class D1ExportDatabaseRequestOutputFormat {const D1ExportDatabaseRequestOutputFormat._(this.value);
 
 factory D1ExportDatabaseRequestOutputFormat.fromJson(String json) { return switch (json) {
   'polling' => polling,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'D1ExportDatabaseRequestOutputFormat($value)'; } 
  }
-final class D1ExportDatabaseRequest {const D1ExportDatabaseRequest({this.currentBookmark, this.dumpOptions, required this.outputFormat, });
+@immutable final class D1ExportDatabaseRequest {const D1ExportDatabaseRequest({required this.outputFormat, this.currentBookmark, this.dumpOptions, });
 
 factory D1ExportDatabaseRequest.fromJson(Map<String, dynamic> json) { return D1ExportDatabaseRequest(
   currentBookmark: json['current_bookmark'] as String?,

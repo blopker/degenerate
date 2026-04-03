@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_messages2.dart';import 'load_balancing_result_info.dart';final class PaginatedResponseCollection {const PaginatedResponseCollection({required this.errors, required this.messages, required this.success, required this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_messages2.dart';import 'load_balancing_result_info.dart';@immutable final class PaginatedResponseCollection {const PaginatedResponseCollection({required this.errors, required this.messages, required this.success, required this.resultInfo, });
 
 factory PaginatedResponseCollection.fromJson(Map<String, dynamic> json) { return PaginatedResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),

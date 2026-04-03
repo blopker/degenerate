@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MqQueueSettings {const MqQueueSettings({this.deliveryDelay, this.deliveryPaused, this.messageRetentionPeriod, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqQueueSettings {const MqQueueSettings({this.deliveryDelay, this.deliveryPaused, this.messageRetentionPeriod, });
 
 factory MqQueueSettings.fromJson(Map<String, dynamic> json) { return MqQueueSettings(
   deliveryDelay: json['delivery_delay'] != null ? (json['delivery_delay'] as num).toDouble() : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Visibility of a variable
-final class OrganizationActionsVariableVisibility {const OrganizationActionsVariableVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Visibility of a variable
+@immutable final class OrganizationActionsVariableVisibility {const OrganizationActionsVariableVisibility._(this.value);
 
 factory OrganizationActionsVariableVisibility.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrganizationActionsVariableVisibility($value)'; } 
  }
 /// Organization variable for GitHub Actions.
-final class OrganizationActionsVariable {const OrganizationActionsVariable({required this.name, required this.value, required this.createdAt, required this.updatedAt, required this.visibility, this.selectedRepositoriesUrl, });
+@immutable final class OrganizationActionsVariable {const OrganizationActionsVariable({required this.name, required this.value, required this.createdAt, required this.updatedAt, required this.visibility, this.selectedRepositoriesUrl, });
 
 factory OrganizationActionsVariable.fromJson(Map<String, dynamic> json) { return OrganizationActionsVariable(
   name: json['name'] as String,

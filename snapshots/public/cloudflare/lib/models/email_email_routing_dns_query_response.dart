@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_email_routing_dns_query_response_result.dart';final class EmailEmailRoutingDnsQueryResponse {const EmailEmailRoutingDnsQueryResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_email_routing_dns_query_response_result.dart';@immutable final class EmailEmailRoutingDnsQueryResponse {const EmailEmailRoutingDnsQueryResponse({this.result});
 
 factory EmailEmailRoutingDnsQueryResponse.fromJson(Map<String, dynamic> json) { return EmailEmailRoutingDnsQueryResponse(
   result: json['result'] != null ? EmailEmailRoutingDnsQueryResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

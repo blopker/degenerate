@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shipping_cost_shipping_rate_data_delivery_estimate_maximum.dart';import 'shipping_cost_shipping_rate_data_delivery_estimate_minimum.dart';final class ShippingCostShippingRateDataDeliveryEstimate {const ShippingCostShippingRateDataDeliveryEstimate({this.maximum, this.minimum, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_cost_shipping_rate_data_delivery_estimate_maximum.dart';import 'shipping_cost_shipping_rate_data_delivery_estimate_minimum.dart';@immutable final class ShippingCostShippingRateDataDeliveryEstimate {const ShippingCostShippingRateDataDeliveryEstimate({this.maximum, this.minimum, });
 
 factory ShippingCostShippingRateDataDeliveryEstimate.fromJson(Map<String, dynamic> json) { return ShippingCostShippingRateDataDeliveryEstimate(
   maximum: json['maximum'] != null ? ShippingCostShippingRateDataDeliveryEstimateMaximum.fromJson(json['maximum'] as Map<String, dynamic>) : null,

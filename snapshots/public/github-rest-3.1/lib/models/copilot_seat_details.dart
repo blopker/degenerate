@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_seat_details_assigning_team.dart';import 'enterprise_team.dart';import 'organization_simple.dart';import 'simple_user.dart';import 'team.dart';/// The Copilot plan of the organization, or the parent enterprise, when applicable.
-final class CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType._(this.value);
+@immutable final class CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType._(this.value);
 
 factory CopilotSeatDetailsPlanType.fromJson(String json) { return switch (json) {
   'business' => business,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CopilotSeatDetailsPlanType($value)'; } 
  }
 /// Information about a Copilot Business seat assignment for a user, team, or organization.
-final class CopilotSeatDetails {const CopilotSeatDetails({this.assignee, this.organization, this.assigningTeam, this.pendingCancellationDate, this.lastActivityAt, this.lastActivityEditor, this.lastAuthenticatedAt, required this.createdAt, this.updatedAt, this.planType, });
+@immutable final class CopilotSeatDetails {const CopilotSeatDetails({required this.createdAt, this.assignee, this.organization, this.assigningTeam, this.pendingCancellationDate, this.lastActivityAt, this.lastActivityEditor, this.lastAuthenticatedAt, this.updatedAt, this.planType, });
 
 factory CopilotSeatDetails.fromJson(Map<String, dynamic> json) { return CopilotSeatDetails(
   assignee: json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,

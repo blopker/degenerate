@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsTimeseriesGroupByIpVersionResponse400Errors {const RadarGetDnsTimeseriesGroupByIpVersionResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByIpVersionResponse400Errors {const RadarGetDnsTimeseriesGroupByIpVersionResponse400Errors({required this.message});
 
 factory RadarGetDnsTimeseriesGroupByIpVersionResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByIpVersionResponse400Errors(
   message: json['message'] as String,

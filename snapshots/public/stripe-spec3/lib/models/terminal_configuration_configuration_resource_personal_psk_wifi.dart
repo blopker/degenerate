@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TerminalConfigurationConfigurationResourcePersonalPskWifi {const TerminalConfigurationConfigurationResourcePersonalPskWifi({required this.password, required this.ssid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TerminalConfigurationConfigurationResourcePersonalPskWifi {const TerminalConfigurationConfigurationResourcePersonalPskWifi({required this.password, required this.ssid, });
 
 factory TerminalConfigurationConfigurationResourcePersonalPskWifi.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourcePersonalPskWifi(
   password: json['password'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptions {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptions({this.collectionMethod});
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptions {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptions({this.collectionMethod});
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptions(
   collectionMethod: json['collection_method'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod.fromJson(json['collection_method'] as String) : null,

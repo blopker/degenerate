@@ -1,7 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 /// Keeper forces the current speaker to pass the stick.
 /// The next speaker won't have a chance to accept — the stick will be passed immediately.
+@immutable
 final class ForcePassStickEvent {
   const ForcePassStickEvent({this.type = 'force_pass_stick'});
 

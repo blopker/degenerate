@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies what permissions the credentials will have.
-final class CcImageRegistryPermissions {const CcImageRegistryPermissions._(this.value);
+@immutable final class CcImageRegistryPermissions {const CcImageRegistryPermissions._(this.value);
 
 factory CcImageRegistryPermissions.fromJson(String json) { return switch (json) {
   'pull' => pull,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CcImageRegistryPermissions($value)'; } 
  }
 /// Specifies the configuration for the image registry credential to create.
-final class CcImageRegistryCredentialsConfiguration {const CcImageRegistryCredentialsConfiguration({required this.expirationMinutes, required this.permissions, });
+@immutable final class CcImageRegistryCredentialsConfiguration {const CcImageRegistryCredentialsConfiguration({required this.expirationMinutes, required this.permissions, });
 
 factory CcImageRegistryCredentialsConfiguration.fromJson(Map<String, dynamic> json) { return CcImageRegistryCredentialsConfiguration(
   expirationMinutes: (json['expiration_minutes'] as num).toInt(),

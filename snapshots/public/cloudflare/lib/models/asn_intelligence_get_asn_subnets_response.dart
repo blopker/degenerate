@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_asn.dart';import 'intel_count.dart';import 'intel_page.dart';import 'intel_per_page.dart';final class AsnIntelligenceGetAsnSubnetsResponse {const AsnIntelligenceGetAsnSubnetsResponse({this.asn, this.count, this.ipCountTotal, this.page, this.perPage, this.subnets, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_asn.dart';import 'intel_count.dart';import 'intel_page.dart';import 'intel_per_page.dart';@immutable final class AsnIntelligenceGetAsnSubnetsResponse {const AsnIntelligenceGetAsnSubnetsResponse({this.asn, this.count, this.ipCountTotal, this.page, this.perPage, this.subnets, });
 
 factory AsnIntelligenceGetAsnSubnetsResponse.fromJson(Map<String, dynamic> json) { return AsnIntelligenceGetAsnSubnetsResponse(
   asn: json['asn'] != null ? IntelAsn.fromJson(json['asn'] as num) : null,

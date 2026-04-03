@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project_service_account.dart';final class ProjectServiceAccountListResponseObject {const ProjectServiceAccountListResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'project_service_account.dart';@immutable final class ProjectServiceAccountListResponseObject {const ProjectServiceAccountListResponseObject._(this.value);
 
 factory ProjectServiceAccountListResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectServiceAccountListResponseObject($value)'; } 
  }
-final class ProjectServiceAccountListResponse {const ProjectServiceAccountListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+@immutable final class ProjectServiceAccountListResponse {const ProjectServiceAccountListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ProjectServiceAccountListResponse.fromJson(Map<String, dynamic> json) { return ProjectServiceAccountListResponse(
   object: ProjectServiceAccountListResponseObject.fromJson(json['object'] as String),

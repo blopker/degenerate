@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Snapshot DHCP lease
-final class MconnSnapshotDhcpLease {const MconnSnapshotDhcpLease({required this.clientId, this.connectorId, required this.expiryTime, required this.hostname, required this.interfaceName, required this.ipAddress, required this.macAddress, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot DHCP lease
+@immutable final class MconnSnapshotDhcpLease {const MconnSnapshotDhcpLease({required this.clientId, required this.expiryTime, required this.hostname, required this.interfaceName, required this.ipAddress, required this.macAddress, this.connectorId, });
 
 factory MconnSnapshotDhcpLease.fromJson(Map<String, dynamic> json) { return MconnSnapshotDhcpLease(
   clientId: json['client_id'] as String,

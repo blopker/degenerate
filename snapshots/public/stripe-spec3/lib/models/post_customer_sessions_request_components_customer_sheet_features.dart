@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodAllowRedisplayFilters {const PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodAllowRedisplayFilters._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodAllowRedisplayFilters {const PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodAllowRedisplayFilters._(this.value);
 
 factory PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodAllowRedisplayFilters.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodAllowRedisplayFilters($value)'; } 
  }
-final class PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodRemove {const PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodRemove._(this.value);
+@immutable final class PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodRemove {const PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodRemove._(this.value);
 
 factory PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodRemove.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodRemove($value)'; } 
  }
-final class PostCustomerSessionsRequestComponentsCustomerSheetFeatures {const PostCustomerSessionsRequestComponentsCustomerSheetFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRemove, });
+@immutable final class PostCustomerSessionsRequestComponentsCustomerSheetFeatures {const PostCustomerSessionsRequestComponentsCustomerSheetFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRemove, });
 
 factory PostCustomerSessionsRequestComponentsCustomerSheetFeatures.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponentsCustomerSheetFeatures(
   paymentMethodAllowRedisplayFilters: (json['payment_method_allow_redisplay_filters'] as List<dynamic>?)?.map((e) => PostCustomerSessionsRequestComponentsCustomerSheetFeaturesPaymentMethodAllowRedisplayFilters.fromJson(e as String)).toList(),

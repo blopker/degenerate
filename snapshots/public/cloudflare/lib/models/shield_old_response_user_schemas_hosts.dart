@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';final class ShieldOldResponseUserSchemasHosts {const ShieldOldResponseUserSchemasHosts({required this.createdAt, required this.hosts, required this.name, required this.schemaId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';@immutable final class ShieldOldResponseUserSchemasHosts {const ShieldOldResponseUserSchemasHosts({required this.createdAt, required this.hosts, required this.name, required this.schemaId, });
 
 factory ShieldOldResponseUserSchemasHosts.fromJson(Map<String, dynamic> json) { return ShieldOldResponseUserSchemasHosts(
   createdAt: ShieldTimestamp.fromJson(json['created_at'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Field to order organizations by.
-final class UserSOrganizationsListOrganizationsOrder {const UserSOrganizationsListOrganizationsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order organizations by.
+@immutable final class UserSOrganizationsListOrganizationsOrder {const UserSOrganizationsListOrganizationsOrder._(this.value);
 
 factory UserSOrganizationsListOrganizationsOrder.fromJson(String json) { return switch (json) {
   'id' => id,

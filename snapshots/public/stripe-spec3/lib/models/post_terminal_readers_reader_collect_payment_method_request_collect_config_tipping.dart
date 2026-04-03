@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping {const PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping({this.amountEligible});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping {const PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping({this.amountEligible});
 
 factory PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping(
   amountEligible: json['amount_eligible'] != null ? (json['amount_eligible'] as num).toInt() : null,

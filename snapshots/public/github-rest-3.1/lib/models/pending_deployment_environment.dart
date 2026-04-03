@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PendingDeploymentEnvironment {const PendingDeploymentEnvironment({this.id, this.nodeId, this.name, this.url, this.htmlUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PendingDeploymentEnvironment {const PendingDeploymentEnvironment({this.id, this.nodeId, this.name, this.url, this.htmlUrl, });
 
 factory PendingDeploymentEnvironment.fromJson(Map<String, dynamic> json) { return PendingDeploymentEnvironment(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

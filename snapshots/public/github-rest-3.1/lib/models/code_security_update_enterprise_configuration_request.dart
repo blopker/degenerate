@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'code_scanning_default_setup_options.dart';import 'code_scanning_options.dart';import 'code_security_update_enterprise_configuration_request_dependency_graph_autosubmit_action_options.dart';/// The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_default_setup_options.dart';import 'code_scanning_options.dart';import 'code_security_update_enterprise_configuration_request_dependency_graph_autosubmit_action_options.dart';/// The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features.
 /// 
-/// > [!WARNING]
+/// > `[!WARNING]`
 /// > `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
 /// 
-final class CodeSecurityUpdateEnterpriseConfigurationRequestAdvancedSecurity {const CodeSecurityUpdateEnterpriseConfigurationRequestAdvancedSecurity._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestAdvancedSecurity {const CodeSecurityUpdateEnterpriseConfigurationRequestAdvancedSecurity._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestAdvancedSecurity.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestAdvancedSecurity($value)'; } 
  }
 /// The enablement status of GitHub Code Security features.
-final class CodeSecurityUpdateEnterpriseConfigurationRequestCodeSecurity {const CodeSecurityUpdateEnterpriseConfigurationRequestCodeSecurity._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestCodeSecurity {const CodeSecurityUpdateEnterpriseConfigurationRequestCodeSecurity._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestCodeSecurity.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -64,7 +64,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestCodeSecurity($value)'; } 
  }
 /// The enablement status of Dependency Graph
-final class CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraph {const CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraph._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraph {const CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraph._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraph.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -92,7 +92,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraph($value)'; } 
  }
 /// The enablement status of Automatic dependency submission
-final class CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitAction {const CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitAction._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitAction {const CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitAction._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitAction.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -120,7 +120,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitAction($value)'; } 
  }
 /// The enablement status of Dependabot alerts
-final class CodeSecurityUpdateEnterpriseConfigurationRequestDependabotAlerts {const CodeSecurityUpdateEnterpriseConfigurationRequestDependabotAlerts._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestDependabotAlerts {const CodeSecurityUpdateEnterpriseConfigurationRequestDependabotAlerts._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestDependabotAlerts.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -148,7 +148,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestDependabotAlerts($value)'; } 
  }
 /// The enablement status of Dependabot security updates
-final class CodeSecurityUpdateEnterpriseConfigurationRequestDependabotSecurityUpdates {const CodeSecurityUpdateEnterpriseConfigurationRequestDependabotSecurityUpdates._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestDependabotSecurityUpdates {const CodeSecurityUpdateEnterpriseConfigurationRequestDependabotSecurityUpdates._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestDependabotSecurityUpdates.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -176,7 +176,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestDependabotSecurityUpdates($value)'; } 
  }
 /// The enablement status of code scanning default setup
-final class CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDefaultSetup {const CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDefaultSetup._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDefaultSetup {const CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDefaultSetup._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDefaultSetup.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -204,7 +204,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDefaultSetup($value)'; } 
  }
 /// The enablement status of code scanning delegated alert dismissal
-final class CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDelegatedAlertDismissal {const CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDelegatedAlertDismissal._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDelegatedAlertDismissal {const CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDelegatedAlertDismissal._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDelegatedAlertDismissal.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -232,7 +232,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDelegatedAlertDismissal($value)'; } 
  }
 /// The enablement status of GitHub Secret Protection features.
-final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretProtection {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretProtection._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretProtection {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretProtection._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestSecretProtection.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -260,7 +260,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestSecretProtection($value)'; } 
  }
 /// The enablement status of secret scanning
-final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanning {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanning._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanning {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanning._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanning.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -288,7 +288,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanning($value)'; } 
  }
 /// The enablement status of secret scanning push protection
-final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningPushProtection {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningPushProtection._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningPushProtection {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningPushProtection._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningPushProtection.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -316,7 +316,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningPushProtection($value)'; } 
  }
 /// The enablement status of secret scanning validity checks
-final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningValidityChecks {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningValidityChecks._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningValidityChecks {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningValidityChecks._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningValidityChecks.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -344,7 +344,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningValidityChecks($value)'; } 
  }
 /// The enablement status of secret scanning non-provider patterns
-final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningNonProviderPatterns {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningNonProviderPatterns._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningNonProviderPatterns {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningNonProviderPatterns._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningNonProviderPatterns.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -372,7 +372,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningNonProviderPatterns($value)'; } 
  }
 /// The enablement status of Copilot secret scanning
-final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningGenericSecrets {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningGenericSecrets._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningGenericSecrets {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningGenericSecrets._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningGenericSecrets.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -400,7 +400,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningGenericSecrets($value)'; } 
  }
 /// The enablement status of secret scanning delegated alert dismissal
-final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningDelegatedAlertDismissal {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningDelegatedAlertDismissal._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningDelegatedAlertDismissal {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningDelegatedAlertDismissal._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningDelegatedAlertDismissal.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -428,7 +428,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningDelegatedAlertDismissal($value)'; } 
  }
 /// The enablement status of secret scanning extended metadata
-final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningExtendedMetadata {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningExtendedMetadata._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningExtendedMetadata {const CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningExtendedMetadata._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningExtendedMetadata.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -456,7 +456,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningExtendedMetadata($value)'; } 
  }
 /// The enablement status of private vulnerability reporting
-final class CodeSecurityUpdateEnterpriseConfigurationRequestPrivateVulnerabilityReporting {const CodeSecurityUpdateEnterpriseConfigurationRequestPrivateVulnerabilityReporting._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestPrivateVulnerabilityReporting {const CodeSecurityUpdateEnterpriseConfigurationRequestPrivateVulnerabilityReporting._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestPrivateVulnerabilityReporting.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -484,7 +484,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestPrivateVulnerabilityReporting($value)'; } 
  }
 /// The enforcement status for a security configuration
-final class CodeSecurityUpdateEnterpriseConfigurationRequestEnforcement {const CodeSecurityUpdateEnterpriseConfigurationRequestEnforcement._(this.value);
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequestEnforcement {const CodeSecurityUpdateEnterpriseConfigurationRequestEnforcement._(this.value);
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequestEnforcement.fromJson(String json) { return switch (json) {
   'enforced' => enforced,
@@ -508,7 +508,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestEnforcement($value)'; } 
  }
-final class CodeSecurityUpdateEnterpriseConfigurationRequest {const CodeSecurityUpdateEnterpriseConfigurationRequest({this.name, this.description, this.advancedSecurity, this.codeSecurity, this.dependencyGraph, this.dependencyGraphAutosubmitAction, this.dependencyGraphAutosubmitActionOptions, this.dependabotAlerts, this.dependabotSecurityUpdates, this.codeScanningDefaultSetup, this.codeScanningDefaultSetupOptions, this.codeScanningOptions, this.codeScanningDelegatedAlertDismissal = CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDelegatedAlertDismissal.disabled, this.secretProtection, this.secretScanning, this.secretScanningPushProtection, this.secretScanningValidityChecks, this.secretScanningNonProviderPatterns, this.secretScanningGenericSecrets = CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningGenericSecrets.disabled, this.secretScanningDelegatedAlertDismissal = CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningDelegatedAlertDismissal.disabled, this.secretScanningExtendedMetadata = CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningExtendedMetadata.disabled, this.privateVulnerabilityReporting, this.enforcement, });
+@immutable final class CodeSecurityUpdateEnterpriseConfigurationRequest {const CodeSecurityUpdateEnterpriseConfigurationRequest({this.name, this.description, this.advancedSecurity, this.codeSecurity, this.dependencyGraph, this.dependencyGraphAutosubmitAction, this.dependencyGraphAutosubmitActionOptions, this.dependabotAlerts, this.dependabotSecurityUpdates, this.codeScanningDefaultSetup, this.codeScanningDefaultSetupOptions, this.codeScanningOptions, this.codeScanningDelegatedAlertDismissal = CodeSecurityUpdateEnterpriseConfigurationRequestCodeScanningDelegatedAlertDismissal.disabled, this.secretProtection, this.secretScanning, this.secretScanningPushProtection, this.secretScanningValidityChecks, this.secretScanningNonProviderPatterns, this.secretScanningGenericSecrets = CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningGenericSecrets.disabled, this.secretScanningDelegatedAlertDismissal = CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningDelegatedAlertDismissal.disabled, this.secretScanningExtendedMetadata = CodeSecurityUpdateEnterpriseConfigurationRequestSecretScanningExtendedMetadata.disabled, this.privateVulnerabilityReporting, this.enforcement, });
 
 factory CodeSecurityUpdateEnterpriseConfigurationRequest.fromJson(Map<String, dynamic> json) { return CodeSecurityUpdateEnterpriseConfigurationRequest(
   name: json['name'] as String?,
@@ -544,7 +544,7 @@ final String? description;
 
 /// The enablement status of GitHub Advanced Security features. `enabled` will enable both Code Security and Secret Protection features.
 /// 
-/// > [!WARNING]
+/// > `[!WARNING]`
 /// > `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
 /// 
 final CodeSecurityUpdateEnterpriseConfigurationRequestAdvancedSecurity? advancedSecurity;

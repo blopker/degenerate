@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify a zone status to filter by.
-final class ZonesGetStatus {const ZonesGetStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify a zone status to filter by.
+@immutable final class ZonesGetStatus {const ZonesGetStatus._(this.value);
 
 factory ZonesGetStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,

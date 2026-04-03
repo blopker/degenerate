@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_downloads_response_result.dart';final class StreamDownloadsResponse {const StreamDownloadsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_downloads_response_result.dart';@immutable final class StreamDownloadsResponse {const StreamDownloadsResponse({this.result});
 
 factory StreamDownloadsResponse.fromJson(Map<String, dynamic> json) { return StreamDownloadsResponse(
   result: json['result'] != null ? StreamDownloadsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

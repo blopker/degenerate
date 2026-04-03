@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpSummaryByIpVersionDeviceType {const RadarGetHttpSummaryByIpVersionDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByIpVersionDeviceType {const RadarGetHttpSummaryByIpVersionDeviceType._(this.value);
 
 factory RadarGetHttpSummaryByIpVersionDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,

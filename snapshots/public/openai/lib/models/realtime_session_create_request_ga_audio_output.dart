@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pcm_audio_format.dart';import 'pcma_audio_format.dart';import 'pcmu_audio_format.dart';import 'realtime_audio_formats.dart';import 'voice_ids_or_custom_voice.dart';import 'voice_ids_or_custom_voice_variant2.dart';import 'voice_ids_shared.dart';final class RealtimeSessionCreateRequestGaAudioOutput {const RealtimeSessionCreateRequestGaAudioOutput({this.format, this.voice, this.speed = 1.0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pcm_audio_format.dart';import 'pcma_audio_format.dart';import 'pcmu_audio_format.dart';import 'realtime_audio_formats.dart';import 'voice_ids_or_custom_voice.dart';import 'voice_ids_or_custom_voice_variant2.dart';import 'voice_ids_shared.dart';@immutable final class RealtimeSessionCreateRequestGaAudioOutput {const RealtimeSessionCreateRequestGaAudioOutput({this.format, this.voice, this.speed = 1.0, });
 
 factory RealtimeSessionCreateRequestGaAudioOutput.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequestGaAudioOutput(
   format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => PcmAudioFormat.fromJson(v as Map<String, dynamic>), fromB: (v) => PcmuAudioFormat.fromJson(v as Map<String, dynamic>), fromC: (v) => PcmaAudioFormat.fromJson(v as Map<String, dynamic>),) : null,

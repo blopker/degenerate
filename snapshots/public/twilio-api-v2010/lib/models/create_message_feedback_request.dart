@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_feedback_enum_outcome.dart';final class CreateMessageFeedbackRequest {const CreateMessageFeedbackRequest({this.outcome});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_feedback_enum_outcome.dart';@immutable final class CreateMessageFeedbackRequest {const CreateMessageFeedbackRequest({this.outcome});
 
 factory CreateMessageFeedbackRequest.fromJson(Map<String, dynamic> json) { return CreateMessageFeedbackRequest(
   outcome: json['Outcome'] != null ? MessageFeedbackEnumOutcome.fromJson(json['Outcome'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResultSerie0({required this.notSupported, required this.supported, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResultSerie0({required this.notSupported, required this.supported, });
 
 factory RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByDnssecAwarenessResponseResultSerie0(
   notSupported: (json['NOT_SUPPORTED'] as List<dynamic>).map((e) => e as String).toList(),

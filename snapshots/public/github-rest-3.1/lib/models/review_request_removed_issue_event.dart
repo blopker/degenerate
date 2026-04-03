@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'integration.dart';import 'simple_user.dart';import 'team.dart';/// Review Request Removed Issue Event
-final class ReviewRequestRemovedIssueEvent {const ReviewRequestRemovedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.reviewRequester, this.requestedTeam, this.requestedReviewer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';import 'team.dart';/// Review Request Removed Issue Event
+@immutable final class ReviewRequestRemovedIssueEvent {const ReviewRequestRemovedIssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, required this.performedViaGithubApp, required this.reviewRequester, this.requestedTeam, this.requestedReviewer, });
 
 factory ReviewRequestRemovedIssueEvent.fromJson(Map<String, dynamic> json) { return ReviewRequestRemovedIssueEvent(
   id: (json['id'] as num).toInt(),

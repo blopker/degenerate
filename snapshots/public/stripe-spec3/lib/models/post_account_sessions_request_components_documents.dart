@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_account_sessions_request_components_documents_features.dart';final class PostAccountSessionsRequestComponentsDocuments {const PostAccountSessionsRequestComponentsDocuments({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components_documents_features.dart';@immutable final class PostAccountSessionsRequestComponentsDocuments {const PostAccountSessionsRequestComponentsDocuments({required this.enabled, this.features, });
 
 factory PostAccountSessionsRequestComponentsDocuments.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsDocuments(
   enabled: json['enabled'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookDeploymentReviewApprovedWorkflowJobRuns {const WebhookDeploymentReviewApprovedWorkflowJobRuns({this.conclusion, this.createdAt, this.environment, this.htmlUrl, this.id, this.name, this.status, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDeploymentReviewApprovedWorkflowJobRuns {const WebhookDeploymentReviewApprovedWorkflowJobRuns({this.conclusion, this.createdAt, this.environment, this.htmlUrl, this.id, this.name, this.status, this.updatedAt, });
 
 factory WebhookDeploymentReviewApprovedWorkflowJobRuns.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewApprovedWorkflowJobRuns(
   conclusion: json['conclusion'],

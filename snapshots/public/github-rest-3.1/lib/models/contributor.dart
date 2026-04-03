@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Contributor
-final class Contributor {const Contributor({this.login, this.id, this.nodeId, this.avatarUrl, this.gravatarId, this.url, this.htmlUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.starredUrl, this.subscriptionsUrl, this.organizationsUrl, this.reposUrl, this.eventsUrl, this.receivedEventsUrl, required this.type, this.siteAdmin, required this.contributions, this.email, this.name, this.userViewType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contributor
+@immutable final class Contributor {const Contributor({required this.type, required this.contributions, this.login, this.id, this.nodeId, this.avatarUrl, this.gravatarId, this.url, this.htmlUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.starredUrl, this.subscriptionsUrl, this.organizationsUrl, this.reposUrl, this.eventsUrl, this.receivedEventsUrl, this.siteAdmin, this.email, this.name, this.userViewType, });
 
 factory Contributor.fromJson(Map<String, dynamic> json) { return Contributor(
   login: json['login'] as String?,

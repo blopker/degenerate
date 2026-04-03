@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_to_markdown_response_result.dart';final class WorkersAiPostToMarkdownResponse {const WorkersAiPostToMarkdownResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_to_markdown_response_result.dart';@immutable final class WorkersAiPostToMarkdownResponse {const WorkersAiPostToMarkdownResponse({required this.result, required this.success, });
 
 factory WorkersAiPostToMarkdownResponse.fromJson(Map<String, dynamic> json) { return WorkersAiPostToMarkdownResponse(
   result: (json['result'] as List<dynamic>).map((e) => WorkersAiPostToMarkdownResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

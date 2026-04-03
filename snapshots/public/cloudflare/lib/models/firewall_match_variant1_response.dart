@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When true, only the uncached traffic served from your origin servers will count towards rate limiting. In this case, any cached traffic served by Cloudflare will not count towards rate limiting. This field is optional.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When true, only the uncached traffic served from your origin servers will count towards rate limiting. In this case, any cached traffic served by Cloudflare will not count towards rate limiting. This field is optional.
 /// Notes: This field is deprecated. Instead, use response headers and set "origin_traffic" to "false" to avoid legacy behaviour interacting with the "response_headers" property.
 extension type const FirewallOriginTraffic(bool value) {
 factory FirewallOriginTraffic.fromJson(bool json) => FirewallOriginTraffic(json);
@@ -8,7 +8,7 @@ factory FirewallOriginTraffic.fromJson(bool json) => FirewallOriginTraffic(json)
 bool toJson() => value;
 
 }
-final class FirewallMatchVariant1Response {const FirewallMatchVariant1Response({this.originTraffic});
+@immutable final class FirewallMatchVariant1Response {const FirewallMatchVariant1Response({this.originTraffic});
 
 factory FirewallMatchVariant1Response.fromJson(Map<String, dynamic> json) { return FirewallMatchVariant1Response(
   originTraffic: json['origin_traffic'] != null ? FirewallOriginTraffic.fromJson(json['origin_traffic'] as bool) : null,

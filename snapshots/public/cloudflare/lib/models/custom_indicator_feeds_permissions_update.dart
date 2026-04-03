@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CustomIndicatorFeedsPermissionsUpdate {const CustomIndicatorFeedsPermissionsUpdate({this.success});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsPermissionsUpdate {const CustomIndicatorFeedsPermissionsUpdate({this.success});
 
 factory CustomIndicatorFeedsPermissionsUpdate.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsPermissionsUpdate(
   success: json['success'] as bool?,

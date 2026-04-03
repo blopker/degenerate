@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'calls_created.dart';import 'calls_identifier.dart';import 'calls_modified.dart';import 'calls_turn_key_name.dart';/// Bearer token
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'calls_created.dart';import 'calls_identifier.dart';import 'calls_modified.dart';import 'calls_turn_key_name.dart';/// Bearer token
 extension type const CallsTurnKey(String value) {
 factory CallsTurnKey.fromJson(String json) => CallsTurnKey(json);
 
 String toJson() => value;
 
 }
-final class CallsTurnKeyWithKey {const CallsTurnKeyWithKey({this.created, this.key, this.modified, this.name, this.uid, });
+@immutable final class CallsTurnKeyWithKey {const CallsTurnKeyWithKey({this.created, this.key, this.modified, this.name, this.uid, });
 
 factory CallsTurnKeyWithKey.fromJson(Map<String, dynamic> json) { return CallsTurnKeyWithKey(
   created: json['created'] != null ? CallsCreated.fromJson(json['created'] as String) : null,

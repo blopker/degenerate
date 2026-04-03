@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ZeroTrustGatewayGenerateCertRequest {const ZeroTrustGatewayGenerateCertRequest({this.validityPeriodDays});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustGatewayGenerateCertRequest {const ZeroTrustGatewayGenerateCertRequest({this.validityPeriodDays});
 
 factory ZeroTrustGatewayGenerateCertRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGenerateCertRequest(
   validityPeriodDays: json['validity_period_days'] != null ? (json['validity_period_days'] as num).toInt() : null,

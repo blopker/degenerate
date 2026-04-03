@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pages_deployment_config_values_request.dart';/// Configs for deployments in a project.
-final class PagesProjectUpdateProjectRequestDeploymentConfigs {const PagesProjectUpdateProjectRequestDeploymentConfigs({this.preview, this.production, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_deployment_config_values_request.dart';/// Configs for deployments in a project.
+@immutable final class PagesProjectUpdateProjectRequestDeploymentConfigs {const PagesProjectUpdateProjectRequestDeploymentConfigs({this.preview, this.production, });
 
 factory PagesProjectUpdateProjectRequestDeploymentConfigs.fromJson(Map<String, dynamic> json) { return PagesProjectUpdateProjectRequestDeploymentConfigs(
   preview: json['preview'] != null ? PagesDeploymentConfigValuesRequest.fromJson(json['preview'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'task_type.dart';/// Type discriminator that is always `chatkit.thread_item`.
-final class TaskItemObject {const TaskItemObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'task_type.dart';/// Type discriminator that is always `chatkit.thread_item`.
+@immutable final class TaskItemObject {const TaskItemObject._(this.value);
 
 factory TaskItemObject.fromJson(String json) { return switch (json) {
   'chatkit.thread_item' => chatkitThreadItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaskItemObject($value)'; } 
  }
 /// Task emitted by the workflow to show progress and status updates.
-final class TaskItem {const TaskItem({required this.id, this.object = TaskItemObject.chatkitThreadItem, required this.createdAt, required this.threadId, this.type = 'chatkit.task', required this.taskType, required this.heading, required this.summary, });
+@immutable final class TaskItem {const TaskItem({required this.id, required this.createdAt, required this.threadId, required this.taskType, required this.heading, required this.summary, this.object = TaskItemObject.chatkitThreadItem, this.type = 'chatkit.task', });
 
 factory TaskItem.fromJson(Map<String, dynamic> json) { return TaskItem(
   id: json['id'] as String,

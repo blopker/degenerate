@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CustomIndicatorFeedsMessages2 {const CustomIndicatorFeedsMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomIndicatorFeedsMessages2 {const CustomIndicatorFeedsMessages2({required this.code, required this.message, });
 
 factory CustomIndicatorFeedsMessages2.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsMessages2(
   code: (json['code'] as num).toInt(),

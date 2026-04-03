@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class GelatoSessionEmailOptions {const GelatoSessionEmailOptions({this.requireVerification});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class GelatoSessionEmailOptions {const GelatoSessionEmailOptions({this.requireVerification});
 
 factory GelatoSessionEmailOptions.fromJson(Map<String, dynamic> json) { return GelatoSessionEmailOptions(
   requireVerification: json['require_verification'] as bool?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A wait action.
-final class WaitParam {const WaitParam({this.type = 'wait'});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A wait action.
+@immutable final class WaitParam {const WaitParam({this.type = 'wait'});
 
 factory WaitParam.fromJson(Map<String, dynamic> json) { return WaitParam(
   type: json['type'] as String,

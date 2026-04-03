@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_enabled.dart';final class ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest {const ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_enabled.dart';@immutable final class ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest {const ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest({required this.enabled});
 
 factory ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelAuthenticatedOriginPullsSetEnablementForZoneRequest(
   enabled: TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled.fromJson(json['enabled'] as bool),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The actor who updated the ruleset
-final class RulesetVersionWithStateActor {const RulesetVersionWithStateActor({this.id, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The actor who updated the ruleset
+@immutable final class RulesetVersionWithStateActor {const RulesetVersionWithStateActor({this.id, this.type, });
 
 factory RulesetVersionWithStateActor.fromJson(Map<String, dynamic> json) { return RulesetVersionWithStateActor(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

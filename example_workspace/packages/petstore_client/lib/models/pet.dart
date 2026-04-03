@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'category.dart';import 'tag.dart';/// pet status in the store
-final class PetStatus {const PetStatus._(this.value);
+@immutable final class PetStatus {const PetStatus._(this.value);
 
 factory PetStatus.fromJson(String json) { return switch (json) {
   'available' => available,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PetStatus($value)'; } 
  }
-final class Pet {const Pet({this.id, required this.name, this.category, required this.photoUrls, this.tags, this.status, });
+@immutable final class Pet {const Pet({required this.name, required this.photoUrls, this.id, this.category, this.tags, this.status, });
 
 factory Pet.fromJson(Map<String, dynamic> json) { return Pet(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

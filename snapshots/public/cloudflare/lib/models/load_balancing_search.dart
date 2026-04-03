@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_resource_reference.dart';final class LoadBalancingSearch {const LoadBalancingSearch({this.resources});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_resource_reference.dart';@immutable final class LoadBalancingSearch {const LoadBalancingSearch({this.resources});
 
 factory LoadBalancingSearch.fromJson(Map<String, dynamic> json) { return LoadBalancingSearch(
   resources: (json['resources'] as List<dynamic>?)?.map((e) => LoadBalancingResourceReference.fromJson(e as Map<String, dynamic>)).toList(),

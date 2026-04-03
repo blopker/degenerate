@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The action Access will take if a user matches this policy.
-final class AccessSchemasDecision {const AccessSchemasDecision._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action Access will take if a user matches this policy.
+@immutable final class AccessSchemasDecision {const AccessSchemasDecision._(this.value);
 
 factory AccessSchemasDecision.fromJson(String json) { return switch (json) {
   'allow' => allow,

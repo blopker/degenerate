@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_message.dart';/// A response object.
-final class RulesetsResponse {const RulesetsResponse({required this.errors, required this.messages, required this.result, required this.success, });
+@immutable final class RulesetsResponse {const RulesetsResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory RulesetsResponse.fromJson(Map<String, dynamic> json) { return RulesetsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => RulesetsMessage.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_dataset_upload_status.dart';final class DlpDocumentFingerprint {const DlpDocumentFingerprint({required this.createdAt, this.description = '', required this.entryId, this.fileName, required this.id, required this.matchPercent, required this.name, required this.status, required this.updatedAt, this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_upload_status.dart';@immutable final class DlpDocumentFingerprint {const DlpDocumentFingerprint({required this.createdAt, required this.entryId, required this.id, required this.matchPercent, required this.name, required this.status, required this.updatedAt, this.description = '', this.fileName, this.version, });
 
 factory DlpDocumentFingerprint.fromJson(Map<String, dynamic> json) { return DlpDocumentFingerprint(
   createdAt: DateTime.parse(json['created_at'] as String),

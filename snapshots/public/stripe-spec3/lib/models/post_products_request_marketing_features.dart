@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostProductsRequestMarketingFeatures {const PostProductsRequestMarketingFeatures({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostProductsRequestMarketingFeatures {const PostProductsRequestMarketingFeatures({required this.name});
 
 factory PostProductsRequestMarketingFeatures.fromJson(Map<String, dynamic> json) { return PostProductsRequestMarketingFeatures(
   name: json['name'] as String,

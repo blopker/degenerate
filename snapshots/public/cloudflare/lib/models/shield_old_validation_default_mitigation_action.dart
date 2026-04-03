@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The default mitigation action used when there is no mitigation action defined on the operation
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default mitigation action used when there is no mitigation action defined on the operation
 /// 
 /// Mitigation actions are as follows:
 /// 
@@ -9,7 +9,7 @@
 /// 
 /// A special value of of `none` will skip running schema validation entirely for the request when there is no mitigation action defined on the operation
 /// 
-final class ShieldOldValidationDefaultMitigationAction {const ShieldOldValidationDefaultMitigationAction._(this.value);
+@immutable final class ShieldOldValidationDefaultMitigationAction {const ShieldOldValidationDefaultMitigationAction._(this.value);
 
 factory ShieldOldValidationDefaultMitigationAction.fromJson(String json) { return switch (json) {
   'none' => none,

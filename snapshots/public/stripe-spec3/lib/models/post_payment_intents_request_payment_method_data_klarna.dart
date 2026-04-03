@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_intents_request_payment_method_data_klarna_dob.dart';final class PostPaymentIntentsRequestPaymentMethodDataKlarna {const PostPaymentIntentsRequestPaymentMethodDataKlarna({this.dob});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_request_payment_method_data_klarna_dob.dart';@immutable final class PostPaymentIntentsRequestPaymentMethodDataKlarna {const PostPaymentIntentsRequestPaymentMethodDataKlarna({this.dob});
 
 factory PostPaymentIntentsRequestPaymentMethodDataKlarna.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentMethodDataKlarna(
   dob: json['dob'] != null ? PostPaymentIntentsRequestPaymentMethodDataKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>) : null,

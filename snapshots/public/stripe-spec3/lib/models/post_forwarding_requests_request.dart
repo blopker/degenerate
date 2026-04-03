@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_forwarding_requests_request_request.dart';final class PostForwardingRequestsRequestReplacements {const PostForwardingRequestsRequestReplacements._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_forwarding_requests_request_request.dart';@immutable final class PostForwardingRequestsRequestReplacements {const PostForwardingRequestsRequestReplacements._(this.value);
 
 factory PostForwardingRequestsRequestReplacements.fromJson(String json) { return switch (json) {
   'card_cvc' => cardCvc,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostForwardingRequestsRequestReplacements($value)'; } 
  }
-final class PostForwardingRequestsRequest {const PostForwardingRequestsRequest({this.expand, this.metadata, required this.paymentMethod, required this.replacements, this.request, required this.url, });
+@immutable final class PostForwardingRequestsRequest {const PostForwardingRequestsRequest({required this.paymentMethod, required this.replacements, required this.url, this.expand, this.metadata, this.request, });
 
 factory PostForwardingRequestsRequest.fromJson(Map<String, dynamic> json) { return PostForwardingRequestsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

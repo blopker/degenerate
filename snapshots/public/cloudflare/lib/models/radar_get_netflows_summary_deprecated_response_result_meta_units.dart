@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetNetflowsSummaryDeprecatedResponseResultMetaUnits {const RadarGetNetflowsSummaryDeprecatedResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetNetflowsSummaryDeprecatedResponseResultMetaUnits {const RadarGetNetflowsSummaryDeprecatedResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetNetflowsSummaryDeprecatedResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsSummaryDeprecatedResponseResultMetaUnits(
   name: json['name'] as String,

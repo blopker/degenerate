@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `response.output_text.delta`.
-final class RealtimeBetaServerEventResponseTextDeltaType {const RealtimeBetaServerEventResponseTextDeltaType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_text.delta`.
+@immutable final class RealtimeBetaServerEventResponseTextDeltaType {const RealtimeBetaServerEventResponseTextDeltaType._(this.value);
 
 factory RealtimeBetaServerEventResponseTextDeltaType.fromJson(String json) { return switch (json) {
   'response.output_text.delta' => responseOutputTextDelta,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaServerEventResponseTextDeltaType($value)'; } 
  }
 /// Returned when the text value of an "output_text" content part is updated.
-final class RealtimeBetaServerEventResponseTextDelta {const RealtimeBetaServerEventResponseTextDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, });
+@immutable final class RealtimeBetaServerEventResponseTextDelta {const RealtimeBetaServerEventResponseTextDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, });
 
 factory RealtimeBetaServerEventResponseTextDelta.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseTextDelta(
   eventId: json['event_id'] as String,

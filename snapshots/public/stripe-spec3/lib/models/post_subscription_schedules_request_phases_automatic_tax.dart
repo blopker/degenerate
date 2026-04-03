@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_subscription_schedules_request_phases_automatic_tax_liability.dart';final class PostSubscriptionSchedulesRequestPhasesAutomaticTax {const PostSubscriptionSchedulesRequestPhasesAutomaticTax({required this.enabled, this.liability, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_phases_automatic_tax_liability.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesAutomaticTax {const PostSubscriptionSchedulesRequestPhasesAutomaticTax({required this.enabled, this.liability, });
 
 factory PostSubscriptionSchedulesRequestPhasesAutomaticTax.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhasesAutomaticTax(
   enabled: json['enabled'] as bool,

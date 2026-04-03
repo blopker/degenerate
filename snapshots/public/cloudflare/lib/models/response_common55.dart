@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_v4error.dart';import 'response_common55_result.dart';final class ResponseCommon55 {const ResponseCommon55({required this.errors, this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_v4error.dart';import 'response_common55_result.dart';@immutable final class ResponseCommon55 {const ResponseCommon55({required this.errors, required this.success, this.result, });
 
 factory ResponseCommon55.fromJson(Map<String, dynamic> json) { return ResponseCommon55(
   errors: (json['errors'] as List<dynamic>).map((e) => ResourceSharingV4error.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null,
+  result: json['result'] != null ? OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,) : null,
   success: json['success'] as bool,
 ); }
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';import 'timeline_cross_referenced_event_source.dart';/// Timeline Cross Referenced Event
-final class TimelineCrossReferencedEvent {const TimelineCrossReferencedEvent({required this.event, this.actor, required this.createdAt, required this.updatedAt, required this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';import 'timeline_cross_referenced_event_source.dart';/// Timeline Cross Referenced Event
+@immutable final class TimelineCrossReferencedEvent {const TimelineCrossReferencedEvent({required this.event, required this.createdAt, required this.updatedAt, required this.source, this.actor, });
 
 factory TimelineCrossReferencedEvent.fromJson(Map<String, dynamic> json) { return TimelineCrossReferencedEvent(
   event: json['event'] as String,

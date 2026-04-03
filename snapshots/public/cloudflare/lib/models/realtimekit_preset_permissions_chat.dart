@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_preset_permissions_chat_private.dart';import 'realtimekit_preset_permissions_chat_public.dart';/// Chat permissions
-final class RealtimekitPresetPermissionsChat {const RealtimekitPresetPermissionsChat({required this.private, required this.public, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_preset_permissions_chat_private.dart';import 'realtimekit_preset_permissions_chat_public.dart';/// Chat permissions
+@immutable final class RealtimekitPresetPermissionsChat {const RealtimekitPresetPermissionsChat({required this.private, required this.public, });
 
 factory RealtimekitPresetPermissionsChat.fromJson(Map<String, dynamic> json) { return RealtimekitPresetPermissionsChat(
   private: RealtimekitPresetPermissionsChatPrivate.fromJson(json['private'] as Map<String, dynamic>),

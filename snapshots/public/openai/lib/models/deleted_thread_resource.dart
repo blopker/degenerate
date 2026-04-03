@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type discriminator that is always `chatkit.thread.deleted`.
-final class DeletedThreadResourceObject {const DeletedThreadResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `chatkit.thread.deleted`.
+@immutable final class DeletedThreadResourceObject {const DeletedThreadResourceObject._(this.value);
 
 factory DeletedThreadResourceObject.fromJson(String json) { return switch (json) {
   'chatkit.thread.deleted' => chatkitThreadDeleted,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeletedThreadResourceObject($value)'; } 
  }
 /// Confirmation payload returned after deleting a thread.
-final class DeletedThreadResource {const DeletedThreadResource({required this.id, this.object = DeletedThreadResourceObject.chatkitThreadDeleted, required this.deleted, });
+@immutable final class DeletedThreadResource {const DeletedThreadResource({required this.id, required this.deleted, this.object = DeletedThreadResourceObject.chatkitThreadDeleted, });
 
 factory DeletedThreadResource.fromJson(Map<String, dynamic> json) { return DeletedThreadResource(
   id: json['id'] as String,

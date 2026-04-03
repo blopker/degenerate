@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_cache_level_value.dart';/// Apply custom caching based on the option selected.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_cache_level_value.dart';/// Apply custom caching based on the option selected.
 /// 
-final class ZonesCacheLevelId {const ZonesCacheLevelId._(this.value);
+@immutable final class ZonesCacheLevelId {const ZonesCacheLevelId._(this.value);
 
 factory ZonesCacheLevelId.fromJson(String json) { return switch (json) {
   'cache_level' => cacheLevel,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesCacheLevelId($value)'; } 
  }
-final class ZonesCacheLevel {const ZonesCacheLevel({this.id, this.value, });
+@immutable final class ZonesCacheLevel {const ZonesCacheLevel({this.id, this.value, });
 
 factory ZonesCacheLevel.fromJson(Map<String, dynamic> json) { return ZonesCacheLevel(
   id: json['id'] != null ? ZonesCacheLevelId.fromJson(json['id'] as String) : null,

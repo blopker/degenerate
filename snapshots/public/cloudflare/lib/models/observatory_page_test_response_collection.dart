@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_page_test_.dart';import 'observatory_result_info.dart';final class ObservatoryPageTestResponseCollection {const ObservatoryPageTestResponseCollection({this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_page_test_.dart';import 'observatory_result_info.dart';@immutable final class ObservatoryPageTestResponseCollection {const ObservatoryPageTestResponseCollection({this.result, this.resultInfo, });
 
 factory ObservatoryPageTestResponseCollection.fromJson(Map<String, dynamic> json) { return ObservatoryPageTestResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => ObservatoryPageTest.fromJson(e as Map<String, dynamic>)).toList(),

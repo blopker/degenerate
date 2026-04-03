@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_audio_variant1.dart';import 'messages51_chat_template_kwargs.dart';import 'messages51_function_call.dart';import 'messages51_function_call_variant2.dart';import 'messages51_functions.dart';import 'messages51_messages.dart';import 'messages51_messages_assistant.dart';import 'messages51_messages_developer.dart';import 'messages51_messages_function.dart';import 'messages51_messages_system.dart';import 'messages51_messages_tool.dart';import 'messages51_messages_user.dart';import 'messages51_prediction_content.dart';import 'messages51_response_format_variant1.dart';import 'messages51_response_format_variant1_json_object.dart';import 'messages51_response_format_variant1_json_schema.dart';import 'messages51_response_format_variant1_text.dart';import 'messages51_stop.dart';import 'messages51_stream_options_variant1.dart';import 'messages51_tool_choice_variant1.dart';import 'messages51_tool_choice_variant1_allowed_tools.dart';import 'messages51_tool_choice_variant1_custom.dart';import 'messages51_tool_choice_variant1_function.dart';import 'messages51_tools.dart';import 'messages51_tools_custom.dart';import 'messages51_tools_function.dart';import 'messages51_web_search_options_variant1.dart';final class Messages51Modalities {const Messages51Modalities._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_audio_variant1.dart';import 'messages51_chat_template_kwargs.dart';import 'messages51_function_call.dart';import 'messages51_function_call_variant2.dart';import 'messages51_functions.dart';import 'messages51_messages.dart';import 'messages51_messages_assistant.dart';import 'messages51_messages_developer.dart';import 'messages51_messages_function.dart';import 'messages51_messages_system.dart';import 'messages51_messages_tool.dart';import 'messages51_messages_user.dart';import 'messages51_prediction_content.dart';import 'messages51_response_format_variant1.dart';import 'messages51_response_format_variant1_json_object.dart';import 'messages51_response_format_variant1_json_schema.dart';import 'messages51_response_format_variant1_text.dart';import 'messages51_stop.dart';import 'messages51_stream_options_variant1.dart';import 'messages51_tool_choice_variant1.dart';import 'messages51_tool_choice_variant1_allowed_tools.dart';import 'messages51_tool_choice_variant1_custom.dart';import 'messages51_tool_choice_variant1_function.dart';import 'messages51_tools.dart';import 'messages51_tools_custom.dart';import 'messages51_tools_function.dart';import 'messages51_web_search_options_variant1.dart';@immutable final class Messages51Modalities {const Messages51Modalities._(this.value);
 
 factory Messages51Modalities.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51Modalities($value)'; } 
  }
-final class Messages51ReasoningEffort {const Messages51ReasoningEffort._(this.value);
+@immutable final class Messages51ReasoningEffort {const Messages51ReasoningEffort._(this.value);
 
 factory Messages51ReasoningEffort.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51ReasoningEffort($value)'; } 
  }
-final class Messages51ServiceTier {const Messages51ServiceTier._(this.value);
+@immutable final class Messages51ServiceTier {const Messages51ServiceTier._(this.value);
 
 factory Messages51ServiceTier.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51ServiceTier($value)'; } 
  }
-final class Messages51 {const Messages51({this.audio, this.chatTemplateKwargs, this.frequencyPenalty, this.functionCall, this.functions, this.logitBias, this.logprobs, this.maxCompletionTokens, this.maxTokens, required this.messages, this.metadata, this.modalities, this.model, this.n, this.parallelToolCalls = true, this.prediction, this.presencePenalty, this.reasoningEffort, this.responseFormat, this.seed, this.serviceTier, this.stop, this.store, this.stream, this.streamOptions, this.temperature, this.toolChoice, this.tools, this.topLogprobs, this.topP, this.user, this.webSearchOptions, });
+@immutable final class Messages51 {const Messages51({required this.messages, this.audio, this.chatTemplateKwargs, this.frequencyPenalty, this.functionCall, this.functions, this.logitBias, this.logprobs, this.maxCompletionTokens, this.maxTokens, this.metadata, this.modalities, this.model, this.n, this.parallelToolCalls = true, this.prediction, this.presencePenalty, this.reasoningEffort, this.responseFormat, this.seed, this.serviceTier, this.stop, this.store, this.stream, this.streamOptions, this.temperature, this.toolChoice, this.tools, this.topLogprobs, this.topP, this.user, this.webSearchOptions, });
 
 factory Messages51.fromJson(Map<String, dynamic> json) { return Messages51(
   audio: json['audio'] != null ? Messages51AudioVariant1.fromJson(json['audio'] as Map<String, dynamic>) : null,
@@ -92,12 +92,12 @@ factory Messages51.fromJson(Map<String, dynamic> json) { return Messages51(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functionCall: json['function_call'] != null ? OneOf2.parse(json['function_call'], fromA: (v) => Messages51FunctionCallVariant1.fromJson(v as String), fromB: (v) => Messages51FunctionCallVariant2.fromJson(v as Map<String, dynamic>),) : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => Messages51Functions.fromJson(e as Map<String, dynamic>)).toList(),
-  logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  logitBias: json['logit_bias'] as Map<String, dynamic>?,
   logprobs: json['logprobs'] as bool?,
   maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
   maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   messages: (json['messages'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => Messages51MessagesDeveloper.fromJson(v as Map<String, dynamic>), fromB: (v) => Messages51MessagesSystem.fromJson(v as Map<String, dynamic>), fromC: (v) => Messages51MessagesUser.fromJson(v as Map<String, dynamic>), fromD: (v) => Messages51MessagesAssistant.fromJson(v as Map<String, dynamic>), fromE: (v) => Messages51MessagesTool.fromJson(v as Map<String, dynamic>), fromF: (v) => Messages51MessagesFunction.fromJson(v as Map<String, dynamic>),)).toList(),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => Messages51Modalities.fromJson(e as String)).toList(),
   model: json['model'] as String?,
   n: json['n'] != null ? (json['n'] as num).toInt() : null,

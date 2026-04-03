@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bbpos_wise_pad3.dart';final class PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2 {const PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bbpos_wise_pad3.dart';@immutable final class PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2 {const PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2._(this.value);
 
 factory PostTerminalConfigurationsConfigurationRequestBbposWisepad3Variant2.fromJson(String json) { return switch (json) {
   '' => $empty,

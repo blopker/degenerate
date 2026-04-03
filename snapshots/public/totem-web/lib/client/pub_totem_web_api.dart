@@ -12,9 +12,9 @@ import '../apis/spaces_api.dart';
 /// sdk.$default.totemApiCurrentUser();
 /// ```
 final class PubTotemWebApi {
-  final ApiConfig _config;
-
   PubTotemWebApi(this._config);
+
+  final ApiConfig _config;
 
   late final DefaultApi $default = DefaultApi(_config);
   late final EventsApi events = EventsApi(_config);

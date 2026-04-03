@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fraudulent_additional_documentation.dart';import 'fraudulent_explanation.dart';final class Fraudulent {const Fraudulent({this.additionalDocumentation, this.explanation, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fraudulent_additional_documentation.dart';import 'fraudulent_explanation.dart';@immutable final class Fraudulent {const Fraudulent({this.additionalDocumentation, this.explanation, });
 
 factory Fraudulent.fromJson(Map<String, dynamic> json) { return Fraudulent(
   additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => FraudulentAdditionalDocumentationVariant2.fromJson(v as String),) : null,

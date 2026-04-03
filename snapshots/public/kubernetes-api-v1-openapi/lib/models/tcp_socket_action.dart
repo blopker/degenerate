@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'io_k8s_apimachinery_pkg_util_intstr_int_or_string.dart';/// TCPSocketAction describes an action based on opening a socket
-final class TcpSocketAction {const TcpSocketAction({this.host, required this.port, });
+@immutable final class TcpSocketAction {const TcpSocketAction({required this.port, this.host, });
 
 factory TcpSocketAction.fromJson(Map<String, dynamic> json) { return TcpSocketAction(
   host: json['host'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Upload permissions and limits applied to the session.
-final class ChatSessionFileUpload {const ChatSessionFileUpload({required this.enabled, required this.maxFileSize, required this.maxFiles, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Upload permissions and limits applied to the session.
+@immutable final class ChatSessionFileUpload {const ChatSessionFileUpload({required this.enabled, required this.maxFileSize, required this.maxFiles, });
 
 factory ChatSessionFileUpload.fromJson(Map<String, dynamic> json) { return ChatSessionFileUpload(
   enabled: json['enabled'] as bool,

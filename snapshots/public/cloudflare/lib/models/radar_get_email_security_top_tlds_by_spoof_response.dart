@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_email_security_top_tlds_by_spoof_response_result.dart';final class RadarGetEmailSecurityTopTldsBySpoofResponse {const RadarGetEmailSecurityTopTldsBySpoofResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_top_tlds_by_spoof_response_result.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpoofResponse {const RadarGetEmailSecurityTopTldsBySpoofResponse({required this.result, required this.success, });
 
 factory RadarGetEmailSecurityTopTldsBySpoofResponse.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTopTldsBySpoofResponse(
   result: RadarGetEmailSecurityTopTldsBySpoofResponseResult.fromJson(json['result'] as Map<String, dynamic>),

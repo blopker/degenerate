@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A subset of parameters to be passed to SetupIntent creation for Checkout Sessions in `setup` mode.
-final class PostCheckoutSessionsRequestSetupIntentData {const PostCheckoutSessionsRequestSetupIntentData({this.description, this.metadata, this.onBehalfOf, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A subset of parameters to be passed to SetupIntent creation for Checkout Sessions in `setup` mode.
+@immutable final class PostCheckoutSessionsRequestSetupIntentData {const PostCheckoutSessionsRequestSetupIntentData({this.description, this.metadata, this.onBehalfOf, });
 
 factory PostCheckoutSessionsRequestSetupIntentData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSetupIntentData(
   description: json['description'] as String?,

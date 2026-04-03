@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecuritySubmissionsRequestedDisposition {const EmailSecuritySubmissionsRequestedDisposition._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecuritySubmissionsRequestedDisposition {const EmailSecuritySubmissionsRequestedDisposition._(this.value);
 
 factory EmailSecuritySubmissionsRequestedDisposition.fromJson(String json) { return switch (json) {
   'MALICIOUS' => malicious,

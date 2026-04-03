@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_setup_intents_request_payment_method_options_us_bank_account_financial_connections.dart';import 'post_setup_intents_request_payment_method_options_us_bank_account_mandate_options.dart';import 'post_setup_intents_request_payment_method_options_us_bank_account_networks.dart';final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_payment_method_options_us_bank_account_financial_connections.dart';import 'post_setup_intents_request_payment_method_options_us_bank_account_mandate_options.dart';import 'post_setup_intents_request_payment_method_options_us_bank_account_networks.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountVerificationMethod($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount({this.financialConnections, this.mandateOptions, this.networks, this.verificationMethod, });
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount({this.financialConnections, this.mandateOptions, this.networks, this.verificationMethod, });
 
 factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccount(
   financialConnections: json['financial_connections'] != null ? PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,

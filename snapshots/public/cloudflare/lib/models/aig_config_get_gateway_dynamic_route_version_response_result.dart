@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_conditional.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_end.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_model.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_percentage.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_rate.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_start.dart';final class AigConfigGetGatewayDynamicRouteVersionResponseResultActive {const AigConfigGetGatewayDynamicRouteVersionResponseResultActive._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_conditional.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_end.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_model.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_percentage.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_rate.dart';import 'aig_config_get_gateway_dynamic_route_version_response_result_elements_start.dart';@immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResultActive {const AigConfigGetGatewayDynamicRouteVersionResponseResultActive._(this.value);
 
 factory AigConfigGetGatewayDynamicRouteVersionResponseResultActive.fromJson(String json) { return switch (json) {
   'true' => $true,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigGetGatewayDynamicRouteVersionResponseResultActive($value)'; } 
  }
-final class AigConfigGetGatewayDynamicRouteVersionResponseResult {const AigConfigGetGatewayDynamicRouteVersionResponseResult({required this.active, this.comment, required this.createdAt, required this.data, required this.elements, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, required this.versionId, });
+@immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResult {const AigConfigGetGatewayDynamicRouteVersionResponseResult({required this.active, required this.createdAt, required this.data, required this.elements, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, required this.versionId, this.comment, });
 
 factory AigConfigGetGatewayDynamicRouteVersionResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteVersionResponseResult(
   active: AigConfigGetGatewayDynamicRouteVersionResponseResultActive.fromJson(json['active'] as String),

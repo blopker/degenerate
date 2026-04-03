@@ -20,7 +20,7 @@ if (model != null) {
 }
 if (metadata != null) {
 for (final entry in metadata.entries) {
-  queryParametersList.add(ApiQueryParameter(name: entry.key, value: entry.value, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: entry.key, value: entry.value));
 }
 }
 if (after != null) {

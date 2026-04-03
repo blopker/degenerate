@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.
-final class AaaAlertType {const AaaAlertType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.
+@immutable final class AaaAlertType {const AaaAlertType._(this.value);
 
 factory AaaAlertType.fromJson(String json) { return switch (json) {
   'abuse_report_alert' => abuseReportAlert,

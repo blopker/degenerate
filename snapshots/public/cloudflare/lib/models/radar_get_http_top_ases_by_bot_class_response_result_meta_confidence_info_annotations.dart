@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotations {const RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotations {const RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetHttpTopAsesByBotClassResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

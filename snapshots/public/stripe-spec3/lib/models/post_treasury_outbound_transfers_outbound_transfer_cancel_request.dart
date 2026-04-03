@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTreasuryOutboundTransfersOutboundTransferCancelRequest {const PostTreasuryOutboundTransfersOutboundTransferCancelRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryOutboundTransfersOutboundTransferCancelRequest {const PostTreasuryOutboundTransfersOutboundTransferCancelRequest({this.expand});
 
 factory PostTreasuryOutboundTransfersOutboundTransferCancelRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundTransfersOutboundTransferCancelRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

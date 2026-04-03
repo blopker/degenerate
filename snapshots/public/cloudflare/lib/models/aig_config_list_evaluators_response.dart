@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_evaluators_response_result.dart';import 'aig_config_list_evaluators_response_result_info.dart';final class AigConfigListEvaluatorsResponse {const AigConfigListEvaluatorsResponse({required this.result, required this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_evaluators_response_result.dart';import 'aig_config_list_evaluators_response_result_info.dart';@immutable final class AigConfigListEvaluatorsResponse {const AigConfigListEvaluatorsResponse({required this.result, required this.resultInfo, required this.success, });
 
 factory AigConfigListEvaluatorsResponse.fromJson(Map<String, dynamic> json) { return AigConfigListEvaluatorsResponse(
   result: (json['result'] as List<dynamic>).map((e) => AigConfigListEvaluatorsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

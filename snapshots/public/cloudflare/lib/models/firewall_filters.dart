@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_schemas_mode.dart';/// The target to search in existing rules.
-final class FirewallFiltersConfigurationTarget {const FirewallFiltersConfigurationTarget._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_schemas_mode.dart';/// The target to search in existing rules.
+@immutable final class FirewallFiltersConfigurationTarget {const FirewallFiltersConfigurationTarget._(this.value);
 
 factory FirewallFiltersConfigurationTarget.fromJson(String json) { return switch (json) {
   'ip' => ip,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FirewallFiltersConfigurationTarget($value)'; } 
  }
 /// When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
-final class FirewallFiltersMatch {const FirewallFiltersMatch._(this.value);
+@immutable final class FirewallFiltersMatch {const FirewallFiltersMatch._(this.value);
 
 factory FirewallFiltersMatch.fromJson(String json) { return switch (json) {
   'any' => any,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FirewallFiltersMatch($value)'; } 
  }
-final class FirewallFilters {const FirewallFilters({this.configurationTarget, this.configurationValue, this.match = FirewallFiltersMatch.all, this.mode, this.notes, });
+@immutable final class FirewallFilters {const FirewallFilters({this.configurationTarget, this.configurationValue, this.match = FirewallFiltersMatch.all, this.mode, this.notes, });
 
 factory FirewallFilters.fromJson(Map<String, dynamic> json) { return FirewallFilters(
   configurationTarget: json['configuration.target'] != null ? FirewallFiltersConfigurationTarget.fromJson(json['configuration.target'] as String) : null,

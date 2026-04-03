@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The payload used to update the group.
-final class AuditLogGroupUpdatedChangesRequested {const AuditLogGroupUpdatedChangesRequested({this.groupName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the group.
+@immutable final class AuditLogGroupUpdatedChangesRequested {const AuditLogGroupUpdatedChangesRequested({this.groupName});
 
 factory AuditLogGroupUpdatedChangesRequested.fromJson(Map<String, dynamic> json) { return AuditLogGroupUpdatedChangesRequested(
   groupName: json['group_name'] as String?,

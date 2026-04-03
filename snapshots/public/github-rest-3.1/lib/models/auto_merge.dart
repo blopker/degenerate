@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'simple_user.dart';/// The merge method to use.
-final class AutoMergeMergeMethod {const AutoMergeMergeMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'simple_user.dart';/// The merge method to use.
+@immutable final class AutoMergeMergeMethod {const AutoMergeMergeMethod._(this.value);
 
 factory AutoMergeMergeMethod.fromJson(String json) { return switch (json) {
   'merge' => merge,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AutoMergeMergeMethod($value)'; } 
  }
 /// The status of auto merging a pull request.
-final class AutoMerge {const AutoMerge({required this.enabledBy, required this.mergeMethod, required this.commitTitle, required this.commitMessage, });
+@immutable final class AutoMerge {const AutoMerge({required this.enabledBy, required this.mergeMethod, required this.commitTitle, required this.commitMessage, });
 
 factory AutoMerge.fromJson(Map<String, dynamic> json) { return AutoMerge(
   enabledBy: SimpleUser.fromJson(json['enabled_by'] as Map<String, dynamic>),

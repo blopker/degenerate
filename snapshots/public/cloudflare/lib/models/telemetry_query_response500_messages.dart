@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TelemetryQueryResponse500Messages {const TelemetryQueryResponse500Messages({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryQueryResponse500Messages {const TelemetryQueryResponse500Messages({required this.message});
 
 factory TelemetryQueryResponse500Messages.fromJson(Map<String, dynamic> json) { return TelemetryQueryResponse500Messages(
   message: json['message'] as String,

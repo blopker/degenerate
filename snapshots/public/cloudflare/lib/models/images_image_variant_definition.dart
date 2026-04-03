@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'images_image_variant_identifier.dart';import 'images_image_variant_never_require_signed_ur_ls.dart';import 'images_image_variant_options.dart';final class ImagesImageVariantDefinition {const ImagesImageVariantDefinition({required this.id, this.neverRequireSignedUrLs, required this.options, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_image_variant_identifier.dart';import 'images_image_variant_never_require_signed_ur_ls.dart';import 'images_image_variant_options.dart';@immutable final class ImagesImageVariantDefinition {const ImagesImageVariantDefinition({required this.id, required this.options, this.neverRequireSignedUrLs, });
 
 factory ImagesImageVariantDefinition.fromJson(Map<String, dynamic> json) { return ImagesImageVariantDefinition(
   id: ImagesImageVariantIdentifier.fromJson(json['id'] as String),

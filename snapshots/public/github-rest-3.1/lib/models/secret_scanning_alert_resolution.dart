@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// **Required when the `state` is `resolved`.** The reason for resolving the alert.
-final class SecretScanningAlertResolution {const SecretScanningAlertResolution._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// **Required when the `state` is `resolved`.** The reason for resolving the alert.
+@immutable final class SecretScanningAlertResolution {const SecretScanningAlertResolution._(this.value);
 
 factory SecretScanningAlertResolution.fromJson(String json) { return switch (json) {
   'false_positive' => falsePositive,

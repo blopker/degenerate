@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetAttacksLayer7TopTargetLocationResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

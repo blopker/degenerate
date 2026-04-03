@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_review_thread_resolved_thread_comments_links.dart';import 'webhook_pull_request_review_thread_resolved_thread_comments_reactions.dart';import 'webhook_pull_request_review_thread_resolved_thread_comments_user.dart';/// How the author is associated with the repository.
-final class WebhookPullRequestReviewThreadResolvedThreadCommentsAuthorAssociation {const WebhookPullRequestReviewThreadResolvedThreadCommentsAuthorAssociation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_thread_resolved_thread_comments_links.dart';import 'webhook_pull_request_review_thread_resolved_thread_comments_reactions.dart';import 'webhook_pull_request_review_thread_resolved_thread_comments_user.dart';/// How the author is associated with the repository.
+@immutable final class WebhookPullRequestReviewThreadResolvedThreadCommentsAuthorAssociation {const WebhookPullRequestReviewThreadResolvedThreadCommentsAuthorAssociation._(this.value);
 
 factory WebhookPullRequestReviewThreadResolvedThreadCommentsAuthorAssociation.fromJson(String json) { return switch (json) {
   'COLLABORATOR' => collaborator,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewThreadResolvedThreadCommentsAuthorAssociation($value)'; } 
  }
 /// The side of the first line of the range for a multi-line comment.
-final class WebhookPullRequestReviewThreadResolvedThreadCommentsSide {const WebhookPullRequestReviewThreadResolvedThreadCommentsSide._(this.value);
+@immutable final class WebhookPullRequestReviewThreadResolvedThreadCommentsSide {const WebhookPullRequestReviewThreadResolvedThreadCommentsSide._(this.value);
 
 factory WebhookPullRequestReviewThreadResolvedThreadCommentsSide.fromJson(String json) { return switch (json) {
   'LEFT' => left,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewThreadResolvedThreadCommentsSide($value)'; } 
  }
 /// The side of the first line of the range for a multi-line comment.
-final class WebhookPullRequestReviewThreadResolvedThreadCommentsStartSide {const WebhookPullRequestReviewThreadResolvedThreadCommentsStartSide._(this.value);
+@immutable final class WebhookPullRequestReviewThreadResolvedThreadCommentsStartSide {const WebhookPullRequestReviewThreadResolvedThreadCommentsStartSide._(this.value);
 
 factory WebhookPullRequestReviewThreadResolvedThreadCommentsStartSide.fromJson(String json) { return switch (json) {
   'LEFT' => left,
@@ -97,7 +97,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewThreadResolvedThreadCommentsStartSide($value)'; } 
  }
 /// The level at which the comment is targeted, can be a diff line or a file.
-final class WebhookPullRequestReviewThreadResolvedThreadCommentsSubjectType {const WebhookPullRequestReviewThreadResolvedThreadCommentsSubjectType._(this.value);
+@immutable final class WebhookPullRequestReviewThreadResolvedThreadCommentsSubjectType {const WebhookPullRequestReviewThreadResolvedThreadCommentsSubjectType._(this.value);
 
 factory WebhookPullRequestReviewThreadResolvedThreadCommentsSubjectType.fromJson(String json) { return switch (json) {
   'line' => line,
@@ -122,7 +122,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewThreadResolvedThreadCommentsSubjectType($value)'; } 
  }
 /// The [comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request) itself.
-final class WebhookPullRequestReviewThreadResolvedThreadComments {const WebhookPullRequestReviewThreadResolvedThreadComments({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.diffHunk, required this.htmlUrl, required this.id, this.inReplyToId, required this.line, required this.nodeId, required this.originalCommitId, required this.originalLine, required this.originalPosition, required this.originalStartLine, required this.path, required this.position, required this.pullRequestReviewId, required this.pullRequestUrl, required this.reactions, required this.side, required this.startLine, this.startSide = WebhookPullRequestReviewThreadResolvedThreadCommentsStartSide.right, this.subjectType, required this.updatedAt, required this.url, required this.user, });
+@immutable final class WebhookPullRequestReviewThreadResolvedThreadComments {const WebhookPullRequestReviewThreadResolvedThreadComments({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.diffHunk, required this.htmlUrl, required this.id, required this.line, required this.nodeId, required this.originalCommitId, required this.originalLine, required this.originalPosition, required this.originalStartLine, required this.path, required this.position, required this.pullRequestReviewId, required this.pullRequestUrl, required this.reactions, required this.side, required this.startLine, required this.updatedAt, required this.url, required this.user, this.inReplyToId, this.startSide = WebhookPullRequestReviewThreadResolvedThreadCommentsStartSide.right, this.subjectType, });
 
 factory WebhookPullRequestReviewThreadResolvedThreadComments.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadResolvedThreadComments(
   links: WebhookPullRequestReviewThreadResolvedThreadCommentsLinks.fromJson(json['_links'] as Map<String, dynamic>),

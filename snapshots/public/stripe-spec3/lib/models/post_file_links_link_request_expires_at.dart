@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostFileLinksLinkRequestExpiresAtVariant1 {const PostFileLinksLinkRequestExpiresAtVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostFileLinksLinkRequestExpiresAtVariant1 {const PostFileLinksLinkRequestExpiresAtVariant1._(this.value);
 
 factory PostFileLinksLinkRequestExpiresAtVariant1.fromJson(String json) { return switch (json) {
   'now' => now,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostFileLinksLinkRequestExpiresAtVariant1($value)'; } 
  }
-final class PostFileLinksLinkRequestExpiresAtVariant3 {const PostFileLinksLinkRequestExpiresAtVariant3._(this.value);
+@immutable final class PostFileLinksLinkRequestExpiresAtVariant3 {const PostFileLinksLinkRequestExpiresAtVariant3._(this.value);
 
 factory PostFileLinksLinkRequestExpiresAtVariant3.fromJson(String json) { return switch (json) {
   '' => $empty,

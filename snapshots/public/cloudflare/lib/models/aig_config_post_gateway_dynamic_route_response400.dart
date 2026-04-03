@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_response400_errors.dart';final class AigConfigPostGatewayDynamicRouteResponse400 {const AigConfigPostGatewayDynamicRouteResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_response400_errors.dart';@immutable final class AigConfigPostGatewayDynamicRouteResponse400 {const AigConfigPostGatewayDynamicRouteResponse400({required this.errors, required this.result, required this.success, });
 
 factory AigConfigPostGatewayDynamicRouteResponse400.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AigConfigPostGatewayDynamicRouteResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_traffic_anomalies_response_result_traffic_anomalies_asn_details_locations.dart';final class RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetails {const RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetails({required this.asn, this.locations, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_traffic_anomalies_response_result_traffic_anomalies_asn_details_locations.dart';@immutable final class RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetails {const RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetails({required this.asn, required this.name, this.locations, });
 
 factory RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetails.fromJson(Map<String, dynamic> json) { return RadarGetTrafficAnomaliesResponseResultTrafficAnomaliesAsnDetails(
   asn: json['asn'] as String,

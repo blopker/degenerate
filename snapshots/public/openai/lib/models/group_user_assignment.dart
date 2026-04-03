@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Always `group.user`.
-final class GroupUserAssignmentObject {const GroupUserAssignmentObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `group.user`.
+@immutable final class GroupUserAssignmentObject {const GroupUserAssignmentObject._(this.value);
 
 factory GroupUserAssignmentObject.fromJson(String json) { return switch (json) {
   'group.user' => groupUser,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GroupUserAssignmentObject($value)'; } 
  }
 /// Confirmation payload returned after adding a user to a group.
-final class GroupUserAssignment {const GroupUserAssignment({required this.object, required this.userId, required this.groupId, });
+@immutable final class GroupUserAssignment {const GroupUserAssignment({required this.object, required this.userId, required this.groupId, });
 
 factory GroupUserAssignment.fromJson(Map<String, dynamic> json) { return GroupUserAssignment(
   object: GroupUserAssignmentObject.fromJson(json['object'] as String),

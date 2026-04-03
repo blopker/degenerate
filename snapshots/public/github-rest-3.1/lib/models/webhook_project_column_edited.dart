@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_project_column_edited_changes.dart';import 'webhooks_project_column.dart';final class WebhookProjectColumnEditedAction {const WebhookProjectColumnEditedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_project_column_edited_changes.dart';import 'webhooks_project_column.dart';@immutable final class WebhookProjectColumnEditedAction {const WebhookProjectColumnEditedAction._(this.value);
 
 factory WebhookProjectColumnEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookProjectColumnEditedAction($value)'; } 
  }
-final class WebhookProjectColumnEdited {const WebhookProjectColumnEdited({required this.action, required this.changes, this.enterprise, this.installation, this.organization, required this.projectColumn, this.repository, this.sender, });
+@immutable final class WebhookProjectColumnEdited {const WebhookProjectColumnEdited({required this.action, required this.changes, required this.projectColumn, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
 factory WebhookProjectColumnEdited.fromJson(Map<String, dynamic> json) { return WebhookProjectColumnEdited(
   action: WebhookProjectColumnEditedAction.fromJson(json['action'] as String),

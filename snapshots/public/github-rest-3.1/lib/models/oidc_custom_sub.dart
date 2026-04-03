@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Actions OIDC Subject customization
-final class OidcCustomSub {const OidcCustomSub({required this.includeClaimKeys});
+@immutable final class OidcCustomSub {const OidcCustomSub({required this.includeClaimKeys});
 
 factory OidcCustomSub.fromJson(Map<String, dynamic> json) { return OidcCustomSub(
   includeClaimKeys: (json['include_claim_keys'] as List<dynamic>).map((e) => e as String).toList(),

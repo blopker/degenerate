@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CanceledCanceledAtVariant2 {const CanceledCanceledAtVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CanceledCanceledAtVariant2 {const CanceledCanceledAtVariant2._(this.value);
 
 factory CanceledCanceledAtVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

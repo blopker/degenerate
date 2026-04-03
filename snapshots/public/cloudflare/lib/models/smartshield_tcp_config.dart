@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The TCP connection method to use for the health check.
-final class SmartshieldTcpConfigMethod {const SmartshieldTcpConfigMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The TCP connection method to use for the health check.
+@immutable final class SmartshieldTcpConfigMethod {const SmartshieldTcpConfigMethod._(this.value);
 
 factory SmartshieldTcpConfigMethod.fromJson(String json) { return switch (json) {
   'connection_established' => connectionEstablished,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SmartshieldTcpConfigMethod($value)'; } 
  }
 /// Parameters specific to TCP health check.
-final class SmartshieldTcpConfig {const SmartshieldTcpConfig({this.method = SmartshieldTcpConfigMethod.connectionEstablished, this.port = 80, });
+@immutable final class SmartshieldTcpConfig {const SmartshieldTcpConfig({this.method = SmartshieldTcpConfigMethod.connectionEstablished, this.port = 80, });
 
 factory SmartshieldTcpConfig.fromJson(Map<String, dynamic> json) { return SmartshieldTcpConfig(
   method: json.containsKey('method') ? SmartshieldTcpConfigMethod.fromJson(json['method'] as String) : SmartshieldTcpConfigMethod.connectionEstablished,

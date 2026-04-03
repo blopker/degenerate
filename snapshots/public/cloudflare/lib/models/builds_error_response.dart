@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_error_response_errors.dart';final class BuildsErrorResponse {const BuildsErrorResponse({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_error_response_errors.dart';@immutable final class BuildsErrorResponse {const BuildsErrorResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory BuildsErrorResponse.fromJson(Map<String, dynamic> json) { return BuildsErrorResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => BuildsErrorResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => e as String).toList(),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
 ); }
 

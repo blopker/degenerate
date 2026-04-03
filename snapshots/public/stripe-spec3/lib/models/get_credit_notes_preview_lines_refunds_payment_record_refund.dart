@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCreditNotesPreviewLinesRefundsPaymentRecordRefund {const GetCreditNotesPreviewLinesRefundsPaymentRecordRefund({required this.paymentRecord, required this.refundGroup, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesPreviewLinesRefundsPaymentRecordRefund {const GetCreditNotesPreviewLinesRefundsPaymentRecordRefund({required this.paymentRecord, required this.refundGroup, });
 
 factory GetCreditNotesPreviewLinesRefundsPaymentRecordRefund.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewLinesRefundsPaymentRecordRefund(
   paymentRecord: json['payment_record'] as String,

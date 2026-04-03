@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_sessions_request_flow_data.dart';/// The IETF language tag of the locale customer portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
-final class PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale._(this.value);
+@immutable final class PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale._(this.value);
 
 factory PostBillingPortalSessionsRequestLocale.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -160,7 +160,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalSessionsRequestLocale($value)'; } 
  }
-final class PostBillingPortalSessionsRequest {const PostBillingPortalSessionsRequest({this.configuration, this.customer, this.customerAccount, this.expand, this.flowData, this.locale, this.onBehalfOf, this.returnUrl, });
+@immutable final class PostBillingPortalSessionsRequest {const PostBillingPortalSessionsRequest({this.configuration, this.customer, this.customerAccount, this.expand, this.flowData, this.locale, this.onBehalfOf, this.returnUrl, });
 
 factory PostBillingPortalSessionsRequest.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequest(
   configuration: json['configuration'] as String?,

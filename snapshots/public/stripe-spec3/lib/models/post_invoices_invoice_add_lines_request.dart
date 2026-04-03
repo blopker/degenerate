@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_add_lines_request_invoice_metadata.dart';import 'post_invoices_invoice_add_lines_request_lines.dart';final class PostInvoicesInvoiceAddLinesRequest {const PostInvoicesInvoiceAddLinesRequest({this.expand, this.invoiceMetadata, required this.lines, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_add_lines_request_invoice_metadata.dart';import 'post_invoices_invoice_add_lines_request_lines.dart';@immutable final class PostInvoicesInvoiceAddLinesRequest {const PostInvoicesInvoiceAddLinesRequest({required this.lines, this.expand, this.invoiceMetadata, });
 
 factory PostInvoicesInvoiceAddLinesRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceAddLinesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteDatasetDeleteResponse {const DeleteDatasetDeleteResponse({required this.name, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteDatasetDeleteResponse {const DeleteDatasetDeleteResponse({required this.name, required this.uuid, });
 
 factory DeleteDatasetDeleteResponse.fromJson(Map<String, dynamic> json) { return DeleteDatasetDeleteResponse(
   name: json['name'] as String,

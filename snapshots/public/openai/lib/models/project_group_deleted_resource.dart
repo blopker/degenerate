@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Always `project.group.deleted`.
-final class ProjectGroupDeletedResourceObject {const ProjectGroupDeletedResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `project.group.deleted`.
+@immutable final class ProjectGroupDeletedResourceObject {const ProjectGroupDeletedResourceObject._(this.value);
 
 factory ProjectGroupDeletedResourceObject.fromJson(String json) { return switch (json) {
   'project.group.deleted' => projectGroupDeleted,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectGroupDeletedResourceObject($value)'; } 
  }
 /// Confirmation payload returned after removing a group from a project.
-final class ProjectGroupDeletedResource {const ProjectGroupDeletedResource({required this.object, required this.deleted, });
+@immutable final class ProjectGroupDeletedResource {const ProjectGroupDeletedResource({required this.object, required this.deleted, });
 
 factory ProjectGroupDeletedResource.fromJson(Map<String, dynamic> json) { return ProjectGroupDeletedResource(
   object: ProjectGroupDeletedResourceObject.fromJson(json['object'] as String),

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages42.dart';import 'response_common84_result.dart';final class ResponseCommon84 {const ResponseCommon84({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages42.dart';import 'response_common84_result.dart';@immutable final class ResponseCommon84 {const ResponseCommon84({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon84.fromJson(Map<String, dynamic> json) { return ResponseCommon84(
   errors: (json['errors'] as List<dynamic>).map((e) => Messages42.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Messages42.fromJson(e as Map<String, dynamic>)).toList(),
-  result: OneOf3.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,),
+  result: OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(), fromC: (v) => v as String,),
   success: json['success'] as bool,
 ); }
 

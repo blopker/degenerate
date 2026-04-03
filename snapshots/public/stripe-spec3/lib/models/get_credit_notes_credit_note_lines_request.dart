@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCreditNotesCreditNoteLinesRequest {const GetCreditNotesCreditNoteLinesRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCreditNotesCreditNoteLinesRequest {const GetCreditNotesCreditNoteLinesRequest();
 
-factory GetCreditNotesCreditNoteLinesRequest.fromJson(Map<String, dynamic> json) { return GetCreditNotesCreditNoteLinesRequest(
-
-); }
+factory GetCreditNotesCreditNoteLinesRequest.fromJson(Map<String, dynamic> _) { return const GetCreditNotesCreditNoteLinesRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetCreditNotesCreditNoteLinesRequest copyWith() { return GetCreditNotesCreditNoteLinesRequest(
+GetCreditNotesCreditNoteLinesRequest copyWith() { return const GetCreditNotesCreditNoteLinesRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetCreditNotesCreditNoteLinesRequest; } 

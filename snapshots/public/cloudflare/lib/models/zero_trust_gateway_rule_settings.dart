@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_rule_settings_audit_ssh.dart';import 'zero_trust_gateway_rule_settings_biso_admin_controls.dart';import 'zero_trust_gateway_rule_settings_block_page.dart';import 'zero_trust_gateway_rule_settings_check_session.dart';import 'zero_trust_gateway_rule_settings_dns_resolvers.dart';import 'zero_trust_gateway_rule_settings_egress.dart';import 'zero_trust_gateway_rule_settings_forensic_copy.dart';import 'zero_trust_gateway_rule_settings_l4override.dart';import 'zero_trust_gateway_rule_settings_notification_settings.dart';import 'zero_trust_gateway_rule_settings_payload_log.dart';import 'zero_trust_gateway_rule_settings_quarantine.dart';import 'zero_trust_gateway_rule_settings_redirect.dart';import 'zero_trust_gateway_rule_settings_resolve_dns_internally.dart';import 'zero_trust_gateway_rule_settings_untrusted_cert.dart';/// Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift.
-final class ZeroTrustGatewayRuleSettings {const ZeroTrustGatewayRuleSettings({this.addHeaders, this.allowChildBypass, this.auditSsh, this.bisoAdminControls, this.blockPage, this.blockPageEnabled, this.blockReason, this.bypassParentRule, this.checkSession, this.dnsResolvers, this.egress, this.forensicCopy, this.ignoreCnameCategoryMatches, this.insecureDisableDnssecValidation, this.ipCategories, this.ipIndicatorFeeds, this.l4override, this.notificationSettings, this.overrideHost, this.overrideIps, this.payloadLog, this.quarantine, this.redirect, this.resolveDnsInternally, this.resolveDnsThroughCloudflare, this.untrustedCert, });
+@immutable final class ZeroTrustGatewayRuleSettings {const ZeroTrustGatewayRuleSettings({this.addHeaders, this.allowChildBypass, this.auditSsh, this.bisoAdminControls, this.blockPage, this.blockPageEnabled, this.blockReason, this.bypassParentRule, this.checkSession, this.dnsResolvers, this.egress, this.forensicCopy, this.ignoreCnameCategoryMatches, this.insecureDisableDnssecValidation, this.ipCategories, this.ipIndicatorFeeds, this.l4override, this.notificationSettings, this.overrideHost, this.overrideIps, this.payloadLog, this.quarantine, this.redirect, this.resolveDnsInternally, this.resolveDnsThroughCloudflare, this.untrustedCert, });
 
 factory ZeroTrustGatewayRuleSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettings(
   addHeaders: (json['add_headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList())),
@@ -71,7 +71,7 @@ final ZeroTrustGatewayRuleSettingsForensicCopy? forensicCopy;
 /// Ignore category matches at CNAME domains in a response. When off, evaluate categories in this rule against all CNAME domain categories in the response. Settable only for `dns` and `dns_resolver` rules.
 final bool? ignoreCnameCategoryMatches;
 
-/// Specify whether to disable DNSSEC validation (for Allow actions) [INSECURE]. Settable only for `dns` rules.
+/// Specify whether to disable DNSSEC validation (for Allow actions) `[INSECURE]`. Settable only for `dns` rules.
 final bool? insecureDisableDnssecValidation;
 
 /// Enable IPs in DNS resolver category blocks. The system blocks only domain name categories unless you enable this setting. Settable only for `dns` and `dns_resolver` rules.
@@ -111,7 +111,7 @@ final bool? resolveDnsThroughCloudflare;
 final ZeroTrustGatewayRuleSettingsUntrustedCert? untrustedCert;
 
 Map<String, dynamic> toJson() { return {
-  if (addHeaders != null) 'add_headers': addHeaders?.map((k, v) => MapEntry(k, v)),
+  'add_headers': ?addHeaders,
   'allow_child_bypass': ?allowChildBypass,
   if (auditSsh != null) 'audit_ssh': auditSsh?.toJson(),
   if (bisoAdminControls != null) 'biso_admin_controls': bisoAdminControls?.toJson(),

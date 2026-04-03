@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories {const PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories {const PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories._(this.value);
 
 factory PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories.fromJson(String json) { return switch (json) {
   'ac_refrigeration_repair' => acRefrigerationRepair,
@@ -903,7 +903,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingCardholdersRequestSpendingControlsSpendingLimitsCategories($value)'; } 
  }
-final class PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval {const PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval._(this.value);
+@immutable final class PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval {const PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval._(this.value);
 
 factory PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval.fromJson(String json) { return switch (json) {
   'all_time' => allTime,
@@ -939,7 +939,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingCardholdersRequestSpendingControlsSpendingLimitsInterval($value)'; } 
  }
-final class PostIssuingCardholdersRequestSpendingControlsSpendingLimits {const PostIssuingCardholdersRequestSpendingControlsSpendingLimits({required this.amount, this.categories, required this.interval, });
+@immutable final class PostIssuingCardholdersRequestSpendingControlsSpendingLimits {const PostIssuingCardholdersRequestSpendingControlsSpendingLimits({required this.amount, required this.interval, this.categories, });
 
 factory PostIssuingCardholdersRequestSpendingControlsSpendingLimits.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequestSpendingControlsSpendingLimits(
   amount: (json['amount'] as num).toInt(),

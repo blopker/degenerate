@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTaxTransactionsCreateFromCalculationRequest {const PostTaxTransactionsCreateFromCalculationRequest({required this.calculation, this.expand, this.metadata, this.postedAt, required this.reference, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxTransactionsCreateFromCalculationRequest {const PostTaxTransactionsCreateFromCalculationRequest({required this.calculation, required this.reference, this.expand, this.metadata, this.postedAt, });
 
 factory PostTaxTransactionsCreateFromCalculationRequest.fromJson(Map<String, dynamic> json) { return PostTaxTransactionsCreateFromCalculationRequest(
   calculation: json['calculation'] as String,

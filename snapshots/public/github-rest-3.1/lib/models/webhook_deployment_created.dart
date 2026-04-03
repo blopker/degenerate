@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_deployment_created_deployment.dart';import 'webhook_deployment_created_workflow_run.dart';import 'webhooks_workflow.dart';final class WebhookDeploymentCreatedAction {const WebhookDeploymentCreatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_deployment_created_deployment.dart';import 'webhook_deployment_created_workflow_run.dart';import 'webhooks_workflow.dart';@immutable final class WebhookDeploymentCreatedAction {const WebhookDeploymentCreatedAction._(this.value);
 
 factory WebhookDeploymentCreatedAction.fromJson(String json) { return switch (json) {
   'created' => created,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentCreatedAction($value)'; } 
  }
-final class WebhookDeploymentCreated {const WebhookDeploymentCreated({required this.action, required this.deployment, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, required this.workflow, required this.workflowRun, });
+@immutable final class WebhookDeploymentCreated {const WebhookDeploymentCreated({required this.action, required this.deployment, required this.repository, required this.sender, required this.workflow, required this.workflowRun, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDeploymentCreated.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreated(
   action: WebhookDeploymentCreatedAction.fromJson(json['action'] as String),

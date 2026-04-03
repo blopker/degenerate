@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_group_by_browsers_response_result_meta_confidence_info_annotations.dart';final class RadarGetHttpTimeseriesGroupByBrowsersResponseResultMetaConfidenceInfo {const RadarGetHttpTimeseriesGroupByBrowsersResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_group_by_browsers_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetHttpTimeseriesGroupByBrowsersResponseResultMetaConfidenceInfo {const RadarGetHttpTimeseriesGroupByBrowsersResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetHttpTimeseriesGroupByBrowsersResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByBrowsersResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetHttpTimeseriesGroupByBrowsersResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

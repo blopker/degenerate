@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Used to select time series resolution.
-final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used to select time series resolution.
+@immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._(this.value);
 
 factory SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta.fromJson(String json) { return switch (json) {
   'year' => year,

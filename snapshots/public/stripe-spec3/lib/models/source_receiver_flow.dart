@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SourceReceiverFlow {const SourceReceiverFlow({this.address, required this.amountCharged, required this.amountReceived, required this.amountReturned, required this.refundAttributesMethod, required this.refundAttributesStatus, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SourceReceiverFlow {const SourceReceiverFlow({required this.amountCharged, required this.amountReceived, required this.amountReturned, required this.refundAttributesMethod, required this.refundAttributesStatus, this.address, });
 
 factory SourceReceiverFlow.fromJson(Map<String, dynamic> json) { return SourceReceiverFlow(
   address: json['address'] as String?,

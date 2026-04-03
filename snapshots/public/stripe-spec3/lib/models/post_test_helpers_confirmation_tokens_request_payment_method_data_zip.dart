@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip();
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip(
-
-); }
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip.fromJson(Map<String, dynamic> _) { return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip copyWith() { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip(
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip copyWith() { return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataZip; } 

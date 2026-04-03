@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeploymentBranchPolicyNamePattern {const DeploymentBranchPolicyNamePattern({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeploymentBranchPolicyNamePattern {const DeploymentBranchPolicyNamePattern({required this.name});
 
 factory DeploymentBranchPolicyNamePattern.fromJson(Map<String, dynamic> json) { return DeploymentBranchPolicyNamePattern(
   name: json['name'] as String,

@@ -1,15 +1,9 @@
-import 'api_client.dart';
-import 'interceptor.dart';
+import 'package:degenerate_runtime/src/api_client.dart';
+import 'package:degenerate_runtime/src/interceptor.dart';
 
 /// Configuration for the generated API classes.
 final class ApiConfig {
-  final ApiClient client;
-  final List<Interceptor> interceptors;
-  final Map<String, String> defaultHeaders;
-  final Map<String, String> defaultQueryParameters;
-  final Map<String, String> defaultCookies;
-  final Duration? timeout;
-
+  /// Creates an [ApiConfig] with the given client and optional settings.
   const ApiConfig({
     required this.client,
     this.interceptors = const [],
@@ -19,6 +13,25 @@ final class ApiConfig {
     this.timeout,
   });
 
+  /// The HTTP client used to send requests.
+  final ApiClient client;
+
+  /// Middleware applied to every request/response cycle.
+  final List<Interceptor> interceptors;
+
+  /// Headers added to every request.
+  final Map<String, String> defaultHeaders;
+
+  /// Query parameters added to every request.
+  final Map<String, String> defaultQueryParameters;
+
+  /// Cookies added to every request.
+  final Map<String, String> defaultCookies;
+
+  /// Default timeout for all requests. Can be overridden per-request.
+  final Duration? timeout;
+
+  /// Creates a copy of this config with the given fields replaced.
   ApiConfig copyWith({
     ApiClient? client,
     List<Interceptor>? interceptors,

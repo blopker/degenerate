@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dnssec_dnssec_multi_signer.dart';import 'dnssec_dnssec_presigned.dart';import 'dnssec_dnssec_use_nsec3.dart';/// Status of DNSSEC, based on user-desired state and presence of necessary records.
-final class DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dnssec_dnssec_multi_signer.dart';import 'dnssec_dnssec_presigned.dart';import 'dnssec_dnssec_use_nsec3.dart';/// Status of DNSSEC, based on user-desired state and presence of necessary records.
+@immutable final class DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus._(this.value);
 
 factory DnssecEditDnssecStatusRequestStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DnssecEditDnssecStatusRequestStatus($value)'; } 
  }
-final class DnssecEditDnssecStatusRequest {const DnssecEditDnssecStatusRequest({this.dnssecMultiSigner, this.dnssecPresigned, this.dnssecUseNsec3, this.status, });
+@immutable final class DnssecEditDnssecStatusRequest {const DnssecEditDnssecStatusRequest({this.dnssecMultiSigner, this.dnssecPresigned, this.dnssecUseNsec3, this.status, });
 
 factory DnssecEditDnssecStatusRequest.fromJson(Map<String, dynamic> json) { return DnssecEditDnssecStatusRequest(
   dnssecMultiSigner: json['dnssec_multi_signer'] != null ? DnssecDnssecMultiSigner.fromJson(json['dnssec_multi_signer'] as bool) : null,

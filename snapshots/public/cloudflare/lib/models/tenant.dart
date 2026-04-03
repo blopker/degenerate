@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tenant_tenant_contacts.dart';import 'tenant_tenant_metadata.dart';import 'tenant_unit.dart';final class Tenant {const Tenant({required this.cdate, this.customerId, required this.edate, required this.tenantContacts, required this.tenantLabels, required this.tenantMetadata, required this.tenantName, required this.tenantNetwork, required this.tenantStatus, required this.tenantTag, required this.tenantType, required this.tenantUnits, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tenant_tenant_contacts.dart';import 'tenant_tenant_metadata.dart';import 'tenant_unit.dart';@immutable final class Tenant {const Tenant({required this.cdate, required this.edate, required this.tenantContacts, required this.tenantLabels, required this.tenantMetadata, required this.tenantName, required this.tenantNetwork, required this.tenantStatus, required this.tenantTag, required this.tenantType, required this.tenantUnits, this.customerId, });
 
 factory Tenant.fromJson(Map<String, dynamic> json) { return Tenant(
   cdate: DateTime.parse(json['cdate'] as String),
@@ -10,7 +10,7 @@ factory Tenant.fromJson(Map<String, dynamic> json) { return Tenant(
   tenantLabels: (json['tenant_labels'] as List<dynamic>).map((e) => e as String).toList(),
   tenantMetadata: TenantTenantMetadata.fromJson(json['tenant_metadata'] as Map<String, dynamic>),
   tenantName: json['tenant_name'] as String,
-  tenantNetwork: (json['tenant_network'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  tenantNetwork: json['tenant_network'] as Map<String, dynamic>,
   tenantStatus: json['tenant_status'] as String,
   tenantTag: json['tenant_tag'] as String,
   tenantType: json['tenant_type'] as String,

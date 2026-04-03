@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Determines which entity is allowed to update the shipping details.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines which entity is allowed to update the shipping details.
 /// 
 /// Default is `client_only`. Stripe Checkout client will automatically update the shipping details. If set to `server_only`, only your server is allowed to update the shipping details.
 /// 
 /// When set to `server_only`, you must add the onShippingDetailsChange event handler when initializing the Stripe Checkout client and manually update the shipping details from your server using the Stripe API.
-final class PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails {const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails._(this.value);
+@immutable final class PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails {const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails._(this.value);
 
 factory PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails.fromJson(String json) { return switch (json) {
   'client_only' => clientOnly,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionPermissions {const PaymentPagesCheckoutSessionPermissions({this.updateShippingDetails});
+@immutable final class PaymentPagesCheckoutSessionPermissions {const PaymentPagesCheckoutSessionPermissions({this.updateShippingDetails});
 
 factory PaymentPagesCheckoutSessionPermissions.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionPermissions(
   updateShippingDetails: json['update_shipping_details'] != null ? PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails.fromJson(json['update_shipping_details'] as String) : null,

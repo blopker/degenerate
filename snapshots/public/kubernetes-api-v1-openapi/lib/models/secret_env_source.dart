@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// SecretEnvSource selects a Secret to populate the environment variables with.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// SecretEnvSource selects a Secret to populate the environment variables with.
 /// 
 /// The contents of the target Secret's Data field will represent the key-value pairs as environment variables.
-final class SecretEnvSource {const SecretEnvSource({this.name = '', this.optional, });
+@immutable final class SecretEnvSource {const SecretEnvSource({this.name = '', this.optional, });
 
 factory SecretEnvSource.fromJson(Map<String, dynamic> json) { return SecretEnvSource(
   name: json.containsKey('name') ? json['name'] as String : '',

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_tests_response_overview_metrics.dart';import 'digital_experience_monitoring_tests_response_tests.dart';final class DigitalExperienceMonitoringTestsResponse {const DigitalExperienceMonitoringTestsResponse({required this.overviewMetrics, required this.tests, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_tests_response_overview_metrics.dart';import 'digital_experience_monitoring_tests_response_tests.dart';@immutable final class DigitalExperienceMonitoringTestsResponse {const DigitalExperienceMonitoringTestsResponse({required this.overviewMetrics, required this.tests, });
 
 factory DigitalExperienceMonitoringTestsResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTestsResponse(
   overviewMetrics: DigitalExperienceMonitoringTestsResponseOverviewMetrics.fromJson(json['overviewMetrics'] as Map<String, dynamic>),

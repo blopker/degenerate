@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_fine_tuning_job_request_hyperparameters.dart';import 'create_fine_tuning_job_request_integrations.dart';import 'create_fine_tuning_job_request_model.dart';import 'fine_tune_method.dart';final class CreateFineTuningJobRequest {const CreateFineTuningJobRequest({required this.model, required this.trainingFile, this.hyperparameters, this.suffix, this.validationFile, this.integrations, this.seed, this.method, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_fine_tuning_job_request_hyperparameters.dart';import 'create_fine_tuning_job_request_integrations.dart';import 'create_fine_tuning_job_request_model.dart';import 'fine_tune_method.dart';@immutable final class CreateFineTuningJobRequest {const CreateFineTuningJobRequest({required this.model, required this.trainingFile, this.hyperparameters, this.suffix, this.validationFile, this.integrations, this.seed, this.method, this.metadata, });
 
 factory CreateFineTuningJobRequest.fromJson(Map<String, dynamic> json) { return CreateFineTuningJobRequest(
   model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateFineTuningJobRequestModelVariant2.fromJson(v as String),),

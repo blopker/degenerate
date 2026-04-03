@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class TerminalConfigurationConfigurationResourceRebootWindow {const TerminalConfigurationConfigurationResourceRebootWindow({required this.endHour, required this.startHour, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class TerminalConfigurationConfigurationResourceRebootWindow {const TerminalConfigurationConfigurationResourceRebootWindow({required this.endHour, required this.startHour, });
 
 factory TerminalConfigurationConfigurationResourceRebootWindow.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceRebootWindow(
   endHour: (json['end_hour'] as num).toInt(),

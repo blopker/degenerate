@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetEventListGetFormat {const GetEventListGetFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventListGetFormat {const GetEventListGetFormat._(this.value);
 
 factory GetEventListGetFormat.fromJson(String json) { return switch (json) {
   'json' => $json,

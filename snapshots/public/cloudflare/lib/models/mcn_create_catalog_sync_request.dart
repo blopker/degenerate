@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_catalog_sync_destination_type.dart';import 'mcn_catalog_sync_update_mode.dart';final class McnCreateCatalogSyncRequest {const McnCreateCatalogSyncRequest({this.description, required this.destinationType, required this.name, this.policy, required this.updateMode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_catalog_sync_destination_type.dart';import 'mcn_catalog_sync_update_mode.dart';@immutable final class McnCreateCatalogSyncRequest {const McnCreateCatalogSyncRequest({required this.destinationType, required this.name, required this.updateMode, this.description, this.policy, });
 
 factory McnCreateCatalogSyncRequest.fromJson(Map<String, dynamic> json) { return McnCreateCatalogSyncRequest(
   description: json['description'] as String?,

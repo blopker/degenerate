@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReviewCustomGatesCommentRequired {const ReviewCustomGatesCommentRequired({required this.environmentName, required this.comment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReviewCustomGatesCommentRequired {const ReviewCustomGatesCommentRequired({required this.environmentName, required this.comment, });
 
 factory ReviewCustomGatesCommentRequired.fromJson(Map<String, dynamic> json) { return ReviewCustomGatesCommentRequired(
   environmentName: json['environment_name'] as String,

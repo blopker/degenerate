@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_observability_query_results_patterns_series_data.dart';final class WorkersObservabilityQueryResultsPatternsSeries {const WorkersObservabilityQueryResultsPatternsSeries({required this.data, required this.time, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_results_patterns_series_data.dart';@immutable final class WorkersObservabilityQueryResultsPatternsSeries {const WorkersObservabilityQueryResultsPatternsSeries({required this.data, required this.time, });
 
 factory WorkersObservabilityQueryResultsPatternsSeries.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsPatternsSeries(
   data: WorkersObservabilityQueryResultsPatternsSeriesData.fromJson(json['data'] as Map<String, dynamic>),

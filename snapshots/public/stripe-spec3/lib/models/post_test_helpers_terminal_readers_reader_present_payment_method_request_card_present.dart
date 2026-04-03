@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Simulated data for the card_present payment method.
-final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCardPresent {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCardPresent({this.number});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Simulated data for the card_present payment method.
+@immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCardPresent {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCardPresent({this.number});
 
 factory PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCardPresent.fromJson(Map<String, dynamic> json) { return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCardPresent(
   number: json['number'] as String?,

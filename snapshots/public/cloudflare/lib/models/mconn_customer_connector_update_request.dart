@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_day_of_week.dart';import 'mconn_embargo_date.dart';final class MconnCustomerConnectorUpdateRequest {const MconnCustomerConnectorUpdateRequest({this.activated, this.interruptWindowDaysOfWeek, this.interruptWindowDurationHours, this.interruptWindowEmbargoDates, this.interruptWindowHourOfDay, this.notes, this.timezone, this.provisionLicense, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_day_of_week.dart';import 'mconn_embargo_date.dart';@immutable final class MconnCustomerConnectorUpdateRequest {const MconnCustomerConnectorUpdateRequest({this.activated, this.interruptWindowDaysOfWeek, this.interruptWindowDurationHours, this.interruptWindowEmbargoDates, this.interruptWindowHourOfDay, this.notes, this.timezone, this.provisionLicense, });
 
 factory MconnCustomerConnectorUpdateRequest.fromJson(Map<String, dynamic> json) { return MconnCustomerConnectorUpdateRequest(
   activated: json['activated'] as bool?,

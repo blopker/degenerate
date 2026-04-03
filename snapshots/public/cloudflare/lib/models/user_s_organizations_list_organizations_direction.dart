@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Direction to order organizations.
-final class UserSOrganizationsListOrganizationsDirection {const UserSOrganizationsListOrganizationsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order organizations.
+@immutable final class UserSOrganizationsListOrganizationsDirection {const UserSOrganizationsListOrganizationsDirection._(this.value);
 
 factory UserSOrganizationsListOrganizationsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

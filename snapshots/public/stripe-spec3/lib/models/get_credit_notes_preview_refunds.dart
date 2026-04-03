@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'get_credit_notes_preview_refunds_payment_record_refund.dart';final class GetCreditNotesPreviewRefundsType {const GetCreditNotesPreviewRefundsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_refunds_payment_record_refund.dart';@immutable final class GetCreditNotesPreviewRefundsType {const GetCreditNotesPreviewRefundsType._(this.value);
 
 factory GetCreditNotesPreviewRefundsType.fromJson(String json) { return switch (json) {
   'payment_record_refund' => paymentRecordRefund,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetCreditNotesPreviewRefundsType($value)'; } 
  }
-final class GetCreditNotesPreviewRefunds {const GetCreditNotesPreviewRefunds({this.amountRefunded, this.paymentRecordRefund, this.refund, this.type, });
+@immutable final class GetCreditNotesPreviewRefunds {const GetCreditNotesPreviewRefunds({this.amountRefunded, this.paymentRecordRefund, this.refund, this.type, });
 
 factory GetCreditNotesPreviewRefunds.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewRefunds(
   amountRefunded: json['amount_refunded'] != null ? (json['amount_refunded'] as num).toInt() : null,

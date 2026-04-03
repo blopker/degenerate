@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'load_balancing_allow_insecure.dart';import 'load_balancing_consecutive_down.dart';import 'load_balancing_consecutive_up.dart';import 'load_balancing_description.dart';import 'load_balancing_expected_body.dart';import 'load_balancing_expected_codes.dart';import 'load_balancing_follow_redirects.dart';import 'load_balancing_identifier.dart';import 'load_balancing_interval.dart';import 'load_balancing_method.dart';import 'load_balancing_path.dart';import 'load_balancing_port.dart';import 'load_balancing_probe_zone.dart';import 'load_balancing_retries.dart';import 'load_balancing_timeout.dart';import 'load_balancing_timestamp.dart';import 'load_balancing_type.dart';final class LoadBalancingMonitor {const LoadBalancingMonitor({this.allowInsecure, this.consecutiveDown, this.consecutiveUp, this.description, this.expectedBody, this.expectedCodes, this.followRedirects, this.header, this.interval, this.method, this.path, this.port, this.probeZone, this.retries, this.timeout, this.type, this.createdOn, this.id, this.modifiedOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_allow_insecure.dart';import 'load_balancing_consecutive_down.dart';import 'load_balancing_consecutive_up.dart';import 'load_balancing_description.dart';import 'load_balancing_expected_body.dart';import 'load_balancing_expected_codes.dart';import 'load_balancing_follow_redirects.dart';import 'load_balancing_identifier.dart';import 'load_balancing_interval.dart';import 'load_balancing_method.dart';import 'load_balancing_path.dart';import 'load_balancing_port.dart';import 'load_balancing_probe_zone.dart';import 'load_balancing_retries.dart';import 'load_balancing_timeout.dart';import 'load_balancing_timestamp.dart';import 'load_balancing_type.dart';@immutable final class LoadBalancingMonitor {const LoadBalancingMonitor({this.allowInsecure, this.consecutiveDown, this.consecutiveUp, this.description, this.expectedBody, this.expectedCodes, this.followRedirects, this.header, this.interval, this.method, this.path, this.port, this.probeZone, this.retries, this.timeout, this.type, this.createdOn, this.id, this.modifiedOn, });
 
 factory LoadBalancingMonitor.fromJson(Map<String, dynamic> json) { return LoadBalancingMonitor(
   allowInsecure: json['allow_insecure'] != null ? LoadBalancingAllowInsecure.fromJson(json['allow_insecure'] as bool) : null,
@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   if (expectedBody != null) 'expected_body': expectedBody?.toJson(),
   if (expectedCodes != null) 'expected_codes': expectedCodes?.toJson(),
   if (followRedirects != null) 'follow_redirects': followRedirects?.toJson(),
-  if (header != null) 'header': header?.map((k, v) => MapEntry(k, v)),
+  'header': ?header,
   if (interval != null) 'interval': interval?.toJson(),
   if (method != null) 'method': method?.toJson(),
   if (path != null) 'path': path?.toJson(),

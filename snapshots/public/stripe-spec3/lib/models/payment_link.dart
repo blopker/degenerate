@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'deleted_application.dart';import 'payment_link_application.dart';import 'payment_link_line_items.dart';import 'payment_link_on_behalf_of.dart';import 'payment_links_resource_after_completion.dart';import 'payment_links_resource_automatic_tax.dart';import 'payment_links_resource_consent_collection.dart';import 'payment_links_resource_custom_fields.dart';import 'payment_links_resource_custom_text.dart';import 'payment_links_resource_invoice_creation.dart';import 'payment_links_resource_name_collection.dart';import 'payment_links_resource_optional_item.dart';import 'payment_links_resource_payment_intent_data.dart';import 'payment_links_resource_phone_number_collection.dart';import 'payment_links_resource_restrictions.dart';import 'payment_links_resource_shipping_address_collection.dart';import 'payment_links_resource_shipping_option.dart';import 'payment_links_resource_subscription_data.dart';import 'payment_links_resource_tax_id_collection.dart';import 'payment_links_resource_transfer_data.dart';/// Configuration for collecting the customer's billing address. Defaults to `auto`.
-final class PaymentLinkBillingAddressCollection {const PaymentLinkBillingAddressCollection._(this.value);
+@immutable final class PaymentLinkBillingAddressCollection {const PaymentLinkBillingAddressCollection._(this.value);
 
 factory PaymentLinkBillingAddressCollection.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinkBillingAddressCollection($value)'; } 
  }
 /// Configuration for Customer creation during checkout.
-final class PaymentLinkCustomerCreation {const PaymentLinkCustomerCreation._(this.value);
+@immutable final class PaymentLinkCustomerCreation {const PaymentLinkCustomerCreation._(this.value);
 
 factory PaymentLinkCustomerCreation.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinkCustomerCreation($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class PaymentLinkObject {const PaymentLinkObject._(this.value);
+@immutable final class PaymentLinkObject {const PaymentLinkObject._(this.value);
 
 factory PaymentLinkObject.fromJson(String json) { return switch (json) {
   'payment_link' => paymentLink,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinkObject($value)'; } 
  }
 /// Configuration for collecting a payment method during checkout. Defaults to `always`.
-final class PaymentLinkPaymentMethodCollection {const PaymentLinkPaymentMethodCollection._(this.value);
+@immutable final class PaymentLinkPaymentMethodCollection {const PaymentLinkPaymentMethodCollection._(this.value);
 
 factory PaymentLinkPaymentMethodCollection.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -97,7 +97,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentLinkPaymentMethodCollection($value)'; } 
  }
-final class PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes._(this.value);
+@immutable final class PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes._(this.value);
 
 factory PaymentLinkPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'affirm' => affirm,
@@ -233,7 +233,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinkPaymentMethodTypes($value)'; } 
  }
 /// Indicates the type of transaction being performed which customizes relevant text on the page, such as the submit button.
-final class PaymentLinkSubmitType {const PaymentLinkSubmitType._(this.value);
+@immutable final class PaymentLinkSubmitType {const PaymentLinkSubmitType._(this.value);
 
 factory PaymentLinkSubmitType.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -271,7 +271,7 @@ bool get isUnknown { return !values.contains(this); }
 /// When a customer opens a payment link it will open a new [checkout session](https://docs.stripe.com/api/checkout/sessions) to render the payment page. You can use [checkout session events](https://docs.stripe.com/api/events/types#event_types-checkout.session.completed) to track payments through payment links.
 /// 
 /// Related guide: [Payment Links API](https://docs.stripe.com/payment-links)
-final class PaymentLink {const PaymentLink({required this.active, required this.afterCompletion, required this.allowPromotionCodes, this.application, this.applicationFeeAmount, this.applicationFeePercent, required this.automaticTax, required this.billingAddressCollection, this.consentCollection, required this.currency, required this.customFields, required this.customText, required this.customerCreation, required this.id, this.inactiveMessage, this.invoiceCreation, this.lineItems, required this.livemode, required this.metadata, this.nameCollection, required this.object, this.onBehalfOf, this.optionalItems, this.paymentIntentData, required this.paymentMethodCollection, this.paymentMethodTypes, required this.phoneNumberCollection, this.restrictions, this.shippingAddressCollection, required this.shippingOptions, required this.submitType, this.subscriptionData, required this.taxIdCollection, this.transferData, required this.url, });
+@immutable final class PaymentLink {const PaymentLink({required this.livemode, required this.afterCompletion, required this.allowPromotionCodes, required this.customerCreation, required this.automaticTax, required this.billingAddressCollection, required this.currency, required this.customFields, required this.customText, required this.active, required this.id, required this.shippingOptions, required this.metadata, required this.taxIdCollection, required this.paymentMethodCollection, required this.url, required this.object, required this.phoneNumberCollection, required this.submitType, this.nameCollection, this.lineItems, this.onBehalfOf, this.invoiceCreation, this.paymentIntentData, this.inactiveMessage, this.paymentMethodTypes, this.consentCollection, this.restrictions, this.shippingAddressCollection, this.optionalItems, this.applicationFeeAmount, this.subscriptionData, this.application, this.transferData, this.applicationFeePercent, });
 
 factory PaymentLink.fromJson(Map<String, dynamic> json) { return PaymentLink(
   active: json['active'] as bool,

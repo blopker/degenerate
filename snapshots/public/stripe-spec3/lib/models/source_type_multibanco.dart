@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeMultibanco {const SourceTypeMultibanco({this.entity, this.reference, this.refundAccountHolderAddressCity, this.refundAccountHolderAddressCountry, this.refundAccountHolderAddressLine1, this.refundAccountHolderAddressLine2, this.refundAccountHolderAddressPostalCode, this.refundAccountHolderAddressState, this.refundAccountHolderName, this.refundIban, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeMultibanco {const SourceTypeMultibanco({this.entity, this.reference, this.refundAccountHolderAddressCity, this.refundAccountHolderAddressCountry, this.refundAccountHolderAddressLine1, this.refundAccountHolderAddressLine2, this.refundAccountHolderAddressPostalCode, this.refundAccountHolderAddressState, this.refundAccountHolderName, this.refundIban, });
 
 factory SourceTypeMultibanco.fromJson(Map<String, dynamic> json) { return SourceTypeMultibanco(
   entity: json['entity'] as String?,

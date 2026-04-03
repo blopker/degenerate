@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_collection45_result_info.dart';import 'waitingroom_messages2.dart';final class ResponseCollection45 {const ResponseCollection45({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_collection45_result_info.dart';import 'waitingroom_messages2.dart';@immutable final class ResponseCollection45 {const ResponseCollection45({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection45.fromJson(Map<String, dynamic> json) { return ResponseCollection45(
   errors: (json['errors'] as List<dynamic>).map((e) => WaitingroomMessages2.fromJson(e as Map<String, dynamic>)).toList(),

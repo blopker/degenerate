@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class DeleteCustomersCustomerSourcesIdRequest {const DeleteCustomersCustomerSourcesIdRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteCustomersCustomerSourcesIdRequest {const DeleteCustomersCustomerSourcesIdRequest({this.expand});
 
 factory DeleteCustomersCustomerSourcesIdRequest.fromJson(Map<String, dynamic> json) { return DeleteCustomersCustomerSourcesIdRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

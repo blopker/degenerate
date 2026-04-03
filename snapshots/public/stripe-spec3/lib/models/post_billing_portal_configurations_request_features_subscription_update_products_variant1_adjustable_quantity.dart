@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity({required this.enabled, this.maximum, this.minimum, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity({required this.enabled, this.maximum, this.minimum, });
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity(
   enabled: json['enabled'] as bool,

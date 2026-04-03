@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_session_request_shipping_options_variant1_shipping_rate_data_delivery_estimate.dart';import 'post_checkout_sessions_session_request_shipping_options_variant1_shipping_rate_data_fixed_amount.dart';final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataTaxBehavior {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_session_request_shipping_options_variant1_shipping_rate_data_delivery_estimate.dart';import 'post_checkout_sessions_session_request_shipping_options_variant1_shipping_rate_data_fixed_amount.dart';@immutable final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataTaxBehavior {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataTaxBehavior._(this.value);
 
 factory PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataTaxBehavior($value)'; } 
  }
-final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataType {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataType._(this.value);
+@immutable final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataType {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataType._(this.value);
 
 factory PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataType.fromJson(String json) { return switch (json) {
   'fixed_amount' => fixedAmount,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataType($value)'; } 
  }
-final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateData {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateData({this.deliveryEstimate, required this.displayName, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
+@immutable final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateData {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateData({required this.displayName, this.deliveryEstimate, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
 
 factory PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateData(
   deliveryEstimate: json['delivery_estimate'] != null ? PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,

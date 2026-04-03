@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-extension type const WaitingroomEstimatedQueuedUsers(int value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const WaitingroomEstimatedQueuedUsers(int value) {
 factory WaitingroomEstimatedQueuedUsers.fromJson(num json) => WaitingroomEstimatedQueuedUsers(json.toInt());
 
 num toJson() => value;
@@ -18,7 +18,7 @@ factory WaitingroomMaxEstimatedTimeMinutes.fromJson(num json) => WaitingroomMaxE
 num toJson() => value;
 
 }
-final class WaitingroomStatus {const WaitingroomStatus._(this.value);
+@immutable final class WaitingroomStatus {const WaitingroomStatus._(this.value);
 
 factory WaitingroomStatus.fromJson(String json) { return switch (json) {
   'event_prequeueing' => eventPrequeueing,
@@ -54,7 +54,7 @@ factory WaitingroomStatusEventId.fromJson(String json) => WaitingroomStatusEvent
 String toJson() => value;
 
 }
-final class WaitingroomStatusResponseResult {const WaitingroomStatusResponseResult({this.estimatedQueuedUsers, this.estimatedTotalActiveUsers, this.eventId, this.maxEstimatedTimeMinutes, this.status, });
+@immutable final class WaitingroomStatusResponseResult {const WaitingroomStatusResponseResult({this.estimatedQueuedUsers, this.estimatedTotalActiveUsers, this.eventId, this.maxEstimatedTimeMinutes, this.status, });
 
 factory WaitingroomStatusResponseResult.fromJson(Map<String, dynamic> json) { return WaitingroomStatusResponseResult(
   estimatedQueuedUsers: json['estimated_queued_users'] != null ? WaitingroomEstimatedQueuedUsers.fromJson(json['estimated_queued_users'] as num) : null,

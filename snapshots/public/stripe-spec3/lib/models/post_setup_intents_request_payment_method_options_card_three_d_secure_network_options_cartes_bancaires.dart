@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(String json) { return switch (json) {
   '0' => $0,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires({required this.cbAvalgo, this.cbExemption, this.cbScore, });
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires {const PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires({required this.cbAvalgo, this.cbExemption, this.cbScore, });
 
 factory PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires(
   cbAvalgo: PostSetupIntentsRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(json['cb_avalgo'] as String),

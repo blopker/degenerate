@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_custom_fields_dropdown.dart';import 'post_checkout_sessions_request_custom_fields_label.dart';import 'post_checkout_sessions_request_custom_fields_numeric.dart';import 'post_checkout_sessions_request_custom_fields_text.dart';final class PostCheckoutSessionsRequestCustomFieldsType {const PostCheckoutSessionsRequestCustomFieldsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_custom_fields_dropdown.dart';import 'post_checkout_sessions_request_custom_fields_label.dart';import 'post_checkout_sessions_request_custom_fields_numeric.dart';import 'post_checkout_sessions_request_custom_fields_text.dart';@immutable final class PostCheckoutSessionsRequestCustomFieldsType {const PostCheckoutSessionsRequestCustomFieldsType._(this.value);
 
 factory PostCheckoutSessionsRequestCustomFieldsType.fromJson(String json) { return switch (json) {
   'dropdown' => dropdown,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestCustomFieldsType($value)'; } 
  }
-final class PostCheckoutSessionsRequestCustomFields {const PostCheckoutSessionsRequestCustomFields({this.dropdown, required this.key, required this.label, this.numeric, this.optional, this.text, required this.type, });
+@immutable final class PostCheckoutSessionsRequestCustomFields {const PostCheckoutSessionsRequestCustomFields({required this.key, required this.label, required this.type, this.dropdown, this.numeric, this.optional, this.text, });
 
 factory PostCheckoutSessionsRequestCustomFields.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestCustomFields(
   dropdown: json['dropdown'] != null ? PostCheckoutSessionsRequestCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,

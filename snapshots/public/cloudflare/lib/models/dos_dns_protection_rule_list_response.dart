@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_dns_protection_rule.dart';final class DosDnsProtectionRuleListResponse {const DosDnsProtectionRuleListResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_dns_protection_rule.dart';@immutable final class DosDnsProtectionRuleListResponse {const DosDnsProtectionRuleListResponse({this.result});
 
 factory DosDnsProtectionRuleListResponse.fromJson(Map<String, dynamic> json) { return DosDnsProtectionRuleListResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => DosDnsProtectionRule.fromJson(e as Map<String, dynamic>)).toList(),

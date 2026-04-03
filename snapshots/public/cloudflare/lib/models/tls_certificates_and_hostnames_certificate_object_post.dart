@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_ca.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_mtls_management_components_schemas_uploaded_on.dart';import 'tls_certificates_and_hostnames_schemas_certificates.dart';import 'tls_certificates_and_hostnames_schemas_expires_on.dart';import 'tls_certificates_and_hostnames_schemas_issuer.dart';import 'tls_certificates_and_hostnames_schemas_name.dart';import 'tls_certificates_and_hostnames_schemas_serial_number.dart';import 'tls_certificates_and_hostnames_signature.dart';/// This is the time the certificate was updated.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_ca.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_mtls_management_components_schemas_uploaded_on.dart';import 'tls_certificates_and_hostnames_schemas_certificates.dart';import 'tls_certificates_and_hostnames_schemas_expires_on.dart';import 'tls_certificates_and_hostnames_schemas_issuer.dart';import 'tls_certificates_and_hostnames_schemas_name.dart';import 'tls_certificates_and_hostnames_schemas_serial_number.dart';import 'tls_certificates_and_hostnames_signature.dart';/// This is the time the certificate was updated.
 extension type TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUpdatedAt(DateTime value) {
 factory TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUpdatedAt.fromJson(String json) => TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasUpdatedAt(DateTime.parse(json));
 
 String toJson() => value.toIso8601String();
 
 }
-final class TlsCertificatesAndHostnamesCertificateObjectPost {const TlsCertificatesAndHostnamesCertificateObjectPost({this.ca, this.certificates, this.expiresOn, this.id, this.issuer, this.name, this.serialNumber, this.signature, this.updatedAt, this.uploadedOn, });
+@immutable final class TlsCertificatesAndHostnamesCertificateObjectPost {const TlsCertificatesAndHostnamesCertificateObjectPost({this.ca, this.certificates, this.expiresOn, this.id, this.issuer, this.name, this.serialNumber, this.signature, this.updatedAt, this.uploadedOn, });
 
 factory TlsCertificatesAndHostnamesCertificateObjectPost.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificateObjectPost(
   ca: json['ca'] != null ? TlsCertificatesAndHostnamesCa.fromJson(json['ca'] as bool) : null,

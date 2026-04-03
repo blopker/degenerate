@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_for
 /// - [Text inputs and outputs](/docs/guides/text)
 /// - [Structured Outputs](/docs/guides/structured-outputs)
 /// 
-final class ResponseTextParam {const ResponseTextParam({this.format, this.verbosity, });
+@immutable final class ResponseTextParam {const ResponseTextParam({this.format, this.verbosity, });
 
 factory ResponseTextParam.fromJson(Map<String, dynamic> json) { return ResponseTextParam(
   format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromB: (v) => TextResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>),) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_klarna_subscriptions.dart';import 'post_checkout_sessions_request_payment_method_options_klarna_subscriptions_variant1.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_klarna_subscriptions.dart';import 'post_checkout_sessions_request_payment_method_options_klarna_subscriptions_variant1.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarna {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarna({this.captureMethod, this.setupFutureUsage, this.subscriptions, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarna {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarna({this.captureMethod, this.setupFutureUsage, this.subscriptions, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsKlarna(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod.fromJson(json['capture_method'] as String) : null,

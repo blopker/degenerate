@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DosExpressionFilter {const DosExpressionFilter({required this.createdOn, required this.expression, required this.id, required this.mode, required this.modifiedOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DosExpressionFilter {const DosExpressionFilter({required this.createdOn, required this.expression, required this.id, required this.mode, required this.modifiedOn, });
 
 factory DosExpressionFilter.fromJson(Map<String, dynamic> json) { return DosExpressionFilter(
   createdOn: DateTime.parse(json['created_on'] as String),

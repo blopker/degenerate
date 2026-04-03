@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_support_connector.dart';final class MconnSupportMacrosProvisionPhysicalConnectorResult {const MconnSupportMacrosProvisionPhysicalConnectorResult({required this.connector});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_support_connector.dart';@immutable final class MconnSupportMacrosProvisionPhysicalConnectorResult {const MconnSupportMacrosProvisionPhysicalConnectorResult({required this.connector});
 
 factory MconnSupportMacrosProvisionPhysicalConnectorResult.fromJson(Map<String, dynamic> json) { return MconnSupportMacrosProvisionPhysicalConnectorResult(
   connector: MconnSupportConnector.fromJson(json['connector'] as Map<String, dynamic>),

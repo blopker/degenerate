@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LogpushValidateResponseResult {const LogpushValidateResponseResult({this.message, this.valid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LogpushValidateResponseResult {const LogpushValidateResponseResult({this.message, this.valid, });
 
 factory LogpushValidateResponseResult.fromJson(Map<String, dynamic> json) { return LogpushValidateResponseResult(
   message: json['message'] as String?,

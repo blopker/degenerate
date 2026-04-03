@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_documents_proof_of_registration_signer.dart';final class PostAccountsAccountRequestDocumentsProofOfRegistration {const PostAccountsAccountRequestDocumentsProofOfRegistration({this.files, this.signer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_documents_proof_of_registration_signer.dart';@immutable final class PostAccountsAccountRequestDocumentsProofOfRegistration {const PostAccountsAccountRequestDocumentsProofOfRegistration({this.files, this.signer, });
 
 factory PostAccountsAccountRequestDocumentsProofOfRegistration.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestDocumentsProofOfRegistration(
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -15,7 +15,7 @@ Future<ApiResult<GetAttackerListResponse, GetAttackerListResponse400>> getAttack
 final queryParametersList = <ApiQueryParameter>[];
 if (datasetIds != null) {
 for (final item in datasetIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'datasetIds', value: item));
 }
 }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_customers_customer_subscriptions_subscription_exposed_id_request_items_price_data_recurring.dart';final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceDataTaxBehavior {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_items_price_data_recurring.dart';@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceDataTaxBehavior {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceDataTaxBehavior._(this.value);
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceDataTaxBehavior($value)'; } 
  }
-final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceData {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceData({required this.currency, required this.product, required this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceData {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceData({required this.currency, required this.product, required this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceData.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsPriceData(
   currency: json['currency'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_treasury_financial_accounts_financial_account_features_request_financial_addresses_aba.dart';/// Contains Features that add FinancialAddresses to the FinancialAccount.
-final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses({this.aba});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_financial_account_features_request_financial_addresses_aba.dart';/// Contains Features that add FinancialAddresses to the FinancialAccount.
+@immutable final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses({this.aba});
 
 factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddresses(
   aba: json['aba'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestFinancialAddressesAba.fromJson(json['aba'] as Map<String, dynamic>) : null,

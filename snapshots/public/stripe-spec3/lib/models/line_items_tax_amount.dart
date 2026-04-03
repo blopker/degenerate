@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_rate.dart';/// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
-final class LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_rate.dart';/// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
+@immutable final class LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason._(this.value);
 
 factory LineItemsTaxAmountTaxabilityReason.fromJson(String json) { return switch (json) {
   'customer_exempt' => customerExempt,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LineItemsTaxAmountTaxabilityReason($value)'; } 
  }
 /// 
-final class LineItemsTaxAmount {const LineItemsTaxAmount({required this.amount, required this.rate, this.taxabilityReason, this.taxableAmount, });
+@immutable final class LineItemsTaxAmount {const LineItemsTaxAmount({required this.amount, required this.rate, this.taxabilityReason, this.taxableAmount, });
 
 factory LineItemsTaxAmount.fromJson(Map<String, dynamic> json) { return LineItemsTaxAmount(
   amount: (json['amount'] as num).toInt(),

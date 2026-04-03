@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetTldDetailsResponse404 {const RadarGetTldDetailsResponse404({required this.error});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetTldDetailsResponse404 {const RadarGetTldDetailsResponse404({required this.error});
 
 factory RadarGetTldDetailsResponse404.fromJson(Map<String, dynamic> json) { return RadarGetTldDetailsResponse404(
   error: json['error'] as String,

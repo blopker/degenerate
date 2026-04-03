@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class BillingUpdateBudgetOrgRequestBudgetAlerting {const BillingUpdateBudgetOrgRequestBudgetAlerting({this.willAlert, this.alertRecipients, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingUpdateBudgetOrgRequestBudgetAlerting {const BillingUpdateBudgetOrgRequestBudgetAlerting({this.willAlert, this.alertRecipients, });
 
 factory BillingUpdateBudgetOrgRequestBudgetAlerting.fromJson(Map<String, dynamic> json) { return BillingUpdateBudgetOrgRequestBudgetAlerting(
   willAlert: json['will_alert'] as bool?,

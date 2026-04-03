@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest {const PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest {const PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest({this.expand});
 
 factory PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTerminalReadersReaderTimeoutInputCollectionRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

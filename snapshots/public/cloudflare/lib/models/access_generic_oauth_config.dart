@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessGenericOauthConfig {const AccessGenericOauthConfig({this.clientId, this.clientSecret, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessGenericOauthConfig {const AccessGenericOauthConfig({this.clientId, this.clientSecret, });
 
 factory AccessGenericOauthConfig.fromJson(Map<String, dynamic> json) { return AccessGenericOauthConfig(
   clientId: json['client_id'] as String?,

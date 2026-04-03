@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'abuse_reports_submission_report_type.dart';final class AbuseReportsSubmitErrorResponseRequest {const AbuseReportsSubmitErrorResponseRequest({required this.act});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_submission_report_type.dart';@immutable final class AbuseReportsSubmitErrorResponseRequest {const AbuseReportsSubmitErrorResponseRequest({required this.act});
 
 factory AbuseReportsSubmitErrorResponseRequest.fromJson(Map<String, dynamic> json) { return AbuseReportsSubmitErrorResponseRequest(
   act: AbuseReportsSubmissionReportType.fromJson(json['act'] as String),

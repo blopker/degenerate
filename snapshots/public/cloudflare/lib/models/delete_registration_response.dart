@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_message.dart';final class DeleteRegistrationResponse {const DeleteRegistrationResponse({required this.errors, required this.messages, this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_message.dart';@immutable final class DeleteRegistrationResponse {const DeleteRegistrationResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory DeleteRegistrationResponse.fromJson(Map<String, dynamic> json) { return DeleteRegistrationResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
 ); }
 

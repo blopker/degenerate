@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecurityTimeseriesGroupByThreatCategorySpf {const RadarGetEmailSecurityTimeseriesGroupByThreatCategorySpf._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByThreatCategorySpf {const RadarGetEmailSecurityTimeseriesGroupByThreatCategorySpf._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupByThreatCategorySpf.fromJson(String json) { return switch (json) {
   'PASS' => pass,

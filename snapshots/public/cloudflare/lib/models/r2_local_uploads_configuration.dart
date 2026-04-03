@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configuration for local uploads on a bucket.
-final class R2LocalUploadsConfiguration {const R2LocalUploadsConfiguration({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configuration for local uploads on a bucket.
+@immutable final class R2LocalUploadsConfiguration {const R2LocalUploadsConfiguration({this.enabled});
 
 factory R2LocalUploadsConfiguration.fromJson(Map<String, dynamic> json) { return R2LocalUploadsConfiguration(
   enabled: json['enabled'] as bool?,

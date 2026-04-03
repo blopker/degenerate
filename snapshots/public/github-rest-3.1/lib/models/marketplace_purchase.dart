@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'marketplace_purchase_marketplace_pending_change.dart';import 'marketplace_purchase_marketplace_purchase.dart';/// Marketplace Purchase
-final class MarketplacePurchase {const MarketplacePurchase({required this.url, required this.type, required this.id, required this.login, this.organizationBillingEmail, this.email, this.marketplacePendingChange, required this.marketplacePurchase, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'marketplace_purchase_marketplace_pending_change.dart';import 'marketplace_purchase_marketplace_purchase.dart';/// Marketplace Purchase
+@immutable final class MarketplacePurchase {const MarketplacePurchase({required this.url, required this.type, required this.id, required this.login, required this.marketplacePurchase, this.organizationBillingEmail, this.email, this.marketplacePendingChange, });
 
 factory MarketplacePurchase.fromJson(Map<String, dynamic> json) { return MarketplacePurchase(
   url: json['url'] as String,

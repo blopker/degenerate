@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InvoicePaid {const InvoicePaid({this.invoiceId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicePaid {const InvoicePaid({this.invoiceId});
 
 factory InvoicePaid.fromJson(Map<String, dynamic> json) { return InvoicePaid(
   invoiceId: json['invoiceId'] as String?,

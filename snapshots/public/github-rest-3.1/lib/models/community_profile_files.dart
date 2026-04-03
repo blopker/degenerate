@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'code_of_conduct_simple.dart';import 'community_health_file.dart';import 'license_simple.dart';final class CommunityProfileFiles {const CommunityProfileFiles({required this.codeOfConduct, required this.codeOfConductFile, required this.license, required this.contributing, required this.readme, required this.issueTemplate, required this.pullRequestTemplate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_of_conduct_simple.dart';import 'community_health_file.dart';import 'license_simple.dart';@immutable final class CommunityProfileFiles {const CommunityProfileFiles({required this.codeOfConduct, required this.codeOfConductFile, required this.license, required this.contributing, required this.readme, required this.issueTemplate, required this.pullRequestTemplate, });
 
 factory CommunityProfileFiles.fromJson(Map<String, dynamic> json) { return CommunityProfileFiles(
   codeOfConduct: json['code_of_conduct'] != null ? CodeOfConductSimple.fromJson(json['code_of_conduct'] as Map<String, dynamic>) : null,

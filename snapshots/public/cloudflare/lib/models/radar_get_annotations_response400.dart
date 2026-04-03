@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_annotations_response400_errors.dart';final class RadarGetAnnotationsResponse400 {const RadarGetAnnotationsResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_annotations_response400_errors.dart';@immutable final class RadarGetAnnotationsResponse400 {const RadarGetAnnotationsResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetAnnotationsResponse400.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetAnnotationsResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

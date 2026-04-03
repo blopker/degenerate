@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_quotes_request_line_items_price_data_recurring.dart';final class PostQuotesRequestLineItemsPriceDataTaxBehavior {const PostQuotesRequestLineItemsPriceDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_request_line_items_price_data_recurring.dart';@immutable final class PostQuotesRequestLineItemsPriceDataTaxBehavior {const PostQuotesRequestLineItemsPriceDataTaxBehavior._(this.value);
 
 factory PostQuotesRequestLineItemsPriceDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostQuotesRequestLineItemsPriceDataTaxBehavior($value)'; } 
  }
-final class PostQuotesRequestLineItemsPriceData {const PostQuotesRequestLineItemsPriceData({required this.currency, required this.product, this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostQuotesRequestLineItemsPriceData {const PostQuotesRequestLineItemsPriceData({required this.currency, required this.product, this.recurring, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostQuotesRequestLineItemsPriceData.fromJson(Map<String, dynamic> json) { return PostQuotesRequestLineItemsPriceData(
   currency: json['currency'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_delta_content_text_object_text.dart';/// Always `text`.
-final class MessageDeltaContentTextObjectType {const MessageDeltaContentTextObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_content_text_object_text.dart';/// Always `text`.
+@immutable final class MessageDeltaContentTextObjectType {const MessageDeltaContentTextObjectType._(this.value);
 
 factory MessageDeltaContentTextObjectType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageDeltaContentTextObjectType($value)'; } 
  }
 /// The text content that is part of a message.
-final class MessageDeltaContentTextObject {const MessageDeltaContentTextObject({required this.index, required this.type, this.text, });
+@immutable final class MessageDeltaContentTextObject {const MessageDeltaContentTextObject({required this.index, required this.type, this.text, });
 
 factory MessageDeltaContentTextObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextObject(
   index: (json['index'] as num).toInt(),

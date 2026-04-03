@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
 /// organization, or when the event occurs from activity in a repository owned by an organization.
-final class OrganizationSimpleWebhooks {const OrganizationSimpleWebhooks({required this.login, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description, });
+@immutable final class OrganizationSimpleWebhooks {const OrganizationSimpleWebhooks({required this.login, required this.id, required this.nodeId, required this.url, required this.reposUrl, required this.eventsUrl, required this.hooksUrl, required this.issuesUrl, required this.membersUrl, required this.publicMembersUrl, required this.avatarUrl, required this.description, });
 
 factory OrganizationSimpleWebhooks.fromJson(Map<String, dynamic> json) { return OrganizationSimpleWebhooks(
   login: json['login'] as String,

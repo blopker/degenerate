@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class ReportingReportTypeObject {const ReportingReportTypeObject._(this.value);
+@immutable final class ReportingReportTypeObject {const ReportingReportTypeObject._(this.value);
 
 factory ReportingReportTypeObject.fromJson(String json) { return switch (json) {
   'reporting.report_type' => reportingReportType,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// Note that certain report types can only be run based on your live-mode data (not test-mode
 /// data), and will error when queried without a [live-mode API key](https://docs.stripe.com/keys#test-live-modes).
-final class ReportingReportType {const ReportingReportType({required this.dataAvailableEnd, required this.dataAvailableStart, this.defaultColumns, required this.id, required this.livemode, required this.name, required this.object, required this.updated, required this.version, });
+@immutable final class ReportingReportType {const ReportingReportType({required this.dataAvailableEnd, required this.dataAvailableStart, required this.id, required this.livemode, required this.name, required this.object, required this.updated, required this.version, this.defaultColumns, });
 
 factory ReportingReportType.fromJson(Map<String, dynamic> json) { return ReportingReportType(
   dataAvailableEnd: (json['data_available_end'] as num).toInt(),

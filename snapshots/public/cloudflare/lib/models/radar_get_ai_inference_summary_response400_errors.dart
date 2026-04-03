@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAiInferenceSummaryResponse400Errors {const RadarGetAiInferenceSummaryResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiInferenceSummaryResponse400Errors {const RadarGetAiInferenceSummaryResponse400Errors({required this.message});
 
 factory RadarGetAiInferenceSummaryResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceSummaryResponse400Errors(
   message: json['message'] as String,

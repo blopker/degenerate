@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_source_field.dart';final class ListModelType {const ListModelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_source_field.dart';@immutable final class ListModelType {const ListModelType._(this.value);
 
 factory ListModelType.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ListModelType($value)'; } 
  }
-final class ListModel {const ListModel({required this.items, required this.type, });
+@immutable final class ListModel {const ListModel({required this.items, required this.type, });
 
 factory ListModel.fromJson(Map<String, dynamic> json) { return ListModel(
   items: CloudflarePipelinesSourceField.fromJson(json['items'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ZeroTrustApplicationsReviewStatusUpdateRequest {const ZeroTrustApplicationsReviewStatusUpdateRequest({required this.approvedApps, required this.inReviewApps, required this.unapprovedApps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZeroTrustApplicationsReviewStatusUpdateRequest {const ZeroTrustApplicationsReviewStatusUpdateRequest({required this.approvedApps, required this.inReviewApps, required this.unapprovedApps, });
 
 factory ZeroTrustApplicationsReviewStatusUpdateRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustApplicationsReviewStatusUpdateRequest(
   approvedApps: (json['approved_apps'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),

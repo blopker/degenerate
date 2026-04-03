@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventCreateBulkResponse202CreatedEvents {const PostEventCreateBulkResponse202CreatedEvents({required this.eventIndex, required this.shardId, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventCreateBulkResponse202CreatedEvents {const PostEventCreateBulkResponse202CreatedEvents({required this.eventIndex, required this.shardId, required this.uuid, });
 
 factory PostEventCreateBulkResponse202CreatedEvents.fromJson(Map<String, dynamic> json) { return PostEventCreateBulkResponse202CreatedEvents(
   eventIndex: (json['eventIndex'] as num).toDouble(),

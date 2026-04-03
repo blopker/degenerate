@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_scim_config.dart';final class AccessAppReqEmbeddedScimConfig {const AccessAppReqEmbeddedScimConfig({this.scimConfig});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_scim_config.dart';@immutable final class AccessAppReqEmbeddedScimConfig {const AccessAppReqEmbeddedScimConfig({this.scimConfig});
 
 factory AccessAppReqEmbeddedScimConfig.fromJson(Map<String, dynamic> json) { return AccessAppReqEmbeddedScimConfig(
   scimConfig: json['scim_config'] != null ? AccessScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,

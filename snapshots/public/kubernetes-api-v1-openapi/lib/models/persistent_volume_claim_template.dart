@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'object_meta.dart';import 'persistent_volume_claim_spec.dart';/// PersistentVolumeClaimTemplate is used to produce PersistentVolumeClaim objects as part of an EphemeralVolumeSource.
-final class PersistentVolumeClaimTemplate {const PersistentVolumeClaimTemplate({this.metadata, required this.spec, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'persistent_volume_claim_spec.dart';/// PersistentVolumeClaimTemplate is used to produce PersistentVolumeClaim objects as part of an EphemeralVolumeSource.
+@immutable final class PersistentVolumeClaimTemplate {const PersistentVolumeClaimTemplate({required this.spec, this.metadata, });
 
 factory PersistentVolumeClaimTemplate.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimTemplate(
   metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,

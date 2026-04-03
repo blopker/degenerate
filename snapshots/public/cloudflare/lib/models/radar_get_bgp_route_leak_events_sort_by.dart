@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Sorts results by the specified field.
-final class RadarGetBgpRouteLeakEventsSortBy {const RadarGetBgpRouteLeakEventsSortBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sorts results by the specified field.
+@immutable final class RadarGetBgpRouteLeakEventsSortBy {const RadarGetBgpRouteLeakEventsSortBy._(this.value);
 
 factory RadarGetBgpRouteLeakEventsSortBy.fromJson(String json) { return switch (json) {
   'ID' => id,

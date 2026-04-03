@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTreasuryFinancialAccountsFinancialAccountRequest {const GetTreasuryFinancialAccountsFinancialAccountRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryFinancialAccountsFinancialAccountRequest {const GetTreasuryFinancialAccountsFinancialAccountRequest();
 
-factory GetTreasuryFinancialAccountsFinancialAccountRequest.fromJson(Map<String, dynamic> json) { return GetTreasuryFinancialAccountsFinancialAccountRequest(
-
-); }
+factory GetTreasuryFinancialAccountsFinancialAccountRequest.fromJson(Map<String, dynamic> _) { return const GetTreasuryFinancialAccountsFinancialAccountRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetTreasuryFinancialAccountsFinancialAccountRequest copyWith() { return GetTreasuryFinancialAccountsFinancialAccountRequest(
+GetTreasuryFinancialAccountsFinancialAccountRequest copyWith() { return const GetTreasuryFinancialAccountsFinancialAccountRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetTreasuryFinancialAccountsFinancialAccountRequest; } 

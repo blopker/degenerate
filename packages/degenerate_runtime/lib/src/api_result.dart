@@ -1,4 +1,4 @@
-import 'api_client.dart';
+import 'package:degenerate_runtime/src/api_client.dart';
 
 /// The result of an API operation.
 ///
@@ -13,16 +13,23 @@ sealed class ApiResult<T, E> {
   T get dataOrThrow;
 }
 
+/// A successful API response containing deserialized data.
 final class ApiSuccess<T, E> extends ApiResult<T, E> {
-  final T data;
-  final int statusCode;
-  final Map<String, String> headers;
-
+  /// Creates a successful API result with the given [data] and [statusCode].
   const ApiSuccess(
     this.data, {
     required this.statusCode,
     this.headers = const {},
   });
+
+  /// The deserialized response data.
+  final T data;
+
+  /// The HTTP status code of the response.
+  final int statusCode;
+
+  /// The response headers.
+  final Map<String, String> headers;
 
   @override
   T get dataOrThrow => data;
@@ -31,18 +38,27 @@ final class ApiSuccess<T, E> extends ApiResult<T, E> {
   String toString() => 'ApiSuccess($statusCode, $data)';
 }
 
+/// A non-2xx API response, optionally containing a typed error body.
 final class ApiError<T, E> extends ApiResult<T, E> implements Exception {
-  final int statusCode;
-  final E? error;
-  final String? rawError;
-  final Map<String, String> headers;
-
+  /// Creates an error API result with the given [statusCode].
   const ApiError({
     required this.statusCode,
     this.error,
     this.rawError,
     this.headers = const {},
   });
+
+  /// The HTTP status code of the error response.
+  final int statusCode;
+
+  /// The deserialized error body, if available.
+  final E? error;
+
+  /// The raw error body as a string.
+  final String? rawError;
+
+  /// The response headers.
+  final Map<String, String> headers;
 
   @override
   T get dataOrThrow => throw this;
@@ -55,10 +71,14 @@ final class ApiError<T, E> extends ApiResult<T, E> implements Exception {
 
 /// Network-level failure (DNS, timeout, connection refused).
 class ApiException<T, E> extends ApiResult<T, E> {
-  final Object exception;
-  final StackTrace stackTrace;
-
+  /// Creates an API exception result wrapping the given [exception].
   const ApiException(this.exception, this.stackTrace);
+
+  /// The underlying exception that caused the failure.
+  final Object exception;
+
+  /// The stack trace of the original exception.
+  final StackTrace stackTrace;
 
   @override
   T get dataOrThrow => Error.throwWithStackTrace(exception, stackTrace);
@@ -73,13 +93,15 @@ class ApiException<T, E> extends ApiResult<T, E> {
 /// (e.g. returning null for a required field). The original [response]
 /// is preserved so callers can fall back to manual parsing.
 final class ApiParseException<T, E> extends ApiException<T, E> {
-  final ApiResponse response;
-
+  /// Creates a parse exception wrapping the original [response].
   const ApiParseException(
     super.exception,
     super.stackTrace, {
     required this.response,
   });
+
+  /// The original response that failed to deserialize.
+  final ApiResponse response;
 
   @override
   String toString() => 'ApiParseException(${response.statusCode}, $exception)';
@@ -90,15 +112,21 @@ final class ApiParseException<T, E> extends ApiException<T, E> {
 /// Streaming methods return `Stream<T>` instead of `ApiResult`, so
 /// errors are surfaced as exceptions rather than result variants.
 final class ApiStreamError implements Exception {
-  final int statusCode;
-  final String? rawError;
-  final Map<String, String> headers;
-
+  /// Creates a stream error with the given [statusCode].
   const ApiStreamError({
     required this.statusCode,
     this.rawError,
     this.headers = const {},
   });
+
+  /// The HTTP status code of the error response.
+  final int statusCode;
+
+  /// The raw error body as a string.
+  final String? rawError;
+
+  /// The response headers.
+  final Map<String, String> headers;
 
   @override
   String toString() => 'ApiStreamError($statusCode, $rawError)';

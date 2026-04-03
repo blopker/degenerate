@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_response_max_output_tokens.dart';import 'realtime_beta_response_status_details.dart';import 'realtime_beta_response_usage.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';import 'voice_ids_shared.dart';/// The object type, must be `realtime.response`.
-final class RealtimeBetaResponseObject {const RealtimeBetaResponseObject._(this.value);
+@immutable final class RealtimeBetaResponseObject {const RealtimeBetaResponseObject._(this.value);
 
 factory RealtimeBetaResponseObject.fromJson(String json) { return switch (json) {
   'realtime.response' => realtimeResponse,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The final status of the response (`completed`, `cancelled`, `failed`, or
 /// `incomplete`, `in_progress`).
 /// 
-final class RealtimeBetaResponseStatus {const RealtimeBetaResponseStatus._(this.value);
+@immutable final class RealtimeBetaResponseStatus {const RealtimeBetaResponseStatus._(this.value);
 
 factory RealtimeBetaResponseStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeBetaResponseStatus($value)'; } 
  }
-final class RealtimeBetaResponseModalities {const RealtimeBetaResponseModalities._(this.value);
+@immutable final class RealtimeBetaResponseModalities {const RealtimeBetaResponseModalities._(this.value);
 
 factory RealtimeBetaResponseModalities.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.
 /// 
-final class RealtimeBetaResponseOutputAudioFormat {const RealtimeBetaResponseOutputAudioFormat._(this.value);
+@immutable final class RealtimeBetaResponseOutputAudioFormat {const RealtimeBetaResponseOutputAudioFormat._(this.value);
 
 factory RealtimeBetaResponseOutputAudioFormat.fromJson(String json) { return switch (json) {
   'pcm16' => pcm16,
@@ -112,7 +112,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaResponseOutputAudioFormat($value)'; } 
  }
 /// The response resource.
-final class RealtimeBetaResponse {const RealtimeBetaResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata, this.usage, this.conversationId, this.voice, this.modalities, this.outputAudioFormat, this.temperature, this.maxOutputTokens, });
+@immutable final class RealtimeBetaResponse {const RealtimeBetaResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata, this.usage, this.conversationId, this.voice, this.modalities, this.outputAudioFormat, this.temperature, this.maxOutputTokens, });
 
 factory RealtimeBetaResponse.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponse(
   id: json['id'] as String?,
@@ -189,7 +189,7 @@ final List<RealtimeBetaResponseModalities>? modalities;
 /// 
 final RealtimeBetaResponseOutputAudioFormat? outputAudioFormat;
 
-/// Sampling temperature for the model, limited to [0.6, 1.2]. Defaults to 0.8.
+/// Sampling temperature for the model, limited to `[0.6, 1.2]`. Defaults to 0.8.
 /// 
 final double? temperature;
 

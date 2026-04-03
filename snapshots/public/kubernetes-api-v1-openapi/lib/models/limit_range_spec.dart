@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'limit_range_item.dart';/// LimitRangeSpec defines a min/max usage limit for resources that match on kind.
-final class LimitRangeSpec {const LimitRangeSpec({required this.limits});
+@immutable final class LimitRangeSpec {const LimitRangeSpec({required this.limits});
 
 factory LimitRangeSpec.fromJson(Map<String, dynamic> json) { return LimitRangeSpec(
   limits: (json['limits'] as List<dynamic>).map((e) => LimitRangeItem.fromJson(e as Map<String, dynamic>)).toList(),

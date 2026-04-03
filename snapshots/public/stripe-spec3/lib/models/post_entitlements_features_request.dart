@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostEntitlementsFeaturesRequest {const PostEntitlementsFeaturesRequest({this.expand, required this.lookupKey, this.metadata, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEntitlementsFeaturesRequest {const PostEntitlementsFeaturesRequest({required this.lookupKey, required this.name, this.expand, this.metadata, });
 
 factory PostEntitlementsFeaturesRequest.fromJson(Map<String, dynamic> json) { return PostEntitlementsFeaturesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

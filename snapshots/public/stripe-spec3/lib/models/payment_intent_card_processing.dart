@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_processing_customer_notification.dart';/// 
-final class PaymentIntentCardProcessing {const PaymentIntentCardProcessing({this.customerNotification});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_processing_customer_notification.dart';/// 
+@immutable final class PaymentIntentCardProcessing {const PaymentIntentCardProcessing({this.customerNotification});
 
 factory PaymentIntentCardProcessing.fromJson(Map<String, dynamic> json) { return PaymentIntentCardProcessing(
   customerNotification: json['customer_notification'] != null ? PaymentIntentProcessingCustomerNotification.fromJson(json['customer_notification'] as Map<String, dynamic>) : null,

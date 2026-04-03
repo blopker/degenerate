@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSessionParticipantsView {const GetSessionParticipantsView._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSessionParticipantsView {const GetSessionParticipantsView._(this.value);
 
 factory GetSessionParticipantsView.fromJson(String json) { return switch (json) {
   'raw' => raw,

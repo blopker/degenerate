@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTreasuryInboundTransfersRequest {const PostTreasuryInboundTransfersRequest({required this.amount, required this.currency, this.description, this.expand, required this.financialAccount, this.metadata, required this.originPaymentMethod, this.statementDescriptor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryInboundTransfersRequest {const PostTreasuryInboundTransfersRequest({required this.amount, required this.currency, required this.financialAccount, required this.originPaymentMethod, this.description, this.expand, this.metadata, this.statementDescriptor, });
 
 factory PostTreasuryInboundTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryInboundTransfersRequest(
   amount: (json['amount'] as num).toInt(),

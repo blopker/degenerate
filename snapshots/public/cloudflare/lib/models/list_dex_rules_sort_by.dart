@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ListDexRulesSortBy {const ListDexRulesSortBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListDexRulesSortBy {const ListDexRulesSortBy._(this.value);
 
 factory ListDexRulesSortBy.fromJson(String json) { return switch (json) {
   'name' => $name,

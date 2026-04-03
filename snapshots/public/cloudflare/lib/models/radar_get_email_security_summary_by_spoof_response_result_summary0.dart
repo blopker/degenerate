@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0 {const RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0({required this.notSpoof, required this.spoof, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0 {const RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0({required this.notSpoof, required this.spoof, });
 
 factory RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0(
   notSpoof: json['NOT_SPOOF'] as String,

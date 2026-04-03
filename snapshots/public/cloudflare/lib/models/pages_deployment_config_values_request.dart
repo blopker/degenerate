@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_deployment_config_values_request_ai_bindings_value.dart';import 'pages_deployment_config_values_request_analytics_engine_datasets_value.dart';import 'pages_deployment_config_values_request_d1_databases_value.dart';import 'pages_deployment_config_values_request_durable_object_namespaces_value.dart';import 'pages_deployment_config_values_request_env_vars_value.dart';import 'pages_deployment_config_values_request_hyperdrive_bindings_value.dart';import 'pages_deployment_config_values_request_kv_namespaces_value.dart';import 'pages_deployment_config_values_request_limits.dart';import 'pages_deployment_config_values_request_mtls_certificates_value.dart';import 'pages_deployment_config_values_request_placement.dart';import 'pages_deployment_config_values_request_queue_producers_value.dart';import 'pages_deployment_config_values_request_r2_buckets_value.dart';import 'pages_deployment_config_values_request_services_value.dart';import 'pages_deployment_config_values_request_vectorize_bindings_value.dart';/// The usage model for Pages Functions.
-final class PagesDeploymentConfigValuesRequestUsageModel {const PagesDeploymentConfigValuesRequestUsageModel._(this.value);
+@immutable final class PagesDeploymentConfigValuesRequestUsageModel {const PagesDeploymentConfigValuesRequestUsageModel._(this.value);
 
 factory PagesDeploymentConfigValuesRequestUsageModel.fromJson(String json) { return switch (json) {
   'standard' => standard,
@@ -28,13 +28,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesDeploymentConfigValuesRequestUsageModel($value)'; } 
  }
-final class PagesDeploymentConfigValuesRequest {const PagesDeploymentConfigValuesRequest({this.aiBindings, this.alwaysUseLatestCompatibilityDate = false, this.analyticsEngineDatasets, this.browsers, this.buildImageMajorVersion = 3, this.compatibilityDate, this.compatibilityFlags, this.d1Databases, this.durableObjectNamespaces, this.envVars, this.failOpen = true, this.hyperdriveBindings, this.kvNamespaces, this.limits, this.mtlsCertificates, this.placement, this.queueProducers, this.r2Buckets, this.services, this.usageModel = PagesDeploymentConfigValuesRequestUsageModel.standard, this.vectorizeBindings, this.wranglerConfigHash, });
+@immutable final class PagesDeploymentConfigValuesRequest {const PagesDeploymentConfigValuesRequest({this.aiBindings, this.alwaysUseLatestCompatibilityDate = false, this.analyticsEngineDatasets, this.browsers, this.buildImageMajorVersion = 3, this.compatibilityDate, this.compatibilityFlags, this.d1Databases, this.durableObjectNamespaces, this.envVars, this.failOpen = true, this.hyperdriveBindings, this.kvNamespaces, this.limits, this.mtlsCertificates, this.placement, this.queueProducers, this.r2Buckets, this.services, this.usageModel = PagesDeploymentConfigValuesRequestUsageModel.standard, this.vectorizeBindings, this.wranglerConfigHash, });
 
 factory PagesDeploymentConfigValuesRequest.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequest(
   aiBindings: (json['ai_bindings'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesDeploymentConfigValuesRequestAiBindingsValue.fromJson(v as Map<String, dynamic>))),
   alwaysUseLatestCompatibilityDate: json.containsKey('always_use_latest_compatibility_date') ? json['always_use_latest_compatibility_date'] as bool : false,
   analyticsEngineDatasets: (json['analytics_engine_datasets'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PagesDeploymentConfigValuesRequestAnalyticsEngineDatasetsValue.fromJson(v as Map<String, dynamic>))),
-  browsers: (json['browsers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)))),
+  browsers: (json['browsers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Map<String, dynamic>)),
   buildImageMajorVersion: json.containsKey('build_image_major_version') ? (json['build_image_major_version'] as num).toInt() : 3,
   compatibilityDate: json['compatibility_date'] as String?,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -125,7 +125,7 @@ Map<String, dynamic> toJson() { return {
   if (aiBindings != null) 'ai_bindings': aiBindings?.map((k, v) => MapEntry(k, v?.toJson())),
   'always_use_latest_compatibility_date': alwaysUseLatestCompatibilityDate,
   if (analyticsEngineDatasets != null) 'analytics_engine_datasets': analyticsEngineDatasets?.map((k, v) => MapEntry(k, v?.toJson())),
-  if (browsers != null) 'browsers': browsers?.map((k, v) => MapEntry(k, v)),
+  'browsers': ?browsers,
   'build_image_major_version': buildImageMajorVersion,
   'compatibility_date': ?compatibilityDate,
   'compatibility_flags': ?compatibilityFlags,

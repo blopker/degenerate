@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inline_product_params.dart';import 'post_plans_request_metadata.dart';import 'post_plans_request_product.dart';import 'post_plans_request_tiers.dart';import 'post_plans_request_transform_usage.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `amount`) will be charged per unit in `quantity` (for plans with `usage_type=licensed`), or per unit of total usage (for plans with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
-final class PostPlansRequestBillingScheme {const PostPlansRequestBillingScheme._(this.value);
+@immutable final class PostPlansRequestBillingScheme {const PostPlansRequestBillingScheme._(this.value);
 
 factory PostPlansRequestBillingScheme.fromJson(String json) { return switch (json) {
   'per_unit' => perUnit,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPlansRequestBillingScheme($value)'; } 
  }
 /// Specifies billing frequency. Either `day`, `week`, `month` or `year`.
-final class PostPlansRequestInterval {const PostPlansRequestInterval._(this.value);
+@immutable final class PostPlansRequestInterval {const PostPlansRequestInterval._(this.value);
 
 factory PostPlansRequestInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPlansRequestInterval($value)'; } 
  }
 /// Defines if the tiering price should be `graduated` or `volume` based. In `volume`-based tiering, the maximum quantity within a period determines the per unit price, in `graduated` tiering pricing can successively change as the quantity grows.
-final class PostPlansRequestTiersMode {const PostPlansRequestTiersMode._(this.value);
+@immutable final class PostPlansRequestTiersMode {const PostPlansRequestTiersMode._(this.value);
 
 factory PostPlansRequestTiersMode.fromJson(String json) { return switch (json) {
   'graduated' => graduated,
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPlansRequestTiersMode($value)'; } 
  }
 /// Configures how the quantity per period should be determined. Can be either `metered` or `licensed`. `licensed` automatically bills the `quantity` set when adding it to a subscription. `metered` aggregates the total usage based on usage records. Defaults to `licensed`.
-final class PostPlansRequestUsageType {const PostPlansRequestUsageType._(this.value);
+@immutable final class PostPlansRequestUsageType {const PostPlansRequestUsageType._(this.value);
 
 factory PostPlansRequestUsageType.fromJson(String json) { return switch (json) {
   'licensed' => licensed,
@@ -106,7 +106,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPlansRequestUsageType($value)'; } 
  }
-final class PostPlansRequest {const PostPlansRequest({this.active, this.amount, this.amountDecimal, this.billingScheme, required this.currency, this.expand, this.id, required this.interval, this.intervalCount, this.metadata, this.meter, this.nickname, this.product, this.tiers, this.tiersMode, this.transformUsage, this.trialPeriodDays, this.usageType, });
+@immutable final class PostPlansRequest {const PostPlansRequest({required this.currency, required this.interval, this.active, this.amount, this.amountDecimal, this.billingScheme, this.expand, this.id, this.intervalCount, this.metadata, this.meter, this.nickname, this.product, this.tiers, this.tiersMode, this.transformUsage, this.trialPeriodDays, this.usageType, });
 
 factory PostPlansRequest.fromJson(Map<String, dynamic> json) { return PostPlansRequest(
   active: json['active'] as bool?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_person_relationship_percent_ownership.dart';final class PostTokensRequestPersonRelationship {const PostTokensRequestPersonRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.percentOwnership, this.representative, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_person_relationship_percent_ownership.dart';@immutable final class PostTokensRequestPersonRelationship {const PostTokensRequestPersonRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.percentOwnership, this.representative, this.title, });
 
 factory PostTokensRequestPersonRelationship.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonRelationship(
   authorizer: json['authorizer'] as bool?,

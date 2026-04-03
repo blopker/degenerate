@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type of source
-final class MqEventSourceR2Type {const MqEventSourceR2Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
+@immutable final class MqEventSourceR2Type {const MqEventSourceR2Type._(this.value);
 
 factory MqEventSourceR2Type.fromJson(String json) { return switch (json) {
   'r2' => r2,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MqEventSourceR2Type($value)'; } 
  }
-final class MqEventSourceR2 {const MqEventSourceR2({this.type});
+@immutable final class MqEventSourceR2 {const MqEventSourceR2({this.type});
 
 factory MqEventSourceR2.fromJson(Map<String, dynamic> json) { return MqEventSourceR2(
   type: json['type'] != null ? MqEventSourceR2Type.fromJson(json['type'] as String) : null,

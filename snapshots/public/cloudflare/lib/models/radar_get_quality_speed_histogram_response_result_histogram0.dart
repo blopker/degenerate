@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetQualitySpeedHistogramResponseResultHistogram0 {const RadarGetQualitySpeedHistogramResponseResultHistogram0({required this.bandwidthDownload, required this.bandwidthUpload, required this.bucketMin, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetQualitySpeedHistogramResponseResultHistogram0 {const RadarGetQualitySpeedHistogramResponseResultHistogram0({required this.bandwidthDownload, required this.bandwidthUpload, required this.bucketMin, });
 
 factory RadarGetQualitySpeedHistogramResponseResultHistogram0.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedHistogramResponseResultHistogram0(
   bandwidthDownload: (json['bandwidthDownload'] as List<dynamic>).map((e) => e as String).toList(),

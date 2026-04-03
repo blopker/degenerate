@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTerminalConfigurationsRequest {const GetTerminalConfigurationsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTerminalConfigurationsRequest {const GetTerminalConfigurationsRequest();
 
-factory GetTerminalConfigurationsRequest.fromJson(Map<String, dynamic> json) { return GetTerminalConfigurationsRequest(
-
-); }
+factory GetTerminalConfigurationsRequest.fromJson(Map<String, dynamic> _) { return const GetTerminalConfigurationsRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetTerminalConfigurationsRequest copyWith() { return GetTerminalConfigurationsRequest(
+GetTerminalConfigurationsRequest copyWith() { return const GetTerminalConfigurationsRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetTerminalConfigurationsRequest; } 

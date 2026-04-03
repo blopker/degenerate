@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_lifecycle_age_condition.dart';import 'r2_lifecycle_date_condition.dart';import 'r2_lifecycle_storage_transition_condition.dart';final class R2LifecycleStorageTransitionStorageClass {const R2LifecycleStorageTransitionStorageClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_lifecycle_age_condition.dart';import 'r2_lifecycle_date_condition.dart';import 'r2_lifecycle_storage_transition_condition.dart';@immutable final class R2LifecycleStorageTransitionStorageClass {const R2LifecycleStorageTransitionStorageClass._(this.value);
 
 factory R2LifecycleStorageTransitionStorageClass.fromJson(String json) { return switch (json) {
   'InfrequentAccess' => infrequentAccess,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2LifecycleStorageTransitionStorageClass($value)'; } 
  }
-final class R2LifecycleStorageTransition {const R2LifecycleStorageTransition({required this.condition, required this.storageClass, });
+@immutable final class R2LifecycleStorageTransition {const R2LifecycleStorageTransition({required this.condition, required this.storageClass, });
 
 factory R2LifecycleStorageTransition.fromJson(Map<String, dynamic> json) { return R2LifecycleStorageTransition(
   condition: OneOf2.parse(json['condition'], fromA: (v) => R2LifecycleAgeCondition.fromJson(v as Map<String, dynamic>), fromB: (v) => R2LifecycleDateCondition.fromJson(v as Map<String, dynamic>),),

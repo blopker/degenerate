@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_card.dart';import 'issuing_network_token_network_data.dart';import 'issuing_token_card.dart';/// The token service provider / card network associated with the token.
-final class IssuingTokenNetwork {const IssuingTokenNetwork._(this.value);
+@immutable final class IssuingTokenNetwork {const IssuingTokenNetwork._(this.value);
 
 factory IssuingTokenNetwork.fromJson(String json) { return switch (json) {
   'mastercard' => mastercard,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingTokenNetwork($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class IssuingTokenObject {const IssuingTokenObject._(this.value);
+@immutable final class IssuingTokenObject {const IssuingTokenObject._(this.value);
 
 factory IssuingTokenObject.fromJson(String json) { return switch (json) {
   'issuing.token' => issuingToken,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingTokenObject($value)'; } 
  }
 /// The usage state of the token.
-final class IssuingTokenStatus {const IssuingTokenStatus._(this.value);
+@immutable final class IssuingTokenStatus {const IssuingTokenStatus._(this.value);
 
 factory IssuingTokenStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -79,7 +79,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingTokenStatus($value)'; } 
  }
 /// The digital wallet for this token, if one was used.
-final class IssuingTokenWalletProvider {const IssuingTokenWalletProvider._(this.value);
+@immutable final class IssuingTokenWalletProvider {const IssuingTokenWalletProvider._(this.value);
 
 factory IssuingTokenWalletProvider.fromJson(String json) { return switch (json) {
   'apple_pay' => applePay,
@@ -107,7 +107,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingTokenWalletProvider($value)'; } 
  }
 /// An issuing token object is created when an issued card is added to a digital wallet. As a [card issuer](https://docs.stripe.com/issuing), you can [view and manage these tokens](https://docs.stripe.com/issuing/controls/token-management) through Stripe.
-final class IssuingToken {const IssuingToken({required this.card, required this.created, this.deviceFingerprint, required this.id, this.last4, required this.livemode, required this.network, this.networkData, required this.networkUpdatedAt, required this.object, required this.status, this.walletProvider, });
+@immutable final class IssuingToken {const IssuingToken({required this.card, required this.created, required this.id, required this.livemode, required this.network, required this.networkUpdatedAt, required this.object, required this.status, this.deviceFingerprint, this.last4, this.networkData, this.walletProvider, });
 
 factory IssuingToken.fromJson(Map<String, dynamic> json) { return IssuingToken(
   card: OneOf2.parse(json['card'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),),

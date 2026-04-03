@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rate plan applied to the subscription.
-final class RatePlan2 {const RatePlan2({this.currency, this.externallyManaged, this.id, this.isContract, this.publicName, this.scope, this.sets, });
+@immutable final class RatePlan2 {const RatePlan2({this.currency, this.externallyManaged, this.id, this.isContract, this.publicName, this.scope, this.sets, });
 
 factory RatePlan2.fromJson(Map<String, dynamic> json) { return RatePlan2(
   currency: json['currency'] as String?,

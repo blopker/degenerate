@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'vectorize_index_dimensions.dart';/// Specifies the type of metric to use calculating distance.
-final class VectorizeIndexMetric {const VectorizeIndexMetric._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_index_dimensions.dart';/// Specifies the type of metric to use calculating distance.
+@immutable final class VectorizeIndexMetric {const VectorizeIndexMetric._(this.value);
 
 factory VectorizeIndexMetric.fromJson(String json) { return switch (json) {
   'cosine' => cosine,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VectorizeIndexMetric($value)'; } 
  }
-final class VectorizeIndexDimensionConfiguration {const VectorizeIndexDimensionConfiguration({required this.dimensions, required this.metric, });
+@immutable final class VectorizeIndexDimensionConfiguration {const VectorizeIndexDimensionConfiguration({required this.dimensions, required this.metric, });
 
 factory VectorizeIndexDimensionConfiguration.fromJson(Map<String, dynamic> json) { return VectorizeIndexDimensionConfiguration(
   dimensions: VectorizeIndexDimensions.fromJson(json['dimensions'] as num),

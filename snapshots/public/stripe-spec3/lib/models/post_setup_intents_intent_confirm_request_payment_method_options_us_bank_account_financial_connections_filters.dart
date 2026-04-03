@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters({this.accountSubcategories});
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters({this.accountSubcategories});
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters(
   accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories.fromJson(e as String)).toList(),

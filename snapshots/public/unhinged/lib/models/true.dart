@@ -2,6 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
+@immutable
 final class TrueNull {
   const TrueNull._(this.value);
 
@@ -73,6 +74,7 @@ final class TrueNull {
   }
 }
 
+@immutable
 final class True0 {
   const True0._(this.value);
 
@@ -139,13 +141,14 @@ final class True0 {
   }
 }
 
+@immutable
 final class True {
   const True({
-    this.$false = true,
     required this.none,
-    this.$null = TrueNull.$null,
     required this.$0,
     required this.$empty,
+    this.$false = true,
+    this.$null = TrueNull.$null,
     this.constructor,
     this.proto,
     this.hasOwnProperty,
@@ -167,8 +170,8 @@ final class True {
       proto: json['__proto__'] as String?,
       hasOwnProperty: json['hasOwnProperty'] as String?,
       type: json['type'] as String?,
-      $ref: json['\$ref'] as String?,
-      $id: json['\$id'] as String?,
+      $ref: json[r'$ref'] as String?,
+      $id: json[r'$id'] as String?,
       xExtensionLookalike: json['x-extension-lookalike'] as String?,
       additionalProperties: Map.fromEntries(
         json.entries
@@ -183,8 +186,8 @@ final class True {
                 '__proto__',
                 'hasOwnProperty',
                 'type',
-                '\$ref',
-                '\$id',
+                r'$ref',
+                r'$id',
                 'x-extension-lookalike',
               }.contains(e.key),
             )
@@ -237,8 +240,8 @@ final class True {
       '__proto__': ?proto,
       'hasOwnProperty': ?hasOwnProperty,
       'type': ?type,
-      '\$ref': ?$ref,
-      '\$id': ?$id,
+      r'$ref': ?$ref,
+      r'$id': ?$id,
       'x-extension-lookalike': ?xExtensionLookalike,
       ...additionalProperties.map((k, v) => MapEntry(k, v.toJson())),
     };

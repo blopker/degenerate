@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FileCommitCommitVerification {const FileCommitCommitVerification({this.verified, this.reason, this.signature, this.payload, this.verifiedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileCommitCommitVerification {const FileCommitCommitVerification({this.verified, this.reason, this.signature, this.payload, this.verifiedAt, });
 
 factory FileCommitCommitVerification.fromJson(Map<String, dynamic> json) { return FileCommitCommitVerification(
   verified: json['verified'] as bool?,

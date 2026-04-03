@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of input messages. Always `item_reference`.
-final class ItemReferenceInputMessagesType {const ItemReferenceInputMessagesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of input messages. Always `item_reference`.
+@immutable final class ItemReferenceInputMessagesType {const ItemReferenceInputMessagesType._(this.value);
 
 factory ItemReferenceInputMessagesType.fromJson(String json) { return switch (json) {
   'item_reference' => itemReference,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ItemReferenceInputMessagesType($value)'; } 
  }
-final class ItemReferenceInputMessages {const ItemReferenceInputMessages({required this.type, required this.itemReference, });
+@immutable final class ItemReferenceInputMessages {const ItemReferenceInputMessages({required this.type, required this.itemReference, });
 
 factory ItemReferenceInputMessages.fromJson(Map<String, dynamic> json) { return ItemReferenceInputMessages(
   type: ItemReferenceInputMessagesType.fromJson(json['type'] as String),

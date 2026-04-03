@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SimpleInputMessage {const SimpleInputMessage({required this.role, required this.content, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SimpleInputMessage {const SimpleInputMessage({required this.role, required this.content, });
 
 factory SimpleInputMessage.fromJson(Map<String, dynamic> json) { return SimpleInputMessage(
   role: json['role'] as String,

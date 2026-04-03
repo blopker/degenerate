@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MigrationsMapCommitAuthorRequest {const MigrationsMapCommitAuthorRequest({this.email, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MigrationsMapCommitAuthorRequest {const MigrationsMapCommitAuthorRequest({this.email, this.name, });
 
 factory MigrationsMapCommitAuthorRequest.fromJson(Map<String, dynamic> json) { return MigrationsMapCommitAuthorRequest(
   email: json['email'] as String?,

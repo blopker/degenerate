@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_messages2.dart';import 'cache_result.dart';final class ResponseCommonFailure15 {const ResponseCommonFailure15({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_messages2.dart';import 'cache_result.dart';@immutable final class ResponseCommonFailure15 {const ResponseCommonFailure15({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommonFailure15.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure15(
   errors: (json['errors'] as List<dynamic>).map((e) => CacheMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ShippingCostShippingRateDataDeliveryEstimateMinimumUnit {const ShippingCostShippingRateDataDeliveryEstimateMinimumUnit._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShippingCostShippingRateDataDeliveryEstimateMinimumUnit {const ShippingCostShippingRateDataDeliveryEstimateMinimumUnit._(this.value);
 
 factory ShippingCostShippingRateDataDeliveryEstimateMinimumUnit.fromJson(String json) { return switch (json) {
   'business_day' => businessDay,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShippingCostShippingRateDataDeliveryEstimateMinimumUnit($value)'; } 
  }
-final class ShippingCostShippingRateDataDeliveryEstimateMinimum {const ShippingCostShippingRateDataDeliveryEstimateMinimum({required this.unit, required this.value, });
+@immutable final class ShippingCostShippingRateDataDeliveryEstimateMinimum {const ShippingCostShippingRateDataDeliveryEstimateMinimum({required this.unit, required this.value, });
 
 factory ShippingCostShippingRateDataDeliveryEstimateMinimum.fromJson(Map<String, dynamic> json) { return ShippingCostShippingRateDataDeliveryEstimateMinimum(
   unit: ShippingCostShippingRateDataDeliveryEstimateMinimumUnit.fromJson(json['unit'] as String),

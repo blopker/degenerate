@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gist_history.dart';import 'gist_simple_files_value.dart';import 'gist_simple_fork_of.dart';import 'gist_simple_forks.dart';import 'simple_user.dart';/// Gist Simple
-final class GistSimple {const GistSimple({this.forks, this.history, this.forkOf, this.url, this.forksUrl, this.commitsUrl, this.id, this.nodeId, this.gitPullUrl, this.gitPushUrl, this.htmlUrl, this.files, this.public, this.createdAt, this.updatedAt, this.description, this.comments, this.commentsEnabled, this.user, this.commentsUrl, this.owner, this.truncated, });
+@immutable final class GistSimple {const GistSimple({this.forks, this.history, this.forkOf, this.url, this.forksUrl, this.commitsUrl, this.id, this.nodeId, this.gitPullUrl, this.gitPushUrl, this.htmlUrl, this.files, this.public, this.createdAt, this.updatedAt, this.description, this.comments, this.commentsEnabled, this.user, this.commentsUrl, this.owner, this.truncated, });
 
 factory GistSimple.fromJson(Map<String, dynamic> json) { return GistSimple(
   forks: (json['forks'] as List<dynamic>?)?.map((e) => GistSimpleForks.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_http_summary_by_tls_version_response_result.dart';final class RadarGetHttpSummaryByTlsVersionResponse {const RadarGetHttpSummaryByTlsVersionResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_summary_by_tls_version_response_result.dart';@immutable final class RadarGetHttpSummaryByTlsVersionResponse {const RadarGetHttpSummaryByTlsVersionResponse({required this.result, required this.success, });
 
 factory RadarGetHttpSummaryByTlsVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByTlsVersionResponse(
   result: RadarGetHttpSummaryByTlsVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),

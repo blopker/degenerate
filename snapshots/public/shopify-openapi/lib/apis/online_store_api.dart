@@ -1479,7 +1479,7 @@ return execute(
 );
  } 
 /// Retrieves a single asset for a theme by its key.
-///           To retrieve a single asset, include asset[key]=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset[key]=templates/index.liquid.
+///           To retrieve a single asset, include asset`[key]`=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset`[key]`=templates/index.liquid.
 ///           For more information on the key property, see Asset properties.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#show-2020-01
@@ -1571,7 +1571,7 @@ return execute(
 );
  } 
 /// Retrieves a single asset for a theme by its key.
-///           To retrieve a single asset, include asset[key]=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset[key]=templates/index.liquid.
+///           To retrieve a single asset, include asset`[key]`=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset`[key]`=templates/index.liquid.
 ///           For more information on the key property, see Asset properties.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#show-2020-04
@@ -1663,7 +1663,7 @@ return execute(
 );
  } 
 /// Retrieves a single asset for a theme by its key.
-///           To retrieve a single asset, include asset[key]=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset[key]=templates/index.liquid.
+///           To retrieve a single asset, include asset`[key]`=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset`[key]`=templates/index.liquid.
 ///           For more information on the key property, see Asset properties.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#show-2020-07
@@ -1755,7 +1755,7 @@ return execute(
 );
  } 
 /// Retrieves a single asset for a theme by its key.
-///           To retrieve a single asset, include asset[key]=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset[key]=templates/index.liquid.
+///           To retrieve a single asset, include asset`[key]`=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset`[key]`=templates/index.liquid.
 ///           For more information on the key property, see Asset properties.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#show-2020-10
@@ -1847,7 +1847,7 @@ return execute(
 );
  } 
 /// Retrieves a single asset for a theme by its key.
-///           To retrieve a single asset, include asset[key]=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset[key]=templates/index.liquid.
+///           To retrieve a single asset, include asset`[key]`=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset`[key]`=templates/index.liquid.
 ///           For more information on the key property, see Asset properties.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#show-2021-01
@@ -1939,7 +1939,7 @@ return execute(
 );
  } 
 /// Retrieves a single asset for a theme by its key.
-///           To retrieve a single asset, include asset[key]=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset[key]=templates/index.liquid.
+///           To retrieve a single asset, include asset`[key]`=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset`[key]`=templates/index.liquid.
 ///           For more information on the key property, see Asset properties.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#show-unstable

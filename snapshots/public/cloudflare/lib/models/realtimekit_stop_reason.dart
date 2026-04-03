@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_stop_reason_caller.dart';/// Specifies the reason why the recording stopped.
-final class RealtimekitStopReasonReason {const RealtimekitStopReasonReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_stop_reason_caller.dart';/// Specifies the reason why the recording stopped.
+@immutable final class RealtimekitStopReasonReason {const RealtimekitStopReasonReason._(this.value);
 
 factory RealtimekitStopReasonReason.fromJson(String json) { return switch (json) {
   'API_CALL' => apiCall,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitStopReasonReason($value)'; } 
  }
-final class RealtimekitStopReason {const RealtimekitStopReason({this.caller, this.reason, });
+@immutable final class RealtimekitStopReason {const RealtimekitStopReason({this.caller, this.reason, });
 
 factory RealtimekitStopReason.fromJson(Map<String, dynamic> json) { return RealtimekitStopReason(
   caller: json['caller'] != null ? RealtimekitStopReasonCaller.fromJson(json['caller'] as Map<String, dynamic>) : null,

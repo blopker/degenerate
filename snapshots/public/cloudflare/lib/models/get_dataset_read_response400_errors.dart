@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetDatasetReadResponse400Errors {const GetDatasetReadResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetDatasetReadResponse400Errors {const GetDatasetReadResponse400Errors({required this.message});
 
 factory GetDatasetReadResponse400Errors.fromJson(Map<String, dynamic> json) { return GetDatasetReadResponse400Errors(
   message: json['message'] as String,

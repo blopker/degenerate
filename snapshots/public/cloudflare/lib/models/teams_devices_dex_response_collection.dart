@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_device_dex_test_schemas_http.dart';final class TeamsDevicesDexResponseCollection {const TeamsDevicesDexResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_device_dex_test_schemas_http.dart';@immutable final class TeamsDevicesDexResponseCollection {const TeamsDevicesDexResponseCollection({this.result});
 
 factory TeamsDevicesDexResponseCollection.fromJson(Map<String, dynamic> json) { return TeamsDevicesDexResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TeamsDevicesDeviceDexTestSchemasHttp.fromJson(e as Map<String, dynamic>)).toList(),

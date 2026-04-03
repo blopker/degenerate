@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `kr_card` PaymentMethod, this hash contains details about the Korean Card payment method.
-final class PostPaymentMethodsRequestKrCard {const PostPaymentMethodsRequestKrCard();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `kr_card` PaymentMethod, this hash contains details about the Korean Card payment method.
+@immutable final class PostPaymentMethodsRequestKrCard {const PostPaymentMethodsRequestKrCard();
 
-factory PostPaymentMethodsRequestKrCard.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestKrCard(
-
-); }
+factory PostPaymentMethodsRequestKrCard.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestKrCard(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestKrCard copyWith() { return PostPaymentMethodsRequestKrCard(
+PostPaymentMethodsRequestKrCard copyWith() { return const PostPaymentMethodsRequestKrCard(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestKrCard; } 

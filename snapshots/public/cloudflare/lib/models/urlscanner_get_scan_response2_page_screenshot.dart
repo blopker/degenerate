@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2PageScreenshot {const UrlscannerGetScanResponse2PageScreenshot({required this.dhash, required this.mm3Hash, required this.name, required this.phash, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2PageScreenshot {const UrlscannerGetScanResponse2PageScreenshot({required this.dhash, required this.mm3Hash, required this.name, required this.phash, });
 
 factory UrlscannerGetScanResponse2PageScreenshot.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2PageScreenshot(
   dhash: json['dhash'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_timestamp.dart';import 'digital_experience_monitoring_uuid.dart';/// The state of the WARP toggle.
-final class DigitalExperienceMonitoringWarpToggleChangeEventToggle {const DigitalExperienceMonitoringWarpToggleChangeEventToggle._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_timestamp.dart';import 'digital_experience_monitoring_uuid.dart';/// The state of the WARP toggle.
+@immutable final class DigitalExperienceMonitoringWarpToggleChangeEventToggle {const DigitalExperienceMonitoringWarpToggleChangeEventToggle._(this.value);
 
 factory DigitalExperienceMonitoringWarpToggleChangeEventToggle.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DigitalExperienceMonitoringWarpToggleChangeEventToggle($value)'; } 
  }
-final class DigitalExperienceMonitoringWarpToggleChangeEvent {const DigitalExperienceMonitoringWarpToggleChangeEvent({this.accountName, this.accountTag, this.deviceId, this.deviceRegistration, this.hostname, this.serialNumber, this.timestamp, this.toggle, this.userEmail, });
+@immutable final class DigitalExperienceMonitoringWarpToggleChangeEvent {const DigitalExperienceMonitoringWarpToggleChangeEvent({this.accountName, this.accountTag, this.deviceId, this.deviceRegistration, this.hostname, this.serialNumber, this.timestamp, this.toggle, this.userEmail, });
 
 factory DigitalExperienceMonitoringWarpToggleChangeEvent.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringWarpToggleChangeEvent(
   accountName: json['account_name'] as String?,

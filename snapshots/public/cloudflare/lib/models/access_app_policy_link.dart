@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_precedence.dart';import 'access_schemas_uuid.dart';/// A JSON that links a reusable policy to an application.
-final class AccessAppPolicyLink {const AccessAppPolicyLink({this.id, this.precedence, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_precedence.dart';import 'access_schemas_uuid.dart';/// A JSON that links a reusable policy to an application.
+@immutable final class AccessAppPolicyLink {const AccessAppPolicyLink({this.id, this.precedence, });
 
 factory AccessAppPolicyLink.fromJson(Map<String, dynamic> json) { return AccessAppPolicyLink(
   id: json['id'] != null ? AccessSchemasUuid.fromJson(json['id'] as String) : null,

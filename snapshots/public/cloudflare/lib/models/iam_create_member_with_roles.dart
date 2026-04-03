@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_email.dart';import 'iam_member_invitation_status.dart';import 'iam_role_components_schemas_identifier.dart';final class IamCreateMemberWithRoles {const IamCreateMemberWithRoles({required this.email, required this.roles, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_email.dart';import 'iam_member_invitation_status.dart';import 'iam_role_components_schemas_identifier.dart';@immutable final class IamCreateMemberWithRoles {const IamCreateMemberWithRoles({required this.email, required this.roles, this.status, });
 
 factory IamCreateMemberWithRoles.fromJson(Map<String, dynamic> json) { return IamCreateMemberWithRoles(
   email: IamEmail.fromJson(json['email'] as String),

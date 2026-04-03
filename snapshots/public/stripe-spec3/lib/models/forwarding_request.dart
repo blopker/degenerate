@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'forwarded_request_context.dart';import 'forwarded_request_details.dart';import 'forwarded_response_details.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class ForwardingRequestObject {const ForwardingRequestObject._(this.value);
+@immutable final class ForwardingRequestObject {const ForwardingRequestObject._(this.value);
 
 factory ForwardingRequestObject.fromJson(String json) { return switch (json) {
   'forwarding.request' => forwardingRequest,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ForwardingRequestObject($value)'; } 
  }
-final class ForwardingRequestReplacements {const ForwardingRequestReplacements._(this.value);
+@immutable final class ForwardingRequestReplacements {const ForwardingRequestReplacements._(this.value);
 
 factory ForwardingRequestReplacements.fromJson(String json) { return switch (json) {
   'card_cvc' => cardCvc,
@@ -71,7 +71,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Stripe’s limits.
 /// 
 /// Related guide: [Forward card details to third-party API endpoints](https://docs.stripe.com/payments/forwarding).
-final class ForwardingRequest {const ForwardingRequest({required this.created, required this.id, required this.livemode, this.metadata, required this.object, required this.paymentMethod, required this.replacements, this.requestContext, this.requestDetails, this.responseDetails, this.url, });
+@immutable final class ForwardingRequest {const ForwardingRequest({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethod, required this.replacements, this.metadata, this.requestContext, this.requestDetails, this.responseDetails, this.url, });
 
 factory ForwardingRequest.fromJson(Map<String, dynamic> json) { return ForwardingRequest(
   created: (json['created'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logcontrol_messages2.dart';final class ResponseCommon43 {const ResponseCommon43({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logcontrol_messages2.dart';@immutable final class ResponseCommon43 {const ResponseCommon43({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon43.fromJson(Map<String, dynamic> json) { return ResponseCommon43(
   errors: (json['errors'] as List<dynamic>).map((e) => LogcontrolMessages2.fromJson(e as Map<String, dynamic>)).toList(),

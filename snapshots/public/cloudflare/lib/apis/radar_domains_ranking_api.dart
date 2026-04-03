@@ -23,7 +23,7 @@ if (rankingType != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (includeTopLocations != null) {
@@ -31,7 +31,7 @@ if (includeTopLocations != null) {
 }
 if (date != null) {
 for (final item in date) {
-  queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'date', value: item));
 }
 }
 if (format != null) {
@@ -75,37 +75,37 @@ if (rankingType != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (domains != null) {
 for (final item in domains) {
-  queryParametersList.add(ApiQueryParameter(name: 'domains', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'domains', value: item));
 }
 }
 if (domainCategory != null) {
 for (final item in domainCategory) {
-  queryParametersList.add(ApiQueryParameter(name: 'domainCategory', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'domainCategory', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (format != null) {
@@ -146,22 +146,22 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (location != null) {
 for (final item in location) {
-  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item));
 }
 }
 if (domainCategory != null) {
 for (final item in domainCategory) {
-  queryParametersList.add(ApiQueryParameter(name: 'domainCategory', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'domainCategory', value: item));
 }
 }
 if (date != null) {
 for (final item in date) {
-  queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'date', value: item));
 }
 }
 if (rankingType != null) {

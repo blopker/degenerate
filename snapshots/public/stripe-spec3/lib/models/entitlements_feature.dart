@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class EntitlementsFeatureObject {const EntitlementsFeatureObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class EntitlementsFeatureObject {const EntitlementsFeatureObject._(this.value);
 
 factory EntitlementsFeatureObject.fromJson(String json) { return switch (json) {
   'entitlements.feature' => entitlementsFeature,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A feature represents a monetizable ability or functionality in your system.
 /// Features can be assigned to products, and when those products are purchased, Stripe will create an entitlement to the feature for the purchasing customer.
-final class EntitlementsFeature {const EntitlementsFeature({required this.active, required this.id, required this.livemode, required this.lookupKey, required this.metadata, required this.name, required this.object, });
+@immutable final class EntitlementsFeature {const EntitlementsFeature({required this.active, required this.id, required this.livemode, required this.lookupKey, required this.metadata, required this.name, required this.object, });
 
 factory EntitlementsFeature.fromJson(Map<String, dynamic> json) { return EntitlementsFeature(
   active: json['active'] as bool,

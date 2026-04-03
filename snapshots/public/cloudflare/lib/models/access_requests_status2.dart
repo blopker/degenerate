@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessRequestsStatus2 {const AccessRequestsStatus2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessRequestsStatus2 {const AccessRequestsStatus2._(this.value);
 
 factory AccessRequestsStatus2.fromJson(String json) { return switch (json) {
   'FAILURE' => failure,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The method for mapping a meter event to a customer.
-final class BillingMeterResourceCustomerMappingSettingsType {const BillingMeterResourceCustomerMappingSettingsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method for mapping a meter event to a customer.
+@immutable final class BillingMeterResourceCustomerMappingSettingsType {const BillingMeterResourceCustomerMappingSettingsType._(this.value);
 
 factory BillingMeterResourceCustomerMappingSettingsType.fromJson(String json) { return switch (json) {
   'by_id' => byId,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingMeterResourceCustomerMappingSettingsType($value)'; } 
  }
 /// 
-final class BillingMeterResourceCustomerMappingSettings {const BillingMeterResourceCustomerMappingSettings({required this.eventPayloadKey, required this.type, });
+@immutable final class BillingMeterResourceCustomerMappingSettings {const BillingMeterResourceCustomerMappingSettings({required this.eventPayloadKey, required this.type, });
 
 factory BillingMeterResourceCustomerMappingSettings.fromJson(Map<String, dynamic> json) { return BillingMeterResourceCustomerMappingSettings(
   eventPayloadKey: json['event_payload_key'] as String,

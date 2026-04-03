@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_registrations_resource_country_options_eu_standard.dart';/// Type of registration in an EU country.
-final class TaxProductRegistrationsResourceCountryOptionsEuropeType {const TaxProductRegistrationsResourceCountryOptionsEuropeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_registrations_resource_country_options_eu_standard.dart';/// Type of registration in an EU country.
+@immutable final class TaxProductRegistrationsResourceCountryOptionsEuropeType {const TaxProductRegistrationsResourceCountryOptionsEuropeType._(this.value);
 
 factory TaxProductRegistrationsResourceCountryOptionsEuropeType.fromJson(String json) { return switch (json) {
   'ioss' => ioss,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsEuropeType($value)'; } 
  }
 /// 
-final class TaxProductRegistrationsResourceCountryOptionsEurope {const TaxProductRegistrationsResourceCountryOptionsEurope({this.standard, required this.type, });
+@immutable final class TaxProductRegistrationsResourceCountryOptionsEurope {const TaxProductRegistrationsResourceCountryOptionsEurope({required this.type, this.standard, });
 
 factory TaxProductRegistrationsResourceCountryOptionsEurope.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsEurope(
   standard: json['standard'] != null ? TaxProductRegistrationsResourceCountryOptionsEuStandard.fromJson(json['standard'] as Map<String, dynamic>) : null,

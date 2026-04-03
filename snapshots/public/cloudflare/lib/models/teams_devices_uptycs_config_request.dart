@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesUptycsConfigRequest {const TeamsDevicesUptycsConfigRequest({required this.apiUrl, required this.clientKey, required this.clientSecret, required this.customerId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesUptycsConfigRequest {const TeamsDevicesUptycsConfigRequest({required this.apiUrl, required this.clientKey, required this.clientSecret, required this.customerId, });
 
 factory TeamsDevicesUptycsConfigRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesUptycsConfigRequest(
   apiUrl: json['api_url'] as String,

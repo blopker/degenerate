@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type discriminator that is always `url`.
-final class UrlAnnotationSourceType {const UrlAnnotationSourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `url`.
+@immutable final class UrlAnnotationSourceType {const UrlAnnotationSourceType._(this.value);
 
 factory UrlAnnotationSourceType.fromJson(String json) { return switch (json) {
   'url' => url,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UrlAnnotationSourceType($value)'; } 
  }
 /// URL backing an annotation entry.
-final class UrlAnnotationSource {const UrlAnnotationSource({this.type = UrlAnnotationSourceType.url, required this.url, });
+@immutable final class UrlAnnotationSource {const UrlAnnotationSource({required this.url, this.type = UrlAnnotationSourceType.url, });
 
 factory UrlAnnotationSource.fromJson(Map<String, dynamic> json) { return UrlAnnotationSource(
   type: UrlAnnotationSourceType.fromJson(json['type'] as String),

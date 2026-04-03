@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_custom_profile.dart';final class DlpProfilesListAllCustomProfilesResponse {const DlpProfilesListAllCustomProfilesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_custom_profile.dart';@immutable final class DlpProfilesListAllCustomProfilesResponse {const DlpProfilesListAllCustomProfilesResponse({this.result});
 
 factory DlpProfilesListAllCustomProfilesResponse.fromJson(Map<String, dynamic> json) { return DlpProfilesListAllCustomProfilesResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => DlpCustomProfile.fromJson(e as Map<String, dynamic>)).toList(),

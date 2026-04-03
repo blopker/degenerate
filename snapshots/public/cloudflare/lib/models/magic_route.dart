@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_description.dart';import 'magic_identifier.dart';import 'magic_nexthop.dart';import 'magic_prefix.dart';import 'magic_priority.dart';import 'magic_scope.dart';import 'magic_weight.dart';/// When the route was created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_description.dart';import 'magic_identifier.dart';import 'magic_nexthop.dart';import 'magic_prefix.dart';import 'magic_priority.dart';import 'magic_scope.dart';import 'magic_weight.dart';/// When the route was created.
 extension type MagicCreatedOn(DateTime value) {
 factory MagicCreatedOn.fromJson(String json) => MagicCreatedOn(DateTime.parse(json));
 
@@ -14,7 +14,7 @@ factory MagicModifiedOn.fromJson(String json) => MagicModifiedOn(DateTime.parse(
 String toJson() => value.toIso8601String();
 
 }
-final class MagicRoute {const MagicRoute({this.createdOn, this.description, required this.id, this.modifiedOn, required this.nexthop, required this.prefix, required this.priority, this.scope, this.weight, });
+@immutable final class MagicRoute {const MagicRoute({required this.id, required this.nexthop, required this.prefix, required this.priority, this.createdOn, this.description, this.modifiedOn, this.scope, this.weight, });
 
 factory MagicRoute.fromJson(Map<String, dynamic> json) { return MagicRoute(
   createdOn: json['created_on'] != null ? MagicCreatedOn.fromJson(json['created_on'] as String) : null,

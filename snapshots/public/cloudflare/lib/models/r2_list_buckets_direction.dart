@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Direction to order buckets.
-final class R2ListBucketsDirection {const R2ListBucketsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order buckets.
+@immutable final class R2ListBucketsDirection {const R2ListBucketsDirection._(this.value);
 
 factory R2ListBucketsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

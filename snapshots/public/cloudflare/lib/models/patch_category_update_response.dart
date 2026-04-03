@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PatchCategoryUpdateResponse {const PatchCategoryUpdateResponse({required this.killChain, this.mitreAttack, required this.name, this.shortname, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchCategoryUpdateResponse {const PatchCategoryUpdateResponse({required this.killChain, required this.name, required this.uuid, this.mitreAttack, this.shortname, });
 
 factory PatchCategoryUpdateResponse.fromJson(Map<String, dynamic> json) { return PatchCategoryUpdateResponse(
   killChain: (json['killChain'] as num).toDouble(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Provides details of a hosted runner custom image version
-final class ActionsHostedRunnerCustomImageVersion {const ActionsHostedRunnerCustomImageVersion({required this.version, required this.state, required this.sizeGb, required this.createdOn, required this.stateDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides details of a hosted runner custom image version
+@immutable final class ActionsHostedRunnerCustomImageVersion {const ActionsHostedRunnerCustomImageVersion({required this.version, required this.state, required this.sizeGb, required this.createdOn, required this.stateDetails, });
 
 factory ActionsHostedRunnerCustomImageVersion.fromJson(Map<String, dynamic> json) { return ActionsHostedRunnerCustomImageVersion(
   version: json['version'] as String,

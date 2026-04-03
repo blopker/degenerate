@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_request_message_content_part_image_image_url.dart';/// The type of the content part.
-final class ChatCompletionRequestMessageContentPartImageType {const ChatCompletionRequestMessageContentPartImageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_message_content_part_image_image_url.dart';/// The type of the content part.
+@immutable final class ChatCompletionRequestMessageContentPartImageType {const ChatCompletionRequestMessageContentPartImageType._(this.value);
 
 factory ChatCompletionRequestMessageContentPartImageType.fromJson(String json) { return switch (json) {
   'image_url' => imageUrl,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Learn about [image inputs](/docs/guides/vision).
 /// 
-final class ChatCompletionRequestMessageContentPartImage {const ChatCompletionRequestMessageContentPartImage({required this.type, required this.imageUrl, });
+@immutable final class ChatCompletionRequestMessageContentPartImage {const ChatCompletionRequestMessageContentPartImage({required this.type, required this.imageUrl, });
 
 factory ChatCompletionRequestMessageContentPartImage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartImage(
   type: ChatCompletionRequestMessageContentPartImageType.fromJson(json['type'] as String),

@@ -45,12 +45,12 @@ if (modifiedAfter != null) {
 }
 if (ips != null) {
 for (final item in ips) {
-  queryParametersList.add(ApiQueryParameter(name: 'ips', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'ips', value: item));
 }
 }
 if (targetIds != null) {
 for (final item in targetIds) {
-  queryParametersList.add(ApiQueryParameter(name: 'target_ids', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'target_ids', value: item));
 }
 }
 if (ipLike != null) {

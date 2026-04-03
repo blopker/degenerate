@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages51ToolsCustomCustomFormatGrammarGrammarSyntax {const Messages51ToolsCustomCustomFormatGrammarGrammarSyntax._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages51ToolsCustomCustomFormatGrammarGrammarSyntax {const Messages51ToolsCustomCustomFormatGrammarGrammarSyntax._(this.value);
 
 factory Messages51ToolsCustomCustomFormatGrammarGrammarSyntax.fromJson(String json) { return switch (json) {
   'lark' => lark,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51ToolsCustomCustomFormatGrammarGrammarSyntax($value)'; } 
  }
-final class Messages51ToolsCustomCustomFormatGrammarGrammar {const Messages51ToolsCustomCustomFormatGrammarGrammar({required this.definition, required this.syntax, });
+@immutable final class Messages51ToolsCustomCustomFormatGrammarGrammar {const Messages51ToolsCustomCustomFormatGrammarGrammar({required this.definition, required this.syntax, });
 
 factory Messages51ToolsCustomCustomFormatGrammarGrammar.fromJson(Map<String, dynamic> json) { return Messages51ToolsCustomCustomFormatGrammarGrammar(
   definition: json['definition'] as String,

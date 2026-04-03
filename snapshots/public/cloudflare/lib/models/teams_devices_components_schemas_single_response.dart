@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_device_managed_networks.dart';final class TeamsDevicesComponentsSchemasSingleResponse {const TeamsDevicesComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_device_managed_networks.dart';@immutable final class TeamsDevicesComponentsSchemasSingleResponse {const TeamsDevicesComponentsSchemasSingleResponse({this.result});
 
 factory TeamsDevicesComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return TeamsDevicesComponentsSchemasSingleResponse(
   result: json['result'] != null ? TeamsDevicesDeviceManagedNetworks.fromJson(json['result'] as Map<String, dynamic>) : null,

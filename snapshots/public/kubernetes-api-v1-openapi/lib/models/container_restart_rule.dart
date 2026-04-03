@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'container_restart_rule_on_exit_codes.dart';/// ContainerRestartRule describes how a container exit is handled.
-final class ContainerRestartRule {const ContainerRestartRule({required this.action, this.exitCodes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_restart_rule_on_exit_codes.dart';/// ContainerRestartRule describes how a container exit is handled.
+@immutable final class ContainerRestartRule {const ContainerRestartRule({required this.action, this.exitCodes, });
 
 factory ContainerRestartRule.fromJson(Map<String, dynamic> json) { return ContainerRestartRule(
   action: json['action'] as String,

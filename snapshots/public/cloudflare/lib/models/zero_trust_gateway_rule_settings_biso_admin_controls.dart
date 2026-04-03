@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
-final class ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy {const ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
+@immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy {const ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy._(this.value);
 
 factory ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy($value)'; } 
  }
 /// Configure download behavior. When set to remote_only, users can view downloads but cannot save them. Applies only when version == "v2".
-final class ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload {const ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload._(this.value);
+@immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload {const ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload._(this.value);
 
 factory ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload($value)'; } 
  }
 /// Configure keyboard usage behavior. If this field is absent, keyboard usage remains enabled. Applies only when version == "v2".
-final class ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard {const ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard._(this.value);
+@immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard {const ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard._(this.value);
 
 factory ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -82,7 +82,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard($value)'; } 
  }
 /// Configure paste behavior. If set to remote_only, users cannot paste content from the local clipboard into isolated pages. If this field is absent, pasting remains enabled. Applies only when version == "v2".
-final class ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste {const ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste._(this.value);
+@immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste {const ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste._(this.value);
 
 factory ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -110,7 +110,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste($value)'; } 
  }
 /// Configure print behavior. Default, Printing is enabled. Applies only when version == "v2".
-final class ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting {const ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting._(this.value);
+@immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting {const ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting._(this.value);
 
 factory ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -135,7 +135,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting($value)'; } 
  }
 /// Configure upload behavior. If this field is absent, uploading remains enabled. Applies only when version == "v2".
-final class ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload {const ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload._(this.value);
+@immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload {const ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload._(this.value);
 
 factory ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -160,7 +160,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload($value)'; } 
  }
 /// Indicate which version of the browser isolation controls should apply.
-final class ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion {const ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion._(this.value);
+@immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion {const ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion._(this.value);
 
 factory ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.fromJson(String json) { return switch (json) {
   'v1' => v1,
@@ -185,7 +185,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion($value)'; } 
  }
 /// Configure browser isolation behavior. Settable only for `http` rules with the action set to `isolate`.
-final class ZeroTrustGatewayRuleSettingsBisoAdminControls {const ZeroTrustGatewayRuleSettingsBisoAdminControls({this.copy, this.dcp, this.dd, this.dk, this.download, this.dp, this.du, this.keyboard, this.paste, this.printing, this.upload, this.version = ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.v1, });
+@immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControls {const ZeroTrustGatewayRuleSettingsBisoAdminControls({this.copy, this.dcp, this.dd, this.dk, this.download, this.dp, this.du, this.keyboard, this.paste, this.printing, this.upload, this.version = ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.v1, });
 
 factory ZeroTrustGatewayRuleSettingsBisoAdminControls.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsBisoAdminControls(
   copy: json['copy'] != null ? ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy.fromJson(json['copy'] as String) : null,

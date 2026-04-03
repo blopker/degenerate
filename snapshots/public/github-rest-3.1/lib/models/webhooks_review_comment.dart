@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_review_comment_links.dart';import 'webhooks_review_comment_reactions.dart';import 'webhooks_review_comment_user.dart';/// How the author is associated with the repository.
-final class WebhooksReviewCommentAuthorAssociation {const WebhooksReviewCommentAuthorAssociation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_review_comment_links.dart';import 'webhooks_review_comment_reactions.dart';import 'webhooks_review_comment_user.dart';/// How the author is associated with the repository.
+@immutable final class WebhooksReviewCommentAuthorAssociation {const WebhooksReviewCommentAuthorAssociation._(this.value);
 
 factory WebhooksReviewCommentAuthorAssociation.fromJson(String json) { return switch (json) {
   'COLLABORATOR' => collaborator,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksReviewCommentAuthorAssociation($value)'; } 
  }
 /// The side of the first line of the range for a multi-line comment.
-final class WebhooksReviewCommentSide {const WebhooksReviewCommentSide._(this.value);
+@immutable final class WebhooksReviewCommentSide {const WebhooksReviewCommentSide._(this.value);
 
 factory WebhooksReviewCommentSide.fromJson(String json) { return switch (json) {
   'LEFT' => left,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksReviewCommentSide($value)'; } 
  }
 /// The side of the first line of the range for a multi-line comment.
-final class WebhooksReviewCommentStartSide {const WebhooksReviewCommentStartSide._(this.value);
+@immutable final class WebhooksReviewCommentStartSide {const WebhooksReviewCommentStartSide._(this.value);
 
 factory WebhooksReviewCommentStartSide.fromJson(String json) { return switch (json) {
   'LEFT' => left,
@@ -97,7 +97,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksReviewCommentStartSide($value)'; } 
  }
 /// The level at which the comment is targeted, can be a diff line or a file.
-final class WebhooksReviewCommentSubjectType {const WebhooksReviewCommentSubjectType._(this.value);
+@immutable final class WebhooksReviewCommentSubjectType {const WebhooksReviewCommentSubjectType._(this.value);
 
 factory WebhooksReviewCommentSubjectType.fromJson(String json) { return switch (json) {
   'line' => line,
@@ -122,7 +122,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksReviewCommentSubjectType($value)'; } 
  }
 /// The [comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request) itself.
-final class WebhooksReviewComment {const WebhooksReviewComment({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.diffHunk, required this.htmlUrl, required this.id, this.inReplyToId, required this.line, required this.nodeId, required this.originalCommitId, required this.originalLine, required this.originalPosition, required this.originalStartLine, required this.path, required this.position, required this.pullRequestReviewId, required this.pullRequestUrl, required this.reactions, required this.side, required this.startLine, this.startSide = WebhooksReviewCommentStartSide.right, this.subjectType, required this.updatedAt, required this.url, required this.user, });
+@immutable final class WebhooksReviewComment {const WebhooksReviewComment({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.diffHunk, required this.htmlUrl, required this.id, required this.line, required this.nodeId, required this.originalCommitId, required this.originalLine, required this.originalPosition, required this.originalStartLine, required this.path, required this.position, required this.pullRequestReviewId, required this.pullRequestUrl, required this.reactions, required this.side, required this.startLine, required this.updatedAt, required this.url, required this.user, this.inReplyToId, this.startSide = WebhooksReviewCommentStartSide.right, this.subjectType, });
 
 factory WebhooksReviewComment.fromJson(Map<String, dynamic> json) { return WebhooksReviewComment(
   links: WebhooksReviewCommentLinks.fromJson(json['_links'] as Map<String, dynamic>),

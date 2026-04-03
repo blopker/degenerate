@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentPagesCheckoutSessionAdaptivePricing {const PaymentPagesCheckoutSessionAdaptivePricing({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionAdaptivePricing {const PaymentPagesCheckoutSessionAdaptivePricing({required this.enabled});
 
 factory PaymentPagesCheckoutSessionAdaptivePricing.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionAdaptivePricing(
   enabled: json['enabled'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_request_metadata.dart';final class PostTerminalReadersRequest {const PostTerminalReadersRequest({this.expand, this.label, this.location, this.metadata, required this.registrationCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_request_metadata.dart';@immutable final class PostTerminalReadersRequest {const PostTerminalReadersRequest({required this.registrationCode, this.expand, this.label, this.location, this.metadata, });
 
 factory PostTerminalReadersRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

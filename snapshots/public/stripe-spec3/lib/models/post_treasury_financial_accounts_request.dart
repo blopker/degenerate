@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_request_features.dart';import 'post_treasury_financial_accounts_request_nickname.dart';import 'post_treasury_financial_accounts_request_platform_restrictions.dart';final class PostTreasuryFinancialAccountsRequest {const PostTreasuryFinancialAccountsRequest({this.expand, this.features, this.metadata, this.nickname, this.platformRestrictions, required this.supportedCurrencies, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_request_features.dart';import 'post_treasury_financial_accounts_request_nickname.dart';import 'post_treasury_financial_accounts_request_platform_restrictions.dart';@immutable final class PostTreasuryFinancialAccountsRequest {const PostTreasuryFinancialAccountsRequest({required this.supportedCurrencies, this.expand, this.features, this.metadata, this.nickname, this.platformRestrictions, });
 
 factory PostTreasuryFinancialAccountsRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

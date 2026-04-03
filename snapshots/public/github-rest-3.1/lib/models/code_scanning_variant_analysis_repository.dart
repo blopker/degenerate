@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Repository Identifier
-final class CodeScanningVariantAnalysisRepository {const CodeScanningVariantAnalysisRepository({required this.id, required this.name, required this.fullName, required this.private, required this.stargazersCount, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Repository Identifier
+@immutable final class CodeScanningVariantAnalysisRepository {const CodeScanningVariantAnalysisRepository({required this.id, required this.name, required this.fullName, required this.private, required this.stargazersCount, required this.updatedAt, });
 
 factory CodeScanningVariantAnalysisRepository.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysisRepository(
   id: (json['id'] as num).toInt(),

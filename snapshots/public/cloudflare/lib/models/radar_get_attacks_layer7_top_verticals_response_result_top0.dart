@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer7TopVerticalsResponseResultTop0 {const RadarGetAttacksLayer7TopVerticalsResponseResultTop0({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TopVerticalsResponseResultTop0 {const RadarGetAttacksLayer7TopVerticalsResponseResultTop0({required this.name, required this.value, });
 
 factory RadarGetAttacksLayer7TopVerticalsResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopVerticalsResponseResultTop0(
   name: json['name'] as String,

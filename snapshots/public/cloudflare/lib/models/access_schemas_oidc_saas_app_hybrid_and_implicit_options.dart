@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessSchemasOidcSaasAppHybridAndImplicitOptions {const AccessSchemasOidcSaasAppHybridAndImplicitOptions({this.returnAccessTokenFromAuthorizationEndpoint, this.returnIdTokenFromAuthorizationEndpoint, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSchemasOidcSaasAppHybridAndImplicitOptions {const AccessSchemasOidcSaasAppHybridAndImplicitOptions({this.returnAccessTokenFromAuthorizationEndpoint, this.returnIdTokenFromAuthorizationEndpoint, });
 
 factory AccessSchemasOidcSaasAppHybridAndImplicitOptions.fromJson(Map<String, dynamic> json) { return AccessSchemasOidcSaasAppHybridAndImplicitOptions(
   returnAccessTokenFromAuthorizationEndpoint: json['return_access_token_from_authorization_endpoint'] as bool?,

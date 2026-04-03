@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message.dart';import 'usage_record.dart';/// Represents a successful response containing billable usage records.
-final class UsageResponse {const UsageResponse({required this.errors, required this.messages, required this.result, required this.success, });
+@immutable final class UsageResponse {const UsageResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory UsageResponse.fromJson(Map<String, dynamic> json) { return UsageResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => Message.fromJson(e as Map<String, dynamic>)).toList(),

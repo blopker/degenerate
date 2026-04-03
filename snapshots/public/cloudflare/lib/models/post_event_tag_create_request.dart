@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostEventTagCreateRequest {const PostEventTagCreateRequest({required this.tags});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventTagCreateRequest {const PostEventTagCreateRequest({required this.tags});
 
 factory PostEventTagCreateRequest.fromJson(Map<String, dynamic> json) { return PostEventTagCreateRequest(
   tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),

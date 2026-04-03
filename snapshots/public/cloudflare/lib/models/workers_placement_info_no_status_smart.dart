@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Enables [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).
-final class WorkersPlacementInfoNoStatusSmartMode {const WorkersPlacementInfoNoStatusSmartMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enables [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).
+@immutable final class WorkersPlacementInfoNoStatusSmartMode {const WorkersPlacementInfoNoStatusSmartMode._(this.value);
 
 factory WorkersPlacementInfoNoStatusSmartMode.fromJson(String json) { return switch (json) {
   'smart' => smart,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersPlacementInfoNoStatusSmartMode($value)'; } 
  }
-final class WorkersPlacementInfoNoStatusSmart {const WorkersPlacementInfoNoStatusSmart({required this.mode});
+@immutable final class WorkersPlacementInfoNoStatusSmart {const WorkersPlacementInfoNoStatusSmart({required this.mode});
 
 factory WorkersPlacementInfoNoStatusSmart.fromJson(Map<String, dynamic> json) { return WorkersPlacementInfoNoStatusSmart(
   mode: WorkersPlacementInfoNoStatusSmartMode.fromJson(json['mode'] as String),

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'grader_multi.dart';import 'grader_python.dart';import 'grader_score_model.dart';import 'grader_string_check.dart';import 'grader_text_similarity.dart';import 'run_grader_request_grader.dart';final class RunGraderRequest {const RunGraderRequest({required this.grader, this.item, required this.modelSample, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'grader_multi.dart';import 'grader_python.dart';import 'grader_score_model.dart';import 'grader_string_check.dart';import 'grader_text_similarity.dart';import 'run_grader_request_grader.dart';@immutable final class RunGraderRequest {const RunGraderRequest({required this.grader, required this.modelSample, this.item, });
 
 factory RunGraderRequest.fromJson(Map<String, dynamic> json) { return RunGraderRequest(
   grader: OneOf5.parse(json['grader'], fromA: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderMulti.fromJson(v as Map<String, dynamic>),),
-  item: (json['item'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  item: json['item'] as Map<String, dynamic>?,
   modelSample: json['model_sample'] as String,
 ); }
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsGrabpay {const PaymentMethodDetailsGrabpay({this.transactionId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsGrabpay {const PaymentMethodDetailsGrabpay({this.transactionId});
 
 factory PaymentMethodDetailsGrabpay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsGrabpay(
   transactionId: json['transaction_id'] as String?,

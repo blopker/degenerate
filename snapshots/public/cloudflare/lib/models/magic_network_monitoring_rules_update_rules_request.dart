@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_rule_automatic_advertisement.dart';import 'magic_visibility_mnm_mnm_rule_bandwidth_threshold.dart';import 'magic_visibility_mnm_mnm_rule_duration.dart';import 'magic_visibility_mnm_mnm_rule_ip_prefix.dart';import 'magic_visibility_mnm_mnm_rule_name.dart';import 'magic_visibility_mnm_mnm_rule_packet_threshold.dart';import 'magic_visibility_mnm_rule_identifier.dart';final class MagicNetworkMonitoringRulesUpdateRulesRequest {const MagicNetworkMonitoringRulesUpdateRulesRequest({this.automaticAdvertisement, this.bandwidth, required this.duration, this.id, required this.name, this.packetThreshold, this.prefixes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_rule_automatic_advertisement.dart';import 'magic_visibility_mnm_mnm_rule_bandwidth_threshold.dart';import 'magic_visibility_mnm_mnm_rule_duration.dart';import 'magic_visibility_mnm_mnm_rule_ip_prefix.dart';import 'magic_visibility_mnm_mnm_rule_name.dart';import 'magic_visibility_mnm_mnm_rule_packet_threshold.dart';import 'magic_visibility_mnm_rule_identifier.dart';@immutable final class MagicNetworkMonitoringRulesUpdateRulesRequest {const MagicNetworkMonitoringRulesUpdateRulesRequest({required this.duration, required this.name, this.automaticAdvertisement, this.bandwidth, this.id, this.packetThreshold, this.prefixes, });
 
 factory MagicNetworkMonitoringRulesUpdateRulesRequest.fromJson(Map<String, dynamic> json) { return MagicNetworkMonitoringRulesUpdateRulesRequest(
   automaticAdvertisement: json['automatic_advertisement'] != null ? MagicVisibilityMnmMnmRuleAutomaticAdvertisement.fromJson(json['automatic_advertisement'] as bool) : null,
@@ -18,7 +18,7 @@ final MagicVisibilityMnmMnmRuleAutomaticAdvertisement? automaticAdvertisement;
 /// The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
 final MagicVisibilityMnmMnmRuleBandwidthThreshold? bandwidth;
 
-/// The amount of time that the rule threshold must be exceeded to send an alert notification. The final value must be equivalent to one of the following 8 values ["1m","5m","10m","15m","20m","30m","45m","60m"].
+/// The amount of time that the rule threshold must be exceeded to send an alert notification. The final value must be equivalent to one of the following 8 values `["1m","5m","10m","15m","20m","30m","45m","60m"]`.
 final MagicVisibilityMnmMnmRuleDuration duration;
 
 /// The id of the rule. Must be unique.

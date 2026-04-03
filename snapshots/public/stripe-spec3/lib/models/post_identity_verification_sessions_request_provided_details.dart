@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details provided about the user being verified. These details may be shown to the user.
-final class PostIdentityVerificationSessionsRequestProvidedDetails {const PostIdentityVerificationSessionsRequestProvidedDetails({this.email, this.phone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details provided about the user being verified. These details may be shown to the user.
+@immutable final class PostIdentityVerificationSessionsRequestProvidedDetails {const PostIdentityVerificationSessionsRequestProvidedDetails({this.email, this.phone, });
 
 factory PostIdentityVerificationSessionsRequestProvidedDetails.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsRequestProvidedDetails(
   email: json['email'] as String?,

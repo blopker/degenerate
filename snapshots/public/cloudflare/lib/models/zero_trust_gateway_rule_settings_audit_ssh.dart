@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Define the settings for the Audit SSH action. Settable only for `l4` rules with `audit_ssh` action.
-final class ZeroTrustGatewayRuleSettingsAuditSsh {const ZeroTrustGatewayRuleSettingsAuditSsh({this.commandLogging});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Define the settings for the Audit SSH action. Settable only for `l4` rules with `audit_ssh` action.
+@immutable final class ZeroTrustGatewayRuleSettingsAuditSsh {const ZeroTrustGatewayRuleSettingsAuditSsh({this.commandLogging});
 
 factory ZeroTrustGatewayRuleSettingsAuditSsh.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsAuditSsh(
   commandLogging: json['command_logging'] as bool?,

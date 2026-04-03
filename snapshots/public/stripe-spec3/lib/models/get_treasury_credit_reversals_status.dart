@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTreasuryCreditReversalsStatus {const GetTreasuryCreditReversalsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryCreditReversalsStatus {const GetTreasuryCreditReversalsStatus._(this.value);
 
 factory GetTreasuryCreditReversalsStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,

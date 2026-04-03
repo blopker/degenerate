@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssuesSetLabelsRequestVariant3Labels {const IssuesSetLabelsRequestVariant3Labels({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesSetLabelsRequestVariant3Labels {const IssuesSetLabelsRequestVariant3Labels({required this.name});
 
 factory IssuesSetLabelsRequestVariant3Labels.fromJson(Map<String, dynamic> json) { return IssuesSetLabelsRequestVariant3Labels(
   name: json['name'] as String,

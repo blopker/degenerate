@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2StatsTlsStatsProtocols {const UrlscannerGetScanResponse2StatsTlsStatsProtocols({required this.tls13Aes128Gcm});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2StatsTlsStatsProtocols {const UrlscannerGetScanResponse2StatsTlsStatsProtocols({required this.tls13Aes128Gcm});
 
 factory UrlscannerGetScanResponse2StatsTlsStatsProtocols.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2StatsTlsStatsProtocols(
   tls13Aes128Gcm: (json['TLS 1.3 / AES_128_GCM'] as num).toDouble(),

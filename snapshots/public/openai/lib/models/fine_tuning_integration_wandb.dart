@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The settings for
 /// metrics will be sent to. Optionally, you can set an explicit display name for your run, add tags
 /// to your run, and set a default entity (team, username, etc) to be associated with your run.
 /// 
-final class FineTuningIntegrationWandb {const FineTuningIntegrationWandb({required this.project, this.name, this.entity, this.tags, });
+@immutable final class FineTuningIntegrationWandb {const FineTuningIntegrationWandb({required this.project, this.name, this.entity, this.tags, });
 
 factory FineTuningIntegrationWandb.fromJson(Map<String, dynamic> json) { return FineTuningIntegrationWandb(
   project: json['project'] as String,

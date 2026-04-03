@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotations {const RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotations {const RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetDnsSummaryByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

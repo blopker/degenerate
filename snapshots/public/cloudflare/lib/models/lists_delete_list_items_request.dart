@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_delete_list_items_request_items.dart';final class ListsDeleteListItemsRequest {const ListsDeleteListItemsRequest({this.items});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_delete_list_items_request_items.dart';@immutable final class ListsDeleteListItemsRequest {const ListsDeleteListItemsRequest({this.items});
 
 factory ListsDeleteListItemsRequest.fromJson(Map<String, dynamic> json) { return ListsDeleteListItemsRequest(
   items: (json['items'] as List<dynamic>?)?.map((e) => ListsDeleteListItemsRequestItems.fromJson(e as Map<String, dynamic>)).toList(),

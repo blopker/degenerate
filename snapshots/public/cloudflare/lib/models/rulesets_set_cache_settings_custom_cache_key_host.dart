@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// How to use the host in the cache key.
-final class RulesetsSetCacheSettingsCustomCacheKeyHost {const RulesetsSetCacheSettingsCustomCacheKeyHost({this.resolved});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// How to use the host in the cache key.
+@immutable final class RulesetsSetCacheSettingsCustomCacheKeyHost {const RulesetsSetCacheSettingsCustomCacheKeyHost({this.resolved});
 
 factory RulesetsSetCacheSettingsCustomCacheKeyHost.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCustomCacheKeyHost(
   resolved: json['resolved'] as bool?,

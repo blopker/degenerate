@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetQualityIndexTimeseriesGroupResponseResultSerie0 {const RadarGetQualityIndexTimeseriesGroupResponseResultSerie0({required this.p25, required this.p50, required this.p75, required this.timestamps, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetQualityIndexTimeseriesGroupResponseResultSerie0 {const RadarGetQualityIndexTimeseriesGroupResponseResultSerie0({required this.p25, required this.p50, required this.p75, required this.timestamps, });
 
 factory RadarGetQualityIndexTimeseriesGroupResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetQualityIndexTimeseriesGroupResponseResultSerie0(
   p25: (json['p25'] as List<dynamic>).map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';final class AppsListInstallationReposForAuthenticatedUserResponse {const AppsListInstallationReposForAuthenticatedUserResponse({required this.totalCount, this.repositorySelection, required this.repositories, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';@immutable final class AppsListInstallationReposForAuthenticatedUserResponse {const AppsListInstallationReposForAuthenticatedUserResponse({required this.totalCount, required this.repositories, this.repositorySelection, });
 
 factory AppsListInstallationReposForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) { return AppsListInstallationReposForAuthenticatedUserResponse(
   totalCount: (json['total_count'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings for OAuth dynamic client registration.
-final class AccessOauthConfigurationDynamicClientRegistration {const AccessOauthConfigurationDynamicClientRegistration({this.allowAnyOnLocalhost, this.allowAnyOnLoopback, this.allowedUris, this.enabled, });
+@immutable final class AccessOauthConfigurationDynamicClientRegistration {const AccessOauthConfigurationDynamicClientRegistration({this.allowAnyOnLocalhost, this.allowAnyOnLoopback, this.allowedUris, this.enabled, });
 
 factory AccessOauthConfigurationDynamicClientRegistration.fromJson(Map<String, dynamic> json) { return AccessOauthConfigurationDynamicClientRegistration(
   allowAnyOnLocalhost: json['allow_any_on_localhost'] as bool?,

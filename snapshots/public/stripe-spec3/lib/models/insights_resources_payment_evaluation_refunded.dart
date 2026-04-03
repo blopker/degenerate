@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates the reason for the refund.
-final class InsightsResourcesPaymentEvaluationRefundedReason {const InsightsResourcesPaymentEvaluationRefundedReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the reason for the refund.
+@immutable final class InsightsResourcesPaymentEvaluationRefundedReason {const InsightsResourcesPaymentEvaluationRefundedReason._(this.value);
 
 factory InsightsResourcesPaymentEvaluationRefundedReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InsightsResourcesPaymentEvaluationRefundedReason($value)'; } 
  }
 /// Refunded Event details attached to this payment evaluation.
-final class InsightsResourcesPaymentEvaluationRefunded {const InsightsResourcesPaymentEvaluationRefunded({required this.amount, required this.currency, required this.reason, });
+@immutable final class InsightsResourcesPaymentEvaluationRefunded {const InsightsResourcesPaymentEvaluationRefunded({required this.amount, required this.currency, required this.reason, });
 
 factory InsightsResourcesPaymentEvaluationRefunded.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationRefunded(
   amount: (json['amount'] as num).toInt(),

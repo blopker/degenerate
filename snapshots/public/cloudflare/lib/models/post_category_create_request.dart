@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCategoryCreateRequest {const PostCategoryCreateRequest({required this.killChain, this.mitreAttack, required this.name, this.shortname, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCategoryCreateRequest {const PostCategoryCreateRequest({required this.killChain, required this.name, this.mitreAttack, this.shortname, });
 
 factory PostCategoryCreateRequest.fromJson(Map<String, dynamic> json) { return PostCategoryCreateRequest(
   killChain: (json['killChain'] as num).toDouble(),

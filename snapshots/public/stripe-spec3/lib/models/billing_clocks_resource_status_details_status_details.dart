@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_clocks_resource_status_details_advancing_status_details.dart';/// 
-final class BillingClocksResourceStatusDetailsStatusDetails {const BillingClocksResourceStatusDetailsStatusDetails({this.advancing});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_clocks_resource_status_details_advancing_status_details.dart';/// 
+@immutable final class BillingClocksResourceStatusDetailsStatusDetails {const BillingClocksResourceStatusDetailsStatusDetails({this.advancing});
 
 factory BillingClocksResourceStatusDetailsStatusDetails.fromJson(Map<String, dynamic> json) { return BillingClocksResourceStatusDetailsStatusDetails(
   advancing: json['advancing'] != null ? BillingClocksResourceStatusDetailsAdvancingStatusDetails.fromJson(json['advancing'] as Map<String, dynamic>) : null,

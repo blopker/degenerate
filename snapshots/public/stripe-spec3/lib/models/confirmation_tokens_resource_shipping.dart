@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';/// 
-final class ConfirmationTokensResourceShipping {const ConfirmationTokensResourceShipping({required this.address, required this.name, this.phone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// 
+@immutable final class ConfirmationTokensResourceShipping {const ConfirmationTokensResourceShipping({required this.address, required this.name, this.phone, });
 
 factory ConfirmationTokensResourceShipping.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourceShipping(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),

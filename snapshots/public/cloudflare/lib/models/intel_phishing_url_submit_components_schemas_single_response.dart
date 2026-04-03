@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'intel_phishing_url_submit.dart';final class IntelPhishingUrlSubmitComponentsSchemasSingleResponse {const IntelPhishingUrlSubmitComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_phishing_url_submit.dart';@immutable final class IntelPhishingUrlSubmitComponentsSchemasSingleResponse {const IntelPhishingUrlSubmitComponentsSchemasSingleResponse({this.result});
 
 factory IntelPhishingUrlSubmitComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlSubmitComponentsSchemasSingleResponse(
   result: json['result'] != null ? IntelPhishingUrlSubmit.fromJson(json['result'] as Map<String, dynamic>) : null,

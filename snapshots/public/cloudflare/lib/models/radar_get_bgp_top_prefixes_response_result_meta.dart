@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_top_prefixes_response_result_meta_date_range.dart';final class RadarGetBgpTopPrefixesResponseResultMeta {const RadarGetBgpTopPrefixesResponseResultMeta({required this.dateRange});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_top_prefixes_response_result_meta_date_range.dart';@immutable final class RadarGetBgpTopPrefixesResponseResultMeta {const RadarGetBgpTopPrefixesResponseResultMeta({required this.dateRange});
 
 factory RadarGetBgpTopPrefixesResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopPrefixesResponseResultMeta(
   dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetBgpTopPrefixesResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),

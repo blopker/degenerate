@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Visa compliance eligibility status.
-final class DisputeEnhancedEligibilityVisaComplianceStatus {const DisputeEnhancedEligibilityVisaComplianceStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Visa compliance eligibility status.
+@immutable final class DisputeEnhancedEligibilityVisaComplianceStatus {const DisputeEnhancedEligibilityVisaComplianceStatus._(this.value);
 
 factory DisputeEnhancedEligibilityVisaComplianceStatus.fromJson(String json) { return switch (json) {
   'fee_acknowledged' => feeAcknowledged,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DisputeEnhancedEligibilityVisaComplianceStatus($value)'; } 
  }
 /// 
-final class DisputeEnhancedEligibilityVisaCompliance {const DisputeEnhancedEligibilityVisaCompliance({required this.status});
+@immutable final class DisputeEnhancedEligibilityVisaCompliance {const DisputeEnhancedEligibilityVisaCompliance({required this.status});
 
 factory DisputeEnhancedEligibilityVisaCompliance.fromJson(Map<String, dynamic> json) { return DisputeEnhancedEligibilityVisaCompliance(
   status: DisputeEnhancedEligibilityVisaComplianceStatus.fromJson(json['status'] as String),

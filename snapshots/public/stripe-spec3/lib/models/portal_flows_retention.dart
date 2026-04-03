@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'portal_flows_coupon_offer.dart';/// Type of retention strategy that will be used.
-final class PortalFlowsRetentionType {const PortalFlowsRetentionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_flows_coupon_offer.dart';/// Type of retention strategy that will be used.
+@immutable final class PortalFlowsRetentionType {const PortalFlowsRetentionType._(this.value);
 
 factory PortalFlowsRetentionType.fromJson(String json) { return switch (json) {
   'coupon_offer' => couponOffer,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalFlowsRetentionType($value)'; } 
  }
 /// 
-final class PortalFlowsRetention {const PortalFlowsRetention({this.couponOffer, required this.type, });
+@immutable final class PortalFlowsRetention {const PortalFlowsRetention({required this.type, this.couponOffer, });
 
 factory PortalFlowsRetention.fromJson(Map<String, dynamic> json) { return PortalFlowsRetention(
   couponOffer: json['coupon_offer'] != null ? PortalFlowsCouponOffer.fromJson(json['coupon_offer'] as Map<String, dynamic>) : null,

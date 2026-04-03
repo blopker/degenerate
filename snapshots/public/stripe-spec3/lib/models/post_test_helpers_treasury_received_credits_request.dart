@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_received_credits_request_initiating_payment_method_details.dart';/// Specifies the network rails to be used. If not set, will default to the PaymentMethod's preferred network. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
-final class PostTestHelpersTreasuryReceivedCreditsRequestNetwork {const PostTestHelpersTreasuryReceivedCreditsRequestNetwork._(this.value);
+@immutable final class PostTestHelpersTreasuryReceivedCreditsRequestNetwork {const PostTestHelpersTreasuryReceivedCreditsRequestNetwork._(this.value);
 
 factory PostTestHelpersTreasuryReceivedCreditsRequestNetwork.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersTreasuryReceivedCreditsRequestNetwork($value)'; } 
  }
-final class PostTestHelpersTreasuryReceivedCreditsRequest {const PostTestHelpersTreasuryReceivedCreditsRequest({required this.amount, required this.currency, this.description, this.expand, required this.financialAccount, this.initiatingPaymentMethodDetails, required this.network, });
+@immutable final class PostTestHelpersTreasuryReceivedCreditsRequest {const PostTestHelpersTreasuryReceivedCreditsRequest({required this.amount, required this.currency, required this.financialAccount, required this.network, this.description, this.expand, this.initiatingPaymentMethodDetails, });
 
 factory PostTestHelpersTreasuryReceivedCreditsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryReceivedCreditsRequest(
   amount: (json['amount'] as num).toInt(),

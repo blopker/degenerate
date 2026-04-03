@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_payment_method_options_us_bank_account_financial_connections_filters.dart';final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_payment_method_options_us_bank_account_financial_connections_filters.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch._(this.value);
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnections {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnections({this.filters, this.permissions, this.prefetch, this.returnUrl, });
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnections {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnections({this.filters, this.permissions, this.prefetch, this.returnUrl, });
 
 factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnections(
   filters: json['filters'] != null ? PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,

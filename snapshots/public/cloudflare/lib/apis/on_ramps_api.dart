@@ -55,7 +55,7 @@ return execute(
 /// Create a new On-ramp (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/onramps`
-Future<ApiResult<McnOnramp?, McnBadResponse>> onrampsCreate({required McnAccountId accountId, String? forwarded, required McnCreateOnrampRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnOnramp?, McnBadResponse>> onrampsCreate({required McnAccountId accountId, required McnCreateOnrampRequest body, String? forwarded, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (forwarded != null) {
   headers['forwarded'] = forwarded;

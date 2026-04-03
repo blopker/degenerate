@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_srv_record_data.dart';import 'dns_records_ttl.dart';/// Record type.
-final class DnsRecordsSrvRecordType {const DnsRecordsSrvRecordType._(this.value);
+@immutable final class DnsRecordsSrvRecordType {const DnsRecordsSrvRecordType._(this.value);
 
 factory DnsRecordsSrvRecordType.fromJson(String json) { return switch (json) {
   'SRV' => srv,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DnsRecordsSrvRecordType($value)'; } 
  }
-final class DnsRecordsSrvRecord {const DnsRecordsSrvRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
+@immutable final class DnsRecordsSrvRecord {const DnsRecordsSrvRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
 
 factory DnsRecordsSrvRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsSrvRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

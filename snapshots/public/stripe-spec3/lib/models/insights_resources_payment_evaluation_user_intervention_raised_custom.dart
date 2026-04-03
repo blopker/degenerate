@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// User intervention raised custom event details attached to this payment evaluation
-final class InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom {const InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// User intervention raised custom event details attached to this payment evaluation
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom {const InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom({required this.type});
 
 factory InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom(
   type: json['type'] as String,

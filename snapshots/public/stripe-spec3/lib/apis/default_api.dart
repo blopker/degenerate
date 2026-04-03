@@ -28,7 +28,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -55,7 +55,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/account_links',
   headers: headers,
-  body: [
+  body: <String>[
     'account=${Uri.encodeQueryComponent(body.account)}',
     if (body.collect case final collect$?)
       'collect=${Uri.encodeQueryComponent(collect$.toJson())}',
@@ -94,7 +94,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/account_sessions',
   headers: headers,
-  body: [
+  body: <String>[
     'account=${Uri.encodeQueryComponent(body.account)}',
     'components=${Uri.encodeQueryComponent(body.components.toString())}',
     if (body.expand case final expand$?)
@@ -121,7 +121,7 @@ return execute(
 Future<ApiResult<GetAccountsResponse, ErrorModel>> getAccounts({GetAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -145,7 +145,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -176,7 +176,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.accountToken case final accountToken$?)
       'account_token=${Uri.encodeQueryComponent(accountToken$)}',
     if (body.bankAccount case final bankAccount$?)
@@ -249,7 +249,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -288,7 +288,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.accountToken case final accountToken$?)
       'account_token=${Uri.encodeQueryComponent(accountToken$)}',
     if (body.businessProfile case final businessProfile$?)
@@ -351,7 +351,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -378,7 +378,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.bankAccount case final bankAccount$?)
       'bank_account=${Uri.encodeQueryComponent(bankAccount$.toString())}',
     if (body.defaultForCurrency case final defaultForCurrency$?)
@@ -423,7 +423,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -456,7 +456,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.accountHolderName case final accountHolderName$?)
       'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
     if (body.accountHolderType case final accountHolderType$?)
@@ -515,7 +515,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -550,7 +550,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -585,7 +585,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -612,7 +612,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/capabilities/${Uri.encodeComponent(capability)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.requested case final requested$?)
@@ -663,7 +663,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -690,7 +690,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.bankAccount case final bankAccount$?)
       'bank_account=${Uri.encodeQueryComponent(bankAccount$.toString())}',
     if (body.defaultForCurrency case final defaultForCurrency$?)
@@ -735,7 +735,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -768,7 +768,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.accountHolderName case final accountHolderName$?)
       'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
     if (body.accountHolderType case final accountHolderType$?)
@@ -827,7 +827,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/external_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -856,7 +856,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/login_links',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -910,7 +910,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -937,7 +937,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.additionalTosAcceptances case final additionalTosAcceptances$?)
       'additional_tos_acceptances=${Uri.encodeQueryComponent(additionalTosAcceptances$.toString())}',
     if (body.address case final address$?)
@@ -1030,7 +1030,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1057,7 +1057,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people/${Uri.encodeComponent(person)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.additionalTosAcceptances case final additionalTosAcceptances$?)
       'additional_tos_acceptances=${Uri.encodeQueryComponent(additionalTosAcceptances$.toString())}',
     if (body.address case final address$?)
@@ -1142,7 +1142,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/people/${Uri.encodeComponent(person)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1194,7 +1194,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1221,7 +1221,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.additionalTosAcceptances case final additionalTosAcceptances$?)
       'additional_tos_acceptances=${Uri.encodeQueryComponent(additionalTosAcceptances$.toString())}',
     if (body.address case final address$?)
@@ -1314,7 +1314,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1341,7 +1341,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons/${Uri.encodeComponent(person)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.additionalTosAcceptances case final additionalTosAcceptances$?)
       'additional_tos_acceptances=${Uri.encodeQueryComponent(additionalTosAcceptances$.toString())}',
     if (body.address case final address$?)
@@ -1426,7 +1426,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/persons/${Uri.encodeComponent(person)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1455,7 +1455,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/accounts/${Uri.encodeComponent(account)}/reject',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'reason=${Uri.encodeQueryComponent(body.reason)}',
@@ -1504,7 +1504,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1530,7 +1530,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/apple_pay/domains',
   headers: headers,
-  body: [
+  body: <String>[
     'domain_name=${Uri.encodeQueryComponent(body.domainName)}',
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
@@ -1567,7 +1567,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1593,7 +1593,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/apple_pay/domains/${Uri.encodeComponent(domain)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1619,7 +1619,7 @@ if (charge != null) {
   queryParameters['charge'] = charge;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -1643,7 +1643,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1678,7 +1678,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1707,7 +1707,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/application_fees/${Uri.encodeComponent(fee)}/refunds/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -1746,7 +1746,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1772,7 +1772,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/application_fees/${Uri.encodeComponent(id)}/refund',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.directive case final directive$?)
@@ -1822,7 +1822,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1857,7 +1857,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/application_fees/${Uri.encodeComponent(id)}/refunds',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.expand case final expand$?)
@@ -1883,7 +1883,7 @@ return execute(
 /// `<p>`List all secrets stored on the given scope.`</p>`
 ///
 /// `GET /v1/apps/secrets`
-Future<ApiResult<GetAppsSecretsResponse, ErrorModel>> getAppsSecrets({String? endingBefore, List<String>? expand, int? limit, required GetAppsSecretsScope scope, String? startingAfter, GetAppsSecretsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAppsSecretsResponse, ErrorModel>> getAppsSecrets({required GetAppsSecretsScope scope, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetAppsSecretsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -1909,7 +1909,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -1936,7 +1936,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/apps/secrets',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.expiresAt case final expiresAt$?)
@@ -1970,7 +1970,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/apps/secrets/delete',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'name=${Uri.encodeQueryComponent(body.name)}',
@@ -1994,7 +1994,7 @@ return execute(
 /// `<p>`Finds a secret in the secret store by name and scope.`</p>`
 ///
 /// `GET /v1/apps/secrets/find`
-Future<ApiResult<AppsSecret, ErrorModel>> getAppsSecretsFind({List<String>? expand, required String name, required GetAppsSecretsFindScope scope, GetAppsSecretsFindRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AppsSecret, ErrorModel>> getAppsSecretsFind({required String name, required GetAppsSecretsFindScope scope, List<String>? expand, GetAppsSecretsFindRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -2012,7 +2012,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2048,7 +2048,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2073,7 +2073,7 @@ return execute(
 Future<ApiResult<GetBalanceHistoryResponse, ErrorModel>> getBalanceHistory({GetBalanceHistoryCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, GetBalanceHistoryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (currency != null) {
   queryParameters['currency'] = currency;
@@ -2109,7 +2109,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2146,7 +2146,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2182,7 +2182,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2210,7 +2210,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/balance_settings',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.payments case final payments$?)
@@ -2239,7 +2239,7 @@ return execute(
 Future<ApiResult<GetBalanceTransactionsResponse, ErrorModel>> getBalanceTransactions({GetBalanceTransactionsCreated? created, String? currency, String? endingBefore, List<String>? expand, int? limit, String? payout, String? source, String? startingAfter, String? type, GetBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (currency != null) {
   queryParameters['currency'] = currency;
@@ -2275,7 +2275,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2312,7 +2312,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2362,7 +2362,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2389,7 +2389,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts',
   headers: headers,
-  body: [
+  body: <String>[
     'alert_type=${Uri.encodeQueryComponent(body.alertType.toJson())}',
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
@@ -2430,7 +2430,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2457,7 +2457,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/activate',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -2486,7 +2486,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/archive',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -2515,7 +2515,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/alerts/${Uri.encodeComponent(id)}/deactivate',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -2537,7 +2537,7 @@ return execute(
 /// `<p>`Retrieves the credit balance summary for a customer.`</p>`
 ///
 /// `GET /v1/billing/credit_balance_summary`
-Future<ApiResult<BillingCreditBalanceSummary, ErrorModel>> getBillingCreditBalanceSummary({String? customer, String? customerAccount, List<String>? expand, required GetBillingCreditBalanceSummaryFilter filter, GetBillingCreditBalanceSummaryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingCreditBalanceSummary, ErrorModel>> getBillingCreditBalanceSummary({required GetBillingCreditBalanceSummaryFilter filter, String? customer, String? customerAccount, List<String>? expand, GetBillingCreditBalanceSummaryRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -2561,7 +2561,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2614,7 +2614,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2649,7 +2649,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2699,7 +2699,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2726,7 +2726,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'applicability_config=${Uri.encodeQueryComponent(body.applicabilityConfig.toString())}',
     if (body.category case final category$?)
@@ -2781,7 +2781,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -2808,7 +2808,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.expiresAt case final expiresAt$?)
@@ -2841,7 +2841,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}/expire',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -2870,7 +2870,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/credit_grants/${Uri.encodeComponent(id)}/void',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -2899,7 +2899,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meter_event_adjustments',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.cancel case final cancel$?)
       'cancel=${Uri.encodeQueryComponent(cancel$.toString())}',
     'event_name=${Uri.encodeQueryComponent(body.eventName)}',
@@ -2932,7 +2932,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meter_events',
   headers: headers,
-  body: [
+  body: <String>[
     'event_name=${Uri.encodeQueryComponent(body.eventName)}',
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
@@ -2987,7 +2987,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -3014,7 +3014,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.customerMapping case final customerMapping$?)
       'customer_mapping=${Uri.encodeQueryComponent(customerMapping$.toString())}',
     'default_aggregation=${Uri.encodeQueryComponent(body.defaultAggregation.toString())}',
@@ -3060,7 +3060,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -3087,7 +3087,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.displayName case final displayName$?)
       'display_name=${Uri.encodeQueryComponent(displayName$)}',
     if (body.expand case final expand$?)
@@ -3118,7 +3118,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}/deactivate',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -3140,7 +3140,7 @@ return execute(
 /// `<p>`Retrieve a list of billing meter event summaries.`</p>`
 ///
 /// `GET /v1/billing/meters/{id}/event_summaries`
-Future<ApiResult<GetBillingMetersIdEventSummariesResponse, ErrorModel>> getBillingMetersIdEventSummaries({required String id, required String customer, required int endTime, String? endingBefore, List<String>? expand, int? limit, required int startTime, String? startingAfter, GetBillingMetersIdEventSummariesValueGroupingWindow? valueGroupingWindow, GetBillingMetersIdEventSummariesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetBillingMetersIdEventSummariesResponse, ErrorModel>> getBillingMetersIdEventSummaries({required String id, required String customer, required int endTime, required int startTime, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetBillingMetersIdEventSummariesValueGroupingWindow? valueGroupingWindow, GetBillingMetersIdEventSummariesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['customer'] = customer;
 queryParameters['end_time'] = endTime.toString();
@@ -3170,7 +3170,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -3197,7 +3197,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing/meters/${Uri.encodeComponent(id)}/reactivate',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -3249,7 +3249,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -3276,7 +3276,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing_portal/configurations',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.businessProfile case final businessProfile$?)
       'business_profile=${Uri.encodeQueryComponent(businessProfile$.toString())}',
     if (body.defaultReturnUrl case final defaultReturnUrl$?)
@@ -3324,7 +3324,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -3351,7 +3351,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing_portal/configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.businessProfile case final businessProfile$?)
@@ -3394,7 +3394,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/billing_portal/sessions',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.configuration case final configuration$?)
       'configuration=${Uri.encodeQueryComponent(configuration$)}',
     if (body.customer case final customer$?)
@@ -3433,7 +3433,7 @@ return execute(
 Future<ApiResult<GetChargesResponse, ErrorModel>> getCharges({GetChargesCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? startingAfter, String? transferGroup, GetChargesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -3466,7 +3466,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -3494,7 +3494,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.applicationFee case final applicationFee$?)
@@ -3557,7 +3557,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/charges/search`
-Future<ApiResult<GetChargesSearchResponse, ErrorModel>> getChargesSearch({List<String>? expand, int? limit, String? page, required String query, GetChargesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetChargesSearchResponse, ErrorModel>> getChargesSearch({required String query, List<String>? expand, int? limit, String? page, GetChargesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -3579,7 +3579,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -3614,7 +3614,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -3641,7 +3641,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.customer case final customer$?)
       'customer=${Uri.encodeQueryComponent(customer$)}',
     if (body.description case final description$?)
@@ -3688,7 +3688,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/capture',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.applicationFee case final applicationFee$?)
@@ -3740,7 +3740,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -3766,7 +3766,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/dispute',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.evidence case final evidence$?)
       'evidence=${Uri.encodeQueryComponent(evidence$.toString())}',
     if (body.expand case final expand$?)
@@ -3800,7 +3800,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/dispute/close',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -3839,7 +3839,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refund',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.expand case final expand$?)
@@ -3899,7 +3899,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -3936,7 +3936,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refunds',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.currency case final currency$?)
@@ -3992,7 +3992,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4018,7 +4018,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/charges/${Uri.encodeComponent(charge)}/refunds/${Uri.encodeComponent(refund)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -4045,7 +4045,7 @@ return execute(
 Future<ApiResult<GetCheckoutSessionsResponse, ErrorModel>> getCheckoutSessions({GetCheckoutSessionsCreated? created, String? customer, String? customerAccount, GetCheckoutSessionsCustomerDetails? customerDetails, String? endingBefore, List<String>? expand, int? limit, String? paymentIntent, String? paymentLink, String? startingAfter, GetCheckoutSessionsStatus? status, String? subscription, GetCheckoutSessionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -4090,7 +4090,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4117,7 +4117,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/checkout/sessions',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.adaptivePricing case final adaptivePricing$?)
       'adaptive_pricing=${Uri.encodeQueryComponent(adaptivePricing$.toString())}',
     if (body.afterExpiration case final afterExpiration$?)
@@ -4250,7 +4250,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4279,7 +4279,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/checkout/sessions/${Uri.encodeComponent(session)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.collectedInformation case final collectedInformation$?)
       'collected_information=${Uri.encodeQueryComponent(collectedInformation$.toString())}',
     if (body.expand case final expand$?)
@@ -4318,7 +4318,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/checkout/sessions/${Uri.encodeComponent(session)}/expire',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -4364,7 +4364,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4409,7 +4409,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4437,7 +4437,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/climate/orders',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.beneficiary case final beneficiary$?)
@@ -4485,7 +4485,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4512,7 +4512,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/climate/orders/${Uri.encodeComponent(order)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.beneficiary case final beneficiary$?)
       'beneficiary=${Uri.encodeQueryComponent(beneficiary$.toString())}',
     if (body.expand case final expand$?)
@@ -4548,7 +4548,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/climate/orders/${Uri.encodeComponent(order)}/cancel',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -4594,7 +4594,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4629,7 +4629,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4673,7 +4673,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4708,7 +4708,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4743,7 +4743,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4787,7 +4787,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4822,7 +4822,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4845,7 +4845,7 @@ return execute(
 Future<ApiResult<GetCouponsResponse, ErrorModel>> getCoupons({GetCouponsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetCouponsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -4869,7 +4869,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4898,7 +4898,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/coupons',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amountOff case final amountOff$?)
       'amount_off=${Uri.encodeQueryComponent(amountOff$.toString())}',
     if (body.appliesTo case final appliesTo$?)
@@ -4959,7 +4959,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -4986,7 +4986,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/coupons/${Uri.encodeComponent(coupon)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.currencyOptions case final currencyOptions$?)
       'currency_options=${Uri.encodeQueryComponent(currencyOptions$.toString())}',
     if (body.expand case final expand$?)
@@ -5021,7 +5021,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/coupons/${Uri.encodeComponent(coupon)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -5044,7 +5044,7 @@ return execute(
 Future<ApiResult<GetCreditNotesResponse, ErrorModel>> getCreditNotes({GetCreditNotesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, GetCreditNotesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -5077,7 +5077,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -5116,7 +5116,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/credit_notes',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.creditAmount case final creditAmount$?)
@@ -5163,7 +5163,7 @@ return execute(
 /// `<p>`Get a preview of a credit note without creating it.`</p>`
 ///
 /// `GET /v1/credit_notes/preview`
-Future<ApiResult<CreditNote, ErrorModel>> getCreditNotesPreview({int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewEmailType? emailType, List<String>? expand, required String invoice, List<GetCreditNotesPreviewLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewReason? reason, int? refundAmount, List<GetCreditNotesPreviewRefunds>? refunds, GetCreditNotesPreviewShippingCost? shippingCost, GetCreditNotesPreviewRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CreditNote, ErrorModel>> getCreditNotesPreview({required String invoice, int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewEmailType? emailType, List<String>? expand, List<GetCreditNotesPreviewLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewReason? reason, int? refundAmount, List<GetCreditNotesPreviewRefunds>? refunds, GetCreditNotesPreviewShippingCost? shippingCost, GetCreditNotesPreviewRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amount != null) {
   queryParameters['amount'] = amount.toString();
@@ -5217,7 +5217,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -5237,7 +5237,7 @@ return execute(
 /// `<p>`When retrieving a credit note preview, you’ll get a `<strong>`lines`</strong>` property containing the first handful of those items. This URL you can retrieve the full (paginated) list of line items.`</p>`
 ///
 /// `GET /v1/credit_notes/preview/lines`
-Future<ApiResult<GetCreditNotesPreviewLinesResponse, ErrorModel>> getCreditNotesPreviewLines({int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewLinesEmailType? emailType, String? endingBefore, List<String>? expand, required String invoice, int? limit, List<GetCreditNotesPreviewLinesLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewLinesReason? reason, int? refundAmount, List<GetCreditNotesPreviewLinesRefunds>? refunds, GetCreditNotesPreviewLinesShippingCost? shippingCost, String? startingAfter, GetCreditNotesPreviewLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCreditNotesPreviewLinesResponse, ErrorModel>> getCreditNotesPreviewLines({required String invoice, int? amount, int? creditAmount, int? effectiveAt, GetCreditNotesPreviewLinesEmailType? emailType, String? endingBefore, List<String>? expand, int? limit, List<GetCreditNotesPreviewLinesLines>? lines, String? memo, Map<String,String>? metadata, int? outOfBandAmount, GetCreditNotesPreviewLinesReason? reason, int? refundAmount, List<GetCreditNotesPreviewLinesRefunds>? refunds, GetCreditNotesPreviewLinesShippingCost? shippingCost, String? startingAfter, GetCreditNotesPreviewLinesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amount != null) {
   queryParameters['amount'] = amount.toString();
@@ -5300,7 +5300,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -5344,7 +5344,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -5379,7 +5379,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -5406,7 +5406,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/credit_notes/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.memo case final memo$?)
@@ -5439,7 +5439,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/credit_notes/${Uri.encodeComponent(id)}/void',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -5468,7 +5468,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customer_sessions',
   headers: headers,
-  body: [
+  body: <String>[
     'components=${Uri.encodeQueryComponent(body.components.toString())}',
     if (body.customer case final customer$?)
       'customer=${Uri.encodeQueryComponent(customer$)}',
@@ -5498,7 +5498,7 @@ return execute(
 Future<ApiResult<GetCustomersResponse, ErrorModel>> getCustomers({GetCustomersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? testClock, GetCustomersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (email != null) {
   queryParameters['email'] = email;
@@ -5528,7 +5528,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -5555,7 +5555,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.address case final address$?)
       'address=${Uri.encodeQueryComponent(address$.toString())}',
     if (body.balance case final balance$?)
@@ -5622,7 +5622,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/customers/search`
-Future<ApiResult<GetCustomersSearchResponse, ErrorModel>> getCustomersSearch({List<String>? expand, int? limit, String? page, required String query, GetCustomersSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetCustomersSearchResponse, ErrorModel>> getCustomersSearch({required String query, List<String>? expand, int? limit, String? page, GetCustomersSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -5644,7 +5644,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -5679,7 +5679,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -5708,7 +5708,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.address case final address$?)
       'address=${Uri.encodeQueryComponent(address$.toString())}',
     if (body.balance case final balance$?)
@@ -5785,7 +5785,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -5808,7 +5808,7 @@ return execute(
 Future<ApiResult<GetCustomersCustomerBalanceTransactionsResponse, ErrorModel>> getCustomersCustomerBalanceTransactions({required String customer, GetCustomersCustomerBalanceTransactionsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, String? startingAfter, GetCustomersCustomerBalanceTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -5835,7 +5835,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -5862,7 +5862,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/balance_transactions',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
     if (body.description case final description$?)
@@ -5905,7 +5905,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -5932,7 +5932,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/balance_transactions/${Uri.encodeComponent(transaction)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.description case final description$?)
       'description=${Uri.encodeQueryComponent(description$)}',
     if (body.expand case final expand$?)
@@ -5969,7 +5969,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.alipayAccount case final alipayAccount$?)
       'alipay_account=${Uri.encodeQueryComponent(alipayAccount$)}',
     if (body.bankAccount case final bankAccount$?)
@@ -6007,7 +6007,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.accountHolderName case final accountHolderName$?)
       'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
     if (body.accountHolderType case final accountHolderType$?)
@@ -6062,7 +6062,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -6091,7 +6091,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/bank_accounts/${Uri.encodeComponent(id)}/verify',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amounts case final amounts$?)
       'amounts=${Uri.encodeQueryComponent(amounts$.toString())}',
     if (body.expand case final expand$?)
@@ -6126,7 +6126,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.alipayAccount case final alipayAccount$?)
       'alipay_account=${Uri.encodeQueryComponent(alipayAccount$)}',
     if (body.bankAccount case final bankAccount$?)
@@ -6164,7 +6164,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.accountHolderName case final accountHolderName$?)
       'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
     if (body.accountHolderType case final accountHolderType$?)
@@ -6219,7 +6219,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cards/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -6256,7 +6256,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -6283,7 +6283,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/cash_balance',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.settings case final settings$?)
@@ -6331,7 +6331,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -6366,7 +6366,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -6400,7 +6400,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -6427,7 +6427,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/discount',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -6456,7 +6456,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/funding_instructions',
   headers: headers,
-  body: [
+  body: <String>[
     'bank_transfer=${Uri.encodeQueryComponent(body.bankTransfer.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
     if (body.expand case final expand$?)
@@ -6511,7 +6511,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -6546,7 +6546,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -6592,7 +6592,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -6623,7 +6623,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.alipayAccount case final alipayAccount$?)
       'alipay_account=${Uri.encodeQueryComponent(alipayAccount$)}',
     if (body.bankAccount case final bankAccount$?)
@@ -6669,7 +6669,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -6695,7 +6695,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.accountHolderName case final accountHolderName$?)
       'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
     if (body.accountHolderType case final accountHolderType$?)
@@ -6750,7 +6750,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -6779,7 +6779,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/sources/${Uri.encodeComponent(id)}/verify',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amounts case final amounts$?)
       'amounts=${Uri.encodeQueryComponent(amounts$.toString())}',
     if (body.expand case final expand$?)
@@ -6827,7 +6827,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -6854,7 +6854,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.addInvoiceItems case final addInvoiceItems$?)
       'add_invoice_items=${Uri.encodeQueryComponent(addInvoiceItems$.toString())}',
     if (body.applicationFeePercent case final applicationFeePercent$?)
@@ -6947,7 +6947,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -6974,7 +6974,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.addInvoiceItems case final addInvoiceItems$?)
       'add_invoice_items=${Uri.encodeQueryComponent(addInvoiceItems$.toString())}',
     if (body.applicationFeePercent case final applicationFeePercent$?)
@@ -7063,7 +7063,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.invoiceNow case final invoiceNow$?)
@@ -7103,7 +7103,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7130,7 +7130,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}/discount',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7174,7 +7174,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7201,7 +7201,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/tax_ids',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'type=${Uri.encodeQueryComponent(body.type.toJson())}',
@@ -7240,7 +7240,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7267,7 +7267,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/customers/${Uri.encodeComponent(customer)}/tax_ids/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7293,7 +7293,7 @@ if (charge != null) {
   queryParameters['charge'] = charge;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -7320,7 +7320,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7355,7 +7355,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7384,7 +7384,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/disputes/${Uri.encodeComponent(dispute)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.evidence case final evidence$?)
       'evidence=${Uri.encodeQueryComponent(evidence$.toString())}',
     if (body.expand case final expand$?)
@@ -7421,7 +7421,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/disputes/${Uri.encodeComponent(dispute)}/close',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -7468,7 +7468,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7503,7 +7503,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7553,7 +7553,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7580,7 +7580,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/entitlements/features',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'lookup_key=${Uri.encodeQueryComponent(body.lookupKey)}',
@@ -7621,7 +7621,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7648,7 +7648,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/entitlements/features/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.expand case final expand$?)
@@ -7683,7 +7683,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/ephemeral_keys',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.customer case final customer$?)
       'customer=${Uri.encodeQueryComponent(customer$)}',
     if (body.expand case final expand$?)
@@ -7720,7 +7720,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/ephemeral_keys/${Uri.encodeComponent(key)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -7745,7 +7745,7 @@ return execute(
 Future<ApiResult<GetEventsResponse, ErrorModel>> getEvents({GetEventsCreated? created, bool? deliverySuccess, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? type, List<String>? types, GetEventsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (deliverySuccess != null) {
   queryParameters['delivery_success'] = deliverySuccess.toString();
@@ -7778,7 +7778,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7813,7 +7813,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7830,7 +7830,7 @@ return execute(
  } 
 /// List all exchange rates
 ///
-/// `<p>`[Deprecated] The `<code>`ExchangeRate`</code>` APIs are deprecated. Please use the `<a href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">`FX Quotes API`</a>` instead.`</p>`
+/// `<p>``[Deprecated]` The `<code>`ExchangeRate`</code>` APIs are deprecated. Please use the `<a href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">`FX Quotes API`</a>` instead.`</p>`
 /// 
 /// `<p>`Returns a list of objects that contain the rates at which foreign currencies are converted to one another. Only shows the currencies for which Stripe supports.`</p>`
 ///
@@ -7859,7 +7859,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7876,7 +7876,7 @@ return execute(
  } 
 /// Retrieve an exchange rate
 ///
-/// `<p>`[Deprecated] The `<code>`ExchangeRate`</code>` APIs are deprecated. Please use the `<a href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">`FX Quotes API`</a>` instead.`</p>`
+/// `<p>``[Deprecated]` The `<code>`ExchangeRate`</code>` APIs are deprecated. Please use the `<a href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">`FX Quotes API`</a>` instead.`</p>`
 /// 
 /// `<p>`Retrieves the exchange rates from the given currency to every supported currency.`</p>`
 ///
@@ -7896,7 +7896,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -7929,7 +7929,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/external_accounts/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.accountHolderName case final accountHolderName$?)
       'account_holder_name=${Uri.encodeQueryComponent(accountHolderName$)}',
     if (body.accountHolderType case final accountHolderType$?)
@@ -7984,7 +7984,7 @@ return execute(
 Future<ApiResult<GetFileLinksResponse, ErrorModel>> getFileLinks({GetFileLinksCreated? created, String? endingBefore, List<String>? expand, bool? expired, String? file, int? limit, String? startingAfter, GetFileLinksRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -8014,7 +8014,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8041,7 +8041,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/file_links',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.expiresAt case final expiresAt$?)
@@ -8083,7 +8083,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8110,7 +8110,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/file_links/${Uri.encodeComponent(link)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.expiresAt case final expiresAt$?)
@@ -8139,7 +8139,7 @@ return execute(
 Future<ApiResult<GetFilesResponse, ErrorModel>> getFiles({GetFilesCreated? created, String? endingBefore, List<String>? expand, int? limit, GetFilesPurpose? purpose, String? startingAfter, GetFilesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -8166,7 +8166,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8236,7 +8236,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8288,7 +8288,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8323,7 +8323,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8350,7 +8350,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/disconnect',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -8372,7 +8372,7 @@ return execute(
 /// `<p>`Lists all owners for a given `<code>`Account`</code>``</p>`
 ///
 /// `GET /v1/financial_connections/accounts/{account}/owners`
-Future<ApiResult<GetFinancialConnectionsAccountsAccountOwnersResponse, ErrorModel>> getFinancialConnectionsAccountsAccountOwners({required String account, String? endingBefore, List<String>? expand, int? limit, required String ownership, String? startingAfter, GetFinancialConnectionsAccountsAccountOwnersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetFinancialConnectionsAccountsAccountOwnersResponse, ErrorModel>> getFinancialConnectionsAccountsAccountOwners({required String account, required String ownership, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetFinancialConnectionsAccountsAccountOwnersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -8397,7 +8397,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8424,7 +8424,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/refresh',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'features=${Uri.encodeQueryComponent(body.features.toString())}',
@@ -8454,7 +8454,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/subscribe',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'features=${Uri.encodeQueryComponent(body.features.toString())}',
@@ -8484,7 +8484,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/accounts/${Uri.encodeComponent(account)}/unsubscribe',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'features=${Uri.encodeQueryComponent(body.features.toString())}',
@@ -8514,7 +8514,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/financial_connections/sessions',
   headers: headers,
-  body: [
+  body: <String>[
     'account_holder=${Uri.encodeQueryComponent(body.accountHolder.toString())}',
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
@@ -8559,7 +8559,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8595,7 +8595,7 @@ if (startingAfter != null) {
   queryParameters['starting_after'] = startingAfter;
 }
 if (transactedAt != null) {
-queryParametersList.add(ApiQueryParameter(name: 'transacted_at', value: transactedAt.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'transacted_at', value: transactedAt.toString()));
 }
 if (transactionRefresh != null) {
 queryParameters['transaction_refresh[after]'] = transactionRefresh.after;
@@ -8610,7 +8610,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8645,7 +8645,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8695,7 +8695,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8722,7 +8722,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/forwarding/requests',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -8766,7 +8766,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8792,7 +8792,7 @@ if (clientReferenceId != null) {
   queryParameters['client_reference_id'] = clientReferenceId;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -8822,7 +8822,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8857,7 +8857,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8883,7 +8883,7 @@ if (clientReferenceId != null) {
   queryParameters['client_reference_id'] = clientReferenceId;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -8916,7 +8916,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -8949,7 +8949,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.clientReferenceId case final clientReferenceId$?)
       'client_reference_id=${Uri.encodeQueryComponent(clientReferenceId$)}',
     if (body.expand case final expand$?)
@@ -9009,7 +9009,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -9039,7 +9039,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -9078,7 +9078,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}/cancel',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -9111,7 +9111,7 @@ return execute(
 /// will be emitted.`</p>`
 /// 
 /// `<p>`Redaction is irreversible. Redacted objects are still accessible in the Stripe API, but all the
-/// fields that contain personal data will be replaced by the string `<code>`[redacted]`</code>` or a similar
+/// fields that contain personal data will be replaced by the string `<code>``[redacted]``</code>` or a similar
 /// placeholder. The `<code>`metadata`</code>` field will also be erased. Redacted objects cannot be updated or
 /// used for any purpose.`</p>`
 /// 
@@ -9125,7 +9125,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/identity/verification_sessions/${Uri.encodeComponent(session)}/redact',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -9150,7 +9150,7 @@ return execute(
 Future<ApiResult<GetInvoicePaymentsResponse, ErrorModel>> getInvoicePayments({GetInvoicePaymentsCreated? created, String? endingBefore, List<String>? expand, String? invoice, int? limit, GetInvoicePaymentsPayment? payment, String? startingAfter, GetInvoicePaymentsStatus? status, GetInvoicePaymentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -9185,7 +9185,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -9220,7 +9220,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -9267,7 +9267,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -9305,7 +9305,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -9332,7 +9332,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoice_rendering_templates/${Uri.encodeComponent(template)}/archive',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -9361,7 +9361,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoice_rendering_templates/${Uri.encodeComponent(template)}/unarchive',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -9386,7 +9386,7 @@ return execute(
 Future<ApiResult<GetInvoiceitemsResponse, ErrorModel>> getInvoiceitems({GetInvoiceitemsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, String? invoice, int? limit, bool? pending, String? startingAfter, GetInvoiceitemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -9422,7 +9422,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -9449,7 +9449,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoiceitems',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.currency case final currency$?)
@@ -9522,7 +9522,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -9549,7 +9549,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoiceitems/${Uri.encodeComponent(invoiceitem)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.description case final description$?)
@@ -9604,7 +9604,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/invoiceitems/${Uri.encodeComponent(invoiceitem)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -9630,7 +9630,7 @@ if (collectionMethod != null) {
   queryParameters['collection_method'] = collectionMethod.toJson();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -9639,7 +9639,7 @@ if (customerAccount != null) {
   queryParameters['customer_account'] = customerAccount;
 }
 if (dueDate != null) {
-queryParametersList.add(ApiQueryParameter(name: 'due_date', value: dueDate.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'due_date', value: dueDate.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -9669,7 +9669,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -9696,7 +9696,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.accountTaxIds case final accountTaxIds$?)
       'account_tax_ids=${Uri.encodeQueryComponent(accountTaxIds$.toString())}',
     if (body.applicationFeeAmount case final applicationFeeAmount$?)
@@ -9797,7 +9797,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/create_preview',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.automaticTax case final automaticTax$?)
       'automatic_tax=${Uri.encodeQueryComponent(automaticTax$.toString())}',
     if (body.currency case final currency$?)
@@ -9850,7 +9850,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/invoices/search`
-Future<ApiResult<GetInvoicesSearchResponse, ErrorModel>> getInvoicesSearch({List<String>? expand, int? limit, String? page, required String query, GetInvoicesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetInvoicesSearchResponse, ErrorModel>> getInvoicesSearch({required String query, List<String>? expand, int? limit, String? page, GetInvoicesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -9872,7 +9872,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -9907,7 +9907,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -9939,7 +9939,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.accountTaxIds case final accountTaxIds$?)
       'account_tax_ids=${Uri.encodeQueryComponent(accountTaxIds$.toString())}',
     if (body.applicationFeeAmount case final applicationFeeAmount$?)
@@ -10020,7 +10020,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -10047,7 +10047,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/add_lines',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.invoiceMetadata case final invoiceMetadata$?)
@@ -10088,7 +10088,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/attach_payment',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.paymentIntent case final paymentIntent$?)
@@ -10121,7 +10121,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/finalize',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.autoAdvance case final autoAdvance$?)
       'auto_advance=${Uri.encodeQueryComponent(autoAdvance$.toString())}',
     if (body.expand case final expand$?)
@@ -10169,7 +10169,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -10199,7 +10199,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/lines/${Uri.encodeComponent(lineItemId)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.description case final description$?)
@@ -10250,7 +10250,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/mark_uncollectible',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -10279,7 +10279,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/pay',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.forgive case final forgive$?)
@@ -10320,7 +10320,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/remove_lines',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.invoiceMetadata case final invoiceMetadata$?)
@@ -10354,7 +10354,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/send',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -10383,7 +10383,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/update_lines',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.invoiceMetadata case final invoiceMetadata$?)
@@ -10417,7 +10417,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/invoices/${Uri.encodeComponent(invoice)}/void',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -10448,7 +10448,7 @@ if (cardholder != null) {
   queryParameters['cardholder'] = cardholder;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -10475,7 +10475,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -10510,7 +10510,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -10537,7 +10537,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/authorizations/${Uri.encodeComponent(authorization)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -10564,7 +10564,7 @@ return execute(
 Future<ApiResult<GetIssuingCardholdersResponse, ErrorModel>> getIssuingCardholders({GetIssuingCardholdersCreated? created, String? email, String? endingBefore, List<String>? expand, int? limit, String? phoneNumber, String? startingAfter, GetIssuingCardholdersStatus? status, GetIssuingCardholdersType? type, GetIssuingCardholdersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (email != null) {
   queryParameters['email'] = email;
@@ -10600,7 +10600,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -10627,7 +10627,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cardholders',
   headers: headers,
-  body: [
+  body: <String>[
     'billing=${Uri.encodeQueryComponent(body.billing.toString())}',
     if (body.company case final company$?)
       'company=${Uri.encodeQueryComponent(company$.toString())}',
@@ -10684,7 +10684,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -10711,7 +10711,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cardholders/${Uri.encodeComponent(cardholder)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.billing case final billing$?)
       'billing=${Uri.encodeQueryComponent(billing$.toString())}',
     if (body.company case final company$?)
@@ -10757,7 +10757,7 @@ if (cardholder != null) {
   queryParameters['cardholder'] = cardholder;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -10799,7 +10799,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -10826,7 +10826,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cards',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.cardholder case final cardholder$?)
       'cardholder=${Uri.encodeQueryComponent(cardholder$)}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
@@ -10891,7 +10891,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -10918,7 +10918,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/cards/${Uri.encodeComponent(card)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.cancellationReason case final cancellationReason$?)
       'cancellation_reason=${Uri.encodeQueryComponent(cancellationReason$.toJson())}',
     if (body.expand case final expand$?)
@@ -10957,7 +10957,7 @@ return execute(
 Future<ApiResult<GetIssuingDisputesResponse, ErrorModel>> getIssuingDisputes({GetIssuingDisputesCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetIssuingDisputesStatus? status, String? transaction, GetIssuingDisputesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -10987,7 +10987,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11014,7 +11014,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/disputes',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.evidence case final evidence$?)
@@ -11061,7 +11061,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11088,7 +11088,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/disputes/${Uri.encodeComponent(dispute)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.evidence case final evidence$?)
@@ -11123,7 +11123,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/disputes/${Uri.encodeComponent(dispute)}/submit',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -11181,7 +11181,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11208,7 +11208,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/personalization_designs',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.cardLogo case final cardLogo$?)
       'card_logo=${Uri.encodeQueryComponent(cardLogo$)}',
     if (body.carrierText case final carrierText$?)
@@ -11260,7 +11260,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11287,7 +11287,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.cardLogo case final cardLogo$?)
       'card_logo=${Uri.encodeQueryComponent(cardLogo$.toString())}',
     if (body.carrierText case final carrierText$?)
@@ -11355,7 +11355,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11390,7 +11390,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11425,7 +11425,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11452,7 +11452,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/settlements/${Uri.encodeComponent(settlement)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -11480,7 +11480,7 @@ Future<ApiResult<GetIssuingTokensResponse, ErrorModel>> getIssuingTokens({requir
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['card'] = card;
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -11507,7 +11507,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11542,7 +11542,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11569,7 +11569,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/tokens/${Uri.encodeComponent(token)}',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'status=${Uri.encodeQueryComponent(body.status.toJson())}',
@@ -11601,7 +11601,7 @@ if (cardholder != null) {
   queryParameters['cardholder'] = cardholder;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -11628,7 +11628,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11663,7 +11663,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11690,7 +11690,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/issuing/transactions/${Uri.encodeComponent(transaction)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -11721,7 +11721,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/link_account_sessions',
   headers: headers,
-  body: [
+  body: <String>[
     'account_holder=${Uri.encodeQueryComponent(body.accountHolder.toString())}',
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
@@ -11766,7 +11766,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11818,7 +11818,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11853,7 +11853,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11880,7 +11880,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/linked_accounts/${Uri.encodeComponent(account)}/disconnect',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -11902,7 +11902,7 @@ return execute(
 /// `<p>`Lists all owners for a given `<code>`Account`</code>``</p>`
 ///
 /// `GET /v1/linked_accounts/{account}/owners`
-Future<ApiResult<GetLinkedAccountsAccountOwnersResponse, ErrorModel>> getLinkedAccountsAccountOwners({required String account, String? endingBefore, List<String>? expand, int? limit, required String ownership, String? startingAfter, GetLinkedAccountsAccountOwnersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetLinkedAccountsAccountOwnersResponse, ErrorModel>> getLinkedAccountsAccountOwners({required String account, required String ownership, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetLinkedAccountsAccountOwnersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -11927,7 +11927,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -11954,7 +11954,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/linked_accounts/${Uri.encodeComponent(account)}/refresh',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'features=${Uri.encodeQueryComponent(body.features.toString())}',
@@ -11992,7 +11992,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -12012,7 +12012,7 @@ return execute(
 /// `<p>`List all the Payment Attempt Records attached to the specified Payment Record.`</p>`
 ///
 /// `GET /v1/payment_attempt_records`
-Future<ApiResult<GetPaymentAttemptRecordsResponse, ErrorModel>> getPaymentAttemptRecords({List<String>? expand, int? limit, required String paymentRecord, String? startingAfter, GetPaymentAttemptRecordsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentAttemptRecordsResponse, ErrorModel>> getPaymentAttemptRecords({required String paymentRecord, List<String>? expand, int? limit, String? startingAfter, GetPaymentAttemptRecordsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -12034,7 +12034,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -12069,7 +12069,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -12092,7 +12092,7 @@ return execute(
 Future<ApiResult<GetPaymentIntentsResponse, ErrorModel>> getPaymentIntents({GetPaymentIntentsCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentIntentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -12122,7 +12122,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -12158,7 +12158,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     if (body.amountDetails case final amountDetails$?)
       'amount_details=${Uri.encodeQueryComponent(amountDetails$.toString())}',
@@ -12253,7 +12253,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/payment_intents/search`
-Future<ApiResult<GetPaymentIntentsSearchResponse, ErrorModel>> getPaymentIntentsSearch({List<String>? expand, int? limit, String? page, required String query, GetPaymentIntentsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPaymentIntentsSearchResponse, ErrorModel>> getPaymentIntentsSearch({required String query, List<String>? expand, int? limit, String? page, GetPaymentIntentsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -12275,7 +12275,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -12317,7 +12317,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -12350,7 +12350,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.amountDetails case final amountDetails$?)
@@ -12444,7 +12444,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -12471,7 +12471,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/apply_customer_balance',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.currency case final currency$?)
@@ -12508,7 +12508,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/cancel',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.cancellationReason case final cancellationReason$?)
       'cancellation_reason=${Uri.encodeQueryComponent(cancellationReason$.toJson())}',
     if (body.expand case final expand$?)
@@ -12543,7 +12543,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/capture',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amountDetails case final amountDetails$?)
       'amount_details=${Uri.encodeQueryComponent(amountDetails$.toString())}',
     if (body.amountToCapture case final amountToCapture$?)
@@ -12621,7 +12621,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/confirm',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amountDetails case final amountDetails$?)
       'amount_details=${Uri.encodeQueryComponent(amountDetails$.toString())}',
     if (body.captureMethod case final captureMethod$?)
@@ -12715,7 +12715,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/increment_authorization',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     if (body.amountDetails case final amountDetails$?)
       'amount_details=${Uri.encodeQueryComponent(amountDetails$.toString())}',
@@ -12761,7 +12761,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_intents/${Uri.encodeComponent(intent)}/verify_microdeposits',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amounts case final amounts$?)
       'amounts=${Uri.encodeQueryComponent(amounts$.toString())}',
     if (body.clientSecret case final clientSecret$?)
@@ -12816,7 +12816,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -12843,7 +12843,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_links',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.afterCompletion case final afterCompletion$?)
       'after_completion=${Uri.encodeQueryComponent(afterCompletion$.toString())}',
     if (body.allowPromotionCodes case final allowPromotionCodes$?)
@@ -12937,7 +12937,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -12964,7 +12964,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_links/${Uri.encodeComponent(paymentLink)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.afterCompletion case final afterCompletion$?)
@@ -13056,7 +13056,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -13079,7 +13079,7 @@ return execute(
 Future<ApiResult<GetPaymentMethodConfigurationsResponse, ErrorModel>> getPaymentMethodConfigurations({GetPaymentMethodConfigurationsApplication? application, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetPaymentMethodConfigurationsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (application != null) {
-queryParametersList.add(ApiQueryParameter(name: 'application', value: application.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'application', value: application.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -13103,7 +13103,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -13130,7 +13130,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_configurations',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.acssDebit case final acssDebit$?)
       'acss_debit=${Uri.encodeQueryComponent(acssDebit$.toString())}',
     if (body.affirm case final affirm$?)
@@ -13283,7 +13283,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -13310,7 +13310,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.acssDebit case final acssDebit$?)
       'acss_debit=${Uri.encodeQueryComponent(acssDebit$.toString())}',
     if (body.active case final active$?)
@@ -13478,7 +13478,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -13505,7 +13505,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_domains',
   headers: headers,
-  body: [
+  body: <String>[
     'domain_name=${Uri.encodeQueryComponent(body.domainName)}',
     if (body.enabled case final enabled$?)
       'enabled=${Uri.encodeQueryComponent(enabled$.toString())}',
@@ -13545,7 +13545,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -13572,7 +13572,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_domains/${Uri.encodeComponent(paymentMethodDomain)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.enabled case final enabled$?)
       'enabled=${Uri.encodeQueryComponent(enabled$.toString())}',
     if (body.expand case final expand$?)
@@ -13608,7 +13608,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_method_domains/${Uri.encodeComponent(paymentMethodDomain)}/validate',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -13666,7 +13666,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -13695,7 +13695,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.acssDebit case final acssDebit$?)
       'acss_debit=${Uri.encodeQueryComponent(acssDebit$.toString())}',
     if (body.affirm case final affirm$?)
@@ -13850,7 +13850,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -13877,7 +13877,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.allowRedisplay case final allowRedisplay$?)
       'allow_redisplay=${Uri.encodeQueryComponent(allowRedisplay$.toJson())}',
     if (body.billingDetails case final billingDetails$?)
@@ -13930,7 +13930,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}/attach',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.customer case final customer$?)
       'customer=${Uri.encodeQueryComponent(customer$)}',
     if (body.customerAccount case final customerAccount$?)
@@ -13963,7 +13963,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_methods/${Uri.encodeComponent(paymentMethod)}/detach',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -13994,7 +13994,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/report_payment',
   headers: headers,
-  body: [
+  body: <String>[
     'amount_requested=${Uri.encodeQueryComponent(body.amountRequested.toString())}',
     if (body.customerDetails case final customerDetails$?)
       'customer_details=${Uri.encodeQueryComponent(customerDetails$.toString())}',
@@ -14052,7 +14052,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -14080,7 +14080,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.description case final description$?)
       'description=${Uri.encodeQueryComponent(description$)}',
     if (body.expand case final expand$?)
@@ -14125,7 +14125,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_canceled',
   headers: headers,
-  body: [
+  body: <String>[
     'canceled_at=${Uri.encodeQueryComponent(body.canceledAt.toString())}',
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
@@ -14158,7 +14158,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_failed',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'failed_at=${Uri.encodeQueryComponent(body.failedAt.toString())}',
@@ -14191,7 +14191,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_guaranteed',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'guaranteed_at=${Uri.encodeQueryComponent(body.guaranteedAt.toString())}',
@@ -14223,7 +14223,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_payment_attempt_informational',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.customerDetails case final customerDetails$?)
       'customer_details=${Uri.encodeQueryComponent(customerDetails$.toString())}',
     if (body.description case final description$?)
@@ -14261,7 +14261,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payment_records/${Uri.encodeComponent(id)}/report_refund',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.expand case final expand$?)
@@ -14295,10 +14295,10 @@ return execute(
 Future<ApiResult<GetPayoutsResponse, ErrorModel>> getPayouts({GetPayoutsArrivalDate? arrivalDate, GetPayoutsCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? status, GetPayoutsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (arrivalDate != null) {
-queryParametersList.add(ApiQueryParameter(name: 'arrival_date', value: arrivalDate.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'arrival_date', value: arrivalDate.toString()));
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (destination != null) {
   queryParameters['destination'] = destination;
@@ -14328,7 +14328,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -14359,7 +14359,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
     if (body.description case final description$?)
@@ -14412,7 +14412,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -14439,7 +14439,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -14470,7 +14470,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}/cancel',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -14501,7 +14501,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/payouts/${Uri.encodeComponent(payout)}/reverse',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -14531,7 +14531,7 @@ if (active != null) {
   queryParameters['active'] = active.toString();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -14558,7 +14558,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -14585,7 +14585,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/plans',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.amount case final amount$?)
@@ -14654,7 +14654,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -14681,7 +14681,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/plans/${Uri.encodeComponent(plan)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.expand case final expand$?)
@@ -14720,7 +14720,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/plans/${Uri.encodeComponent(plan)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -14746,7 +14746,7 @@ if (active != null) {
   queryParameters['active'] = active.toString();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (currency != null) {
   queryParameters['currency'] = currency;
@@ -14787,7 +14787,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -14814,7 +14814,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/prices',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.billingScheme case final billingScheme$?)
@@ -14874,7 +14874,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/prices/search`
-Future<ApiResult<GetPricesSearchResponse, ErrorModel>> getPricesSearch({List<String>? expand, int? limit, String? page, required String query, GetPricesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetPricesSearchResponse, ErrorModel>> getPricesSearch({required String query, List<String>? expand, int? limit, String? page, GetPricesSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -14896,7 +14896,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -14931,7 +14931,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -14958,7 +14958,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/prices/${Uri.encodeComponent(price)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.currencyOptions case final currencyOptions$?)
@@ -15000,7 +15000,7 @@ if (active != null) {
   queryParameters['active'] = active.toString();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -15033,7 +15033,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -15060,7 +15060,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/products',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.defaultPriceData case final defaultPriceData$?)
@@ -15112,7 +15112,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/products/search`
-Future<ApiResult<GetProductsSearchResponse, ErrorModel>> getProductsSearch({List<String>? expand, int? limit, String? page, required String query, GetProductsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetProductsSearchResponse, ErrorModel>> getProductsSearch({required String query, List<String>? expand, int? limit, String? page, GetProductsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -15134,7 +15134,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -15169,7 +15169,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -15196,7 +15196,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/products/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.defaultPrice case final defaultPrice$?)
@@ -15251,7 +15251,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/products/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -15295,7 +15295,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -15322,7 +15322,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/products/${Uri.encodeComponent(product)}/features',
   headers: headers,
-  body: [
+  body: <String>[
     'entitlement_feature=${Uri.encodeQueryComponent(body.entitlementFeature)}',
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
@@ -15360,7 +15360,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -15387,7 +15387,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/products/${Uri.encodeComponent(product)}/features/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -15419,7 +15419,7 @@ if (coupon != null) {
   queryParameters['coupon'] = coupon;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -15449,7 +15449,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -15476,7 +15476,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/promotion_codes',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.code case final code$?)
@@ -15530,7 +15530,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -15557,7 +15557,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/promotion_codes/${Uri.encodeComponent(promotionCode)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.expand case final expand$?)
@@ -15621,7 +15621,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -15648,7 +15648,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.applicationFeeAmount case final applicationFeeAmount$?)
       'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
     if (body.applicationFeePercent case final applicationFeePercent$?)
@@ -15725,7 +15725,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -15752,7 +15752,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.applicationFeeAmount case final applicationFeeAmount$?)
       'application_fee_amount=${Uri.encodeQueryComponent(applicationFeeAmount$.toString())}',
     if (body.applicationFeePercent case final applicationFeePercent$?)
@@ -15817,7 +15817,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/accept',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -15846,7 +15846,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/cancel',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -15892,7 +15892,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -15919,7 +15919,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/quotes/${Uri.encodeComponent(quote)}/finalize',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.expiresAt case final expiresAt$?)
@@ -15967,7 +15967,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16002,7 +16002,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16028,7 +16028,7 @@ if (charge != null) {
   queryParameters['charge'] = charge;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -16055,7 +16055,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16092,7 +16092,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16119,7 +16119,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/payment_evaluations',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.clientDeviceMetadataDetails case final clientDeviceMetadataDetails$?)
       'client_device_metadata_details=${Uri.encodeQueryComponent(clientDeviceMetadataDetails$.toString())}',
     'customer_details=${Uri.encodeQueryComponent(body.customerDetails.toString())}',
@@ -16147,10 +16147,10 @@ return execute(
 /// `<p>`Returns a list of `<code>`ValueListItem`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
 ///
 /// `GET /v1/radar/value_list_items`
-Future<ApiResult<GetRadarValueListItemsResponse, ErrorModel>> getRadarValueListItems({GetRadarValueListItemsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? value, required String valueList, GetRadarValueListItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetRadarValueListItemsResponse, ErrorModel>> getRadarValueListItems({required String valueList, GetRadarValueListItemsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? value, GetRadarValueListItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -16178,7 +16178,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16205,7 +16205,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/value_list_items',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'value=${Uri.encodeQueryComponent(body.value)}',
@@ -16244,7 +16244,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16271,7 +16271,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/radar/value_list_items/${Uri.encodeComponent(item)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16300,7 +16300,7 @@ if (contains != null) {
   queryParameters['contains'] = contains;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -16324,7 +16324,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16351,7 +16351,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/value_lists',
   headers: headers,
-  body: [
+  body: <String>[
     'alias=${Uri.encodeQueryComponent(body.alias)}',
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
@@ -16394,7 +16394,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16421,7 +16421,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/radar/value_lists/${Uri.encodeComponent(valueList)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.alias case final alias$?)
       'alias=${Uri.encodeQueryComponent(alias$)}',
     if (body.expand case final expand$?)
@@ -16456,7 +16456,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/radar/value_lists/${Uri.encodeComponent(valueList)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16482,7 +16482,7 @@ if (charge != null) {
   queryParameters['charge'] = charge;
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -16509,7 +16509,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16546,7 +16546,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/refunds',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.charge case final charge$?)
@@ -16605,7 +16605,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16634,7 +16634,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/refunds/${Uri.encodeComponent(refund)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -16667,7 +16667,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/refunds/${Uri.encodeComponent(refund)}/cancel',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -16692,7 +16692,7 @@ return execute(
 Future<ApiResult<GetReportingReportRunsResponse, ErrorModel>> getReportingReportRuns({GetReportingReportRunsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetReportingReportRunsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -16716,7 +16716,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16743,7 +16743,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/reporting/report_runs',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.parameters case final parameters$?)
@@ -16783,7 +16783,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16818,7 +16818,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16853,7 +16853,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16876,7 +16876,7 @@ return execute(
 Future<ApiResult<GetReviewsResponse, ErrorModel>> getReviews({GetReviewsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetReviewsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -16900,7 +16900,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16935,7 +16935,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -16962,7 +16962,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/reviews/${Uri.encodeComponent(review)}/approve',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -16984,10 +16984,10 @@ return execute(
 /// `<p>`Returns a list of SetupAttempts that associate with a provided SetupIntent.`</p>`
 ///
 /// `GET /v1/setup_attempts`
-Future<ApiResult<GetSetupAttemptsResponse, ErrorModel>> getSetupAttempts({GetSetupAttemptsCreated? created, String? endingBefore, List<String>? expand, int? limit, required String setupIntent, String? startingAfter, GetSetupAttemptsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSetupAttemptsResponse, ErrorModel>> getSetupAttempts({required String setupIntent, GetSetupAttemptsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSetupAttemptsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -17012,7 +17012,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -17038,7 +17038,7 @@ if (attachToSelf != null) {
   queryParameters['attach_to_self'] = attachToSelf.toString();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -17071,7 +17071,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -17101,7 +17101,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.attachToSelf case final attachToSelf$?)
       'attach_to_self=${Uri.encodeQueryComponent(attachToSelf$.toString())}',
     if (body.automaticPaymentMethods case final automaticPaymentMethods$?)
@@ -17187,7 +17187,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -17214,7 +17214,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.attachToSelf case final attachToSelf$?)
       'attach_to_self=${Uri.encodeQueryComponent(attachToSelf$.toString())}',
     if (body.customer case final customer$?)
@@ -17269,7 +17269,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/cancel',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.cancellationReason case final cancellationReason$?)
       'cancellation_reason=${Uri.encodeQueryComponent(cancellationReason$.toJson())}',
     if (body.expand case final expand$?)
@@ -17313,7 +17313,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/confirm',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.clientSecret case final clientSecret$?)
       'client_secret=${Uri.encodeQueryComponent(clientSecret$)}',
     if (body.confirmationToken case final confirmationToken$?)
@@ -17358,7 +17358,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/setup_intents/${Uri.encodeComponent(intent)}/verify_microdeposits',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amounts case final amounts$?)
       'amounts=${Uri.encodeQueryComponent(amounts$.toString())}',
     if (body.clientSecret case final clientSecret$?)
@@ -17392,7 +17392,7 @@ if (active != null) {
   queryParameters['active'] = active.toString();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (currency != null) {
   queryParameters['currency'] = currency;
@@ -17419,7 +17419,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -17446,7 +17446,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/shipping_rates',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.deliveryEstimate case final deliveryEstimate$?)
       'delivery_estimate=${Uri.encodeQueryComponent(deliveryEstimate$.toString())}',
     'display_name=${Uri.encodeQueryComponent(body.displayName)}',
@@ -17496,7 +17496,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -17523,7 +17523,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/shipping_rates/${Uri.encodeComponent(shippingRateToken)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.expand case final expand$?)
@@ -17560,7 +17560,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/sigma/saved_queries/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.name case final name$?)
@@ -17610,7 +17610,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -17645,7 +17645,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -17672,7 +17672,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/sources',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.currency case final currency$?)
@@ -17742,7 +17742,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -17771,7 +17771,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/sources/${Uri.encodeComponent(source)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.expand case final expand$?)
@@ -17818,7 +17818,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -17861,7 +17861,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -17896,7 +17896,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -17922,7 +17922,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/sources/${Uri.encodeComponent(source)}/verify',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'values=${Uri.encodeQueryComponent(body.values.toString())}',
@@ -17945,7 +17945,7 @@ return execute(
 /// `<p>`Returns a list of your subscription items for a given subscription.`</p>`
 ///
 /// `GET /v1/subscription_items`
-Future<ApiResult<GetSubscriptionItemsResponse, ErrorModel>> getSubscriptionItems({String? endingBefore, List<String>? expand, int? limit, String? startingAfter, required String subscription, GetSubscriptionItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSubscriptionItemsResponse, ErrorModel>> getSubscriptionItems({required String subscription, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetSubscriptionItemsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -17970,7 +17970,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -17997,7 +17997,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_items',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.billingThresholds case final billingThresholds$?)
       'billing_thresholds=${Uri.encodeQueryComponent(billingThresholds$.toString())}',
     if (body.discounts case final discounts$?)
@@ -18055,7 +18055,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -18082,7 +18082,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_items/${Uri.encodeComponent(item)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.billingThresholds case final billingThresholds$?)
       'billing_thresholds=${Uri.encodeQueryComponent(billingThresholds$.toString())}',
     if (body.discounts case final discounts$?)
@@ -18133,7 +18133,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/subscription_items/${Uri.encodeComponent(item)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.clearUsage case final clearUsage$?)
       'clear_usage=${Uri.encodeQueryComponent(clearUsage$.toString())}',
     if (body.paymentBehavior case final paymentBehavior$?)
@@ -18164,13 +18164,13 @@ return execute(
 Future<ApiResult<GetSubscriptionSchedulesResponse, ErrorModel>> getSubscriptionSchedules({GetSubscriptionSchedulesCanceledAt? canceledAt, GetSubscriptionSchedulesCompletedAt? completedAt, GetSubscriptionSchedulesCreated? created, String? customer, String? customerAccount, String? endingBefore, List<String>? expand, int? limit, GetSubscriptionSchedulesReleasedAt? releasedAt, bool? scheduled, String? startingAfter, GetSubscriptionSchedulesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (canceledAt != null) {
-queryParametersList.add(ApiQueryParameter(name: 'canceled_at', value: canceledAt.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'canceled_at', value: canceledAt.toString()));
 }
 if (completedAt != null) {
-queryParametersList.add(ApiQueryParameter(name: 'completed_at', value: completedAt.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'completed_at', value: completedAt.toString()));
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -18188,7 +18188,7 @@ if (limit != null) {
   queryParameters['limit'] = limit.toString();
 }
 if (releasedAt != null) {
-queryParametersList.add(ApiQueryParameter(name: 'released_at', value: releasedAt.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'released_at', value: releasedAt.toString()));
 }
 if (scheduled != null) {
   queryParameters['scheduled'] = scheduled.toString();
@@ -18206,7 +18206,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -18233,7 +18233,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.billingMode case final billingMode$?)
       'billing_mode=${Uri.encodeQueryComponent(billingMode$.toString())}',
     if (body.customer case final customer$?)
@@ -18288,7 +18288,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -18315,7 +18315,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.defaultSettings case final defaultSettings$?)
       'default_settings=${Uri.encodeQueryComponent(defaultSettings$.toString())}',
     if (body.endBehavior case final endBehavior$?)
@@ -18354,7 +18354,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}/cancel',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.invoiceNow case final invoiceNow$?)
@@ -18387,7 +18387,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscription_schedules/${Uri.encodeComponent(schedule)}/release',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.preserveCancelDate case final preserveCancelDate$?)
@@ -18420,13 +18420,13 @@ if (collectionMethod != null) {
   queryParameters['collection_method'] = collectionMethod.toJson();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (currentPeriodEnd != null) {
-queryParametersList.add(ApiQueryParameter(name: 'current_period_end', value: currentPeriodEnd.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'current_period_end', value: currentPeriodEnd.toString()));
 }
 if (currentPeriodStart != null) {
-queryParametersList.add(ApiQueryParameter(name: 'current_period_start', value: currentPeriodStart.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'current_period_start', value: currentPeriodStart.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -18465,7 +18465,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -18498,7 +18498,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.addInvoiceItems case final addInvoiceItems$?)
       'add_invoice_items=${Uri.encodeQueryComponent(addInvoiceItems$.toString())}',
     if (body.applicationFeePercent case final applicationFeePercent$?)
@@ -18591,7 +18591,7 @@ return execute(
 /// to an hour behind during outages. Search functionality is not available to merchants in India.`</p>`
 ///
 /// `GET /v1/subscriptions/search`
-Future<ApiResult<GetSubscriptionsSearchResponse, ErrorModel>> getSubscriptionsSearch({List<String>? expand, int? limit, String? page, required String query, GetSubscriptionsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetSubscriptionsSearchResponse, ErrorModel>> getSubscriptionsSearch({required String query, List<String>? expand, int? limit, String? page, GetSubscriptionsSearchRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -18613,7 +18613,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -18648,7 +18648,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -18695,7 +18695,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.addInvoiceItems case final addInvoiceItems$?)
       'add_invoice_items=${Uri.encodeQueryComponent(addInvoiceItems$.toString())}',
     if (body.applicationFeePercent case final applicationFeePercent$?)
@@ -18788,7 +18788,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.cancellationDetails case final cancellationDetails$?)
       'cancellation_details=${Uri.encodeQueryComponent(cancellationDetails$.toString())}',
     if (body.expand case final expand$?)
@@ -18823,7 +18823,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscriptionExposedId)}/discount',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -18850,7 +18850,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscription)}/migrate',
   headers: headers,
-  body: [
+  body: <String>[
     'billing_mode=${Uri.encodeQueryComponent(body.billingMode.toString())}',
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
@@ -18880,7 +18880,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/subscriptions/${Uri.encodeComponent(subscription)}/resume',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.billingCycleAnchor case final billingCycleAnchor$?)
       'billing_cycle_anchor=${Uri.encodeQueryComponent(billingCycleAnchor$.toJson())}',
     if (body.expand case final expand$?)
@@ -18908,7 +18908,7 @@ return execute(
 /// `<p>`Finds a tax association object by PaymentIntent id.`</p>`
 ///
 /// `GET /v1/tax/associations/find`
-Future<ApiResult<TaxAssociation, ErrorModel>> getTaxAssociationsFind({List<String>? expand, required String paymentIntent, GetTaxAssociationsFindRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TaxAssociation, ErrorModel>> getTaxAssociationsFind({required String paymentIntent, List<String>? expand, GetTaxAssociationsFindRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expand != null) {
 queryParameters['expand'] = expand.join(',');
@@ -18924,7 +18924,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -18951,7 +18951,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/calculations',
   headers: headers,
-  body: [
+  body: <String>[
     'currency=${Uri.encodeQueryComponent(body.currency)}',
     if (body.customer case final customer$?)
       'customer=${Uri.encodeQueryComponent(customer$)}',
@@ -19000,7 +19000,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19044,7 +19044,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19091,7 +19091,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19118,7 +19118,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/registrations',
   headers: headers,
-  body: [
+  body: <String>[
     'active_from=${Uri.encodeQueryComponent(body.activeFrom.toString())}',
     'country=${Uri.encodeQueryComponent(body.country)}',
     'country_options=${Uri.encodeQueryComponent(body.countryOptions.toString())}',
@@ -19160,7 +19160,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19189,7 +19189,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/registrations/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.activeFrom case final activeFrom$?)
       'active_from=${Uri.encodeQueryComponent(activeFrom$.toString())}',
     if (body.expand case final expand$?)
@@ -19230,7 +19230,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19257,7 +19257,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/settings',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.defaults case final defaults$?)
       'defaults=${Uri.encodeQueryComponent(defaults$.toString())}',
     if (body.expand case final expand$?)
@@ -19290,7 +19290,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/transactions/create_from_calculation',
   headers: headers,
-  body: [
+  body: <String>[
     'calculation=${Uri.encodeQueryComponent(body.calculation)}',
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
@@ -19325,7 +19325,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax/transactions/create_reversal',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.flatAmount case final flatAmount$?)
@@ -19373,7 +19373,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19417,7 +19417,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19461,7 +19461,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19496,7 +19496,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19546,7 +19546,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19573,7 +19573,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax_ids',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.owner case final owner$?)
@@ -19614,7 +19614,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19641,7 +19641,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/tax_ids/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19667,7 +19667,7 @@ if (active != null) {
   queryParameters['active'] = active.toString();
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -19694,7 +19694,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19721,7 +19721,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax_rates',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.country case final country$?)
@@ -19775,7 +19775,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19802,7 +19802,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tax_rates/${Uri.encodeComponent(taxRate)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.active case final active$?)
       'active=${Uri.encodeQueryComponent(active$.toString())}',
     if (body.country case final country$?)
@@ -19867,7 +19867,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19894,7 +19894,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/configurations',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.bbposWisepad3 case final bbposWisepad3$?)
       'bbpos_wisepad3=${Uri.encodeQueryComponent(bbposWisepad3$.toString())}',
     if (body.bbposWiseposE case final bbposWiseposE$?)
@@ -19953,7 +19953,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -19980,7 +19980,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.bbposWisepad3 case final bbposWisepad3$?)
       'bbpos_wisepad3=${Uri.encodeQueryComponent(bbposWisepad3$.toString())}',
     if (body.bbposWiseposE case final bbposWiseposE$?)
@@ -20031,7 +20031,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/terminal/configurations/${Uri.encodeComponent(configuration)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -20058,7 +20058,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/connection_tokens',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.location case final location$?)
@@ -20106,7 +20106,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -20134,7 +20134,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/locations',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.address case final address$?)
       'address=${Uri.encodeQueryComponent(address$.toString())}',
     if (body.addressKana case final addressKana$?)
@@ -20189,7 +20189,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -20216,7 +20216,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/locations/${Uri.encodeComponent(location)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.address case final address$?)
       'address=${Uri.encodeQueryComponent(address$.toString())}',
     if (body.addressKana case final addressKana$?)
@@ -20263,7 +20263,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/terminal/locations/${Uri.encodeComponent(location)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -20290,7 +20290,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/onboarding_links',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'link_options=${Uri.encodeQueryComponent(body.linkOptions.toString())}',
@@ -20352,7 +20352,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -20379,7 +20379,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.label case final label$?)
@@ -20423,7 +20423,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -20450,7 +20450,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.label case final label$?)
@@ -20483,7 +20483,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -20510,7 +20510,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/cancel_action',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -20539,7 +20539,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/collect_inputs',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'inputs=${Uri.encodeQueryComponent(body.inputs.toString())}',
@@ -20571,7 +20571,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/collect_payment_method',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.collectConfig case final collectConfig$?)
       'collect_config=${Uri.encodeQueryComponent(collectConfig$.toString())}',
     if (body.expand case final expand$?)
@@ -20603,7 +20603,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/confirm_payment_intent',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.confirmConfig case final confirmConfig$?)
       'confirm_config=${Uri.encodeQueryComponent(confirmConfig$.toString())}',
     if (body.expand case final expand$?)
@@ -20635,7 +20635,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/process_payment_intent',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'payment_intent=${Uri.encodeQueryComponent(body.paymentIntent)}',
@@ -20667,7 +20667,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/process_setup_intent',
   headers: headers,
-  body: [
+  body: <String>[
     'allow_redisplay=${Uri.encodeQueryComponent(body.allowRedisplay.toJson())}',
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
@@ -20700,7 +20700,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/refund_payment',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.charge case final charge$?)
@@ -20743,7 +20743,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/readers/${Uri.encodeComponent(reader)}/set_reader_display',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.cart case final cart$?)
       'cart=${Uri.encodeQueryComponent(cart$.toString())}',
     if (body.expand case final expand$?)
@@ -20778,7 +20778,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/terminal/refunds',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.charge case final charge$?)
@@ -20821,7 +20821,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/confirmation_tokens',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.paymentMethod case final paymentMethod$?)
@@ -20862,7 +20862,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/customers/${Uri.encodeComponent(customer)}/fund_cash_balance',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
     if (body.expand case final expand$?)
@@ -20895,7 +20895,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.amountDetails case final amountDetails$?)
@@ -20955,7 +20955,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/capture',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.captureAmount case final captureAmount$?)
       'capture_amount=${Uri.encodeQueryComponent(captureAmount$.toString())}',
     if (body.closeAuthorization case final closeAuthorization$?)
@@ -20990,7 +20990,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/expire',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21019,7 +21019,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/finalize_amount',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'final_amount=${Uri.encodeQueryComponent(body.finalAmount.toString())}',
@@ -21053,7 +21053,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/fraud_challenges/respond',
   headers: headers,
-  body: [
+  body: <String>[
     'confirmed=${Uri.encodeQueryComponent(body.confirmed.toString())}',
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
@@ -21083,7 +21083,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/increment',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'increment_amount=${Uri.encodeQueryComponent(body.incrementAmount.toString())}',
@@ -21115,7 +21115,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/authorizations/${Uri.encodeComponent(authorization)}/reverse',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.reverseAmount case final reverseAmount$?)
@@ -21146,7 +21146,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/deliver',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21175,7 +21175,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/fail',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21204,7 +21204,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/return',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21233,7 +21233,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/ship',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21262,7 +21262,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/cards/${Uri.encodeComponent(card)}/shipping/submit',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21291,7 +21291,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/activate',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21320,7 +21320,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/deactivate',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21349,7 +21349,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/personalization_designs/${Uri.encodeComponent(personalizationDesign)}/reject',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'rejection_reasons=${Uri.encodeQueryComponent(body.rejectionReasons.toString())}',
@@ -21379,7 +21379,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/settlements',
   headers: headers,
-  body: [
+  body: <String>[
     'bin=${Uri.encodeQueryComponent(body.bin)}',
     'clearing_date=${Uri.encodeQueryComponent(body.clearingDate.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
@@ -21422,7 +21422,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/settlements/${Uri.encodeComponent(settlement)}/complete',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21451,7 +21451,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/transactions/create_force_capture',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'card=${Uri.encodeQueryComponent(body.card)}',
     if (body.currency case final currency$?)
@@ -21488,7 +21488,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/transactions/create_unlinked_refund',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'card=${Uri.encodeQueryComponent(body.card)}',
     if (body.currency case final currency$?)
@@ -21525,7 +21525,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/issuing/transactions/${Uri.encodeComponent(transaction)}/refund',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.refundAmount case final refundAmount$?)
@@ -21556,7 +21556,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/refunds/${Uri.encodeComponent(refund)}/expire',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21585,7 +21585,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/present_payment_method',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amountTip case final amountTip$?)
       'amount_tip=${Uri.encodeQueryComponent(amountTip$.toString())}',
     if (body.card case final card$?)
@@ -21624,7 +21624,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/succeed_input_collection',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.skipNonRequiredInputs case final skipNonRequiredInputs$?)
@@ -21655,7 +21655,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/terminal/readers/${Uri.encodeComponent(reader)}/timeout_input_collection',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21701,7 +21701,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -21728,7 +21728,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/test_clocks',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'frozen_time=${Uri.encodeQueryComponent(body.frozenTime.toString())}',
@@ -21768,7 +21768,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -21795,7 +21795,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/test_helpers/test_clocks/${Uri.encodeComponent(testClock)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -21822,7 +21822,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/test_clocks/${Uri.encodeComponent(testClock)}/advance',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'frozen_time=${Uri.encodeQueryComponent(body.frozenTime.toString())}',
@@ -21852,7 +21852,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/fail',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.failureDetails case final failureDetails$?)
@@ -21883,7 +21883,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/return',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21912,7 +21912,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/inbound_transfers/${Uri.encodeComponent(id)}/succeed',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -21941,7 +21941,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'tracking_details=${Uri.encodeQueryComponent(body.trackingDetails.toString())}',
@@ -21971,7 +21971,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/fail',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -22000,7 +22000,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/post',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -22029,7 +22029,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_payments/${Uri.encodeComponent(id)}/return',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.returnedDetails case final returnedDetails$?)
@@ -22060,7 +22060,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     'tracking_details=${Uri.encodeQueryComponent(body.trackingDetails.toString())}',
@@ -22090,7 +22090,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/fail',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -22119,7 +22119,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/post',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -22148,7 +22148,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/return',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.returnedDetails case final returnedDetails$?)
@@ -22179,7 +22179,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/received_credits',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
     if (body.description case final description$?)
@@ -22216,7 +22216,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/test_helpers/treasury/received_debits',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
     if (body.description case final description$?)
@@ -22254,7 +22254,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/tokens',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.account case final account$?)
       'account=${Uri.encodeQueryComponent(account$.toString())}',
     if (body.bankAccount case final bankAccount$?)
@@ -22305,7 +22305,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -22328,10 +22328,10 @@ return execute(
 Future<ApiResult<GetTopupsResponse, ErrorModel>> getTopups({GetTopupsAmount? amount, GetTopupsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTopupsStatus? status, GetTopupsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (amount != null) {
-queryParametersList.add(ApiQueryParameter(name: 'amount', value: amount.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'amount', value: amount.toString()));
 }
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -22358,7 +22358,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -22385,7 +22385,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/topups',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
     if (body.description case final description$?)
@@ -22434,7 +22434,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -22461,7 +22461,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/topups/${Uri.encodeComponent(topup)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.description case final description$?)
       'description=${Uri.encodeQueryComponent(description$)}',
     if (body.expand case final expand$?)
@@ -22494,7 +22494,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/topups/${Uri.encodeComponent(topup)}/cancel',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -22519,7 +22519,7 @@ return execute(
 Future<ApiResult<GetTransfersResponse, ErrorModel>> getTransfers({GetTransfersCreated? created, String? destination, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, String? transferGroup, GetTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (destination != null) {
   queryParameters['destination'] = destination;
@@ -22549,7 +22549,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -22576,7 +22576,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
@@ -22636,7 +22636,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -22667,7 +22667,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers/${Uri.encodeComponent(id)}/reversals',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.amount case final amount$?)
       'amount=${Uri.encodeQueryComponent(amount$.toString())}',
     if (body.description case final description$?)
@@ -22712,7 +22712,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -22741,7 +22741,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers/${Uri.encodeComponent(transfer)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.description case final description$?)
       'description=${Uri.encodeQueryComponent(description$)}',
     if (body.expand case final expand$?)
@@ -22782,7 +22782,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -22811,7 +22811,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/transfers/${Uri.encodeComponent(transfer)}/reversals/${Uri.encodeComponent(id)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -22835,7 +22835,7 @@ return execute(
 /// `<p>`Returns a list of CreditReversals.`</p>`
 ///
 /// `GET /v1/treasury/credit_reversals`
-Future<ApiResult<GetTreasuryCreditReversalsResponse, ErrorModel>> getTreasuryCreditReversals({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? receivedCredit, String? startingAfter, GetTreasuryCreditReversalsStatus? status, GetTreasuryCreditReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryCreditReversalsResponse, ErrorModel>> getTreasuryCreditReversals({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? receivedCredit, String? startingAfter, GetTreasuryCreditReversalsStatus? status, GetTreasuryCreditReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -22866,7 +22866,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -22893,7 +22893,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/credit_reversals',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -22933,7 +22933,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -22953,7 +22953,7 @@ return execute(
 /// `<p>`Returns a list of DebitReversals.`</p>`
 ///
 /// `GET /v1/treasury/debit_reversals`
-Future<ApiResult<GetTreasuryDebitReversalsResponse, ErrorModel>> getTreasuryDebitReversals({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? receivedDebit, GetTreasuryDebitReversalsResolution? resolution, String? startingAfter, GetTreasuryDebitReversalsStatus? status, GetTreasuryDebitReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryDebitReversalsResponse, ErrorModel>> getTreasuryDebitReversals({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? receivedDebit, GetTreasuryDebitReversalsResolution? resolution, String? startingAfter, GetTreasuryDebitReversalsStatus? status, GetTreasuryDebitReversalsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -22987,7 +22987,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23014,7 +23014,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/debit_reversals',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.metadata case final metadata$?)
@@ -23054,7 +23054,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23077,7 +23077,7 @@ return execute(
 Future<ApiResult<GetTreasuryFinancialAccountsResponse, ErrorModel>> getTreasuryFinancialAccounts({GetTreasuryFinancialAccountsCreated? created, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryFinancialAccountsStatus? status, GetTreasuryFinancialAccountsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23104,7 +23104,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23131,7 +23131,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.features case final features$?)
@@ -23177,7 +23177,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23204,7 +23204,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.features case final features$?)
@@ -23243,7 +23243,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}/close',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
     if (body.forwardingSettings case final forwardingSettings$?)
@@ -23282,7 +23282,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23309,7 +23309,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/financial_accounts/${Uri.encodeComponent(financialAccount)}/features',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.cardIssuing case final cardIssuing$?)
       'card_issuing=${Uri.encodeQueryComponent(cardIssuing$.toString())}',
     if (body.depositInsurance case final depositInsurance$?)
@@ -23345,7 +23345,7 @@ return execute(
 /// `<p>`Returns a list of InboundTransfers sent from the specified FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/inbound_transfers`
-Future<ApiResult<GetTreasuryInboundTransfersResponse, ErrorModel>> getTreasuryInboundTransfers({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryInboundTransfersStatus? status, GetTreasuryInboundTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryInboundTransfersResponse, ErrorModel>> getTreasuryInboundTransfers({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryInboundTransfersStatus? status, GetTreasuryInboundTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23373,7 +23373,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23400,7 +23400,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/inbound_transfers',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
     if (body.description case final description$?)
@@ -23447,7 +23447,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23474,7 +23474,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/inbound_transfers/${Uri.encodeComponent(inboundTransfer)}/cancel',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -23496,10 +23496,10 @@ return execute(
 /// `<p>`Returns a list of OutboundPayments sent from the specified FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/outbound_payments`
-Future<ApiResult<GetTreasuryOutboundPaymentsResponse, ErrorModel>> getTreasuryOutboundPayments({GetTreasuryOutboundPaymentsCreated? created, String? customer, String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryOutboundPaymentsStatus? status, GetTreasuryOutboundPaymentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryOutboundPaymentsResponse, ErrorModel>> getTreasuryOutboundPayments({required String financialAccount, GetTreasuryOutboundPaymentsCreated? created, String? customer, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryOutboundPaymentsStatus? status, GetTreasuryOutboundPaymentsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (customer != null) {
   queryParameters['customer'] = customer;
@@ -23530,7 +23530,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23557,7 +23557,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_payments',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
     if (body.customer case final customer$?)
@@ -23613,7 +23613,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23640,7 +23640,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_payments/${Uri.encodeComponent(id)}/cancel',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -23662,7 +23662,7 @@ return execute(
 /// `<p>`Returns a list of OutboundTransfers sent from the specified FinancialAccount.`</p>`
 ///
 /// `GET /v1/treasury/outbound_transfers`
-Future<ApiResult<GetTreasuryOutboundTransfersResponse, ErrorModel>> getTreasuryOutboundTransfers({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryOutboundTransfersStatus? status, GetTreasuryOutboundTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryOutboundTransfersResponse, ErrorModel>> getTreasuryOutboundTransfers({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryOutboundTransfersStatus? status, GetTreasuryOutboundTransfersRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23690,7 +23690,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23717,7 +23717,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_transfers',
   headers: headers,
-  body: [
+  body: <String>[
     'amount=${Uri.encodeQueryComponent(body.amount.toString())}',
     'currency=${Uri.encodeQueryComponent(body.currency)}',
     if (body.description case final description$?)
@@ -23769,7 +23769,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23796,7 +23796,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/treasury/outbound_transfers/${Uri.encodeComponent(outboundTransfer)}/cancel',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.expand case final expand$?)
       'expand=${Uri.encodeQueryComponent(expand$.toString())}',
   ].join('&'),
@@ -23818,7 +23818,7 @@ return execute(
 /// `<p>`Returns a list of ReceivedCredits.`</p>`
 ///
 /// `GET /v1/treasury/received_credits`
-Future<ApiResult<GetTreasuryReceivedCreditsResponse, ErrorModel>> getTreasuryReceivedCredits({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, GetTreasuryReceivedCreditsLinkedFlows? linkedFlows, String? startingAfter, GetTreasuryReceivedCreditsStatus? status, GetTreasuryReceivedCreditsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryReceivedCreditsResponse, ErrorModel>> getTreasuryReceivedCredits({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, GetTreasuryReceivedCreditsLinkedFlows? linkedFlows, String? startingAfter, GetTreasuryReceivedCreditsStatus? status, GetTreasuryReceivedCreditsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23849,7 +23849,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23884,7 +23884,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23904,7 +23904,7 @@ return execute(
 /// `<p>`Returns a list of ReceivedDebits.`</p>`
 ///
 /// `GET /v1/treasury/received_debits`
-Future<ApiResult<GetTreasuryReceivedDebitsResponse, ErrorModel>> getTreasuryReceivedDebits({String? endingBefore, List<String>? expand, required String financialAccount, int? limit, String? startingAfter, GetTreasuryReceivedDebitsStatus? status, GetTreasuryReceivedDebitsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryReceivedDebitsResponse, ErrorModel>> getTreasuryReceivedDebits({required String financialAccount, String? endingBefore, List<String>? expand, int? limit, String? startingAfter, GetTreasuryReceivedDebitsStatus? status, GetTreasuryReceivedDebitsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -23932,7 +23932,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23967,7 +23967,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -23987,13 +23987,13 @@ return execute(
 /// `<p>`Retrieves a list of TransactionEntry objects.`</p>`
 ///
 /// `GET /v1/treasury/transaction_entries`
-Future<ApiResult<GetTreasuryTransactionEntriesResponse, ErrorModel>> getTreasuryTransactionEntries({GetTreasuryTransactionEntriesCreated? created, GetTreasuryTransactionEntriesEffectiveAt? effectiveAt, String? endingBefore, List<String>? expand, required String financialAccount, int? limit, GetTreasuryTransactionEntriesOrderBy? orderBy, String? startingAfter, String? transaction, GetTreasuryTransactionEntriesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryTransactionEntriesResponse, ErrorModel>> getTreasuryTransactionEntries({required String financialAccount, GetTreasuryTransactionEntriesCreated? created, GetTreasuryTransactionEntriesEffectiveAt? effectiveAt, String? endingBefore, List<String>? expand, int? limit, GetTreasuryTransactionEntriesOrderBy? orderBy, String? startingAfter, String? transaction, GetTreasuryTransactionEntriesRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (effectiveAt != null) {
-queryParametersList.add(ApiQueryParameter(name: 'effective_at', value: effectiveAt.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'effective_at', value: effectiveAt.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -24024,7 +24024,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -24059,7 +24059,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -24079,10 +24079,10 @@ return execute(
 /// `<p>`Retrieves a list of Transaction objects.`</p>`
 ///
 /// `GET /v1/treasury/transactions`
-Future<ApiResult<GetTreasuryTransactionsResponse, ErrorModel>> getTreasuryTransactions({GetTreasuryTransactionsCreated? created, String? endingBefore, List<String>? expand, required String financialAccount, int? limit, GetTreasuryTransactionsOrderBy? orderBy, String? startingAfter, GetTreasuryTransactionsStatus? status, GetTreasuryTransactionsStatusTransitions? statusTransitions, GetTreasuryTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTreasuryTransactionsResponse, ErrorModel>> getTreasuryTransactions({required String financialAccount, GetTreasuryTransactionsCreated? created, String? endingBefore, List<String>? expand, int? limit, GetTreasuryTransactionsOrderBy? orderBy, String? startingAfter, GetTreasuryTransactionsStatus? status, GetTreasuryTransactionsStatusTransitions? statusTransitions, GetTreasuryTransactionsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (created != null) {
-queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'created', value: created.toString()));
 }
 if (endingBefore != null) {
   queryParameters['ending_before'] = endingBefore;
@@ -24116,7 +24116,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -24151,7 +24151,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -24195,7 +24195,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -24222,7 +24222,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/webhook_endpoints',
   headers: headers,
-  body: [
+  body: <String>[
     if (body.apiVersion case final apiVersion$?)
       'api_version=${Uri.encodeQueryComponent(apiVersion$.toJson())}',
     if (body.connect case final connect$?)
@@ -24269,7 +24269,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );
@@ -24296,7 +24296,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/v1/webhook_endpoints/${Uri.encodeComponent(webhookEndpoint)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.description case final description$?)
       'description=${Uri.encodeQueryComponent(description$.toString())}',
     if (body.disabled case final disabled$?)
@@ -24335,7 +24335,7 @@ final request = ApiRequest(
   method: 'DELETE',
   path: '/v1/webhook_endpoints/${Uri.encodeComponent(webhookEndpoint)}',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
   ].join('&'),
   options: options,
 );

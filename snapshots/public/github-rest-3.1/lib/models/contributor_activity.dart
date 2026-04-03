@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'contributor_activity_weeks.dart';import 'simple_user.dart';/// Contributor Activity
-final class ContributorActivity {const ContributorActivity({required this.author, required this.total, required this.weeks, });
+@immutable final class ContributorActivity {const ContributorActivity({required this.author, required this.total, required this.weeks, });
 
 factory ContributorActivity.fromJson(Map<String, dynamic> json) { return ContributorActivity(
   author: json['author'] != null ? SimpleUser.fromJson(json['author'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ContentTreeLinks {const ContentTreeLinks({required this.git, required this.html, required this.self, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ContentTreeLinks {const ContentTreeLinks({required this.git, required this.html, required this.self, });
 
 factory ContentTreeLinks.fromJson(Map<String, dynamic> json) { return ContentTreeLinks(
   git: json['git'] != null ? Uri.parse(json['git'] as String) : null,

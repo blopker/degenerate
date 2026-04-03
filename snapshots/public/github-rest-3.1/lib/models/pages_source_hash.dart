@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PagesSourceHash {const PagesSourceHash({required this.branch, required this.path, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesSourceHash {const PagesSourceHash({required this.branch, required this.path, });
 
 factory PagesSourceHash.fromJson(Map<String, dynamic> json) { return PagesSourceHash(
   branch: json['branch'] as String,

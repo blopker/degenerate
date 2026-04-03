@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aws_elastic_block_store_volume_source.dart';import 'azure_disk_volume_source.dart';import 'azure_file_persistent_volume_source.dart';import 'ceph_fs_persistent_volume_source.dart';import 'cinder_persistent_volume_source.dart';import 'csi_persistent_volume_source.dart';import 'fc_volume_source.dart';import 'flex_persistent_volume_source.dart';import 'flocker_volume_source.dart';import 'gce_persistent_disk_volume_source.dart';import 'glusterfs_persistent_volume_source.dart';import 'host_path_volume_source.dart';import 'iscsi_persistent_volume_source.dart';import 'local_volume_source.dart';import 'nfs_volume_source.dart';import 'object_reference.dart';import 'photon_persistent_disk_volume_source.dart';import 'portworx_volume_source.dart';import 'quobyte_volume_source.dart';import 'rbd_persistent_volume_source.dart';import 'resource_quantity.dart';import 'scale_io_persistent_volume_source.dart';import 'storage_os_persistent_volume_source.dart';import 'volume_node_affinity.dart';import 'vsphere_virtual_disk_volume_source.dart';/// PersistentVolumeSpec is the specification of a persistent volume.
-final class PersistentVolumeSpec {const PersistentVolumeSpec({this.accessModes, this.awsElasticBlockStore, this.azureDisk, this.azureFile, this.capacity, this.cephfs, this.cinder, this.claimRef, this.csi, this.fc, this.flexVolume, this.flocker, this.gcePersistentDisk, this.glusterfs, this.hostPath, this.iscsi, this.local, this.mountOptions, this.nfs, this.nodeAffinity, this.persistentVolumeReclaimPolicy, this.photonPersistentDisk, this.portworxVolume, this.quobyte, this.rbd, this.scaleIo, this.storageClassName, this.storageos, this.volumeAttributesClassName, this.volumeMode, this.vsphereVolume, });
+@immutable final class PersistentVolumeSpec {const PersistentVolumeSpec({this.accessModes, this.awsElasticBlockStore, this.azureDisk, this.azureFile, this.capacity, this.cephfs, this.cinder, this.claimRef, this.csi, this.fc, this.flexVolume, this.flocker, this.gcePersistentDisk, this.glusterfs, this.hostPath, this.iscsi, this.local, this.mountOptions, this.nfs, this.nodeAffinity, this.persistentVolumeReclaimPolicy, this.photonPersistentDisk, this.portworxVolume, this.quobyte, this.rbd, this.scaleIo, this.storageClassName, this.storageos, this.volumeAttributesClassName, this.volumeMode, this.vsphereVolume, });
 
 factory PersistentVolumeSpec.fromJson(Map<String, dynamic> json) { return PersistentVolumeSpec(
   accessModes: (json['accessModes'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -88,7 +88,7 @@ final IscsiPersistentVolumeSource? iscsi;
 /// local represents directly-attached storage with node affinity
 final LocalVolumeSource? local;
 
-/// mountOptions is the list of mount options, e.g. ["ro", "soft"]. Not validated - mount will simply fail if one is invalid. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#mount-options
+/// mountOptions is the list of mount options, e.g. `["ro", "soft"]`. Not validated - mount will simply fail if one is invalid. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#mount-options
 final List<String>? mountOptions;
 
 /// nfs represents an NFS mount on the host. Provisioned by an admin. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs

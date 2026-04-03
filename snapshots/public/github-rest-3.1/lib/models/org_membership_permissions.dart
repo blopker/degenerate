@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrgMembershipPermissions {const OrgMembershipPermissions({required this.canCreateRepository});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgMembershipPermissions {const OrgMembershipPermissions({required this.canCreateRepository});
 
 factory OrgMembershipPermissions.fromJson(Map<String, dynamic> json) { return OrgMembershipPermissions(
   canCreateRepository: json['can_create_repository'] as bool,

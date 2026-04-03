@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration target. You must set the target to `ip` when specifying an IP address in the Zone Lockdown rule.
-final class FirewallSchemasIpConfigurationTarget {const FirewallSchemasIpConfigurationTarget._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ip` when specifying an IP address in the Zone Lockdown rule.
+@immutable final class FirewallSchemasIpConfigurationTarget {const FirewallSchemasIpConfigurationTarget._(this.value);
 
 factory FirewallSchemasIpConfigurationTarget.fromJson(String json) { return switch (json) {
   'ip' => ip,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FirewallSchemasIpConfigurationTarget($value)'; } 
  }
-final class FirewallSchemasIpConfiguration {const FirewallSchemasIpConfiguration({this.target, this.value, });
+@immutable final class FirewallSchemasIpConfiguration {const FirewallSchemasIpConfiguration({this.target, this.value, });
 
 factory FirewallSchemasIpConfiguration.fromJson(Map<String, dynamic> json) { return FirewallSchemasIpConfiguration(
   target: json['target'] != null ? FirewallSchemasIpConfigurationTarget.fromJson(json['target'] as String) : null,

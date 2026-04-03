@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'smartshield_healthchecks.dart';final class SmartshieldSingleHcResponse {const SmartshieldSingleHcResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_healthchecks.dart';@immutable final class SmartshieldSingleHcResponse {const SmartshieldSingleHcResponse({this.result});
 
 factory SmartshieldSingleHcResponse.fromJson(Map<String, dynamic> json) { return SmartshieldSingleHcResponse(
   result: json['result'] != null ? SmartshieldHealthchecks.fromJson(json['result'] as Map<String, dynamic>) : null,

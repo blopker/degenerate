@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PromptInnerResponseFormatType {const PromptInnerResponseFormatType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PromptInnerResponseFormatType {const PromptInnerResponseFormatType._(this.value);
 
 factory PromptInnerResponseFormatType.fromJson(String json) { return switch (json) {
   'json_object' => jsonObject,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PromptInnerResponseFormatType($value)'; } 
  }
-final class PromptInnerResponseFormat {const PromptInnerResponseFormat({this.jsonSchema, this.type, });
+@immutable final class PromptInnerResponseFormat {const PromptInnerResponseFormat({this.jsonSchema, this.type, });
 
 factory PromptInnerResponseFormat.fromJson(Map<String, dynamic> json) { return PromptInnerResponseFormat(
   jsonSchema: json['json_schema'],

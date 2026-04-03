@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'images_images_stats_count.dart';final class ImagesImagesStats {const ImagesImagesStats({this.count});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_images_stats_count.dart';@immutable final class ImagesImagesStats {const ImagesImagesStats({this.count});
 
 factory ImagesImagesStats.fromJson(Map<String, dynamic> json) { return ImagesImagesStats(
   count: json['count'] != null ? ImagesImagesStatsCount.fromJson(json['count'] as Map<String, dynamic>) : null,

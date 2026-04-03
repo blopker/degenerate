@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Always `group`.
-final class GroupObject {const GroupObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `group`.
+@immutable final class GroupObject {const GroupObject._(this.value);
 
 factory GroupObject.fromJson(String json) { return switch (json) {
   'group' => group,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GroupObject($value)'; } 
  }
 /// Summary information about a group returned in role assignment responses.
-final class Group {const Group({required this.object, required this.id, required this.name, required this.createdAt, required this.scimManaged, });
+@immutable final class Group {const Group({required this.object, required this.id, required this.name, required this.createdAt, required this.scimManaged, });
 
 factory Group.fromJson(Map<String, dynamic> json) { return Group(
   object: GroupObject.fromJson(json['object'] as String),

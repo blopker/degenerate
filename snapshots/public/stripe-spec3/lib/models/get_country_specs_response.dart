@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'country_spec.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetCountrySpecsResponseObject {const GetCountrySpecsResponseObject._(this.value);
+@immutable final class GetCountrySpecsResponseObject {const GetCountrySpecsResponseObject._(this.value);
 
 factory GetCountrySpecsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetCountrySpecsResponseObject($value)'; } 
  }
 /// 
-final class GetCountrySpecsResponse {const GetCountrySpecsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetCountrySpecsResponse {const GetCountrySpecsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetCountrySpecsResponse.fromJson(Map<String, dynamic> json) { return GetCountrySpecsResponse(
   data: (json['data'] as List<dynamic>).map((e) => CountrySpec.fromJson(e as Map<String, dynamic>)).toList(),

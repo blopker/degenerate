@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetTrafficAnomaliesTopResponseResultTrafficAnomalies {const RadarGetTrafficAnomaliesTopResponseResultTrafficAnomalies({required this.clientCountryAlpha2, required this.clientCountryName, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetTrafficAnomaliesTopResponseResultTrafficAnomalies {const RadarGetTrafficAnomaliesTopResponseResultTrafficAnomalies({required this.clientCountryAlpha2, required this.clientCountryName, required this.value, });
 
 factory RadarGetTrafficAnomaliesTopResponseResultTrafficAnomalies.fromJson(Map<String, dynamic> json) { return RadarGetTrafficAnomaliesTopResponseResultTrafficAnomalies(
   clientCountryAlpha2: json['clientCountryAlpha2'] as String,

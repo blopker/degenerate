@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details about the output tokens used in the Response.
-final class RealtimeResponseUsageOutputTokenDetails {const RealtimeResponseUsageOutputTokenDetails({this.textTokens, this.audioTokens, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the output tokens used in the Response.
+@immutable final class RealtimeResponseUsageOutputTokenDetails {const RealtimeResponseUsageOutputTokenDetails({this.textTokens, this.audioTokens, });
 
 factory RealtimeResponseUsageOutputTokenDetails.fromJson(Map<String, dynamic> json) { return RealtimeResponseUsageOutputTokenDetails(
   textTokens: json['text_tokens'] != null ? (json['text_tokens'] as num).toInt() : null,

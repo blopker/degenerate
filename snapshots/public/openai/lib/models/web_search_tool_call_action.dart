@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'web_search_action_find.dart';import 'web_search_action_open_page.dart';import 'web_search_action_search.dart';/// An object describing the specific action taken in this web search call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web_search_action_find.dart';import 'web_search_action_open_page.dart';import 'web_search_action_search.dart';/// An object describing the specific action taken in this web search call.
 /// Includes details on how the model used the web (search, open_page, find_in_page).
 /// 
 sealed class WebSearchToolCallAction {const WebSearchToolCallAction();
@@ -19,7 +19,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WebSearchToolCallAction$Unknown; } 
  }
-final class WebSearchToolCallActionSearch extends WebSearchToolCallAction {const WebSearchToolCallActionSearch(this.webSearchActionSearch);
+@immutable final class WebSearchToolCallActionSearch extends WebSearchToolCallAction {const WebSearchToolCallActionSearch(this.webSearchActionSearch);
 
 factory WebSearchToolCallActionSearch.fromJson(Map<String, dynamic> json) { return WebSearchToolCallActionSearch(WebSearchActionSearch.fromJson(json)); }
 
@@ -32,7 +32,7 @@ final WebSearchActionSearch webSearchActionSearch;
 @override int get hashCode { return webSearchActionSearch.hashCode; } 
 @override String toString() { return 'WebSearchToolCallActionSearch(webSearchActionSearch: $webSearchActionSearch)'; } 
  }
-final class WebSearchToolCallActionOpenPage extends WebSearchToolCallAction {const WebSearchToolCallActionOpenPage(this.webSearchActionOpenPage);
+@immutable final class WebSearchToolCallActionOpenPage extends WebSearchToolCallAction {const WebSearchToolCallActionOpenPage(this.webSearchActionOpenPage);
 
 factory WebSearchToolCallActionOpenPage.fromJson(Map<String, dynamic> json) { return WebSearchToolCallActionOpenPage(WebSearchActionOpenPage.fromJson(json)); }
 
@@ -45,7 +45,7 @@ final WebSearchActionOpenPage webSearchActionOpenPage;
 @override int get hashCode { return webSearchActionOpenPage.hashCode; } 
 @override String toString() { return 'WebSearchToolCallActionOpenPage(webSearchActionOpenPage: $webSearchActionOpenPage)'; } 
  }
-final class WebSearchToolCallActionFindInPage extends WebSearchToolCallAction {const WebSearchToolCallActionFindInPage(this.webSearchActionFind);
+@immutable final class WebSearchToolCallActionFindInPage extends WebSearchToolCallAction {const WebSearchToolCallActionFindInPage(this.webSearchActionFind);
 
 factory WebSearchToolCallActionFindInPage.fromJson(Map<String, dynamic> json) { return WebSearchToolCallActionFindInPage(WebSearchActionFind.fromJson(json)); }
 
@@ -60,7 +60,7 @@ final WebSearchActionFind webSearchActionFind;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class WebSearchToolCallAction$Unknown extends WebSearchToolCallAction {const WebSearchToolCallAction$Unknown(this.json);
+@immutable final class WebSearchToolCallAction$Unknown extends WebSearchToolCallAction {const WebSearchToolCallAction$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

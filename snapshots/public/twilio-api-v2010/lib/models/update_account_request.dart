@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_enum_status.dart';final class UpdateAccountRequest {const UpdateAccountRequest({this.friendlyName, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_enum_status.dart';@immutable final class UpdateAccountRequest {const UpdateAccountRequest({this.friendlyName, this.status, });
 
 factory UpdateAccountRequest.fromJson(Map<String, dynamic> json) { return UpdateAccountRequest(
   friendlyName: json['FriendlyName'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_object.dart';final class ListMessagesResponse {const ListMessagesResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_object.dart';@immutable final class ListMessagesResponse {const ListMessagesResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ListMessagesResponse.fromJson(Map<String, dynamic> json) { return ListMessagesResponse(
   object: json['object'] as String,

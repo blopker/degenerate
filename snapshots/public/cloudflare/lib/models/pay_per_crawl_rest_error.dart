@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pay_per_crawl_error_source.dart';final class PayPerCrawlRestError {const PayPerCrawlRestError({this.code, this.documentationUrl, this.error, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_error_source.dart';@immutable final class PayPerCrawlRestError {const PayPerCrawlRestError({this.code, this.documentationUrl, this.error, this.source, });
 
 factory PayPerCrawlRestError.fromJson(Map<String, dynamic> json) { return PayPerCrawlRestError(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,

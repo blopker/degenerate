@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigListGatewayLogsFeedbackVariant1 {const AigConfigListGatewayLogsFeedbackVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayLogsFeedbackVariant1 {const AigConfigListGatewayLogsFeedbackVariant1._(this.value);
 
 factory AigConfigListGatewayLogsFeedbackVariant1.fromJson(double json) { return switch (json) {
   -1 => minus1,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigListGatewayLogsFeedbackVariant1($value)'; } 
  }
-final class AigConfigListGatewayLogsFeedbackVariant2 {const AigConfigListGatewayLogsFeedbackVariant2._(this.value);
+@immutable final class AigConfigListGatewayLogsFeedbackVariant2 {const AigConfigListGatewayLogsFeedbackVariant2._(this.value);
 
 factory AigConfigListGatewayLogsFeedbackVariant2.fromJson(double json) { return switch (json) {
   0 => $0,
@@ -42,7 +42,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigListGatewayLogsFeedbackVariant2($value)'; } 
  }
-final class AigConfigListGatewayLogsFeedbackVariant3 {const AigConfigListGatewayLogsFeedbackVariant3._(this.value);
+@immutable final class AigConfigListGatewayLogsFeedbackVariant3 {const AigConfigListGatewayLogsFeedbackVariant3._(this.value);
 
 factory AigConfigListGatewayLogsFeedbackVariant3.fromJson(double json) { return switch (json) {
   1 => $1,

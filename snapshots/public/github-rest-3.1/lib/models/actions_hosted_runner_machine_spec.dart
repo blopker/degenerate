@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Provides details of a particular machine spec.
-final class ActionsHostedRunnerMachineSpec {const ActionsHostedRunnerMachineSpec({required this.id, required this.cpuCores, required this.memoryGb, required this.storageGb, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides details of a particular machine spec.
+@immutable final class ActionsHostedRunnerMachineSpec {const ActionsHostedRunnerMachineSpec({required this.id, required this.cpuCores, required this.memoryGb, required this.storageGb, });
 
 factory ActionsHostedRunnerMachineSpec.fromJson(Map<String, dynamic> json) { return ActionsHostedRunnerMachineSpec(
   id: json['id'] as String,

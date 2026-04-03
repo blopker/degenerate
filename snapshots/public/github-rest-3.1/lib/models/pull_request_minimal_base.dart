@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pull_request_minimal_base_repo.dart';final class PullRequestMinimalBase {const PullRequestMinimalBase({required this.ref, required this.sha, required this.repo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pull_request_minimal_base_repo.dart';@immutable final class PullRequestMinimalBase {const PullRequestMinimalBase({required this.ref, required this.sha, required this.repo, });
 
 factory PullRequestMinimalBase.fromJson(Map<String, dynamic> json) { return PullRequestMinimalBase(
   ref: json['ref'] as String,

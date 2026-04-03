@@ -1,5 +1,5 @@
-import '../api_client.dart';
-import '../interceptor.dart';
+import 'package:degenerate_runtime/src/api_client.dart';
+import 'package:degenerate_runtime/src/interceptor.dart';
 
 /// Middleware that adds an Authorization header and optionally refreshes
 /// the token on 401 responses.
@@ -16,6 +16,13 @@ import '../interceptor.dart';
 /// );
 /// ```
 class AuthInterceptor implements Interceptor {
+  /// Creates an [AuthInterceptor] that adds authorization headers.
+  const AuthInterceptor({
+    required this.getToken,
+    this.refreshToken,
+    this.scheme = 'Bearer',
+  });
+
   /// Called before each request to get the current token.
   final Future<String> Function() getToken;
 
@@ -25,12 +32,6 @@ class AuthInterceptor implements Interceptor {
 
   /// Authorization scheme (e.g. 'Bearer', 'Token', 'Basic').
   final String scheme;
-
-  const AuthInterceptor({
-    required this.getToken,
-    this.refreshToken,
-    this.scheme = 'Bearer',
-  });
 
   @override
   Future<ApiResponse> intercept(ApiRequest request, Handler next) async {

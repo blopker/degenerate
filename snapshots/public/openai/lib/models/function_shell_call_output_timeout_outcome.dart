@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The outcome type. Always `timeout`.
-final class FunctionShellCallOutputTimeoutOutcomeType {const FunctionShellCallOutputTimeoutOutcomeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome type. Always `timeout`.
+@immutable final class FunctionShellCallOutputTimeoutOutcomeType {const FunctionShellCallOutputTimeoutOutcomeType._(this.value);
 
 factory FunctionShellCallOutputTimeoutOutcomeType.fromJson(String json) { return switch (json) {
   'timeout' => timeout,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FunctionShellCallOutputTimeoutOutcomeType($value)'; } 
  }
 /// Indicates that the shell call exceeded its configured time limit.
-final class FunctionShellCallOutputTimeoutOutcome {const FunctionShellCallOutputTimeoutOutcome({this.type = FunctionShellCallOutputTimeoutOutcomeType.timeout});
+@immutable final class FunctionShellCallOutputTimeoutOutcome {const FunctionShellCallOutputTimeoutOutcome({this.type = FunctionShellCallOutputTimeoutOutcomeType.timeout});
 
 factory FunctionShellCallOutputTimeoutOutcome.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputTimeoutOutcome(
   type: FunctionShellCallOutputTimeoutOutcomeType.fromJson(json['type'] as String),

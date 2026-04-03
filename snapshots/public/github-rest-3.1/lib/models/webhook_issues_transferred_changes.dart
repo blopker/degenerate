@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_issues_transferred_changes_new_issue.dart';import 'webhook_issues_transferred_changes_new_repository.dart';final class WebhookIssuesTransferredChanges {const WebhookIssuesTransferredChanges({required this.newIssue, required this.newRepository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_issues_transferred_changes_new_issue.dart';import 'webhook_issues_transferred_changes_new_repository.dart';@immutable final class WebhookIssuesTransferredChanges {const WebhookIssuesTransferredChanges({required this.newIssue, required this.newRepository, });
 
 factory WebhookIssuesTransferredChanges.fromJson(Map<String, dynamic> json) { return WebhookIssuesTransferredChanges(
   newIssue: WebhookIssuesTransferredChangesNewIssue.fromJson(json['new_issue'] as Map<String, dynamic>),

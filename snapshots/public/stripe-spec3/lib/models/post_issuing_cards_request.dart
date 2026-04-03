@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cards_request_pin.dart';import 'post_issuing_cards_request_second_line.dart';import 'post_issuing_cards_request_shipping.dart';import 'post_issuing_cards_request_spending_controls.dart';/// If `replacement_for` is specified, this should indicate why that card is being replaced.
-final class PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason._(this.value);
+@immutable final class PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason._(this.value);
 
 factory PostIssuingCardsRequestReplacementReason.fromJson(String json) { return switch (json) {
   'damaged' => damaged,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostIssuingCardsRequestReplacementReason($value)'; } 
  }
 /// Whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to `inactive`.
-final class PostIssuingCardsRequestStatus {const PostIssuingCardsRequestStatus._(this.value);
+@immutable final class PostIssuingCardsRequestStatus {const PostIssuingCardsRequestStatus._(this.value);
 
 factory PostIssuingCardsRequestStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostIssuingCardsRequestStatus($value)'; } 
  }
 /// The type of card to issue. Possible values are `physical` or `virtual`.
-final class PostIssuingCardsRequestType {const PostIssuingCardsRequestType._(this.value);
+@immutable final class PostIssuingCardsRequestType {const PostIssuingCardsRequestType._(this.value);
 
 factory PostIssuingCardsRequestType.fromJson(String json) { return switch (json) {
   'physical' => physical,
@@ -81,7 +81,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingCardsRequestType($value)'; } 
  }
-final class PostIssuingCardsRequest {const PostIssuingCardsRequest({this.cardholder, required this.currency, this.expMonth, this.expYear, this.expand, this.financialAccount, this.metadata, this.personalizationDesign, this.pin, this.replacementFor, this.replacementReason, this.secondLine, this.shipping, this.spendingControls, this.status, required this.type, });
+@immutable final class PostIssuingCardsRequest {const PostIssuingCardsRequest({required this.currency, required this.type, this.cardholder, this.expMonth, this.expYear, this.expand, this.financialAccount, this.metadata, this.personalizationDesign, this.pin, this.replacementFor, this.replacementReason, this.secondLine, this.shipping, this.spendingControls, this.status, });
 
 factory PostIssuingCardsRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardsRequest(
   cardholder: json['cardholder'] as String?,

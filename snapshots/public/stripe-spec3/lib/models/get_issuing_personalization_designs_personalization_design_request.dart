@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingPersonalizationDesignsPersonalizationDesignRequest {const GetIssuingPersonalizationDesignsPersonalizationDesignRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingPersonalizationDesignsPersonalizationDesignRequest {const GetIssuingPersonalizationDesignsPersonalizationDesignRequest();
 
-factory GetIssuingPersonalizationDesignsPersonalizationDesignRequest.fromJson(Map<String, dynamic> json) { return GetIssuingPersonalizationDesignsPersonalizationDesignRequest(
-
-); }
+factory GetIssuingPersonalizationDesignsPersonalizationDesignRequest.fromJson(Map<String, dynamic> _) { return const GetIssuingPersonalizationDesignsPersonalizationDesignRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetIssuingPersonalizationDesignsPersonalizationDesignRequest copyWith() { return GetIssuingPersonalizationDesignsPersonalizationDesignRequest(
+GetIssuingPersonalizationDesignsPersonalizationDesignRequest copyWith() { return const GetIssuingPersonalizationDesignsPersonalizationDesignRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetIssuingPersonalizationDesignsPersonalizationDesignRequest; } 

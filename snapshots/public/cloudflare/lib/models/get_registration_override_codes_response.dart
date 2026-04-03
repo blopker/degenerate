@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_message.dart';import 'teams_devices_override_codes.dart';final class GetRegistrationOverrideCodesResponse {const GetRegistrationOverrideCodesResponse({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_message.dart';import 'teams_devices_override_codes.dart';@immutable final class GetRegistrationOverrideCodesResponse {const GetRegistrationOverrideCodesResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory GetRegistrationOverrideCodesResponse.fromJson(Map<String, dynamic> json) { return GetRegistrationOverrideCodesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),

@@ -85,38 +85,38 @@ return execute(
 /// Retrieves an aggregated summary of origin metrics grouped by the specified dimension.
 ///
 /// `GET /radar/origins/summary/{dimension}`
-Future<ApiResult<RadarGetOriginsSummaryResponseResult, RadarGetOriginsSummaryResponse400>> radarGetOriginsSummary({required RadarGetOriginsSummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, required List<RadarGetOriginsSummaryOrigin> origin, required RadarGetOriginsSummaryMetric metric, List<String>? region, RadarGetOriginsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginsSummaryResponseResult, RadarGetOriginsSummaryResponse400>> radarGetOriginsSummary({required RadarGetOriginsSummaryDimension dimension, required List<RadarGetOriginsSummaryOrigin> origin, required RadarGetOriginsSummaryMetric metric, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? region, RadarGetOriginsSummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (limitPerGroup != null) {
   queryParameters['limitPerGroup'] = limitPerGroup.toString();
 }
 for (final item in origin) {
-  queryParametersList.add(ApiQueryParameter(name: 'origin', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'origin', value: item.toJson()));
 }
 queryParameters['metric'] = metric.toJson();
 if (region != null) {
 for (final item in region) {
-  queryParametersList.add(ApiQueryParameter(name: 'region', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'region', value: item));
 }
 }
 if (format != null) {
@@ -150,38 +150,38 @@ return execute(
 /// Retrieves the time series of origin metrics for the specified origin.
 ///
 /// `GET /radar/origins/timeseries`
-Future<ApiResult<RadarGetOriginsTimeseriesResponseResult, RadarGetOriginsTimeseriesResponse400>> radarGetOriginsTimeseries({RadarGetOriginsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, required List<RadarGetOriginsTimeseriesOrigin> origin, required RadarGetOriginsTimeseriesMetric metric, List<String>? region, RadarGetOriginsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginsTimeseriesResponseResult, RadarGetOriginsTimeseriesResponse400>> radarGetOriginsTimeseries({required List<RadarGetOriginsTimeseriesOrigin> origin, required RadarGetOriginsTimeseriesMetric metric, RadarGetOriginsTimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? region, RadarGetOriginsTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 for (final item in origin) {
-  queryParametersList.add(ApiQueryParameter(name: 'origin', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'origin', value: item.toJson()));
 }
 queryParameters['metric'] = metric.toJson();
 if (region != null) {
 for (final item in region) {
-  queryParametersList.add(ApiQueryParameter(name: 'region', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'region', value: item));
 }
 }
 if (format != null) {
@@ -215,41 +215,41 @@ return execute(
 /// Retrieves the distribution of origin metrics grouped by the specified dimension over time.
 ///
 /// `GET /radar/origins/timeseries_groups/{dimension}`
-Future<ApiResult<RadarGetOriginsTimeseriesGroupResponseResult, RadarGetOriginsTimeseriesGroupResponse400>> radarGetOriginsTimeseriesGroup({required RadarGetOriginsTimeseriesGroupDimension dimension, RadarGetOriginsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, required List<RadarGetOriginsTimeseriesGroupOrigin> origin, required RadarGetOriginsTimeseriesGroupMetric metric, List<String>? region, RadarGetOriginsTimeseriesGroupNormalization? normalization, RadarGetOriginsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RadarGetOriginsTimeseriesGroupResponseResult, RadarGetOriginsTimeseriesGroupResponse400>> radarGetOriginsTimeseriesGroup({required RadarGetOriginsTimeseriesGroupDimension dimension, required List<RadarGetOriginsTimeseriesGroupOrigin> origin, required RadarGetOriginsTimeseriesGroupMetric metric, RadarGetOriginsTimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, int? limitPerGroup, List<String>? region, RadarGetOriginsTimeseriesGroupNormalization? normalization, RadarGetOriginsTimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (aggInterval != null) {
   queryParameters['aggInterval'] = aggInterval.toJson();
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (limitPerGroup != null) {
   queryParameters['limitPerGroup'] = limitPerGroup.toString();
 }
 for (final item in origin) {
-  queryParametersList.add(ApiQueryParameter(name: 'origin', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'origin', value: item.toJson()));
 }
 queryParameters['metric'] = metric.toJson();
 if (region != null) {
 for (final item in region) {
-  queryParametersList.add(ApiQueryParameter(name: 'region', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'region', value: item));
 }
 }
 if (normalization != null) {

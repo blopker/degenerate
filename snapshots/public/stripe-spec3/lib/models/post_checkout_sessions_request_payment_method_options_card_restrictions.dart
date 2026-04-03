@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictionsBrandsBlocked {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictionsBrandsBlocked._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictionsBrandsBlocked {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictionsBrandsBlocked._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictionsBrandsBlocked.fromJson(String json) { return switch (json) {
   'american_express' => americanExpress,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictionsBrandsBlocked($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictions {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictions({this.brandsBlocked});
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictions {const PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictions({this.brandsBlocked});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictions(
   brandsBlocked: (json['brands_blocked'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestPaymentMethodOptionsCardRestrictionsBrandsBlocked.fromJson(e as String)).toList(),

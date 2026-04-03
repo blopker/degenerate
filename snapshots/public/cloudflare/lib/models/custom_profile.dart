@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_confidence.dart';import 'dlp_context_awareness.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';final class CustomProfileType {const CustomProfileType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'dlp_confidence.dart';import 'dlp_context_awareness.dart';import 'dlp_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';@immutable final class CustomProfileType {const CustomProfileType._(this.value);
 
 factory CustomProfileType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CustomProfileType($value)'; } 
  }
-final class CustomProfile {const CustomProfile({this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, required this.createdAt, this.dataClasses, this.dataTags, this.description, this.entries, required this.id, required this.name, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, required this.updatedAt, required this.type, });
+@immutable final class CustomProfile {const CustomProfile({required this.createdAt, required this.id, required this.name, required this.updatedAt, required this.type, this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, this.dataClasses, this.dataTags, this.description, this.entries, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
 
 factory CustomProfile.fromJson(Map<String, dynamic> json) { return CustomProfile(
   aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,

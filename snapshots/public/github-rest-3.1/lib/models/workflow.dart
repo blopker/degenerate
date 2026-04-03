@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkflowState {const WorkflowState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowState {const WorkflowState._(this.value);
 
 factory WorkflowState.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkflowState($value)'; } 
  }
 /// A GitHub Actions workflow
-final class Workflow {const Workflow({required this.id, required this.nodeId, required this.name, required this.path, required this.state, required this.createdAt, required this.updatedAt, required this.url, required this.htmlUrl, required this.badgeUrl, this.deletedAt, });
+@immutable final class Workflow {const Workflow({required this.id, required this.nodeId, required this.name, required this.path, required this.state, required this.createdAt, required this.updatedAt, required this.url, required this.htmlUrl, required this.badgeUrl, this.deletedAt, });
 
 factory Workflow.fromJson(Map<String, dynamic> json) { return Workflow(
   id: (json['id'] as num).toInt(),

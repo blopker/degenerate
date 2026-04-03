@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Actions OIDC subject customization for a repository
-final class ActionsSetCustomOidcSubClaimForRepoRequest {const ActionsSetCustomOidcSubClaimForRepoRequest({required this.useDefault, this.includeClaimKeys, });
+@immutable final class ActionsSetCustomOidcSubClaimForRepoRequest {const ActionsSetCustomOidcSubClaimForRepoRequest({required this.useDefault, this.includeClaimKeys, });
 
 factory ActionsSetCustomOidcSubClaimForRepoRequest.fromJson(Map<String, dynamic> json) { return ActionsSetCustomOidcSubClaimForRepoRequest(
   useDefault: json['use_default'] as bool,

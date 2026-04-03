@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Update an existing file with the provided diff.
-final class ApplyPatchUpdateFileOperationType {const ApplyPatchUpdateFileOperationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Update an existing file with the provided diff.
+@immutable final class ApplyPatchUpdateFileOperationType {const ApplyPatchUpdateFileOperationType._(this.value);
 
 factory ApplyPatchUpdateFileOperationType.fromJson(String json) { return switch (json) {
   'update_file' => updateFile,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ApplyPatchUpdateFileOperationType($value)'; } 
  }
 /// Instruction describing how to update a file via the apply_patch tool.
-final class ApplyPatchUpdateFileOperation {const ApplyPatchUpdateFileOperation({this.type = ApplyPatchUpdateFileOperationType.updateFile, required this.path, required this.diff, });
+@immutable final class ApplyPatchUpdateFileOperation {const ApplyPatchUpdateFileOperation({required this.path, required this.diff, this.type = ApplyPatchUpdateFileOperationType.updateFile, });
 
 factory ApplyPatchUpdateFileOperation.fromJson(Map<String, dynamic> json) { return ApplyPatchUpdateFileOperation(
   type: ApplyPatchUpdateFileOperationType.fromJson(json['type'] as String),

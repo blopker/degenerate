@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RealtimekitCreateChatChannelInfoVisibility {const RealtimekitCreateChatChannelInfoVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitCreateChatChannelInfoVisibility {const RealtimekitCreateChatChannelInfoVisibility._(this.value);
 
 factory RealtimekitCreateChatChannelInfoVisibility.fromJson(String json) { return switch (json) {
   'public' => public,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitCreateChatChannelInfoVisibility($value)'; } 
  }
-final class RealtimekitCreateChatChannelInfo {const RealtimekitCreateChatChannelInfo({this.customParticipantIds, this.displayName, this.visibility, });
+@immutable final class RealtimekitCreateChatChannelInfo {const RealtimekitCreateChatChannelInfo({this.customParticipantIds, this.displayName, this.visibility, });
 
 factory RealtimekitCreateChatChannelInfo.fromJson(Map<String, dynamic> json) { return RealtimekitCreateChatChannelInfo(
   customParticipantIds: (json['custom_participant_ids'] as List<dynamic>?)?.map((e) => e as String).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AutoragConfigListJobLogsResponseResult {const AutoragConfigListJobLogsResponseResult({required this.createdAt, required this.id, required this.message, required this.messageType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigListJobLogsResponseResult {const AutoragConfigListJobLogsResponseResult({required this.createdAt, required this.id, required this.message, required this.messageType, });
 
 factory AutoragConfigListJobLogsResponseResult.fromJson(Map<String, dynamic> json) { return AutoragConfigListJobLogsResponseResult(
   createdAt: (json['created_at'] as num).toDouble(),

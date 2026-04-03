@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_post_gateway_dynamic_route_deployment_response_result_elements_model_outputs.dart';import 'aig_config_post_gateway_dynamic_route_deployment_response_result_elements_model_properties.dart';final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModelType {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_deployment_response_result_elements_model_outputs.dart';import 'aig_config_post_gateway_dynamic_route_deployment_response_result_elements_model_properties.dart';@immutable final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModelType {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModelType._(this.value);
 
 factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModelType.fromJson(String json) { return switch (json) {
   'model' => model,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModelType($value)'; } 
  }
-final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModel {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModel({required this.id, required this.outputs, required this.properties, required this.type, });
+@immutable final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModel {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModel({required this.id, required this.outputs, required this.properties, required this.type, });
 
 factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModel.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsModel(
   id: json['id'] as String,

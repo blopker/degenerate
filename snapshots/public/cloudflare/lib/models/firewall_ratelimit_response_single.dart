@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_ratelimit.dart';final class FirewallRatelimitResponseSingle {const FirewallRatelimitResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_ratelimit.dart';@immutable final class FirewallRatelimitResponseSingle {const FirewallRatelimitResponseSingle({this.result});
 
 factory FirewallRatelimitResponseSingle.fromJson(Map<String, dynamic> json) { return FirewallRatelimitResponseSingle(
   result: json['result'] != null ? FirewallRatelimit.fromJson(json['result'] as Map<String, dynamic>) : null,

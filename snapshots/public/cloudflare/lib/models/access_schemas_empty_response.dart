@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessSchemasEmptyResponse {const AccessSchemasEmptyResponse({this.result, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessSchemasEmptyResponse {const AccessSchemasEmptyResponse({this.result, this.success, });
 
 factory AccessSchemasEmptyResponse.fromJson(Map<String, dynamic> json) { return AccessSchemasEmptyResponse(
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool?,
 ); }
 

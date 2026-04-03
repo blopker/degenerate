@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_entities_location_by_alpha2_response_result_location.dart';final class RadarGetEntitiesLocationByAlpha2ResponseResult {const RadarGetEntitiesLocationByAlpha2ResponseResult({required this.location});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_location_by_alpha2_response_result_location.dart';@immutable final class RadarGetEntitiesLocationByAlpha2ResponseResult {const RadarGetEntitiesLocationByAlpha2ResponseResult({required this.location});
 
 factory RadarGetEntitiesLocationByAlpha2ResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesLocationByAlpha2ResponseResult(
   location: RadarGetEntitiesLocationByAlpha2ResponseResultLocation.fromJson(json['location'] as Map<String, dynamic>),

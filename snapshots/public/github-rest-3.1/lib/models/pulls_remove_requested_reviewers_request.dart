@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PullsRemoveRequestedReviewersRequest {const PullsRemoveRequestedReviewersRequest({required this.reviewers, this.teamReviewers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsRemoveRequestedReviewersRequest {const PullsRemoveRequestedReviewersRequest({required this.reviewers, this.teamReviewers, });
 
 factory PullsRemoveRequestedReviewersRequest.fromJson(Map<String, dynamic> json) { return PullsRemoveRequestedReviewersRequest(
   reviewers: (json['reviewers'] as List<dynamic>).map((e) => e as String).toList(),

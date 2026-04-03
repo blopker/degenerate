@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dls_region_key.dart';final class DlsAccountRegionalHostnamesAccountListRegionsResponseResult {const DlsAccountRegionalHostnamesAccountListRegionsResponseResult({this.key, this.label, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dls_region_key.dart';@immutable final class DlsAccountRegionalHostnamesAccountListRegionsResponseResult {const DlsAccountRegionalHostnamesAccountListRegionsResponseResult({this.key, this.label, });
 
 factory DlsAccountRegionalHostnamesAccountListRegionsResponseResult.fromJson(Map<String, dynamic> json) { return DlsAccountRegionalHostnamesAccountListRegionsResponseResult(
   key: json['key'] != null ? DlsRegionKey.fromJson(json['key'] as String) : null,

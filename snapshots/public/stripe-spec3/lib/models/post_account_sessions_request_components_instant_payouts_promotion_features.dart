@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountSessionsRequestComponentsInstantPayoutsPromotionFeatures {const PostAccountSessionsRequestComponentsInstantPayoutsPromotionFeatures({this.disableStripeUserAuthentication, this.externalAccountCollection, this.instantPayouts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountSessionsRequestComponentsInstantPayoutsPromotionFeatures {const PostAccountSessionsRequestComponentsInstantPayoutsPromotionFeatures({this.disableStripeUserAuthentication, this.externalAccountCollection, this.instantPayouts, });
 
 factory PostAccountSessionsRequestComponentsInstantPayoutsPromotionFeatures.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsInstantPayoutsPromotionFeatures(
   disableStripeUserAuthentication: json['disable_stripe_user_authentication'] as bool?,

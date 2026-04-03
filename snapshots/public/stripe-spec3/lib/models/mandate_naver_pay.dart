@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class MandateNaverPay {const MandateNaverPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class MandateNaverPay {const MandateNaverPay();
 
-factory MandateNaverPay.fromJson(Map<String, dynamic> json) { return MandateNaverPay(
-
-); }
+factory MandateNaverPay.fromJson(Map<String, dynamic> _) { return const MandateNaverPay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-MandateNaverPay copyWith() { return MandateNaverPay(
+MandateNaverPay copyWith() { return const MandateNaverPay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is MandateNaverPay; } 

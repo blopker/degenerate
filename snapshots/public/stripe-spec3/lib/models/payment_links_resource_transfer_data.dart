@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'payment_links_resource_transfer_data_destination.dart';/// 
-final class PaymentLinksResourceTransferData {const PaymentLinksResourceTransferData({this.amount, required this.destination, });
+@immutable final class PaymentLinksResourceTransferData {const PaymentLinksResourceTransferData({required this.destination, this.amount, });
 
 factory PaymentLinksResourceTransferData.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceTransferData(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

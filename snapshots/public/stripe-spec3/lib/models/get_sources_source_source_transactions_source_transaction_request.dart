@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetSourcesSourceSourceTransactionsSourceTransactionRequest {const GetSourcesSourceSourceTransactionsSourceTransactionRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSourcesSourceSourceTransactionsSourceTransactionRequest {const GetSourcesSourceSourceTransactionsSourceTransactionRequest();
 
-factory GetSourcesSourceSourceTransactionsSourceTransactionRequest.fromJson(Map<String, dynamic> json) { return GetSourcesSourceSourceTransactionsSourceTransactionRequest(
-
-); }
+factory GetSourcesSourceSourceTransactionsSourceTransactionRequest.fromJson(Map<String, dynamic> _) { return const GetSourcesSourceSourceTransactionsSourceTransactionRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetSourcesSourceSourceTransactionsSourceTransactionRequest copyWith() { return GetSourcesSourceSourceTransactionsSourceTransactionRequest(
+GetSourcesSourceSourceTransactionsSourceTransactionRequest copyWith() { return const GetSourcesSourceSourceTransactionsSourceTransactionRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetSourcesSourceSourceTransactionsSourceTransactionRequest; } 

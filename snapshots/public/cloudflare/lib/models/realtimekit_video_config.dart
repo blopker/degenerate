@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_video_config_watermark.dart';/// Codec using which the recording will be encoded.
-final class RealtimekitVideoConfigCodec {const RealtimekitVideoConfigCodec._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_video_config_watermark.dart';/// Codec using which the recording will be encoded.
+@immutable final class RealtimekitVideoConfigCodec {const RealtimekitVideoConfigCodec._(this.value);
 
 factory RealtimekitVideoConfigCodec.fromJson(String json) { return switch (json) {
   'H264' => h264,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitVideoConfigCodec($value)'; } 
  }
-final class RealtimekitVideoConfig {const RealtimekitVideoConfig({this.codec = RealtimekitVideoConfigCodec.h264, this.exportFile = true, this.height = 720, this.watermark, this.width = 1280, });
+@immutable final class RealtimekitVideoConfig {const RealtimekitVideoConfig({this.codec = RealtimekitVideoConfigCodec.h264, this.exportFile = true, this.height = 720, this.watermark, this.width = 1280, });
 
 factory RealtimekitVideoConfig.fromJson(Map<String, dynamic> json) { return RealtimekitVideoConfig(
   codec: json.containsKey('codec') ? RealtimekitVideoConfigCodec.fromJson(json['codec'] as String) : RealtimekitVideoConfigCodec.h264,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metaproperties for Git author/committer information.
-final class WebhookPushPusher {const WebhookPushPusher({this.date, this.email, required this.name, this.username, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metaproperties for Git author/committer information.
+@immutable final class WebhookPushPusher {const WebhookPushPusher({required this.name, this.date, this.email, this.username, });
 
 factory WebhookPushPusher.fromJson(Map<String, dynamic> json) { return WebhookPushPusher(
   date: json['date'] != null ? DateTime.parse(json['date'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_review_request_removed_review_request_removed2_pull_request_auto_merge_enabled_by.dart';/// The merge method to use.
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestAutoMergeMergeMethod {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestAutoMergeMergeMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_request_removed_review_request_removed2_pull_request_auto_merge_enabled_by.dart';/// The merge method to use.
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestAutoMergeMergeMethod {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestAutoMergeMergeMethod._(this.value);
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestAutoMergeMergeMethod.fromJson(String json) { return switch (json) {
   'merge' => merge,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestAutoMergeMergeMethod($value)'; } 
  }
 /// The status of auto merging a pull request.
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestAutoMerge {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestAutoMerge({required this.commitMessage, required this.commitTitle, required this.enabledBy, required this.mergeMethod, });
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestAutoMerge {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestAutoMerge({required this.commitMessage, required this.commitTitle, required this.enabledBy, required this.mergeMethod, });
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestAutoMerge.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestAutoMerge(
   commitMessage: json['commit_message'] as String?,

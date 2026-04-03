@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnCatalogSyncUpdateMode {const McnCatalogSyncUpdateMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnCatalogSyncUpdateMode {const McnCatalogSyncUpdateMode._(this.value);
 
 factory McnCatalogSyncUpdateMode.fromJson(String json) { return switch (json) {
   'AUTO' => auto,

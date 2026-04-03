@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'create_single_member.dart';final class CreateMemberRequest {const CreateMemberRequest({required this.member});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_single_member.dart';@immutable final class CreateMemberRequest {const CreateMemberRequest({required this.member});
 
 factory CreateMemberRequest.fromJson(Map<String, dynamic> json) { return CreateMemberRequest(
   member: CreateSingleMember.fromJson(json['member'] as Map<String, dynamic>),

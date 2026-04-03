@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_har_response2_log.dart';final class UrlscannerGetScanHarResponse2 {const UrlscannerGetScanHarResponse2({required this.log});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response2_log.dart';@immutable final class UrlscannerGetScanHarResponse2 {const UrlscannerGetScanHarResponse2({required this.log});
 
 factory UrlscannerGetScanHarResponse2.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2(
   log: UrlscannerGetScanHarResponse2Log.fromJson(json['log'] as Map<String, dynamic>),

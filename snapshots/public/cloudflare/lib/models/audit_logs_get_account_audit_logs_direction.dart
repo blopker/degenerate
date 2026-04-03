@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Changes the direction of the chronological sorting.
-final class AuditLogsGetAccountAuditLogsDirection {const AuditLogsGetAccountAuditLogsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Changes the direction of the chronological sorting.
+@immutable final class AuditLogsGetAccountAuditLogsDirection {const AuditLogsGetAccountAuditLogsDirection._(this.value);
 
 factory AuditLogsGetAccountAuditLogsDirection.fromJson(String json) { return switch (json) {
   'desc' => desc,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_webhook.dart';final class RealtimekitWebhooksListSuccessResponse {const RealtimekitWebhooksListSuccessResponse({required this.data, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_webhook.dart';@immutable final class RealtimekitWebhooksListSuccessResponse {const RealtimekitWebhooksListSuccessResponse({required this.data, required this.success, });
 
 factory RealtimekitWebhooksListSuccessResponse.fromJson(Map<String, dynamic> json) { return RealtimekitWebhooksListSuccessResponse(
   data: (json['data'] as List<dynamic>).map((e) => RealtimekitWebhook.fromJson(e as Map<String, dynamic>)).toList(),

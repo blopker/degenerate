@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_account_app_id.dart';import 'magic_app_name.dart';import 'magic_app_type.dart';import 'magic_cidr.dart';/// Custom app defined for an account.
-final class MagicAccountApp {const MagicAccountApp({required this.accountAppId, this.hostnames, this.ipSubnets, this.name, this.sourceSubnets, this.type, });
+@immutable final class MagicAccountApp {const MagicAccountApp({required this.accountAppId, this.hostnames, this.ipSubnets, this.name, this.sourceSubnets, this.type, });
 
 factory MagicAccountApp.fromJson(Map<String, dynamic> json) { return MagicAccountApp(
   accountAppId: MagicAccountAppId.fromJson(json['account_app_id'] as String),

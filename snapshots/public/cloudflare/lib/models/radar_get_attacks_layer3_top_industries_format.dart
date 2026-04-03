@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Format in which results will be returned.
-final class RadarGetAttacksLayer3TopIndustriesFormat {const RadarGetAttacksLayer3TopIndustriesFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
+@immutable final class RadarGetAttacksLayer3TopIndustriesFormat {const RadarGetAttacksLayer3TopIndustriesFormat._(this.value);
 
 factory RadarGetAttacksLayer3TopIndustriesFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,

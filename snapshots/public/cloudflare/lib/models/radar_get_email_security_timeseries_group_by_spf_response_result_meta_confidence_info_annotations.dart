@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotations {const RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotations {const RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetEmailSecurityTimeseriesGroupBySpfResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

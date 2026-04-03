@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_issues_opened_changes_old_issue.dart';import 'webhook_issues_opened_changes_old_repository.dart';final class WebhookIssuesOpenedChanges {const WebhookIssuesOpenedChanges({required this.oldIssue, required this.oldRepository, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_issues_opened_changes_old_issue.dart';import 'webhook_issues_opened_changes_old_repository.dart';@immutable final class WebhookIssuesOpenedChanges {const WebhookIssuesOpenedChanges({required this.oldIssue, required this.oldRepository, });
 
 factory WebhookIssuesOpenedChanges.fromJson(Map<String, dynamic> json) { return WebhookIssuesOpenedChanges(
   oldIssue: json['old_issue'] != null ? WebhookIssuesOpenedChangesOldIssue.fromJson(json['old_issue'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Operator.
-final class TeamsDevicesCrowdstrikeInputRequestOperator {const TeamsDevicesCrowdstrikeInputRequestOperator._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operator.
+@immutable final class TeamsDevicesCrowdstrikeInputRequestOperator {const TeamsDevicesCrowdstrikeInputRequestOperator._(this.value);
 
 factory TeamsDevicesCrowdstrikeInputRequestOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamsDevicesCrowdstrikeInputRequestOperator($value)'; } 
  }
 /// For more details on state, please refer to the Crowdstrike documentation.
-final class TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState._(this.value);
+@immutable final class TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState._(this.value);
 
 factory TeamsDevicesCrowdstrikeInputRequestState.fromJson(String json) { return switch (json) {
   'online' => online,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamsDevicesCrowdstrikeInputRequestState($value)'; } 
  }
 /// Version Operator.
-final class TeamsDevicesCrowdstrikeInputRequestVersionOperator {const TeamsDevicesCrowdstrikeInputRequestVersionOperator._(this.value);
+@immutable final class TeamsDevicesCrowdstrikeInputRequestVersionOperator {const TeamsDevicesCrowdstrikeInputRequestVersionOperator._(this.value);
 
 factory TeamsDevicesCrowdstrikeInputRequestVersionOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
@@ -96,7 +96,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesCrowdstrikeInputRequestVersionOperator($value)'; } 
  }
-final class TeamsDevicesCrowdstrikeInputRequest {const TeamsDevicesCrowdstrikeInputRequest({required this.connectionId, this.lastSeen, this.$operator, this.os, this.overall, this.sensorConfig, this.state, this.version, this.versionOperator, });
+@immutable final class TeamsDevicesCrowdstrikeInputRequest {const TeamsDevicesCrowdstrikeInputRequest({required this.connectionId, this.lastSeen, this.$operator, this.os, this.overall, this.sensorConfig, this.state, this.version, this.versionOperator, });
 
 factory TeamsDevicesCrowdstrikeInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesCrowdstrikeInputRequest(
   connectionId: json['connection_id'] as String,

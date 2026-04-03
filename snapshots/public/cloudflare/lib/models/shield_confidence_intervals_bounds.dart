@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Upper and lower bound for percentile estimate
-final class ShieldConfidenceIntervalsBounds {const ShieldConfidenceIntervalsBounds({this.lower, this.upper, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Upper and lower bound for percentile estimate
+@immutable final class ShieldConfidenceIntervalsBounds {const ShieldConfidenceIntervalsBounds({this.lower, this.upper, });
 
 factory ShieldConfidenceIntervalsBounds.fromJson(Map<String, dynamic> json) { return ShieldConfidenceIntervalsBounds(
   lower: json['lower'] != null ? (json['lower'] as num).toDouble() : null,

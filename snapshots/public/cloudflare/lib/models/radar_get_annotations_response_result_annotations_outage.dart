@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAnnotationsResponseResultAnnotationsOutage {const RadarGetAnnotationsResponseResultAnnotationsOutage({required this.outageCause, required this.outageType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAnnotationsResponseResultAnnotationsOutage {const RadarGetAnnotationsResponseResultAnnotationsOutage({required this.outageCause, required this.outageType, });
 
 factory RadarGetAnnotationsResponseResultAnnotationsOutage.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsResponseResultAnnotationsOutage(
   outageCause: json['outageCause'] as String,

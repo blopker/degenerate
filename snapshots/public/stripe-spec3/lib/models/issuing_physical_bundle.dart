@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_physical_bundle_features.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class IssuingPhysicalBundleObject {const IssuingPhysicalBundleObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_physical_bundle_features.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class IssuingPhysicalBundleObject {const IssuingPhysicalBundleObject._(this.value);
 
 factory IssuingPhysicalBundleObject.fromJson(String json) { return switch (json) {
   'issuing.physical_bundle' => issuingPhysicalBundle,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingPhysicalBundleObject($value)'; } 
  }
 /// Whether this physical bundle can be used to create cards.
-final class IssuingPhysicalBundleStatus {const IssuingPhysicalBundleStatus._(this.value);
+@immutable final class IssuingPhysicalBundleStatus {const IssuingPhysicalBundleStatus._(this.value);
 
 factory IssuingPhysicalBundleStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingPhysicalBundleStatus($value)'; } 
  }
 /// Whether this physical bundle is a standard Stripe offering or custom-made for you.
-final class IssuingPhysicalBundleType {const IssuingPhysicalBundleType._(this.value);
+@immutable final class IssuingPhysicalBundleType {const IssuingPhysicalBundleType._(this.value);
 
 factory IssuingPhysicalBundleType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingPhysicalBundleType($value)'; } 
  }
 /// A Physical Bundle represents the bundle of physical items - card stock, carrier letter, and envelope - that is shipped to a cardholder when you create a physical card.
-final class IssuingPhysicalBundle {const IssuingPhysicalBundle({required this.features, required this.id, required this.livemode, required this.name, required this.object, required this.status, required this.type, });
+@immutable final class IssuingPhysicalBundle {const IssuingPhysicalBundle({required this.features, required this.id, required this.livemode, required this.name, required this.object, required this.status, required this.type, });
 
 factory IssuingPhysicalBundle.fromJson(Map<String, dynamic> json) { return IssuingPhysicalBundle(
   features: IssuingPhysicalBundleFeatures.fromJson(json['features'] as Map<String, dynamic>),

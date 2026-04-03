@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class AccountLinkObject {const AccountLinkObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class AccountLinkObject {const AccountLinkObject._(this.value);
 
 factory AccountLinkObject.fromJson(String json) { return switch (json) {
   'account_link' => accountLink,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Stripe-hosted applications, such as Connect Onboarding.
 /// 
 /// Related guide: [Connect Onboarding](https://docs.stripe.com/connect/custom/hosted-onboarding)
-final class AccountLink {const AccountLink({required this.created, required this.expiresAt, required this.object, required this.url, });
+@immutable final class AccountLink {const AccountLink({required this.created, required this.expiresAt, required this.object, required this.url, });
 
 factory AccountLink.fromJson(Map<String, dynamic> json) { return AccountLink(
   created: (json['created'] as num).toInt(),

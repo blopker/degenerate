@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DexEndpointsListTestsOverviewKind {const DexEndpointsListTestsOverviewKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DexEndpointsListTestsOverviewKind {const DexEndpointsListTestsOverviewKind._(this.value);
 
 factory DexEndpointsListTestsOverviewKind.fromJson(String json) { return switch (json) {
   'http' => http,

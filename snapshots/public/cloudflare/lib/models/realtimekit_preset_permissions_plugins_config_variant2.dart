@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitPresetPermissionsPluginsConfigVariant2AccessControl {const RealtimekitPresetPermissionsPluginsConfigVariant2AccessControl._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPresetPermissionsPluginsConfigVariant2AccessControl {const RealtimekitPresetPermissionsPluginsConfigVariant2AccessControl._(this.value);
 
 factory RealtimekitPresetPermissionsPluginsConfigVariant2AccessControl.fromJson(String json) { return switch (json) {
   'FULL_ACCESS' => fullAccess,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitPresetPermissionsPluginsConfigVariant2AccessControl($value)'; } 
  }
-final class RealtimekitPresetPermissionsPluginsConfigVariant2 {const RealtimekitPresetPermissionsPluginsConfigVariant2({required this.accessControl, required this.handlesViewOnly, });
+@immutable final class RealtimekitPresetPermissionsPluginsConfigVariant2 {const RealtimekitPresetPermissionsPluginsConfigVariant2({required this.accessControl, required this.handlesViewOnly, });
 
 factory RealtimekitPresetPermissionsPluginsConfigVariant2.fromJson(Map<String, dynamic> json) { return RealtimekitPresetPermissionsPluginsConfigVariant2(
   accessControl: RealtimekitPresetPermissionsPluginsConfigVariant2AccessControl.fromJson(json['access_control'] as String),

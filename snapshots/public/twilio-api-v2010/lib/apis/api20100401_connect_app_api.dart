@@ -37,7 +37,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/ConnectApps/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.authorizeRedirectUrl case final authorizeRedirectUrl$?)
       'AuthorizeRedirectUrl=${Uri.encodeQueryComponent(authorizeRedirectUrl$.toString())}',
     if (body.companyName case final companyName$?)

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TokenCountsResourceObject {const TokenCountsResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TokenCountsResourceObject {const TokenCountsResourceObject._(this.value);
 
 factory TokenCountsResourceObject.fromJson(String json) { return switch (json) {
   'response.input_tokens' => responseInputTokens,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TokenCountsResourceObject($value)'; } 
  }
-final class TokenCountsResource {const TokenCountsResource({this.object = TokenCountsResourceObject.responseInputTokens, required this.inputTokens, });
+@immutable final class TokenCountsResource {const TokenCountsResource({required this.inputTokens, this.object = TokenCountsResourceObject.responseInputTokens, });
 
 factory TokenCountsResource.fromJson(Map<String, dynamic> json) { return TokenCountsResource(
   object: TokenCountsResourceObject.fromJson(json['object'] as String),

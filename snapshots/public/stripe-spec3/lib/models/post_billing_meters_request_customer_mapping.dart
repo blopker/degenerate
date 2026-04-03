@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBillingMetersRequestCustomerMappingType {const PostBillingMetersRequestCustomerMappingType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingMetersRequestCustomerMappingType {const PostBillingMetersRequestCustomerMappingType._(this.value);
 
 factory PostBillingMetersRequestCustomerMappingType.fromJson(String json) { return switch (json) {
   'by_id' => byId,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostBillingMetersRequestCustomerMappingType($value)'; } 
  }
 /// Fields that specify how to map a meter event to a customer.
-final class PostBillingMetersRequestCustomerMapping {const PostBillingMetersRequestCustomerMapping({required this.eventPayloadKey, required this.type, });
+@immutable final class PostBillingMetersRequestCustomerMapping {const PostBillingMetersRequestCustomerMapping({required this.eventPayloadKey, required this.type, });
 
 factory PostBillingMetersRequestCustomerMapping.fromJson(Map<String, dynamic> json) { return PostBillingMetersRequestCustomerMapping(
   eventPayloadKey: json['event_payload_key'] as String,

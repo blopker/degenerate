@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_records_id_report_refund_request_processor_details_custom.dart';final class PostPaymentRecordsIdReportRefundRequestProcessorDetailsType {const PostPaymentRecordsIdReportRefundRequestProcessorDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_refund_request_processor_details_custom.dart';@immutable final class PostPaymentRecordsIdReportRefundRequestProcessorDetailsType {const PostPaymentRecordsIdReportRefundRequestProcessorDetailsType._(this.value);
 
 factory PostPaymentRecordsIdReportRefundRequestProcessorDetailsType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentRecordsIdReportRefundRequestProcessorDetailsType($value)'; } 
  }
 /// Processor information for this refund.
-final class PostPaymentRecordsIdReportRefundRequestProcessorDetails {const PostPaymentRecordsIdReportRefundRequestProcessorDetails({this.custom, required this.type, });
+@immutable final class PostPaymentRecordsIdReportRefundRequestProcessorDetails {const PostPaymentRecordsIdReportRefundRequestProcessorDetails({required this.type, this.custom, });
 
 factory PostPaymentRecordsIdReportRefundRequestProcessorDetails.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportRefundRequestProcessorDetails(
   custom: json['custom'] != null ? PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom.fromJson(json['custom'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingDisputesStatus {const GetIssuingDisputesStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingDisputesStatus {const GetIssuingDisputesStatus._(this.value);
 
 factory GetIssuingDisputesStatus.fromJson(String json) { return switch (json) {
   'expired' => expired,

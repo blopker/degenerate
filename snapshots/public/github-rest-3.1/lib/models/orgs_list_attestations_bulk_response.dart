@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'orgs_list_attestations_bulk_response_attestations_subject_digests_value.dart';import 'orgs_list_attestations_bulk_response_page_info.dart';final class OrgsListAttestationsBulkResponse {const OrgsListAttestationsBulkResponse({this.attestationsSubjectDigests, this.pageInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_list_attestations_bulk_response_attestations_subject_digests_value.dart';import 'orgs_list_attestations_bulk_response_page_info.dart';@immutable final class OrgsListAttestationsBulkResponse {const OrgsListAttestationsBulkResponse({this.attestationsSubjectDigests, this.pageInfo, });
 
 factory OrgsListAttestationsBulkResponse.fromJson(Map<String, dynamic> json) { return OrgsListAttestationsBulkResponse(
   attestationsSubjectDigests: (json['attestations_subject_digests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValue.fromJson(e as Map<String, dynamic>)).toList())),

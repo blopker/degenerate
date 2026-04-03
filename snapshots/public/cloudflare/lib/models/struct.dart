@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_source_field.dart';final class StructType {const StructType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_source_field.dart';@immutable final class StructType {const StructType._(this.value);
 
 factory StructType.fromJson(String json) { return switch (json) {
   'struct' => struct,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StructType($value)'; } 
  }
-final class Struct {const Struct({required this.fields, this.name, required this.type, });
+@immutable final class Struct {const Struct({required this.fields, required this.type, this.name, });
 
 factory Struct.fromJson(Map<String, dynamic> json) { return Struct(
   fields: (json['fields'] as List<dynamic>).map((e) => CloudflarePipelinesSourceField.fromJson(e as Map<String, dynamic>)).toList(),

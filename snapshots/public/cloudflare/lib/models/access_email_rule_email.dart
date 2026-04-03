@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessEmailRuleEmail {const AccessEmailRuleEmail({required this.email});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessEmailRuleEmail {const AccessEmailRuleEmail({required this.email});
 
 factory AccessEmailRuleEmail.fromJson(Map<String, dynamic> json) { return AccessEmailRuleEmail(
   email: json['email'] as String,

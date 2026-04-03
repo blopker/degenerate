@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'conference_recording_enum_status.dart';final class UpdateConferenceRecordingRequest {const UpdateConferenceRecordingRequest({required this.status, this.pauseBehavior, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'conference_recording_enum_status.dart';@immutable final class UpdateConferenceRecordingRequest {const UpdateConferenceRecordingRequest({required this.status, this.pauseBehavior, });
 
 factory UpdateConferenceRecordingRequest.fromJson(Map<String, dynamic> json) { return UpdateConferenceRecordingRequest(
   status: ConferenceRecordingEnumStatus.fromJson(json['Status'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoice_payment_method_options_acss_debit.dart';import 'invoice_payment_method_options_bancontact.dart';import 'invoice_payment_method_options_card.dart';import 'invoice_payment_method_options_customer_balance.dart';import 'invoice_payment_method_options_konbini.dart';import 'invoice_payment_method_options_payto.dart';import 'invoice_payment_method_options_sepa_debit.dart';import 'invoice_payment_method_options_us_bank_account.dart';/// 
-final class InvoicesPaymentMethodOptions {const InvoicesPaymentMethodOptions({this.acssDebit, this.bancontact, this.card, this.customerBalance, this.konbini, this.payto, this.sepaDebit, this.usBankAccount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_acss_debit.dart';import 'invoice_payment_method_options_bancontact.dart';import 'invoice_payment_method_options_card.dart';import 'invoice_payment_method_options_customer_balance.dart';import 'invoice_payment_method_options_konbini.dart';import 'invoice_payment_method_options_payto.dart';import 'invoice_payment_method_options_sepa_debit.dart';import 'invoice_payment_method_options_us_bank_account.dart';/// 
+@immutable final class InvoicesPaymentMethodOptions {const InvoicesPaymentMethodOptions({this.acssDebit, this.bancontact, this.card, this.customerBalance, this.konbini, this.payto, this.sepaDebit, this.usBankAccount, });
 
 factory InvoicesPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return InvoicesPaymentMethodOptions(
   acssDebit: json['acss_debit'] != null ? InvoicePaymentMethodOptionsAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,

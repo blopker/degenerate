@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DependabotListAlertsForEnterpriseSort {const DependabotListAlertsForEnterpriseSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotListAlertsForEnterpriseSort {const DependabotListAlertsForEnterpriseSort._(this.value);
 
 factory DependabotListAlertsForEnterpriseSort.fromJson(String json) { return switch (json) {
   'created' => created,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Operator.
-final class TeamsDevicesCustomS2sInputRequestOperator {const TeamsDevicesCustomS2sInputRequestOperator._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operator.
+@immutable final class TeamsDevicesCustomS2sInputRequestOperator {const TeamsDevicesCustomS2sInputRequestOperator._(this.value);
 
 factory TeamsDevicesCustomS2sInputRequestOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesCustomS2sInputRequestOperator($value)'; } 
  }
-final class TeamsDevicesCustomS2sInputRequest {const TeamsDevicesCustomS2sInputRequest({required this.connectionId, required this.$operator, required this.score, });
+@immutable final class TeamsDevicesCustomS2sInputRequest {const TeamsDevicesCustomS2sInputRequest({required this.connectionId, required this.$operator, required this.score, });
 
 factory TeamsDevicesCustomS2sInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesCustomS2sInputRequest(
   connectionId: json['connection_id'] as String,

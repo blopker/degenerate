@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ImageRefParam2 {const ImageRefParam2({this.imageUrl, this.fileId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageRefParam2 {const ImageRefParam2({this.imageUrl, this.fileId, });
 
 factory ImageRefParam2.fromJson(Map<String, dynamic> json) { return ImageRefParam2(
   imageUrl: json['image_url'] as String?,

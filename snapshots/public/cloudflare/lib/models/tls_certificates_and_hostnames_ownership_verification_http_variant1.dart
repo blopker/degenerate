@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 {const TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1({this.httpBody, this.httpUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 {const TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1({this.httpBody, this.httpUrl, });
 
 factory TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(
   httpBody: json['http_body'] as String?,

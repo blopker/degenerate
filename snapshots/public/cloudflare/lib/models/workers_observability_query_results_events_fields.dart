@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObservabilityQueryResultsEventsFields {const WorkersObservabilityQueryResultsEventsFields({required this.key, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityQueryResultsEventsFields {const WorkersObservabilityQueryResultsEventsFields({required this.key, required this.type, });
 
 factory WorkersObservabilityQueryResultsEventsFields.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsEventsFields(
   key: json['key'] as String,

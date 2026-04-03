@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_predefined_entry.dart';final class DlpEntriesCreatePredefinedEntryResponse {const DlpEntriesCreatePredefinedEntryResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_predefined_entry.dart';@immutable final class DlpEntriesCreatePredefinedEntryResponse {const DlpEntriesCreatePredefinedEntryResponse({this.result});
 
 factory DlpEntriesCreatePredefinedEntryResponse.fromJson(Map<String, dynamic> json) { return DlpEntriesCreatePredefinedEntryResponse(
   result: json['result'] != null ? DlpPredefinedEntry.fromJson(json['result'] as Map<String, dynamic>) : null,

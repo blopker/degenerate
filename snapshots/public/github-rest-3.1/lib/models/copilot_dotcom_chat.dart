@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_dotcom_chat_models.dart';/// Usage metrics for Copilot Chat in GitHub.com
-final class CopilotDotcomChat {const CopilotDotcomChat({this.totalEngagedUsers, this.models, this.additionalProperties = const {}, });
+@immutable final class CopilotDotcomChat {const CopilotDotcomChat({this.totalEngagedUsers, this.models, this.additionalProperties = const {}, });
 
 factory CopilotDotcomChat.fromJson(Map<String, dynamic> json) { return CopilotDotcomChat(
   totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,

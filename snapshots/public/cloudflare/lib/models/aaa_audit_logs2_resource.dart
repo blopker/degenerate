@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Provides details about the affected resource.
-final class AaaAuditLogs2Resource {const AaaAuditLogs2Resource({this.id, this.product, this.request, this.response, this.scope, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides details about the affected resource.
+@immutable final class AaaAuditLogs2Resource {const AaaAuditLogs2Resource({this.id, this.product, this.request, this.response, this.scope, this.type, });
 
 factory AaaAuditLogs2Resource.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2Resource(
   id: json['id'] as String?,
   product: json['product'] as String?,
-  request: (json['request'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  response: (json['response'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  scope: (json['scope'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  request: json['request'] as Map<String, dynamic>?,
+  response: json['response'] as Map<String, dynamic>?,
+  scope: json['scope'] as Map<String, dynamic>?,
   type: json['type'] as String?,
 ); }
 

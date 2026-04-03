@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lists_item_hostname.dart';final class ListsListItemHostnameObject {const ListsListItemHostnameObject({required this.hostname});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_item_hostname.dart';@immutable final class ListsListItemHostnameObject {const ListsListItemHostnameObject({required this.hostname});
 
 factory ListsListItemHostnameObject.fromJson(Map<String, dynamic> json) { return ListsListItemHostnameObject(
   hostname: ListsItemHostname.fromJson(json['hostname'] as Map<String, dynamic>),

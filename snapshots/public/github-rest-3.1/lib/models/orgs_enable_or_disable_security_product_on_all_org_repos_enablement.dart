@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement {const OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement {const OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement._(this.value);
 
 factory OrgsEnableOrDisableSecurityProductOnAllOrgReposEnablement.fromJson(String json) { return switch (json) {
   'enable_all' => enableAll,

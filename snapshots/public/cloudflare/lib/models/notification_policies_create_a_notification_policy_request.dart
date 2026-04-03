@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_alert_interval.dart';import 'aaa_alert_type.dart';import 'aaa_enabled.dart';import 'aaa_filters.dart';import 'aaa_mechanisms.dart';import 'aaa_schemas_description.dart';import 'aaa_schemas_name.dart';final class NotificationPoliciesCreateANotificationPolicyRequest {const NotificationPoliciesCreateANotificationPolicyRequest({this.alertInterval, required this.alertType, this.description, required this.enabled, this.filters, required this.mechanisms, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_alert_interval.dart';import 'aaa_alert_type.dart';import 'aaa_enabled.dart';import 'aaa_filters.dart';import 'aaa_mechanisms.dart';import 'aaa_schemas_description.dart';import 'aaa_schemas_name.dart';@immutable final class NotificationPoliciesCreateANotificationPolicyRequest {const NotificationPoliciesCreateANotificationPolicyRequest({required this.alertType, required this.enabled, required this.mechanisms, required this.name, this.alertInterval, this.description, this.filters, });
 
 factory NotificationPoliciesCreateANotificationPolicyRequest.fromJson(Map<String, dynamic> json) { return NotificationPoliciesCreateANotificationPolicyRequest(
   alertInterval: json['alert_interval'] != null ? AaaAlertInterval.fromJson(json['alert_interval'] as String) : null,

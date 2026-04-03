@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingAuthorizationsRequestFleetReportedBreakdownTax {const PostTestHelpersIssuingAuthorizationsRequestFleetReportedBreakdownTax({this.localAmountDecimal, this.nationalAmountDecimal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingAuthorizationsRequestFleetReportedBreakdownTax {const PostTestHelpersIssuingAuthorizationsRequestFleetReportedBreakdownTax({this.localAmountDecimal, this.nationalAmountDecimal, });
 
 factory PostTestHelpersIssuingAuthorizationsRequestFleetReportedBreakdownTax.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestFleetReportedBreakdownTax(
   localAmountDecimal: json['local_amount_decimal'] as String?,

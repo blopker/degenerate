@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_tags_components_schemas_name.dart';import 'access_timestamp.dart';/// A tag
-final class AccessTagWithoutAppCount {const AccessTagWithoutAppCount({this.createdAt, required this.name, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_tags_components_schemas_name.dart';import 'access_timestamp.dart';/// A tag
+@immutable final class AccessTagWithoutAppCount {const AccessTagWithoutAppCount({required this.name, this.createdAt, this.updatedAt, });
 
 factory AccessTagWithoutAppCount.fromJson(Map<String, dynamic> json) { return AccessTagWithoutAppCount(
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,

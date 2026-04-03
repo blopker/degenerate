@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_security_disposition_label.dart';final class EmailSecurityMailsearchMessageFindings {const EmailSecurityMailsearchMessageFindings({this.attachment, this.detail, this.detection, this.field, this.name, this.portion, this.reason, this.score, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';@immutable final class EmailSecurityMailsearchMessageFindings {const EmailSecurityMailsearchMessageFindings({this.attachment, this.detail, this.detection, this.field, this.name, this.portion, this.reason, this.score, this.value, });
 
 factory EmailSecurityMailsearchMessageFindings.fromJson(Map<String, dynamic> json) { return EmailSecurityMailsearchMessageFindings(
   attachment: json['attachment'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentIntentPaymentMethodOptionsParam14NetworksRequested {const PaymentIntentPaymentMethodOptionsParam14NetworksRequested._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam14NetworksRequested {const PaymentIntentPaymentMethodOptionsParam14NetworksRequested._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam14NetworksRequested.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14NetworksRequested($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam14Networks {const PaymentIntentPaymentMethodOptionsParam14Networks({this.requested});
+@immutable final class PaymentIntentPaymentMethodOptionsParam14Networks {const PaymentIntentPaymentMethodOptionsParam14Networks({this.requested});
 
 factory PaymentIntentPaymentMethodOptionsParam14Networks.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam14Networks(
   requested: (json['requested'] as List<dynamic>?)?.map((e) => PaymentIntentPaymentMethodOptionsParam14NetworksRequested.fromJson(e as String)).toList(),

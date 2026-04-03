@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposRenameBranchRequest {const ReposRenameBranchRequest({required this.newName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposRenameBranchRequest {const ReposRenameBranchRequest({required this.newName});
 
 factory ReposRenameBranchRequest.fromJson(Map<String, dynamic> json) { return ReposRenameBranchRequest(
   newName: json['new_name'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventDoRevertResponsePropertiesTargetTimestamp {const PostEventDoRevertResponsePropertiesTargetTimestamp({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventDoRevertResponsePropertiesTargetTimestamp {const PostEventDoRevertResponsePropertiesTargetTimestamp({required this.type});
 
 factory PostEventDoRevertResponsePropertiesTargetTimestamp.fromJson(Map<String, dynamic> json) { return PostEventDoRevertResponsePropertiesTargetTimestamp(
   type: json['type'] as String,

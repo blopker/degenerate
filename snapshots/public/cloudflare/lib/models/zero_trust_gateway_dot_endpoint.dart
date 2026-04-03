@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_ip_network.dart';final class ZeroTrustGatewayDotEndpoint {const ZeroTrustGatewayDotEndpoint({this.enabled, this.networks, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_ip_network.dart';@immutable final class ZeroTrustGatewayDotEndpoint {const ZeroTrustGatewayDotEndpoint({this.enabled, this.networks, });
 
 factory ZeroTrustGatewayDotEndpoint.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayDotEndpoint(
   enabled: json['enabled'] as bool?,

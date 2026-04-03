@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_deployment_review_rejected_workflow_run_pull_requests_head_repo.dart';final class WebhookDeploymentReviewRejectedWorkflowRunPullRequestsHead {const WebhookDeploymentReviewRejectedWorkflowRunPullRequestsHead({required this.ref, required this.repo, required this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_review_rejected_workflow_run_pull_requests_head_repo.dart';@immutable final class WebhookDeploymentReviewRejectedWorkflowRunPullRequestsHead {const WebhookDeploymentReviewRejectedWorkflowRunPullRequestsHead({required this.ref, required this.repo, required this.sha, });
 
 factory WebhookDeploymentReviewRejectedWorkflowRunPullRequestsHead.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRejectedWorkflowRunPullRequestsHead(
   ref: json['ref'] as String,

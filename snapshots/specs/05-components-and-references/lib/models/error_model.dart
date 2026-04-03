@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ErrorModel {const ErrorModel({this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ErrorModel {const ErrorModel({this.message});
 
 factory ErrorModel.fromJson(Map<String, dynamic> json) { return ErrorModel(
   message: json['message'] as String?,

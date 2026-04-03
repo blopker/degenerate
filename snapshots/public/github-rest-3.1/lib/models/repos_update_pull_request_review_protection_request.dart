@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repos_update_pull_request_review_protection_request_bypass_pull_request_allowances.dart';import 'repos_update_pull_request_review_protection_request_dismissal_restrictions.dart';final class ReposUpdatePullRequestReviewProtectionRequest {const ReposUpdatePullRequestReviewProtectionRequest({this.dismissalRestrictions, this.dismissStaleReviews, this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, this.bypassPullRequestAllowances, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_pull_request_review_protection_request_bypass_pull_request_allowances.dart';import 'repos_update_pull_request_review_protection_request_dismissal_restrictions.dart';@immutable final class ReposUpdatePullRequestReviewProtectionRequest {const ReposUpdatePullRequestReviewProtectionRequest({this.dismissalRestrictions, this.dismissStaleReviews, this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, this.bypassPullRequestAllowances, });
 
 factory ReposUpdatePullRequestReviewProtectionRequest.fromJson(Map<String, dynamic> json) { return ReposUpdatePullRequestReviewProtectionRequest(
   dismissalRestrictions: json['dismissal_restrictions'] != null ? ReposUpdatePullRequestReviewProtectionRequestDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null,

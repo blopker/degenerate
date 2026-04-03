@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_groups_components_schemas_name2.dart';import 'access_rule.dart';final class ZoneLevelAccessGroupsCreateAnAccessGroupRequest {const ZoneLevelAccessGroupsCreateAnAccessGroupRequest({this.exclude, required this.include, required this.name, this.require, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_groups_components_schemas_name2.dart';import 'access_rule.dart';@immutable final class ZoneLevelAccessGroupsCreateAnAccessGroupRequest {const ZoneLevelAccessGroupsCreateAnAccessGroupRequest({required this.include, required this.name, this.exclude, this.require, });
 
 factory ZoneLevelAccessGroupsCreateAnAccessGroupRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelAccessGroupsCreateAnAccessGroupRequest(
   exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),

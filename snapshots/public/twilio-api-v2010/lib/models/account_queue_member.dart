@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountQueueMember {const AccountQueueMember({this.callSid, this.dateEnqueued, this.position = 0, this.uri, this.waitTime = 0, this.queueSid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountQueueMember {const AccountQueueMember({this.callSid, this.dateEnqueued, this.position = 0, this.uri, this.waitTime = 0, this.queueSid, });
 
 factory AccountQueueMember.fromJson(Map<String, dynamic> json) { return AccountQueueMember(
   callSid: json['call_sid'] as String?,

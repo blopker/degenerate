@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessAuthenticationMethodRuleAuthMethod {const AccessAuthenticationMethodRuleAuthMethod({required this.authMethod});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessAuthenticationMethodRuleAuthMethod {const AccessAuthenticationMethodRuleAuthMethod({required this.authMethod});
 
 factory AccessAuthenticationMethodRuleAuthMethod.fromJson(Map<String, dynamic> json) { return AccessAuthenticationMethodRuleAuthMethod(
   authMethod: json['auth_method'] as String,

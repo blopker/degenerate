@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Usage statistics related to the run. This value will be `null` if the run is not in a terminal state (i.e. `in_progress`, `queued`, etc.).
-final class RunCompletionUsage {const RunCompletionUsage({required this.completionTokens, required this.promptTokens, required this.totalTokens, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Usage statistics related to the run. This value will be `null` if the run is not in a terminal state (i.e. `in_progress`, `queued`, etc.).
+@immutable final class RunCompletionUsage {const RunCompletionUsage({required this.completionTokens, required this.promptTokens, required this.totalTokens, });
 
 factory RunCompletionUsage.fromJson(Map<String, dynamic> json) { return RunCompletionUsage(
   completionTokens: (json['completion_tokens'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_settings_dns_settings_account_patch.dart';final class DnsSettingsAccountSettingsPatch {const DnsSettingsAccountSettingsPatch({this.zoneDefaults});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_settings_dns_settings_account_patch.dart';@immutable final class DnsSettingsAccountSettingsPatch {const DnsSettingsAccountSettingsPatch({this.zoneDefaults});
 
 factory DnsSettingsAccountSettingsPatch.fromJson(Map<String, dynamic> json) { return DnsSettingsAccountSettingsPatch(
   zoneDefaults: json['zone_defaults'] != null ? DnsSettingsDnsSettingsAccountPatch.fromJson(json['zone_defaults'] as Map<String, dynamic>) : null,

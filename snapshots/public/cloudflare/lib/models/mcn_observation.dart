@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_provider_id.dart';import 'mcn_resource_id.dart';final class McnObservation {const McnObservation({required this.firstObservedAt, required this.lastObservedAt, required this.providerId, required this.resourceId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_provider_id.dart';import 'mcn_resource_id.dart';@immutable final class McnObservation {const McnObservation({required this.firstObservedAt, required this.lastObservedAt, required this.providerId, required this.resourceId, });
 
 factory McnObservation.fromJson(Map<String, dynamic> json) { return McnObservation(
   firstObservedAt: json['first_observed_at'] as String,

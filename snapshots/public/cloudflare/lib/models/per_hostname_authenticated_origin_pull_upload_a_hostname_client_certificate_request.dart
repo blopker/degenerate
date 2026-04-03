@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate.dart';import 'tls_certificates_and_hostnames_schemas_private_key.dart';final class PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest {const PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest({required this.certificate, required this.privateKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate.dart';import 'tls_certificates_and_hostnames_schemas_private_key.dart';@immutable final class PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest {const PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest({required this.certificate, required this.privateKey, });
 
 factory PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest.fromJson(Map<String, dynamic> json) { return PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest(
   certificate: TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate.fromJson(json['certificate'] as String),

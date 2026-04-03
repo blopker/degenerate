@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Provides details of static public IP limits for GitHub-hosted Hosted Runners
-final class ActionsHostedRunnerLimitsPublicIps {const ActionsHostedRunnerLimitsPublicIps({required this.maximum, required this.currentUsage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides details of static public IP limits for GitHub-hosted Hosted Runners
+@immutable final class ActionsHostedRunnerLimitsPublicIps {const ActionsHostedRunnerLimitsPublicIps({required this.maximum, required this.currentUsage, });
 
 factory ActionsHostedRunnerLimitsPublicIps.fromJson(Map<String, dynamic> json) { return ActionsHostedRunnerLimitsPublicIps(
   maximum: (json['maximum'] as num).toInt(),

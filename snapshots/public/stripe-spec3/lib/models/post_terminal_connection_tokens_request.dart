@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTerminalConnectionTokensRequest {const PostTerminalConnectionTokensRequest({this.expand, this.location, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalConnectionTokensRequest {const PostTerminalConnectionTokensRequest({this.expand, this.location, });
 
 factory PostTerminalConnectionTokensRequest.fromJson(Map<String, dynamic> json) { return PostTerminalConnectionTokensRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

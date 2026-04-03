@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique {const AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique {const AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique._(this.value);
 
 factory AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimitTechnique($value)'; } 
  }
-final class AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit {const AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit({this.periodMs, this.requests, this.technique, });
+@immutable final class AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit {const AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit({this.periodMs, this.requests, this.technique, });
 
 factory AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit.fromJson(Map<String, dynamic> json) { return AiSearchFetchInstancesResponseResultPublicEndpointParamsRateLimit(
   periodMs: json['period_ms'] != null ? (json['period_ms'] as num).toInt() : null,

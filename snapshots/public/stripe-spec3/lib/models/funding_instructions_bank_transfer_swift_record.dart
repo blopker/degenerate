@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';/// SWIFT Records contain U.S. bank account details per the SWIFT format.
-final class FundingInstructionsBankTransferSwiftRecord {const FundingInstructionsBankTransferSwiftRecord({required this.accountHolderAddress, required this.accountHolderName, required this.accountNumber, required this.accountType, required this.bankAddress, required this.bankName, required this.swiftCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// SWIFT Records contain U.S. bank account details per the SWIFT format.
+@immutable final class FundingInstructionsBankTransferSwiftRecord {const FundingInstructionsBankTransferSwiftRecord({required this.accountHolderAddress, required this.accountHolderName, required this.accountNumber, required this.accountType, required this.bankAddress, required this.bankName, required this.swiftCode, });
 
 factory FundingInstructionsBankTransferSwiftRecord.fromJson(Map<String, dynamic> json) { return FundingInstructionsBankTransferSwiftRecord(
   accountHolderAddress: Address.fromJson(json['account_holder_address'] as Map<String, dynamic>),

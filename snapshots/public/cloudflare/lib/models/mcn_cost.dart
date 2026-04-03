@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnCost {const McnCost({required this.currency, required this.monthlyCost, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnCost {const McnCost({required this.currency, required this.monthlyCost, });
 
 factory McnCost.fromJson(Map<String, dynamic> json) { return McnCost(
   currency: json['currency'] as String,

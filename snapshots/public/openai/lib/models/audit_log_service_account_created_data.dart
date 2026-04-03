@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The payload used to create the service account.
-final class AuditLogServiceAccountCreatedData {const AuditLogServiceAccountCreatedData({this.role});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to create the service account.
+@immutable final class AuditLogServiceAccountCreatedData {const AuditLogServiceAccountCreatedData({this.role});
 
 factory AuditLogServiceAccountCreatedData.fromJson(Map<String, dynamic> json) { return AuditLogServiceAccountCreatedData(
   role: json['role'] as String?,

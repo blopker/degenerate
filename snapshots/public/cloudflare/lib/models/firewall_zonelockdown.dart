@@ -14,7 +14,7 @@ factory FirewallLockdownsComponentsSchemasDescription.fromJson(String json) => F
 String toJson() => value;
 
 }
-final class FirewallZonelockdown {const FirewallZonelockdown({required this.configurations, required this.createdOn, required this.description, required this.id, required this.modifiedOn, required this.paused, required this.urls, });
+@immutable final class FirewallZonelockdown {const FirewallZonelockdown({required this.configurations, required this.createdOn, required this.description, required this.id, required this.modifiedOn, required this.paused, required this.urls, });
 
 factory FirewallZonelockdown.fromJson(Map<String, dynamic> json) { return FirewallZonelockdown(
   configurations: (json['configurations'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => FirewallSchemasIpConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallSchemasCidrConfiguration.fromJson(v as Map<String, dynamic>),)).toList(),

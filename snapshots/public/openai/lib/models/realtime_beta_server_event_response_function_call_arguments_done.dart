@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `response.function_call_arguments.done`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.function_call_arguments.done`.
 /// 
-final class RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType._(this.value);
+@immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType._(this.value);
 
 factory RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType.fromJson(String json) { return switch (json) {
   'response.function_call_arguments.done' => responseFunctionCallArgumentsDone,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Returned when the model-generated function call arguments are done streaming.
 /// Also emitted when a Response is interrupted, incomplete, or cancelled.
 /// 
-final class RealtimeBetaServerEventResponseFunctionCallArgumentsDone {const RealtimeBetaServerEventResponseFunctionCallArgumentsDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.callId, required this.name, required this.arguments, });
+@immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDone {const RealtimeBetaServerEventResponseFunctionCallArgumentsDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.callId, required this.name, required this.arguments, });
 
 factory RealtimeBetaServerEventResponseFunctionCallArgumentsDone.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseFunctionCallArgumentsDone(
   eventId: json['event_id'] as String,

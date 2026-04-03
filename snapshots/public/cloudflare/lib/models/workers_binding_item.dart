@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_kind_ai.dart';import 'workers_binding_kind_analytics_engine.dart';import 'workers_binding_kind_assets.dart';import 'workers_binding_kind_browser.dart';import 'workers_binding_kind_d1.dart';import 'workers_binding_kind_data_blob.dart';import 'workers_binding_kind_dispatch_namespace.dart';import 'workers_binding_kind_durable_object_namespace.dart';import 'workers_binding_kind_hyperdrive.dart';import 'workers_binding_kind_images.dart';import 'workers_binding_kind_inherit.dart';import 'workers_binding_kind_json.dart';import 'workers_binding_kind_kv_namespace.dart';import 'workers_binding_kind_mtls_certificate.dart';import 'workers_binding_kind_pipelines.dart';import 'workers_binding_kind_plain_text.dart';import 'workers_binding_kind_queue.dart';import 'workers_binding_kind_r2_bucket.dart';import 'workers_binding_kind_ratelimit.dart';import 'workers_binding_kind_secret_key.dart';import 'workers_binding_kind_secret_text.dart';import 'workers_binding_kind_secrets_store_secret.dart';import 'workers_binding_kind_send_email.dart';import 'workers_binding_kind_service.dart';import 'workers_binding_kind_text_blob.dart';import 'workers_binding_kind_vectorize.dart';import 'workers_binding_kind_version_metadata.dart';import 'workers_binding_kind_vpc_service.dart';import 'workers_binding_kind_wasm_module.dart';import 'workers_binding_kind_workflow.dart';/// A binding to allow the Worker to communicate with resources.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_kind_ai.dart';import 'workers_binding_kind_analytics_engine.dart';import 'workers_binding_kind_assets.dart';import 'workers_binding_kind_browser.dart';import 'workers_binding_kind_d1.dart';import 'workers_binding_kind_data_blob.dart';import 'workers_binding_kind_dispatch_namespace.dart';import 'workers_binding_kind_durable_object_namespace.dart';import 'workers_binding_kind_hyperdrive.dart';import 'workers_binding_kind_images.dart';import 'workers_binding_kind_inherit.dart';import 'workers_binding_kind_json.dart';import 'workers_binding_kind_kv_namespace.dart';import 'workers_binding_kind_mtls_certificate.dart';import 'workers_binding_kind_pipelines.dart';import 'workers_binding_kind_plain_text.dart';import 'workers_binding_kind_queue.dart';import 'workers_binding_kind_r2_bucket.dart';import 'workers_binding_kind_ratelimit.dart';import 'workers_binding_kind_secret_key.dart';import 'workers_binding_kind_secret_text.dart';import 'workers_binding_kind_secrets_store_secret.dart';import 'workers_binding_kind_send_email.dart';import 'workers_binding_kind_service.dart';import 'workers_binding_kind_text_blob.dart';import 'workers_binding_kind_vectorize.dart';import 'workers_binding_kind_version_metadata.dart';import 'workers_binding_kind_vpc_service.dart';import 'workers_binding_kind_wasm_module.dart';import 'workers_binding_kind_workflow.dart';/// A binding to allow the Worker to communicate with resources.
 sealed class WorkersBindingItem {const WorkersBindingItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersBindingItem$Unknown; } 
  }
-final class WorkersBindingItemAi extends WorkersBindingItem {const WorkersBindingItemAi(this.workersBindingKindAi);
+@immutable final class WorkersBindingItemAi extends WorkersBindingItem {const WorkersBindingItemAi(this.workersBindingKindAi);
 
 factory WorkersBindingItemAi.fromJson(Map<String, dynamic> json) { return WorkersBindingItemAi(WorkersBindingKindAi.fromJson(json)); }
 
@@ -57,7 +57,7 @@ final WorkersBindingKindAi workersBindingKindAi;
 @override int get hashCode { return workersBindingKindAi.hashCode; } 
 @override String toString() { return 'WorkersBindingItemAi(workersBindingKindAi: $workersBindingKindAi)'; } 
  }
-final class WorkersBindingItemAnalyticsEngine extends WorkersBindingItem {const WorkersBindingItemAnalyticsEngine(this.workersBindingKindAnalyticsEngine);
+@immutable final class WorkersBindingItemAnalyticsEngine extends WorkersBindingItem {const WorkersBindingItemAnalyticsEngine(this.workersBindingKindAnalyticsEngine);
 
 factory WorkersBindingItemAnalyticsEngine.fromJson(Map<String, dynamic> json) { return WorkersBindingItemAnalyticsEngine(WorkersBindingKindAnalyticsEngine.fromJson(json)); }
 
@@ -70,7 +70,7 @@ final WorkersBindingKindAnalyticsEngine workersBindingKindAnalyticsEngine;
 @override int get hashCode { return workersBindingKindAnalyticsEngine.hashCode; } 
 @override String toString() { return 'WorkersBindingItemAnalyticsEngine(workersBindingKindAnalyticsEngine: $workersBindingKindAnalyticsEngine)'; } 
  }
-final class WorkersBindingItemAssets extends WorkersBindingItem {const WorkersBindingItemAssets(this.workersBindingKindAssets);
+@immutable final class WorkersBindingItemAssets extends WorkersBindingItem {const WorkersBindingItemAssets(this.workersBindingKindAssets);
 
 factory WorkersBindingItemAssets.fromJson(Map<String, dynamic> json) { return WorkersBindingItemAssets(WorkersBindingKindAssets.fromJson(json)); }
 
@@ -83,7 +83,7 @@ final WorkersBindingKindAssets workersBindingKindAssets;
 @override int get hashCode { return workersBindingKindAssets.hashCode; } 
 @override String toString() { return 'WorkersBindingItemAssets(workersBindingKindAssets: $workersBindingKindAssets)'; } 
  }
-final class WorkersBindingItemBrowser extends WorkersBindingItem {const WorkersBindingItemBrowser(this.workersBindingKindBrowser);
+@immutable final class WorkersBindingItemBrowser extends WorkersBindingItem {const WorkersBindingItemBrowser(this.workersBindingKindBrowser);
 
 factory WorkersBindingItemBrowser.fromJson(Map<String, dynamic> json) { return WorkersBindingItemBrowser(WorkersBindingKindBrowser.fromJson(json)); }
 
@@ -96,7 +96,7 @@ final WorkersBindingKindBrowser workersBindingKindBrowser;
 @override int get hashCode { return workersBindingKindBrowser.hashCode; } 
 @override String toString() { return 'WorkersBindingItemBrowser(workersBindingKindBrowser: $workersBindingKindBrowser)'; } 
  }
-final class WorkersBindingItemD1 extends WorkersBindingItem {const WorkersBindingItemD1(this.workersBindingKindD1);
+@immutable final class WorkersBindingItemD1 extends WorkersBindingItem {const WorkersBindingItemD1(this.workersBindingKindD1);
 
 factory WorkersBindingItemD1.fromJson(Map<String, dynamic> json) { return WorkersBindingItemD1(WorkersBindingKindD1.fromJson(json)); }
 
@@ -109,7 +109,7 @@ final WorkersBindingKindD1 workersBindingKindD1;
 @override int get hashCode { return workersBindingKindD1.hashCode; } 
 @override String toString() { return 'WorkersBindingItemD1(workersBindingKindD1: $workersBindingKindD1)'; } 
  }
-final class WorkersBindingItemDataBlob extends WorkersBindingItem {const WorkersBindingItemDataBlob(this.workersBindingKindDataBlob);
+@immutable final class WorkersBindingItemDataBlob extends WorkersBindingItem {const WorkersBindingItemDataBlob(this.workersBindingKindDataBlob);
 
 factory WorkersBindingItemDataBlob.fromJson(Map<String, dynamic> json) { return WorkersBindingItemDataBlob(WorkersBindingKindDataBlob.fromJson(json)); }
 
@@ -122,7 +122,7 @@ final WorkersBindingKindDataBlob workersBindingKindDataBlob;
 @override int get hashCode { return workersBindingKindDataBlob.hashCode; } 
 @override String toString() { return 'WorkersBindingItemDataBlob(workersBindingKindDataBlob: $workersBindingKindDataBlob)'; } 
  }
-final class WorkersBindingItemDispatchNamespace extends WorkersBindingItem {const WorkersBindingItemDispatchNamespace(this.workersBindingKindDispatchNamespace);
+@immutable final class WorkersBindingItemDispatchNamespace extends WorkersBindingItem {const WorkersBindingItemDispatchNamespace(this.workersBindingKindDispatchNamespace);
 
 factory WorkersBindingItemDispatchNamespace.fromJson(Map<String, dynamic> json) { return WorkersBindingItemDispatchNamespace(WorkersBindingKindDispatchNamespace.fromJson(json)); }
 
@@ -135,7 +135,7 @@ final WorkersBindingKindDispatchNamespace workersBindingKindDispatchNamespace;
 @override int get hashCode { return workersBindingKindDispatchNamespace.hashCode; } 
 @override String toString() { return 'WorkersBindingItemDispatchNamespace(workersBindingKindDispatchNamespace: $workersBindingKindDispatchNamespace)'; } 
  }
-final class WorkersBindingItemDurableObjectNamespace extends WorkersBindingItem {const WorkersBindingItemDurableObjectNamespace(this.workersBindingKindDurableObjectNamespace);
+@immutable final class WorkersBindingItemDurableObjectNamespace extends WorkersBindingItem {const WorkersBindingItemDurableObjectNamespace(this.workersBindingKindDurableObjectNamespace);
 
 factory WorkersBindingItemDurableObjectNamespace.fromJson(Map<String, dynamic> json) { return WorkersBindingItemDurableObjectNamespace(WorkersBindingKindDurableObjectNamespace.fromJson(json)); }
 
@@ -148,7 +148,7 @@ final WorkersBindingKindDurableObjectNamespace workersBindingKindDurableObjectNa
 @override int get hashCode { return workersBindingKindDurableObjectNamespace.hashCode; } 
 @override String toString() { return 'WorkersBindingItemDurableObjectNamespace(workersBindingKindDurableObjectNamespace: $workersBindingKindDurableObjectNamespace)'; } 
  }
-final class WorkersBindingItemHyperdrive extends WorkersBindingItem {const WorkersBindingItemHyperdrive(this.workersBindingKindHyperdrive);
+@immutable final class WorkersBindingItemHyperdrive extends WorkersBindingItem {const WorkersBindingItemHyperdrive(this.workersBindingKindHyperdrive);
 
 factory WorkersBindingItemHyperdrive.fromJson(Map<String, dynamic> json) { return WorkersBindingItemHyperdrive(WorkersBindingKindHyperdrive.fromJson(json)); }
 
@@ -161,7 +161,7 @@ final WorkersBindingKindHyperdrive workersBindingKindHyperdrive;
 @override int get hashCode { return workersBindingKindHyperdrive.hashCode; } 
 @override String toString() { return 'WorkersBindingItemHyperdrive(workersBindingKindHyperdrive: $workersBindingKindHyperdrive)'; } 
  }
-final class WorkersBindingItemImages extends WorkersBindingItem {const WorkersBindingItemImages(this.workersBindingKindImages);
+@immutable final class WorkersBindingItemImages extends WorkersBindingItem {const WorkersBindingItemImages(this.workersBindingKindImages);
 
 factory WorkersBindingItemImages.fromJson(Map<String, dynamic> json) { return WorkersBindingItemImages(WorkersBindingKindImages.fromJson(json)); }
 
@@ -174,7 +174,7 @@ final WorkersBindingKindImages workersBindingKindImages;
 @override int get hashCode { return workersBindingKindImages.hashCode; } 
 @override String toString() { return 'WorkersBindingItemImages(workersBindingKindImages: $workersBindingKindImages)'; } 
  }
-final class WorkersBindingItemInherit extends WorkersBindingItem {const WorkersBindingItemInherit(this.workersBindingKindInherit);
+@immutable final class WorkersBindingItemInherit extends WorkersBindingItem {const WorkersBindingItemInherit(this.workersBindingKindInherit);
 
 factory WorkersBindingItemInherit.fromJson(Map<String, dynamic> json) { return WorkersBindingItemInherit(WorkersBindingKindInherit.fromJson(json)); }
 
@@ -187,7 +187,7 @@ final WorkersBindingKindInherit workersBindingKindInherit;
 @override int get hashCode { return workersBindingKindInherit.hashCode; } 
 @override String toString() { return 'WorkersBindingItemInherit(workersBindingKindInherit: $workersBindingKindInherit)'; } 
  }
-final class WorkersBindingItemJson extends WorkersBindingItem {const WorkersBindingItemJson(this.workersBindingKindJson);
+@immutable final class WorkersBindingItemJson extends WorkersBindingItem {const WorkersBindingItemJson(this.workersBindingKindJson);
 
 factory WorkersBindingItemJson.fromJson(Map<String, dynamic> json) { return WorkersBindingItemJson(WorkersBindingKindJson.fromJson(json)); }
 
@@ -200,7 +200,7 @@ final WorkersBindingKindJson workersBindingKindJson;
 @override int get hashCode { return workersBindingKindJson.hashCode; } 
 @override String toString() { return 'WorkersBindingItemJson(workersBindingKindJson: $workersBindingKindJson)'; } 
  }
-final class WorkersBindingItemKvNamespace extends WorkersBindingItem {const WorkersBindingItemKvNamespace(this.workersBindingKindKvNamespace);
+@immutable final class WorkersBindingItemKvNamespace extends WorkersBindingItem {const WorkersBindingItemKvNamespace(this.workersBindingKindKvNamespace);
 
 factory WorkersBindingItemKvNamespace.fromJson(Map<String, dynamic> json) { return WorkersBindingItemKvNamespace(WorkersBindingKindKvNamespace.fromJson(json)); }
 
@@ -213,7 +213,7 @@ final WorkersBindingKindKvNamespace workersBindingKindKvNamespace;
 @override int get hashCode { return workersBindingKindKvNamespace.hashCode; } 
 @override String toString() { return 'WorkersBindingItemKvNamespace(workersBindingKindKvNamespace: $workersBindingKindKvNamespace)'; } 
  }
-final class WorkersBindingItemMtlsCertificate extends WorkersBindingItem {const WorkersBindingItemMtlsCertificate(this.workersBindingKindMtlsCertificate);
+@immutable final class WorkersBindingItemMtlsCertificate extends WorkersBindingItem {const WorkersBindingItemMtlsCertificate(this.workersBindingKindMtlsCertificate);
 
 factory WorkersBindingItemMtlsCertificate.fromJson(Map<String, dynamic> json) { return WorkersBindingItemMtlsCertificate(WorkersBindingKindMtlsCertificate.fromJson(json)); }
 
@@ -226,7 +226,7 @@ final WorkersBindingKindMtlsCertificate workersBindingKindMtlsCertificate;
 @override int get hashCode { return workersBindingKindMtlsCertificate.hashCode; } 
 @override String toString() { return 'WorkersBindingItemMtlsCertificate(workersBindingKindMtlsCertificate: $workersBindingKindMtlsCertificate)'; } 
  }
-final class WorkersBindingItemPipelines extends WorkersBindingItem {const WorkersBindingItemPipelines(this.workersBindingKindPipelines);
+@immutable final class WorkersBindingItemPipelines extends WorkersBindingItem {const WorkersBindingItemPipelines(this.workersBindingKindPipelines);
 
 factory WorkersBindingItemPipelines.fromJson(Map<String, dynamic> json) { return WorkersBindingItemPipelines(WorkersBindingKindPipelines.fromJson(json)); }
 
@@ -239,7 +239,7 @@ final WorkersBindingKindPipelines workersBindingKindPipelines;
 @override int get hashCode { return workersBindingKindPipelines.hashCode; } 
 @override String toString() { return 'WorkersBindingItemPipelines(workersBindingKindPipelines: $workersBindingKindPipelines)'; } 
  }
-final class WorkersBindingItemPlainText extends WorkersBindingItem {const WorkersBindingItemPlainText(this.workersBindingKindPlainText);
+@immutable final class WorkersBindingItemPlainText extends WorkersBindingItem {const WorkersBindingItemPlainText(this.workersBindingKindPlainText);
 
 factory WorkersBindingItemPlainText.fromJson(Map<String, dynamic> json) { return WorkersBindingItemPlainText(WorkersBindingKindPlainText.fromJson(json)); }
 
@@ -252,7 +252,7 @@ final WorkersBindingKindPlainText workersBindingKindPlainText;
 @override int get hashCode { return workersBindingKindPlainText.hashCode; } 
 @override String toString() { return 'WorkersBindingItemPlainText(workersBindingKindPlainText: $workersBindingKindPlainText)'; } 
  }
-final class WorkersBindingItemQueue extends WorkersBindingItem {const WorkersBindingItemQueue(this.workersBindingKindQueue);
+@immutable final class WorkersBindingItemQueue extends WorkersBindingItem {const WorkersBindingItemQueue(this.workersBindingKindQueue);
 
 factory WorkersBindingItemQueue.fromJson(Map<String, dynamic> json) { return WorkersBindingItemQueue(WorkersBindingKindQueue.fromJson(json)); }
 
@@ -265,7 +265,7 @@ final WorkersBindingKindQueue workersBindingKindQueue;
 @override int get hashCode { return workersBindingKindQueue.hashCode; } 
 @override String toString() { return 'WorkersBindingItemQueue(workersBindingKindQueue: $workersBindingKindQueue)'; } 
  }
-final class WorkersBindingItemR2Bucket extends WorkersBindingItem {const WorkersBindingItemR2Bucket(this.workersBindingKindR2Bucket);
+@immutable final class WorkersBindingItemR2Bucket extends WorkersBindingItem {const WorkersBindingItemR2Bucket(this.workersBindingKindR2Bucket);
 
 factory WorkersBindingItemR2Bucket.fromJson(Map<String, dynamic> json) { return WorkersBindingItemR2Bucket(WorkersBindingKindR2Bucket.fromJson(json)); }
 
@@ -278,7 +278,7 @@ final WorkersBindingKindR2Bucket workersBindingKindR2Bucket;
 @override int get hashCode { return workersBindingKindR2Bucket.hashCode; } 
 @override String toString() { return 'WorkersBindingItemR2Bucket(workersBindingKindR2Bucket: $workersBindingKindR2Bucket)'; } 
  }
-final class WorkersBindingItemRatelimit extends WorkersBindingItem {const WorkersBindingItemRatelimit(this.workersBindingKindRatelimit);
+@immutable final class WorkersBindingItemRatelimit extends WorkersBindingItem {const WorkersBindingItemRatelimit(this.workersBindingKindRatelimit);
 
 factory WorkersBindingItemRatelimit.fromJson(Map<String, dynamic> json) { return WorkersBindingItemRatelimit(WorkersBindingKindRatelimit.fromJson(json)); }
 
@@ -291,7 +291,7 @@ final WorkersBindingKindRatelimit workersBindingKindRatelimit;
 @override int get hashCode { return workersBindingKindRatelimit.hashCode; } 
 @override String toString() { return 'WorkersBindingItemRatelimit(workersBindingKindRatelimit: $workersBindingKindRatelimit)'; } 
  }
-final class WorkersBindingItemSecretKey extends WorkersBindingItem {const WorkersBindingItemSecretKey(this.workersBindingKindSecretKey);
+@immutable final class WorkersBindingItemSecretKey extends WorkersBindingItem {const WorkersBindingItemSecretKey(this.workersBindingKindSecretKey);
 
 factory WorkersBindingItemSecretKey.fromJson(Map<String, dynamic> json) { return WorkersBindingItemSecretKey(WorkersBindingKindSecretKey.fromJson(json)); }
 
@@ -304,7 +304,7 @@ final WorkersBindingKindSecretKey workersBindingKindSecretKey;
 @override int get hashCode { return workersBindingKindSecretKey.hashCode; } 
 @override String toString() { return 'WorkersBindingItemSecretKey(workersBindingKindSecretKey: $workersBindingKindSecretKey)'; } 
  }
-final class WorkersBindingItemSecretText extends WorkersBindingItem {const WorkersBindingItemSecretText(this.workersBindingKindSecretText);
+@immutable final class WorkersBindingItemSecretText extends WorkersBindingItem {const WorkersBindingItemSecretText(this.workersBindingKindSecretText);
 
 factory WorkersBindingItemSecretText.fromJson(Map<String, dynamic> json) { return WorkersBindingItemSecretText(WorkersBindingKindSecretText.fromJson(json)); }
 
@@ -317,7 +317,7 @@ final WorkersBindingKindSecretText workersBindingKindSecretText;
 @override int get hashCode { return workersBindingKindSecretText.hashCode; } 
 @override String toString() { return 'WorkersBindingItemSecretText(workersBindingKindSecretText: $workersBindingKindSecretText)'; } 
  }
-final class WorkersBindingItemSecretsStoreSecret extends WorkersBindingItem {const WorkersBindingItemSecretsStoreSecret(this.workersBindingKindSecretsStoreSecret);
+@immutable final class WorkersBindingItemSecretsStoreSecret extends WorkersBindingItem {const WorkersBindingItemSecretsStoreSecret(this.workersBindingKindSecretsStoreSecret);
 
 factory WorkersBindingItemSecretsStoreSecret.fromJson(Map<String, dynamic> json) { return WorkersBindingItemSecretsStoreSecret(WorkersBindingKindSecretsStoreSecret.fromJson(json)); }
 
@@ -330,7 +330,7 @@ final WorkersBindingKindSecretsStoreSecret workersBindingKindSecretsStoreSecret;
 @override int get hashCode { return workersBindingKindSecretsStoreSecret.hashCode; } 
 @override String toString() { return 'WorkersBindingItemSecretsStoreSecret(workersBindingKindSecretsStoreSecret: $workersBindingKindSecretsStoreSecret)'; } 
  }
-final class WorkersBindingItemSendEmail extends WorkersBindingItem {const WorkersBindingItemSendEmail(this.workersBindingKindSendEmail);
+@immutable final class WorkersBindingItemSendEmail extends WorkersBindingItem {const WorkersBindingItemSendEmail(this.workersBindingKindSendEmail);
 
 factory WorkersBindingItemSendEmail.fromJson(Map<String, dynamic> json) { return WorkersBindingItemSendEmail(WorkersBindingKindSendEmail.fromJson(json)); }
 
@@ -343,7 +343,7 @@ final WorkersBindingKindSendEmail workersBindingKindSendEmail;
 @override int get hashCode { return workersBindingKindSendEmail.hashCode; } 
 @override String toString() { return 'WorkersBindingItemSendEmail(workersBindingKindSendEmail: $workersBindingKindSendEmail)'; } 
  }
-final class WorkersBindingItemService extends WorkersBindingItem {const WorkersBindingItemService(this.workersBindingKindService);
+@immutable final class WorkersBindingItemService extends WorkersBindingItem {const WorkersBindingItemService(this.workersBindingKindService);
 
 factory WorkersBindingItemService.fromJson(Map<String, dynamic> json) { return WorkersBindingItemService(WorkersBindingKindService.fromJson(json)); }
 
@@ -356,7 +356,7 @@ final WorkersBindingKindService workersBindingKindService;
 @override int get hashCode { return workersBindingKindService.hashCode; } 
 @override String toString() { return 'WorkersBindingItemService(workersBindingKindService: $workersBindingKindService)'; } 
  }
-final class WorkersBindingItemTextBlob extends WorkersBindingItem {const WorkersBindingItemTextBlob(this.workersBindingKindTextBlob);
+@immutable final class WorkersBindingItemTextBlob extends WorkersBindingItem {const WorkersBindingItemTextBlob(this.workersBindingKindTextBlob);
 
 factory WorkersBindingItemTextBlob.fromJson(Map<String, dynamic> json) { return WorkersBindingItemTextBlob(WorkersBindingKindTextBlob.fromJson(json)); }
 
@@ -369,7 +369,7 @@ final WorkersBindingKindTextBlob workersBindingKindTextBlob;
 @override int get hashCode { return workersBindingKindTextBlob.hashCode; } 
 @override String toString() { return 'WorkersBindingItemTextBlob(workersBindingKindTextBlob: $workersBindingKindTextBlob)'; } 
  }
-final class WorkersBindingItemVectorize extends WorkersBindingItem {const WorkersBindingItemVectorize(this.workersBindingKindVectorize);
+@immutable final class WorkersBindingItemVectorize extends WorkersBindingItem {const WorkersBindingItemVectorize(this.workersBindingKindVectorize);
 
 factory WorkersBindingItemVectorize.fromJson(Map<String, dynamic> json) { return WorkersBindingItemVectorize(WorkersBindingKindVectorize.fromJson(json)); }
 
@@ -382,7 +382,7 @@ final WorkersBindingKindVectorize workersBindingKindVectorize;
 @override int get hashCode { return workersBindingKindVectorize.hashCode; } 
 @override String toString() { return 'WorkersBindingItemVectorize(workersBindingKindVectorize: $workersBindingKindVectorize)'; } 
  }
-final class WorkersBindingItemVersionMetadata extends WorkersBindingItem {const WorkersBindingItemVersionMetadata(this.workersBindingKindVersionMetadata);
+@immutable final class WorkersBindingItemVersionMetadata extends WorkersBindingItem {const WorkersBindingItemVersionMetadata(this.workersBindingKindVersionMetadata);
 
 factory WorkersBindingItemVersionMetadata.fromJson(Map<String, dynamic> json) { return WorkersBindingItemVersionMetadata(WorkersBindingKindVersionMetadata.fromJson(json)); }
 
@@ -395,7 +395,7 @@ final WorkersBindingKindVersionMetadata workersBindingKindVersionMetadata;
 @override int get hashCode { return workersBindingKindVersionMetadata.hashCode; } 
 @override String toString() { return 'WorkersBindingItemVersionMetadata(workersBindingKindVersionMetadata: $workersBindingKindVersionMetadata)'; } 
  }
-final class WorkersBindingItemVpcService extends WorkersBindingItem {const WorkersBindingItemVpcService(this.workersBindingKindVpcService);
+@immutable final class WorkersBindingItemVpcService extends WorkersBindingItem {const WorkersBindingItemVpcService(this.workersBindingKindVpcService);
 
 factory WorkersBindingItemVpcService.fromJson(Map<String, dynamic> json) { return WorkersBindingItemVpcService(WorkersBindingKindVpcService.fromJson(json)); }
 
@@ -408,7 +408,7 @@ final WorkersBindingKindVpcService workersBindingKindVpcService;
 @override int get hashCode { return workersBindingKindVpcService.hashCode; } 
 @override String toString() { return 'WorkersBindingItemVpcService(workersBindingKindVpcService: $workersBindingKindVpcService)'; } 
  }
-final class WorkersBindingItemWasmModule extends WorkersBindingItem {const WorkersBindingItemWasmModule(this.workersBindingKindWasmModule);
+@immutable final class WorkersBindingItemWasmModule extends WorkersBindingItem {const WorkersBindingItemWasmModule(this.workersBindingKindWasmModule);
 
 factory WorkersBindingItemWasmModule.fromJson(Map<String, dynamic> json) { return WorkersBindingItemWasmModule(WorkersBindingKindWasmModule.fromJson(json)); }
 
@@ -421,7 +421,7 @@ final WorkersBindingKindWasmModule workersBindingKindWasmModule;
 @override int get hashCode { return workersBindingKindWasmModule.hashCode; } 
 @override String toString() { return 'WorkersBindingItemWasmModule(workersBindingKindWasmModule: $workersBindingKindWasmModule)'; } 
  }
-final class WorkersBindingItemWorkflow extends WorkersBindingItem {const WorkersBindingItemWorkflow(this.workersBindingKindWorkflow);
+@immutable final class WorkersBindingItemWorkflow extends WorkersBindingItem {const WorkersBindingItemWorkflow(this.workersBindingKindWorkflow);
 
 factory WorkersBindingItemWorkflow.fromJson(Map<String, dynamic> json) { return WorkersBindingItemWorkflow(WorkersBindingKindWorkflow.fromJson(json)); }
 
@@ -436,7 +436,7 @@ final WorkersBindingKindWorkflow workersBindingKindWorkflow;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class WorkersBindingItem$Unknown extends WorkersBindingItem {const WorkersBindingItem$Unknown(this.json);
+@immutable final class WorkersBindingItem$Unknown extends WorkersBindingItem {const WorkersBindingItem$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

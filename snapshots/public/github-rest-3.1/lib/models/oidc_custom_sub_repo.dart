@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Actions OIDC subject customization for a repository
-final class OidcCustomSubRepo {const OidcCustomSubRepo({required this.useDefault, this.includeClaimKeys, });
+@immutable final class OidcCustomSubRepo {const OidcCustomSubRepo({required this.useDefault, this.includeClaimKeys, });
 
 factory OidcCustomSubRepo.fromJson(Map<String, dynamic> json) { return OidcCustomSubRepo(
   useDefault: json['use_default'] as bool,

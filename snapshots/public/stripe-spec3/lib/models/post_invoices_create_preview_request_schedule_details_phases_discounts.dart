@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_schedule_details_phases_discounts_variant1.dart';final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2 {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_schedule_details_phases_discounts_variant1.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2 {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2._(this.value);
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

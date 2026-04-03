@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_active_session.dart';final class GetSessionsResponseData {const GetSessionsResponseData({this.sessions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_active_session.dart';@immutable final class GetSessionsResponseData {const GetSessionsResponseData({this.sessions});
 
 factory GetSessionsResponseData.fromJson(Map<String, dynamic> json) { return GetSessionsResponseData(
   sessions: (json['sessions'] as List<dynamic>?)?.map((e) => RealtimekitActiveSession.fromJson(e as Map<String, dynamic>)).toList(),

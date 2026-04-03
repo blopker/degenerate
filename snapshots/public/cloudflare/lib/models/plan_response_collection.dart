@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rate_plan.dart';final class PlanResponseCollection {const PlanResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rate_plan.dart';@immutable final class PlanResponseCollection {const PlanResponseCollection({this.result});
 
 factory PlanResponseCollection.fromJson(Map<String, dynamic> json) { return PlanResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => RatePlan.fromJson(e as Map<String, dynamic>)).toList(),

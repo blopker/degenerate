@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_websocket_run_cf_pipecat_ai_smart_turn_response400_errors.dart';final class WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400 {const WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_websocket_run_cf_pipecat_ai_smart_turn_response400_errors.dart';@immutable final class WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400 {const WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

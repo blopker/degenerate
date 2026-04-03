@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_auto_merge_enabled_pull_request.dart';final class WebhookPullRequestAutoMergeEnabledAction {const WebhookPullRequestAutoMergeEnabledAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_auto_merge_enabled_pull_request.dart';@immutable final class WebhookPullRequestAutoMergeEnabledAction {const WebhookPullRequestAutoMergeEnabledAction._(this.value);
 
 factory WebhookPullRequestAutoMergeEnabledAction.fromJson(String json) { return switch (json) {
   'auto_merge_enabled' => autoMergeEnabled,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestAutoMergeEnabledAction($value)'; } 
  }
-final class WebhookPullRequestAutoMergeEnabled {const WebhookPullRequestAutoMergeEnabled({required this.action, this.enterprise, this.installation, required this.number, this.organization, required this.pullRequest, this.reason, required this.repository, required this.sender, });
+@immutable final class WebhookPullRequestAutoMergeEnabled {const WebhookPullRequestAutoMergeEnabled({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, this.reason, });
 
 factory WebhookPullRequestAutoMergeEnabled.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAutoMergeEnabled(
   action: WebhookPullRequestAutoMergeEnabledAction.fromJson(json['action'] as String),

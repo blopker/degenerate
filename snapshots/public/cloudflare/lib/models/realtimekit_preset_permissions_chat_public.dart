@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitPresetPermissionsChatPublic {const RealtimekitPresetPermissionsChatPublic({required this.canSend, required this.files, required this.text, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPresetPermissionsChatPublic {const RealtimekitPresetPermissionsChatPublic({required this.canSend, required this.files, required this.text, });
 
 factory RealtimekitPresetPermissionsChatPublic.fromJson(Map<String, dynamic> json) { return RealtimekitPresetPermissionsChatPublic(
   canSend: json['can_send'] as bool,

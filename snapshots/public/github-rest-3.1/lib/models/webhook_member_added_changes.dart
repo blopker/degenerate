@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_member_added_changes_permission.dart';import 'webhook_member_added_changes_role_name.dart';final class WebhookMemberAddedChanges {const WebhookMemberAddedChanges({this.permission, this.roleName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_member_added_changes_permission.dart';import 'webhook_member_added_changes_role_name.dart';@immutable final class WebhookMemberAddedChanges {const WebhookMemberAddedChanges({this.permission, this.roleName, });
 
 factory WebhookMemberAddedChanges.fromJson(Map<String, dynamic> json) { return WebhookMemberAddedChanges(
   permission: json['permission'] != null ? WebhookMemberAddedChangesPermission.fromJson(json['permission'] as Map<String, dynamic>) : null,

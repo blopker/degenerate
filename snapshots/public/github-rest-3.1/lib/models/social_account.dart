@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Social media account
-final class SocialAccount {const SocialAccount({required this.provider, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Social media account
+@immutable final class SocialAccount {const SocialAccount({required this.provider, required this.url, });
 
 factory SocialAccount.fromJson(Map<String, dynamic> json) { return SocialAccount(
   provider: json['provider'] as String,

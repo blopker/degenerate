@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// UUID.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// UUID.
 extension type const TeamsDevicesComponentsSchemasUuid(String value) {
 factory TeamsDevicesComponentsSchemasUuid.fromJson(String json) => TeamsDevicesComponentsSchemasUuid(json);
 
@@ -14,7 +14,7 @@ factory TeamsDevicesEmail.fromJson(String json) => TeamsDevicesEmail(json);
 String toJson() => value;
 
 }
-final class TeamsDevicesUser {const TeamsDevicesUser({this.email, this.id, this.name, });
+@immutable final class TeamsDevicesUser {const TeamsDevicesUser({this.email, this.id, this.name, });
 
 factory TeamsDevicesUser.fromJson(Map<String, dynamic> json) { return TeamsDevicesUser(
   email: json['email'] != null ? TeamsDevicesEmail.fromJson(json['email'] as String) : null,

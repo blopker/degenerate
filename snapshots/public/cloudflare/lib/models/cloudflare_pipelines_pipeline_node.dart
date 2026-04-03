@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudflarePipelinesPipelineNode {const CloudflarePipelinesPipelineNode({required this.description, required this.nodeId, required this.$operator, required this.parallelism, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesPipelineNode {const CloudflarePipelinesPipelineNode({required this.description, required this.nodeId, required this.$operator, required this.parallelism, });
 
 factory CloudflarePipelinesPipelineNode.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesPipelineNode(
   description: json['description'] as String,

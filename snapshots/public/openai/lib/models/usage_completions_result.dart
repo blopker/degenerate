@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageCompletionsResultObject {const UsageCompletionsResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageCompletionsResultObject {const UsageCompletionsResultObject._(this.value);
 
 factory UsageCompletionsResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.completions.result' => organizationUsageCompletionsResult,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UsageCompletionsResultObject($value)'; } 
  }
 /// The aggregated completions usage details of the specific time bucket.
-final class UsageCompletionsResult {const UsageCompletionsResult({required this.object, required this.inputTokens, this.inputCachedTokens, required this.outputTokens, this.inputAudioTokens, this.outputAudioTokens, required this.numModelRequests, this.projectId, this.userId, this.apiKeyId, this.model, this.batch, this.serviceTier, });
+@immutable final class UsageCompletionsResult {const UsageCompletionsResult({required this.object, required this.inputTokens, required this.outputTokens, required this.numModelRequests, this.inputCachedTokens, this.inputAudioTokens, this.outputAudioTokens, this.projectId, this.userId, this.apiKeyId, this.model, this.batch, this.serviceTier, });
 
 factory UsageCompletionsResult.fromJson(Map<String, dynamic> json) { return UsageCompletionsResult(
   object: UsageCompletionsResultObject.fromJson(json['object'] as String),

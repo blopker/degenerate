@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Tool selection that the assistant should honor when executing the item.
-final class ToolChoice {const ToolChoice({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Tool selection that the assistant should honor when executing the item.
+@immutable final class ToolChoice {const ToolChoice({required this.id});
 
 factory ToolChoice.fromJson(Map<String, dynamic> json) { return ToolChoice(
   id: json['id'] as String,

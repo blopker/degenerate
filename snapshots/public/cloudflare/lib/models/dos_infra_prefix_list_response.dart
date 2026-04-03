@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_infra_prefix.dart';final class DosInfraPrefixListResponse {const DosInfraPrefixListResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_infra_prefix.dart';@immutable final class DosInfraPrefixListResponse {const DosInfraPrefixListResponse({this.result});
 
 factory DosInfraPrefixListResponse.fromJson(Map<String, dynamic> json) { return DosInfraPrefixListResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => DosInfraPrefix.fromJson(e as Map<String, dynamic>)).toList(),

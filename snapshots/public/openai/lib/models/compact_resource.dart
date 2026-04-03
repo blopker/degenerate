@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_field.dart';import 'response_usage.dart';/// The object type. Always `response.compaction`.
-final class CompactResourceObject {const CompactResourceObject._(this.value);
+@immutable final class CompactResourceObject {const CompactResourceObject._(this.value);
 
 factory CompactResourceObject.fromJson(String json) { return switch (json) {
   'response.compaction' => responseCompaction,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CompactResourceObject($value)'; } 
  }
-final class CompactResource {const CompactResource({required this.id, this.object = CompactResourceObject.responseCompaction, required this.output, required this.createdAt, required this.usage, });
+@immutable final class CompactResource {const CompactResource({required this.id, required this.output, required this.createdAt, required this.usage, this.object = CompactResourceObject.responseCompaction, });
 
 factory CompactResource.fromJson(Map<String, dynamic> json) { return CompactResource(
   id: json['id'] as String,

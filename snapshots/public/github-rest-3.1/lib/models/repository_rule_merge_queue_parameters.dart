@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge.
-final class RepositoryRuleMergeQueueParametersGroupingStrategy {const RepositoryRuleMergeQueueParametersGroupingStrategy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge.
+@immutable final class RepositoryRuleMergeQueueParametersGroupingStrategy {const RepositoryRuleMergeQueueParametersGroupingStrategy._(this.value);
 
 factory RepositoryRuleMergeQueueParametersGroupingStrategy.fromJson(String json) { return switch (json) {
   'ALLGREEN' => allgreen,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleMergeQueueParametersGroupingStrategy($value)'; } 
  }
 /// Method to use when merging changes from queued pull requests.
-final class RepositoryRuleMergeQueueParametersMergeMethod {const RepositoryRuleMergeQueueParametersMergeMethod._(this.value);
+@immutable final class RepositoryRuleMergeQueueParametersMergeMethod {const RepositoryRuleMergeQueueParametersMergeMethod._(this.value);
 
 factory RepositoryRuleMergeQueueParametersMergeMethod.fromJson(String json) { return switch (json) {
   'MERGE' => merge,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RepositoryRuleMergeQueueParametersMergeMethod($value)'; } 
  }
-final class RepositoryRuleMergeQueueParameters {const RepositoryRuleMergeQueueParameters({required this.checkResponseTimeoutMinutes, required this.groupingStrategy, required this.maxEntriesToBuild, required this.maxEntriesToMerge, required this.mergeMethod, required this.minEntriesToMerge, required this.minEntriesToMergeWaitMinutes, });
+@immutable final class RepositoryRuleMergeQueueParameters {const RepositoryRuleMergeQueueParameters({required this.checkResponseTimeoutMinutes, required this.groupingStrategy, required this.maxEntriesToBuild, required this.maxEntriesToMerge, required this.mergeMethod, required this.minEntriesToMerge, required this.minEntriesToMergeWaitMinutes, });
 
 factory RepositoryRuleMergeQueueParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleMergeQueueParameters(
   checkResponseTimeoutMinutes: (json['check_response_timeout_minutes'] as num).toInt(),

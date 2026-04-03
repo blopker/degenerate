@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secondary_dns_identifier.dart';final class SecondaryDnsIdResponseResult {const SecondaryDnsIdResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_identifier.dart';@immutable final class SecondaryDnsIdResponseResult {const SecondaryDnsIdResponseResult({this.id});
 
 factory SecondaryDnsIdResponseResult.fromJson(Map<String, dynamic> json) { return SecondaryDnsIdResponseResult(
   id: json['id'] != null ? SecondaryDnsIdentifier.fromJson(json['id'] as String) : null,

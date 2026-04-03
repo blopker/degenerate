@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'bank_connections_resource_accountholder_account.dart';import 'bank_connections_resource_accountholder_customer.dart';import 'customer.dart';/// Type of account holder that this account belongs to.
-final class BankConnectionsResourceAccountholderType {const BankConnectionsResourceAccountholderType._(this.value);
+@immutable final class BankConnectionsResourceAccountholderType {const BankConnectionsResourceAccountholderType._(this.value);
 
 factory BankConnectionsResourceAccountholderType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BankConnectionsResourceAccountholderType($value)'; } 
  }
 /// 
-final class BankConnectionsResourceAccountholder {const BankConnectionsResourceAccountholder({this.account, this.customer, this.customerAccount, required this.type, });
+@immutable final class BankConnectionsResourceAccountholder {const BankConnectionsResourceAccountholder({required this.type, this.account, this.customer, this.customerAccount, });
 
 factory BankConnectionsResourceAccountholder.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceAccountholder(
   account: json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,

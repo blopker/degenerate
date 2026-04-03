@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked {const PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked {const PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked._(this.value);
 
 factory PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked.fromJson(String json) { return switch (json) {
   'american_express' => americanExpress,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked($value)'; } 
  }
 /// 
-final class PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions {const PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions({this.brandsBlocked});
+@immutable final class PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions {const PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions({this.brandsBlocked});
 
 factory PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions.fromJson(Map<String, dynamic> json) { return PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions(
   brandsBlocked: (json['brands_blocked'] as List<dynamic>?)?.map((e) => PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictionsBrandsBlocked.fromJson(e as String)).toList(),

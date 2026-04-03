@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'brapi_post_snapshot_request_variant1_screenshot_options_clip.dart';final class BrapiPostSnapshotRequestVariant1ScreenshotOptionsType {const BrapiPostSnapshotRequestVariant1ScreenshotOptionsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_snapshot_request_variant1_screenshot_options_clip.dart';@immutable final class BrapiPostSnapshotRequestVariant1ScreenshotOptionsType {const BrapiPostSnapshotRequestVariant1ScreenshotOptionsType._(this.value);
 
 factory BrapiPostSnapshotRequestVariant1ScreenshotOptionsType.fromJson(String json) { return switch (json) {
   'png' => png,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostSnapshotRequestVariant1ScreenshotOptionsType($value)'; } 
  }
-final class BrapiPostSnapshotRequestVariant1ScreenshotOptions {const BrapiPostSnapshotRequestVariant1ScreenshotOptions({this.captureBeyondViewport, this.clip, this.fromSurface, this.fullPage, this.omitBackground, this.optimizeForSpeed, this.quality, this.type = BrapiPostSnapshotRequestVariant1ScreenshotOptionsType.png, });
+@immutable final class BrapiPostSnapshotRequestVariant1ScreenshotOptions {const BrapiPostSnapshotRequestVariant1ScreenshotOptions({this.captureBeyondViewport, this.clip, this.fromSurface, this.fullPage, this.omitBackground, this.optimizeForSpeed, this.quality, this.type = BrapiPostSnapshotRequestVariant1ScreenshotOptionsType.png, });
 
 factory BrapiPostSnapshotRequestVariant1ScreenshotOptions.fromJson(Map<String, dynamic> json) { return BrapiPostSnapshotRequestVariant1ScreenshotOptions(
   captureBeyondViewport: json['captureBeyondViewport'] as bool?,

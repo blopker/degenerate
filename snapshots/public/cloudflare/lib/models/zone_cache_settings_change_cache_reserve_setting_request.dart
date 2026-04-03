@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_cache_reserve_value.dart';final class ZoneCacheSettingsChangeCacheReserveSettingRequest {const ZoneCacheSettingsChangeCacheReserveSettingRequest({required this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_cache_reserve_value.dart';@immutable final class ZoneCacheSettingsChangeCacheReserveSettingRequest {const ZoneCacheSettingsChangeCacheReserveSettingRequest({required this.value});
 
 factory ZoneCacheSettingsChangeCacheReserveSettingRequest.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsChangeCacheReserveSettingRequest(
   value: CacheRulesCacheReserveValue.fromJson(json['value'] as String),

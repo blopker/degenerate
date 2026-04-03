@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpLimits {const DlpLimits({required this.maxDatasetCells});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpLimits {const DlpLimits({required this.maxDatasetCells});
 
 factory DlpLimits.fromJson(Map<String, dynamic> json) { return DlpLimits(
   maxDatasetCells: (json['max_dataset_cells'] as num).toInt(),

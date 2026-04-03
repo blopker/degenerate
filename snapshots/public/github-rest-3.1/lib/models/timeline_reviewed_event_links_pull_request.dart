@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TimelineReviewedEventLinksPullRequest {const TimelineReviewedEventLinksPullRequest({required this.href});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TimelineReviewedEventLinksPullRequest {const TimelineReviewedEventLinksPullRequest({required this.href});
 
 factory TimelineReviewedEventLinksPullRequest.fromJson(Map<String, dynamic> json) { return TimelineReviewedEventLinksPullRequest(
   href: json['href'] as String,

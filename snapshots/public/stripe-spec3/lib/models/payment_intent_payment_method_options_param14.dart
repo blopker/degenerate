@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_payment_method_options_param14_financial_connections.dart';import 'payment_intent_payment_method_options_param14_mandate_options.dart';import 'payment_intent_payment_method_options_param14_networks.dart';final class PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param14_financial_connections.dart';import 'payment_intent_payment_method_options_param14_mandate_options.dart';import 'payment_intent_payment_method_options_param14_networks.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14SetupFutureUsage($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam14TransactionPurpose {const PaymentIntentPaymentMethodOptionsParam14TransactionPurpose._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsParam14TransactionPurpose {const PaymentIntentPaymentMethodOptionsParam14TransactionPurpose._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam14TransactionPurpose.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14TransactionPurpose($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam14VerificationMethod {const PaymentIntentPaymentMethodOptionsParam14VerificationMethod._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsParam14VerificationMethod {const PaymentIntentPaymentMethodOptionsParam14VerificationMethod._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam14VerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -90,7 +90,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14VerificationMethod($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam14 {const PaymentIntentPaymentMethodOptionsParam14({this.financialConnections, this.mandateOptions, this.networks, this.setupFutureUsage, this.targetDate, this.transactionPurpose, this.verificationMethod, });
+@immutable final class PaymentIntentPaymentMethodOptionsParam14 {const PaymentIntentPaymentMethodOptionsParam14({this.financialConnections, this.mandateOptions, this.networks, this.setupFutureUsage, this.targetDate, this.transactionPurpose, this.verificationMethod, });
 
 factory PaymentIntentPaymentMethodOptionsParam14.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam14(
   financialConnections: json['financial_connections'] != null ? PaymentIntentPaymentMethodOptionsParam14FinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,

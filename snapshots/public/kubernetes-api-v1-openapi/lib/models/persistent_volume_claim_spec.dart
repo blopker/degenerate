@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'label_selector.dart';import 'typed_local_object_reference.dart';import 'typed_object_reference.dart';import 'volume_resource_requirements.dart';/// PersistentVolumeClaimSpec describes the common attributes of storage devices and allows a Source for provider-specific attributes
-final class PersistentVolumeClaimSpec {const PersistentVolumeClaimSpec({this.accessModes, this.dataSource, this.dataSourceRef, this.resources, this.selector, this.storageClassName, this.volumeAttributesClassName, this.volumeMode, this.volumeName, });
+@immutable final class PersistentVolumeClaimSpec {const PersistentVolumeClaimSpec({this.accessModes, this.dataSource, this.dataSourceRef, this.resources, this.selector, this.storageClassName, this.volumeAttributesClassName, this.volumeMode, this.volumeName, });
 
 factory PersistentVolumeClaimSpec.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimSpec(
   accessModes: (json['accessModes'] as List<dynamic>?)?.map((e) => e as String).toList(),

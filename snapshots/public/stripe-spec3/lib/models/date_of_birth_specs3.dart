@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DateOfBirthSpecs3 {const DateOfBirthSpecs3({required this.day, required this.month, required this.year, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DateOfBirthSpecs3 {const DateOfBirthSpecs3({required this.day, required this.month, required this.year, });
 
 factory DateOfBirthSpecs3.fromJson(Map<String, dynamic> json) { return DateOfBirthSpecs3(
   day: (json['day'] as num).toInt(),

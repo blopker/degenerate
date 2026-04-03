@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeletePermissionDeleteResponse404Errors {const DeletePermissionDeleteResponse404Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeletePermissionDeleteResponse404Errors {const DeletePermissionDeleteResponse404Errors({required this.message});
 
 factory DeletePermissionDeleteResponse404Errors.fromJson(Map<String, dynamic> json) { return DeletePermissionDeleteResponse404Errors(
   message: json['message'] as String,

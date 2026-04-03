@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_request_dlp_variant2_policies.dart';final class AigConfigUpdateGatewayRequestDlpVariant2 {const AigConfigUpdateGatewayRequestDlpVariant2({required this.enabled, required this.policies, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_update_gateway_request_dlp_variant2_policies.dart';@immutable final class AigConfigUpdateGatewayRequestDlpVariant2 {const AigConfigUpdateGatewayRequestDlpVariant2({required this.enabled, required this.policies, });
 
 factory AigConfigUpdateGatewayRequestDlpVariant2.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayRequestDlpVariant2(
   enabled: json['enabled'] as bool,

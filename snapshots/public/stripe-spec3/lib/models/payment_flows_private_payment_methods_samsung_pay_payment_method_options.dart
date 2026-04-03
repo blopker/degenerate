@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls when the funds will be captured from the customer's account.
-final class PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptionsCaptureMethod {const PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptionsCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
+@immutable final class PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptionsCaptureMethod {const PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptionsCaptureMethod._(this.value);
 
 factory PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptionsCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptionsCaptureMethod($value)'; } 
  }
 /// 
-final class PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions {const PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions({this.captureMethod});
+@immutable final class PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions {const PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions({this.captureMethod});
 
 factory PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? PaymentFlowsPrivatePaymentMethodsSamsungPayPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,

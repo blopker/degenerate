@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// OwnerReference contains enough information to let you identify an owning object. An owning object must be in the same namespace as the dependent, or be cluster-scoped, so there is no namespace field.
-final class OwnerReference {const OwnerReference({this.apiVersion = '', this.blockOwnerDeletion, this.controller, this.kind = '', this.name = '', this.uid = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// OwnerReference contains enough information to let you identify an owning object. An owning object must be in the same namespace as the dependent, or be cluster-scoped, so there is no namespace field.
+@immutable final class OwnerReference {const OwnerReference({this.apiVersion = '', this.blockOwnerDeletion, this.controller, this.kind = '', this.name = '', this.uid = '', });
 
 factory OwnerReference.fromJson(Map<String, dynamic> json) { return OwnerReference(
   apiVersion: json['apiVersion'] as String,

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If `opt_in`, the customer consents to receiving promotional communications
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If `opt_in`, the customer consents to receiving promotional communications
 /// from the merchant about this Checkout Session.
-final class PaymentPagesCheckoutSessionConsentPromotions {const PaymentPagesCheckoutSessionConsentPromotions._(this.value);
+@immutable final class PaymentPagesCheckoutSessionConsentPromotions {const PaymentPagesCheckoutSessionConsentPromotions._(this.value);
 
 factory PaymentPagesCheckoutSessionConsentPromotions.fromJson(String json) { return switch (json) {
   'opt_in' => optIn,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionConsentPromotions($value)'; } 
  }
 /// If `accepted`, the customer in this Checkout Session has agreed to the merchant's terms of service.
-final class PaymentPagesCheckoutSessionConsentTermsOfService {const PaymentPagesCheckoutSessionConsentTermsOfService._(this.value);
+@immutable final class PaymentPagesCheckoutSessionConsentTermsOfService {const PaymentPagesCheckoutSessionConsentTermsOfService._(this.value);
 
 factory PaymentPagesCheckoutSessionConsentTermsOfService.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionConsentTermsOfService($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionConsent {const PaymentPagesCheckoutSessionConsent({this.promotions, this.termsOfService, });
+@immutable final class PaymentPagesCheckoutSessionConsent {const PaymentPagesCheckoutSessionConsent({this.promotions, this.termsOfService, });
 
 factory PaymentPagesCheckoutSessionConsent.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionConsent(
   promotions: json['promotions'] != null ? PaymentPagesCheckoutSessionConsentPromotions.fromJson(json['promotions'] as String) : null,

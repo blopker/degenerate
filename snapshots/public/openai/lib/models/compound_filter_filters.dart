@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'comparison_filter.dart';sealed class CompoundFilterFilters {const CompoundFilterFilters();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'comparison_filter.dart';sealed class CompoundFilterFilters {const CompoundFilterFilters();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CompoundFilterFilters.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -14,7 +14,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CompoundFilterFilters$Unknown; } 
  }
-final class CompoundFilterFiltersEq extends CompoundFilterFilters {const CompoundFilterFiltersEq(this.comparisonFilter);
+@immutable final class CompoundFilterFiltersEq extends CompoundFilterFilters {const CompoundFilterFiltersEq(this.comparisonFilter);
 
 factory CompoundFilterFiltersEq.fromJson(Map<String, dynamic> json) { return CompoundFilterFiltersEq(ComparisonFilter.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final ComparisonFilter comparisonFilter;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class CompoundFilterFilters$Unknown extends CompoundFilterFilters {const CompoundFilterFilters$Unknown(this.json);
+@immutable final class CompoundFilterFilters$Unknown extends CompoundFilterFilters {const CompoundFilterFilters$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

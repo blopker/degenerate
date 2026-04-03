@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountSessionsRequestComponentsNotificationBannerFeatures {const PostAccountSessionsRequestComponentsNotificationBannerFeatures({this.disableStripeUserAuthentication, this.externalAccountCollection, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountSessionsRequestComponentsNotificationBannerFeatures {const PostAccountSessionsRequestComponentsNotificationBannerFeatures({this.disableStripeUserAuthentication, this.externalAccountCollection, });
 
 factory PostAccountSessionsRequestComponentsNotificationBannerFeatures.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsNotificationBannerFeatures(
   disableStripeUserAuthentication: json['disable_stripe_user_authentication'] as bool?,

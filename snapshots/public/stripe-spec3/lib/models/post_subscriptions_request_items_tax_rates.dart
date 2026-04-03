@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSubscriptionsRequestItemsTaxRatesVariant2 {const PostSubscriptionsRequestItemsTaxRatesVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionsRequestItemsTaxRatesVariant2 {const PostSubscriptionsRequestItemsTaxRatesVariant2._(this.value);
 
 factory PostSubscriptionsRequestItemsTaxRatesVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

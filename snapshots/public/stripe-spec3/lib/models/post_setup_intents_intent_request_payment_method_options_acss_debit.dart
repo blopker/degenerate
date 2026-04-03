@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_setup_intents_intent_request_payment_method_options_acss_debit_mandate_options.dart';final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitCurrency {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitCurrency._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_acss_debit_mandate_options.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitCurrency {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitCurrency._(this.value);
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitCurrency.fromJson(String json) { return switch (json) {
   'cad' => cad,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitCurrency($value)'; } 
  }
-final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitVerificationMethod {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitVerificationMethod._(this.value);
+@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitVerificationMethod {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitVerificationMethod._(this.value);
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitVerificationMethod($value)'; } 
  }
-final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit({this.currency, this.mandateOptions, this.verificationMethod, });
+@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit {const PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit({this.currency, this.mandateOptions, this.verificationMethod, });
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebit(
   currency: json['currency'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsAcssDebitCurrency.fromJson(json['currency'] as String) : null,

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item_with_reference_content.dart';/// The type of the item (`message`, `function_call`, `function_call_output`, `item_reference`).
 /// 
-final class RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType._(this.value);
+@immutable final class RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType._(this.value);
 
 factory RealtimeConversationItemWithReferenceType.fromJson(String json) { return switch (json) {
   'message' => message,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Identifier for the API object being returned - always `realtime.item`.
 /// 
-final class RealtimeConversationItemWithReferenceObject {const RealtimeConversationItemWithReferenceObject._(this.value);
+@immutable final class RealtimeConversationItemWithReferenceObject {const RealtimeConversationItemWithReferenceObject._(this.value);
 
 factory RealtimeConversationItemWithReferenceObject.fromJson(String json) { return switch (json) {
   'realtime.item' => realtimeItem,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 /// on the conversation, but are accepted for consistency with the
 /// `conversation.item.created` event.
 /// 
-final class RealtimeConversationItemWithReferenceStatus {const RealtimeConversationItemWithReferenceStatus._(this.value);
+@immutable final class RealtimeConversationItemWithReferenceStatus {const RealtimeConversationItemWithReferenceStatus._(this.value);
 
 factory RealtimeConversationItemWithReferenceStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -86,7 +86,7 @@ bool get isUnknown { return !values.contains(this); }
 /// The role of the message sender (`user`, `assistant`, `system`), only
 /// applicable for `message` items.
 /// 
-final class RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole._(this.value);
+@immutable final class RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole._(this.value);
 
 factory RealtimeConversationItemWithReferenceRole.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -114,7 +114,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeConversationItemWithReferenceRole($value)'; } 
  }
 /// The item to add to the conversation.
-final class RealtimeConversationItemWithReference {const RealtimeConversationItemWithReference({this.id, this.type, this.object, this.status, this.role, this.content, this.callId, this.name, this.arguments, this.output, });
+@immutable final class RealtimeConversationItemWithReference {const RealtimeConversationItemWithReference({this.id, this.type, this.object, this.status, this.role, this.content, this.callId, this.name, this.arguments, this.output, });
 
 factory RealtimeConversationItemWithReference.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemWithReference(
   id: json['id'] as String?,

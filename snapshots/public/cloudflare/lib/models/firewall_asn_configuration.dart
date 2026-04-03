@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration target. You must set the target to `asn` when specifying an Autonomous System Number (ASN) in the rule.
-final class FirewallAsnConfigurationTarget {const FirewallAsnConfigurationTarget._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `asn` when specifying an Autonomous System Number (ASN) in the rule.
+@immutable final class FirewallAsnConfigurationTarget {const FirewallAsnConfigurationTarget._(this.value);
 
 factory FirewallAsnConfigurationTarget.fromJson(String json) { return switch (json) {
   'asn' => asn,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FirewallAsnConfigurationTarget($value)'; } 
  }
-final class FirewallAsnConfiguration {const FirewallAsnConfiguration({this.target, this.value, });
+@immutable final class FirewallAsnConfiguration {const FirewallAsnConfiguration({this.target, this.value, });
 
 factory FirewallAsnConfiguration.fromJson(Map<String, dynamic> json) { return FirewallAsnConfiguration(
   target: json['target'] != null ? FirewallAsnConfigurationTarget.fromJson(json['target'] as String) : null,

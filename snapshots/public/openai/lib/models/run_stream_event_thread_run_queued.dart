@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_object.dart';final class RunStreamEventThreadRunQueuedEvent {const RunStreamEventThreadRunQueuedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_object.dart';@immutable final class RunStreamEventThreadRunQueuedEvent {const RunStreamEventThreadRunQueuedEvent._(this.value);
 
 factory RunStreamEventThreadRunQueuedEvent.fromJson(String json) { return switch (json) {
   'thread.run.queued' => threadRunQueued,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStreamEventThreadRunQueuedEvent($value)'; } 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.
-final class RunStreamEventThreadRunQueued {const RunStreamEventThreadRunQueued({required this.event, required this.data, });
+@immutable final class RunStreamEventThreadRunQueued {const RunStreamEventThreadRunQueued({required this.event, required this.data, });
 
 factory RunStreamEventThreadRunQueued.fromJson(Map<String, dynamic> json) { return RunStreamEventThreadRunQueued(
   event: RunStreamEventThreadRunQueuedEvent.fromJson(json['event'] as String),

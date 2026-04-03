@@ -6,25 +6,49 @@ library;
 
 import 'dart:io';
 
+import 'package:degenerate/src/emitter/file_emitter.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
+import 'package:degenerate/src/lowering/ir_mapper.dart';
+import 'package:degenerate/src/lowering/operation_lowerer.dart';
+import 'package:degenerate/src/lowering/type_ref_resolver.dart';
+import 'package:degenerate/src/normalizer/schema_normalizer.dart';
+import 'package:degenerate/src/parser/openapi_document.dart';
+import 'package:degenerate/src/parser/ref_inliner.dart';
 import 'package:path/path.dart' as p;
 
-import 'parser/openapi_document.dart';
-import 'parser/ref_inliner.dart';
-
-import 'lowering/ir_mapper.dart';
-import 'lowering/operation_lowerer.dart';
-import 'lowering/type_ref_resolver.dart';
-import 'normalizer/schema_normalizer.dart';
-import 'emitter/file_emitter.dart';
-import 'ir/ir_types.dart';
-
 // packageVersion updated by scripts/release.dart
+/// Current package version.
 const packageVersion = '0.4.0';
+
+/// Default name for generated API client packages.
 const defaultPackageName = 'api_client';
+
+/// Default output directory for library mode.
 const defaultOutputDir = 'lib';
+
+/// Default output directory for workspace mode.
 const defaultWorkspaceOutputDir = 'packages';
 
+/// Configuration for the code generator.
 class GeneratorConfig {
+  /// Creates a generator configuration.
+  GeneratorConfig({
+    required this.inputPath,
+    this.outputDir,
+    this.packageName,
+    this.includeDeprecated = false,
+    this.verbose = false,
+    this.dryRun = false,
+    this.clean = false,
+    this.quiet = false,
+    this.tags = const [],
+    this.paths = const [],
+    this.workspace = false,
+    this.stdinContent,
+    this.unwrapFields = const [],
+  });
+
+  /// Path to the input OpenAPI spec file.
   final String inputPath;
 
   /// Base output directory. The package name is appended to this.
@@ -36,11 +60,23 @@ class GeneratorConfig {
 
   /// Resolved package name (set during generation).
   String? resolvedPackageName;
+
+  /// Optional package name override.
   final String? packageName;
+
+  /// Whether to include deprecated operations.
   final bool includeDeprecated;
+
+  /// Whether to print verbose diagnostics.
   final bool verbose;
+
+  /// Whether to skip writing files.
   final bool dryRun;
+
+  /// Whether to clean the output directory first.
   final bool clean;
+
+  /// Whether to suppress log output.
   final bool quiet;
 
   /// If non-empty, only include API groups whose tag matches one of these
@@ -64,35 +100,22 @@ class GeneratorConfig {
   /// full envelope. For example, `['result']` unwraps
   /// `{errors, messages, success, result: T}` to just `T`.
   final List<String> unwrapFields;
-
-  GeneratorConfig({
-    required this.inputPath,
-    this.outputDir,
-    this.packageName,
-    this.includeDeprecated = false,
-    this.verbose = false,
-    this.dryRun = false,
-    this.clean = false,
-    this.quiet = false,
-    this.tags = const [],
-    this.paths = const [],
-    this.workspace = false,
-    this.stdinContent,
-    this.unwrapFields = const [],
-  });
 }
 
+/// The main code generator pipeline.
 class Generator {
-  final GeneratorConfig config;
-
+  /// Creates a generator with the given [config].
   Generator(this.config);
+
+  /// The generator configuration.
+  final GeneratorConfig config;
 
   /// Run the full pipeline: parse -> normalize -> lower -> emit -> write.
   ///
   /// Returns the map of relative file paths to their generated contents.
   Future<Map<String, String>> generate() async {
     // 1. Read and parse spec
-    final bool isStdin = config.stdinContent != null;
+    final isStdin = config.stdinContent != null;
     final String content;
     if (isStdin) {
       content = config.stdinContent!;
@@ -124,7 +147,7 @@ class Generator {
     }
 
     if (doc.version.isEmpty) {
-      throw GeneratorException(
+      throw const GeneratorException(
         'Missing or invalid "openapi" version field in spec.',
       );
     }
@@ -226,10 +249,11 @@ class Generator {
       final normalTags = config.tags.map(normalize).toList();
       irApis = irApis.where((api) {
         final apiNorm = normalize(api.name);
-        return normalTags.any((t) => apiNorm.contains(t));
+        return normalTags.any(apiNorm.contains);
       }).toList();
       _log(
-        '  Filtered to ${irApis.length} API groups matching tags: ${config.tags}',
+        '  Filtered to ${irApis.length} API groups'
+        ' matching tags: ${config.tags}',
       );
     }
 
@@ -246,7 +270,8 @@ class Generator {
       }
       irApis = filtered;
       _log(
-        '  Filtered to ${irApis.length} API groups matching paths: ${config.paths}',
+        '  Filtered to ${irApis.length} API groups'
+        ' matching paths: ${config.paths}',
       );
     }
 
@@ -393,8 +418,7 @@ class Generator {
               authorizationUrl: flow['authorizationUrl'] as String?,
               tokenUrl: flow['tokenUrl'] as String?,
               refreshUrl: flow['refreshUrl'] as String?,
-              deviceAuthorizationUrl:
-                  flow['deviceAuthorizationUrl'] as String?,
+              deviceAuthorizationUrl: flow['deviceAuthorizationUrl'] as String?,
               scopes: scopes,
             ),
           );
@@ -433,7 +457,7 @@ class Generator {
 
   void _log(String message) {
     if (config.quiet) return;
-    // ignore: avoid_print
+    // ignore: avoid_print -- intentional for CLI output
     print(message);
   }
 
@@ -663,9 +687,13 @@ class Generator {
   }
 }
 
+/// Exception thrown by the generator pipeline.
 class GeneratorException implements Exception {
-  final String message;
+  /// Creates a generator exception with the given [message].
   const GeneratorException(this.message);
+
+  /// The error message.
+  final String message;
 
   @override
   String toString() => 'GeneratorException: $message';

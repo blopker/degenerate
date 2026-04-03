@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode._(this.value);
 
 factory EmailSecurityMessageDeliveryMode.fromJson(String json) { return switch (json) {
   'DIRECT' => direct,

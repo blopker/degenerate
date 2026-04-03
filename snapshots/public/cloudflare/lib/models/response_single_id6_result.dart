@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'speed_identifier.dart';final class ResponseSingleId6Result {const ResponseSingleId6Result({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'speed_identifier.dart';@immutable final class ResponseSingleId6Result {const ResponseSingleId6Result({required this.id});
 
 factory ResponseSingleId6Result.fromJson(Map<String, dynamic> json) { return ResponseSingleId6Result(
   id: SpeedIdentifier.fromJson(json['id'] as String),

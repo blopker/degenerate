@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'organization_id.dart';final class OrganizationParent {const OrganizationParent({required this.id, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_id.dart';@immutable final class OrganizationParent {const OrganizationParent({required this.id, required this.name, });
 
 factory OrganizationParent.fromJson(Map<String, dynamic> json) { return OrganizationParent(
   id: OrganizationId.fromJson(json['id'] as String),

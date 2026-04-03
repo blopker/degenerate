@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_account_sessions_request_components_notification_banner_features.dart';final class PostAccountSessionsRequestComponentsNotificationBanner {const PostAccountSessionsRequestComponentsNotificationBanner({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components_notification_banner_features.dart';@immutable final class PostAccountSessionsRequestComponentsNotificationBanner {const PostAccountSessionsRequestComponentsNotificationBanner({required this.enabled, this.features, });
 
 factory PostAccountSessionsRequestComponentsNotificationBanner.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsNotificationBanner(
   enabled: json['enabled'] as bool,

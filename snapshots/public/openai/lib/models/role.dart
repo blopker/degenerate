@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `role`.
-final class RoleObject {const RoleObject._(this.value);
+@immutable final class RoleObject {const RoleObject._(this.value);
 
 factory RoleObject.fromJson(String json) { return switch (json) {
   'role' => role,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RoleObject($value)'; } 
  }
 /// Details about a role that can be assigned through the public Roles API.
-final class Role {const Role({required this.object, required this.id, required this.name, required this.description, required this.permissions, required this.resourceType, required this.predefinedRole, });
+@immutable final class Role {const Role({required this.object, required this.id, required this.name, required this.description, required this.permissions, required this.resourceType, required this.predefinedRole, });
 
 factory Role.fromJson(Map<String, dynamic> json) { return Role(
   object: RoleObject.fromJson(json['object'] as String),

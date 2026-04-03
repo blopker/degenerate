@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_settings.dart';final class AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest {const AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest({required this.settings});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_settings.dart';@immutable final class AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest {const AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest({required this.settings});
 
 factory AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest.fromJson(Map<String, dynamic> json) { return AccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest(
   settings: (json['settings'] as List<dynamic>).map((e) => AccessSettings.fromJson(e as Map<String, dynamic>)).toList(),

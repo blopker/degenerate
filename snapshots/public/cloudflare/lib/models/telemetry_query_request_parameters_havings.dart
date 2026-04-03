@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TelemetryQueryRequestParametersHavingsOperation {const TelemetryQueryRequestParametersHavingsOperation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryQueryRequestParametersHavingsOperation {const TelemetryQueryRequestParametersHavingsOperation._(this.value);
 
 factory TelemetryQueryRequestParametersHavingsOperation.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TelemetryQueryRequestParametersHavingsOperation($value)'; } 
  }
-final class TelemetryQueryRequestParametersHavings {const TelemetryQueryRequestParametersHavings({required this.key, required this.operation, required this.value, });
+@immutable final class TelemetryQueryRequestParametersHavings {const TelemetryQueryRequestParametersHavings({required this.key, required this.operation, required this.value, });
 
 factory TelemetryQueryRequestParametersHavings.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequestParametersHavings(
   key: json['key'] as String,

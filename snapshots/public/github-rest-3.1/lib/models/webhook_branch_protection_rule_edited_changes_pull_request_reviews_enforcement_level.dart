@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom {const WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom {const WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._(this.value);
 
 factory WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom($value)'; } 
  }
-final class WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel {const WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel({required this.from});
+@immutable final class WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel {const WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel({required this.from});
 
 factory WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel(
   from: WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.fromJson(json['from'] as String),

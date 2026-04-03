@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TlsCertificatesAndHostnamesQuota {const TlsCertificatesAndHostnamesQuota({this.allocated, this.used, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesQuota {const TlsCertificatesAndHostnamesQuota({this.allocated, this.used, });
 
 factory TlsCertificatesAndHostnamesQuota.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesQuota(
   allocated: json['allocated'] != null ? (json['allocated'] as num).toInt() : null,

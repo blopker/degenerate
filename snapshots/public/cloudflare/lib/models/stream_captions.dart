@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_language.dart';/// The status of a generated caption.
-final class StreamCaptionStatus {const StreamCaptionStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_language.dart';/// The status of a generated caption.
+@immutable final class StreamCaptionStatus {const StreamCaptionStatus._(this.value);
 
 factory StreamCaptionStatus.fromJson(String json) { return switch (json) {
   'ready' => ready,
@@ -42,7 +42,7 @@ factory StreamLabel.fromJson(String json) => StreamLabel(json);
 String toJson() => value;
 
 }
-final class StreamCaptions {const StreamCaptions({this.generated, this.label, this.language, this.status, });
+@immutable final class StreamCaptions {const StreamCaptions({this.generated, this.label, this.language, this.status, });
 
 factory StreamCaptions.fromJson(Map<String, dynamic> json) { return StreamCaptions(
   generated: json['generated'] != null ? StreamGeneratedCaption.fromJson(json['generated'] as bool) : null,

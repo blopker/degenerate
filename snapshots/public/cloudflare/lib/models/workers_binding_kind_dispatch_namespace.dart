@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_kind_dispatch_namespace_outbound.dart';import 'workers_binding_name.dart';final class WorkersBindingKindDispatchNamespace {const WorkersBindingKindDispatchNamespace({required this.name, required this.namespace, this.outbound, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_kind_dispatch_namespace_outbound.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindDispatchNamespace {const WorkersBindingKindDispatchNamespace({required this.name, required this.namespace, required this.type, this.outbound, });
 
 factory WorkersBindingKindDispatchNamespace.fromJson(Map<String, dynamic> json) { return WorkersBindingKindDispatchNamespace(
   name: WorkersBindingName.fromJson(json['name'] as String),

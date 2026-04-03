@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'telemetry_query_request_parameters_calculations.dart';import 'telemetry_query_request_parameters_filters.dart';import 'telemetry_query_request_parameters_group_bys.dart';import 'telemetry_query_request_parameters_havings.dart';import 'telemetry_query_request_parameters_needle.dart';import 'telemetry_query_request_parameters_order_by.dart';/// Set a Flag to describe how to combine the filters on the query.
-final class TelemetryQueryRequestParametersFilterCombination {const TelemetryQueryRequestParametersFilterCombination._(this.value);
+@immutable final class TelemetryQueryRequestParametersFilterCombination {const TelemetryQueryRequestParametersFilterCombination._(this.value);
 
 factory TelemetryQueryRequestParametersFilterCombination.fromJson(String json) { return switch (json) {
   'and' => and,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TelemetryQueryRequestParametersFilterCombination($value)'; } 
  }
 /// Optional parameters to pass to the query execution
-final class TelemetryQueryRequestParameters {const TelemetryQueryRequestParameters({this.calculations, this.datasets, this.filterCombination, this.filters, this.groupBys, this.havings, this.limit, this.needle, this.orderBy, });
+@immutable final class TelemetryQueryRequestParameters {const TelemetryQueryRequestParameters({this.calculations, this.datasets, this.filterCombination, this.filters, this.groupBys, this.havings, this.limit, this.needle, this.orderBy, });
 
 factory TelemetryQueryRequestParameters.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequestParameters(
   calculations: (json['calculations'] as List<dynamic>?)?.map((e) => TelemetryQueryRequestParametersCalculations.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitRealtimekitBucketConfig {const RealtimekitRealtimekitBucketConfig({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitRealtimekitBucketConfig {const RealtimekitRealtimekitBucketConfig({required this.enabled});
 
 factory RealtimekitRealtimekitBucketConfig.fromJson(Map<String, dynamic> json) { return RealtimekitRealtimekitBucketConfig(
   enabled: json['enabled'] as bool,

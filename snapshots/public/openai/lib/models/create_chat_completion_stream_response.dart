@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'completion_usage.dart';import 'create_chat_completion_stream_response_choices.dart';import 'service_tier.dart';/// The object type, which is always `chat.completion.chunk`.
-final class CreateChatCompletionStreamResponseObject {const CreateChatCompletionStreamResponseObject._(this.value);
+@immutable final class CreateChatCompletionStreamResponseObject {const CreateChatCompletionStreamResponseObject._(this.value);
 
 factory CreateChatCompletionStreamResponseObject.fromJson(String json) { return switch (json) {
   'chat.completion.chunk' => chatCompletionChunk,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// by the model, based on the provided input.
 /// [Learn more](/docs/guides/streaming-responses).
 /// 
-final class CreateChatCompletionStreamResponse {const CreateChatCompletionStreamResponse({required this.id, required this.choices, required this.created, required this.model, this.serviceTier, this.systemFingerprint, required this.object, this.usage, });
+@immutable final class CreateChatCompletionStreamResponse {const CreateChatCompletionStreamResponse({required this.id, required this.choices, required this.created, required this.model, required this.object, this.serviceTier, this.systemFingerprint, this.usage, });
 
 factory CreateChatCompletionStreamResponse.fromJson(Map<String, dynamic> json) { return CreateChatCompletionStreamResponse(
   id: json['id'] as String,

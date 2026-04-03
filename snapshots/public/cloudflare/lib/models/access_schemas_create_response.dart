@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_create_response_result.dart';final class AccessSchemasCreateResponse {const AccessSchemasCreateResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_create_response_result.dart';@immutable final class AccessSchemasCreateResponse {const AccessSchemasCreateResponse({this.result});
 
 factory AccessSchemasCreateResponse.fromJson(Map<String, dynamic> json) { return AccessSchemasCreateResponse(
   result: json['result'] != null ? AccessSchemasCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

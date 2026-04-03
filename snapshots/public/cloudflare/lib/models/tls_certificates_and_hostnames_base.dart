@@ -22,7 +22,7 @@ String toJson() => value;
 
 }
 /// Status of the Keyless SSL.
-final class TlsCertificatesAndHostnamesSchemasStatus {const TlsCertificatesAndHostnamesSchemasStatus._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSchemasStatus {const TlsCertificatesAndHostnamesSchemasStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesSchemasStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -46,7 +46,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TlsCertificatesAndHostnamesSchemasStatus($value)'; } 
  }
-final class TlsCertificatesAndHostnamesBase {const TlsCertificatesAndHostnamesBase({required this.createdOn, required this.enabled, required this.host, required this.id, required this.modifiedOn, required this.name, required this.permissions, required this.port, required this.status, this.tunnel, });
+@immutable final class TlsCertificatesAndHostnamesBase {const TlsCertificatesAndHostnamesBase({required this.createdOn, required this.enabled, required this.host, required this.id, required this.modifiedOn, required this.name, required this.permissions, required this.port, required this.status, this.tunnel, });
 
 factory TlsCertificatesAndHostnamesBase.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesBase(
   createdOn: DateTime.parse(json['created_on'] as String),

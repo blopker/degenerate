@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_uuid.dart';final class TokenValidationConfigDeleteResponseResult {const TokenValidationConfigDeleteResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_uuid.dart';@immutable final class TokenValidationConfigDeleteResponseResult {const TokenValidationConfigDeleteResponseResult({this.id});
 
 factory TokenValidationConfigDeleteResponseResult.fromJson(Map<String, dynamic> json) { return TokenValidationConfigDeleteResponseResult(
   id: json['id'] != null ? ShieldUuid.fromJson(json['id'] as String) : null,

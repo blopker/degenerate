@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_billing_portal_configurations_request_features_subscription_cancel_cancellation_reason.dart';final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelMode {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_cancel_cancellation_reason.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelMode {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelMode._(this.value);
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelMode.fromJson(String json) { return switch (json) {
   'at_period_end' => atPeriodEnd,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelMode($value)'; } 
  }
-final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelProrationBehavior {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelProrationBehavior._(this.value);
+@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelProrationBehavior {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelProrationBehavior._(this.value);
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelProrationBehavior.fromJson(String json) { return switch (json) {
   'always_invoice' => alwaysInvoice,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelProrationBehavior($value)'; } 
  }
-final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel({this.cancellationReason, required this.enabled, this.mode, this.prorationBehavior, });
+@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel({required this.enabled, this.cancellationReason, this.mode, this.prorationBehavior, });
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancel(
   cancellationReason: json['cancellation_reason'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason.fromJson(json['cancellation_reason'] as Map<String, dynamic>) : null,

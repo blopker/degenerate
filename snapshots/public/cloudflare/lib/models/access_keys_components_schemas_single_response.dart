@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_key_config.dart';final class AccessKeysComponentsSchemasSingleResponse {const AccessKeysComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_key_config.dart';@immutable final class AccessKeysComponentsSchemasSingleResponse {const AccessKeysComponentsSchemasSingleResponse({this.result});
 
 factory AccessKeysComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AccessKeysComponentsSchemasSingleResponse(
   result: json['result'] != null ? AccessKeyConfig.fromJson(json['result'] as Map<String, dynamic>) : null,

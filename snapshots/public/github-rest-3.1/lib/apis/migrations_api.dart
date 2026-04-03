@@ -25,7 +25,7 @@ if (page != null) {
 }
 if (exclude != null) {
 for (final item in exclude) {
-  queryParametersList.add(ApiQueryParameter(name: 'exclude', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'exclude', value: item.toJson()));
 }
 }
 
@@ -90,7 +90,7 @@ Future<ApiResult<Migration, BasicError>> migrationsGetStatusForOrg({required Str
 final queryParametersList = <ApiQueryParameter>[];
 if (exclude != null) {
 for (final item in exclude) {
-  queryParametersList.add(ApiQueryParameter(name: 'exclude', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'exclude', value: item.toJson()));
 }
 }
 
@@ -295,7 +295,7 @@ Future<ApiResult<Migration, BasicError>> migrationsGetStatusForAuthenticatedUser
 final queryParametersList = <ApiQueryParameter>[];
 if (exclude != null) {
 for (final item in exclude) {
-  queryParametersList.add(ApiQueryParameter(name: 'exclude', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'exclude', value: item));
 }
 }
 

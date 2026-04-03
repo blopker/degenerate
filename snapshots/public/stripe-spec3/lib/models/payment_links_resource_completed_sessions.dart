@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentLinksResourceCompletedSessions {const PaymentLinksResourceCompletedSessions({required this.count, required this.limit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentLinksResourceCompletedSessions {const PaymentLinksResourceCompletedSessions({required this.count, required this.limit, });
 
 factory PaymentLinksResourceCompletedSessions.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCompletedSessions(
   count: (json['count'] as num).toInt(),

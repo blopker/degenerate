@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, must be `certificate.deleted`.
-final class DeleteCertificateResponseObject {const DeleteCertificateResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, must be `certificate.deleted`.
+@immutable final class DeleteCertificateResponseObject {const DeleteCertificateResponseObject._(this.value);
 
 factory DeleteCertificateResponseObject.fromJson(String json) { return switch (json) {
   'certificate.deleted' => certificateDeleted,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DeleteCertificateResponseObject($value)'; } 
  }
-final class DeleteCertificateResponse {const DeleteCertificateResponse({required this.object, required this.id, });
+@immutable final class DeleteCertificateResponse {const DeleteCertificateResponse({required this.object, required this.id, });
 
 factory DeleteCertificateResponse.fromJson(Map<String, dynamic> json) { return DeleteCertificateResponse(
   object: DeleteCertificateResponseObject.fromJson(json['object'] as String),

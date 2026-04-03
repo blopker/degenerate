@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposGenerateReleaseNotesRequest {const ReposGenerateReleaseNotesRequest({required this.tagName, this.targetCommitish, this.previousTagName, this.configurationFilePath, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposGenerateReleaseNotesRequest {const ReposGenerateReleaseNotesRequest({required this.tagName, this.targetCommitish, this.previousTagName, this.configurationFilePath, });
 
 factory ReposGenerateReleaseNotesRequest.fromJson(Map<String, dynamic> json) { return ReposGenerateReleaseNotesRequest(
   tagName: json['tag_name'] as String,

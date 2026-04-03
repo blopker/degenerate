@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookWatchStartedAction {const WebhookWatchStartedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookWatchStartedAction {const WebhookWatchStartedAction._(this.value);
 
 factory WebhookWatchStartedAction.fromJson(String json) { return switch (json) {
   'started' => started,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWatchStartedAction($value)'; } 
  }
-final class WebhookWatchStarted {const WebhookWatchStarted({required this.action, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookWatchStarted {const WebhookWatchStarted({required this.action, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookWatchStarted.fromJson(Map<String, dynamic> json) { return WebhookWatchStarted(
   action: WebhookWatchStartedAction.fromJson(json['action'] as String),

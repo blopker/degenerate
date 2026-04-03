@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_origin_max_http_version.dart';final class CacheRulesOriginMaxHttpVersionResponseValue {const CacheRulesOriginMaxHttpVersionResponseValue({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_origin_max_http_version.dart';@immutable final class CacheRulesOriginMaxHttpVersionResponseValue {const CacheRulesOriginMaxHttpVersionResponseValue({this.result});
 
 factory CacheRulesOriginMaxHttpVersionResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesOriginMaxHttpVersionResponseValue(
   result: json['result'] != null ? CacheRulesOriginMaxHttpVersion.fromJson(json['result'] as Map<String, dynamic>) : null,

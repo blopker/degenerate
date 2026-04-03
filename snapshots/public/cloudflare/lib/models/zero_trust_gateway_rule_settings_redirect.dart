@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Apply settings to redirect rules. Settable only for `http` rules with the action set to `redirect`.
-final class ZeroTrustGatewayRuleSettingsRedirect {const ZeroTrustGatewayRuleSettingsRedirect({this.includeContext, this.preservePathAndQuery, required this.targetUri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Apply settings to redirect rules. Settable only for `http` rules with the action set to `redirect`.
+@immutable final class ZeroTrustGatewayRuleSettingsRedirect {const ZeroTrustGatewayRuleSettingsRedirect({required this.targetUri, this.includeContext, this.preservePathAndQuery, });
 
 factory ZeroTrustGatewayRuleSettingsRedirect.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsRedirect(
   includeContext: json['include_context'] as bool?,

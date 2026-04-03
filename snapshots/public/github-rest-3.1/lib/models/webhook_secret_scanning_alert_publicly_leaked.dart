@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'secret_scanning_alert_webhook.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookSecretScanningAlertPubliclyLeakedAction {const WebhookSecretScanningAlertPubliclyLeakedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'secret_scanning_alert_webhook.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookSecretScanningAlertPubliclyLeakedAction {const WebhookSecretScanningAlertPubliclyLeakedAction._(this.value);
 
 factory WebhookSecretScanningAlertPubliclyLeakedAction.fromJson(String json) { return switch (json) {
   'publicly_leaked' => publiclyLeaked,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookSecretScanningAlertPubliclyLeakedAction($value)'; } 
  }
-final class WebhookSecretScanningAlertPubliclyLeaked {const WebhookSecretScanningAlertPubliclyLeaked({required this.action, required this.alert, this.enterprise, this.installation, this.organization, required this.repository, this.sender, });
+@immutable final class WebhookSecretScanningAlertPubliclyLeaked {const WebhookSecretScanningAlertPubliclyLeaked({required this.action, required this.alert, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookSecretScanningAlertPubliclyLeaked.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertPubliclyLeaked(
   action: WebhookSecretScanningAlertPubliclyLeakedAction.fromJson(json['action'] as String),

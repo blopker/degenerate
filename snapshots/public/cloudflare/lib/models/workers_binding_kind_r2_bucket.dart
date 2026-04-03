@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_name.dart';/// The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
-final class WorkersBindingKindR2BucketJurisdiction {const WorkersBindingKindR2BucketJurisdiction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';/// The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
+@immutable final class WorkersBindingKindR2BucketJurisdiction {const WorkersBindingKindR2BucketJurisdiction._(this.value);
 
 factory WorkersBindingKindR2BucketJurisdiction.fromJson(String json) { return switch (json) {
   'eu' => eu,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersBindingKindR2BucketJurisdiction($value)'; } 
  }
-final class WorkersBindingKindR2Bucket {const WorkersBindingKindR2Bucket({required this.bucketName, this.jurisdiction, required this.name, required this.type, });
+@immutable final class WorkersBindingKindR2Bucket {const WorkersBindingKindR2Bucket({required this.bucketName, required this.name, required this.type, this.jurisdiction, });
 
 factory WorkersBindingKindR2Bucket.fromJson(Map<String, dynamic> json) { return WorkersBindingKindR2Bucket(
   bucketName: json['bucket_name'] as String,

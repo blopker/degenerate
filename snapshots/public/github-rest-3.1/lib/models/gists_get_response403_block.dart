@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GistsGetResponse403Block {const GistsGetResponse403Block({this.reason, this.createdAt, this.htmlUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistsGetResponse403Block {const GistsGetResponse403Block({this.reason, this.createdAt, this.htmlUrl, });
 
 factory GistsGetResponse403Block.fromJson(Map<String, dynamic> json) { return GistsGetResponse403Block(
   reason: json['reason'] as String?,

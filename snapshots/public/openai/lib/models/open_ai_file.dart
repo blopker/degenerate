@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `file`.
-final class OpenAiFileObject {const OpenAiFileObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `file`.
+@immutable final class OpenAiFileObject {const OpenAiFileObject._(this.value);
 
 factory OpenAiFileObject.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OpenAiFileObject($value)'; } 
  }
 /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
-final class OpenAiFilePurpose {const OpenAiFilePurpose._(this.value);
+@immutable final class OpenAiFilePurpose {const OpenAiFilePurpose._(this.value);
 
 factory OpenAiFilePurpose.fromJson(String json) { return switch (json) {
   'assistants' => assistants,
@@ -66,7 +66,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OpenAiFilePurpose($value)'; } 
  }
 /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
-final class OpenAiFileStatus {const OpenAiFileStatus._(this.value);
+@immutable final class OpenAiFileStatus {const OpenAiFileStatus._(this.value);
 
 factory OpenAiFileStatus.fromJson(String json) { return switch (json) {
   'uploaded' => uploaded,
@@ -94,7 +94,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OpenAiFileStatus($value)'; } 
  }
 /// The `File` object represents a document that has been uploaded to OpenAI.
-final class OpenAiFile {const OpenAiFile({required this.id, required this.bytes, required this.createdAt, this.expiresAt, required this.filename, required this.object, required this.purpose, required this.status, this.statusDetails, });
+@immutable final class OpenAiFile {const OpenAiFile({required this.id, required this.bytes, required this.createdAt, required this.filename, required this.object, required this.purpose, required this.status, this.expiresAt, this.statusDetails, });
 
 factory OpenAiFile.fromJson(Map<String, dynamic> json) { return OpenAiFile(
   id: json['id'] as String,

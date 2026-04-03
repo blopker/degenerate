@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0 {const RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0 {const RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0({required this.name, required this.value, });
 
 factory RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTopTldsBySpoofResponseResultTop0(
   name: json['name'] as String,

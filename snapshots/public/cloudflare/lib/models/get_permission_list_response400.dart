@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_permission_list_response400_errors.dart';final class GetPermissionListResponse400 {const GetPermissionListResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_permission_list_response400_errors.dart';@immutable final class GetPermissionListResponse400 {const GetPermissionListResponse400({required this.errors, required this.result, required this.success, });
 
 factory GetPermissionListResponse400.fromJson(Map<String, dynamic> json) { return GetPermissionListResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => GetPermissionListResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

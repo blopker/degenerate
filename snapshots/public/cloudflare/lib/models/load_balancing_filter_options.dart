@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filter options for a particular resource type (pool or origin). Use null to reset.
-final class LoadBalancingFilterOptions {const LoadBalancingFilterOptions({this.disable = false, this.healthy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filter options for a particular resource type (pool or origin). Use null to reset.
+@immutable final class LoadBalancingFilterOptions {const LoadBalancingFilterOptions({this.disable = false, this.healthy, });
 
 factory LoadBalancingFilterOptions.fromJson(Map<String, dynamic> json) { return LoadBalancingFilterOptions(
   disable: json.containsKey('disable') ? json['disable'] as bool? : false,

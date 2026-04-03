@@ -7,7 +7,7 @@ factory FirewallDisabled.fromJson(bool json) => FirewallDisabled(json);
 bool toJson() => value;
 
 }
-final class FirewallRatelimit {const FirewallRatelimit({this.action, this.bypass, this.description, this.disabled, this.id, this.match, this.period, this.threshold, });
+@immutable final class FirewallRatelimit {const FirewallRatelimit({this.action, this.bypass, this.description, this.disabled, this.id, this.match, this.period, this.threshold, });
 
 factory FirewallRatelimit.fromJson(Map<String, dynamic> json) { return FirewallRatelimit(
   action: json['action'] != null ? FirewallAction.fromJson(json['action'] as Map<String, dynamic>) : null,

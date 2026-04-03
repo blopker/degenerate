@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfMyshellAiMelottsRequest {const WorkersAiPostRunCfMyshellAiMelottsRequest({this.lang = 'en', required this.prompt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfMyshellAiMelottsRequest {const WorkersAiPostRunCfMyshellAiMelottsRequest({required this.prompt, this.lang = 'en', });
 
 factory WorkersAiPostRunCfMyshellAiMelottsRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMyshellAiMelottsRequest(
   lang: json.containsKey('lang') ? json['lang'] as String : 'en',

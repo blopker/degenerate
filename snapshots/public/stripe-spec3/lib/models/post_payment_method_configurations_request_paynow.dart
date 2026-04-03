@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_request_paynow_display_preference.dart';/// PayNow is a Singapore-based payment method that allows customers to make a payment using their preferred app from participating banks and participating non-bank financial institutions. Check this [page](https://docs.stripe.com/payments/paynow) for more details.
-final class PostPaymentMethodConfigurationsRequestPaynow {const PostPaymentMethodConfigurationsRequestPaynow({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_paynow_display_preference.dart';/// PayNow is a Singapore-based payment method that allows customers to make a payment using their preferred app from participating banks and participating non-bank financial institutions. Check this [page](https://docs.stripe.com/payments/paynow) for more details.
+@immutable final class PostPaymentMethodConfigurationsRequestPaynow {const PostPaymentMethodConfigurationsRequestPaynow({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestPaynow.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestPaynow(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestPaynowDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

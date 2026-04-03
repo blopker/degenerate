@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'config_map_key_selector.dart';import 'file_key_selector.dart';import 'object_field_selector.dart';import 'resource_field_selector.dart';import 'secret_key_selector.dart';/// EnvVarSource represents a source for the value of an EnvVar.
-final class EnvVarSource {const EnvVarSource({this.configMapKeyRef, this.fieldRef, this.fileKeyRef, this.resourceFieldRef, this.secretKeyRef, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'config_map_key_selector.dart';import 'file_key_selector.dart';import 'object_field_selector.dart';import 'resource_field_selector.dart';import 'secret_key_selector.dart';/// EnvVarSource represents a source for the value of an EnvVar.
+@immutable final class EnvVarSource {const EnvVarSource({this.configMapKeyRef, this.fieldRef, this.fileKeyRef, this.resourceFieldRef, this.secretKeyRef, });
 
 factory EnvVarSource.fromJson(Map<String, dynamic> json) { return EnvVarSource(
   configMapKeyRef: json['configMapKeyRef'] != null ? ConfigMapKeySelector.fromJson(json['configMapKeyRef'] as Map<String, dynamic>) : null,

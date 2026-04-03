@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RemovedFromProjectIssueEventProjectCard {const RemovedFromProjectIssueEventProjectCard({required this.id, required this.url, required this.projectId, required this.projectUrl, required this.columnName, this.previousColumnName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RemovedFromProjectIssueEventProjectCard {const RemovedFromProjectIssueEventProjectCard({required this.id, required this.url, required this.projectId, required this.projectUrl, required this.columnName, this.previousColumnName, });
 
 factory RemovedFromProjectIssueEventProjectCard.fromJson(Map<String, dynamic> json) { return RemovedFromProjectIssueEventProjectCard(
   id: (json['id'] as num).toInt(),

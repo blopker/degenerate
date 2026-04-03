@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether commits to preview branches trigger a preview deployment.
-final class PagesProjectUpdateProjectRequestSourceConfigPreviewDeploymentSetting {const PagesProjectUpdateProjectRequestSourceConfigPreviewDeploymentSetting._(this.value);
+@immutable final class PagesProjectUpdateProjectRequestSourceConfigPreviewDeploymentSetting {const PagesProjectUpdateProjectRequestSourceConfigPreviewDeploymentSetting._(this.value);
 
 factory PagesProjectUpdateProjectRequestSourceConfigPreviewDeploymentSetting.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesProjectUpdateProjectRequestSourceConfigPreviewDeploymentSetting($value)'; } 
  }
-final class PagesProjectUpdateProjectRequestSourceConfig {const PagesProjectUpdateProjectRequestSourceConfig({this.deploymentsEnabled, this.owner, this.ownerId, this.pathExcludes, this.pathIncludes, this.prCommentsEnabled, this.previewBranchExcludes, this.previewBranchIncludes, this.previewDeploymentSetting, this.productionBranch, this.productionDeploymentsEnabled, this.repoId, this.repoName, });
+@immutable final class PagesProjectUpdateProjectRequestSourceConfig {const PagesProjectUpdateProjectRequestSourceConfig({this.deploymentsEnabled, this.owner, this.ownerId, this.pathExcludes, this.pathIncludes, this.prCommentsEnabled, this.previewBranchExcludes, this.previewBranchIncludes, this.previewDeploymentSetting, this.productionBranch, this.productionDeploymentsEnabled, this.repoId, this.repoName, });
 
 factory PagesProjectUpdateProjectRequestSourceConfig.fromJson(Map<String, dynamic> json) { return PagesProjectUpdateProjectRequestSourceConfig(
   deploymentsEnabled: json['deployments_enabled'] as bool?,

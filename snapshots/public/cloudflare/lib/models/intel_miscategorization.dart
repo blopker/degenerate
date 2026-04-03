@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class IntelMiscategorizationIndicatorType {const IntelMiscategorizationIndicatorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IntelMiscategorizationIndicatorType {const IntelMiscategorizationIndicatorType._(this.value);
 
 factory IntelMiscategorizationIndicatorType.fromJson(String json) { return switch (json) {
   'domain' => domain,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IntelMiscategorizationIndicatorType($value)'; } 
  }
-final class IntelMiscategorization {const IntelMiscategorization({this.contentAdds, this.contentRemoves, this.indicatorType, this.ip, this.securityAdds, this.securityRemoves, this.url, });
+@immutable final class IntelMiscategorization {const IntelMiscategorization({this.contentAdds, this.contentRemoves, this.indicatorType, this.ip, this.securityAdds, this.securityRemoves, this.url, });
 
 factory IntelMiscategorization.fromJson(Map<String, dynamic> json) { return IntelMiscategorization(
   contentAdds: (json['content_adds'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

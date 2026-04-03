@@ -1,12 +1,23 @@
-import '../naming.dart';
+import 'package:degenerate/src/lowering/ir_mapper.dart' show IrMapper;
+
+import 'package:degenerate/src/naming.dart';
 
 /// Result of normalizing OpenAPI schemas before IR mapping.
 ///
 /// Contains all the metadata computed during the pre-scan phase:
 /// name mappings, discriminator properties, and the set of allocated names.
 /// This context is passed to [IrMapper] so it can perform pure schema→IR
-/// translation without worrying about name conflicts or discriminator detection.
+/// translation without worrying about name conflicts or discriminator
+/// detection.
 class NormalizationContext {
+  /// Creates a normalization context.
+  NormalizationContext({
+    required this.nameMapping,
+    required this.discriminatorProperties,
+    required this.usedNames,
+    List<String>? warnings,
+  }) : warnings = warnings ?? [];
+
   /// Maps original OpenAPI schema name → Dart type name (after renaming).
   final Map<String, String> nameMapping;
 
@@ -19,13 +30,6 @@ class NormalizationContext {
 
   /// Warnings collected during normalization.
   final List<String> warnings;
-
-  NormalizationContext({
-    required this.nameMapping,
-    required this.discriminatorProperties,
-    required this.usedNames,
-    List<String>? warnings,
-  }) : warnings = warnings ?? [];
 }
 
 /// Pre-scans OpenAPI schemas to extract metadata needed for IR mapping.
@@ -90,7 +94,7 @@ class SchemaNormalizer {
   static String _uniqueTypeName(String rawName, Set<String> usedNames) {
     final pascal = toPascalCase(rawName);
     final sanitized = sanitizeDartName(pascal);
-    var candidate = dartCoreTypeNames.contains(sanitized)
+    final candidate = dartCoreTypeNames.contains(sanitized)
         ? '${sanitized}Model'
         : sanitized;
     final unique = deduplicateName(candidate, usedNames);

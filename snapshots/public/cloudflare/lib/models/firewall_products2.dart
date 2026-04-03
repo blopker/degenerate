@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A list of products to bypass for a request when using the `bypass` action.
-final class FirewallProducts2 {const FirewallProducts2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A list of products to bypass for a request when using the `bypass` action.
+@immutable final class FirewallProducts2 {const FirewallProducts2._(this.value);
 
 factory FirewallProducts2.fromJson(String json) { return switch (json) {
   'zoneLockdown' => zoneLockdown,

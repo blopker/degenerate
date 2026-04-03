@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory {const PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory {const PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory._(this.value);
 
 factory PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory.fromJson(String json) { return switch (json) {
   'digital_goods' => digitalGoods,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory($value)'; } 
  }
-final class PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal {const PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal({this.category, this.description, this.soldBy, });
+@immutable final class PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal {const PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal({this.category, this.description, this.soldBy, });
 
 factory PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal(
   category: json['category'] != null ? PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory.fromJson(json['category'] as String) : null,

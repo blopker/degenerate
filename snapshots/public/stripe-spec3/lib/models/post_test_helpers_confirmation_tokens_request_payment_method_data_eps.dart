@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataEpsBank {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataEpsBank._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataEpsBank {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataEpsBank._(this.value);
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataEpsBank.fromJson(String json) { return switch (json) {
   'arzte_und_apotheker_bank' => arzteUndApothekerBank,
@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataEpsBank($value)'; } 
  }
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataEps {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataEps({this.bank});
+@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataEps {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataEps({this.bank});
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataEps.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataEps(
   bank: json['bank'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataEpsBank.fromJson(json['bank'] as String) : null,

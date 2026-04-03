@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_user_content.dart';import 'messages51_messages_user_content_variant2.dart';final class Messages51MessagesUserRole {const Messages51MessagesUserRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_user_content.dart';import 'messages51_messages_user_content_variant2.dart';@immutable final class Messages51MessagesUserRole {const Messages51MessagesUserRole._(this.value);
 
 factory Messages51MessagesUserRole.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51MessagesUserRole($value)'; } 
  }
-final class Messages51MessagesUser {const Messages51MessagesUser({required this.content, this.name, required this.role, });
+@immutable final class Messages51MessagesUser {const Messages51MessagesUser({required this.content, required this.role, this.name, });
 
 factory Messages51MessagesUser.fromJson(Map<String, dynamic> json) { return Messages51MessagesUser(
   content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => Messages51MessagesUserContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),

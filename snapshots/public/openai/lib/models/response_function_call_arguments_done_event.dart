@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ResponseFunctionCallArgumentsDoneEventType {const ResponseFunctionCallArgumentsDoneEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseFunctionCallArgumentsDoneEventType {const ResponseFunctionCallArgumentsDoneEventType._(this.value);
 
 factory ResponseFunctionCallArgumentsDoneEventType.fromJson(String json) { return switch (json) {
   'response.function_call_arguments.done' => responseFunctionCallArgumentsDone,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseFunctionCallArgumentsDoneEventType($value)'; } 
  }
 /// Emitted when function-call arguments are finalized.
-final class ResponseFunctionCallArgumentsDoneEvent {const ResponseFunctionCallArgumentsDoneEvent({required this.type, required this.itemId, required this.name, required this.outputIndex, required this.sequenceNumber, required this.arguments, });
+@immutable final class ResponseFunctionCallArgumentsDoneEvent {const ResponseFunctionCallArgumentsDoneEvent({required this.type, required this.itemId, required this.name, required this.outputIndex, required this.sequenceNumber, required this.arguments, });
 
 factory ResponseFunctionCallArgumentsDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseFunctionCallArgumentsDoneEvent(
   type: ResponseFunctionCallArgumentsDoneEventType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookRepositoryPublicizedAction {const WebhookRepositoryPublicizedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookRepositoryPublicizedAction {const WebhookRepositoryPublicizedAction._(this.value);
 
 factory WebhookRepositoryPublicizedAction.fromJson(String json) { return switch (json) {
   'publicized' => publicized,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookRepositoryPublicizedAction($value)'; } 
  }
-final class WebhookRepositoryPublicized {const WebhookRepositoryPublicized({required this.action, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookRepositoryPublicized {const WebhookRepositoryPublicized({required this.action, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookRepositoryPublicized.fromJson(Map<String, dynamic> json) { return WebhookRepositoryPublicized(
   action: WebhookRepositoryPublicizedAction.fromJson(json['action'] as String),

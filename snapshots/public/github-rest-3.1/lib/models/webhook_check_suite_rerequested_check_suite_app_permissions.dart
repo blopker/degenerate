@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAdministration($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsArtifactMetadata($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -96,7 +96,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsAttestations($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -120,7 +120,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsChecks($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContentReferences($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -168,7 +168,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsContents($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests.fromJson(String json) { return switch (json) {
   'write' => write,
@@ -189,7 +189,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsCopilotRequests($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -213,7 +213,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDeployments($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -237,7 +237,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsDiscussions($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -261,7 +261,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEmails($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -285,7 +285,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsEnvironments($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -309,7 +309,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsIssues($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -333,7 +333,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsKeys($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -357,7 +357,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMembers($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -381,7 +381,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMergeQueues($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -405,7 +405,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsMetadata($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -429,7 +429,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsModels($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -453,7 +453,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationAdministration($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -477,7 +477,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationHooks($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -501,7 +501,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPackages($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -525,7 +525,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationPlan($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -552,7 +552,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationProjects($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -576,7 +576,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSecrets($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -600,7 +600,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationSelfHostedRunners($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -624,7 +624,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsOrganizationUserBlocking($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -648,7 +648,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPackages($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -672,7 +672,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPages($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -696,7 +696,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsPullRequests($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -720,7 +720,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryHooks($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -747,7 +747,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsRepositoryProjects($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -771,7 +771,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecretScanningAlerts($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -795,7 +795,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecrets($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -819,7 +819,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityEvents($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -843,7 +843,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSecurityScanningAlert($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -867,7 +867,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsSingleFile($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -891,7 +891,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsStatuses($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -915,7 +915,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsVulnerabilityAlerts($value)'; } 
  }
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows._(this.value);
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows._(this.value);
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -940,7 +940,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsWorkflows($value)'; } 
  }
 /// The set of permissions for the GitHub app
-final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissions {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissions({this.actions, this.administration, this.artifactMetadata, this.attestations, this.checks, this.contentReferences, this.contents, this.copilotRequests, this.deployments, this.discussions, this.emails, this.environments, this.issues, this.keys, this.members, this.mergeQueues, this.metadata, this.models, this.organizationAdministration, this.organizationHooks, this.organizationPackages, this.organizationPlan, this.organizationProjects, this.organizationSecrets, this.organizationSelfHostedRunners, this.organizationUserBlocking, this.packages, this.pages, this.pullRequests, this.repositoryHooks, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.securityScanningAlert, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.workflows, });
+@immutable final class WebhookCheckSuiteRerequestedCheckSuiteAppPermissions {const WebhookCheckSuiteRerequestedCheckSuiteAppPermissions({this.keys, this.administration, this.artifactMetadata, this.attestations, this.checks, this.contentReferences, this.contents, this.copilotRequests, this.deployments, this.discussions, this.emails, this.environments, this.issues, this.actions, this.members, this.mergeQueues, this.metadata, this.models, this.organizationAdministration, this.organizationHooks, this.organizationPackages, this.organizationPlan, this.organizationProjects, this.organizationSecrets, this.organizationSelfHostedRunners, this.workflows, this.packages, this.pages, this.pullRequests, this.repositoryHooks, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.securityScanningAlert, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.organizationUserBlocking, });
 
 factory WebhookCheckSuiteRerequestedCheckSuiteAppPermissions.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRerequestedCheckSuiteAppPermissions(
   actions: json['actions'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissionsActions.fromJson(json['actions'] as String) : null,

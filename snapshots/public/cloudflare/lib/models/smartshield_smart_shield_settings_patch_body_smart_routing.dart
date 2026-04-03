@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the enablement value of Smart Routing.
-final class SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue {const SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the enablement value of Smart Routing.
+@immutable final class SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue {const SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue._(this.value);
 
 factory SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue($value)'; } 
  }
-final class SmartshieldSmartShieldSettingsPatchBodySmartRouting {const SmartshieldSmartShieldSettingsPatchBodySmartRouting({this.value});
+@immutable final class SmartshieldSmartShieldSettingsPatchBodySmartRouting {const SmartshieldSmartShieldSettingsPatchBodySmartRouting({this.value});
 
 factory SmartshieldSmartShieldSettingsPatchBodySmartRouting.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsPatchBodySmartRouting(
   value: json['value'] != null ? SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue.fromJson(json['value'] as String) : null,

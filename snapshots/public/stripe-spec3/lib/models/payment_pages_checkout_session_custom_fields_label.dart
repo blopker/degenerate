@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the label.
-final class PaymentPagesCheckoutSessionCustomFieldsLabelType {const PaymentPagesCheckoutSessionCustomFieldsLabelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the label.
+@immutable final class PaymentPagesCheckoutSessionCustomFieldsLabelType {const PaymentPagesCheckoutSessionCustomFieldsLabelType._(this.value);
 
 factory PaymentPagesCheckoutSessionCustomFieldsLabelType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionCustomFieldsLabelType($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionCustomFieldsLabel {const PaymentPagesCheckoutSessionCustomFieldsLabel({this.custom, required this.type, });
+@immutable final class PaymentPagesCheckoutSessionCustomFieldsLabel {const PaymentPagesCheckoutSessionCustomFieldsLabel({required this.type, this.custom, });
 
 factory PaymentPagesCheckoutSessionCustomFieldsLabel.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomFieldsLabel(
   custom: json['custom'] as String?,

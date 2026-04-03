@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InvoicePaymentMethodOptionsParam35MandateOptionsPurpose {const InvoicePaymentMethodOptionsParam35MandateOptionsPurpose._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InvoicePaymentMethodOptionsParam35MandateOptionsPurpose {const InvoicePaymentMethodOptionsParam35MandateOptionsPurpose._(this.value);
 
 factory InvoicePaymentMethodOptionsParam35MandateOptionsPurpose.fromJson(String json) { return switch (json) {
   'dependant_support' => dependantSupport,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InvoicePaymentMethodOptionsParam35MandateOptionsPurpose($value)'; } 
  }
-final class InvoicePaymentMethodOptionsParam35MandateOptions {const InvoicePaymentMethodOptionsParam35MandateOptions({this.amount, this.purpose, });
+@immutable final class InvoicePaymentMethodOptionsParam35MandateOptions {const InvoicePaymentMethodOptionsParam35MandateOptions({this.amount, this.purpose, });
 
 factory InvoicePaymentMethodOptionsParam35MandateOptions.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam35MandateOptions(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

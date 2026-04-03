@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_namespace_details.dart';/// Contains the list of namespaces with optional pagination.
-final class R2DataCatalogNamespaceListResponse {const R2DataCatalogNamespaceListResponse({this.details, this.namespaceUuids, required this.namespaces, this.nextPageToken, });
+@immutable final class R2DataCatalogNamespaceListResponse {const R2DataCatalogNamespaceListResponse({required this.namespaces, this.details, this.namespaceUuids, this.nextPageToken, });
 
 factory R2DataCatalogNamespaceListResponse.fromJson(Map<String, dynamic> json) { return R2DataCatalogNamespaceListResponse(
   details: (json['details'] as List<dynamic>?)?.map((e) => R2DataCatalogNamespaceDetails.fromJson(e as Map<String, dynamic>)).toList(),

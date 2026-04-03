@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_treasury_financial_accounts_request_features_financial_addresses_aba.dart';final class PostTreasuryFinancialAccountsRequestFeaturesFinancialAddresses {const PostTreasuryFinancialAccountsRequestFeaturesFinancialAddresses({this.aba});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_request_features_financial_addresses_aba.dart';@immutable final class PostTreasuryFinancialAccountsRequestFeaturesFinancialAddresses {const PostTreasuryFinancialAccountsRequestFeaturesFinancialAddresses({this.aba});
 
 factory PostTreasuryFinancialAccountsRequestFeaturesFinancialAddresses.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsRequestFeaturesFinancialAddresses(
   aba: json['aba'] != null ? PostTreasuryFinancialAccountsRequestFeaturesFinancialAddressesAba.fromJson(json['aba'] as Map<String, dynamic>) : null,

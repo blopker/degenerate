@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_track_config_layer.dart';final class StartTrackRecordingForAMeetingRequest {const StartTrackRecordingForAMeetingRequest({required this.layers, this.maxSeconds, required this.meetingId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_track_config_layer.dart';@immutable final class StartTrackRecordingForAMeetingRequest {const StartTrackRecordingForAMeetingRequest({required this.layers, required this.meetingId, this.maxSeconds, });
 
 factory StartTrackRecordingForAMeetingRequest.fromJson(Map<String, dynamic> json) { return StartTrackRecordingForAMeetingRequest(
   layers: (json['layers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, RealtimekitTrackConfigLayer.fromJson(v as Map<String, dynamic>))),

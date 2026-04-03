@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Clipboard format for RDP connections.
-final class AccessRdpClipboardFormat {const AccessRdpClipboardFormat._(this.value);
+@immutable final class AccessRdpClipboardFormat {const AccessRdpClipboardFormat._(this.value);
 
 factory AccessRdpClipboardFormat.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccessRdpClipboardFormat($value)'; } 
  }
 /// The RDP-specific rules that define clipboard behavior for RDP connections.
-final class AccessConnectionRulesRdp {const AccessConnectionRulesRdp({this.allowedClipboardLocalToRemoteFormats, this.allowedClipboardRemoteToLocalFormats, });
+@immutable final class AccessConnectionRulesRdp {const AccessConnectionRulesRdp({this.allowedClipboardLocalToRemoteFormats, this.allowedClipboardRemoteToLocalFormats, });
 
 factory AccessConnectionRulesRdp.fromJson(Map<String, dynamic> json) { return AccessConnectionRulesRdp(
   allowedClipboardLocalToRemoteFormats: (json['allowed_clipboard_local_to_remote_formats'] as List<dynamic>?)?.map((e) => AccessRdpClipboardFormat.fromJson(e as String)).toList(),

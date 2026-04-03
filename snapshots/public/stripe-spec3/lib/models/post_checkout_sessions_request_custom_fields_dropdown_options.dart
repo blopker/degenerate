@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestCustomFieldsDropdownOptions {const PostCheckoutSessionsRequestCustomFieldsDropdownOptions({required this.label, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestCustomFieldsDropdownOptions {const PostCheckoutSessionsRequestCustomFieldsDropdownOptions({required this.label, required this.value, });
 
 factory PostCheckoutSessionsRequestCustomFieldsDropdownOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestCustomFieldsDropdownOptions(
   label: json['label'] as String,

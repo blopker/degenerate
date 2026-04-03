@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_cidr.dart';import 'addressing_delegated_account_identifier.dart';import 'addressing_delegation_identifier.dart';import 'addressing_prefix_identifier.dart';import 'addressing_timestamp.dart';final class AddressingIpamDelegations {const AddressingIpamDelegations({this.cidr, this.createdAt, this.delegatedAccountId, this.id, this.modifiedAt, this.parentPrefixId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_cidr.dart';import 'addressing_delegated_account_identifier.dart';import 'addressing_delegation_identifier.dart';import 'addressing_prefix_identifier.dart';import 'addressing_timestamp.dart';@immutable final class AddressingIpamDelegations {const AddressingIpamDelegations({this.cidr, this.createdAt, this.delegatedAccountId, this.id, this.modifiedAt, this.parentPrefixId, });
 
 factory AddressingIpamDelegations.fromJson(Map<String, dynamic> json) { return AddressingIpamDelegations(
   cidr: json['cidr'] != null ? AddressingCidr.fromJson(json['cidr'] as String) : null,

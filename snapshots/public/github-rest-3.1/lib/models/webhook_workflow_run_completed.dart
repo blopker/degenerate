@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_workflow_run_completed_workflow_run.dart';import 'webhooks_workflow.dart';final class WebhookWorkflowRunCompletedAction {const WebhookWorkflowRunCompletedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_workflow_run_completed_workflow_run.dart';import 'webhooks_workflow.dart';@immutable final class WebhookWorkflowRunCompletedAction {const WebhookWorkflowRunCompletedAction._(this.value);
 
 factory WebhookWorkflowRunCompletedAction.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWorkflowRunCompletedAction($value)'; } 
  }
-final class WebhookWorkflowRunCompleted {const WebhookWorkflowRunCompleted({required this.action, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, required this.workflow, required this.workflowRun, });
+@immutable final class WebhookWorkflowRunCompleted {const WebhookWorkflowRunCompleted({required this.action, required this.repository, required this.sender, required this.workflow, required this.workflowRun, this.enterprise, this.installation, this.organization, });
 
 factory WebhookWorkflowRunCompleted.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunCompleted(
   action: WebhookWorkflowRunCompletedAction.fromJson(json['action'] as String),

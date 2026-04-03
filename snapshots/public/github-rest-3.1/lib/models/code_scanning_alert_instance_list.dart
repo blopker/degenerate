@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_alert_classification.dart';import 'code_scanning_alert_environment.dart';import 'code_scanning_alert_instance_list_message.dart';import 'code_scanning_alert_location.dart';import 'code_scanning_analysis_analysis_key.dart';import 'code_scanning_analysis_category.dart';import 'code_scanning_ref.dart';/// State of a code scanning alert instance.
-final class CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState._(this.value);
+@immutable final class CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState._(this.value);
 
 factory CodeScanningAlertInstanceState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeScanningAlertInstanceState($value)'; } 
  }
-final class CodeScanningAlertInstanceList {const CodeScanningAlertInstanceList({this.ref, this.analysisKey, this.environment, this.category, this.state, this.commitSha, this.message, this.location, this.htmlUrl, this.classifications, });
+@immutable final class CodeScanningAlertInstanceList {const CodeScanningAlertInstanceList({this.ref, this.analysisKey, this.environment, this.category, this.state, this.commitSha, this.message, this.location, this.htmlUrl, this.classifications, });
 
 factory CodeScanningAlertInstanceList.fromJson(Map<String, dynamic> json) { return CodeScanningAlertInstanceList(
   ref: json['ref'] != null ? CodeScanningRef.fromJson(json['ref'] as String) : null,

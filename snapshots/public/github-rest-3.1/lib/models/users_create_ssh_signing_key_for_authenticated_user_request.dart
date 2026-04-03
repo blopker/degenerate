@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsersCreateSshSigningKeyForAuthenticatedUserRequest {const UsersCreateSshSigningKeyForAuthenticatedUserRequest({this.title, required this.key, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersCreateSshSigningKeyForAuthenticatedUserRequest {const UsersCreateSshSigningKeyForAuthenticatedUserRequest({required this.key, this.title, });
 
 factory UsersCreateSshSigningKeyForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return UsersCreateSshSigningKeyForAuthenticatedUserRequest(
   title: json['title'] as String?,

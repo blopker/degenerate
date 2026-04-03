@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudforce_one_requests_time.dart';final class CloudforceOneRequestsRequestAssetItem {const CloudforceOneRequestsRequestAssetItem({this.created, this.description, this.fileType, required this.id, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_time.dart';@immutable final class CloudforceOneRequestsRequestAssetItem {const CloudforceOneRequestsRequestAssetItem({required this.id, required this.name, this.created, this.description, this.fileType, });
 
 factory CloudforceOneRequestsRequestAssetItem.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestAssetItem(
   created: json['created'] != null ? CloudforceOneRequestsTime.fromJson(json['created'] as String) : null,

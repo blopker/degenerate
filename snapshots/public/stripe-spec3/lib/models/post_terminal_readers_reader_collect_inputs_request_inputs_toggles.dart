@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTerminalReadersReaderCollectInputsRequestInputsTogglesDefaultValue {const PostTerminalReadersReaderCollectInputsRequestInputsTogglesDefaultValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalReadersReaderCollectInputsRequestInputsTogglesDefaultValue {const PostTerminalReadersReaderCollectInputsRequestInputsTogglesDefaultValue._(this.value);
 
 factory PostTerminalReadersReaderCollectInputsRequestInputsTogglesDefaultValue.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTerminalReadersReaderCollectInputsRequestInputsTogglesDefaultValue($value)'; } 
  }
-final class PostTerminalReadersReaderCollectInputsRequestInputsToggles {const PostTerminalReadersReaderCollectInputsRequestInputsToggles({this.defaultValue, this.description, this.title, });
+@immutable final class PostTerminalReadersReaderCollectInputsRequestInputsToggles {const PostTerminalReadersReaderCollectInputsRequestInputsToggles({this.defaultValue, this.description, this.title, });
 
 factory PostTerminalReadersReaderCollectInputsRequestInputsToggles.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectInputsRequestInputsToggles(
   defaultValue: json['default_value'] != null ? PostTerminalReadersReaderCollectInputsRequestInputsTogglesDefaultValue.fromJson(json['default_value'] as String) : null,

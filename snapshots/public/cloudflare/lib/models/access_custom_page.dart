@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_custom_pages_components_schemas_name.dart';import 'access_schemas_app_count.dart';import 'access_schemas_type.dart';import 'access_timestamp.dart';import 'access_uuid.dart';final class AccessCustomPage {const AccessCustomPage({this.appCount, this.createdAt, required this.customHtml, required this.name, required this.type, this.uid, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_custom_pages_components_schemas_name.dart';import 'access_schemas_app_count.dart';import 'access_schemas_type.dart';import 'access_timestamp.dart';import 'access_uuid.dart';@immutable final class AccessCustomPage {const AccessCustomPage({required this.customHtml, required this.name, required this.type, this.appCount, this.createdAt, this.uid, this.updatedAt, });
 
 factory AccessCustomPage.fromJson(Map<String, dynamic> json) { return AccessCustomPage(
   appCount: json['app_count'] != null ? AccessSchemasAppCount.fromJson(json['app_count'] as num) : null,

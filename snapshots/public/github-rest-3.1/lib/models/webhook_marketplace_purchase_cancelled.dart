@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_marketplace_purchase.dart';import 'webhooks_previous_marketplace_purchase.dart';final class WebhookMarketplacePurchaseCancelledAction {const WebhookMarketplacePurchaseCancelledAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_marketplace_purchase.dart';import 'webhooks_previous_marketplace_purchase.dart';@immutable final class WebhookMarketplacePurchaseCancelledAction {const WebhookMarketplacePurchaseCancelledAction._(this.value);
 
 factory WebhookMarketplacePurchaseCancelledAction.fromJson(String json) { return switch (json) {
   'cancelled' => cancelled,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMarketplacePurchaseCancelledAction($value)'; } 
  }
-final class WebhookMarketplacePurchaseCancelled {const WebhookMarketplacePurchaseCancelled({required this.action, required this.effectiveDate, this.enterprise, this.installation, required this.marketplacePurchase, this.organization, this.previousMarketplacePurchase, this.repository, required this.sender, });
+@immutable final class WebhookMarketplacePurchaseCancelled {const WebhookMarketplacePurchaseCancelled({required this.action, required this.effectiveDate, required this.marketplacePurchase, required this.sender, this.enterprise, this.installation, this.organization, this.previousMarketplacePurchase, this.repository, });
 
 factory WebhookMarketplacePurchaseCancelled.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchaseCancelled(
   action: WebhookMarketplacePurchaseCancelledAction.fromJson(json['action'] as String),

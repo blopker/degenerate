@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Resource limits for the Worker.
-final class WorkersVersionItemFullResourcesScriptRuntimeLimits {const WorkersVersionItemFullResourcesScriptRuntimeLimits({this.cpuMs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Resource limits for the Worker.
+@immutable final class WorkersVersionItemFullResourcesScriptRuntimeLimits {const WorkersVersionItemFullResourcesScriptRuntimeLimits({this.cpuMs});
 
 factory WorkersVersionItemFullResourcesScriptRuntimeLimits.fromJson(Map<String, dynamic> json) { return WorkersVersionItemFullResourcesScriptRuntimeLimits(
   cpuMs: json['cpu_ms'] != null ? (json['cpu_ms'] as num).toInt() : null,

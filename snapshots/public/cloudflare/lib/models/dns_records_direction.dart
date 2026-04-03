@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Direction to order DNS records in.
-final class DnsRecordsDirection {const DnsRecordsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order DNS records in.
+@immutable final class DnsRecordsDirection {const DnsRecordsDirection._(this.value);
 
 factory DnsRecordsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_embedded_payments_features.dart';/// 
-final class ConnectEmbeddedPaymentsConfigClaim {const ConnectEmbeddedPaymentsConfigClaim({required this.enabled, required this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_embedded_payments_features.dart';/// 
+@immutable final class ConnectEmbeddedPaymentsConfigClaim {const ConnectEmbeddedPaymentsConfigClaim({required this.enabled, required this.features, });
 
 factory ConnectEmbeddedPaymentsConfigClaim.fromJson(Map<String, dynamic> json) { return ConnectEmbeddedPaymentsConfigClaim(
   enabled: json['enabled'] as bool,

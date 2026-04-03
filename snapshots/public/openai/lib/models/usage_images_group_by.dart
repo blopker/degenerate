@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageImagesGroupBy {const UsageImagesGroupBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageImagesGroupBy {const UsageImagesGroupBy._(this.value);
 
 factory UsageImagesGroupBy.fromJson(String json) { return switch (json) {
   'project_id' => projectId,

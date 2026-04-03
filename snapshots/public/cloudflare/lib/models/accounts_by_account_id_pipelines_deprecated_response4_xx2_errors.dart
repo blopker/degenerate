@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountsByAccountIdPipelinesDeprecatedResponse4Xx2Errors {const AccountsByAccountIdPipelinesDeprecatedResponse4Xx2Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsByAccountIdPipelinesDeprecatedResponse4Xx2Errors {const AccountsByAccountIdPipelinesDeprecatedResponse4Xx2Errors({required this.code, required this.message, });
 
 factory AccountsByAccountIdPipelinesDeprecatedResponse4Xx2Errors.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedResponse4Xx2Errors(
   code: (json['code'] as num).toDouble(),

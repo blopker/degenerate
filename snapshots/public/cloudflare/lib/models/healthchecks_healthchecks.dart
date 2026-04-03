@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// The current status of the origin server according to the health check.
-final class HealthchecksStatus {const HealthchecksStatus._(this.value);
+@immutable final class HealthchecksStatus {const HealthchecksStatus._(this.value);
 
 factory HealthchecksStatus.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
@@ -44,7 +44,7 @@ factory HealthchecksTimestamp.fromJson(String json) => HealthchecksTimestamp(Dat
 String toJson() => value.toIso8601String();
 
 }
-final class HealthchecksHealthchecks {const HealthchecksHealthchecks({this.address, this.checkRegions, this.consecutiveFails, this.consecutiveSuccesses, this.createdOn, this.description, this.failureReason, this.httpConfig, this.id, this.interval, this.modifiedOn, this.name, this.retries, this.status, this.suspended, this.tcpConfig, this.timeout, this.type, });
+@immutable final class HealthchecksHealthchecks {const HealthchecksHealthchecks({this.address, this.checkRegions, this.consecutiveFails, this.consecutiveSuccesses, this.createdOn, this.description, this.failureReason, this.httpConfig, this.id, this.interval, this.modifiedOn, this.name, this.retries, this.status, this.suspended, this.tcpConfig, this.timeout, this.type, });
 
 factory HealthchecksHealthchecks.fromJson(Map<String, dynamic> json) { return HealthchecksHealthchecks(
   address: json['address'] != null ? HealthchecksAddress.fromJson(json['address'] as String) : null,

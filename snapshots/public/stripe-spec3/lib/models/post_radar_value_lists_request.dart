@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the items in the value list. One of `card_fingerprint`, `card_bin`, `email`, `ip_address`, `country`, `string`, `case_sensitive_string`, `customer_id`, `sepa_debit_fingerprint`, or `us_bank_account_fingerprint`. Use `string` if the item type is unknown or mixed.
-final class PostRadarValueListsRequestItemType {const PostRadarValueListsRequestItemType._(this.value);
+@immutable final class PostRadarValueListsRequestItemType {const PostRadarValueListsRequestItemType._(this.value);
 
 factory PostRadarValueListsRequestItemType.fromJson(String json) { return switch (json) {
   'card_bin' => cardBin,
@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostRadarValueListsRequestItemType($value)'; } 
  }
-final class PostRadarValueListsRequest {const PostRadarValueListsRequest({required this.alias, this.expand, this.itemType, this.metadata, required this.name, });
+@immutable final class PostRadarValueListsRequest {const PostRadarValueListsRequest({required this.alias, required this.name, this.expand, this.itemType, this.metadata, });
 
 factory PostRadarValueListsRequest.fromJson(Map<String, dynamic> json) { return PostRadarValueListsRequest(
   alias: json['alias'] as String,

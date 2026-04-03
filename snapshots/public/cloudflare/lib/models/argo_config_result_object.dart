@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'argo_config_setting_value.dart';/// Specifies if the setting is editable.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'argo_config_setting_value.dart';/// Specifies if the setting is editable.
 extension type const ArgoConfigEditable(bool value) {
 factory ArgoConfigEditable.fromJson(bool json) => ArgoConfigEditable(json);
 
@@ -21,7 +21,7 @@ factory ArgoConfigSettingId.fromJson(String json) => ArgoConfigSettingId(json);
 String toJson() => value;
 
 }
-final class ArgoConfigResultObject {const ArgoConfigResultObject({required this.editable, required this.id, this.modifiedOn, required this.value, });
+@immutable final class ArgoConfigResultObject {const ArgoConfigResultObject({required this.editable, required this.id, required this.value, this.modifiedOn, });
 
 factory ArgoConfigResultObject.fromJson(Map<String, dynamic> json) { return ArgoConfigResultObject(
   editable: ArgoConfigEditable.fromJson(json['editable'] as bool),

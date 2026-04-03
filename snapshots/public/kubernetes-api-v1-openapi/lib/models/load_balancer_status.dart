@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancer_ingress.dart';/// LoadBalancerStatus represents the status of a load-balancer.
-final class LoadBalancerStatus {const LoadBalancerStatus({this.ingress});
+@immutable final class LoadBalancerStatus {const LoadBalancerStatus({this.ingress});
 
 factory LoadBalancerStatus.fromJson(Map<String, dynamic> json) { return LoadBalancerStatus(
   ingress: (json['ingress'] as List<dynamic>?)?.map((e) => LoadBalancerIngress.fromJson(e as Map<String, dynamic>)).toList(),

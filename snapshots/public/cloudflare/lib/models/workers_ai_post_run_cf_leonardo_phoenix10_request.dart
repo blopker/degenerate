@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfLeonardoPhoenix10Request {const WorkersAiPostRunCfLeonardoPhoenix10Request({this.guidance = 2.0, this.height = 1024, this.negativePrompt, this.numSteps = 25, required this.prompt, this.seed, this.width = 1024, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfLeonardoPhoenix10Request {const WorkersAiPostRunCfLeonardoPhoenix10Request({required this.prompt, this.guidance = 2.0, this.height = 1024, this.negativePrompt, this.numSteps = 25, this.seed, this.width = 1024, });
 
 factory WorkersAiPostRunCfLeonardoPhoenix10Request.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfLeonardoPhoenix10Request(
   guidance: json.containsKey('guidance') ? (json['guidance'] as num).toDouble() : 2.0,

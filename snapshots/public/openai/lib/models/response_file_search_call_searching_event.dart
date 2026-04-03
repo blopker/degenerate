@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.file_search_call.searching`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.file_search_call.searching`.
 /// 
-final class ResponseFileSearchCallSearchingEventType {const ResponseFileSearchCallSearchingEventType._(this.value);
+@immutable final class ResponseFileSearchCallSearchingEventType {const ResponseFileSearchCallSearchingEventType._(this.value);
 
 factory ResponseFileSearchCallSearchingEventType.fromJson(String json) { return switch (json) {
   'response.file_search_call.searching' => responseFileSearchCallSearching,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseFileSearchCallSearchingEventType($value)'; } 
  }
 /// Emitted when a file search is currently searching.
-final class ResponseFileSearchCallSearchingEvent {const ResponseFileSearchCallSearchingEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
+@immutable final class ResponseFileSearchCallSearchingEvent {const ResponseFileSearchCallSearchingEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseFileSearchCallSearchingEvent.fromJson(Map<String, dynamic> json) { return ResponseFileSearchCallSearchingEvent(
   type: ResponseFileSearchCallSearchingEventType.fromJson(json['type'] as String),

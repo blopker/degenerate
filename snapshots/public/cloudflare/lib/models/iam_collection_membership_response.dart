@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_membership.dart';final class IamCollectionMembershipResponse {const IamCollectionMembershipResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_membership.dart';@immutable final class IamCollectionMembershipResponse {const IamCollectionMembershipResponse({this.result});
 
 factory IamCollectionMembershipResponse.fromJson(Map<String, dynamic> json) { return IamCollectionMembershipResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => IamMembership.fromJson(e as Map<String, dynamic>)).toList(),

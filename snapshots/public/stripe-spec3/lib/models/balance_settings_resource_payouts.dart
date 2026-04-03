@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'balance_settings_resource_payout_schedule.dart';/// Whether the funds in this account can be paid out.
-final class BalanceSettingsResourcePayoutsStatus {const BalanceSettingsResourcePayoutsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_settings_resource_payout_schedule.dart';/// Whether the funds in this account can be paid out.
+@immutable final class BalanceSettingsResourcePayoutsStatus {const BalanceSettingsResourcePayoutsStatus._(this.value);
 
 factory BalanceSettingsResourcePayoutsStatus.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BalanceSettingsResourcePayoutsStatus($value)'; } 
  }
 /// 
-final class BalanceSettingsResourcePayouts {const BalanceSettingsResourcePayouts({this.minimumBalanceByCurrency, this.schedule, this.statementDescriptor, required this.status, });
+@immutable final class BalanceSettingsResourcePayouts {const BalanceSettingsResourcePayouts({required this.status, this.minimumBalanceByCurrency, this.schedule, this.statementDescriptor, });
 
 factory BalanceSettingsResourcePayouts.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayouts(
   minimumBalanceByCurrency: (json['minimum_balance_by_currency'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt())),

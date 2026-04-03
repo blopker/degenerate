@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Status discriminator that is always `active`.
-final class ActiveStatusType {const ActiveStatusType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status discriminator that is always `active`.
+@immutable final class ActiveStatusType {const ActiveStatusType._(this.value);
 
 factory ActiveStatusType.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ActiveStatusType($value)'; } 
  }
 /// Indicates that a thread is active.
-final class ActiveStatus {const ActiveStatus({this.type = ActiveStatusType.active});
+@immutable final class ActiveStatus {const ActiveStatus({this.type = ActiveStatusType.active});
 
 factory ActiveStatus.fromJson(Map<String, dynamic> json) { return ActiveStatus(
   type: ActiveStatusType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingSummaryByIpVersionEncrypted {const RadarGetEmailRoutingSummaryByIpVersionEncrypted._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByIpVersionEncrypted {const RadarGetEmailRoutingSummaryByIpVersionEncrypted._(this.value);
 
 factory RadarGetEmailRoutingSummaryByIpVersionEncrypted.fromJson(String json) { return switch (json) {
   'ENCRYPTED' => encrypted,

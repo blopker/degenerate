@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_zone_security_center_insights_response_result_variant1.dart';import 'security_center_messages2.dart';final class GetZoneSecurityCenterInsightsResponse {const GetZoneSecurityCenterInsightsResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_zone_security_center_insights_response_result_variant1.dart';import 'security_center_messages2.dart';@immutable final class GetZoneSecurityCenterInsightsResponse {const GetZoneSecurityCenterInsightsResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory GetZoneSecurityCenterInsightsResponse.fromJson(Map<String, dynamic> json) { return GetZoneSecurityCenterInsightsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => SecurityCenterMessages2.fromJson(e as Map<String, dynamic>)).toList(),

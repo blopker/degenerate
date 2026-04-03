@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of label. Read-only labels are applied automatically when the runner is configured.
-final class RunnerLabelType {const RunnerLabelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of label. Read-only labels are applied automatically when the runner is configured.
+@immutable final class RunnerLabelType {const RunnerLabelType._(this.value);
 
 factory RunnerLabelType.fromJson(String json) { return switch (json) {
   'read-only' => readOnly,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunnerLabelType($value)'; } 
  }
 /// A label for a self hosted runner
-final class RunnerLabel {const RunnerLabel({this.id, required this.name, this.type, });
+@immutable final class RunnerLabel {const RunnerLabel({required this.name, this.id, this.type, });
 
 factory RunnerLabel.fromJson(Map<String, dynamic> json) { return RunnerLabel(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

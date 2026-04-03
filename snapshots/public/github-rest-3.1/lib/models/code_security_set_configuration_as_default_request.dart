@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify which types of repository this security configuration should be applied to by default.
-final class CodeSecuritySetConfigurationAsDefaultRequestDefaultForNewRepos {const CodeSecuritySetConfigurationAsDefaultRequestDefaultForNewRepos._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify which types of repository this security configuration should be applied to by default.
+@immutable final class CodeSecuritySetConfigurationAsDefaultRequestDefaultForNewRepos {const CodeSecuritySetConfigurationAsDefaultRequestDefaultForNewRepos._(this.value);
 
 factory CodeSecuritySetConfigurationAsDefaultRequestDefaultForNewRepos.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeSecuritySetConfigurationAsDefaultRequestDefaultForNewRepos($value)'; } 
  }
-final class CodeSecuritySetConfigurationAsDefaultRequest {const CodeSecuritySetConfigurationAsDefaultRequest({this.defaultForNewRepos});
+@immutable final class CodeSecuritySetConfigurationAsDefaultRequest {const CodeSecuritySetConfigurationAsDefaultRequest({this.defaultForNewRepos});
 
 factory CodeSecuritySetConfigurationAsDefaultRequest.fromJson(Map<String, dynamic> json) { return CodeSecuritySetConfigurationAsDefaultRequest(
   defaultForNewRepos: json['default_for_new_repos'] != null ? CodeSecuritySetConfigurationAsDefaultRequestDefaultForNewRepos.fromJson(json['default_for_new_repos'] as String) : null,

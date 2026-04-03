@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class GetSubscriptionsSearchResponseObject {const GetSubscriptionsSearchResponseObject._(this.value);
+@immutable final class GetSubscriptionsSearchResponseObject {const GetSubscriptionsSearchResponseObject._(this.value);
 
 factory GetSubscriptionsSearchResponseObject.fromJson(String json) { return switch (json) {
   'search_result' => searchResult,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetSubscriptionsSearchResponseObject($value)'; } 
  }
 /// 
-final class GetSubscriptionsSearchResponse {const GetSubscriptionsSearchResponse({required this.data, required this.hasMore, this.nextPage, required this.object, this.totalCount, required this.url, });
+@immutable final class GetSubscriptionsSearchResponse {const GetSubscriptionsSearchResponse({required this.data, required this.hasMore, required this.object, required this.url, this.nextPage, this.totalCount, });
 
 factory GetSubscriptionsSearchResponse.fromJson(Map<String, dynamic> json) { return GetSubscriptionsSearchResponse(
   data: (json['data'] as List<dynamic>).map((e) => Subscription.fromJson(e as Map<String, dynamic>)).toList(),

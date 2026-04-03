@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Request payload for creating a new group in the organization.
-final class CreateGroupBody {const CreateGroupBody({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for creating a new group in the organization.
+@immutable final class CreateGroupBody {const CreateGroupBody({required this.name});
 
 factory CreateGroupBody.fromJson(Map<String, dynamic> json) { return CreateGroupBody(
   name: json['name'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_target.dart';final class InfraTargetsListResponse {const InfraTargetsListResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_target.dart';@immutable final class InfraTargetsListResponse {const InfraTargetsListResponse({this.result});
 
 factory InfraTargetsListResponse.fromJson(Map<String, dynamic> json) { return InfraTargetsListResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => InfraTarget.fromJson(e as Map<String, dynamic>)).toList(),

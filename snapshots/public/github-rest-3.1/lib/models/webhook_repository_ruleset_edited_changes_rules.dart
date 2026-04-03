@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule.dart';import 'webhook_repository_ruleset_edited_changes_rules_updated.dart';final class WebhookRepositoryRulesetEditedChangesRules {const WebhookRepositoryRulesetEditedChangesRules({this.added, this.deleted, this.updated, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule.dart';import 'webhook_repository_ruleset_edited_changes_rules_updated.dart';@immutable final class WebhookRepositoryRulesetEditedChangesRules {const WebhookRepositoryRulesetEditedChangesRules({this.added, this.deleted, this.updated, });
 
 factory WebhookRepositoryRulesetEditedChangesRules.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetEditedChangesRules(
   added: (json['added'] as List<dynamic>?)?.map((e) => RepositoryRule.fromJson(e as Map<String, dynamic>)).toList(),

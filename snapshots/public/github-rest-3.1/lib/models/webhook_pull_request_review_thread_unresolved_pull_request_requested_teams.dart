@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_review_thread_unresolved_pull_request_requested_teams_parent.dart';final class WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsPrivacy {const WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsPrivacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_thread_unresolved_pull_request_requested_teams_parent.dart';@immutable final class WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsPrivacy {const WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsPrivacy._(this.value);
 
 factory WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsPrivacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeamsPrivacy($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-final class WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeams {const WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeams({this.deleted, this.description, this.htmlUrl, required this.id, this.membersUrl, required this.name, this.nodeId, this.parent, this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
+@immutable final class WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeams {const WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeams({required this.id, required this.name, this.deleted, this.description, this.htmlUrl, this.membersUrl, this.nodeId, this.parent, this.permission, this.privacy, this.repositoriesUrl, this.slug, this.url, });
 
 factory WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeams.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadUnresolvedPullRequestRequestedTeams(
   deleted: json['deleted'] as bool?,

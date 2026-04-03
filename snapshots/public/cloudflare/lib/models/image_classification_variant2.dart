@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ImageClassificationVariant2 {const ImageClassificationVariant2({required this.image});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageClassificationVariant2 {const ImageClassificationVariant2({required this.image});
 
 factory ImageClassificationVariant2.fromJson(Map<String, dynamic> json) { return ImageClassificationVariant2(
   image: (json['image'] as List<dynamic>).map((e) => (e as num).toDouble()).toList(),

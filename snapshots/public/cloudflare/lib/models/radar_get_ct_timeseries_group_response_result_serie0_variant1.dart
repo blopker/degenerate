@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant1 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant1({required this.timestamps, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant1 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant1({required this.timestamps, this.additionalProperties = const {}, });
 
 factory RadarGetCtTimeseriesGroupResponseResultSerie0Variant1.fromJson(Map<String, dynamic> json) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant1(
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
@@ -13,7 +13,7 @@ final Map<String,List<String>> additionalProperties;
 
 Map<String, dynamic> toJson() { return {
   'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
-  ...additionalProperties.map((k, v) => MapEntry(k, v)),
+  ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('timestamps'); } 
 RadarGetCtTimeseriesGroupResponseResultSerie0Variant1 copyWith({List<DateTime>? timestamps, Map<String, List<String>>? additionalProperties, }) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant1(

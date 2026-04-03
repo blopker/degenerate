@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_connection.dart';final class PageShieldListZoneConnectionsResponse {const PageShieldListZoneConnectionsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_connection.dart';@immutable final class PageShieldListZoneConnectionsResponse {const PageShieldListZoneConnectionsResponse({this.result});
 
 factory PageShieldListZoneConnectionsResponse.fromJson(Map<String, dynamic> json) { return PageShieldListZoneConnectionsResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => PageShieldConnection.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsAccountCapabilitiesCapabilityRequest {const PostAccountsAccountCapabilitiesCapabilityRequest({this.expand, this.requested, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountCapabilitiesCapabilityRequest {const PostAccountsAccountCapabilitiesCapabilityRequest({this.expand, this.requested, });
 
 factory PostAccountsAccountCapabilitiesCapabilityRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountCapabilitiesCapabilityRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

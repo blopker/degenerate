@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_transit_messages2.dart';import 'magic_transit_target_result.dart';final class MagicTransitTracerouteResponseCollection {const MagicTransitTracerouteResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_transit_messages2.dart';import 'magic_transit_target_result.dart';@immutable final class MagicTransitTracerouteResponseCollection {const MagicTransitTracerouteResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 
 factory MagicTransitTracerouteResponseCollection.fromJson(Map<String, dynamic> json) { return MagicTransitTracerouteResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicTransitMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// One of `fixed` or `maximum`. If `fixed`, the `amount` param refers to the exact amount to be charged in future payments. If `maximum`, the amount charged can be up to the value passed for the `amount` param.
-final class InvoiceMandateOptionsCardAmountType {const InvoiceMandateOptionsCardAmountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `fixed` or `maximum`. If `fixed`, the `amount` param refers to the exact amount to be charged in future payments. If `maximum`, the amount charged can be up to the value passed for the `amount` param.
+@immutable final class InvoiceMandateOptionsCardAmountType {const InvoiceMandateOptionsCardAmountType._(this.value);
 
 factory InvoiceMandateOptionsCardAmountType.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoiceMandateOptionsCardAmountType($value)'; } 
  }
 /// 
-final class InvoiceMandateOptionsCard {const InvoiceMandateOptionsCard({this.amount, this.amountType, this.description, });
+@immutable final class InvoiceMandateOptionsCard {const InvoiceMandateOptionsCard({this.amount, this.amountType, this.description, });
 
 factory InvoiceMandateOptionsCard.fromJson(Map<String, dynamic> json) { return InvoiceMandateOptionsCard(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

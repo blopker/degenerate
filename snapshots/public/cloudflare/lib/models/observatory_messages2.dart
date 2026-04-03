@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ObservatoryMessages2 {const ObservatoryMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ObservatoryMessages2 {const ObservatoryMessages2({required this.code, required this.message, });
 
 factory ObservatoryMessages2.fromJson(Map<String, dynamic> json) { return ObservatoryMessages2(
   code: (json['code'] as num).toInt(),

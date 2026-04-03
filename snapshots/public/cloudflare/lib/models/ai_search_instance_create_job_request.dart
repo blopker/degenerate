@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchInstanceCreateJobRequest {const AiSearchInstanceCreateJobRequest({this.description});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceCreateJobRequest {const AiSearchInstanceCreateJobRequest({this.description});
 
 factory AiSearchInstanceCreateJobRequest.fromJson(Map<String, dynamic> json) { return AiSearchInstanceCreateJobRequest(
   description: json['description'] as String?,

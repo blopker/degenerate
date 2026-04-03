@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecretScanningCreatePushProtectionBypassResponse503 {const SecretScanningCreatePushProtectionBypassResponse503({this.code, this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecretScanningCreatePushProtectionBypassResponse503 {const SecretScanningCreatePushProtectionBypassResponse503({this.code, this.message, this.documentationUrl, });
 
 factory SecretScanningCreatePushProtectionBypassResponse503.fromJson(Map<String, dynamic> json) { return SecretScanningCreatePushProtectionBypassResponse503(
   code: json['code'] as String?,

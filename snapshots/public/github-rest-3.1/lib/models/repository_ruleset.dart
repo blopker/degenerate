@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';import 'repository_ruleset_conditions.dart';import 'repository_ruleset_conditions2.dart';import 'repository_ruleset_links.dart';/// The target of the ruleset
-final class RepositoryRulesetTarget {const RepositoryRulesetTarget._(this.value);
+@immutable final class RepositoryRulesetTarget {const RepositoryRulesetTarget._(this.value);
 
 factory RepositoryRulesetTarget.fromJson(String json) { return switch (json) {
   'branch' => branch,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRulesetTarget($value)'; } 
  }
 /// The type of the source of the ruleset
-final class RepositoryRulesetSourceType {const RepositoryRulesetSourceType._(this.value);
+@immutable final class RepositoryRulesetSourceType {const RepositoryRulesetSourceType._(this.value);
 
 factory RepositoryRulesetSourceType.fromJson(String json) { return switch (json) {
   'Repository' => repository,
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The bypass type of the user making the API request for this ruleset. This field is only returned when
 /// querying the repository-level endpoint.
-final class RepositoryRulesetCurrentUserCanBypass {const RepositoryRulesetCurrentUserCanBypass._(this.value);
+@immutable final class RepositoryRulesetCurrentUserCanBypass {const RepositoryRulesetCurrentUserCanBypass._(this.value);
 
 factory RepositoryRulesetCurrentUserCanBypass.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -92,7 +92,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRulesetCurrentUserCanBypass($value)'; } 
  }
 /// A set of rules to apply when specified conditions are met.
-final class RepositoryRuleset {const RepositoryRuleset({required this.id, required this.name, this.target, this.sourceType, required this.source, required this.enforcement, this.bypassActors, this.currentUserCanBypass, this.nodeId, this.links, this.conditions, this.rules, this.createdAt, this.updatedAt, });
+@immutable final class RepositoryRuleset {const RepositoryRuleset({required this.id, required this.name, required this.source, required this.enforcement, this.target, this.sourceType, this.bypassActors, this.currentUserCanBypass, this.nodeId, this.links, this.conditions, this.rules, this.createdAt, this.updatedAt, });
 
 factory RepositoryRuleset.fromJson(Map<String, dynamic> json) { return RepositoryRuleset(
   id: (json['id'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class LabeledIssueEventLabel {const LabeledIssueEventLabel({required this.name, required this.color, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LabeledIssueEventLabel {const LabeledIssueEventLabel({required this.name, required this.color, });
 
 factory LabeledIssueEventLabel.fromJson(Map<String, dynamic> json) { return LabeledIssueEventLabel(
   name: json['name'] as String,

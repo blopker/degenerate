@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'branch_restriction_policy_apps_owner.dart';import 'branch_restriction_policy_apps_permissions.dart';final class BranchRestrictionPolicyApps {const BranchRestrictionPolicyApps({this.id, this.slug, this.nodeId, this.owner, this.name, this.clientId, this.description, this.externalUrl, this.htmlUrl, this.createdAt, this.updatedAt, this.permissions, this.events, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'branch_restriction_policy_apps_owner.dart';import 'branch_restriction_policy_apps_permissions.dart';@immutable final class BranchRestrictionPolicyApps {const BranchRestrictionPolicyApps({this.id, this.slug, this.nodeId, this.owner, this.name, this.clientId, this.description, this.externalUrl, this.htmlUrl, this.createdAt, this.updatedAt, this.permissions, this.events, });
 
 factory BranchRestrictionPolicyApps.fromJson(Map<String, dynamic> json) { return BranchRestrictionPolicyApps(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

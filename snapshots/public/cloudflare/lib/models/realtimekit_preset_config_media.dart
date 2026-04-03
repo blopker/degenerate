@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_preset_config_media_audio.dart';import 'realtimekit_preset_config_media_screenshare.dart';import 'realtimekit_preset_config_media_video.dart';/// Media configuration options. eg: Video quality
-final class RealtimekitPresetConfigMedia {const RealtimekitPresetConfigMedia({this.audio, required this.screenshare, required this.video, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_preset_config_media_audio.dart';import 'realtimekit_preset_config_media_screenshare.dart';import 'realtimekit_preset_config_media_video.dart';/// Media configuration options. eg: Video quality
+@immutable final class RealtimekitPresetConfigMedia {const RealtimekitPresetConfigMedia({required this.screenshare, required this.video, this.audio, });
 
 factory RealtimekitPresetConfigMedia.fromJson(Map<String, dynamic> json) { return RealtimekitPresetConfigMedia(
   audio: json['audio'] != null ? RealtimekitPresetConfigMediaAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,

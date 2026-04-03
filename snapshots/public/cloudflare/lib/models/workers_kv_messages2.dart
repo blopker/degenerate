@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersKvMessages2 {const WorkersKvMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersKvMessages2 {const WorkersKvMessages2({required this.code, required this.message, });
 
 factory WorkersKvMessages2.fromJson(Map<String, dynamic> json) { return WorkersKvMessages2(
   code: (json['code'] as num).toInt(),

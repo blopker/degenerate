@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_text_position_param5.dart';import 'custom_text_position_param6.dart';import 'custom_text_position_param7.dart';import 'custom_text_position_param8.dart';import 'post_payment_links_request_custom_text_after_submit.dart';import 'post_payment_links_request_custom_text_shipping_address.dart';import 'post_payment_links_request_custom_text_submit.dart';import 'post_payment_links_request_custom_text_terms_of_service_acceptance.dart';/// Display additional text for your customers using custom text. You can't set this parameter if `ui_mode` is `custom`.
-final class PostPaymentLinksRequestCustomText {const PostPaymentLinksRequestCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
+@immutable final class PostPaymentLinksRequestCustomText {const PostPaymentLinksRequestCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
 
 factory PostPaymentLinksRequestCustomText.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestCustomText(
   afterSubmit: json['after_submit'] != null ? OneOf2.parse(json['after_submit'], fromA: (v) => CustomTextPositionParam5.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentLinksRequestCustomTextAfterSubmitVariant2.fromJson(v as String),) : null,

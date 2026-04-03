@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify the name of the file that contains the main module of the snippet.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the name of the file that contains the main module of the snippet.
 extension type const SnippetsSnippetMainModule(String value) {
 factory SnippetsSnippetMainModule.fromJson(String json) => SnippetsSnippetMainModule(json);
 
@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// Provide metadata about the snippet.
-final class UpdateZoneSnippetRequestMetadata {const UpdateZoneSnippetRequestMetadata({required this.mainModule});
+@immutable final class UpdateZoneSnippetRequestMetadata {const UpdateZoneSnippetRequestMetadata({required this.mainModule});
 
 factory UpdateZoneSnippetRequestMetadata.fromJson(Map<String, dynamic> json) { return UpdateZoneSnippetRequestMetadata(
   mainModule: SnippetsSnippetMainModule.fromJson(json['main_module'] as String),

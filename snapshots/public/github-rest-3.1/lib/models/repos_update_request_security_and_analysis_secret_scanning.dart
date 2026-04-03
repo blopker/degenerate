@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."
-final class ReposUpdateRequestSecurityAndAnalysisSecretScanning {const ReposUpdateRequestSecurityAndAnalysisSecretScanning({this.status});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."
+@immutable final class ReposUpdateRequestSecurityAndAnalysisSecretScanning {const ReposUpdateRequestSecurityAndAnalysisSecretScanning({this.status});
 
 factory ReposUpdateRequestSecurityAndAnalysisSecretScanning.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysisSecretScanning(
   status: json['status'] as String?,

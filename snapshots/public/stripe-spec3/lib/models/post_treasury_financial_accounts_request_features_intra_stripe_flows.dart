@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTreasuryFinancialAccountsRequestFeaturesIntraStripeFlows {const PostTreasuryFinancialAccountsRequestFeaturesIntraStripeFlows({required this.requested});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryFinancialAccountsRequestFeaturesIntraStripeFlows {const PostTreasuryFinancialAccountsRequestFeaturesIntraStripeFlows({required this.requested});
 
 factory PostTreasuryFinancialAccountsRequestFeaturesIntraStripeFlows.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsRequestFeaturesIntraStripeFlows(
   requested: json['requested'] as bool,

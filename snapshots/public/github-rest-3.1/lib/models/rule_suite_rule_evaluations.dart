@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rule_suite_rule_evaluations_rule_source.dart';/// The enforcement level of this rule source.
-final class RuleSuiteRuleEvaluationsEnforcement {const RuleSuiteRuleEvaluationsEnforcement._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rule_suite_rule_evaluations_rule_source.dart';/// The enforcement level of this rule source.
+@immutable final class RuleSuiteRuleEvaluationsEnforcement {const RuleSuiteRuleEvaluationsEnforcement._(this.value);
 
 factory RuleSuiteRuleEvaluationsEnforcement.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RuleSuiteRuleEvaluationsEnforcement($value)'; } 
  }
 /// The result of the evaluation of the individual rule.
-final class RuleSuiteRuleEvaluationsResult {const RuleSuiteRuleEvaluationsResult._(this.value);
+@immutable final class RuleSuiteRuleEvaluationsResult {const RuleSuiteRuleEvaluationsResult._(this.value);
 
 factory RuleSuiteRuleEvaluationsResult.fromJson(String json) { return switch (json) {
   'pass' => pass,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RuleSuiteRuleEvaluationsResult($value)'; } 
  }
-final class RuleSuiteRuleEvaluations {const RuleSuiteRuleEvaluations({this.ruleSource, this.enforcement, this.result, this.ruleType, this.details, });
+@immutable final class RuleSuiteRuleEvaluations {const RuleSuiteRuleEvaluations({this.ruleSource, this.enforcement, this.result, this.ruleType, this.details, });
 
 factory RuleSuiteRuleEvaluations.fromJson(Map<String, dynamic> json) { return RuleSuiteRuleEvaluations(
   ruleSource: json['rule_source'] != null ? RuleSuiteRuleEvaluationsRuleSource.fromJson(json['rule_source'] as Map<String, dynamic>) : null,

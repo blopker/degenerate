@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_captions.dart';final class StreamLanguageResponseSingle {const StreamLanguageResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_captions.dart';@immutable final class StreamLanguageResponseSingle {const StreamLanguageResponseSingle({this.result});
 
 factory StreamLanguageResponseSingle.fromJson(Map<String, dynamic> json) { return StreamLanguageResponseSingle(
   result: json['result'] != null ? StreamCaptions.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_billing_credit_grants_request_amount_monetary.dart';final class PostBillingCreditGrantsRequestAmountType {const PostBillingCreditGrantsRequestAmountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_credit_grants_request_amount_monetary.dart';@immutable final class PostBillingCreditGrantsRequestAmountType {const PostBillingCreditGrantsRequestAmountType._(this.value);
 
 factory PostBillingCreditGrantsRequestAmountType.fromJson(String json) { return switch (json) {
   'monetary' => monetary,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostBillingCreditGrantsRequestAmountType($value)'; } 
  }
 /// Amount of this credit grant.
-final class PostBillingCreditGrantsRequestAmount {const PostBillingCreditGrantsRequestAmount({this.monetary, required this.type, });
+@immutable final class PostBillingCreditGrantsRequestAmount {const PostBillingCreditGrantsRequestAmount({required this.type, this.monetary, });
 
 factory PostBillingCreditGrantsRequestAmount.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsRequestAmount(
   monetary: json['monetary'] != null ? PostBillingCreditGrantsRequestAmountMonetary.fromJson(json['monetary'] as Map<String, dynamic>) : null,

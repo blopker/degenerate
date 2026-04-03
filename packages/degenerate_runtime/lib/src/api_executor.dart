@@ -1,19 +1,20 @@
 import 'dart:async';
 
-import 'api_client.dart';
-import 'api_config.dart';
-import 'api_result.dart';
-import 'cancel_token.dart';
-import 'interceptor.dart';
-import 'jsonl.dart';
-import 'request_options.dart';
-import 'sse.dart';
+import 'package:degenerate_runtime/src/api_client.dart';
+import 'package:degenerate_runtime/src/api_config.dart';
+import 'package:degenerate_runtime/src/api_result.dart';
+import 'package:degenerate_runtime/src/cancel_token.dart';
+import 'package:degenerate_runtime/src/interceptor.dart';
+import 'package:degenerate_runtime/src/jsonl.dart';
+import 'package:degenerate_runtime/src/request_options.dart';
+import 'package:degenerate_runtime/src/sse.dart';
 
 /// Shared execution logic for generated API classes.
 ///
 /// Generated API tag classes mix this in to get `_execute` and
 /// `_executeStreaming` without duplicating the pipeline in every file.
 mixin ApiExecutor {
+  /// The configuration used for executing API requests.
   ApiConfig get apiConfig;
 
   /// Shared execution pipeline: interceptors -> send -> deserialize.
@@ -36,14 +37,14 @@ mixin ApiExecutor {
           ? CancelToken()
           : null;
       Timer? timeoutTimer;
-      bool timedOut = false;
+      var timedOut = false;
 
       if (adapterToken != null) {
         if (userCancelToken != null) {
           final token = adapterToken;
-          userCancelToken.whenCancelled.then((_) {
+          unawaited(userCancelToken.whenCancelled.then((_) {
             if (!token.isCancelled) token.cancel();
-          });
+          }));
         }
         if (effectiveTimeout != null) {
           final token = adapterToken;
@@ -84,7 +85,7 @@ mixin ApiExecutor {
             rawError: response.body,
             headers: response.headers,
           );
-        } catch (e, st) {
+        } on Object catch (e, st) {
           return ApiParseException(e, st, response: response);
         }
       } on CancelledException {
@@ -94,14 +95,14 @@ mixin ApiExecutor {
         }
         rethrow;
       }
-    } catch (e, st) {
+    } on Object catch (e, st) {
       return ApiException(e, st);
     }
   }
 
   /// Shared streaming setup: applies interceptors to modify the request
-  /// (auth, logging, etc.), then sends via [sendStreaming] and yields
-  /// events from the provided [parseStream] function.
+  /// (auth, logging, etc.), then sends via [ApiClient.sendStreaming] and
+  /// yields events from the provided [parseStream] function.
   Stream<T> _executeStreamingImpl<T>(
     ApiRequest request, {
     required T Function(String data) onEvent,
@@ -117,14 +118,14 @@ mixin ApiExecutor {
         ? CancelToken()
         : null;
     Timer? timeoutTimer;
-    bool timedOut = false;
+    var timedOut = false;
 
     if (adapterToken != null) {
       if (userCancelToken != null) {
         final token = adapterToken;
-        userCancelToken.whenCancelled.then((_) {
+        unawaited(userCancelToken.whenCancelled.then((_) {
           if (!token.isCancelled) token.cancel();
-        });
+        }));
       }
       if (effectiveTimeout != null) {
         final token = adapterToken;
@@ -151,8 +152,9 @@ mixin ApiExecutor {
         interceptors: apiConfig.interceptors,
         terminal: (req) async {
           finalRequest = req;
-          // Return a dummy response — we'll send the real streaming request below.
-          return ApiResponse(statusCode: 200, headers: const {}, body: '');
+          // Return a dummy response — the real streaming
+          // request is sent below.
+          return ApiResponse(statusCode: 200, body: '');
         },
       );
       await chain(effectiveRequest);

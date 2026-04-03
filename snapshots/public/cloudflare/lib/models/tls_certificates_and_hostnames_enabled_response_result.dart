@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_enabled.dart';final class TlsCertificatesAndHostnamesEnabledResponseResult {const TlsCertificatesAndHostnamesEnabledResponseResult({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_zone_authenticated_origin_pull_components_schemas_enabled.dart';@immutable final class TlsCertificatesAndHostnamesEnabledResponseResult {const TlsCertificatesAndHostnamesEnabledResponseResult({this.enabled});
 
 factory TlsCertificatesAndHostnamesEnabledResponseResult.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesEnabledResponseResult(
   enabled: json['enabled'] != null ? TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled.fromJson(json['enabled'] as bool) : null,

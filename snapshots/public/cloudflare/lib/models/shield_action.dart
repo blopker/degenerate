@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Action to take on requests that match operations included in `selector` and fail `expression`.
-final class ShieldAction {const ShieldAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Action to take on requests that match operations included in `selector` and fail `expression`.
+@immutable final class ShieldAction {const ShieldAction._(this.value);
 
 factory ShieldAction.fromJson(String json) { return switch (json) {
   'log' => log,

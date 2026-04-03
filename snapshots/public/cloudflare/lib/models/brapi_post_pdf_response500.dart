@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_pdf_response500_errors.dart';final class BrapiPostPdfResponse500 {const BrapiPostPdfResponse500({this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_pdf_response500_errors.dart';@immutable final class BrapiPostPdfResponse500 {const BrapiPostPdfResponse500({required this.success, this.errors, });
 
 factory BrapiPostPdfResponse500.fromJson(Map<String, dynamic> json) { return BrapiPostPdfResponse500(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostPdfResponse500Errors.fromJson(e as Map<String, dynamic>)).toList(),

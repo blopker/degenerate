@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
-final class D1JurisdictionNullable {const D1JurisdictionNullable._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
+@immutable final class D1JurisdictionNullable {const D1JurisdictionNullable._(this.value);
 
 factory D1JurisdictionNullable.fromJson(String json) { return switch (json) {
   'eu' => eu,

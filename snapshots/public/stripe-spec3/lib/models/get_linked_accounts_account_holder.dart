@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetLinkedAccountsAccountHolder {const GetLinkedAccountsAccountHolder({this.account, this.customer, this.customerAccount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetLinkedAccountsAccountHolder {const GetLinkedAccountsAccountHolder({this.account, this.customer, this.customerAccount, });
 
 factory GetLinkedAccountsAccountHolder.fromJson(Map<String, dynamic> json) { return GetLinkedAccountsAccountHolder(
   account: json['account'] as String?,

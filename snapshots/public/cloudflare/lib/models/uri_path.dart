@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_rewrite_uri_path.dart';/// A URI path rewrite.
-final class UriPath {const UriPath({required this.path});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rewrite_uri_path.dart';/// A URI path rewrite.
+@immutable final class UriPath {const UriPath({required this.path});
 
 factory UriPath.fromJson(Map<String, dynamic> json) { return UriPath(
   path: RulesetsRewriteUriPath.fromJson(json['path'] as Map<String, dynamic>),

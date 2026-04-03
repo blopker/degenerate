@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit.dart';import 'diff_entry.dart';final class CommitComparisonStatus {const CommitComparisonStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit.dart';import 'diff_entry.dart';@immutable final class CommitComparisonStatus {const CommitComparisonStatus._(this.value);
 
 factory CommitComparisonStatus.fromJson(String json) { return switch (json) {
   'diverged' => diverged,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CommitComparisonStatus($value)'; } 
  }
 /// Commit Comparison
-final class CommitComparison {const CommitComparison({required this.url, required this.htmlUrl, required this.permalinkUrl, required this.diffUrl, required this.patchUrl, required this.baseCommit, required this.mergeBaseCommit, required this.status, required this.aheadBy, required this.behindBy, required this.totalCommits, required this.commits, this.files, });
+@immutable final class CommitComparison {const CommitComparison({required this.url, required this.htmlUrl, required this.permalinkUrl, required this.diffUrl, required this.patchUrl, required this.baseCommit, required this.mergeBaseCommit, required this.status, required this.aheadBy, required this.behindBy, required this.totalCommits, required this.commits, this.files, });
 
 factory CommitComparison.fromJson(Map<String, dynamic> json) { return CommitComparison(
   url: Uri.parse(json['url'] as String),

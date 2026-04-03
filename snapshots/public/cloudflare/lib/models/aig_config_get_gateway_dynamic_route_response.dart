@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_get_gateway_dynamic_route_response_result.dart';final class AigConfigGetGatewayDynamicRouteResponse {const AigConfigGetGatewayDynamicRouteResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_get_gateway_dynamic_route_response_result.dart';@immutable final class AigConfigGetGatewayDynamicRouteResponse {const AigConfigGetGatewayDynamicRouteResponse({required this.result, required this.success, });
 
 factory AigConfigGetGatewayDynamicRouteResponse.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteResponse(
   result: AigConfigGetGatewayDynamicRouteResponseResult.fromJson(json['result'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_available_phone_number_country_available_phone_number_toll_free_capabilities.dart';final class AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree {const AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree({this.friendlyName, this.phoneNumber, this.lata, this.locality, this.rateCenter, this.latitude, this.longitude, this.region, this.postalCode, this.isoCountry, this.addressRequirements, this.beta, this.capabilities, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_available_phone_number_country_available_phone_number_toll_free_capabilities.dart';@immutable final class AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree {const AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree({this.friendlyName, this.phoneNumber, this.lata, this.locality, this.rateCenter, this.latitude, this.longitude, this.region, this.postalCode, this.isoCountry, this.addressRequirements, this.beta, this.capabilities, });
 
 factory AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree.fromJson(Map<String, dynamic> json) { return AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree(
   friendlyName: json['friendly_name'] as String?,

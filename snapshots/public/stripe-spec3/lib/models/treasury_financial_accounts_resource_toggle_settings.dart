@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_toggles_setting_status_details.dart';/// Whether the Feature is operational.
-final class TreasuryFinancialAccountsResourceToggleSettingsStatus {const TreasuryFinancialAccountsResourceToggleSettingsStatus._(this.value);
+@immutable final class TreasuryFinancialAccountsResourceToggleSettingsStatus {const TreasuryFinancialAccountsResourceToggleSettingsStatus._(this.value);
 
 factory TreasuryFinancialAccountsResourceToggleSettingsStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourceToggleSettingsStatus($value)'; } 
  }
 /// Toggle settings for enabling/disabling a feature
-final class TreasuryFinancialAccountsResourceToggleSettings {const TreasuryFinancialAccountsResourceToggleSettings({required this.requested, required this.status, required this.statusDetails, });
+@immutable final class TreasuryFinancialAccountsResourceToggleSettings {const TreasuryFinancialAccountsResourceToggleSettings({required this.requested, required this.status, required this.statusDetails, });
 
 factory TreasuryFinancialAccountsResourceToggleSettings.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceToggleSettings(
   requested: json['requested'] as bool,

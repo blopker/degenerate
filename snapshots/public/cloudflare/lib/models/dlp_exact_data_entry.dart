@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DlpExactDataEntry {const DlpExactDataEntry({required this.caseSensitive, required this.createdAt, required this.enabled, required this.id, required this.name, required this.secret, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpExactDataEntry {const DlpExactDataEntry({required this.caseSensitive, required this.createdAt, required this.enabled, required this.id, required this.name, required this.secret, required this.updatedAt, });
 
 factory DlpExactDataEntry.fromJson(Map<String, dynamic> json) { return DlpExactDataEntry(
   caseSensitive: json['case_sensitive'] as bool,

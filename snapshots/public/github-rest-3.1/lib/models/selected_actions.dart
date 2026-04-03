@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class SelectedActions {const SelectedActions({this.githubOwnedAllowed, this.verifiedAllowed, this.patternsAllowed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SelectedActions {const SelectedActions({this.githubOwnedAllowed, this.verifiedAllowed, this.patternsAllowed, });
 
 factory SelectedActions.fromJson(Map<String, dynamic> json) { return SelectedActions(
   githubOwnedAllowed: json['github_owned_allowed'] as bool?,
@@ -16,7 +16,7 @@ final bool? verifiedAllowed;
 
 /// Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > The `patterns_allowed` setting only applies to public repositories.
 final List<String>? patternsAllowed;
 

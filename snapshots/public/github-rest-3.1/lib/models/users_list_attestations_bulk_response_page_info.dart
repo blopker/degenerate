@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about the current page.
-final class UsersListAttestationsBulkResponsePageInfo {const UsersListAttestationsBulkResponsePageInfo({this.hasNext, this.hasPrevious, this.next, this.previous, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the current page.
+@immutable final class UsersListAttestationsBulkResponsePageInfo {const UsersListAttestationsBulkResponsePageInfo({this.hasNext, this.hasPrevious, this.next, this.previous, });
 
 factory UsersListAttestationsBulkResponsePageInfo.fromJson(Map<String, dynamic> json) { return UsersListAttestationsBulkResponsePageInfo(
   hasNext: json['has_next'] as bool?,

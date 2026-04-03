@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_reinforcement_hyperparameters_batch_size.dart';import 'fine_tune_reinforcement_hyperparameters_compute_multiplier.dart';import 'fine_tune_reinforcement_hyperparameters_eval_interval.dart';import 'fine_tune_reinforcement_hyperparameters_eval_samples.dart';import 'fine_tune_reinforcement_hyperparameters_learning_rate_multiplier.dart';import 'fine_tune_reinforcement_hyperparameters_n_epochs.dart';/// Level of reasoning effort.
 /// 
-final class FineTuneReinforcementHyperparametersReasoningEffort {const FineTuneReinforcementHyperparametersReasoningEffort._(this.value);
+@immutable final class FineTuneReinforcementHyperparametersReasoningEffort {const FineTuneReinforcementHyperparametersReasoningEffort._(this.value);
 
 factory FineTuneReinforcementHyperparametersReasoningEffort.fromJson(String json) { return switch (json) {
   'default' => $default,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FineTuneReinforcementHyperparametersReasoningEffort($value)'; } 
  }
 /// The hyperparameters used for the reinforcement fine-tuning job.
-final class FineTuneReinforcementHyperparameters {const FineTuneReinforcementHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, this.reasoningEffort = FineTuneReinforcementHyperparametersReasoningEffort.$default, this.computeMultiplier, this.evalInterval, this.evalSamples, });
+@immutable final class FineTuneReinforcementHyperparameters {const FineTuneReinforcementHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, this.reasoningEffort = FineTuneReinforcementHyperparametersReasoningEffort.$default, this.computeMultiplier, this.evalInterval, this.evalSamples, });
 
 factory FineTuneReinforcementHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuneReinforcementHyperparameters(
   batchSize: json['batch_size'] != null ? OneOf2.parse(json['batch_size'], fromA: (v) => FineTuneReinforcementHyperparametersBatchSizeVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,

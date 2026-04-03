@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_locations_response_result_locations.dart';final class RadarGetEntitiesLocationsResponseResult {const RadarGetEntitiesLocationsResponseResult({required this.locations});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_locations_response_result_locations.dart';@immutable final class RadarGetEntitiesLocationsResponseResult {const RadarGetEntitiesLocationsResponseResult({required this.locations});
 
 factory RadarGetEntitiesLocationsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesLocationsResponseResult(
   locations: (json['locations'] as List<dynamic>).map((e) => RadarGetEntitiesLocationsResponseResultLocations.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tenant_tenant_metadata_dns.dart';final class TenantTenantMetadata {const TenantTenantMetadata({this.dns});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tenant_tenant_metadata_dns.dart';@immutable final class TenantTenantMetadata {const TenantTenantMetadata({this.dns});
 
 factory TenantTenantMetadata.fromJson(Map<String, dynamic> json) { return TenantTenantMetadata(
   dns: json['dns'] != null ? TenantTenantMetadataDns.fromJson(json['dns'] as Map<String, dynamic>) : null,

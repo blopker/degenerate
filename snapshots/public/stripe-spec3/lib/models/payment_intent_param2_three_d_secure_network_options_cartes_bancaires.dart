@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo {const PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo {const PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._(this.value);
 
 factory PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(String json) { return switch (json) {
   '0' => $0,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo($value)'; } 
  }
-final class PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancaires {const PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancaires({required this.cbAvalgo, this.cbExemption, this.cbScore, });
+@immutable final class PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancaires {const PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancaires({required this.cbAvalgo, this.cbExemption, this.cbScore, });
 
 factory PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancaires.fromJson(Map<String, dynamic> json) { return PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancaires(
   cbAvalgo: PaymentIntentParam2ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(json['cb_avalgo'] as String),

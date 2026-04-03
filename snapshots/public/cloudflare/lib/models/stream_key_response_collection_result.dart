@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_schemas_identifier.dart';import 'stream_signing_key_created.dart';final class StreamKeyResponseCollectionResult {const StreamKeyResponseCollectionResult({this.created, this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_schemas_identifier.dart';import 'stream_signing_key_created.dart';@immutable final class StreamKeyResponseCollectionResult {const StreamKeyResponseCollectionResult({this.created, this.id, });
 
 factory StreamKeyResponseCollectionResult.fromJson(Map<String, dynamic> json) { return StreamKeyResponseCollectionResult(
   created: json['created'] != null ? StreamSigningKeyCreated.fromJson(json['created'] as String) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify which account types can create policies for this category. `blocked` Blocks unconditionally for all accounts. `removalPending` Allows removal from policies but disables addition. `noBlock` Prevents blocking.
-final class ZeroTrustGatewayClass {const ZeroTrustGatewayClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify which account types can create policies for this category. `blocked` Blocks unconditionally for all accounts. `removalPending` Allows removal from policies but disables addition. `noBlock` Prevents blocking.
+@immutable final class ZeroTrustGatewayClass {const ZeroTrustGatewayClass._(this.value);
 
 factory ZeroTrustGatewayClass.fromJson(String json) { return switch (json) {
   'free' => free,

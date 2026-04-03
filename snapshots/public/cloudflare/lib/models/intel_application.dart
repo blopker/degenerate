@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Application that the hostname belongs to.
-final class IntelApplication {const IntelApplication({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Application that the hostname belongs to.
+@immutable final class IntelApplication {const IntelApplication({this.id, this.name, });
 
 factory IntelApplication.fromJson(Map<String, dynamic> json) { return IntelApplication(
   id: json['id'] != null ? (json['id'] as num).toInt() : null,

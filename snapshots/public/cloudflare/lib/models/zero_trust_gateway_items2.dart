@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_description_item.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_value.dart';final class ZeroTrustGatewayItems2 {const ZeroTrustGatewayItems2({this.createdAt, this.description, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_description_item.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_value.dart';@immutable final class ZeroTrustGatewayItems2 {const ZeroTrustGatewayItems2({this.createdAt, this.description, this.value, });
 
 factory ZeroTrustGatewayItems2.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayItems2(
   createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,

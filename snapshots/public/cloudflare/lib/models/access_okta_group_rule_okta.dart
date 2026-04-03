@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessOktaGroupRuleOkta {const AccessOktaGroupRuleOkta({required this.identityProviderId, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessOktaGroupRuleOkta {const AccessOktaGroupRuleOkta({required this.identityProviderId, required this.name, });
 
 factory AccessOktaGroupRuleOkta.fromJson(Map<String, dynamic> json) { return AccessOktaGroupRuleOkta(
   identityProviderId: json['identity_provider_id'] as String,

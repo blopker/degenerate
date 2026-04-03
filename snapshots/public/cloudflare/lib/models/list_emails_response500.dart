@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_message.dart';final class ListEmailsResponse500 {const ListEmailsResponse500({this.errors, this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_message.dart';@immutable final class ListEmailsResponse500 {const ListEmailsResponse500({required this.success, this.errors, this.messages, });
 
 factory ListEmailsResponse500.fromJson(Map<String, dynamic> json) { return ListEmailsResponse500(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => AbuseReportsMessage.fromJson(e as Map<String, dynamic>)).toList(),

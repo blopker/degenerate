@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_marketplace_purchase_pending_change_previous_marketplace_purchase.dart';import 'webhooks_marketplace_purchase.dart';final class WebhookMarketplacePurchasePendingChangeAction {const WebhookMarketplacePurchasePendingChangeAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_marketplace_purchase_pending_change_previous_marketplace_purchase.dart';import 'webhooks_marketplace_purchase.dart';@immutable final class WebhookMarketplacePurchasePendingChangeAction {const WebhookMarketplacePurchasePendingChangeAction._(this.value);
 
 factory WebhookMarketplacePurchasePendingChangeAction.fromJson(String json) { return switch (json) {
   'pending_change' => pendingChange,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMarketplacePurchasePendingChangeAction($value)'; } 
  }
-final class WebhookMarketplacePurchasePendingChange {const WebhookMarketplacePurchasePendingChange({required this.action, required this.effectiveDate, this.enterprise, this.installation, required this.marketplacePurchase, this.organization, this.previousMarketplacePurchase, this.repository, required this.sender, });
+@immutable final class WebhookMarketplacePurchasePendingChange {const WebhookMarketplacePurchasePendingChange({required this.action, required this.effectiveDate, required this.marketplacePurchase, required this.sender, this.enterprise, this.installation, this.organization, this.previousMarketplacePurchase, this.repository, });
 
 factory WebhookMarketplacePurchasePendingChange.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchasePendingChange(
   action: WebhookMarketplacePurchasePendingChangeAction.fromJson(json['action'] as String),

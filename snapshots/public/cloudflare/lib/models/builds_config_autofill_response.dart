@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BuildsPackageManager {const BuildsPackageManager._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsPackageManager {const BuildsPackageManager._(this.value);
 
 factory BuildsPackageManager.fromJson(String json) { return switch (json) {
   'npm' => npm,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BuildsPackageManager($value)'; } 
  }
-final class BuildsConfigAutofillResponse {const BuildsConfigAutofillResponse({this.configFile, this.defaultWorkerName, this.envWorkerNames, this.packageManager, this.scripts, });
+@immutable final class BuildsConfigAutofillResponse {const BuildsConfigAutofillResponse({this.configFile, this.defaultWorkerName, this.envWorkerNames, this.packageManager, this.scripts, });
 
 factory BuildsConfigAutofillResponse.fromJson(Map<String, dynamic> json) { return BuildsConfigAutofillResponse(
   configFile: json['config_file'] as String?,

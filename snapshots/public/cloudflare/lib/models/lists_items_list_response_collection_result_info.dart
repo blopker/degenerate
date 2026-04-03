@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lists_items_list_response_collection_result_info_cursors.dart';final class ListsItemsListResponseCollectionResultInfo {const ListsItemsListResponseCollectionResultInfo({this.cursors});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_items_list_response_collection_result_info_cursors.dart';@immutable final class ListsItemsListResponseCollectionResultInfo {const ListsItemsListResponseCollectionResultInfo({this.cursors});
 
 factory ListsItemsListResponseCollectionResultInfo.fromJson(Map<String, dynamic> json) { return ListsItemsListResponseCollectionResultInfo(
   cursors: json['cursors'] != null ? ListsItemsListResponseCollectionResultInfoCursors.fromJson(json['cursors'] as Map<String, dynamic>) : null,

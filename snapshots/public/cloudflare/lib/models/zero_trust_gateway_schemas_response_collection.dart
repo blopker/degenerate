@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_lists.dart';final class ZeroTrustGatewaySchemasResponseCollection {const ZeroTrustGatewaySchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_lists.dart';@immutable final class ZeroTrustGatewaySchemasResponseCollection {const ZeroTrustGatewaySchemasResponseCollection({this.result});
 
 factory ZeroTrustGatewaySchemasResponseCollection.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewaySchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayLists.fromJson(e as Map<String, dynamic>)).toList(),

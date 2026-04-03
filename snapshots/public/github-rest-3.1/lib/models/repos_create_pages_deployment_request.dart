@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object used to create GitHub Pages deployment
-final class ReposCreatePagesDeploymentRequest {const ReposCreatePagesDeploymentRequest({this.artifactId, this.artifactUrl, this.environment = 'github-pages', this.pagesBuildVersion = 'GITHUB_SHA', required this.oidcToken, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object used to create GitHub Pages deployment
+@immutable final class ReposCreatePagesDeploymentRequest {const ReposCreatePagesDeploymentRequest({required this.oidcToken, this.artifactId, this.artifactUrl, this.environment = 'github-pages', this.pagesBuildVersion = 'GITHUB_SHA', });
 
 factory ReposCreatePagesDeploymentRequest.fromJson(Map<String, dynamic> json) { return ReposCreatePagesDeploymentRequest(
   artifactId: json['artifact_id'] != null ? (json['artifact_id'] as num).toDouble() : null,

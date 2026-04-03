@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PrivateRegistriesGetOrgPublicKeyResponse {const PrivateRegistriesGetOrgPublicKeyResponse({required this.keyId, required this.key, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PrivateRegistriesGetOrgPublicKeyResponse {const PrivateRegistriesGetOrgPublicKeyResponse({required this.keyId, required this.key, });
 
 factory PrivateRegistriesGetOrgPublicKeyResponse.fromJson(Map<String, dynamic> json) { return PrivateRegistriesGetOrgPublicKeyResponse(
   keyId: json['key_id'] as String,

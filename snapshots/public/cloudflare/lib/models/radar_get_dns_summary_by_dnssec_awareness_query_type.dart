@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsSummaryByDnssecAwarenessQueryType {const RadarGetDnsSummaryByDnssecAwarenessQueryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByDnssecAwarenessQueryType {const RadarGetDnsSummaryByDnssecAwarenessQueryType._(this.value);
 
 factory RadarGetDnsSummaryByDnssecAwarenessQueryType.fromJson(String json) { return switch (json) {
   'A' => a,

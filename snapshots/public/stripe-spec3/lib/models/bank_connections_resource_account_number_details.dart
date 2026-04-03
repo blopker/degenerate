@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of account number associated with the account.
-final class BankConnectionsResourceAccountNumberDetailsIdentifierType {const BankConnectionsResourceAccountNumberDetailsIdentifierType._(this.value);
+@immutable final class BankConnectionsResourceAccountNumberDetailsIdentifierType {const BankConnectionsResourceAccountNumberDetailsIdentifierType._(this.value);
 
 factory BankConnectionsResourceAccountNumberDetailsIdentifierType.fromJson(String json) { return switch (json) {
   'account_number' => accountNumber,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BankConnectionsResourceAccountNumberDetailsIdentifierType($value)'; } 
  }
 /// Whether the account number is currently active and usable for transactions.
-final class BankConnectionsResourceAccountNumberDetailsStatus {const BankConnectionsResourceAccountNumberDetailsStatus._(this.value);
+@immutable final class BankConnectionsResourceAccountNumberDetailsStatus {const BankConnectionsResourceAccountNumberDetailsStatus._(this.value);
 
 factory BankConnectionsResourceAccountNumberDetailsStatus.fromJson(String json) { return switch (json) {
   'deactivated' => deactivated,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BankConnectionsResourceAccountNumberDetailsStatus($value)'; } 
  }
-final class BankConnectionsResourceAccountNumberDetailsSupportedNetworks {const BankConnectionsResourceAccountNumberDetailsSupportedNetworks._(this.value);
+@immutable final class BankConnectionsResourceAccountNumberDetailsSupportedNetworks {const BankConnectionsResourceAccountNumberDetailsSupportedNetworks._(this.value);
 
 factory BankConnectionsResourceAccountNumberDetailsSupportedNetworks.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -72,7 +72,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BankConnectionsResourceAccountNumberDetailsSupportedNetworks($value)'; } 
  }
 /// 
-final class BankConnectionsResourceAccountNumberDetails {const BankConnectionsResourceAccountNumberDetails({this.expectedExpiryDate, required this.identifierType, required this.status, required this.supportedNetworks, });
+@immutable final class BankConnectionsResourceAccountNumberDetails {const BankConnectionsResourceAccountNumberDetails({required this.identifierType, required this.status, required this.supportedNetworks, this.expectedExpiryDate, });
 
 factory BankConnectionsResourceAccountNumberDetails.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceAccountNumberDetails(
   expectedExpiryDate: json['expected_expiry_date'] != null ? (json['expected_expiry_date'] as num).toInt() : null,

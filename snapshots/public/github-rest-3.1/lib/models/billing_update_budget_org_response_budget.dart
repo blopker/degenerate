@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_update_budget_org_response_budget_budget_alerting.dart';/// The scope of the budget
-final class BillingUpdateBudgetOrgResponseBudgetBudgetScope {const BillingUpdateBudgetOrgResponseBudgetBudgetScope._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_update_budget_org_response_budget_budget_alerting.dart';/// The scope of the budget
+@immutable final class BillingUpdateBudgetOrgResponseBudgetBudgetScope {const BillingUpdateBudgetOrgResponseBudgetBudgetScope._(this.value);
 
 factory BillingUpdateBudgetOrgResponseBudgetBudgetScope.fromJson(String json) { return switch (json) {
   'enterprise' => enterprise,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingUpdateBudgetOrgResponseBudgetBudgetScope($value)'; } 
  }
 /// The type of pricing for the budget
-final class BillingUpdateBudgetOrgResponseBudgetBudgetType {const BillingUpdateBudgetOrgResponseBudgetBudgetType._(this.value);
+@immutable final class BillingUpdateBudgetOrgResponseBudgetBudgetType {const BillingUpdateBudgetOrgResponseBudgetBudgetType._(this.value);
 
 factory BillingUpdateBudgetOrgResponseBudgetBudgetType.fromJson(String json) { return switch (json) {
   'ProductPricing' => productPricing,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BillingUpdateBudgetOrgResponseBudgetBudgetType($value)'; } 
  }
-final class BillingUpdateBudgetOrgResponseBudget {const BillingUpdateBudgetOrgResponseBudget({this.id, this.budgetAmount, this.preventFurtherUsage, this.budgetAlerting, this.budgetScope, this.budgetEntityName = '', this.budgetType, this.budgetProductSku, });
+@immutable final class BillingUpdateBudgetOrgResponseBudget {const BillingUpdateBudgetOrgResponseBudget({this.id, this.budgetAmount, this.preventFurtherUsage, this.budgetAlerting, this.budgetScope, this.budgetEntityName = '', this.budgetType, this.budgetProductSku, });
 
 factory BillingUpdateBudgetOrgResponseBudget.fromJson(Map<String, dynamic> json) { return BillingUpdateBudgetOrgResponseBudget(
   id: json['id'] as String?,

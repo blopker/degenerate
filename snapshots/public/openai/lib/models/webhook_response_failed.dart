@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_response_failed_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_response_failed_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookResponseFailedObject {const WebhookResponseFailedObject._(this.value);
+@immutable final class WebhookResponseFailedObject {const WebhookResponseFailedObject._(this.value);
 
 factory WebhookResponseFailedObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `response.failed`.
 /// 
-final class WebhookResponseFailedType {const WebhookResponseFailedType._(this.value);
+@immutable final class WebhookResponseFailedType {const WebhookResponseFailedType._(this.value);
 
 factory WebhookResponseFailedType.fromJson(String json) { return switch (json) {
   'response.failed' => responseFailed,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when a background response has failed.
 /// 
-final class WebhookResponseFailed {const WebhookResponseFailed({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookResponseFailed {const WebhookResponseFailed({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookResponseFailed.fromJson(Map<String, dynamic> json) { return WebhookResponseFailed(
   createdAt: (json['created_at'] as num).toInt(),

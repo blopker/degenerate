@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `organization.project.service_account`
-final class ProjectServiceAccountObject {const ProjectServiceAccountObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project.service_account`
+@immutable final class ProjectServiceAccountObject {const ProjectServiceAccountObject._(this.value);
 
 factory ProjectServiceAccountObject.fromJson(String json) { return switch (json) {
   'organization.project.service_account' => organizationProjectServiceAccount,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectServiceAccountObject($value)'; } 
  }
 /// `owner` or `member`
-final class ProjectServiceAccountRole {const ProjectServiceAccountRole._(this.value);
+@immutable final class ProjectServiceAccountRole {const ProjectServiceAccountRole._(this.value);
 
 factory ProjectServiceAccountRole.fromJson(String json) { return switch (json) {
   'owner' => owner,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectServiceAccountRole($value)'; } 
  }
 /// Represents an individual service account in a project.
-final class ProjectServiceAccount {const ProjectServiceAccount({required this.object, required this.id, required this.name, required this.role, required this.createdAt, });
+@immutable final class ProjectServiceAccount {const ProjectServiceAccount({required this.object, required this.id, required this.name, required this.role, required this.createdAt, });
 
 factory ProjectServiceAccount.fromJson(Map<String, dynamic> json) { return ProjectServiceAccount(
   object: ProjectServiceAccountObject.fromJson(json['object'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dls_regional_hostname_response.dart';final class DlsAccountRegionalHostnamesAccountListHostnamesResponse {const DlsAccountRegionalHostnamesAccountListHostnamesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dls_regional_hostname_response.dart';@immutable final class DlsAccountRegionalHostnamesAccountListHostnamesResponse {const DlsAccountRegionalHostnamesAccountListHostnamesResponse({this.result});
 
 factory DlsAccountRegionalHostnamesAccountListHostnamesResponse.fromJson(Map<String, dynamic> json) { return DlsAccountRegionalHostnamesAccountListHostnamesResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => DlsRegionalHostnameResponse.fromJson(e as Map<String, dynamic>)).toList(),

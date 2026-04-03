@@ -198,7 +198,7 @@ if (q != null) {
   queryParameters['q'] = q;
 }
 if (fields != null) {
-queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
 }
 if (before != null) {
   queryParameters['before'] = before;
@@ -266,7 +266,7 @@ return execute(
 Future<ApiResult<ItemWithContent, BasicError>> projectsGetOrgItem({required int projectNumber, required String org, required int itemId, ProjectsGetOrgItemFields? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
-queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -372,7 +372,7 @@ return execute(
 Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListViewItemsForOrg({required int projectNumber, required String org, required int viewNumber, ProjectsListViewItemsForOrgFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
-queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
 }
 if (before != null) {
   queryParameters['before'] = before;
@@ -633,7 +633,7 @@ if (q != null) {
   queryParameters['q'] = q;
 }
 if (fields != null) {
-queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -692,7 +692,7 @@ return execute(
 Future<ApiResult<ItemWithContent, BasicError>> projectsGetUserItem({required int projectNumber, required String username, required int itemId, ProjectsGetUserItemFields? fields, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
-queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -772,7 +772,7 @@ return execute(
 Future<ApiResult<List<ItemWithContent>, BasicError>> projectsListViewItemsForUser({required int projectNumber, required String username, required int viewNumber, ProjectsListViewItemsForUserFields? fields, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (fields != null) {
-queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'fields', value: fields.toString()));
 }
 if (before != null) {
   queryParameters['before'] = before;

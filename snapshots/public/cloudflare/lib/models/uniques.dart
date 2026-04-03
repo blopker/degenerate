@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Uniques {const Uniques({this.all});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Uniques {const Uniques({this.all});
 
 factory Uniques.fromJson(Map<String, dynamic> json) { return Uniques(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,

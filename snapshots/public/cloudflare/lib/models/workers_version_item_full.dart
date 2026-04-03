@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_version_item_full_metadata.dart';import 'workers_version_item_full_resources.dart';final class WorkersVersionItemFull {const WorkersVersionItemFull({this.id, this.metadata, this.number, required this.resources, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_version_item_full_metadata.dart';import 'workers_version_item_full_resources.dart';@immutable final class WorkersVersionItemFull {const WorkersVersionItemFull({required this.resources, this.id, this.metadata, this.number, });
 
 factory WorkersVersionItemFull.fromJson(Map<String, dynamic> json) { return WorkersVersionItemFull(
   id: json['id'] as String?,

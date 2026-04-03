@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ai_inference_timeseries_group_by_task_response400_errors.dart';final class RadarGetAiInferenceTimeseriesGroupByTaskResponse400 {const RadarGetAiInferenceTimeseriesGroupByTaskResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ai_inference_timeseries_group_by_task_response400_errors.dart';@immutable final class RadarGetAiInferenceTimeseriesGroupByTaskResponse400 {const RadarGetAiInferenceTimeseriesGroupByTaskResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetAiInferenceTimeseriesGroupByTaskResponse400.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceTimeseriesGroupByTaskResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetAiInferenceTimeseriesGroupByTaskResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EvalRunPerTestingCriteriaResults {const EvalRunPerTestingCriteriaResults({required this.testingCriteria, required this.passed, required this.failed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EvalRunPerTestingCriteriaResults {const EvalRunPerTestingCriteriaResults({required this.testingCriteria, required this.passed, required this.failed, });
 
 factory EvalRunPerTestingCriteriaResults.fromJson(Map<String, dynamic> json) { return EvalRunPerTestingCriteriaResults(
   testingCriteria: json['testing_criteria'] as String,

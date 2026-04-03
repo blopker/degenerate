@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Address.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Address.
 extension type const Address(String value) {
 factory Address.fromJson(String json) => Address(json);
 
@@ -91,7 +91,7 @@ factory Zipcode.fromJson(String json) => Zipcode(json);
 String toJson() => value;
 
 }
-final class ContactProperties {const ContactProperties({required this.address, this.address2, required this.city, required this.country, this.email, this.fax, required this.firstName, this.id, required this.lastName, required this.organization, required this.phone, required this.state, required this.zip, });
+@immutable final class ContactProperties {const ContactProperties({required this.address, required this.city, required this.country, required this.firstName, required this.lastName, required this.organization, required this.phone, required this.state, required this.zip, this.address2, this.email, this.fax, this.id, });
 
 factory ContactProperties.fromJson(Map<String, dynamic> json) { return ContactProperties(
   address: Address.fromJson(json['address'] as String),

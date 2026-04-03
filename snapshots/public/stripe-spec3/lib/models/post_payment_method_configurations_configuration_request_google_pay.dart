@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_google_pay_display_preference.dart';/// Google Pay allows customers to make payments in your app or website using any credit or debit card saved to their Google Account, including those from Google Play, YouTube, Chrome, or an Android device. Use the Google Pay API to request any credit or debit card stored in your customer's Google account. Check this [page](https://docs.stripe.com/google-pay) for more details.
-final class PostPaymentMethodConfigurationsConfigurationRequestGooglePay {const PostPaymentMethodConfigurationsConfigurationRequestGooglePay({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_google_pay_display_preference.dart';/// Google Pay allows customers to make payments in your app or website using any credit or debit card saved to their Google Account, including those from Google Play, YouTube, Chrome, or an Android device. Use the Google Pay API to request any credit or debit card stored in your customer's Google account. Check this [page](https://docs.stripe.com/google-pay) for more details.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestGooglePay {const PostPaymentMethodConfigurationsConfigurationRequestGooglePay({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestGooglePay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestGooglePay(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestGooglePayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

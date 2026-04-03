@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IncomingPhoneNumberTollFreeEnumVoiceReceiveMode {const IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IncomingPhoneNumberTollFreeEnumVoiceReceiveMode {const IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._(this.value);
 
 factory IncomingPhoneNumberTollFreeEnumVoiceReceiveMode.fromJson(String json) { return switch (json) {
   'voice' => voice,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsSatispay {const PaymentMethodDetailsSatispay({this.transactionId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsSatispay {const PaymentMethodDetailsSatispay({this.transactionId});
 
 factory PaymentMethodDetailsSatispay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsSatispay(
   transactionId: json['transaction_id'] as String?,

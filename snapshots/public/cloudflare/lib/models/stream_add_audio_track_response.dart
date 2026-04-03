@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_additional_audio.dart';import 'stream_messages2.dart';final class StreamAddAudioTrackResponse {const StreamAddAudioTrackResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_additional_audio.dart';import 'stream_messages2.dart';@immutable final class StreamAddAudioTrackResponse {const StreamAddAudioTrackResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory StreamAddAudioTrackResponse.fromJson(Map<String, dynamic> json) { return StreamAddAudioTrackResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),

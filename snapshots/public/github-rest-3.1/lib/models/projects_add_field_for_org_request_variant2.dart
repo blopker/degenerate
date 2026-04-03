@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The field's data type.
-final class ProjectsAddFieldForOrgRequestVariant2DataType {const ProjectsAddFieldForOrgRequestVariant2DataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field's data type.
+@immutable final class ProjectsAddFieldForOrgRequestVariant2DataType {const ProjectsAddFieldForOrgRequestVariant2DataType._(this.value);
 
 factory ProjectsAddFieldForOrgRequestVariant2DataType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectsAddFieldForOrgRequestVariant2DataType($value)'; } 
  }
-final class ProjectsAddFieldForOrgRequestVariant2 {const ProjectsAddFieldForOrgRequestVariant2({required this.name, required this.dataType, });
+@immutable final class ProjectsAddFieldForOrgRequestVariant2 {const ProjectsAddFieldForOrgRequestVariant2({required this.name, required this.dataType, });
 
 factory ProjectsAddFieldForOrgRequestVariant2.fromJson(Map<String, dynamic> json) { return ProjectsAddFieldForOrgRequestVariant2(
   name: json['name'] as String,

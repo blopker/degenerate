@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Field to order by. When requesting a feature, the feature keys are available for ordering as well, e.g., `thresholds.suggested_threshold`.
-final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order by. When requesting a feature, the feature keys are available for ordering as well, e.g., `thresholds.suggested_threshold`.
+@immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._(this.value);
 
 factory ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder.fromJson(String json) { return switch (json) {
   'method' => method,
   'host' => host,
   'endpoint' => endpoint,
-  'thresholds.\$key' => thresholdsKey,
+  r'thresholds.$key' => thresholdsKey,
   _ => ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._(json),
 }; }
 
@@ -17,7 +17,7 @@ static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZon
 
 static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder endpoint = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._('endpoint');
 
-static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder thresholdsKey = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._('thresholds.\$key');
+static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder thresholdsKey = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder._(r'thresholds.$key');
 
 static const List<ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneOrder> values = [method, host, endpoint, thresholdsKey];
 

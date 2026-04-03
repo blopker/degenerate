@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ReposSetStatusCheckContextsRequestVariant1 {const ReposSetStatusCheckContextsRequestVariant1({required this.contexts});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposSetStatusCheckContextsRequestVariant1 {const ReposSetStatusCheckContextsRequestVariant1({required this.contexts});
 
 factory ReposSetStatusCheckContextsRequestVariant1.fromJson(Map<String, dynamic> json) { return ReposSetStatusCheckContextsRequestVariant1(
   contexts: (json['contexts'] as List<dynamic>).map((e) => e as String).toList(),

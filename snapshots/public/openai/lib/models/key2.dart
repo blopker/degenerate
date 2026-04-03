@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'audit_log_actor_service_account.dart';import 'audit_log_actor_user.dart';/// The type of API key. Can be either `user` or `service_account`.
-final class Key2Type {const Key2Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_actor_service_account.dart';import 'audit_log_actor_user.dart';/// The type of API key. Can be either `user` or `service_account`.
+@immutable final class Key2Type {const Key2Type._(this.value);
 
 factory Key2Type.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Key2Type($value)'; } 
  }
 /// The API Key used to perform the audit logged action.
-final class Key2 {const Key2({this.id, this.type, this.user, this.serviceAccount, });
+@immutable final class Key2 {const Key2({this.id, this.type, this.user, this.serviceAccount, });
 
 factory Key2.fromJson(Map<String, dynamic> json) { return Key2(
   id: json['id'] as String?,

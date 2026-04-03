@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_operation_feature_schema_info_schema_info_active_schema.dart';/// Action taken on requests failing validation.
-final class ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction {const ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_operation_feature_schema_info_schema_info_active_schema.dart';/// Action taken on requests failing validation.
+@immutable final class ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction {const ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction._(this.value);
 
 factory ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction($value)'; } 
  }
-final class ShieldOperationFeatureSchemaInfoSchemaInfo {const ShieldOperationFeatureSchemaInfoSchemaInfo({this.activeSchema, this.learnedAvailable, this.mitigationAction, });
+@immutable final class ShieldOperationFeatureSchemaInfoSchemaInfo {const ShieldOperationFeatureSchemaInfoSchemaInfo({this.activeSchema, this.learnedAvailable, this.mitigationAction, });
 
 factory ShieldOperationFeatureSchemaInfoSchemaInfo.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureSchemaInfoSchemaInfo(
   activeSchema: json['active_schema'] != null ? ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema.fromJson(json['active_schema'] as Map<String, dynamic>) : null,

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Apply the Cache Everything option (Cache Level setting) based on a
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Apply the Cache Everything option (Cache Level setting) based on a
 /// regular expression match against a cookie name.
 /// 
-final class ZonesCacheOnCookieId {const ZonesCacheOnCookieId._(this.value);
+@immutable final class ZonesCacheOnCookieId {const ZonesCacheOnCookieId._(this.value);
 
 factory ZonesCacheOnCookieId.fromJson(String json) { return switch (json) {
   'cache_on_cookie' => cacheOnCookie,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesCacheOnCookieId($value)'; } 
  }
-final class ZonesCacheOnCookie {const ZonesCacheOnCookie({this.id, this.value, });
+@immutable final class ZonesCacheOnCookie {const ZonesCacheOnCookie({this.id, this.value, });
 
 factory ZonesCacheOnCookie.fromJson(Map<String, dynamic> json) { return ZonesCacheOnCookie(
   id: json['id'] != null ? ZonesCacheOnCookieId.fromJson(json['id'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'images_images_list_response2_result.dart';final class ImagesImagesListResponse2 {const ImagesImagesListResponse2({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_images_list_response2_result.dart';@immutable final class ImagesImagesListResponse2 {const ImagesImagesListResponse2({this.result});
 
 factory ImagesImagesListResponse2.fromJson(Map<String, dynamic> json) { return ImagesImagesListResponse2(
   result: json['result'] != null ? ImagesImagesListResponse2Result.fromJson(json['result'] as Map<String, dynamic>) : null,

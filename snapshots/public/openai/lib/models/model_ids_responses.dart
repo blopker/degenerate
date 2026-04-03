@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'model_ids_shared.dart';final class ResponsesOnlyModel {const ResponsesOnlyModel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'model_ids_shared.dart';@immutable final class ResponsesOnlyModel {const ResponsesOnlyModel._(this.value);
 
 factory ResponsesOnlyModel.fromJson(String json) { return switch (json) {
   'o1-pro' => o1Pro,

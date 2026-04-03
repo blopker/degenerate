@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'fine_tune_dpo_method.dart';import 'fine_tune_reinforcement_method.dart';import 'fine_tune_supervised_method.dart';/// The type of method. Is either `supervised`, `dpo`, or `reinforcement`.
-final class FineTuneMethodType {const FineTuneMethodType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_dpo_method.dart';import 'fine_tune_reinforcement_method.dart';import 'fine_tune_supervised_method.dart';/// The type of method. Is either `supervised`, `dpo`, or `reinforcement`.
+@immutable final class FineTuneMethodType {const FineTuneMethodType._(this.value);
 
 factory FineTuneMethodType.fromJson(String json) { return switch (json) {
   'supervised' => supervised,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FineTuneMethodType($value)'; } 
  }
 /// The method used for fine-tuning.
-final class FineTuneMethod {const FineTuneMethod({required this.type, this.supervised, this.dpo, this.reinforcement, });
+@immutable final class FineTuneMethod {const FineTuneMethod({required this.type, this.supervised, this.dpo, this.reinforcement, });
 
 factory FineTuneMethod.fromJson(Map<String, dynamic> json) { return FineTuneMethod(
   type: FineTuneMethodType.fromJson(json['type'] as String),

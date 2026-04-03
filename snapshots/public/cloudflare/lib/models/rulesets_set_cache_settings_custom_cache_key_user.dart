@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// How to use characteristics of the request user agent in the cache key.
-final class RulesetsSetCacheSettingsCustomCacheKeyUser {const RulesetsSetCacheSettingsCustomCacheKeyUser({this.deviceType, this.geo, this.lang, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// How to use characteristics of the request user agent in the cache key.
+@immutable final class RulesetsSetCacheSettingsCustomCacheKeyUser {const RulesetsSetCacheSettingsCustomCacheKeyUser({this.deviceType, this.geo, this.lang, });
 
 factory RulesetsSetCacheSettingsCustomCacheKeyUser.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCustomCacheKeyUser(
   deviceType: json['device_type'] as bool?,

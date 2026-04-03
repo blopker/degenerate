@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_bank_accounts_id_request_documents.dart';import 'post_accounts_account_bank_accounts_id_request_metadata.dart';/// The type of entity that holds the account. This can be either `individual` or `company`.
-final class PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType._(this.value);
+@immutable final class PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType._(this.value);
 
 factory PostAccountsAccountBankAccountsIdRequestAccountHolderType.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostAccountsAccountBankAccountsIdRequestAccountHolderType($value)'; } 
  }
 /// The bank account type. This can only be `checking` or `savings` in most countries. In Japan, this can only be `futsu` or `toza`.
-final class PostAccountsAccountBankAccountsIdRequestAccountType {const PostAccountsAccountBankAccountsIdRequestAccountType._(this.value);
+@immutable final class PostAccountsAccountBankAccountsIdRequestAccountType {const PostAccountsAccountBankAccountsIdRequestAccountType._(this.value);
 
 factory PostAccountsAccountBankAccountsIdRequestAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountBankAccountsIdRequestAccountType($value)'; } 
  }
-final class PostAccountsAccountBankAccountsIdRequest {const PostAccountsAccountBankAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.accountType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.defaultForCurrency, this.documents, this.expMonth, this.expYear, this.expand, this.metadata, this.name, });
+@immutable final class PostAccountsAccountBankAccountsIdRequest {const PostAccountsAccountBankAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.accountType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.defaultForCurrency, this.documents, this.expMonth, this.expYear, this.expand, this.metadata, this.name, });
 
 factory PostAccountsAccountBankAccountsIdRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountBankAccountsIdRequest(
   accountHolderName: json['account_holder_name'] as String?,

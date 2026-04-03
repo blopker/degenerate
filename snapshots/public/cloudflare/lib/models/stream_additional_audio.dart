@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_audio_default.dart';import 'stream_audio_label.dart';import 'stream_identifier.dart';/// Specifies the processing status of the video.
-final class StreamAudioState {const StreamAudioState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_audio_default.dart';import 'stream_audio_label.dart';import 'stream_identifier.dart';/// Specifies the processing status of the video.
+@immutable final class StreamAudioState {const StreamAudioState._(this.value);
 
 factory StreamAudioState.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StreamAudioState($value)'; } 
  }
-final class StreamAdditionalAudio {const StreamAdditionalAudio({this.$default, this.label, this.status, this.uid, });
+@immutable final class StreamAdditionalAudio {const StreamAdditionalAudio({this.$default, this.label, this.status, this.uid, });
 
 factory StreamAdditionalAudio.fromJson(Map<String, dynamic> json) { return StreamAdditionalAudio(
   $default: json['default'] != null ? StreamAudioDefault.fromJson(json['default'] as bool) : null,

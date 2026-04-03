@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_uuid.dart';/// When set, this applies a mitigation action to this operation which supersedes a global schema validation setting just for this operation
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_uuid.dart';/// When set, this applies a mitigation action to this operation which supersedes a global schema validation setting just for this operation
 /// 
 ///   - `"log"` - log request when request does not conform to schema for this operation
 ///   - `"block"` - deny access to the site when request does not conform to schema for this operation
 ///   - `"none"` - will skip mitigation for this operation
 /// 
-final class ShieldPerOperationSettingMitigationAction {const ShieldPerOperationSettingMitigationAction._(this.value);
+@immutable final class ShieldPerOperationSettingMitigationAction {const ShieldPerOperationSettingMitigationAction._(this.value);
 
 factory ShieldPerOperationSettingMitigationAction.fromJson(String json) { return switch (json) {
   'log' => log,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShieldPerOperationSettingMitigationAction($value)'; } 
  }
-final class ShieldPerOperationSetting {const ShieldPerOperationSetting({required this.mitigationAction, required this.operationId, });
+@immutable final class ShieldPerOperationSetting {const ShieldPerOperationSetting({required this.mitigationAction, required this.operationId, });
 
 factory ShieldPerOperationSetting.fromJson(Map<String, dynamic> json) { return ShieldPerOperationSetting(
   mitigationAction: ShieldPerOperationSettingMitigationAction.fromJson(json['mitigation_action'] as String),

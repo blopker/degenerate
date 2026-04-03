@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_selec
 /// 
 /// For details on selectors, see the [Cloudflare Docs](https://developers.cloudflare.com/api-shield/security/jwt-validation/).
 /// 
-final class ShieldSelector {const ShieldSelector({this.exclude, this.include, });
+@immutable final class ShieldSelector {const ShieldSelector({this.exclude, this.include, });
 
 factory ShieldSelector.fromJson(Map<String, dynamic> json) { return ShieldSelector(
   exclude: (json['exclude'] as List<dynamic>?)?.map((e) => ShieldSelectorExclude.fromJson(e as Map<String, dynamic>)).toList(),

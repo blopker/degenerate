@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_discount.dart';import 'discount.dart';import 'discounts_resource_discount_amount_discount.dart';/// 
-final class DiscountsResourceDiscountAmount {const DiscountsResourceDiscountAmount({required this.amount, required this.discount, });
+@immutable final class DiscountsResourceDiscountAmount {const DiscountsResourceDiscountAmount({required this.amount, required this.discount, });
 
 factory DiscountsResourceDiscountAmount.fromJson(Map<String, dynamic> json) { return DiscountsResourceDiscountAmount(
   amount: (json['amount'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_request_paypal_display_preference.dart';/// PayPal, a digital wallet popular with customers in Europe, allows your customers worldwide to pay using their PayPal account. Check this [page](https://docs.stripe.com/payments/paypal) for more details.
-final class PostPaymentMethodConfigurationsRequestPaypal {const PostPaymentMethodConfigurationsRequestPaypal({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_paypal_display_preference.dart';/// PayPal, a digital wallet popular with customers in Europe, allows your customers worldwide to pay using their PayPal account. Check this [page](https://docs.stripe.com/payments/paypal) for more details.
+@immutable final class PostPaymentMethodConfigurationsRequestPaypal {const PostPaymentMethodConfigurationsRequestPaypal({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestPaypal.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestPaypal(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestPaypalDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

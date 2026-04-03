@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingSummaryByDkimEncrypted {const RadarGetEmailRoutingSummaryByDkimEncrypted._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByDkimEncrypted {const RadarGetEmailRoutingSummaryByDkimEncrypted._(this.value);
 
 factory RadarGetEmailRoutingSummaryByDkimEncrypted.fromJson(String json) { return switch (json) {
   'ENCRYPTED' => encrypted,

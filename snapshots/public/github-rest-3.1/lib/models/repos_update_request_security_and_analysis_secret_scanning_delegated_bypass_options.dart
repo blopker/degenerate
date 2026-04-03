@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_request_security_and_analysis_secret_scanning_delegated_bypass_options_reviewers.dart';/// Feature options for secret scanning delegated bypass.
 /// This object is only honored when `security_and_analysis.secret_scanning_delegated_bypass.status` is set to `enabled`.
 /// You can send this object in the same request as `secret_scanning_delegated_bypass`, or update just the options in a separate request.
-final class ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions {const ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions({this.reviewers});
+@immutable final class ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions {const ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions({this.reviewers});
 
 factory ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions(
   reviewers: (json['reviewers'] as List<dynamic>?)?.map((e) => ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptionsReviewers.fromJson(e as Map<String, dynamic>)).toList(),

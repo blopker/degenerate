@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_edited_changes_variant1_field_value_from.dart';import 'item_edited_changes_variant1_field_value_to.dart';import 'iteration_setting.dart';import 'single_select_option.dart';final class ItemEditedChangesVariant1FieldValue {const ItemEditedChangesVariant1FieldValue({this.fieldNodeId, this.fieldType, this.fieldName, this.projectNumber, this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_edited_changes_variant1_field_value_from.dart';import 'item_edited_changes_variant1_field_value_to.dart';import 'iteration_setting.dart';import 'single_select_option.dart';@immutable final class ItemEditedChangesVariant1FieldValue {const ItemEditedChangesVariant1FieldValue({this.fieldNodeId, this.fieldType, this.fieldName, this.projectNumber, this.from, this.to, });
 
 factory ItemEditedChangesVariant1FieldValue.fromJson(Map<String, dynamic> json) { return ItemEditedChangesVariant1FieldValue(
   fieldNodeId: json['field_node_id'] as String?,

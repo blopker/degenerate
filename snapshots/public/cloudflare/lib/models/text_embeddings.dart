@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'text_embeddings_text.dart';final class TextEmbeddings {const TextEmbeddings({required this.text});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'text_embeddings_text.dart';@immutable final class TextEmbeddings {const TextEmbeddings({required this.text});
 
 factory TextEmbeddings.fromJson(Map<String, dynamic> json) { return TextEmbeddings(
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),

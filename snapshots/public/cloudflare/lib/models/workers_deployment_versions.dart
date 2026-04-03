@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersDeploymentVersions {const WorkersDeploymentVersions({required this.percentage, required this.versionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersDeploymentVersions {const WorkersDeploymentVersions({required this.percentage, required this.versionId, });
 
 factory WorkersDeploymentVersions.fromJson(Map<String, dynamic> json) { return WorkersDeploymentVersions(
   percentage: (json['percentage'] as num).toDouble(),

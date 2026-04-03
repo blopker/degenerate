@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rulesets_rule.dart';sealed class RulesetsRequestRule {const RulesetsRequestRule();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rule.dart';sealed class RulesetsRequestRule {const RulesetsRequestRule();
 
 /// Deserialize from JSON, dispatching on the `action` discriminator.
 factory RulesetsRequestRule.fromJson(Map<String, dynamic> json) { return switch (json['action']) {
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is RulesetsRequestRule$Unknown; } 
  }
-final class RulesetsRequestRuleBlock extends RulesetsRequestRule {const RulesetsRequestRuleBlock(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleBlock extends RulesetsRequestRule {const RulesetsRequestRuleBlock(this.rulesetsRule);
 
 factory RulesetsRequestRuleBlock.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleBlock(RulesetsRule.fromJson(json)); }
 
@@ -46,7 +46,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleBlock(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleChallenge extends RulesetsRequestRule {const RulesetsRequestRuleChallenge(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleChallenge extends RulesetsRequestRule {const RulesetsRequestRuleChallenge(this.rulesetsRule);
 
 factory RulesetsRequestRuleChallenge.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleChallenge(RulesetsRule.fromJson(json)); }
 
@@ -59,7 +59,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleChallenge(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleCompressResponse extends RulesetsRequestRule {const RulesetsRequestRuleCompressResponse(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleCompressResponse extends RulesetsRequestRule {const RulesetsRequestRuleCompressResponse(this.rulesetsRule);
 
 factory RulesetsRequestRuleCompressResponse.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleCompressResponse(RulesetsRule.fromJson(json)); }
 
@@ -72,7 +72,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleCompressResponse(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleDdosDynamic extends RulesetsRequestRule {const RulesetsRequestRuleDdosDynamic(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleDdosDynamic extends RulesetsRequestRule {const RulesetsRequestRuleDdosDynamic(this.rulesetsRule);
 
 factory RulesetsRequestRuleDdosDynamic.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleDdosDynamic(RulesetsRule.fromJson(json)); }
 
@@ -85,7 +85,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleDdosDynamic(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleExecute extends RulesetsRequestRule {const RulesetsRequestRuleExecute(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleExecute extends RulesetsRequestRule {const RulesetsRequestRuleExecute(this.rulesetsRule);
 
 factory RulesetsRequestRuleExecute.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleExecute(RulesetsRule.fromJson(json)); }
 
@@ -98,7 +98,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleExecute(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleForceConnectionClose extends RulesetsRequestRule {const RulesetsRequestRuleForceConnectionClose(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleForceConnectionClose extends RulesetsRequestRule {const RulesetsRequestRuleForceConnectionClose(this.rulesetsRule);
 
 factory RulesetsRequestRuleForceConnectionClose.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleForceConnectionClose(RulesetsRule.fromJson(json)); }
 
@@ -111,7 +111,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleForceConnectionClose(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleJsChallenge extends RulesetsRequestRule {const RulesetsRequestRuleJsChallenge(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleJsChallenge extends RulesetsRequestRule {const RulesetsRequestRuleJsChallenge(this.rulesetsRule);
 
 factory RulesetsRequestRuleJsChallenge.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleJsChallenge(RulesetsRule.fromJson(json)); }
 
@@ -124,7 +124,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleJsChallenge(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleLog extends RulesetsRequestRule {const RulesetsRequestRuleLog(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleLog extends RulesetsRequestRule {const RulesetsRequestRuleLog(this.rulesetsRule);
 
 factory RulesetsRequestRuleLog.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleLog(RulesetsRule.fromJson(json)); }
 
@@ -137,7 +137,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleLog(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleLogCustomField extends RulesetsRequestRule {const RulesetsRequestRuleLogCustomField(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleLogCustomField extends RulesetsRequestRule {const RulesetsRequestRuleLogCustomField(this.rulesetsRule);
 
 factory RulesetsRequestRuleLogCustomField.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleLogCustomField(RulesetsRule.fromJson(json)); }
 
@@ -150,7 +150,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleLogCustomField(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleManagedChallenge extends RulesetsRequestRule {const RulesetsRequestRuleManagedChallenge(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleManagedChallenge extends RulesetsRequestRule {const RulesetsRequestRuleManagedChallenge(this.rulesetsRule);
 
 factory RulesetsRequestRuleManagedChallenge.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleManagedChallenge(RulesetsRule.fromJson(json)); }
 
@@ -163,7 +163,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleManagedChallenge(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleRedirect extends RulesetsRequestRule {const RulesetsRequestRuleRedirect(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleRedirect extends RulesetsRequestRule {const RulesetsRequestRuleRedirect(this.rulesetsRule);
 
 factory RulesetsRequestRuleRedirect.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRedirect(RulesetsRule.fromJson(json)); }
 
@@ -176,7 +176,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleRedirect(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleRewrite extends RulesetsRequestRule {const RulesetsRequestRuleRewrite(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleRewrite extends RulesetsRequestRule {const RulesetsRequestRuleRewrite(this.rulesetsRule);
 
 factory RulesetsRequestRuleRewrite.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRewrite(RulesetsRule.fromJson(json)); }
 
@@ -189,7 +189,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleRewrite(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleRoute extends RulesetsRequestRule {const RulesetsRequestRuleRoute(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleRoute extends RulesetsRequestRule {const RulesetsRequestRuleRoute(this.rulesetsRule);
 
 factory RulesetsRequestRuleRoute.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleRoute(RulesetsRule.fromJson(json)); }
 
@@ -202,7 +202,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleRoute(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleScore extends RulesetsRequestRule {const RulesetsRequestRuleScore(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleScore extends RulesetsRequestRule {const RulesetsRequestRuleScore(this.rulesetsRule);
 
 factory RulesetsRequestRuleScore.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleScore(RulesetsRule.fromJson(json)); }
 
@@ -215,7 +215,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleScore(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleServeError extends RulesetsRequestRule {const RulesetsRequestRuleServeError(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleServeError extends RulesetsRequestRule {const RulesetsRequestRuleServeError(this.rulesetsRule);
 
 factory RulesetsRequestRuleServeError.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleServeError(RulesetsRule.fromJson(json)); }
 
@@ -228,7 +228,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleServeError(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleSetCacheControl extends RulesetsRequestRule {const RulesetsRequestRuleSetCacheControl(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleSetCacheControl extends RulesetsRequestRule {const RulesetsRequestRuleSetCacheControl(this.rulesetsRule);
 
 factory RulesetsRequestRuleSetCacheControl.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleSetCacheControl(RulesetsRule.fromJson(json)); }
 
@@ -241,7 +241,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleSetCacheControl(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleSetCacheSettings extends RulesetsRequestRule {const RulesetsRequestRuleSetCacheSettings(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleSetCacheSettings extends RulesetsRequestRule {const RulesetsRequestRuleSetCacheSettings(this.rulesetsRule);
 
 factory RulesetsRequestRuleSetCacheSettings.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleSetCacheSettings(RulesetsRule.fromJson(json)); }
 
@@ -254,7 +254,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleSetCacheSettings(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleSetCacheTags extends RulesetsRequestRule {const RulesetsRequestRuleSetCacheTags(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleSetCacheTags extends RulesetsRequestRule {const RulesetsRequestRuleSetCacheTags(this.rulesetsRule);
 
 factory RulesetsRequestRuleSetCacheTags.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleSetCacheTags(RulesetsRule.fromJson(json)); }
 
@@ -267,7 +267,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleSetCacheTags(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleSetConfig extends RulesetsRequestRule {const RulesetsRequestRuleSetConfig(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleSetConfig extends RulesetsRequestRule {const RulesetsRequestRuleSetConfig(this.rulesetsRule);
 
 factory RulesetsRequestRuleSetConfig.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleSetConfig(RulesetsRule.fromJson(json)); }
 
@@ -280,7 +280,7 @@ final RulesetsRule rulesetsRule;
 @override int get hashCode { return rulesetsRule.hashCode; } 
 @override String toString() { return 'RulesetsRequestRuleSetConfig(rulesetsRule: $rulesetsRule)'; } 
  }
-final class RulesetsRequestRuleSkip extends RulesetsRequestRule {const RulesetsRequestRuleSkip(this.rulesetsRule);
+@immutable final class RulesetsRequestRuleSkip extends RulesetsRequestRule {const RulesetsRequestRuleSkip(this.rulesetsRule);
 
 factory RulesetsRequestRuleSkip.fromJson(Map<String, dynamic> json) { return RulesetsRequestRuleSkip(RulesetsRule.fromJson(json)); }
 
@@ -295,7 +295,7 @@ final RulesetsRule rulesetsRule;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class RulesetsRequestRule$Unknown extends RulesetsRequestRule {const RulesetsRequestRule$Unknown(this.json);
+@immutable final class RulesetsRequestRule$Unknown extends RulesetsRequestRule {const RulesetsRequestRule$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

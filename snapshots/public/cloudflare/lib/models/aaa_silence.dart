@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_policy_id.dart';import 'aaa_silence_id.dart';final class AaaSilence {const AaaSilence({this.createdAt, this.endTime, this.id, this.policyId, this.startTime, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_policy_id.dart';import 'aaa_silence_id.dart';@immutable final class AaaSilence {const AaaSilence({this.createdAt, this.endTime, this.id, this.policyId, this.startTime, this.updatedAt, });
 
 factory AaaSilence.fromJson(Map<String, dynamic> json) { return AaaSilence(
   createdAt: json['created_at'] as String?,

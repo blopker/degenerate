@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ListPortalsResponseResult {const ListPortalsResponseResult({this.createdAt, this.createdBy, this.description, required this.hostname, required this.id, this.modifiedAt, this.modifiedBy, required this.name, this.secureWebGateway, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListPortalsResponseResult {const ListPortalsResponseResult({required this.hostname, required this.id, required this.name, this.createdAt, this.createdBy, this.description, this.modifiedAt, this.modifiedBy, this.secureWebGateway, });
 
 factory ListPortalsResponseResult.fromJson(Map<String, dynamic> json) { return ListPortalsResponseResult(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

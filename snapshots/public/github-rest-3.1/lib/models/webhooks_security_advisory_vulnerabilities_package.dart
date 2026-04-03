@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhooksSecurityAdvisoryVulnerabilitiesPackage {const WebhooksSecurityAdvisoryVulnerabilitiesPackage({required this.ecosystem, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhooksSecurityAdvisoryVulnerabilitiesPackage {const WebhooksSecurityAdvisoryVulnerabilitiesPackage({required this.ecosystem, required this.name, });
 
 factory WebhooksSecurityAdvisoryVulnerabilitiesPackage.fromJson(Map<String, dynamic> json) { return WebhooksSecurityAdvisoryVulnerabilitiesPackage(
   ecosystem: json['ecosystem'] as String,

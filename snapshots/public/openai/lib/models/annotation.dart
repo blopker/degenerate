@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'container_file_citation_body.dart';import 'file_citation_body.dart';import 'file_path.dart';import 'url_citation_body.dart';/// An annotation that applies to a span of output text.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_file_citation_body.dart';import 'file_citation_body.dart';import 'file_path.dart';import 'url_citation_body.dart';/// An annotation that applies to a span of output text.
 sealed class Annotation {const Annotation();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -18,7 +18,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is Annotation$Unknown; } 
  }
-final class AnnotationFileCitation extends Annotation {const AnnotationFileCitation(this.fileCitationBody);
+@immutable final class AnnotationFileCitation extends Annotation {const AnnotationFileCitation(this.fileCitationBody);
 
 factory AnnotationFileCitation.fromJson(Map<String, dynamic> json) { return AnnotationFileCitation(FileCitationBody.fromJson(json)); }
 
@@ -31,7 +31,7 @@ final FileCitationBody fileCitationBody;
 @override int get hashCode { return fileCitationBody.hashCode; } 
 @override String toString() { return 'AnnotationFileCitation(fileCitationBody: $fileCitationBody)'; } 
  }
-final class AnnotationUrlCitation extends Annotation {const AnnotationUrlCitation(this.urlCitationBody);
+@immutable final class AnnotationUrlCitation extends Annotation {const AnnotationUrlCitation(this.urlCitationBody);
 
 factory AnnotationUrlCitation.fromJson(Map<String, dynamic> json) { return AnnotationUrlCitation(UrlCitationBody.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final UrlCitationBody urlCitationBody;
 @override int get hashCode { return urlCitationBody.hashCode; } 
 @override String toString() { return 'AnnotationUrlCitation(urlCitationBody: $urlCitationBody)'; } 
  }
-final class AnnotationContainerFileCitation extends Annotation {const AnnotationContainerFileCitation(this.containerFileCitationBody);
+@immutable final class AnnotationContainerFileCitation extends Annotation {const AnnotationContainerFileCitation(this.containerFileCitationBody);
 
 factory AnnotationContainerFileCitation.fromJson(Map<String, dynamic> json) { return AnnotationContainerFileCitation(ContainerFileCitationBody.fromJson(json)); }
 
@@ -57,7 +57,7 @@ final ContainerFileCitationBody containerFileCitationBody;
 @override int get hashCode { return containerFileCitationBody.hashCode; } 
 @override String toString() { return 'AnnotationContainerFileCitation(containerFileCitationBody: $containerFileCitationBody)'; } 
  }
-final class AnnotationFilePath extends Annotation {const AnnotationFilePath(this.filePath);
+@immutable final class AnnotationFilePath extends Annotation {const AnnotationFilePath(this.filePath);
 
 factory AnnotationFilePath.fromJson(Map<String, dynamic> json) { return AnnotationFilePath(FilePath.fromJson(json)); }
 
@@ -72,7 +72,7 @@ final FilePath filePath;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class Annotation$Unknown extends Annotation {const Annotation$Unknown(this.json);
+@immutable final class Annotation$Unknown extends Annotation {const Annotation$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

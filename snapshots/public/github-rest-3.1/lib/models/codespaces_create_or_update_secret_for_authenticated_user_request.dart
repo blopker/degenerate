@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest {const CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest({this.encryptedValue, required this.keyId, this.selectedRepositoryIds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest {const CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest({required this.keyId, this.encryptedValue, this.selectedRepositoryIds, });
 
 factory CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(
   encryptedValue: json['encrypted_value'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request payload for creating a custom role.
-final class PublicCreateOrganizationRoleBody {const PublicCreateOrganizationRoleBody({required this.roleName, required this.permissions, this.description, });
+@immutable final class PublicCreateOrganizationRoleBody {const PublicCreateOrganizationRoleBody({required this.roleName, required this.permissions, this.description, });
 
 factory PublicCreateOrganizationRoleBody.fromJson(Map<String, dynamic> json) { return PublicCreateOrganizationRoleBody(
   roleName: json['role_name'] as String,

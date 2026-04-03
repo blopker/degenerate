@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class RefundDestinationDetailsGbBankTransfer {const RefundDestinationDetailsGbBankTransfer({this.reference, this.referenceStatus, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class RefundDestinationDetailsGbBankTransfer {const RefundDestinationDetailsGbBankTransfer({this.reference, this.referenceStatus, });
 
 factory RefundDestinationDetailsGbBankTransfer.fromJson(Map<String, dynamic> json) { return RefundDestinationDetailsGbBankTransfer(
   reference: json['reference'] as String?,

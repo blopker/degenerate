@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'terminal_reader_reader_resource_tipping_config.dart';/// Represents a per-transaction override of a reader configuration
-final class TerminalReaderReaderResourceCollectConfig {const TerminalReaderReaderResourceCollectConfig({this.enableCustomerCancellation, this.skipTipping, this.tipping, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_tipping_config.dart';/// Represents a per-transaction override of a reader configuration
+@immutable final class TerminalReaderReaderResourceCollectConfig {const TerminalReaderReaderResourceCollectConfig({this.enableCustomerCancellation, this.skipTipping, this.tipping, });
 
 factory TerminalReaderReaderResourceCollectConfig.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceCollectConfig(
   enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,

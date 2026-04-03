@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'artifact.dart';final class ActionsListWorkflowRunArtifactsResponse {const ActionsListWorkflowRunArtifactsResponse({required this.totalCount, required this.artifacts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'artifact.dart';@immutable final class ActionsListWorkflowRunArtifactsResponse {const ActionsListWorkflowRunArtifactsResponse({required this.totalCount, required this.artifacts, });
 
 factory ActionsListWorkflowRunArtifactsResponse.fromJson(Map<String, dynamic> json) { return ActionsListWorkflowRunArtifactsResponse(
   totalCount: (json['total_count'] as num).toInt(),

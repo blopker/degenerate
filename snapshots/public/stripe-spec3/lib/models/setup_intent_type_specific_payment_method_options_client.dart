@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'setup_intent_payment_method_options_mandate_options_payto.dart';/// Bank account verification method.
-final class SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod {const SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent_payment_method_options_mandate_options_payto.dart';/// Bank account verification method.
+@immutable final class SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod {const SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod._(this.value);
 
 factory SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentTypeSpecificPaymentMethodOptionsClientVerificationMethod($value)'; } 
  }
 /// 
-final class SetupIntentTypeSpecificPaymentMethodOptionsClient {const SetupIntentTypeSpecificPaymentMethodOptionsClient({this.mandateOptions, this.verificationMethod, });
+@immutable final class SetupIntentTypeSpecificPaymentMethodOptionsClient {const SetupIntentTypeSpecificPaymentMethodOptionsClient({this.mandateOptions, this.verificationMethod, });
 
 factory SetupIntentTypeSpecificPaymentMethodOptionsClient.fromJson(Map<String, dynamic> json) { return SetupIntentTypeSpecificPaymentMethodOptionsClient(
   mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

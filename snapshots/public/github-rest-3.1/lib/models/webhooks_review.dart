@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_review_links.dart';import 'webhooks_review_user.dart';/// How the author is associated with the repository.
-final class WebhooksReviewAuthorAssociation {const WebhooksReviewAuthorAssociation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_review_links.dart';import 'webhooks_review_user.dart';/// How the author is associated with the repository.
+@immutable final class WebhooksReviewAuthorAssociation {const WebhooksReviewAuthorAssociation._(this.value);
 
 factory WebhooksReviewAuthorAssociation.fromJson(String json) { return switch (json) {
   'COLLABORATOR' => collaborator,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksReviewAuthorAssociation($value)'; } 
  }
 /// The review that was affected.
-final class WebhooksReview {const WebhooksReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, this.updatedAt, required this.user, });
+@immutable final class WebhooksReview {const WebhooksReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, required this.user, this.updatedAt, });
 
 factory WebhooksReview.fromJson(Map<String, dynamic> json) { return WebhooksReview(
   links: WebhooksReviewLinks.fromJson(json['_links'] as Map<String, dynamic>),

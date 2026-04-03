@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
-final class RepositoryRuleEnforcement {const RepositoryRuleEnforcement._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
+@immutable final class RepositoryRuleEnforcement {const RepositoryRuleEnforcement._(this.value);
 
 factory RepositoryRuleEnforcement.fromJson(String json) { return switch (json) {
   'disabled' => disabled,

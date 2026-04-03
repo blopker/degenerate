@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the Cache Reserve zone setting.
-final class CacheRulesCacheReserveValue {const CacheRulesCacheReserveValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Cache Reserve zone setting.
+@immutable final class CacheRulesCacheReserveValue {const CacheRulesCacheReserveValue._(this.value);
 
 factory CacheRulesCacheReserveValue.fromJson(String json) { return switch (json) {
   'on' => $on,

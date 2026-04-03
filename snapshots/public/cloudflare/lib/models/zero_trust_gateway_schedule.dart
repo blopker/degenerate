@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the schedule for activating DNS policies. Settable only for `dns` and `dns_resolver` rules.
-final class ZeroTrustGatewaySchedule {const ZeroTrustGatewaySchedule({this.fri, this.mon, this.sat, this.sun, this.thu, this.timeZone, this.tue, this.wed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the schedule for activating DNS policies. Settable only for `dns` and `dns_resolver` rules.
+@immutable final class ZeroTrustGatewaySchedule {const ZeroTrustGatewaySchedule({this.fri, this.mon, this.sat, this.sun, this.thu, this.timeZone, this.tue, this.wed, });
 
 factory ZeroTrustGatewaySchedule.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewaySchedule(
   fri: json['fri'] as String?,

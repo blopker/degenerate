@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_user_group_policy_write_body.dart';final class IamCreateUserGroupBody {const IamCreateUserGroupBody({required this.name, required this.policies, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_user_group_policy_write_body.dart';@immutable final class IamCreateUserGroupBody {const IamCreateUserGroupBody({required this.name, required this.policies, });
 
 factory IamCreateUserGroupBody.fromJson(Map<String, dynamic> json) { return IamCreateUserGroupBody(
   name: json['name'] as String,

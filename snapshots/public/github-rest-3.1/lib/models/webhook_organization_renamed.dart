@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_organization_renamed_changes.dart';import 'webhooks_membership.dart';final class WebhookOrganizationRenamedAction {const WebhookOrganizationRenamedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_organization_renamed_changes.dart';import 'webhooks_membership.dart';@immutable final class WebhookOrganizationRenamedAction {const WebhookOrganizationRenamedAction._(this.value);
 
 factory WebhookOrganizationRenamedAction.fromJson(String json) { return switch (json) {
   'renamed' => renamed,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookOrganizationRenamedAction($value)'; } 
  }
-final class WebhookOrganizationRenamed {const WebhookOrganizationRenamed({required this.action, this.changes, this.enterprise, this.installation, this.membership, required this.organization, this.repository, required this.sender, });
+@immutable final class WebhookOrganizationRenamed {const WebhookOrganizationRenamed({required this.action, required this.organization, required this.sender, this.changes, this.enterprise, this.installation, this.membership, this.repository, });
 
 factory WebhookOrganizationRenamed.fromJson(Map<String, dynamic> json) { return WebhookOrganizationRenamed(
   action: WebhookOrganizationRenamedAction.fromJson(json['action'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_account_id.dart';import 'resource_sharing_created.dart';import 'resource_sharing_modified.dart';import 'resource_sharing_recipient_id.dart';import 'resource_sharing_share_recipient_resource_object.dart';/// Share Recipient association status.
-final class ResourceSharingRecipientAssociationStatus {const ResourceSharingRecipientAssociationStatus._(this.value);
+@immutable final class ResourceSharingRecipientAssociationStatus {const ResourceSharingRecipientAssociationStatus._(this.value);
 
 factory ResourceSharingRecipientAssociationStatus.fromJson(String json) { return switch (json) {
   'associating' => associating,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ResourceSharingRecipientAssociationStatus($value)'; } 
  }
-final class ResourceSharingShareRecipientObject {const ResourceSharingShareRecipientObject({required this.accountId, required this.associationStatus, required this.created, required this.id, required this.modified, this.resources, });
+@immutable final class ResourceSharingShareRecipientObject {const ResourceSharingShareRecipientObject({required this.accountId, required this.associationStatus, required this.created, required this.id, required this.modified, this.resources, });
 
 factory ResourceSharingShareRecipientObject.fromJson(Map<String, dynamic> json) { return ResourceSharingShareRecipientObject(
   accountId: ResourceSharingAccountId.fromJson(json['account_id'] as String),

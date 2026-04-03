@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorStatusTerminateWorkflowInstancesResponseResultStatus {const WorStatusTerminateWorkflowInstancesResponseResultStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorStatusTerminateWorkflowInstancesResponseResultStatus {const WorStatusTerminateWorkflowInstancesResponseResultStatus._(this.value);
 
 factory WorStatusTerminateWorkflowInstancesResponseResultStatus.fromJson(String json) { return switch (json) {
   'running' => running,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorStatusTerminateWorkflowInstancesResponseResultStatus($value)'; } 
  }
-final class WorStatusTerminateWorkflowInstancesResponseResult {const WorStatusTerminateWorkflowInstancesResponseResult({required this.status});
+@immutable final class WorStatusTerminateWorkflowInstancesResponseResult {const WorStatusTerminateWorkflowInstancesResponseResult({required this.status});
 
 factory WorStatusTerminateWorkflowInstancesResponseResult.fromJson(Map<String, dynamic> json) { return WorStatusTerminateWorkflowInstancesResponseResult(
   status: WorStatusTerminateWorkflowInstancesResponseResultStatus.fromJson(json['status'] as String),

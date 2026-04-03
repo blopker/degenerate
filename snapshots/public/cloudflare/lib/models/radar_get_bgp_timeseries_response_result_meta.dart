@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_timeseries_response_result_meta_confidence_info.dart';import 'radar_get_bgp_timeseries_response_result_meta_date_range.dart';final class RadarGetBgpTimeseriesResponseResultMetaAggInterval {const RadarGetBgpTimeseriesResponseResultMetaAggInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_timeseries_response_result_meta_confidence_info.dart';import 'radar_get_bgp_timeseries_response_result_meta_date_range.dart';@immutable final class RadarGetBgpTimeseriesResponseResultMetaAggInterval {const RadarGetBgpTimeseriesResponseResultMetaAggInterval._(this.value);
 
 factory RadarGetBgpTimeseriesResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   '15m' => $15m,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RadarGetBgpTimeseriesResponseResultMetaAggInterval($value)'; } 
  }
-final class RadarGetBgpTimeseriesResponseResultMeta {const RadarGetBgpTimeseriesResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, });
+@immutable final class RadarGetBgpTimeseriesResponseResultMeta {const RadarGetBgpTimeseriesResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, });
 
 factory RadarGetBgpTimeseriesResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetBgpTimeseriesResponseResultMeta(
   aggInterval: RadarGetBgpTimeseriesResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),

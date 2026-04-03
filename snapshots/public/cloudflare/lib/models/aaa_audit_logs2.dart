@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aaa_audit_logs2_account.dart';import 'aaa_audit_logs2_action.dart';import 'aaa_audit_logs2_actor.dart';import 'aaa_audit_logs2_raw.dart';import 'aaa_audit_logs2_resource.dart';import 'aaa_audit_logs2_zone.dart';/// A unique identifier for the audit log entry.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_audit_logs2_account.dart';import 'aaa_audit_logs2_action.dart';import 'aaa_audit_logs2_actor.dart';import 'aaa_audit_logs2_raw.dart';import 'aaa_audit_logs2_resource.dart';import 'aaa_audit_logs2_zone.dart';/// A unique identifier for the audit log entry.
 extension type const AaaSchemasIdentifier(String value) {
 factory AaaSchemasIdentifier.fromJson(String json) => AaaSchemasIdentifier(json);
 
 String toJson() => value;
 
 }
-final class AaaAuditLogs2 {const AaaAuditLogs2({this.account, this.action, this.actor, this.id, this.raw, this.resource, this.zone, });
+@immutable final class AaaAuditLogs2 {const AaaAuditLogs2({this.account, this.action, this.actor, this.id, this.raw, this.resource, this.zone, });
 
 factory AaaAuditLogs2.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2(
   account: json['account'] != null ? AaaAuditLogs2Account.fromJson(json['account'] as Map<String, dynamic>) : null,

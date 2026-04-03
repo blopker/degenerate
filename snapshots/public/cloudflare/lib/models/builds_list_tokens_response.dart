@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'builds_build_token_name.dart';import 'builds_build_token_uuid.dart';import 'builds_cloudflare_token_id.dart';import 'builds_owner_type.dart';final class BuildsListTokensResponse {const BuildsListTokensResponse({this.buildTokenName, this.buildTokenUuid, this.cloudflareTokenId, this.ownerType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_token_name.dart';import 'builds_build_token_uuid.dart';import 'builds_cloudflare_token_id.dart';import 'builds_owner_type.dart';@immutable final class BuildsListTokensResponse {const BuildsListTokensResponse({this.buildTokenName, this.buildTokenUuid, this.cloudflareTokenId, this.ownerType, });
 
 factory BuildsListTokensResponse.fromJson(Map<String, dynamic> json) { return BuildsListTokensResponse(
   buildTokenName: json['build_token_name'] != null ? BuildsBuildTokenName.fromJson(json['build_token_name'] as String) : null,

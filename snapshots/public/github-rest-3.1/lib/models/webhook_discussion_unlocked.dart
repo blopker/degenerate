@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookDiscussionUnlockedAction {const WebhookDiscussionUnlockedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDiscussionUnlockedAction {const WebhookDiscussionUnlockedAction._(this.value);
 
 factory WebhookDiscussionUnlockedAction.fromJson(String json) { return switch (json) {
   'unlocked' => unlocked,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDiscussionUnlockedAction($value)'; } 
  }
-final class WebhookDiscussionUnlocked {const WebhookDiscussionUnlocked({required this.action, required this.discussion, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookDiscussionUnlocked {const WebhookDiscussionUnlocked({required this.action, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDiscussionUnlocked.fromJson(Map<String, dynamic> json) { return WebhookDiscussionUnlocked(
   action: WebhookDiscussionUnlockedAction.fromJson(json['action'] as String),

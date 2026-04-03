@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPayCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPayCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPayCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPayCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPay {const PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPay({this.captureMethod});
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPay {const PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPay({this.captureMethod});
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPay(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsSamsungPayCaptureMethod.fromJson(json['capture_method'] as String) : null,

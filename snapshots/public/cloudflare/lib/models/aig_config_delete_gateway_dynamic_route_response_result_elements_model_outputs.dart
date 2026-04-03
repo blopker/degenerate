@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'aig_config_delete_gateway_dynamic_route_response_result_elements_model_outputs_fallback.dart';import 'aig_config_delete_gateway_dynamic_route_response_result_elements_model_outputs_success.dart';final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsModelOutputs {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsModelOutputs({required this.fallback, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_gateway_dynamic_route_response_result_elements_model_outputs_fallback.dart';import 'aig_config_delete_gateway_dynamic_route_response_result_elements_model_outputs_success.dart';@immutable final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsModelOutputs {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsModelOutputs({required this.fallback, required this.success, });
 
 factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsModelOutputs.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayDynamicRouteResponseResultElementsModelOutputs(
   fallback: AigConfigDeleteGatewayDynamicRouteResponseResultElementsModelOutputsFallback.fromJson(json['fallback'] as Map<String, dynamic>),

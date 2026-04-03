@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_resource_tax_association_transaction_attempts_resource_committed.dart';import 'tax_product_resource_tax_association_transaction_attempts_resource_errored.dart';/// 
-final class TaxProductResourceTaxAssociationTransactionAttempts {const TaxProductResourceTaxAssociationTransactionAttempts({this.committed, this.errored, required this.source, required this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_tax_association_transaction_attempts_resource_committed.dart';import 'tax_product_resource_tax_association_transaction_attempts_resource_errored.dart';/// 
+@immutable final class TaxProductResourceTaxAssociationTransactionAttempts {const TaxProductResourceTaxAssociationTransactionAttempts({required this.source, required this.status, this.committed, this.errored, });
 
 factory TaxProductResourceTaxAssociationTransactionAttempts.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxAssociationTransactionAttempts(
   committed: json['committed'] != null ? TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted.fromJson(json['committed'] as Map<String, dynamic>) : null,

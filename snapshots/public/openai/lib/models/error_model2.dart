@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An object representing an error response from the Eval API.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An object representing an error response from the Eval API.
 /// 
-final class ErrorModel2 {const ErrorModel2({required this.code, required this.message, });
+@immutable final class ErrorModel2 {const ErrorModel2({required this.code, required this.message, });
 
 factory ErrorModel2.fromJson(Map<String, dynamic> json) { return ErrorModel2(
   code: json['code'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_calculation_line_items.dart';import 'tax_product_resource_customer_details.dart';import 'tax_product_resource_ship_from_details.dart';import 'tax_product_resource_tax_breakdown.dart';import 'tax_product_resource_tax_calculation_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class TaxCalculationObject {const TaxCalculationObject._(this.value);
+@immutable final class TaxCalculationObject {const TaxCalculationObject._(this.value);
 
 factory TaxCalculationObject.fromJson(String json) { return switch (json) {
   'tax.calculation' => taxCalculation,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A Tax Calculation allows you to calculate the tax to collect from your customer.
 /// 
 /// Related guide: [Calculate tax in your custom payment flow](https://docs.stripe.com/tax/custom)
-final class TaxCalculation {const TaxCalculation({required this.amountTotal, required this.currency, this.customer, required this.customerDetails, this.expiresAt, this.id, this.lineItems, required this.livemode, required this.object, this.shipFromDetails, this.shippingCost, required this.taxAmountExclusive, required this.taxAmountInclusive, required this.taxBreakdown, required this.taxDate, });
+@immutable final class TaxCalculation {const TaxCalculation({required this.amountTotal, required this.currency, required this.customerDetails, required this.livemode, required this.object, required this.taxAmountExclusive, required this.taxAmountInclusive, required this.taxBreakdown, required this.taxDate, this.customer, this.expiresAt, this.id, this.lineItems, this.shipFromDetails, this.shippingCost, });
 
 factory TaxCalculation.fromJson(Map<String, dynamic> json) { return TaxCalculation(
   amountTotal: (json['amount_total'] as num).toInt(),

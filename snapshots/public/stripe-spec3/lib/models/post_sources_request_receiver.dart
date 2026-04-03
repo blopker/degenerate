@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSourcesRequestReceiverRefundAttributesMethod {const PostSourcesRequestReceiverRefundAttributesMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSourcesRequestReceiverRefundAttributesMethod {const PostSourcesRequestReceiverRefundAttributesMethod._(this.value);
 
 factory PostSourcesRequestReceiverRefundAttributesMethod.fromJson(String json) { return switch (json) {
   'email' => email,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSourcesRequestReceiverRefundAttributesMethod($value)'; } 
  }
 /// Optional parameters for the receiver flow. Can be set only if the source is a receiver (`flow` is `receiver`).
-final class PostSourcesRequestReceiver {const PostSourcesRequestReceiver({this.refundAttributesMethod});
+@immutable final class PostSourcesRequestReceiver {const PostSourcesRequestReceiver({this.refundAttributesMethod});
 
 factory PostSourcesRequestReceiver.fromJson(Map<String, dynamic> json) { return PostSourcesRequestReceiver(
   refundAttributesMethod: json['refund_attributes_method'] != null ? PostSourcesRequestReceiverRefundAttributesMethod.fromJson(json['refund_attributes_method'] as String) : null,

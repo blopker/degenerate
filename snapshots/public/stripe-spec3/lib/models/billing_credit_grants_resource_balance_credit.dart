@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_credit_grants_resource_amount.dart';import 'billing_credit_grants_resource_balance_credits_application_invoice_voided.dart';/// The type of credit transaction.
-final class BillingCreditGrantsResourceBalanceCreditType {const BillingCreditGrantsResourceBalanceCreditType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_amount.dart';import 'billing_credit_grants_resource_balance_credits_application_invoice_voided.dart';/// The type of credit transaction.
+@immutable final class BillingCreditGrantsResourceBalanceCreditType {const BillingCreditGrantsResourceBalanceCreditType._(this.value);
 
 factory BillingCreditGrantsResourceBalanceCreditType.fromJson(String json) { return switch (json) {
   'credits_application_invoice_voided' => creditsApplicationInvoiceVoided,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingCreditGrantsResourceBalanceCreditType($value)'; } 
  }
 /// 
-final class BillingCreditGrantsResourceBalanceCredit {const BillingCreditGrantsResourceBalanceCredit({required this.amount, this.creditsApplicationInvoiceVoided, required this.type, });
+@immutable final class BillingCreditGrantsResourceBalanceCredit {const BillingCreditGrantsResourceBalanceCredit({required this.amount, required this.type, this.creditsApplicationInvoiceVoided, });
 
 factory BillingCreditGrantsResourceBalanceCredit.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceCredit(
   amount: BillingCreditGrantsResourceAmount.fromJson(json['amount'] as Map<String, dynamic>),

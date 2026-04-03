@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class NullabilityCombos {const NullabilityCombos({required this.requiredNonNullable, required this.requiredNullable, this.optionalNonNullable, this.optionalNullable, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NullabilityCombos {const NullabilityCombos({required this.requiredNonNullable, required this.requiredNullable, this.optionalNonNullable, this.optionalNullable, });
 
 factory NullabilityCombos.fromJson(Map<String, dynamic> json) { return NullabilityCombos(
   requiredNonNullable: json['requiredNonNullable'] as String,

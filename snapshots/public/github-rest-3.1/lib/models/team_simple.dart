@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The ownership type of the team
-final class TeamSimpleType {const TeamSimpleType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ownership type of the team
+@immutable final class TeamSimpleType {const TeamSimpleType._(this.value);
 
 factory TeamSimpleType.fromJson(String json) { return switch (json) {
   'enterprise' => enterprise,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamSimpleType($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-final class TeamSimple {const TeamSimple({required this.id, required this.nodeId, required this.url, required this.membersUrl, required this.name, required this.description, required this.permission, this.privacy, this.notificationSetting, required this.htmlUrl, required this.repositoriesUrl, required this.slug, this.ldapDn, required this.type, this.organizationId, this.enterpriseId, });
+@immutable final class TeamSimple {const TeamSimple({required this.id, required this.nodeId, required this.url, required this.membersUrl, required this.name, required this.description, required this.permission, required this.htmlUrl, required this.repositoriesUrl, required this.slug, required this.type, this.privacy, this.notificationSetting, this.ldapDn, this.organizationId, this.enterpriseId, });
 
 factory TeamSimple.fromJson(Map<String, dynamic> json) { return TeamSimple(
   id: (json['id'] as num).toInt(),

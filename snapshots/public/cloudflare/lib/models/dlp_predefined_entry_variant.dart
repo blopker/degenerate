@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_predefined_entry_variant_prompt_topic.dart';/// A value that is one of: `DlpPredefinedEntryVariantPromptTopic`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_predefined_entry_variant_prompt_topic.dart';/// A value that is one of: `DlpPredefinedEntryVariantPromptTopic`.
 sealed class DlpPredefinedEntryVariant {const DlpPredefinedEntryVariant();
 
 factory DlpPredefinedEntryVariant.fromJson(Map<String, dynamic> json) {   if (DlpPredefinedEntryVariantPromptTopic.canParse(json)) {
@@ -12,7 +12,7 @@ factory DlpPredefinedEntryVariant.fromJson(Map<String, dynamic> json) {   if (Dl
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class DlpPredefinedEntryVariantDlpPredefinedEntryVariantPromptTopic extends DlpPredefinedEntryVariant {const DlpPredefinedEntryVariantDlpPredefinedEntryVariantPromptTopic(this._value);
+@immutable final class DlpPredefinedEntryVariantDlpPredefinedEntryVariantPromptTopic extends DlpPredefinedEntryVariant {const DlpPredefinedEntryVariantDlpPredefinedEntryVariantPromptTopic(this._value);
 
 final DlpPredefinedEntryVariantPromptTopic _value;
 
@@ -23,7 +23,7 @@ final DlpPredefinedEntryVariantPromptTopic _value;
 @override String toString() { return 'DlpPredefinedEntryVariant.dlpPredefinedEntryVariantPromptTopic($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class DlpPredefinedEntryVariant$Unknown extends DlpPredefinedEntryVariant {const DlpPredefinedEntryVariant$Unknown(this._value);
+@immutable final class DlpPredefinedEntryVariant$Unknown extends DlpPredefinedEntryVariant {const DlpPredefinedEntryVariant$Unknown(this._value);
 
 final dynamic _value;
 

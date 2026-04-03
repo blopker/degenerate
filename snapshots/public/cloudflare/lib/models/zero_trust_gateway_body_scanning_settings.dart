@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify the inspection mode as either `deep` or `shallow`.
-final class ZeroTrustGatewayBodyScanningSettingsInspectionMode {const ZeroTrustGatewayBodyScanningSettingsInspectionMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the inspection mode as either `deep` or `shallow`.
+@immutable final class ZeroTrustGatewayBodyScanningSettingsInspectionMode {const ZeroTrustGatewayBodyScanningSettingsInspectionMode._(this.value);
 
 factory ZeroTrustGatewayBodyScanningSettingsInspectionMode.fromJson(String json) { return switch (json) {
   'deep' => deep,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayBodyScanningSettingsInspectionMode($value)'; } 
  }
 /// Specify the DLP inspection mode.
-final class ZeroTrustGatewayBodyScanningSettings {const ZeroTrustGatewayBodyScanningSettings({this.inspectionMode});
+@immutable final class ZeroTrustGatewayBodyScanningSettings {const ZeroTrustGatewayBodyScanningSettings({this.inspectionMode});
 
 factory ZeroTrustGatewayBodyScanningSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayBodyScanningSettings(
   inspectionMode: json['inspection_mode'] != null ? ZeroTrustGatewayBodyScanningSettingsInspectionMode.fromJson(json['inspection_mode'] as String) : null,

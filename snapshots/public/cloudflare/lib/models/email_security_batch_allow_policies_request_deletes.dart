@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityBatchAllowPoliciesRequestDeletes {const EmailSecurityBatchAllowPoliciesRequestDeletes({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityBatchAllowPoliciesRequestDeletes {const EmailSecurityBatchAllowPoliciesRequestDeletes({required this.id});
 
 factory EmailSecurityBatchAllowPoliciesRequestDeletes.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchAllowPoliciesRequestDeletes(
   id: (json['id'] as num).toInt(),

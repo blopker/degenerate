@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The entity that requested the exemption, either the acquiring merchant or the Issuing user.
-final class IssuingAuthorizationAuthenticationExemptionClaimedBy {const IssuingAuthorizationAuthenticationExemptionClaimedBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The entity that requested the exemption, either the acquiring merchant or the Issuing user.
+@immutable final class IssuingAuthorizationAuthenticationExemptionClaimedBy {const IssuingAuthorizationAuthenticationExemptionClaimedBy._(this.value);
 
 factory IssuingAuthorizationAuthenticationExemptionClaimedBy.fromJson(String json) { return switch (json) {
   'acquirer' => acquirer,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationAuthenticationExemptionClaimedBy($value)'; } 
  }
 /// The specific exemption claimed for this authorization.
-final class IssuingAuthorizationAuthenticationExemptionType {const IssuingAuthorizationAuthenticationExemptionType._(this.value);
+@immutable final class IssuingAuthorizationAuthenticationExemptionType {const IssuingAuthorizationAuthenticationExemptionType._(this.value);
 
 factory IssuingAuthorizationAuthenticationExemptionType.fromJson(String json) { return switch (json) {
   'low_value_transaction' => lowValueTransaction,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationAuthenticationExemptionType($value)'; } 
  }
 /// 
-final class IssuingAuthorizationAuthenticationExemption {const IssuingAuthorizationAuthenticationExemption({required this.claimedBy, required this.type, });
+@immutable final class IssuingAuthorizationAuthenticationExemption {const IssuingAuthorizationAuthenticationExemption({required this.claimedBy, required this.type, });
 
 factory IssuingAuthorizationAuthenticationExemption.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationAuthenticationExemption(
   claimedBy: IssuingAuthorizationAuthenticationExemptionClaimedBy.fromJson(json['claimed_by'] as String),

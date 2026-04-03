@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetAccountAuditLogsActorContext {const GetAccountAuditLogsActorContext._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountAuditLogsActorContext {const GetAccountAuditLogsActorContext._(this.value);
 
 factory GetAccountAuditLogsActorContext.fromJson(String json) { return switch (json) {
   'api_key' => apiKey,

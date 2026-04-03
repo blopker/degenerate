@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Define an expression to search using full-text search.
-final class TelemetryQueryRequestParametersNeedle {const TelemetryQueryRequestParametersNeedle({this.isRegex, this.matchCase, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Define an expression to search using full-text search.
+@immutable final class TelemetryQueryRequestParametersNeedle {const TelemetryQueryRequestParametersNeedle({required this.value, this.isRegex, this.matchCase, });
 
 factory TelemetryQueryRequestParametersNeedle.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequestParametersNeedle(
   isRegex: json['isRegex'] as bool?,

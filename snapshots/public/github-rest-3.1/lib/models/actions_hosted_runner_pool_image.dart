@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The image provider.
-final class ActionsHostedRunnerPoolImageSource {const ActionsHostedRunnerPoolImageSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The image provider.
+@immutable final class ActionsHostedRunnerPoolImageSource {const ActionsHostedRunnerPoolImageSource._(this.value);
 
 factory ActionsHostedRunnerPoolImageSource.fromJson(String json) { return switch (json) {
   'github' => github,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ActionsHostedRunnerPoolImageSource($value)'; } 
  }
 /// Provides details of a hosted runner image
-final class ActionsHostedRunnerPoolImage {const ActionsHostedRunnerPoolImage({required this.id, required this.sizeGb, required this.displayName, required this.source, this.version, });
+@immutable final class ActionsHostedRunnerPoolImage {const ActionsHostedRunnerPoolImage({required this.id, required this.sizeGb, required this.displayName, required this.source, this.version, });
 
 factory ActionsHostedRunnerPoolImage.fromJson(Map<String, dynamic> json) { return ActionsHostedRunnerPoolImage(
   id: json['id'] as String,

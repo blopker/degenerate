@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'quotes_resource_total_details_resource_breakdown.dart';/// 
-final class QuotesResourceTotalDetails {const QuotesResourceTotalDetails({required this.amountDiscount, this.amountShipping, required this.amountTax, this.breakdown, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'quotes_resource_total_details_resource_breakdown.dart';/// 
+@immutable final class QuotesResourceTotalDetails {const QuotesResourceTotalDetails({required this.amountDiscount, required this.amountTax, this.amountShipping, this.breakdown, });
 
 factory QuotesResourceTotalDetails.fromJson(Map<String, dynamic> json) { return QuotesResourceTotalDetails(
   amountDiscount: (json['amount_discount'] as num).toInt(),

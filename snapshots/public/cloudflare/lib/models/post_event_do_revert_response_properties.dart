@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_event_do_revert_response_properties_dataset_id.dart';import 'post_event_do_revert_response_properties_minutes_ago.dart';import 'post_event_do_revert_response_properties_revert_bookmark.dart';import 'post_event_do_revert_response_properties_target_timestamp.dart';import 'post_event_do_revert_response_properties_undo_bookmark.dart';final class PostEventDoRevertResponseProperties {const PostEventDoRevertResponseProperties({required this.datasetId, required this.minutesAgo, required this.revertBookmark, required this.targetTimestamp, required this.undoBookmark, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_do_revert_response_properties_dataset_id.dart';import 'post_event_do_revert_response_properties_minutes_ago.dart';import 'post_event_do_revert_response_properties_revert_bookmark.dart';import 'post_event_do_revert_response_properties_target_timestamp.dart';import 'post_event_do_revert_response_properties_undo_bookmark.dart';@immutable final class PostEventDoRevertResponseProperties {const PostEventDoRevertResponseProperties({required this.datasetId, required this.minutesAgo, required this.revertBookmark, required this.targetTimestamp, required this.undoBookmark, });
 
 factory PostEventDoRevertResponseProperties.fromJson(Map<String, dynamic> json) { return PostEventDoRevertResponseProperties(
   datasetId: PostEventDoRevertResponsePropertiesDatasetId.fromJson(json['datasetId'] as Map<String, dynamic>),

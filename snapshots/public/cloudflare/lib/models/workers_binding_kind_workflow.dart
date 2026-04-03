@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_name.dart';final class WorkersBindingKindWorkflow {const WorkersBindingKindWorkflow({this.className, required this.name, this.scriptName, required this.type, required this.workflowName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindWorkflow {const WorkersBindingKindWorkflow({required this.name, required this.type, required this.workflowName, this.className, this.scriptName, });
 
 factory WorkersBindingKindWorkflow.fromJson(Map<String, dynamic> json) { return WorkersBindingKindWorkflow(
   className: json['class_name'] as String?,

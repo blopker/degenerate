@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetCountryReadResponseResult {const GetCountryReadResponseResult({required this.alpha3, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCountryReadResponseResult {const GetCountryReadResponseResult({required this.alpha3, required this.name, });
 
 factory GetCountryReadResponseResult.fromJson(Map<String, dynamic> json) { return GetCountryReadResponseResult(
   alpha3: json['alpha3'] as String,

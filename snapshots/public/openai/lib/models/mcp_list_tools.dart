@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcp_list_tools_tool.dart';/// A list of tools available on an MCP server.
 /// 
-final class McpListTools {const McpListTools({required this.type, required this.id, required this.serverLabel, required this.tools, this.error, });
+@immutable final class McpListTools {const McpListTools({required this.type, required this.id, required this.serverLabel, required this.tools, this.error, });
 
 factory McpListTools.fromJson(Map<String, dynamic> json) { return McpListTools(
   type: json['type'] as String,

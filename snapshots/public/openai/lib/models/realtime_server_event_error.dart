@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_server_event_error_error.dart';/// The event type, must be `error`.
-final class RealtimeServerEventErrorType {const RealtimeServerEventErrorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_error_error.dart';/// The event type, must be `error`.
+@immutable final class RealtimeServerEventErrorType {const RealtimeServerEventErrorType._(this.value);
 
 factory RealtimeServerEventErrorType.fromJson(String json) { return switch (json) {
   'error' => error,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// problem. Most errors are recoverable and the session will stay open, we
 /// recommend to implementors to monitor and log error messages by default.
 /// 
-final class RealtimeServerEventError {const RealtimeServerEventError({required this.eventId, required this.type, required this.error, });
+@immutable final class RealtimeServerEventError {const RealtimeServerEventError({required this.eventId, required this.type, required this.error, });
 
 factory RealtimeServerEventError.fromJson(Map<String, dynamic> json) { return RealtimeServerEventError(
   eventId: json['event_id'] as String,

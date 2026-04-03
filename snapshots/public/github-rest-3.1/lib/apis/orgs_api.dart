@@ -12,7 +12,7 @@ final class OrgsApi with ApiExecutor {const OrgsApi(this.apiConfig);
 ///
 /// Lists all organizations, in the order that they were created.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.
 ///
 /// `GET /organizations`
@@ -78,10 +78,10 @@ return execute(
  } 
 /// Update an organization
 ///
-/// > [!WARNING]
+/// > `[!WARNING]`
 /// > **Closing down notice:** GitHub will replace and discontinue `members_allowed_repository_creation_type` in favor of more granular permissions. The new input parameters are `members_can_create_public_repositories`, `members_can_create_private_repositories` for all organizations and `members_can_create_internal_repositories` for organizations associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see the [blog post](https://developer.github.com/changes/2019-12-03-internal-visibility-changes).
 /// 
-/// > [!WARNING]
+/// > `[!WARNING]`
 /// > **Closing down notice:** Code security product enablement for new repositories through the organization API is closing down. Please use [code security configurations](https://docs.github.com/rest/code-security/configurations#set-a-code-security-configuration-as-a-default-for-an-organization) to set defaults instead. For more information on setting a default security configuration, see the [changelog](https://github.blog/changelog/2024-07-09-sunsetting-security-settings-defaults-parameters-in-the-organizations-rest-api/).
 /// 
 /// Updates the organization's profile and member privileges.
@@ -135,7 +135,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -281,7 +281,7 @@ return execute(
 /// **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
 /// `POST /orgs/{org}/attestations/bulk-list`
-Future<ApiResult<OrgsListAttestationsBulkResponse, Never>> orgsListAttestationsBulk({required String org, int? perPage, String? before, String? after, required OrgsListAttestationsBulkRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<OrgsListAttestationsBulkResponse, Never>> orgsListAttestationsBulk({required String org, required OrgsListAttestationsBulkRequest body, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -905,7 +905,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -962,7 +962,7 @@ if (direction != null) {
 }
 if (sort != null) {
 for (final item in sort) {
-  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson()));
 }
 }
 if (apiRouteSubstring != null) {
@@ -1010,7 +1010,7 @@ if (direction != null) {
 }
 if (sort != null) {
 for (final item in sort) {
-  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson()));
 }
 }
 if (subjectNameSubstring != null) {
@@ -1131,7 +1131,7 @@ return execute(
 /// Get the number of API requests and rate-limited requests made within an organization over a specified time period.
 ///
 /// `GET /orgs/{org}/insights/api/time-stats`
-Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStats({required String org, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStats({required String org, required String minTimestamp, required String timestampIncrement, String? maxTimestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) {
@@ -1163,7 +1163,7 @@ return execute(
 /// Get the number of API requests and rate-limited requests made within an organization by a specific user over a specified time period.
 ///
 /// `GET /orgs/{org}/insights/api/time-stats/users/{user_id}`
-Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByUser({required String org, required String userId, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByUser({required String org, required String userId, required String minTimestamp, required String timestampIncrement, String? maxTimestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) {
@@ -1195,7 +1195,7 @@ return execute(
 /// Get the number of API requests and rate-limited requests made within an organization by a specific actor within a specified time period.
 ///
 /// `GET /orgs/{org}/insights/api/time-stats/{actor_type}/{actor_id}`
-Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByActor({required String org, required InsightsGetTimeStatsByActorActorType actorType, required int actorId, required String minTimestamp, String? maxTimestamp, required String timestampIncrement, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<InsightsTimeStats2>, Never>> apiInsightsGetTimeStatsByActor({required String org, required InsightsGetTimeStatsByActorActorType actorType, required int actorId, required String minTimestamp, required String timestampIncrement, String? maxTimestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['min_timestamp'] = minTimestamp;
 if (maxTimestamp != null) {
@@ -1244,7 +1244,7 @@ if (direction != null) {
 }
 if (sort != null) {
 for (final item in sort) {
-  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'sort', value: item.toJson()));
 }
 }
 if (actorNameSubstring != null) {
@@ -1620,7 +1620,7 @@ return execute(
 ///
 /// Removing a user from this list will remove them from all teams and they will no longer have any access to the organization's repositories.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > If a user has both direct membership in the organization as well as indirect membership via an enterprise team, only their direct membership will be removed. Their indirect membership via an enterprise team remains until the user is removed from the enterprise team.
 ///
 /// `DELETE /orgs/{org}/members/{username}`
@@ -1705,7 +1705,7 @@ return execute(
 /// 
 /// If the specified user is an active member of the organization, this will remove them from the organization. If the specified user has been invited to the organization, this will cancel their invitation. The specified user will receive an email notification in both cases.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > If a user has both direct membership in the organization as well as indirect membership via an enterprise team, only their direct membership will be removed. Their indirect membership via an enterprise team remains until the user is removed from the enterprise team.
 ///
 /// `DELETE /orgs/{org}/memberships/{username}`
@@ -2107,7 +2107,7 @@ if (direction != null) {
 }
 if (owner != null) {
 for (final item in owner) {
-  queryParametersList.add(ApiQueryParameter(name: 'owner', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'owner', value: item));
 }
 }
 if (repository != null) {
@@ -2124,7 +2124,7 @@ if (lastUsedAfter != null) {
 }
 if (tokenId != null) {
 for (final item in tokenId) {
-  queryParametersList.add(ApiQueryParameter(name: 'token_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'token_id', value: item));
 }
 }
 
@@ -2171,7 +2171,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -2265,7 +2265,7 @@ if (direction != null) {
 }
 if (owner != null) {
 for (final item in owner) {
-  queryParametersList.add(ApiQueryParameter(name: 'owner', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'owner', value: item));
 }
 }
 if (repository != null) {
@@ -2282,7 +2282,7 @@ if (lastUsedAfter != null) {
 }
 if (tokenId != null) {
 for (final item in tokenId) {
-  queryParametersList.add(ApiQueryParameter(name: 'token_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'token_id', value: item));
 }
 }
 
@@ -2329,7 +2329,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -3010,7 +3010,7 @@ return execute(
 /// 
 /// For OAuth app tokens and personal access tokens (classic), this endpoint only lists organizations that your authorization allows you to operate on in some way (e.g., you can list teams with `read:org` scope, you can publicize your organization membership with `user` scope, etc.). Therefore, this API requires at least `user` or `read:org` scope for OAuth app tokens and personal access tokens (classic). Requests with insufficient scope will receive a `403 Forbidden` response.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Requests using a fine-grained access token will receive a `200 Success` response with an empty list.
 ///
 /// `GET /user/orgs`

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotations {const RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotations {const RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetAiInferenceTimeseriesGroupByModelResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

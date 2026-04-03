@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gelato_report_document_options.dart';import 'gelato_report_id_number_options.dart';/// 
-final class GelatoVerificationReportOptions {const GelatoVerificationReportOptions({this.document, this.idNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_report_document_options.dart';import 'gelato_report_id_number_options.dart';/// 
+@immutable final class GelatoVerificationReportOptions {const GelatoVerificationReportOptions({this.document, this.idNumber, });
 
 factory GelatoVerificationReportOptions.fromJson(Map<String, dynamic> json) { return GelatoVerificationReportOptions(
   document: json['document'] != null ? GelatoReportDocumentOptions.fromJson(json['document'] as Map<String, dynamic>) : null,

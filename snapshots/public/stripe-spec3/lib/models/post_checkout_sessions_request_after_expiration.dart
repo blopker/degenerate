@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_checkout_sessions_request_after_expiration_recovery.dart';/// Configure actions after a Checkout Session has expired. You can't set this parameter if `ui_mode` is `custom`.
-final class PostCheckoutSessionsRequestAfterExpiration {const PostCheckoutSessionsRequestAfterExpiration({this.recovery});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_after_expiration_recovery.dart';/// Configure actions after a Checkout Session has expired. You can't set this parameter if `ui_mode` is `custom`.
+@immutable final class PostCheckoutSessionsRequestAfterExpiration {const PostCheckoutSessionsRequestAfterExpiration({this.recovery});
 
 factory PostCheckoutSessionsRequestAfterExpiration.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestAfterExpiration(
   recovery: json['recovery'] != null ? PostCheckoutSessionsRequestAfterExpirationRecovery.fromJson(json['recovery'] as Map<String, dynamic>) : null,

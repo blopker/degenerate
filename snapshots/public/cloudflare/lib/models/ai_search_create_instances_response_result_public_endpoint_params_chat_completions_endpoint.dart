@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchCreateInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint {const AiSearchCreateInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint({this.disabled = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchCreateInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint {const AiSearchCreateInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint({this.disabled = false});
 
 factory AiSearchCreateInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesResponseResultPublicEndpointParamsChatCompletionsEndpoint(
   disabled: json.containsKey('disabled') ? json['disabled'] as bool : false,

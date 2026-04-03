@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigListEvaluatorsResponse400Errors {const AigConfigListEvaluatorsResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListEvaluatorsResponse400Errors {const AigConfigListEvaluatorsResponse400Errors({required this.message});
 
 factory AigConfigListEvaluatorsResponse400Errors.fromJson(Map<String, dynamic> json) { return AigConfigListEvaluatorsResponse400Errors(
   message: json['message'] as String,

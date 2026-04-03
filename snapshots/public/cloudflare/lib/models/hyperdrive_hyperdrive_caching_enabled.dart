@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class HyperdriveHyperdriveCachingEnabled {const HyperdriveHyperdriveCachingEnabled({this.disabled, this.maxAge, this.staleWhileRevalidate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HyperdriveHyperdriveCachingEnabled {const HyperdriveHyperdriveCachingEnabled({this.disabled, this.maxAge, this.staleWhileRevalidate, });
 
 factory HyperdriveHyperdriveCachingEnabled.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveCachingEnabled(
   disabled: json['disabled'] as bool?,

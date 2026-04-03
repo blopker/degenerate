@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_messages2.dart';import 'cache_rules_origin_h2_max_streams.dart';final class CacheRulesOriginH2MaxStreamsResponseValue {const CacheRulesOriginH2MaxStreamsResponseValue({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_messages2.dart';import 'cache_rules_origin_h2_max_streams.dart';@immutable final class CacheRulesOriginH2MaxStreamsResponseValue {const CacheRulesOriginH2MaxStreamsResponseValue({required this.errors, required this.messages, required this.success, this.result, });
 
 factory CacheRulesOriginH2MaxStreamsResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesOriginH2MaxStreamsResponseValue(
   errors: (json['errors'] as List<dynamic>).map((e) => CacheRulesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

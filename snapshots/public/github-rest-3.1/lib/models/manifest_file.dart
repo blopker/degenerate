@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ManifestFile {const ManifestFile({this.sourceLocation});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ManifestFile {const ManifestFile({this.sourceLocation});
 
 factory ManifestFile.fromJson(Map<String, dynamic> json) { return ManifestFile(
   sourceLocation: json['source_location'] as String?,

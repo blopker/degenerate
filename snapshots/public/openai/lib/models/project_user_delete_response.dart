@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProjectUserDeleteResponseObject {const ProjectUserDeleteResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectUserDeleteResponseObject {const ProjectUserDeleteResponseObject._(this.value);
 
 factory ProjectUserDeleteResponseObject.fromJson(String json) { return switch (json) {
   'organization.project.user.deleted' => organizationProjectUserDeleted,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectUserDeleteResponseObject($value)'; } 
  }
-final class ProjectUserDeleteResponse {const ProjectUserDeleteResponse({required this.object, required this.id, required this.deleted, });
+@immutable final class ProjectUserDeleteResponse {const ProjectUserDeleteResponse({required this.object, required this.id, required this.deleted, });
 
 factory ProjectUserDeleteResponse.fromJson(Map<String, dynamic> json) { return ProjectUserDeleteResponse(
   object: ProjectUserDeleteResponseObject.fromJson(json['object'] as String),

@@ -10,9 +10,9 @@ import '../apis/default_api.dart';
 /// sdk.$default.getHealth();
 /// ```
 final class Spec07WebhooksAndPathItemsApi {
-  final ApiConfig _config;
-
   Spec07WebhooksAndPathItemsApi(this._config);
+
+  final ApiConfig _config;
 
   late final DefaultApi $default = DefaultApi(_config);
 }

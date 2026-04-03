@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_delta_step_details_tool_calls_code_object_code_interpreter.dart';/// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
-final class RunStepDeltaStepDetailsToolCallsCodeObjectType {const RunStepDeltaStepDetailsToolCallsCodeObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_delta_step_details_tool_calls_code_object_code_interpreter.dart';/// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
+@immutable final class RunStepDeltaStepDetailsToolCallsCodeObjectType {const RunStepDeltaStepDetailsToolCallsCodeObjectType._(this.value);
 
 factory RunStepDeltaStepDetailsToolCallsCodeObjectType.fromJson(String json) { return switch (json) {
   'code_interpreter' => codeInterpreter,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepDeltaStepDetailsToolCallsCodeObjectType($value)'; } 
  }
 /// Details of the Code Interpreter tool call the run step was involved in.
-final class RunStepDeltaStepDetailsToolCallsCodeObject {const RunStepDeltaStepDetailsToolCallsCodeObject({required this.index, this.id, required this.type, this.codeInterpreter, });
+@immutable final class RunStepDeltaStepDetailsToolCallsCodeObject {const RunStepDeltaStepDetailsToolCallsCodeObject({required this.index, required this.type, this.id, this.codeInterpreter, });
 
 factory RunStepDeltaStepDetailsToolCallsCodeObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsToolCallsCodeObject(
   index: (json['index'] as num).toInt(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsAs112TimeseriesByEdnsProtocol {const RadarGetDnsAs112TimeseriesByEdnsProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesByEdnsProtocol {const RadarGetDnsAs112TimeseriesByEdnsProtocol._(this.value);
 
 factory RadarGetDnsAs112TimeseriesByEdnsProtocol.fromJson(String json) { return switch (json) {
   'UDP' => udp,

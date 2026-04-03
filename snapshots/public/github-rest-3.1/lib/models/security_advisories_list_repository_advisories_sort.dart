@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecurityAdvisoriesListRepositoryAdvisoriesSort {const SecurityAdvisoriesListRepositoryAdvisoriesSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityAdvisoriesListRepositoryAdvisoriesSort {const SecurityAdvisoriesListRepositoryAdvisoriesSort._(this.value);
 
 factory SecurityAdvisoriesListRepositoryAdvisoriesSort.fromJson(String json) { return switch (json) {
   'created' => created,

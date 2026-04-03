@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The role assigned to the collaborator.
-final class WebhookMemberAddedChangesRoleName {const WebhookMemberAddedChangesRoleName({required this.to});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role assigned to the collaborator.
+@immutable final class WebhookMemberAddedChangesRoleName {const WebhookMemberAddedChangesRoleName({required this.to});
 
 factory WebhookMemberAddedChangesRoleName.fromJson(Map<String, dynamic> json) { return WebhookMemberAddedChangesRoleName(
   to: json['to'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentIntentNextActionRedirectToUrl {const PaymentIntentNextActionRedirectToUrl({this.returnUrl, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentIntentNextActionRedirectToUrl {const PaymentIntentNextActionRedirectToUrl({this.returnUrl, this.url, });
 
 factory PaymentIntentNextActionRedirectToUrl.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionRedirectToUrl(
   returnUrl: json['return_url'] as String?,

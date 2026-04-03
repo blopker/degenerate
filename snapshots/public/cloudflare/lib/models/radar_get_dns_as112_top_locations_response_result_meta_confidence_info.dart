@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_top_locations_response_result_meta_confidence_info_annotations.dart';final class RadarGetDnsAs112TopLocationsResponseResultMetaConfidenceInfo {const RadarGetDnsAs112TopLocationsResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_top_locations_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetDnsAs112TopLocationsResponseResultMetaConfidenceInfo {const RadarGetDnsAs112TopLocationsResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetDnsAs112TopLocationsResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TopLocationsResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetDnsAs112TopLocationsResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'node_spec.dart';import 'node_status.dart';import 'object_meta.dart';/// Node is a worker node in Kubernetes. Each node will have a unique identifier in the cache (i.e. in etcd).
-final class Node {const Node({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_spec.dart';import 'node_status.dart';import 'object_meta.dart';/// Node is a worker node in Kubernetes. Each node will have a unique identifier in the cache (i.e. in etcd).
+@immutable final class Node {const Node({this.apiVersion, this.kind, this.metadata, this.spec, this.status, });
 
 factory Node.fromJson(Map<String, dynamic> json) { return Node(
   apiVersion: json['apiVersion'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_default_value.dart';/// The source type of the property
-final class CustomPropertySourceType {const CustomPropertySourceType._(this.value);
+@immutable final class CustomPropertySourceType {const CustomPropertySourceType._(this.value);
 
 factory CustomPropertySourceType.fromJson(String json) { return switch (json) {
   'organization' => organization,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomPropertySourceType($value)'; } 
  }
 /// The type of the value for the property
-final class CustomPropertyValueType {const CustomPropertyValueType._(this.value);
+@immutable final class CustomPropertyValueType {const CustomPropertyValueType._(this.value);
 
 factory CustomPropertyValueType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomPropertyValueType($value)'; } 
  }
 /// Who can edit the values of the property
-final class CustomPropertyValuesEditableBy {const CustomPropertyValuesEditableBy._(this.value);
+@immutable final class CustomPropertyValuesEditableBy {const CustomPropertyValuesEditableBy._(this.value);
 
 factory CustomPropertyValuesEditableBy.fromJson(String json) { return switch (json) {
   'org_actors' => orgActors,
@@ -88,7 +88,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomPropertyValuesEditableBy($value)'; } 
  }
 /// Custom property defined on an organization
-final class CustomProperty {const CustomProperty({required this.propertyName, this.url, this.sourceType, required this.valueType, this.$required, this.defaultValue, this.description, this.allowedValues, this.valuesEditableBy, this.requireExplicitValues, });
+@immutable final class CustomProperty {const CustomProperty({required this.propertyName, required this.valueType, this.url, this.sourceType, this.$required, this.defaultValue, this.description, this.allowedValues, this.valuesEditableBy, this.requireExplicitValues, });
 
 factory CustomProperty.fromJson(Map<String, dynamic> json) { return CustomProperty(
   propertyName: json['property_name'] as String,

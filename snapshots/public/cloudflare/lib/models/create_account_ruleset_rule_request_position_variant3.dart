@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateAccountRulesetRuleRequestPositionVariant3 {const CreateAccountRulesetRuleRequestPositionVariant3({this.index});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateAccountRulesetRuleRequestPositionVariant3 {const CreateAccountRulesetRuleRequestPositionVariant3({this.index});
 
 factory CreateAccountRulesetRuleRequestPositionVariant3.fromJson(Map<String, dynamic> json) { return CreateAccountRulesetRuleRequestPositionVariant3(
   index: json['index'] != null ? (json['index'] as num).toInt() : null,

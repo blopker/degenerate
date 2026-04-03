@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_worker_pipelines_common_success.dart';import 'streams_response_result.dart';import 'streams_response_result_info.dart';final class StreamsResponse {const StreamsResponse({required this.result, required this.resultInfo, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_worker_pipelines_common_success.dart';import 'streams_response_result.dart';import 'streams_response_result_info.dart';@immutable final class StreamsResponse {const StreamsResponse({required this.result, required this.resultInfo, required this.success, });
 
 factory StreamsResponse.fromJson(Map<String, dynamic> json) { return StreamsResponse(
   result: (json['result'] as List<dynamic>).map((e) => StreamsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_deploy_pusher_type.dart';import 'webhooks_ref0.dart';/// The type of Git ref object deleted in the repository.
-final class WebhookDeleteRefType {const WebhookDeleteRefType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_deploy_pusher_type.dart';import 'webhooks_ref0.dart';/// The type of Git ref object deleted in the repository.
+@immutable final class WebhookDeleteRefType {const WebhookDeleteRefType._(this.value);
 
 factory WebhookDeleteRefType.fromJson(String json) { return switch (json) {
   'tag' => tag,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeleteRefType($value)'; } 
  }
-final class WebhookDelete {const WebhookDelete({this.enterprise, this.installation, this.organization, required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, });
+@immutable final class WebhookDelete {const WebhookDelete({required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDelete.fromJson(Map<String, dynamic> json) { return WebhookDelete(
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,

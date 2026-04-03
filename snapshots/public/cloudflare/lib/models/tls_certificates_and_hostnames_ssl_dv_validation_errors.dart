@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TlsCertificatesAndHostnamesSslDvValidationErrors {const TlsCertificatesAndHostnamesSslDvValidationErrors({this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesSslDvValidationErrors {const TlsCertificatesAndHostnamesSslDvValidationErrors({this.message});
 
 factory TlsCertificatesAndHostnamesSslDvValidationErrors.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslDvValidationErrors(
   message: json['message'] as String?,

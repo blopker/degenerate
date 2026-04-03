@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_secret_object.dart';final class SecretsStoreSecretsResponseCollection {const SecretsStoreSecretsResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_secret_object.dart';@immutable final class SecretsStoreSecretsResponseCollection {const SecretsStoreSecretsResponseCollection({this.result});
 
 factory SecretsStoreSecretsResponseCollection.fromJson(Map<String, dynamic> json) { return SecretsStoreSecretsResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => SecretsStoreSecretObject.fromJson(e as Map<String, dynamic>)).toList(),

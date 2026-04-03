@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'trial_settings_config_end_behavior.dart';final class TrialSettingsConfig {const TrialSettingsConfig({required this.endBehavior});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'trial_settings_config_end_behavior.dart';@immutable final class TrialSettingsConfig {const TrialSettingsConfig({required this.endBehavior});
 
 factory TrialSettingsConfig.fromJson(Map<String, dynamic> json) { return TrialSettingsConfig(
   endBehavior: TrialSettingsConfigEndBehavior.fromJson(json['end_behavior'] as Map<String, dynamic>),

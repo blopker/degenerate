@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotations {const RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotations {const RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetHttpSummaryByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

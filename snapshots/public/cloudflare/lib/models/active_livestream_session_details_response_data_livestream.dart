@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActiveLivestreamSessionDetailsResponseDataLivestreamStatus {const ActiveLivestreamSessionDetailsResponseDataLivestreamStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActiveLivestreamSessionDetailsResponseDataLivestreamStatus {const ActiveLivestreamSessionDetailsResponseDataLivestreamStatus._(this.value);
 
 factory ActiveLivestreamSessionDetailsResponseDataLivestreamStatus.fromJson(String json) { return switch (json) {
   'LIVE' => live,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ActiveLivestreamSessionDetailsResponseDataLivestreamStatus($value)'; } 
  }
-final class ActiveLivestreamSessionDetailsResponseDataLivestream {const ActiveLivestreamSessionDetailsResponseDataLivestream({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
+@immutable final class ActiveLivestreamSessionDetailsResponseDataLivestream {const ActiveLivestreamSessionDetailsResponseDataLivestream({this.createdAt, this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.playbackUrl, this.status, this.streamKey, this.updatedAt, });
 
 factory ActiveLivestreamSessionDetailsResponseDataLivestream.fromJson(Map<String, dynamic> json) { return ActiveLivestreamSessionDetailsResponseDataLivestream(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

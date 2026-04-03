@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Controls when the funds will be captured from the customer's account.
-final class PaymentIntentPaymentMethodOptionsMobilepayCaptureMethod {const PaymentIntentPaymentMethodOptionsMobilepayCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls when the funds will be captured from the customer's account.
+@immutable final class PaymentIntentPaymentMethodOptionsMobilepayCaptureMethod {const PaymentIntentPaymentMethodOptionsMobilepayCaptureMethod._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsMobilepayCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class PaymentIntentPaymentMethodOptionsMobilepaySetupFutureUsage {const PaymentIntentPaymentMethodOptionsMobilepaySetupFutureUsage._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsMobilepaySetupFutureUsage {const PaymentIntentPaymentMethodOptionsMobilepaySetupFutureUsage._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsMobilepaySetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsMobilepaySetupFutureUsage($value)'; } 
  }
 /// 
-final class PaymentIntentPaymentMethodOptionsMobilepay {const PaymentIntentPaymentMethodOptionsMobilepay({this.captureMethod, this.setupFutureUsage, });
+@immutable final class PaymentIntentPaymentMethodOptionsMobilepay {const PaymentIntentPaymentMethodOptionsMobilepay({this.captureMethod, this.setupFutureUsage, });
 
 factory PaymentIntentPaymentMethodOptionsMobilepay.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsMobilepay(
   captureMethod: json['capture_method'] != null ? PaymentIntentPaymentMethodOptionsMobilepayCaptureMethod.fromJson(json['capture_method'] as String) : null,

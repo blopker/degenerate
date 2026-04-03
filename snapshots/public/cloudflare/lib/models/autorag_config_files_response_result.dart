@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AutoragConfigFilesResponseResult {const AutoragConfigFilesResponseResult({required this.error, required this.key, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigFilesResponseResult {const AutoragConfigFilesResponseResult({required this.error, required this.key, });
 
 factory AutoragConfigFilesResponseResult.fromJson(Map<String, dynamic> json) { return AutoragConfigFilesResponseResult(
   error: json['error'] as String,

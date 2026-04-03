@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostScrapeResponseResultResultsAttributes {const BrapiPostScrapeResponseResultResultsAttributes({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostScrapeResponseResultResultsAttributes {const BrapiPostScrapeResponseResultResultsAttributes({required this.name, required this.value, });
 
 factory BrapiPostScrapeResponseResultResultsAttributes.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeResponseResultResultsAttributes(
   name: json['name'] as String,

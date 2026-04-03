@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Actor
-final class Actor {const Actor({required this.id, required this.login, this.displayLogin, required this.gravatarId, required this.url, required this.avatarUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Actor
+@immutable final class Actor {const Actor({required this.id, required this.login, required this.gravatarId, required this.url, required this.avatarUrl, this.displayLogin, });
 
 factory Actor.fromJson(Map<String, dynamic> json) { return Actor(
   id: (json['id'] as num).toInt(),

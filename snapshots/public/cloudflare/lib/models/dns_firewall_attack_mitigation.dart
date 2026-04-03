@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Attack mitigation settings
-final class DnsFirewallAttackMitigation {const DnsFirewallAttackMitigation({this.enabled, this.onlyWhenUpstreamUnhealthy = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Attack mitigation settings
+@immutable final class DnsFirewallAttackMitigation {const DnsFirewallAttackMitigation({this.enabled, this.onlyWhenUpstreamUnhealthy = true, });
 
 factory DnsFirewallAttackMitigation.fromJson(Map<String, dynamic> json) { return DnsFirewallAttackMitigation(
   enabled: json['enabled'] as bool?,

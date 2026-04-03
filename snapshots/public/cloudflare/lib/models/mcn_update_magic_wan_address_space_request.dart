@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_cidr_prefix.dart';final class McnUpdateMagicWanAddressSpaceRequest {const McnUpdateMagicWanAddressSpaceRequest({required this.prefixes});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_cidr_prefix.dart';@immutable final class McnUpdateMagicWanAddressSpaceRequest {const McnUpdateMagicWanAddressSpaceRequest({required this.prefixes});
 
 factory McnUpdateMagicWanAddressSpaceRequest.fromJson(Map<String, dynamic> json) { return McnUpdateMagicWanAddressSpaceRequest(
   prefixes: (json['prefixes'] as List<dynamic>).map((e) => McnCidrPrefix.fromJson(e as String)).toList(),

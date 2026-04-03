@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems {const PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems({required this.amount, required this.description, required this.quantity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems {const PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems({required this.amount, required this.description, required this.quantity, });
 
 factory PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems(
   amount: (json['amount'] as num).toInt(),

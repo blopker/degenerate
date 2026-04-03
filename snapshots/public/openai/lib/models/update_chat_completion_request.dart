@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UpdateChatCompletionRequest {const UpdateChatCompletionRequest({required this.metadata});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UpdateChatCompletionRequest {const UpdateChatCompletionRequest({required this.metadata});
 
 factory UpdateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return UpdateChatCompletionRequest(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

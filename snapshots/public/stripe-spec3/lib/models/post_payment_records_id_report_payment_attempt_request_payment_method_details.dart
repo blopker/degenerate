@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_records_id_report_payment_attempt_request_payment_method_details_billing_details.dart';import 'post_payment_records_id_report_payment_attempt_request_payment_method_details_custom.dart';final class PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType {const PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_request_payment_method_details_billing_details.dart';import 'post_payment_records_id_report_payment_attempt_request_payment_method_details_custom.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType {const PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType._(this.value);
 
 factory PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsType($value)'; } 
  }
 /// Information about the Payment Method debited for this payment.
-final class PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails {const PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails({this.billingDetails, this.custom, this.paymentMethod, this.type, });
+@immutable final class PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails {const PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails({this.billingDetails, this.custom, this.paymentMethod, this.type, });
 
 factory PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails(
   billingDetails: json['billing_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetailsBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,

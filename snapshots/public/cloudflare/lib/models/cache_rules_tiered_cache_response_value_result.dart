@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the Tiered Cache zone setting.
-final class CacheRulesTieredCacheValue {const CacheRulesTieredCacheValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Tiered Cache zone setting.
+@immutable final class CacheRulesTieredCacheValue {const CacheRulesTieredCacheValue._(this.value);
 
 factory CacheRulesTieredCacheValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CacheRulesTieredCacheValue($value)'; } 
  }
-final class CacheRulesTieredCacheResponseValueResult {const CacheRulesTieredCacheResponseValueResult({required this.value});
+@immutable final class CacheRulesTieredCacheResponseValueResult {const CacheRulesTieredCacheResponseValueResult({required this.value});
 
 factory CacheRulesTieredCacheResponseValueResult.fromJson(Map<String, dynamic> json) { return CacheRulesTieredCacheResponseValueResult(
   value: CacheRulesTieredCacheValue.fromJson(json['value'] as String),

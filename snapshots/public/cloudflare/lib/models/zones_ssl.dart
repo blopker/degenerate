@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_ssl_value.dart';/// Control options for the SSL feature of the Edge Certificates tab in the Cloudflare SSL/TLS app.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_ssl_value.dart';/// Control options for the SSL feature of the Edge Certificates tab in the Cloudflare SSL/TLS app.
 /// 
-final class ZonesSslId {const ZonesSslId._(this.value);
+@immutable final class ZonesSslId {const ZonesSslId._(this.value);
 
 factory ZonesSslId.fromJson(String json) { return switch (json) {
   'ssl' => ssl,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesSslId($value)'; } 
  }
-final class ZonesSsl {const ZonesSsl({this.id, this.value, });
+@immutable final class ZonesSsl {const ZonesSsl({this.id, this.value, });
 
 factory ZonesSsl.fromJson(Map<String, dynamic> json) { return ZonesSsl(
   id: json['id'] != null ? ZonesSslId.fromJson(json['id'] as String) : null,

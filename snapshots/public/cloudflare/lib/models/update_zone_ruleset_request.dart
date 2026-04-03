@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_request_rule.dart';import 'rulesets_ruleset_id.dart';import 'rulesets_ruleset_kind.dart';import 'rulesets_ruleset_phase.dart';import 'rulesets_ruleset_version.dart';final class UpdateZoneRulesetRequest {const UpdateZoneRulesetRequest({this.description = '', required this.id, required this.lastUpdated, this.name, required this.version, this.kind, this.phase, this.rules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_request_rule.dart';import 'rulesets_ruleset_id.dart';import 'rulesets_ruleset_kind.dart';import 'rulesets_ruleset_phase.dart';import 'rulesets_ruleset_version.dart';@immutable final class UpdateZoneRulesetRequest {const UpdateZoneRulesetRequest({required this.id, required this.lastUpdated, required this.version, this.description = '', this.name, this.kind, this.phase, this.rules, });
 
 factory UpdateZoneRulesetRequest.fromJson(Map<String, dynamic> json) { return UpdateZoneRulesetRequest(
   description: json.containsKey('description') ? json['description'] as String : '',

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class NotificationEventData {const NotificationEventData({required this.object, this.previousAttributes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class NotificationEventData {const NotificationEventData({required this.object, this.previousAttributes, });
 
 factory NotificationEventData.fromJson(Map<String, dynamic> json) { return NotificationEventData(
-  object: (json['object'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  previousAttributes: (json['previous_attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  object: json['object'] as Map<String, dynamic>,
+  previousAttributes: json['previous_attributes'] as Map<String, dynamic>?,
 ); }
 
 /// Object containing the API resource relevant to the event. For example, an `invoice.created` event will have a full [invoice object](https://api.stripe.com#invoice_object) as the value of the object key.

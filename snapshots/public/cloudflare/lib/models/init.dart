@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates you have a new SQL file to upload.
-final class InitAction {const InitAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates you have a new SQL file to upload.
+@immutable final class InitAction {const InitAction._(this.value);
 
 factory InitAction.fromJson(String json) { return switch (json) {
   'init' => init,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InitAction($value)'; } 
  }
-final class Init {const Init({required this.action, required this.etag, });
+@immutable final class Init {const Init({required this.action, required this.etag, });
 
 factory Init.fromJson(Map<String, dynamic> json) { return Init(
   action: InitAction.fromJson(json['action'] as String),

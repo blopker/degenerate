@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_review_comment_links_html.dart';import 'webhooks_review_comment_links_pull_request.dart';import 'webhooks_review_comment_links_self.dart';final class WebhooksReviewCommentLinks {const WebhooksReviewCommentLinks({required this.html, required this.pullRequest, required this.self, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_review_comment_links_html.dart';import 'webhooks_review_comment_links_pull_request.dart';import 'webhooks_review_comment_links_self.dart';@immutable final class WebhooksReviewCommentLinks {const WebhooksReviewCommentLinks({required this.html, required this.pullRequest, required this.self, });
 
 factory WebhooksReviewCommentLinks.fromJson(Map<String, dynamic> json) { return WebhooksReviewCommentLinks(
   html: WebhooksReviewCommentLinksHtml.fromJson(json['html'] as Map<String, dynamic>),

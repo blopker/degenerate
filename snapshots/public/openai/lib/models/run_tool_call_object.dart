@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_tool_call_object_function.dart';/// The type of tool call the output is required for. For now, this is always `function`.
-final class RunToolCallObjectType {const RunToolCallObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_tool_call_object_function.dart';/// The type of tool call the output is required for. For now, this is always `function`.
+@immutable final class RunToolCallObjectType {const RunToolCallObjectType._(this.value);
 
 factory RunToolCallObjectType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunToolCallObjectType($value)'; } 
  }
 /// Tool call objects
-final class RunToolCallObject {const RunToolCallObject({required this.id, required this.type, required this.function, });
+@immutable final class RunToolCallObject {const RunToolCallObject({required this.id, required this.type, required this.function, });
 
 factory RunToolCallObject.fromJson(Map<String, dynamic> json) { return RunToolCallObject(
   id: json['id'] as String,

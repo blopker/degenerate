@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_fetch_instances_response400_errors.dart';final class AiSearchFetchInstancesResponse400 {const AiSearchFetchInstancesResponse400({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_fetch_instances_response400_errors.dart';@immutable final class AiSearchFetchInstancesResponse400 {const AiSearchFetchInstancesResponse400({required this.errors, required this.success, });
 
 factory AiSearchFetchInstancesResponse400.fromJson(Map<String, dynamic> json) { return AiSearchFetchInstancesResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => AiSearchFetchInstancesResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),

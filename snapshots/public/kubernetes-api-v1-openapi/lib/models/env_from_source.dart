@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'config_map_env_source.dart';import 'secret_env_source.dart';/// EnvFromSource represents the source of a set of ConfigMaps or Secrets
-final class EnvFromSource {const EnvFromSource({this.configMapRef, this.prefix, this.secretRef, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'config_map_env_source.dart';import 'secret_env_source.dart';/// EnvFromSource represents the source of a set of ConfigMaps or Secrets
+@immutable final class EnvFromSource {const EnvFromSource({this.configMapRef, this.prefix, this.secretRef, });
 
 factory EnvFromSource.fromJson(Map<String, dynamic> json) { return EnvFromSource(
   configMapRef: json['configMapRef'] != null ? ConfigMapEnvSource.fromJson(json['configMapRef'] as Map<String, dynamic>) : null,

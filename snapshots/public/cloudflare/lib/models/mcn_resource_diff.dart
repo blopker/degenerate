@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_cost_diff.dart';import 'mcn_resource_preview.dart';import 'mcn_yaml_diff.dart';final class McnPlannedAction {const McnPlannedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_cost_diff.dart';import 'mcn_resource_preview.dart';import 'mcn_yaml_diff.dart';@immutable final class McnPlannedAction {const McnPlannedAction._(this.value);
 
 factory McnPlannedAction.fromJson(String json) { return switch (json) {
   'no_op' => noOp,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'McnPlannedAction($value)'; } 
  }
-final class McnResourceDiff {const McnResourceDiff({required this.diff, required this.keysRequireReplace, required this.monthlyCostEstimateDiff, required this.plannedAction, required this.resource, });
+@immutable final class McnResourceDiff {const McnResourceDiff({required this.diff, required this.keysRequireReplace, required this.monthlyCostEstimateDiff, required this.plannedAction, required this.resource, });
 
 factory McnResourceDiff.fromJson(Map<String, dynamic> json) { return McnResourceDiff(
   diff: McnYamlDiff.fromJson(json['diff'] as Map<String, dynamic>),

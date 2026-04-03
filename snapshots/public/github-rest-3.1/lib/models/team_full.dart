@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'team_organization.dart';import 'team_simple.dart';/// The [distinguished name](https://www.ldap.com/ldap-dns-and-rdns) (DN) of the LDAP entry to map to a team.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team_organization.dart';import 'team_simple.dart';/// The [distinguished name](https://www.ldap.com/ldap-dns-and-rdns) (DN) of the LDAP entry to map to a team.
 extension type const LdapDn(String value) {
 factory LdapDn.fromJson(String json) => LdapDn(json);
 
@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// The level of privacy this team should have
-final class TeamFullPrivacy {const TeamFullPrivacy._(this.value);
+@immutable final class TeamFullPrivacy {const TeamFullPrivacy._(this.value);
 
 factory TeamFullPrivacy.fromJson(String json) { return switch (json) {
   'closed' => closed,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamFullPrivacy($value)'; } 
  }
 /// The notification setting the team has set
-final class TeamFullNotificationSetting {const TeamFullNotificationSetting._(this.value);
+@immutable final class TeamFullNotificationSetting {const TeamFullNotificationSetting._(this.value);
 
 factory TeamFullNotificationSetting.fromJson(String json) { return switch (json) {
   'notifications_enabled' => notificationsEnabled,
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamFullNotificationSetting($value)'; } 
  }
 /// The ownership type of the team
-final class TeamFullType {const TeamFullType._(this.value);
+@immutable final class TeamFullType {const TeamFullType._(this.value);
 
 factory TeamFullType.fromJson(String json) { return switch (json) {
   'enterprise' => enterprise,
@@ -83,7 +83,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamFullType($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-final class TeamFull {const TeamFull({required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.name, required this.slug, required this.description, this.privacy, this.notificationSetting, required this.permission, required this.membersUrl, required this.repositoriesUrl, this.parent, required this.membersCount, required this.reposCount, required this.createdAt, required this.updatedAt, required this.organization, this.ldapDn, required this.type, this.organizationId, this.enterpriseId, });
+@immutable final class TeamFull {const TeamFull({required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.name, required this.slug, required this.description, required this.permission, required this.membersUrl, required this.repositoriesUrl, required this.membersCount, required this.reposCount, required this.createdAt, required this.updatedAt, required this.organization, required this.type, this.privacy, this.notificationSetting, this.parent, this.ldapDn, this.organizationId, this.enterpriseId, });
 
 factory TeamFull.fromJson(Map<String, dynamic> json) { return TeamFull(
   id: (json['id'] as num).toInt(),

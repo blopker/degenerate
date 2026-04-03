@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_ips_cloudflare_ip_details_response_result.dart';import 'public_ip_ips.dart';import 'public_ip_ips_jdcloud.dart';final class CloudflareIpsCloudflareIpDetailsResponse {const CloudflareIpsCloudflareIpDetailsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_ips_cloudflare_ip_details_response_result.dart';import 'public_ip_ips.dart';import 'public_ip_ips_jdcloud.dart';@immutable final class CloudflareIpsCloudflareIpDetailsResponse {const CloudflareIpsCloudflareIpDetailsResponse({this.result});
 
 factory CloudflareIpsCloudflareIpDetailsResponse.fromJson(Map<String, dynamic> json) { return CloudflareIpsCloudflareIpDetailsResponse(
   result: json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => PublicIpIps.fromJson(v as Map<String, dynamic>), fromB: (v) => PublicIpIpsJdcloud.fromJson(v as Map<String, dynamic>),) : null,

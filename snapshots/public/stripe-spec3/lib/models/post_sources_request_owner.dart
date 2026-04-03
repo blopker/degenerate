@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_sources_request_owner_address.dart';/// Information about the owner of the payment instrument that may be used or required by particular source types.
-final class PostSourcesRequestOwner {const PostSourcesRequestOwner({this.address, this.email, this.name, this.phone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_sources_request_owner_address.dart';/// Information about the owner of the payment instrument that may be used or required by particular source types.
+@immutable final class PostSourcesRequestOwner {const PostSourcesRequestOwner({this.address, this.email, this.name, this.phone, });
 
 factory PostSourcesRequestOwner.fromJson(Map<String, dynamic> json) { return PostSourcesRequestOwner(
   address: json['address'] != null ? PostSourcesRequestOwnerAddress.fromJson(json['address'] as Map<String, dynamic>) : null,

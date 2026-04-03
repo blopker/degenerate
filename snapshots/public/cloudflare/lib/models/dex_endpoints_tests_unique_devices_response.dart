@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_unique_devices_response.dart';final class DexEndpointsTestsUniqueDevicesResponse {const DexEndpointsTestsUniqueDevicesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_unique_devices_response.dart';@immutable final class DexEndpointsTestsUniqueDevicesResponse {const DexEndpointsTestsUniqueDevicesResponse({this.result});
 
 factory DexEndpointsTestsUniqueDevicesResponse.fromJson(Map<String, dynamic> json) { return DexEndpointsTestsUniqueDevicesResponse(
   result: json['result'] != null ? DigitalExperienceMonitoringUniqueDevicesResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

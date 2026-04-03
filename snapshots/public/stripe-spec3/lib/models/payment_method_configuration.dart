@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_config_resource_payment_method_properties.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class PaymentMethodConfigurationObject {const PaymentMethodConfigurationObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_config_resource_payment_method_properties.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class PaymentMethodConfigurationObject {const PaymentMethodConfigurationObject._(this.value);
 
 factory PaymentMethodConfigurationObject.fromJson(String json) { return switch (json) {
   'payment_method_configuration' => paymentMethodConfiguration,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - [Payment Method Configurations API](https://docs.stripe.com/connect/payment-method-configurations)
 /// - [Multiple configurations on dynamic payment methods](https://docs.stripe.com/payments/multiple-payment-method-configs)
 /// - [Multiple configurations for your Connect accounts](https://docs.stripe.com/connect/multiple-payment-method-configurations)
-final class PaymentMethodConfiguration {const PaymentMethodConfiguration({this.acssDebit, required this.active, this.affirm, this.afterpayClearpay, this.alipay, this.alma, this.amazonPay, this.applePay, this.application, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.blik, this.boleto, this.card, this.cartesBancaires, this.cashapp, this.crypto, this.customerBalance, this.eps, this.fpx, this.giropay, this.googlePay, this.grabpay, required this.id, this.ideal, required this.isDefault, this.jcb, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, required this.livemode, this.mbWay, this.mobilepay, this.multibanco, required this.name, this.naverPay, this.nzBankAccount, required this.object, this.oxxo, this.p24, this.parent, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.usBankAccount, this.wechatPay, this.zip, });
+@immutable final class PaymentMethodConfiguration {const PaymentMethodConfiguration({required this.object, required this.active, required this.id, required this.isDefault, required this.livemode, required this.name, this.eps, this.applePay, this.application, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.blik, this.boleto, this.card, this.cartesBancaires, this.cashapp, this.crypto, this.customerBalance, this.acssDebit, this.fpx, this.giropay, this.googlePay, this.grabpay, this.affirm, this.ideal, this.afterpayClearpay, this.jcb, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.alipay, this.mbWay, this.mobilepay, this.multibanco, this.alma, this.naverPay, this.zip, this.amazonPay, this.oxxo, this.p24, this.parent, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.usBankAccount, this.wechatPay, this.nzBankAccount, });
 
 factory PaymentMethodConfiguration.fromJson(Map<String, dynamic> json) { return PaymentMethodConfiguration(
   acssDebit: json['acss_debit'] != null ? PaymentMethodConfigResourcePaymentMethodProperties.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A short machine-readable string giving the reason for the verification failure.
-final class GelatoEmailReportErrorCode {const GelatoEmailReportErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
+@immutable final class GelatoEmailReportErrorCode {const GelatoEmailReportErrorCode._(this.value);
 
 factory GelatoEmailReportErrorCode.fromJson(String json) { return switch (json) {
   'email_unverified_other' => emailUnverifiedOther,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoEmailReportErrorCode($value)'; } 
  }
 /// 
-final class GelatoEmailReportError {const GelatoEmailReportError({this.code, this.reason, });
+@immutable final class GelatoEmailReportError {const GelatoEmailReportError({this.code, this.reason, });
 
 factory GelatoEmailReportError.fromJson(Map<String, dynamic> json) { return GelatoEmailReportError(
   code: json['code'] != null ? GelatoEmailReportErrorCode.fromJson(json['code'] as String) : null,

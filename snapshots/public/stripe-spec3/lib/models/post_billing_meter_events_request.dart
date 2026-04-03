@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostBillingMeterEventsRequest {const PostBillingMeterEventsRequest({required this.eventName, this.expand, this.identifier, required this.payload, this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingMeterEventsRequest {const PostBillingMeterEventsRequest({required this.eventName, required this.payload, this.expand, this.identifier, this.timestamp, });
 
 factory PostBillingMeterEventsRequest.fromJson(Map<String, dynamic> json) { return PostBillingMeterEventsRequest(
   eventName: json['event_name'] as String,

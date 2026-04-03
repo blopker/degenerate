@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotations {const RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotations {const RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

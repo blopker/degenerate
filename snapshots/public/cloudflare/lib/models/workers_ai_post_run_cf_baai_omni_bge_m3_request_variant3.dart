@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_embedding4.dart';import 'input_query_and_contexts4.dart';import 'workers_ai_post_run_cf_baai_omni_bge_m3_request_variant3_requests.dart';final class WorkersAiPostRunCfBaaiOmniBgeM3RequestVariant3 {const WorkersAiPostRunCfBaaiOmniBgeM3RequestVariant3({required this.requests});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_embedding4.dart';import 'input_query_and_contexts4.dart';import 'workers_ai_post_run_cf_baai_omni_bge_m3_request_variant3_requests.dart';@immutable final class WorkersAiPostRunCfBaaiOmniBgeM3RequestVariant3 {const WorkersAiPostRunCfBaaiOmniBgeM3RequestVariant3({required this.requests});
 
 factory WorkersAiPostRunCfBaaiOmniBgeM3RequestVariant3.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBaaiOmniBgeM3RequestVariant3(
   requests: (json['requests'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => InputQueryAndContexts4.fromJson(v as Map<String, dynamic>), fromB: (v) => InputEmbedding4.fromJson(v as Map<String, dynamic>),)).toList(),

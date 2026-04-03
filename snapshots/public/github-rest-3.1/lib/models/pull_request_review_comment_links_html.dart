@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullRequestReviewCommentLinksHtml {const PullRequestReviewCommentLinksHtml({required this.href});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullRequestReviewCommentLinksHtml {const PullRequestReviewCommentLinksHtml({required this.href});
 
 factory PullRequestReviewCommentLinksHtml.fromJson(Map<String, dynamic> json) { return PullRequestReviewCommentLinksHtml(
   href: Uri.parse(json['href'] as String),

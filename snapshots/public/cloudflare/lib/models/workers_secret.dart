@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_kind_secret_key.dart';import 'workers_binding_kind_secret_text.dart';/// A secret value accessible through a binding.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_kind_secret_key.dart';import 'workers_binding_kind_secret_text.dart';/// A secret value accessible through a binding.
 sealed class WorkersSecret {const WorkersSecret();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is WorkersSecret$Unknown; } 
  }
-final class WorkersSecretSecretKey extends WorkersSecret {const WorkersSecretSecretKey(this.workersBindingKindSecretKey);
+@immutable final class WorkersSecretSecretKey extends WorkersSecret {const WorkersSecretSecretKey(this.workersBindingKindSecretKey);
 
 factory WorkersSecretSecretKey.fromJson(Map<String, dynamic> json) { return WorkersSecretSecretKey(WorkersBindingKindSecretKey.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final WorkersBindingKindSecretKey workersBindingKindSecretKey;
 @override int get hashCode { return workersBindingKindSecretKey.hashCode; } 
 @override String toString() { return 'WorkersSecretSecretKey(workersBindingKindSecretKey: $workersBindingKindSecretKey)'; } 
  }
-final class WorkersSecretSecretText extends WorkersSecret {const WorkersSecretSecretText(this.workersBindingKindSecretText);
+@immutable final class WorkersSecretSecretText extends WorkersSecret {const WorkersSecretSecretText(this.workersBindingKindSecretText);
 
 factory WorkersSecretSecretText.fromJson(Map<String, dynamic> json) { return WorkersSecretSecretText(WorkersBindingKindSecretText.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final WorkersBindingKindSecretText workersBindingKindSecretText;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class WorkersSecret$Unknown extends WorkersSecret {const WorkersSecret$Unknown(this.json);
+@immutable final class WorkersSecret$Unknown extends WorkersSecret {const WorkersSecret$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

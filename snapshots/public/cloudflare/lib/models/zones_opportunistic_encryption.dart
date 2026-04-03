@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_opportunistic_encryption_value.dart';/// Opportunistic Encryption allows browsers to access HTTP URIs over an encrypted TLS channel.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_opportunistic_encryption_value.dart';/// Opportunistic Encryption allows browsers to access HTTP URIs over an encrypted TLS channel.
 /// It's not a substitute for HTTPS, but provides additional security for otherwise vulnerable requests.
 /// 
-final class ZonesOpportunisticEncryptionId {const ZonesOpportunisticEncryptionId._(this.value);
+@immutable final class ZonesOpportunisticEncryptionId {const ZonesOpportunisticEncryptionId._(this.value);
 
 factory ZonesOpportunisticEncryptionId.fromJson(String json) { return switch (json) {
   'opportunistic_encryption' => opportunisticEncryption,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesOpportunisticEncryptionId($value)'; } 
  }
-final class ZonesOpportunisticEncryption {const ZonesOpportunisticEncryption({this.id, this.value, });
+@immutable final class ZonesOpportunisticEncryption {const ZonesOpportunisticEncryption({this.id, this.value, });
 
 factory ZonesOpportunisticEncryption.fromJson(Map<String, dynamic> json) { return ZonesOpportunisticEncryption(
   id: json['id'] != null ? ZonesOpportunisticEncryptionId.fromJson(json['id'] as String) : null,

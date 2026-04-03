@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingSummaryByDkimArc {const RadarGetEmailRoutingSummaryByDkimArc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByDkimArc {const RadarGetEmailRoutingSummaryByDkimArc._(this.value);
 
 factory RadarGetEmailRoutingSummaryByDkimArc.fromJson(String json) { return switch (json) {
   'PASS' => pass,

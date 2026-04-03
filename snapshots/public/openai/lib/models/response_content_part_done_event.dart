@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'output_content.dart';/// The type of the event. Always `response.content_part.done`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_content.dart';/// The type of the event. Always `response.content_part.done`.
 /// 
-final class ResponseContentPartDoneEventType {const ResponseContentPartDoneEventType._(this.value);
+@immutable final class ResponseContentPartDoneEventType {const ResponseContentPartDoneEventType._(this.value);
 
 factory ResponseContentPartDoneEventType.fromJson(String json) { return switch (json) {
   'response.content_part.done' => responseContentPartDone,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseContentPartDoneEventType($value)'; } 
  }
 /// Emitted when a content part is done.
-final class ResponseContentPartDoneEvent {const ResponseContentPartDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.sequenceNumber, required this.$part, });
+@immutable final class ResponseContentPartDoneEvent {const ResponseContentPartDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.sequenceNumber, required this.$part, });
 
 factory ResponseContentPartDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseContentPartDoneEvent(
   type: ResponseContentPartDoneEventType.fromJson(json['type'] as String),

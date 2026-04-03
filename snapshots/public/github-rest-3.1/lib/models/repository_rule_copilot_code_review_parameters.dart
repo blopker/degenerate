@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryRuleCopilotCodeReviewParameters {const RepositoryRuleCopilotCodeReviewParameters({this.reviewDraftPullRequests, this.reviewOnPush, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleCopilotCodeReviewParameters {const RepositoryRuleCopilotCodeReviewParameters({this.reviewDraftPullRequests, this.reviewOnPush, });
 
 factory RepositoryRuleCopilotCodeReviewParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleCopilotCodeReviewParameters(
   reviewDraftPullRequests: json['review_draft_pull_requests'] as bool?,

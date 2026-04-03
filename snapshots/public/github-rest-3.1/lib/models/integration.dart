@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise.dart';import 'integration_owner.dart';import 'integration_permissions.dart';import 'simple_user.dart';/// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
-final class Integration {const Integration({required this.id, this.slug, required this.nodeId, this.clientId, required this.owner, required this.name, required this.description, required this.externalUrl, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.permissions, required this.events, this.installationsCount, });
+@immutable final class Integration {const Integration({required this.id, required this.nodeId, required this.owner, required this.name, required this.description, required this.externalUrl, required this.htmlUrl, required this.createdAt, required this.updatedAt, required this.permissions, required this.events, this.slug, this.clientId, this.installationsCount, });
 
 factory Integration.fromJson(Map<String, dynamic> json) { return Integration(
   id: (json['id'] as num).toInt(),

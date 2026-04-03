@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_old_operation_mitigation_action.dart';import 'shield_uuid.dart';final class ShieldOldOperationSchemaValidationSettings {const ShieldOldOperationSchemaValidationSettings({this.mitigationAction, this.operationId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_old_operation_mitigation_action.dart';import 'shield_uuid.dart';@immutable final class ShieldOldOperationSchemaValidationSettings {const ShieldOldOperationSchemaValidationSettings({this.mitigationAction, this.operationId, });
 
 factory ShieldOldOperationSchemaValidationSettings.fromJson(Map<String, dynamic> json) { return ShieldOldOperationSchemaValidationSettings(
   mitigationAction: json['mitigation_action'] != null ? ShieldOldOperationMitigationAction.fromJson(json['mitigation_action'] as String) : null,

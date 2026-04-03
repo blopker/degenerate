@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifying a particular function via `{"name": "my_function"}` forces the model to call that function.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifying a particular function via `{"name": "my_function"}` forces the model to call that function.
 /// 
-final class ChatCompletionFunctionCallOption {const ChatCompletionFunctionCallOption({required this.name});
+@immutable final class ChatCompletionFunctionCallOption {const ChatCompletionFunctionCallOption({required this.name});
 
 factory ChatCompletionFunctionCallOption.fromJson(Map<String, dynamic> json) { return ChatCompletionFunctionCallOption(
   name: json['name'] as String,

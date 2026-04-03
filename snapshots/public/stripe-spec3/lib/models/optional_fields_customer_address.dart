@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class OptionalFieldsCustomerAddress {const OptionalFieldsCustomerAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OptionalFieldsCustomerAddress {const OptionalFieldsCustomerAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
 
 factory OptionalFieldsCustomerAddress.fromJson(Map<String, dynamic> json) { return OptionalFieldsCustomerAddress(
   city: json['city'] as String?,

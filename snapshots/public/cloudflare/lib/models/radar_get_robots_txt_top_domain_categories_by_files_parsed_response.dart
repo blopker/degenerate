@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_robots_txt_top_domain_categories_by_files_parsed_response_result.dart';final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_robots_txt_top_domain_categories_by_files_parsed_response_result.dart';@immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse({required this.result, required this.success, });
 
 factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse.fromJson(Map<String, dynamic> json) { return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse(
   result: RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResult.fromJson(json['result'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale.fromJson(String json) { return switch (json) {
   'cs-CZ' => csCz,
@@ -105,7 +105,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaypalPreferredLocale($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage._(this.value);
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaypalSetupFutureUsage($value)'; } 
  }
-final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypal {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypal({this.captureMethod, this.preferredLocale, this.reference, this.riskCorrelationId, this.setupFutureUsage, });
+@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsPaypal {const PostCheckoutSessionsRequestPaymentMethodOptionsPaypal({this.captureMethod, this.preferredLocale, this.reference, this.riskCorrelationId, this.setupFutureUsage, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsPaypal.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsPaypal(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaypalCaptureMethod.fromJson(json['capture_method'] as String) : null,

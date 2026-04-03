@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_argo_tunnel.dart';final class TunnelLegacyTunnelResponseCollection {const TunnelLegacyTunnelResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_argo_tunnel.dart';@immutable final class TunnelLegacyTunnelResponseCollection {const TunnelLegacyTunnelResponseCollection({this.result});
 
 factory TunnelLegacyTunnelResponseCollection.fromJson(Map<String, dynamic> json) { return TunnelLegacyTunnelResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TunnelArgoTunnel.fromJson(e as Map<String, dynamic>)).toList(),

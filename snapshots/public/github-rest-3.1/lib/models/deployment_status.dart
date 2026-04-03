@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'integration.dart';import 'simple_user.dart';/// The state of the status.
-final class DeploymentStatusState {const DeploymentStatusState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';/// The state of the status.
+@immutable final class DeploymentStatusState {const DeploymentStatusState._(this.value);
 
 factory DeploymentStatusState.fromJson(String json) { return switch (json) {
   'error' => error,
@@ -41,7 +41,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeploymentStatusState($value)'; } 
  }
 /// The status of a deployment.
-final class DeploymentStatus {const DeploymentStatus({required this.url, required this.id, required this.nodeId, required this.state, required this.creator, this.description = '', this.environment = '', required this.targetUrl, required this.createdAt, required this.updatedAt, required this.deploymentUrl, required this.repositoryUrl, this.environmentUrl, this.logUrl, this.performedViaGithubApp, });
+@immutable final class DeploymentStatus {const DeploymentStatus({required this.url, required this.id, required this.nodeId, required this.state, required this.creator, required this.targetUrl, required this.createdAt, required this.updatedAt, required this.deploymentUrl, required this.repositoryUrl, this.description = '', this.environment = '', this.environmentUrl, this.logUrl, this.performedViaGithubApp, });
 
 factory DeploymentStatus.fromJson(Map<String, dynamic> json) { return DeploymentStatus(
   url: Uri.parse(json['url'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTaxRegistrationsRequestCountryOptionsGeType {const PostTaxRegistrationsRequestCountryOptionsGeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTaxRegistrationsRequestCountryOptionsGeType {const PostTaxRegistrationsRequestCountryOptionsGeType._(this.value);
 
 factory PostTaxRegistrationsRequestCountryOptionsGeType.fromJson(String json) { return switch (json) {
   'simplified' => simplified,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsGeType($value)'; } 
  }
-final class PostTaxRegistrationsRequestCountryOptionsGe {const PostTaxRegistrationsRequestCountryOptionsGe({required this.type});
+@immutable final class PostTaxRegistrationsRequestCountryOptionsGe {const PostTaxRegistrationsRequestCountryOptionsGe({required this.type});
 
 factory PostTaxRegistrationsRequestCountryOptionsGe.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsGe(
   type: PostTaxRegistrationsRequestCountryOptionsGeType.fromJson(json['type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteIndicatorDeleteResponse404Errors {const DeleteIndicatorDeleteResponse404Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteIndicatorDeleteResponse404Errors {const DeleteIndicatorDeleteResponse404Errors({required this.message});
 
 factory DeleteIndicatorDeleteResponse404Errors.fromJson(Map<String, dynamic> json) { return DeleteIndicatorDeleteResponse404Errors(
   message: json['message'] as String,

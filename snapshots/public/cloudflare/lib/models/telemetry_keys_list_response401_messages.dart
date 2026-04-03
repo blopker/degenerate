@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TelemetryKeysListResponse401Messages {const TelemetryKeysListResponse401Messages({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryKeysListResponse401Messages {const TelemetryKeysListResponse401Messages({required this.message});
 
 factory TelemetryKeysListResponse401Messages.fromJson(Map<String, dynamic> json) { return TelemetryKeysListResponse401Messages(
   message: json['message'] as String,

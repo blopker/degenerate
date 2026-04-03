@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_uuid.dart';final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots({required this.clientToAppRttMs, required this.clientToCfEgressRttMs, required this.clientToCfIngressRttMs, this.clientToIspRttMs, required this.id, required this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_uuid.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots({required this.clientToAppRttMs, required this.clientToCfEgressRttMs, required this.clientToCfIngressRttMs, required this.id, required this.timestamp, this.clientToIspRttMs, });
 
 factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSlots(
   clientToAppRttMs: json['clientToAppRttMs'] != null ? (json['clientToAppRttMs'] as num).toInt() : null,

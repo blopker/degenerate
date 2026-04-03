@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'custom_grammar_format_param.dart';import 'custom_text_format_param.dart';/// The input format for the custom tool. Default is unconstrained text.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_grammar_format_param.dart';import 'custom_text_format_param.dart';/// The input format for the custom tool. Default is unconstrained text.
 sealed class CustomToolParamFormat {const CustomToolParamFormat();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CustomToolParamFormat$Unknown; } 
  }
-final class CustomToolParamFormatText extends CustomToolParamFormat {const CustomToolParamFormatText(this.customTextFormatParam);
+@immutable final class CustomToolParamFormatText extends CustomToolParamFormat {const CustomToolParamFormatText(this.customTextFormatParam);
 
 factory CustomToolParamFormatText.fromJson(Map<String, dynamic> json) { return CustomToolParamFormatText(CustomTextFormatParam.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final CustomTextFormatParam customTextFormatParam;
 @override int get hashCode { return customTextFormatParam.hashCode; } 
 @override String toString() { return 'CustomToolParamFormatText(customTextFormatParam: $customTextFormatParam)'; } 
  }
-final class CustomToolParamFormatGrammar extends CustomToolParamFormat {const CustomToolParamFormatGrammar(this.customGrammarFormatParam);
+@immutable final class CustomToolParamFormatGrammar extends CustomToolParamFormat {const CustomToolParamFormatGrammar(this.customGrammarFormatParam);
 
 factory CustomToolParamFormatGrammar.fromJson(Map<String, dynamic> json) { return CustomToolParamFormatGrammar(CustomGrammarFormatParam.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final CustomGrammarFormatParam customGrammarFormatParam;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class CustomToolParamFormat$Unknown extends CustomToolParamFormat {const CustomToolParamFormat$Unknown(this.json);
+@immutable final class CustomToolParamFormat$Unknown extends CustomToolParamFormat {const CustomToolParamFormat$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookSecretScanningScanCompletedAction {const WebhookSecretScanningScanCompletedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookSecretScanningScanCompletedAction {const WebhookSecretScanningScanCompletedAction._(this.value);
 
 factory WebhookSecretScanningScanCompletedAction.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookSecretScanningScanCompletedAction($value)'; } 
  }
 /// What type of scan was completed
-final class WebhookSecretScanningScanCompletedType {const WebhookSecretScanningScanCompletedType._(this.value);
+@immutable final class WebhookSecretScanningScanCompletedType {const WebhookSecretScanningScanCompletedType._(this.value);
 
 factory WebhookSecretScanningScanCompletedType.fromJson(String json) { return switch (json) {
   'backfill' => backfill,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookSecretScanningScanCompletedType($value)'; } 
  }
 /// What type of content was scanned
-final class WebhookSecretScanningScanCompletedSource {const WebhookSecretScanningScanCompletedSource._(this.value);
+@immutable final class WebhookSecretScanningScanCompletedSource {const WebhookSecretScanningScanCompletedSource._(this.value);
 
 factory WebhookSecretScanningScanCompletedSource.fromJson(String json) { return switch (json) {
   'git' => git,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookSecretScanningScanCompletedSource($value)'; } 
  }
 /// If the scan was triggered by a custom pattern update, this will be the scope of the pattern that was updated
-final class WebhookSecretScanningScanCompletedCustomPatternScope {const WebhookSecretScanningScanCompletedCustomPatternScope._(this.value);
+@immutable final class WebhookSecretScanningScanCompletedCustomPatternScope {const WebhookSecretScanningScanCompletedCustomPatternScope._(this.value);
 
 factory WebhookSecretScanningScanCompletedCustomPatternScope.fromJson(String json) { return switch (json) {
   'repository' => repository,
@@ -114,7 +114,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookSecretScanningScanCompletedCustomPatternScope($value)'; } 
  }
-final class WebhookSecretScanningScanCompleted {const WebhookSecretScanningScanCompleted({required this.action, required this.type, required this.source, required this.startedAt, required this.completedAt, this.secretTypes, this.customPatternName, this.customPatternScope, this.repository, this.enterprise, this.installation, this.organization, this.sender, });
+@immutable final class WebhookSecretScanningScanCompleted {const WebhookSecretScanningScanCompleted({required this.action, required this.type, required this.source, required this.startedAt, required this.completedAt, this.secretTypes, this.customPatternName, this.customPatternScope, this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookSecretScanningScanCompleted.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningScanCompleted(
   action: WebhookSecretScanningScanCompletedAction.fromJson(json['action'] as String),

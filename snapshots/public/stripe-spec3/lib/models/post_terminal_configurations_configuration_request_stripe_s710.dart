@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stripe_s710.dart';final class PostTerminalConfigurationsConfigurationRequestStripeS710Variant2 {const PostTerminalConfigurationsConfigurationRequestStripeS710Variant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stripe_s710.dart';@immutable final class PostTerminalConfigurationsConfigurationRequestStripeS710Variant2 {const PostTerminalConfigurationsConfigurationRequestStripeS710Variant2._(this.value);
 
 factory PostTerminalConfigurationsConfigurationRequestStripeS710Variant2.fromJson(String json) { return switch (json) {
   '' => $empty,

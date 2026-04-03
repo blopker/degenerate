@@ -1,25 +1,24 @@
 import 'dart:io';
 
 import 'package:dart_style/dart_style.dart';
+import 'package:degenerate/src/generator.dart';
 import 'package:path/path.dart' as p;
 import 'package:test/test.dart';
 
-import 'package:degenerate/src/generator.dart';
-
 /// Set to true (or pass --update-snapshots) to regenerate snapshot files.
-final _updateSnapshots =
+final bool _updateSnapshots =
     Platform.environment['UPDATE_SNAPSHOTS'] == '1' ||
     Platform.environment['UPDATE_SNAPSHOTS'] == 'true';
 
-final _fixturesDir =
+final String _fixturesDir =
     p.join(Directory.current.path, 'test', 'fixtures');
-final _snapshotsDir = p.join(Directory.current.path, 'snapshots');
+final String _snapshotsDir = p.join(Directory.current.path, 'snapshots');
 
 /// Convert a spec filename to a valid Dart package name.
 /// e.g. '03-operations-parameters-request-body' → 'spec_03_operations_parameters_request_body'
 String _packageNameFromSpec(String groupName, String specName) {
   final prefix = groupName == 'specs' ? 'spec' : 'pub';
-  final sanitized = specName.replaceAll(RegExp(r'[^a-zA-Z0-9]'), '_').toLowerCase();
+  final sanitized = specName.replaceAll(RegExp('[^a-zA-Z0-9]'), '_').toLowerCase();
   return '${prefix}_$sanitized';
 }
 
@@ -98,7 +97,7 @@ void _snapshotTests(String groupName, List<File> specFiles, {bool workspace = fa
               'stderr: ${pubGet.stderr}',
             );
           }
-          // ignore: avoid_print
+          // ignore: avoid_print -- useful progress output during snapshot updates
           print('  Updated ${generated.length} snapshot files for $specName');
         } else {
           // Generate in-memory only (dryRun avoids disk writes)

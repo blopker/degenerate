@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_gsuite_group_rule_gsuite.dart';/// Matches a group in Google Workspace.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_gsuite_group_rule_gsuite.dart';/// Matches a group in Google Workspace.
 /// Requires a Google Workspace identity provider.
-final class AccessGsuiteGroupRule {const AccessGsuiteGroupRule({required this.gsuite});
+@immutable final class AccessGsuiteGroupRule {const AccessGsuiteGroupRule({required this.gsuite});
 
 factory AccessGsuiteGroupRule.fromJson(Map<String, dynamic> json) { return AccessGsuiteGroupRule(
   gsuite: AccessGsuiteGroupRuleGsuite.fromJson(json['gsuite'] as Map<String, dynamic>),

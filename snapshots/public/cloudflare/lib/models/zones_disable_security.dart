@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Turn off
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn off
 /// [Email Obfuscation](https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/),
 /// [Rate Limiting (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-rate-limiting/),
 /// [Scrape Shield](https://developers.cloudflare.com/waf/tools/scrape-shield/),
 /// [URL (Zone) Lockdown](https://developers.cloudflare.com/waf/tools/zone-lockdown/), and
 /// [WAF managed rules (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-waf-managed-rules/).
 /// 
-final class ZonesDisableSecurityId {const ZonesDisableSecurityId._(this.value);
+@immutable final class ZonesDisableSecurityId {const ZonesDisableSecurityId._(this.value);
 
 factory ZonesDisableSecurityId.fromJson(String json) { return switch (json) {
   'disable_security' => disableSecurity,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesDisableSecurityId($value)'; } 
  }
-final class ZonesDisableSecurity {const ZonesDisableSecurity({this.id});
+@immutable final class ZonesDisableSecurity {const ZonesDisableSecurity({this.id});
 
 factory ZonesDisableSecurity.fromJson(Map<String, dynamic> json) { return ZonesDisableSecurity(
   id: json['id'] != null ? ZonesDisableSecurityId.fromJson(json['id'] as String) : null,

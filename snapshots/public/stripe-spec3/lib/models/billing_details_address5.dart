@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BillingDetailsAddress5 {const BillingDetailsAddress5({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BillingDetailsAddress5 {const BillingDetailsAddress5({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
 
 factory BillingDetailsAddress5.fromJson(Map<String, dynamic> json) { return BillingDetailsAddress5(
   city: json['city'] as String?,

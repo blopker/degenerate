@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_error.dart';import 'wor_describe_workflow_instance_response_result_steps.dart';import 'wor_describe_workflow_instance_response_result_steps_sleep.dart';import 'wor_describe_workflow_instance_response_result_steps_step.dart';import 'wor_describe_workflow_instance_response_result_steps_termination.dart';import 'wor_describe_workflow_instance_response_result_steps_wait_for_event.dart';import 'wor_describe_workflow_instance_response_result_trigger.dart';final class WorDescribeWorkflowInstanceResponseResultStatus {const WorDescribeWorkflowInstanceResponseResultStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_error.dart';import 'wor_describe_workflow_instance_response_result_steps.dart';import 'wor_describe_workflow_instance_response_result_steps_sleep.dart';import 'wor_describe_workflow_instance_response_result_steps_step.dart';import 'wor_describe_workflow_instance_response_result_steps_termination.dart';import 'wor_describe_workflow_instance_response_result_steps_wait_for_event.dart';import 'wor_describe_workflow_instance_response_result_trigger.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStatus {const WorDescribeWorkflowInstanceResponseResultStatus._(this.value);
 
 factory WorDescribeWorkflowInstanceResponseResultStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -42,13 +42,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorDescribeWorkflowInstanceResponseResultStatus($value)'; } 
  }
-final class WorDescribeWorkflowInstanceResponseResult {const WorDescribeWorkflowInstanceResponseResult({required this.end, required this.error, required this.output, required this.params, required this.queued, required this.start, required this.status, required this.stepCount, required this.steps, required this.success, required this.trigger, required this.versionId, });
+@immutable final class WorDescribeWorkflowInstanceResponseResult {const WorDescribeWorkflowInstanceResponseResult({required this.end, required this.error, required this.output, required this.params, required this.queued, required this.start, required this.status, required this.stepCount, required this.steps, required this.success, required this.trigger, required this.versionId, });
 
 factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResult(
   end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
   error: json['error'] != null ? WorDescribeWorkflowInstanceResponseResultError.fromJson(json['error'] as Map<String, dynamic>) : null,
   output: json['output'],
-  params: (json['params'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  params: json['params'] as Map<String, dynamic>,
   queued: DateTime.parse(json['queued'] as String),
   start: json['start'] != null ? DateTime.parse(json['start'] as String) : null,
   status: WorDescribeWorkflowInstanceResponseResultStatus.fromJson(json['status'] as String),

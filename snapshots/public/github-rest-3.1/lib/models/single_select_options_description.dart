@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The description of the option, in raw text and HTML formats.
-final class SingleSelectOptionsDescription {const SingleSelectOptionsDescription({required this.raw, required this.html, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The description of the option, in raw text and HTML formats.
+@immutable final class SingleSelectOptionsDescription {const SingleSelectOptionsDescription({required this.raw, required this.html, });
 
 factory SingleSelectOptionsDescription.fromJson(Map<String, dynamic> json) { return SingleSelectOptionsDescription(
   raw: json['raw'] as String,

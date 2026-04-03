@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_app_types.dart';import 'zero_trust_gateway_application.dart';import 'zero_trust_gateway_application_type.dart';final class ZeroTrustGatewayAppTypesComponentsSchemasResponseCollection {const ZeroTrustGatewayAppTypesComponentsSchemasResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_app_types.dart';import 'zero_trust_gateway_application.dart';import 'zero_trust_gateway_application_type.dart';@immutable final class ZeroTrustGatewayAppTypesComponentsSchemasResponseCollection {const ZeroTrustGatewayAppTypesComponentsSchemasResponseCollection({this.result});
 
 factory ZeroTrustGatewayAppTypesComponentsSchemasResponseCollection.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayAppTypesComponentsSchemasResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ZeroTrustGatewayApplication.fromJson(v as Map<String, dynamic>), fromB: (v) => ZeroTrustGatewayApplicationType.fromJson(v as Map<String, dynamic>),)).toList(),

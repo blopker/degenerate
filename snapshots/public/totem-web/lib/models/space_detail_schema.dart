@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'next_session_schema.dart';import 'public_user_schema.dart';final class SpaceDetailSchema {const SpaceDetailSchema({required this.slug, required this.title, required this.imageLink, required this.shortDescription, required this.content, required this.author, required this.nextEvent, required this.category, required this.subscribers, required this.recurring, required this.price, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'next_session_schema.dart';import 'public_user_schema.dart';@immutable final class SpaceDetailSchema {const SpaceDetailSchema({required this.slug, required this.title, required this.imageLink, required this.shortDescription, required this.content, required this.author, required this.nextEvent, required this.category, required this.subscribers, required this.recurring, required this.price, });
 
 factory SpaceDetailSchema.fromJson(Map<String, dynamic> json) { return SpaceDetailSchema(
   slug: json['slug'] as String,

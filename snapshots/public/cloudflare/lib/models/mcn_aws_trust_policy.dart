@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class McnAwsTrustPolicy {const McnAwsTrustPolicy({required this.awsTrustPolicy, required this.itemType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McnAwsTrustPolicy {const McnAwsTrustPolicy({required this.awsTrustPolicy, required this.itemType, });
 
 factory McnAwsTrustPolicy.fromJson(Map<String, dynamic> json) { return McnAwsTrustPolicy(
   awsTrustPolicy: json['aws_trust_policy'] as String,

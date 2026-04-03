@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_tool_chat_completions_custom_format.dart';import 'grammar_format.dart';import 'text_format.dart';/// Properties of the custom tool.
 /// 
-final class CustomToolChatCompletionsCustom {const CustomToolChatCompletionsCustom({required this.name, this.description, this.format, });
+@immutable final class CustomToolChatCompletionsCustom {const CustomToolChatCompletionsCustom({required this.name, this.description, this.format, });
 
 factory CustomToolChatCompletionsCustom.fromJson(Map<String, dynamic> json) { return CustomToolChatCompletionsCustom(
   name: json['name'] as String,

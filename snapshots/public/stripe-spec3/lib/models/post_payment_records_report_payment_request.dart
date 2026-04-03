@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_report_payment_request_amount_requested.dart';import 'post_payment_records_report_payment_request_customer_details.dart';import 'post_payment_records_report_payment_request_failed.dart';import 'post_payment_records_report_payment_request_guaranteed.dart';import 'post_payment_records_report_payment_request_metadata.dart';import 'post_payment_records_report_payment_request_payment_method_details.dart';import 'post_payment_records_report_payment_request_processor_details.dart';import 'post_payment_records_report_payment_request_shipping_details.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
-final class PostPaymentRecordsReportPaymentRequestCustomerPresence {const PostPaymentRecordsReportPaymentRequestCustomerPresence._(this.value);
+@immutable final class PostPaymentRecordsReportPaymentRequestCustomerPresence {const PostPaymentRecordsReportPaymentRequestCustomerPresence._(this.value);
 
 factory PostPaymentRecordsReportPaymentRequestCustomerPresence.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentRecordsReportPaymentRequestCustomerPresence($value)'; } 
  }
 /// The outcome of the reported payment.
-final class PostPaymentRecordsReportPaymentRequestOutcome {const PostPaymentRecordsReportPaymentRequestOutcome._(this.value);
+@immutable final class PostPaymentRecordsReportPaymentRequestOutcome {const PostPaymentRecordsReportPaymentRequestOutcome._(this.value);
 
 factory PostPaymentRecordsReportPaymentRequestOutcome.fromJson(String json) { return switch (json) {
   'failed' => failed,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentRecordsReportPaymentRequestOutcome($value)'; } 
  }
-final class PostPaymentRecordsReportPaymentRequest {const PostPaymentRecordsReportPaymentRequest({required this.amountRequested, this.customerDetails, this.customerPresence, this.description, this.expand, this.failed, this.guaranteed, required this.initiatedAt, this.metadata, this.outcome, required this.paymentMethodDetails, this.processorDetails, this.shippingDetails, });
+@immutable final class PostPaymentRecordsReportPaymentRequest {const PostPaymentRecordsReportPaymentRequest({required this.amountRequested, required this.initiatedAt, required this.paymentMethodDetails, this.customerDetails, this.customerPresence, this.description, this.expand, this.failed, this.guaranteed, this.metadata, this.outcome, this.processorDetails, this.shippingDetails, });
 
 factory PostPaymentRecordsReportPaymentRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsReportPaymentRequest(
   amountRequested: PostPaymentRecordsReportPaymentRequestAmountRequested.fromJson(json['amount_requested'] as Map<String, dynamic>),

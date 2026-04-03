@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result_changes_entries.dart';final class RadarGetBgpRpkiAspaChangesResponseResultChanges {const RadarGetBgpRpkiAspaChangesResponseResultChanges({required this.customersAdded, required this.customersRemoved, required this.date, required this.entries, required this.providersAdded, required this.providersRemoved, required this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result_changes_entries.dart';@immutable final class RadarGetBgpRpkiAspaChangesResponseResultChanges {const RadarGetBgpRpkiAspaChangesResponseResultChanges({required this.customersAdded, required this.customersRemoved, required this.date, required this.entries, required this.providersAdded, required this.providersRemoved, required this.totalCount, });
 
 factory RadarGetBgpRpkiAspaChangesResponseResultChanges.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaChangesResponseResultChanges(
   customersAdded: (json['customersAdded'] as num).toInt(),

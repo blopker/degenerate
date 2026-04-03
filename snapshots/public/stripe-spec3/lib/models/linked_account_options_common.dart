@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_private_payment_methods_financial_connections_common_linked_account_options_filters.dart';final class LinkedAccountOptionsCommonPermissions {const LinkedAccountOptionsCommonPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_private_payment_methods_financial_connections_common_linked_account_options_filters.dart';@immutable final class LinkedAccountOptionsCommonPermissions {const LinkedAccountOptionsCommonPermissions._(this.value);
 
 factory LinkedAccountOptionsCommonPermissions.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'LinkedAccountOptionsCommonPermissions($value)'; } 
  }
-final class LinkedAccountOptionsCommonPrefetch {const LinkedAccountOptionsCommonPrefetch._(this.value);
+@immutable final class LinkedAccountOptionsCommonPrefetch {const LinkedAccountOptionsCommonPrefetch._(this.value);
 
 factory LinkedAccountOptionsCommonPrefetch.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LinkedAccountOptionsCommonPrefetch($value)'; } 
  }
 /// 
-final class LinkedAccountOptionsCommon {const LinkedAccountOptionsCommon({this.filters, this.permissions, this.prefetch, this.returnUrl, });
+@immutable final class LinkedAccountOptionsCommon {const LinkedAccountOptionsCommon({this.filters, this.permissions, this.prefetch, this.returnUrl, });
 
 factory LinkedAccountOptionsCommon.fromJson(Map<String, dynamic> json) { return LinkedAccountOptionsCommon(
   filters: json['filters'] != null ? PaymentFlowsPrivatePaymentMethodsFinancialConnectionsCommonLinkedAccountOptionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,

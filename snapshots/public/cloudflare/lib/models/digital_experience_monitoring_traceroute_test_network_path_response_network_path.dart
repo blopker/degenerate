@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_test_network_path_response_network_path_sampling.dart';import 'digital_experience_monitoring_traceroute_test_network_path_response_network_path_slots.dart';final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath({this.sampling, required this.slots, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_traceroute_test_network_path_response_network_path_sampling.dart';import 'digital_experience_monitoring_traceroute_test_network_path_response_network_path_slots.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath({required this.slots, this.sampling, });
 
 factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPath(
   sampling: json['sampling'] != null ? DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling.fromJson(json['sampling'] as Map<String, dynamic>) : null,

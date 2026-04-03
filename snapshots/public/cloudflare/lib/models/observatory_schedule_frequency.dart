@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The frequency of the test.
-final class ObservatoryScheduleFrequency {const ObservatoryScheduleFrequency._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The frequency of the test.
+@immutable final class ObservatoryScheduleFrequency {const ObservatoryScheduleFrequency._(this.value);
 
 factory ObservatoryScheduleFrequency.fromJson(String json) { return switch (json) {
   'DAILY' => daily,

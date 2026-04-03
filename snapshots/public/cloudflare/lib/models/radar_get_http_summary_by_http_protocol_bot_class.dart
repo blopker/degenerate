@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpSummaryByHttpProtocolBotClass {const RadarGetHttpSummaryByHttpProtocolBotClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByHttpProtocolBotClass {const RadarGetHttpSummaryByHttpProtocolBotClass._(this.value);
 
 factory RadarGetHttpSummaryByHttpProtocolBotClass.fromJson(String json) { return switch (json) {
   'LIKELY_AUTOMATED' => likelyAutomated,

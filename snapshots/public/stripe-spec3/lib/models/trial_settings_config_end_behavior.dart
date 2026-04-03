@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TrialSettingsConfigEndBehaviorMissingPaymentMethod {const TrialSettingsConfigEndBehaviorMissingPaymentMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TrialSettingsConfigEndBehaviorMissingPaymentMethod {const TrialSettingsConfigEndBehaviorMissingPaymentMethod._(this.value);
 
 factory TrialSettingsConfigEndBehaviorMissingPaymentMethod.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TrialSettingsConfigEndBehaviorMissingPaymentMethod($value)'; } 
  }
-final class TrialSettingsConfigEndBehavior {const TrialSettingsConfigEndBehavior({required this.missingPaymentMethod});
+@immutable final class TrialSettingsConfigEndBehavior {const TrialSettingsConfigEndBehavior({required this.missingPaymentMethod});
 
 factory TrialSettingsConfigEndBehavior.fromJson(Map<String, dynamic> json) { return TrialSettingsConfigEndBehavior(
   missingPaymentMethod: TrialSettingsConfigEndBehaviorMissingPaymentMethod.fromJson(json['missing_payment_method'] as String),

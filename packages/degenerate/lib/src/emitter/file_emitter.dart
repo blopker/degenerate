@@ -1,14 +1,14 @@
 import 'package:code_builder/code_builder.dart';
-
-import '../ir/ir_types.dart';
-import '../naming.dart' show sanitizeDartName, sanitizeFieldName, toPascalCase;
-import 'api_emitter.dart';
-import 'emit_utils.dart';
-import 'enum_emitter.dart';
-import 'extension_type_emitter.dart';
-import 'media_type_utils.dart';
-import 'model_emitter.dart';
-import 'sealed_union_emitter.dart';
+import 'package:degenerate/src/emitter/api_emitter.dart';
+import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/emitter/enum_emitter.dart';
+import 'package:degenerate/src/emitter/extension_type_emitter.dart';
+import 'package:degenerate/src/emitter/media_type_utils.dart';
+import 'package:degenerate/src/emitter/model_emitter.dart';
+import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
+import 'package:degenerate/src/ir/ir_types.dart';
+import 'package:degenerate/src/naming.dart'
+    show sanitizeDartName, sanitizeFieldName, toPascalCase;
 
 /// Orchestrates all emitters to produce the full generated file structure.
 ///
@@ -20,9 +20,9 @@ class FileEmitter {
   Map<String, String> emitAll({
     required List<IrType> types,
     required List<IrApi> apis,
+    required String packageName,
     List<IrSecurityScheme> securitySchemes = const [],
     List<IrSecurityRequirement>? globalSecurity,
-    required String packageName,
     bool workspace = false,
     String? defaultServerUrl,
     List<String>? warnings,
@@ -54,7 +54,8 @@ class FileEmitter {
         (referencedBy[refName] ??= {}).add(parentName);
       }
     }
-    // Also count API references - if an API directly uses a type, it stays separate.
+    // Also count API references - if an API directly uses a type, it stays
+    // separate.
     // Don't resolve OneOf variant types here - variants can still be inlined
     // into their parent typedef file (the parent file provides the import).
     final apiReferencedTypes = <String>{};
@@ -77,7 +78,8 @@ class FileEmitter {
       final parent = parents.first;
       inlinedInto[name] = parent;
       (inlinedChildren[parent] ??= []).add(type);
-      // Redirect imports: anyone importing this type should import the parent's file
+      // Redirect imports: anyone importing this type should import the parent's
+      // file
       typeToFile[name] = typeToFile[parent]!;
     }
 
@@ -88,7 +90,7 @@ class FileEmitter {
       if (inlinedInto.containsKey(name)) continue; // emitted with parent
 
       final fileName = toSnakeCase(name);
-      final header = _header;
+      const header = _header;
 
       // Prepend inlined children before the parent type
       final specs = <Spec>[];
@@ -113,7 +115,7 @@ class FileEmitter {
 
       final sortedFiles =
           modelAnalysis.referencedNames
-              .where((n) => typeToFile.containsKey(n))
+              .where(typeToFile.containsKey)
               .map((n) => typeToFile[n]!)
               .toSet()
               .toList()
@@ -126,7 +128,13 @@ class FileEmitter {
       final needsTypedData = modelAnalysis.needsTypedData;
       final needsConvert = modelAnalysis.needsConvert;
       final needsOneOf = modelAnalysis.needsOneOf;
-      final needsRuntime = needsOneOf || needsCollection;
+
+      // Determine if the runtime import is needed: for @immutable (classes with
+      // == and hashCode), collection helpers, or OneOf types.
+      final needsImmutable =
+          _typeNeedsImmutable(type) ||
+          (children?.any(_typeNeedsImmutable) ?? false);
+      final needsRuntime = needsOneOf || needsCollection || needsImmutable;
 
       final library = Library((b) {
         b.comments.addAll(header);
@@ -153,9 +161,12 @@ class FileEmitter {
     // Emit API files
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
-      final header = _header;
-      final apiEmitter = ApiEmitter(api,
-          typeRegistry: typeRegistry, unwrapFields: unwrapFields);
+      const header = _header;
+      final apiEmitter = ApiEmitter(
+        api,
+        typeRegistry: typeRegistry,
+        unwrapFields: unwrapFields,
+      );
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
 
@@ -164,7 +175,7 @@ class FileEmitter {
       // Derive imports directly from referenced types using pre-built lookup
       final sortedApiFiles =
           analysis.referencedTypes
-              .where((n) => typeToFile.containsKey(n))
+              .where(typeToFile.containsKey)
               .map((n) => typeToFile[n]!)
               .toSet()
               .toList()
@@ -265,8 +276,10 @@ class FileEmitter {
 
   /// Emit a `typedef X = OneOfN<A, B, ...>;` for a union type.
   ///
-  /// For self-referencing types (e.g., `WorkersKvAny = OneOf6<..., List<WorkersKvAny>>`),
-  /// also emits a top-level `parseTypeName` function for recursive deserialization.
+  /// For self-referencing types (e.g.,
+  /// `WorkersKvAny = OneOf6<..., List<WorkersKvAny>>`),
+  /// also emits a top-level `parseTypeName` function for recursive
+  /// deserialization.
   List<Spec> _emitOneOfTypedef(
     String name,
     List<IrType> variants,
@@ -304,6 +317,18 @@ class FileEmitter {
 
   static final _dartEmitter = DartEmitter(useNullSafetySyntax: true);
 
+  /// Whether a type emits classes that have == and hashCode (needing
+  /// @immutable).
+  /// Whether a type emits classes with @immutable (those with == and hashCode).
+  /// AnyOf classes don't override == or hashCode, so they don't need it.
+  static bool _typeNeedsImmutable(IrType type) => switch (type) {
+    IrObject() => true,
+    IrEnum() => true,
+    IrDiscriminatedUnion() => true,
+    IrUntaggedUnion() => true,
+    _ => false,
+  };
+
   String? _typeName(IrType type) => type.emittableName;
 
   /// Collect top-level type names referenced by an API's operations.
@@ -315,8 +340,11 @@ class FileEmitter {
   /// Single-pass analysis of an API: collects referenced types, and determines
   /// whether dart:convert and dart:typed_data imports are needed.
   ({Set<String> referencedTypes, bool needsConvert, bool needsTypedData})
-  _analyzeApi(IrApi api, [Map<String, IrType>? typeRegistry,
-      List<String> unwrapFields = const []]) {
+  _analyzeApi(
+    IrApi api, [
+    Map<String, IrType>? typeRegistry,
+    List<String> unwrapFields = const [],
+  ]) {
     final names = <String>{};
     var needsConvert = false;
     var needsTypedData = false;
@@ -385,7 +413,8 @@ class FileEmitter {
         _collectTopLevelTypeName(eventType, names, typeRegistry);
       }
       // Collect error response type (matching ApiEmitter._errorResponseContent
-      // logic: prefer default, then first 4xx+, only one error type per operation).
+      // logic: prefer default, then first 4xx+, only one error type per
+      // operation).
       {
         (String, IrMediaType)? errorContent;
         if (op.defaultResponse != null) {
@@ -415,7 +444,8 @@ class FileEmitter {
   /// Collect only the top-level type name from a type, without recursing
   /// into fields. For lists/maps, collect the item/value types.
   /// When [typeRegistry] is provided, resolves IrTypeRef to OneOf-eligible
-  /// unions and collects their variant type names (needed for parse code imports).
+  /// unions and collects their variant type names (needed for parse code
+  /// imports).
   ///
   /// When [skipInlinedOneOfRefs] is true (used during variant resolution),
   /// refs that resolve to non-self-referencing OneOf typedefs are NOT added
@@ -492,7 +522,8 @@ class FileEmitter {
         if (!skipUntagged) {
           names.add(name);
         }
-        // When resolving imports (typeRegistry provided), collect variant type names
+        // When resolving imports (typeRegistry provided), collect variant type
+        // names
         // because OneOf.parse() code references them directly.
         if (typeRegistry != null && isOneOfEligible(variants)) {
           for (final v in variants) {
@@ -536,7 +567,8 @@ class FileEmitter {
   }
 
   /// Single-pass model analysis: collects referenced type names and detects
-  /// whether dart:collection, dart:typed_data, dart:convert, and OneOf are needed.
+  /// whether dart:collection, dart:typed_data, dart:convert, and OneOf are
+  /// needed.
   ({
     Set<String> referencedNames,
     bool needsCollection,
@@ -559,9 +591,12 @@ class FileEmitter {
       _ => false,
     };
 
-    /// Deep bytes check (traverses OneOf-eligible unions and refs) - for needsConvert.
-    /// Only recurses into OneOf-eligible unions because their parse code is inlined
-    /// in the current file. Non-OneOf-eligible unions (sealed classes) handle bytes
+    /// Deep bytes check (traverses OneOf-eligible unions and refs) - for
+    /// needsConvert.
+    /// Only recurses into OneOf-eligible unions because their parse code is
+    /// inlined
+    /// in the current file. Non-OneOf-eligible unions (sealed classes) handle
+    /// bytes
     /// in their own fromJson method.
     final bytesVisited = <String>{};
     bool hasBytesAnywhere(IrType t) => switch (t) {
@@ -669,7 +704,8 @@ class FileEmitter {
             if (isDirectBytes(variant)) needsTypedData = true;
           }
         } else {
-          // AnyOf class: fromJson may inline OneOf.parse for variant types.
+          // AnyOf class: fromJson calls .fromJson()/.canParse() on variants,
+          // or inlines OneOf.parse for OneOf-eligible union variants.
           for (final variant in variants) {
             _collectTopLevelTypeName(variant, names, typeRegistry);
             if (isOneOfType(variant)) needsOneOf = true;
@@ -722,12 +758,10 @@ class FileEmitter {
     Set<String> inlinedTypes = const {},
     bool hasSecurityFile = false,
   }) {
-    final exports = <Directive>[
-      Directive.export('package:degenerate_runtime/degenerate_runtime.dart'),
-      if (apis.isNotEmpty) Directive.export('client/${packageName}_api.dart'),
-      if (hasSecurityFile)
-        Directive.export('client/${packageName}_security.dart'),
-      // Model exports (sorted, deduplicated, excluding inlined)
+    // Collect all relative exports and sort them alphabetically.
+    final relativeExports = <String>[
+      if (apis.isNotEmpty) 'client/${packageName}_api.dart',
+      if (hasSecurityFile) 'client/${packageName}_security.dart',
       for (final name
           in types
               .map(_typeName)
@@ -736,10 +770,14 @@ class FileEmitter {
               .toSet()
               .toList()
             ..sort())
-        Directive.export('models/${toSnakeCase(name)}.dart'),
-      // API exports (sorted, deduplicated)
+        'models/${toSnakeCase(name)}.dart',
       for (final name in apis.map((a) => a.name).toSet().toList()..sort())
-        Directive.export('apis/${toSnakeCase(name)}.dart'),
+        'apis/${toSnakeCase(name)}.dart',
+    ]..sort();
+
+    final exports = <Directive>[
+      Directive.export('package:degenerate_runtime/degenerate_runtime.dart'),
+      ...relativeExports.map(Directive.export),
     ];
 
     final library = Library((b) {
@@ -758,17 +796,22 @@ class FileEmitter {
     final className = '${sanitizeDartName(toPascalCase(packageName))}Api';
     final buf = StringBuffer();
     buf.writeln("import 'package:degenerate_runtime/degenerate_runtime.dart';");
+    // Collect and sort relative imports alphabetically.
+    final relativeImports = <String>[];
     if (securitySchemes.isNotEmpty) {
-      buf.writeln("import '${packageName}_security.dart';");
+      relativeImports.add("'${packageName}_security.dart'");
     }
-    // Deduplicate imports - multiple tags can resolve to the same API class name.
     final seenImports = <String>{};
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
       final importLine = "'../apis/$fileName.dart'";
       if (seenImports.add(importLine)) {
-        buf.writeln("import $importLine;");
+        relativeImports.add(importLine);
       }
+    }
+    relativeImports.sort();
+    for (final imp in relativeImports) {
+      buf.writeln('import $imp;');
     }
     buf.writeln();
     buf.writeln('/// Root SDK client providing access to all API groups.');
@@ -785,14 +828,14 @@ class FileEmitter {
     }
     buf.writeln('/// ```');
     buf.writeln('final class $className {');
+    buf.writeln('  $className(this._config);');
+    buf.writeln();
     if (defaultServerUrl != null) {
       final escaped = escapeDartString(defaultServerUrl);
       buf.writeln("  static const defaultBaseUrl = '$escaped';");
       buf.writeln();
     }
     buf.writeln('  final ApiConfig _config;');
-    buf.writeln();
-    buf.writeln('  $className(this._config);');
     buf.writeln();
 
     // Lazy-initialized API accessors - deduplicate field names.
@@ -882,19 +925,61 @@ class FileEmitter {
       'openIdConnect' => 'ApiSecuritySchemeType.openIdConnect',
       _ => 'ApiSecuritySchemeType.http',
     };
-    final location = switch (scheme.location) {
-      'header' => 'ApiKeyLocation.header',
-      'query' => 'ApiKeyLocation.query',
-      'cookie' => 'ApiKeyLocation.cookie',
-      _ => 'null',
-    };
-    final flowLiterals = scheme.flows
-        .map(
-          (flow) =>
-              'ApiOAuthFlow(type: ${_oauthFlowType(flow.type)}, authorizationUrl: ${_stringOrNull(flow.authorizationUrl)}, tokenUrl: ${_stringOrNull(flow.tokenUrl)}, refreshUrl: ${_stringOrNull(flow.refreshUrl)}, deviceAuthorizationUrl: ${_stringOrNull(flow.deviceAuthorizationUrl)}, scopes: ${_stringMapLiteral(flow.scopes)})',
-        )
-        .join(', ');
-    return 'ApiSecurityScheme(name: ${_stringOrNull(scheme.name)}, type: $type, scheme: ${_stringOrNull(scheme.scheme)}, bearerFormat: ${_stringOrNull(scheme.bearerFormat)}, parameterName: ${_stringOrNull(scheme.parameterName)}, location: $location, openIdConnectUrl: ${_stringOrNull(scheme.openIdConnectUrl)}, flows: [$flowLiterals])';
+    // Only include optional parameters that differ from their defaults.
+    final args = <String>[
+      "name: '${escapeDartString(scheme.name)}'",
+      'type: $type',
+    ];
+    if (scheme.scheme != null) {
+      args.add('scheme: ${_stringOrNull(scheme.scheme)}');
+    }
+    if (scheme.bearerFormat != null) {
+      args.add('bearerFormat: ${_stringOrNull(scheme.bearerFormat)}');
+    }
+    if (scheme.parameterName != null) {
+      args.add('parameterName: ${_stringOrNull(scheme.parameterName)}');
+    }
+    if (scheme.location != null) {
+      final location = switch (scheme.location) {
+        'header' => 'ApiKeyLocation.header',
+        'query' => 'ApiKeyLocation.query',
+        'cookie' => 'ApiKeyLocation.cookie',
+        _ => 'null',
+      };
+      if (location != 'null') args.add('location: $location');
+    }
+    if (scheme.openIdConnectUrl != null) {
+      args.add(
+        'openIdConnectUrl: ${_stringOrNull(scheme.openIdConnectUrl)}',
+      );
+    }
+    if (scheme.flows.isNotEmpty) {
+      final flowLiterals = scheme.flows.map(_oauthFlowLiteral).join(', ');
+      args.add('flows: [$flowLiterals]');
+    }
+    return 'const ApiSecurityScheme(${args.join(', ')})';
+  }
+
+  String _oauthFlowLiteral(IrOAuthFlow flow) {
+    final args = <String>['type: ${_oauthFlowType(flow.type)}'];
+    if (flow.authorizationUrl != null) {
+      args.add('authorizationUrl: ${_stringOrNull(flow.authorizationUrl)}');
+    }
+    if (flow.tokenUrl != null) {
+      args.add('tokenUrl: ${_stringOrNull(flow.tokenUrl)}');
+    }
+    if (flow.refreshUrl != null) {
+      args.add('refreshUrl: ${_stringOrNull(flow.refreshUrl)}');
+    }
+    if (flow.deviceAuthorizationUrl != null) {
+      args.add(
+        'deviceAuthorizationUrl: ${_stringOrNull(flow.deviceAuthorizationUrl)}',
+      );
+    }
+    if (flow.scopes.isNotEmpty) {
+      args.add('scopes: ${_stringMapLiteral(flow.scopes)}');
+    }
+    return 'ApiOAuthFlow(${args.join(', ')})';
   }
 
   String _securityRequirementsLiteral(
@@ -908,7 +993,7 @@ class FileEmitter {
                     "'${entry.key}': [${entry.value.map((scope) => "'${escapeDartString(scope)}'").join(', ')}]",
               )
               .join(', ');
-          return 'ApiSecurityRequirement({$entries})';
+          return 'const ApiSecurityRequirement({$entries})';
         })
         .join(', ');
     return '[$pieces]';
@@ -950,9 +1035,9 @@ class FileEmitter {
       },
       'http' => switch (scheme.scheme) {
         'bearer' =>
-          '  static ApiConfig $methodName(ApiConfig config, String token) => config.copyWith(defaultHeaders: {...config.defaultHeaders, \'Authorization\': \'Bearer \$token\'});',
+          "  static ApiConfig $methodName(ApiConfig config, String token) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Bearer \$token'});",
         'basic' =>
-          '  static ApiConfig $methodName(ApiConfig config, {required String username, required String password}) => config.copyWith(defaultHeaders: {...config.defaultHeaders, \'Authorization\': \'Basic \${base64Encode(utf8.encode(\'\$username:\$password\'))}\'});',
+          "  static ApiConfig $methodName(ApiConfig config, {required String username, required String password}) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'Authorization': 'Basic \${base64Encode(utf8.encode('\$username:\$password'))}'});",
         _ => null,
       },
       _ => null,
@@ -986,14 +1071,15 @@ class FileEmitter {
   String _securityMethodSuffix(String name) => name.isEmpty
       ? 'Security'
       : name
-            .split(RegExp(r'[^A-Za-z0-9]+'))
+            .split(RegExp('[^A-Za-z0-9]+'))
             .where((part) => part.isNotEmpty)
             .map((part) => part[0].toUpperCase() + part.substring(1))
             .join();
 
   /// Derive a clean field name from an API class name.
   ///
-  /// Drops a trailing "Api" suffix to avoid redundancy (e.g. `PetsApi` → `pets`).
+  /// Drops a trailing "Api" suffix to avoid redundancy (e.g. `PetsApi` →
+  /// `pets`).
   String _facadeFieldName(String apiClassName) {
     final stripped = apiClassName.endsWith('Api') && apiClassName.length > 3
         ? apiClassName.substring(0, apiClassName.length - 3)

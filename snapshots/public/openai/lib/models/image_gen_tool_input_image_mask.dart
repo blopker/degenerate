@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Optional mask for inpainting. Contains `image_url`
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Optional mask for inpainting. Contains `image_url`
 /// (string, optional) and `file_id` (string, optional).
 /// 
-final class ImageGenToolInputImageMask {const ImageGenToolInputImageMask({this.imageUrl, this.fileId, });
+@immutable final class ImageGenToolInputImageMask {const ImageGenToolInputImageMask({this.imageUrl, this.fileId, });
 
 factory ImageGenToolInputImageMask.fromJson(Map<String, dynamic> json) { return ImageGenToolInputImageMask(
   imageUrl: json['image_url'] as String?,

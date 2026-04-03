@@ -14,7 +14,7 @@ factory WaitingroomNextEventStartTime.fromJson(String json) => WaitingroomNextEv
 String toJson() => value;
 
 }
-final class WaitingroomWaitingroom {const WaitingroomWaitingroom({this.additionalRoutes, this.cookieAttributes, this.cookieSuffix, this.createdOn, this.customPageHtml, this.defaultTemplateLanguage, this.description, this.disableSessionRenewal, this.enabledOriginCommands, this.host, this.id, this.jsonResponseEnabled, this.modifiedOn, this.name, this.newUsersPerMinute, this.nextEventPrequeueStartTime, this.nextEventStartTime, this.path, this.queueAll, this.queueingMethod, this.queueingStatusCode, this.sessionDuration, this.suspended, this.totalActiveUsers, this.turnstileAction, this.turnstileMode, });
+@immutable final class WaitingroomWaitingroom {const WaitingroomWaitingroom({this.additionalRoutes, this.cookieAttributes, this.cookieSuffix, this.createdOn, this.customPageHtml, this.defaultTemplateLanguage, this.description, this.disableSessionRenewal, this.enabledOriginCommands, this.host, this.id, this.jsonResponseEnabled, this.modifiedOn, this.name, this.newUsersPerMinute, this.nextEventPrequeueStartTime, this.nextEventStartTime, this.path, this.queueAll, this.queueingMethod, this.queueingStatusCode, this.sessionDuration, this.suspended, this.totalActiveUsers, this.turnstileAction, this.turnstileMode, });
 
 factory WaitingroomWaitingroom.fromJson(Map<String, dynamic> json) { return WaitingroomWaitingroom(
   additionalRoutes: (json['additional_routes'] as List<dynamic>?)?.map((e) => WaitingroomAdditionalRoutes2.fromJson(e as Map<String, dynamic>)).toList(),

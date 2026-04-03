@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is an `oxxo` PaymentMethod, this hash contains details about the OXXO payment method.
-final class PostPaymentMethodsRequestOxxo {const PostPaymentMethodsRequestOxxo();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is an `oxxo` PaymentMethod, this hash contains details about the OXXO payment method.
+@immutable final class PostPaymentMethodsRequestOxxo {const PostPaymentMethodsRequestOxxo();
 
-factory PostPaymentMethodsRequestOxxo.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestOxxo(
-
-); }
+factory PostPaymentMethodsRequestOxxo.fromJson(Map<String, dynamic> _) { return const PostPaymentMethodsRequestOxxo(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentMethodsRequestOxxo copyWith() { return PostPaymentMethodsRequestOxxo(
+PostPaymentMethodsRequestOxxo copyWith() { return const PostPaymentMethodsRequestOxxo(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestOxxo; } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StatusUpdateEditedChangesStartDate {const StatusUpdateEditedChangesStartDate({this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StatusUpdateEditedChangesStartDate {const StatusUpdateEditedChangesStartDate({this.from, this.to, });
 
 factory StatusUpdateEditedChangesStartDate.fromJson(Map<String, dynamic> json) { return StatusUpdateEditedChangesStartDate(
   from: json['from'] as String?,

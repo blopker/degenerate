@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'put_zones_zone_id_activation_check_response_result.dart';final class PutZonesZoneIdActivationCheckResponse {const PutZonesZoneIdActivationCheckResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'put_zones_zone_id_activation_check_response_result.dart';@immutable final class PutZonesZoneIdActivationCheckResponse {const PutZonesZoneIdActivationCheckResponse({this.result});
 
 factory PutZonesZoneIdActivationCheckResponse.fromJson(Map<String, dynamic> json) { return PutZonesZoneIdActivationCheckResponse(
   result: json['result'] != null ? PutZonesZoneIdActivationCheckResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'patch_event_update_request_raw.dart';final class PatchEventUpdateRequest {const PatchEventUpdateRequest({this.attacker, this.attackerCountry, this.category, this.createdAt, this.datasetId, this.date, this.event, this.indicator, this.indicatorType, this.insight, this.raw, this.targetCountry, this.targetIndustry, this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'patch_event_update_request_raw.dart';@immutable final class PatchEventUpdateRequest {const PatchEventUpdateRequest({this.attacker, this.attackerCountry, this.category, this.createdAt, this.datasetId, this.date, this.event, this.indicator, this.indicatorType, this.insight, this.raw, this.targetCountry, this.targetIndustry, this.tlp, });
 
 factory PatchEventUpdateRequest.fromJson(Map<String, dynamic> json) { return PatchEventUpdateRequest(
   attacker: json['attacker'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestCustomerUpdateAddress {const PostCheckoutSessionsRequestCustomerUpdateAddress._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestCustomerUpdateAddress {const PostCheckoutSessionsRequestCustomerUpdateAddress._(this.value);
 
 factory PostCheckoutSessionsRequestCustomerUpdateAddress.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestCustomerUpdateAddress($value)'; } 
  }
-final class PostCheckoutSessionsRequestCustomerUpdateName {const PostCheckoutSessionsRequestCustomerUpdateName._(this.value);
+@immutable final class PostCheckoutSessionsRequestCustomerUpdateName {const PostCheckoutSessionsRequestCustomerUpdateName._(this.value);
 
 factory PostCheckoutSessionsRequestCustomerUpdateName.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestCustomerUpdateName($value)'; } 
  }
-final class PostCheckoutSessionsRequestCustomerUpdateShipping {const PostCheckoutSessionsRequestCustomerUpdateShipping._(this.value);
+@immutable final class PostCheckoutSessionsRequestCustomerUpdateShipping {const PostCheckoutSessionsRequestCustomerUpdateShipping._(this.value);
 
 factory PostCheckoutSessionsRequestCustomerUpdateShipping.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestCustomerUpdateShipping($value)'; } 
  }
 /// Controls what fields on Customer can be updated by the Checkout Session. Can only be provided when `customer` is provided.
-final class PostCheckoutSessionsRequestCustomerUpdate {const PostCheckoutSessionsRequestCustomerUpdate({this.address, this.name, this.shipping, });
+@immutable final class PostCheckoutSessionsRequestCustomerUpdate {const PostCheckoutSessionsRequestCustomerUpdate({this.address, this.name, this.shipping, });
 
 factory PostCheckoutSessionsRequestCustomerUpdate.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestCustomerUpdate(
   address: json['address'] != null ? PostCheckoutSessionsRequestCustomerUpdateAddress.fromJson(json['address'] as String) : null,

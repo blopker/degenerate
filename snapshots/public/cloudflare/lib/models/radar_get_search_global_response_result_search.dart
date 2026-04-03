@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetSearchGlobalResponseResultSearch {const RadarGetSearchGlobalResponseResultSearch({required this.code, required this.name, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetSearchGlobalResponseResultSearch {const RadarGetSearchGlobalResponseResultSearch({required this.code, required this.name, required this.type, });
 
 factory RadarGetSearchGlobalResponseResultSearch.fromJson(Map<String, dynamic> json) { return RadarGetSearchGlobalResponseResultSearch(
   code: json['code'] as String,

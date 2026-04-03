@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_addin_auth.dart';import 'dlp_addin_auth_no_auth.dart';import 'dlp_addin_auth_org.dart';final class DlpAddinAccountMapping {const DlpAddinAccountMapping({required this.addinIdentifierToken, required this.authRequirements, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_addin_auth.dart';import 'dlp_addin_auth_no_auth.dart';import 'dlp_addin_auth_org.dart';@immutable final class DlpAddinAccountMapping {const DlpAddinAccountMapping({required this.addinIdentifierToken, required this.authRequirements, });
 
 factory DlpAddinAccountMapping.fromJson(Map<String, dynamic> json) { return DlpAddinAccountMapping(
   addinIdentifierToken: json['addin_identifier_token'] as String,

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'users_list_attestations_response_attestations_bundle_dsse_envelope.dart';import 'users_list_attestations_response_attestations_bundle_verification_material.dart';/// The attestation's Sigstore Bundle.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'users_list_attestations_response_attestations_bundle_dsse_envelope.dart';import 'users_list_attestations_response_attestations_bundle_verification_material.dart';/// The attestation's Sigstore Bundle.
 /// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
-final class UsersListAttestationsResponseAttestationsBundle {const UsersListAttestationsResponseAttestationsBundle({this.mediaType, this.verificationMaterial, this.dsseEnvelope, });
+@immutable final class UsersListAttestationsResponseAttestationsBundle {const UsersListAttestationsResponseAttestationsBundle({this.mediaType, this.verificationMaterial, this.dsseEnvelope, });
 
 factory UsersListAttestationsResponseAttestationsBundle.fromJson(Map<String, dynamic> json) { return UsersListAttestationsResponseAttestationsBundle(
   mediaType: json['mediaType'] as String?,

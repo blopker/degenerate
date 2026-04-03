@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecurityTimeseriesGroupArc {const RadarGetEmailSecurityTimeseriesGroupArc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupArc {const RadarGetEmailSecurityTimeseriesGroupArc._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupArc.fromJson(String json) { return switch (json) {
   'PASS' => pass,

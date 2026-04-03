@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tunnel_config.dart';import 'tunnel_identifier.dart';import 'tunnel_schemas_tunnel_id.dart';/// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel's configuration on the Zero Trust dashboard.
-final class TunnelSchemasConfigSrc {const TunnelSchemasConfigSrc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_config.dart';import 'tunnel_identifier.dart';import 'tunnel_schemas_tunnel_id.dart';/// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel's configuration on the Zero Trust dashboard.
+@immutable final class TunnelSchemasConfigSrc {const TunnelSchemasConfigSrc._(this.value);
 
 factory TunnelSchemasConfigSrc.fromJson(String json) { return switch (json) {
   'local' => local,
@@ -39,7 +39,7 @@ String toJson() => value.toIso8601String();
 
 }
 /// Cloudflare Tunnel configuration
-final class TunnelConfiguration {const TunnelConfiguration({this.accountId, this.config, this.createdAt, this.source, this.tunnelId, this.version, });
+@immutable final class TunnelConfiguration {const TunnelConfiguration({this.accountId, this.config, this.createdAt, this.source, this.tunnelId, this.version, });
 
 factory TunnelConfiguration.fromJson(Map<String, dynamic> json) { return TunnelConfiguration(
   accountId: json['account_id'] != null ? TunnelIdentifier.fromJson(json['account_id'] as String) : null,

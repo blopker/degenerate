@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of tunnel.
-final class TunnelTunnelType {const TunnelTunnelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of tunnel.
+@immutable final class TunnelTunnelType {const TunnelTunnelType._(this.value);
 
 factory TunnelTunnelType.fromJson(String json) { return switch (json) {
   'cfd_tunnel' => cfdTunnel,

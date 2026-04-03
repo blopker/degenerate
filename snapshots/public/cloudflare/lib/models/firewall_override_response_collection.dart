@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_override.dart';final class FirewallOverrideResponseCollection {const FirewallOverrideResponseCollection({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_override.dart';@immutable final class FirewallOverrideResponseCollection {const FirewallOverrideResponseCollection({required this.result});
 
 factory FirewallOverrideResponseCollection.fromJson(Map<String, dynamic> json) { return FirewallOverrideResponseCollection(
   result: (json['result'] as List<dynamic>).map((e) => FirewallOverride.fromJson(e as Map<String, dynamic>)).toList(),

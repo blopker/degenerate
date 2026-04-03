@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the participant's call in a session. Can be: `queued`, `connecting`, `ringing`, `connected`, `complete`, or `failed`.
-final class ParticipantEnumStatus {const ParticipantEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the participant's call in a session. Can be: `queued`, `connecting`, `ringing`, `connected`, `complete`, or `failed`.
+@immutable final class ParticipantEnumStatus {const ParticipantEnumStatus._(this.value);
 
 factory ParticipantEnumStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ParticipantEnumStatus($value)'; } 
  }
-final class AccountConferenceParticipant {const AccountConferenceParticipant({this.accountSid, this.callSid, this.label, this.callSidToCoach, this.coaching, this.conferenceSid, this.dateCreated, this.dateUpdated, this.endConferenceOnExit, this.muted, this.hold, this.startConferenceOnEnter, this.status, this.queueTime, this.uri, });
+@immutable final class AccountConferenceParticipant {const AccountConferenceParticipant({this.accountSid, this.callSid, this.label, this.callSidToCoach, this.coaching, this.conferenceSid, this.dateCreated, this.dateUpdated, this.endConferenceOnExit, this.muted, this.hold, this.startConferenceOnEnter, this.status, this.queueTime, this.uri, });
 
 factory AccountConferenceParticipant.fromJson(Map<String, dynamic> json) { return AccountConferenceParticipant(
   accountSid: json['account_sid'] as String?,

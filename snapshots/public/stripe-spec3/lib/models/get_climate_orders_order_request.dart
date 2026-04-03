@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetClimateOrdersOrderRequest {const GetClimateOrdersOrderRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetClimateOrdersOrderRequest {const GetClimateOrdersOrderRequest();
 
-factory GetClimateOrdersOrderRequest.fromJson(Map<String, dynamic> json) { return GetClimateOrdersOrderRequest(
-
-); }
+factory GetClimateOrdersOrderRequest.fromJson(Map<String, dynamic> _) { return const GetClimateOrdersOrderRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetClimateOrdersOrderRequest copyWith() { return GetClimateOrdersOrderRequest(
+GetClimateOrdersOrderRequest copyWith() { return const GetClimateOrdersOrderRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetClimateOrdersOrderRequest; } 

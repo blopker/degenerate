@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Create a new file with the provided diff.
-final class ApplyPatchCreateFileOperationType {const ApplyPatchCreateFileOperationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Create a new file with the provided diff.
+@immutable final class ApplyPatchCreateFileOperationType {const ApplyPatchCreateFileOperationType._(this.value);
 
 factory ApplyPatchCreateFileOperationType.fromJson(String json) { return switch (json) {
   'create_file' => createFile,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ApplyPatchCreateFileOperationType($value)'; } 
  }
 /// Instruction describing how to create a file via the apply_patch tool.
-final class ApplyPatchCreateFileOperation {const ApplyPatchCreateFileOperation({this.type = ApplyPatchCreateFileOperationType.createFile, required this.path, required this.diff, });
+@immutable final class ApplyPatchCreateFileOperation {const ApplyPatchCreateFileOperation({required this.path, required this.diff, this.type = ApplyPatchCreateFileOperationType.createFile, });
 
 factory ApplyPatchCreateFileOperation.fromJson(Map<String, dynamic> json) { return ApplyPatchCreateFileOperation(
   type: ApplyPatchCreateFileOperationType.fromJson(json['type'] as String),

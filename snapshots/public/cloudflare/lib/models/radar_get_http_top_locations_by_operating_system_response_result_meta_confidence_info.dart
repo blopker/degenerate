@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_locations_by_operating_system_response_result_meta_confidence_info_annotations.dart';final class RadarGetHttpTopLocationsByOperatingSystemResponseResultMetaConfidenceInfo {const RadarGetHttpTopLocationsByOperatingSystemResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_locations_by_operating_system_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetHttpTopLocationsByOperatingSystemResponseResultMetaConfidenceInfo {const RadarGetHttpTopLocationsByOperatingSystemResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetHttpTopLocationsByOperatingSystemResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopLocationsByOperatingSystemResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetHttpTopLocationsByOperatingSystemResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetEventRawReadResponse {const GetEventRawReadResponse({required this.accountId, required this.created, required this.data, required this.id, required this.source, required this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEventRawReadResponse {const GetEventRawReadResponse({required this.accountId, required this.created, required this.data, required this.id, required this.source, required this.tlp, });
 
 factory GetEventRawReadResponse.fromJson(Map<String, dynamic> json) { return GetEventRawReadResponse(
   accountId: (json['accountId'] as num).toDouble(),
   created: json['created'] as String,
-  data: (json['data'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  data: json['data'] as Map<String, dynamic>,
   id: json['id'] as String,
   source: json['source'] as String,
   tlp: json['tlp'] as String,

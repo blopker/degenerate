@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The scope of the URL normalization.
-final class RulesetsUrlNormalizationScope {const RulesetsUrlNormalizationScope._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The scope of the URL normalization.
+@immutable final class RulesetsUrlNormalizationScope {const RulesetsUrlNormalizationScope._(this.value);
 
 factory RulesetsUrlNormalizationScope.fromJson(String json) { return switch (json) {
   'incoming' => incoming,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RulesetsUrlNormalizationScope($value)'; } 
  }
 /// The type of URL normalization performed by Cloudflare.
-final class RulesetsUrlNormalizationType {const RulesetsUrlNormalizationType._(this.value);
+@immutable final class RulesetsUrlNormalizationType {const RulesetsUrlNormalizationType._(this.value);
 
 factory RulesetsUrlNormalizationType.fromJson(String json) { return switch (json) {
   'cloudflare' => cloudflare,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RulesetsUrlNormalizationType($value)'; } 
  }
 /// A URL Normalization object.
-final class RulesetsUrlNormalization {const RulesetsUrlNormalization({required this.scope, required this.type, });
+@immutable final class RulesetsUrlNormalization {const RulesetsUrlNormalization({required this.scope, required this.type, });
 
 factory RulesetsUrlNormalization.fromJson(Map<String, dynamic> json) { return RulesetsUrlNormalization(
   scope: RulesetsUrlNormalizationScope.fromJson(json['scope'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTokensRequestAccountIndividualAddressKanji {const PostTokensRequestAccountIndividualAddressKanji({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, this.town, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTokensRequestAccountIndividualAddressKanji {const PostTokensRequestAccountIndividualAddressKanji({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, this.town, });
 
 factory PostTokensRequestAccountIndividualAddressKanji.fromJson(Map<String, dynamic> json) { return PostTokensRequestAccountIndividualAddressKanji(
   city: json['city'] as String?,

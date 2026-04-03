@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the metric to retrieve.
-final class RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the metric to retrieve.
+@immutable final class RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric._(this.value);
 
 factory RadarGetOriginsTimeseriesGroupMetric.fromJson(String json) { return switch (json) {
   'CONNECTION_FAILURES' => connectionFailures,

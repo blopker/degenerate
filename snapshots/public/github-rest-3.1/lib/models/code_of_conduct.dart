@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Code Of Conduct
-final class CodeOfConduct {const CodeOfConduct({required this.key, required this.name, required this.url, this.body, required this.htmlUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code Of Conduct
+@immutable final class CodeOfConduct {const CodeOfConduct({required this.key, required this.name, required this.url, required this.htmlUrl, this.body, });
 
 factory CodeOfConduct.fromJson(Map<String, dynamic> json) { return CodeOfConduct(
   key: json['key'] as String,

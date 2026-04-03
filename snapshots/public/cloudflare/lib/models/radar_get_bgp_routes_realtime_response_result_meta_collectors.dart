@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpRoutesRealtimeResponseResultMetaCollectors {const RadarGetBgpRoutesRealtimeResponseResultMetaCollectors({required this.collector, required this.latestRealtimeTs, required this.latestRibTs, required this.latestUpdatesTs, required this.peersCount, required this.peersV4Count, required this.peersV6Count, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpRoutesRealtimeResponseResultMetaCollectors {const RadarGetBgpRoutesRealtimeResponseResultMetaCollectors({required this.collector, required this.latestRealtimeTs, required this.latestRibTs, required this.latestUpdatesTs, required this.peersCount, required this.peersV4Count, required this.peersV6Count, });
 
 factory RadarGetBgpRoutesRealtimeResponseResultMetaCollectors.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesRealtimeResponseResultMetaCollectors(
   collector: json['collector'] as String,

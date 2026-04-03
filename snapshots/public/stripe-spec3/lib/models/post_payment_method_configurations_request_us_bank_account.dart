@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_request_us_bank_account_display_preference.dart';/// Stripe users in the United States can accept ACH direct debit payments from customers with a US bank account using the Automated Clearing House (ACH) payments system operated by Nacha. Check this [page](https://docs.stripe.com/payments/ach-direct-debit) for more details.
-final class PostPaymentMethodConfigurationsRequestUsBankAccount {const PostPaymentMethodConfigurationsRequestUsBankAccount({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_us_bank_account_display_preference.dart';/// Stripe users in the United States can accept ACH direct debit payments from customers with a US bank account using the Automated Clearing House (ACH) payments system operated by Nacha. Check this [page](https://docs.stripe.com/payments/ach-direct-debit) for more details.
+@immutable final class PostPaymentMethodConfigurationsRequestUsBankAccount {const PostPaymentMethodConfigurationsRequestUsBankAccount({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestUsBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestUsBankAccount(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestUsBankAccountDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

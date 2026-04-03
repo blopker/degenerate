@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudforce_one_requests_request_content.dart';import 'cloudforce_one_requests_request_summary.dart';import 'cloudforce_one_requests_request_type.dart';import 'cloudforce_one_requests_tlp.dart';final class CloudforceOneRequestsRequestEdit {const CloudforceOneRequestsRequestEdit({this.content, this.priority, this.requestType, this.summary, this.tlp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_request_content.dart';import 'cloudforce_one_requests_request_summary.dart';import 'cloudforce_one_requests_request_type.dart';import 'cloudforce_one_requests_tlp.dart';@immutable final class CloudforceOneRequestsRequestEdit {const CloudforceOneRequestsRequestEdit({this.content, this.priority, this.requestType, this.summary, this.tlp, });
 
 factory CloudforceOneRequestsRequestEdit.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsRequestEdit(
   content: json['content'] != null ? CloudforceOneRequestsRequestContent.fromJson(json['content'] as String) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'auto_chunking_strategy_request_param.dart';import 'static_chunking_strategy_request_param.dart';/// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto_chunking_strategy_request_param.dart';import 'static_chunking_strategy_request_param.dart';/// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
 sealed class ChunkingStrategyRequestParam {const ChunkingStrategyRequestParam();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ChunkingStrategyRequestParam$Unknown; } 
  }
-final class ChunkingStrategyRequestParamAuto extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParamAuto(this.autoChunkingStrategyRequestParam);
+@immutable final class ChunkingStrategyRequestParamAuto extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParamAuto(this.autoChunkingStrategyRequestParam);
 
 factory ChunkingStrategyRequestParamAuto.fromJson(Map<String, dynamic> json) { return ChunkingStrategyRequestParamAuto(AutoChunkingStrategyRequestParam.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final AutoChunkingStrategyRequestParam autoChunkingStrategyRequestParam;
 @override int get hashCode { return autoChunkingStrategyRequestParam.hashCode; } 
 @override String toString() { return 'ChunkingStrategyRequestParamAuto(autoChunkingStrategyRequestParam: $autoChunkingStrategyRequestParam)'; } 
  }
-final class ChunkingStrategyRequestParamStatic extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParamStatic(this.staticChunkingStrategyRequestParam);
+@immutable final class ChunkingStrategyRequestParamStatic extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParamStatic(this.staticChunkingStrategyRequestParam);
 
 factory ChunkingStrategyRequestParamStatic.fromJson(Map<String, dynamic> json) { return ChunkingStrategyRequestParamStatic(StaticChunkingStrategyRequestParam.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final StaticChunkingStrategyRequestParam staticChunkingStrategyRequestParam;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class ChunkingStrategyRequestParam$Unknown extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParam$Unknown(this.json);
+@immutable final class ChunkingStrategyRequestParam$Unknown extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParam$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_portals_request_servers.dart';final class CreatePortalsRequest {const CreatePortalsRequest({this.description, required this.hostname, required this.id, required this.name, this.secureWebGateway, this.servers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_portals_request_servers.dart';@immutable final class CreatePortalsRequest {const CreatePortalsRequest({required this.hostname, required this.id, required this.name, this.description, this.secureWebGateway, this.servers, });
 
 factory CreatePortalsRequest.fromJson(Map<String, dynamic> json) { return CreatePortalsRequest(
   description: json['description'] as String?,

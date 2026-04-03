@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_status_check_protection_request_checks.dart';final class ReposUpdateStatusCheckProtectionRequest {const ReposUpdateStatusCheckProtectionRequest({this.strict, this.contexts, this.checks, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_status_check_protection_request_checks.dart';@immutable final class ReposUpdateStatusCheckProtectionRequest {const ReposUpdateStatusCheckProtectionRequest({this.strict, this.contexts, this.checks, });
 
 factory ReposUpdateStatusCheckProtectionRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateStatusCheckProtectionRequest(
   strict: json['strict'] as bool?,

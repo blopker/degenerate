@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_discussion_transferred_changes.dart';final class WebhookDiscussionTransferredAction {const WebhookDiscussionTransferredAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discussion.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_discussion_transferred_changes.dart';@immutable final class WebhookDiscussionTransferredAction {const WebhookDiscussionTransferredAction._(this.value);
 
 factory WebhookDiscussionTransferredAction.fromJson(String json) { return switch (json) {
   'transferred' => transferred,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDiscussionTransferredAction($value)'; } 
  }
-final class WebhookDiscussionTransferred {const WebhookDiscussionTransferred({required this.action, required this.changes, required this.discussion, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookDiscussionTransferred {const WebhookDiscussionTransferred({required this.action, required this.changes, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookDiscussionTransferred.fromJson(Map<String, dynamic> json) { return WebhookDiscussionTransferred(
   action: WebhookDiscussionTransferredAction.fromJson(json['action'] as String),

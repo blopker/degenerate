@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_accounts_account_request_individual_verification_additional_document.dart';import 'post_accounts_account_request_individual_verification_document.dart';final class PostAccountsAccountRequestIndividualVerification {const PostAccountsAccountRequestIndividualVerification({this.additionalDocument, this.document, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_request_individual_verification_additional_document.dart';import 'post_accounts_account_request_individual_verification_document.dart';@immutable final class PostAccountsAccountRequestIndividualVerification {const PostAccountsAccountRequestIndividualVerification({this.additionalDocument, this.document, });
 
 factory PostAccountsAccountRequestIndividualVerification.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestIndividualVerification(
   additionalDocument: json['additional_document'] != null ? PostAccountsAccountRequestIndividualVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null,

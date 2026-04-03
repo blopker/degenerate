@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_cloud_type.dart';import 'mcn_resource_id.dart';import 'mcn_resource_type.dart';final class McnResourcePreview {const McnResourcePreview({required this.cloudType, required this.detail, required this.id, required this.name, required this.resourceType, required this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_cloud_type.dart';import 'mcn_resource_id.dart';import 'mcn_resource_type.dart';@immutable final class McnResourcePreview {const McnResourcePreview({required this.cloudType, required this.detail, required this.id, required this.name, required this.resourceType, required this.title, });
 
 factory McnResourcePreview.fromJson(Map<String, dynamic> json) { return McnResourcePreview(
   cloudType: McnCloudType.fromJson(json['cloud_type'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_target_criteria_self_hosted_app.dart';import 'access_type.dart';final class AccessRdpProps {const AccessRdpProps({required this.targetCriteria, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_target_criteria_self_hosted_app.dart';import 'access_type.dart';@immutable final class AccessRdpProps {const AccessRdpProps({required this.targetCriteria, this.type, });
 
 factory AccessRdpProps.fromJson(Map<String, dynamic> json) { return AccessRdpProps(
   targetCriteria: (json['target_criteria'] as List<dynamic>).map((e) => AccessTargetCriteriaSelfHostedApp.fromJson(e as Map<String, dynamic>)).toList(),

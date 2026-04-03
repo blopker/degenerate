@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Gitignore Template
-final class GitignoreTemplate {const GitignoreTemplate({required this.name, required this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Gitignore Template
+@immutable final class GitignoreTemplate {const GitignoreTemplate({required this.name, required this.source, });
 
 factory GitignoreTemplate.fromJson(Map<String, dynamic> json) { return GitignoreTemplate(
   name: json['name'] as String,

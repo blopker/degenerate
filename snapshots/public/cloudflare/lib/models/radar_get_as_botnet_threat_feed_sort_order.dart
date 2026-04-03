@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Sort order.
-final class RadarGetAsBotnetThreatFeedSortOrder {const RadarGetAsBotnetThreatFeedSortOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sort order.
+@immutable final class RadarGetAsBotnetThreatFeedSortOrder {const RadarGetAsBotnetThreatFeedSortOrder._(this.value);
 
 factory RadarGetAsBotnetThreatFeedSortOrder.fromJson(String json) { return switch (json) {
   'ASC' => asc,

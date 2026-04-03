@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_transcription_session_create_request_ga_audio.dart';/// The type of session to create. Always `transcription` for transcription sessions.
 /// 
-final class RealtimeTranscriptionSessionCreateRequestGaType {const RealtimeTranscriptionSessionCreateRequestGaType._(this.value);
+@immutable final class RealtimeTranscriptionSessionCreateRequestGaType {const RealtimeTranscriptionSessionCreateRequestGaType._(this.value);
 
 factory RealtimeTranscriptionSessionCreateRequestGaType.fromJson(String json) { return switch (json) {
   'transcription' => transcription,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeTranscriptionSessionCreateRequestGaType($value)'; } 
  }
-final class RealtimeTranscriptionSessionCreateRequestGaInclude {const RealtimeTranscriptionSessionCreateRequestGaInclude._(this.value);
+@immutable final class RealtimeTranscriptionSessionCreateRequestGaInclude {const RealtimeTranscriptionSessionCreateRequestGaInclude._(this.value);
 
 factory RealtimeTranscriptionSessionCreateRequestGaInclude.fromJson(String json) { return switch (json) {
   'item.input_audio_transcription.logprobs' => itemInputAudioTranscriptionLogprobs,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeTranscriptionSessionCreateRequestGaInclude($value)'; } 
  }
 /// Realtime transcription session object configuration.
-final class RealtimeTranscriptionSessionCreateRequestGa {const RealtimeTranscriptionSessionCreateRequestGa({required this.type, this.audio, this.include, });
+@immutable final class RealtimeTranscriptionSessionCreateRequestGa {const RealtimeTranscriptionSessionCreateRequestGa({required this.type, this.audio, this.include, });
 
 factory RealtimeTranscriptionSessionCreateRequestGa.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateRequestGa(
   type: RealtimeTranscriptionSessionCreateRequestGaType.fromJson(json['type'] as String),

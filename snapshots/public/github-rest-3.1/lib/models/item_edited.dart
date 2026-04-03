@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item.dart';import 'item_edited_changes.dart';import 'item_edited_changes_variant1.dart';import 'item_edited_changes_variant2.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class ItemEditedAction {const ItemEditedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item.dart';import 'item_edited_changes.dart';import 'item_edited_changes_variant1.dart';import 'item_edited_changes_variant2.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class ItemEditedAction {const ItemEditedAction._(this.value);
 
 factory ItemEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ItemEditedAction($value)'; } 
  }
-final class ItemEdited {const ItemEdited({required this.action, this.changes, this.installation, required this.organization, required this.projectsV2Item, required this.sender, });
+@immutable final class ItemEdited {const ItemEdited({required this.action, required this.organization, required this.projectsV2Item, required this.sender, this.changes, this.installation, });
 
 factory ItemEdited.fromJson(Map<String, dynamic> json) { return ItemEdited(
   action: ItemEditedAction.fromJson(json['action'] as String),

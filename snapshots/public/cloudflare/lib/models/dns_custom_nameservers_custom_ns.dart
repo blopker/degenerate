@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// Verification status of the nameserver.
-final class DnsCustomNameserversCustomNsStatus {const DnsCustomNameserversCustomNsStatus._(this.value);
+@immutable final class DnsCustomNameserversCustomNsStatus {const DnsCustomNameserversCustomNsStatus._(this.value);
 
 factory DnsCustomNameserversCustomNsStatus.fromJson(String json) { return switch (json) {
   'moved' => moved,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DnsCustomNameserversCustomNsStatus($value)'; } 
  }
 /// A single account custom nameserver.
-final class DnsCustomNameserversCustomNs {const DnsCustomNameserversCustomNs({required this.dnsRecords, required this.nsName, this.nsSet, required this.status, required this.zoneTag, });
+@immutable final class DnsCustomNameserversCustomNs {const DnsCustomNameserversCustomNs({required this.dnsRecords, required this.nsName, required this.status, required this.zoneTag, this.nsSet, });
 
 factory DnsCustomNameserversCustomNs.fromJson(Map<String, dynamic> json) { return DnsCustomNameserversCustomNs(
   dnsRecords: (json['dns_records'] as List<dynamic>).map((e) => DnsCustomNameserversCustomNsDnsRecords.fromJson(e as Map<String, dynamic>)).toList(),

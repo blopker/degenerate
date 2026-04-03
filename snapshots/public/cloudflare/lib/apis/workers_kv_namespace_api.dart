@@ -135,7 +135,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -296,7 +296,7 @@ throw UnsupportedError('Cannot decode application/octet-stream response into Wor
 /// Write a value identified by a key. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name. Body should be the value to be stored. If JSON metadata to be associated with the key/value pair is needed, use `multipart/form-data` content type for your PUT request (see dropdown below in `REQUEST BODY SCHEMA`). Existing values, expirations, and metadata will be overwritten. If neither `expiration` nor `expiration_ttl` is specified, the key-value pair will never expire. If both are set, `expiration_ttl` is used and `expiration` is ignored.
 ///
 /// `PUT /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}`
-Future<ApiResult<Map<String, dynamic>?, Never>> workersKvNamespaceWriteKeyValuePairWithMetadata({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, WorkersKvExpiration? expiration, WorkersKvExpirationTtl? expirationTtl, required WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>?, Never>> workersKvNamespaceWriteKeyValuePairWithMetadata({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest body, WorkersKvExpiration? expiration, WorkersKvExpirationTtl? expirationTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expiration != null) {
   queryParameters['expiration'] = expiration.toString();
@@ -326,7 +326,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -348,7 +348,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 

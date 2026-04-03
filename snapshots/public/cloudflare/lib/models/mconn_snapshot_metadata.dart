@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MconnSnapshotMetadata {const MconnSnapshotMetadata({required this.a, required this.t, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MconnSnapshotMetadata {const MconnSnapshotMetadata({required this.a, required this.t, });
 
 factory MconnSnapshotMetadata.fromJson(Map<String, dynamic> json) { return MconnSnapshotMetadata(
   a: (json['a'] as num).toDouble(),

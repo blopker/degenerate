@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_port.dart';/// The communication protocol your application secures.
-final class AccessProtocolSelfHostedApp {const AccessProtocolSelfHostedApp._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_port.dart';/// The communication protocol your application secures.
+@immutable final class AccessProtocolSelfHostedApp {const AccessProtocolSelfHostedApp._(this.value);
 
 factory AccessProtocolSelfHostedApp.fromJson(String json) { return switch (json) {
   'RDP' => rdp,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessProtocolSelfHostedApp($value)'; } 
  }
-final class AccessTargetCriteriaSelfHostedApp {const AccessTargetCriteriaSelfHostedApp({required this.port, required this.targetAttributes, required this.protocol, });
+@immutable final class AccessTargetCriteriaSelfHostedApp {const AccessTargetCriteriaSelfHostedApp({required this.port, required this.targetAttributes, required this.protocol, });
 
 factory AccessTargetCriteriaSelfHostedApp.fromJson(Map<String, dynamic> json) { return AccessTargetCriteriaSelfHostedApp(
   port: AccessPort.fromJson(json['port'] as num),
@@ -41,7 +41,7 @@ final AccessProtocolSelfHostedApp protocol;
 
 Map<String, dynamic> toJson() { return {
   'port': port.toJson(),
-  'target_attributes': targetAttributes.map((k, v) => MapEntry(k, v)),
+  'target_attributes': targetAttributes,
   'protocol': protocol.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') &&

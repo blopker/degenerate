@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'text_generation2_variant1_tool_calls.dart';import 'text_generation2_variant1_usage.dart';final class TextGeneration2Variant1 {const TextGeneration2Variant1({required this.response, this.toolCalls, this.usage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'text_generation2_variant1_tool_calls.dart';import 'text_generation2_variant1_usage.dart';@immutable final class TextGeneration2Variant1 {const TextGeneration2Variant1({required this.response, this.toolCalls, this.usage, });
 
 factory TextGeneration2Variant1.fromJson(Map<String, dynamic> json) { return TextGeneration2Variant1(
   response: json['response'] as String,

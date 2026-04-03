@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ActionsGenerateRunnerJitconfigForOrgRequest {const ActionsGenerateRunnerJitconfigForOrgRequest({required this.name, required this.runnerGroupId, required this.labels, this.workFolder = '_work', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGenerateRunnerJitconfigForOrgRequest {const ActionsGenerateRunnerJitconfigForOrgRequest({required this.name, required this.runnerGroupId, required this.labels, this.workFolder = '_work', });
 
 factory ActionsGenerateRunnerJitconfigForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsGenerateRunnerJitconfigForOrgRequest(
   name: json['name'] as String,

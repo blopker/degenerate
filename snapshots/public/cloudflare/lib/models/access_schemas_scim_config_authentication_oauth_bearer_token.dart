@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The authentication scheme to use when making SCIM requests to this application.
-final class AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme {const AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The authentication scheme to use when making SCIM requests to this application.
+@immutable final class AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme {const AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme._(this.value);
 
 factory AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme.fromJson(String json) { return switch (json) {
   'oauthbearertoken' => oauthbearertoken,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme($value)'; } 
  }
 /// Attributes for configuring OAuth Bearer Token authentication scheme for SCIM provisioning to an application.
-final class AccessSchemasScimConfigAuthenticationOauthBearerToken {const AccessSchemasScimConfigAuthenticationOauthBearerToken({required this.scheme, required this.token, });
+@immutable final class AccessSchemasScimConfigAuthenticationOauthBearerToken {const AccessSchemasScimConfigAuthenticationOauthBearerToken({required this.scheme, required this.token, });
 
 factory AccessSchemasScimConfigAuthenticationOauthBearerToken.fromJson(Map<String, dynamic> json) { return AccessSchemasScimConfigAuthenticationOauthBearerToken(
   scheme: AccessSchemasScimConfigAuthenticationOauthBearerTokenScheme.fromJson(json['scheme'] as String),

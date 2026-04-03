@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_links_resource_payment_method_reuse_agreement.dart';/// If set to `auto`, enables the collection of customer consent for promotional communications.
-final class PaymentLinksResourceConsentCollectionPromotions {const PaymentLinksResourceConsentCollectionPromotions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_links_resource_payment_method_reuse_agreement.dart';/// If set to `auto`, enables the collection of customer consent for promotional communications.
+@immutable final class PaymentLinksResourceConsentCollectionPromotions {const PaymentLinksResourceConsentCollectionPromotions._(this.value);
 
 factory PaymentLinksResourceConsentCollectionPromotions.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinksResourceConsentCollectionPromotions($value)'; } 
  }
 /// If set to `required`, it requires cutomers to accept the terms of service before being able to pay. If set to `none`, customers won't be shown a checkbox to accept the terms of service.
-final class PaymentLinksResourceConsentCollectionTermsOfService {const PaymentLinksResourceConsentCollectionTermsOfService._(this.value);
+@immutable final class PaymentLinksResourceConsentCollectionTermsOfService {const PaymentLinksResourceConsentCollectionTermsOfService._(this.value);
 
 factory PaymentLinksResourceConsentCollectionTermsOfService.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinksResourceConsentCollectionTermsOfService($value)'; } 
  }
 /// 
-final class PaymentLinksResourceConsentCollection {const PaymentLinksResourceConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
+@immutable final class PaymentLinksResourceConsentCollection {const PaymentLinksResourceConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
 
 factory PaymentLinksResourceConsentCollection.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceConsentCollection(
   paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null ? PaymentLinksResourcePaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null,

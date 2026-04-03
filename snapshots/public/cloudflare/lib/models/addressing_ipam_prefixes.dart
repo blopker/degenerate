@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_account_identifier.dart';import 'addressing_asn.dart';import 'addressing_cidr.dart';import 'addressing_delegate_loa_creation.dart';import 'addressing_description.dart';import 'addressing_loa_document_identifier.dart';import 'addressing_prefix_identifier.dart';import 'addressing_timestamp.dart';/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_account_identifier.dart';import 'addressing_asn.dart';import 'addressing_cidr.dart';import 'addressing_delegate_loa_creation.dart';import 'addressing_description.dart';import 'addressing_loa_document_identifier.dart';import 'addressing_prefix_identifier.dart';import 'addressing_timestamp.dart';/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
 extension type const AddressingAdvertised(bool value) {
 factory AddressingAdvertised.fromJson(bool json) => AddressingAdvertised(json);
 
@@ -49,7 +49,7 @@ factory AddressingValidationState.fromJson(String json) => AddressingValidationS
 String toJson() => value;
 
 }
-final class AddressingIpamPrefixes {const AddressingIpamPrefixes({this.accountId, this.advertised, this.advertisedModifiedAt, this.approved, this.asn, this.cidr, this.createdAt, this.delegateLoaCreation, this.description, this.id, this.irrValidationState, this.loaDocumentId, this.modifiedAt, this.onDemandEnabled, this.onDemandLocked, this.ownershipValidationState, this.ownershipValidationToken, this.rpkiValidationState, });
+@immutable final class AddressingIpamPrefixes {const AddressingIpamPrefixes({this.accountId, this.advertised, this.advertisedModifiedAt, this.approved, this.asn, this.cidr, this.createdAt, this.delegateLoaCreation, this.description, this.id, this.irrValidationState, this.loaDocumentId, this.modifiedAt, this.onDemandEnabled, this.onDemandLocked, this.ownershipValidationState, this.ownershipValidationToken, this.rpkiValidationState, });
 
 factory AddressingIpamPrefixes.fromJson(Map<String, dynamic> json) { return AddressingIpamPrefixes(
   accountId: json['account_id'] != null ? AddressingAccountIdentifier.fromJson(json['account_id'] as String) : null,

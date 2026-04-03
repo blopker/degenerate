@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shape.dart';final class ShapeCollection {const ShapeCollection({required this.name, required this.shapes, this.tags, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shape.dart';@immutable final class ShapeCollection {const ShapeCollection({required this.name, required this.shapes, this.tags, });
 
 factory ShapeCollection.fromJson(Map<String, dynamic> json) { return ShapeCollection(
   name: json['name'] as String,

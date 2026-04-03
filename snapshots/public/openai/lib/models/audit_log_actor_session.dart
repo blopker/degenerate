@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'audit_log_actor_user.dart';/// The session in which the audit logged action was performed.
-final class AuditLogActorSession {const AuditLogActorSession({this.user, this.ipAddress, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_actor_user.dart';/// The session in which the audit logged action was performed.
+@immutable final class AuditLogActorSession {const AuditLogActorSession({this.user, this.ipAddress, });
 
 factory AuditLogActorSession.fromJson(Map<String, dynamic> json) { return AuditLogActorSession(
   user: json['user'] != null ? AuditLogActorUser.fromJson(json['user'] as Map<String, dynamic>) : null,

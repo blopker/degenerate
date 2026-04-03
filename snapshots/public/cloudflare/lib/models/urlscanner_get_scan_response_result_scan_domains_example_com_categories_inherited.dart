@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_categories_inherited_content.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_categories_inherited_risks.dart';final class UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited {const UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited({this.content, this.from, this.risks, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_categories_inherited_content.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_categories_inherited_risks.dart';@immutable final class UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited {const UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited({this.content, this.from, this.risks, });
 
 factory UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited(
   content: (json['content'] as List<dynamic>?)?.map((e) => UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInheritedContent.fromJson(e as Map<String, dynamic>)).toList(),

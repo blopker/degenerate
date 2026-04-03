@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Poll permissions
-final class RealtimekitPresetPermissionsPolls {const RealtimekitPresetPermissionsPolls({required this.canCreate, required this.canView, required this.canVote, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Poll permissions
+@immutable final class RealtimekitPresetPermissionsPolls {const RealtimekitPresetPermissionsPolls({required this.canCreate, required this.canView, required this.canVote, });
 
 factory RealtimekitPresetPermissionsPolls.fromJson(Map<String, dynamic> json) { return RealtimekitPresetPermissionsPolls(
   canCreate: json['can_create'] as bool,

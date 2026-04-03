@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-extension type const McnResourcesCatalogPolicyPreview(String value) {
+import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const McnResourcesCatalogPolicyPreview(String value) {
 factory McnResourcesCatalogPolicyPreview.fromJson(String json) => McnResourcesCatalogPolicyPreview(json);
 
 String toJson() => value;
 
 }
-final class McnResourcesCatalogPolicyPreviewResponse {const McnResourcesCatalogPolicyPreviewResponse({this.result});
+@immutable final class McnResourcesCatalogPolicyPreviewResponse {const McnResourcesCatalogPolicyPreviewResponse({this.result});
 
 factory McnResourcesCatalogPolicyPreviewResponse.fromJson(Map<String, dynamic> json) { return McnResourcesCatalogPolicyPreviewResponse(
   result: json['result'] != null ? McnResourcesCatalogPolicyPreview.fromJson(json['result'] as String) : null,

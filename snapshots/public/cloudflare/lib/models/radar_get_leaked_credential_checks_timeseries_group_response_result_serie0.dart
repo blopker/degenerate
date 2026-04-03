@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultSerie0 {const RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultSerie0 {const RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultSerie0(
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
@@ -13,7 +13,7 @@ final Map<String,List<String>> additionalProperties;
 
 Map<String, dynamic> toJson() { return {
   'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
-  ...additionalProperties.map((k, v) => MapEntry(k, v)),
+  ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('timestamps'); } 
 RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultSerie0 copyWith({List<DateTime>? timestamps, Map<String, List<String>>? additionalProperties, }) { return RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultSerie0(

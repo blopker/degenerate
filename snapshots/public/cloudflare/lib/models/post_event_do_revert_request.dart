@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventDoRevertRequest {const PostEventDoRevertRequest({required this.minutesAgo});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventDoRevertRequest {const PostEventDoRevertRequest({required this.minutesAgo});
 
 factory PostEventDoRevertRequest.fromJson(Map<String, dynamic> json) { return PostEventDoRevertRequest(
   minutesAgo: (json['minutesAgo'] as num).toDouble(),

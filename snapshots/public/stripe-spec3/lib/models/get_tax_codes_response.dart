@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_code.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetTaxCodesResponseObject {const GetTaxCodesResponseObject._(this.value);
+@immutable final class GetTaxCodesResponseObject {const GetTaxCodesResponseObject._(this.value);
 
 factory GetTaxCodesResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetTaxCodesResponseObject($value)'; } 
  }
 /// 
-final class GetTaxCodesResponse {const GetTaxCodesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetTaxCodesResponse {const GetTaxCodesResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetTaxCodesResponse.fromJson(Map<String, dynamic> json) { return GetTaxCodesResponse(
   data: (json['data'] as List<dynamic>).map((e) => TaxCode.fromJson(e as Map<String, dynamic>)).toList(),

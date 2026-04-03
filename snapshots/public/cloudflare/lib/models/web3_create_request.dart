@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'web3_description.dart';import 'web3_dnslink.dart';import 'web3_name.dart';import 'web3_target.dart';final class Web3CreateRequest {const Web3CreateRequest({this.description, this.dnslink, required this.name, required this.target, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_description.dart';import 'web3_dnslink.dart';import 'web3_name.dart';import 'web3_target.dart';@immutable final class Web3CreateRequest {const Web3CreateRequest({required this.name, required this.target, this.description, this.dnslink, });
 
 factory Web3CreateRequest.fromJson(Map<String, dynamic> json) { return Web3CreateRequest(
   description: json['description'] != null ? Web3Description.fromJson(json['description'] as String) : null,

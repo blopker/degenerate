@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result_asn_info.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result_changes.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result_meta.dart';final class RadarGetBgpRpkiAspaChangesResponseResult {const RadarGetBgpRpkiAspaChangesResponseResult({required this.asnInfo, required this.changes, required this.meta, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result_asn_info.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result_changes.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result_meta.dart';@immutable final class RadarGetBgpRpkiAspaChangesResponseResult {const RadarGetBgpRpkiAspaChangesResponseResult({required this.asnInfo, required this.changes, required this.meta, });
 
 factory RadarGetBgpRpkiAspaChangesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaChangesResponseResult(
   asnInfo: RadarGetBgpRpkiAspaChangesResponseResultAsnInfo.fromJson(json['asnInfo'] as Map<String, dynamic>),

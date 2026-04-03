@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'object_meta.dart';import 'object_reference.dart';/// Binding ties one object to another; for example, a pod is bound to a node by a scheduler.
-final class Binding {const Binding({this.apiVersion, this.kind, this.metadata, required this.target, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_meta.dart';import 'object_reference.dart';/// Binding ties one object to another; for example, a pod is bound to a node by a scheduler.
+@immutable final class Binding {const Binding({required this.target, this.apiVersion, this.kind, this.metadata, });
 
 factory Binding.fromJson(Map<String, dynamic> json) { return Binding(
   apiVersion: json['apiVersion'] as String?,

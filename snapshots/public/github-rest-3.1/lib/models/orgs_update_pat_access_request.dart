@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Action to apply to the fine-grained personal access token.
-final class OrgsUpdatePatAccessRequestAction {const OrgsUpdatePatAccessRequestAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Action to apply to the fine-grained personal access token.
+@immutable final class OrgsUpdatePatAccessRequestAction {const OrgsUpdatePatAccessRequestAction._(this.value);
 
 factory OrgsUpdatePatAccessRequestAction.fromJson(String json) { return switch (json) {
   'revoke' => revoke,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsUpdatePatAccessRequestAction($value)'; } 
  }
-final class OrgsUpdatePatAccessRequest {const OrgsUpdatePatAccessRequest({required this.action});
+@immutable final class OrgsUpdatePatAccessRequest {const OrgsUpdatePatAccessRequest({required this.action});
 
 factory OrgsUpdatePatAccessRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdatePatAccessRequest(
   action: OrgsUpdatePatAccessRequestAction.fromJson(json['action'] as String),

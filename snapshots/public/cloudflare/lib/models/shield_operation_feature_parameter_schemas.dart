@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_operation_feature_parameter_schemas_parameter_schemas.dart';final class ShieldOperationFeatureParameterSchemas {const ShieldOperationFeatureParameterSchemas({required this.parameterSchemas});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_operation_feature_parameter_schemas_parameter_schemas.dart';@immutable final class ShieldOperationFeatureParameterSchemas {const ShieldOperationFeatureParameterSchemas({required this.parameterSchemas});
 
 factory ShieldOperationFeatureParameterSchemas.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureParameterSchemas(
   parameterSchemas: ShieldOperationFeatureParameterSchemasParameterSchemas.fromJson(json['parameter_schemas'] as Map<String, dynamic>),

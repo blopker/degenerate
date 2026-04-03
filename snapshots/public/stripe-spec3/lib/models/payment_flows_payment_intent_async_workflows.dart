@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_flows_payment_intent_async_workflows_resource_inputs.dart';/// 
-final class PaymentFlowsPaymentIntentAsyncWorkflows {const PaymentFlowsPaymentIntentAsyncWorkflows({this.inputs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_payment_intent_async_workflows_resource_inputs.dart';/// 
+@immutable final class PaymentFlowsPaymentIntentAsyncWorkflows {const PaymentFlowsPaymentIntentAsyncWorkflows({this.inputs});
 
 factory PaymentFlowsPaymentIntentAsyncWorkflows.fromJson(Map<String, dynamic> json) { return PaymentFlowsPaymentIntentAsyncWorkflows(
   inputs: json['inputs'] != null ? PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs.fromJson(json['inputs'] as Map<String, dynamic>) : null,

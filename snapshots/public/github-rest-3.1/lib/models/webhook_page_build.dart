@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_page_build_build.dart';final class WebhookPageBuild {const WebhookPageBuild({required this.build, this.enterprise, required this.id, this.installation, this.organization, required this.repository, required this.sender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_page_build_build.dart';@immutable final class WebhookPageBuild {const WebhookPageBuild({required this.build, required this.id, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPageBuild.fromJson(Map<String, dynamic> json) { return WebhookPageBuild(
   build: WebhookPageBuildBuild.fromJson(json['build'] as Map<String, dynamic>),

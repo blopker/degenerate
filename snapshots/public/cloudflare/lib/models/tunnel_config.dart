@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_config_warp_routing.dart';import 'tunnel_ingress_rule.dart';import 'tunnel_origin_request.dart';/// The tunnel configuration and ingress rules.
-final class TunnelConfig {const TunnelConfig({this.ingress, this.originRequest, this.warpRouting, });
+@immutable final class TunnelConfig {const TunnelConfig({this.ingress, this.originRequest, this.warpRouting, });
 
 factory TunnelConfig.fromJson(Map<String, dynamic> json) { return TunnelConfig(
   ingress: (json['ingress'] as List<dynamic>?)?.map((e) => TunnelIngressRule.fromJson(e as Map<String, dynamic>)).toList(),

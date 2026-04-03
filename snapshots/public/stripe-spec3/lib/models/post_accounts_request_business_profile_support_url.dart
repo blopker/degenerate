@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsRequestBusinessProfileSupportUrlVariant2 {const PostAccountsRequestBusinessProfileSupportUrlVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestBusinessProfileSupportUrlVariant2 {const PostAccountsRequestBusinessProfileSupportUrlVariant2._(this.value);
 
 factory PostAccountsRequestBusinessProfileSupportUrlVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

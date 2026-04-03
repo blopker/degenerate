@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_config_default_sampling.dart';import 'magic_visibility_mnm_mnm_config_name.dart';import 'magic_visibility_mnm_mnm_config_router_ip.dart';import 'magic_visibility_mnm_mnm_config_warp_device.dart';final class MagicVisibilityMnmMnmConfig {const MagicVisibilityMnmMnmConfig({required this.defaultSampling, required this.name, required this.routerIps, required this.warpDevices, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_config_default_sampling.dart';import 'magic_visibility_mnm_mnm_config_name.dart';import 'magic_visibility_mnm_mnm_config_router_ip.dart';import 'magic_visibility_mnm_mnm_config_warp_device.dart';@immutable final class MagicVisibilityMnmMnmConfig {const MagicVisibilityMnmMnmConfig({required this.defaultSampling, required this.name, required this.routerIps, required this.warpDevices, });
 
 factory MagicVisibilityMnmMnmConfig.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmConfig(
   defaultSampling: MagicVisibilityMnmMnmConfigDefaultSampling.fromJson(json['default_sampling'] as num),

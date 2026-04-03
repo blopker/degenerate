@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'teams_devices_disconnect.dart';/// Reasoning for setting the Global WARP override state. This will be surfaced in the audit log.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'teams_devices_disconnect.dart';/// Reasoning for setting the Global WARP override state. This will be surfaced in the audit log.
 extension type const TeamsDevicesJustification(String value) {
 factory TeamsDevicesJustification.fromJson(String json) => TeamsDevicesJustification(json);
 
 String toJson() => value;
 
 }
-final class TeamsDevicesGlobalWarpOverrideRequest {const TeamsDevicesGlobalWarpOverrideRequest({required this.disconnect, this.justification, });
+@immutable final class TeamsDevicesGlobalWarpOverrideRequest {const TeamsDevicesGlobalWarpOverrideRequest({required this.disconnect, this.justification, });
 
 factory TeamsDevicesGlobalWarpOverrideRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesGlobalWarpOverrideRequest(
   disconnect: TeamsDevicesDisconnect.fromJson(json['disconnect'] as bool),

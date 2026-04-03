@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_oidc_saas_app_custom_claims.dart';import 'access_schemas_oidc_saas_app_hybrid_and_implicit_options.dart';import 'access_schemas_oidc_saas_app_refresh_token_options.dart';import 'access_timestamp.dart';/// Identifier of the authentication protocol used for the saas app. Required for OIDC.
-final class AccessSchemasOidcSaasAppAuthType {const AccessSchemasOidcSaasAppAuthType._(this.value);
+@immutable final class AccessSchemasOidcSaasAppAuthType {const AccessSchemasOidcSaasAppAuthType._(this.value);
 
 factory AccessSchemasOidcSaasAppAuthType.fromJson(String json) { return switch (json) {
   'saml' => saml,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessSchemasOidcSaasAppAuthType($value)'; } 
  }
-final class AccessSchemasOidcSaasAppGrantTypes {const AccessSchemasOidcSaasAppGrantTypes._(this.value);
+@immutable final class AccessSchemasOidcSaasAppGrantTypes {const AccessSchemasOidcSaasAppGrantTypes._(this.value);
 
 factory AccessSchemasOidcSaasAppGrantTypes.fromJson(String json) { return switch (json) {
   'authorization_code' => authorizationCode,
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessSchemasOidcSaasAppGrantTypes($value)'; } 
  }
-final class AccessSchemasOidcSaasAppScopes {const AccessSchemasOidcSaasAppScopes._(this.value);
+@immutable final class AccessSchemasOidcSaasAppScopes {const AccessSchemasOidcSaasAppScopes._(this.value);
 
 factory AccessSchemasOidcSaasAppScopes.fromJson(String json) { return switch (json) {
   'openid' => openid,
@@ -88,7 +88,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccessSchemasOidcSaasAppScopes($value)'; } 
  }
-final class AccessSchemasOidcSaasApp {const AccessSchemasOidcSaasApp({this.accessTokenLifetime, this.allowPkceWithoutClientSecret, this.appLauncherUrl, this.authType, this.clientId, this.clientSecret, this.createdAt, this.customClaims, this.grantTypes, this.groupFilterRegex, this.hybridAndImplicitOptions, this.publicKey, this.redirectUris, this.refreshTokenOptions, this.scopes, this.updatedAt, });
+@immutable final class AccessSchemasOidcSaasApp {const AccessSchemasOidcSaasApp({this.accessTokenLifetime, this.allowPkceWithoutClientSecret, this.appLauncherUrl, this.authType, this.clientId, this.clientSecret, this.createdAt, this.customClaims, this.grantTypes, this.groupFilterRegex, this.hybridAndImplicitOptions, this.publicKey, this.redirectUris, this.refreshTokenOptions, this.scopes, this.updatedAt, });
 
 factory AccessSchemasOidcSaasApp.fromJson(Map<String, dynamic> json) { return AccessSchemasOidcSaasApp(
   accessTokenLifetime: json['access_token_lifetime'] as String?,

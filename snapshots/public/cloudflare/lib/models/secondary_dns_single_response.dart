@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'secondary_dns_tsig.dart';final class SecondaryDnsSingleResponse {const SecondaryDnsSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_tsig.dart';@immutable final class SecondaryDnsSingleResponse {const SecondaryDnsSingleResponse({this.result});
 
 factory SecondaryDnsSingleResponse.fromJson(Map<String, dynamic> json) { return SecondaryDnsSingleResponse(
   result: json['result'] != null ? SecondaryDnsTsig.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MergedUpstreamMergeType {const MergedUpstreamMergeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MergedUpstreamMergeType {const MergedUpstreamMergeType._(this.value);
 
 factory MergedUpstreamMergeType.fromJson(String json) { return switch (json) {
   'merge' => merge,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MergedUpstreamMergeType($value)'; } 
  }
 /// Results of a successful merge upstream request
-final class MergedUpstream {const MergedUpstream({this.message, this.mergeType, this.baseBranch, });
+@immutable final class MergedUpstream {const MergedUpstream({this.message, this.mergeType, this.baseBranch, });
 
 factory MergedUpstream.fromJson(Map<String, dynamic> json) { return MergedUpstream(
   message: json['message'] as String?,

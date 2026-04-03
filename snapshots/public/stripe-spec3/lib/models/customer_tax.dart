@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'customer_tax_location.dart';/// Surfaces if automatic tax computation is possible given the current customer location information.
-final class CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_tax_location.dart';/// Surfaces if automatic tax computation is possible given the current customer location information.
+@immutable final class CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax._(this.value);
 
 factory CustomerTaxAutomaticTax.fromJson(String json) { return switch (json) {
   'failed' => failed,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerTaxAutomaticTax($value)'; } 
  }
 /// The tax calculation provider used for location resolution. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
-final class CustomerTaxProvider {const CustomerTaxProvider._(this.value);
+@immutable final class CustomerTaxProvider {const CustomerTaxProvider._(this.value);
 
 factory CustomerTaxProvider.fromJson(String json) { return switch (json) {
   'anrok' => anrok,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerTaxProvider($value)'; } 
  }
 /// 
-final class CustomerTax {const CustomerTax({required this.automaticTax, this.ipAddress, this.location, required this.provider, });
+@immutable final class CustomerTax {const CustomerTax({required this.automaticTax, required this.provider, this.ipAddress, this.location, });
 
 factory CustomerTax.fromJson(Map<String, dynamic> json) { return CustomerTax(
   automaticTax: CustomerTaxAutomaticTax.fromJson(json['automatic_tax'] as String),

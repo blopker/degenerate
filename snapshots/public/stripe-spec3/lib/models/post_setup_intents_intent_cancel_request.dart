@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason for canceling this SetupIntent. Possible values are: `abandoned`, `requested_by_customer`, or `duplicate`
-final class PostSetupIntentsIntentCancelRequestCancellationReason {const PostSetupIntentsIntentCancelRequestCancellationReason._(this.value);
+@immutable final class PostSetupIntentsIntentCancelRequestCancellationReason {const PostSetupIntentsIntentCancelRequestCancellationReason._(this.value);
 
 factory PostSetupIntentsIntentCancelRequestCancellationReason.fromJson(String json) { return switch (json) {
   'abandoned' => abandoned,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentCancelRequestCancellationReason($value)'; } 
  }
-final class PostSetupIntentsIntentCancelRequest {const PostSetupIntentsIntentCancelRequest({this.cancellationReason, this.expand, });
+@immutable final class PostSetupIntentsIntentCancelRequest {const PostSetupIntentsIntentCancelRequest({this.cancellationReason, this.expand, });
 
 factory PostSetupIntentsIntentCancelRequest.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentCancelRequest(
   cancellationReason: json['cancellation_reason'] != null ? PostSetupIntentsIntentCancelRequestCancellationReason.fromJson(json['cancellation_reason'] as String) : null,

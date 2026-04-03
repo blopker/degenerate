@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_transactions_transaction_request_metadata.dart';final class PostIssuingTransactionsTransactionRequest {const PostIssuingTransactionsTransactionRequest({this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_transactions_transaction_request_metadata.dart';@immutable final class PostIssuingTransactionsTransactionRequest {const PostIssuingTransactionsTransactionRequest({this.expand, this.metadata, });
 
 factory PostIssuingTransactionsTransactionRequest.fromJson(Map<String, dynamic> json) { return PostIssuingTransactionsTransactionRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

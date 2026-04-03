@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_json_request_variant1_response_format_json_schema_value.dart';final class BrapiPostJsonRequestVariant1ResponseFormat {const BrapiPostJsonRequestVariant1ResponseFormat({this.jsonSchema, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_json_request_variant1_response_format_json_schema_value.dart';@immutable final class BrapiPostJsonRequestVariant1ResponseFormat {const BrapiPostJsonRequestVariant1ResponseFormat({required this.type, this.jsonSchema, });
 
 factory BrapiPostJsonRequestVariant1ResponseFormat.fromJson(Map<String, dynamic> json) { return BrapiPostJsonRequestVariant1ResponseFormat(
-  jsonSchema: (json['json_schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf5.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromE: (v) => (v as List<dynamic>).map((e) => e as String).toList(),))),
+  jsonSchema: (json['json_schema'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf5.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => v as Map<String, dynamic>, fromE: (v) => (v as List<dynamic>).map((e) => e as String).toList(),))),
   type: json['type'] as String,
 ); }
 

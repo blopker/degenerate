@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_us_bank_account_financial_connections_filters.dart';final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_us_bank_account_financial_connections_filters.dart';@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions._(this.value);
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPermissions($value)'; } 
  }
-final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch._(this.value);
+@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch._(this.value);
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch.fromJson(String json) { return switch (json) {
   'balances' => balances,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsPrefetch($value)'; } 
  }
-final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections({this.filters, this.permissions, this.prefetch, this.returnUrl, });
+@immutable final class PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections {const PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections({this.filters, this.permissions, this.prefetch, this.returnUrl, });
 
 factory PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnections(
   filters: json['filters'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,

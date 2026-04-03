@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBillingCreditBalanceTransactionsRequest {const GetBillingCreditBalanceTransactionsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingCreditBalanceTransactionsRequest {const GetBillingCreditBalanceTransactionsRequest();
 
-factory GetBillingCreditBalanceTransactionsRequest.fromJson(Map<String, dynamic> json) { return GetBillingCreditBalanceTransactionsRequest(
-
-); }
+factory GetBillingCreditBalanceTransactionsRequest.fromJson(Map<String, dynamic> _) { return const GetBillingCreditBalanceTransactionsRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetBillingCreditBalanceTransactionsRequest copyWith() { return GetBillingCreditBalanceTransactionsRequest(
+GetBillingCreditBalanceTransactionsRequest copyWith() { return const GetBillingCreditBalanceTransactionsRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetBillingCreditBalanceTransactionsRequest; } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_dataset_populate_response_properties_account_id.dart';import 'post_dataset_populate_response_properties_datasets.dart';import 'post_dataset_populate_response_properties_errors.dart';import 'post_dataset_populate_response_properties_summary.dart';final class PostDatasetPopulateResponseProperties {const PostDatasetPopulateResponseProperties({required this.accountId, required this.datasets, required this.errors, required this.summary, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dataset_populate_response_properties_account_id.dart';import 'post_dataset_populate_response_properties_datasets.dart';import 'post_dataset_populate_response_properties_errors.dart';import 'post_dataset_populate_response_properties_summary.dart';@immutable final class PostDatasetPopulateResponseProperties {const PostDatasetPopulateResponseProperties({required this.accountId, required this.datasets, required this.errors, required this.summary, });
 
 factory PostDatasetPopulateResponseProperties.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponseProperties(
   accountId: PostDatasetPopulateResponsePropertiesAccountId.fromJson(json['accountId'] as Map<String, dynamic>),

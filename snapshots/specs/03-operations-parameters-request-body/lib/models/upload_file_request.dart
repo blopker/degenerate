@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';final class UploadFileRequest {const UploadFileRequest({required this.file, required this.description, this.tags, });
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UploadFileRequest {const UploadFileRequest({required this.file, required this.description, this.tags, });
 
 factory UploadFileRequest.fromJson(Map<String, dynamic> json) { return UploadFileRequest(
   file: base64Decode(json['file'] as String),

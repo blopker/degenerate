@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_script.dart';final class PageShieldListZoneScriptsResponse {const PageShieldListZoneScriptsResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'page_shield_script.dart';@immutable final class PageShieldListZoneScriptsResponse {const PageShieldListZoneScriptsResponse({required this.result});
 
 factory PageShieldListZoneScriptsResponse.fromJson(Map<String, dynamic> json) { return PageShieldListZoneScriptsResponse(
   result: (json['result'] as List<dynamic>).map((e) => PageShieldScript.fromJson(e as Map<String, dynamic>)).toList(),

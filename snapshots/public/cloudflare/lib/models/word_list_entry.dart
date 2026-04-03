@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WordListEntryType {const WordListEntryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WordListEntryType {const WordListEntryType._(this.value);
 
 factory WordListEntryType.fromJson(String json) { return switch (json) {
   'word_list' => wordList,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WordListEntryType($value)'; } 
  }
-final class WordListEntry {const WordListEntry({required this.createdAt, required this.enabled, required this.id, required this.name, this.profileId, required this.updatedAt, required this.wordList, required this.type, });
+@immutable final class WordListEntry {const WordListEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.wordList, required this.type, this.profileId, });
 
 factory WordListEntry.fromJson(Map<String, dynamic> json) { return WordListEntry(
   createdAt: DateTime.parse(json['created_at'] as String),

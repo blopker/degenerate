@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'branch_protection.dart';import 'branch_with_protection_links.dart';import 'commit.dart';/// Branch With Protection
-final class BranchWithProtection {const BranchWithProtection({required this.name, required this.commit, required this.links, required this.protected, required this.protection, required this.protectionUrl, this.pattern, this.requiredApprovingReviewCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'branch_protection.dart';import 'branch_with_protection_links.dart';import 'commit.dart';/// Branch With Protection
+@immutable final class BranchWithProtection {const BranchWithProtection({required this.name, required this.commit, required this.links, required this.protected, required this.protection, required this.protectionUrl, this.pattern, this.requiredApprovingReviewCount, });
 
 factory BranchWithProtection.fromJson(Map<String, dynamic> json) { return BranchWithProtection(
   name: json['name'] as String,

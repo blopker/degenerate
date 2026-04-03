@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'campaign_state.dart';import 'campaign_summary_alert_stats.dart';import 'simple_user.dart';import 'team.dart';/// The campaign metadata and alert stats.
-final class CampaignSummary {const CampaignSummary({required this.number, required this.createdAt, required this.updatedAt, this.name, required this.description, required this.managers, this.teamManagers, this.publishedAt, required this.endsAt, this.closedAt, required this.state, required this.contactLink, this.alertStats, });
+@immutable final class CampaignSummary {const CampaignSummary({required this.number, required this.createdAt, required this.updatedAt, required this.description, required this.managers, required this.endsAt, required this.state, required this.contactLink, this.name, this.teamManagers, this.publishedAt, this.closedAt, this.alertStats, });
 
 factory CampaignSummary.fromJson(Map<String, dynamic> json) { return CampaignSummary(
   number: (json['number'] as num).toInt(),

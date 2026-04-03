@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamRoleAssignmentPermissions {const TeamRoleAssignmentPermissions({required this.pull, required this.triage, required this.push, required this.maintain, required this.admin, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamRoleAssignmentPermissions {const TeamRoleAssignmentPermissions({required this.pull, required this.triage, required this.push, required this.maintain, required this.admin, });
 
 factory TeamRoleAssignmentPermissions.fromJson(Map<String, dynamic> json) { return TeamRoleAssignmentPermissions(
   pull: json['pull'] as bool,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_configuration_request_affirm_display_preference.dart';/// [Affirm](https://www.affirm.com/) gives your customers a way to split purchases over a series of payments. Depending on the purchase, they can pay with four interest-free payments (Split Pay) or pay over a longer term (Installments), which might include interest. Check this [page](https://docs.stripe.com/payments/affirm) for more details like country availability.
-final class PostPaymentMethodConfigurationsConfigurationRequestAffirm {const PostPaymentMethodConfigurationsConfigurationRequestAffirm({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_configuration_request_affirm_display_preference.dart';/// [Affirm](https://www.affirm.com/) gives your customers a way to split purchases over a series of payments. Depending on the purchase, they can pay with four interest-free payments (Split Pay) or pay over a longer term (Installments), which might include interest. Check this [page](https://docs.stripe.com/payments/affirm) for more details like country availability.
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestAffirm {const PostPaymentMethodConfigurationsConfigurationRequestAffirm({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestAffirm.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestAffirm(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestAffirmDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

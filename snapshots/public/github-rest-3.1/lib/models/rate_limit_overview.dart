@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rate_limit.dart';import 'rate_limit_overview_resources.dart';/// Rate Limit Overview
-final class RateLimitOverview {const RateLimitOverview({required this.resources, required this.rate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rate_limit.dart';import 'rate_limit_overview_resources.dart';/// Rate Limit Overview
+@immutable final class RateLimitOverview {const RateLimitOverview({required this.resources, required this.rate, });
 
 factory RateLimitOverview.fromJson(Map<String, dynamic> json) { return RateLimitOverview(
   resources: RateLimitOverviewResources.fromJson(json['resources'] as Map<String, dynamic>),

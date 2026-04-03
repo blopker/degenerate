@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The default mitigation action used
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default mitigation action used
 /// 
 /// Mitigation actions are as follows:
 /// 
@@ -8,7 +8,7 @@
 ///   - `block` - deny access to the site when request does not conform to schema
 ///   - `none` - skip running schema validation
 /// 
-final class ShieldGlobalSettingsValidationDefaultMitigationAction {const ShieldGlobalSettingsValidationDefaultMitigationAction._(this.value);
+@immutable final class ShieldGlobalSettingsValidationDefaultMitigationAction {const ShieldGlobalSettingsValidationDefaultMitigationAction._(this.value);
 
 factory ShieldGlobalSettingsValidationDefaultMitigationAction.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -39,7 +39,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 ///   - `"none"` will skip running schema validation entirely for the request
 /// 
-final class ShieldGlobalSettingsValidationOverrideMitigationAction {const ShieldGlobalSettingsValidationOverrideMitigationAction._(this.value);
+@immutable final class ShieldGlobalSettingsValidationOverrideMitigationAction {const ShieldGlobalSettingsValidationOverrideMitigationAction._(this.value);
 
 factory ShieldGlobalSettingsValidationOverrideMitigationAction.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShieldGlobalSettingsValidationOverrideMitigationAction($value)'; } 
  }
-final class ShieldGlobalSettings {const ShieldGlobalSettings({required this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });
+@immutable final class ShieldGlobalSettings {const ShieldGlobalSettings({required this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });
 
 factory ShieldGlobalSettings.fromJson(Map<String, dynamic> json) { return ShieldGlobalSettings(
   validationDefaultMitigationAction: ShieldGlobalSettingsValidationDefaultMitigationAction.fromJson(json['validation_default_mitigation_action'] as String),

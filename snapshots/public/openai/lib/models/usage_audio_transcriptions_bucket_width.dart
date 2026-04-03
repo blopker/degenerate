@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsageAudioTranscriptionsBucketWidth {const UsageAudioTranscriptionsBucketWidth._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageAudioTranscriptionsBucketWidth {const UsageAudioTranscriptionsBucketWidth._(this.value);
 
 factory UsageAudioTranscriptionsBucketWidth.fromJson(String json) { return switch (json) {
   '1m' => $1m,

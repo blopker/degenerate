@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_radar_rank_data.dart';final class UrlscannerGetScanResponse2MetaProcessorsRadarRank {const UrlscannerGetScanResponse2MetaProcessorsRadarRank({required this.data});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_radar_rank_data.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsRadarRank {const UrlscannerGetScanResponse2MetaProcessorsRadarRank({required this.data});
 
 factory UrlscannerGetScanResponse2MetaProcessorsRadarRank.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsRadarRank(
   data: (json['data'] as List<dynamic>).map((e) => UrlscannerGetScanResponse2MetaProcessorsRadarRankData.fromJson(e as Map<String, dynamic>)).toList(),

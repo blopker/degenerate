@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_shipping_param5_amount.dart';import 'amount_details_shipping_param5_from_postal_code.dart';import 'amount_details_shipping_param5_to_postal_code.dart';final class AmountDetailsShippingParam5 {const AmountDetailsShippingParam5({this.amount, this.fromPostalCode, this.toPostalCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_shipping_param5_amount.dart';import 'amount_details_shipping_param5_from_postal_code.dart';import 'amount_details_shipping_param5_to_postal_code.dart';@immutable final class AmountDetailsShippingParam5 {const AmountDetailsShippingParam5({this.amount, this.fromPostalCode, this.toPostalCode, });
 
 factory AmountDetailsShippingParam5.fromJson(Map<String, dynamic> json) { return AmountDetailsShippingParam5(
   amount: json['amount'] != null ? OneOf2.parse(json['amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => AmountDetailsShippingParam5AmountVariant2.fromJson(v as String),) : null,

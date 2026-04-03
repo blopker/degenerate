@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Page Build Status
-final class PageBuildStatus {const PageBuildStatus({required this.url, required this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Page Build Status
+@immutable final class PageBuildStatus {const PageBuildStatus({required this.url, required this.status, });
 
 factory PageBuildStatus.fromJson(Map<String, dynamic> json) { return PageBuildStatus(
   url: Uri.parse(json['url'] as String),

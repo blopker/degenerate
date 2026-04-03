@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_http_top_ases_by_http_requests_response_result.dart';final class RadarGetHttpTopAsesByHttpRequestsResponse {const RadarGetHttpTopAsesByHttpRequestsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_ases_by_http_requests_response_result.dart';@immutable final class RadarGetHttpTopAsesByHttpRequestsResponse {const RadarGetHttpTopAsesByHttpRequestsResponse({required this.result, required this.success, });
 
 factory RadarGetHttpTopAsesByHttpRequestsResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopAsesByHttpRequestsResponse(
   result: RadarGetHttpTopAsesByHttpRequestsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

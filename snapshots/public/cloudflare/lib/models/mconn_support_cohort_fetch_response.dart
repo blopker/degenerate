@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_support_cohort.dart';final class MconnSupportCohortFetchResponse {const MconnSupportCohortFetchResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_support_cohort.dart';@immutable final class MconnSupportCohortFetchResponse {const MconnSupportCohortFetchResponse({this.result});
 
 factory MconnSupportCohortFetchResponse.fromJson(Map<String, dynamic> json) { return MconnSupportCohortFetchResponse(
   result: json['result'] != null ? MconnSupportCohort.fromJson(json['result'] as Map<String, dynamic>) : null,

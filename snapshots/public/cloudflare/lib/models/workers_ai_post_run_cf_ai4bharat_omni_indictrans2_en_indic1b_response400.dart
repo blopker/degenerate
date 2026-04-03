@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_ai4bharat_omni_indictrans2_en_indic1b_response400_errors.dart';final class WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400 {const WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_ai4bharat_omni_indictrans2_en_indic1b_response400_errors.dart';@immutable final class WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400 {const WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_run_in_progress_workflow_run_actor.dart';import 'webhook_workflow_run_in_progress_workflow_run_head_commit.dart';import 'webhook_workflow_run_in_progress_workflow_run_head_repository.dart';import 'webhook_workflow_run_in_progress_workflow_run_pull_requests.dart';import 'webhook_workflow_run_in_progress_workflow_run_referenced_workflows.dart';import 'webhook_workflow_run_in_progress_workflow_run_repository.dart';import 'webhook_workflow_run_in_progress_workflow_run_triggering_actor.dart';final class WebhookWorkflowRunInProgressWorkflowRunConclusion {const WebhookWorkflowRunInProgressWorkflowRunConclusion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_workflow_run_in_progress_workflow_run_actor.dart';import 'webhook_workflow_run_in_progress_workflow_run_head_commit.dart';import 'webhook_workflow_run_in_progress_workflow_run_head_repository.dart';import 'webhook_workflow_run_in_progress_workflow_run_pull_requests.dart';import 'webhook_workflow_run_in_progress_workflow_run_referenced_workflows.dart';import 'webhook_workflow_run_in_progress_workflow_run_repository.dart';import 'webhook_workflow_run_in_progress_workflow_run_triggering_actor.dart';@immutable final class WebhookWorkflowRunInProgressWorkflowRunConclusion {const WebhookWorkflowRunInProgressWorkflowRunConclusion._(this.value);
 
 factory WebhookWorkflowRunInProgressWorkflowRunConclusion.fromJson(String json) { return switch (json) {
   'action_required' => actionRequired,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWorkflowRunInProgressWorkflowRunConclusion($value)'; } 
  }
-final class WebhookWorkflowRunInProgressWorkflowRunStatus {const WebhookWorkflowRunInProgressWorkflowRunStatus._(this.value);
+@immutable final class WebhookWorkflowRunInProgressWorkflowRunStatus {const WebhookWorkflowRunInProgressWorkflowRunStatus._(this.value);
 
 factory WebhookWorkflowRunInProgressWorkflowRunStatus.fromJson(String json) { return switch (json) {
   'requested' => requested,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWorkflowRunInProgressWorkflowRunStatus($value)'; } 
  }
-final class WebhookWorkflowRunInProgressWorkflowRun {const WebhookWorkflowRunInProgressWorkflowRun({required this.actor, required this.artifactsUrl, required this.cancelUrl, required this.checkSuiteId, required this.checkSuiteNodeId, required this.checkSuiteUrl, required this.conclusion, required this.createdAt, required this.event, required this.headBranch, required this.headCommit, required this.headRepository, required this.headSha, required this.htmlUrl, required this.id, required this.jobsUrl, required this.logsUrl, required this.name, required this.nodeId, required this.path, required this.previousAttemptUrl, required this.pullRequests, this.referencedWorkflows, required this.repository, required this.rerunUrl, required this.runAttempt, required this.runNumber, required this.runStartedAt, required this.status, required this.triggeringActor, required this.updatedAt, required this.url, required this.workflowId, required this.workflowUrl, });
+@immutable final class WebhookWorkflowRunInProgressWorkflowRun {const WebhookWorkflowRunInProgressWorkflowRun({required this.headRepository, required this.artifactsUrl, required this.cancelUrl, required this.checkSuiteId, required this.checkSuiteNodeId, required this.checkSuiteUrl, required this.conclusion, required this.createdAt, required this.event, required this.headBranch, required this.headCommit, required this.actor, required this.headSha, required this.htmlUrl, required this.id, required this.jobsUrl, required this.logsUrl, required this.name, required this.nodeId, required this.path, required this.previousAttemptUrl, required this.workflowUrl, required this.workflowId, required this.repository, required this.rerunUrl, required this.runAttempt, required this.runNumber, required this.runStartedAt, required this.status, required this.triggeringActor, required this.updatedAt, required this.url, required this.pullRequests, this.referencedWorkflows, });
 
 factory WebhookWorkflowRunInProgressWorkflowRun.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunInProgressWorkflowRun(
   actor: json['actor'] != null ? WebhookWorkflowRunInProgressWorkflowRunActor.fromJson(json['actor'] as Map<String, dynamic>) : null,

@@ -1000,7 +1000,7 @@ return execute(
 /// **Please note:** in order to offer meaningful security benefits, an attestation's signature and timestamps **must** be cryptographically verified, and the identity of the attestation signer **must** be validated. Attestations can be verified using the [GitHub CLI `attestation verify` command](https://cli.github.com/manual/gh_attestation_verify). For more information, see [our guide on how to use artifact attestations to establish a build's provenance](https://docs.github.com/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
 ///
 /// `POST /users/{username}/attestations/bulk-list`
-Future<ApiResult<UsersListAttestationsBulkResponse, Never>> usersListAttestationsBulk({required String username, int? perPage, String? before, String? after, required UsersListAttestationsBulkRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<UsersListAttestationsBulkResponse, Never>> usersListAttestationsBulk({required String username, required UsersListAttestationsBulkRequest body, int? perPage, String? before, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();

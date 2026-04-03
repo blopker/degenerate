@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class KickAllParticipantsResponseData {const KickAllParticipantsResponseData({this.action, this.kickedParticipantsCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class KickAllParticipantsResponseData {const KickAllParticipantsResponseData({this.action, this.kickedParticipantsCount, });
 
 factory KickAllParticipantsResponseData.fromJson(Map<String, dynamic> json) { return KickAllParticipantsResponseData(
   action: json['action'] as String?,

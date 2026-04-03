@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about a email being collected using a reader
-final class TerminalReaderReaderResourceEmail {const TerminalReaderReaderResourceEmail({this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about a email being collected using a reader
+@immutable final class TerminalReaderReaderResourceEmail {const TerminalReaderReaderResourceEmail({this.value});
 
 factory TerminalReaderReaderResourceEmail.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceEmail(
   value: json['value'] as String?,

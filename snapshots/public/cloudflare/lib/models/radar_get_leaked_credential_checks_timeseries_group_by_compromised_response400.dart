@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_leaked_credential_checks_timeseries_group_by_compromised_response400_errors.dart';final class RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse400 {const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_leaked_credential_checks_timeseries_group_by_compromised_response400_errors.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse400 {const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse400.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

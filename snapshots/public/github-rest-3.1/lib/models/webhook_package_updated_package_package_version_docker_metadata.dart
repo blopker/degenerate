@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WebhookPackageUpdatedPackagePackageVersionDockerMetadata {const WebhookPackageUpdatedPackagePackageVersionDockerMetadata({this.tags});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPackageUpdatedPackagePackageVersionDockerMetadata {const WebhookPackageUpdatedPackagePackageVersionDockerMetadata({this.tags});
 
 factory WebhookPackageUpdatedPackagePackageVersionDockerMetadata.fromJson(Map<String, dynamic> json) { return WebhookPackageUpdatedPackagePackageVersionDockerMetadata(
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),

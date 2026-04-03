@@ -8,7 +8,7 @@ String toJson() => value;
 
 }
 /// An HTTP method or `_ALL_` to indicate all methods.
-final class FirewallMethods2 {const FirewallMethods2._(this.value);
+@immutable final class FirewallMethods2 {const FirewallMethods2._(this.value);
 
 factory FirewallMethods2.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FirewallMethods2($value)'; } 
  }
-final class FirewallMatchVariant1Request {const FirewallMatchVariant1Request({this.methods, this.schemes, this.url, });
+@immutable final class FirewallMatchVariant1Request {const FirewallMatchVariant1Request({this.methods, this.schemes, this.url, });
 
 factory FirewallMatchVariant1Request.fromJson(Map<String, dynamic> json) { return FirewallMatchVariant1Request(
   methods: (json['methods'] as List<dynamic>?)?.map((e) => FirewallMethods2.fromJson(e as String)).toList(),

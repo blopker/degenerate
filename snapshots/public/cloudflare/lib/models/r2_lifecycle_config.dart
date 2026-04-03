@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_lifecycle_rule.dart';final class R2LifecycleConfig {const R2LifecycleConfig({this.rules});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_lifecycle_rule.dart';@immutable final class R2LifecycleConfig {const R2LifecycleConfig({this.rules});
 
 factory R2LifecycleConfig.fromJson(Map<String, dynamic> json) { return R2LifecycleConfig(
   rules: (json['rules'] as List<dynamic>?)?.map((e) => R2LifecycleRule.fromJson(e as Map<String, dynamic>)).toList(),

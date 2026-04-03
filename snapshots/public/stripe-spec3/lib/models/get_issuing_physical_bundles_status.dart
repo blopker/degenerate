@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetIssuingPhysicalBundlesStatus {const GetIssuingPhysicalBundlesStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetIssuingPhysicalBundlesStatus {const GetIssuingPhysicalBundlesStatus._(this.value);
 
 factory GetIssuingPhysicalBundlesStatus.fromJson(String json) { return switch (json) {
   'active' => active,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_image_keys.dart';final class ImagesImageKeysResponse {const ImagesImageKeysResponse({this.keys});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_image_keys.dart';@immutable final class ImagesImageKeysResponse {const ImagesImageKeysResponse({this.keys});
 
 factory ImagesImageKeysResponse.fromJson(Map<String, dynamic> json) { return ImagesImageKeysResponse(
   keys: (json['keys'] as List<dynamic>?)?.map((e) => ImagesImageKeys.fromJson(e as Map<String, dynamic>)).toList(),

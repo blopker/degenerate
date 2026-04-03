@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class ReposSetUserAccessRestrictionsRequest {const ReposSetUserAccessRestrictionsRequest({required this.users});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposSetUserAccessRestrictionsRequest {const ReposSetUserAccessRestrictionsRequest({required this.users});
 
 factory ReposSetUserAccessRestrictionsRequest.fromJson(Map<String, dynamic> json) { return ReposSetUserAccessRestrictionsRequest(
   users: (json['users'] as List<dynamic>).map((e) => e as String).toList(),

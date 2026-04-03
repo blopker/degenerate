@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class CheckoutCardInstallmentsOptions {const CheckoutCardInstallmentsOptions({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class CheckoutCardInstallmentsOptions {const CheckoutCardInstallmentsOptions({this.enabled});
 
 factory CheckoutCardInstallmentsOptions.fromJson(Map<String, dynamic> json) { return CheckoutCardInstallmentsOptions(
   enabled: json['enabled'] as bool?,

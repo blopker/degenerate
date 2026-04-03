@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_expires_on.dart';import 'iam_not_before.dart';import 'iam_token_identifier.dart';import 'iam_token_status.dart';final class IamTokenVerifyResponseSingleSegmentResult {const IamTokenVerifyResponseSingleSegmentResult({this.expiresOn, required this.id, this.notBefore, required this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_expires_on.dart';import 'iam_not_before.dart';import 'iam_token_identifier.dart';import 'iam_token_status.dart';@immutable final class IamTokenVerifyResponseSingleSegmentResult {const IamTokenVerifyResponseSingleSegmentResult({required this.id, required this.status, this.expiresOn, this.notBefore, });
 
 factory IamTokenVerifyResponseSingleSegmentResult.fromJson(Map<String, dynamic> json) { return IamTokenVerifyResponseSingleSegmentResult(
   expiresOn: json['expires_on'] != null ? IamExpiresOn.fromJson(json['expires_on'] as String) : null,

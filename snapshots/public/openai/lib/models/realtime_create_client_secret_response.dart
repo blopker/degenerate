@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_create_client_secret_response_session.dart';/// Response from creating a session and client secret for the Realtime API.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_create_client_secret_response_session.dart';/// Response from creating a session and client secret for the Realtime API.
 /// 
-final class RealtimeCreateClientSecretResponse {const RealtimeCreateClientSecretResponse({required this.value, required this.expiresAt, required this.session, });
+@immutable final class RealtimeCreateClientSecretResponse {const RealtimeCreateClientSecretResponse({required this.value, required this.expiresAt, required this.session, });
 
 factory RealtimeCreateClientSecretResponse.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretResponse(
   value: json['value'] as String,

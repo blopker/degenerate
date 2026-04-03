@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_support_connector.dart';import 'mconn_support_device.dart';import 'mconn_support_site.dart';final class MconnSupportMacrosDiagnoseConnectorResult {const MconnSupportMacrosDiagnoseConnectorResult({this.connector, this.device, this.site, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_support_connector.dart';import 'mconn_support_device.dart';import 'mconn_support_site.dart';@immutable final class MconnSupportMacrosDiagnoseConnectorResult {const MconnSupportMacrosDiagnoseConnectorResult({this.connector, this.device, this.site, });
 
 factory MconnSupportMacrosDiagnoseConnectorResult.fromJson(Map<String, dynamic> json) { return MconnSupportMacrosDiagnoseConnectorResult(
   connector: json['connector'] != null ? MconnSupportConnector.fromJson(json['connector'] as Map<String, dynamic>) : null,

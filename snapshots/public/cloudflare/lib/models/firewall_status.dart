@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When set to `active`, indicates that the WAF package will be applied to the zone.
-final class FirewallStatus {const FirewallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When set to `active`, indicates that the WAF package will be applied to the zone.
+@immutable final class FirewallStatus {const FirewallStatus._(this.value);
 
 factory FirewallStatus.fromJson(String json) { return switch (json) {
   'active' => active,

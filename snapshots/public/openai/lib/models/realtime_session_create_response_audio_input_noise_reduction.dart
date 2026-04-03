@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'noise_reduction_type.dart';/// Configuration for input audio noise reduction.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'noise_reduction_type.dart';/// Configuration for input audio noise reduction.
 /// 
-final class RealtimeSessionCreateResponseAudioInputNoiseReduction {const RealtimeSessionCreateResponseAudioInputNoiseReduction({this.type});
+@immutable final class RealtimeSessionCreateResponseAudioInputNoiseReduction {const RealtimeSessionCreateResponseAudioInputNoiseReduction({this.type});
 
 factory RealtimeSessionCreateResponseAudioInputNoiseReduction.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseAudioInputNoiseReduction(
   type: json['type'] != null ? NoiseReductionType.fromJson(json['type'] as String) : null,

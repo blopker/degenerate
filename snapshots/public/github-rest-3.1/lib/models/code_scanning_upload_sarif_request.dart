@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'code_scanning_analysis_commit_sha.dart';/// The full Git reference, formatted as `refs/heads/<branch name>`,
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_analysis_commit_sha.dart';/// The full Git reference, formatted as `refs/heads/<branch name>`,
 /// `refs/tags/<tag>`, `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
 extension type const CodeScanningRefFull(String value) {
 factory CodeScanningRefFull.fromJson(String json) => CodeScanningRefFull(json);
@@ -15,7 +15,7 @@ factory CodeScanningAnalysisSarifFile.fromJson(String json) => CodeScanningAnaly
 String toJson() => value;
 
 }
-final class CodeScanningUploadSarifRequest {const CodeScanningUploadSarifRequest({required this.commitSha, required this.ref, required this.sarif, this.checkoutUri, this.startedAt, this.toolName, this.validate, });
+@immutable final class CodeScanningUploadSarifRequest {const CodeScanningUploadSarifRequest({required this.commitSha, required this.ref, required this.sarif, this.checkoutUri, this.startedAt, this.toolName, this.validate, });
 
 factory CodeScanningUploadSarifRequest.fromJson(Map<String, dynamic> json) { return CodeScanningUploadSarifRequest(
   commitSha: CodeScanningAnalysisCommitSha.fromJson(json['commit_sha'] as String),

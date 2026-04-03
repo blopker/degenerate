@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type discriminator that is always `quoted_text`.
-final class UserMessageQuotedTextType {const UserMessageQuotedTextType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `quoted_text`.
+@immutable final class UserMessageQuotedTextType {const UserMessageQuotedTextType._(this.value);
 
 factory UserMessageQuotedTextType.fromJson(String json) { return switch (json) {
   'quoted_text' => quotedText,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UserMessageQuotedTextType($value)'; } 
  }
 /// Quoted snippet that the user referenced in their message.
-final class UserMessageQuotedText {const UserMessageQuotedText({this.type = UserMessageQuotedTextType.quotedText, required this.text, });
+@immutable final class UserMessageQuotedText {const UserMessageQuotedText({required this.text, this.type = UserMessageQuotedTextType.quotedText, });
 
 factory UserMessageQuotedText.fromJson(Map<String, dynamic> json) { return UserMessageQuotedText(
   type: UserMessageQuotedTextType.fromJson(json['type'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// R2 binding.
-final class PagesDeploymentConfigValuesRequestR2BucketsValue {const PagesDeploymentConfigValuesRequestR2BucketsValue({this.jurisdiction, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// R2 binding.
+@immutable final class PagesDeploymentConfigValuesRequestR2BucketsValue {const PagesDeploymentConfigValuesRequestR2BucketsValue({required this.name, this.jurisdiction, });
 
 factory PagesDeploymentConfigValuesRequestR2BucketsValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestR2BucketsValue(
   jurisdiction: json['jurisdiction'] as String?,

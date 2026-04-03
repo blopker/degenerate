@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_abuse_report.dart';import 'abuse_reports_error_message.dart';import 'abuse_reports_message.dart';final class GetAbuseReportResponse {const GetAbuseReportResponse({this.errors, this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_abuse_report.dart';import 'abuse_reports_error_message.dart';import 'abuse_reports_message.dart';@immutable final class GetAbuseReportResponse {const GetAbuseReportResponse({required this.result, required this.success, this.errors, this.messages, });
 
 factory GetAbuseReportResponse.fromJson(Map<String, dynamic> json) { return GetAbuseReportResponse(
   errors: (json['errors'] as List<dynamic>?)?.map((e) => AbuseReportsErrorMessage.fromJson(e as Map<String, dynamic>)).toList(),

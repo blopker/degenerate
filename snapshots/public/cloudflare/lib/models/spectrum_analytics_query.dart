@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_dimensions2.dart';import 'spectrum_analytics_filters.dart';import 'spectrum_analytics_metrics2.dart';import 'spectrum_analytics_timestamp.dart';final class SpectrumAnalyticsQuery {const SpectrumAnalyticsQuery({this.dimensions, this.filters, this.limit, this.metrics, this.since, this.sort, this.until, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_dimensions2.dart';import 'spectrum_analytics_filters.dart';import 'spectrum_analytics_metrics2.dart';import 'spectrum_analytics_timestamp.dart';@immutable final class SpectrumAnalyticsQuery {const SpectrumAnalyticsQuery({this.dimensions, this.filters, this.limit, this.metrics, this.since, this.sort, this.until, });
 
 factory SpectrumAnalyticsQuery.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsQuery(
   dimensions: (json['dimensions'] as List<dynamic>?)?.map((e) => SpectrumAnalyticsDimensions2.fromJson(e as String)).toList(),

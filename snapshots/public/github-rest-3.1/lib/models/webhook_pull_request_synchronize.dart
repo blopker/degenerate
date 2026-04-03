@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_synchronize_pull_request.dart';import 'webhooks_number.dart';final class WebhookPullRequestSynchronizeAction {const WebhookPullRequestSynchronizeAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_synchronize_pull_request.dart';import 'webhooks_number.dart';@immutable final class WebhookPullRequestSynchronizeAction {const WebhookPullRequestSynchronizeAction._(this.value);
 
 factory WebhookPullRequestSynchronizeAction.fromJson(String json) { return switch (json) {
   'synchronize' => synchronize,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestSynchronizeAction($value)'; } 
  }
-final class WebhookPullRequestSynchronize {const WebhookPullRequestSynchronize({required this.action, required this.after, required this.before, this.enterprise, this.installation, required this.number, this.organization, required this.pullRequest, required this.repository, required this.sender, });
+@immutable final class WebhookPullRequestSynchronize {const WebhookPullRequestSynchronize({required this.action, required this.after, required this.before, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookPullRequestSynchronize.fromJson(Map<String, dynamic> json) { return WebhookPullRequestSynchronize(
   action: WebhookPullRequestSynchronizeAction.fromJson(json['action'] as String),

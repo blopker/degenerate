@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search_type_only.dart';import 'create_message_request_attachments2_tools.dart';final class CreateMessageRequestAttachments2 {const CreateMessageRequestAttachments2({this.fileId, this.tools, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search_type_only.dart';import 'create_message_request_attachments2_tools.dart';@immutable final class CreateMessageRequestAttachments2 {const CreateMessageRequestAttachments2({this.fileId, this.tools, });
 
 factory CreateMessageRequestAttachments2.fromJson(Map<String, dynamic> json) { return CreateMessageRequestAttachments2(
   fileId: json['file_id'] as String?,

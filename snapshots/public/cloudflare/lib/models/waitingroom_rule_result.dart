@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waitingroom_rule_action.dart';import 'waitingroom_rule_description.dart';import 'waitingroom_rule_enabled.dart';import 'waitingroom_rule_expression.dart';import 'waitingroom_rule_id.dart';import 'waitingroom_timestamp.dart';/// The version of the rule.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_rule_action.dart';import 'waitingroom_rule_description.dart';import 'waitingroom_rule_enabled.dart';import 'waitingroom_rule_expression.dart';import 'waitingroom_rule_id.dart';import 'waitingroom_timestamp.dart';/// The version of the rule.
 extension type const WaitingroomRuleVersion(String value) {
 factory WaitingroomRuleVersion.fromJson(String json) => WaitingroomRuleVersion(json);
 
 String toJson() => value;
 
 }
-final class WaitingroomRuleResult {const WaitingroomRuleResult({this.action, this.description, this.enabled, this.expression, this.id, this.lastUpdated, this.version, });
+@immutable final class WaitingroomRuleResult {const WaitingroomRuleResult({this.action, this.description, this.enabled, this.expression, this.id, this.lastUpdated, this.version, });
 
 factory WaitingroomRuleResult.fromJson(Map<String, dynamic> json) { return WaitingroomRuleResult(
   action: json['action'] != null ? WaitingroomRuleAction.fromJson(json['action'] as String) : null,

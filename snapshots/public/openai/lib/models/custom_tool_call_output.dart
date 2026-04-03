@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_tool_call_output_output.dart';import 'function_and_custom_tool_call_output.dart';/// The output of a custom tool call from your code, being sent back to the model.
 /// 
-final class CustomToolCallOutput {const CustomToolCallOutput({required this.type, this.id, required this.callId, required this.output, });
+@immutable final class CustomToolCallOutput {const CustomToolCallOutput({required this.type, required this.callId, required this.output, this.id, });
 
 factory CustomToolCallOutput.fromJson(Map<String, dynamic> json) { return CustomToolCallOutput(
   type: json['type'] as String,

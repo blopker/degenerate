@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TimelineCommittedEventVerification {const TimelineCommittedEventVerification({required this.verified, required this.reason, required this.signature, required this.payload, required this.verifiedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TimelineCommittedEventVerification {const TimelineCommittedEventVerification({required this.verified, required this.reason, required this.signature, required this.payload, required this.verifiedAt, });
 
 factory TimelineCommittedEventVerification.fromJson(Map<String, dynamic> json) { return TimelineCommittedEventVerification(
   verified: json['verified'] as bool,

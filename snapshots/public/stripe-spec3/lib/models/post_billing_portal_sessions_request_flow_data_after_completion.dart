@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_billing_portal_sessions_request_flow_data_after_completion_hosted_confirmation.dart';import 'post_billing_portal_sessions_request_flow_data_after_completion_redirect.dart';final class PostBillingPortalSessionsRequestFlowDataAfterCompletionType {const PostBillingPortalSessionsRequestFlowDataAfterCompletionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_sessions_request_flow_data_after_completion_hosted_confirmation.dart';import 'post_billing_portal_sessions_request_flow_data_after_completion_redirect.dart';@immutable final class PostBillingPortalSessionsRequestFlowDataAfterCompletionType {const PostBillingPortalSessionsRequestFlowDataAfterCompletionType._(this.value);
 
 factory PostBillingPortalSessionsRequestFlowDataAfterCompletionType.fromJson(String json) { return switch (json) {
   'hosted_confirmation' => hostedConfirmation,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalSessionsRequestFlowDataAfterCompletionType($value)'; } 
  }
-final class PostBillingPortalSessionsRequestFlowDataAfterCompletion {const PostBillingPortalSessionsRequestFlowDataAfterCompletion({this.hostedConfirmation, this.redirect, required this.type, });
+@immutable final class PostBillingPortalSessionsRequestFlowDataAfterCompletion {const PostBillingPortalSessionsRequestFlowDataAfterCompletion({required this.type, this.hostedConfirmation, this.redirect, });
 
 factory PostBillingPortalSessionsRequestFlowDataAfterCompletion.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataAfterCompletion(
   hostedConfirmation: json['hosted_confirmation'] != null ? PostBillingPortalSessionsRequestFlowDataAfterCompletionHostedConfirmation.fromJson(json['hosted_confirmation'] as Map<String, dynamic>) : null,

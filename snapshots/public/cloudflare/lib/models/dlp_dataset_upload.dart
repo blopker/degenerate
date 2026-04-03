@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_dataset_upload_status.dart';final class DlpDatasetUpload {const DlpDatasetUpload({required this.numCells, required this.status, required this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_upload_status.dart';@immutable final class DlpDatasetUpload {const DlpDatasetUpload({required this.numCells, required this.status, required this.version, });
 
 factory DlpDatasetUpload.fromJson(Map<String, dynamic> json) { return DlpDatasetUpload(
   numCells: (json['num_cells'] as num).toInt(),

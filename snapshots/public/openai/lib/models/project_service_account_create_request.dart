@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ProjectServiceAccountCreateRequest {const ProjectServiceAccountCreateRequest({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectServiceAccountCreateRequest {const ProjectServiceAccountCreateRequest({required this.name});
 
 factory ProjectServiceAccountCreateRequest.fromJson(Map<String, dynamic> json) { return ProjectServiceAccountCreateRequest(
   name: json['name'] as String,

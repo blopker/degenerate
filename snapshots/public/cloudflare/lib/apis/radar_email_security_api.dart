@@ -17,47 +17,47 @@ Future<ApiResult<RadarGetEmailSecuritySummaryResponseResult, RadarGetEmailSecuri
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (arc != null) {
 for (final item in arc) {
-  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson()));
 }
 }
 if (dkim != null) {
 for (final item in dkim) {
-  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson()));
 }
 }
 if (dmarc != null) {
 for (final item in dmarc) {
-  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson()));
 }
 }
 if (spf != null) {
 for (final item in spf) {
-  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson()));
 }
 }
 if (tlsVersion != null) {
 for (final item in tlsVersion) {
-  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson()));
 }
 }
 if (limitPerGroup != null) {
@@ -101,47 +101,47 @@ if (aggInterval != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (arc != null) {
 for (final item in arc) {
-  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson()));
 }
 }
 if (dkim != null) {
 for (final item in dkim) {
-  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson()));
 }
 }
 if (dmarc != null) {
 for (final item in dmarc) {
-  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson()));
 }
 }
 if (spf != null) {
 for (final item in spf) {
-  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson()));
 }
 }
 if (tlsVersion != null) {
 for (final item in tlsVersion) {
-  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson()));
 }
 }
 if (limitPerGroup != null) {
@@ -185,47 +185,47 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (arc != null) {
 for (final item in arc) {
-  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson()));
 }
 }
 if (dkim != null) {
 for (final item in dkim) {
-  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson()));
 }
 }
 if (dmarc != null) {
 for (final item in dmarc) {
-  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson()));
 }
 }
 if (spf != null) {
 for (final item in spf) {
-  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson()));
 }
 }
 if (tlsVersion != null) {
 for (final item in tlsVersion) {
-  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson()));
 }
 }
 if (tldCategory != null) {
@@ -269,47 +269,47 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (arc != null) {
 for (final item in arc) {
-  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson()));
 }
 }
 if (dkim != null) {
 for (final item in dkim) {
-  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson()));
 }
 }
 if (dmarc != null) {
 for (final item in dmarc) {
-  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson()));
 }
 }
 if (spf != null) {
 for (final item in spf) {
-  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson()));
 }
 }
 if (tlsVersion != null) {
 for (final item in tlsVersion) {
-  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson()));
 }
 }
 if (tldCategory != null) {
@@ -353,47 +353,47 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (arc != null) {
 for (final item in arc) {
-  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson()));
 }
 }
 if (dkim != null) {
 for (final item in dkim) {
-  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson()));
 }
 }
 if (dmarc != null) {
 for (final item in dmarc) {
-  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson()));
 }
 }
 if (spf != null) {
 for (final item in spf) {
-  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson()));
 }
 }
 if (tlsVersion != null) {
 for (final item in tlsVersion) {
-  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson()));
 }
 }
 if (tldCategory != null) {
@@ -437,47 +437,47 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (arc != null) {
 for (final item in arc) {
-  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'arc', value: item.toJson()));
 }
 }
 if (dkim != null) {
 for (final item in dkim) {
-  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dkim', value: item.toJson()));
 }
 }
 if (dmarc != null) {
 for (final item in dmarc) {
-  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dmarc', value: item.toJson()));
 }
 }
 if (spf != null) {
 for (final item in spf) {
-  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'spf', value: item.toJson()));
 }
 }
 if (tlsVersion != null) {
 for (final item in tlsVersion) {
-  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tlsVersion', value: item.toJson()));
 }
 }
 if (tldCategory != null) {

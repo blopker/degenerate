@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class HyperdriveResultInfo {const HyperdriveResultInfo({this.count, this.page, this.perPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HyperdriveResultInfo {const HyperdriveResultInfo({this.count, this.page, this.perPage, this.totalCount, });
 
 factory HyperdriveResultInfo.fromJson(Map<String, dynamic> json) { return HyperdriveResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

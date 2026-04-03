@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_tcp_resets_timeouts_summary_response_result_meta_confidence_info_annotations.dart';final class RadarGetTcpResetsTimeoutsSummaryResponseResultMetaConfidenceInfo {const RadarGetTcpResetsTimeoutsSummaryResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_tcp_resets_timeouts_summary_response_result_meta_confidence_info_annotations.dart';@immutable final class RadarGetTcpResetsTimeoutsSummaryResponseResultMetaConfidenceInfo {const RadarGetTcpResetsTimeoutsSummaryResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
 
 factory RadarGetTcpResetsTimeoutsSummaryResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetTcpResetsTimeoutsSummaryResponseResultMetaConfidenceInfo(
   annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetTcpResetsTimeoutsSummaryResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),

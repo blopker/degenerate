@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsRequestPaymentMethodOptionsPaypal {const PostSetupIntentsRequestPaymentMethodOptionsPaypal({this.billingAgreementId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsPaypal {const PostSetupIntentsRequestPaymentMethodOptionsPaypal({this.billingAgreementId});
 
 factory PostSetupIntentsRequestPaymentMethodOptionsPaypal.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsPaypal(
   billingAgreementId: json['billing_agreement_id'] as String?,

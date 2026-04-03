@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_issuing_cardholders_request_individual_card_issuing.dart';import 'post_issuing_cardholders_request_individual_dob.dart';import 'post_issuing_cardholders_request_individual_verification.dart';/// Additional information about an `individual` cardholder.
-final class PostIssuingCardholdersRequestIndividual {const PostIssuingCardholdersRequestIndividual({this.cardIssuing, this.dob, this.firstName, this.lastName, this.verification, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cardholders_request_individual_card_issuing.dart';import 'post_issuing_cardholders_request_individual_dob.dart';import 'post_issuing_cardholders_request_individual_verification.dart';/// Additional information about an `individual` cardholder.
+@immutable final class PostIssuingCardholdersRequestIndividual {const PostIssuingCardholdersRequestIndividual({this.cardIssuing, this.dob, this.firstName, this.lastName, this.verification, });
 
 factory PostIssuingCardholdersRequestIndividual.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequestIndividual(
   cardIssuing: json['card_issuing'] != null ? PostIssuingCardholdersRequestIndividualCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,

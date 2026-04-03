@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_variants_response_value_result.dart';final class CacheRulesVariantsResponseValue {const CacheRulesVariantsResponseValue({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cache_rules_variants_response_value_result.dart';@immutable final class CacheRulesVariantsResponseValue {const CacheRulesVariantsResponseValue({this.result});
 
 factory CacheRulesVariantsResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesVariantsResponseValue(
   result: json['result'] != null ? CacheRulesVariantsResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates the alert type of a campaign
-final class CampaignAlertType {const CampaignAlertType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the alert type of a campaign
+@immutable final class CampaignAlertType {const CampaignAlertType._(this.value);
 
 factory CampaignAlertType.fromJson(String json) { return switch (json) {
   'code_scanning' => codeScanning,

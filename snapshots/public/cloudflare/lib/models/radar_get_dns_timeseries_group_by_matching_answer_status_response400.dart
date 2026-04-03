@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_matching_answer_status_response400_errors.dart';final class RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse400 {const RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_matching_answer_status_response400_errors.dart';@immutable final class RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse400 {const RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse400.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetDnsTimeseriesGroupByMatchingAnswerStatusResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

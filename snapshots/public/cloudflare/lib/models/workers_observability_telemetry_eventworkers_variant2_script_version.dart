@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion {const WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion({this.id, this.message, this.tag, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion {const WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion({this.id, this.message, this.tag, });
 
 factory WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent$workersVariant2ScriptVersion(
   id: json['id'] as String?,

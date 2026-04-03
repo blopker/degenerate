@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_version_item_full_resources_script_runtime_limits.dart';/// Usage model for the Worker invocations.
-final class WorkersVersionItemFullResourcesScriptRuntimeUsageModel {const WorkersVersionItemFullResourcesScriptRuntimeUsageModel._(this.value);
+@immutable final class WorkersVersionItemFullResourcesScriptRuntimeUsageModel {const WorkersVersionItemFullResourcesScriptRuntimeUsageModel._(this.value);
 
 factory WorkersVersionItemFullResourcesScriptRuntimeUsageModel.fromJson(String json) { return switch (json) {
   'bundled' => bundled,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkersVersionItemFullResourcesScriptRuntimeUsageModel($value)'; } 
  }
 /// Runtime configuration for the Worker.
-final class WorkersVersionItemFullResourcesScriptRuntime {const WorkersVersionItemFullResourcesScriptRuntime({this.compatibilityDate, this.compatibilityFlags, this.limits, this.migrationTag, this.usageModel, });
+@immutable final class WorkersVersionItemFullResourcesScriptRuntime {const WorkersVersionItemFullResourcesScriptRuntime({this.compatibilityDate, this.compatibilityFlags, this.limits, this.migrationTag, this.usageModel, });
 
 factory WorkersVersionItemFullResourcesScriptRuntime.fromJson(Map<String, dynamic> json) { return WorkersVersionItemFullResourcesScriptRuntime(
   compatibilityDate: json['compatibility_date'] as String?,

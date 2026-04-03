@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_advisory_create_credits.dart';import 'repository_advisory_create_vulnerabilities.dart';/// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
-final class RepositoryAdvisoryCreateSeverity {const RepositoryAdvisoryCreateSeverity._(this.value);
+@immutable final class RepositoryAdvisoryCreateSeverity {const RepositoryAdvisoryCreateSeverity._(this.value);
 
 factory RepositoryAdvisoryCreateSeverity.fromJson(String json) { return switch (json) {
   'critical' => critical,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RepositoryAdvisoryCreateSeverity($value)'; } 
  }
-final class RepositoryAdvisoryCreate {const RepositoryAdvisoryCreate({required this.summary, required this.description, this.cveId, required this.vulnerabilities, this.cweIds, this.credits, this.severity, this.cvssVectorString, this.startPrivateFork = false, });
+@immutable final class RepositoryAdvisoryCreate {const RepositoryAdvisoryCreate({required this.summary, required this.description, required this.vulnerabilities, this.cveId, this.cweIds, this.credits, this.severity, this.cvssVectorString, this.startPrivateFork = false, });
 
 factory RepositoryAdvisoryCreate.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCreate(
   summary: json['summary'] as String,

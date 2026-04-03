@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_data_catalog_table_identifier.dart';/// Contains table with metadata.
-final class R2DataCatalogTableDetails {const R2DataCatalogTableDetails({this.createdAt, required this.identifier, this.location, this.metadataLocation, required this.tableUuid, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_table_identifier.dart';/// Contains table with metadata.
+@immutable final class R2DataCatalogTableDetails {const R2DataCatalogTableDetails({required this.identifier, required this.tableUuid, this.createdAt, this.location, this.metadataLocation, this.updatedAt, });
 
 factory R2DataCatalogTableDetails.fromJson(Map<String, dynamic> json) { return R2DataCatalogTableDetails(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

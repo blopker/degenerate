@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_object.dart';final class RunStreamEventThreadRunCreatedEvent {const RunStreamEventThreadRunCreatedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_object.dart';@immutable final class RunStreamEventThreadRunCreatedEvent {const RunStreamEventThreadRunCreatedEvent._(this.value);
 
 factory RunStreamEventThreadRunCreatedEvent.fromJson(String json) { return switch (json) {
   'thread.run.created' => threadRunCreated,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStreamEventThreadRunCreatedEvent($value)'; } 
  }
 /// Occurs when a new [run](/docs/api-reference/runs/object) is created.
-final class RunStreamEventThreadRunCreated {const RunStreamEventThreadRunCreated({required this.event, required this.data, });
+@immutable final class RunStreamEventThreadRunCreated {const RunStreamEventThreadRunCreated({required this.event, required this.data, });
 
 factory RunStreamEventThreadRunCreated.fromJson(Map<String, dynamic> json) { return RunStreamEventThreadRunCreated(
   event: RunStreamEventThreadRunCreatedEvent.fromJson(json['event'] as String),

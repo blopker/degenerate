@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigUpdateGatewayRequestOtelContentType {const AigConfigUpdateGatewayRequestOtelContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateGatewayRequestOtelContentType {const AigConfigUpdateGatewayRequestOtelContentType._(this.value);
 
 factory AigConfigUpdateGatewayRequestOtelContentType.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateGatewayRequestOtelContentType($value)'; } 
  }
-final class AigConfigUpdateGatewayRequestOtel {const AigConfigUpdateGatewayRequestOtel({required this.authorization, this.contentType = AigConfigUpdateGatewayRequestOtelContentType.$json, required this.headers, required this.url, });
+@immutable final class AigConfigUpdateGatewayRequestOtel {const AigConfigUpdateGatewayRequestOtel({required this.authorization, required this.headers, required this.url, this.contentType = AigConfigUpdateGatewayRequestOtelContentType.$json, });
 
 factory AigConfigUpdateGatewayRequestOtel.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayRequestOtel(
   authorization: json['authorization'] as String,

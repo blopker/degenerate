@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gelato_session_document_options.dart';import 'gelato_session_email_options.dart';import 'gelato_session_id_number_options.dart';import 'gelato_session_matching_options.dart';import 'gelato_session_phone_options.dart';/// 
-final class GelatoVerificationSessionOptions {const GelatoVerificationSessionOptions({this.document, this.email, this.idNumber, this.matching, this.phone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_session_document_options.dart';import 'gelato_session_email_options.dart';import 'gelato_session_id_number_options.dart';import 'gelato_session_matching_options.dart';import 'gelato_session_phone_options.dart';/// 
+@immutable final class GelatoVerificationSessionOptions {const GelatoVerificationSessionOptions({this.document, this.email, this.idNumber, this.matching, this.phone, });
 
 factory GelatoVerificationSessionOptions.fromJson(Map<String, dynamic> json) { return GelatoVerificationSessionOptions(
   document: json['document'] != null ? GelatoSessionDocumentOptions.fromJson(json['document'] as Map<String, dynamic>) : null,

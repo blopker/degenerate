@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class BankConnectionsResourceTransactionResourceStatusTransitions {const BankConnectionsResourceTransactionResourceStatusTransitions({this.postedAt, this.voidAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class BankConnectionsResourceTransactionResourceStatusTransitions {const BankConnectionsResourceTransactionResourceStatusTransitions({this.postedAt, this.voidAt, });
 
 factory BankConnectionsResourceTransactionResourceStatusTransitions.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceTransactionResourceStatusTransitions(
   postedAt: json['posted_at'] != null ? (json['posted_at'] as num).toInt() : null,

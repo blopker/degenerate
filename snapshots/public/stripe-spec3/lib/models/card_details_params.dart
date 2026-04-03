@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'card_details_params_networks.dart';final class CardDetailsParams {const CardDetailsParams({this.cvc, required this.expMonth, required this.expYear, this.networks, required this.number, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'card_details_params_networks.dart';@immutable final class CardDetailsParams {const CardDetailsParams({required this.expMonth, required this.expYear, required this.number, this.cvc, this.networks, });
 
 factory CardDetailsParams.fromJson(Map<String, dynamic> json) { return CardDetailsParams(
   cvc: json['cvc'] as String?,

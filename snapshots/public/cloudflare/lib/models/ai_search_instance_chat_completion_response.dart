@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_chat_completion_response_choices.dart';import 'ai_search_instance_chat_completion_response_chunks.dart';final class AiSearchInstanceChatCompletionResponse {const AiSearchInstanceChatCompletionResponse({required this.choices, required this.chunks, this.id, this.model, this.object, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_chat_completion_response_choices.dart';import 'ai_search_instance_chat_completion_response_chunks.dart';@immutable final class AiSearchInstanceChatCompletionResponse {const AiSearchInstanceChatCompletionResponse({required this.choices, required this.chunks, this.id, this.model, this.object, this.additionalProperties = const {}, });
 
 factory AiSearchInstanceChatCompletionResponse.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionResponse(
   choices: (json['choices'] as List<dynamic>).map((e) => AiSearchInstanceChatCompletionResponseChoices.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'time.dart';/// NodeCondition contains condition information for a node.
-final class NodeCondition {const NodeCondition({this.lastHeartbeatTime, this.lastTransitionTime, this.message, this.reason, this.status = '', this.type = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// NodeCondition contains condition information for a node.
+@immutable final class NodeCondition {const NodeCondition({this.lastHeartbeatTime, this.lastTransitionTime, this.message, this.reason, this.status = '', this.type = '', });
 
 factory NodeCondition.fromJson(Map<String, dynamic> json) { return NodeCondition(
   lastHeartbeatTime: json['lastHeartbeatTime'] != null ? Time.fromJson(json['lastHeartbeatTime'] as String) : null,

@@ -55,7 +55,7 @@ return execute(
 /// Lists challenge widgets.
 ///
 /// `POST /accounts/{account_id}/challenges/widgets`
-Future<ApiResult<TurnstileWidgetDetail?, Never>> accountsTurnstileWidgetCreate({required TurnstileIdentifier accountId, double? page, double? perPage, AccountsTurnstileWidgetCreateOrder? order, AccountsTurnstileWidgetCreateDirection? direction, String? filter, required AccountsTurnstileWidgetCreateRequest body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TurnstileWidgetDetail?, Never>> accountsTurnstileWidgetCreate({required TurnstileIdentifier accountId, required AccountsTurnstileWidgetCreateRequest body, double? page, double? perPage, AccountsTurnstileWidgetCreateOrder? order, AccountsTurnstileWidgetCreateDirection? direction, String? filter, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();

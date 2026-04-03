@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Strict Transport Security.
-final class ZonesSecurityHeaderValueStrictTransportSecurity {const ZonesSecurityHeaderValueStrictTransportSecurity({this.enabled, this.includeSubdomains, this.maxAge, this.nosniff, this.preload, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Strict Transport Security.
+@immutable final class ZonesSecurityHeaderValueStrictTransportSecurity {const ZonesSecurityHeaderValueStrictTransportSecurity({this.enabled, this.includeSubdomains, this.maxAge, this.nosniff, this.preload, });
 
 factory ZonesSecurityHeaderValueStrictTransportSecurity.fromJson(Map<String, dynamic> json) { return ZonesSecurityHeaderValueStrictTransportSecurity(
   enabled: json['enabled'] as bool?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_meta_llama_guard38b_request_messages.dart';import 'workers_ai_post_run_cf_meta_llama_guard38b_request_response_format.dart';final class WorkersAiPostRunCfMetaLlamaGuard38bRequest {const WorkersAiPostRunCfMetaLlamaGuard38bRequest({this.maxTokens = 256, required this.messages, this.responseFormat, this.temperature = 0.6, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_meta_llama_guard38b_request_messages.dart';import 'workers_ai_post_run_cf_meta_llama_guard38b_request_response_format.dart';@immutable final class WorkersAiPostRunCfMetaLlamaGuard38bRequest {const WorkersAiPostRunCfMetaLlamaGuard38bRequest({required this.messages, this.maxTokens = 256, this.responseFormat, this.temperature = 0.6, });
 
 factory WorkersAiPostRunCfMetaLlamaGuard38bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaLlamaGuard38bRequest(
   maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,

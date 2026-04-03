@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSubscriptionSchedulesScheduleRequestPhasesEndDateVariant2 {const PostSubscriptionSchedulesScheduleRequestPhasesEndDateVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesEndDateVariant2 {const PostSubscriptionSchedulesScheduleRequestPhasesEndDateVariant2._(this.value);
 
 factory PostSubscriptionSchedulesScheduleRequestPhasesEndDateVariant2.fromJson(String json) { return switch (json) {
   'now' => now,

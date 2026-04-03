@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetOriginsTimeseriesGroupResponseResultSerie0 {const RadarGetOriginsTimeseriesGroupResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetOriginsTimeseriesGroupResponseResultSerie0 {const RadarGetOriginsTimeseriesGroupResponseResultSerie0({required this.timestamps, this.additionalProperties = const {}, });
 
 factory RadarGetOriginsTimeseriesGroupResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetOriginsTimeseriesGroupResponseResultSerie0(
   timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
@@ -13,7 +13,7 @@ final Map<String,List<String>> additionalProperties;
 
 Map<String, dynamic> toJson() { return {
   'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
-  ...additionalProperties.map((k, v) => MapEntry(k, v)),
+  ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('timestamps'); } 
 RadarGetOriginsTimeseriesGroupResponseResultSerie0 copyWith({List<DateTime>? timestamps, Map<String, List<String>>? additionalProperties, }) { return RadarGetOriginsTimeseriesGroupResponseResultSerie0(

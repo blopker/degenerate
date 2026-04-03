@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'prompt43_tools_custom_custom_format_grammar_grammar.dart';final class Prompt43ToolsCustomCustomFormatGrammarType {const Prompt43ToolsCustomCustomFormatGrammarType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_tools_custom_custom_format_grammar_grammar.dart';@immutable final class Prompt43ToolsCustomCustomFormatGrammarType {const Prompt43ToolsCustomCustomFormatGrammarType._(this.value);
 
 factory Prompt43ToolsCustomCustomFormatGrammarType.fromJson(String json) { return switch (json) {
   'grammar' => grammar,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43ToolsCustomCustomFormatGrammarType($value)'; } 
  }
-final class Prompt43ToolsCustomCustomFormatGrammar {const Prompt43ToolsCustomCustomFormatGrammar({required this.grammar, required this.type, });
+@immutable final class Prompt43ToolsCustomCustomFormatGrammar {const Prompt43ToolsCustomCustomFormatGrammar({required this.grammar, required this.type, });
 
 factory Prompt43ToolsCustomCustomFormatGrammar.fromJson(Map<String, dynamic> json) { return Prompt43ToolsCustomCustomFormatGrammar(
   grammar: Prompt43ToolsCustomCustomFormatGrammarGrammar.fromJson(json['grammar'] as Map<String, dynamic>),

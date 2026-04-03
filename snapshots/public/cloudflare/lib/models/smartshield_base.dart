@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SmartshieldBase {const SmartshieldBase({required this.id, this.modifiedOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmartshieldBase {const SmartshieldBase({required this.id, this.modifiedOn, });
 
 factory SmartshieldBase.fromJson(Map<String, dynamic> json) { return SmartshieldBase(
   id: json['id'] as String,

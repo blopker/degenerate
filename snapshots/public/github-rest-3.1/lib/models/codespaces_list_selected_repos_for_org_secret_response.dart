@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';final class CodespacesListSelectedReposForOrgSecretResponse {const CodespacesListSelectedReposForOrgSecretResponse({required this.totalCount, required this.repositories, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';@immutable final class CodespacesListSelectedReposForOrgSecretResponse {const CodespacesListSelectedReposForOrgSecretResponse({required this.totalCount, required this.repositories, });
 
 factory CodespacesListSelectedReposForOrgSecretResponse.fromJson(Map<String, dynamic> json) { return CodespacesListSelectedReposForOrgSecretResponse(
   totalCount: (json['total_count'] as num).toInt(),

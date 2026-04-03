@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_column.dart';final class WebhookProjectColumnMovedAction {const WebhookProjectColumnMovedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_project_column.dart';@immutable final class WebhookProjectColumnMovedAction {const WebhookProjectColumnMovedAction._(this.value);
 
 factory WebhookProjectColumnMovedAction.fromJson(String json) { return switch (json) {
   'moved' => moved,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookProjectColumnMovedAction($value)'; } 
  }
-final class WebhookProjectColumnMoved {const WebhookProjectColumnMoved({required this.action, this.enterprise, this.installation, this.organization, required this.projectColumn, this.repository, required this.sender, });
+@immutable final class WebhookProjectColumnMoved {const WebhookProjectColumnMoved({required this.action, required this.projectColumn, required this.sender, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookProjectColumnMoved.fromJson(Map<String, dynamic> json) { return WebhookProjectColumnMoved(
   action: WebhookProjectColumnMovedAction.fromJson(json['action'] as String),

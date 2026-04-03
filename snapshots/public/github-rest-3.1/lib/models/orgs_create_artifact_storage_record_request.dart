@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the artifact (e.g., active, inactive).
-final class OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the artifact (e.g., active, inactive).
+@immutable final class OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus._(this.value);
 
 factory OrgsCreateArtifactStorageRecordRequestStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsCreateArtifactStorageRecordRequestStatus($value)'; } 
  }
-final class OrgsCreateArtifactStorageRecordRequest {const OrgsCreateArtifactStorageRecordRequest({required this.name, required this.digest, this.version, this.artifactUrl, this.path, required this.registryUrl, this.repository, this.status = OrgsCreateArtifactStorageRecordRequestStatus.active, this.githubRepository, });
+@immutable final class OrgsCreateArtifactStorageRecordRequest {const OrgsCreateArtifactStorageRecordRequest({required this.name, required this.digest, required this.registryUrl, this.version, this.artifactUrl, this.path, this.repository, this.status = OrgsCreateArtifactStorageRecordRequestStatus.active, this.githubRepository, });
 
 factory OrgsCreateArtifactStorageRecordRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateArtifactStorageRecordRequest(
   name: json['name'] as String,

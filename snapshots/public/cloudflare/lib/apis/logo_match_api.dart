@@ -17,7 +17,7 @@ Future<ApiResult<LogoMatch, ErrorModel>> getAccountsBrandProtectionLogoMatches({
 final queryParametersList = <ApiQueryParameter>[];
 if (logoId != null) {
 for (final item in logoId) {
-  queryParametersList.add(ApiQueryParameter(name: 'logo_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'logo_id', value: item));
 }
 }
 if (offset != null) {
@@ -57,7 +57,7 @@ Future<ApiResult<LogoMatch, ErrorModel>> getAccountsBrandProtectionLogoMatchesDo
 final queryParametersList = <ApiQueryParameter>[];
 if (logoId != null) {
 for (final item in logoId) {
-  queryParametersList.add(ApiQueryParameter(name: 'logo_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'logo_id', value: item));
 }
 }
 if (offset != null) {
@@ -115,7 +115,7 @@ return execute(
 /// Return new saved logo queries created from image files
 ///
 /// `POST /accounts/{account_id}/brand-protection/logos`
-Future<ApiResult<Logo, ErrorModel>> postAccountsBrandProtectionLogos({required String accountId, String? tag, String? matchType, double? threshold, required ImageFile body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Logo, ErrorModel>> postAccountsBrandProtectionLogos({required String accountId, required ImageFile body, String? tag, String? matchType, double? threshold, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (tag != null) {
   queryParameters['tag'] = tag;
@@ -136,7 +136,7 @@ final request = ApiRequest(
   headers: headers,
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
-  body: [
+  body: <String>[
     if (body.image case final image$?)
       'image=${Uri.encodeQueryComponent(base64Encode(image$))}',
   ].join('&'),

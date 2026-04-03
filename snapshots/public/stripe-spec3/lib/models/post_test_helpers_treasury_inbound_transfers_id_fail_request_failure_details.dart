@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode {const PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode {const PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode._(this.value);
 
 factory PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode.fromJson(String json) { return switch (json) {
   'account_closed' => accountClosed,
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode($value)'; } 
  }
 /// Details about a failed InboundTransfer.
-final class PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetails {const PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetails({this.code});
+@immutable final class PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetails {const PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetails({this.code});
 
 factory PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetails(
   code: json['code'] != null ? PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetailsCode.fromJson(json['code'] as String) : null,

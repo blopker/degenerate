@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'community_profile_files.dart';/// Community Profile
-final class CommunityProfile {const CommunityProfile({required this.healthPercentage, required this.description, required this.documentation, required this.files, required this.updatedAt, this.contentReportsEnabled, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'community_profile_files.dart';/// Community Profile
+@immutable final class CommunityProfile {const CommunityProfile({required this.healthPercentage, required this.description, required this.documentation, required this.files, required this.updatedAt, this.contentReportsEnabled, });
 
 factory CommunityProfile.fromJson(Map<String, dynamic> json) { return CommunityProfile(
   healthPercentage: (json['health_percentage'] as num).toInt(),

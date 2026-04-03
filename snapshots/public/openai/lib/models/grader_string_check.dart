@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `string_check`.
-final class GraderStringCheckType {const GraderStringCheckType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `string_check`.
+@immutable final class GraderStringCheckType {const GraderStringCheckType._(this.value);
 
 factory GraderStringCheckType.fromJson(String json) { return switch (json) {
   'string_check' => stringCheck,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GraderStringCheckType($value)'; } 
  }
 /// The string check operation to perform. One of `eq`, `ne`, `like`, or `ilike`.
-final class GraderStringCheckOperation {const GraderStringCheckOperation._(this.value);
+@immutable final class GraderStringCheckOperation {const GraderStringCheckOperation._(this.value);
 
 factory GraderStringCheckOperation.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A StringCheckGrader object that performs a string comparison between input and reference using a specified operation.
 /// 
-final class GraderStringCheck {const GraderStringCheck({required this.type, required this.name, required this.input, required this.reference, required this.operation, });
+@immutable final class GraderStringCheck {const GraderStringCheck({required this.type, required this.name, required this.input, required this.reference, required this.operation, });
 
 factory GraderStringCheck.fromJson(Map<String, dynamic> json) { return GraderStringCheck(
   type: GraderStringCheckType.fromJson(json['type'] as String),

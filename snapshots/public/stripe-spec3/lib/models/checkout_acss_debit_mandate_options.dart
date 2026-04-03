@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CheckoutAcssDebitMandateOptionsDefaultFor {const CheckoutAcssDebitMandateOptionsDefaultFor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CheckoutAcssDebitMandateOptionsDefaultFor {const CheckoutAcssDebitMandateOptionsDefaultFor._(this.value);
 
 factory CheckoutAcssDebitMandateOptionsDefaultFor.fromJson(String json) { return switch (json) {
   'invoice' => invoice,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutAcssDebitMandateOptionsDefaultFor($value)'; } 
  }
 /// Payment schedule for the mandate.
-final class CheckoutAcssDebitMandateOptionsPaymentSchedule {const CheckoutAcssDebitMandateOptionsPaymentSchedule._(this.value);
+@immutable final class CheckoutAcssDebitMandateOptionsPaymentSchedule {const CheckoutAcssDebitMandateOptionsPaymentSchedule._(this.value);
 
 factory CheckoutAcssDebitMandateOptionsPaymentSchedule.fromJson(String json) { return switch (json) {
   'combined' => combined,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutAcssDebitMandateOptionsPaymentSchedule($value)'; } 
  }
 /// Transaction type of the mandate.
-final class CheckoutAcssDebitMandateOptionsTransactionType {const CheckoutAcssDebitMandateOptionsTransactionType._(this.value);
+@immutable final class CheckoutAcssDebitMandateOptionsTransactionType {const CheckoutAcssDebitMandateOptionsTransactionType._(this.value);
 
 factory CheckoutAcssDebitMandateOptionsTransactionType.fromJson(String json) { return switch (json) {
   'business' => business,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutAcssDebitMandateOptionsTransactionType($value)'; } 
  }
 /// 
-final class CheckoutAcssDebitMandateOptions {const CheckoutAcssDebitMandateOptions({this.customMandateUrl, this.defaultFor, this.intervalDescription, this.paymentSchedule, this.transactionType, });
+@immutable final class CheckoutAcssDebitMandateOptions {const CheckoutAcssDebitMandateOptions({this.customMandateUrl, this.defaultFor, this.intervalDescription, this.paymentSchedule, this.transactionType, });
 
 factory CheckoutAcssDebitMandateOptions.fromJson(Map<String, dynamic> json) { return CheckoutAcssDebitMandateOptions(
   customMandateUrl: json['custom_mandate_url'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_rendering_options_param.dart';final class PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2 {const PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_rendering_options_param.dart';@immutable final class PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2 {const PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2._(this.value);
 
 factory PostCheckoutSessionsRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

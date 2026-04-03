@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreementPosition {const PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreementPosition._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreementPosition {const PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreementPosition._(this.value);
 
 factory PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreementPosition.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreementPosition($value)'; } 
  }
-final class PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreement {const PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreement({required this.position});
+@immutable final class PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreement {const PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreement({required this.position});
 
 factory PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreement.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreement(
   position: PostPaymentLinksRequestConsentCollectionPaymentMethodReuseAgreementPosition.fromJson(json['position'] as String),

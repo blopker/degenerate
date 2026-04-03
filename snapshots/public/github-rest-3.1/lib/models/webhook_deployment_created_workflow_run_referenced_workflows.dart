@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookDeploymentCreatedWorkflowRunReferencedWorkflows {const WebhookDeploymentCreatedWorkflowRunReferencedWorkflows({required this.path, this.ref, required this.sha, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDeploymentCreatedWorkflowRunReferencedWorkflows {const WebhookDeploymentCreatedWorkflowRunReferencedWorkflows({required this.path, required this.sha, this.ref, });
 
 factory WebhookDeploymentCreatedWorkflowRunReferencedWorkflows.fromJson(Map<String, dynamic> json) { return WebhookDeploymentCreatedWorkflowRunReferencedWorkflows(
   path: json['path'] as String,

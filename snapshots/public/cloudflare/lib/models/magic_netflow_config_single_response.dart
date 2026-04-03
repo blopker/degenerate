@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_netflow_config.dart';final class MagicNetflowConfigSingleResponse {const MagicNetflowConfigSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_netflow_config.dart';@immutable final class MagicNetflowConfigSingleResponse {const MagicNetflowConfigSingleResponse({this.result});
 
 factory MagicNetflowConfigSingleResponse.fromJson(Map<String, dynamic> json) { return MagicNetflowConfigSingleResponse(
   result: json['result'] != null ? MagicNetflowConfig.fromJson(json['result'] as Map<String, dynamic>) : null,

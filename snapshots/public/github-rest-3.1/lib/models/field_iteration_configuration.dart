@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'field_iteration_configuration_iterations.dart';/// The configuration for iteration fields.
-final class FieldIterationConfiguration {const FieldIterationConfiguration({this.startDate, this.duration, this.iterations, });
+@immutable final class FieldIterationConfiguration {const FieldIterationConfiguration({this.startDate, this.duration, this.iterations, });
 
 factory FieldIterationConfiguration.fromJson(Map<String, dynamic> json) { return FieldIterationConfiguration(
   startDate: json['start_date'] as String?,

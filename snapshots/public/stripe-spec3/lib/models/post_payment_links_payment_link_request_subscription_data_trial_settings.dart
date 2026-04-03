@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'trial_settings_config.dart';final class PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2 {const PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'trial_settings_config.dart';@immutable final class PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2 {const PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2._(this.value);
 
 factory PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

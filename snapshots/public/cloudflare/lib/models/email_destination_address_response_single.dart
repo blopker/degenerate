@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_destination_address_properties.dart';final class EmailDestinationAddressResponseSingle {const EmailDestinationAddressResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_destination_address_properties.dart';@immutable final class EmailDestinationAddressResponseSingle {const EmailDestinationAddressResponseSingle({this.result});
 
 factory EmailDestinationAddressResponseSingle.fromJson(Map<String, dynamic> json) { return EmailDestinationAddressResponseSingle(
   result: json['result'] != null ? EmailDestinationAddressProperties.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Operating System.
-final class TeamsDevicesFirewallInputRequestOperatingSystem {const TeamsDevicesFirewallInputRequestOperatingSystem._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating System.
+@immutable final class TeamsDevicesFirewallInputRequestOperatingSystem {const TeamsDevicesFirewallInputRequestOperatingSystem._(this.value);
 
 factory TeamsDevicesFirewallInputRequestOperatingSystem.fromJson(String json) { return switch (json) {
   'windows' => windows,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesFirewallInputRequestOperatingSystem($value)'; } 
  }
-final class TeamsDevicesFirewallInputRequest {const TeamsDevicesFirewallInputRequest({required this.enabled, required this.operatingSystem, });
+@immutable final class TeamsDevicesFirewallInputRequest {const TeamsDevicesFirewallInputRequest({required this.enabled, required this.operatingSystem, });
 
 factory TeamsDevicesFirewallInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesFirewallInputRequest(
   enabled: json['enabled'] as bool,

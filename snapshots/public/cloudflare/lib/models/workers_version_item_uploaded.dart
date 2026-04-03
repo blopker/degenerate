@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersVersionItemUploaded {const WorkersVersionItemUploaded({this.startupTimeMs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersVersionItemUploaded {const WorkersVersionItemUploaded({this.startupTimeMs});
 
 factory WorkersVersionItemUploaded.fromJson(Map<String, dynamic> json) { return WorkersVersionItemUploaded(
   startupTimeMs: json['startup_time_ms'] != null ? (json['startup_time_ms'] as num).toInt() : null,

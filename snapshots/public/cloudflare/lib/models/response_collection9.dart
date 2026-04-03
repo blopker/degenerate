@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_messages2.dart';import 'response_collection9_result_info.dart';final class ResponseCollection9 {const ResponseCollection9({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_messages2.dart';import 'response_collection9_result_info.dart';@immutable final class ResponseCollection9 {const ResponseCollection9({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection9.fromJson(Map<String, dynamic> json) { return ResponseCollection9(
   errors: (json['errors'] as List<dynamic>).map((e) => DigitalExperienceMonitoringMessages2.fromJson(e as Map<String, dynamic>)).toList(),

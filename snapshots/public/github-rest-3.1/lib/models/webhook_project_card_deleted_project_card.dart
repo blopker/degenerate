@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_project_card_deleted_project_card_creator.dart';final class WebhookProjectCardDeletedProjectCard {const WebhookProjectCardDeletedProjectCard({this.afterId, required this.archived, required this.columnId, required this.columnUrl, this.contentUrl, required this.createdAt, required this.creator, required this.id, required this.nodeId, required this.note, required this.projectUrl, required this.updatedAt, required this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_project_card_deleted_project_card_creator.dart';@immutable final class WebhookProjectCardDeletedProjectCard {const WebhookProjectCardDeletedProjectCard({required this.archived, required this.columnId, required this.columnUrl, required this.createdAt, required this.creator, required this.id, required this.nodeId, required this.note, required this.projectUrl, required this.updatedAt, required this.url, this.afterId, this.contentUrl, });
 
 factory WebhookProjectCardDeletedProjectCard.fromJson(Map<String, dynamic> json) { return WebhookProjectCardDeletedProjectCard(
   afterId: json['after_id'] != null ? (json['after_id'] as num).toInt() : null,

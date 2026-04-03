@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of downloads available are: `default`, `audio`.
-final class StreamDownloadType {const StreamDownloadType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of downloads available are: `default`, `audio`.
+@immutable final class StreamDownloadType {const StreamDownloadType._(this.value);
 
 factory StreamDownloadType.fromJson(String json) { return switch (json) {
   'default' => $default,

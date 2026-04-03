@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsCardWalletApplePay {const PaymentMethodDetailsCardWalletApplePay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsCardWalletApplePay {const PaymentMethodDetailsCardWalletApplePay();
 
-factory PaymentMethodDetailsCardWalletApplePay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardWalletApplePay(
-
-); }
+factory PaymentMethodDetailsCardWalletApplePay.fromJson(Map<String, dynamic> _) { return const PaymentMethodDetailsCardWalletApplePay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PaymentMethodDetailsCardWalletApplePay copyWith() { return PaymentMethodDetailsCardWalletApplePay(
+PaymentMethodDetailsCardWalletApplePay copyWith() { return const PaymentMethodDetailsCardWalletApplePay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PaymentMethodDetailsCardWalletApplePay; } 

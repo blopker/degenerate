@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// TypedLocalObjectReference contains enough information to let you locate the typed referenced object inside the same namespace.
-final class TypedLocalObjectReference {const TypedLocalObjectReference({this.apiGroup, this.kind = '', this.name = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// TypedLocalObjectReference contains enough information to let you locate the typed referenced object inside the same namespace.
+@immutable final class TypedLocalObjectReference {const TypedLocalObjectReference({this.apiGroup, this.kind = '', this.name = '', });
 
 factory TypedLocalObjectReference.fromJson(Map<String, dynamic> json) { return TypedLocalObjectReference(
   apiGroup: json['apiGroup'] as String?,

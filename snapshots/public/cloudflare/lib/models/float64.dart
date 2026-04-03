@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Float64Type {const Float64Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Float64Type {const Float64Type._(this.value);
 
 factory Float64Type.fromJson(String json) { return switch (json) {
   'float64' => float64,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Float64Type($value)'; } 
  }
-final class Float64 {const Float64({required this.type});
+@immutable final class Float64 {const Float64({required this.type});
 
 factory Float64.fromJson(Map<String, dynamic> json) { return Float64(
   type: Float64Type.fromJson(json['type'] as String),

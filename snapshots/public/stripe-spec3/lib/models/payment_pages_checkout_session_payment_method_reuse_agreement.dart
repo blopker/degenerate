@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Determines the position and visibility of the payment method reuse agreement in the UI. When set to `auto`, Stripe's defaults will be used.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines the position and visibility of the payment method reuse agreement in the UI. When set to `auto`, Stripe's defaults will be used.
 /// 
 /// When set to `hidden`, the payment method reuse agreement text will always be hidden in the UI.
-final class PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition {const PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition._(this.value);
+@immutable final class PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition {const PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition._(this.value);
 
 factory PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionPaymentMethodReuseAgreement {const PaymentPagesCheckoutSessionPaymentMethodReuseAgreement({required this.position});
+@immutable final class PaymentPagesCheckoutSessionPaymentMethodReuseAgreement {const PaymentPagesCheckoutSessionPaymentMethodReuseAgreement({required this.position});
 
 factory PaymentPagesCheckoutSessionPaymentMethodReuseAgreement.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionPaymentMethodReuseAgreement(
   position: PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition.fromJson(json['position'] as String),

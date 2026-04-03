@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_policy_users.dart';final class AccessPolicyUsersResp {const AccessPolicyUsersResp({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_policy_users.dart';@immutable final class AccessPolicyUsersResp {const AccessPolicyUsersResp({this.result});
 
 factory AccessPolicyUsersResp.fromJson(Map<String, dynamic> json) { return AccessPolicyUsersResp(
   result: (json['result'] as List<dynamic>?)?.map((e) => AccessPolicyUsers.fromJson(e as Map<String, dynamic>)).toList(),

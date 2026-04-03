@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimumUnit {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimumUnit._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimumUnit {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimumUnit._(this.value);
 
 factory PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimumUnit.fromJson(String json) { return switch (json) {
   'business_day' => businessDay,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimumUnit($value)'; } 
  }
-final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimum {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimum({required this.unit, required this.value, });
+@immutable final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimum {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimum({required this.unit, required this.value, });
 
 factory PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimum.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimum(
   unit: PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimateMinimumUnit.fromJson(json['unit'] as String),

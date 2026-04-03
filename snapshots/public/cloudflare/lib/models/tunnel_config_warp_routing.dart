@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Enable private network access from WARP users to private network routes. This is enabled if the tunnel has an assigned route.
-final class TunnelConfigWarpRouting {const TunnelConfigWarpRouting({this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable private network access from WARP users to private network routes. This is enabled if the tunnel has an assigned route.
+@immutable final class TunnelConfigWarpRouting {const TunnelConfigWarpRouting({this.enabled});
 
 factory TunnelConfigWarpRouting.fromJson(Map<String, dynamic> json) { return TunnelConfigWarpRouting(
   enabled: json['enabled'] as bool?,

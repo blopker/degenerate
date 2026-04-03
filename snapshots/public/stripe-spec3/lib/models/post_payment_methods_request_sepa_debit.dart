@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// If this is a `sepa_debit` PaymentMethod, this hash contains details about the SEPA debit bank account.
-final class PostPaymentMethodsRequestSepaDebit {const PostPaymentMethodsRequestSepaDebit({required this.iban});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// If this is a `sepa_debit` PaymentMethod, this hash contains details about the SEPA debit bank account.
+@immutable final class PostPaymentMethodsRequestSepaDebit {const PostPaymentMethodsRequestSepaDebit({required this.iban});
 
 factory PostPaymentMethodsRequestSepaDebit.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestSepaDebit(
   iban: json['iban'] as String,

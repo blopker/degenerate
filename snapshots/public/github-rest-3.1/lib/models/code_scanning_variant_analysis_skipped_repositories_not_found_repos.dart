@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos {const CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos({required this.repositoryCount, required this.repositoryFullNames, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos {const CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos({required this.repositoryCount, required this.repositoryFullNames, });
 
 factory CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos(
   repositoryCount: (json['repository_count'] as num).toInt(),

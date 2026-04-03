@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetIssuingAuthorizationsResponseObject {const GetIssuingAuthorizationsResponseObject._(this.value);
+@immutable final class GetIssuingAuthorizationsResponseObject {const GetIssuingAuthorizationsResponseObject._(this.value);
 
 factory GetIssuingAuthorizationsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetIssuingAuthorizationsResponseObject($value)'; } 
  }
 /// 
-final class GetIssuingAuthorizationsResponse {const GetIssuingAuthorizationsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetIssuingAuthorizationsResponse {const GetIssuingAuthorizationsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetIssuingAuthorizationsResponse.fromJson(Map<String, dynamic> json) { return GetIssuingAuthorizationsResponse(
   data: (json['data'] as List<dynamic>).map((e) => IssuingAuthorization.fromJson(e as Map<String, dynamic>)).toList(),

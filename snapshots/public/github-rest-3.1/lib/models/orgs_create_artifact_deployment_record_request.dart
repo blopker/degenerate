@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks {const OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks {const OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks._(this.value);
 
 factory OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks.fromJson(String json) { return switch (json) {
   'critical-resource' => criticalResource,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OrgsCreateArtifactDeploymentRecordRequestRuntimeRisks($value)'; } 
  }
 /// The status of the artifact. Can be either deployed or decommissioned.
-final class OrgsCreateArtifactDeploymentRecordRequestStatus {const OrgsCreateArtifactDeploymentRecordRequestStatus._(this.value);
+@immutable final class OrgsCreateArtifactDeploymentRecordRequestStatus {const OrgsCreateArtifactDeploymentRecordRequestStatus._(this.value);
 
 factory OrgsCreateArtifactDeploymentRecordRequestStatus.fromJson(String json) { return switch (json) {
   'deployed' => deployed,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsCreateArtifactDeploymentRecordRequestStatus($value)'; } 
  }
-final class OrgsCreateArtifactDeploymentRecordRequest {const OrgsCreateArtifactDeploymentRecordRequest({required this.name, required this.digest, this.version, required this.status, required this.logicalEnvironment, this.physicalEnvironment, this.cluster, required this.deploymentName, this.tags, this.runtimeRisks, this.githubRepository, });
+@immutable final class OrgsCreateArtifactDeploymentRecordRequest {const OrgsCreateArtifactDeploymentRecordRequest({required this.name, required this.digest, required this.status, required this.logicalEnvironment, required this.deploymentName, this.version, this.physicalEnvironment, this.cluster, this.tags, this.runtimeRisks, this.githubRepository, });
 
 factory OrgsCreateArtifactDeploymentRecordRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateArtifactDeploymentRecordRequest(
   name: json['name'] as String,

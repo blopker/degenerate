@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'streams_by_stream_id_request_http.dart';import 'streams_by_stream_id_request_worker_binding.dart';final class StreamsByStreamIdRequest {const StreamsByStreamIdRequest({this.http, this.workerBinding, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'streams_by_stream_id_request_http.dart';import 'streams_by_stream_id_request_worker_binding.dart';@immutable final class StreamsByStreamIdRequest {const StreamsByStreamIdRequest({this.http, this.workerBinding, });
 
 factory StreamsByStreamIdRequest.fromJson(Map<String, dynamic> json) { return StreamsByStreamIdRequest(
   http: json['http'] != null ? StreamsByStreamIdRequestHttp.fromJson(json['http'] as Map<String, dynamic>) : null,

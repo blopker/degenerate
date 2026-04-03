@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
-import 'petstore_client_security.dart';
 import '../apis/pet_api.dart';
 import '../apis/store_api.dart';
 import '../apis/user_api.dart';
+import 'petstore_client_security.dart';
 
 /// Root SDK client providing access to all API groups.
 ///
@@ -13,11 +13,11 @@ import '../apis/user_api.dart';
 /// sdk.pet.addPet();
 /// ```
 final class PetstoreClientApi {
+  PetstoreClientApi(this._config);
+
   static const defaultBaseUrl = '/api/v3';
 
   final ApiConfig _config;
-
-  PetstoreClientApi(this._config);
 
   late final PetApi pet = PetApi(_config);
   late final StoreApi store = StoreApi(_config);

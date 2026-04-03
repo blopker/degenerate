@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_query_and_contexts4_contexts.dart';final class InputQueryAndContexts4 {const InputQueryAndContexts4({required this.contexts, this.query, this.truncateInputs = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_query_and_contexts4_contexts.dart';@immutable final class InputQueryAndContexts4 {const InputQueryAndContexts4({required this.contexts, this.query, this.truncateInputs = false, });
 
 factory InputQueryAndContexts4.fromJson(Map<String, dynamic> json) { return InputQueryAndContexts4(
   contexts: (json['contexts'] as List<dynamic>).map((e) => InputQueryAndContexts4Contexts.fromJson(e as Map<String, dynamic>)).toList(),

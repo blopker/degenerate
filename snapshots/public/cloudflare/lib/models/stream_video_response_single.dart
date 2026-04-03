@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_videos.dart';final class StreamVideoResponseSingle {const StreamVideoResponseSingle({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_videos.dart';@immutable final class StreamVideoResponseSingle {const StreamVideoResponseSingle({this.result});
 
 factory StreamVideoResponseSingle.fromJson(Map<String, dynamic> json) { return StreamVideoResponseSingle(
   result: json['result'] != null ? StreamVideos.fromJson(json['result'] as Map<String, dynamic>) : null,

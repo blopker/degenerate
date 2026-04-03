@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsAccountRequestDocumentsProofOfRegistrationSigner {const PostAccountsAccountRequestDocumentsProofOfRegistrationSigner({this.person});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestDocumentsProofOfRegistrationSigner {const PostAccountsAccountRequestDocumentsProofOfRegistrationSigner({this.person});
 
 factory PostAccountsAccountRequestDocumentsProofOfRegistrationSigner.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestDocumentsProofOfRegistrationSigner(
   person: json['person'] as String?,

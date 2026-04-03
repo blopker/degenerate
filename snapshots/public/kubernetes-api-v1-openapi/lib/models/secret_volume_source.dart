@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key_to_path.dart';/// Adapts a Secret into a volume.
 /// 
 /// The contents of the target Secret's Data field will be presented in a volume as files using the keys in the Data field as the file names. Secret volumes support ownership management and SELinux relabeling.
-final class SecretVolumeSource {const SecretVolumeSource({this.defaultMode, this.items, this.optional, this.secretName, });
+@immutable final class SecretVolumeSource {const SecretVolumeSource({this.defaultMode, this.items, this.optional, this.secretName, });
 
 factory SecretVolumeSource.fromJson(Map<String, dynamic> json) { return SecretVolumeSource(
   defaultMode: json['defaultMode'] != null ? (json['defaultMode'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'get_target_industry_list_complete_response_items.dart';final class GetTargetIndustryListCompleteResponse {const GetTargetIndustryListCompleteResponse({required this.items, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_target_industry_list_complete_response_items.dart';@immutable final class GetTargetIndustryListCompleteResponse {const GetTargetIndustryListCompleteResponse({required this.items, required this.type, });
 
 factory GetTargetIndustryListCompleteResponse.fromJson(Map<String, dynamic> json) { return GetTargetIndustryListCompleteResponse(
   items: GetTargetIndustryListCompleteResponseItems.fromJson(json['items'] as Map<String, dynamic>),

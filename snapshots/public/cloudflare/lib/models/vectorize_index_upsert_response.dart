@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_identifier.dart';final class VectorizeIndexUpsertResponse {const VectorizeIndexUpsertResponse({this.count, this.ids, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_identifier.dart';@immutable final class VectorizeIndexUpsertResponse {const VectorizeIndexUpsertResponse({this.count, this.ids, });
 
 factory VectorizeIndexUpsertResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexUpsertResponse(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

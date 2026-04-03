@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetBgpTopPrefixesResponseResultTop0 {const RadarGetBgpTopPrefixesResponseResultTop0({required this.prefix, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTopPrefixesResponseResultTop0 {const RadarGetBgpTopPrefixesResponseResultTop0({required this.prefix, required this.value, });
 
 factory RadarGetBgpTopPrefixesResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopPrefixesResponseResultTop0(
   prefix: json['prefix'] as String,

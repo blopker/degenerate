@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_entry_with_shared_profiles.dart';final class DlpEntriesGetDlpEntryResponse {const DlpEntriesGetDlpEntryResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_entry_with_shared_profiles.dart';@immutable final class DlpEntriesGetDlpEntryResponse {const DlpEntriesGetDlpEntryResponse({this.result});
 
 factory DlpEntriesGetDlpEntryResponse.fromJson(Map<String, dynamic> json) { return DlpEntriesGetDlpEntryResponse(
   result: json['result'] != null ? DlpEntryWithSharedProfiles.fromJson(json['result'] as Map<String, dynamic>) : null,

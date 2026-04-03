@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostBillingPortalSessionsRequestFlowDataAfterCompletionHostedConfirmation {const PostBillingPortalSessionsRequestFlowDataAfterCompletionHostedConfirmation({this.customMessage});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostBillingPortalSessionsRequestFlowDataAfterCompletionHostedConfirmation {const PostBillingPortalSessionsRequestFlowDataAfterCompletionHostedConfirmation({this.customMessage});
 
 factory PostBillingPortalSessionsRequestFlowDataAfterCompletionHostedConfirmation.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataAfterCompletionHostedConfirmation(
   customMessage: json['custom_message'] as String?,

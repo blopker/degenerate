@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'checkout_acss_debit_mandate_options.dart';/// Currency supported by the bank account. Returned when the Session is in `setup` mode.
-final class CheckoutAcssDebitPaymentMethodOptionsCurrency {const CheckoutAcssDebitPaymentMethodOptionsCurrency._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_acss_debit_mandate_options.dart';/// Currency supported by the bank account. Returned when the Session is in `setup` mode.
+@immutable final class CheckoutAcssDebitPaymentMethodOptionsCurrency {const CheckoutAcssDebitPaymentMethodOptionsCurrency._(this.value);
 
 factory CheckoutAcssDebitPaymentMethodOptionsCurrency.fromJson(String json) { return switch (json) {
   'cad' => cad,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
 /// 
 /// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
-final class CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage {const CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage._(this.value);
+@immutable final class CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage {const CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage._(this.value);
 
 factory CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage($value)'; } 
  }
 /// Bank account verification method.
-final class CheckoutAcssDebitPaymentMethodOptionsVerificationMethod {const CheckoutAcssDebitPaymentMethodOptionsVerificationMethod._(this.value);
+@immutable final class CheckoutAcssDebitPaymentMethodOptionsVerificationMethod {const CheckoutAcssDebitPaymentMethodOptionsVerificationMethod._(this.value);
 
 factory CheckoutAcssDebitPaymentMethodOptionsVerificationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -88,7 +88,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutAcssDebitPaymentMethodOptionsVerificationMethod($value)'; } 
  }
 /// 
-final class CheckoutAcssDebitPaymentMethodOptions {const CheckoutAcssDebitPaymentMethodOptions({this.currency, this.mandateOptions, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
+@immutable final class CheckoutAcssDebitPaymentMethodOptions {const CheckoutAcssDebitPaymentMethodOptions({this.currency, this.mandateOptions, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
 
 factory CheckoutAcssDebitPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutAcssDebitPaymentMethodOptions(
   currency: json['currency'] != null ? CheckoutAcssDebitPaymentMethodOptionsCurrency.fromJson(json['currency'] as String) : null,

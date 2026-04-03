@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of test.
-final class DigitalExperienceMonitoringDeviceDexTestSchemasDataKind {const DigitalExperienceMonitoringDeviceDexTestSchemasDataKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of test.
+@immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasDataKind {const DigitalExperienceMonitoringDeviceDexTestSchemasDataKind._(this.value);
 
 factory DigitalExperienceMonitoringDeviceDexTestSchemasDataKind.fromJson(String json) { return switch (json) {
   'http' => http,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DigitalExperienceMonitoringDeviceDexTestSchemasDataKind($value)'; } 
  }
 /// The HTTP request method type.
-final class DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod {const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod._(this.value);
+@immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod {const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod._(this.value);
 
 factory DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod($value)'; } 
  }
 /// The configuration object which contains the details for the WARP client to conduct the test.
-final class DigitalExperienceMonitoringDeviceDexTestSchemasData {const DigitalExperienceMonitoringDeviceDexTestSchemasData({required this.host, required this.kind, this.method, });
+@immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasData {const DigitalExperienceMonitoringDeviceDexTestSchemasData({required this.host, required this.kind, this.method, });
 
 factory DigitalExperienceMonitoringDeviceDexTestSchemasData.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDeviceDexTestSchemasData(
   host: json['host'] as String,

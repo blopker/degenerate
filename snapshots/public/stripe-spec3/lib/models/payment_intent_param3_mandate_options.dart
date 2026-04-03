@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentIntentParam3MandateOptionsSupportedTypes {const PaymentIntentParam3MandateOptionsSupportedTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentParam3MandateOptionsSupportedTypes {const PaymentIntentParam3MandateOptionsSupportedTypes._(this.value);
 
 factory PaymentIntentParam3MandateOptionsSupportedTypes.fromJson(String json) { return switch (json) {
   'india' => india,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParam3MandateOptionsSupportedTypes($value)'; } 
  }
-final class PaymentIntentParam3MandateOptionsAmountType {const PaymentIntentParam3MandateOptionsAmountType._(this.value);
+@immutable final class PaymentIntentParam3MandateOptionsAmountType {const PaymentIntentParam3MandateOptionsAmountType._(this.value);
 
 factory PaymentIntentParam3MandateOptionsAmountType.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -45,7 +45,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParam3MandateOptionsAmountType($value)'; } 
  }
-final class PaymentIntentParam3MandateOptionsInterval {const PaymentIntentParam3MandateOptionsInterval._(this.value);
+@immutable final class PaymentIntentParam3MandateOptionsInterval {const PaymentIntentParam3MandateOptionsInterval._(this.value);
 
 factory PaymentIntentParam3MandateOptionsInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParam3MandateOptionsInterval($value)'; } 
  }
-final class PaymentIntentParam3MandateOptions {const PaymentIntentParam3MandateOptions({required this.amount, required this.amountType, this.description, this.endDate, required this.interval, this.intervalCount, required this.reference, required this.startDate, this.supportedTypes, });
+@immutable final class PaymentIntentParam3MandateOptions {const PaymentIntentParam3MandateOptions({required this.amount, required this.amountType, required this.interval, required this.reference, required this.startDate, this.description, this.endDate, this.intervalCount, this.supportedTypes, });
 
 factory PaymentIntentParam3MandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentParam3MandateOptions(
   amount: (json['amount'] as num).toInt(),

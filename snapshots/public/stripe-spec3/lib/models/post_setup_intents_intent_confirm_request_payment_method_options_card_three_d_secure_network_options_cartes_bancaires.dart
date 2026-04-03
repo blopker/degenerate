@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(String json) { return switch (json) {
   '0' => $0,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires({required this.cbAvalgo, this.cbExemption, this.cbScore, });
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires({required this.cbAvalgo, this.cbExemption, this.cbScore, });
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires(
   cbAvalgo: PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(json['cb_avalgo'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult {const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult {const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult._(this.value);
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult.fromJson(String json) { return switch (json) {
   'CLEAN' => clean,

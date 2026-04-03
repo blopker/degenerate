@@ -1,7 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'phase.dart';
 
+@immutable
 final class $3Incident {
   const $3Incident({
     required this.$1id,

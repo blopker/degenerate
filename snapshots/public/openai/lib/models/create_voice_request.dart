@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';final class CreateVoiceRequest {const CreateVoiceRequest({required this.name, required this.audioSample, required this.consent, });
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateVoiceRequest {const CreateVoiceRequest({required this.name, required this.audioSample, required this.consent, });
 
 factory CreateVoiceRequest.fromJson(Map<String, dynamic> json) { return CreateVoiceRequest(
   name: json['name'] as String,

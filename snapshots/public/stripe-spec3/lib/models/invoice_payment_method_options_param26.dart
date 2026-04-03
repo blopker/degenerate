@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoice_payment_method_options_param26_bank_transfer.dart';final class InvoicePaymentMethodOptionsParam26 {const InvoicePaymentMethodOptionsParam26({this.bankTransfer, this.fundingType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param26_bank_transfer.dart';@immutable final class InvoicePaymentMethodOptionsParam26 {const InvoicePaymentMethodOptionsParam26({this.bankTransfer, this.fundingType, });
 
 factory InvoicePaymentMethodOptionsParam26.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam26(
   bankTransfer: json['bank_transfer'] != null ? InvoicePaymentMethodOptionsParam26BankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,

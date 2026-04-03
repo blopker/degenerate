@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The HTTP method we should use when calling the `sms_url`. Can be: `GET` or `POST`.
-final class UpdateShortCodeRequestSmsMethod {const UpdateShortCodeRequestSmsMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use when calling the `sms_url`. Can be: `GET` or `POST`.
+@immutable final class UpdateShortCodeRequestSmsMethod {const UpdateShortCodeRequestSmsMethod._(this.value);
 
 factory UpdateShortCodeRequestSmsMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UpdateShortCodeRequestSmsMethod($value)'; } 
  }
 /// The HTTP method that we should use to call the `sms_fallback_url`. Can be: `GET` or `POST`.
-final class UpdateShortCodeRequestSmsFallbackMethod {const UpdateShortCodeRequestSmsFallbackMethod._(this.value);
+@immutable final class UpdateShortCodeRequestSmsFallbackMethod {const UpdateShortCodeRequestSmsFallbackMethod._(this.value);
 
 factory UpdateShortCodeRequestSmsFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UpdateShortCodeRequestSmsFallbackMethod($value)'; } 
  }
-final class UpdateShortCodeRequest {const UpdateShortCodeRequest({this.friendlyName, this.apiVersion, this.smsUrl, this.smsMethod, this.smsFallbackUrl, this.smsFallbackMethod, });
+@immutable final class UpdateShortCodeRequest {const UpdateShortCodeRequest({this.friendlyName, this.apiVersion, this.smsUrl, this.smsMethod, this.smsFallbackUrl, this.smsFallbackMethod, });
 
 factory UpdateShortCodeRequest.fromJson(Map<String, dynamic> json) { return UpdateShortCodeRequest(
   friendlyName: json['FriendlyName'] as String?,

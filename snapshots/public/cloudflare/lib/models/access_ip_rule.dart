@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_ip_rule_ip.dart';/// Matches an IP address block.
-final class AccessIpRule {const AccessIpRule({required this.ip});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_ip_rule_ip.dart';/// Matches an IP address block.
+@immutable final class AccessIpRule {const AccessIpRule({required this.ip});
 
 factory AccessIpRule.fromJson(Map<String, dynamic> json) { return AccessIpRule(
   ip: AccessIpRuleIp.fromJson(json['ip'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CallEnumEvent {const CallEnumEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CallEnumEvent {const CallEnumEvent._(this.value);
 
 factory CallEnumEvent.fromJson(String json) { return switch (json) {
   'initiated' => initiated,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The hosted compute service to use for the network configuration.
-final class HostedComputeCreateNetworkConfigurationForOrgRequestComputeService {const HostedComputeCreateNetworkConfigurationForOrgRequestComputeService._(this.value);
+@immutable final class HostedComputeCreateNetworkConfigurationForOrgRequestComputeService {const HostedComputeCreateNetworkConfigurationForOrgRequestComputeService._(this.value);
 
 factory HostedComputeCreateNetworkConfigurationForOrgRequestComputeService.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'HostedComputeCreateNetworkConfigurationForOrgRequestComputeService($value)'; } 
  }
-final class HostedComputeCreateNetworkConfigurationForOrgRequest {const HostedComputeCreateNetworkConfigurationForOrgRequest({required this.name, this.computeService, required this.networkSettingsIds, });
+@immutable final class HostedComputeCreateNetworkConfigurationForOrgRequest {const HostedComputeCreateNetworkConfigurationForOrgRequest({required this.name, required this.networkSettingsIds, this.computeService, });
 
 factory HostedComputeCreateNetworkConfigurationForOrgRequest.fromJson(Map<String, dynamic> json) { return HostedComputeCreateNetworkConfigurationForOrgRequest(
   name: json['name'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class GelatoRelatedPerson {const GelatoRelatedPerson({required this.account, required this.person, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class GelatoRelatedPerson {const GelatoRelatedPerson({required this.account, required this.person, });
 
 factory GelatoRelatedPerson.fromJson(Map<String, dynamic> json) { return GelatoRelatedPerson(
   account: json['account'] as String,

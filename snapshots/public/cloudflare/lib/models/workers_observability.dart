@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_observability_logs.dart';/// Observability settings for the Worker.
-final class WorkersObservability {const WorkersObservability({required this.enabled, this.headSamplingRate, this.logs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_logs.dart';/// Observability settings for the Worker.
+@immutable final class WorkersObservability {const WorkersObservability({required this.enabled, this.headSamplingRate, this.logs, });
 
 factory WorkersObservability.fromJson(Map<String, dynamic> json) { return WorkersObservability(
   enabled: json['enabled'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type.dart';final class ZeroTrustGatewayGatewayAccountLoggingSettings {const ZeroTrustGatewayGatewayAccountLoggingSettings({this.redactPii = false, this.settingsByRuleType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type.dart';@immutable final class ZeroTrustGatewayGatewayAccountLoggingSettings {const ZeroTrustGatewayGatewayAccountLoggingSettings({this.redactPii = false, this.settingsByRuleType, });
 
 factory ZeroTrustGatewayGatewayAccountLoggingSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountLoggingSettings(
   redactPii: json.containsKey('redact_pii') ? json['redact_pii'] as bool : false,

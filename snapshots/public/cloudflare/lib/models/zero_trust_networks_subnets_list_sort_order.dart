@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Sort order of the results. `asc` means oldest to newest, `desc` means newest to oldest. If not set, they will not be in any particular order.
-final class ZeroTrustNetworksSubnetsListSortOrder {const ZeroTrustNetworksSubnetsListSortOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sort order of the results. `asc` means oldest to newest, `desc` means newest to oldest. If not set, they will not be in any particular order.
+@immutable final class ZeroTrustNetworksSubnetsListSortOrder {const ZeroTrustNetworksSubnetsListSortOrder._(this.value);
 
 factory ZeroTrustNetworksSubnetsListSortOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,

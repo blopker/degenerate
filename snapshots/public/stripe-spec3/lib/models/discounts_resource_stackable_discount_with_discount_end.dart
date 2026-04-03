@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coupon.dart';import 'discount.dart';import 'discounts_resource_stackable_discount_with_discount_end_coupon.dart';import 'discounts_resource_stackable_discount_with_discount_end_discount.dart';import 'discounts_resource_stackable_discount_with_discount_end_promotion_code.dart';import 'promotion_code.dart';/// 
-final class DiscountsResourceStackableDiscountWithDiscountEnd {const DiscountsResourceStackableDiscountWithDiscountEnd({this.coupon, this.discount, this.promotionCode, });
+@immutable final class DiscountsResourceStackableDiscountWithDiscountEnd {const DiscountsResourceStackableDiscountWithDiscountEnd({this.coupon, this.discount, this.promotionCode, });
 
 factory DiscountsResourceStackableDiscountWithDiscountEnd.fromJson(Map<String, dynamic> json) { return DiscountsResourceStackableDiscountWithDiscountEnd(
   coupon: json['coupon'] != null ? OneOf2.parse(json['coupon'], fromA: (v) => v as String, fromB: (v) => Coupon.fromJson(v as Map<String, dynamic>),) : null,

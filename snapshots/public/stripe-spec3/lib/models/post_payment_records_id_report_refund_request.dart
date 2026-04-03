@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_refund_request_amount.dart';import 'post_payment_records_id_report_refund_request_metadata.dart';import 'post_payment_records_id_report_refund_request_processor_details.dart';import 'post_payment_records_id_report_refund_request_refunded.dart';/// The outcome of the reported refund.
-final class PostPaymentRecordsIdReportRefundRequestOutcome {const PostPaymentRecordsIdReportRefundRequestOutcome._(this.value);
+@immutable final class PostPaymentRecordsIdReportRefundRequestOutcome {const PostPaymentRecordsIdReportRefundRequestOutcome._(this.value);
 
 factory PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(String json) { return switch (json) {
   'refunded' => refunded,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentRecordsIdReportRefundRequestOutcome($value)'; } 
  }
-final class PostPaymentRecordsIdReportRefundRequest {const PostPaymentRecordsIdReportRefundRequest({this.amount, this.expand, this.initiatedAt, this.metadata, required this.outcome, required this.processorDetails, required this.refunded, });
+@immutable final class PostPaymentRecordsIdReportRefundRequest {const PostPaymentRecordsIdReportRefundRequest({required this.outcome, required this.processorDetails, required this.refunded, this.amount, this.expand, this.initiatedAt, this.metadata, });
 
 factory PostPaymentRecordsIdReportRefundRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportRefundRequest(
   amount: json['amount'] != null ? PostPaymentRecordsIdReportRefundRequestAmount.fromJson(json['amount'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_limits.dart';final class DlpLimitsGetResponse {const DlpLimitsGetResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_limits.dart';@immutable final class DlpLimitsGetResponse {const DlpLimitsGetResponse({this.result});
 
 factory DlpLimitsGetResponse.fromJson(Map<String, dynamic> json) { return DlpLimitsGetResponse(
   result: json['result'] != null ? DlpLimits.fromJson(json['result'] as Map<String, dynamic>) : null,

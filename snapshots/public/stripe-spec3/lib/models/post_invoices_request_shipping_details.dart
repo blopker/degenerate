@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_request_shipping_details_address.dart';import 'post_invoices_request_shipping_details_phone.dart';/// Shipping details for the invoice. The Invoice PDF will use the `shipping_details` value if it is set, otherwise the PDF will render the shipping address from the customer.
-final class PostInvoicesRequestShippingDetails {const PostInvoicesRequestShippingDetails({required this.address, required this.name, this.phone, });
+@immutable final class PostInvoicesRequestShippingDetails {const PostInvoicesRequestShippingDetails({required this.address, required this.name, this.phone, });
 
 factory PostInvoicesRequestShippingDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestShippingDetails(
   address: PostInvoicesRequestShippingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>),

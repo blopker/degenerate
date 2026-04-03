@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_port.dart';final class AccessTargetCriteriaBase {const AccessTargetCriteriaBase({required this.port, required this.targetAttributes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_port.dart';@immutable final class AccessTargetCriteriaBase {const AccessTargetCriteriaBase({required this.port, required this.targetAttributes, });
 
 factory AccessTargetCriteriaBase.fromJson(Map<String, dynamic> json) { return AccessTargetCriteriaBase(
   port: AccessPort.fromJson(json['port'] as num),
@@ -15,7 +15,7 @@ final Map<String,List<String>> targetAttributes;
 
 Map<String, dynamic> toJson() { return {
   'port': port.toJson(),
-  'target_attributes': targetAttributes.map((k, v) => MapEntry(k, v)),
+  'target_attributes': targetAttributes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') &&
       json.containsKey('target_attributes'); } 

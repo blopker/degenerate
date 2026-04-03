@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_customer_connector.dart';final class MconnCustomerConnectorFetchResponse {const MconnCustomerConnectorFetchResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_customer_connector.dart';@immutable final class MconnCustomerConnectorFetchResponse {const MconnCustomerConnectorFetchResponse({this.result});
 
 factory MconnCustomerConnectorFetchResponse.fromJson(Map<String, dynamic> json) { return MconnCustomerConnectorFetchResponse(
   result: json['result'] != null ? MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>) : null,

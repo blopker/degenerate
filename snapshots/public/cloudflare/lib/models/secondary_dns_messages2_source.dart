@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecondaryDnsMessages2Source {const SecondaryDnsMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecondaryDnsMessages2Source {const SecondaryDnsMessages2Source({this.pointer});
 
 factory SecondaryDnsMessages2Source.fromJson(Map<String, dynamic> json) { return SecondaryDnsMessages2Source(
   pointer: json['pointer'] as String?,

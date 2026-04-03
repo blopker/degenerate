@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_intents_intent_request_hooks_inputs_tax.dart';final class PostPaymentIntentsIntentRequestHooksInputs {const PostPaymentIntentsIntentRequestHooksInputs({this.tax});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_request_hooks_inputs_tax.dart';@immutable final class PostPaymentIntentsIntentRequestHooksInputs {const PostPaymentIntentsIntentRequestHooksInputs({this.tax});
 
 factory PostPaymentIntentsIntentRequestHooksInputs.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestHooksInputs(
   tax: json['tax'] != null ? PostPaymentIntentsIntentRequestHooksInputsTax.fromJson(json['tax'] as Map<String, dynamic>) : null,

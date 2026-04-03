@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InstallmentPlan4Interval {const InstallmentPlan4Interval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InstallmentPlan4Interval {const InstallmentPlan4Interval._(this.value);
 
 factory InstallmentPlan4Interval.fromJson(String json) { return switch (json) {
   'month' => month,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InstallmentPlan4Interval($value)'; } 
  }
-final class InstallmentPlan4Type {const InstallmentPlan4Type._(this.value);
+@immutable final class InstallmentPlan4Type {const InstallmentPlan4Type._(this.value);
 
 factory InstallmentPlan4Type.fromJson(String json) { return switch (json) {
   'bonus' => bonus,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InstallmentPlan4Type($value)'; } 
  }
-final class InstallmentPlan4 {const InstallmentPlan4({this.count, this.interval, required this.type, });
+@immutable final class InstallmentPlan4 {const InstallmentPlan4({required this.type, this.count, this.interval, });
 
 factory InstallmentPlan4.fromJson(Map<String, dynamic> json) { return InstallmentPlan4(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

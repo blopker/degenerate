@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostScrapeRequestVariant2Elements {const BrapiPostScrapeRequestVariant2Elements({required this.selector});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostScrapeRequestVariant2Elements {const BrapiPostScrapeRequestVariant2Elements({required this.selector});
 
 factory BrapiPostScrapeRequestVariant2Elements.fromJson(Map<String, dynamic> json) { return BrapiPostScrapeRequestVariant2Elements(
   selector: json['selector'] as String,

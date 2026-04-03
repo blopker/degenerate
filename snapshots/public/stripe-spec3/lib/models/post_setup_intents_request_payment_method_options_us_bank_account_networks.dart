@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks({this.requested});
+@immutable final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks({this.requested});
 
 factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks(
   requested: (json['requested'] as List<dynamic>?)?.map((e) => PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested.fromJson(e as String)).toList(),

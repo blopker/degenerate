@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentIntentPaymentMethodOptionsParam19CaptureMethod {const PaymentIntentPaymentMethodOptionsParam19CaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam19CaptureMethod {const PaymentIntentPaymentMethodOptionsParam19CaptureMethod._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam19CaptureMethod.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam19CaptureMethod($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage._(this.value);
+@immutable final class PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam19SetupFutureUsage($value)'; } 
  }
-final class PaymentIntentPaymentMethodOptionsParam19 {const PaymentIntentPaymentMethodOptionsParam19({this.captureMethod, this.setupFutureUsage, });
+@immutable final class PaymentIntentPaymentMethodOptionsParam19 {const PaymentIntentPaymentMethodOptionsParam19({this.captureMethod, this.setupFutureUsage, });
 
 factory PaymentIntentPaymentMethodOptionsParam19.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam19(
   captureMethod: json['capture_method'] != null ? PaymentIntentPaymentMethodOptionsParam19CaptureMethod.fromJson(json['capture_method'] as String) : null,

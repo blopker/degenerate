@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The payload used to update the rate limits.
-final class AuditLogRateLimitUpdatedChangesRequested {const AuditLogRateLimitUpdatedChangesRequested({this.maxRequestsPer1Minute, this.maxTokensPer1Minute, this.maxImagesPer1Minute, this.maxAudioMegabytesPer1Minute, this.maxRequestsPer1Day, this.batch1DayMaxInputTokens, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the rate limits.
+@immutable final class AuditLogRateLimitUpdatedChangesRequested {const AuditLogRateLimitUpdatedChangesRequested({this.maxRequestsPer1Minute, this.maxTokensPer1Minute, this.maxImagesPer1Minute, this.maxAudioMegabytesPer1Minute, this.maxRequestsPer1Day, this.batch1DayMaxInputTokens, });
 
 factory AuditLogRateLimitUpdatedChangesRequested.fromJson(Map<String, dynamic> json) { return AuditLogRateLimitUpdatedChangesRequested(
   maxRequestsPer1Minute: json['max_requests_per_1_minute'] != null ? (json['max_requests_per_1_minute'] as num).toInt() : null,

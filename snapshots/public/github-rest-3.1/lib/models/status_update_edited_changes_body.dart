@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StatusUpdateEditedChangesBody {const StatusUpdateEditedChangesBody({this.from, this.to, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StatusUpdateEditedChangesBody {const StatusUpdateEditedChangesBody({this.from, this.to, });
 
 factory StatusUpdateEditedChangesBody.fromJson(Map<String, dynamic> json) { return StatusUpdateEditedChangesBody(
   from: json['from'] as String?,

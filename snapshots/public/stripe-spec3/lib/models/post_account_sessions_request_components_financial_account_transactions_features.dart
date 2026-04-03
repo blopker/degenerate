@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountSessionsRequestComponentsFinancialAccountTransactionsFeatures {const PostAccountSessionsRequestComponentsFinancialAccountTransactionsFeatures({this.cardSpendDisputeManagement});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountSessionsRequestComponentsFinancialAccountTransactionsFeatures {const PostAccountSessionsRequestComponentsFinancialAccountTransactionsFeatures({this.cardSpendDisputeManagement});
 
 factory PostAccountSessionsRequestComponentsFinancialAccountTransactionsFeatures.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsFinancialAccountTransactionsFeatures(
   cardSpendDisputeManagement: json['card_spend_dispute_management'] as bool?,

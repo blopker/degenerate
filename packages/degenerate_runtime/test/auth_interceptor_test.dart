@@ -15,7 +15,7 @@ void main() {
         },
       );
 
-      await chain(ApiRequest(method: 'GET', path: '/test'));
+      await chain(const ApiRequest(method: 'GET', path: '/test'));
       expect(capturedHeaders, containsPair('Authorization', 'Bearer my-token'));
     });
 
@@ -34,7 +34,7 @@ void main() {
         },
       );
 
-      await chain(ApiRequest(method: 'GET', path: '/test'));
+      await chain(const ApiRequest(method: 'GET', path: '/test'));
       expect(capturedHeaders, containsPair('Authorization', 'Token my-key'));
     });
 
@@ -61,7 +61,9 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
       expect(response.statusCode, 200);
       expect(callCount, 2);
       expect(refreshCount, 1);
@@ -79,7 +81,9 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
       expect(response.statusCode, 401);
       expect(callCount, 1);
     });
@@ -99,7 +103,9 @@ void main() {
         },
       );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+      final response = await chain(
+        const ApiRequest(method: 'GET', path: '/test'),
+      );
       expect(response.statusCode, 401);
       expect(callCount, 2); // initial + one retry
     });

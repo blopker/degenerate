@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_server_event_response_content_part_done_part.dart';/// The event type, must be `response.content_part.done`.
-final class RealtimeServerEventResponseContentPartDoneType {const RealtimeServerEventResponseContentPartDoneType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_server_event_response_content_part_done_part.dart';/// The event type, must be `response.content_part.done`.
+@immutable final class RealtimeServerEventResponseContentPartDoneType {const RealtimeServerEventResponseContentPartDoneType._(this.value);
 
 factory RealtimeServerEventResponseContentPartDoneType.fromJson(String json) { return switch (json) {
   'response.content_part.done' => responseContentPartDone,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Returned when a content part is done streaming in an assistant message item.
 /// Also emitted when a Response is interrupted, incomplete, or cancelled.
 /// 
-final class RealtimeServerEventResponseContentPartDone {const RealtimeServerEventResponseContentPartDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.$part, });
+@immutable final class RealtimeServerEventResponseContentPartDone {const RealtimeServerEventResponseContentPartDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.$part, });
 
 factory RealtimeServerEventResponseContentPartDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseContentPartDone(
   eventId: json['event_id'] as String,

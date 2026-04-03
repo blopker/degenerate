@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_billing_portal_sessions_request_flow_data_subscription_cancel_retention_coupon_offer.dart';final class PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionType {const PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_cancel_retention_coupon_offer.dart';@immutable final class PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionType {const PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionType._(this.value);
 
 factory PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionType.fromJson(String json) { return switch (json) {
   'coupon_offer' => couponOffer,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionType($value)'; } 
  }
-final class PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetention {const PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetention({required this.couponOffer, required this.type, });
+@immutable final class PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetention {const PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetention({required this.couponOffer, required this.type, });
 
 factory PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetention.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetention(
   couponOffer: PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetentionCouponOffer.fromJson(json['coupon_offer'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecuritySummaryByThreatCategoryDmarc {const RadarGetEmailSecuritySummaryByThreatCategoryDmarc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByThreatCategoryDmarc {const RadarGetEmailSecuritySummaryByThreatCategoryDmarc._(this.value);
 
 factory RadarGetEmailSecuritySummaryByThreatCategoryDmarc.fromJson(String json) { return switch (json) {
   'PASS' => pass,

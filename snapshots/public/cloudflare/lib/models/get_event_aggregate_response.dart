@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_event_aggregate_response_aggregations.dart';import 'get_event_aggregate_response_date_range.dart';final class GetEventAggregateResponse {const GetEventAggregateResponse({required this.aggregateBy, required this.aggregations, this.dateRange, required this.total, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_event_aggregate_response_aggregations.dart';import 'get_event_aggregate_response_date_range.dart';@immutable final class GetEventAggregateResponse {const GetEventAggregateResponse({required this.aggregateBy, required this.aggregations, required this.total, this.dateRange, });
 
 factory GetEventAggregateResponse.fromJson(Map<String, dynamic> json) { return GetEventAggregateResponse(
   aggregateBy: json['aggregateBy'] as String,

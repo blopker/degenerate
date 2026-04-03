@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookIssueCommentDeletedIssueReactions {const WebhookIssueCommentDeletedIssueReactions({this.plus1, this.minus1, this.confused, this.eyes, this.heart, this.hooray, this.laugh, this.rocket, this.totalCount, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssueCommentDeletedIssueReactions {const WebhookIssueCommentDeletedIssueReactions({this.plus1, this.minus1, this.confused, this.eyes, this.heart, this.hooray, this.laugh, this.rocket, this.totalCount, this.url, });
 
 factory WebhookIssueCommentDeletedIssueReactions.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentDeletedIssueReactions(
   plus1: json['+1'] != null ? (json['+1'] as num).toInt() : null,

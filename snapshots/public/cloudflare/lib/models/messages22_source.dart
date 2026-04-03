@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Messages22Source {const Messages22Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Messages22Source {const Messages22Source({this.pointer});
 
 factory Messages22Source.fromJson(Map<String, dynamic> json) { return Messages22Source(
   pointer: json['pointer'] as String?,

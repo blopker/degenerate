@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PersonEthnicityDetailsEthnicity {const PersonEthnicityDetailsEthnicity._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PersonEthnicityDetailsEthnicity {const PersonEthnicityDetailsEthnicity._(this.value);
 
 factory PersonEthnicityDetailsEthnicity.fromJson(String json) { return switch (json) {
   'cuban' => cuban,
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PersonEthnicityDetailsEthnicity($value)'; } 
  }
 /// 
-final class PersonEthnicityDetails {const PersonEthnicityDetails({this.ethnicity, this.ethnicityOther, });
+@immutable final class PersonEthnicityDetails {const PersonEthnicityDetails({this.ethnicity, this.ethnicityOther, });
 
 factory PersonEthnicityDetails.fromJson(Map<String, dynamic> json) { return PersonEthnicityDetails(
   ethnicity: (json['ethnicity'] as List<dynamic>?)?.map((e) => PersonEthnicityDetailsEthnicity.fromJson(e as String)).toList(),

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specify how long to cache a resource in the Cloudflare global
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify how long to cache a resource in the Cloudflare global
 /// network. *Edge Cache TTL* is not visible in response headers.
 /// 
-final class ZonesEdgeCacheTtlId {const ZonesEdgeCacheTtlId._(this.value);
+@immutable final class ZonesEdgeCacheTtlId {const ZonesEdgeCacheTtlId._(this.value);
 
 factory ZonesEdgeCacheTtlId.fromJson(String json) { return switch (json) {
   'edge_cache_ttl' => edgeCacheTtl,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesEdgeCacheTtlId($value)'; } 
  }
-final class ZonesEdgeCacheTtl {const ZonesEdgeCacheTtl({this.id, this.value, });
+@immutable final class ZonesEdgeCacheTtl {const ZonesEdgeCacheTtl({this.id, this.value, });
 
 factory ZonesEdgeCacheTtl.fromJson(Map<String, dynamic> json) { return ZonesEdgeCacheTtl(
   id: json['id'] != null ? ZonesEdgeCacheTtlId.fromJson(json['id'] as String) : null,

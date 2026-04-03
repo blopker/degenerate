@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_oidc_saas_app_custom_claims_source_name_by_idp.dart';final class AccessSchemasOidcSaasAppCustomClaimsSource {const AccessSchemasOidcSaasAppCustomClaimsSource({this.name, this.nameByIdp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_oidc_saas_app_custom_claims_source_name_by_idp.dart';@immutable final class AccessSchemasOidcSaasAppCustomClaimsSource {const AccessSchemasOidcSaasAppCustomClaimsSource({this.name, this.nameByIdp, });
 
 factory AccessSchemasOidcSaasAppCustomClaimsSource.fromJson(Map<String, dynamic> json) { return AccessSchemasOidcSaasAppCustomClaimsSource(
   name: json['name'] as String?,

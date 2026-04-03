@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CustomTextPositionParam8 {const CustomTextPositionParam8({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomTextPositionParam8 {const CustomTextPositionParam8({required this.message});
 
 factory CustomTextPositionParam8.fromJson(Map<String, dynamic> json) { return CustomTextPositionParam8(
   message: json['message'] as String,

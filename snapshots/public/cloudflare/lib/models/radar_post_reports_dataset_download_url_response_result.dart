@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_post_reports_dataset_download_url_response_result_dataset.dart';final class RadarPostReportsDatasetDownloadUrlResponseResult {const RadarPostReportsDatasetDownloadUrlResponseResult({required this.dataset});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_post_reports_dataset_download_url_response_result_dataset.dart';@immutable final class RadarPostReportsDatasetDownloadUrlResponseResult {const RadarPostReportsDatasetDownloadUrlResponseResult({required this.dataset});
 
 factory RadarPostReportsDatasetDownloadUrlResponseResult.fromJson(Map<String, dynamic> json) { return RadarPostReportsDatasetDownloadUrlResponseResult(
   dataset: RadarPostReportsDatasetDownloadUrlResponseResultDataset.fromJson(json['dataset'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the attribute by which to group the results.
-final class RadarGetDnsTimeseriesGroupDimension {const RadarGetDnsTimeseriesGroupDimension._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
+@immutable final class RadarGetDnsTimeseriesGroupDimension {const RadarGetDnsTimeseriesGroupDimension._(this.value);
 
 factory RadarGetDnsTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
   'AS' => $as,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsRequestSettingsPayments {const PostAccountsRequestSettingsPayments({this.statementDescriptor, this.statementDescriptorKana, this.statementDescriptorKanji, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestSettingsPayments {const PostAccountsRequestSettingsPayments({this.statementDescriptor, this.statementDescriptorKana, this.statementDescriptorKanji, });
 
 factory PostAccountsRequestSettingsPayments.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsPayments(
   statementDescriptor: json['statement_descriptor'] as String?,

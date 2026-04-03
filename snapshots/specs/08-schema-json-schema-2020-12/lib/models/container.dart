@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class Container {const Container({this.payload, this.tags, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Container {const Container({this.payload, this.tags, });
 
 factory Container.fromJson(Map<String, dynamic> json) { return Container(
   payload: json['payload'],

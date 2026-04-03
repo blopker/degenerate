@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_uuid.dart';final class ShieldObjectWithOperationId {const ShieldObjectWithOperationId({required this.operationId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_uuid.dart';@immutable final class ShieldObjectWithOperationId {const ShieldObjectWithOperationId({required this.operationId});
 
 factory ShieldObjectWithOperationId.fromJson(Map<String, dynamic> json) { return ShieldObjectWithOperationId(
   operationId: ShieldUuid.fromJson(json['operation_id'] as String),

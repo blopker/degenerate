@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The configuration target. You must set the target to `ip_range` when specifying an IP address range in the rule.
-final class FirewallCidrConfigurationTarget {const FirewallCidrConfigurationTarget._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ip_range` when specifying an IP address range in the rule.
+@immutable final class FirewallCidrConfigurationTarget {const FirewallCidrConfigurationTarget._(this.value);
 
 factory FirewallCidrConfigurationTarget.fromJson(String json) { return switch (json) {
   'ip_range' => ipRange,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FirewallCidrConfigurationTarget($value)'; } 
  }
-final class FirewallCidrConfiguration {const FirewallCidrConfiguration({this.target, this.value, });
+@immutable final class FirewallCidrConfiguration {const FirewallCidrConfiguration({this.target, this.value, });
 
 factory FirewallCidrConfiguration.fromJson(Map<String, dynamic> json) { return FirewallCidrConfiguration(
   target: json['target'] != null ? FirewallCidrConfigurationTarget.fromJson(json['target'] as String) : null,

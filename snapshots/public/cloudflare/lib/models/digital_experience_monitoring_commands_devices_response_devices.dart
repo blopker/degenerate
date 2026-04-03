@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_platform.dart';import 'digital_experience_monitoring_status.dart';import 'digital_experience_monitoring_timestamp.dart';import 'digital_experience_monitoring_version.dart';final class DigitalExperienceMonitoringCommandsDevicesResponseDevices {const DigitalExperienceMonitoringCommandsDevicesResponseDevices({this.deviceId, this.deviceName, this.eligible, this.ineligibleReason, this.personEmail, this.platform, this.registrationId, this.status, this.timestamp, this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_platform.dart';import 'digital_experience_monitoring_status.dart';import 'digital_experience_monitoring_timestamp.dart';import 'digital_experience_monitoring_version.dart';@immutable final class DigitalExperienceMonitoringCommandsDevicesResponseDevices {const DigitalExperienceMonitoringCommandsDevicesResponseDevices({this.deviceId, this.deviceName, this.eligible, this.ineligibleReason, this.personEmail, this.platform, this.registrationId, this.status, this.timestamp, this.version, });
 
 factory DigitalExperienceMonitoringCommandsDevicesResponseDevices.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringCommandsDevicesResponseDevices(
   deviceId: json['deviceId'] as String?,

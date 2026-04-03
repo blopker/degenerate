@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_advisory_create_vulnerabilities_package.dart';final class RepositoryAdvisoryCreateVulnerabilities {const RepositoryAdvisoryCreateVulnerabilities({required this.package, this.vulnerableVersionRange, this.patchedVersions, this.vulnerableFunctions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_advisory_create_vulnerabilities_package.dart';@immutable final class RepositoryAdvisoryCreateVulnerabilities {const RepositoryAdvisoryCreateVulnerabilities({required this.package, this.vulnerableVersionRange, this.patchedVersions, this.vulnerableFunctions, });
 
 factory RepositoryAdvisoryCreateVulnerabilities.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCreateVulnerabilities(
   package: RepositoryAdvisoryCreateVulnerabilitiesPackage.fromJson(json['package'] as Map<String, dynamic>),

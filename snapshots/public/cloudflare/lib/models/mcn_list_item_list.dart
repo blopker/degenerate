@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_resource_preview_item.dart';import 'mcn_string_item.dart';sealed class McnListItemList {const McnListItemList();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_resource_preview_item.dart';import 'mcn_string_item.dart';sealed class McnListItemList {const McnListItemList();
 
 /// Deserialize from JSON, dispatching on the `item_type` discriminator.
 factory McnListItemList.fromJson(Map<String, dynamic> json) { return switch (json['item_type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is McnListItemList$Unknown; } 
  }
-final class McnListItemListMcnStringItem extends McnListItemList {const McnListItemListMcnStringItem(this.mcnStringItem);
+@immutable final class McnListItemListMcnStringItem extends McnListItemList {const McnListItemListMcnStringItem(this.mcnStringItem);
 
 factory McnListItemListMcnStringItem.fromJson(Map<String, dynamic> json) { return McnListItemListMcnStringItem(McnStringItem.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final McnStringItem mcnStringItem;
 @override int get hashCode { return mcnStringItem.hashCode; } 
 @override String toString() { return 'McnListItemListMcnStringItem(mcnStringItem: $mcnStringItem)'; } 
  }
-final class McnListItemListMcnResourcePreviewItem extends McnListItemList {const McnListItemListMcnResourcePreviewItem(this.mcnResourcePreviewItem);
+@immutable final class McnListItemListMcnResourcePreviewItem extends McnListItemList {const McnListItemListMcnResourcePreviewItem(this.mcnResourcePreviewItem);
 
 factory McnListItemListMcnResourcePreviewItem.fromJson(Map<String, dynamic> json) { return McnListItemListMcnResourcePreviewItem(McnResourcePreviewItem.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final McnResourcePreviewItem mcnResourcePreviewItem;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class McnListItemList$Unknown extends McnListItemList {const McnListItemList$Unknown(this.json);
+@immutable final class McnListItemList$Unknown extends McnListItemList {const McnListItemList$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

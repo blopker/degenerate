@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_required_deployments_parameters.dart';final class RepositoryRuleRequiredDeploymentsType {const RepositoryRuleRequiredDeploymentsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_required_deployments_parameters.dart';@immutable final class RepositoryRuleRequiredDeploymentsType {const RepositoryRuleRequiredDeploymentsType._(this.value);
 
 factory RepositoryRuleRequiredDeploymentsType.fromJson(String json) { return switch (json) {
   'required_deployments' => requiredDeployments,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleRequiredDeploymentsType($value)'; } 
  }
 /// Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.
-final class RepositoryRuleRequiredDeployments {const RepositoryRuleRequiredDeployments({required this.type, this.parameters, });
+@immutable final class RepositoryRuleRequiredDeployments {const RepositoryRuleRequiredDeployments({required this.type, this.parameters, });
 
 factory RepositoryRuleRequiredDeployments.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredDeployments(
   type: RepositoryRuleRequiredDeploymentsType.fromJson(json['type'] as String),

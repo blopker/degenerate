@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookBranchProtectionConfigurationEnabledAction {const WebhookBranchProtectionConfigurationEnabledAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookBranchProtectionConfigurationEnabledAction {const WebhookBranchProtectionConfigurationEnabledAction._(this.value);
 
 factory WebhookBranchProtectionConfigurationEnabledAction.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookBranchProtectionConfigurationEnabledAction($value)'; } 
  }
-final class WebhookBranchProtectionConfigurationEnabled {const WebhookBranchProtectionConfigurationEnabled({required this.action, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookBranchProtectionConfigurationEnabled {const WebhookBranchProtectionConfigurationEnabled({required this.action, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookBranchProtectionConfigurationEnabled.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionConfigurationEnabled(
   action: WebhookBranchProtectionConfigurationEnabledAction.fromJson(json['action'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'spectrum_config_identifier.dart';import 'spectrum_config_timestamp.dart';final class SpectrumConfigBaseAppConfig {const SpectrumConfigBaseAppConfig({required this.createdOn, required this.id, required this.modifiedOn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_config_identifier.dart';import 'spectrum_config_timestamp.dart';@immutable final class SpectrumConfigBaseAppConfig {const SpectrumConfigBaseAppConfig({required this.createdOn, required this.id, required this.modifiedOn, });
 
 factory SpectrumConfigBaseAppConfig.fromJson(Map<String, dynamic> json) { return SpectrumConfigBaseAppConfig(
   createdOn: SpectrumConfigTimestamp.fromJson(json['created_on'] as String),

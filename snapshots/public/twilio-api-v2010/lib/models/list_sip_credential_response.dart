@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_sip_sip_credential_list_sip_credential.dart';final class ListSipCredentialResponse {const ListSipCredentialResponse({this.credentials, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_sip_sip_credential_list_sip_credential.dart';@immutable final class ListSipCredentialResponse {const ListSipCredentialResponse({this.credentials, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListSipCredentialResponse.fromJson(Map<String, dynamic> json) { return ListSipCredentialResponse(
   credentials: (json['credentials'] as List<dynamic>?)?.map((e) => AccountSipSipCredentialListSipCredential.fromJson(e as Map<String, dynamic>)).toList(),

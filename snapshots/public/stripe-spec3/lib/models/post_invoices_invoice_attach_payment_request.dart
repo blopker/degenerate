@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoicesInvoiceAttachPaymentRequest {const PostInvoicesInvoiceAttachPaymentRequest({this.expand, this.paymentIntent, this.paymentRecord, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceAttachPaymentRequest {const PostInvoicesInvoiceAttachPaymentRequest({this.expand, this.paymentIntent, this.paymentRecord, });
 
 factory PostInvoicesInvoiceAttachPaymentRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceAttachPaymentRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

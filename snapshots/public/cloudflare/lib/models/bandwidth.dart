@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Bandwidth structure as visible through the customer-facing API.
-final class Bandwidth {const Bandwidth._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Bandwidth structure as visible through the customer-facing API.
+@immutable final class Bandwidth {const Bandwidth._(this.value);
 
 factory Bandwidth.fromJson(String json) { return switch (json) {
   '50M' => $50M,

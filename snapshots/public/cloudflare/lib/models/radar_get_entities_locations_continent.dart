@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters results by continent code.
-final class RadarGetEntitiesLocationsContinent {const RadarGetEntitiesLocationsContinent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by continent code.
+@immutable final class RadarGetEntitiesLocationsContinent {const RadarGetEntitiesLocationsContinent._(this.value);
 
 factory RadarGetEntitiesLocationsContinent.fromJson(String json) { return switch (json) {
   'AF' => af,

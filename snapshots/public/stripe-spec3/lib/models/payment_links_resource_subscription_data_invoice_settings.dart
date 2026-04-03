@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'connect_account_reference.dart';/// 
-final class PaymentLinksResourceSubscriptionDataInvoiceSettings {const PaymentLinksResourceSubscriptionDataInvoiceSettings({required this.issuer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';/// 
+@immutable final class PaymentLinksResourceSubscriptionDataInvoiceSettings {const PaymentLinksResourceSubscriptionDataInvoiceSettings({required this.issuer});
 
 factory PaymentLinksResourceSubscriptionDataInvoiceSettings.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceSubscriptionDataInvoiceSettings(
   issuer: ConnectAccountReference.fromJson(json['issuer'] as Map<String, dynamic>),

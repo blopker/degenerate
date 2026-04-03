@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ListDevicesActiveRegistrations {const ListDevicesActiveRegistrations._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListDevicesActiveRegistrations {const ListDevicesActiveRegistrations._(this.value);
 
 factory ListDevicesActiveRegistrations.fromJson(String json) { return switch (json) {
   'include' => include,

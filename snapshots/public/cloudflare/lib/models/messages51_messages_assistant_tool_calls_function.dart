@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages51_messages_assistant_tool_calls_function_function.dart';final class Messages51MessagesAssistantToolCallsFunctionType {const Messages51MessagesAssistantToolCallsFunctionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_assistant_tool_calls_function_function.dart';@immutable final class Messages51MessagesAssistantToolCallsFunctionType {const Messages51MessagesAssistantToolCallsFunctionType._(this.value);
 
 factory Messages51MessagesAssistantToolCallsFunctionType.fromJson(String json) { return switch (json) {
   'function' => function,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51MessagesAssistantToolCallsFunctionType($value)'; } 
  }
-final class Messages51MessagesAssistantToolCallsFunction {const Messages51MessagesAssistantToolCallsFunction({required this.function, required this.id, required this.type, });
+@immutable final class Messages51MessagesAssistantToolCallsFunction {const Messages51MessagesAssistantToolCallsFunction({required this.function, required this.id, required this.type, });
 
 factory Messages51MessagesAssistantToolCallsFunction.fromJson(Map<String, dynamic> json) { return Messages51MessagesAssistantToolCallsFunction(
   function: Messages51MessagesAssistantToolCallsFunctionFunction.fromJson(json['function'] as Map<String, dynamic>),

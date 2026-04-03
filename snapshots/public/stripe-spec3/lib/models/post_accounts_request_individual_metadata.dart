@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsRequestIndividualMetadataVariant2 {const PostAccountsRequestIndividualMetadataVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestIndividualMetadataVariant2 {const PostAccountsRequestIndividualMetadataVariant2._(this.value);
 
 factory PostAccountsRequestIndividualMetadataVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

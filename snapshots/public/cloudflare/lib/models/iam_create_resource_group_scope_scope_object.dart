@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// This is a combination of pre-defined resource name and identifier (like Zone ID etc.)
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// This is a combination of pre-defined resource name and identifier (like Zone ID etc.)
 extension type IamCreateResourceGroupScopeScopeObjectKey(dynamic value) {
 factory IamCreateResourceGroupScopeScopeObjectKey.fromJson(dynamic json) => IamCreateResourceGroupScopeScopeObjectKey(json);
 
@@ -8,7 +8,7 @@ dynamic toJson() => value;
 
 }
 /// A scope object represents any resource that can have actions applied against invite.
-final class IamCreateResourceGroupScopeScopeObject {const IamCreateResourceGroupScopeScopeObject({required this.key});
+@immutable final class IamCreateResourceGroupScopeScopeObject {const IamCreateResourceGroupScopeScopeObject({required this.key});
 
 factory IamCreateResourceGroupScopeScopeObject.fromJson(Map<String, dynamic> json) { return IamCreateResourceGroupScopeScopeObject(
   key: json['key'] != null ? IamCreateResourceGroupScopeScopeObjectKey.fromJson(json['key'] as dynamic) : null,

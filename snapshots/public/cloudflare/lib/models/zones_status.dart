@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the Page Rule.
-final class ZonesStatus {const ZonesStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Page Rule.
+@immutable final class ZonesStatus {const ZonesStatus._(this.value);
 
 factory ZonesStatus.fromJson(String json) { return switch (json) {
   'active' => active,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'healthchecks_healthchecks.dart';final class HealthchecksSingleResponse {const HealthchecksSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'healthchecks_healthchecks.dart';@immutable final class HealthchecksSingleResponse {const HealthchecksSingleResponse({this.result});
 
 factory HealthchecksSingleResponse.fromJson(Map<String, dynamic> json) { return HealthchecksSingleResponse(
   result: json['result'] != null ? HealthchecksHealthchecks.fromJson(json['result'] as Map<String, dynamic>) : null,

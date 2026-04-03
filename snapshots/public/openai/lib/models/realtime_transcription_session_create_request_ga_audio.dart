@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_transcription_session_create_request_ga_audio_input.dart';/// Configuration for input and output audio.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_transcription_session_create_request_ga_audio_input.dart';/// Configuration for input and output audio.
 /// 
-final class RealtimeTranscriptionSessionCreateRequestGaAudio {const RealtimeTranscriptionSessionCreateRequestGaAudio({this.input});
+@immutable final class RealtimeTranscriptionSessionCreateRequestGaAudio {const RealtimeTranscriptionSessionCreateRequestGaAudio({this.input});
 
 factory RealtimeTranscriptionSessionCreateRequestGaAudio.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateRequestGaAudio(
   input: json['input'] != null ? RealtimeTranscriptionSessionCreateRequestGaAudioInput.fromJson(json['input'] as Map<String, dynamic>) : null,

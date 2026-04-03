@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-final class PaymentMethodCardPresentNetworks {const PaymentMethodCardPresentNetworks({required this.available, this.preferred, });
+@immutable final class PaymentMethodCardPresentNetworks {const PaymentMethodCardPresentNetworks({required this.available, this.preferred, });
 
 factory PaymentMethodCardPresentNetworks.fromJson(Map<String, dynamic> json) { return PaymentMethodCardPresentNetworks(
   available: (json['available'] as List<dynamic>).map((e) => e as String).toList(),

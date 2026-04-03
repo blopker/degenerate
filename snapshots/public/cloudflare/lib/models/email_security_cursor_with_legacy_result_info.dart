@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityCursorWithLegacyResultInfo {const EmailSecurityCursorWithLegacyResultInfo({required this.count, this.next, required this.page, required this.perPage, this.previous, required this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityCursorWithLegacyResultInfo {const EmailSecurityCursorWithLegacyResultInfo({required this.count, required this.page, required this.perPage, required this.totalCount, this.next, this.previous, });
 
 factory EmailSecurityCursorWithLegacyResultInfo.fromJson(Map<String, dynamic> json) { return EmailSecurityCursorWithLegacyResultInfo(
   count: (json['count'] as num).toInt(),

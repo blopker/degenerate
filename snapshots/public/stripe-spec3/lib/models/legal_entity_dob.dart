@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class LegalEntityDob {const LegalEntityDob({this.day, this.month, this.year, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class LegalEntityDob {const LegalEntityDob({this.day, this.month, this.year, });
 
 factory LegalEntityDob.fromJson(Map<String, dynamic> json) { return LegalEntityDob(
   day: json['day'] != null ? (json['day'] as num).toInt() : null,

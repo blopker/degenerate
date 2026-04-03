@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'setup_intent_payment_method_options_card_mandate_options.dart';/// Selected network to process this SetupIntent on. Depends on the available networks of the card attached to the setup intent. Can be only set confirm-time.
-final class SetupIntentPaymentMethodOptionsCardNetwork {const SetupIntentPaymentMethodOptionsCardNetwork._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent_payment_method_options_card_mandate_options.dart';/// Selected network to process this SetupIntent on. Depends on the available networks of the card attached to the setup intent. Can be only set confirm-time.
+@immutable final class SetupIntentPaymentMethodOptionsCardNetwork {const SetupIntentPaymentMethodOptionsCardNetwork._(this.value);
 
 factory SetupIntentPaymentMethodOptionsCardNetwork.fromJson(String json) { return switch (json) {
   'amex' => amex,
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsCardNetwork($value)'; } 
  }
 /// We strongly recommend that you rely on our SCA Engine to automatically prompt your customers for authentication based on risk level and [other requirements](https://docs.stripe.com/strong-customer-authentication). However, if you wish to request 3D Secure based on logic from your own fraud engine, provide this option. If not provided, this value defaults to `automatic`. Read our guide on [manually requesting 3D Secure](https://docs.stripe.com/payments/3d-secure/authentication-flow#manual-three-ds) for more information on how this configuration interacts with Radar and our SCA Engine.
-final class SetupIntentPaymentMethodOptionsCardRequestThreeDSecure {const SetupIntentPaymentMethodOptionsCardRequestThreeDSecure._(this.value);
+@immutable final class SetupIntentPaymentMethodOptionsCardRequestThreeDSecure {const SetupIntentPaymentMethodOptionsCardRequestThreeDSecure._(this.value);
 
 factory SetupIntentPaymentMethodOptionsCardRequestThreeDSecure.fromJson(String json) { return switch (json) {
   'any' => any,
@@ -87,7 +87,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SetupIntentPaymentMethodOptionsCardRequestThreeDSecure($value)'; } 
  }
 /// 
-final class SetupIntentPaymentMethodOptionsCard {const SetupIntentPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, });
+@immutable final class SetupIntentPaymentMethodOptionsCard {const SetupIntentPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, });
 
 factory SetupIntentPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsCard(
   mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsCardMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik();
 
-factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik(
-
-); }
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik.fromJson(Map<String, dynamic> _) { return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik copyWith() { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik(
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik copyWith() { return const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataBlik; } 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Output format for indicator data. 'json' returns the default format, 'stix2' returns STIX 2.1 Indicator SDOs.
-final class GetIndicatorListFormat {const GetIndicatorListFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Output format for indicator data. 'json' returns the default format, 'stix2' returns STIX 2.1 Indicator SDOs.
+@immutable final class GetIndicatorListFormat {const GetIndicatorListFormat._(this.value);
 
 factory GetIndicatorListFormat.fromJson(String json) { return switch (json) {
   'json' => $json,

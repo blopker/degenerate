@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// These fields can be used to create a new product that this price will belong to.
-final class PostPricesRequestProductData {const PostPricesRequestProductData({this.active, this.id, this.metadata, required this.name, this.statementDescriptor, this.taxCode, this.unitLabel, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// These fields can be used to create a new product that this price will belong to.
+@immutable final class PostPricesRequestProductData {const PostPricesRequestProductData({required this.name, this.active, this.id, this.metadata, this.statementDescriptor, this.taxCode, this.unitLabel, });
 
 factory PostPricesRequestProductData.fromJson(Map<String, dynamic> json) { return PostPricesRequestProductData(
   active: json['active'] as bool?,

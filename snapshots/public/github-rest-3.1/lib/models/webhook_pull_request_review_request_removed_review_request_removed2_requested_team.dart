@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_pull_request_review_request_removed_review_request_removed2_requested_team_parent.dart';final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_request_removed_review_request_removed2_requested_team_parent.dart';@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy._(this.value);
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam({this.deleted, required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, this.parent, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
+@immutable final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam({required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, this.deleted, this.parent, });
 
 factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam(
   deleted: json['deleted'] as bool?,

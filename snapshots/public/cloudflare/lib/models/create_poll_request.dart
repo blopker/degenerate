@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CreatePollRequest {const CreatePollRequest({this.anonymous, this.hideVotes, required this.options, required this.question, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreatePollRequest {const CreatePollRequest({required this.options, required this.question, this.anonymous, this.hideVotes, });
 
 factory CreatePollRequest.fromJson(Map<String, dynamic> json) { return CreatePollRequest(
   anonymous: json['anonymous'] as bool?,

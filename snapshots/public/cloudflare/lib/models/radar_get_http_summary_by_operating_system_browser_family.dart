@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpSummaryByOperatingSystemBrowserFamily {const RadarGetHttpSummaryByOperatingSystemBrowserFamily._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByOperatingSystemBrowserFamily {const RadarGetHttpSummaryByOperatingSystemBrowserFamily._(this.value);
 
 factory RadarGetHttpSummaryByOperatingSystemBrowserFamily.fromJson(String json) { return switch (json) {
   'CHROME' => chrome,

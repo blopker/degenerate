@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_automatic_return_routing.dart';import 'magic_gre.dart';import 'magic_health_check_base.dart';import 'magic_interconnect_components_schemas_description.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_schemas_created_on.dart';import 'magic_schemas_identifier.dart';import 'magic_schemas_modified_on.dart';import 'magic_schemas_mtu.dart';/// The name of the interconnect. The name cannot share a name with other tunnels.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_automatic_return_routing.dart';import 'magic_gre.dart';import 'magic_health_check_base.dart';import 'magic_interconnect_components_schemas_description.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_schemas_created_on.dart';import 'magic_schemas_identifier.dart';import 'magic_schemas_modified_on.dart';import 'magic_schemas_mtu.dart';/// The name of the interconnect. The name cannot share a name with other tunnels.
 extension type const MagicComponentsSchemasName(String value) {
 factory MagicComponentsSchemasName.fromJson(String json) => MagicComponentsSchemasName(json);
 
 String toJson() => value;
 
 }
-final class MagicInterconnect {const MagicInterconnect({this.automaticReturnRouting, this.coloName, this.createdOn, this.description, this.gre, this.healthCheck, this.id, this.interfaceAddress, this.interfaceAddress6, this.modifiedOn, this.mtu, this.name, });
+@immutable final class MagicInterconnect {const MagicInterconnect({this.automaticReturnRouting, this.coloName, this.createdOn, this.description, this.gre, this.healthCheck, this.id, this.interfaceAddress, this.interfaceAddress6, this.modifiedOn, this.mtu, this.name, });
 
 factory MagicInterconnect.fromJson(Map<String, dynamic> json) { return MagicInterconnect(
   automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,

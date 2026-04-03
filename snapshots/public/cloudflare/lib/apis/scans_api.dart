@@ -88,7 +88,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>;
   },
 );
  } 

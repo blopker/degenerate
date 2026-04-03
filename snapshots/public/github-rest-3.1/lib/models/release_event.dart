@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'release_event_release.dart';final class ReleaseEvent {const ReleaseEvent({required this.action, required this.release, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'release_event_release.dart';@immutable final class ReleaseEvent {const ReleaseEvent({required this.action, required this.release, });
 
 factory ReleaseEvent.fromJson(Map<String, dynamic> json) { return ReleaseEvent(
   action: json['action'] as String,

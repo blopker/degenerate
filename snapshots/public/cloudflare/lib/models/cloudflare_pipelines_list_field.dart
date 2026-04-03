@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_source_field.dart';final class CloudflarePipelinesListField {const CloudflarePipelinesListField({required this.items});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_source_field.dart';@immutable final class CloudflarePipelinesListField {const CloudflarePipelinesListField({required this.items});
 
 factory CloudflarePipelinesListField.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesListField(
   items: CloudflarePipelinesSourceField.fromJson(json['items'] as Map<String, dynamic>),

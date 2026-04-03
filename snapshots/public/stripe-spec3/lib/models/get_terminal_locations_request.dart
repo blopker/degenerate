@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTerminalLocationsRequest {const GetTerminalLocationsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTerminalLocationsRequest {const GetTerminalLocationsRequest();
 
-factory GetTerminalLocationsRequest.fromJson(Map<String, dynamic> json) { return GetTerminalLocationsRequest(
-
-); }
+factory GetTerminalLocationsRequest.fromJson(Map<String, dynamic> _) { return const GetTerminalLocationsRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetTerminalLocationsRequest copyWith() { return GetTerminalLocationsRequest(
+GetTerminalLocationsRequest copyWith() { return const GetTerminalLocationsRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetTerminalLocationsRequest; } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTargetIndustryListByDatasetResponseItems {const GetTargetIndustryListByDatasetResponseItems({required this.type});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTargetIndustryListByDatasetResponseItems {const GetTargetIndustryListByDatasetResponseItems({required this.type});
 
 factory GetTargetIndustryListByDatasetResponseItems.fromJson(Map<String, dynamic> json) { return GetTargetIndustryListByDatasetResponseItems(
   type: json['type'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Describe a region within a file for the alert.
-final class CodeScanningAlertLocation {const CodeScanningAlertLocation({this.path, this.startLine, this.endLine, this.startColumn, this.endColumn, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describe a region within a file for the alert.
+@immutable final class CodeScanningAlertLocation {const CodeScanningAlertLocation({this.path, this.startLine, this.endLine, this.startColumn, this.endColumn, });
 
 factory CodeScanningAlertLocation.fromJson(Map<String, dynamic> json) { return CodeScanningAlertLocation(
   path: json['path'] as String?,

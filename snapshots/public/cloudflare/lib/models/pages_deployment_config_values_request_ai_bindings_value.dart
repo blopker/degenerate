@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// AI binding.
-final class PagesDeploymentConfigValuesRequestAiBindingsValue {const PagesDeploymentConfigValuesRequestAiBindingsValue({required this.projectId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// AI binding.
+@immutable final class PagesDeploymentConfigValuesRequestAiBindingsValue {const PagesDeploymentConfigValuesRequestAiBindingsValue({required this.projectId});
 
 factory PagesDeploymentConfigValuesRequestAiBindingsValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestAiBindingsValue(
   projectId: json['project_id'] as String,

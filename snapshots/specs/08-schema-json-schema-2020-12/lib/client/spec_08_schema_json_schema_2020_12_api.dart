@@ -10,9 +10,9 @@ import '../apis/default_api.dart';
 /// sdk.$default.createShape();
 /// ```
 final class Spec08SchemaJsonSchema202012Api {
-  final ApiConfig _config;
-
   Spec08SchemaJsonSchema202012Api(this._config);
+
+  final ApiConfig _config;
 
   late final DefaultApi $default = DefaultApi(_config);
 }

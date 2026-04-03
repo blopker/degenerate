@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_dataset_response404_errors.dart';final class AigConfigFetchDatasetResponse404 {const AigConfigFetchDatasetResponse404({required this.errors, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_dataset_response404_errors.dart';@immutable final class AigConfigFetchDatasetResponse404 {const AigConfigFetchDatasetResponse404({required this.errors, required this.success, });
 
 factory AigConfigFetchDatasetResponse404.fromJson(Map<String, dynamic> json) { return AigConfigFetchDatasetResponse404(
   errors: (json['errors'] as List<dynamic>).map((e) => AigConfigFetchDatasetResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),

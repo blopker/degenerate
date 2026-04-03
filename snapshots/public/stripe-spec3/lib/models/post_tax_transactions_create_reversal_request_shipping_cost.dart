@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The shipping cost to reverse.
-final class PostTaxTransactionsCreateReversalRequestShippingCost {const PostTaxTransactionsCreateReversalRequestShippingCost({required this.amount, required this.amountTax, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The shipping cost to reverse.
+@immutable final class PostTaxTransactionsCreateReversalRequestShippingCost {const PostTaxTransactionsCreateReversalRequestShippingCost({required this.amount, required this.amountTax, });
 
 factory PostTaxTransactionsCreateReversalRequestShippingCost.fromJson(Map<String, dynamic> json) { return PostTaxTransactionsCreateReversalRequestShippingCost(
   amount: (json['amount'] as num).toInt(),

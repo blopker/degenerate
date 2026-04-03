@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'images_image_variant_public_request_hero.dart';final class ImagesImageVariantPublicRequest {const ImagesImageVariantPublicRequest({this.hero});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_image_variant_public_request_hero.dart';@immutable final class ImagesImageVariantPublicRequest {const ImagesImageVariantPublicRequest({this.hero});
 
 factory ImagesImageVariantPublicRequest.fromJson(Map<String, dynamic> json) { return ImagesImageVariantPublicRequest(
   hero: json['hero'] != null ? ImagesImageVariantPublicRequestHero.fromJson(json['hero'] as Map<String, dynamic>) : null,

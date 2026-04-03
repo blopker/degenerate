@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_column.dart';final class DlpDatasetNewVersion {const DlpDatasetNewVersion({this.caseSensitive, this.columns, required this.encodingVersion, required this.maxCells, this.secret, required this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_dataset_column.dart';@immutable final class DlpDatasetNewVersion {const DlpDatasetNewVersion({required this.encodingVersion, required this.maxCells, required this.version, this.caseSensitive, this.columns, this.secret, });
 
 factory DlpDatasetNewVersion.fromJson(Map<String, dynamic> json) { return DlpDatasetNewVersion(
   caseSensitive: json['case_sensitive'] as bool?,

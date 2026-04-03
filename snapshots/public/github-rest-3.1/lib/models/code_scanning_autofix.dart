@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of an autofix.
-final class CodeScanningAutofixStatus {const CodeScanningAutofixStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of an autofix.
+@immutable final class CodeScanningAutofixStatus {const CodeScanningAutofixStatus._(this.value);
 
 factory CodeScanningAutofixStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -45,7 +45,7 @@ factory CodeScanningAutofixStartedAt.fromJson(String json) => CodeScanningAutofi
 String toJson() => value.toIso8601String();
 
 }
-final class CodeScanningAutofix {const CodeScanningAutofix({required this.status, required this.description, required this.startedAt, });
+@immutable final class CodeScanningAutofix {const CodeScanningAutofix({required this.status, required this.description, required this.startedAt, });
 
 factory CodeScanningAutofix.fromJson(Map<String, dynamic> json) { return CodeScanningAutofix(
   status: CodeScanningAutofixStatus.fromJson(json['status'] as String),

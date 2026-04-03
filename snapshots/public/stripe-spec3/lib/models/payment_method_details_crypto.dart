@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The blockchain network that the transaction was sent on.
-final class PaymentMethodDetailsCryptoNetwork {const PaymentMethodDetailsCryptoNetwork._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The blockchain network that the transaction was sent on.
+@immutable final class PaymentMethodDetailsCryptoNetwork {const PaymentMethodDetailsCryptoNetwork._(this.value);
 
 factory PaymentMethodDetailsCryptoNetwork.fromJson(String json) { return switch (json) {
   'base' => base,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsCryptoNetwork($value)'; } 
  }
 /// The token currency that the transaction was sent with.
-final class PaymentMethodDetailsCryptoTokenCurrency {const PaymentMethodDetailsCryptoTokenCurrency._(this.value);
+@immutable final class PaymentMethodDetailsCryptoTokenCurrency {const PaymentMethodDetailsCryptoTokenCurrency._(this.value);
 
 factory PaymentMethodDetailsCryptoTokenCurrency.fromJson(String json) { return switch (json) {
   'usdc' => usdc,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsCryptoTokenCurrency($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsCrypto {const PaymentMethodDetailsCrypto({this.buyerAddress, this.network, this.tokenCurrency, this.transactionHash, });
+@immutable final class PaymentMethodDetailsCrypto {const PaymentMethodDetailsCrypto({this.buyerAddress, this.network, this.tokenCurrency, this.transactionHash, });
 
 factory PaymentMethodDetailsCrypto.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCrypto(
   buyerAddress: json['buyer_address'] as String?,

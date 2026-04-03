@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_attacks_layer7_timeseries_group_by_mitigation_product_response_result_meta.dart';import 'radar_get_attacks_layer7_timeseries_group_by_mitigation_product_response_result_serie0.dart';final class RadarGetAttacksLayer7TimeseriesGroupByMitigationProductResponseResult {const RadarGetAttacksLayer7TimeseriesGroupByMitigationProductResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer7_timeseries_group_by_mitigation_product_response_result_meta.dart';import 'radar_get_attacks_layer7_timeseries_group_by_mitigation_product_response_result_serie0.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByMitigationProductResponseResult {const RadarGetAttacksLayer7TimeseriesGroupByMitigationProductResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetAttacksLayer7TimeseriesGroupByMitigationProductResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TimeseriesGroupByMitigationProductResponseResult(
   meta: RadarGetAttacksLayer7TimeseriesGroupByMitigationProductResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Custom voice reference.
-final class VoiceIdsOrCustomVoiceVariant2 {const VoiceIdsOrCustomVoiceVariant2({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom voice reference.
+@immutable final class VoiceIdsOrCustomVoiceVariant2 {const VoiceIdsOrCustomVoiceVariant2({required this.id});
 
 factory VoiceIdsOrCustomVoiceVariant2.fromJson(Map<String, dynamic> json) { return VoiceIdsOrCustomVoiceVariant2(
   id: json['id'] as String,

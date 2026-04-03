@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'carrier_text_param.dart';final class PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2 {const PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'carrier_text_param.dart';@immutable final class PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2 {const PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2._(this.value);
 
 factory PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

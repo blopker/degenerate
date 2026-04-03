@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_lines_line_item_id_request_tax_amounts_variant1.dart';final class PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant2 {const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_lines_line_item_id_request_tax_amounts_variant1.dart';@immutable final class PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant2 {const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant2._(this.value);
 
 factory PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

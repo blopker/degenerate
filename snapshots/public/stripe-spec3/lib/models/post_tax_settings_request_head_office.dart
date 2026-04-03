@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_tax_settings_request_head_office_address.dart';/// The place where your business is located.
-final class PostTaxSettingsRequestHeadOffice {const PostTaxSettingsRequestHeadOffice({required this.address});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_settings_request_head_office_address.dart';/// The place where your business is located.
+@immutable final class PostTaxSettingsRequestHeadOffice {const PostTaxSettingsRequestHeadOffice({required this.address});
 
 factory PostTaxSettingsRequestHeadOffice.fromJson(Map<String, dynamic> json) { return PostTaxSettingsRequestHeadOffice(
   address: PostTaxSettingsRequestHeadOfficeAddress.fromJson(json['address'] as Map<String, dynamic>),

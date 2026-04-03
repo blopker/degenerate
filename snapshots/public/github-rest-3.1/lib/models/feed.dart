@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'feed_links.dart';/// Feed
-final class Feed {const Feed({required this.timelineUrl, required this.userUrl, this.currentUserPublicUrl, this.currentUserUrl, this.currentUserActorUrl, this.currentUserOrganizationUrl, this.currentUserOrganizationUrls, this.securityAdvisoriesUrl, this.repositoryDiscussionsUrl, this.repositoryDiscussionsCategoryUrl, required this.links, });
+@immutable final class Feed {const Feed({required this.timelineUrl, required this.userUrl, required this.links, this.currentUserPublicUrl, this.currentUserUrl, this.currentUserActorUrl, this.currentUserOrganizationUrl, this.currentUserOrganizationUrls, this.securityAdvisoriesUrl, this.repositoryDiscussionsUrl, this.repositoryDiscussionsCategoryUrl, });
 
 factory Feed.fromJson(Map<String, dynamic> json) { return Feed(
   timelineUrl: json['timeline_url'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchInstanceChangeJobStatusResponseResultSource {const AiSearchInstanceChangeJobStatusResponseResultSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceChangeJobStatusResponseResultSource {const AiSearchInstanceChangeJobStatusResponseResultSource._(this.value);
 
 factory AiSearchInstanceChangeJobStatusResponseResultSource.fromJson(String json) { return switch (json) {
   'user' => user,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceChangeJobStatusResponseResultSource($value)'; } 
  }
-final class AiSearchInstanceChangeJobStatusResponseResult {const AiSearchInstanceChangeJobStatusResponseResult({this.description, this.endReason, this.endedAt, required this.id, this.lastSeenAt, required this.source, this.startedAt, });
+@immutable final class AiSearchInstanceChangeJobStatusResponseResult {const AiSearchInstanceChangeJobStatusResponseResult({required this.id, required this.source, this.description, this.endReason, this.endedAt, this.lastSeenAt, this.startedAt, });
 
 factory AiSearchInstanceChangeJobStatusResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChangeJobStatusResponseResult(
   description: json['description'] as String?,

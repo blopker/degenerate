@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodsRequestSofortCountry {const PostPaymentMethodsRequestSofortCountry._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodsRequestSofortCountry {const PostPaymentMethodsRequestSofortCountry._(this.value);
 
 factory PostPaymentMethodsRequestSofortCountry.fromJson(String json) { return switch (json) {
   'AT' => at,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentMethodsRequestSofortCountry($value)'; } 
  }
 /// If this is a `sofort` PaymentMethod, this hash contains details about the SOFORT payment method.
-final class PostPaymentMethodsRequestSofort {const PostPaymentMethodsRequestSofort({required this.country});
+@immutable final class PostPaymentMethodsRequestSofort {const PostPaymentMethodsRequestSofort({required this.country});
 
 factory PostPaymentMethodsRequestSofort.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestSofort(
   country: PostPaymentMethodsRequestSofortCountry.fromJson(json['country'] as String),

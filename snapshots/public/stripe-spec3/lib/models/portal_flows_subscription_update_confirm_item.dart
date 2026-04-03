@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PortalFlowsSubscriptionUpdateConfirmItem {const PortalFlowsSubscriptionUpdateConfirmItem({this.id, this.price, this.quantity, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PortalFlowsSubscriptionUpdateConfirmItem {const PortalFlowsSubscriptionUpdateConfirmItem({this.id, this.price, this.quantity, });
 
 factory PortalFlowsSubscriptionUpdateConfirmItem.fromJson(Map<String, dynamic> json) { return PortalFlowsSubscriptionUpdateConfirmItem(
   id: json['id'] as String?,

@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetApplicationFeesRequest {const GetApplicationFeesRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetApplicationFeesRequest {const GetApplicationFeesRequest();
 
-factory GetApplicationFeesRequest.fromJson(Map<String, dynamic> json) { return GetApplicationFeesRequest(
-
-); }
+factory GetApplicationFeesRequest.fromJson(Map<String, dynamic> _) { return const GetApplicationFeesRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetApplicationFeesRequest copyWith() { return GetApplicationFeesRequest(
+GetApplicationFeesRequest copyWith() { return const GetApplicationFeesRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetApplicationFeesRequest; } 

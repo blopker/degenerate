@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Indicates whether a campaign is open or closed
-final class CampaignState {const CampaignState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether a campaign is open or closed
+@immutable final class CampaignState {const CampaignState._(this.value);
 
 factory CampaignState.fromJson(String json) { return switch (json) {
   'open' => open,

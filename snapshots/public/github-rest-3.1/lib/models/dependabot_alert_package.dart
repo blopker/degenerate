@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details for the vulnerable package.
-final class DependabotAlertPackage {const DependabotAlertPackage({required this.ecosystem, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details for the vulnerable package.
+@immutable final class DependabotAlertPackage {const DependabotAlertPackage({required this.ecosystem, required this.name, });
 
 factory DependabotAlertPackage.fromJson(Map<String, dynamic> json) { return DependabotAlertPackage(
   ecosystem: json['ecosystem'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'restrictions_params_completed_sessions.dart';final class RestrictionsParams {const RestrictionsParams({required this.completedSessions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'restrictions_params_completed_sessions.dart';@immutable final class RestrictionsParams {const RestrictionsParams({required this.completedSessions});
 
 factory RestrictionsParams.fromJson(Map<String, dynamic> json) { return RestrictionsParams(
   completedSessions: RestrictionsParamsCompletedSessions.fromJson(json['completed_sessions'] as Map<String, dynamic>),

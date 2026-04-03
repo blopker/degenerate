@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_file_path_restriction_parameters.dart';final class RepositoryRuleFilePathRestrictionType {const RepositoryRuleFilePathRestrictionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_file_path_restriction_parameters.dart';@immutable final class RepositoryRuleFilePathRestrictionType {const RepositoryRuleFilePathRestrictionType._(this.value);
 
 factory RepositoryRuleFilePathRestrictionType.fromJson(String json) { return switch (json) {
   'file_path_restriction' => filePathRestriction,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleFilePathRestrictionType($value)'; } 
  }
 /// Prevent commits that include changes in specified file and folder paths from being pushed to the commit graph. This includes absolute paths that contain file names.
-final class RepositoryRuleFilePathRestriction {const RepositoryRuleFilePathRestriction({required this.type, this.parameters, });
+@immutable final class RepositoryRuleFilePathRestriction {const RepositoryRuleFilePathRestriction({required this.type, this.parameters, });
 
 factory RepositoryRuleFilePathRestriction.fromJson(Map<String, dynamic> json) { return RepositoryRuleFilePathRestriction(
   type: RepositoryRuleFilePathRestrictionType.fromJson(json['type'] as String),

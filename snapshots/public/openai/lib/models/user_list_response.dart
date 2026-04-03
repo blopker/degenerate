@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'user.dart';final class UserListResponseObject {const UserListResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'user.dart';@immutable final class UserListResponseObject {const UserListResponseObject._(this.value);
 
 factory UserListResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UserListResponseObject($value)'; } 
  }
-final class UserListResponse {const UserListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+@immutable final class UserListResponse {const UserListResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory UserListResponse.fromJson(Map<String, dynamic> json) { return UserListResponse(
   object: UserListResponseObject.fromJson(json['object'] as String),

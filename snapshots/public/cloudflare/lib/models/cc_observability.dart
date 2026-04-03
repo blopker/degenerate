@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cc_observability_logs.dart';/// Settings for observability such as logging.
-final class CcObservability {const CcObservability({this.logs});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cc_observability_logs.dart';/// Settings for observability such as logging.
+@immutable final class CcObservability {const CcObservability({this.logs});
 
 factory CcObservability.fromJson(Map<String, dynamic> json) { return CcObservability(
   logs: json['logs'] != null ? CcObservabilityLogs.fromJson(json['logs'] as Map<String, dynamic>) : null,

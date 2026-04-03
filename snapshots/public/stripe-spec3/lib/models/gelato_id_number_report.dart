@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gelato_data_id_number_report_date.dart';import 'gelato_id_number_report_error.dart';/// Type of ID number.
-final class GelatoIdNumberReportIdNumberType {const GelatoIdNumberReportIdNumberType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_data_id_number_report_date.dart';import 'gelato_id_number_report_error.dart';/// Type of ID number.
+@immutable final class GelatoIdNumberReportIdNumberType {const GelatoIdNumberReportIdNumberType._(this.value);
 
 factory GelatoIdNumberReportIdNumberType.fromJson(String json) { return switch (json) {
   'br_cpf' => brCpf,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoIdNumberReportIdNumberType($value)'; } 
  }
 /// Status of this `id_number` check.
-final class GelatoIdNumberReportStatus {const GelatoIdNumberReportStatus._(this.value);
+@immutable final class GelatoIdNumberReportStatus {const GelatoIdNumberReportStatus._(this.value);
 
 factory GelatoIdNumberReportStatus.fromJson(String json) { return switch (json) {
   'unverified' => unverified,
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoIdNumberReportStatus($value)'; } 
  }
 /// Result from an id_number check
-final class GelatoIdNumberReport {const GelatoIdNumberReport({this.dob, this.error, this.firstName, this.idNumber, this.idNumberType, this.lastName, required this.status, });
+@immutable final class GelatoIdNumberReport {const GelatoIdNumberReport({required this.status, this.dob, this.error, this.firstName, this.idNumber, this.idNumberType, this.lastName, });
 
 factory GelatoIdNumberReport.fromJson(Map<String, dynamic> json) { return GelatoIdNumberReport(
   dob: json['dob'] != null ? GelatoDataIdNumberReportDate.fromJson(json['dob'] as Map<String, dynamic>) : null,

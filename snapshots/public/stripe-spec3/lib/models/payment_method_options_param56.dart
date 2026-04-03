@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentMethodOptionsParam56CaptureMethod {const PaymentMethodOptionsParam56CaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam56CaptureMethod {const PaymentMethodOptionsParam56CaptureMethod._(this.value);
 
 factory PaymentMethodOptionsParam56CaptureMethod.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam56CaptureMethod($value)'; } 
  }
-final class PaymentMethodOptionsParam56SetupFutureUsage {const PaymentMethodOptionsParam56SetupFutureUsage._(this.value);
+@immutable final class PaymentMethodOptionsParam56SetupFutureUsage {const PaymentMethodOptionsParam56SetupFutureUsage._(this.value);
 
 factory PaymentMethodOptionsParam56SetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam56SetupFutureUsage($value)'; } 
  }
-final class PaymentMethodOptionsParam56 {const PaymentMethodOptionsParam56({this.captureMethod, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsParam56 {const PaymentMethodOptionsParam56({this.captureMethod, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam56.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam56(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParam56CaptureMethod.fromJson(json['capture_method'] as String) : null,

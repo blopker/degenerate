@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_verified_bots_top_by_http_requests_response_result.dart';final class RadarGetVerifiedBotsTopByHttpRequestsResponse {const RadarGetVerifiedBotsTopByHttpRequestsResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_verified_bots_top_by_http_requests_response_result.dart';@immutable final class RadarGetVerifiedBotsTopByHttpRequestsResponse {const RadarGetVerifiedBotsTopByHttpRequestsResponse({required this.result, required this.success, });
 
 factory RadarGetVerifiedBotsTopByHttpRequestsResponse.fromJson(Map<String, dynamic> json) { return RadarGetVerifiedBotsTopByHttpRequestsResponse(
   result: RadarGetVerifiedBotsTopByHttpRequestsResponseResult.fromJson(json['result'] as Map<String, dynamic>),

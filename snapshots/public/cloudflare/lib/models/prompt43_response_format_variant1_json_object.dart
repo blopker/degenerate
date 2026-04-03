@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt43ResponseFormatVariant1JsonObjectType {const Prompt43ResponseFormatVariant1JsonObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43ResponseFormatVariant1JsonObjectType {const Prompt43ResponseFormatVariant1JsonObjectType._(this.value);
 
 factory Prompt43ResponseFormatVariant1JsonObjectType.fromJson(String json) { return switch (json) {
   'json_object' => jsonObject,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43ResponseFormatVariant1JsonObjectType($value)'; } 
  }
-final class Prompt43ResponseFormatVariant1JsonObject {const Prompt43ResponseFormatVariant1JsonObject({required this.type});
+@immutable final class Prompt43ResponseFormatVariant1JsonObject {const Prompt43ResponseFormatVariant1JsonObject({required this.type});
 
 factory Prompt43ResponseFormatVariant1JsonObject.fromJson(Map<String, dynamic> json) { return Prompt43ResponseFormatVariant1JsonObject(
   type: Prompt43ResponseFormatVariant1JsonObjectType.fromJson(json['type'] as String),

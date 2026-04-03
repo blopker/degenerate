@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorBatchCreateWorkflowInstanceResponseResultInfo {const WorBatchCreateWorkflowInstanceResponseResultInfo({required this.count, this.cursor, this.page, required this.perPage, required this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorBatchCreateWorkflowInstanceResponseResultInfo {const WorBatchCreateWorkflowInstanceResponseResultInfo({required this.count, required this.perPage, required this.totalCount, this.cursor, this.page, });
 
 factory WorBatchCreateWorkflowInstanceResponseResultInfo.fromJson(Map<String, dynamic> json) { return WorBatchCreateWorkflowInstanceResponseResultInfo(
   count: (json['count'] as num).toDouble(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// object containing information about the committer.
-final class ReposDeleteFileRequestCommitter {const ReposDeleteFileRequestCommitter({this.name, this.email, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// object containing information about the committer.
+@immutable final class ReposDeleteFileRequestCommitter {const ReposDeleteFileRequestCommitter({this.name, this.email, });
 
 factory ReposDeleteFileRequestCommitter.fromJson(Map<String, dynamic> json) { return ReposDeleteFileRequestCommitter(
   name: json['name'] as String?,

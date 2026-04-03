@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_action.dart';import 'shield_enabled.dart';import 'shield_expression.dart';import 'shield_schemas_description.dart';import 'shield_schemas_title.dart';import 'shield_selector.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';/// A Token Validation rule that can enforce security policies using JWT Tokens.
-final class ShieldRule {const ShieldRule({required this.action, this.createdAt, required this.description, required this.enabled, required this.expression, this.id, this.lastUpdated, required this.selector, required this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_action.dart';import 'shield_enabled.dart';import 'shield_expression.dart';import 'shield_schemas_description.dart';import 'shield_schemas_title.dart';import 'shield_selector.dart';import 'shield_timestamp.dart';import 'shield_uuid.dart';/// A Token Validation rule that can enforce security policies using JWT Tokens.
+@immutable final class ShieldRule {const ShieldRule({required this.action, required this.description, required this.enabled, required this.expression, required this.selector, required this.title, this.createdAt, this.id, this.lastUpdated, });
 
 factory ShieldRule.fromJson(Map<String, dynamic> json) { return ShieldRule(
   action: ShieldAction.fromJson(json['action'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class DisputePaymentMethodDetailsPaypal {const DisputePaymentMethodDetailsPaypal({this.caseId, this.reasonCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class DisputePaymentMethodDetailsPaypal {const DisputePaymentMethodDetailsPaypal({this.caseId, this.reasonCode, });
 
 factory DisputePaymentMethodDetailsPaypal.fromJson(Map<String, dynamic> json) { return DisputePaymentMethodDetailsPaypal(
   caseId: json['case_id'] as String?,

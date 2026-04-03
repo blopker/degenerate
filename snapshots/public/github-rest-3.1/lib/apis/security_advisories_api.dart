@@ -33,13 +33,13 @@ if (severity != null) {
   queryParameters['severity'] = severity.toJson();
 }
 if (cwes != null) {
-queryParametersList.add(ApiQueryParameter(name: 'cwes', value: cwes.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'cwes', value: cwes.toString()));
 }
 if (isWithdrawn != null) {
   queryParameters['is_withdrawn'] = isWithdrawn.toString();
 }
 if (affects != null) {
-queryParametersList.add(ApiQueryParameter(name: 'affects', value: affects.toString(), allowReserved: false));
+queryParametersList.add(ApiQueryParameter(name: 'affects', value: affects.toString()));
 }
 if (published != null) {
   queryParameters['published'] = published;
@@ -364,7 +364,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -375,7 +375,7 @@ return execute(
 ///
 /// Create a temporary private fork to collaborate on fixing a security vulnerability in your repository.
 /// 
-/// > [!NOTE]
+/// > `[!NOTE]`
 /// > Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
 ///
 /// `POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks`

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_crawlers_timeseries_group_response_result.dart';final class RadarGetCrawlersTimeseriesGroupResponse {const RadarGetCrawlersTimeseriesGroupResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_crawlers_timeseries_group_response_result.dart';@immutable final class RadarGetCrawlersTimeseriesGroupResponse {const RadarGetCrawlersTimeseriesGroupResponse({required this.result, required this.success, });
 
 factory RadarGetCrawlersTimeseriesGroupResponse.fromJson(Map<String, dynamic> json) { return RadarGetCrawlersTimeseriesGroupResponse(
   result: RadarGetCrawlersTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>),

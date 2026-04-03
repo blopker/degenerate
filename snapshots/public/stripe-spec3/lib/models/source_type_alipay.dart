@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeAlipay {const SourceTypeAlipay({this.dataString, this.nativeUrl, this.statementDescriptor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAlipay {const SourceTypeAlipay({this.dataString, this.nativeUrl, this.statementDescriptor, });
 
 factory SourceTypeAlipay.fromJson(Map<String, dynamic> json) { return SourceTypeAlipay(
   dataString: json['data_string'] as String?,

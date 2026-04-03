@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorDescribeWorkflowInstanceResponse404Errors {const WorDescribeWorkflowInstanceResponse404Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorDescribeWorkflowInstanceResponse404Errors {const WorDescribeWorkflowInstanceResponse404Errors({required this.code, required this.message, });
 
 factory WorDescribeWorkflowInstanceResponse404Errors.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponse404Errors(
   code: (json['code'] as num).toDouble(),

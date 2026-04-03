@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UsersCreateGpgKeyForAuthenticatedUserRequest {const UsersCreateGpgKeyForAuthenticatedUserRequest({this.name, required this.armoredPublicKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersCreateGpgKeyForAuthenticatedUserRequest {const UsersCreateGpgKeyForAuthenticatedUserRequest({required this.armoredPublicKey, this.name, });
 
 factory UsersCreateGpgKeyForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return UsersCreateGpgKeyForAuthenticatedUserRequest(
   name: json['name'] as String?,

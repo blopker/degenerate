@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issues_demilestoned_issue.dart';import 'webhooks_milestone.dart';final class WebhookIssuesDemilestonedAction {const WebhookIssuesDemilestonedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issues_demilestoned_issue.dart';import 'webhooks_milestone.dart';@immutable final class WebhookIssuesDemilestonedAction {const WebhookIssuesDemilestonedAction._(this.value);
 
 factory WebhookIssuesDemilestonedAction.fromJson(String json) { return switch (json) {
   'demilestoned' => demilestoned,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookIssuesDemilestonedAction($value)'; } 
  }
-final class WebhookIssuesDemilestoned {const WebhookIssuesDemilestoned({required this.action, this.enterprise, this.installation, required this.issue, this.milestone, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookIssuesDemilestoned {const WebhookIssuesDemilestoned({required this.action, required this.issue, required this.repository, required this.sender, this.enterprise, this.installation, this.milestone, this.organization, });
 
 factory WebhookIssuesDemilestoned.fromJson(Map<String, dynamic> json) { return WebhookIssuesDemilestoned(
   action: WebhookIssuesDemilestonedAction.fromJson(json['action'] as String),

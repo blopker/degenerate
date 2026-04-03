@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_messages2.dart';final class ResponseCommon37 {const ResponseCommon37({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_messages2.dart';@immutable final class ResponseCommon37 {const ResponseCommon37({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon37.fromJson(Map<String, dynamic> json) { return ResponseCommon37(
   errors: (json['errors'] as List<dynamic>).map((e) => InfraMessages2.fromJson(e as Map<String, dynamic>)).toList(),

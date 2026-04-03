@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_tag_indicators_list_response_indicators_related_events.dart';import 'get_tag_indicators_list_response_indicators_tags.dart';final class GetTagIndicatorsListResponseIndicators {const GetTagIndicatorsListResponseIndicators({required this.createdAt, this.datasetId, required this.indicatorType, this.relatedEvents, this.tags, required this.updatedAt, required this.uuid, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_tag_indicators_list_response_indicators_related_events.dart';import 'get_tag_indicators_list_response_indicators_tags.dart';@immutable final class GetTagIndicatorsListResponseIndicators {const GetTagIndicatorsListResponseIndicators({required this.createdAt, required this.indicatorType, required this.updatedAt, required this.uuid, required this.value, this.datasetId, this.relatedEvents, this.tags, });
 
 factory GetTagIndicatorsListResponseIndicators.fromJson(Map<String, dynamic> json) { return GetTagIndicatorsListResponseIndicators(
   createdAt: DateTime.parse(json['createdAt'] as String),

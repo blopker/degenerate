@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status - one of `stopped`, `in-flight`
-final class RealtimeTranscriptionEnumStatus {const RealtimeTranscriptionEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status - one of `stopped`, `in-flight`
+@immutable final class RealtimeTranscriptionEnumStatus {const RealtimeTranscriptionEnumStatus._(this.value);
 
 factory RealtimeTranscriptionEnumStatus.fromJson(String json) { return switch (json) {
   'in-progress' => inProgress,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeTranscriptionEnumStatus($value)'; } 
  }
-final class AccountCallRealtimeTranscription {const AccountCallRealtimeTranscription({this.sid, this.accountSid, this.callSid, this.name, this.status, this.dateUpdated, this.uri, });
+@immutable final class AccountCallRealtimeTranscription {const AccountCallRealtimeTranscription({this.sid, this.accountSid, this.callSid, this.name, this.status, this.dateUpdated, this.uri, });
 
 factory AccountCallRealtimeTranscription.fromJson(Map<String, dynamic> json) { return AccountCallRealtimeTranscription(
   sid: json['sid'] as String?,

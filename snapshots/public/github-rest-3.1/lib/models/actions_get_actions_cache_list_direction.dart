@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsGetActionsCacheListDirection {const ActionsGetActionsCacheListDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGetActionsCacheListDirection {const ActionsGetActionsCacheListDirection._(this.value);
 
 factory ActionsGetActionsCacheListDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,

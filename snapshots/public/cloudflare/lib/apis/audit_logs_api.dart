@@ -75,226 +75,226 @@ return execute(
 /// Gets a list of audit logs for an account. `<br />`  `<br />` This is the beta release of Audit Logs Version 2. Since this is a beta version, there may be gaps or missing entries in the available audit logs. Be aware of the following limitations.  `<br />` `<ul>` `<li>`Audit logs are available only for the past 30 days. `<br />``</li>` `<li>`Error handling is not yet implemented.  `<br />` `</li>` `</ul>`
 ///
 /// `GET /accounts/{account_id}/logs/audit`
-Future<ApiResult<List<AaaAuditLogs2>?, Never>> auditLogsV2GetAccountAuditLogs({required String accountId, List<String>? accountName, List<GetAccountAuditLogsActionResult>? actionResult, List<GetAccountAuditLogsActionType>? actionType, List<GetAccountAuditLogsActorContext>? actorContext, List<String>? actorEmail, List<String>? actorId, List<String>? actorIpAddress, List<String>? actorTokenId, List<String>? actorTokenName, List<GetAccountAuditLogsActorType>? actorType, List<String>? auditLogId, List<String>? id, List<String>? rawCfRayId, List<String>? rawMethod, List<int>? rawStatusCode, List<String>? rawUri, List<String>? resourceId, List<String>? resourceProduct, List<String>? resourceType, List<GetAccountAuditLogsResourceScope>? resourceScope, List<String>? zoneId, List<String>? zoneName, List<String>? accountNameNot, List<GetAccountAuditLogsActionResultNot>? actionResultNot, List<GetAccountAuditLogsActionTypeNot>? actionTypeNot, List<GetAccountAuditLogsActorContextNot>? actorContextNot, List<String>? actorEmailNot, List<String>? actorIdNot, List<String>? actorIpAddressNot, List<String>? actorTokenIdNot, List<String>? actorTokenNameNot, List<GetAccountAuditLogsActorTypeNot>? actorTypeNot, List<String>? auditLogIdNot, List<String>? idNot, List<String>? rawCfRayIdNot, List<String>? rawMethodNot, List<int>? rawStatusCodeNot, List<String>? rawUriNot, List<String>? resourceIdNot, List<String>? resourceProductNot, List<String>? resourceTypeNot, List<GetAccountAuditLogsResourceScopeNot>? resourceScopeNot, List<String>? zoneIdNot, List<String>? zoneNameNot, required String since, required String before, GetAccountAuditLogsDirection? direction, double? limit, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AaaAuditLogs2>?, Never>> auditLogsV2GetAccountAuditLogs({required String before, required String accountId, required String since, List<String>? rawUri, List<GetAccountAuditLogsActorContext>? actorContext, List<String>? actorEmail, List<String>? actorId, List<String>? actorIpAddress, List<String>? actorTokenId, List<String>? actorTokenName, List<GetAccountAuditLogsActorType>? actorType, List<String>? auditLogId, List<String>? id, List<String>? rawCfRayId, List<String>? rawMethod, List<int>? rawStatusCode, List<String>? accountName, List<String>? resourceId, List<String>? resourceProduct, List<String>? resourceType, List<GetAccountAuditLogsResourceScope>? resourceScope, List<String>? zoneId, List<String>? zoneName, List<String>? accountNameNot, List<GetAccountAuditLogsActionResultNot>? actionResultNot, List<GetAccountAuditLogsActionTypeNot>? actionTypeNot, List<GetAccountAuditLogsActorContextNot>? actorContextNot, List<String>? actorEmailNot, List<String>? actorIdNot, List<String>? actorIpAddressNot, List<String>? actorTokenIdNot, List<String>? actorTokenNameNot, String? cursor, List<String>? auditLogIdNot, List<String>? idNot, List<String>? rawCfRayIdNot, List<String>? rawMethodNot, List<int>? rawStatusCodeNot, List<String>? rawUriNot, List<String>? resourceIdNot, List<String>? resourceProductNot, List<String>? resourceTypeNot, List<GetAccountAuditLogsResourceScopeNot>? resourceScopeNot, List<String>? zoneIdNot, List<String>? zoneNameNot, List<GetAccountAuditLogsActionResult>? actionResult, List<GetAccountAuditLogsActionType>? actionType, GetAccountAuditLogsDirection? direction, double? limit, List<GetAccountAuditLogsActorTypeNot>? actorTypeNot, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountName != null) {
 for (final item in accountName) {
-  queryParametersList.add(ApiQueryParameter(name: 'account_name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'account_name', value: item));
 }
 }
 if (actionResult != null) {
 for (final item in actionResult) {
-  queryParametersList.add(ApiQueryParameter(name: 'action_result', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'action_result', value: item.toJson()));
 }
 }
 if (actionType != null) {
 for (final item in actionType) {
-  queryParametersList.add(ApiQueryParameter(name: 'action_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'action_type', value: item.toJson()));
 }
 }
 if (actorContext != null) {
 for (final item in actorContext) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_context', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_context', value: item.toJson()));
 }
 }
 if (actorEmail != null) {
 for (final item in actorEmail) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_email', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_email', value: item));
 }
 }
 if (actorId != null) {
 for (final item in actorId) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_id', value: item));
 }
 }
 if (actorIpAddress != null) {
 for (final item in actorIpAddress) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_ip_address', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_ip_address', value: item));
 }
 }
 if (actorTokenId != null) {
 for (final item in actorTokenId) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_token_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_token_id', value: item));
 }
 }
 if (actorTokenName != null) {
 for (final item in actorTokenName) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_token_name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_token_name', value: item));
 }
 }
 if (actorType != null) {
 for (final item in actorType) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_type', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_type', value: item.toJson()));
 }
 }
 if (auditLogId != null) {
 for (final item in auditLogId) {
-  queryParametersList.add(ApiQueryParameter(name: 'audit_log_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'audit_log_id', value: item));
 }
 }
 if (id != null) {
 for (final item in id) {
-  queryParametersList.add(ApiQueryParameter(name: 'id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'id', value: item));
 }
 }
 if (rawCfRayId != null) {
 for (final item in rawCfRayId) {
-  queryParametersList.add(ApiQueryParameter(name: 'raw_cf_ray_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'raw_cf_ray_id', value: item));
 }
 }
 if (rawMethod != null) {
 for (final item in rawMethod) {
-  queryParametersList.add(ApiQueryParameter(name: 'raw_method', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'raw_method', value: item));
 }
 }
 if (rawStatusCode != null) {
 for (final item in rawStatusCode) {
-  queryParametersList.add(ApiQueryParameter(name: 'raw_status_code', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'raw_status_code', value: item.toString()));
 }
 }
 if (rawUri != null) {
 for (final item in rawUri) {
-  queryParametersList.add(ApiQueryParameter(name: 'raw_uri', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'raw_uri', value: item));
 }
 }
 if (resourceId != null) {
 for (final item in resourceId) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_id', value: item));
 }
 }
 if (resourceProduct != null) {
 for (final item in resourceProduct) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_product', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_product', value: item));
 }
 }
 if (resourceType != null) {
 for (final item in resourceType) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_type', value: item));
 }
 }
 if (resourceScope != null) {
 for (final item in resourceScope) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_scope', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_scope', value: item.toJson()));
 }
 }
 if (zoneId != null) {
 for (final item in zoneId) {
-  queryParametersList.add(ApiQueryParameter(name: 'zone_id', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'zone_id', value: item));
 }
 }
 if (zoneName != null) {
 for (final item in zoneName) {
-  queryParametersList.add(ApiQueryParameter(name: 'zone_name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'zone_name', value: item));
 }
 }
 if (accountNameNot != null) {
 for (final item in accountNameNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'account_name.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'account_name.not', value: item));
 }
 }
 if (actionResultNot != null) {
 for (final item in actionResultNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'action_result.not', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'action_result.not', value: item.toJson()));
 }
 }
 if (actionTypeNot != null) {
 for (final item in actionTypeNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'action_type.not', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'action_type.not', value: item.toJson()));
 }
 }
 if (actorContextNot != null) {
 for (final item in actorContextNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_context.not', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_context.not', value: item.toJson()));
 }
 }
 if (actorEmailNot != null) {
 for (final item in actorEmailNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_email.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_email.not', value: item));
 }
 }
 if (actorIdNot != null) {
 for (final item in actorIdNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_id.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_id.not', value: item));
 }
 }
 if (actorIpAddressNot != null) {
 for (final item in actorIpAddressNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_ip_address.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_ip_address.not', value: item));
 }
 }
 if (actorTokenIdNot != null) {
 for (final item in actorTokenIdNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_token_id.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_token_id.not', value: item));
 }
 }
 if (actorTokenNameNot != null) {
 for (final item in actorTokenNameNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_token_name.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_token_name.not', value: item));
 }
 }
 if (actorTypeNot != null) {
 for (final item in actorTypeNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'actor_type.not', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'actor_type.not', value: item.toJson()));
 }
 }
 if (auditLogIdNot != null) {
 for (final item in auditLogIdNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'audit_log_id.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'audit_log_id.not', value: item));
 }
 }
 if (idNot != null) {
 for (final item in idNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'id.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'id.not', value: item));
 }
 }
 if (rawCfRayIdNot != null) {
 for (final item in rawCfRayIdNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'raw_cf_ray_id.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'raw_cf_ray_id.not', value: item));
 }
 }
 if (rawMethodNot != null) {
 for (final item in rawMethodNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'raw_method.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'raw_method.not', value: item));
 }
 }
 if (rawStatusCodeNot != null) {
 for (final item in rawStatusCodeNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'raw_status_code.not', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'raw_status_code.not', value: item.toString()));
 }
 }
 if (rawUriNot != null) {
 for (final item in rawUriNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'raw_uri.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'raw_uri.not', value: item));
 }
 }
 if (resourceIdNot != null) {
 for (final item in resourceIdNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_id.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_id.not', value: item));
 }
 }
 if (resourceProductNot != null) {
 for (final item in resourceProductNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_product.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_product.not', value: item));
 }
 }
 if (resourceTypeNot != null) {
 for (final item in resourceTypeNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_type.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_type.not', value: item));
 }
 }
 if (resourceScopeNot != null) {
 for (final item in resourceScopeNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'resource_scope.not', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'resource_scope.not', value: item.toJson()));
 }
 }
 if (zoneIdNot != null) {
 for (final item in zoneIdNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'zone_id.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'zone_id.not', value: item));
 }
 }
 if (zoneNameNot != null) {
 for (final item in zoneNameNot) {
-  queryParametersList.add(ApiQueryParameter(name: 'zone_name.not', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'zone_name.not', value: item));
 }
 }
 queryParameters['since'] = since;

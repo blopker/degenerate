@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude {const WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude({this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude {const WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude({this.from});
 
 factory WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetEditedChangesConditionsUpdatedChangesInclude(
   from: (json['from'] as List<dynamic>?)?.map((e) => e as String).toList(),

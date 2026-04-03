@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The rails used to send funds.
-final class OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork {const OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rails used to send funds.
+@immutable final class OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork {const OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork._(this.value);
 
 factory OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork.fromJson(String json) { return switch (json) {
   'stripe' => stripe,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork($value)'; } 
  }
 /// 
-final class OutboundPaymentsPaymentMethodDetailsFinancialAccount {const OutboundPaymentsPaymentMethodDetailsFinancialAccount({required this.id, required this.network, });
+@immutable final class OutboundPaymentsPaymentMethodDetailsFinancialAccount {const OutboundPaymentsPaymentMethodDetailsFinancialAccount({required this.id, required this.network, });
 
 factory OutboundPaymentsPaymentMethodDetailsFinancialAccount.fromJson(Map<String, dynamic> json) { return OutboundPaymentsPaymentMethodDetailsFinancialAccount(
   id: json['id'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The error code of the Lighthouse result.
-final class ObservatoryLighthouseErrorCode {const ObservatoryLighthouseErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The error code of the Lighthouse result.
+@immutable final class ObservatoryLighthouseErrorCode {const ObservatoryLighthouseErrorCode._(this.value);
 
 factory ObservatoryLighthouseErrorCode.fromJson(String json) { return switch (json) {
   'NOT_REACHABLE' => notReachable,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ObservatoryLighthouseErrorCode($value)'; } 
  }
-final class ObservatoryLighthouseReportError {const ObservatoryLighthouseReportError({this.code, this.detail, this.finalDisplayedUrl, });
+@immutable final class ObservatoryLighthouseReportError {const ObservatoryLighthouseReportError({this.code, this.detail, this.finalDisplayedUrl, });
 
 factory ObservatoryLighthouseReportError.fromJson(Map<String, dynamic> json) { return ObservatoryLighthouseReportError(
   code: json['code'] != null ? ObservatoryLighthouseErrorCode.fromJson(json['code'] as String) : null,

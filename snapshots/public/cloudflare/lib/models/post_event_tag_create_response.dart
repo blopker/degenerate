@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_event_tag_create_response_result.dart';final class PostEventTagCreateResponse {const PostEventTagCreateResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_event_tag_create_response_result.dart';@immutable final class PostEventTagCreateResponse {const PostEventTagCreateResponse({required this.result, required this.success, });
 
 factory PostEventTagCreateResponse.fromJson(Map<String, dynamic> json) { return PostEventTagCreateResponse(
   result: PostEventTagCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsRequestDocumentsCompanyMinisterialDecree {const PostAccountsRequestDocumentsCompanyMinisterialDecree({this.files});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestDocumentsCompanyMinisterialDecree {const PostAccountsRequestDocumentsCompanyMinisterialDecree({this.files});
 
 factory PostAccountsRequestDocumentsCompanyMinisterialDecree.fromJson(Map<String, dynamic> json) { return PostAccountsRequestDocumentsCompanyMinisterialDecree(
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),

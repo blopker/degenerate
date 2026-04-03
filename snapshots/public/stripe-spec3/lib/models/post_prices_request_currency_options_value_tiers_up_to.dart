@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPricesRequestCurrencyOptionsValueTiersUpToVariant1 {const PostPricesRequestCurrencyOptionsValueTiersUpToVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPricesRequestCurrencyOptionsValueTiersUpToVariant1 {const PostPricesRequestCurrencyOptionsValueTiersUpToVariant1._(this.value);
 
 factory PostPricesRequestCurrencyOptionsValueTiersUpToVariant1.fromJson(String json) { return switch (json) {
   'inf' => inf,

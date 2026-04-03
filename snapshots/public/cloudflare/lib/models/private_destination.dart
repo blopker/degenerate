@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The L4 protocol of the destination. When omitted, both UDP and TCP traffic will match.
-final class PrivateDestinationL4Protocol {const PrivateDestinationL4Protocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The L4 protocol of the destination. When omitted, both UDP and TCP traffic will match.
+@immutable final class PrivateDestinationL4Protocol {const PrivateDestinationL4Protocol._(this.value);
 
 factory PrivateDestinationL4Protocol.fromJson(String json) { return switch (json) {
   'tcp' => tcp,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PrivateDestinationL4Protocol($value)'; } 
  }
-final class PrivateDestinationType {const PrivateDestinationType._(this.value);
+@immutable final class PrivateDestinationType {const PrivateDestinationType._(this.value);
 
 factory PrivateDestinationType.fromJson(String json) { return switch (json) {
   'private' => private,
@@ -46,7 +46,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PrivateDestinationType($value)'; } 
  }
-final class PrivateDestination {const PrivateDestination({this.cidr, this.hostname, this.l4Protocol, this.portRange, this.type, this.vnetId, });
+@immutable final class PrivateDestination {const PrivateDestination({this.cidr, this.hostname, this.l4Protocol, this.portRange, this.type, this.vnetId, });
 
 factory PrivateDestination.fromJson(Map<String, dynamic> json) { return PrivateDestination(
   cidr: json['cidr'] as String?,

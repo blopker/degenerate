@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// An enum value that represents the status of an abuse record
-final class AbuseReportsReportStatus {const AbuseReportsReportStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// An enum value that represents the status of an abuse record
+@immutable final class AbuseReportsReportStatus {const AbuseReportsReportStatus._(this.value);
 
 factory AbuseReportsReportStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,

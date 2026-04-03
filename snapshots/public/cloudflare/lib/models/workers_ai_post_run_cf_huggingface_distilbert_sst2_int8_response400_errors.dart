@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400Errors {const WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400Errors {const WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400Errors({required this.code, required this.message, });
 
 factory WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400Errors(
   code: json['code'] as String,

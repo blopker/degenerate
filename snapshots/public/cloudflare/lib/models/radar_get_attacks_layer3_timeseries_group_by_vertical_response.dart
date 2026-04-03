@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_attacks_layer3_timeseries_group_by_vertical_response_result.dart';final class RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse {const RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_timeseries_group_by_vertical_response_result.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse {const RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse({required this.result, required this.success, });
 
 factory RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByVerticalResponse(
   result: RadarGetAttacksLayer3TimeseriesGroupByVerticalResponseResult.fromJson(json['result'] as Map<String, dynamic>),

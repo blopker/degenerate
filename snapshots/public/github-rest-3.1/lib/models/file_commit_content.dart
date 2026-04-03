@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'file_commit_content_links.dart';final class FileCommitContent {const FileCommitContent({this.name, this.path, this.sha, this.size, this.url, this.htmlUrl, this.gitUrl, this.downloadUrl, this.type, this.links, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_commit_content_links.dart';@immutable final class FileCommitContent {const FileCommitContent({this.name, this.path, this.sha, this.size, this.url, this.htmlUrl, this.gitUrl, this.downloadUrl, this.type, this.links, });
 
 factory FileCommitContent.fromJson(Map<String, dynamic> json) { return FileCommitContent(
   name: json['name'] as String?,

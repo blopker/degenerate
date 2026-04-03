@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_subscription_data_invoice_settings.dart';import 'post_payment_links_payment_link_request_subscription_data_metadata.dart';import 'post_payment_links_payment_link_request_subscription_data_trial_period_days.dart';import 'post_payment_links_payment_link_request_subscription_data_trial_settings.dart';import 'trial_settings_config.dart';/// When creating a subscription, the specified configuration data will be used. There must be at least one line item with a recurring price to use `subscription_data`.
-final class PostPaymentLinksPaymentLinkRequestSubscriptionData {const PostPaymentLinksPaymentLinkRequestSubscriptionData({this.invoiceSettings, this.metadata, this.trialPeriodDays, this.trialSettings, });
+@immutable final class PostPaymentLinksPaymentLinkRequestSubscriptionData {const PostPaymentLinksPaymentLinkRequestSubscriptionData({this.invoiceSettings, this.metadata, this.trialPeriodDays, this.trialSettings, });
 
 factory PostPaymentLinksPaymentLinkRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestSubscriptionData(
   invoiceSettings: json['invoice_settings'] != null ? PostPaymentLinksPaymentLinkRequestSubscriptionDataInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,

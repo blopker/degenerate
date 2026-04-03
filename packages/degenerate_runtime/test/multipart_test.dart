@@ -7,7 +7,7 @@ void main() {
   group('ApiMultipartField', () {
     group('text', () {
       test('creates text field via factory', () {
-        final field = ApiMultipartField.text('key', 'value');
+        const field = ApiMultipartField.text('key', 'value');
         expect(field, isA<ApiMultipartTextField>());
         expect(field.name, 'key');
         expect((field as ApiMultipartTextField).value, 'value');

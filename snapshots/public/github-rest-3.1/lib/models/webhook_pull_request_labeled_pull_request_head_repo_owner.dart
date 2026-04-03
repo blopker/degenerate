@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestLabeledPullRequestHeadRepoOwnerType {const WebhookPullRequestLabeledPullRequestHeadRepoOwnerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestLabeledPullRequestHeadRepoOwnerType {const WebhookPullRequestLabeledPullRequestHeadRepoOwnerType._(this.value);
 
 factory WebhookPullRequestLabeledPullRequestHeadRepoOwnerType.fromJson(String json) { return switch (json) {
   'Bot' => bot,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestLabeledPullRequestHeadRepoOwnerType($value)'; } 
  }
-final class WebhookPullRequestLabeledPullRequestHeadRepoOwner {const WebhookPullRequestLabeledPullRequestHeadRepoOwner({this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, required this.id, required this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+@immutable final class WebhookPullRequestLabeledPullRequestHeadRepoOwner {const WebhookPullRequestLabeledPullRequestHeadRepoOwner({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
 factory WebhookPullRequestLabeledPullRequestHeadRepoOwner.fromJson(Map<String, dynamic> json) { return WebhookPullRequestLabeledPullRequestHeadRepoOwner(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,

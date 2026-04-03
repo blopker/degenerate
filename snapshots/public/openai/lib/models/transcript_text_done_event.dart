@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transcript_text_done_event_logprobs.dart';import 'transcript_text_usage_tokens.dart';/// The type of the event. Always `transcript.text.done`.
 /// 
-final class TranscriptTextDoneEventType {const TranscriptTextDoneEventType._(this.value);
+@immutable final class TranscriptTextDoneEventType {const TranscriptTextDoneEventType._(this.value);
 
 factory TranscriptTextDoneEventType.fromJson(String json) { return switch (json) {
   'transcript.text.done' => transcriptTextDone,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TranscriptTextDoneEventType($value)'; } 
  }
 /// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
-final class TranscriptTextDoneEvent {const TranscriptTextDoneEvent({required this.type, required this.text, this.logprobs, this.usage, });
+@immutable final class TranscriptTextDoneEvent {const TranscriptTextDoneEvent({required this.type, required this.text, this.logprobs, this.usage, });
 
 factory TranscriptTextDoneEvent.fromJson(Map<String, dynamic> json) { return TranscriptTextDoneEvent(
   type: TranscriptTextDoneEventType.fromJson(json['type'] as String),

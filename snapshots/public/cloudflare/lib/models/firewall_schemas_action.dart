@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The action to apply to a matched request. The `log` action is only available on an Enterprise plan.
-final class FirewallSchemasAction {const FirewallSchemasAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to apply to a matched request. The `log` action is only available on an Enterprise plan.
+@immutable final class FirewallSchemasAction {const FirewallSchemasAction._(this.value);
 
 factory FirewallSchemasAction.fromJson(String json) { return switch (json) {
   'block' => block,

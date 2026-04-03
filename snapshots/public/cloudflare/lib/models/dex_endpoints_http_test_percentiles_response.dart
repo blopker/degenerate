@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'digital_experience_monitoring_http_details_percentiles_response.dart';final class DexEndpointsHttpTestPercentilesResponse {const DexEndpointsHttpTestPercentilesResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_http_details_percentiles_response.dart';@immutable final class DexEndpointsHttpTestPercentilesResponse {const DexEndpointsHttpTestPercentilesResponse({this.result});
 
 factory DexEndpointsHttpTestPercentilesResponse.fromJson(Map<String, dynamic> json) { return DexEndpointsHttpTestPercentilesResponse(
   result: json['result'] != null ? DigitalExperienceMonitoringHttpDetailsPercentilesResponse.fromJson(json['result'] as Map<String, dynamic>) : null,

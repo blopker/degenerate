@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Infrastructure type of this ASN.
-final class IntelSchemasIpBelongsToRefType {const IntelSchemasIpBelongsToRefType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Infrastructure type of this ASN.
+@immutable final class IntelSchemasIpBelongsToRefType {const IntelSchemasIpBelongsToRefType._(this.value);
 
 factory IntelSchemasIpBelongsToRefType.fromJson(String json) { return switch (json) {
   'hosting_provider' => hostingProvider,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IntelSchemasIpBelongsToRefType($value)'; } 
  }
 /// Specifies a reference to the autonomous systems (AS) that the IP address belongs to.
-final class IntelSchemasIpBelongsToRef {const IntelSchemasIpBelongsToRef({this.country, this.description, this.id, this.type, this.value, });
+@immutable final class IntelSchemasIpBelongsToRef {const IntelSchemasIpBelongsToRef({this.country, this.description, this.id, this.type, this.value, });
 
 factory IntelSchemasIpBelongsToRef.fromJson(Map<String, dynamic> json) { return IntelSchemasIpBelongsToRef(
   country: json['country'] as String?,

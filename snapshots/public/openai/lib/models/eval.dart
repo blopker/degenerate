@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'eval_custom_data_source_config.dart';import 'eval_data_source_config.dart';import 'eval_grader_python.dart';import 'eval_grader_score_model.dart';import 'eval_grader_text_similarity.dart';import 'eval_logs_data_source_config.dart';import 'eval_stored_completions_data_source_config.dart';import 'eval_testing_criteria.dart';import 'grader_label_model.dart';import 'grader_string_check.dart';/// The object type.
-final class EvalObject {const EvalObject._(this.value);
+@immutable final class EvalObject {const EvalObject._(this.value);
 
 factory EvalObject.fromJson(String json) { return switch (json) {
   'eval' => eval,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 ///  - See how well my chatbot handles customer support
 ///  - Check if o4-mini is better at my usecase than gpt-4o
 /// 
-final class Eval {const Eval({this.object = EvalObject.eval, required this.id, required this.name, required this.dataSourceConfig, required this.testingCriteria, required this.createdAt, required this.metadata, });
+@immutable final class Eval {const Eval({required this.id, required this.name, required this.dataSourceConfig, required this.testingCriteria, required this.createdAt, required this.metadata, this.object = EvalObject.eval, });
 
 factory Eval.fromJson(Map<String, dynamic> json) { return Eval(
   object: EvalObject.fromJson(json['object'] as String),

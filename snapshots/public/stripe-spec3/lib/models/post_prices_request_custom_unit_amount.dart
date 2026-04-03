@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links.
-final class PostPricesRequestCustomUnitAmount {const PostPricesRequestCustomUnitAmount({required this.enabled, this.maximum, this.minimum, this.preset, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links.
+@immutable final class PostPricesRequestCustomUnitAmount {const PostPricesRequestCustomUnitAmount({required this.enabled, this.maximum, this.minimum, this.preset, });
 
 factory PostPricesRequestCustomUnitAmount.fromJson(Map<String, dynamic> json) { return PostPricesRequestCustomUnitAmount(
   enabled: json['enabled'] as bool,

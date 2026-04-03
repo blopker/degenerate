@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hook_response.dart';import 'webhook_config.dart';/// Webhooks for repositories.
-final class Hook {const Hook({required this.type, required this.id, required this.name, required this.active, required this.events, required this.config, required this.updatedAt, required this.createdAt, required this.url, required this.testUrl, required this.pingUrl, this.deliveriesUrl, required this.lastResponse, });
+@immutable final class Hook {const Hook({required this.type, required this.id, required this.name, required this.active, required this.events, required this.config, required this.updatedAt, required this.createdAt, required this.url, required this.testUrl, required this.pingUrl, required this.lastResponse, this.deliveriesUrl, });
 
 factory Hook.fromJson(Map<String, dynamic> json) { return Hook(
   type: json['type'] as String,
@@ -30,7 +30,7 @@ final String name;
 /// Determines whether the hook is actually triggered on pushes.
 final bool active;
 
-/// Determines what events the hook is triggered for. Default: ['push'].
+/// Determines what events the hook is triggered for. Default: `['push']`.
 final List<String> events;
 
 final WebhookConfig config;

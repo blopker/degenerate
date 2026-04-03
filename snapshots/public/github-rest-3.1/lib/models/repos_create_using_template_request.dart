@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposCreateUsingTemplateRequest {const ReposCreateUsingTemplateRequest({this.owner, required this.name, this.description, this.includeAllBranches = false, this.private = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposCreateUsingTemplateRequest {const ReposCreateUsingTemplateRequest({required this.name, this.owner, this.description, this.includeAllBranches = false, this.private = false, });
 
 factory ReposCreateUsingTemplateRequest.fromJson(Map<String, dynamic> json) { return ReposCreateUsingTemplateRequest(
   owner: json['owner'] as String?,

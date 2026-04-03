@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreference {const PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreference {const PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

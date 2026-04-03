@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_changes8.dart';import 'webhooks_sponsorship.dart';final class WebhookSponsorshipTierChangedAction {const WebhookSponsorshipTierChangedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_changes8.dart';import 'webhooks_sponsorship.dart';@immutable final class WebhookSponsorshipTierChangedAction {const WebhookSponsorshipTierChangedAction._(this.value);
 
 factory WebhookSponsorshipTierChangedAction.fromJson(String json) { return switch (json) {
   'tier_changed' => tierChanged,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookSponsorshipTierChangedAction($value)'; } 
  }
-final class WebhookSponsorshipTierChanged {const WebhookSponsorshipTierChanged({required this.action, required this.changes, this.enterprise, this.installation, this.organization, this.repository, required this.sender, required this.sponsorship, });
+@immutable final class WebhookSponsorshipTierChanged {const WebhookSponsorshipTierChanged({required this.action, required this.changes, required this.sender, required this.sponsorship, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookSponsorshipTierChanged.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipTierChanged(
   action: WebhookSponsorshipTierChangedAction.fromJson(json['action'] as String),

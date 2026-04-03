@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'legal_entity_dob.dart';import 'legal_entity_japan_address.dart';import 'legal_entity_person_verification.dart';import 'person_additional_tos_acceptances.dart';import 'person_future_requirements.dart';import 'person_relationship.dart';import 'person_requirements.dart';import 'person_us_cfpb_data.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class PersonObject {const PersonObject._(this.value);
+@immutable final class PersonObject {const PersonObject._(this.value);
 
 factory PersonObject.fromJson(String json) { return switch (json) {
   'person' => person,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PersonObject($value)'; } 
  }
 /// Indicates if the person or any of their representatives, family members, or other closely related persons, declares that they hold or have held an important public job or function, in any jurisdiction.
-final class PersonPoliticalExposure {const PersonPoliticalExposure._(this.value);
+@immutable final class PersonPoliticalExposure {const PersonPoliticalExposure._(this.value);
 
 factory PersonPoliticalExposure.fromJson(String json) { return switch (json) {
   'existing' => existing,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A platform can only access a subset of data in a person for an account where [account.controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`, which includes Standard and Express accounts, after creating an Account Link or Account Session to start Connect onboarding.
 /// 
 /// See the [Standard onboarding](/connect/standard-accounts) or [Express onboarding](/connect/express-accounts) documentation for information about prefilling information and account onboarding steps. Learn more about [handling identity verification with the API](/connect/handling-api-verification#person-information).
-final class Person {const Person({required this.account, this.additionalTosAcceptances, this.address, this.addressKana, this.addressKanji, required this.created, this.dob, this.email, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.futureRequirements, this.gender, required this.id, this.idNumberProvided, this.idNumberSecondaryProvided, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.nationality, required this.object, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.requirements, this.ssnLast4Provided, this.usCfpbData, this.verification, });
+@immutable final class Person {const Person({required this.account, required this.created, required this.id, required this.object, this.additionalTosAcceptances, this.address, this.addressKana, this.addressKanji, this.dob, this.email, this.firstName, this.firstNameKana, this.firstNameKanji, this.fullNameAliases, this.futureRequirements, this.gender, this.idNumberProvided, this.idNumberSecondaryProvided, this.lastName, this.lastNameKana, this.lastNameKanji, this.maidenName, this.metadata, this.nationality, this.phone, this.politicalExposure, this.registeredAddress, this.relationship, this.requirements, this.ssnLast4Provided, this.usCfpbData, this.verification, });
 
 factory Person.fromJson(Map<String, dynamic> json) { return Person(
   account: json['account'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_treasury_outbound_payments_request_destination_payment_method_data_billing_details.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_data_us_bank_account.dart';final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_data_billing_details.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_data_us_bank_account.dart';@immutable final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType._(this.value);
 
 factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType.fromJson(String json) { return switch (json) {
   'financial_account' => financialAccount,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType($value)'; } 
  }
 /// Hash used to generate the PaymentMethod to be used for this OutboundPayment. Exclusive with `destination_payment_method`.
-final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData({this.billingDetails, this.financialAccount, this.metadata, required this.type, this.usBankAccount, });
+@immutable final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData({required this.type, this.billingDetails, this.financialAccount, this.metadata, this.usBankAccount, });
 
 factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData(
   billingDetails: json['billing_details'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,

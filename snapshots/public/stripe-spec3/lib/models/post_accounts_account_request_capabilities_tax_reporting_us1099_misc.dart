@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsAccountRequestCapabilitiesTaxReportingUs1099Misc {const PostAccountsAccountRequestCapabilitiesTaxReportingUs1099Misc({this.requested});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestCapabilitiesTaxReportingUs1099Misc {const PostAccountsAccountRequestCapabilitiesTaxReportingUs1099Misc({this.requested});
 
 factory PostAccountsAccountRequestCapabilitiesTaxReportingUs1099Misc.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCapabilitiesTaxReportingUs1099Misc(
   requested: json['requested'] as bool?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `mcp_list_tools.in_progress`.
-final class RealtimeServerEventMcpListToolsInProgressType {const RealtimeServerEventMcpListToolsInProgressType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `mcp_list_tools.in_progress`.
+@immutable final class RealtimeServerEventMcpListToolsInProgressType {const RealtimeServerEventMcpListToolsInProgressType._(this.value);
 
 factory RealtimeServerEventMcpListToolsInProgressType.fromJson(String json) { return switch (json) {
   'mcp_list_tools.in_progress' => mcpListToolsInProgress,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeServerEventMcpListToolsInProgressType($value)'; } 
  }
 /// Returned when listing MCP tools is in progress for an item.
-final class RealtimeServerEventMcpListToolsInProgress {const RealtimeServerEventMcpListToolsInProgress({required this.eventId, required this.type, required this.itemId, });
+@immutable final class RealtimeServerEventMcpListToolsInProgress {const RealtimeServerEventMcpListToolsInProgress({required this.eventId, required this.type, required this.itemId, });
 
 factory RealtimeServerEventMcpListToolsInProgress.fromJson(Map<String, dynamic> json) { return RealtimeServerEventMcpListToolsInProgress(
   eventId: json['event_id'] as String,

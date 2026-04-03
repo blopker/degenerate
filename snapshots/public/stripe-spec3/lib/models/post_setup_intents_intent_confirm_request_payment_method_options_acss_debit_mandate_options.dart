@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_acss_debit_mandate_options_custom_mandate_url.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_acss_debit_mandate_options_custom_mandate_url.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor.fromJson(String json) { return switch (json) {
   'invoice' => invoice,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule._(this.value);
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule.fromJson(String json) { return switch (json) {
   'combined' => combined,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsTransactionType {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsTransactionType._(this.value);
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsTransactionType {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsTransactionType._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsTransactionType.fromJson(String json) { return switch (json) {
   'business' => business,
@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsTransactionType($value)'; } 
  }
-final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptions {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptions({this.customMandateUrl, this.defaultFor, this.intervalDescription, this.paymentSchedule, this.transactionType, });
+@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptions {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptions({this.customMandateUrl, this.defaultFor, this.intervalDescription, this.paymentSchedule, this.transactionType, });
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptions(
   customMandateUrl: json['custom_mandate_url'] != null ? OneOf2.parse(json['custom_mandate_url'], fromA: (v) => v as String, fromB: (v) => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2.fromJson(v as String),) : null,

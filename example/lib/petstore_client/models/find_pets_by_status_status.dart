@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class FindPetsByStatusStatus {const FindPetsByStatusStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FindPetsByStatusStatus {const FindPetsByStatusStatus._(this.value);
 
 factory FindPetsByStatusStatus.fromJson(String json) { return switch (json) {
   'available' => available,

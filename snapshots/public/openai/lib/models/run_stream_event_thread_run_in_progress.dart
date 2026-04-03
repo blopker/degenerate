@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_object.dart';final class RunStreamEventThreadRunInProgressEvent {const RunStreamEventThreadRunInProgressEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_object.dart';@immutable final class RunStreamEventThreadRunInProgressEvent {const RunStreamEventThreadRunInProgressEvent._(this.value);
 
 factory RunStreamEventThreadRunInProgressEvent.fromJson(String json) { return switch (json) {
   'thread.run.in_progress' => threadRunInProgress,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStreamEventThreadRunInProgressEvent($value)'; } 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.
-final class RunStreamEventThreadRunInProgress {const RunStreamEventThreadRunInProgress({required this.event, required this.data, });
+@immutable final class RunStreamEventThreadRunInProgress {const RunStreamEventThreadRunInProgress({required this.event, required this.data, });
 
 factory RunStreamEventThreadRunInProgress.fromJson(Map<String, dynamic> json) { return RunStreamEventThreadRunInProgress(
   event: RunStreamEventThreadRunInProgressEvent.fromJson(json['event'] as String),

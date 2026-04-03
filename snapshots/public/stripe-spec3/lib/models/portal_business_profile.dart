@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PortalBusinessProfile {const PortalBusinessProfile({this.headline, this.privacyPolicyUrl, this.termsOfServiceUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PortalBusinessProfile {const PortalBusinessProfile({this.headline, this.privacyPolicyUrl, this.termsOfServiceUrl, });
 
 factory PortalBusinessProfile.fromJson(Map<String, dynamic> json) { return PortalBusinessProfile(
   headline: json['headline'] as String?,

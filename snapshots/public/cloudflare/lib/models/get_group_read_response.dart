@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_group_read_response_members.dart';final class GetGroupReadResponse {const GetGroupReadResponse({required this.createdAt, required this.description, required this.members, required this.name, required this.updatedAt, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_group_read_response_members.dart';@immutable final class GetGroupReadResponse {const GetGroupReadResponse({required this.createdAt, required this.description, required this.members, required this.name, required this.updatedAt, required this.uuid, });
 
 factory GetGroupReadResponse.fromJson(Map<String, dynamic> json) { return GetGroupReadResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),

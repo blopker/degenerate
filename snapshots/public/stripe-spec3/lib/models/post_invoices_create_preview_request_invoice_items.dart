@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_invoice_items_discounts.dart';import 'post_invoices_create_preview_request_invoice_items_discounts_variant1.dart';import 'post_invoices_create_preview_request_invoice_items_metadata.dart';import 'post_invoices_create_preview_request_invoice_items_period.dart';import 'post_invoices_create_preview_request_invoice_items_price_data.dart';import 'post_invoices_create_preview_request_invoice_items_tax_code.dart';import 'post_invoices_create_preview_request_invoice_items_tax_rates.dart';final class PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior {const PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_invoice_items_discounts.dart';import 'post_invoices_create_preview_request_invoice_items_discounts_variant1.dart';import 'post_invoices_create_preview_request_invoice_items_metadata.dart';import 'post_invoices_create_preview_request_invoice_items_period.dart';import 'post_invoices_create_preview_request_invoice_items_price_data.dart';import 'post_invoices_create_preview_request_invoice_items_tax_code.dart';import 'post_invoices_create_preview_request_invoice_items_tax_rates.dart';@immutable final class PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior {const PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior._(this.value);
 
 factory PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior($value)'; } 
  }
-final class PostInvoicesCreatePreviewRequestInvoiceItems {const PostInvoicesCreatePreviewRequestInvoiceItems({this.amount, this.currency, this.description, this.discountable, this.discounts, this.invoiceitem, this.metadata, this.period, this.price, this.priceData, this.quantity, this.taxBehavior, this.taxCode, this.taxRates, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostInvoicesCreatePreviewRequestInvoiceItems {const PostInvoicesCreatePreviewRequestInvoiceItems({this.amount, this.currency, this.description, this.discountable, this.discounts, this.invoiceitem, this.metadata, this.period, this.price, this.priceData, this.quantity, this.taxBehavior, this.taxCode, this.taxRates, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostInvoicesCreatePreviewRequestInvoiceItems.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestInvoiceItems(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

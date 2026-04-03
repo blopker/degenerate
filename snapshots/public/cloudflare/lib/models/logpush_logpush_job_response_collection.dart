@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_logpush_job.dart';import 'logpush_messages2.dart';final class LogpushLogpushJobResponseCollection {const LogpushLogpushJobResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_logpush_job.dart';import 'logpush_messages2.dart';@immutable final class LogpushLogpushJobResponseCollection {const LogpushLogpushJobResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 
 factory LogpushLogpushJobResponseCollection.fromJson(Map<String, dynamic> json) { return LogpushLogpushJobResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),

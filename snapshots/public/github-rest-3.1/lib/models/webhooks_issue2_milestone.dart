@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_issue2_milestone_creator.dart';/// The state of the milestone.
-final class WebhooksIssue2MilestoneState {const WebhooksIssue2MilestoneState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_issue2_milestone_creator.dart';/// The state of the milestone.
+@immutable final class WebhooksIssue2MilestoneState {const WebhooksIssue2MilestoneState._(this.value);
 
 factory WebhooksIssue2MilestoneState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksIssue2MilestoneState($value)'; } 
  }
 /// A collection of related issues and pull requests.
-final class WebhooksIssue2Milestone {const WebhooksIssue2Milestone({required this.closedAt, required this.closedIssues, required this.createdAt, required this.creator, required this.description, required this.dueOn, required this.htmlUrl, required this.id, required this.labelsUrl, required this.nodeId, required this.number, required this.openIssues, required this.state, required this.title, required this.updatedAt, required this.url, });
+@immutable final class WebhooksIssue2Milestone {const WebhooksIssue2Milestone({required this.closedAt, required this.closedIssues, required this.createdAt, required this.creator, required this.description, required this.dueOn, required this.htmlUrl, required this.id, required this.labelsUrl, required this.nodeId, required this.number, required this.openIssues, required this.state, required this.title, required this.updatedAt, required this.url, });
 
 factory WebhooksIssue2Milestone.fromJson(Map<String, dynamic> json) { return WebhooksIssue2Milestone(
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,

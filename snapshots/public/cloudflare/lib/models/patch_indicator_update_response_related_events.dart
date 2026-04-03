@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PatchIndicatorUpdateResponseRelatedEvents {const PatchIndicatorUpdateResponseRelatedEvents({required this.datasetId, required this.eventId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchIndicatorUpdateResponseRelatedEvents {const PatchIndicatorUpdateResponseRelatedEvents({required this.datasetId, required this.eventId, });
 
 factory PatchIndicatorUpdateResponseRelatedEvents.fromJson(Map<String, dynamic> json) { return PatchIndicatorUpdateResponseRelatedEvents(
   datasetId: json['datasetId'] as String,

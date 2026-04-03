@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EmailSecurityUpdateDomainResponseResultEmailsProcessed {const EmailSecurityUpdateDomainResponseResultEmailsProcessed({required this.timestamp, required this.totalEmailsProcessed, required this.totalEmailsProcessedPrevious, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityUpdateDomainResponseResultEmailsProcessed {const EmailSecurityUpdateDomainResponseResultEmailsProcessed({required this.timestamp, required this.totalEmailsProcessed, required this.totalEmailsProcessedPrevious, });
 
 factory EmailSecurityUpdateDomainResponseResultEmailsProcessed.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateDomainResponseResultEmailsProcessed(
   timestamp: DateTime.parse(json['timestamp'] as String),

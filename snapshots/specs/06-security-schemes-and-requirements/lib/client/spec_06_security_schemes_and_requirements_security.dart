@@ -7,17 +7,17 @@ final class Spec06SecuritySchemesAndRequirementsSecurity {
   const Spec06SecuritySchemesAndRequirementsSecurity._();
 
   static final securitySchemes = <String, ApiSecurityScheme>{
-    'ApiKeyAuth': ApiSecurityScheme(name: 'ApiKeyAuth', type: ApiSecuritySchemeType.apiKey, scheme: null, bearerFormat: null, parameterName: 'x-api-key', location: ApiKeyLocation.header, openIdConnectUrl: null, flows: []),
-    'HttpBasic': ApiSecurityScheme(name: 'HttpBasic', type: ApiSecuritySchemeType.http, scheme: 'basic', bearerFormat: null, parameterName: null, location: null, openIdConnectUrl: null, flows: []),
-    'HttpBearer': ApiSecurityScheme(name: 'HttpBearer', type: ApiSecuritySchemeType.http, scheme: 'bearer', bearerFormat: 'JWT', parameterName: null, location: null, openIdConnectUrl: null, flows: []),
-    'MutualTLS': ApiSecurityScheme(name: 'MutualTLS', type: ApiSecuritySchemeType.mutualTls, scheme: null, bearerFormat: null, parameterName: null, location: null, openIdConnectUrl: null, flows: []),
-    'OAuth2Auth': ApiSecurityScheme(name: 'OAuth2Auth', type: ApiSecuritySchemeType.oauth2, scheme: null, bearerFormat: null, parameterName: null, location: null, openIdConnectUrl: null, flows: [ApiOAuthFlow(type: ApiOAuthFlowType.implicit, authorizationUrl: 'https://auth.example.com/authorize', tokenUrl: null, refreshUrl: null, deviceAuthorizationUrl: null, scopes: {'read:items': 'Read items'}), ApiOAuthFlow(type: ApiOAuthFlowType.password, authorizationUrl: null, tokenUrl: 'https://auth.example.com/token', refreshUrl: null, deviceAuthorizationUrl: null, scopes: {'write:items': 'Write items'}), ApiOAuthFlow(type: ApiOAuthFlowType.clientCredentials, authorizationUrl: null, tokenUrl: 'https://auth.example.com/token', refreshUrl: null, deviceAuthorizationUrl: null, scopes: {'admin': 'Admin access'}), ApiOAuthFlow(type: ApiOAuthFlowType.authorizationCode, authorizationUrl: 'https://auth.example.com/authorize', tokenUrl: 'https://auth.example.com/token', refreshUrl: 'https://auth.example.com/refresh', deviceAuthorizationUrl: null, scopes: {'read:items': 'Read items', 'write:items': 'Write items'})]),
-    'OpenId': ApiSecurityScheme(name: 'OpenId', type: ApiSecuritySchemeType.openIdConnect, scheme: null, bearerFormat: null, parameterName: null, location: null, openIdConnectUrl: 'https://auth.example.com/.well-known/openid-configuration', flows: []),
+    'ApiKeyAuth': const ApiSecurityScheme(name: 'ApiKeyAuth', type: ApiSecuritySchemeType.apiKey, parameterName: 'x-api-key', location: ApiKeyLocation.header),
+    'HttpBasic': const ApiSecurityScheme(name: 'HttpBasic', type: ApiSecuritySchemeType.http, scheme: 'basic'),
+    'HttpBearer': const ApiSecurityScheme(name: 'HttpBearer', type: ApiSecuritySchemeType.http, scheme: 'bearer', bearerFormat: 'JWT'),
+    'MutualTLS': const ApiSecurityScheme(name: 'MutualTLS', type: ApiSecuritySchemeType.mutualTls),
+    'OAuth2Auth': const ApiSecurityScheme(name: 'OAuth2Auth', type: ApiSecuritySchemeType.oauth2, flows: [ApiOAuthFlow(type: ApiOAuthFlowType.implicit, authorizationUrl: 'https://auth.example.com/authorize', scopes: {'read:items': 'Read items'}), ApiOAuthFlow(type: ApiOAuthFlowType.password, tokenUrl: 'https://auth.example.com/token', scopes: {'write:items': 'Write items'}), ApiOAuthFlow(type: ApiOAuthFlowType.clientCredentials, tokenUrl: 'https://auth.example.com/token', scopes: {'admin': 'Admin access'}), ApiOAuthFlow(type: ApiOAuthFlowType.authorizationCode, authorizationUrl: 'https://auth.example.com/authorize', tokenUrl: 'https://auth.example.com/token', refreshUrl: 'https://auth.example.com/refresh', scopes: {'read:items': 'Read items', 'write:items': 'Write items'})]),
+    'OpenId': const ApiSecurityScheme(name: 'OpenId', type: ApiSecuritySchemeType.openIdConnect, openIdConnectUrl: 'https://auth.example.com/.well-known/openid-configuration'),
   };
 
-  static final globalRequirements = [ApiSecurityRequirement({'ApiKeyAuth': []}), ApiSecurityRequirement({'OAuth2Auth': ['read:items']})];
+  static final globalRequirements = [const ApiSecurityRequirement({'ApiKeyAuth': []}), const ApiSecurityRequirement({'OAuth2Auth': ['read:items']})];
 
-  static final secureReadRequirements = [ApiSecurityRequirement({'HttpBearer': []}), ApiSecurityRequirement({'MutualTLS': []}), ApiSecurityRequirement({'OpenId': []})];
+  static final secureReadRequirements = [const ApiSecurityRequirement({'HttpBearer': []}), const ApiSecurityRequirement({'MutualTLS': []}), const ApiSecurityRequirement({'OpenId': []})];
 
   static ApiConfig applyApiKeyAuth(ApiConfig config, String value) => config.copyWith(defaultHeaders: {...config.defaultHeaders, 'x-api-key': value});
 

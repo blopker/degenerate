@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Settings for the DNS record.
-final class DnsRecordsSettings {const DnsRecordsSettings({this.ipv4Only = false, this.ipv6Only = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings for the DNS record.
+@immutable final class DnsRecordsSettings {const DnsRecordsSettings({this.ipv4Only = false, this.ipv6Only = false, });
 
 factory DnsRecordsSettings.fromJson(Map<String, dynamic> json) { return DnsRecordsSettings(
   ipv4Only: json.containsKey('ipv4_only') ? json['ipv4_only'] as bool : false,

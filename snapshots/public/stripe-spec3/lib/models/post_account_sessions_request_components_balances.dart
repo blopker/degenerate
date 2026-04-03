@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_account_sessions_request_components_balances_features.dart';final class PostAccountSessionsRequestComponentsBalances {const PostAccountSessionsRequestComponentsBalances({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components_balances_features.dart';@immutable final class PostAccountSessionsRequestComponentsBalances {const PostAccountSessionsRequestComponentsBalances({required this.enabled, this.features, });
 
 factory PostAccountSessionsRequestComponentsBalances.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsBalances(
   enabled: json['enabled'] as bool,

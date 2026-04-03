@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'logpush_destination_conf.dart';import 'logpush_ownership_challenge.dart';final class PostZonesZoneIdLogpushOwnershipValidateRequest {const PostZonesZoneIdLogpushOwnershipValidateRequest({required this.destinationConf, required this.ownershipChallenge, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_destination_conf.dart';import 'logpush_ownership_challenge.dart';@immutable final class PostZonesZoneIdLogpushOwnershipValidateRequest {const PostZonesZoneIdLogpushOwnershipValidateRequest({required this.destinationConf, required this.ownershipChallenge, });
 
 factory PostZonesZoneIdLogpushOwnershipValidateRequest.fromJson(Map<String, dynamic> json) { return PostZonesZoneIdLogpushOwnershipValidateRequest(
   destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),

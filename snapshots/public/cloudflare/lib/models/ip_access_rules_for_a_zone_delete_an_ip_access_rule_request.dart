@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The level to attempt to delete similar rules defined for other zones with the same owner. The default value is `none`, which will only delete the current rule. Using `basic` will delete rules that match the same action (mode) and configuration, while using `aggressive` will delete rules that match the same configuration.
-final class IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade {const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level to attempt to delete similar rules defined for other zones with the same owner. The default value is `none`, which will only delete the current rule. Using `basic` will delete rules that match the same action (mode) and configuration, while using `aggressive` will delete rules that match the same configuration.
+@immutable final class IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade {const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade._(this.value);
 
 factory IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade($value)'; } 
  }
-final class IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest {const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest({this.cascade = IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade.none});
+@immutable final class IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest {const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest({this.cascade = IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade.none});
 
 factory IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest.fromJson(Map<String, dynamic> json) { return IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest(
   cascade: json.containsKey('cascade') ? IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade.fromJson(json['cascade'] as String) : IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade.none,

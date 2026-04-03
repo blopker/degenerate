@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'container_network_policy_allowlist_param.dart';import 'container_network_policy_disabled_param.dart';/// Network access policy for the container.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'container_network_policy_allowlist_param.dart';import 'container_network_policy_disabled_param.dart';/// Network access policy for the container.
 sealed class AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicy();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -16,7 +16,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AutoCodeInterpreterToolParamNetworkPolicy$Unknown; } 
  }
-final class AutoCodeInterpreterToolParamNetworkPolicyDisabled extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicyDisabled(this.containerNetworkPolicyDisabledParam);
+@immutable final class AutoCodeInterpreterToolParamNetworkPolicyDisabled extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicyDisabled(this.containerNetworkPolicyDisabledParam);
 
 factory AutoCodeInterpreterToolParamNetworkPolicyDisabled.fromJson(Map<String, dynamic> json) { return AutoCodeInterpreterToolParamNetworkPolicyDisabled(ContainerNetworkPolicyDisabledParam.fromJson(json)); }
 
@@ -29,7 +29,7 @@ final ContainerNetworkPolicyDisabledParam containerNetworkPolicyDisabledParam;
 @override int get hashCode { return containerNetworkPolicyDisabledParam.hashCode; } 
 @override String toString() { return 'AutoCodeInterpreterToolParamNetworkPolicyDisabled(containerNetworkPolicyDisabledParam: $containerNetworkPolicyDisabledParam)'; } 
  }
-final class AutoCodeInterpreterToolParamNetworkPolicyAllowlist extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicyAllowlist(this.containerNetworkPolicyAllowlistParam);
+@immutable final class AutoCodeInterpreterToolParamNetworkPolicyAllowlist extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicyAllowlist(this.containerNetworkPolicyAllowlistParam);
 
 factory AutoCodeInterpreterToolParamNetworkPolicyAllowlist.fromJson(Map<String, dynamic> json) { return AutoCodeInterpreterToolParamNetworkPolicyAllowlist(ContainerNetworkPolicyAllowlistParam.fromJson(json)); }
 
@@ -44,7 +44,7 @@ final ContainerNetworkPolicyAllowlistParam containerNetworkPolicyAllowlistParam;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class AutoCodeInterpreterToolParamNetworkPolicy$Unknown extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicy$Unknown(this.json);
+@immutable final class AutoCodeInterpreterToolParamNetworkPolicy$Unknown extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicy$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_calculations_request_customer_details_address.dart';import 'post_tax_calculations_request_customer_details_tax_ids.dart';final class PostTaxCalculationsRequestCustomerDetailsAddressSource {const PostTaxCalculationsRequestCustomerDetailsAddressSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_calculations_request_customer_details_address.dart';import 'post_tax_calculations_request_customer_details_tax_ids.dart';@immutable final class PostTaxCalculationsRequestCustomerDetailsAddressSource {const PostTaxCalculationsRequestCustomerDetailsAddressSource._(this.value);
 
 factory PostTaxCalculationsRequestCustomerDetailsAddressSource.fromJson(String json) { return switch (json) {
   'billing' => billing,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxCalculationsRequestCustomerDetailsAddressSource($value)'; } 
  }
-final class PostTaxCalculationsRequestCustomerDetailsTaxabilityOverride {const PostTaxCalculationsRequestCustomerDetailsTaxabilityOverride._(this.value);
+@immutable final class PostTaxCalculationsRequestCustomerDetailsTaxabilityOverride {const PostTaxCalculationsRequestCustomerDetailsTaxabilityOverride._(this.value);
 
 factory PostTaxCalculationsRequestCustomerDetailsTaxabilityOverride.fromJson(String json) { return switch (json) {
   'customer_exempt' => customerExempt,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTaxCalculationsRequestCustomerDetailsTaxabilityOverride($value)'; } 
  }
 /// Details about the customer, including address and tax IDs.
-final class PostTaxCalculationsRequestCustomerDetails {const PostTaxCalculationsRequestCustomerDetails({this.address, this.addressSource, this.ipAddress, this.taxIds, this.taxabilityOverride, });
+@immutable final class PostTaxCalculationsRequestCustomerDetails {const PostTaxCalculationsRequestCustomerDetails({this.address, this.addressSource, this.ipAddress, this.taxIds, this.taxabilityOverride, });
 
 factory PostTaxCalculationsRequestCustomerDetails.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestCustomerDetails(
   address: json['address'] != null ? PostTaxCalculationsRequestCustomerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,

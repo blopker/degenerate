@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AaaAuditLogs2ActorContext {const AaaAuditLogs2ActorContext._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AaaAuditLogs2ActorContext {const AaaAuditLogs2ActorContext._(this.value);
 
 factory AaaAuditLogs2ActorContext.fromJson(String json) { return switch (json) {
   'api_key' => apiKey,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AaaAuditLogs2ActorContext($value)'; } 
  }
 /// The type of actor.
-final class AaaAuditLogs2ActorType {const AaaAuditLogs2ActorType._(this.value);
+@immutable final class AaaAuditLogs2ActorType {const AaaAuditLogs2ActorType._(this.value);
 
 factory AaaAuditLogs2ActorType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AaaAuditLogs2ActorType($value)'; } 
  }
 /// Provides details about the actor who performed the action.
-final class AaaAuditLogs2Actor {const AaaAuditLogs2Actor({this.context, this.email, this.id, this.ipAddress, this.tokenId, this.tokenName, this.type, });
+@immutable final class AaaAuditLogs2Actor {const AaaAuditLogs2Actor({this.context, this.email, this.id, this.ipAddress, this.tokenId, this.tokenName, this.type, });
 
 factory AaaAuditLogs2Actor.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2Actor(
   context: json['context'] != null ? AaaAuditLogs2ActorContext.fromJson(json['context'] as String) : null,

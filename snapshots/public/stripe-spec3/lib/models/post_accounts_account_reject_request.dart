@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsAccountRejectRequest {const PostAccountsAccountRejectRequest({this.expand, required this.reason, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRejectRequest {const PostAccountsAccountRejectRequest({required this.reason, this.expand, });
 
 factory PostAccountsAccountRejectRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRejectRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

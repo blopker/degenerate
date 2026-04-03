@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Sorting order by upload time
-final class CloudflareImagesListImagesSortOrder {const CloudflareImagesListImagesSortOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sorting order by upload time
+@immutable final class CloudflareImagesListImagesSortOrder {const CloudflareImagesListImagesSortOrder._(this.value);
 
 factory CloudflareImagesListImagesSortOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,

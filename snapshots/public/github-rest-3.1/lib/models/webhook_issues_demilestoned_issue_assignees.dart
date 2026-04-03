@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookIssuesDemilestonedIssueAssigneesType {const WebhookIssuesDemilestonedIssueAssigneesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssuesDemilestonedIssueAssigneesType {const WebhookIssuesDemilestonedIssueAssigneesType._(this.value);
 
 factory WebhookIssuesDemilestonedIssueAssigneesType.fromJson(String json) { return switch (json) {
   'Bot' => bot,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookIssuesDemilestonedIssueAssigneesType($value)'; } 
  }
-final class WebhookIssuesDemilestonedIssueAssignees {const WebhookIssuesDemilestonedIssueAssignees({this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, required this.id, required this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
+@immutable final class WebhookIssuesDemilestonedIssueAssignees {const WebhookIssuesDemilestonedIssueAssignees({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
 
 factory WebhookIssuesDemilestonedIssueAssignees.fromJson(Map<String, dynamic> json) { return WebhookIssuesDemilestonedIssueAssignees(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,

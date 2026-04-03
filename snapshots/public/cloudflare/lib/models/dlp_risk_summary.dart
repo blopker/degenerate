@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_user_risk_info.dart';final class DlpRiskSummary {const DlpRiskSummary({required this.users});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_user_risk_info.dart';@immutable final class DlpRiskSummary {const DlpRiskSummary({required this.users});
 
 factory DlpRiskSummary.fromJson(Map<String, dynamic> json) { return DlpRiskSummary(
   users: (json['users'] as List<dynamic>).map((e) => DlpUserRiskInfo.fromJson(e as Map<String, dynamic>)).toList(),

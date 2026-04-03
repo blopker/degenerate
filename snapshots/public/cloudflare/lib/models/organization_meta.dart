@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_flags.dart';final class OrganizationMeta {const OrganizationMeta({this.flags, this.managedBy, this.additionalProperties = const {}, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'organization_flags.dart';@immutable final class OrganizationMeta {const OrganizationMeta({this.flags, this.managedBy, this.additionalProperties = const {}, });
 
 factory OrganizationMeta.fromJson(Map<String, dynamic> json) { return OrganizationMeta(
   flags: json['flags'] != null ? OrganizationFlags.fromJson(json['flags'] as Map<String, dynamic>) : null,
   managedBy: json['managed_by'] as String?,
-  additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'flags', 'managed_by'}.contains(e.key)).map((e) => MapEntry(e.key, (e.value as Map<String, dynamic>).map((k, v) => MapEntry(k, v))))),
+  additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'flags', 'managed_by'}.contains(e.key)).map((e) => MapEntry(e.key, e.value as Map<String, dynamic>))),
 ); }
 
 final OrganizationFlags? flags;
@@ -17,7 +17,7 @@ final Map<String,Map<String,dynamic>> additionalProperties;
 Map<String, dynamic> toJson() { return {
   if (flags != null) 'flags': flags?.toJson(),
   'managed_by': ?managedBy,
-  ...additionalProperties.map((k, v) => MapEntry(k, v)),
+  ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'flags', 'managed_by'}.contains(key)); } 
 OrganizationMeta copyWith({OrganizationFlags Function()? flags, String Function()? managedBy, Map<String, Map<String, dynamic>>? additionalProperties, }) { return OrganizationMeta(

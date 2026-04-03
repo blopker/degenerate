@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._(this.value);
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory.fromJson(String json) { return switch (json) {
   'ac_refrigeration_repair' => acRefrigerationRepair,
@@ -901,7 +901,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory($value)'; } 
  }
 /// Details about the seller (grocery store, e-commerce website, etc.) where the card authorization happened.
-final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData({this.category, this.city, this.country, this.name, this.networkId, this.postalCode, this.state, this.terminalId, this.url, });
+@immutable final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData({this.category, this.city, this.country, this.name, this.networkId, this.postalCode, this.state, this.terminalId, this.url, });
 
 factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData(
   category: json['category'] != null ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory.fromJson(json['category'] as String) : null,

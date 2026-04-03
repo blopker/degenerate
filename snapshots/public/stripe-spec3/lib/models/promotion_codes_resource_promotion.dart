@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coupon.dart';import 'promotion_codes_resource_promotion_coupon.dart';/// The type of promotion.
-final class PromotionCodesResourcePromotionType {const PromotionCodesResourcePromotionType._(this.value);
+@immutable final class PromotionCodesResourcePromotionType {const PromotionCodesResourcePromotionType._(this.value);
 
 factory PromotionCodesResourcePromotionType.fromJson(String json) { return switch (json) {
   'coupon' => coupon,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PromotionCodesResourcePromotionType($value)'; } 
  }
 /// 
-final class PromotionCodesResourcePromotion {const PromotionCodesResourcePromotion({this.coupon, required this.type, });
+@immutable final class PromotionCodesResourcePromotion {const PromotionCodesResourcePromotion({required this.type, this.coupon, });
 
 factory PromotionCodesResourcePromotion.fromJson(Map<String, dynamic> json) { return PromotionCodesResourcePromotion(
   coupon: json['coupon'] != null ? OneOf2.parse(json['coupon'], fromA: (v) => v as String, fromB: (v) => Coupon.fromJson(v as Map<String, dynamic>),) : null,

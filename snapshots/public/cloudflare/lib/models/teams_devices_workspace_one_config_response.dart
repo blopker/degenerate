@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The Workspace One Config Response.
-final class TeamsDevicesWorkspaceOneConfigResponse {const TeamsDevicesWorkspaceOneConfigResponse({required this.apiUrl, required this.authUrl, required this.clientId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Workspace One Config Response.
+@immutable final class TeamsDevicesWorkspaceOneConfigResponse {const TeamsDevicesWorkspaceOneConfigResponse({required this.apiUrl, required this.authUrl, required this.clientId, });
 
 factory TeamsDevicesWorkspaceOneConfigResponse.fromJson(Map<String, dynamic> json) { return TeamsDevicesWorkspaceOneConfigResponse(
   apiUrl: json['api_url'] as String,

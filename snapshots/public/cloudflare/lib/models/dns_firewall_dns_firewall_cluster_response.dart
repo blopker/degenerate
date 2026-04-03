@@ -7,7 +7,7 @@ factory DnsFirewallModifiedOn.fromJson(String json) => DnsFirewallModifiedOn(Dat
 String toJson() => value.toIso8601String();
 
 }
-final class DnsFirewallDnsFirewallClusterResponse {const DnsFirewallDnsFirewallClusterResponse({this.attackMitigation, required this.deprecateAnyRequests, required this.ecsFallback, required this.maximumCacheTtl, required this.minimumCacheTtl, required this.name, required this.negativeCacheTtl, required this.ratelimit, required this.retries, required this.upstreamIps, required this.dnsFirewallIps, required this.id, required this.modifiedOn, });
+@immutable final class DnsFirewallDnsFirewallClusterResponse {const DnsFirewallDnsFirewallClusterResponse({required this.deprecateAnyRequests, required this.ecsFallback, required this.maximumCacheTtl, required this.minimumCacheTtl, required this.name, required this.negativeCacheTtl, required this.ratelimit, required this.retries, required this.upstreamIps, required this.dnsFirewallIps, required this.id, required this.modifiedOn, this.attackMitigation, });
 
 factory DnsFirewallDnsFirewallClusterResponse.fromJson(Map<String, dynamic> json) { return DnsFirewallDnsFirewallClusterResponse(
   attackMitigation: json['attack_mitigation'] != null ? DnsFirewallAttackMitigation.fromJson(json['attack_mitigation'] as Map<String, dynamic>) : null,

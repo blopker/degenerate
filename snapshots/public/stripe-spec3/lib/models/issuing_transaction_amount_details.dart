@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class IssuingTransactionAmountDetails {const IssuingTransactionAmountDetails({this.atmFee, this.cashbackAmount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class IssuingTransactionAmountDetails {const IssuingTransactionAmountDetails({this.atmFee, this.cashbackAmount, });
 
 factory IssuingTransactionAmountDetails.fromJson(Map<String, dynamic> json) { return IssuingTransactionAmountDetails(
   atmFee: json['atm_fee'] != null ? (json['atm_fee'] as num).toInt() : null,

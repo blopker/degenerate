@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_effective_date.dart';import 'webhooks_sponsorship.dart';final class WebhookSponsorshipPendingCancellationAction {const WebhookSponsorshipPendingCancellationAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_effective_date.dart';import 'webhooks_sponsorship.dart';@immutable final class WebhookSponsorshipPendingCancellationAction {const WebhookSponsorshipPendingCancellationAction._(this.value);
 
 factory WebhookSponsorshipPendingCancellationAction.fromJson(String json) { return switch (json) {
   'pending_cancellation' => pendingCancellation,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookSponsorshipPendingCancellationAction($value)'; } 
  }
-final class WebhookSponsorshipPendingCancellation {const WebhookSponsorshipPendingCancellation({required this.action, this.effectiveDate, this.enterprise, this.installation, this.organization, this.repository, required this.sender, required this.sponsorship, });
+@immutable final class WebhookSponsorshipPendingCancellation {const WebhookSponsorshipPendingCancellation({required this.action, required this.sender, required this.sponsorship, this.effectiveDate, this.enterprise, this.installation, this.organization, this.repository, });
 
 factory WebhookSponsorshipPendingCancellation.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipPendingCancellation(
   action: WebhookSponsorshipPendingCancellationAction.fromJson(json['action'] as String),

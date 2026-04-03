@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_links_request_name_collection_business.dart';import 'post_payment_links_request_name_collection_individual.dart';/// Controls settings applied for collecting the customer's name.
-final class PostPaymentLinksRequestNameCollection {const PostPaymentLinksRequestNameCollection({this.business, this.individual, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_name_collection_business.dart';import 'post_payment_links_request_name_collection_individual.dart';/// Controls settings applied for collecting the customer's name.
+@immutable final class PostPaymentLinksRequestNameCollection {const PostPaymentLinksRequestNameCollection({this.business, this.individual, });
 
 factory PostPaymentLinksRequestNameCollection.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestNameCollection(
   business: json['business'] != null ? PostPaymentLinksRequestNameCollectionBusiness.fromJson(json['business'] as Map<String, dynamic>) : null,

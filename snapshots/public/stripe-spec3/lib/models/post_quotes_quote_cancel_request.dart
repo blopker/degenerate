@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostQuotesQuoteCancelRequest {const PostQuotesQuoteCancelRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostQuotesQuoteCancelRequest {const PostQuotesQuoteCancelRequest({this.expand});
 
 factory PostQuotesQuoteCancelRequest.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteCancelRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

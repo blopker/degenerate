@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_stats_ip_stats_asn.dart';import 'urlscanner_get_scan_response2_stats_ip_stats_geoip.dart';final class UrlscannerGetScanResponse2StatsIpStats {const UrlscannerGetScanResponse2StatsIpStats({required this.asn, this.count, required this.countries, required this.domains, required this.encodedSize, required this.geoip, required this.index, required this.ip, required this.ipv6, required this.redirects, required this.requests, required this.size, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_stats_ip_stats_asn.dart';import 'urlscanner_get_scan_response2_stats_ip_stats_geoip.dart';@immutable final class UrlscannerGetScanResponse2StatsIpStats {const UrlscannerGetScanResponse2StatsIpStats({required this.asn, required this.countries, required this.domains, required this.encodedSize, required this.geoip, required this.index, required this.ip, required this.ipv6, required this.redirects, required this.requests, required this.size, this.count, });
 
 factory UrlscannerGetScanResponse2StatsIpStats.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2StatsIpStats(
   asn: UrlscannerGetScanResponse2StatsIpStatsAsn.fromJson(json['asn'] as Map<String, dynamic>),

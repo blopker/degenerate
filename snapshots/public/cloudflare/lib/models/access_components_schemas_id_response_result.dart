@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_uuid.dart';final class AccessComponentsSchemasIdResponseResult {const AccessComponentsSchemasIdResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_uuid.dart';@immutable final class AccessComponentsSchemasIdResponseResult {const AccessComponentsSchemasIdResponseResult({this.id});
 
 factory AccessComponentsSchemasIdResponseResult.fromJson(Map<String, dynamic> json) { return AccessComponentsSchemasIdResponseResult(
   id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,

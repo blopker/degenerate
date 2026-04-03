@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_tools_custom_custom_format.dart';import 'prompt43_tools_custom_custom_format_grammar.dart';import 'prompt43_tools_custom_custom_format_text.dart';final class Prompt43ToolsCustomCustom {const Prompt43ToolsCustomCustom({this.description, this.format, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_tools_custom_custom_format.dart';import 'prompt43_tools_custom_custom_format_grammar.dart';import 'prompt43_tools_custom_custom_format_text.dart';@immutable final class Prompt43ToolsCustomCustom {const Prompt43ToolsCustomCustom({required this.name, this.description, this.format, });
 
 factory Prompt43ToolsCustomCustom.fromJson(Map<String, dynamic> json) { return Prompt43ToolsCustomCustom(
   description: json['description'] as String?,

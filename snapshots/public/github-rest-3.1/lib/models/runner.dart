@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'runner_label.dart';/// A self hosted runner
-final class Runner {const Runner({required this.id, this.runnerGroupId, required this.name, required this.os, required this.status, required this.busy, required this.labels, this.ephemeral, });
+@immutable final class Runner {const Runner({required this.id, required this.name, required this.os, required this.status, required this.busy, required this.labels, this.runnerGroupId, this.ephemeral, });
 
 factory Runner.fromJson(Map<String, dynamic> json) { return Runner(
   id: (json['id'] as num).toInt(),

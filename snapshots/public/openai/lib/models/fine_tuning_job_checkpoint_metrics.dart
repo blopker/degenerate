@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Metrics at the step number during the fine-tuning job.
-final class FineTuningJobCheckpointMetrics {const FineTuningJobCheckpointMetrics({this.step, this.trainLoss, this.trainMeanTokenAccuracy, this.validLoss, this.validMeanTokenAccuracy, this.fullValidLoss, this.fullValidMeanTokenAccuracy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Metrics at the step number during the fine-tuning job.
+@immutable final class FineTuningJobCheckpointMetrics {const FineTuningJobCheckpointMetrics({this.step, this.trainLoss, this.trainMeanTokenAccuracy, this.validLoss, this.validMeanTokenAccuracy, this.fullValidLoss, this.fullValidMeanTokenAccuracy, });
 
 factory FineTuningJobCheckpointMetrics.fromJson(Map<String, dynamic> json) { return FineTuningJobCheckpointMetrics(
   step: json['step'] != null ? (json['step'] as num).toDouble() : null,

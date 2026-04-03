@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_ai_get_model_schema_response_result_input.dart';import 'workers_ai_get_model_schema_response_result_output.dart';final class WorkersAiGetModelSchemaResponseResult {const WorkersAiGetModelSchemaResponseResult({required this.input, required this.output, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_get_model_schema_response_result_input.dart';import 'workers_ai_get_model_schema_response_result_output.dart';@immutable final class WorkersAiGetModelSchemaResponseResult {const WorkersAiGetModelSchemaResponseResult({required this.input, required this.output, });
 
 factory WorkersAiGetModelSchemaResponseResult.fromJson(Map<String, dynamic> json) { return WorkersAiGetModelSchemaResponseResult(
   input: WorkersAiGetModelSchemaResponseResultInput.fromJson(json['input'] as Map<String, dynamic>),

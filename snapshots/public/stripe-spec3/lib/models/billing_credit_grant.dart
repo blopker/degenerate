@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grant_customer.dart';import 'billing_credit_grant_test_clock.dart';import 'billing_credit_grants_resource_amount.dart';import 'billing_credit_grants_resource_applicability_config.dart';import 'customer.dart';import 'deleted_customer.dart';import 'test_helpers_test_clock.dart';/// The category of this credit grant. This is for tracking purposes and isn't displayed to the customer.
-final class BillingCreditGrantCategory {const BillingCreditGrantCategory._(this.value);
+@immutable final class BillingCreditGrantCategory {const BillingCreditGrantCategory._(this.value);
 
 factory BillingCreditGrantCategory.fromJson(String json) { return switch (json) {
   'paid' => paid,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingCreditGrantCategory($value)'; } 
  }
 /// String representing the object's type. Objects of the same type share the same value.
-final class BillingCreditGrantObject {const BillingCreditGrantObject._(this.value);
+@immutable final class BillingCreditGrantObject {const BillingCreditGrantObject._(this.value);
 
 factory BillingCreditGrantObject.fromJson(String json) { return switch (json) {
   'billing.credit_grant' => billingCreditGrant,
@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A credit grant is an API resource that documents the allocation of some billing credits to a customer.
 /// 
 /// Related guide: [Billing credits](https://docs.stripe.com/billing/subscriptions/usage-based/billing-credits)
-final class BillingCreditGrant {const BillingCreditGrant({required this.amount, required this.applicabilityConfig, required this.category, required this.created, required this.customer, this.customerAccount, this.effectiveAt, this.expiresAt, required this.id, required this.livemode, required this.metadata, this.name, required this.object, this.priority, this.testClock, required this.updated, this.voidedAt, });
+@immutable final class BillingCreditGrant {const BillingCreditGrant({required this.amount, required this.applicabilityConfig, required this.category, required this.created, required this.customer, required this.id, required this.livemode, required this.metadata, required this.object, required this.updated, this.customerAccount, this.effectiveAt, this.expiresAt, this.name, this.priority, this.testClock, this.voidedAt, });
 
 factory BillingCreditGrant.fromJson(Map<String, dynamic> json) { return BillingCreditGrant(
   amount: BillingCreditGrantsResourceAmount.fromJson(json['amount'] as Map<String, dynamic>),

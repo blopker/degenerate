@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'completion_usage.dart';import 'create_completion_response_choices.dart';/// The object type, which is always "text_completion"
-final class CreateCompletionResponseObject {const CreateCompletionResponseObject._(this.value);
+@immutable final class CreateCompletionResponseObject {const CreateCompletionResponseObject._(this.value);
 
 factory CreateCompletionResponseObject.fromJson(String json) { return switch (json) {
   'text_completion' => textCompletion,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Represents a completion response from the API. Note: both the streamed and non-streamed response objects share the same shape (unlike the chat endpoint).
 /// 
-final class CreateCompletionResponse {const CreateCompletionResponse({required this.id, required this.choices, required this.created, required this.model, this.systemFingerprint, required this.object, this.usage, });
+@immutable final class CreateCompletionResponse {const CreateCompletionResponse({required this.id, required this.choices, required this.created, required this.model, required this.object, this.systemFingerprint, this.usage, });
 
 factory CreateCompletionResponse.fromJson(Map<String, dynamic> json) { return CreateCompletionResponse(
   id: json['id'] as String,

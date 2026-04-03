@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_security_advisory_withdrawn_security_advisory_vulnerabilities_first_patched_version.dart';import 'webhook_security_advisory_withdrawn_security_advisory_vulnerabilities_package.dart';final class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilities {const WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilities({required this.firstPatchedVersion, required this.package, required this.severity, required this.vulnerableVersionRange, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_security_advisory_withdrawn_security_advisory_vulnerabilities_first_patched_version.dart';import 'webhook_security_advisory_withdrawn_security_advisory_vulnerabilities_package.dart';@immutable final class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilities {const WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilities({required this.firstPatchedVersion, required this.package, required this.severity, required this.vulnerableVersionRange, });
 
 factory WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilities.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilities(
   firstPatchedVersion: json['first_patched_version'] != null ? WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiesFirstPatchedVersion.fromJson(json['first_patched_version'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The tax type, such as `vat` or `sales_tax`.
-final class TaxProductResourceLineItemTaxRateDetailsTaxType {const TaxProductResourceLineItemTaxRateDetailsTaxType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tax type, such as `vat` or `sales_tax`.
+@immutable final class TaxProductResourceLineItemTaxRateDetailsTaxType {const TaxProductResourceLineItemTaxRateDetailsTaxType._(this.value);
 
 factory TaxProductResourceLineItemTaxRateDetailsTaxType.fromJson(String json) { return switch (json) {
   'amusement_tax' => amusementTax,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceLineItemTaxRateDetailsTaxType($value)'; } 
  }
 /// 
-final class TaxProductResourceLineItemTaxRateDetails {const TaxProductResourceLineItemTaxRateDetails({required this.displayName, required this.percentageDecimal, required this.taxType, });
+@immutable final class TaxProductResourceLineItemTaxRateDetails {const TaxProductResourceLineItemTaxRateDetails({required this.displayName, required this.percentageDecimal, required this.taxType, });
 
 factory TaxProductResourceLineItemTaxRateDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceLineItemTaxRateDetails(
   displayName: json['display_name'] as String,

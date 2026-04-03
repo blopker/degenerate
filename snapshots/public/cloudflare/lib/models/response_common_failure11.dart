@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message.dart';/// Represents a failed API response.
-final class ResponseCommonFailure11 {const ResponseCommonFailure11({required this.errors, required this.messages, required this.result, required this.success, });
+@immutable final class ResponseCommonFailure11 {const ResponseCommonFailure11({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommonFailure11.fromJson(Map<String, dynamic> json) { return ResponseCommonFailure11(
   errors: (json['errors'] as List<dynamic>).map((e) => Message.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>?)?.map((e) => Message.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
 ); }
 

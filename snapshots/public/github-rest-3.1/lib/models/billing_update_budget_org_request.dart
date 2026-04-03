@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_update_budget_org_request_budget_alerting.dart';/// The scope of the budget
-final class BillingUpdateBudgetOrgRequestBudgetScope {const BillingUpdateBudgetOrgRequestBudgetScope._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_update_budget_org_request_budget_alerting.dart';/// The scope of the budget
+@immutable final class BillingUpdateBudgetOrgRequestBudgetScope {const BillingUpdateBudgetOrgRequestBudgetScope._(this.value);
 
 factory BillingUpdateBudgetOrgRequestBudgetScope.fromJson(String json) { return switch (json) {
   'enterprise' => enterprise,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingUpdateBudgetOrgRequestBudgetScope($value)'; } 
  }
 /// The type of pricing for the budget
-final class BillingUpdateBudgetOrgRequestBudgetType {const BillingUpdateBudgetOrgRequestBudgetType._(this.value);
+@immutable final class BillingUpdateBudgetOrgRequestBudgetType {const BillingUpdateBudgetOrgRequestBudgetType._(this.value);
 
 factory BillingUpdateBudgetOrgRequestBudgetType.fromJson(String json) { return switch (json) {
   'ProductPricing' => productPricing,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BillingUpdateBudgetOrgRequestBudgetType($value)'; } 
  }
-final class BillingUpdateBudgetOrgRequest {const BillingUpdateBudgetOrgRequest({this.budgetAmount, this.preventFurtherUsage, this.budgetAlerting, this.budgetScope, this.budgetEntityName, this.budgetType, this.budgetProductSku, });
+@immutable final class BillingUpdateBudgetOrgRequest {const BillingUpdateBudgetOrgRequest({this.budgetAmount, this.preventFurtherUsage, this.budgetAlerting, this.budgetScope, this.budgetEntityName, this.budgetType, this.budgetProductSku, });
 
 factory BillingUpdateBudgetOrgRequest.fromJson(Map<String, dynamic> json) { return BillingUpdateBudgetOrgRequest(
   budgetAmount: json['budget_amount'] != null ? (json['budget_amount'] as num).toInt() : null,

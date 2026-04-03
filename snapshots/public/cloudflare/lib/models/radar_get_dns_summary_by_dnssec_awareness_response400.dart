@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_dnssec_awareness_response400_errors.dart';final class RadarGetDnsSummaryByDnssecAwarenessResponse400 {const RadarGetDnsSummaryByDnssecAwarenessResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_dnssec_awareness_response400_errors.dart';@immutable final class RadarGetDnsSummaryByDnssecAwarenessResponse400 {const RadarGetDnsSummaryByDnssecAwarenessResponse400({required this.errors, required this.result, required this.success, });
 
 factory RadarGetDnsSummaryByDnssecAwarenessResponse400.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByDnssecAwarenessResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => RadarGetDnsSummaryByDnssecAwarenessResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

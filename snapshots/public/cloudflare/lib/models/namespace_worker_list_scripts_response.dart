@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_messages2.dart';import 'workers_namespace_script_response.dart';final class NamespaceWorkerListScriptsResponse {const NamespaceWorkerListScriptsResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_messages2.dart';import 'workers_namespace_script_response.dart';@immutable final class NamespaceWorkerListScriptsResponse {const NamespaceWorkerListScriptsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory NamespaceWorkerListScriptsResponse.fromJson(Map<String, dynamic> json) { return NamespaceWorkerListScriptsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),

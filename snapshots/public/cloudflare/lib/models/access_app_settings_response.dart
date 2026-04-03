@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_allow_iframe.dart';import 'access_skip_interstitial.dart';final class AccessAppSettingsResponse {const AccessAppSettingsResponse({this.allowIframe, this.skipInterstitial, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_allow_iframe.dart';import 'access_skip_interstitial.dart';@immutable final class AccessAppSettingsResponse {const AccessAppSettingsResponse({this.allowIframe, this.skipInterstitial, });
 
 factory AccessAppSettingsResponse.fromJson(Map<String, dynamic> json) { return AccessAppSettingsResponse(
   allowIframe: json['allow_iframe'] != null ? AccessAllowIframe.fromJson(json['allow_iframe'] as bool) : null,

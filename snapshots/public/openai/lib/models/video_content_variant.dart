@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class VideoContentVariant {const VideoContentVariant._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class VideoContentVariant {const VideoContentVariant._(this.value);
 
 factory VideoContentVariant.fromJson(String json) { return switch (json) {
   'video' => video,

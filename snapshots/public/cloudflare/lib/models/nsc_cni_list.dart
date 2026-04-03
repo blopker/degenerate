@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_cni.dart';final class NscCniList {const NscCniList({required this.items, this.next, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_cni.dart';@immutable final class NscCniList {const NscCniList({required this.items, this.next, });
 
 factory NscCniList.fromJson(Map<String, dynamic> json) { return NscCniList(
   items: (json['items'] as List<dynamic>).map((e) => NscCni.fromJson(e as Map<String, dynamic>)).toList(),

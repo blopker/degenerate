@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodDetailsPaymentRecordWechatPay {const PaymentMethodDetailsPaymentRecordWechatPay({this.fingerprint, this.location, this.reader, this.transactionId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodDetailsPaymentRecordWechatPay {const PaymentMethodDetailsPaymentRecordWechatPay({this.fingerprint, this.location, this.reader, this.transactionId, });
 
 factory PaymentMethodDetailsPaymentRecordWechatPay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordWechatPay(
   fingerprint: json['fingerprint'] as String?,

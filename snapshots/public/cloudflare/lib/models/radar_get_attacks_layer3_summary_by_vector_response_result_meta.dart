@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_summary_by_vector_response_result_meta_confidence_info.dart';import 'radar_get_attacks_layer3_summary_by_vector_response_result_meta_date_range.dart';import 'radar_get_attacks_layer3_summary_by_vector_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetAttacksLayer3SummaryByVectorResponseResultMetaNormalization {const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetAttacksLayer3SummaryByVectorResponseResultMetaNormalization {const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaNormalization._(this.value);
 
 factory RadarGetAttacksLayer3SummaryByVectorResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -44,7 +44,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer3SummaryByVectorResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetAttacksLayer3SummaryByVectorResponseResultMeta {const RadarGetAttacksLayer3SummaryByVectorResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetAttacksLayer3SummaryByVectorResponseResultMeta {const RadarGetAttacksLayer3SummaryByVectorResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetAttacksLayer3SummaryByVectorResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByVectorResponseResultMeta(
   confidenceInfo: RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always 'response.image_generation_call.generating'.
-final class ResponseImageGenCallGeneratingEventType {const ResponseImageGenCallGeneratingEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always 'response.image_generation_call.generating'.
+@immutable final class ResponseImageGenCallGeneratingEventType {const ResponseImageGenCallGeneratingEventType._(this.value);
 
 factory ResponseImageGenCallGeneratingEventType.fromJson(String json) { return switch (json) {
   'response.image_generation_call.generating' => responseImageGenerationCallGenerating,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Emitted when an image generation tool call is actively generating an image (intermediate state).
 /// 
-final class ResponseImageGenCallGeneratingEvent {const ResponseImageGenCallGeneratingEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
+@immutable final class ResponseImageGenCallGeneratingEvent {const ResponseImageGenCallGeneratingEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseImageGenCallGeneratingEvent.fromJson(Map<String, dynamic> json) { return ResponseImageGenCallGeneratingEvent(
   type: ResponseImageGenCallGeneratingEventType.fromJson(json['type'] as String),

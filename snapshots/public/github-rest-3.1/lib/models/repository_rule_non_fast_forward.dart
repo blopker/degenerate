@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RepositoryRuleNonFastForwardType {const RepositoryRuleNonFastForwardType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleNonFastForwardType {const RepositoryRuleNonFastForwardType._(this.value);
 
 factory RepositoryRuleNonFastForwardType.fromJson(String json) { return switch (json) {
   'non_fast_forward' => nonFastForward,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleNonFastForwardType($value)'; } 
  }
 /// Prevent users with push access from force pushing to refs.
-final class RepositoryRuleNonFastForward {const RepositoryRuleNonFastForward({required this.type});
+@immutable final class RepositoryRuleNonFastForward {const RepositoryRuleNonFastForward({required this.type});
 
 factory RepositoryRuleNonFastForward.fromJson(Map<String, dynamic> json) { return RepositoryRuleNonFastForward(
   type: RepositoryRuleNonFastForwardType.fromJson(json['type'] as String),

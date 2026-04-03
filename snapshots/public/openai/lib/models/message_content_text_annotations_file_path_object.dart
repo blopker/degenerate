@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'message_content_text_annotations_file_path_object_file_path.dart';/// Always `file_path`.
-final class MessageContentTextAnnotationsFilePathObjectType {const MessageContentTextAnnotationsFilePathObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_text_annotations_file_path_object_file_path.dart';/// Always `file_path`.
+@immutable final class MessageContentTextAnnotationsFilePathObjectType {const MessageContentTextAnnotationsFilePathObjectType._(this.value);
 
 factory MessageContentTextAnnotationsFilePathObjectType.fromJson(String json) { return switch (json) {
   'file_path' => filePath,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageContentTextAnnotationsFilePathObjectType($value)'; } 
  }
 /// A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.
-final class MessageContentTextAnnotationsFilePathObject {const MessageContentTextAnnotationsFilePathObject({required this.type, required this.text, required this.filePath, required this.startIndex, required this.endIndex, });
+@immutable final class MessageContentTextAnnotationsFilePathObject {const MessageContentTextAnnotationsFilePathObject({required this.type, required this.text, required this.filePath, required this.startIndex, required this.endIndex, });
 
 factory MessageContentTextAnnotationsFilePathObject.fromJson(Map<String, dynamic> json) { return MessageContentTextAnnotationsFilePathObject(
   type: MessageContentTextAnnotationsFilePathObjectType.fromJson(json['type'] as String),

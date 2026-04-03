@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RumSchemasMessages2Source {const RumSchemasMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RumSchemasMessages2Source {const RumSchemasMessages2Source({this.pointer});
 
 factory RumSchemasMessages2Source.fromJson(Map<String, dynamic> json) { return RumSchemasMessages2Source(
   pointer: json['pointer'] as String?,

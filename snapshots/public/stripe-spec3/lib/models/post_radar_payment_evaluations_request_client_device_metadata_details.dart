@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Details about the Client Device Metadata to associate with the payment evaluation.
-final class PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails {const PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails({required this.radarSession});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details about the Client Device Metadata to associate with the payment evaluation.
+@immutable final class PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails {const PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails({required this.radarSession});
 
 factory PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequestClientDeviceMetadataDetails(
   radarSession: json['radar_session'] as String,

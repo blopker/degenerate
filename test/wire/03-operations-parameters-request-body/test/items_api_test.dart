@@ -144,15 +144,15 @@ void main() {
     test('returns ApiSuccess on 200', () async {
       final result = await api.getItem(itemId: 'x');
 
-      expect(result, isA<ApiSuccess>());
+      expect(result, isA<ApiSuccess<void, Never>>());
     });
 
     test('returns ApiError on non-2xx', () async {
       client.nextResponse = ApiResponse(statusCode: 404, body: 'not found');
       final result = await api.getItem(itemId: 'x');
 
-      expect(result, isA<ApiError>());
-      final error = result as ApiError;
+      expect(result, isA<ApiError<void, Never>>());
+      final error = result as ApiError<void, Never>;
       expect(error.statusCode, equals(404));
       expect(error.rawError, equals('not found'));
     });
@@ -169,7 +169,7 @@ void main() {
       expect(client.lastRequest!.path, equals('/upload'));
       expect(client.lastRequest!.body, isA<List<ApiMultipartField>>());
 
-      final fields = client.lastRequest!.body as List<ApiMultipartField>;
+      final fields = client.lastRequest!.body! as List<ApiMultipartField>;
       expect(fields, hasLength(2));
 
       // File field
@@ -194,7 +194,7 @@ void main() {
         ),
       );
 
-      final fields = client.lastRequest!.body as List<ApiMultipartField>;
+      final fields = client.lastRequest!.body! as List<ApiMultipartField>;
       expect(fields, hasLength(3));
       final tags = fields[2] as ApiMultipartTextField;
       expect(tags.name, equals('tags'));
@@ -209,7 +209,7 @@ void main() {
         ),
       );
 
-      final fields = client.lastRequest!.body as List<ApiMultipartField>;
+      final fields = client.lastRequest!.body! as List<ApiMultipartField>;
       expect(fields, hasLength(2));
     });
 
@@ -232,7 +232,7 @@ void main() {
       expect(client.lastRequest!.path, equals('/token'));
       expect(client.lastRequest!.body, isA<String>());
       expect(
-        client.lastRequest!.body as String,
+        client.lastRequest!.body! as String,
         equals('grant_type=client_credentials'),
       );
     });
@@ -246,7 +246,7 @@ void main() {
         ),
       );
 
-      final body = client.lastRequest!.body as String;
+      final body = client.lastRequest!.body! as String;
       expect(body, contains('grant_type=client_credentials'));
       expect(body, contains('scope=read+write'));
       expect(body, contains('timeout=3600'));
@@ -259,7 +259,7 @@ void main() {
         body: const CreateTokenRequest(grantType: 'password'),
       );
 
-      final body = client.lastRequest!.body as String;
+      final body = client.lastRequest!.body! as String;
       expect(body, equals('grant_type=password'));
     });
 
@@ -271,7 +271,7 @@ void main() {
         ),
       );
 
-      final body = client.lastRequest!.body as String;
+      final body = client.lastRequest!.body! as String;
       final parts = body.split('&');
       // grant_type value should be encoded
       expect(

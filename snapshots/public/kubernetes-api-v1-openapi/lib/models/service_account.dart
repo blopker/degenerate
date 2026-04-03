@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'local_object_reference.dart';import 'object_meta.dart';import 'object_reference.dart';/// ServiceAccount binds together: * a name, understood by users, and perhaps by peripheral systems, for an identity * a principal that can be authenticated and authorized * a set of secrets
-final class ServiceAccount {const ServiceAccount({this.apiVersion, this.automountServiceAccountToken, this.imagePullSecrets, this.kind, this.metadata, this.secrets, });
+@immutable final class ServiceAccount {const ServiceAccount({this.apiVersion, this.automountServiceAccountToken, this.imagePullSecrets, this.kind, this.metadata, this.secrets, });
 
 factory ServiceAccount.fromJson(Map<String, dynamic> json) { return ServiceAccount(
   apiVersion: json['apiVersion'] as String?,

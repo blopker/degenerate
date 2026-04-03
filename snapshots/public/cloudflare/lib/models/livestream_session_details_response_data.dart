@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'livestream_session_details_response_data_livestreams.dart';import 'livestream_session_details_response_data_paging.dart';import 'livestream_session_details_response_data_sessions.dart';final class LivestreamSessionDetailsResponseData {const LivestreamSessionDetailsResponseData({this.livestreams, this.paging, this.sessions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'livestream_session_details_response_data_livestreams.dart';import 'livestream_session_details_response_data_paging.dart';import 'livestream_session_details_response_data_sessions.dart';@immutable final class LivestreamSessionDetailsResponseData {const LivestreamSessionDetailsResponseData({this.livestreams, this.paging, this.sessions, });
 
 factory LivestreamSessionDetailsResponseData.fromJson(Map<String, dynamic> json) { return LivestreamSessionDetailsResponseData(
   livestreams: (json['livestreams'] as List<dynamic>?)?.map((e) => LivestreamSessionDetailsResponseDataLivestreams.fromJson(e as Map<String, dynamic>)).toList(),

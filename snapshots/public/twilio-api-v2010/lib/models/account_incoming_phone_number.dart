@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_incoming_phone_number_capabilities.dart';import 'incoming_phone_number_enum_emergency_status.dart';import 'incoming_phone_number_enum_voice_receive_mode.dart';/// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
-final class IncomingPhoneNumberEnumAddressRequirement {const IncomingPhoneNumberEnumAddressRequirement._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_incoming_phone_number_capabilities.dart';import 'incoming_phone_number_enum_emergency_status.dart';import 'incoming_phone_number_enum_voice_receive_mode.dart';/// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
+@immutable final class IncomingPhoneNumberEnumAddressRequirement {const IncomingPhoneNumberEnumAddressRequirement._(this.value);
 
 factory IncomingPhoneNumberEnumAddressRequirement.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IncomingPhoneNumberEnumAddressRequirement($value)'; } 
  }
 /// The status of address registration with emergency services. A registered emergency address will be used during handling of emergency calls from this number.
-final class IncomingPhoneNumberEnumEmergencyAddressStatus {const IncomingPhoneNumberEnumEmergencyAddressStatus._(this.value);
+@immutable final class IncomingPhoneNumberEnumEmergencyAddressStatus {const IncomingPhoneNumberEnumEmergencyAddressStatus._(this.value);
 
 factory IncomingPhoneNumberEnumEmergencyAddressStatus.fromJson(String json) { return switch (json) {
   'registered' => registered,
@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IncomingPhoneNumberEnumEmergencyAddressStatus($value)'; } 
  }
 /// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
-final class AccountIncomingPhoneNumberSmsFallbackMethod {const AccountIncomingPhoneNumberSmsFallbackMethod._(this.value);
+@immutable final class AccountIncomingPhoneNumberSmsFallbackMethod {const AccountIncomingPhoneNumberSmsFallbackMethod._(this.value);
 
 factory AccountIncomingPhoneNumberSmsFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -94,7 +94,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountIncomingPhoneNumberSmsFallbackMethod($value)'; } 
  }
 /// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
-final class AccountIncomingPhoneNumberSmsMethod {const AccountIncomingPhoneNumberSmsMethod._(this.value);
+@immutable final class AccountIncomingPhoneNumberSmsMethod {const AccountIncomingPhoneNumberSmsMethod._(this.value);
 
 factory AccountIncomingPhoneNumberSmsMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -119,7 +119,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountIncomingPhoneNumberSmsMethod($value)'; } 
  }
 /// The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.
-final class AccountIncomingPhoneNumberStatusCallbackMethod {const AccountIncomingPhoneNumberStatusCallbackMethod._(this.value);
+@immutable final class AccountIncomingPhoneNumberStatusCallbackMethod {const AccountIncomingPhoneNumberStatusCallbackMethod._(this.value);
 
 factory AccountIncomingPhoneNumberStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountIncomingPhoneNumberStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-final class AccountIncomingPhoneNumberVoiceFallbackMethod {const AccountIncomingPhoneNumberVoiceFallbackMethod._(this.value);
+@immutable final class AccountIncomingPhoneNumberVoiceFallbackMethod {const AccountIncomingPhoneNumberVoiceFallbackMethod._(this.value);
 
 factory AccountIncomingPhoneNumberVoiceFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -169,7 +169,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountIncomingPhoneNumberVoiceFallbackMethod($value)'; } 
  }
 /// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
-final class AccountIncomingPhoneNumberVoiceMethod {const AccountIncomingPhoneNumberVoiceMethod._(this.value);
+@immutable final class AccountIncomingPhoneNumberVoiceMethod {const AccountIncomingPhoneNumberVoiceMethod._(this.value);
 
 factory AccountIncomingPhoneNumberVoiceMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -193,7 +193,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountIncomingPhoneNumberVoiceMethod($value)'; } 
  }
-final class AccountIncomingPhoneNumber {const AccountIncomingPhoneNumber({this.accountSid, this.addressSid, this.addressRequirements, this.apiVersion, this.beta, this.capabilities, this.dateCreated, this.dateUpdated, this.friendlyName, this.identitySid, this.phoneNumber, this.origin, this.sid, this.smsApplicationSid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.trunkSid, this.uri, this.voiceReceiveMode, this.voiceApplicationSid, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.emergencyStatus, this.emergencyAddressSid, this.emergencyAddressStatus, this.bundleSid, this.status, this.type, });
+@immutable final class AccountIncomingPhoneNumber {const AccountIncomingPhoneNumber({this.sid, this.addressSid, this.addressRequirements, this.apiVersion, this.beta, this.capabilities, this.dateCreated, this.dateUpdated, this.friendlyName, this.identitySid, this.phoneNumber, this.origin, this.accountSid, this.smsApplicationSid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.trunkSid, this.uri, this.type, this.voiceApplicationSid, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.emergencyStatus, this.emergencyAddressSid, this.emergencyAddressStatus, this.bundleSid, this.status, this.voiceReceiveMode, });
 
 factory AccountIncomingPhoneNumber.fromJson(Map<String, dynamic> json) { return AccountIncomingPhoneNumber(
   accountSid: json['account_sid'] as String?,

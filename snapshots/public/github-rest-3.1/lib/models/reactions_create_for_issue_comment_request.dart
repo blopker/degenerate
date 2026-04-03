@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue comment.
-final class ReactionsCreateForIssueCommentRequestContent {const ReactionsCreateForIssueCommentRequestContent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue comment.
+@immutable final class ReactionsCreateForIssueCommentRequestContent {const ReactionsCreateForIssueCommentRequestContent._(this.value);
 
 factory ReactionsCreateForIssueCommentRequestContent.fromJson(String json) { return switch (json) {
   '+1' => plus1,
@@ -43,7 +43,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReactionsCreateForIssueCommentRequestContent($value)'; } 
  }
-final class ReactionsCreateForIssueCommentRequest {const ReactionsCreateForIssueCommentRequest({required this.content});
+@immutable final class ReactionsCreateForIssueCommentRequest {const ReactionsCreateForIssueCommentRequest({required this.content});
 
 factory ReactionsCreateForIssueCommentRequest.fromJson(Map<String, dynamic> json) { return ReactionsCreateForIssueCommentRequest(
   content: ReactionsCreateForIssueCommentRequestContent.fromJson(json['content'] as String),

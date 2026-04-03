@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The status of the Message. Possible values: `accepted`, `scheduled`, `canceled`, `queued`, `sending`, `sent`, `failed`, `delivered`, `undelivered`, `receiving`, `received`, or `read` (WhatsApp only). For more information, See [detailed descriptions](https://www.twilio.com/docs/sms/api/message-resource#message-status-values).
-final class MessageEnumStatus {const MessageEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Message. Possible values: `accepted`, `scheduled`, `canceled`, `queued`, `sending`, `sent`, `failed`, `delivered`, `undelivered`, `receiving`, `received`, or `read` (WhatsApp only). For more information, See [detailed descriptions](https://www.twilio.com/docs/sms/api/message-resource#message-status-values).
+@immutable final class MessageEnumStatus {const MessageEnumStatus._(this.value);
 
 factory MessageEnumStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MessageEnumStatus($value)'; } 
  }
 /// The direction of the message. Can be: `inbound` for incoming messages, `outbound-api` for messages created by the REST API, `outbound-call` for messages created during a call, or `outbound-reply` for messages created in response to an incoming message.
-final class MessageEnumDirection {const MessageEnumDirection._(this.value);
+@immutable final class MessageEnumDirection {const MessageEnumDirection._(this.value);
 
 factory MessageEnumDirection.fromJson(String json) { return switch (json) {
   'inbound' => inbound,
@@ -89,7 +89,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageEnumDirection($value)'; } 
  }
-final class AccountMessage {const AccountMessage({this.body, this.numSegments, this.direction, this.from, this.to, this.dateUpdated, this.price, this.errorMessage, this.uri, this.accountSid, this.numMedia, this.status, this.messagingServiceSid, this.sid, this.dateSent, this.dateCreated, this.errorCode, this.priceUnit, this.apiVersion, this.subresourceUris, });
+@immutable final class AccountMessage {const AccountMessage({this.body, this.numSegments, this.direction, this.from, this.to, this.dateUpdated, this.price, this.errorMessage, this.uri, this.accountSid, this.numMedia, this.status, this.messagingServiceSid, this.sid, this.dateSent, this.dateCreated, this.errorCode, this.priceUnit, this.apiVersion, this.subresourceUris, });
 
 factory AccountMessage.fromJson(Map<String, dynamic> json) { return AccountMessage(
   body: json['body'] as String?,
@@ -111,7 +111,7 @@ factory AccountMessage.fromJson(Map<String, dynamic> json) { return AccountMessa
   errorCode: json['error_code'] != null ? (json['error_code'] as num).toInt() : null,
   priceUnit: json['price_unit'] as String?,
   apiVersion: json['api_version'] as String?,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
 ); }
 
 /// The text content of the message

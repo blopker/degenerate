@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';import 'legal_entity_company_verification.dart';import 'legal_entity_directorship_declaration.dart';import 'legal_entity_japan_address.dart';import 'legal_entity_registration_date.dart';import 'legal_entity_representative_declaration.dart';import 'legal_entity_ubo_declaration.dart';/// This value is used to determine if a business is exempt from providing ultimate beneficial owners. See [this support article](https://support.stripe.com/questions/exemption-from-providing-ownership-details) and [changelog](https://docs.stripe.com/changelog/acacia/2025-01-27/ownership-exemption-reason-accounts-api) for more details.
-final class LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'legal_entity_company_verification.dart';import 'legal_entity_directorship_declaration.dart';import 'legal_entity_japan_address.dart';import 'legal_entity_registration_date.dart';import 'legal_entity_representative_declaration.dart';import 'legal_entity_ubo_declaration.dart';/// This value is used to determine if a business is exempt from providing ultimate beneficial owners. See [this support article](https://support.stripe.com/questions/exemption-from-providing-ownership-details) and [changelog](https://docs.stripe.com/changelog/acacia/2025-01-27/ownership-exemption-reason-accounts-api) for more details.
+@immutable final class LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason._(this.value);
 
 factory LegalEntityCompanyOwnershipExemptionReason.fromJson(String json) { return switch (json) {
   'qualified_entity_exceeds_ownership_threshold' => qualifiedEntityExceedsOwnershipThreshold,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LegalEntityCompanyOwnershipExemptionReason($value)'; } 
  }
 /// The category identifying the legal structure of the company or legal entity. Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`. See [Business structure](https://docs.stripe.com/connect/identity-verification#business-structure) for more details.
-final class LegalEntityCompanyStructure {const LegalEntityCompanyStructure._(this.value);
+@immutable final class LegalEntityCompanyStructure {const LegalEntityCompanyStructure._(this.value);
 
 factory LegalEntityCompanyStructure.fromJson(String json) { return switch (json) {
   'free_zone_establishment' => freeZoneEstablishment,
@@ -114,7 +114,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LegalEntityCompanyStructure($value)'; } 
  }
 /// 
-final class LegalEntityCompany {const LegalEntityCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.representativeDeclaration, this.structure, this.taxIdProvided, this.taxIdRegistrar, this.vatIdProvided, this.verification, });
+@immutable final class LegalEntityCompany {const LegalEntityCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.representativeDeclaration, this.structure, this.taxIdProvided, this.taxIdRegistrar, this.vatIdProvided, this.verification, });
 
 factory LegalEntityCompany.fromJson(Map<String, dynamic> json) { return LegalEntityCompany(
   address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,

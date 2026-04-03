@@ -7,7 +7,7 @@ factory TeamsDevicesRequireAll.fromJson(bool json) => TeamsDevicesRequireAll(jso
 bool toJson() => value;
 
 }
-final class TeamsDevicesDiskEncryptionInputRequest {const TeamsDevicesDiskEncryptionInputRequest({this.checkDisks, this.requireAll, });
+@immutable final class TeamsDevicesDiskEncryptionInputRequest {const TeamsDevicesDiskEncryptionInputRequest({this.checkDisks, this.requireAll, });
 
 factory TeamsDevicesDiskEncryptionInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesDiskEncryptionInputRequest(
   checkDisks: (json['checkDisks'] as List<dynamic>?)?.map((e) => e as String).toList(),

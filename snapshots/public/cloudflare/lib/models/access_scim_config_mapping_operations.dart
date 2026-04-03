@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether or not this mapping applies to creates, updates, or deletes.
-final class AccessScimConfigMappingOperations {const AccessScimConfigMappingOperations({this.create, this.delete, this.update, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether or not this mapping applies to creates, updates, or deletes.
+@immutable final class AccessScimConfigMappingOperations {const AccessScimConfigMappingOperations({this.create, this.delete, this.update, });
 
 factory AccessScimConfigMappingOperations.fromJson(Map<String, dynamic> json) { return AccessScimConfigMappingOperations(
   create: json['create'] as bool?,

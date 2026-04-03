@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue_dependencies_summary.dart';import 'issue_type.dart';import 'sub_issues_summary.dart';import 'webhook_issue_comment_unpinned_issue_assignee.dart';import 'webhook_issue_comment_unpinned_issue_labels.dart';import 'webhook_issue_comment_unpinned_issue_pull_request.dart';import 'webhook_issue_comment_unpinned_issue_reactions.dart';import 'webhook_issue_comment_unpinned_issue_user.dart';/// State of the issue; either 'open' or 'closed'
-final class WebhookIssueCommentUnpinnedIssueState {const WebhookIssueCommentUnpinnedIssueState._(this.value);
+@immutable final class WebhookIssueCommentUnpinnedIssueState {const WebhookIssueCommentUnpinnedIssueState._(this.value);
 
 factory WebhookIssueCommentUnpinnedIssueState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -26,12 +26,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookIssueCommentUnpinnedIssueState($value)'; } 
  }
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-final class WebhookIssueCommentUnpinnedIssue {const WebhookIssueCommentUnpinnedIssue({required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, this.draft, required this.eventsUrl, required this.htmlUrl, required this.id, required this.labels, required this.labelsUrl, required this.locked, required this.milestone, required this.nodeId, required this.number, this.performedViaGithubApp, this.pullRequest, required this.reactions, required this.repositoryUrl, this.subIssuesSummary, this.issueDependenciesSummary, required this.state, this.stateReason, this.timelineUrl, required this.title, this.type, required this.updatedAt, required this.url, required this.user, });
+@immutable final class WebhookIssueCommentUnpinnedIssue {const WebhookIssueCommentUnpinnedIssue({required this.activeLockReason, required this.assignee, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.eventsUrl, required this.htmlUrl, required this.id, required this.labels, required this.labelsUrl, required this.locked, required this.milestone, required this.nodeId, required this.number, required this.reactions, required this.repositoryUrl, required this.state, required this.title, required this.updatedAt, required this.url, required this.user, this.draft, this.performedViaGithubApp, this.pullRequest, this.subIssuesSummary, this.issueDependenciesSummary, this.stateReason, this.timelineUrl, this.type, });
 
 factory WebhookIssueCommentUnpinnedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentUnpinnedIssue(
   activeLockReason: json['active_lock_reason'] as String?,
   assignee: json['assignee'] != null ? WebhookIssueCommentUnpinnedIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
-  assignees: (json['assignees'] as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  assignees: (json['assignees'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   authorAssociation: json['author_association'] as String,
   body: json['body'] as String?,
   closedAt: json['closed_at'] as String?,
@@ -45,10 +45,10 @@ factory WebhookIssueCommentUnpinnedIssue.fromJson(Map<String, dynamic> json) { r
   labels: (json['labels'] as List<dynamic>).map((e) => WebhookIssueCommentUnpinnedIssueLabels.fromJson(e as Map<String, dynamic>)).toList(),
   labelsUrl: json['labels_url'] as String,
   locked: json['locked'] as bool,
-  milestone: (json['milestone'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  milestone: json['milestone'] as Map<String, dynamic>?,
   nodeId: json['node_id'] as String,
   number: (json['number'] as num).toInt(),
-  performedViaGithubApp: (json['performed_via_github_app'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  performedViaGithubApp: json['performed_via_github_app'] as Map<String, dynamic>?,
   pullRequest: json['pull_request'] != null ? WebhookIssueCommentUnpinnedIssuePullRequest.fromJson(json['pull_request'] as Map<String, dynamic>) : null,
   reactions: WebhookIssueCommentUnpinnedIssueReactions.fromJson(json['reactions'] as Map<String, dynamic>),
   repositoryUrl: json['repository_url'] as String,

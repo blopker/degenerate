@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities.dart';import 'dependabot_alert_security_advisory_cvss.dart';import 'dependabot_alert_security_advisory_cwes.dart';import 'dependabot_alert_security_advisory_identifiers.dart';import 'dependabot_alert_security_advisory_references.dart';import 'dependabot_alert_security_vulnerability.dart';import 'security_advisory_epss.dart';/// The severity of the advisory.
-final class DependabotAlertSecurityAdvisorySeverity {const DependabotAlertSecurityAdvisorySeverity._(this.value);
+@immutable final class DependabotAlertSecurityAdvisorySeverity {const DependabotAlertSecurityAdvisorySeverity._(this.value);
 
 factory DependabotAlertSecurityAdvisorySeverity.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotAlertSecurityAdvisorySeverity($value)'; } 
  }
 /// Details for the GitHub Security Advisory.
-final class DependabotAlertSecurityAdvisory {const DependabotAlertSecurityAdvisory({required this.ghsaId, required this.cveId, required this.summary, required this.description, required this.vulnerabilities, required this.severity, required this.cvss, this.cvssSeverities, this.epss, required this.cwes, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.withdrawnAt, });
+@immutable final class DependabotAlertSecurityAdvisory {const DependabotAlertSecurityAdvisory({required this.ghsaId, required this.cveId, required this.summary, required this.description, required this.vulnerabilities, required this.severity, required this.cvss, required this.cwes, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.withdrawnAt, this.cvssSeverities, this.epss, });
 
 factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisory(
   ghsaId: json['ghsa_id'] as String,

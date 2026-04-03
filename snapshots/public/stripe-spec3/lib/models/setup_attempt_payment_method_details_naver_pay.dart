@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class SetupAttemptPaymentMethodDetailsNaverPay {const SetupAttemptPaymentMethodDetailsNaverPay({this.buyerId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class SetupAttemptPaymentMethodDetailsNaverPay {const SetupAttemptPaymentMethodDetailsNaverPay({this.buyerId});
 
 factory SetupAttemptPaymentMethodDetailsNaverPay.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsNaverPay(
   buyerId: json['buyer_id'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The field's data type.
-final class ProjectsAddFieldForUserRequestVariant1DataType {const ProjectsAddFieldForUserRequestVariant1DataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field's data type.
+@immutable final class ProjectsAddFieldForUserRequestVariant1DataType {const ProjectsAddFieldForUserRequestVariant1DataType._(this.value);
 
 factory ProjectsAddFieldForUserRequestVariant1DataType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ProjectsAddFieldForUserRequestVariant1DataType($value)'; } 
  }
-final class ProjectsAddFieldForUserRequestVariant1 {const ProjectsAddFieldForUserRequestVariant1({required this.name, required this.dataType, });
+@immutable final class ProjectsAddFieldForUserRequestVariant1 {const ProjectsAddFieldForUserRequestVariant1({required this.name, required this.dataType, });
 
 factory ProjectsAddFieldForUserRequestVariant1.fromJson(Map<String, dynamic> json) { return ProjectsAddFieldForUserRequestVariant1(
   name: json['name'] as String,

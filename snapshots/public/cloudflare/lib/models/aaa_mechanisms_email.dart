@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AaaMechanismsEmail {const AaaMechanismsEmail({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AaaMechanismsEmail {const AaaMechanismsEmail({this.id});
 
 factory AaaMechanismsEmail.fromJson(Map<String, dynamic> json) { return AaaMechanismsEmail(
   id: json['id'] as String?,

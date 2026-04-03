@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Confirmation payload returned after unassigning a role.
-final class DeletedRoleAssignmentResource {const DeletedRoleAssignmentResource({required this.object, required this.deleted, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Confirmation payload returned after unassigning a role.
+@immutable final class DeletedRoleAssignmentResource {const DeletedRoleAssignmentResource({required this.object, required this.deleted, });
 
 factory DeletedRoleAssignmentResource.fromJson(Map<String, dynamic> json) { return DeletedRoleAssignmentResource(
   object: json['object'] as String,

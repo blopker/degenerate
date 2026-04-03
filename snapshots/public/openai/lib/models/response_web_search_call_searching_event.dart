@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.web_search_call.searching`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.web_search_call.searching`.
 /// 
-final class ResponseWebSearchCallSearchingEventType {const ResponseWebSearchCallSearchingEventType._(this.value);
+@immutable final class ResponseWebSearchCallSearchingEventType {const ResponseWebSearchCallSearchingEventType._(this.value);
 
 factory ResponseWebSearchCallSearchingEventType.fromJson(String json) { return switch (json) {
   'response.web_search_call.searching' => responseWebSearchCallSearching,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseWebSearchCallSearchingEventType($value)'; } 
  }
 /// Emitted when a web search call is executing.
-final class ResponseWebSearchCallSearchingEvent {const ResponseWebSearchCallSearchingEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
+@immutable final class ResponseWebSearchCallSearchingEvent {const ResponseWebSearchCallSearchingEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseWebSearchCallSearchingEvent.fromJson(Map<String, dynamic> json) { return ResponseWebSearchCallSearchingEvent(
   type: ResponseWebSearchCallSearchingEventType.fromJson(json['type'] as String),

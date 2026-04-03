@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'pages_domain_name.dart';final class PagesDomainsAddDomainRequest {const PagesDomainsAddDomainRequest({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_domain_name.dart';@immutable final class PagesDomainsAddDomainRequest {const PagesDomainsAddDomainRequest({required this.name});
 
 factory PagesDomainsAddDomainRequest.fromJson(Map<String, dynamic> json) { return PagesDomainsAddDomainRequest(
   name: PagesDomainName.fromJson(json['name'] as String),

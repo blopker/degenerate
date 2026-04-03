@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The service account that performed the audit logged action.
-final class AuditLogActorServiceAccount {const AuditLogActorServiceAccount({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The service account that performed the audit logged action.
+@immutable final class AuditLogActorServiceAccount {const AuditLogActorServiceAccount({this.id});
 
 factory AuditLogActorServiceAccount.fromJson(Map<String, dynamic> json) { return AuditLogActorServiceAccount(
   id: json['id'] as String?,

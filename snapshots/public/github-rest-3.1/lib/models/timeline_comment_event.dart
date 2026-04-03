@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'author_association.dart';import 'integration.dart';import 'pinned_issue_comment.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// Timeline Comment Event
-final class TimelineCommentEvent {const TimelineCommentEvent({required this.event, required this.actor, required this.id, required this.nodeId, required this.url, this.body, this.bodyText, this.bodyHtml, required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, required this.authorAssociation, this.performedViaGithubApp, this.reactions, this.pin, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'integration.dart';import 'pinned_issue_comment.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// Timeline Comment Event
+@immutable final class TimelineCommentEvent {const TimelineCommentEvent({required this.event, required this.actor, required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, required this.authorAssociation, this.body, this.bodyText, this.bodyHtml, this.performedViaGithubApp, this.reactions, this.pin, });
 
 factory TimelineCommentEvent.fromJson(Map<String, dynamic> json) { return TimelineCommentEvent(
   event: json['event'] as String,

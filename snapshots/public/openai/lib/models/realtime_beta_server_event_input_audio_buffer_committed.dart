@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `input_audio_buffer.committed`.
-final class RealtimeBetaServerEventInputAudioBufferCommittedType {const RealtimeBetaServerEventInputAudioBufferCommittedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.committed`.
+@immutable final class RealtimeBetaServerEventInputAudioBufferCommittedType {const RealtimeBetaServerEventInputAudioBufferCommittedType._(this.value);
 
 factory RealtimeBetaServerEventInputAudioBufferCommittedType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.committed' => inputAudioBufferCommitted,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 /// message item that will be created, thus a `conversation.item.created` event
 /// will also be sent to the client.
 /// 
-final class RealtimeBetaServerEventInputAudioBufferCommitted {const RealtimeBetaServerEventInputAudioBufferCommitted({required this.eventId, required this.type, this.previousItemId, required this.itemId, });
+@immutable final class RealtimeBetaServerEventInputAudioBufferCommitted {const RealtimeBetaServerEventInputAudioBufferCommitted({required this.eventId, required this.type, required this.itemId, this.previousItemId, });
 
 factory RealtimeBetaServerEventInputAudioBufferCommitted.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventInputAudioBufferCommitted(
   eventId: json['event_id'] as String,

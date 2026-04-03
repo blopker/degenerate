@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_cost.dart';final class PostInvoicesInvoiceRequestShippingCostVariant2 {const PostInvoicesInvoiceRequestShippingCostVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_cost.dart';@immutable final class PostInvoicesInvoiceRequestShippingCostVariant2 {const PostInvoicesInvoiceRequestShippingCostVariant2._(this.value);
 
 factory PostInvoicesInvoiceRequestShippingCostVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

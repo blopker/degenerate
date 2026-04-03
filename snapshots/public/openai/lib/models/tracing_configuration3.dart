@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Granular configuration for tracing.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Granular configuration for tracing.
 /// 
-final class TracingConfiguration3 {const TracingConfiguration3({this.workflowName, this.groupId, this.metadata, });
+@immutable final class TracingConfiguration3 {const TracingConfiguration3({this.workflowName, this.groupId, this.metadata, });
 
 factory TracingConfiguration3.fromJson(Map<String, dynamic> json) { return TracingConfiguration3(
   workflowName: json['workflow_name'] as String?,
   groupId: json['group_id'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
 ); }
 
 /// The name of the workflow to attach to this trace. This is used to

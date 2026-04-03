@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_infra_prefix.dart';import 'dos_messages2.dart';final class DosInfraPrefixResponse {const DosInfraPrefixResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dos_infra_prefix.dart';import 'dos_messages2.dart';@immutable final class DosInfraPrefixResponse {const DosInfraPrefixResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory DosInfraPrefixResponse.fromJson(Map<String, dynamic> json) { return DosInfraPrefixResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => DosMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_treasury_financial_accounts_financial_account_features_request_inbound_transfers_ach.dart';/// Contains settings related to adding funds to a FinancialAccount from another Account with the same owner.
-final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers({this.ach});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_financial_accounts_financial_account_features_request_inbound_transfers_ach.dart';/// Contains settings related to adding funds to a FinancialAccount from another Account with the same owner.
+@immutable final class PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers {const PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers({this.ach});
 
 factory PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfers(
   ach: json['ach'] != null ? PostTreasuryFinancialAccountsFinancialAccountFeaturesRequestInboundTransfersAch.fromJson(json['ach'] as Map<String, dynamic>) : null,

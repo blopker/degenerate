@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Property to sort results by. Results are sorted in ascending order.
-final class WorkerScriptSearchWorkersOrderBy {const WorkerScriptSearchWorkersOrderBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Property to sort results by. Results are sorted in ascending order.
+@immutable final class WorkerScriptSearchWorkersOrderBy {const WorkerScriptSearchWorkersOrderBy._(this.value);
 
 factory WorkerScriptSearchWorkersOrderBy.fromJson(String json) { return switch (json) {
   'created_on' => createdOn,

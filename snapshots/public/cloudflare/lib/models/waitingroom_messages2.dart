@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waitingroom_messages2_source.dart';final class WaitingroomMessages2 {const WaitingroomMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_messages2_source.dart';@immutable final class WaitingroomMessages2 {const WaitingroomMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory WaitingroomMessages2.fromJson(Map<String, dynamic> json) { return WaitingroomMessages2(
   code: (json['code'] as num).toInt(),

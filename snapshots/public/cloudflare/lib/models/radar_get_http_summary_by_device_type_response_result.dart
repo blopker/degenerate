@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_http_summary_by_device_type_response_result_meta.dart';import 'radar_get_http_summary_by_device_type_response_result_summary0.dart';final class RadarGetHttpSummaryByDeviceTypeResponseResult {const RadarGetHttpSummaryByDeviceTypeResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_summary_by_device_type_response_result_meta.dart';import 'radar_get_http_summary_by_device_type_response_result_summary0.dart';@immutable final class RadarGetHttpSummaryByDeviceTypeResponseResult {const RadarGetHttpSummaryByDeviceTypeResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetHttpSummaryByDeviceTypeResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByDeviceTypeResponseResult(
   meta: RadarGetHttpSummaryByDeviceTypeResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

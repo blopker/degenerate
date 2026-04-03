@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The frequency at which you will be billed for this plan.
-final class SchemasFrequency {const SchemasFrequency._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The frequency at which you will be billed for this plan.
+@immutable final class SchemasFrequency {const SchemasFrequency._(this.value);
 
 factory SchemasFrequency.fromJson(String json) { return switch (json) {
   'weekly' => weekly,

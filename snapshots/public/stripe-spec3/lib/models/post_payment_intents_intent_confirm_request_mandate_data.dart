@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_key_param.dart';import 'secret_key_param2.dart';final class PostPaymentIntentsIntentConfirmRequestMandateDataVariant2 {const PostPaymentIntentsIntentConfirmRequestMandateDataVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_key_param.dart';import 'secret_key_param2.dart';@immutable final class PostPaymentIntentsIntentConfirmRequestMandateDataVariant2 {const PostPaymentIntentsIntentConfirmRequestMandateDataVariant2._(this.value);
 
 factory PostPaymentIntentsIntentConfirmRequestMandateDataVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel {const WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel {const WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel._(this.value);
 
 factory WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel.fromJson(String json) { return switch (json) {
   'FREE' => free,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlanPriceModel($value)'; } 
  }
-final class WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan {const WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan({required this.bullets, required this.description, required this.hasFreeTrial, required this.id, required this.monthlyPriceInCents, required this.name, required this.priceModel, required this.unitName, required this.yearlyPriceInCents, });
+@immutable final class WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan {const WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan({required this.bullets, required this.description, required this.hasFreeTrial, required this.id, required this.monthlyPriceInCents, required this.name, required this.priceModel, required this.unitName, required this.yearlyPriceInCents, });
 
 factory WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan.fromJson(Map<String, dynamic> json) { return WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchasePlan(
   bullets: (json['bullets'] as List<dynamic>).map((e) => e as String).toList(),

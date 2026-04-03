@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_servers_response400_errors.dart';final class ListServersResponse400 {const ListServersResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_servers_response400_errors.dart';@immutable final class ListServersResponse400 {const ListServersResponse400({required this.errors, required this.result, required this.success, });
 
 factory ListServersResponse400.fromJson(Map<String, dynamic> json) { return ListServersResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => ListServersResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

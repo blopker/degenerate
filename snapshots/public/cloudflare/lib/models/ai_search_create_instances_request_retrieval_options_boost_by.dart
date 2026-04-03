@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Boost direction. 'desc' = higher values rank higher (e.g. newer timestamps). 'asc' = lower values rank higher. 'exists' = boost chunks that have the field. 'not_exists' = boost chunks that lack the field. Optional ��� defaults to 'asc' for numeric fields, 'exists' for text/boolean fields.
-final class AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection {const AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Boost direction. 'desc' = higher values rank higher (e.g. newer timestamps). 'asc' = lower values rank higher. 'exists' = boost chunks that have the field. 'not_exists' = boost chunks that lack the field. Optional ��� defaults to 'asc' for numeric fields, 'exists' for text/boolean fields.
+@immutable final class AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection {const AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection._(this.value);
 
 factory AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection($value)'; } 
  }
-final class AiSearchCreateInstancesRequestRetrievalOptionsBoostBy {const AiSearchCreateInstancesRequestRetrievalOptionsBoostBy({this.direction, required this.field, });
+@immutable final class AiSearchCreateInstancesRequestRetrievalOptionsBoostBy {const AiSearchCreateInstancesRequestRetrievalOptionsBoostBy({required this.field, this.direction, });
 
 factory AiSearchCreateInstancesRequestRetrievalOptionsBoostBy.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesRequestRetrievalOptionsBoostBy(
   direction: json['direction'] != null ? AiSearchCreateInstancesRequestRetrievalOptionsBoostByDirection.fromJson(json['direction'] as String) : null,

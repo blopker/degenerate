@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `response.function_call_arguments.delta`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.function_call_arguments.delta`.
 /// 
-final class RealtimeServerEventResponseFunctionCallArgumentsDeltaType {const RealtimeServerEventResponseFunctionCallArgumentsDeltaType._(this.value);
+@immutable final class RealtimeServerEventResponseFunctionCallArgumentsDeltaType {const RealtimeServerEventResponseFunctionCallArgumentsDeltaType._(this.value);
 
 factory RealtimeServerEventResponseFunctionCallArgumentsDeltaType.fromJson(String json) { return switch (json) {
   'response.function_call_arguments.delta' => responseFunctionCallArgumentsDelta,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Returned when the model-generated function call arguments are updated.
 /// 
-final class RealtimeServerEventResponseFunctionCallArgumentsDelta {const RealtimeServerEventResponseFunctionCallArgumentsDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.callId, required this.delta, });
+@immutable final class RealtimeServerEventResponseFunctionCallArgumentsDelta {const RealtimeServerEventResponseFunctionCallArgumentsDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.callId, required this.delta, });
 
 factory RealtimeServerEventResponseFunctionCallArgumentsDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventResponseFunctionCallArgumentsDelta(
   eventId: json['event_id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetLivestreamAnalyticsCompleteResponseData {const GetLivestreamAnalyticsCompleteResponseData({this.count, this.totalIngestSeconds, this.totalViewerSeconds, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetLivestreamAnalyticsCompleteResponseData {const GetLivestreamAnalyticsCompleteResponseData({this.count, this.totalIngestSeconds, this.totalViewerSeconds, });
 
 factory GetLivestreamAnalyticsCompleteResponseData.fromJson(Map<String, dynamic> json) { return GetLivestreamAnalyticsCompleteResponseData(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

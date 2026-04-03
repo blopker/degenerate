@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// HTTP status code returned to a user while in the queue.
-final class WaitingroomQueueingStatusCode {const WaitingroomQueueingStatusCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// HTTP status code returned to a user while in the queue.
+@immutable final class WaitingroomQueueingStatusCode {const WaitingroomQueueingStatusCode._(this.value);
 
 factory WaitingroomQueueingStatusCode.fromJson(int json) { return switch (json) {
   200 => $200,

@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls which cookies appear in the Cache Key.
 /// 
-final class ZonesCacheKeyFieldsValueCookie {const ZonesCacheKeyFieldsValueCookie({this.checkPresence, this.include, });
+@immutable final class ZonesCacheKeyFieldsValueCookie {const ZonesCacheKeyFieldsValueCookie({this.checkPresence, this.include, });
 
 factory ZonesCacheKeyFieldsValueCookie.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValueCookie(
   checkPresence: (json['check_presence'] as List<dynamic>?)?.map((e) => e as String).toList(),

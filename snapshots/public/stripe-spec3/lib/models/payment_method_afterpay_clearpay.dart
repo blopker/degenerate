@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentMethodAfterpayClearpay {const PaymentMethodAfterpayClearpay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentMethodAfterpayClearpay {const PaymentMethodAfterpayClearpay();
 
-factory PaymentMethodAfterpayClearpay.fromJson(Map<String, dynamic> json) { return PaymentMethodAfterpayClearpay(
-
-); }
+factory PaymentMethodAfterpayClearpay.fromJson(Map<String, dynamic> _) { return const PaymentMethodAfterpayClearpay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PaymentMethodAfterpayClearpay copyWith() { return PaymentMethodAfterpayClearpay(
+PaymentMethodAfterpayClearpay copyWith() { return const PaymentMethodAfterpayClearpay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PaymentMethodAfterpayClearpay; } 

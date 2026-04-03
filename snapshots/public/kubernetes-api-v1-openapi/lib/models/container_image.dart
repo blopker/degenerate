@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describe a container image
-final class ContainerImage {const ContainerImage({this.names, this.sizeBytes, });
+@immutable final class ContainerImage {const ContainerImage({this.names, this.sizeBytes, });
 
 factory ContainerImage.fromJson(Map<String, dynamic> json) { return ContainerImage(
   names: (json['names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   sizeBytes: json['sizeBytes'] != null ? (json['sizeBytes'] as num).toInt() : null,
 ); }
 
-/// Names by which this image is known. e.g. ["kubernetes.example/hyperkube:v1.0.7", "cloud-vendor.registry.example/cloud-vendor/hyperkube:v1.0.7"]
+/// Names by which this image is known. e.g. `["kubernetes.example/hyperkube:v1.0.7", "cloud-vendor.registry.example/cloud-vendor/hyperkube:v1.0.7"]`
 final List<String>? names;
 
 /// The size of the image in bytes.

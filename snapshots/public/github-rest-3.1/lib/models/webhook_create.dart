@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_deploy_pusher_type.dart';import 'webhooks_ref0.dart';/// The type of Git ref object created in the repository.
-final class WebhookCreateRefType {const WebhookCreateRefType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_deploy_pusher_type.dart';import 'webhooks_ref0.dart';/// The type of Git ref object created in the repository.
+@immutable final class WebhookCreateRefType {const WebhookCreateRefType._(this.value);
 
 factory WebhookCreateRefType.fromJson(String json) { return switch (json) {
   'tag' => tag,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCreateRefType($value)'; } 
  }
-final class WebhookCreate {const WebhookCreate({required this.description, this.enterprise, this.installation, required this.masterBranch, this.organization, required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, });
+@immutable final class WebhookCreate {const WebhookCreate({required this.description, required this.masterBranch, required this.pusherType, required this.ref, required this.refType, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookCreate.fromJson(Map<String, dynamic> json) { return WebhookCreate(
   description: json['description'] as String?,

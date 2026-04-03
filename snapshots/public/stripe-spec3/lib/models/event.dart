@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'notification_event_data.dart';import 'notification_event_request.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class EventObject {const EventObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'notification_event_data.dart';import 'notification_event_request.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class EventObject {const EventObject._(this.value);
 
 factory EventObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// You can access events through the [Retrieve Event API](https://docs.stripe.com/api/events#retrieve_event)
 /// for 30 days.
-final class Event {const Event({this.account, this.apiVersion, this.context, required this.created, required this.data, required this.id, required this.livemode, required this.object, required this.pendingWebhooks, this.request, required this.type, });
+@immutable final class Event {const Event({required this.created, required this.data, required this.id, required this.livemode, required this.object, required this.pendingWebhooks, required this.type, this.account, this.apiVersion, this.context, this.request, });
 
 factory Event.fromJson(Map<String, dynamic> json) { return Event(
   account: json['account'] as String?,

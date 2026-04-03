@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_token_logprob_top_logprobs.dart';final class ChatCompletionTokenLogprob {const ChatCompletionTokenLogprob({required this.token, required this.logprob, required this.bytes, required this.topLogprobs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_token_logprob_top_logprobs.dart';@immutable final class ChatCompletionTokenLogprob {const ChatCompletionTokenLogprob({required this.token, required this.logprob, required this.bytes, required this.topLogprobs, });
 
 factory ChatCompletionTokenLogprob.fromJson(Map<String, dynamic> json) { return ChatCompletionTokenLogprob(
   token: json['token'] as String,

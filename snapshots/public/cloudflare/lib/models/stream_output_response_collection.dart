@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_messages2.dart';import 'stream_output.dart';final class StreamOutputResponseCollection {const StreamOutputResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_messages2.dart';import 'stream_output.dart';@immutable final class StreamOutputResponseCollection {const StreamOutputResponseCollection({required this.errors, required this.messages, required this.success, this.result, });
 
 factory StreamOutputResponseCollection.fromJson(Map<String, dynamic> json) { return StreamOutputResponseCollection(
   errors: (json['errors'] as List<dynamic>).map((e) => StreamMessages2.fromJson(e as Map<String, dynamic>)).toList(),

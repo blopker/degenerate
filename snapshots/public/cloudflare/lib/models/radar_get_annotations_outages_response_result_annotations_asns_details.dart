@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_annotations_outages_response_result_annotations_asns_details_locations.dart';final class RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails {const RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails({required this.asn, this.locations, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_annotations_outages_response_result_annotations_asns_details_locations.dart';@immutable final class RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails {const RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails({required this.asn, required this.name, this.locations, });
 
 factory RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsOutagesResponseResultAnnotationsAsnsDetails(
   asn: json['asn'] as String,

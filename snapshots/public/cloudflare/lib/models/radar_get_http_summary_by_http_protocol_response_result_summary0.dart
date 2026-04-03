@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpSummaryByHttpProtocolResponseResultSummary0 {const RadarGetHttpSummaryByHttpProtocolResponseResultSummary0({required this.http, required this.https, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByHttpProtocolResponseResultSummary0 {const RadarGetHttpSummaryByHttpProtocolResponseResultSummary0({required this.http, required this.https, });
 
 factory RadarGetHttpSummaryByHttpProtocolResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByHttpProtocolResponseResultSummary0(
   http: json['http'] as String,

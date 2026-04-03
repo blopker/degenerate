@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_issuing_authorizations_request_amount_details.dart';import 'post_test_helpers_issuing_authorizations_request_fleet.dart';import 'post_test_helpers_issuing_authorizations_request_fuel.dart';import 'post_test_helpers_issuing_authorizations_request_merchant_data.dart';import 'post_test_helpers_issuing_authorizations_request_network_data.dart';import 'post_test_helpers_issuing_authorizations_request_risk_assessment.dart';import 'post_test_helpers_issuing_authorizations_request_verification_data.dart';/// How the card details were provided. Defaults to online.
-final class PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod {const PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod._(this.value);
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod {const PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod.fromJson(String json) { return switch (json) {
   'chip' => chip,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestAuthorizationMethod($value)'; } 
  }
 /// Probability that this transaction can be disputed in the event of fraud. Assessed by comparing the characteristics of the authorization to card network rules.
-final class PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood {const PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood._(this.value);
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood {const PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood.fromJson(String json) { return switch (json) {
   'neutral' => neutral,
@@ -66,7 +66,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestFraudDisputabilityLikelihood($value)'; } 
  }
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`. Will populate as `null` when no digital wallet was utilized.
-final class PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet._(this.value);
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet._(this.value);
 
 factory PostTestHelpersIssuingAuthorizationsRequestWallet.fromJson(String json) { return switch (json) {
   'apple_pay' => applePay,
@@ -93,7 +93,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestWallet($value)'; } 
  }
-final class PostTestHelpersIssuingAuthorizationsRequest {const PostTestHelpersIssuingAuthorizationsRequest({this.amount, this.amountDetails, this.authorizationMethod, required this.card, this.currency, this.expand, this.fleet, this.fraudDisputabilityLikelihood, this.fuel, this.isAmountControllable, this.merchantAmount, this.merchantCurrency, this.merchantData, this.networkData, this.riskAssessment, this.verificationData, this.wallet, });
+@immutable final class PostTestHelpersIssuingAuthorizationsRequest {const PostTestHelpersIssuingAuthorizationsRequest({required this.card, this.amount, this.amountDetails, this.authorizationMethod, this.currency, this.expand, this.fleet, this.fraudDisputabilityLikelihood, this.fuel, this.isAmountControllable, this.merchantAmount, this.merchantCurrency, this.merchantData, this.networkData, this.riskAssessment, this.verificationData, this.wallet, });
 
 factory PostTestHelpersIssuingAuthorizationsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

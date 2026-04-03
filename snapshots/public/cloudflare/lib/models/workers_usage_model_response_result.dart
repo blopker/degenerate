@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_usage_model.dart';import 'workers_user_limits.dart';final class WorkersUsageModelResponseResult {const WorkersUsageModelResponseResult({this.usageModel, this.userLimits, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_usage_model.dart';import 'workers_user_limits.dart';@immutable final class WorkersUsageModelResponseResult {const WorkersUsageModelResponseResult({this.usageModel, this.userLimits, });
 
 factory WorkersUsageModelResponseResult.fromJson(Map<String, dynamic> json) { return WorkersUsageModelResponseResult(
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,

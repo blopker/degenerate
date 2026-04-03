@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_flows_amount_details_resource_line_items_list_resource_line_item_resource_payment_method_options.dart';import 'payment_flows_amount_details_resource_line_items_list_resource_line_item_resource_tax.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class PaymentIntentAmountDetailsLineItemObject {const PaymentIntentAmountDetailsLineItemObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_amount_details_resource_line_items_list_resource_line_item_resource_payment_method_options.dart';import 'payment_flows_amount_details_resource_line_items_list_resource_line_item_resource_tax.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class PaymentIntentAmountDetailsLineItemObject {const PaymentIntentAmountDetailsLineItemObject._(this.value);
 
 factory PaymentIntentAmountDetailsLineItemObject.fromJson(String json) { return switch (json) {
   'payment_intent_amount_details_line_item' => paymentIntentAmountDetailsLineItem,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentIntentAmountDetailsLineItemObject($value)'; } 
  }
 /// 
-final class PaymentIntentAmountDetailsLineItem {const PaymentIntentAmountDetailsLineItem({this.discountAmount, required this.id, required this.object, this.paymentMethodOptions, this.productCode, required this.productName, required this.quantity, this.tax, required this.unitCost, this.unitOfMeasure, });
+@immutable final class PaymentIntentAmountDetailsLineItem {const PaymentIntentAmountDetailsLineItem({required this.id, required this.object, required this.productName, required this.quantity, required this.unitCost, this.discountAmount, this.paymentMethodOptions, this.productCode, this.tax, this.unitOfMeasure, });
 
 factory PaymentIntentAmountDetailsLineItem.fromJson(Map<String, dynamic> json) { return PaymentIntentAmountDetailsLineItem(
   discountAmount: json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null,

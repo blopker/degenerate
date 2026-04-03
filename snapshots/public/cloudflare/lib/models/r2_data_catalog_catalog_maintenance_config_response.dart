@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'r2_data_catalog_catalog_maintenance_config.dart';import 'r2_data_catalog_credential_status.dart';/// Contains maintenance configuration and credential status.
-final class R2DataCatalogCatalogMaintenanceConfigResponse {const R2DataCatalogCatalogMaintenanceConfigResponse({required this.credentialStatus, required this.maintenanceConfig, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_data_catalog_catalog_maintenance_config.dart';import 'r2_data_catalog_credential_status.dart';/// Contains maintenance configuration and credential status.
+@immutable final class R2DataCatalogCatalogMaintenanceConfigResponse {const R2DataCatalogCatalogMaintenanceConfigResponse({required this.credentialStatus, required this.maintenanceConfig, });
 
 factory R2DataCatalogCatalogMaintenanceConfigResponse.fromJson(Map<String, dynamic> json) { return R2DataCatalogCatalogMaintenanceConfigResponse(
   credentialStatus: R2DataCatalogCredentialStatus.fromJson(json['credential_status'] as String),

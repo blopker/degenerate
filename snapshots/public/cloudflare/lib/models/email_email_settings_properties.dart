@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_email_setting_name.dart';/// The date and time the settings have been created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_email_setting_name.dart';/// The date and time the settings have been created.
 extension type EmailEmailSettingCreated(DateTime value) {
 factory EmailEmailSettingCreated.fromJson(String json) => EmailEmailSettingCreated(DateTime.parse(json));
 
@@ -36,7 +36,7 @@ bool toJson() => value;
 
 }
 /// Show the state of your account, and the type or configuration error.
-final class EmailEmailSettingStatus {const EmailEmailSettingStatus._(this.value);
+@immutable final class EmailEmailSettingStatus {const EmailEmailSettingStatus._(this.value);
 
 factory EmailEmailSettingStatus.fromJson(String json) { return switch (json) {
   'ready' => ready,
@@ -76,7 +76,7 @@ factory EmailEmailSettingTag.fromJson(String json) => EmailEmailSettingTag(json)
 String toJson() => value;
 
 }
-final class EmailEmailSettingsProperties {const EmailEmailSettingsProperties({this.created, required this.enabled, required this.id, this.modified, required this.name, this.skipWizard, this.status, this.tag, });
+@immutable final class EmailEmailSettingsProperties {const EmailEmailSettingsProperties({required this.enabled, required this.id, required this.name, this.created, this.modified, this.skipWizard, this.status, this.tag, });
 
 factory EmailEmailSettingsProperties.fromJson(Map<String, dynamic> json) { return EmailEmailSettingsProperties(
   created: json['created'] != null ? EmailEmailSettingCreated.fromJson(json['created'] as String) : null,

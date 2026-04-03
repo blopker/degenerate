@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsRequestPaymentMethodDataSamsungPay {const PostPaymentIntentsRequestPaymentMethodDataSamsungPay();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsRequestPaymentMethodDataSamsungPay {const PostPaymentIntentsRequestPaymentMethodDataSamsungPay();
 
-factory PostPaymentIntentsRequestPaymentMethodDataSamsungPay.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentMethodDataSamsungPay(
-
-); }
+factory PostPaymentIntentsRequestPaymentMethodDataSamsungPay.fromJson(Map<String, dynamic> _) { return const PostPaymentIntentsRequestPaymentMethodDataSamsungPay(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostPaymentIntentsRequestPaymentMethodDataSamsungPay copyWith() { return PostPaymentIntentsRequestPaymentMethodDataSamsungPay(
+PostPaymentIntentsRequestPaymentMethodDataSamsungPay copyWith() { return const PostPaymentIntentsRequestPaymentMethodDataSamsungPay(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentIntentsRequestPaymentMethodDataSamsungPay; } 

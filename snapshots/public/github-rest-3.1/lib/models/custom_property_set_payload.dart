@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_set_payload_default_value.dart';/// The type of the value for the property
-final class CustomPropertySetPayloadValueType {const CustomPropertySetPayloadValueType._(this.value);
+@immutable final class CustomPropertySetPayloadValueType {const CustomPropertySetPayloadValueType._(this.value);
 
 factory CustomPropertySetPayloadValueType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomPropertySetPayloadValueType($value)'; } 
  }
 /// Who can edit the values of the property
-final class CustomPropertySetPayloadValuesEditableBy {const CustomPropertySetPayloadValuesEditableBy._(this.value);
+@immutable final class CustomPropertySetPayloadValuesEditableBy {const CustomPropertySetPayloadValuesEditableBy._(this.value);
 
 factory CustomPropertySetPayloadValuesEditableBy.fromJson(String json) { return switch (json) {
   'org_actors' => orgActors,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomPropertySetPayloadValuesEditableBy($value)'; } 
  }
 /// Custom property set payload
-final class CustomPropertySetPayload {const CustomPropertySetPayload({required this.valueType, this.$required, this.defaultValue, this.description, this.allowedValues, this.valuesEditableBy, this.requireExplicitValues, });
+@immutable final class CustomPropertySetPayload {const CustomPropertySetPayload({required this.valueType, this.$required, this.defaultValue, this.description, this.allowedValues, this.valuesEditableBy, this.requireExplicitValues, });
 
 factory CustomPropertySetPayload.fromJson(Map<String, dynamic> json) { return CustomPropertySetPayload(
   valueType: CustomPropertySetPayloadValueType.fromJson(json['value_type'] as String),

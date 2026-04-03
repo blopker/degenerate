@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'milestone.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhooks_number.dart';import 'webhooks_pull_request5.dart';final class WebhookPullRequestMilestonedAction {const WebhookPullRequestMilestonedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'milestone.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhooks_number.dart';import 'webhooks_pull_request5.dart';@immutable final class WebhookPullRequestMilestonedAction {const WebhookPullRequestMilestonedAction._(this.value);
 
 factory WebhookPullRequestMilestonedAction.fromJson(String json) { return switch (json) {
   'milestoned' => milestoned,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestMilestonedAction($value)'; } 
  }
-final class WebhookPullRequestMilestoned {const WebhookPullRequestMilestoned({required this.action, this.enterprise, this.milestone, required this.number, this.organization, required this.pullRequest, required this.repository, this.sender, });
+@immutable final class WebhookPullRequestMilestoned {const WebhookPullRequestMilestoned({required this.action, required this.number, required this.pullRequest, required this.repository, this.enterprise, this.milestone, this.organization, this.sender, });
 
 factory WebhookPullRequestMilestoned.fromJson(Map<String, dynamic> json) { return WebhookPullRequestMilestoned(
   action: WebhookPullRequestMilestonedAction.fromJson(json['action'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSourcesRequestMandateAcceptanceOnline {const PostSourcesRequestMandateAcceptanceOnline({this.date, this.ip, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSourcesRequestMandateAcceptanceOnline {const PostSourcesRequestMandateAcceptanceOnline({this.date, this.ip, this.userAgent, });
 
 factory PostSourcesRequestMandateAcceptanceOnline.fromJson(Map<String, dynamic> json) { return PostSourcesRequestMandateAcceptanceOnline(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,

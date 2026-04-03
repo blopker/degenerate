@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_canceled_request_metadata.dart';final class PostPaymentRecordsIdReportPaymentAttemptCanceledRequest {const PostPaymentRecordsIdReportPaymentAttemptCanceledRequest({required this.canceledAt, this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_canceled_request_metadata.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptCanceledRequest {const PostPaymentRecordsIdReportPaymentAttemptCanceledRequest({required this.canceledAt, this.expand, this.metadata, });
 
 factory PostPaymentRecordsIdReportPaymentAttemptCanceledRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptCanceledRequest(
   canceledAt: (json['canceled_at'] as num).toInt(),

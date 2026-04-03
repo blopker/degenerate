@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigCreateDatasetResponseResultFiltersKey {const AigConfigCreateDatasetResponseResultFiltersKey._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateDatasetResponseResultFiltersKey {const AigConfigCreateDatasetResponseResultFiltersKey._(this.value);
 
 factory AigConfigCreateDatasetResponseResultFiltersKey.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigCreateDatasetResponseResultFiltersKey($value)'; } 
  }
-final class AigConfigCreateDatasetResponseResultFiltersOperator {const AigConfigCreateDatasetResponseResultFiltersOperator._(this.value);
+@immutable final class AigConfigCreateDatasetResponseResultFiltersOperator {const AigConfigCreateDatasetResponseResultFiltersOperator._(this.value);
 
 factory AigConfigCreateDatasetResponseResultFiltersOperator.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -87,7 +87,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigCreateDatasetResponseResultFiltersOperator($value)'; } 
  }
-final class AigConfigCreateDatasetResponseResultFilters {const AigConfigCreateDatasetResponseResultFilters({required this.key, required this.$operator, required this.value, });
+@immutable final class AigConfigCreateDatasetResponseResultFilters {const AigConfigCreateDatasetResponseResultFilters({required this.key, required this.$operator, required this.value, });
 
 factory AigConfigCreateDatasetResponseResultFilters.fromJson(Map<String, dynamic> json) { return AigConfigCreateDatasetResponseResultFilters(
   key: AigConfigCreateDatasetResponseResultFiltersKey.fromJson(json['key'] as String),

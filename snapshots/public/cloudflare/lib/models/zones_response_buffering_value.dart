@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the zone setting.
-final class ZonesResponseBufferingValue {const ZonesResponseBufferingValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
+@immutable final class ZonesResponseBufferingValue {const ZonesResponseBufferingValue._(this.value);
 
 factory ZonesResponseBufferingValue.fromJson(String json) { return switch (json) {
   'on' => $on,

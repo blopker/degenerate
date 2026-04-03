@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the
 /// repository.
 /// 
 /// `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
-final class ActionsWorkflowAccessToRepositoryAccessLevel {const ActionsWorkflowAccessToRepositoryAccessLevel._(this.value);
+@immutable final class ActionsWorkflowAccessToRepositoryAccessLevel {const ActionsWorkflowAccessToRepositoryAccessLevel._(this.value);
 
 factory ActionsWorkflowAccessToRepositoryAccessLevel.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ActionsWorkflowAccessToRepositoryAccessLevel($value)'; } 
  }
-final class ActionsWorkflowAccessToRepository {const ActionsWorkflowAccessToRepository({required this.accessLevel});
+@immutable final class ActionsWorkflowAccessToRepository {const ActionsWorkflowAccessToRepository({required this.accessLevel});
 
 factory ActionsWorkflowAccessToRepository.fromJson(Map<String, dynamic> json) { return ActionsWorkflowAccessToRepository(
   accessLevel: ActionsWorkflowAccessToRepositoryAccessLevel.fromJson(json['access_level'] as String),

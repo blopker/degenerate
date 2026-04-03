@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bot_management_bm_subscription_config_stale_zone_configuration.dart';/// Automatically update to the newest bot detection models created by Cloudflare as they are released. [Learn more.](https://developers.cloudflare.com/bots/reference/machine-learning-models#model-versions-and-release-notes)
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_bm_subscription_config_stale_zone_configuration.dart';/// Automatically update to the newest bot detection models created by Cloudflare as they are released. [Learn more.](https://developers.cloudflare.com/bots/reference/machine-learning-models#model-versions-and-release-notes)
 extension type const BotManagementAutoUpdateModel(bool value) {
 factory BotManagementAutoUpdateModel.fromJson(bool json) => BotManagementAutoUpdateModel(json);
 
@@ -21,7 +21,7 @@ factory BotManagementSuppressSessionScore.fromJson(bool json) => BotManagementSu
 bool toJson() => value;
 
 }
-final class BotManagementBmSubscriptionConfig {const BotManagementBmSubscriptionConfig({this.autoUpdateModel, this.bmCookieEnabled, this.staleZoneConfiguration, this.suppressSessionScore, });
+@immutable final class BotManagementBmSubscriptionConfig {const BotManagementBmSubscriptionConfig({this.autoUpdateModel, this.bmCookieEnabled, this.staleZoneConfiguration, this.suppressSessionScore, });
 
 factory BotManagementBmSubscriptionConfig.fromJson(Map<String, dynamic> json) { return BotManagementBmSubscriptionConfig(
   autoUpdateModel: json['auto_update_model'] != null ? BotManagementAutoUpdateModel.fromJson(json['auto_update_model'] as bool) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'code_scanning_variant_analysis_skipped_repo_group.dart';import 'code_scanning_variant_analysis_skipped_repositories_not_found_repos.dart';/// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
-final class CodeScanningVariantAnalysisSkippedRepositories {const CodeScanningVariantAnalysisSkippedRepositories({required this.accessMismatchRepos, required this.notFoundRepos, required this.noCodeqlDbRepos, required this.overLimitRepos, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_variant_analysis_skipped_repo_group.dart';import 'code_scanning_variant_analysis_skipped_repositories_not_found_repos.dart';/// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
+@immutable final class CodeScanningVariantAnalysisSkippedRepositories {const CodeScanningVariantAnalysisSkippedRepositories({required this.accessMismatchRepos, required this.notFoundRepos, required this.noCodeqlDbRepos, required this.overLimitRepos, });
 
 factory CodeScanningVariantAnalysisSkippedRepositories.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysisSkippedRepositories(
   accessMismatchRepos: CodeScanningVariantAnalysisSkippedRepoGroup.fromJson(json['access_mismatch_repos'] as Map<String, dynamic>),

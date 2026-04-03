@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Allow or deny operations against the resources.
-final class IamAccess {const IamAccess._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allow or deny operations against the resources.
+@immutable final class IamAccess {const IamAccess._(this.value);
 
 factory IamAccess.fromJson(String json) { return switch (json) {
   'allow' => allow,

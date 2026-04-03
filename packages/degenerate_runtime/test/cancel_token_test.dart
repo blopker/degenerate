@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:test/test.dart';
 
@@ -9,25 +11,24 @@ void main() {
     });
 
     test('is cancelled after cancel()', () {
-      final token = CancelToken();
-      token.cancel();
+      final token = CancelToken()..cancel();
       expect(token.isCancelled, isTrue);
     });
 
     test('cancel() is idempotent', () {
-      final token = CancelToken();
-      token.cancel();
-      token.cancel();
+      final token = CancelToken()
+        ..cancel()
+        ..cancel();
       expect(token.isCancelled, isTrue);
     });
 
     test('whenCancelled completes after cancel()', () async {
       final token = CancelToken();
       var completed = false;
-      token.whenCancelled.then((_) => completed = true);
+      unawaited(token.whenCancelled.then((_) => completed = true));
       expect(completed, isFalse);
       token.cancel();
-      await Future.delayed(Duration.zero);
+      await Future<void>.delayed(Duration.zero);
       expect(completed, isTrue);
     });
   });
@@ -56,11 +57,11 @@ void main() {
     test('fields are accessible', () {
       final token = CancelToken();
       final options = RequestOptions(
-        timeout: Duration(seconds: 5),
-        extraHeaders: {'X-Request-Id': '123'},
+        timeout: const Duration(seconds: 5),
+        extraHeaders: const {'X-Request-Id': '123'},
         cancelToken: token,
       );
-      expect(options.timeout, equals(Duration(seconds: 5)));
+      expect(options.timeout, equals(const Duration(seconds: 5)));
       expect(options.extraHeaders!['X-Request-Id'], equals('123'));
       expect(options.cancelToken, same(token));
     });

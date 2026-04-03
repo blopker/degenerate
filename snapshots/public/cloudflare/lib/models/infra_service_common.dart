@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_dual_stack_host.dart';import 'infra_hostname_host.dart';import 'infra_i_pv4_host.dart';import 'infra_i_pv6_host.dart';import 'infra_service_host.dart';import 'infra_service_type.dart';final class InfraServiceCommon {const InfraServiceCommon({this.createdAt, required this.host, required this.name, this.serviceId, required this.type, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_dual_stack_host.dart';import 'infra_hostname_host.dart';import 'infra_i_pv4_host.dart';import 'infra_i_pv6_host.dart';import 'infra_service_host.dart';import 'infra_service_type.dart';@immutable final class InfraServiceCommon {const InfraServiceCommon({required this.host, required this.name, required this.type, this.createdAt, this.serviceId, this.updatedAt, });
 
 factory InfraServiceCommon.fromJson(Map<String, dynamic> json) { return InfraServiceCommon(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,

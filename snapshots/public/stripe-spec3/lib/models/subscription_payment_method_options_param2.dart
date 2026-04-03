@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'subscription_payment_method_options_param2_mandate_options.dart';final class SubscriptionPaymentMethodOptionsParam2Network {const SubscriptionPaymentMethodOptionsParam2Network._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription_payment_method_options_param2_mandate_options.dart';@immutable final class SubscriptionPaymentMethodOptionsParam2Network {const SubscriptionPaymentMethodOptionsParam2Network._(this.value);
 
 factory SubscriptionPaymentMethodOptionsParam2Network.fromJson(String json) { return switch (json) {
   'amex' => amex,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SubscriptionPaymentMethodOptionsParam2Network($value)'; } 
  }
-final class SubscriptionPaymentMethodOptionsParam2RequestThreeDSecure {const SubscriptionPaymentMethodOptionsParam2RequestThreeDSecure._(this.value);
+@immutable final class SubscriptionPaymentMethodOptionsParam2RequestThreeDSecure {const SubscriptionPaymentMethodOptionsParam2RequestThreeDSecure._(this.value);
 
 factory SubscriptionPaymentMethodOptionsParam2RequestThreeDSecure.fromJson(String json) { return switch (json) {
   'any' => any,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SubscriptionPaymentMethodOptionsParam2RequestThreeDSecure($value)'; } 
  }
-final class SubscriptionPaymentMethodOptionsParam2 {const SubscriptionPaymentMethodOptionsParam2({this.mandateOptions, this.network, this.requestThreeDSecure, });
+@immutable final class SubscriptionPaymentMethodOptionsParam2 {const SubscriptionPaymentMethodOptionsParam2({this.mandateOptions, this.network, this.requestThreeDSecure, });
 
 factory SubscriptionPaymentMethodOptionsParam2.fromJson(Map<String, dynamic> json) { return SubscriptionPaymentMethodOptionsParam2(
   mandateOptions: json['mandate_options'] != null ? SubscriptionPaymentMethodOptionsParam2MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,

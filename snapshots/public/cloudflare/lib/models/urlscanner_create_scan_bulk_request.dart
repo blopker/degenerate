@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Device resolutions.
-final class UrlscannerCreateScanBulkRequestScreenshotsResolutions {const UrlscannerCreateScanBulkRequestScreenshotsResolutions._(this.value);
+@immutable final class UrlscannerCreateScanBulkRequestScreenshotsResolutions {const UrlscannerCreateScanBulkRequestScreenshotsResolutions._(this.value);
 
 factory UrlscannerCreateScanBulkRequestScreenshotsResolutions.fromJson(String json) { return switch (json) {
   'desktop' => desktop,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UrlscannerCreateScanBulkRequestScreenshotsResolutions($value)'; } 
  }
 /// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
-final class UrlscannerCreateScanBulkRequestVisibility {const UrlscannerCreateScanBulkRequestVisibility._(this.value);
+@immutable final class UrlscannerCreateScanBulkRequestVisibility {const UrlscannerCreateScanBulkRequestVisibility._(this.value);
 
 factory UrlscannerCreateScanBulkRequestVisibility.fromJson(String json) { return switch (json) {
   'Public' => public,
@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UrlscannerCreateScanBulkRequestVisibility($value)'; } 
  }
-final class UrlscannerCreateScanBulkRequest {const UrlscannerCreateScanBulkRequest({this.customHeaders, this.customagent, this.referer, this.screenshotsResolutions, required this.url, this.visibility = UrlscannerCreateScanBulkRequestVisibility.public, });
+@immutable final class UrlscannerCreateScanBulkRequest {const UrlscannerCreateScanBulkRequest({required this.url, this.customHeaders, this.customagent, this.referer, this.screenshotsResolutions, this.visibility = UrlscannerCreateScanBulkRequestVisibility.public, });
 
 factory UrlscannerCreateScanBulkRequest.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanBulkRequest(
   customHeaders: (json['customHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

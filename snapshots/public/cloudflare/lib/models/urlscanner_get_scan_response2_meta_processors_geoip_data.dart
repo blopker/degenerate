@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'urlscanner_get_scan_response2_meta_processors_geoip_data_geoip.dart';final class UrlscannerGetScanResponse2MetaProcessorsGeoipData {const UrlscannerGetScanResponse2MetaProcessorsGeoipData({required this.geoip, required this.ip, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_geoip_data_geoip.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsGeoipData {const UrlscannerGetScanResponse2MetaProcessorsGeoipData({required this.geoip, required this.ip, });
 
 factory UrlscannerGetScanResponse2MetaProcessorsGeoipData.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsGeoipData(
   geoip: UrlscannerGetScanResponse2MetaProcessorsGeoipDataGeoip.fromJson(json['geoip'] as Map<String, dynamic>),

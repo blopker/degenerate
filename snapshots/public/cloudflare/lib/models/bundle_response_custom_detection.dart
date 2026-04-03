@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bundle_custom_detection.dart';final class BundleResponseCustomDetection {const BundleResponseCustomDetection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bundle_custom_detection.dart';@immutable final class BundleResponseCustomDetection {const BundleResponseCustomDetection({this.result});
 
 factory BundleResponseCustomDetection.fromJson(Map<String, dynamic> json) { return BundleResponseCustomDetection(
   result: json['result'] != null ? BundleCustomDetection.fromJson(json['result'] as Map<String, dynamic>) : null,

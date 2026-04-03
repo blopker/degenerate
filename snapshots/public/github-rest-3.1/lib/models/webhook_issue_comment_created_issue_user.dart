@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookIssueCommentCreatedIssueUser {const WebhookIssueCommentCreatedIssueUser({this.avatarUrl, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssueCommentCreatedIssueUser {const WebhookIssueCommentCreatedIssueUser({this.avatarUrl, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
 
 factory WebhookIssueCommentCreatedIssueUser.fromJson(Map<String, dynamic> json) { return WebhookIssueCommentCreatedIssueUser(
   avatarUrl: json['avatar_url'] as String?,

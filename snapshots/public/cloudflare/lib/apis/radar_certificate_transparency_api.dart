@@ -161,22 +161,22 @@ Future<ApiResult<RadarGetCtSummaryResponseResult, RadarGetCtSummaryResponse400>>
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (limitPerGroup != null) {
@@ -184,77 +184,77 @@ if (limitPerGroup != null) {
 }
 if (ca != null) {
 for (final item in ca) {
-  queryParametersList.add(ApiQueryParameter(name: 'ca', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'ca', value: item));
 }
 }
 if (caOwner != null) {
 for (final item in caOwner) {
-  queryParametersList.add(ApiQueryParameter(name: 'caOwner', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'caOwner', value: item));
 }
 }
 if (duration != null) {
 for (final item in duration) {
-  queryParametersList.add(ApiQueryParameter(name: 'duration', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'duration', value: item.toJson()));
 }
 }
 if (entryType != null) {
 for (final item in entryType) {
-  queryParametersList.add(ApiQueryParameter(name: 'entryType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'entryType', value: item.toJson()));
 }
 }
 if (expirationStatus != null) {
 for (final item in expirationStatus) {
-  queryParametersList.add(ApiQueryParameter(name: 'expirationStatus', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'expirationStatus', value: item.toJson()));
 }
 }
 if (hasIps != null) {
 for (final item in hasIps) {
-  queryParametersList.add(ApiQueryParameter(name: 'hasIps', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'hasIps', value: item.toString()));
 }
 }
 if (hasWildcards != null) {
 for (final item in hasWildcards) {
-  queryParametersList.add(ApiQueryParameter(name: 'hasWildcards', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'hasWildcards', value: item.toString()));
 }
 }
 if (log != null) {
 for (final item in log) {
-  queryParametersList.add(ApiQueryParameter(name: 'log', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'log', value: item));
 }
 }
 if (logApi != null) {
 for (final item in logApi) {
-  queryParametersList.add(ApiQueryParameter(name: 'logApi', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'logApi', value: item.toJson()));
 }
 }
 if (logOperator != null) {
 for (final item in logOperator) {
-  queryParametersList.add(ApiQueryParameter(name: 'logOperator', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'logOperator', value: item));
 }
 }
 if (publicKeyAlgorithm != null) {
 for (final item in publicKeyAlgorithm) {
-  queryParametersList.add(ApiQueryParameter(name: 'publicKeyAlgorithm', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'publicKeyAlgorithm', value: item.toJson()));
 }
 }
 if (signatureAlgorithm != null) {
 for (final item in signatureAlgorithm) {
-  queryParametersList.add(ApiQueryParameter(name: 'signatureAlgorithm', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'signatureAlgorithm', value: item.toJson()));
 }
 }
 if (tld != null) {
 for (final item in tld) {
-  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item));
 }
 }
 if (validationLevel != null) {
 for (final item in validationLevel) {
-  queryParametersList.add(ApiQueryParameter(name: 'validationLevel', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'validationLevel', value: item.toJson()));
 }
 }
 if (uniqueEntries != null) {
 for (final item in uniqueEntries) {
-  queryParametersList.add(ApiQueryParameter(name: 'uniqueEntries', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'uniqueEntries', value: item.toJson()));
 }
 }
 if (normalization != null) {
@@ -298,97 +298,97 @@ if (aggInterval != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (ca != null) {
 for (final item in ca) {
-  queryParametersList.add(ApiQueryParameter(name: 'ca', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'ca', value: item));
 }
 }
 if (caOwner != null) {
 for (final item in caOwner) {
-  queryParametersList.add(ApiQueryParameter(name: 'caOwner', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'caOwner', value: item));
 }
 }
 if (duration != null) {
 for (final item in duration) {
-  queryParametersList.add(ApiQueryParameter(name: 'duration', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'duration', value: item.toJson()));
 }
 }
 if (entryType != null) {
 for (final item in entryType) {
-  queryParametersList.add(ApiQueryParameter(name: 'entryType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'entryType', value: item.toJson()));
 }
 }
 if (expirationStatus != null) {
 for (final item in expirationStatus) {
-  queryParametersList.add(ApiQueryParameter(name: 'expirationStatus', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'expirationStatus', value: item.toJson()));
 }
 }
 if (hasIps != null) {
 for (final item in hasIps) {
-  queryParametersList.add(ApiQueryParameter(name: 'hasIps', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'hasIps', value: item.toString()));
 }
 }
 if (hasWildcards != null) {
 for (final item in hasWildcards) {
-  queryParametersList.add(ApiQueryParameter(name: 'hasWildcards', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'hasWildcards', value: item.toString()));
 }
 }
 if (log != null) {
 for (final item in log) {
-  queryParametersList.add(ApiQueryParameter(name: 'log', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'log', value: item));
 }
 }
 if (logApi != null) {
 for (final item in logApi) {
-  queryParametersList.add(ApiQueryParameter(name: 'logApi', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'logApi', value: item.toJson()));
 }
 }
 if (logOperator != null) {
 for (final item in logOperator) {
-  queryParametersList.add(ApiQueryParameter(name: 'logOperator', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'logOperator', value: item));
 }
 }
 if (publicKeyAlgorithm != null) {
 for (final item in publicKeyAlgorithm) {
-  queryParametersList.add(ApiQueryParameter(name: 'publicKeyAlgorithm', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'publicKeyAlgorithm', value: item.toJson()));
 }
 }
 if (signatureAlgorithm != null) {
 for (final item in signatureAlgorithm) {
-  queryParametersList.add(ApiQueryParameter(name: 'signatureAlgorithm', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'signatureAlgorithm', value: item.toJson()));
 }
 }
 if (tld != null) {
 for (final item in tld) {
-  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item));
 }
 }
 if (validationLevel != null) {
 for (final item in validationLevel) {
-  queryParametersList.add(ApiQueryParameter(name: 'validationLevel', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'validationLevel', value: item.toJson()));
 }
 }
 if (uniqueEntries != null) {
 for (final item in uniqueEntries) {
-  queryParametersList.add(ApiQueryParameter(name: 'uniqueEntries', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'uniqueEntries', value: item.toJson()));
 }
 }
 if (format != null) {
@@ -429,22 +429,22 @@ if (aggInterval != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (dateRange != null) {
 for (final item in dateRange) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item));
 }
 }
 if (dateStart != null) {
 for (final item in dateStart) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String()));
 }
 }
 if (dateEnd != null) {
 for (final item in dateEnd) {
-  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String()));
 }
 }
 if (limitPerGroup != null) {
@@ -452,72 +452,72 @@ if (limitPerGroup != null) {
 }
 if (ca != null) {
 for (final item in ca) {
-  queryParametersList.add(ApiQueryParameter(name: 'ca', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'ca', value: item));
 }
 }
 if (caOwner != null) {
 for (final item in caOwner) {
-  queryParametersList.add(ApiQueryParameter(name: 'caOwner', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'caOwner', value: item));
 }
 }
 if (duration != null) {
 for (final item in duration) {
-  queryParametersList.add(ApiQueryParameter(name: 'duration', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'duration', value: item.toJson()));
 }
 }
 if (entryType != null) {
 for (final item in entryType) {
-  queryParametersList.add(ApiQueryParameter(name: 'entryType', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'entryType', value: item.toJson()));
 }
 }
 if (expirationStatus != null) {
 for (final item in expirationStatus) {
-  queryParametersList.add(ApiQueryParameter(name: 'expirationStatus', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'expirationStatus', value: item.toJson()));
 }
 }
 if (hasIps != null) {
 for (final item in hasIps) {
-  queryParametersList.add(ApiQueryParameter(name: 'hasIps', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'hasIps', value: item.toString()));
 }
 }
 if (hasWildcards != null) {
 for (final item in hasWildcards) {
-  queryParametersList.add(ApiQueryParameter(name: 'hasWildcards', value: item.toString(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'hasWildcards', value: item.toString()));
 }
 }
 if (log != null) {
 for (final item in log) {
-  queryParametersList.add(ApiQueryParameter(name: 'log', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'log', value: item));
 }
 }
 if (logApi != null) {
 for (final item in logApi) {
-  queryParametersList.add(ApiQueryParameter(name: 'logApi', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'logApi', value: item.toJson()));
 }
 }
 if (logOperator != null) {
 for (final item in logOperator) {
-  queryParametersList.add(ApiQueryParameter(name: 'logOperator', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'logOperator', value: item));
 }
 }
 if (publicKeyAlgorithm != null) {
 for (final item in publicKeyAlgorithm) {
-  queryParametersList.add(ApiQueryParameter(name: 'publicKeyAlgorithm', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'publicKeyAlgorithm', value: item.toJson()));
 }
 }
 if (signatureAlgorithm != null) {
 for (final item in signatureAlgorithm) {
-  queryParametersList.add(ApiQueryParameter(name: 'signatureAlgorithm', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'signatureAlgorithm', value: item.toJson()));
 }
 }
 if (validationLevel != null) {
 for (final item in validationLevel) {
-  queryParametersList.add(ApiQueryParameter(name: 'validationLevel', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'validationLevel', value: item.toJson()));
 }
 }
 if (tld != null) {
 for (final item in tld) {
-  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'tld', value: item));
 }
 }
 if (normalization != null) {
@@ -525,7 +525,7 @@ if (normalization != null) {
 }
 if (uniqueEntries != null) {
 for (final item in uniqueEntries) {
-  queryParametersList.add(ApiQueryParameter(name: 'uniqueEntries', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'uniqueEntries', value: item.toJson()));
 }
 }
 if (format != null) {

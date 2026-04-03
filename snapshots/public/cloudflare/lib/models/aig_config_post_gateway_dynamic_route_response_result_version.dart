@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigPostGatewayDynamicRouteResponseResultVersionActive {const AigConfigPostGatewayDynamicRouteResponseResultVersionActive._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPostGatewayDynamicRouteResponseResultVersionActive {const AigConfigPostGatewayDynamicRouteResponseResultVersionActive._(this.value);
 
 factory AigConfigPostGatewayDynamicRouteResponseResultVersionActive.fromJson(String json) { return switch (json) {
   'true' => $true,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigPostGatewayDynamicRouteResponseResultVersionActive($value)'; } 
  }
-final class AigConfigPostGatewayDynamicRouteResponseResultVersion {const AigConfigPostGatewayDynamicRouteResponseResultVersion({required this.active, this.comment, required this.createdAt, required this.data, required this.versionId, });
+@immutable final class AigConfigPostGatewayDynamicRouteResponseResultVersion {const AigConfigPostGatewayDynamicRouteResponseResultVersion({required this.active, required this.createdAt, required this.data, required this.versionId, this.comment, });
 
 factory AigConfigPostGatewayDynamicRouteResponseResultVersion.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteResponseResultVersion(
   active: AigConfigPostGatewayDynamicRouteResponseResultVersionActive.fromJson(json['active'] as String),

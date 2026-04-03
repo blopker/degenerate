@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_error.dart';final class McnResponse {const McnResponse({required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_error.dart';@immutable final class McnResponse {const McnResponse({required this.messages, required this.success, });
 
 factory McnResponse.fromJson(Map<String, dynamic> json) { return McnResponse(
   messages: (json['messages'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),

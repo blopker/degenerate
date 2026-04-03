@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class InfraTargetsListOrder {const InfraTargetsListOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InfraTargetsListOrder {const InfraTargetsListOrder._(this.value);
 
 factory InfraTargetsListOrder.fromJson(String json) { return switch (json) {
   'hostname' => hostname,

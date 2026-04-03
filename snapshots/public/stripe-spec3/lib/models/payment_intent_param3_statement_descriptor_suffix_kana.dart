@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentIntentParam3StatementDescriptorSuffixKanaVariant2 {const PaymentIntentParam3StatementDescriptorSuffixKanaVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentParam3StatementDescriptorSuffixKanaVariant2 {const PaymentIntentParam3StatementDescriptorSuffixKanaVariant2._(this.value);
 
 factory PaymentIntentParam3StatementDescriptorSuffixKanaVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

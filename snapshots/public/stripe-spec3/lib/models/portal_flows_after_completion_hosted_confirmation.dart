@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PortalFlowsAfterCompletionHostedConfirmation {const PortalFlowsAfterCompletionHostedConfirmation({this.customMessage});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PortalFlowsAfterCompletionHostedConfirmation {const PortalFlowsAfterCompletionHostedConfirmation({this.customMessage});
 
 factory PortalFlowsAfterCompletionHostedConfirmation.fromJson(Map<String, dynamic> json) { return PortalFlowsAfterCompletionHostedConfirmation(
   customMessage: json['custom_message'] as String?,

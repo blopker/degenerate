@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_issuing_cardholders_cardholder_request_individual_verification_document.dart';final class PostIssuingCardholdersCardholderRequestIndividualVerification {const PostIssuingCardholdersCardholderRequestIndividualVerification({this.document});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_cardholders_cardholder_request_individual_verification_document.dart';@immutable final class PostIssuingCardholdersCardholderRequestIndividualVerification {const PostIssuingCardholdersCardholderRequestIndividualVerification({this.document});
 
 factory PostIssuingCardholdersCardholderRequestIndividualVerification.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersCardholderRequestIndividualVerification(
   document: json['document'] != null ? PostIssuingCardholdersCardholderRequestIndividualVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,

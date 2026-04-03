@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The destination address in a request type health check. After the healthcheck is decapsulated at the customer end of the tunnel, the ICMP echo will be forwarded to this address. This field defaults to `customer_gre_endpoint address`. This field is ignored for bidirectional healthchecks as the interface_address (not assigned to the Cloudflare side of the tunnel) is used as the target.
-final class MagicHealthCheckTarget {const MagicHealthCheckTarget({this.effective, this.saved, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The destination address in a request type health check. After the healthcheck is decapsulated at the customer end of the tunnel, the ICMP echo will be forwarded to this address. This field defaults to `customer_gre_endpoint address`. This field is ignored for bidirectional healthchecks as the interface_address (not assigned to the Cloudflare side of the tunnel) is used as the target.
+@immutable final class MagicHealthCheckTarget {const MagicHealthCheckTarget({this.effective, this.saved, });
 
 factory MagicHealthCheckTarget.fromJson(Map<String, dynamic> json) { return MagicHealthCheckTarget(
   effective: json['effective'] as String?,

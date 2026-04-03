@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_gateway_account_config_result_settings.dart';import 'zero_trust_gateway_read_only_timestamp.dart';final class ZeroTrustGatewayGatewayAccountConfigResult {const ZeroTrustGatewayGatewayAccountConfigResult({this.settings, this.createdAt, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_gateway_account_config_result_settings.dart';import 'zero_trust_gateway_read_only_timestamp.dart';@immutable final class ZeroTrustGatewayGatewayAccountConfigResult {const ZeroTrustGatewayGatewayAccountConfigResult({this.settings, this.createdAt, this.updatedAt, });
 
 factory ZeroTrustGatewayGatewayAccountConfigResult.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountConfigResult(
   settings: json['settings'] != null ? ZeroTrustGatewayGatewayAccountConfigResultSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'components_schemas_identifier.dart';import 'currency.dart';import 'schemas_zone.dart';/// The billing item action.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'components_schemas_identifier.dart';import 'currency.dart';import 'schemas_zone.dart';/// The billing item action.
 extension type const Action(String value) {
 factory Action.fromJson(String json) => Action(json);
 
@@ -35,7 +35,7 @@ factory TypeModel.fromJson(String json) => TypeModel(json);
 String toJson() => value;
 
 }
-final class BillingHistory {const BillingHistory({required this.action, required this.amount, required this.currency, required this.description, required this.id, required this.occurredAt, required this.type, required this.zone, });
+@immutable final class BillingHistory {const BillingHistory({required this.action, required this.amount, required this.currency, required this.description, required this.id, required this.occurredAt, required this.type, required this.zone, });
 
 factory BillingHistory.fromJson(Map<String, dynamic> json) { return BillingHistory(
   action: Action.fromJson(json['action'] as String),

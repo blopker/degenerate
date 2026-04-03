@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal {const UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal({this.aiInput, this.aiTrain, this.search, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal {const UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal({this.aiInput, this.aiTrain, this.search, });
 
 factory UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal(
   aiInput: json['ai-input'] as String?,

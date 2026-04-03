@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'output_text_content.dart';import 'refusal_content.dart';sealed class OutputMessageContent {const OutputMessageContent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'output_text_content.dart';import 'refusal_content.dart';sealed class OutputMessageContent {const OutputMessageContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory OutputMessageContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -15,7 +15,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is OutputMessageContent$Unknown; } 
  }
-final class OutputMessageContentOutputText extends OutputMessageContent {const OutputMessageContentOutputText(this.outputTextContent);
+@immutable final class OutputMessageContentOutputText extends OutputMessageContent {const OutputMessageContentOutputText(this.outputTextContent);
 
 factory OutputMessageContentOutputText.fromJson(Map<String, dynamic> json) { return OutputMessageContentOutputText(OutputTextContent.fromJson(json)); }
 
@@ -28,7 +28,7 @@ final OutputTextContent outputTextContent;
 @override int get hashCode { return outputTextContent.hashCode; } 
 @override String toString() { return 'OutputMessageContentOutputText(outputTextContent: $outputTextContent)'; } 
  }
-final class OutputMessageContentRefusal extends OutputMessageContent {const OutputMessageContentRefusal(this.refusalContent);
+@immutable final class OutputMessageContentRefusal extends OutputMessageContent {const OutputMessageContentRefusal(this.refusalContent);
 
 factory OutputMessageContentRefusal.fromJson(Map<String, dynamic> json) { return OutputMessageContentRefusal(RefusalContent.fromJson(json)); }
 
@@ -43,7 +43,7 @@ final RefusalContent refusalContent;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class OutputMessageContent$Unknown extends OutputMessageContent {const OutputMessageContent$Unknown(this.json);
+@immutable final class OutputMessageContent$Unknown extends OutputMessageContent {const OutputMessageContent$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

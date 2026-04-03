@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountSessionsRequestComponentsAccountManagementFeatures {const PostAccountSessionsRequestComponentsAccountManagementFeatures({this.disableStripeUserAuthentication, this.externalAccountCollection, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountSessionsRequestComponentsAccountManagementFeatures {const PostAccountSessionsRequestComponentsAccountManagementFeatures({this.disableStripeUserAuthentication, this.externalAccountCollection, });
 
 factory PostAccountSessionsRequestComponentsAccountManagementFeatures.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsAccountManagementFeatures(
   disableStripeUserAuthentication: json['disable_stripe_user_authentication'] as bool?,

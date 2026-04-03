@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Breakdown of tokens used in a completion.
-final class CompletionUsageCompletionTokensDetails {const CompletionUsageCompletionTokensDetails({this.acceptedPredictionTokens = 0, this.audioTokens = 0, this.reasoningTokens = 0, this.rejectedPredictionTokens = 0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Breakdown of tokens used in a completion.
+@immutable final class CompletionUsageCompletionTokensDetails {const CompletionUsageCompletionTokensDetails({this.acceptedPredictionTokens = 0, this.audioTokens = 0, this.reasoningTokens = 0, this.rejectedPredictionTokens = 0, });
 
 factory CompletionUsageCompletionTokensDetails.fromJson(Map<String, dynamic> json) { return CompletionUsageCompletionTokensDetails(
   acceptedPredictionTokens: json.containsKey('accepted_prediction_tokens') ? (json['accepted_prediction_tokens'] as num).toInt() : 0,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_components_schemas_certificate_object.dart';import 'tls_certificates_and_hostnames_mtls_management_components_schemas_certificate_response_collection_result_info.dart';final class TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollection {const TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollection({this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_components_schemas_certificate_object.dart';import 'tls_certificates_and_hostnames_mtls_management_components_schemas_certificate_response_collection_result_info.dart';@immutable final class TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollection {const TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollection({this.result, this.resultInfo, });
 
 factory TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollection.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesMtlsManagementComponentsSchemasCertificateResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesComponentsSchemasCertificateObject.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class CouponCurrencyOption {const CouponCurrencyOption({required this.amountOff});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class CouponCurrencyOption {const CouponCurrencyOption({required this.amountOff});
 
 factory CouponCurrencyOption.fromJson(Map<String, dynamic> json) { return CouponCurrencyOption(
   amountOff: (json['amount_off'] as num).toInt(),

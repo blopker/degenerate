@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_uuid.dart';/// An application-scoped policy JSON. If the policy does not yet exist, it will be created.
-final class AccessAppReqEmbeddedPoliciesPoliciesVariant3 {const AccessAppReqEmbeddedPoliciesPoliciesVariant3({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_uuid.dart';/// An application-scoped policy JSON. If the policy does not yet exist, it will be created.
+@immutable final class AccessAppReqEmbeddedPoliciesPoliciesVariant3 {const AccessAppReqEmbeddedPoliciesPoliciesVariant3({this.id});
 
 factory AccessAppReqEmbeddedPoliciesPoliciesVariant3.fromJson(Map<String, dynamic> json) { return AccessAppReqEmbeddedPoliciesPoliciesVariant3(
   id: json['id'] != null ? AccessSchemasUuid.fromJson(json['id'] as String) : null,

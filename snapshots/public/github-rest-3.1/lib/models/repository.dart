@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'license_simple.dart';import 'repository_code_search_index_status.dart';import 'repository_permissions.dart';import 'simple_user.dart';/// The policy controlling who can create pull requests: all or collaborators_only.
-final class RepositoryPullRequestCreationPolicy {const RepositoryPullRequestCreationPolicy._(this.value);
+@immutable final class RepositoryPullRequestCreationPolicy {const RepositoryPullRequestCreationPolicy._(this.value);
 
 factory RepositoryPullRequestCreationPolicy.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-final class RepositorySquashMergeCommitTitle {const RepositorySquashMergeCommitTitle._(this.value);
+@immutable final class RepositorySquashMergeCommitTitle {const RepositorySquashMergeCommitTitle._(this.value);
 
 factory RepositorySquashMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `PR_BODY` - default to the pull request's body.
 /// - `COMMIT_MESSAGES` - default to the branch's commit messages.
 /// - `BLANK` - default to a blank commit message.
-final class RepositorySquashMergeCommitMessage {const RepositorySquashMergeCommitMessage._(this.value);
+@immutable final class RepositorySquashMergeCommitMessage {const RepositorySquashMergeCommitMessage._(this.value);
 
 factory RepositorySquashMergeCommitMessage.fromJson(String json) { return switch (json) {
   'PR_BODY' => prBody,
@@ -89,7 +89,7 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
-final class RepositoryMergeCommitTitle {const RepositoryMergeCommitTitle._(this.value);
+@immutable final class RepositoryMergeCommitTitle {const RepositoryMergeCommitTitle._(this.value);
 
 factory RepositoryMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
@@ -118,7 +118,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `PR_BODY` - default to the pull request's body.
 /// - `BLANK` - default to a blank commit message.
-final class RepositoryMergeCommitMessage {const RepositoryMergeCommitMessage._(this.value);
+@immutable final class RepositoryMergeCommitMessage {const RepositoryMergeCommitMessage._(this.value);
 
 factory RepositoryMergeCommitMessage.fromJson(String json) { return switch (json) {
   'PR_BODY' => prBody,
@@ -146,7 +146,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryMergeCommitMessage($value)'; } 
  }
 /// A repository on GitHub.
-final class Repository {const Repository({required this.id, required this.nodeId, required this.name, required this.fullName, required this.license, required this.forks, this.permissions, required this.owner, this.private = false, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.sshUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.cloneUrl, required this.mirrorUrl, required this.hooksUrl, required this.svnUrl, required this.homepage, required this.language, required this.forksCount, required this.stargazersCount, required this.watchersCount, required this.size, required this.defaultBranch, required this.openIssuesCount, this.isTemplate = false, this.topics, this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, required this.hasPages, this.hasDownloads = true, this.hasDiscussions = false, this.hasPullRequests = true, this.pullRequestCreationPolicy, this.archived = false, required this.disabled, this.visibility = 'public', required this.pushedAt, required this.createdAt, required this.updatedAt, this.allowRebaseMerge = true, this.tempCloneToken, this.allowSquashMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.allowUpdateBranch = false, this.useSquashPrTitleAsDefault = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.allowMergeCommit = true, this.allowForking, this.webCommitSignoffRequired = false, required this.openIssues, required this.watchers, this.masterBranch, this.starredAt, this.anonymousAccessEnabled, this.codeSearchIndexStatus, });
+@immutable final class Repository {const Repository({required this.issueEventsUrl, required this.nodeId, required this.name, required this.fullName, required this.license, required this.forks, required this.owner, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.issueCommentUrl, required this.id, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.sshUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.cloneUrl, required this.mirrorUrl, required this.hooksUrl, required this.svnUrl, required this.homepage, required this.language, required this.forksCount, required this.stargazersCount, required this.watchersCount, required this.size, required this.defaultBranch, required this.openIssuesCount, required this.openIssues, required this.watchers, required this.updatedAt, required this.createdAt, required this.pushedAt, required this.disabled, required this.hasPages, this.hasWiki = true, this.hasDownloads = true, this.hasDiscussions = false, this.hasPullRequests = true, this.pullRequestCreationPolicy, this.archived = false, this.hasProjects = true, this.visibility = 'public', this.codeSearchIndexStatus, this.topics, this.isTemplate = false, this.allowRebaseMerge = true, this.tempCloneToken, this.allowSquashMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.allowUpdateBranch = false, this.useSquashPrTitleAsDefault = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.allowMergeCommit = true, this.allowForking, this.webCommitSignoffRequired = false, this.private = false, this.permissions, this.masterBranch, this.starredAt, this.anonymousAccessEnabled, this.hasIssues = true, });
 
 factory Repository.fromJson(Map<String, dynamic> json) { return Repository(
   id: (json['id'] as num).toInt(),

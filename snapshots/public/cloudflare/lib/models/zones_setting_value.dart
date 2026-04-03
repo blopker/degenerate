@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_automatic_https_rewrites_value.dart';import 'zones_automatic_platform_optimization.dart';import 'zones_browser_check_value.dart';import 'zones_cache_level_value.dart';import 'zones_cache_rules_aegis_value.dart';import 'zones_cache_rules_origin_max_http_version_value.dart';import 'zones_development_mode_value.dart';import 'zones_email_obfuscation_value.dart';import 'zones_ip_geolocation_value.dart';import 'zones_mirage_value.dart';import 'zones_nel_value.dart';import 'zones_opportunistic_encryption_value.dart';import 'zones_origin_error_page_pass_thru_value.dart';import 'zones_polish_value.dart';import 'zones_response_buffering_value.dart';import 'zones_rocket_loader_value.dart';import 'zones_security_header_value.dart';import 'zones_security_level_value.dart';import 'zones_sort_query_string_for_cache_value.dart';import 'zones_ssl_value.dart';import 'zones_true_client_ip_header_value.dart';import 'zones_waf_value.dart';/// Value of the 0-RTT setting.
-final class Zones0rttValue {const Zones0rttValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_automatic_https_rewrites_value.dart';import 'zones_automatic_platform_optimization.dart';import 'zones_browser_check_value.dart';import 'zones_cache_level_value.dart';import 'zones_cache_rules_aegis_value.dart';import 'zones_cache_rules_origin_max_http_version_value.dart';import 'zones_development_mode_value.dart';import 'zones_email_obfuscation_value.dart';import 'zones_ip_geolocation_value.dart';import 'zones_mirage_value.dart';import 'zones_nel_value.dart';import 'zones_opportunistic_encryption_value.dart';import 'zones_origin_error_page_pass_thru_value.dart';import 'zones_polish_value.dart';import 'zones_response_buffering_value.dart';import 'zones_rocket_loader_value.dart';import 'zones_security_header_value.dart';import 'zones_security_level_value.dart';import 'zones_sort_query_string_for_cache_value.dart';import 'zones_ssl_value.dart';import 'zones_true_client_ip_header_value.dart';import 'zones_waf_value.dart';/// Value of the 0-RTT setting.
+@immutable final class Zones0rttValue {const Zones0rttValue._(this.value);
 
 factory Zones0rttValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Value of the zone setting.
 /// Notes: Defaults to on for Business+ plans
-final class ZonesAdvancedDdosValue {const ZonesAdvancedDdosValue._(this.value);
+@immutable final class ZonesAdvancedDdosValue {const ZonesAdvancedDdosValue._(this.value);
 
 factory ZonesAdvancedDdosValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesAdvancedDdosValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesAlwaysOnlineValue {const ZonesAlwaysOnlineValue._(this.value);
+@immutable final class ZonesAlwaysOnlineValue {const ZonesAlwaysOnlineValue._(this.value);
 
 factory ZonesAlwaysOnlineValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -77,7 +77,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesAlwaysOnlineValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesAlwaysUseHttpsValue {const ZonesAlwaysUseHttpsValue._(this.value);
+@immutable final class ZonesAlwaysUseHttpsValue {const ZonesAlwaysUseHttpsValue._(this.value);
 
 factory ZonesAlwaysUseHttpsValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesAlwaysUseHttpsValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesBrotliValue {const ZonesBrotliValue._(this.value);
+@immutable final class ZonesBrotliValue {const ZonesBrotliValue._(this.value);
 
 factory ZonesBrotliValue.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -140,7 +140,7 @@ num toJson() => value;
 
 }
 /// Value of the zone setting.
-final class ZonesChallengeTtlValue {const ZonesChallengeTtlValue._(this.value);
+@immutable final class ZonesChallengeTtlValue {const ZonesChallengeTtlValue._(this.value);
 
 factory ZonesChallengeTtlValue.fromJson(double json) { return switch (json) {
   300 => $300,
@@ -201,7 +201,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesChallengeTtlValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesChinaNetworkEnabledValue {const ZonesChinaNetworkEnabledValue._(this.value);
+@immutable final class ZonesChinaNetworkEnabledValue {const ZonesChinaNetworkEnabledValue._(this.value);
 
 factory ZonesChinaNetworkEnabledValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -226,7 +226,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesChinaNetworkEnabledValue($value)'; } 
  }
 /// Value of the cname flattening setting.
-final class ZonesCnameFlatteningValue {const ZonesCnameFlatteningValue._(this.value);
+@immutable final class ZonesCnameFlatteningValue {const ZonesCnameFlatteningValue._(this.value);
 
 factory ZonesCnameFlatteningValue.fromJson(String json) { return switch (json) {
   'flatten_at_root' => flattenAtRoot,
@@ -251,7 +251,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesCnameFlatteningValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesContentConverterValue {const ZonesContentConverterValue._(this.value);
+@immutable final class ZonesContentConverterValue {const ZonesContentConverterValue._(this.value);
 
 factory ZonesContentConverterValue.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -276,7 +276,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesContentConverterValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesEarlyHintsValue {const ZonesEarlyHintsValue._(this.value);
+@immutable final class ZonesEarlyHintsValue {const ZonesEarlyHintsValue._(this.value);
 
 factory ZonesEarlyHintsValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -302,7 +302,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Value of the zone setting.
 /// Notes: The minimum TTL available depends on the plan level of the zone. (Enterprise = 30, Business = 1800, Pro = 3600, Free = 7200)
-final class ZonesEdgeCacheTtlValue {const ZonesEdgeCacheTtlValue._(this.value);
+@immutable final class ZonesEdgeCacheTtlValue {const ZonesEdgeCacheTtlValue._(this.value);
 
 factory ZonesEdgeCacheTtlValue.fromJson(double json) { return switch (json) {
   30 => $30,
@@ -384,7 +384,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesEdgeCacheTtlValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesH2PrioritizationValue {const ZonesH2PrioritizationValue._(this.value);
+@immutable final class ZonesH2PrioritizationValue {const ZonesH2PrioritizationValue._(this.value);
 
 factory ZonesH2PrioritizationValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -412,7 +412,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesH2PrioritizationValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesHotlinkProtectionValue {const ZonesHotlinkProtectionValue._(this.value);
+@immutable final class ZonesHotlinkProtectionValue {const ZonesHotlinkProtectionValue._(this.value);
 
 factory ZonesHotlinkProtectionValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -437,7 +437,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesHotlinkProtectionValue($value)'; } 
  }
 /// Value of the HTTP2 setting.
-final class ZonesHttp2Value {const ZonesHttp2Value._(this.value);
+@immutable final class ZonesHttp2Value {const ZonesHttp2Value._(this.value);
 
 factory ZonesHttp2Value.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -462,7 +462,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesHttp2Value($value)'; } 
  }
 /// Value of the HTTP3 setting.
-final class ZonesHttp3Value {const ZonesHttp3Value._(this.value);
+@immutable final class ZonesHttp3Value {const ZonesHttp3Value._(this.value);
 
 factory ZonesHttp3Value.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -487,7 +487,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesHttp3Value($value)'; } 
  }
 /// Whether the feature is enabled, disabled, or enabled in `open proxy` mode.
-final class ZonesImageResizingValue {const ZonesImageResizingValue._(this.value);
+@immutable final class ZonesImageResizingValue {const ZonesImageResizingValue._(this.value);
 
 factory ZonesImageResizingValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -515,7 +515,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesImageResizingValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesIpv6Value {const ZonesIpv6Value._(this.value);
+@immutable final class ZonesIpv6Value {const ZonesIpv6Value._(this.value);
 
 factory ZonesIpv6Value.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -541,7 +541,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Value of the zone setting.
 /// Notes: The size depends on the plan level of the zone. (Enterprise = 500, Business = 200, Pro = 100, Free = 100)
-final class ZonesMaxUploadValue {const ZonesMaxUploadValue._(this.value);
+@immutable final class ZonesMaxUploadValue {const ZonesMaxUploadValue._(this.value);
 
 factory ZonesMaxUploadValue.fromJson(int json) { return switch (json) {
   100 => $100,
@@ -614,7 +614,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesMaxUploadValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesMinTlsVersionValue {const ZonesMinTlsVersionValue._(this.value);
+@immutable final class ZonesMinTlsVersionValue {const ZonesMinTlsVersionValue._(this.value);
 
 factory ZonesMinTlsVersionValue.fromJson(String json) { return switch (json) {
   '1.0' => $10,
@@ -646,7 +646,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Value of the zone setting.
 /// Notes: Default value depends on the zone's plan level.
-final class ZonesOpportunisticOnionValue {const ZonesOpportunisticOnionValue._(this.value);
+@immutable final class ZonesOpportunisticOnionValue {const ZonesOpportunisticOnionValue._(this.value);
 
 factory ZonesOpportunisticOnionValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -671,7 +671,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesOpportunisticOnionValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesOrangeToOrangeValue {const ZonesOrangeToOrangeValue._(this.value);
+@immutable final class ZonesOrangeToOrangeValue {const ZonesOrangeToOrangeValue._(this.value);
 
 factory ZonesOrangeToOrangeValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -696,7 +696,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesOrangeToOrangeValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesPrefetchPreloadValue {const ZonesPrefetchPreloadValue._(this.value);
+@immutable final class ZonesPrefetchPreloadValue {const ZonesPrefetchPreloadValue._(this.value);
 
 factory ZonesPrefetchPreloadValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -721,7 +721,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesPrefetchPreloadValue($value)'; } 
  }
 /// Value of the Privacy Pass v1 (deprecated) zone setting
-final class ZonesPrivacyPassValue {const ZonesPrivacyPassValue._(this.value);
+@immutable final class ZonesPrivacyPassValue {const ZonesPrivacyPassValue._(this.value);
 
 factory ZonesPrivacyPassValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -746,7 +746,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesPrivacyPassValue($value)'; } 
  }
 /// Value of the Pseudo IPv4 setting.
-final class ZonesPseudoIpv4Value {const ZonesPseudoIpv4Value._(this.value);
+@immutable final class ZonesPseudoIpv4Value {const ZonesPseudoIpv4Value._(this.value);
 
 factory ZonesPseudoIpv4Value.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -774,7 +774,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesPseudoIpv4Value($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesRedirectsForAiTrainingValue {const ZonesRedirectsForAiTrainingValue._(this.value);
+@immutable final class ZonesRedirectsForAiTrainingValue {const ZonesRedirectsForAiTrainingValue._(this.value);
 
 factory ZonesRedirectsForAiTrainingValue.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -799,7 +799,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesRedirectsForAiTrainingValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesReplaceInsecureJsValue {const ZonesReplaceInsecureJsValue._(this.value);
+@immutable final class ZonesReplaceInsecureJsValue {const ZonesReplaceInsecureJsValue._(this.value);
 
 factory ZonesReplaceInsecureJsValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -824,7 +824,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesReplaceInsecureJsValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesServerSideExcludeValue {const ZonesServerSideExcludeValue._(this.value);
+@immutable final class ZonesServerSideExcludeValue {const ZonesServerSideExcludeValue._(this.value);
 
 factory ZonesServerSideExcludeValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -849,7 +849,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesServerSideExcludeValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesSha1SupportValue {const ZonesSha1SupportValue._(this.value);
+@immutable final class ZonesSha1SupportValue {const ZonesSha1SupportValue._(this.value);
 
 factory ZonesSha1SupportValue.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -874,7 +874,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesSha1SupportValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesTls12OnlyValue {const ZonesTls12OnlyValue._(this.value);
+@immutable final class ZonesTls12OnlyValue {const ZonesTls12OnlyValue._(this.value);
 
 factory ZonesTls12OnlyValue.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -900,7 +900,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Value of the zone setting.
 /// Notes: Default value depends on the zone's plan level.
-final class ZonesTls13Value {const ZonesTls13Value._(this.value);
+@immutable final class ZonesTls13Value {const ZonesTls13Value._(this.value);
 
 factory ZonesTls13Value.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -928,7 +928,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesTls13Value($value)'; } 
  }
 /// value of the zone setting.
-final class ZonesTlsClientAuthValue {const ZonesTlsClientAuthValue._(this.value);
+@immutable final class ZonesTlsClientAuthValue {const ZonesTlsClientAuthValue._(this.value);
 
 factory ZonesTlsClientAuthValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -953,7 +953,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesTlsClientAuthValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesWebpValue {const ZonesWebpValue._(this.value);
+@immutable final class ZonesWebpValue {const ZonesWebpValue._(this.value);
 
 factory ZonesWebpValue.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -978,7 +978,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesWebpValue($value)'; } 
  }
 /// Value of the zone setting.
-final class ZonesWebsocketsValue {const ZonesWebsocketsValue._(this.value);
+@immutable final class ZonesWebsocketsValue {const ZonesWebsocketsValue._(this.value);
 
 factory ZonesWebsocketsValue.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -1023,7 +1023,7 @@ factory ZonesSettingValue.fromJson(Map<String, dynamic> json) {   if (ZonesCache
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class ZonesSettingValueZones0rttValue extends ZonesSettingValue {const ZonesSettingValueZones0rttValue(this._value);
+@immutable final class ZonesSettingValueZones0rttValue extends ZonesSettingValue {const ZonesSettingValueZones0rttValue(this._value);
 
 final Zones0rttValue _value;
 
@@ -1033,7 +1033,7 @@ final Zones0rttValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zones0rttValue($_value)'; } 
  }
-final class ZonesSettingValueZonesAdvancedDdosValue extends ZonesSettingValue {const ZonesSettingValueZonesAdvancedDdosValue(this._value);
+@immutable final class ZonesSettingValueZonesAdvancedDdosValue extends ZonesSettingValue {const ZonesSettingValueZonesAdvancedDdosValue(this._value);
 
 final ZonesAdvancedDdosValue _value;
 
@@ -1043,7 +1043,7 @@ final ZonesAdvancedDdosValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesAdvancedDdosValue($_value)'; } 
  }
-final class ZonesSettingValueZonesCacheRulesAegisValue extends ZonesSettingValue {const ZonesSettingValueZonesCacheRulesAegisValue(this._value);
+@immutable final class ZonesSettingValueZonesCacheRulesAegisValue extends ZonesSettingValue {const ZonesSettingValueZonesCacheRulesAegisValue(this._value);
 
 final ZonesCacheRulesAegisValue _value;
 
@@ -1053,7 +1053,7 @@ final ZonesCacheRulesAegisValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesCacheRulesAegisValue($_value)'; } 
  }
-final class ZonesSettingValueZonesAlwaysOnlineValue extends ZonesSettingValue {const ZonesSettingValueZonesAlwaysOnlineValue(this._value);
+@immutable final class ZonesSettingValueZonesAlwaysOnlineValue extends ZonesSettingValue {const ZonesSettingValueZonesAlwaysOnlineValue(this._value);
 
 final ZonesAlwaysOnlineValue _value;
 
@@ -1063,7 +1063,7 @@ final ZonesAlwaysOnlineValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesAlwaysOnlineValue($_value)'; } 
  }
-final class ZonesSettingValueZonesAlwaysUseHttpsValue extends ZonesSettingValue {const ZonesSettingValueZonesAlwaysUseHttpsValue(this._value);
+@immutable final class ZonesSettingValueZonesAlwaysUseHttpsValue extends ZonesSettingValue {const ZonesSettingValueZonesAlwaysUseHttpsValue(this._value);
 
 final ZonesAlwaysUseHttpsValue _value;
 
@@ -1073,7 +1073,7 @@ final ZonesAlwaysUseHttpsValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesAlwaysUseHttpsValue($_value)'; } 
  }
-final class ZonesSettingValueZonesAutomaticHttpsRewritesValue extends ZonesSettingValue {const ZonesSettingValueZonesAutomaticHttpsRewritesValue(this._value);
+@immutable final class ZonesSettingValueZonesAutomaticHttpsRewritesValue extends ZonesSettingValue {const ZonesSettingValueZonesAutomaticHttpsRewritesValue(this._value);
 
 final ZonesAutomaticHttpsRewritesValue _value;
 
@@ -1083,7 +1083,7 @@ final ZonesAutomaticHttpsRewritesValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesAutomaticHttpsRewritesValue($_value)'; } 
  }
-final class ZonesSettingValueZonesBrotliValue extends ZonesSettingValue {const ZonesSettingValueZonesBrotliValue(this._value);
+@immutable final class ZonesSettingValueZonesBrotliValue extends ZonesSettingValue {const ZonesSettingValueZonesBrotliValue(this._value);
 
 final ZonesBrotliValue _value;
 
@@ -1093,7 +1093,7 @@ final ZonesBrotliValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesBrotliValue($_value)'; } 
  }
-final class ZonesSettingValueZonesBrowserCacheTtlValue extends ZonesSettingValue {const ZonesSettingValueZonesBrowserCacheTtlValue(this._value);
+@immutable final class ZonesSettingValueZonesBrowserCacheTtlValue extends ZonesSettingValue {const ZonesSettingValueZonesBrowserCacheTtlValue(this._value);
 
 final ZonesBrowserCacheTtlValue _value;
 
@@ -1103,7 +1103,7 @@ final ZonesBrowserCacheTtlValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesBrowserCacheTtlValue($_value)'; } 
  }
-final class ZonesSettingValueZonesBrowserCheckValue extends ZonesSettingValue {const ZonesSettingValueZonesBrowserCheckValue(this._value);
+@immutable final class ZonesSettingValueZonesBrowserCheckValue extends ZonesSettingValue {const ZonesSettingValueZonesBrowserCheckValue(this._value);
 
 final ZonesBrowserCheckValue _value;
 
@@ -1113,7 +1113,7 @@ final ZonesBrowserCheckValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesBrowserCheckValue($_value)'; } 
  }
-final class ZonesSettingValueZonesCacheLevelValue extends ZonesSettingValue {const ZonesSettingValueZonesCacheLevelValue(this._value);
+@immutable final class ZonesSettingValueZonesCacheLevelValue extends ZonesSettingValue {const ZonesSettingValueZonesCacheLevelValue(this._value);
 
 final ZonesCacheLevelValue _value;
 
@@ -1123,7 +1123,7 @@ final ZonesCacheLevelValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesCacheLevelValue($_value)'; } 
  }
-final class ZonesSettingValueZonesChallengeTtlValue extends ZonesSettingValue {const ZonesSettingValueZonesChallengeTtlValue(this._value);
+@immutable final class ZonesSettingValueZonesChallengeTtlValue extends ZonesSettingValue {const ZonesSettingValueZonesChallengeTtlValue(this._value);
 
 final ZonesChallengeTtlValue _value;
 
@@ -1133,7 +1133,7 @@ final ZonesChallengeTtlValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesChallengeTtlValue($_value)'; } 
  }
-final class ZonesSettingValueZonesChinaNetworkEnabledValue extends ZonesSettingValue {const ZonesSettingValueZonesChinaNetworkEnabledValue(this._value);
+@immutable final class ZonesSettingValueZonesChinaNetworkEnabledValue extends ZonesSettingValue {const ZonesSettingValueZonesChinaNetworkEnabledValue(this._value);
 
 final ZonesChinaNetworkEnabledValue _value;
 
@@ -1143,7 +1143,7 @@ final ZonesChinaNetworkEnabledValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesChinaNetworkEnabledValue($_value)'; } 
  }
-final class ZonesSettingValueZonesContentConverterValue extends ZonesSettingValue {const ZonesSettingValueZonesContentConverterValue(this._value);
+@immutable final class ZonesSettingValueZonesContentConverterValue extends ZonesSettingValue {const ZonesSettingValueZonesContentConverterValue(this._value);
 
 final ZonesContentConverterValue _value;
 
@@ -1153,7 +1153,7 @@ final ZonesContentConverterValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesContentConverterValue($_value)'; } 
  }
-final class ZonesSettingValueListString extends ZonesSettingValue {const ZonesSettingValueListString(this._value);
+@immutable final class ZonesSettingValueListString extends ZonesSettingValue {const ZonesSettingValueListString(this._value);
 
 final List<String> _value;
 
@@ -1163,7 +1163,7 @@ final List<String> _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.list<String>($_value)'; } 
  }
-final class ZonesSettingValueZonesCnameFlatteningValue extends ZonesSettingValue {const ZonesSettingValueZonesCnameFlatteningValue(this._value);
+@immutable final class ZonesSettingValueZonesCnameFlatteningValue extends ZonesSettingValue {const ZonesSettingValueZonesCnameFlatteningValue(this._value);
 
 final ZonesCnameFlatteningValue _value;
 
@@ -1173,7 +1173,7 @@ final ZonesCnameFlatteningValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesCnameFlatteningValue($_value)'; } 
  }
-final class ZonesSettingValueZonesDevelopmentModeValue extends ZonesSettingValue {const ZonesSettingValueZonesDevelopmentModeValue(this._value);
+@immutable final class ZonesSettingValueZonesDevelopmentModeValue extends ZonesSettingValue {const ZonesSettingValueZonesDevelopmentModeValue(this._value);
 
 final ZonesDevelopmentModeValue _value;
 
@@ -1183,7 +1183,7 @@ final ZonesDevelopmentModeValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesDevelopmentModeValue($_value)'; } 
  }
-final class ZonesSettingValueZonesEarlyHintsValue extends ZonesSettingValue {const ZonesSettingValueZonesEarlyHintsValue(this._value);
+@immutable final class ZonesSettingValueZonesEarlyHintsValue extends ZonesSettingValue {const ZonesSettingValueZonesEarlyHintsValue(this._value);
 
 final ZonesEarlyHintsValue _value;
 
@@ -1193,7 +1193,7 @@ final ZonesEarlyHintsValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesEarlyHintsValue($_value)'; } 
  }
-final class ZonesSettingValueZonesEdgeCacheTtlValue extends ZonesSettingValue {const ZonesSettingValueZonesEdgeCacheTtlValue(this._value);
+@immutable final class ZonesSettingValueZonesEdgeCacheTtlValue extends ZonesSettingValue {const ZonesSettingValueZonesEdgeCacheTtlValue(this._value);
 
 final ZonesEdgeCacheTtlValue _value;
 
@@ -1203,7 +1203,7 @@ final ZonesEdgeCacheTtlValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesEdgeCacheTtlValue($_value)'; } 
  }
-final class ZonesSettingValueZonesEmailObfuscationValue extends ZonesSettingValue {const ZonesSettingValueZonesEmailObfuscationValue(this._value);
+@immutable final class ZonesSettingValueZonesEmailObfuscationValue extends ZonesSettingValue {const ZonesSettingValueZonesEmailObfuscationValue(this._value);
 
 final ZonesEmailObfuscationValue _value;
 
@@ -1213,7 +1213,7 @@ final ZonesEmailObfuscationValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesEmailObfuscationValue($_value)'; } 
  }
-final class ZonesSettingValueZonesH2PrioritizationValue extends ZonesSettingValue {const ZonesSettingValueZonesH2PrioritizationValue(this._value);
+@immutable final class ZonesSettingValueZonesH2PrioritizationValue extends ZonesSettingValue {const ZonesSettingValueZonesH2PrioritizationValue(this._value);
 
 final ZonesH2PrioritizationValue _value;
 
@@ -1223,7 +1223,7 @@ final ZonesH2PrioritizationValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesH2PrioritizationValue($_value)'; } 
  }
-final class ZonesSettingValueZonesHotlinkProtectionValue extends ZonesSettingValue {const ZonesSettingValueZonesHotlinkProtectionValue(this._value);
+@immutable final class ZonesSettingValueZonesHotlinkProtectionValue extends ZonesSettingValue {const ZonesSettingValueZonesHotlinkProtectionValue(this._value);
 
 final ZonesHotlinkProtectionValue _value;
 
@@ -1233,7 +1233,7 @@ final ZonesHotlinkProtectionValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesHotlinkProtectionValue($_value)'; } 
  }
-final class ZonesSettingValueZonesHttp2Value extends ZonesSettingValue {const ZonesSettingValueZonesHttp2Value(this._value);
+@immutable final class ZonesSettingValueZonesHttp2Value extends ZonesSettingValue {const ZonesSettingValueZonesHttp2Value(this._value);
 
 final ZonesHttp2Value _value;
 
@@ -1243,7 +1243,7 @@ final ZonesHttp2Value _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesHttp2Value($_value)'; } 
  }
-final class ZonesSettingValueZonesHttp3Value extends ZonesSettingValue {const ZonesSettingValueZonesHttp3Value(this._value);
+@immutable final class ZonesSettingValueZonesHttp3Value extends ZonesSettingValue {const ZonesSettingValueZonesHttp3Value(this._value);
 
 final ZonesHttp3Value _value;
 
@@ -1253,7 +1253,7 @@ final ZonesHttp3Value _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesHttp3Value($_value)'; } 
  }
-final class ZonesSettingValueZonesImageResizingValue extends ZonesSettingValue {const ZonesSettingValueZonesImageResizingValue(this._value);
+@immutable final class ZonesSettingValueZonesImageResizingValue extends ZonesSettingValue {const ZonesSettingValueZonesImageResizingValue(this._value);
 
 final ZonesImageResizingValue _value;
 
@@ -1263,7 +1263,7 @@ final ZonesImageResizingValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesImageResizingValue($_value)'; } 
  }
-final class ZonesSettingValueZonesIpGeolocationValue extends ZonesSettingValue {const ZonesSettingValueZonesIpGeolocationValue(this._value);
+@immutable final class ZonesSettingValueZonesIpGeolocationValue extends ZonesSettingValue {const ZonesSettingValueZonesIpGeolocationValue(this._value);
 
 final ZonesIpGeolocationValue _value;
 
@@ -1273,7 +1273,7 @@ final ZonesIpGeolocationValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesIpGeolocationValue($_value)'; } 
  }
-final class ZonesSettingValueZonesIpv6Value extends ZonesSettingValue {const ZonesSettingValueZonesIpv6Value(this._value);
+@immutable final class ZonesSettingValueZonesIpv6Value extends ZonesSettingValue {const ZonesSettingValueZonesIpv6Value(this._value);
 
 final ZonesIpv6Value _value;
 
@@ -1283,7 +1283,7 @@ final ZonesIpv6Value _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesIpv6Value($_value)'; } 
  }
-final class ZonesSettingValueZonesMaxUploadValue extends ZonesSettingValue {const ZonesSettingValueZonesMaxUploadValue(this._value);
+@immutable final class ZonesSettingValueZonesMaxUploadValue extends ZonesSettingValue {const ZonesSettingValueZonesMaxUploadValue(this._value);
 
 final ZonesMaxUploadValue _value;
 
@@ -1293,7 +1293,7 @@ final ZonesMaxUploadValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesMaxUploadValue($_value)'; } 
  }
-final class ZonesSettingValueZonesMinTlsVersionValue extends ZonesSettingValue {const ZonesSettingValueZonesMinTlsVersionValue(this._value);
+@immutable final class ZonesSettingValueZonesMinTlsVersionValue extends ZonesSettingValue {const ZonesSettingValueZonesMinTlsVersionValue(this._value);
 
 final ZonesMinTlsVersionValue _value;
 
@@ -1303,7 +1303,7 @@ final ZonesMinTlsVersionValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesMinTlsVersionValue($_value)'; } 
  }
-final class ZonesSettingValueZonesMirageValue extends ZonesSettingValue {const ZonesSettingValueZonesMirageValue(this._value);
+@immutable final class ZonesSettingValueZonesMirageValue extends ZonesSettingValue {const ZonesSettingValueZonesMirageValue(this._value);
 
 final ZonesMirageValue _value;
 
@@ -1313,7 +1313,7 @@ final ZonesMirageValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesMirageValue($_value)'; } 
  }
-final class ZonesSettingValueZonesNelValue extends ZonesSettingValue {const ZonesSettingValueZonesNelValue(this._value);
+@immutable final class ZonesSettingValueZonesNelValue extends ZonesSettingValue {const ZonesSettingValueZonesNelValue(this._value);
 
 final ZonesNelValue _value;
 
@@ -1323,7 +1323,7 @@ final ZonesNelValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesNelValue($_value)'; } 
  }
-final class ZonesSettingValueZonesOpportunisticEncryptionValue extends ZonesSettingValue {const ZonesSettingValueZonesOpportunisticEncryptionValue(this._value);
+@immutable final class ZonesSettingValueZonesOpportunisticEncryptionValue extends ZonesSettingValue {const ZonesSettingValueZonesOpportunisticEncryptionValue(this._value);
 
 final ZonesOpportunisticEncryptionValue _value;
 
@@ -1333,7 +1333,7 @@ final ZonesOpportunisticEncryptionValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesOpportunisticEncryptionValue($_value)'; } 
  }
-final class ZonesSettingValueZonesOpportunisticOnionValue extends ZonesSettingValue {const ZonesSettingValueZonesOpportunisticOnionValue(this._value);
+@immutable final class ZonesSettingValueZonesOpportunisticOnionValue extends ZonesSettingValue {const ZonesSettingValueZonesOpportunisticOnionValue(this._value);
 
 final ZonesOpportunisticOnionValue _value;
 
@@ -1343,7 +1343,7 @@ final ZonesOpportunisticOnionValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesOpportunisticOnionValue($_value)'; } 
  }
-final class ZonesSettingValueZonesOrangeToOrangeValue extends ZonesSettingValue {const ZonesSettingValueZonesOrangeToOrangeValue(this._value);
+@immutable final class ZonesSettingValueZonesOrangeToOrangeValue extends ZonesSettingValue {const ZonesSettingValueZonesOrangeToOrangeValue(this._value);
 
 final ZonesOrangeToOrangeValue _value;
 
@@ -1353,7 +1353,7 @@ final ZonesOrangeToOrangeValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesOrangeToOrangeValue($_value)'; } 
  }
-final class ZonesSettingValueZonesOriginErrorPagePassThruValue extends ZonesSettingValue {const ZonesSettingValueZonesOriginErrorPagePassThruValue(this._value);
+@immutable final class ZonesSettingValueZonesOriginErrorPagePassThruValue extends ZonesSettingValue {const ZonesSettingValueZonesOriginErrorPagePassThruValue(this._value);
 
 final ZonesOriginErrorPagePassThruValue _value;
 
@@ -1363,7 +1363,7 @@ final ZonesOriginErrorPagePassThruValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesOriginErrorPagePassThruValue($_value)'; } 
  }
-final class ZonesSettingValueZonesCacheRulesOriginMaxHttpVersionValue extends ZonesSettingValue {const ZonesSettingValueZonesCacheRulesOriginMaxHttpVersionValue(this._value);
+@immutable final class ZonesSettingValueZonesCacheRulesOriginMaxHttpVersionValue extends ZonesSettingValue {const ZonesSettingValueZonesCacheRulesOriginMaxHttpVersionValue(this._value);
 
 final ZonesCacheRulesOriginMaxHttpVersionValue _value;
 
@@ -1373,7 +1373,7 @@ final ZonesCacheRulesOriginMaxHttpVersionValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesCacheRulesOriginMaxHttpVersionValue($_value)'; } 
  }
-final class ZonesSettingValueZonesPolishValue extends ZonesSettingValue {const ZonesSettingValueZonesPolishValue(this._value);
+@immutable final class ZonesSettingValueZonesPolishValue extends ZonesSettingValue {const ZonesSettingValueZonesPolishValue(this._value);
 
 final ZonesPolishValue _value;
 
@@ -1383,7 +1383,7 @@ final ZonesPolishValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesPolishValue($_value)'; } 
  }
-final class ZonesSettingValueZonesPrefetchPreloadValue extends ZonesSettingValue {const ZonesSettingValueZonesPrefetchPreloadValue(this._value);
+@immutable final class ZonesSettingValueZonesPrefetchPreloadValue extends ZonesSettingValue {const ZonesSettingValueZonesPrefetchPreloadValue(this._value);
 
 final ZonesPrefetchPreloadValue _value;
 
@@ -1393,7 +1393,7 @@ final ZonesPrefetchPreloadValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesPrefetchPreloadValue($_value)'; } 
  }
-final class ZonesSettingValueZonesPrivacyPassValue extends ZonesSettingValue {const ZonesSettingValueZonesPrivacyPassValue(this._value);
+@immutable final class ZonesSettingValueZonesPrivacyPassValue extends ZonesSettingValue {const ZonesSettingValueZonesPrivacyPassValue(this._value);
 
 final ZonesPrivacyPassValue _value;
 
@@ -1403,7 +1403,7 @@ final ZonesPrivacyPassValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesPrivacyPassValue($_value)'; } 
  }
-final class ZonesSettingValueZonesPseudoIpv4Value extends ZonesSettingValue {const ZonesSettingValueZonesPseudoIpv4Value(this._value);
+@immutable final class ZonesSettingValueZonesPseudoIpv4Value extends ZonesSettingValue {const ZonesSettingValueZonesPseudoIpv4Value(this._value);
 
 final ZonesPseudoIpv4Value _value;
 
@@ -1413,7 +1413,7 @@ final ZonesPseudoIpv4Value _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesPseudoIpv4Value($_value)'; } 
  }
-final class ZonesSettingValueZonesRedirectsForAiTrainingValue extends ZonesSettingValue {const ZonesSettingValueZonesRedirectsForAiTrainingValue(this._value);
+@immutable final class ZonesSettingValueZonesRedirectsForAiTrainingValue extends ZonesSettingValue {const ZonesSettingValueZonesRedirectsForAiTrainingValue(this._value);
 
 final ZonesRedirectsForAiTrainingValue _value;
 
@@ -1423,7 +1423,7 @@ final ZonesRedirectsForAiTrainingValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesRedirectsForAiTrainingValue($_value)'; } 
  }
-final class ZonesSettingValueZonesReplaceInsecureJsValue extends ZonesSettingValue {const ZonesSettingValueZonesReplaceInsecureJsValue(this._value);
+@immutable final class ZonesSettingValueZonesReplaceInsecureJsValue extends ZonesSettingValue {const ZonesSettingValueZonesReplaceInsecureJsValue(this._value);
 
 final ZonesReplaceInsecureJsValue _value;
 
@@ -1433,7 +1433,7 @@ final ZonesReplaceInsecureJsValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesReplaceInsecureJsValue($_value)'; } 
  }
-final class ZonesSettingValueZonesResponseBufferingValue extends ZonesSettingValue {const ZonesSettingValueZonesResponseBufferingValue(this._value);
+@immutable final class ZonesSettingValueZonesResponseBufferingValue extends ZonesSettingValue {const ZonesSettingValueZonesResponseBufferingValue(this._value);
 
 final ZonesResponseBufferingValue _value;
 
@@ -1443,7 +1443,7 @@ final ZonesResponseBufferingValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesResponseBufferingValue($_value)'; } 
  }
-final class ZonesSettingValueZonesRocketLoaderValue extends ZonesSettingValue {const ZonesSettingValueZonesRocketLoaderValue(this._value);
+@immutable final class ZonesSettingValueZonesRocketLoaderValue extends ZonesSettingValue {const ZonesSettingValueZonesRocketLoaderValue(this._value);
 
 final ZonesRocketLoaderValue _value;
 
@@ -1453,7 +1453,7 @@ final ZonesRocketLoaderValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesRocketLoaderValue($_value)'; } 
  }
-final class ZonesSettingValueZonesAutomaticPlatformOptimization extends ZonesSettingValue {const ZonesSettingValueZonesAutomaticPlatformOptimization(this._value);
+@immutable final class ZonesSettingValueZonesAutomaticPlatformOptimization extends ZonesSettingValue {const ZonesSettingValueZonesAutomaticPlatformOptimization(this._value);
 
 final ZonesAutomaticPlatformOptimization _value;
 
@@ -1463,7 +1463,7 @@ final ZonesAutomaticPlatformOptimization _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesAutomaticPlatformOptimization($_value)'; } 
  }
-final class ZonesSettingValueZonesSecurityHeaderValue extends ZonesSettingValue {const ZonesSettingValueZonesSecurityHeaderValue(this._value);
+@immutable final class ZonesSettingValueZonesSecurityHeaderValue extends ZonesSettingValue {const ZonesSettingValueZonesSecurityHeaderValue(this._value);
 
 final ZonesSecurityHeaderValue _value;
 
@@ -1473,7 +1473,7 @@ final ZonesSecurityHeaderValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesSecurityHeaderValue($_value)'; } 
  }
-final class ZonesSettingValueZonesSecurityLevelValue extends ZonesSettingValue {const ZonesSettingValueZonesSecurityLevelValue(this._value);
+@immutable final class ZonesSettingValueZonesSecurityLevelValue extends ZonesSettingValue {const ZonesSettingValueZonesSecurityLevelValue(this._value);
 
 final ZonesSecurityLevelValue _value;
 
@@ -1483,7 +1483,7 @@ final ZonesSecurityLevelValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesSecurityLevelValue($_value)'; } 
  }
-final class ZonesSettingValueZonesServerSideExcludeValue extends ZonesSettingValue {const ZonesSettingValueZonesServerSideExcludeValue(this._value);
+@immutable final class ZonesSettingValueZonesServerSideExcludeValue extends ZonesSettingValue {const ZonesSettingValueZonesServerSideExcludeValue(this._value);
 
 final ZonesServerSideExcludeValue _value;
 
@@ -1493,7 +1493,7 @@ final ZonesServerSideExcludeValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesServerSideExcludeValue($_value)'; } 
  }
-final class ZonesSettingValueZonesSha1SupportValue extends ZonesSettingValue {const ZonesSettingValueZonesSha1SupportValue(this._value);
+@immutable final class ZonesSettingValueZonesSha1SupportValue extends ZonesSettingValue {const ZonesSettingValueZonesSha1SupportValue(this._value);
 
 final ZonesSha1SupportValue _value;
 
@@ -1503,7 +1503,7 @@ final ZonesSha1SupportValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesSha1SupportValue($_value)'; } 
  }
-final class ZonesSettingValueZonesSortQueryStringForCacheValue extends ZonesSettingValue {const ZonesSettingValueZonesSortQueryStringForCacheValue(this._value);
+@immutable final class ZonesSettingValueZonesSortQueryStringForCacheValue extends ZonesSettingValue {const ZonesSettingValueZonesSortQueryStringForCacheValue(this._value);
 
 final ZonesSortQueryStringForCacheValue _value;
 
@@ -1513,7 +1513,7 @@ final ZonesSortQueryStringForCacheValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesSortQueryStringForCacheValue($_value)'; } 
  }
-final class ZonesSettingValueZonesSslValue extends ZonesSettingValue {const ZonesSettingValueZonesSslValue(this._value);
+@immutable final class ZonesSettingValueZonesSslValue extends ZonesSettingValue {const ZonesSettingValueZonesSslValue(this._value);
 
 final ZonesSslValue _value;
 
@@ -1523,7 +1523,7 @@ final ZonesSslValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesSslValue($_value)'; } 
  }
-final class ZonesSettingValueZonesTls12OnlyValue extends ZonesSettingValue {const ZonesSettingValueZonesTls12OnlyValue(this._value);
+@immutable final class ZonesSettingValueZonesTls12OnlyValue extends ZonesSettingValue {const ZonesSettingValueZonesTls12OnlyValue(this._value);
 
 final ZonesTls12OnlyValue _value;
 
@@ -1533,7 +1533,7 @@ final ZonesTls12OnlyValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesTls12OnlyValue($_value)'; } 
  }
-final class ZonesSettingValueZonesTls13Value extends ZonesSettingValue {const ZonesSettingValueZonesTls13Value(this._value);
+@immutable final class ZonesSettingValueZonesTls13Value extends ZonesSettingValue {const ZonesSettingValueZonesTls13Value(this._value);
 
 final ZonesTls13Value _value;
 
@@ -1543,7 +1543,7 @@ final ZonesTls13Value _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesTls13Value($_value)'; } 
  }
-final class ZonesSettingValueZonesTlsClientAuthValue extends ZonesSettingValue {const ZonesSettingValueZonesTlsClientAuthValue(this._value);
+@immutable final class ZonesSettingValueZonesTlsClientAuthValue extends ZonesSettingValue {const ZonesSettingValueZonesTlsClientAuthValue(this._value);
 
 final ZonesTlsClientAuthValue _value;
 
@@ -1553,7 +1553,7 @@ final ZonesTlsClientAuthValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesTlsClientAuthValue($_value)'; } 
  }
-final class ZonesSettingValueZonesTrueClientIpHeaderValue extends ZonesSettingValue {const ZonesSettingValueZonesTrueClientIpHeaderValue(this._value);
+@immutable final class ZonesSettingValueZonesTrueClientIpHeaderValue extends ZonesSettingValue {const ZonesSettingValueZonesTrueClientIpHeaderValue(this._value);
 
 final ZonesTrueClientIpHeaderValue _value;
 
@@ -1563,7 +1563,7 @@ final ZonesTrueClientIpHeaderValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesTrueClientIpHeaderValue($_value)'; } 
  }
-final class ZonesSettingValueZonesWafValue extends ZonesSettingValue {const ZonesSettingValueZonesWafValue(this._value);
+@immutable final class ZonesSettingValueZonesWafValue extends ZonesSettingValue {const ZonesSettingValueZonesWafValue(this._value);
 
 final ZonesWafValue _value;
 
@@ -1573,7 +1573,7 @@ final ZonesWafValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesWafValue($_value)'; } 
  }
-final class ZonesSettingValueZonesWebpValue extends ZonesSettingValue {const ZonesSettingValueZonesWebpValue(this._value);
+@immutable final class ZonesSettingValueZonesWebpValue extends ZonesSettingValue {const ZonesSettingValueZonesWebpValue(this._value);
 
 final ZonesWebpValue _value;
 
@@ -1583,7 +1583,7 @@ final ZonesWebpValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesWebpValue($_value)'; } 
  }
-final class ZonesSettingValueZonesWebsocketsValue extends ZonesSettingValue {const ZonesSettingValueZonesWebsocketsValue(this._value);
+@immutable final class ZonesSettingValueZonesWebsocketsValue extends ZonesSettingValue {const ZonesSettingValueZonesWebsocketsValue(this._value);
 
 final ZonesWebsocketsValue _value;
 
@@ -1594,7 +1594,7 @@ final ZonesWebsocketsValue _value;
 @override String toString() { return 'ZonesSettingValue.zonesWebsocketsValue($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class ZonesSettingValue$Unknown extends ZonesSettingValue {const ZonesSettingValue$Unknown(this._value);
+@immutable final class ZonesSettingValue$Unknown extends ZonesSettingValue {const ZonesSettingValue$Unknown(this._value);
 
 final dynamic _value;
 

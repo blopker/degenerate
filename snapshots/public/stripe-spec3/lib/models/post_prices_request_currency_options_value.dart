@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_request_currency_options_value_custom_unit_amount.dart';import 'post_prices_request_currency_options_value_tiers.dart';final class PostPricesRequestCurrencyOptionsValueTaxBehavior {const PostPricesRequestCurrencyOptionsValueTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_prices_request_currency_options_value_custom_unit_amount.dart';import 'post_prices_request_currency_options_value_tiers.dart';@immutable final class PostPricesRequestCurrencyOptionsValueTaxBehavior {const PostPricesRequestCurrencyOptionsValueTaxBehavior._(this.value);
 
 factory PostPricesRequestCurrencyOptionsValueTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPricesRequestCurrencyOptionsValueTaxBehavior($value)'; } 
  }
-final class PostPricesRequestCurrencyOptionsValue {const PostPricesRequestCurrencyOptionsValue({this.customUnitAmount, this.taxBehavior, this.tiers, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostPricesRequestCurrencyOptionsValue {const PostPricesRequestCurrencyOptionsValue({this.customUnitAmount, this.taxBehavior, this.tiers, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostPricesRequestCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return PostPricesRequestCurrencyOptionsValue(
   customUnitAmount: json['custom_unit_amount'] != null ? PostPricesRequestCurrencyOptionsValueCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,

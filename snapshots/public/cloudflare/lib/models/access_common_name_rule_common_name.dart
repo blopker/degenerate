@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessCommonNameRuleCommonName {const AccessCommonNameRuleCommonName({required this.commonName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessCommonNameRuleCommonName {const AccessCommonNameRuleCommonName({required this.commonName});
 
 factory AccessCommonNameRuleCommonName.fromJson(Map<String, dynamic> json) { return AccessCommonNameRuleCommonName(
   commonName: json['common_name'] as String,

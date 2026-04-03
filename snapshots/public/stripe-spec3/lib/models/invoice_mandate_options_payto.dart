@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Only `maximum` is supported.
-final class InvoiceMandateOptionsPaytoAmountType {const InvoiceMandateOptionsPaytoAmountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Only `maximum` is supported.
+@immutable final class InvoiceMandateOptionsPaytoAmountType {const InvoiceMandateOptionsPaytoAmountType._(this.value);
 
 factory InvoiceMandateOptionsPaytoAmountType.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoiceMandateOptionsPaytoAmountType($value)'; } 
  }
 /// The purpose for which payments are made. Has a default value based on your merchant category code.
-final class InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose._(this.value);
+@immutable final class InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose._(this.value);
 
 factory InvoiceMandateOptionsPaytoPurpose.fromJson(String json) { return switch (json) {
   'dependant_support' => dependantSupport,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoiceMandateOptionsPaytoPurpose($value)'; } 
  }
 /// 
-final class InvoiceMandateOptionsPayto {const InvoiceMandateOptionsPayto({this.amount, this.amountType, this.purpose, });
+@immutable final class InvoiceMandateOptionsPayto {const InvoiceMandateOptionsPayto({this.amount, this.amountType, this.purpose, });
 
 factory InvoiceMandateOptionsPayto.fromJson(Map<String, dynamic> json) { return InvoiceMandateOptionsPayto(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

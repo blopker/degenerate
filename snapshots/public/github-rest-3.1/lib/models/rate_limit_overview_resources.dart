@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'rate_limit.dart';final class RateLimitOverviewResources {const RateLimitOverviewResources({required this.core, this.graphql, required this.search, this.codeSearch, this.sourceImport, this.integrationManifest, this.codeScanningUpload, this.actionsRunnerRegistration, this.scim, this.dependencySnapshots, this.dependencySbom, this.codeScanningAutofix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rate_limit.dart';@immutable final class RateLimitOverviewResources {const RateLimitOverviewResources({required this.core, required this.search, this.graphql, this.codeSearch, this.sourceImport, this.integrationManifest, this.codeScanningUpload, this.actionsRunnerRegistration, this.scim, this.dependencySnapshots, this.dependencySbom, this.codeScanningAutofix, });
 
 factory RateLimitOverviewResources.fromJson(Map<String, dynamic> json) { return RateLimitOverviewResources(
   core: RateLimit.fromJson(json['core'] as Map<String, dynamic>),

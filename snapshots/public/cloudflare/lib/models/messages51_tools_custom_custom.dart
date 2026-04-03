@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_tools_custom_custom_format.dart';import 'messages51_tools_custom_custom_format_grammar.dart';import 'messages51_tools_custom_custom_format_text.dart';final class Messages51ToolsCustomCustom {const Messages51ToolsCustomCustom({this.description, this.format, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_tools_custom_custom_format.dart';import 'messages51_tools_custom_custom_format_grammar.dart';import 'messages51_tools_custom_custom_format_text.dart';@immutable final class Messages51ToolsCustomCustom {const Messages51ToolsCustomCustom({required this.name, this.description, this.format, });
 
 factory Messages51ToolsCustomCustom.fromJson(Map<String, dynamic> json) { return Messages51ToolsCustomCustom(
   description: json['description'] as String?,

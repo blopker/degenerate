@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'incoming_phone_number_toll_free_enum_emergency_status.dart';import 'incoming_phone_number_toll_free_enum_voice_receive_mode.dart';/// The HTTP method that we should use to call `sms_fallback_url`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateIncomingPhoneNumberTollFreeRequestSmsFallbackMethod {const CreateIncomingPhoneNumberTollFreeRequestSmsFallbackMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'incoming_phone_number_toll_free_enum_emergency_status.dart';import 'incoming_phone_number_toll_free_enum_voice_receive_mode.dart';/// The HTTP method that we should use to call `sms_fallback_url`. Can be: `GET` or `POST` and defaults to `POST`.
+@immutable final class CreateIncomingPhoneNumberTollFreeRequestSmsFallbackMethod {const CreateIncomingPhoneNumberTollFreeRequestSmsFallbackMethod._(this.value);
 
 factory CreateIncomingPhoneNumberTollFreeRequestSmsFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateIncomingPhoneNumberTollFreeRequestSmsFallbackMethod($value)'; } 
  }
 /// The HTTP method that we should use to call `sms_url`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateIncomingPhoneNumberTollFreeRequestSmsMethod {const CreateIncomingPhoneNumberTollFreeRequestSmsMethod._(this.value);
+@immutable final class CreateIncomingPhoneNumberTollFreeRequestSmsMethod {const CreateIncomingPhoneNumberTollFreeRequestSmsMethod._(this.value);
 
 factory CreateIncomingPhoneNumberTollFreeRequestSmsMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateIncomingPhoneNumberTollFreeRequestSmsMethod($value)'; } 
  }
 /// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateIncomingPhoneNumberTollFreeRequestStatusCallbackMethod {const CreateIncomingPhoneNumberTollFreeRequestStatusCallbackMethod._(this.value);
+@immutable final class CreateIncomingPhoneNumberTollFreeRequestStatusCallbackMethod {const CreateIncomingPhoneNumberTollFreeRequestStatusCallbackMethod._(this.value);
 
 factory CreateIncomingPhoneNumberTollFreeRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateIncomingPhoneNumberTollFreeRequestStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method that we should use to call `voice_fallback_url`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateIncomingPhoneNumberTollFreeRequestVoiceFallbackMethod {const CreateIncomingPhoneNumberTollFreeRequestVoiceFallbackMethod._(this.value);
+@immutable final class CreateIncomingPhoneNumberTollFreeRequestVoiceFallbackMethod {const CreateIncomingPhoneNumberTollFreeRequestVoiceFallbackMethod._(this.value);
 
 factory CreateIncomingPhoneNumberTollFreeRequestVoiceFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -101,7 +101,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateIncomingPhoneNumberTollFreeRequestVoiceFallbackMethod($value)'; } 
  }
 /// The HTTP method that we should use to call `voice_url`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateIncomingPhoneNumberTollFreeRequestVoiceMethod {const CreateIncomingPhoneNumberTollFreeRequestVoiceMethod._(this.value);
+@immutable final class CreateIncomingPhoneNumberTollFreeRequestVoiceMethod {const CreateIncomingPhoneNumberTollFreeRequestVoiceMethod._(this.value);
 
 factory CreateIncomingPhoneNumberTollFreeRequestVoiceMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -125,7 +125,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateIncomingPhoneNumberTollFreeRequestVoiceMethod($value)'; } 
  }
-final class CreateIncomingPhoneNumberTollFreeRequest {const CreateIncomingPhoneNumberTollFreeRequest({required this.phoneNumber, this.apiVersion, this.friendlyName, this.smsApplicationSid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.voiceApplicationSid, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.identitySid, this.addressSid, this.emergencyStatus, this.emergencyAddressSid, this.trunkSid, this.voiceReceiveMode, this.bundleSid, });
+@immutable final class CreateIncomingPhoneNumberTollFreeRequest {const CreateIncomingPhoneNumberTollFreeRequest({required this.phoneNumber, this.apiVersion, this.friendlyName, this.smsApplicationSid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.voiceApplicationSid, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.identitySid, this.addressSid, this.emergencyStatus, this.emergencyAddressSid, this.trunkSid, this.voiceReceiveMode, this.bundleSid, });
 
 factory CreateIncomingPhoneNumberTollFreeRequest.fromJson(Map<String, dynamic> json) { return CreateIncomingPhoneNumberTollFreeRequest(
   phoneNumber: json['PhoneNumber'] as String,

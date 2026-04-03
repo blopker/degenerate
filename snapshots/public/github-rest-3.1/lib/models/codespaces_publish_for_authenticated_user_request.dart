@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodespacesPublishForAuthenticatedUserRequest {const CodespacesPublishForAuthenticatedUserRequest({this.name, this.private = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesPublishForAuthenticatedUserRequest {const CodespacesPublishForAuthenticatedUserRequest({this.name, this.private = false, });
 
 factory CodespacesPublishForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesPublishForAuthenticatedUserRequest(
   name: json['name'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'get_org_analytics_response_data_recording_stats.dart';import 'get_org_analytics_response_data_session_stats.dart';final class GetOrgAnalyticsResponseData {const GetOrgAnalyticsResponseData({this.recordingStats, this.sessionStats, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_org_analytics_response_data_recording_stats.dart';import 'get_org_analytics_response_data_session_stats.dart';@immutable final class GetOrgAnalyticsResponseData {const GetOrgAnalyticsResponseData({this.recordingStats, this.sessionStats, });
 
 factory GetOrgAnalyticsResponseData.fromJson(Map<String, dynamic> json) { return GetOrgAnalyticsResponseData(
   recordingStats: json['recording_stats'] != null ? GetOrgAnalyticsResponseDataRecordingStats.fromJson(json['recording_stats'] as Map<String, dynamic>) : null,

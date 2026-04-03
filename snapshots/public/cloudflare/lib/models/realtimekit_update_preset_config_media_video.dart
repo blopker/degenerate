@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Video quality of participants
-final class RealtimekitUpdatePresetConfigMediaVideoQuality {const RealtimekitUpdatePresetConfigMediaVideoQuality._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Video quality of participants
+@immutable final class RealtimekitUpdatePresetConfigMediaVideoQuality {const RealtimekitUpdatePresetConfigMediaVideoQuality._(this.value);
 
 factory RealtimekitUpdatePresetConfigMediaVideoQuality.fromJson(String json) { return switch (json) {
   'hd' => hd,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitUpdatePresetConfigMediaVideoQuality($value)'; } 
  }
 /// Configuration options for participant videos
-final class RealtimekitUpdatePresetConfigMediaVideo {const RealtimekitUpdatePresetConfigMediaVideo({this.frameRate, this.quality, });
+@immutable final class RealtimekitUpdatePresetConfigMediaVideo {const RealtimekitUpdatePresetConfigMediaVideo({this.frameRate, this.quality, });
 
 factory RealtimekitUpdatePresetConfigMediaVideo.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetConfigMediaVideo(
   frameRate: json['frame_rate'] != null ? (json['frame_rate'] as num).toInt() : null,

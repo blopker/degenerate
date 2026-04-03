@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_item.dart';import 'workers_messages2.dart';final class NamespaceWorkerGetScriptBindingsResponse {const NamespaceWorkerGetScriptBindingsResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_item.dart';import 'workers_messages2.dart';@immutable final class NamespaceWorkerGetScriptBindingsResponse {const NamespaceWorkerGetScriptBindingsResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory NamespaceWorkerGetScriptBindingsResponse.fromJson(Map<String, dynamic> json) { return NamespaceWorkerGetScriptBindingsResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'application_fee_account.dart';import 'application_fee_application.dart';import 'application_fee_balance_transaction.dart';import 'application_fee_charge.dart';import 'application_fee_originating_transaction.dart';import 'application_fee_refunds.dart';import 'balance_transaction.dart';import 'charge.dart';import 'platform_earning_fee_source.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class ApplicationFeeObject {const ApplicationFeeObject._(this.value);
+@immutable final class ApplicationFeeObject {const ApplicationFeeObject._(this.value);
 
 factory ApplicationFeeObject.fromJson(String json) { return switch (json) {
   'application_fee' => applicationFee,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ApplicationFeeObject($value)'; } 
  }
 /// 
-final class ApplicationFee {const ApplicationFee({required this.account, required this.amount, required this.amountRefunded, required this.application, this.balanceTransaction, required this.charge, required this.created, required this.currency, this.feeSource, required this.id, required this.livemode, required this.object, this.originatingTransaction, required this.refunded, required this.refunds, });
+@immutable final class ApplicationFee {const ApplicationFee({required this.account, required this.amount, required this.amountRefunded, required this.application, required this.charge, required this.created, required this.currency, required this.id, required this.livemode, required this.object, required this.refunded, required this.refunds, this.balanceTransaction, this.feeSource, this.originatingTransaction, });
 
 factory ApplicationFee.fromJson(Map<String, dynamic> json) { return ApplicationFee(
   account: OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),

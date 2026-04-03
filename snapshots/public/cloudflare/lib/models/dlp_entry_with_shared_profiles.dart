@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_entry_profile.dart';final class DlpEntryWithSharedProfiles {const DlpEntryWithSharedProfiles({required this.profiles});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_entry_profile.dart';@immutable final class DlpEntryWithSharedProfiles {const DlpEntryWithSharedProfiles({required this.profiles});
 
 factory DlpEntryWithSharedProfiles.fromJson(Map<String, dynamic> json) { return DlpEntryWithSharedProfiles(
   profiles: (json['profiles'] as List<dynamic>).map((e) => DlpEntryProfile.fromJson(e as Map<String, dynamic>)).toList(),

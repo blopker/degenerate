@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'calls_name.dart';final class CallsAppEditableFields {const CallsAppEditableFields({this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'calls_name.dart';@immutable final class CallsAppEditableFields {const CallsAppEditableFields({this.name});
 
 factory CallsAppEditableFields.fromJson(Map<String, dynamic> json) { return CallsAppEditableFields(
   name: json['name'] != null ? CallsName.fromJson(json['name'] as String) : null,

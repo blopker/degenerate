@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountSessionsRequestComponentsFinancialAccountFeatures {const PostAccountSessionsRequestComponentsFinancialAccountFeatures({this.disableStripeUserAuthentication, this.externalAccountCollection, this.sendMoney, this.transferBalance, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountSessionsRequestComponentsFinancialAccountFeatures {const PostAccountSessionsRequestComponentsFinancialAccountFeatures({this.disableStripeUserAuthentication, this.externalAccountCollection, this.sendMoney, this.transferBalance, });
 
 factory PostAccountSessionsRequestComponentsFinancialAccountFeatures.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsFinancialAccountFeatures(
   disableStripeUserAuthentication: json['disable_stripe_user_authentication'] as bool?,

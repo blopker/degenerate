@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'logpush_destination_conf.dart';final class DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest {const DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest({required this.destinationConf});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'logpush_destination_conf.dart';@immutable final class DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest {const DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest({required this.destinationConf});
 
 factory DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest.fromJson(Map<String, dynamic> json) { return DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest(
   destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),

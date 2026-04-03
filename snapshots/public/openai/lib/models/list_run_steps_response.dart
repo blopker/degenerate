@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_object.dart';final class ListRunStepsResponse {const ListRunStepsResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_object.dart';@immutable final class ListRunStepsResponse {const ListRunStepsResponse({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ListRunStepsResponse.fromJson(Map<String, dynamic> json) { return ListRunStepsResponse(
   object: json['object'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_automatic_tax.dart';import 'post_invoices_create_preview_request_customer_details.dart';import 'post_invoices_create_preview_request_discounts.dart';import 'post_invoices_create_preview_request_discounts_variant1.dart';import 'post_invoices_create_preview_request_invoice_items.dart';import 'post_invoices_create_preview_request_issuer.dart';import 'post_invoices_create_preview_request_on_behalf_of.dart';import 'post_invoices_create_preview_request_schedule_details.dart';import 'post_invoices_create_preview_request_subscription_details.dart';/// Customizes the types of values to include when calculating the invoice. Defaults to `next` if unspecified.
-final class PostInvoicesCreatePreviewRequestPreviewMode {const PostInvoicesCreatePreviewRequestPreviewMode._(this.value);
+@immutable final class PostInvoicesCreatePreviewRequestPreviewMode {const PostInvoicesCreatePreviewRequestPreviewMode._(this.value);
 
 factory PostInvoicesCreatePreviewRequestPreviewMode.fromJson(String json) { return switch (json) {
   'next' => next,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestPreviewMode($value)'; } 
  }
-final class PostInvoicesCreatePreviewRequest {const PostInvoicesCreatePreviewRequest({this.automaticTax, this.currency, this.customer, this.customerAccount, this.customerDetails, this.discounts, this.expand, this.invoiceItems, this.issuer, this.onBehalfOf, this.previewMode, this.schedule, this.scheduleDetails, this.subscription, this.subscriptionDetails, });
+@immutable final class PostInvoicesCreatePreviewRequest {const PostInvoicesCreatePreviewRequest({this.automaticTax, this.currency, this.customer, this.customerAccount, this.customerDetails, this.discounts, this.expand, this.invoiceItems, this.issuer, this.onBehalfOf, this.previewMode, this.schedule, this.scheduleDetails, this.subscription, this.subscriptionDetails, });
 
 factory PostInvoicesCreatePreviewRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequest(
   automaticTax: json['automatic_tax'] != null ? PostInvoicesCreatePreviewRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,

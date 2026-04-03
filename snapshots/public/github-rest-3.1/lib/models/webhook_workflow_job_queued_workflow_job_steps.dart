@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookWorkflowJobQueuedWorkflowJobStepsConclusion {const WebhookWorkflowJobQueuedWorkflowJobStepsConclusion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookWorkflowJobQueuedWorkflowJobStepsConclusion {const WebhookWorkflowJobQueuedWorkflowJobStepsConclusion._(this.value);
 
 factory WebhookWorkflowJobQueuedWorkflowJobStepsConclusion.fromJson(String json) { return switch (json) {
   'failure' => failure,
@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWorkflowJobQueuedWorkflowJobStepsConclusion($value)'; } 
  }
-final class WebhookWorkflowJobQueuedWorkflowJobStepsStatus {const WebhookWorkflowJobQueuedWorkflowJobStepsStatus._(this.value);
+@immutable final class WebhookWorkflowJobQueuedWorkflowJobStepsStatus {const WebhookWorkflowJobQueuedWorkflowJobStepsStatus._(this.value);
 
 factory WebhookWorkflowJobQueuedWorkflowJobStepsStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookWorkflowJobQueuedWorkflowJobStepsStatus($value)'; } 
  }
-final class WebhookWorkflowJobQueuedWorkflowJobSteps {const WebhookWorkflowJobQueuedWorkflowJobSteps({required this.completedAt, required this.conclusion, required this.name, required this.number, required this.startedAt, required this.status, });
+@immutable final class WebhookWorkflowJobQueuedWorkflowJobSteps {const WebhookWorkflowJobQueuedWorkflowJobSteps({required this.completedAt, required this.conclusion, required this.name, required this.number, required this.startedAt, required this.status, });
 
 factory WebhookWorkflowJobQueuedWorkflowJobSteps.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobQueuedWorkflowJobSteps(
   completedAt: json['completed_at'] as String?,

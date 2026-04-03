@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vector_store_search_result_item.dart';/// The object type, which is always `vector_store.search_results.page`
-final class VectorStoreSearchResultsPageObject {const VectorStoreSearchResultsPageObject._(this.value);
+@immutable final class VectorStoreSearchResultsPageObject {const VectorStoreSearchResultsPageObject._(this.value);
 
 factory VectorStoreSearchResultsPageObject.fromJson(String json) { return switch (json) {
   'vector_store.search_results.page' => vectorStoreSearchResultsPage,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VectorStoreSearchResultsPageObject($value)'; } 
  }
-final class VectorStoreSearchResultsPage {const VectorStoreSearchResultsPage({required this.object, required this.searchQuery, required this.data, required this.hasMore, required this.nextPage, });
+@immutable final class VectorStoreSearchResultsPage {const VectorStoreSearchResultsPage({required this.object, required this.searchQuery, required this.data, required this.hasMore, required this.nextPage, });
 
 factory VectorStoreSearchResultsPage.fromJson(Map<String, dynamic> json) { return VectorStoreSearchResultsPage(
   object: VectorStoreSearchResultsPageObject.fromJson(json['object'] as String),

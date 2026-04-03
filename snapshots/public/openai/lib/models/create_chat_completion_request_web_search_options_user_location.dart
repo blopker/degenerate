@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'web_search_location.dart';/// The type of location approximation. Always `approximate`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web_search_location.dart';/// The type of location approximation. Always `approximate`.
 /// 
-final class CreateChatCompletionRequestWebSearchOptionsUserLocationType {const CreateChatCompletionRequestWebSearchOptionsUserLocationType._(this.value);
+@immutable final class CreateChatCompletionRequestWebSearchOptionsUserLocationType {const CreateChatCompletionRequestWebSearchOptionsUserLocationType._(this.value);
 
 factory CreateChatCompletionRequestWebSearchOptionsUserLocationType.fromJson(String json) { return switch (json) {
   'approximate' => approximate,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Approximate location parameters for the search.
 /// 
-final class CreateChatCompletionRequestWebSearchOptionsUserLocation {const CreateChatCompletionRequestWebSearchOptionsUserLocation({required this.type, required this.approximate, });
+@immutable final class CreateChatCompletionRequestWebSearchOptionsUserLocation {const CreateChatCompletionRequestWebSearchOptionsUserLocation({required this.type, required this.approximate, });
 
 factory CreateChatCompletionRequestWebSearchOptionsUserLocation.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequestWebSearchOptionsUserLocation(
   type: CreateChatCompletionRequestWebSearchOptionsUserLocationType.fromJson(json['type'] as String),

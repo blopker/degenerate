@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanHarResponse2LogCreator {const UrlscannerGetScanHarResponse2LogCreator({required this.comment, required this.name, required this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanHarResponse2LogCreator {const UrlscannerGetScanHarResponse2LogCreator({required this.comment, required this.name, required this.version, });
 
 factory UrlscannerGetScanHarResponse2LogCreator.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2LogCreator(
   comment: json['comment'] as String,

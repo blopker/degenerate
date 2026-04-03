@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PatchDatasetUpdateResponse {const PatchDatasetUpdateResponse({required this.isPublic, required this.name, required this.uuid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PatchDatasetUpdateResponse {const PatchDatasetUpdateResponse({required this.isPublic, required this.name, required this.uuid, });
 
 factory PatchDatasetUpdateResponse.fromJson(Map<String, dynamic> json) { return PatchDatasetUpdateResponse(
   isPublic: json['isPublic'] as bool,

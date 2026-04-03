@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UserSInvitesRespondToInvitationRequest {const UserSInvitesRespondToInvitationRequest({required this.status});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UserSInvitesRespondToInvitationRequest {const UserSInvitesRespondToInvitationRequest({required this.status});
 
 factory UserSInvitesRespondToInvitationRequest.fromJson(Map<String, dynamic> json) { return UserSInvitesRespondToInvitationRequest(
   status: json['status'],

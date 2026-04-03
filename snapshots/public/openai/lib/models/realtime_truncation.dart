@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'retention_ratio_truncation.dart';/// The truncation strategy to use for the session. `auto` is the default truncation strategy. `disabled` will disable truncation and emit errors when the conversation exceeds the input token limit.
-final class RealtimeTruncationVariant1 {const RealtimeTruncationVariant1._(this.value);
+@immutable final class RealtimeTruncationVariant1 {const RealtimeTruncationVariant1._(this.value);
 
 factory RealtimeTruncationVariant1.fromJson(String json) { return switch (json) {
   'auto' => auto,

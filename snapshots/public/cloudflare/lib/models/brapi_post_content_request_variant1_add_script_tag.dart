@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BrapiPostContentRequestVariant1AddScriptTag {const BrapiPostContentRequestVariant1AddScriptTag({this.content, this.id, this.type, this.url, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BrapiPostContentRequestVariant1AddScriptTag {const BrapiPostContentRequestVariant1AddScriptTag({this.content, this.id, this.type, this.url, });
 
 factory BrapiPostContentRequestVariant1AddScriptTag.fromJson(Map<String, dynamic> json) { return BrapiPostContentRequestVariant1AddScriptTag(
   content: json['content'] as String?,

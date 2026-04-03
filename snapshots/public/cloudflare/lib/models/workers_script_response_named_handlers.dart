@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WorkersScriptResponseNamedHandlers {const WorkersScriptResponseNamedHandlers({this.handlers, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersScriptResponseNamedHandlers {const WorkersScriptResponseNamedHandlers({this.handlers, this.name, });
 
 factory WorkersScriptResponseNamedHandlers.fromJson(Map<String, dynamic> json) { return WorkersScriptResponseNamedHandlers(
   handlers: (json['handlers'] as List<dynamic>?)?.map((e) => e as String).toList(),

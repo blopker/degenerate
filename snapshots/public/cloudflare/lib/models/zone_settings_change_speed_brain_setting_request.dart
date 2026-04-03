@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether the feature is enabled or disabled.
-final class ZoneSettingsChangeSpeedBrainSettingRequestValue {const ZoneSettingsChangeSpeedBrainSettingRequestValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether the feature is enabled or disabled.
+@immutable final class ZoneSettingsChangeSpeedBrainSettingRequestValue {const ZoneSettingsChangeSpeedBrainSettingRequestValue._(this.value);
 
 factory ZoneSettingsChangeSpeedBrainSettingRequestValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZoneSettingsChangeSpeedBrainSettingRequestValue($value)'; } 
  }
-final class ZoneSettingsChangeSpeedBrainSettingRequest {const ZoneSettingsChangeSpeedBrainSettingRequest({required this.value});
+@immutable final class ZoneSettingsChangeSpeedBrainSettingRequest {const ZoneSettingsChangeSpeedBrainSettingRequest({required this.value});
 
 factory ZoneSettingsChangeSpeedBrainSettingRequest.fromJson(Map<String, dynamic> json) { return ZoneSettingsChangeSpeedBrainSettingRequest(
   value: ZoneSettingsChangeSpeedBrainSettingRequestValue.fromJson(json['value'] as String),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostApplicationFeesIdRefundRequest {const PostApplicationFeesIdRefundRequest({this.amount, this.directive, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostApplicationFeesIdRefundRequest {const PostApplicationFeesIdRefundRequest({this.amount, this.directive, this.expand, });
 
 factory PostApplicationFeesIdRefundRequest.fromJson(Map<String, dynamic> json) { return PostApplicationFeesIdRefundRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

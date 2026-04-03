@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Format in which results will be returned.
-final class RadarGetHttpSummaryByDeviceTypeFormat {const RadarGetHttpSummaryByDeviceTypeFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
+@immutable final class RadarGetHttpSummaryByDeviceTypeFormat {const RadarGetHttpSummaryByDeviceTypeFormat._(this.value);
 
 factory RadarGetHttpSummaryByDeviceTypeFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,

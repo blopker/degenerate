@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_incoming_phone_number.dart';final class ListIncomingPhoneNumberResponse {const ListIncomingPhoneNumberResponse({this.incomingPhoneNumbers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_incoming_phone_number.dart';@immutable final class ListIncomingPhoneNumberResponse {const ListIncomingPhoneNumberResponse({this.incomingPhoneNumbers, this.end, this.firstPageUri, this.nextPageUri, this.page, this.pageSize, this.previousPageUri, this.start, this.uri, });
 
 factory ListIncomingPhoneNumberResponse.fromJson(Map<String, dynamic> json) { return ListIncomingPhoneNumberResponse(
   incomingPhoneNumbers: (json['incoming_phone_numbers'] as List<dynamic>?)?.map((e) => AccountIncomingPhoneNumber.fromJson(e as Map<String, dynamic>)).toList(),

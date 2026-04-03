@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The HTTP method used to access the endpoint.
-final class ShieldMethod {const ShieldMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method used to access the endpoint.
+@immutable final class ShieldMethod {const ShieldMethod._(this.value);
 
 factory ShieldMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,

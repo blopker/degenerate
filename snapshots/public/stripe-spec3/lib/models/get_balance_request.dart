@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBalanceRequest {const GetBalanceRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBalanceRequest {const GetBalanceRequest();
 
-factory GetBalanceRequest.fromJson(Map<String, dynamic> json) { return GetBalanceRequest(
-
-); }
+factory GetBalanceRequest.fromJson(Map<String, dynamic> _) { return const GetBalanceRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetBalanceRequest copyWith() { return GetBalanceRequest(
+GetBalanceRequest copyWith() { return const GetBalanceRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetBalanceRequest; } 

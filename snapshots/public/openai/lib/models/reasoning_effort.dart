@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Constrains effort on reasoning for
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Constrains effort on reasoning for
 /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
 /// Currently supported values are `none`, `minimal`, `low`, `medium`, `high`, and `xhigh`. Reducing
 /// reasoning effort can result in faster responses and fewer tokens used
@@ -11,7 +11,7 @@
 /// - The `gpt-5-pro` model defaults to (and only supports) `high` reasoning effort.
 /// - `xhigh` is supported for all models after `gpt-5.1-codex-max`.
 /// 
-final class ReasoningEffort {const ReasoningEffort._(this.value);
+@immutable final class ReasoningEffort {const ReasoningEffort._(this.value);
 
 factory ReasoningEffort.fromJson(String json) { return switch (json) {
   'none' => none,

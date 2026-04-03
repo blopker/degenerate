@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issue.dart';final class TimelineCrossReferencedEventSource {const TimelineCrossReferencedEventSource({this.type, this.issue, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issue.dart';@immutable final class TimelineCrossReferencedEventSource {const TimelineCrossReferencedEventSource({this.type, this.issue, });
 
 factory TimelineCrossReferencedEventSource.fromJson(Map<String, dynamic> json) { return TimelineCrossReferencedEventSource(
   type: json['type'] as String?,

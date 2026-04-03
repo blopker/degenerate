@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_messages2.dart';final class ResponseCommon68 {const ResponseCommon68({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_messages2.dart';@immutable final class ResponseCommon68 {const ResponseCommon68({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon68.fromJson(Map<String, dynamic> json) { return ResponseCommon68(
   errors: (json['errors'] as List<dynamic>).map((e) => TlsCertificatesAndHostnamesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

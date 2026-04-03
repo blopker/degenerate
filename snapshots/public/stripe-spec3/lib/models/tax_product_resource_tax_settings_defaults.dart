@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The tax calculation provider this account uses. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
-final class TaxProductResourceTaxSettingsDefaultsProvider {const TaxProductResourceTaxSettingsDefaultsProvider._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tax calculation provider this account uses. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
+@immutable final class TaxProductResourceTaxSettingsDefaultsProvider {const TaxProductResourceTaxSettingsDefaultsProvider._(this.value);
 
 factory TaxProductResourceTaxSettingsDefaultsProvider.fromJson(String json) { return switch (json) {
   'anrok' => anrok,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceTaxSettingsDefaultsProvider($value)'; } 
  }
 /// Default [tax behavior](https://stripe.com/docs/tax/products-prices-tax-categories-tax-behavior#tax-behavior) used to specify whether the price is considered inclusive of taxes or exclusive of taxes. If the item's price has a tax behavior set, it will take precedence over the default tax behavior.
-final class TaxProductResourceTaxSettingsDefaultsTaxBehavior {const TaxProductResourceTaxSettingsDefaultsTaxBehavior._(this.value);
+@immutable final class TaxProductResourceTaxSettingsDefaultsTaxBehavior {const TaxProductResourceTaxSettingsDefaultsTaxBehavior._(this.value);
 
 factory TaxProductResourceTaxSettingsDefaultsTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -60,7 +60,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceTaxSettingsDefaultsTaxBehavior($value)'; } 
  }
 /// 
-final class TaxProductResourceTaxSettingsDefaults {const TaxProductResourceTaxSettingsDefaults({required this.provider, this.taxBehavior, this.taxCode, });
+@immutable final class TaxProductResourceTaxSettingsDefaults {const TaxProductResourceTaxSettingsDefaults({required this.provider, this.taxBehavior, this.taxCode, });
 
 factory TaxProductResourceTaxSettingsDefaults.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxSettingsDefaults(
   provider: TaxProductResourceTaxSettingsDefaultsProvider.fromJson(json['provider'] as String),

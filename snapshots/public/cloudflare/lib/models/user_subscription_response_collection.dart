@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription2.dart';final class UserSubscriptionResponseCollection {const UserSubscriptionResponseCollection({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription2.dart';@immutable final class UserSubscriptionResponseCollection {const UserSubscriptionResponseCollection({this.result});
 
 factory UserSubscriptionResponseCollection.fromJson(Map<String, dynamic> json) { return UserSubscriptionResponseCollection(
   result: (json['result'] as List<dynamic>?)?.map((e) => Subscription2.fromJson(e as Map<String, dynamic>)).toList(),

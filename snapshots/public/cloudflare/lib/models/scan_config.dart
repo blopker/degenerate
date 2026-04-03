@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'frequency2.dart';final class ScanConfig {const ScanConfig({required this.accountId, required this.frequency, required this.id, required this.ips, required this.ports, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'frequency2.dart';@immutable final class ScanConfig {const ScanConfig({required this.accountId, required this.frequency, required this.id, required this.ips, required this.ports, });
 
 factory ScanConfig.fromJson(Map<String, dynamic> json) { return ScanConfig(
   accountId: json['account_id'] as String,
@@ -21,7 +21,7 @@ final String id;
 /// Defines a list of IP addresses or CIDR blocks to scan. The maximum number of total IP addresses allowed is 5000.
 final List<String> ips;
 
-/// Defines a list of ports to scan. Valid values are:"default", "all", or a comma-separated list of ports or range of ports (e.g. ["1-80", "443"]). "default" scans the 100 most commonly open ports.
+/// Defines a list of ports to scan. Valid values are:"default", "all", or a comma-separated list of ports or range of ports (e.g. `["1-80", "443"]`). "default" scans the 100 most commonly open ports.
 final List<String> ports;
 
 Map<String, dynamic> toJson() { return {

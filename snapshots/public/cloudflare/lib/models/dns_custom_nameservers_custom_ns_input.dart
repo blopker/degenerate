@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_custom_nameservers_ns_name.dart';import 'dns_custom_nameservers_ns_set.dart';final class DnsCustomNameserversCustomNsInput {const DnsCustomNameserversCustomNsInput({required this.nsName, this.nsSet, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_custom_nameservers_ns_name.dart';import 'dns_custom_nameservers_ns_set.dart';@immutable final class DnsCustomNameserversCustomNsInput {const DnsCustomNameserversCustomNsInput({required this.nsName, this.nsSet, });
 
 factory DnsCustomNameserversCustomNsInput.fromJson(Map<String, dynamic> json) { return DnsCustomNameserversCustomNsInput(
   nsName: DnsCustomNameserversNsName.fromJson(json['ns_name'] as String),

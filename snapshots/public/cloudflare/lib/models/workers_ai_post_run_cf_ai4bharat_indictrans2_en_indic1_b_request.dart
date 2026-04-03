@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic1_b_request_text.dart';/// Target langauge to translate to
-final class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguage {const WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguage._(this.value);
+@immutable final class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguage {const WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguage._(this.value);
 
 factory WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguage.fromJson(String json) { return switch (json) {
   'asm_Beng' => asmBeng,
@@ -121,7 +121,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguage($value)'; } 
  }
-final class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest {const WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest({this.targetLanguage = WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguage.hinDeva, required this.text, });
+@immutable final class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest {const WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest({required this.text, this.targetLanguage = WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguage.hinDeva, });
 
 factory WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest(
   targetLanguage: WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestTargetLanguage.fromJson(json['target_language'] as String),

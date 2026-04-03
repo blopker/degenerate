@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'linux_container_user.dart';/// ContainerUser represents user identity information
-final class ContainerUser {const ContainerUser({this.linux});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'linux_container_user.dart';/// ContainerUser represents user identity information
+@immutable final class ContainerUser {const ContainerUser({this.linux});
 
 factory ContainerUser.fromJson(Map<String, dynamic> json) { return ContainerUser(
   linux: json['linux'] != null ? LinuxContainerUser.fromJson(json['linux'] as Map<String, dynamic>) : null,

@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetPaymentIntentsRequest {const GetPaymentIntentsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetPaymentIntentsRequest {const GetPaymentIntentsRequest();
 
-factory GetPaymentIntentsRequest.fromJson(Map<String, dynamic> json) { return GetPaymentIntentsRequest(
-
-); }
+factory GetPaymentIntentsRequest.fromJson(Map<String, dynamic> _) { return const GetPaymentIntentsRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetPaymentIntentsRequest copyWith() { return GetPaymentIntentsRequest(
+GetPaymentIntentsRequest copyWith() { return const GetPaymentIntentsRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetPaymentIntentsRequest; } 

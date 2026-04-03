@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CreateCompletionResponseChoicesLogprobs {const CreateCompletionResponseChoicesLogprobs({this.textOffset, this.tokenLogprobs, this.tokens, this.topLogprobs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateCompletionResponseChoicesLogprobs {const CreateCompletionResponseChoicesLogprobs({this.textOffset, this.tokenLogprobs, this.tokens, this.topLogprobs, });
 
 factory CreateCompletionResponseChoicesLogprobs.fromJson(Map<String, dynamic> json) { return CreateCompletionResponseChoicesLogprobs(
   textOffset: (json['text_offset'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

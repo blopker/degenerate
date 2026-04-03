@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_cert_pack_uuid.dart';import 'tls_certificates_and_hostnames_verification_info.dart';/// Certificate Authority is manually reviewing the order.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_cert_pack_uuid.dart';import 'tls_certificates_and_hostnames_verification_info.dart';/// Certificate Authority is manually reviewing the order.
 extension type const TlsCertificatesAndHostnamesBrandCheck(bool value) {
 factory TlsCertificatesAndHostnamesBrandCheck.fromJson(bool json) => TlsCertificatesAndHostnamesBrandCheck(json);
 
@@ -8,7 +8,7 @@ bool toJson() => value;
 
 }
 /// Current status of certificate.
-final class TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus._(this.value);
+@immutable final class TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesCertificateStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesCertificateStatus($value)'; } 
  }
 /// Certificate's signature algorithm.
-final class TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature._(this.value);
 
 factory TlsCertificatesAndHostnamesSchemasSignature.fromJson(String json) { return switch (json) {
   'ECDSAWithSHA256' => ecdsaWithSha256,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesSchemasSignature($value)'; } 
  }
 /// Validation method in use for a certificate pack order.
-final class TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod._(this.value);
+@immutable final class TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod._(this.value);
 
 factory TlsCertificatesAndHostnamesSchemasValidationMethod.fromJson(String json) { return switch (json) {
   'http' => http,
@@ -111,7 +111,7 @@ bool toJson() => value;
 
 }
 /// Method of verification.
-final class TlsCertificatesAndHostnamesVerificationType {const TlsCertificatesAndHostnamesVerificationType._(this.value);
+@immutable final class TlsCertificatesAndHostnamesVerificationType {const TlsCertificatesAndHostnamesVerificationType._(this.value);
 
 factory TlsCertificatesAndHostnamesVerificationType.fromJson(String json) { return switch (json) {
   'cname' => cname,
@@ -135,7 +135,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TlsCertificatesAndHostnamesVerificationType($value)'; } 
  }
-final class TlsCertificatesAndHostnamesVerification {const TlsCertificatesAndHostnamesVerification({this.brandCheck, this.certPackUuid, required this.certificateStatus, this.signature, this.validationMethod, this.verificationInfo, this.verificationStatus, this.verificationType, });
+@immutable final class TlsCertificatesAndHostnamesVerification {const TlsCertificatesAndHostnamesVerification({required this.certificateStatus, this.brandCheck, this.certPackUuid, this.signature, this.validationMethod, this.verificationInfo, this.verificationStatus, this.verificationType, });
 
 factory TlsCertificatesAndHostnamesVerification.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesVerification(
   brandCheck: json['brand_check'] != null ? TlsCertificatesAndHostnamesBrandCheck.fromJson(json['brand_check'] as bool) : null,

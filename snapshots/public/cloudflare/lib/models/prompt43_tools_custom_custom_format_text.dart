@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Prompt43ToolsCustomCustomFormatTextType {const Prompt43ToolsCustomCustomFormatTextType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Prompt43ToolsCustomCustomFormatTextType {const Prompt43ToolsCustomCustomFormatTextType._(this.value);
 
 factory Prompt43ToolsCustomCustomFormatTextType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43ToolsCustomCustomFormatTextType($value)'; } 
  }
-final class Prompt43ToolsCustomCustomFormatText {const Prompt43ToolsCustomCustomFormatText({required this.type});
+@immutable final class Prompt43ToolsCustomCustomFormatText {const Prompt43ToolsCustomCustomFormatText({required this.type});
 
 factory Prompt43ToolsCustomCustomFormatText.fromJson(Map<String, dynamic> json) { return Prompt43ToolsCustomCustomFormatText(
   type: Prompt43ToolsCustomCustomFormatTextType.fromJson(json['type'] as String),

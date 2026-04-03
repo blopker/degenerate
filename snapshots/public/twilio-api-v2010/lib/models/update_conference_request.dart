@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ConferenceEnumUpdateStatus {const ConferenceEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConferenceEnumUpdateStatus {const ConferenceEnumUpdateStatus._(this.value);
 
 factory ConferenceEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ConferenceEnumUpdateStatus($value)'; } 
  }
 /// The HTTP method used to call `announce_url`. Can be: `GET` or `POST` and the default is `POST`
-final class UpdateConferenceRequestAnnounceMethod {const UpdateConferenceRequestAnnounceMethod._(this.value);
+@immutable final class UpdateConferenceRequestAnnounceMethod {const UpdateConferenceRequestAnnounceMethod._(this.value);
 
 factory UpdateConferenceRequestAnnounceMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -46,7 +46,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UpdateConferenceRequestAnnounceMethod($value)'; } 
  }
-final class UpdateConferenceRequest {const UpdateConferenceRequest({this.status, this.announceUrl, this.announceMethod, });
+@immutable final class UpdateConferenceRequest {const UpdateConferenceRequest({this.status, this.announceUrl, this.announceMethod, });
 
 factory UpdateConferenceRequest.fromJson(Map<String, dynamic> json) { return UpdateConferenceRequest(
   status: json['Status'] != null ? ConferenceEnumUpdateStatus.fromJson(json['Status'] as String) : null,

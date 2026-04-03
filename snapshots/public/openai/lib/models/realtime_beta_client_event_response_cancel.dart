@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `response.cancel`.
-final class RealtimeBetaClientEventResponseCancelType {const RealtimeBetaClientEventResponseCancelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.cancel`.
+@immutable final class RealtimeBetaClientEventResponseCancelType {const RealtimeBetaClientEventResponseCancelType._(this.value);
 
 factory RealtimeBetaClientEventResponseCancelType.fromJson(String json) { return switch (json) {
   'response.cancel' => responseCancel,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// with a `response.done` event with a status of `response.status=cancelled`. If
 /// there is no response to cancel, the server will respond with an error.
 /// 
-final class RealtimeBetaClientEventResponseCancel {const RealtimeBetaClientEventResponseCancel({this.eventId, required this.type, this.responseId, });
+@immutable final class RealtimeBetaClientEventResponseCancel {const RealtimeBetaClientEventResponseCancel({required this.type, this.eventId, this.responseId, });
 
 factory RealtimeBetaClientEventResponseCancel.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventResponseCancel(
   eventId: json['event_id'] as String?,

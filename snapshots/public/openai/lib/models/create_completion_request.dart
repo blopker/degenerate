@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_stream_options.dart';import 'create_completion_request_model.dart';import 'create_completion_request_prompt.dart';import 'stop_configuration.dart';final class CreateCompletionRequest {const CreateCompletionRequest({required this.model, required this.prompt, this.bestOf = 1, this.echo = false, this.frequencyPenalty = 0.0, this.logitBias, this.logprobs, this.maxTokens = 16, this.n = 1, this.presencePenalty = 0.0, this.seed, this.stop, this.stream = false, this.streamOptions, this.suffix, this.temperature = 1.0, this.topP = 1.0, this.user, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_stream_options.dart';import 'create_completion_request_model.dart';import 'create_completion_request_prompt.dart';import 'stop_configuration.dart';@immutable final class CreateCompletionRequest {const CreateCompletionRequest({required this.model, required this.prompt, this.bestOf = 1, this.echo = false, this.frequencyPenalty = 0.0, this.logitBias, this.logprobs, this.maxTokens = 16, this.n = 1, this.presencePenalty = 0.0, this.seed, this.stop, this.stream = false, this.streamOptions, this.suffix, this.temperature = 1.0, this.topP = 1.0, this.user, });
 
 factory CreateCompletionRequest.fromJson(Map<String, dynamic> json) { return CreateCompletionRequest(
   model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateCompletionRequestModelVariant2.fromJson(v as String),),

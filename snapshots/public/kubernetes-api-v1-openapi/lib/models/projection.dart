@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'volume_file.dart';/// Represents downward API info for projecting into a projected volume. Note that this is identical to a downwardAPI volume source without the default mode.
-final class Projection {const Projection({this.items});
+@immutable final class Projection {const Projection({this.items});
 
 factory Projection.fromJson(Map<String, dynamic> json) { return Projection(
   items: (json['items'] as List<dynamic>?)?.map((e) => VolumeFile.fromJson(e as Map<String, dynamic>)).toList(),

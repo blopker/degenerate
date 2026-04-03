@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponse2ListsCertificates {const UrlscannerGetScanResponse2ListsCertificates({required this.issuer, required this.subjectName, required this.validFrom, required this.validTo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponse2ListsCertificates {const UrlscannerGetScanResponse2ListsCertificates({required this.issuer, required this.subjectName, required this.validFrom, required this.validTo, });
 
 factory UrlscannerGetScanResponse2ListsCertificates.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2ListsCertificates(
   issuer: json['issuer'] as String,

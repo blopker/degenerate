@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostDosEventCreateBulkWithRelationshipsResponseErrors {const PostDosEventCreateBulkWithRelationshipsResponseErrors({required this.error, required this.eventIndex, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDosEventCreateBulkWithRelationshipsResponseErrors {const PostDosEventCreateBulkWithRelationshipsResponseErrors({required this.error, required this.eventIndex, });
 
 factory PostDosEventCreateBulkWithRelationshipsResponseErrors.fromJson(Map<String, dynamic> json) { return PostDosEventCreateBulkWithRelationshipsResponseErrors(
   error: json['error'] as String,

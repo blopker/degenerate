@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'observatory_plan_properties_info.dart';/// The number of tests available per plan.
-final class ObservatoryAvailabilitiesQuotaQuotasPerPlan {const ObservatoryAvailabilitiesQuotaQuotasPerPlan({this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_plan_properties_info.dart';/// The number of tests available per plan.
+@immutable final class ObservatoryAvailabilitiesQuotaQuotasPerPlan {const ObservatoryAvailabilitiesQuotaQuotasPerPlan({this.value});
 
 factory ObservatoryAvailabilitiesQuotaQuotasPerPlan.fromJson(Map<String, dynamic> json) { return ObservatoryAvailabilitiesQuotaQuotasPerPlan(
   value: json['value'] != null ? ObservatoryPlanPropertiesInfo.fromJson(json['value'] as Map<String, dynamic>) : null,

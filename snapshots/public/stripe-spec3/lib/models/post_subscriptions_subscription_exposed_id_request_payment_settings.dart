@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings_payment_method_options.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings_payment_method_types.dart';final class PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsSaveDefaultPaymentMethod {const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsSaveDefaultPaymentMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings_payment_method_options.dart';import 'post_subscriptions_subscription_exposed_id_request_payment_settings_payment_method_types.dart';@immutable final class PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsSaveDefaultPaymentMethod {const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsSaveDefaultPaymentMethod._(this.value);
 
 factory PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsSaveDefaultPaymentMethod.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsSaveDefaultPaymentMethod($value)'; } 
  }
 /// Payment settings to pass to invoices created by the subscription.
-final class PostSubscriptionsSubscriptionExposedIdRequestPaymentSettings {const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettings({this.paymentMethodOptions, this.paymentMethodTypes, this.saveDefaultPaymentMethod, });
+@immutable final class PostSubscriptionsSubscriptionExposedIdRequestPaymentSettings {const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettings({this.paymentMethodOptions, this.paymentMethodTypes, this.saveDefaultPaymentMethod, });
 
 factory PostSubscriptionsSubscriptionExposedIdRequestPaymentSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestPaymentSettings(
   paymentMethodOptions: json['payment_method_options'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,

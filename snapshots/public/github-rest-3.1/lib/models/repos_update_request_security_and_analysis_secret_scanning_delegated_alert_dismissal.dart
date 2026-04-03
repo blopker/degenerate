@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Use the `status` property to enable or disable secret scanning delegated alert dismissal for this repository.
-final class ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal {const ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal({this.status});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Use the `status` property to enable or disable secret scanning delegated alert dismissal for this repository.
+@immutable final class ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal {const ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal({this.status});
 
 factory ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
   status: json['status'] as String?,

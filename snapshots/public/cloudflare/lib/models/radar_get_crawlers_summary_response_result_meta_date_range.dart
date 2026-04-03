@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetCrawlersSummaryResponseResultMetaDateRange {const RadarGetCrawlersSummaryResponseResultMetaDateRange({required this.endTime, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCrawlersSummaryResponseResultMetaDateRange {const RadarGetCrawlersSummaryResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
 factory RadarGetCrawlersSummaryResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetCrawlersSummaryResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),

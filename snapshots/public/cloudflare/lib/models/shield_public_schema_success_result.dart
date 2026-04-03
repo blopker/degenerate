@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_public_schema.dart';final class ShieldPublicSchemaSuccessResult {const ShieldPublicSchemaSuccessResult({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_public_schema.dart';@immutable final class ShieldPublicSchemaSuccessResult {const ShieldPublicSchemaSuccessResult({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory ShieldPublicSchemaSuccessResult.fromJson(Map<String, dynamic> json) { return ShieldPublicSchemaSuccessResult(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),

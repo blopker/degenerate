@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'thread_resource_status.dart';/// Type discriminator that is always `chatkit.thread`.
-final class ThreadResourceObject {const ThreadResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thread_resource_status.dart';/// Type discriminator that is always `chatkit.thread`.
+@immutable final class ThreadResourceObject {const ThreadResourceObject._(this.value);
 
 factory ThreadResourceObject.fromJson(String json) { return switch (json) {
   'chatkit.thread' => chatkitThread,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreadResourceObject($value)'; } 
  }
 /// Represents a ChatKit thread and its current status.
-final class ThreadResource {const ThreadResource({required this.id, this.object = ThreadResourceObject.chatkitThread, required this.createdAt, required this.title, required this.status, required this.user, });
+@immutable final class ThreadResource {const ThreadResource({required this.id, required this.createdAt, required this.title, required this.status, required this.user, this.object = ThreadResourceObject.chatkitThread, });
 
 factory ThreadResource.fromJson(Map<String, dynamic> json) { return ThreadResource(
   id: json['id'] as String,

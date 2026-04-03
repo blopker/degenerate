@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_sponsorship_maintainer.dart';import 'webhooks_sponsorship_sponsor.dart';import 'webhooks_sponsorship_sponsorable.dart';import 'webhooks_sponsorship_tier.dart';final class WebhooksSponsorship {const WebhooksSponsorship({required this.createdAt, this.maintainer, required this.nodeId, required this.privacyLevel, required this.sponsor, required this.sponsorable, required this.tier, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_sponsorship_maintainer.dart';import 'webhooks_sponsorship_sponsor.dart';import 'webhooks_sponsorship_sponsorable.dart';import 'webhooks_sponsorship_tier.dart';@immutable final class WebhooksSponsorship {const WebhooksSponsorship({required this.createdAt, required this.nodeId, required this.privacyLevel, required this.sponsor, required this.sponsorable, required this.tier, this.maintainer, });
 
 factory WebhooksSponsorship.fromJson(Map<String, dynamic> json) { return WebhooksSponsorship(
   createdAt: json['created_at'] as String,

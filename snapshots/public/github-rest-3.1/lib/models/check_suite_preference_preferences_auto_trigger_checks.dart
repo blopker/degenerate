@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CheckSuitePreferencePreferencesAutoTriggerChecks {const CheckSuitePreferencePreferencesAutoTriggerChecks({required this.appId, required this.setting, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CheckSuitePreferencePreferencesAutoTriggerChecks {const CheckSuitePreferencePreferencesAutoTriggerChecks({required this.appId, required this.setting, });
 
 factory CheckSuitePreferencePreferencesAutoTriggerChecks.fromJson(Map<String, dynamic> json) { return CheckSuitePreferencePreferencesAutoTriggerChecks(
   appId: (json['app_id'] as num).toInt(),

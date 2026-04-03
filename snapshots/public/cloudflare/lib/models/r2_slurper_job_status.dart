@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2SlurperJobStatus {const R2SlurperJobStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperJobStatus {const R2SlurperJobStatus._(this.value);
 
 factory R2SlurperJobStatus.fromJson(String json) { return switch (json) {
   'running' => running,

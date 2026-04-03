@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_domain.dart';import 'pages_messages2.dart';final class PagesDomainsAddDomainResponse {const PagesDomainsAddDomainResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pages_domain.dart';import 'pages_messages2.dart';@immutable final class PagesDomainsAddDomainResponse {const PagesDomainsAddDomainResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory PagesDomainsAddDomainResponse.fromJson(Map<String, dynamic> json) { return PagesDomainsAddDomainResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => PagesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

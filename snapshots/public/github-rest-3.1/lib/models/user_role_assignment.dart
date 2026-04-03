@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'team_simple.dart';/// Determines if the user has a direct, indirect, or mixed relationship to a role
-final class UserRoleAssignmentAssignment {const UserRoleAssignmentAssignment._(this.value);
+@immutable final class UserRoleAssignmentAssignment {const UserRoleAssignmentAssignment._(this.value);
 
 factory UserRoleAssignmentAssignment.fromJson(String json) { return switch (json) {
   'direct' => direct,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UserRoleAssignmentAssignment($value)'; } 
  }
 /// The Relationship a User has with a role.
-final class UserRoleAssignment {const UserRoleAssignment({this.assignment, this.inheritedFrom, this.name, this.email, required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, this.starredAt, this.userViewType, });
+@immutable final class UserRoleAssignment {const UserRoleAssignment({required this.login, required this.id, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, this.assignment, this.inheritedFrom, this.name, this.email, this.starredAt, this.userViewType, });
 
 factory UserRoleAssignment.fromJson(Map<String, dynamic> json) { return UserRoleAssignment(
   assignment: json['assignment'] != null ? UserRoleAssignmentAssignment.fromJson(json['assignment'] as String) : null,

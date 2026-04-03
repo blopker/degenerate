@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run_with_simple_check_suite_output.dart';import 'deployment_simple.dart';import 'integration.dart';import 'pull_request_minimal.dart';import 'simple_check_suite.dart';final class CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_run_with_simple_check_suite_output.dart';import 'deployment_simple.dart';import 'integration.dart';import 'pull_request_minimal.dart';import 'simple_check_suite.dart';@immutable final class CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion._(this.value);
 
 factory CheckRunWithSimpleCheckSuiteConclusion.fromJson(String json) { return switch (json) {
   'waiting' => waiting,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckRunWithSimpleCheckSuiteConclusion($value)'; } 
  }
 /// The phase of the lifecycle that the check is currently in.
-final class CheckRunWithSimpleCheckSuiteStatus {const CheckRunWithSimpleCheckSuiteStatus._(this.value);
+@immutable final class CheckRunWithSimpleCheckSuiteStatus {const CheckRunWithSimpleCheckSuiteStatus._(this.value);
 
 factory CheckRunWithSimpleCheckSuiteStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -86,7 +86,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckRunWithSimpleCheckSuiteStatus($value)'; } 
  }
 /// A check performed on the code of a given code change
-final class CheckRunWithSimpleCheckSuite {const CheckRunWithSimpleCheckSuite({required this.app, required this.checkSuite, required this.completedAt, required this.conclusion, this.deployment, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.output, required this.pullRequests, required this.startedAt, required this.status, required this.url, });
+@immutable final class CheckRunWithSimpleCheckSuite {const CheckRunWithSimpleCheckSuite({required this.app, required this.checkSuite, required this.completedAt, required this.conclusion, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.output, required this.pullRequests, required this.startedAt, required this.status, required this.url, this.deployment, });
 
 factory CheckRunWithSimpleCheckSuite.fromJson(Map<String, dynamic> json) { return CheckRunWithSimpleCheckSuite(
   app: Integration.fromJson(json['app'] as Map<String, dynamic>),

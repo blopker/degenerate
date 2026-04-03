@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'since.dart';import 'until.dart';/// The exact parameters/timestamps the analytics service used to return data.
-final class QueryResponse {const QueryResponse({this.since, this.timeDelta, this.until, });
+@immutable final class QueryResponse {const QueryResponse({this.since, this.timeDelta, this.until, });
 
 factory QueryResponse.fromJson(Map<String, dynamic> json) { return QueryResponse(
   since: json['since'] != null ? OneOf2.parse(json['since'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(),) : null,

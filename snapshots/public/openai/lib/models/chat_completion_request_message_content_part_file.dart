@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chat_completion_request_message_content_part_file_file.dart';/// The type of the content part. Always `file`.
-final class ChatCompletionRequestMessageContentPartFileType {const ChatCompletionRequestMessageContentPartFileType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_message_content_part_file_file.dart';/// The type of the content part. Always `file`.
+@immutable final class ChatCompletionRequestMessageContentPartFileType {const ChatCompletionRequestMessageContentPartFileType._(this.value);
 
 factory ChatCompletionRequestMessageContentPartFileType.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Learn about [file inputs](/docs/guides/text) for text generation.
 /// 
-final class ChatCompletionRequestMessageContentPartFile {const ChatCompletionRequestMessageContentPartFile({required this.type, required this.file, });
+@immutable final class ChatCompletionRequestMessageContentPartFile {const ChatCompletionRequestMessageContentPartFile({required this.type, required this.file, });
 
 factory ChatCompletionRequestMessageContentPartFile.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartFile(
   type: ChatCompletionRequestMessageContentPartFileType.fromJson(json['type'] as String),

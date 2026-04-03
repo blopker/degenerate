@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class AccountGroupMembership {const AccountGroupMembership({this.paymentsPricing});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class AccountGroupMembership {const AccountGroupMembership({this.paymentsPricing});
 
 factory AccountGroupMembership.fromJson(Map<String, dynamic> json) { return AccountGroupMembership(
   paymentsPricing: json['payments_pricing'] as String?,

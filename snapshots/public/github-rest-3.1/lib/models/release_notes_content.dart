@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Generated name and body describing a release
-final class ReleaseNotesContent {const ReleaseNotesContent({required this.name, required this.body, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Generated name and body describing a release
+@immutable final class ReleaseNotesContent {const ReleaseNotesContent({required this.name, required this.body, });
 
 factory ReleaseNotesContent.fromJson(Map<String, dynamic> json) { return ReleaseNotesContent(
   name: json['name'] as String,

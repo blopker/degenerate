@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_behaviors.dart';final class DlpRiskScoreBehaviorsGetResponse {const DlpRiskScoreBehaviorsGetResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_behaviors.dart';@immutable final class DlpRiskScoreBehaviorsGetResponse {const DlpRiskScoreBehaviorsGetResponse({this.result});
 
 factory DlpRiskScoreBehaviorsGetResponse.fromJson(Map<String, dynamic> json) { return DlpRiskScoreBehaviorsGetResponse(
   result: json['result'] != null ? DlpBehaviors.fromJson(json['result'] as Map<String, dynamic>) : null,

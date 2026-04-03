@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostEventDoRevertResponse400Errors {const PostEventDoRevertResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostEventDoRevertResponse400Errors {const PostEventDoRevertResponse400Errors({required this.message});
 
 factory PostEventDoRevertResponse400Errors.fromJson(Map<String, dynamic> json) { return PostEventDoRevertResponse400Errors(
   message: json['message'] as String,

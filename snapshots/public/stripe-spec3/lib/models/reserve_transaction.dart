@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// String representing the object's type. Objects of the same type share the same value.
-final class ReserveTransactionObject {const ReserveTransactionObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
+@immutable final class ReserveTransactionObject {const ReserveTransactionObject._(this.value);
 
 factory ReserveTransactionObject.fromJson(String json) { return switch (json) {
   'reserve_transaction' => reserveTransaction,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ReserveTransactionObject($value)'; } 
  }
 /// 
-final class ReserveTransaction {const ReserveTransaction({required this.amount, required this.currency, this.description, required this.id, required this.object, });
+@immutable final class ReserveTransaction {const ReserveTransaction({required this.amount, required this.currency, required this.id, required this.object, this.description, });
 
 factory ReserveTransaction.fromJson(Map<String, dynamic> json) { return ReserveTransaction(
   amount: (json['amount'] as num).toInt(),

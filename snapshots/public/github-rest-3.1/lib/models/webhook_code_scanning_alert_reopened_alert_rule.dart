@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The severity of the alert.
-final class WebhookCodeScanningAlertReopenedAlertRuleSeverity {const WebhookCodeScanningAlertReopenedAlertRuleSeverity._(this.value);
+@immutable final class WebhookCodeScanningAlertReopenedAlertRuleSeverity {const WebhookCodeScanningAlertReopenedAlertRuleSeverity._(this.value);
 
 factory WebhookCodeScanningAlertReopenedAlertRuleSeverity.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCodeScanningAlertReopenedAlertRuleSeverity($value)'; } 
  }
-final class WebhookCodeScanningAlertReopenedAlertRule {const WebhookCodeScanningAlertReopenedAlertRule({required this.description, this.fullDescription, this.help, this.helpUri, required this.id, this.name, required this.severity, this.tags, });
+@immutable final class WebhookCodeScanningAlertReopenedAlertRule {const WebhookCodeScanningAlertReopenedAlertRule({required this.description, required this.id, required this.severity, this.fullDescription, this.help, this.helpUri, this.name, this.tags, });
 
 factory WebhookCodeScanningAlertReopenedAlertRule.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertReopenedAlertRule(
   description: json['description'] as String,

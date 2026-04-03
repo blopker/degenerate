@@ -8,7 +8,7 @@ bool toJson() => value;
 
 }
 /// Specifies the recording behavior for the live input. Set this value to `off` to prevent a recording. Set the value to `automatic` to begin a recording and transition to on-demand after Stream Live stops receiving input.
-final class StreamLiveInputRecordingMode {const StreamLiveInputRecordingMode._(this.value);
+@immutable final class StreamLiveInputRecordingMode {const StreamLiveInputRecordingMode._(this.value);
 
 factory StreamLiveInputRecordingMode.fromJson(String json) { return switch (json) {
   'off' => off,
@@ -47,7 +47,7 @@ num toJson() => value;
 
 }
 /// Records the input to a Cloudflare Stream video. Behavior depends on the mode. In most cases, the video will initially be viewable as a live video and transition to on-demand after a condition is satisfied.
-final class StreamLiveInputRecordingSettings {const StreamLiveInputRecordingSettings({this.allowedOrigins, this.hideLiveViewerCount, this.mode, this.requireSignedUrLs, this.timeoutSeconds, });
+@immutable final class StreamLiveInputRecordingSettings {const StreamLiveInputRecordingSettings({this.allowedOrigins, this.hideLiveViewerCount, this.mode, this.requireSignedUrLs, this.timeoutSeconds, });
 
 factory StreamLiveInputRecordingSettings.fromJson(Map<String, dynamic> json) { return StreamLiveInputRecordingSettings(
   allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),

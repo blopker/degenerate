@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the role.
-final class AuditLogRoleUpdatedChangesRequested {const AuditLogRoleUpdatedChangesRequested({this.roleName, this.resourceId, this.resourceType, this.permissionsAdded, this.permissionsRemoved, this.description, this.metadata, });
+@immutable final class AuditLogRoleUpdatedChangesRequested {const AuditLogRoleUpdatedChangesRequested({this.roleName, this.resourceId, this.resourceType, this.permissionsAdded, this.permissionsRemoved, this.description, this.metadata, });
 
 factory AuditLogRoleUpdatedChangesRequested.fromJson(Map<String, dynamic> json) { return AuditLogRoleUpdatedChangesRequested(
   roleName: json['role_name'] as String?,
@@ -10,7 +10,7 @@ factory AuditLogRoleUpdatedChangesRequested.fromJson(Map<String, dynamic> json) 
   permissionsAdded: (json['permissions_added'] as List<dynamic>?)?.map((e) => e as String).toList(),
   permissionsRemoved: (json['permissions_removed'] as List<dynamic>?)?.map((e) => e as String).toList(),
   description: json['description'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
 ); }
 
 /// The updated role name, when provided.

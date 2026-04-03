@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'lists_lists_async_response_result.dart';final class ListsListsAsyncResponse {const ListsListsAsyncResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_lists_async_response_result.dart';@immutable final class ListsListsAsyncResponse {const ListsListsAsyncResponse({this.result});
 
 factory ListsListsAsyncResponse.fromJson(Map<String, dynamic> json) { return ListsListsAsyncResponse(
   result: json['result'] != null ? ListsListsAsyncResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

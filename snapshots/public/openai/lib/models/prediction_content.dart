@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_message_content_part_text.dart';import 'prediction_content_content.dart';/// The type of the predicted content you want to provide. This type is
 /// currently always `content`.
 /// 
-final class PredictionContentType {const PredictionContentType._(this.value);
+@immutable final class PredictionContentType {const PredictionContentType._(this.value);
 
 factory PredictionContentType.fromJson(String json) { return switch (json) {
   'content' => content,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Static predicted output content, such as the content of a text file that is
 /// being regenerated.
 /// 
-final class PredictionContent {const PredictionContent({required this.type, required this.content, });
+@immutable final class PredictionContent {const PredictionContent({required this.type, required this.content, });
 
 factory PredictionContent.fromJson(Map<String, dynamic> json) { return PredictionContent(
   type: PredictionContentType.fromJson(json['type'] as String),

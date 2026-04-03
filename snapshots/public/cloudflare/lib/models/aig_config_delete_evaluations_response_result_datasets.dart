@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_evaluations_response_result_datasets_filters.dart';final class AigConfigDeleteEvaluationsResponseResultDatasets {const AigConfigDeleteEvaluationsResponseResultDatasets({required this.accountId, required this.accountTag, required this.createdAt, required this.enable, required this.filters, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_evaluations_response_result_datasets_filters.dart';@immutable final class AigConfigDeleteEvaluationsResponseResultDatasets {const AigConfigDeleteEvaluationsResponseResultDatasets({required this.accountId, required this.accountTag, required this.createdAt, required this.enable, required this.filters, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, });
 
 factory AigConfigDeleteEvaluationsResponseResultDatasets.fromJson(Map<String, dynamic> json) { return AigConfigDeleteEvaluationsResponseResultDatasets(
   accountId: json['account_id'] as String,

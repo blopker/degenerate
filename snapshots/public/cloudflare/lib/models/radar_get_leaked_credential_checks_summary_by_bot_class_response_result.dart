@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_leaked_credential_checks_summary_by_bot_class_response_result_meta.dart';import 'radar_get_leaked_credential_checks_summary_by_bot_class_response_result_summary0.dart';final class RadarGetLeakedCredentialChecksSummaryByBotClassResponseResult {const RadarGetLeakedCredentialChecksSummaryByBotClassResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_leaked_credential_checks_summary_by_bot_class_response_result_meta.dart';import 'radar_get_leaked_credential_checks_summary_by_bot_class_response_result_summary0.dart';@immutable final class RadarGetLeakedCredentialChecksSummaryByBotClassResponseResult {const RadarGetLeakedCredentialChecksSummaryByBotClassResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetLeakedCredentialChecksSummaryByBotClassResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksSummaryByBotClassResponseResult(
   meta: RadarGetLeakedCredentialChecksSummaryByBotClassResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

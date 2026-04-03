@@ -2,7 +2,9 @@
 
 import 'dart:convert';
 import 'dart:typed_data';
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 
+@immutable
 final class UpdateCurrentUserImageRequest {
   const UpdateCurrentUserImageRequest({required this.profileImage});
 

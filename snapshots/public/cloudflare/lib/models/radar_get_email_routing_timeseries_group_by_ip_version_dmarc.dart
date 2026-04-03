@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingTimeseriesGroupByIpVersionDmarc {const RadarGetEmailRoutingTimeseriesGroupByIpVersionDmarc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByIpVersionDmarc {const RadarGetEmailRoutingTimeseriesGroupByIpVersionDmarc._(this.value);
 
 factory RadarGetEmailRoutingTimeseriesGroupByIpVersionDmarc.fromJson(String json) { return switch (json) {
   'PASS' => pass,

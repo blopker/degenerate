@@ -20,7 +20,7 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (userAgentCategory != null) {
@@ -28,7 +28,7 @@ if (userAgentCategory != null) {
 }
 if (date != null) {
 for (final item in date) {
-  queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'date', value: item));
 }
 }
 if (format != null) {
@@ -69,7 +69,7 @@ if (limit != null) {
 }
 if (name != null) {
 for (final item in name) {
-  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item));
 }
 }
 if (userAgentCategory != null) {
@@ -77,12 +77,12 @@ if (userAgentCategory != null) {
 }
 if (date != null) {
 for (final item in date) {
-  queryParametersList.add(ApiQueryParameter(name: 'date', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'date', value: item));
 }
 }
 if (domainCategory != null) {
 for (final item in domainCategory) {
-  queryParametersList.add(ApiQueryParameter(name: 'domainCategory', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'domainCategory', value: item));
 }
 }
 if (directive != null) {

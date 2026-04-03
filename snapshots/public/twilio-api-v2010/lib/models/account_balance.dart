@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccountBalance {const AccountBalance({this.accountSid, this.balance, this.currency, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountBalance {const AccountBalance({this.accountSid, this.balance, this.currency, });
 
 factory AccountBalance.fromJson(Map<String, dynamic> json) { return AccountBalance(
   accountSid: json['account_sid'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DexEndpointsTracerouteTestDetailsInterval {const DexEndpointsTracerouteTestDetailsInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DexEndpointsTracerouteTestDetailsInterval {const DexEndpointsTracerouteTestDetailsInterval._(this.value);
 
 factory DexEndpointsTracerouteTestDetailsInterval.fromJson(String json) { return switch (json) {
   'minute' => minute,

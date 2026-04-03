@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'd1_created_at.dart';import 'd1_database_identifier.dart';import 'd1_database_name.dart';import 'd1_database_version.dart';import 'd1_jurisdiction_nullable.dart';final class D1DatabaseResponse {const D1DatabaseResponse({this.createdAt, this.jurisdiction, this.name, this.uuid, this.version, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'd1_created_at.dart';import 'd1_database_identifier.dart';import 'd1_database_name.dart';import 'd1_database_version.dart';import 'd1_jurisdiction_nullable.dart';@immutable final class D1DatabaseResponse {const D1DatabaseResponse({this.createdAt, this.jurisdiction, this.name, this.uuid, this.version, });
 
 factory D1DatabaseResponse.fromJson(Map<String, dynamic> json) { return D1DatabaseResponse(
   createdAt: json['created_at'] != null ? D1CreatedAt.fromJson(json['created_at'] as String) : null,

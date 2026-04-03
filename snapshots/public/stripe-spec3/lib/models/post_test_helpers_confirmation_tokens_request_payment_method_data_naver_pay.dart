@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPayFunding {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPayFunding._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPayFunding {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPayFunding._(this.value);
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPayFunding.fromJson(String json) { return switch (json) {
   'card' => card,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPayFunding($value)'; } 
  }
-final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay({this.funding});
+@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay({this.funding});
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPay(
   funding: json['funding'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataNaverPayFunding.fromJson(json['funding'] as String) : null,

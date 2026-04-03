@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// JSON-encoded metadata about the uploaded parts and Worker configuration.
-final class NamespaceWorkerPutScriptContentRequestMetadata {const NamespaceWorkerPutScriptContentRequestMetadata({this.bodyPart, this.mainModule, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// JSON-encoded metadata about the uploaded parts and Worker configuration.
+@immutable final class NamespaceWorkerPutScriptContentRequestMetadata {const NamespaceWorkerPutScriptContentRequestMetadata({this.bodyPart, this.mainModule, });
 
 factory NamespaceWorkerPutScriptContentRequestMetadata.fromJson(Map<String, dynamic> json) { return NamespaceWorkerPutScriptContentRequestMetadata(
   bodyPart: json['body_part'] as String?,

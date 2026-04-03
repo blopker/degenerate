@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_object.dart';final class RunStreamEventThreadRunIncompleteEvent {const RunStreamEventThreadRunIncompleteEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_object.dart';@immutable final class RunStreamEventThreadRunIncompleteEvent {const RunStreamEventThreadRunIncompleteEvent._(this.value);
 
 factory RunStreamEventThreadRunIncompleteEvent.fromJson(String json) { return switch (json) {
   'thread.run.incomplete' => threadRunIncomplete,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStreamEventThreadRunIncompleteEvent($value)'; } 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.
-final class RunStreamEventThreadRunIncomplete {const RunStreamEventThreadRunIncomplete({required this.event, required this.data, });
+@immutable final class RunStreamEventThreadRunIncomplete {const RunStreamEventThreadRunIncomplete({required this.event, required this.data, });
 
 factory RunStreamEventThreadRunIncomplete.fromJson(Map<String, dynamic> json) { return RunStreamEventThreadRunIncomplete(
   event: RunStreamEventThreadRunIncompleteEvent.fromJson(json['event'] as String),

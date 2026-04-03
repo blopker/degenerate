@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtimekit_update_preset_permissions_chat.dart';import 'realtimekit_update_preset_permissions_connected_meetings.dart';import 'realtimekit_update_preset_permissions_media.dart';import 'realtimekit_update_preset_permissions_plugins.dart';import 'realtimekit_update_preset_permissions_polls.dart';/// Type of the recording peer
-final class RealtimekitUpdatePresetPermissionsRecorderType {const RealtimekitUpdatePresetPermissionsRecorderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_update_preset_permissions_chat.dart';import 'realtimekit_update_preset_permissions_connected_meetings.dart';import 'realtimekit_update_preset_permissions_media.dart';import 'realtimekit_update_preset_permissions_plugins.dart';import 'realtimekit_update_preset_permissions_polls.dart';/// Type of the recording peer
+@immutable final class RealtimekitUpdatePresetPermissionsRecorderType {const RealtimekitUpdatePresetPermissionsRecorderType._(this.value);
 
 factory RealtimekitUpdatePresetPermissionsRecorderType.fromJson(String json) { return switch (json) {
   'RECORDER' => recorder,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitUpdatePresetPermissionsRecorderType($value)'; } 
  }
 /// Waiting room type
-final class RealtimekitUpdatePresetPermissionsWaitingRoomType {const RealtimekitUpdatePresetPermissionsWaitingRoomType._(this.value);
+@immutable final class RealtimekitUpdatePresetPermissionsWaitingRoomType {const RealtimekitUpdatePresetPermissionsWaitingRoomType._(this.value);
 
 factory RealtimekitUpdatePresetPermissionsWaitingRoomType.fromJson(String json) { return switch (json) {
   'SKIP' => skip,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitUpdatePresetPermissionsWaitingRoomType($value)'; } 
  }
-final class RealtimekitUpdatePresetPermissions {const RealtimekitUpdatePresetPermissions({this.acceptWaitingRequests, this.canAcceptProductionRequests, this.canChangeParticipantPermissions, this.canEditDisplayName, this.canLivestream, this.canRecord, this.canSpotlight, this.chat, this.connectedMeetings, this.disableParticipantAudio, this.disableParticipantScreensharing, this.disableParticipantVideo, this.hiddenParticipant, this.isRecorder = false, this.kickParticipant, this.media, this.pinParticipant, this.plugins, this.polls, this.recorderType = RealtimekitUpdatePresetPermissionsRecorderType.none, this.showParticipantList, this.waitingRoomType, });
+@immutable final class RealtimekitUpdatePresetPermissions {const RealtimekitUpdatePresetPermissions({this.acceptWaitingRequests, this.canAcceptProductionRequests, this.canChangeParticipantPermissions, this.canEditDisplayName, this.canLivestream, this.canRecord, this.canSpotlight, this.chat, this.connectedMeetings, this.disableParticipantAudio, this.disableParticipantScreensharing, this.disableParticipantVideo, this.hiddenParticipant, this.isRecorder = false, this.kickParticipant, this.media, this.pinParticipant, this.plugins, this.polls, this.recorderType = RealtimekitUpdatePresetPermissionsRecorderType.none, this.showParticipantList, this.waitingRoomType, });
 
 factory RealtimekitUpdatePresetPermissions.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissions(
   acceptWaitingRequests: json['accept_waiting_requests'] as bool?,

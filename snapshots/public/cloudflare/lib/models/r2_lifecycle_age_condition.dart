@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class R2LifecycleAgeConditionType {const R2LifecycleAgeConditionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2LifecycleAgeConditionType {const R2LifecycleAgeConditionType._(this.value);
 
 factory R2LifecycleAgeConditionType.fromJson(String json) { return switch (json) {
   'Age' => age,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2LifecycleAgeConditionType($value)'; } 
  }
 /// Condition for lifecycle transitions to apply after an object reaches an age in seconds.
-final class R2LifecycleAgeCondition {const R2LifecycleAgeCondition({required this.maxAge, required this.type, });
+@immutable final class R2LifecycleAgeCondition {const R2LifecycleAgeCondition({required this.maxAge, required this.type, });
 
 factory R2LifecycleAgeCondition.fromJson(Map<String, dynamic> json) { return R2LifecycleAgeCondition(
   maxAge: (json['maxAge'] as num).toInt(),

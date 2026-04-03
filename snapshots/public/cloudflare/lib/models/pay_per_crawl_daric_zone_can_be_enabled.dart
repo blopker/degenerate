@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PayPerCrawlDaricZoneCanBeEnabled {const PayPerCrawlDaricZoneCanBeEnabled({this.canBeEnabled, this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PayPerCrawlDaricZoneCanBeEnabled {const PayPerCrawlDaricZoneCanBeEnabled({this.canBeEnabled, this.id, });
 
 factory PayPerCrawlDaricZoneCanBeEnabled.fromJson(Map<String, dynamic> json) { return PayPerCrawlDaricZoneCanBeEnabled(
   canBeEnabled: json['can_be_enabled'] as bool?,

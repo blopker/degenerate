@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SecurityAndAnalysisCodeSecurityStatus {const SecurityAndAnalysisCodeSecurityStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityAndAnalysisCodeSecurityStatus {const SecurityAndAnalysisCodeSecurityStatus._(this.value);
 
 factory SecurityAndAnalysisCodeSecurityStatus.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SecurityAndAnalysisCodeSecurityStatus($value)'; } 
  }
-final class SecurityAndAnalysisCodeSecurity {const SecurityAndAnalysisCodeSecurity({this.status});
+@immutable final class SecurityAndAnalysisCodeSecurity {const SecurityAndAnalysisCodeSecurity({this.status});
 
 factory SecurityAndAnalysisCodeSecurity.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisCodeSecurity(
   status: json['status'] != null ? SecurityAndAnalysisCodeSecurityStatus.fromJson(json['status'] as String) : null,

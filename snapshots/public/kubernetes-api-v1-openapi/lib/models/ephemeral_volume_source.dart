@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'persistent_volume_claim_template.dart';/// Represents an ephemeral volume that is handled by a normal storage driver.
-final class EphemeralVolumeSource {const EphemeralVolumeSource({this.volumeClaimTemplate});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'persistent_volume_claim_template.dart';/// Represents an ephemeral volume that is handled by a normal storage driver.
+@immutable final class EphemeralVolumeSource {const EphemeralVolumeSource({this.volumeClaimTemplate});
 
 factory EphemeralVolumeSource.fromJson(Map<String, dynamic> json) { return EphemeralVolumeSource(
   volumeClaimTemplate: json['volumeClaimTemplate'] != null ? PersistentVolumeClaimTemplate.fromJson(json['volumeClaimTemplate'] as Map<String, dynamic>) : null,

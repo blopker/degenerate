@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters {const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters {const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters._(this.value);
 
 factory CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Controls whether the customer sheet displays the option to remove a saved payment method."
 /// 
 /// Allowing buyers to remove their saved payment methods impacts subscriptions that depend on that payment method. Removing the payment method detaches the [`customer` object](https://docs.stripe.com/api/payment_methods/object#payment_method_object-customer) from that [PaymentMethod](https://docs.stripe.com/api/payment_methods).
-final class CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove {const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove._(this.value);
+@immutable final class CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove {const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove._(this.value);
 
 factory CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodRemove($value)'; } 
  }
 /// This hash contains the features the customer sheet supports.
-final class CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures {const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRemove, });
+@immutable final class CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures {const CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRemove, });
 
 factory CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures(
   paymentMethodAllowRedisplayFilters: (json['payment_method_allow_redisplay_filters'] as List<dynamic>?)?.map((e) => CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters.fromJson(e as String)).toList(),
@@ -64,7 +64,7 @@ factory CustomerSessionResourceComponentsResourceCustomerSheetResourceFeatures.f
 
 /// A list of [`allow_redisplay`](https://docs.stripe.com/api/payment_methods/object#payment_method_object-allow_redisplay) values that controls which saved payment methods the customer sheet displays by filtering to only show payment methods with an `allow_redisplay` value that is present in this list.
 /// 
-/// If not specified, defaults to ["always"]. In order to display all saved payment methods, specify ["always", "limited", "unspecified"].
+/// If not specified, defaults to `["always"]`. In order to display all saved payment methods, specify `["always", "limited", "unspecified"]`.
 final List<CustomerSessionResourceComponentsResourceCustomerSheetResourceFeaturesPaymentMethodAllowRedisplayFilters>? paymentMethodAllowRedisplayFilters;
 
 /// Controls whether the customer sheet displays the option to remove a saved payment method."

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant5 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant5({required this.expired, required this.valid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant5 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant5({required this.expired, required this.valid, });
 
 factory RadarGetCtTimeseriesGroupResponseResultSerie0Variant5.fromJson(Map<String, dynamic> json) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant5(
   expired: (json['EXPIRED'] as List<dynamic>).map((e) => e as String).toList(),

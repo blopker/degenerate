@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'bandwidth2_ssl.dart';import 'bandwidth2_ssl_protocols.dart';/// Breakdown of totals for bandwidth in the form of bytes.
-final class Bandwidth2 {const Bandwidth2({this.all, this.cached, this.contentType, this.country, this.ssl, this.sslProtocols, this.uncached, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth2_ssl.dart';import 'bandwidth2_ssl_protocols.dart';/// Breakdown of totals for bandwidth in the form of bytes.
+@immutable final class Bandwidth2 {const Bandwidth2({this.all, this.cached, this.contentType, this.country, this.ssl, this.sslProtocols, this.uncached, });
 
 factory Bandwidth2.fromJson(Map<String, dynamic> json) { return Bandwidth2(
   all: json['all'] != null ? (json['all'] as num).toInt() : null,
   cached: json['cached'] != null ? (json['cached'] as num).toInt() : null,
-  contentType: (json['content_type'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  country: (json['country'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  contentType: json['content_type'] as Map<String, dynamic>?,
+  country: json['country'] as Map<String, dynamic>?,
   ssl: json['ssl'] != null ? Bandwidth2Ssl.fromJson(json['ssl'] as Map<String, dynamic>) : null,
   sslProtocols: json['ssl_protocols'] != null ? Bandwidth2SslProtocols.fromJson(json['ssl_protocols'] as Map<String, dynamic>) : null,
   uncached: json['uncached'] != null ? (json['uncached'] as num).toInt() : null,

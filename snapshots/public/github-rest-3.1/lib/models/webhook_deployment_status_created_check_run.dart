@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The result of the completed check run. This value will be `null` until the check run has completed.
-final class WebhookDeploymentStatusCreatedCheckRunConclusion {const WebhookDeploymentStatusCreatedCheckRunConclusion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The result of the completed check run. This value will be `null` until the check run has completed.
+@immutable final class WebhookDeploymentStatusCreatedCheckRunConclusion {const WebhookDeploymentStatusCreatedCheckRunConclusion._(this.value);
 
 factory WebhookDeploymentStatusCreatedCheckRunConclusion.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookDeploymentStatusCreatedCheckRunConclusion($value)'; } 
  }
 /// The current status of the check run. Can be `queued`, `in_progress`, or `completed`.
-final class WebhookDeploymentStatusCreatedCheckRunStatus {const WebhookDeploymentStatusCreatedCheckRunStatus._(this.value);
+@immutable final class WebhookDeploymentStatusCreatedCheckRunStatus {const WebhookDeploymentStatusCreatedCheckRunStatus._(this.value);
 
 factory WebhookDeploymentStatusCreatedCheckRunStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -80,7 +80,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentStatusCreatedCheckRunStatus($value)'; } 
  }
-final class WebhookDeploymentStatusCreatedCheckRun {const WebhookDeploymentStatusCreatedCheckRun({required this.completedAt, required this.conclusion, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.startedAt, required this.status, required this.url, });
+@immutable final class WebhookDeploymentStatusCreatedCheckRun {const WebhookDeploymentStatusCreatedCheckRun({required this.completedAt, required this.conclusion, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.startedAt, required this.status, required this.url, });
 
 factory WebhookDeploymentStatusCreatedCheckRun.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedCheckRun(
   completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,

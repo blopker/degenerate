@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Profile {const Profile({required this.businessAddress, required this.businessEmail, required this.businessName, required this.businessPhone, required this.externalMetadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Profile {const Profile({required this.businessAddress, required this.businessEmail, required this.businessName, required this.businessPhone, required this.externalMetadata, });
 
 factory Profile.fromJson(Map<String, dynamic> json) { return Profile(
   businessAddress: json['business_address'] as String,

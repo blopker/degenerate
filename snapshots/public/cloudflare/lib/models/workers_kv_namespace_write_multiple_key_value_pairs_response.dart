@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_kv_bulk_result.dart';final class WorkersKvNamespaceWriteMultipleKeyValuePairsResponse {const WorkersKvNamespaceWriteMultipleKeyValuePairsResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_bulk_result.dart';@immutable final class WorkersKvNamespaceWriteMultipleKeyValuePairsResponse {const WorkersKvNamespaceWriteMultipleKeyValuePairsResponse({this.result});
 
 factory WorkersKvNamespaceWriteMultipleKeyValuePairsResponse.fromJson(Map<String, dynamic> json) { return WorkersKvNamespaceWriteMultipleKeyValuePairsResponse(
   result: json['result'] != null ? WorkersKvBulkResult.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'chunking_strategy_request_param.dart';final class CreateVectorStoreFileRequest {const CreateVectorStoreFileRequest({required this.fileId, this.chunkingStrategy, this.attributes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chunking_strategy_request_param.dart';@immutable final class CreateVectorStoreFileRequest {const CreateVectorStoreFileRequest({required this.fileId, this.chunkingStrategy, this.attributes, });
 
 factory CreateVectorStoreFileRequest.fromJson(Map<String, dynamic> json) { return CreateVectorStoreFileRequest(
   fileId: json['file_id'] as String,
   chunkingStrategy: json['chunking_strategy'] != null ? ChunkingStrategyRequestParam.fromJson(json['chunking_strategy'] as Map<String, dynamic>) : null,
-  attributes: (json['attributes'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  attributes: json['attributes'] as Map<String, dynamic>?,
 ); }
 
 /// A [File](/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files.

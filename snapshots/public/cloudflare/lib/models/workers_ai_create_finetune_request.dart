@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAiCreateFinetuneRequest {const WorkersAiCreateFinetuneRequest({this.description, required this.model, required this.name, this.public = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiCreateFinetuneRequest {const WorkersAiCreateFinetuneRequest({required this.model, required this.name, this.description, this.public = false, });
 
 factory WorkersAiCreateFinetuneRequest.fromJson(Map<String, dynamic> json) { return WorkersAiCreateFinetuneRequest(
   description: json['description'] as String?,

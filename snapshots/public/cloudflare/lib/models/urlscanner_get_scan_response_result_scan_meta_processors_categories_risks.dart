@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesRisks {const UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesRisks({required this.id, required this.name, required this.superCategoryId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesRisks {const UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesRisks({required this.id, required this.name, required this.superCategoryId, });
 
 factory UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesRisks.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanMetaProcessorsCategoriesRisks(
   id: (json['id'] as num).toInt(),

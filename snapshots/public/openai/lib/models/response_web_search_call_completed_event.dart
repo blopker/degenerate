@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of the event. Always `response.web_search_call.completed`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the event. Always `response.web_search_call.completed`.
 /// 
-final class ResponseWebSearchCallCompletedEventType {const ResponseWebSearchCallCompletedEventType._(this.value);
+@immutable final class ResponseWebSearchCallCompletedEventType {const ResponseWebSearchCallCompletedEventType._(this.value);
 
 factory ResponseWebSearchCallCompletedEventType.fromJson(String json) { return switch (json) {
   'response.web_search_call.completed' => responseWebSearchCallCompleted,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseWebSearchCallCompletedEventType($value)'; } 
  }
 /// Emitted when a web search call is completed.
-final class ResponseWebSearchCallCompletedEvent {const ResponseWebSearchCallCompletedEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
+@immutable final class ResponseWebSearchCallCompletedEvent {const ResponseWebSearchCallCompletedEvent({required this.type, required this.outputIndex, required this.itemId, required this.sequenceNumber, });
 
 factory ResponseWebSearchCallCompletedEvent.fromJson(Map<String, dynamic> json) { return ResponseWebSearchCallCompletedEvent(
   type: ResponseWebSearchCallCompletedEventType.fromJson(json['type'] as String),

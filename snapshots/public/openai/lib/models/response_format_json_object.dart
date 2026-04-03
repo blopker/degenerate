@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of response format being defined. Always `json_object`.
-final class ResponseFormatJsonObjectType {const ResponseFormatJsonObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of response format being defined. Always `json_object`.
+@immutable final class ResponseFormatJsonObjectType {const ResponseFormatJsonObjectType._(this.value);
 
 factory ResponseFormatJsonObjectType.fromJson(String json) { return switch (json) {
   'json_object' => jsonObject,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 /// model will not generate JSON without a system or user message instructing it
 /// to do so.
 /// 
-final class ResponseFormatJsonObject {const ResponseFormatJsonObject({required this.type});
+@immutable final class ResponseFormatJsonObject {const ResponseFormatJsonObject({required this.type});
 
 factory ResponseFormatJsonObject.fromJson(Map<String, dynamic> json) { return ResponseFormatJsonObject(
   type: ResponseFormatJsonObjectType.fromJson(json['type'] as String),

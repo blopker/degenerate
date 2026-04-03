@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'resource_tagging_resource_id.dart';/// Enum for base account-level resource types (those with no extra required fields).
-final class ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_tagging_resource_id.dart';/// Enum for base account-level resource types (those with no extra required fields).
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum._(this.value);
 
 factory ResourceTaggingAccountResourceTypeBaseEnum.fromJson(String json) { return switch (json) {
   'access_application' => accessApplication,
@@ -77,7 +77,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResourceTaggingAccountResourceTypeBaseEnum($value)'; } 
  }
 /// Request body schema for deleting tags from account-level resources.
-final class ResourceTaggingDeleteTagsRequestAccountLevelBase {const ResourceTaggingDeleteTagsRequestAccountLevelBase({required this.resourceId, required this.resourceType, });
+@immutable final class ResourceTaggingDeleteTagsRequestAccountLevelBase {const ResourceTaggingDeleteTagsRequestAccountLevelBase({required this.resourceId, required this.resourceType, });
 
 factory ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelBase(
   resourceId: ResourceTaggingResourceId.fromJson(json['resource_id'] as String),

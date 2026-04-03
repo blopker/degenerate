@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsaccountIdRealtimeKitappIdLivestreamsRequest {const PostAccountsaccountIdRealtimeKitappIdLivestreamsRequest({this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsaccountIdRealtimeKitappIdLivestreamsRequest {const PostAccountsaccountIdRealtimeKitappIdLivestreamsRequest({this.name});
 
 factory PostAccountsaccountIdRealtimeKitappIdLivestreamsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsRequest(
   name: json['name'] as String?,

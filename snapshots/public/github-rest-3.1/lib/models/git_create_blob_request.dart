@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GitCreateBlobRequest {const GitCreateBlobRequest({required this.content, this.encoding = 'utf-8', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitCreateBlobRequest {const GitCreateBlobRequest({required this.content, this.encoding = 'utf-8', });
 
 factory GitCreateBlobRequest.fromJson(Map<String, dynamic> json) { return GitCreateBlobRequest(
   content: json['content'] as String,

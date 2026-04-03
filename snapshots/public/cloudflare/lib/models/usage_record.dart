@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents a single billable usage record.
-final class UsageRecord {const UsageRecord({required this.billingCurrency, required this.billingPeriodStart, required this.chargePeriodEnd, required this.chargePeriodStart, required this.consumedQuantity, required this.consumedUnit, required this.contractedCost, required this.cumulatedContractedCost, required this.cumulatedPricingQuantity, required this.pricingQuantity, required this.serviceName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a single billable usage record.
+@immutable final class UsageRecord {const UsageRecord({required this.billingCurrency, required this.billingPeriodStart, required this.chargePeriodEnd, required this.chargePeriodStart, required this.consumedQuantity, required this.consumedUnit, required this.contractedCost, required this.cumulatedContractedCost, required this.cumulatedPricingQuantity, required this.pricingQuantity, required this.serviceName, });
 
 factory UsageRecord.fromJson(Map<String, dynamic> json) { return UsageRecord(
   billingCurrency: json['BillingCurrency'] as String,

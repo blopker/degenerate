@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTerminalReadersReaderCollectInputsRequestInputsCustomText {const PostTerminalReadersReaderCollectInputsRequestInputsCustomText({this.description, this.skipButton, this.submitButton, required this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTerminalReadersReaderCollectInputsRequestInputsCustomText {const PostTerminalReadersReaderCollectInputsRequestInputsCustomText({required this.title, this.description, this.skipButton, this.submitButton, });
 
 factory PostTerminalReadersReaderCollectInputsRequestInputsCustomText.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectInputsRequestInputsCustomText(
   description: json['description'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_id.dart';import 'access_meta.dart';import 'access_users_emails.dart';final class AccessUsers {const AccessUsers({this.active, this.displayName, this.emails, this.externalId, this.id, this.meta, this.schemas, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_id.dart';import 'access_meta.dart';import 'access_users_emails.dart';@immutable final class AccessUsers {const AccessUsers({this.active, this.displayName, this.emails, this.externalId, this.id, this.meta, this.schemas, });
 
 factory AccessUsers.fromJson(Map<String, dynamic> json) { return AccessUsers(
   active: json['active'] as bool?,

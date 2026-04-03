@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_priority.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_ttl.dart';/// Record type.
-final class DnsRecordsMxRecordType {const DnsRecordsMxRecordType._(this.value);
+@immutable final class DnsRecordsMxRecordType {const DnsRecordsMxRecordType._(this.value);
 
 factory DnsRecordsMxRecordType.fromJson(String json) { return switch (json) {
   'MX' => mx,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DnsRecordsMxRecordType($value)'; } 
  }
-final class DnsRecordsMxRecord {const DnsRecordsMxRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.priority, this.type, });
+@immutable final class DnsRecordsMxRecord {const DnsRecordsMxRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.priority, this.type, });
 
 factory DnsRecordsMxRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsMxRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

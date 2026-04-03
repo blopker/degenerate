@@ -1,5 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+
+@immutable
 final class Input {
   const Input({this.limit = 100, this.offset = 0});
 

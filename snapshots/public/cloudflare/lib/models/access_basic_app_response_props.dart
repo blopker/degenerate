@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_aud.dart';import 'access_timestamp.dart';import 'access_uuid.dart';final class AccessBasicAppResponseProps {const AccessBasicAppResponseProps({this.aud, this.createdAt, this.id, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_aud.dart';import 'access_timestamp.dart';import 'access_uuid.dart';@immutable final class AccessBasicAppResponseProps {const AccessBasicAppResponseProps({this.aud, this.createdAt, this.id, this.updatedAt, });
 
 factory AccessBasicAppResponseProps.fromJson(Map<String, dynamic> json) { return AccessBasicAppResponseProps(
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,

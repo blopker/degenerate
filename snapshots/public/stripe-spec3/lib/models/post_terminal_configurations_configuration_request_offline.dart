@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'offline2.dart';final class PostTerminalConfigurationsConfigurationRequestOfflineVariant2 {const PostTerminalConfigurationsConfigurationRequestOfflineVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'offline2.dart';@immutable final class PostTerminalConfigurationsConfigurationRequestOfflineVariant2 {const PostTerminalConfigurationsConfigurationRequestOfflineVariant2._(this.value);
 
 factory PostTerminalConfigurationsConfigurationRequestOfflineVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

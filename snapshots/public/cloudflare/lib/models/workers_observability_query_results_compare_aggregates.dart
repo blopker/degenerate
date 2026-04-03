@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_results_compare_aggregates_groups.dart';final class WorkersObservabilityQueryResultsCompareAggregates {const WorkersObservabilityQueryResultsCompareAggregates({required this.count, this.groups, required this.interval, required this.sampleInterval, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_results_compare_aggregates_groups.dart';@immutable final class WorkersObservabilityQueryResultsCompareAggregates {const WorkersObservabilityQueryResultsCompareAggregates({required this.count, required this.interval, required this.sampleInterval, required this.value, this.groups, });
 
 factory WorkersObservabilityQueryResultsCompareAggregates.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsCompareAggregates(
   count: (json['count'] as num).toDouble(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RealtimekitParticipantPeerStatsPeerStatsEvents {const RealtimekitParticipantPeerStatsPeerStatsEvents({this.timestamp, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitParticipantPeerStatsPeerStatsEvents {const RealtimekitParticipantPeerStatsPeerStatsEvents({this.timestamp, this.type, });
 
 factory RealtimekitParticipantPeerStatsPeerStatsEvents.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStatsPeerStatsEvents(
   timestamp: json['timestamp'] as String?,

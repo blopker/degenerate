@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'budget_budget_alerting.dart';/// The type of pricing for the budget
-final class BudgetBudgetType {const BudgetBudgetType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'budget_budget_alerting.dart';/// The type of pricing for the budget
+@immutable final class BudgetBudgetType {const BudgetBudgetType._(this.value);
 
 factory BudgetBudgetType.fromJson(String json) { return switch (json) {
   'SkuPricing' => skuPricing,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BudgetBudgetType($value)'; } 
  }
-final class Budget {const Budget({required this.id, required this.budgetType, required this.budgetAmount, required this.preventFurtherUsage, required this.budgetScope, this.budgetEntityName, required this.budgetProductSku, required this.budgetAlerting, });
+@immutable final class Budget {const Budget({required this.id, required this.budgetType, required this.budgetAmount, required this.preventFurtherUsage, required this.budgetScope, required this.budgetProductSku, required this.budgetAlerting, this.budgetEntityName, });
 
 factory Budget.fromJson(Map<String, dynamic> json) { return Budget(
   id: json['id'] as String,

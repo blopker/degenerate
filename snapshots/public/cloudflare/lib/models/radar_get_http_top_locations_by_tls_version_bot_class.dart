@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetHttpTopLocationsByTlsVersionBotClass {const RadarGetHttpTopLocationsByTlsVersionBotClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByTlsVersionBotClass {const RadarGetHttpTopLocationsByTlsVersionBotClass._(this.value);
 
 factory RadarGetHttpTopLocationsByTlsVersionBotClass.fromJson(String json) { return switch (json) {
   'LIKELY_AUTOMATED' => likelyAutomated,

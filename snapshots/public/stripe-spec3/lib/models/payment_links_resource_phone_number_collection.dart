@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class PaymentLinksResourcePhoneNumberCollection {const PaymentLinksResourcePhoneNumberCollection({required this.enabled});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class PaymentLinksResourcePhoneNumberCollection {const PaymentLinksResourcePhoneNumberCollection({required this.enabled});
 
 factory PaymentLinksResourcePhoneNumberCollection.fromJson(Map<String, dynamic> json) { return PaymentLinksResourcePhoneNumberCollection(
   enabled: json['enabled'] as bool,

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhook_eval_run_failed_data.dart';/// The object of the event. Always `event`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_eval_run_failed_data.dart';/// The object of the event. Always `event`.
 /// 
-final class WebhookEvalRunFailedObject {const WebhookEvalRunFailedObject._(this.value);
+@immutable final class WebhookEvalRunFailedObject {const WebhookEvalRunFailedObject._(this.value);
 
 factory WebhookEvalRunFailedObject.fromJson(String json) { return switch (json) {
   'event' => event,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The type of the event. Always `eval.run.failed`.
 /// 
-final class WebhookEvalRunFailedType {const WebhookEvalRunFailedType._(this.value);
+@immutable final class WebhookEvalRunFailedType {const WebhookEvalRunFailedType._(this.value);
 
 factory WebhookEvalRunFailedType.fromJson(String json) { return switch (json) {
   'eval.run.failed' => evalRunFailed,
@@ -48,7 +48,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Sent when an eval run has failed.
 /// 
-final class WebhookEvalRunFailed {const WebhookEvalRunFailed({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+@immutable final class WebhookEvalRunFailed {const WebhookEvalRunFailed({required this.createdAt, required this.id, required this.data, required this.type, this.object, });
 
 factory WebhookEvalRunFailed.fromJson(Map<String, dynamic> json) { return WebhookEvalRunFailed(
   createdAt: (json['created_at'] as num).toInt(),

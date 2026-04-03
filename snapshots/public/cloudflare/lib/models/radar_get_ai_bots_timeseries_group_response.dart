@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_ai_bots_timeseries_group_response_result.dart';final class RadarGetAiBotsTimeseriesGroupResponse {const RadarGetAiBotsTimeseriesGroupResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ai_bots_timeseries_group_response_result.dart';@immutable final class RadarGetAiBotsTimeseriesGroupResponse {const RadarGetAiBotsTimeseriesGroupResponse({required this.result, required this.success, });
 
 factory RadarGetAiBotsTimeseriesGroupResponse.fromJson(Map<String, dynamic> json) { return RadarGetAiBotsTimeseriesGroupResponse(
   result: RadarGetAiBotsTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>),

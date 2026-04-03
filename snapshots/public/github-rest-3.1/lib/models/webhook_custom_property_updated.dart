@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'custom_property.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookCustomPropertyUpdatedAction {const WebhookCustomPropertyUpdatedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookCustomPropertyUpdatedAction {const WebhookCustomPropertyUpdatedAction._(this.value);
 
 factory WebhookCustomPropertyUpdatedAction.fromJson(String json) { return switch (json) {
   'updated' => updated,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookCustomPropertyUpdatedAction($value)'; } 
  }
-final class WebhookCustomPropertyUpdated {const WebhookCustomPropertyUpdated({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
+@immutable final class WebhookCustomPropertyUpdated {const WebhookCustomPropertyUpdated({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
 
 factory WebhookCustomPropertyUpdated.fromJson(Map<String, dynamic> json) { return WebhookCustomPropertyUpdated(
   action: WebhookCustomPropertyUpdatedAction.fromJson(json['action'] as String),

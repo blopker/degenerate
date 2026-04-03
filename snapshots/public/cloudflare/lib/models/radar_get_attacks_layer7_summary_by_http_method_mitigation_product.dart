@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct {const RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct {const RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct._(this.value);
 
 factory RadarGetAttacksLayer7SummaryByHttpMethodMitigationProduct.fromJson(String json) { return switch (json) {
   'DDOS' => ddos,

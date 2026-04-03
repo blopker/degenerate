@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of source. Always `stored_completions`.
-final class EvalStoredCompletionsSourceType {const EvalStoredCompletionsSourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of source. Always `stored_completions`.
+@immutable final class EvalStoredCompletionsSourceType {const EvalStoredCompletionsSourceType._(this.value);
 
 factory EvalStoredCompletionsSourceType.fromJson(String json) { return switch (json) {
   'stored_completions' => storedCompletions,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A StoredCompletionsRunDataSource configuration describing a set of filters
 /// 
-final class EvalStoredCompletionsSource {const EvalStoredCompletionsSource({this.type = EvalStoredCompletionsSourceType.storedCompletions, this.metadata, this.model, this.createdAfter, this.createdBefore, this.limit, });
+@immutable final class EvalStoredCompletionsSource {const EvalStoredCompletionsSource({this.type = EvalStoredCompletionsSourceType.storedCompletions, this.metadata, this.model, this.createdAfter, this.createdBefore, this.limit, });
 
 factory EvalStoredCompletionsSource.fromJson(Map<String, dynamic> json) { return EvalStoredCompletionsSource(
   type: EvalStoredCompletionsSourceType.fromJson(json['type'] as String),

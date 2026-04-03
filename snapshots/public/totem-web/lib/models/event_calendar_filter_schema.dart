@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class EventCalendarFilterSchema {const EventCalendarFilterSchema({this.spaceSlug = '', this.month = 3, this.year = 2026, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EventCalendarFilterSchema {const EventCalendarFilterSchema({this.spaceSlug = '', this.month = 3, this.year = 2026, });
 
 factory EventCalendarFilterSchema.fromJson(Map<String, dynamic> json) { return EventCalendarFilterSchema(
   spaceSlug: json.containsKey('space_slug') ? json['space_slug'] as String : '',

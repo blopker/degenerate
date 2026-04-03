@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'org_rules.dart';import 'org_ruleset_conditions.dart';import 'repository_rule_enforcement.dart';import 'repository_ruleset_bypass_actor.dart';import 'repository_ruleset_conditions.dart';/// The target of the ruleset
-final class ReposCreateOrgRulesetRequestTarget {const ReposCreateOrgRulesetRequestTarget._(this.value);
+@immutable final class ReposCreateOrgRulesetRequestTarget {const ReposCreateOrgRulesetRequestTarget._(this.value);
 
 factory ReposCreateOrgRulesetRequestTarget.fromJson(String json) { return switch (json) {
   'branch' => branch,
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposCreateOrgRulesetRequestTarget($value)'; } 
  }
-final class ReposCreateOrgRulesetRequest {const ReposCreateOrgRulesetRequest({required this.name, this.target = ReposCreateOrgRulesetRequestTarget.branch, required this.enforcement, this.bypassActors, this.conditions, this.rules, });
+@immutable final class ReposCreateOrgRulesetRequest {const ReposCreateOrgRulesetRequest({required this.name, required this.enforcement, this.target = ReposCreateOrgRulesetRequestTarget.branch, this.bypassActors, this.conditions, this.rules, });
 
 factory ReposCreateOrgRulesetRequest.fromJson(Map<String, dynamic> json) { return ReposCreateOrgRulesetRequest(
   name: json['name'] as String,

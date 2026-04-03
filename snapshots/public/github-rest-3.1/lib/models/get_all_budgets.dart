@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'budget.dart';final class GetAllBudgets {const GetAllBudgets({required this.budgets, this.hasNextPage, this.totalCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'budget.dart';@immutable final class GetAllBudgets {const GetAllBudgets({required this.budgets, this.hasNextPage, this.totalCount, });
 
 factory GetAllBudgets.fromJson(Map<String, dynamic> json) { return GetAllBudgets(
   budgets: (json['budgets'] as List<dynamic>).map((e) => Budget.fromJson(e as Map<String, dynamic>)).toList(),

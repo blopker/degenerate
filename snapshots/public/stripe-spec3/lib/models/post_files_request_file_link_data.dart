@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_files_request_file_link_data_metadata.dart';/// Optional parameters that automatically create a [file link](https://api.stripe.com#file_links) for the newly created file.
-final class PostFilesRequestFileLinkData {const PostFilesRequestFileLinkData({required this.create, this.expiresAt, this.metadata, });
+@immutable final class PostFilesRequestFileLinkData {const PostFilesRequestFileLinkData({required this.create, this.expiresAt, this.metadata, });
 
 factory PostFilesRequestFileLinkData.fromJson(Map<String, dynamic> json) { return PostFilesRequestFileLinkData(
   create: json['create'] as bool,

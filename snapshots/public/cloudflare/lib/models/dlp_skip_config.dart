@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Content types to exclude from context analysis and return all matches.
-final class DlpSkipConfig {const DlpSkipConfig({required this.files});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Content types to exclude from context analysis and return all matches.
+@immutable final class DlpSkipConfig {const DlpSkipConfig({required this.files});
 
 factory DlpSkipConfig.fromJson(Map<String, dynamic> json) { return DlpSkipConfig(
   files: json['files'] as bool,

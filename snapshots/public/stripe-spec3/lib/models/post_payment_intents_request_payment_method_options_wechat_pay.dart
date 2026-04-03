@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param36.dart';final class PostPaymentIntentsRequestPaymentMethodOptionsWechatPayVariant2 {const PostPaymentIntentsRequestPaymentMethodOptionsWechatPayVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param36.dart';@immutable final class PostPaymentIntentsRequestPaymentMethodOptionsWechatPayVariant2 {const PostPaymentIntentsRequestPaymentMethodOptionsWechatPayVariant2._(this.value);
 
 factory PostPaymentIntentsRequestPaymentMethodOptionsWechatPayVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

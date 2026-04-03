@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_messages2.dart';import 'rum_rule.dart';final class RumRuleResponseSingle {const RumRuleResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_messages2.dart';import 'rum_rule.dart';@immutable final class RumRuleResponseSingle {const RumRuleResponseSingle({required this.errors, required this.messages, required this.success, this.result, });
 
 factory RumRuleResponseSingle.fromJson(Map<String, dynamic> json) { return RumRuleResponseSingle(
   errors: (json['errors'] as List<dynamic>).map((e) => RumMessages2.fromJson(e as Map<String, dynamic>)).toList(),

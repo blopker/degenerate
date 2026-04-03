@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';final class ImageFile {const ImageFile({this.image});
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageFile {const ImageFile({this.image});
 
 factory ImageFile.fromJson(Map<String, dynamic> json) { return ImageFile(
   image: json['image'] != null ? base64Decode(json['image'] as String) : null,

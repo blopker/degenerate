@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchCreateInstancesResponseResultMetadata {const AiSearchCreateInstancesResponseResultMetadata({this.createdFromAisearchWizard, this.workerDomain, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchCreateInstancesResponseResultMetadata {const AiSearchCreateInstancesResponseResultMetadata({this.createdFromAisearchWizard, this.workerDomain, });
 
 factory AiSearchCreateInstancesResponseResultMetadata.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesResponseResultMetadata(
   createdFromAisearchWizard: json['created_from_aisearch_wizard'] as bool?,

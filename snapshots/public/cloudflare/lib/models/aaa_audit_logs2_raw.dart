@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Provides raw information about the request and response.
-final class AaaAuditLogs2Raw {const AaaAuditLogs2Raw({this.cfRayId, this.method, this.statusCode, this.uri, this.userAgent, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Provides raw information about the request and response.
+@immutable final class AaaAuditLogs2Raw {const AaaAuditLogs2Raw({this.cfRayId, this.method, this.statusCode, this.uri, this.userAgent, });
 
 factory AaaAuditLogs2Raw.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2Raw(
   cfRayId: json['cf_ray_id'] as String?,

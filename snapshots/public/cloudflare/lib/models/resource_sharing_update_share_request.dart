@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'resource_sharing_share_name.dart';final class ResourceSharingUpdateShareRequest {const ResourceSharingUpdateShareRequest({required this.name});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_share_name.dart';@immutable final class ResourceSharingUpdateShareRequest {const ResourceSharingUpdateShareRequest({required this.name});
 
 factory ResourceSharingUpdateShareRequest.fromJson(Map<String, dynamic> json) { return ResourceSharingUpdateShareRequest(
   name: ResourceSharingShareName.fromJson(json['name'] as String),

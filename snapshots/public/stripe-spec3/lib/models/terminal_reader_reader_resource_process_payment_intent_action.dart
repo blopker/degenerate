@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent.dart';import 'terminal_reader_reader_resource_process_config.dart';import 'terminal_reader_reader_resource_process_payment_intent_action_payment_intent.dart';/// Represents a reader action to process a payment intent
-final class TerminalReaderReaderResourceProcessPaymentIntentAction {const TerminalReaderReaderResourceProcessPaymentIntentAction({required this.paymentIntent, this.processConfig, });
+@immutable final class TerminalReaderReaderResourceProcessPaymentIntentAction {const TerminalReaderReaderResourceProcessPaymentIntentAction({required this.paymentIntent, this.processConfig, });
 
 factory TerminalReaderReaderResourceProcessPaymentIntentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceProcessPaymentIntentAction(
   paymentIntent: OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),),

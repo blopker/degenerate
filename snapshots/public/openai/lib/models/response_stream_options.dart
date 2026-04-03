@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Options for streaming responses. Only set this when you set `stream: true`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Options for streaming responses. Only set this when you set `stream: true`.
 /// 
-final class ResponseStreamOptions {const ResponseStreamOptions({this.includeObfuscation});
+@immutable final class ResponseStreamOptions {const ResponseStreamOptions({this.includeObfuscation});
 
 factory ResponseStreamOptions.fromJson(Map<String, dynamic> json) { return ResponseStreamOptions(
   includeObfuscation: json['include_obfuscation'] as bool?,

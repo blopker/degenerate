@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'financial_connections_account_owner.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class FinancialConnectionsAccountOwnershipOwnersObject {const FinancialConnectionsAccountOwnershipOwnersObject._(this.value);
+@immutable final class FinancialConnectionsAccountOwnershipOwnersObject {const FinancialConnectionsAccountOwnershipOwnersObject._(this.value);
 
 factory FinancialConnectionsAccountOwnershipOwnersObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FinancialConnectionsAccountOwnershipOwnersObject($value)'; } 
  }
 /// A paginated list of owners for this account.
-final class FinancialConnectionsAccountOwnershipOwners {const FinancialConnectionsAccountOwnershipOwners({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class FinancialConnectionsAccountOwnershipOwners {const FinancialConnectionsAccountOwnershipOwners({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory FinancialConnectionsAccountOwnershipOwners.fromJson(Map<String, dynamic> json) { return FinancialConnectionsAccountOwnershipOwners(
   data: (json['data'] as List<dynamic>).map((e) => FinancialConnectionsAccountOwner.fromJson(e as Map<String, dynamic>)).toList(),

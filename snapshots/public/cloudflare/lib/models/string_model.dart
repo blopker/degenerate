@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class StringModelType {const StringModelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StringModelType {const StringModelType._(this.value);
 
 factory StringModelType.fromJson(String json) { return switch (json) {
   'string' => string,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StringModelType($value)'; } 
  }
-final class StringModel {const StringModel({required this.type});
+@immutable final class StringModel {const StringModel({required this.type});
 
 factory StringModel.fromJson(Map<String, dynamic> json) { return StringModel(
   type: StringModelType.fromJson(json['type'] as String),

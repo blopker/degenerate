@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Shows a count of application instance states.
-final class CcApplicationHealthInstances {const CcApplicationHealthInstances({required this.active, required this.assigned, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Shows a count of application instance states.
+@immutable final class CcApplicationHealthInstances {const CcApplicationHealthInstances({required this.active, required this.assigned, });
 
 factory CcApplicationHealthInstances.fromJson(Map<String, dynamic> json) { return CcApplicationHealthInstances(
   active: (json['active'] as num).toInt(),

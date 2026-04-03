@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PendingInvoiceItemIntervalParams2Interval {const PendingInvoiceItemIntervalParams2Interval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PendingInvoiceItemIntervalParams2Interval {const PendingInvoiceItemIntervalParams2Interval._(this.value);
 
 factory PendingInvoiceItemIntervalParams2Interval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PendingInvoiceItemIntervalParams2Interval($value)'; } 
  }
-final class PendingInvoiceItemIntervalParams2 {const PendingInvoiceItemIntervalParams2({required this.interval, this.intervalCount, });
+@immutable final class PendingInvoiceItemIntervalParams2 {const PendingInvoiceItemIntervalParams2({required this.interval, this.intervalCount, });
 
 factory PendingInvoiceItemIntervalParams2.fromJson(Map<String, dynamic> json) { return PendingInvoiceItemIntervalParams2(
   interval: PendingInvoiceItemIntervalParams2Interval.fromJson(json['interval'] as String),

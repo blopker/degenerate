@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'quotes_resource_total_details.dart';/// The frequency at which a subscription is billed. One of `day`, `week`, `month` or `year`.
-final class QuotesResourceRecurringInterval {const QuotesResourceRecurringInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'quotes_resource_total_details.dart';/// The frequency at which a subscription is billed. One of `day`, `week`, `month` or `year`.
+@immutable final class QuotesResourceRecurringInterval {const QuotesResourceRecurringInterval._(this.value);
 
 factory QuotesResourceRecurringInterval.fromJson(String json) { return switch (json) {
   'day' => day,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'QuotesResourceRecurringInterval($value)'; } 
  }
 /// 
-final class QuotesResourceRecurring {const QuotesResourceRecurring({required this.amountSubtotal, required this.amountTotal, required this.interval, required this.intervalCount, required this.totalDetails, });
+@immutable final class QuotesResourceRecurring {const QuotesResourceRecurring({required this.amountSubtotal, required this.amountTotal, required this.interval, required this.intervalCount, required this.totalDetails, });
 
 factory QuotesResourceRecurring.fromJson(Map<String, dynamic> json) { return QuotesResourceRecurring(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),

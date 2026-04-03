@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsRequestControllerLossesPayments {const PostAccountsRequestControllerLossesPayments._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsRequestControllerLossesPayments {const PostAccountsRequestControllerLossesPayments._(this.value);
 
 factory PostAccountsRequestControllerLossesPayments.fromJson(String json) { return switch (json) {
   'application' => application,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsRequestControllerLossesPayments($value)'; } 
  }
-final class PostAccountsRequestControllerLosses {const PostAccountsRequestControllerLosses({this.payments});
+@immutable final class PostAccountsRequestControllerLosses {const PostAccountsRequestControllerLosses({this.payments});
 
 factory PostAccountsRequestControllerLosses.fromJson(Map<String, dynamic> json) { return PostAccountsRequestControllerLosses(
   payments: json['payments'] != null ? PostAccountsRequestControllerLossesPayments.fromJson(json['payments'] as String) : null,

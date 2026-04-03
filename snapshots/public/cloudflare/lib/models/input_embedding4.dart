@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_embedding4_text.dart';final class InputEmbedding4 {const InputEmbedding4({required this.text, this.truncateInputs = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_embedding4_text.dart';@immutable final class InputEmbedding4 {const InputEmbedding4({required this.text, this.truncateInputs = false, });
 
 factory InputEmbedding4.fromJson(Map<String, dynamic> json) { return InputEmbedding4(
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),

@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Used to update multiple email rule priorities as an atomic action,
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used to update multiple email rule priorities as an atomic action,
 /// to support patterns such as swapping the priorities of two email rules.
-final class DlpUpdateEmailRulePriorities {const DlpUpdateEmailRulePriorities({required this.newPriorities});
+@immutable final class DlpUpdateEmailRulePriorities {const DlpUpdateEmailRulePriorities({required this.newPriorities});
 
 factory DlpUpdateEmailRulePriorities.fromJson(Map<String, dynamic> json) { return DlpUpdateEmailRulePriorities(
   newPriorities: (json['new_priorities'] as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt())),

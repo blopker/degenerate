@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'security_advisory_ecosystems.dart';/// The name of the package affected by the vulnerability.
-final class RepositoryAdvisoryCreateVulnerabilitiesPackage {const RepositoryAdvisoryCreateVulnerabilitiesPackage({required this.ecosystem, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_advisory_ecosystems.dart';/// The name of the package affected by the vulnerability.
+@immutable final class RepositoryAdvisoryCreateVulnerabilitiesPackage {const RepositoryAdvisoryCreateVulnerabilitiesPackage({required this.ecosystem, this.name, });
 
 factory RepositoryAdvisoryCreateVulnerabilitiesPackage.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCreateVulnerabilitiesPackage(
   ecosystem: SecurityAdvisoryEcosystems.fromJson(json['ecosystem'] as String),

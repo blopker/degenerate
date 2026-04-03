@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_black_forest_labs_flux1_schnell_response400_errors.dart';final class WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400 {const WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400({required this.errors, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_black_forest_labs_flux1_schnell_response400_errors.dart';@immutable final class WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400 {const WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400({required this.errors, required this.result, required this.success, });
 
 factory WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400(
   errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  result: json['result'] as Map<String, dynamic>,
   success: json['success'] as bool,
 ); }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CopilotDotcomPullRequestsRepositoriesModels {const CopilotDotcomPullRequestsRepositoriesModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalPrSummariesCreated, this.totalEngagedUsers, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CopilotDotcomPullRequestsRepositoriesModels {const CopilotDotcomPullRequestsRepositoriesModels({this.name, this.isCustomModel, this.customModelTrainingDate, this.totalPrSummariesCreated, this.totalEngagedUsers, });
 
 factory CopilotDotcomPullRequestsRepositoriesModels.fromJson(Map<String, dynamic> json) { return CopilotDotcomPullRequestsRepositoriesModels(
   name: json['name'] as String?,

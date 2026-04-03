@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_old_public_schema.dart';final class ShieldSchemaValidationRetrieveInformationAboutSpecificSchemaResponse {const ShieldSchemaValidationRetrieveInformationAboutSpecificSchemaResponse({required this.errors, required this.messages, required this.success, required this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_messages2.dart';import 'shield_old_public_schema.dart';@immutable final class ShieldSchemaValidationRetrieveInformationAboutSpecificSchemaResponse {const ShieldSchemaValidationRetrieveInformationAboutSpecificSchemaResponse({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory ShieldSchemaValidationRetrieveInformationAboutSpecificSchemaResponse.fromJson(Map<String, dynamic> json) { return ShieldSchemaValidationRetrieveInformationAboutSpecificSchemaResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),

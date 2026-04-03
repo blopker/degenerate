@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Enable or disable the Smart Tiered Cache.
-final class CacheRulesSmartTieredCachePatchValue {const CacheRulesSmartTieredCachePatchValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable or disable the Smart Tiered Cache.
+@immutable final class CacheRulesSmartTieredCachePatchValue {const CacheRulesSmartTieredCachePatchValue._(this.value);
 
 factory CacheRulesSmartTieredCachePatchValue.fromJson(String json) { return switch (json) {
   'on' => $on,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CacheRulesSmartTieredCachePatchValue($value)'; } 
  }
 /// Update enablement of Smart Tiered Cache.
-final class CacheRulesSmartTieredCachePatch {const CacheRulesSmartTieredCachePatch({required this.value});
+@immutable final class CacheRulesSmartTieredCachePatch {const CacheRulesSmartTieredCachePatch({required this.value});
 
 factory CacheRulesSmartTieredCachePatch.fromJson(Map<String, dynamic> json) { return CacheRulesSmartTieredCachePatch(
   value: CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String),

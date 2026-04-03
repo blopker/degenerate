@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Settings to determine whether the request's response from origin is eligible for Cache Reserve (requires a Cache Reserve add-on plan).
-final class RulesetsSetCacheSettingsCacheReserve {const RulesetsSetCacheSettingsCacheReserve({required this.eligible, this.minimumFileSize, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Settings to determine whether the request's response from origin is eligible for Cache Reserve (requires a Cache Reserve add-on plan).
+@immutable final class RulesetsSetCacheSettingsCacheReserve {const RulesetsSetCacheSettingsCacheReserve({required this.eligible, this.minimumFileSize, });
 
 factory RulesetsSetCacheSettingsCacheReserve.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCacheReserve(
   eligible: json['eligible'] as bool,

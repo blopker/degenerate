@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TimelineCommittedEventParents {const TimelineCommittedEventParents({required this.sha, required this.url, required this.htmlUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TimelineCommittedEventParents {const TimelineCommittedEventParents({required this.sha, required this.url, required this.htmlUrl, });
 
 factory TimelineCommittedEventParents.fromJson(Map<String, dynamic> json) { return TimelineCommittedEventParents(
   sha: json['sha'] as String,

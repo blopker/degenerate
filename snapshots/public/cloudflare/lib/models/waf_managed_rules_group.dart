@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waf_managed_rules_components_schemas_identifier.dart';import 'waf_managed_rules_description.dart';import 'waf_managed_rules_identifier.dart';import 'waf_managed_rules_modified_rules_count.dart';import 'waf_managed_rules_name.dart';import 'waf_managed_rules_rules_count.dart';final class WafManagedRulesGroup {const WafManagedRulesGroup({this.description, this.id, this.modifiedRulesCount, this.name, this.packageId, this.rulesCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_components_schemas_identifier.dart';import 'waf_managed_rules_description.dart';import 'waf_managed_rules_identifier.dart';import 'waf_managed_rules_modified_rules_count.dart';import 'waf_managed_rules_name.dart';import 'waf_managed_rules_rules_count.dart';@immutable final class WafManagedRulesGroup {const WafManagedRulesGroup({this.description, this.id, this.modifiedRulesCount, this.name, this.packageId, this.rulesCount, });
 
 factory WafManagedRulesGroup.fromJson(Map<String, dynamic> json) { return WafManagedRulesGroup(
   description: json['description'] != null ? WafManagedRulesDescription.fromJson(json['description'] as String) : null,

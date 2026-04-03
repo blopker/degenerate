@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';final class WorkersAiUploadFinetuneAssetRequest {const WorkersAiUploadFinetuneAssetRequest({this.file, this.fileName, });
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiUploadFinetuneAssetRequest {const WorkersAiUploadFinetuneAssetRequest({this.file, this.fileName, });
 
 factory WorkersAiUploadFinetuneAssetRequest.fromJson(Map<String, dynamic> json) { return WorkersAiUploadFinetuneAssetRequest(
   file: json['file'] != null ? base64Decode(json['file'] as String) : null,

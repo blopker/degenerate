@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_identifier.dart';final class TlsCertificatesAndHostnamesKeylessResponseSingleIdResult {const TlsCertificatesAndHostnamesKeylessResponseSingleIdResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_identifier.dart';@immutable final class TlsCertificatesAndHostnamesKeylessResponseSingleIdResult {const TlsCertificatesAndHostnamesKeylessResponseSingleIdResult({this.id});
 
 factory TlsCertificatesAndHostnamesKeylessResponseSingleIdResult.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesKeylessResponseSingleIdResult(
   id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,

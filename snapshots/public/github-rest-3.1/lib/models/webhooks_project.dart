@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'webhooks_project_creator.dart';/// State of the project; either 'open' or 'closed'
-final class WebhooksProjectState {const WebhooksProjectState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhooks_project_creator.dart';/// State of the project; either 'open' or 'closed'
+@immutable final class WebhooksProjectState {const WebhooksProjectState._(this.value);
 
 factory WebhooksProjectState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhooksProjectState($value)'; } 
  }
-final class WebhooksProject {const WebhooksProject({required this.body, required this.columnsUrl, required this.createdAt, required this.creator, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.number, required this.ownerUrl, required this.state, required this.updatedAt, required this.url, });
+@immutable final class WebhooksProject {const WebhooksProject({required this.body, required this.columnsUrl, required this.createdAt, required this.creator, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.number, required this.ownerUrl, required this.state, required this.updatedAt, required this.url, });
 
 factory WebhooksProject.fromJson(Map<String, dynamic> json) { return WebhooksProject(
   body: json['body'] as String?,

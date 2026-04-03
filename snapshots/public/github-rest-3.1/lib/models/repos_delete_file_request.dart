@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repos_delete_file_request_author.dart';import 'repos_delete_file_request_committer.dart';final class ReposDeleteFileRequest {const ReposDeleteFileRequest({required this.message, required this.sha, this.branch, this.committer, this.author, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_delete_file_request_author.dart';import 'repos_delete_file_request_committer.dart';@immutable final class ReposDeleteFileRequest {const ReposDeleteFileRequest({required this.message, required this.sha, this.branch, this.committer, this.author, });
 
 factory ReposDeleteFileRequest.fromJson(Map<String, dynamic> json) { return ReposDeleteFileRequest(
   message: json['message'] as String,

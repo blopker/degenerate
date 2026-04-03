@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_response_related_events.dart';import 'post_indicator_create_response_tags.dart';final class PostIndicatorCreateResponse {const PostIndicatorCreateResponse({required this.createdAt, this.datasetId, required this.indicatorType, this.relatedEvents, this.tags, required this.updatedAt, required this.uuid, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_response_related_events.dart';import 'post_indicator_create_response_tags.dart';@immutable final class PostIndicatorCreateResponse {const PostIndicatorCreateResponse({required this.createdAt, required this.indicatorType, required this.updatedAt, required this.uuid, required this.value, this.datasetId, this.relatedEvents, this.tags, });
 
 factory PostIndicatorCreateResponse.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateResponse(
   createdAt: DateTime.parse(json['createdAt'] as String),

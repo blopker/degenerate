@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_update_products_variant1.dart';final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant2 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_update_products_variant1.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant2 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant2._(this.value);
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

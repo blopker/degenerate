@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_gre_tunnel.dart';final class MagicTunnelSingleResponseResult {const MagicTunnelSingleResponseResult({this.greTunnel});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_gre_tunnel.dart';@immutable final class MagicTunnelSingleResponseResult {const MagicTunnelSingleResponseResult({this.greTunnel});
 
 factory MagicTunnelSingleResponseResult.fromJson(Map<String, dynamic> json) { return MagicTunnelSingleResponseResult(
   greTunnel: json['gre_tunnel'] != null ? MagicGreTunnel.fromJson(json['gre_tunnel'] as Map<String, dynamic>) : null,

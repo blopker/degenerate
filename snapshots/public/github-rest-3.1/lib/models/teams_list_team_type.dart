@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsListTeamType {const TeamsListTeamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsListTeamType {const TeamsListTeamType._(this.value);
 
 factory TeamsListTeamType.fromJson(String json) { return switch (json) {
   'all' => all,

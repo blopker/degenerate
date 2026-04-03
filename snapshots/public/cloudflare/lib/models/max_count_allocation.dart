@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MaxCountAllocationType {const MaxCountAllocationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MaxCountAllocationType {const MaxCountAllocationType._(this.value);
 
 factory MaxCountAllocationType.fromJson(String json) { return switch (json) {
   'max_count' => maxCount,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MaxCountAllocationType($value)'; } 
  }
-final class MaxCountAllocation {const MaxCountAllocation({required this.type, required this.value, });
+@immutable final class MaxCountAllocation {const MaxCountAllocation({required this.type, required this.value, });
 
 factory MaxCountAllocation.fromJson(Map<String, dynamic> json) { return MaxCountAllocation(
   type: MaxCountAllocationType.fromJson(json['type'] as String),

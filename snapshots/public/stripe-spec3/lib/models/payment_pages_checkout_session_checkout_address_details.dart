@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';/// 
-final class PaymentPagesCheckoutSessionCheckoutAddressDetails {const PaymentPagesCheckoutSessionCheckoutAddressDetails({required this.address, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// 
+@immutable final class PaymentPagesCheckoutSessionCheckoutAddressDetails {const PaymentPagesCheckoutSessionCheckoutAddressDetails({required this.address, required this.name, });
 
 factory PaymentPagesCheckoutSessionCheckoutAddressDetails.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCheckoutAddressDetails(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),

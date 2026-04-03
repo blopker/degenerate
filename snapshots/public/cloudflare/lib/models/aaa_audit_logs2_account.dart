@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Contains account related information.
-final class AaaAuditLogs2Account {const AaaAuditLogs2Account({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Contains account related information.
+@immutable final class AaaAuditLogs2Account {const AaaAuditLogs2Account({this.id, this.name, });
 
 factory AaaAuditLogs2Account.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2Account(
   id: json['id'] as String?,

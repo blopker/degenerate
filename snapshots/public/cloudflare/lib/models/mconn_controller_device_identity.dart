@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_uuid.dart';final class MconnControllerDeviceIdentity {const MconnControllerDeviceIdentity({required this.id, this.imagedAt, this.serialNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_uuid.dart';@immutable final class MconnControllerDeviceIdentity {const MconnControllerDeviceIdentity({required this.id, this.imagedAt, this.serialNumber, });
 
 factory MconnControllerDeviceIdentity.fromJson(Map<String, dynamic> json) { return MconnControllerDeviceIdentity(
   id: MconnUuid.fromJson(json['id'] as String),

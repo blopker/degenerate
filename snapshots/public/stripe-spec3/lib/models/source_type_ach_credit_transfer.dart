@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SourceTypeAchCreditTransfer {const SourceTypeAchCreditTransfer({this.accountNumber, this.bankName, this.fingerprint, this.refundAccountHolderName, this.refundAccountHolderType, this.refundRoutingNumber, this.routingNumber, this.swiftCode, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeAchCreditTransfer {const SourceTypeAchCreditTransfer({this.accountNumber, this.bankName, this.fingerprint, this.refundAccountHolderName, this.refundAccountHolderType, this.refundRoutingNumber, this.routingNumber, this.swiftCode, });
 
 factory SourceTypeAchCreditTransfer.fromJson(Map<String, dynamic> json) { return SourceTypeAchCreditTransfer(
   accountNumber: json['account_number'] as String?,

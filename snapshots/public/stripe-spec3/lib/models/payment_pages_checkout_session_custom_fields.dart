@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_custom_fields_dropdown.dart';import 'payment_pages_checkout_session_custom_fields_label.dart';import 'payment_pages_checkout_session_custom_fields_numeric.dart';import 'payment_pages_checkout_session_custom_fields_text.dart';/// The type of the field.
-final class PaymentPagesCheckoutSessionCustomFieldsType {const PaymentPagesCheckoutSessionCustomFieldsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_custom_fields_dropdown.dart';import 'payment_pages_checkout_session_custom_fields_label.dart';import 'payment_pages_checkout_session_custom_fields_numeric.dart';import 'payment_pages_checkout_session_custom_fields_text.dart';/// The type of the field.
+@immutable final class PaymentPagesCheckoutSessionCustomFieldsType {const PaymentPagesCheckoutSessionCustomFieldsType._(this.value);
 
 factory PaymentPagesCheckoutSessionCustomFieldsType.fromJson(String json) { return switch (json) {
   'dropdown' => dropdown,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionCustomFieldsType($value)'; } 
  }
 /// 
-final class PaymentPagesCheckoutSessionCustomFields {const PaymentPagesCheckoutSessionCustomFields({this.dropdown, required this.key, required this.label, this.numeric, required this.optional, this.text, required this.type, });
+@immutable final class PaymentPagesCheckoutSessionCustomFields {const PaymentPagesCheckoutSessionCustomFields({required this.key, required this.label, required this.optional, required this.type, this.dropdown, this.numeric, this.text, });
 
 factory PaymentPagesCheckoutSessionCustomFields.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomFields(
   dropdown: json['dropdown'] != null ? PaymentPagesCheckoutSessionCustomFieldsDropdown.fromJson(json['dropdown'] as Map<String, dynamic>) : null,

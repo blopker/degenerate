@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_customer_sessions_request_components_buy_button.dart';import 'post_customer_sessions_request_components_customer_sheet.dart';import 'post_customer_sessions_request_components_mobile_payment_element.dart';import 'post_customer_sessions_request_components_payment_element.dart';import 'post_customer_sessions_request_components_pricing_table.dart';/// Configuration for each component. At least 1 component must be enabled.
-final class PostCustomerSessionsRequestComponents {const PostCustomerSessionsRequestComponents({this.buyButton, this.customerSheet, this.mobilePaymentElement, this.paymentElement, this.pricingTable, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customer_sessions_request_components_buy_button.dart';import 'post_customer_sessions_request_components_customer_sheet.dart';import 'post_customer_sessions_request_components_mobile_payment_element.dart';import 'post_customer_sessions_request_components_payment_element.dart';import 'post_customer_sessions_request_components_pricing_table.dart';/// Configuration for each component. At least 1 component must be enabled.
+@immutable final class PostCustomerSessionsRequestComponents {const PostCustomerSessionsRequestComponents({this.buyButton, this.customerSheet, this.mobilePaymentElement, this.paymentElement, this.pricingTable, });
 
 factory PostCustomerSessionsRequestComponents.fromJson(Map<String, dynamic> json) { return PostCustomerSessionsRequestComponents(
   buyButton: json['buy_button'] != null ? PostCustomerSessionsRequestComponentsBuyButton.fromJson(json['buy_button'] as Map<String, dynamic>) : null,

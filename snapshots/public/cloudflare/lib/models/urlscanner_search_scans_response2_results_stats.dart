@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class UrlscannerSearchScansResponse2ResultsStats {const UrlscannerSearchScansResponse2ResultsStats({required this.dataLength, required this.requests, required this.uniqCountries, required this.uniqIPs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UrlscannerSearchScansResponse2ResultsStats {const UrlscannerSearchScansResponse2ResultsStats({required this.dataLength, required this.requests, required this.uniqCountries, required this.uniqIPs, });
 
 factory UrlscannerSearchScansResponse2ResultsStats.fromJson(Map<String, dynamic> json) { return UrlscannerSearchScansResponse2ResultsStats(
   dataLength: (json['dataLength'] as num).toDouble(),

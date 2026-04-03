@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsRequestPaymentMethodDataBlik {const PostSetupIntentsRequestPaymentMethodDataBlik();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataBlik {const PostSetupIntentsRequestPaymentMethodDataBlik();
 
-factory PostSetupIntentsRequestPaymentMethodDataBlik.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodDataBlik(
-
-); }
+factory PostSetupIntentsRequestPaymentMethodDataBlik.fromJson(Map<String, dynamic> _) { return const PostSetupIntentsRequestPaymentMethodDataBlik(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostSetupIntentsRequestPaymentMethodDataBlik copyWith() { return PostSetupIntentsRequestPaymentMethodDataBlik(
+PostSetupIntentsRequestPaymentMethodDataBlik copyWith() { return const PostSetupIntentsRequestPaymentMethodDataBlik(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsRequestPaymentMethodDataBlik; } 

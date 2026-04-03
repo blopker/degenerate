@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Sort order.
-final class RadarGetBgpHijacksEventsSortOrder {const RadarGetBgpHijacksEventsSortOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sort order.
+@immutable final class RadarGetBgpHijacksEventsSortOrder {const RadarGetBgpHijacksEventsSortOrder._(this.value);
 
 factory RadarGetBgpHijacksEventsSortOrder.fromJson(String json) { return switch (json) {
   'ASC' => asc,

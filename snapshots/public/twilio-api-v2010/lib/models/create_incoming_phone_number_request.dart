@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'incoming_phone_number_enum_emergency_status.dart';import 'incoming_phone_number_enum_voice_receive_mode.dart';/// The HTTP method that we should use to call `sms_fallback_url`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateIncomingPhoneNumberRequestSmsFallbackMethod {const CreateIncomingPhoneNumberRequestSmsFallbackMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'incoming_phone_number_enum_emergency_status.dart';import 'incoming_phone_number_enum_voice_receive_mode.dart';/// The HTTP method that we should use to call `sms_fallback_url`. Can be: `GET` or `POST` and defaults to `POST`.
+@immutable final class CreateIncomingPhoneNumberRequestSmsFallbackMethod {const CreateIncomingPhoneNumberRequestSmsFallbackMethod._(this.value);
 
 factory CreateIncomingPhoneNumberRequestSmsFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateIncomingPhoneNumberRequestSmsFallbackMethod($value)'; } 
  }
 /// The HTTP method that we should use to call `sms_url`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateIncomingPhoneNumberRequestSmsMethod {const CreateIncomingPhoneNumberRequestSmsMethod._(this.value);
+@immutable final class CreateIncomingPhoneNumberRequestSmsMethod {const CreateIncomingPhoneNumberRequestSmsMethod._(this.value);
 
 factory CreateIncomingPhoneNumberRequestSmsMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateIncomingPhoneNumberRequestSmsMethod($value)'; } 
  }
 /// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateIncomingPhoneNumberRequestStatusCallbackMethod {const CreateIncomingPhoneNumberRequestStatusCallbackMethod._(this.value);
+@immutable final class CreateIncomingPhoneNumberRequestStatusCallbackMethod {const CreateIncomingPhoneNumberRequestStatusCallbackMethod._(this.value);
 
 factory CreateIncomingPhoneNumberRequestStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateIncomingPhoneNumberRequestStatusCallbackMethod($value)'; } 
  }
 /// The HTTP method that we should use to call `voice_fallback_url`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateIncomingPhoneNumberRequestVoiceFallbackMethod {const CreateIncomingPhoneNumberRequestVoiceFallbackMethod._(this.value);
+@immutable final class CreateIncomingPhoneNumberRequestVoiceFallbackMethod {const CreateIncomingPhoneNumberRequestVoiceFallbackMethod._(this.value);
 
 factory CreateIncomingPhoneNumberRequestVoiceFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -101,7 +101,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreateIncomingPhoneNumberRequestVoiceFallbackMethod($value)'; } 
  }
 /// The HTTP method that we should use to call `voice_url`. Can be: `GET` or `POST` and defaults to `POST`.
-final class CreateIncomingPhoneNumberRequestVoiceMethod {const CreateIncomingPhoneNumberRequestVoiceMethod._(this.value);
+@immutable final class CreateIncomingPhoneNumberRequestVoiceMethod {const CreateIncomingPhoneNumberRequestVoiceMethod._(this.value);
 
 factory CreateIncomingPhoneNumberRequestVoiceMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -125,7 +125,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateIncomingPhoneNumberRequestVoiceMethod($value)'; } 
  }
-final class CreateIncomingPhoneNumberRequest {const CreateIncomingPhoneNumberRequest({this.apiVersion, this.friendlyName, this.smsApplicationSid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.voiceApplicationSid, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.emergencyStatus, this.emergencyAddressSid, this.trunkSid, this.identitySid, this.addressSid, this.voiceReceiveMode, this.bundleSid, this.phoneNumber, this.areaCode, });
+@immutable final class CreateIncomingPhoneNumberRequest {const CreateIncomingPhoneNumberRequest({this.apiVersion, this.friendlyName, this.smsApplicationSid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.voiceApplicationSid, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.emergencyStatus, this.emergencyAddressSid, this.trunkSid, this.identitySid, this.addressSid, this.voiceReceiveMode, this.bundleSid, this.phoneNumber, this.areaCode, });
 
 factory CreateIncomingPhoneNumberRequest.fromJson(Map<String, dynamic> json) { return CreateIncomingPhoneNumberRequest(
   apiVersion: json['ApiVersion'] as String?,

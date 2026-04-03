@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'computer_screenshot_content.dart';import 'input_file_content.dart';import 'input_image_content.dart';import 'input_text_content.dart';import 'output_text_content.dart';import 'reasoning_text_content.dart';import 'refusal_content.dart';import 'summary_text_content.dart';import 'text_content.dart';/// A content part that makes up an input or output item.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'computer_screenshot_content.dart';import 'input_file_content.dart';import 'input_image_content.dart';import 'input_text_content.dart';import 'output_text_content.dart';import 'reasoning_text_content.dart';import 'refusal_content.dart';import 'summary_text_content.dart';import 'text_content.dart';/// A content part that makes up an input or output item.
 sealed class MessageContent {const MessageContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is MessageContent$Unknown; } 
  }
-final class MessageContentInputText extends MessageContent {const MessageContentInputText(this.inputTextContent);
+@immutable final class MessageContentInputText extends MessageContent {const MessageContentInputText(this.inputTextContent);
 
 factory MessageContentInputText.fromJson(Map<String, dynamic> json) { return MessageContentInputText(InputTextContent.fromJson(json)); }
 
@@ -36,7 +36,7 @@ final InputTextContent inputTextContent;
 @override int get hashCode { return inputTextContent.hashCode; } 
 @override String toString() { return 'MessageContentInputText(inputTextContent: $inputTextContent)'; } 
  }
-final class MessageContentOutputText extends MessageContent {const MessageContentOutputText(this.outputTextContent);
+@immutable final class MessageContentOutputText extends MessageContent {const MessageContentOutputText(this.outputTextContent);
 
 factory MessageContentOutputText.fromJson(Map<String, dynamic> json) { return MessageContentOutputText(OutputTextContent.fromJson(json)); }
 
@@ -49,7 +49,7 @@ final OutputTextContent outputTextContent;
 @override int get hashCode { return outputTextContent.hashCode; } 
 @override String toString() { return 'MessageContentOutputText(outputTextContent: $outputTextContent)'; } 
  }
-final class MessageContentText extends MessageContent {const MessageContentText(this.textContent);
+@immutable final class MessageContentText extends MessageContent {const MessageContentText(this.textContent);
 
 factory MessageContentText.fromJson(Map<String, dynamic> json) { return MessageContentText(TextContent.fromJson(json)); }
 
@@ -62,7 +62,7 @@ final TextContent textContent;
 @override int get hashCode { return textContent.hashCode; } 
 @override String toString() { return 'MessageContentText(textContent: $textContent)'; } 
  }
-final class MessageContentSummaryText extends MessageContent {const MessageContentSummaryText(this.summaryTextContent);
+@immutable final class MessageContentSummaryText extends MessageContent {const MessageContentSummaryText(this.summaryTextContent);
 
 factory MessageContentSummaryText.fromJson(Map<String, dynamic> json) { return MessageContentSummaryText(SummaryTextContent.fromJson(json)); }
 
@@ -75,7 +75,7 @@ final SummaryTextContent summaryTextContent;
 @override int get hashCode { return summaryTextContent.hashCode; } 
 @override String toString() { return 'MessageContentSummaryText(summaryTextContent: $summaryTextContent)'; } 
  }
-final class MessageContentReasoningText extends MessageContent {const MessageContentReasoningText(this.reasoningTextContent);
+@immutable final class MessageContentReasoningText extends MessageContent {const MessageContentReasoningText(this.reasoningTextContent);
 
 factory MessageContentReasoningText.fromJson(Map<String, dynamic> json) { return MessageContentReasoningText(ReasoningTextContent.fromJson(json)); }
 
@@ -88,7 +88,7 @@ final ReasoningTextContent reasoningTextContent;
 @override int get hashCode { return reasoningTextContent.hashCode; } 
 @override String toString() { return 'MessageContentReasoningText(reasoningTextContent: $reasoningTextContent)'; } 
  }
-final class MessageContentRefusal extends MessageContent {const MessageContentRefusal(this.refusalContent);
+@immutable final class MessageContentRefusal extends MessageContent {const MessageContentRefusal(this.refusalContent);
 
 factory MessageContentRefusal.fromJson(Map<String, dynamic> json) { return MessageContentRefusal(RefusalContent.fromJson(json)); }
 
@@ -101,7 +101,7 @@ final RefusalContent refusalContent;
 @override int get hashCode { return refusalContent.hashCode; } 
 @override String toString() { return 'MessageContentRefusal(refusalContent: $refusalContent)'; } 
  }
-final class MessageContentInputImage extends MessageContent {const MessageContentInputImage(this.inputImageContent);
+@immutable final class MessageContentInputImage extends MessageContent {const MessageContentInputImage(this.inputImageContent);
 
 factory MessageContentInputImage.fromJson(Map<String, dynamic> json) { return MessageContentInputImage(InputImageContent.fromJson(json)); }
 
@@ -114,7 +114,7 @@ final InputImageContent inputImageContent;
 @override int get hashCode { return inputImageContent.hashCode; } 
 @override String toString() { return 'MessageContentInputImage(inputImageContent: $inputImageContent)'; } 
  }
-final class MessageContentComputerScreenshot extends MessageContent {const MessageContentComputerScreenshot(this.computerScreenshotContent);
+@immutable final class MessageContentComputerScreenshot extends MessageContent {const MessageContentComputerScreenshot(this.computerScreenshotContent);
 
 factory MessageContentComputerScreenshot.fromJson(Map<String, dynamic> json) { return MessageContentComputerScreenshot(ComputerScreenshotContent.fromJson(json)); }
 
@@ -127,7 +127,7 @@ final ComputerScreenshotContent computerScreenshotContent;
 @override int get hashCode { return computerScreenshotContent.hashCode; } 
 @override String toString() { return 'MessageContentComputerScreenshot(computerScreenshotContent: $computerScreenshotContent)'; } 
  }
-final class MessageContentInputFile extends MessageContent {const MessageContentInputFile(this.inputFileContent);
+@immutable final class MessageContentInputFile extends MessageContent {const MessageContentInputFile(this.inputFileContent);
 
 factory MessageContentInputFile.fromJson(Map<String, dynamic> json) { return MessageContentInputFile(InputFileContent.fromJson(json)); }
 
@@ -142,7 +142,7 @@ final InputFileContent inputFileContent;
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-final class MessageContent$Unknown extends MessageContent {const MessageContent$Unknown(this.json);
+@immutable final class MessageContent$Unknown extends MessageContent {const MessageContent$Unknown(this.json);
 
 final Map<String, dynamic> json;
 

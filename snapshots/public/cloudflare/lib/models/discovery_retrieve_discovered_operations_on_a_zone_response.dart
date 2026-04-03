@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_discovery_operation.dart';final class DiscoveryRetrieveDiscoveredOperationsOnAZoneResponse {const DiscoveryRetrieveDiscoveredOperationsOnAZoneResponse({required this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_discovery_operation.dart';@immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneResponse {const DiscoveryRetrieveDiscoveredOperationsOnAZoneResponse({required this.result});
 
 factory DiscoveryRetrieveDiscoveredOperationsOnAZoneResponse.fromJson(Map<String, dynamic> json) { return DiscoveryRetrieveDiscoveredOperationsOnAZoneResponse(
   result: (json['result'] as List<dynamic>).map((e) => ShieldDiscoveryOperation.fromJson(e as Map<String, dynamic>)).toList(),

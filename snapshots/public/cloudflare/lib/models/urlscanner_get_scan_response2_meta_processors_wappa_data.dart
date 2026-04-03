@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_wappa_data_categories.dart';import 'urlscanner_get_scan_response2_meta_processors_wappa_data_confidence.dart';final class UrlscannerGetScanResponse2MetaProcessorsWappaData {const UrlscannerGetScanResponse2MetaProcessorsWappaData({required this.app, required this.categories, required this.confidence, required this.confidenceTotal, required this.icon, required this.website, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_wappa_data_categories.dart';import 'urlscanner_get_scan_response2_meta_processors_wappa_data_confidence.dart';@immutable final class UrlscannerGetScanResponse2MetaProcessorsWappaData {const UrlscannerGetScanResponse2MetaProcessorsWappaData({required this.app, required this.categories, required this.confidence, required this.confidenceTotal, required this.icon, required this.website, });
 
 factory UrlscannerGetScanResponse2MetaProcessorsWappaData.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsWappaData(
   app: json['app'] as String,

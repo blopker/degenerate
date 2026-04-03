@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Snapshot Tunnels
-final class MconnSnapshotTunnel {const MconnSnapshotTunnel({this.connectorId, required this.healthState, required this.healthValue, required this.interfaceName, this.probedMtu, this.recentHealthyPings, this.recentUnhealthyPings, required this.tunnelId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Snapshot Tunnels
+@immutable final class MconnSnapshotTunnel {const MconnSnapshotTunnel({required this.healthState, required this.healthValue, required this.interfaceName, required this.tunnelId, this.connectorId, this.probedMtu, this.recentHealthyPings, this.recentUnhealthyPings, });
 
 factory MconnSnapshotTunnel.fromJson(Map<String, dynamic> json) { return MconnSnapshotTunnel(
   connectorId: json['connector_id'] as String?,

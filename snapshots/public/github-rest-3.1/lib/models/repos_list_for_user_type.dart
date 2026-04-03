@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposListForUserType {const ReposListForUserType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListForUserType {const ReposListForUserType._(this.value);
 
 factory ReposListForUserType.fromJson(String json) { return switch (json) {
   'all' => all,

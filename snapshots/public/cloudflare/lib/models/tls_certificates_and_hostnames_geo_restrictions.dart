@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TlsCertificatesAndHostnamesGeoRestrictionsLabel {const TlsCertificatesAndHostnamesGeoRestrictionsLabel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TlsCertificatesAndHostnamesGeoRestrictionsLabel {const TlsCertificatesAndHostnamesGeoRestrictionsLabel._(this.value);
 
 factory TlsCertificatesAndHostnamesGeoRestrictionsLabel.fromJson(String json) { return switch (json) {
   'us' => us,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TlsCertificatesAndHostnamesGeoRestrictionsLabel($value)'; } 
  }
 /// Specify the region where your private key can be held locally for optimal TLS performance. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Options allow distribution to only to U.S. data centers, only to E.U. data centers, or only to highest security data centers. Default distribution is to all Cloudflare datacenters, for optimal performance.
-final class TlsCertificatesAndHostnamesGeoRestrictions {const TlsCertificatesAndHostnamesGeoRestrictions({this.label});
+@immutable final class TlsCertificatesAndHostnamesGeoRestrictions {const TlsCertificatesAndHostnamesGeoRestrictions({this.label});
 
 factory TlsCertificatesAndHostnamesGeoRestrictions.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesGeoRestrictions(
   label: json['label'] != null ? TlsCertificatesAndHostnamesGeoRestrictionsLabel.fromJson(json['label'] as String) : null,

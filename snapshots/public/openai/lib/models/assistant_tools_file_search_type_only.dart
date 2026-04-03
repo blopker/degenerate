@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The type of tool being defined: `file_search`
-final class AssistantToolsFileSearchTypeOnlyType {const AssistantToolsFileSearchTypeOnlyType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of tool being defined: `file_search`
+@immutable final class AssistantToolsFileSearchTypeOnlyType {const AssistantToolsFileSearchTypeOnlyType._(this.value);
 
 factory AssistantToolsFileSearchTypeOnlyType.fromJson(String json) { return switch (json) {
   'file_search' => fileSearch,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AssistantToolsFileSearchTypeOnlyType($value)'; } 
  }
-final class AssistantToolsFileSearchTypeOnly {const AssistantToolsFileSearchTypeOnly({required this.type});
+@immutable final class AssistantToolsFileSearchTypeOnly {const AssistantToolsFileSearchTypeOnly({required this.type});
 
 factory AssistantToolsFileSearchTypeOnly.fromJson(Map<String, dynamic> json) { return AssistantToolsFileSearchTypeOnly(
   type: AssistantToolsFileSearchTypeOnlyType.fromJson(json['type'] as String),

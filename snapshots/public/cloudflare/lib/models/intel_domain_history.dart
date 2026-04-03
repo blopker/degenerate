@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_domain_history_categorizations.dart';import 'intel_domain_name.dart';final class IntelDomainHistory {const IntelDomainHistory({this.categorizations, this.domain, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_domain_history_categorizations.dart';import 'intel_domain_name.dart';@immutable final class IntelDomainHistory {const IntelDomainHistory({this.categorizations, this.domain, });
 
 factory IntelDomainHistory.fromJson(Map<String, dynamic> json) { return IntelDomainHistory(
   categorizations: (json['categorizations'] as List<dynamic>?)?.map((e) => IntelDomainHistoryCategorizations.fromJson(e as Map<String, dynamic>)).toList(),

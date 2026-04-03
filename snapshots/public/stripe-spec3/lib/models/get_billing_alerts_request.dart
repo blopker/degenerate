@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBillingAlertsRequest {const GetBillingAlertsRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingAlertsRequest {const GetBillingAlertsRequest();
 
-factory GetBillingAlertsRequest.fromJson(Map<String, dynamic> json) { return GetBillingAlertsRequest(
-
-); }
+factory GetBillingAlertsRequest.fromJson(Map<String, dynamic> _) { return const GetBillingAlertsRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetBillingAlertsRequest copyWith() { return GetBillingAlertsRequest(
+GetBillingAlertsRequest copyWith() { return const GetBillingAlertsRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetBillingAlertsRequest; } 

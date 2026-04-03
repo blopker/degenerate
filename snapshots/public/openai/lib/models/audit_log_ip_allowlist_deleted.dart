@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The details for events with this `type`.
-final class AuditLogIpAllowlistDeleted {const AuditLogIpAllowlistDeleted({this.id, this.name, this.allowedIps, });
+@immutable final class AuditLogIpAllowlistDeleted {const AuditLogIpAllowlistDeleted({this.id, this.name, this.allowedIps, });
 
 factory AuditLogIpAllowlistDeleted.fromJson(Map<String, dynamic> json) { return AuditLogIpAllowlistDeleted(
   id: json['id'] as String?,

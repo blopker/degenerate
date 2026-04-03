@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mq_lease_id.dart';final class MqQueuePullBatch2 {const MqQueuePullBatch2({this.attempts, this.body, this.id, this.leaseId, this.metadata, this.timestampMs, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_lease_id.dart';@immutable final class MqQueuePullBatch2 {const MqQueuePullBatch2({this.attempts, this.body, this.id, this.leaseId, this.metadata, this.timestampMs, });
 
 factory MqQueuePullBatch2.fromJson(Map<String, dynamic> json) { return MqQueuePullBatch2(
   attempts: json['attempts'] != null ? (json['attempts'] as num).toDouble() : null,
   body: json['body'] as String?,
   id: json['id'] as String?,
   leaseId: json['lease_id'] != null ? MqLeaseId.fromJson(json['lease_id'] as String) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   timestampMs: json['timestamp_ms'] != null ? (json['timestamp_ms'] as num).toDouble() : null,
 ); }
 

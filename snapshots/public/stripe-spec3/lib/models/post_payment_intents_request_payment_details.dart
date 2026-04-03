@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_request_payment_details_customer_reference.dart';import 'post_payment_intents_request_payment_details_order_reference.dart';/// Provides industry-specific information about the charge.
-final class PostPaymentIntentsRequestPaymentDetails {const PostPaymentIntentsRequestPaymentDetails({this.customerReference, this.orderReference, });
+@immutable final class PostPaymentIntentsRequestPaymentDetails {const PostPaymentIntentsRequestPaymentDetails({this.customerReference, this.orderReference, });
 
 factory PostPaymentIntentsRequestPaymentDetails.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentDetails(
   customerReference: json['customer_reference'] != null ? OneOf2.parse(json['customer_reference'], fromA: (v) => v as String, fromB: (v) => PostPaymentIntentsRequestPaymentDetailsCustomerReferenceVariant2.fromJson(v as String),) : null,

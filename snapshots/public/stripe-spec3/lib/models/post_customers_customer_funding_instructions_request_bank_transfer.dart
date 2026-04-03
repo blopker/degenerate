@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_funding_instructions_request_bank_transfer_eu_bank_transfer.dart';final class PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes {const PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_funding_instructions_request_bank_transfer_eu_bank_transfer.dart';@immutable final class PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes {const PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes._(this.value);
 
 factory PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes.fromJson(String json) { return switch (json) {
   'iban' => iban,
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerFundingInstructionsRequestBankTransferRequestedAddressTypes($value)'; } 
  }
-final class PostCustomersCustomerFundingInstructionsRequestBankTransferType {const PostCustomersCustomerFundingInstructionsRequestBankTransferType._(this.value);
+@immutable final class PostCustomersCustomerFundingInstructionsRequestBankTransferType {const PostCustomersCustomerFundingInstructionsRequestBankTransferType._(this.value);
 
 factory PostCustomersCustomerFundingInstructionsRequestBankTransferType.fromJson(String json) { return switch (json) {
   'eu_bank_transfer' => euBankTransfer,
@@ -64,7 +64,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCustomersCustomerFundingInstructionsRequestBankTransferType($value)'; } 
  }
 /// Additional parameters for `bank_transfer` funding types
-final class PostCustomersCustomerFundingInstructionsRequestBankTransfer {const PostCustomersCustomerFundingInstructionsRequestBankTransfer({this.euBankTransfer, this.requestedAddressTypes, required this.type, });
+@immutable final class PostCustomersCustomerFundingInstructionsRequestBankTransfer {const PostCustomersCustomerFundingInstructionsRequestBankTransfer({required this.type, this.euBankTransfer, this.requestedAddressTypes, });
 
 factory PostCustomersCustomerFundingInstructionsRequestBankTransfer.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerFundingInstructionsRequestBankTransfer(
   euBankTransfer: json['eu_bank_transfer'] != null ? PostCustomersCustomerFundingInstructionsRequestBankTransferEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,

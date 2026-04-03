@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PagesSecretTextEnvVarType {const PagesSecretTextEnvVarType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesSecretTextEnvVarType {const PagesSecretTextEnvVarType._(this.value);
 
 factory PagesSecretTextEnvVarType.fromJson(String json) { return switch (json) {
   'secret_text' => secretText,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PagesSecretTextEnvVarType($value)'; } 
  }
 /// An encrypted environment variable.
-final class PagesSecretTextEnvVar {const PagesSecretTextEnvVar({required this.type, required this.value, });
+@immutable final class PagesSecretTextEnvVar {const PagesSecretTextEnvVar({required this.type, required this.value, });
 
 factory PagesSecretTextEnvVar.fromJson(Map<String, dynamic> json) { return PagesSecretTextEnvVar(
   type: PagesSecretTextEnvVarType.fromJson(json['type'] as String),

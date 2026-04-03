@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_account_sessions_request_components_account_onboarding_features.dart';final class PostAccountSessionsRequestComponentsAccountOnboarding {const PostAccountSessionsRequestComponentsAccountOnboarding({required this.enabled, this.features, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account_sessions_request_components_account_onboarding_features.dart';@immutable final class PostAccountSessionsRequestComponentsAccountOnboarding {const PostAccountSessionsRequestComponentsAccountOnboarding({required this.enabled, this.features, });
 
 factory PostAccountSessionsRequestComponentsAccountOnboarding.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsAccountOnboarding(
   enabled: json['enabled'] as bool,

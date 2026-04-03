@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_svcb_record_data.dart';import 'dns_records_ttl.dart';/// Record type.
-final class DnsRecordsSvcbRecordType {const DnsRecordsSvcbRecordType._(this.value);
+@immutable final class DnsRecordsSvcbRecordType {const DnsRecordsSvcbRecordType._(this.value);
 
 factory DnsRecordsSvcbRecordType.fromJson(String json) { return switch (json) {
   'SVCB' => svcb,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DnsRecordsSvcbRecordType($value)'; } 
  }
-final class DnsRecordsSvcbRecord {const DnsRecordsSvcbRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
+@immutable final class DnsRecordsSvcbRecord {const DnsRecordsSvcbRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
 
 factory DnsRecordsSvcbRecord.fromJson(Map<String, dynamic> json) { return DnsRecordsSvcbRecord(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

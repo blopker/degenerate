@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waf_managed_rules_components_schemas_identifier.dart';import 'waf_managed_rules_name.dart';/// Defines the rule group to which the current WAF rule belongs.
-final class WafManagedRulesTraditionalDenyRuleGroup {const WafManagedRulesTraditionalDenyRuleGroup({this.id, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waf_managed_rules_components_schemas_identifier.dart';import 'waf_managed_rules_name.dart';/// Defines the rule group to which the current WAF rule belongs.
+@immutable final class WafManagedRulesTraditionalDenyRuleGroup {const WafManagedRulesTraditionalDenyRuleGroup({this.id, this.name, });
 
 factory WafManagedRulesTraditionalDenyRuleGroup.fromJson(Map<String, dynamic> json) { return WafManagedRulesTraditionalDenyRuleGroup(
   id: json['id'] != null ? WafManagedRulesComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,

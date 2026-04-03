@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceDataTaxBehavior {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceDataTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceDataTaxBehavior {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceDataTaxBehavior._(this.value);
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceDataTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceDataTaxBehavior($value)'; } 
  }
-final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceData {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceData({required this.currency, required this.product, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceData {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceData({required this.currency, required this.product, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceData.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestAddInvoiceItemsPriceData(
   currency: json['currency'] as String,

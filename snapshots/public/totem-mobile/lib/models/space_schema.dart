@@ -1,15 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'public_user_schema.dart';
 
+@immutable
 final class SpaceSchema {
   const SpaceSchema({
     required this.author,
     required this.title,
-    this.slug,
     required this.dateCreated,
     required this.dateModified,
     required this.subtitle,
+    this.slug,
   });
 
   factory SpaceSchema.fromJson(Map<String, dynamic> json) {

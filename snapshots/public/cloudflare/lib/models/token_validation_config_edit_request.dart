@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_description.dart';import 'shield_header.dart';import 'shield_title.dart';final class TokenValidationConfigEditRequest {const TokenValidationConfigEditRequest({this.description, this.title, this.tokenSources, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_description.dart';import 'shield_header.dart';import 'shield_title.dart';@immutable final class TokenValidationConfigEditRequest {const TokenValidationConfigEditRequest({this.description, this.title, this.tokenSources, });
 
 factory TokenValidationConfigEditRequest.fromJson(Map<String, dynamic> json) { return TokenValidationConfigEditRequest(
   description: json['description'] != null ? ShieldDescription.fromJson(json['description'] as String) : null,

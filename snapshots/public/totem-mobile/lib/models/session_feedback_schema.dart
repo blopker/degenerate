@@ -1,5 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+import 'package:degenerate_runtime/degenerate_runtime.dart';
+
+@immutable
 final class SessionFeedbackOptions {
   const SessionFeedbackOptions._(this.value);
 
@@ -45,6 +48,7 @@ final class SessionFeedbackOptions {
   }
 }
 
+@immutable
 final class SessionFeedbackSchema {
   const SessionFeedbackSchema({required this.feedback, this.message});
 

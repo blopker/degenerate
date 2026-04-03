@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_ruleset_conditions_repository_name_target_repository_name.dart';/// Parameters for a repository name condition
-final class RepositoryRulesetConditionsRepositoryNameTarget {const RepositoryRulesetConditionsRepositoryNameTarget({required this.repositoryName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_ruleset_conditions_repository_name_target_repository_name.dart';/// Parameters for a repository name condition
+@immutable final class RepositoryRulesetConditionsRepositoryNameTarget {const RepositoryRulesetConditionsRepositoryNameTarget({required this.repositoryName});
 
 factory RepositoryRulesetConditionsRepositoryNameTarget.fromJson(Map<String, dynamic> json) { return RepositoryRulesetConditionsRepositoryNameTarget(
   repositoryName: RepositoryRulesetConditionsRepositoryNameTargetRepositoryName.fromJson(json['repository_name'] as Map<String, dynamic>),

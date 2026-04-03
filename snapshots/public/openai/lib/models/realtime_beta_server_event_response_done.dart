@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'realtime_beta_response.dart';/// The event type, must be `response.done`.
-final class RealtimeBetaServerEventResponseDoneType {const RealtimeBetaServerEventResponseDoneType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_beta_response.dart';/// The event type, must be `response.done`.
+@immutable final class RealtimeBetaServerEventResponseDoneType {const RealtimeBetaServerEventResponseDoneType._(this.value);
 
 factory RealtimeBetaServerEventResponseDoneType.fromJson(String json) { return switch (json) {
   'response.done' => responseDone,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// final state. The Response object included in the `response.done` event will
 /// include all output Items in the Response but will omit the raw audio data.
 /// 
-final class RealtimeBetaServerEventResponseDone {const RealtimeBetaServerEventResponseDone({required this.eventId, required this.type, required this.response, });
+@immutable final class RealtimeBetaServerEventResponseDone {const RealtimeBetaServerEventResponseDone({required this.eventId, required this.type, required this.response, });
 
 factory RealtimeBetaServerEventResponseDone.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseDone(
   eventId: json['event_id'] as String,

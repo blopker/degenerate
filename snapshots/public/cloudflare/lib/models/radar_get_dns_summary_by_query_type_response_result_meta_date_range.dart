@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsSummaryByQueryTypeResponseResultMetaDateRange {const RadarGetDnsSummaryByQueryTypeResponseResultMetaDateRange({required this.endTime, required this.startTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByQueryTypeResponseResultMetaDateRange {const RadarGetDnsSummaryByQueryTypeResponseResultMetaDateRange({required this.endTime, required this.startTime, });
 
 factory RadarGetDnsSummaryByQueryTypeResponseResultMetaDateRange.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByQueryTypeResponseResultMetaDateRange(
   endTime: DateTime.parse(json['endTime'] as String),

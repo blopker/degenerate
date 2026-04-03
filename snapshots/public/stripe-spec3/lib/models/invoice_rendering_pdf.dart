@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Page size of invoice pdf. Options include a4, letter, and auto. If set to auto, page size will be switched to a4 or letter based on customer locale.
-final class InvoiceRenderingPdfPageSize {const InvoiceRenderingPdfPageSize._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Page size of invoice pdf. Options include a4, letter, and auto. If set to auto, page size will be switched to a4 or letter based on customer locale.
+@immutable final class InvoiceRenderingPdfPageSize {const InvoiceRenderingPdfPageSize._(this.value);
 
 factory InvoiceRenderingPdfPageSize.fromJson(String json) { return switch (json) {
   'a4' => a4,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoiceRenderingPdfPageSize($value)'; } 
  }
 /// 
-final class InvoiceRenderingPdf {const InvoiceRenderingPdf({this.pageSize});
+@immutable final class InvoiceRenderingPdf {const InvoiceRenderingPdf({this.pageSize});
 
 factory InvoiceRenderingPdf.fromJson(Map<String, dynamic> json) { return InvoiceRenderingPdf(
   pageSize: json['page_size'] != null ? InvoiceRenderingPdfPageSize.fromJson(json['page_size'] as String) : null,

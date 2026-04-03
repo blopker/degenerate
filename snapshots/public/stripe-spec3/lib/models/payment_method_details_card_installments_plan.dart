@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// For `fixed_count` installment plans, this is the interval between installment payments your customer will make to their credit card.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// For `fixed_count` installment plans, this is the interval between installment payments your customer will make to their credit card.
 /// One of `month`.
-final class PaymentMethodDetailsCardInstallmentsPlanInterval {const PaymentMethodDetailsCardInstallmentsPlanInterval._(this.value);
+@immutable final class PaymentMethodDetailsCardInstallmentsPlanInterval {const PaymentMethodDetailsCardInstallmentsPlanInterval._(this.value);
 
 factory PaymentMethodDetailsCardInstallmentsPlanInterval.fromJson(String json) { return switch (json) {
   'month' => month,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsCardInstallmentsPlanInterval($value)'; } 
  }
 /// Type of installment plan, one of `fixed_count`, `bonus`, or `revolving`.
-final class PaymentMethodDetailsCardInstallmentsPlanType {const PaymentMethodDetailsCardInstallmentsPlanType._(this.value);
+@immutable final class PaymentMethodDetailsCardInstallmentsPlanType {const PaymentMethodDetailsCardInstallmentsPlanType._(this.value);
 
 factory PaymentMethodDetailsCardInstallmentsPlanType.fromJson(String json) { return switch (json) {
   'bonus' => bonus,
@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsCardInstallmentsPlanType($value)'; } 
  }
 /// 
-final class PaymentMethodDetailsCardInstallmentsPlan {const PaymentMethodDetailsCardInstallmentsPlan({this.count, this.interval, required this.type, });
+@immutable final class PaymentMethodDetailsCardInstallmentsPlan {const PaymentMethodDetailsCardInstallmentsPlan({required this.type, this.count, this.interval, });
 
 factory PaymentMethodDetailsCardInstallmentsPlan.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardInstallmentsPlan(
   count: json['count'] != null ? (json['count'] as num).toInt() : null,

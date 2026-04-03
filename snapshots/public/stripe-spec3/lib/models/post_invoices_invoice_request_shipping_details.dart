@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'recipient_shipping_with_optional_fields_address.dart';final class PostInvoicesInvoiceRequestShippingDetailsVariant2 {const PostInvoicesInvoiceRequestShippingDetailsVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'recipient_shipping_with_optional_fields_address.dart';@immutable final class PostInvoicesInvoiceRequestShippingDetailsVariant2 {const PostInvoicesInvoiceRequestShippingDetailsVariant2._(this.value);
 
 factory PostInvoicesInvoiceRequestShippingDetailsVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

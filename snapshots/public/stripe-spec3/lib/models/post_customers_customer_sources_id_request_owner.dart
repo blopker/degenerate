@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_customers_customer_sources_id_request_owner_address.dart';final class PostCustomersCustomerSourcesIdRequestOwner {const PostCustomersCustomerSourcesIdRequestOwner({this.address, this.email, this.name, this.phone, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_sources_id_request_owner_address.dart';@immutable final class PostCustomersCustomerSourcesIdRequestOwner {const PostCustomersCustomerSourcesIdRequestOwner({this.address, this.email, this.name, this.phone, });
 
 factory PostCustomersCustomerSourcesIdRequestOwner.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSourcesIdRequestOwner(
   address: json['address'] != null ? PostCustomersCustomerSourcesIdRequestOwnerAddress.fromJson(json['address'] as Map<String, dynamic>) : null,

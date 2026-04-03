@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_live_input_default_creator.dart';import 'stream_live_input_enabled.dart';import 'stream_live_input_recording_deletion.dart';import 'stream_live_input_recording_settings.dart';final class StreamCreateInputRequest {const StreamCreateInputRequest({this.defaultCreator, this.deleteRecordingAfterDays, this.enabled, this.meta, this.recording, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_live_input_default_creator.dart';import 'stream_live_input_enabled.dart';import 'stream_live_input_recording_deletion.dart';import 'stream_live_input_recording_settings.dart';@immutable final class StreamCreateInputRequest {const StreamCreateInputRequest({this.defaultCreator, this.deleteRecordingAfterDays, this.enabled, this.meta, this.recording, });
 
 factory StreamCreateInputRequest.fromJson(Map<String, dynamic> json) { return StreamCreateInputRequest(
   defaultCreator: json['defaultCreator'] != null ? StreamLiveInputDefaultCreator.fromJson(json['defaultCreator'] as String) : null,
   deleteRecordingAfterDays: json['deleteRecordingAfterDays'] != null ? StreamLiveInputRecordingDeletion.fromJson(json['deleteRecordingAfterDays'] as num) : null,
   enabled: json['enabled'] != null ? StreamLiveInputEnabled.fromJson(json['enabled'] as bool) : null,
-  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  meta: json['meta'] as Map<String, dynamic>?,
   recording: json['recording'] != null ? StreamLiveInputRecordingSettings.fromJson(json['recording'] as Map<String, dynamic>) : null,
 ); }
 

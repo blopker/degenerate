@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_user_invite.dart';final class IamSchemasCollectionInviteResponse {const IamSchemasCollectionInviteResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_user_invite.dart';@immutable final class IamSchemasCollectionInviteResponse {const IamSchemasCollectionInviteResponse({this.result});
 
 factory IamSchemasCollectionInviteResponse.fromJson(Map<String, dynamic> json) { return IamSchemasCollectionInviteResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => IamUserInvite.fromJson(e as Map<String, dynamic>)).toList(),

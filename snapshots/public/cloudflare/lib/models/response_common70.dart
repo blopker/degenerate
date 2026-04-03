@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_schemas_messages2.dart';final class ResponseCommon70 {const ResponseCommon70({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_schemas_messages2.dart';@immutable final class ResponseCommon70 {const ResponseCommon70({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon70.fromJson(Map<String, dynamic> json) { return ResponseCommon70(
   errors: (json['errors'] as List<dynamic>).map((e) => TunnelSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_observability_query_results_events_series_data_aggregates.dart';final class WorkersObservabilityQueryResultsEventsSeriesData {const WorkersObservabilityQueryResultsEventsSeriesData({required this.aggregates, required this.count, this.errors, this.groups, required this.interval, required this.sampleInterval, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_observability_query_results_events_series_data_aggregates.dart';@immutable final class WorkersObservabilityQueryResultsEventsSeriesData {const WorkersObservabilityQueryResultsEventsSeriesData({required this.aggregates, required this.count, required this.interval, required this.sampleInterval, this.errors, this.groups, });
 
 factory WorkersObservabilityQueryResultsEventsSeriesData.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsEventsSeriesData(
   aggregates: WorkersObservabilityQueryResultsEventsSeriesDataAggregates.fromJson(json['aggregates'] as Map<String, dynamic>),
   count: (json['count'] as num).toDouble(),
   errors: json['errors'] != null ? (json['errors'] as num).toDouble() : null,
-  groups: (json['groups'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  groups: json['groups'] as Map<String, dynamic>?,
   interval: (json['interval'] as num).toDouble(),
   sampleInterval: (json['sampleInterval'] as num).toDouble(),
 ); }

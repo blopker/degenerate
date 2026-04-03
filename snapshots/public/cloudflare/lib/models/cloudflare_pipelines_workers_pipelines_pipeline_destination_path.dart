@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CloudflarePipelinesWorkersPipelinesPipelineDestinationPath {const CloudflarePipelinesWorkersPipelinesPipelineDestinationPath({required this.bucket, this.filename, this.filepath, this.prefix, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestinationPath {const CloudflarePipelinesWorkersPipelinesPipelineDestinationPath({required this.bucket, this.filename, this.filepath, this.prefix, });
 
 factory CloudflarePipelinesWorkersPipelinesPipelineDestinationPath.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesPipelineDestinationPath(
   bucket: json['bucket'] as String,

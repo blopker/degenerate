@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetTreasuryReceivedCreditsStatus {const GetTreasuryReceivedCreditsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryReceivedCreditsStatus {const GetTreasuryReceivedCreditsStatus._(this.value);
 
 factory GetTreasuryReceivedCreditsStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,

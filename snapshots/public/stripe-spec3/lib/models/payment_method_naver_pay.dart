@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Whether to fund this transaction with Naver Pay points or a card.
-final class PaymentMethodNaverPayFunding {const PaymentMethodNaverPayFunding._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to fund this transaction with Naver Pay points or a card.
+@immutable final class PaymentMethodNaverPayFunding {const PaymentMethodNaverPayFunding._(this.value);
 
 factory PaymentMethodNaverPayFunding.fromJson(String json) { return switch (json) {
   'card' => card,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodNaverPayFunding($value)'; } 
  }
 /// 
-final class PaymentMethodNaverPay {const PaymentMethodNaverPay({this.buyerId, required this.funding, });
+@immutable final class PaymentMethodNaverPay {const PaymentMethodNaverPay({required this.funding, this.buyerId, });
 
 factory PaymentMethodNaverPay.fromJson(Map<String, dynamic> json) { return PaymentMethodNaverPay(
   buyerId: json['buyer_id'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Format in which results will be returned.
-final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
+@immutable final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat._(this.value);
 
 factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,

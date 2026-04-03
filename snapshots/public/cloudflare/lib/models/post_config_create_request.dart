@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'frequency2.dart';final class PostConfigCreateRequest {const PostConfigCreateRequest({this.frequency, required this.ips, this.ports, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'frequency2.dart';@immutable final class PostConfigCreateRequest {const PostConfigCreateRequest({required this.ips, this.frequency, this.ports, });
 
 factory PostConfigCreateRequest.fromJson(Map<String, dynamic> json) { return PostConfigCreateRequest(
   frequency: json['frequency'] != null ? Frequency2.fromJson(json['frequency'] as num) : null,
@@ -14,7 +14,7 @@ final Frequency2? frequency;
 /// Defines a list of IP addresses or CIDR blocks to scan. The maximum number of total IP addresses allowed is 5000.
 final List<String> ips;
 
-/// Defines a list of ports to scan. Valid values are:"default", "all", or a comma-separated list of ports or range of ports (e.g. ["1-80", "443"]). "default" scans the 100 most commonly open ports.
+/// Defines a list of ports to scan. Valid values are:"default", "all", or a comma-separated list of ports or range of ports (e.g. `["1-80", "443"]`). "default" scans the 100 most commonly open ports.
 final List<String>? ports;
 
 Map<String, dynamic> toJson() { return {

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dependabot_alert.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookDependabotAlertAutoDismissedAction {const WebhookDependabotAlertAutoDismissedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dependabot_alert.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';@immutable final class WebhookDependabotAlertAutoDismissedAction {const WebhookDependabotAlertAutoDismissedAction._(this.value);
 
 factory WebhookDependabotAlertAutoDismissedAction.fromJson(String json) { return switch (json) {
   'auto_dismissed' => autoDismissed,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDependabotAlertAutoDismissedAction($value)'; } 
  }
-final class WebhookDependabotAlertAutoDismissed {const WebhookDependabotAlertAutoDismissed({required this.action, required this.alert, this.installation, this.organization, this.enterprise, required this.repository, required this.sender, });
+@immutable final class WebhookDependabotAlertAutoDismissed {const WebhookDependabotAlertAutoDismissed({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
 factory WebhookDependabotAlertAutoDismissed.fromJson(Map<String, dynamic> json) { return WebhookDependabotAlertAutoDismissed(
   action: WebhookDependabotAlertAutoDismissedAction.fromJson(json['action'] as String),

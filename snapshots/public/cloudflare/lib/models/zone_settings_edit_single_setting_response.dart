@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_messages2.dart';import 'zones_setting.dart';final class ZoneSettingsEditSingleSettingResponse {const ZoneSettingsEditSingleSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_messages2.dart';import 'zones_setting.dart';@immutable final class ZoneSettingsEditSingleSettingResponse {const ZoneSettingsEditSingleSettingResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory ZoneSettingsEditSingleSettingResponse.fromJson(Map<String, dynamic> json) { return ZoneSettingsEditSingleSettingResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ZonesMessages2.fromJson(e as Map<String, dynamic>)).toList(),

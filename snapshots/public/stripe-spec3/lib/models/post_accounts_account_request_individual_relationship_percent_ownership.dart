@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsAccountRequestIndividualRelationshipPercentOwnershipVariant2 {const PostAccountsAccountRequestIndividualRelationshipPercentOwnershipVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountRequestIndividualRelationshipPercentOwnershipVariant2 {const PostAccountsAccountRequestIndividualRelationshipPercentOwnershipVariant2._(this.value);
 
 factory PostAccountsAccountRequestIndividualRelationshipPercentOwnershipVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

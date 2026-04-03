@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'quotes_resource_transfer_data_destination.dart';/// 
-final class QuotesResourceTransferData {const QuotesResourceTransferData({this.amount, this.amountPercent, required this.destination, });
+@immutable final class QuotesResourceTransferData {const QuotesResourceTransferData({required this.destination, this.amount, this.amountPercent, });
 
 factory QuotesResourceTransferData.fromJson(Map<String, dynamic> json) { return QuotesResourceTransferData(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

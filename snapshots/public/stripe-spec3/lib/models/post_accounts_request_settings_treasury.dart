@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_accounts_request_settings_treasury_tos_acceptance.dart';final class PostAccountsRequestSettingsTreasury {const PostAccountsRequestSettingsTreasury({this.tosAcceptance});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_settings_treasury_tos_acceptance.dart';@immutable final class PostAccountsRequestSettingsTreasury {const PostAccountsRequestSettingsTreasury({this.tosAcceptance});
 
 factory PostAccountsRequestSettingsTreasury.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsTreasury(
   tosAcceptance: json['tos_acceptance'] != null ? PostAccountsRequestSettingsTreasuryTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,

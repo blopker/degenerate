@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodeInterpreterFileOutputFiles {const CodeInterpreterFileOutputFiles({required this.mimeType, required this.fileId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeInterpreterFileOutputFiles {const CodeInterpreterFileOutputFiles({required this.mimeType, required this.fileId, });
 
 factory CodeInterpreterFileOutputFiles.fromJson(Map<String, dynamic> json) { return CodeInterpreterFileOutputFiles(
   mimeType: json['mime_type'] as String,

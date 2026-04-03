@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'function_shell_call_output_content_outcome.dart';/// The content of a shell tool call output that was emitted.
-final class FunctionShellCallOutputContent {const FunctionShellCallOutputContent({required this.stdout, required this.stderr, required this.outcome, this.createdBy, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_call_output_content_outcome.dart';/// The content of a shell tool call output that was emitted.
+@immutable final class FunctionShellCallOutputContent {const FunctionShellCallOutputContent({required this.stdout, required this.stderr, required this.outcome, this.createdBy, });
 
 factory FunctionShellCallOutputContent.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputContent(
   stdout: json['stdout'] as String,

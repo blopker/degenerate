@@ -10,9 +10,9 @@ import '../apis/default_api.dart';
 /// sdk.$default.verbsGet();
 /// ```
 final class Spec09HttpMethodsPathItemApi {
-  final ApiConfig _config;
-
   Spec09HttpMethodsPathItemApi(this._config);
+
+  final ApiConfig _config;
 
   late final DefaultApi $default = DefaultApi(_config);
 }

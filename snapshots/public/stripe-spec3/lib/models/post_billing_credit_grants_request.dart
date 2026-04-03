@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_credit_grants_request_amount.dart';import 'post_billing_credit_grants_request_applicability_config.dart';/// The category of this credit grant. It defaults to `paid` if not specified.
-final class PostBillingCreditGrantsRequestCategory {const PostBillingCreditGrantsRequestCategory._(this.value);
+@immutable final class PostBillingCreditGrantsRequestCategory {const PostBillingCreditGrantsRequestCategory._(this.value);
 
 factory PostBillingCreditGrantsRequestCategory.fromJson(String json) { return switch (json) {
   'paid' => paid,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingCreditGrantsRequestCategory($value)'; } 
  }
-final class PostBillingCreditGrantsRequest {const PostBillingCreditGrantsRequest({required this.amount, required this.applicabilityConfig, this.category, this.customer, this.customerAccount, this.effectiveAt, this.expand, this.expiresAt, this.metadata, this.name, this.priority, });
+@immutable final class PostBillingCreditGrantsRequest {const PostBillingCreditGrantsRequest({required this.amount, required this.applicabilityConfig, this.category, this.customer, this.customerAccount, this.effectiveAt, this.expand, this.expiresAt, this.metadata, this.name, this.priority, });
 
 factory PostBillingCreditGrantsRequest.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsRequest(
   amount: PostBillingCreditGrantsRequestAmount.fromJson(json['amount'] as Map<String, dynamic>),

@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetBalanceTransactionsIdRequest {const GetBalanceTransactionsIdRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBalanceTransactionsIdRequest {const GetBalanceTransactionsIdRequest();
 
-factory GetBalanceTransactionsIdRequest.fromJson(Map<String, dynamic> json) { return GetBalanceTransactionsIdRequest(
-
-); }
+factory GetBalanceTransactionsIdRequest.fromJson(Map<String, dynamic> _) { return const GetBalanceTransactionsIdRequest(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-GetBalanceTransactionsIdRequest copyWith() { return GetBalanceTransactionsIdRequest(
+GetBalanceTransactionsIdRequest copyWith() { return const GetBalanceTransactionsIdRequest(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is GetBalanceTransactionsIdRequest; } 

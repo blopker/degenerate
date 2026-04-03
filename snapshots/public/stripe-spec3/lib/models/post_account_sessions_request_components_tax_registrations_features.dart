@@ -1,16 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountSessionsRequestComponentsTaxRegistrationsFeatures {const PostAccountSessionsRequestComponentsTaxRegistrationsFeatures();
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountSessionsRequestComponentsTaxRegistrationsFeatures {const PostAccountSessionsRequestComponentsTaxRegistrationsFeatures();
 
-factory PostAccountSessionsRequestComponentsTaxRegistrationsFeatures.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsTaxRegistrationsFeatures(
-
-); }
+factory PostAccountSessionsRequestComponentsTaxRegistrationsFeatures.fromJson(Map<String, dynamic> _) { return const PostAccountSessionsRequestComponentsTaxRegistrationsFeatures(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-PostAccountSessionsRequestComponentsTaxRegistrationsFeatures copyWith() { return PostAccountSessionsRequestComponentsTaxRegistrationsFeatures(
+PostAccountSessionsRequestComponentsTaxRegistrationsFeatures copyWith() { return const PostAccountSessionsRequestComponentsTaxRegistrationsFeatures(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is PostAccountSessionsRequestComponentsTaxRegistrationsFeatures; } 

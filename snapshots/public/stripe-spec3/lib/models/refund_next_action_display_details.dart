@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'email_sent.dart';/// 
-final class RefundNextActionDisplayDetails {const RefundNextActionDisplayDetails({required this.emailSent, required this.expiresAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_sent.dart';/// 
+@immutable final class RefundNextActionDisplayDetails {const RefundNextActionDisplayDetails({required this.emailSent, required this.expiresAt, });
 
 factory RefundNextActionDisplayDetails.fromJson(Map<String, dynamic> json) { return RefundNextActionDisplayDetails(
   emailSent: EmailSent.fromJson(json['email_sent'] as Map<String, dynamic>),

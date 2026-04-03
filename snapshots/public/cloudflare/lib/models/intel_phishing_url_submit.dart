@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_phishing_url_submit_excluded_urls.dart';import 'intel_phishing_url_submit_skipped_urls.dart';import 'intel_phishing_url_submit_submitted_urls.dart';final class IntelPhishingUrlSubmit {const IntelPhishingUrlSubmit({this.excludedUrls, this.skippedUrls, this.submittedUrls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_phishing_url_submit_excluded_urls.dart';import 'intel_phishing_url_submit_skipped_urls.dart';import 'intel_phishing_url_submit_submitted_urls.dart';@immutable final class IntelPhishingUrlSubmit {const IntelPhishingUrlSubmit({this.excludedUrls, this.skippedUrls, this.submittedUrls, });
 
 factory IntelPhishingUrlSubmit.fromJson(Map<String, dynamic> json) { return IntelPhishingUrlSubmit(
   excludedUrls: (json['excluded_urls'] as List<dynamic>?)?.map((e) => IntelPhishingUrlSubmitExcludedUrls.fromJson(e as Map<String, dynamic>)).toList(),

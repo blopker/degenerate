@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesInvoiceRemoveLinesRequestLinesBehavior {const PostInvoicesInvoiceRemoveLinesRequestLinesBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesInvoiceRemoveLinesRequestLinesBehavior {const PostInvoicesInvoiceRemoveLinesRequestLinesBehavior._(this.value);
 
 factory PostInvoicesInvoiceRemoveLinesRequestLinesBehavior.fromJson(String json) { return switch (json) {
   'delete' => delete,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesInvoiceRemoveLinesRequestLinesBehavior($value)'; } 
  }
-final class PostInvoicesInvoiceRemoveLinesRequestLines {const PostInvoicesInvoiceRemoveLinesRequestLines({required this.behavior, required this.id, });
+@immutable final class PostInvoicesInvoiceRemoveLinesRequestLines {const PostInvoicesInvoiceRemoveLinesRequestLines({required this.behavior, required this.id, });
 
 factory PostInvoicesInvoiceRemoveLinesRequestLines.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRemoveLinesRequestLines(
   behavior: PostInvoicesInvoiceRemoveLinesRequestLinesBehavior.fromJson(json['behavior'] as String),

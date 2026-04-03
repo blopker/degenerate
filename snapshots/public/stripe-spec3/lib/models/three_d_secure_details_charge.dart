@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// For authenticated transactions: how the customer was authenticated by
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// For authenticated transactions: how the customer was authenticated by
 /// the issuing bank.
-final class ThreeDSecureDetailsChargeAuthenticationFlow {const ThreeDSecureDetailsChargeAuthenticationFlow._(this.value);
+@immutable final class ThreeDSecureDetailsChargeAuthenticationFlow {const ThreeDSecureDetailsChargeAuthenticationFlow._(this.value);
 
 factory ThreeDSecureDetailsChargeAuthenticationFlow.fromJson(String json) { return switch (json) {
   'challenge' => challenge,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The Electronic Commerce Indicator (ECI). A protocol-level field
 /// indicating what degree of authentication was performed.
-final class ThreeDSecureDetailsChargeElectronicCommerceIndicator {const ThreeDSecureDetailsChargeElectronicCommerceIndicator._(this.value);
+@immutable final class ThreeDSecureDetailsChargeElectronicCommerceIndicator {const ThreeDSecureDetailsChargeElectronicCommerceIndicator._(this.value);
 
 factory ThreeDSecureDetailsChargeElectronicCommerceIndicator.fromJson(String json) { return switch (json) {
   '01' => $01,
@@ -62,7 +62,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreeDSecureDetailsChargeElectronicCommerceIndicator($value)'; } 
  }
 /// The exemption requested via 3DS and accepted by the issuer at authentication time.
-final class ThreeDSecureDetailsChargeExemptionIndicator {const ThreeDSecureDetailsChargeExemptionIndicator._(this.value);
+@immutable final class ThreeDSecureDetailsChargeExemptionIndicator {const ThreeDSecureDetailsChargeExemptionIndicator._(this.value);
 
 factory ThreeDSecureDetailsChargeExemptionIndicator.fromJson(String json) { return switch (json) {
   'low_risk' => lowRisk,
@@ -87,7 +87,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreeDSecureDetailsChargeExemptionIndicator($value)'; } 
  }
 /// Indicates the outcome of 3D Secure authentication.
-final class ThreeDSecureDetailsChargeResult {const ThreeDSecureDetailsChargeResult._(this.value);
+@immutable final class ThreeDSecureDetailsChargeResult {const ThreeDSecureDetailsChargeResult._(this.value);
 
 factory ThreeDSecureDetailsChargeResult.fromJson(String json) { return switch (json) {
   'attempt_acknowledged' => attemptAcknowledged,
@@ -125,7 +125,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Additional information about why 3D Secure succeeded or failed based
 /// on the `result`.
-final class ThreeDSecureDetailsChargeResultReason {const ThreeDSecureDetailsChargeResultReason._(this.value);
+@immutable final class ThreeDSecureDetailsChargeResultReason {const ThreeDSecureDetailsChargeResultReason._(this.value);
 
 factory ThreeDSecureDetailsChargeResultReason.fromJson(String json) { return switch (json) {
   'abandoned' => abandoned,
@@ -165,7 +165,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreeDSecureDetailsChargeResultReason($value)'; } 
  }
 /// The version of 3D Secure that was used.
-final class ThreeDSecureDetailsChargeVersion {const ThreeDSecureDetailsChargeVersion._(this.value);
+@immutable final class ThreeDSecureDetailsChargeVersion {const ThreeDSecureDetailsChargeVersion._(this.value);
 
 factory ThreeDSecureDetailsChargeVersion.fromJson(String json) { return switch (json) {
   '1.0.2' => $102,
@@ -199,7 +199,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreeDSecureDetailsChargeVersion($value)'; } 
  }
 /// 
-final class ThreeDSecureDetailsCharge {const ThreeDSecureDetailsCharge({this.authenticationFlow, this.electronicCommerceIndicator, this.exemptionIndicator, this.exemptionIndicatorApplied, this.result, this.resultReason, this.transactionId, this.version, });
+@immutable final class ThreeDSecureDetailsCharge {const ThreeDSecureDetailsCharge({this.authenticationFlow, this.electronicCommerceIndicator, this.exemptionIndicator, this.exemptionIndicatorApplied, this.result, this.resultReason, this.transactionId, this.version, });
 
 factory ThreeDSecureDetailsCharge.fromJson(Map<String, dynamic> json) { return ThreeDSecureDetailsCharge(
   authenticationFlow: json['authentication_flow'] != null ? ThreeDSecureDetailsChargeAuthenticationFlow.fromJson(json['authentication_flow'] as String) : null,

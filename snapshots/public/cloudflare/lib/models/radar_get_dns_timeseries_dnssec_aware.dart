@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetDnsTimeseriesDnssecAware {const RadarGetDnsTimeseriesDnssecAware._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesDnssecAware {const RadarGetDnsTimeseriesDnssecAware._(this.value);
 
 factory RadarGetDnsTimeseriesDnssecAware.fromJson(String json) { return switch (json) {
   'SUPPORTED' => supported,

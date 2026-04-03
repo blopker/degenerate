@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DigitalExperienceMonitoringCpuPctByApp2 {const DigitalExperienceMonitoringCpuPctByApp2({this.cpuPct, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringCpuPctByApp2 {const DigitalExperienceMonitoringCpuPctByApp2({this.cpuPct, this.name, });
 
 factory DigitalExperienceMonitoringCpuPctByApp2.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringCpuPctByApp2(
   cpuPct: json['cpu_pct'] != null ? (json['cpu_pct'] as num).toDouble() : null,

@@ -38,7 +38,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -75,7 +75,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -112,7 +112,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+    return jsonDecode(response.body) as Map<String, dynamic>;
   },
   onError: (response) {
     return WorkersAiPostRunCfMetaM2m10012bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

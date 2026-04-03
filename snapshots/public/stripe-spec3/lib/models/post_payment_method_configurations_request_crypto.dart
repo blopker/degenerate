@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_payment_method_configurations_request_crypto_display_preference.dart';/// [Stablecoin payments](https://docs.stripe.com/payments/stablecoin-payments) enable customers to pay in stablecoins like USDC from 100s of wallets including Phantom and Metamask.
-final class PostPaymentMethodConfigurationsRequestCrypto {const PostPaymentMethodConfigurationsRequestCrypto({this.displayPreference});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_method_configurations_request_crypto_display_preference.dart';/// [Stablecoin payments](https://docs.stripe.com/payments/stablecoin-payments) enable customers to pay in stablecoins like USDC from 100s of wallets including Phantom and Metamask.
+@immutable final class PostPaymentMethodConfigurationsRequestCrypto {const PostPaymentMethodConfigurationsRequestCrypto({this.displayPreference});
 
 factory PostPaymentMethodConfigurationsRequestCrypto.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestCrypto(
   displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestCryptoDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_cache_hit_status_response_result_meta_confidence_info.dart';import 'radar_get_dns_timeseries_group_by_cache_hit_status_response_result_meta_date_range.dart';import 'radar_get_dns_timeseries_group_by_cache_hit_status_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-final class RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaAggInterval {const RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaAggInterval._(this.value);
+@immutable final class RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaAggInterval {const RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaAggInterval._(this.value);
 
 factory RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   'FIFTEEN_MINUTES' => fifteenMinutes,
@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaAggInterval($value)'; } 
  }
 /// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-final class RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaNormalization {const RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaNormalization._(this.value);
+@immutable final class RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaNormalization {const RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaNormalization._(this.value);
 
 factory RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaNormalization($value)'; } 
  }
 /// Metadata for the results.
-final class RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMeta {const RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+@immutable final class RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMeta {const RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
 
 factory RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMeta(
   aggInterval: RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),

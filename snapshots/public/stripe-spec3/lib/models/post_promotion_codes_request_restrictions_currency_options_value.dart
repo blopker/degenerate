@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPromotionCodesRequestRestrictionsCurrencyOptionsValue {const PostPromotionCodesRequestRestrictionsCurrencyOptionsValue({this.minimumAmount});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPromotionCodesRequestRestrictionsCurrencyOptionsValue {const PostPromotionCodesRequestRestrictionsCurrencyOptionsValue({this.minimumAmount});
 
 factory PostPromotionCodesRequestRestrictionsCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return PostPromotionCodesRequestRestrictionsCurrencyOptionsValue(
   minimumAmount: json['minimum_amount'] != null ? (json['minimum_amount'] as num).toInt() : null,

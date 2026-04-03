@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'subscription_transfer_data_destination.dart';/// 
-final class SubscriptionTransferData {const SubscriptionTransferData({this.amountPercent, required this.destination, });
+@immutable final class SubscriptionTransferData {const SubscriptionTransferData({required this.destination, this.amountPercent, });
 
 factory SubscriptionTransferData.fromJson(Map<String, dynamic> json) { return SubscriptionTransferData(
   amountPercent: json['amount_percent'] != null ? (json['amount_percent'] as num).toDouble() : null,

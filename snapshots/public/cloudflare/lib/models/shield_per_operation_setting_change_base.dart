@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When set, this applies a mitigation action to this operation
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When set, this applies a mitigation action to this operation
 /// 
 ///   - `"log"` - log request when request does not conform to schema for this operation
 ///   - `"block"` - deny access to the site when request does not conform to schema for this operation
 ///   - `"none"` - will skip mitigation for this operation
 ///   - `null` - clears any mitigation action
 /// 
-final class ShieldPerOperationSettingChangeBaseMitigationAction {const ShieldPerOperationSettingChangeBaseMitigationAction._(this.value);
+@immutable final class ShieldPerOperationSettingChangeBaseMitigationAction {const ShieldPerOperationSettingChangeBaseMitigationAction._(this.value);
 
 factory ShieldPerOperationSettingChangeBaseMitigationAction.fromJson(String json) { return switch (json) {
   'log' => log,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShieldPerOperationSettingChangeBaseMitigationAction($value)'; } 
  }
-final class ShieldPerOperationSettingChangeBase {const ShieldPerOperationSettingChangeBase({this.mitigationAction});
+@immutable final class ShieldPerOperationSettingChangeBase {const ShieldPerOperationSettingChangeBase({this.mitigationAction});
 
 factory ShieldPerOperationSettingChangeBase.fromJson(Map<String, dynamic> json) { return ShieldPerOperationSettingChangeBase(
   mitigationAction: json['mitigation_action'] != null ? ShieldPerOperationSettingChangeBaseMitigationAction.fromJson(json['mitigation_action'] as String) : null,

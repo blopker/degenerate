@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class MagicBgpStatusWithStateState {const MagicBgpStatusWithStateState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicBgpStatusWithStateState {const MagicBgpStatusWithStateState._(this.value);
 
 factory MagicBgpStatusWithStateState.fromJson(String json) { return switch (json) {
   'BGP_DOWN' => bgpDown,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MagicBgpStatusWithStateState($value)'; } 
  }
-final class MagicBgpStatusWithState {const MagicBgpStatusWithState({this.bgpState, this.cfSpeakerIp, this.cfSpeakerPort, this.customerSpeakerIp, this.customerSpeakerPort, required this.state, required this.tcpEstablished, required this.updatedAt, });
+@immutable final class MagicBgpStatusWithState {const MagicBgpStatusWithState({required this.state, required this.tcpEstablished, required this.updatedAt, this.bgpState, this.cfSpeakerIp, this.cfSpeakerPort, this.customerSpeakerIp, this.customerSpeakerPort, });
 
 factory MagicBgpStatusWithState.fromJson(Map<String, dynamic> json) { return MagicBgpStatusWithState(
   bgpState: json['bgp_state'] as String?,

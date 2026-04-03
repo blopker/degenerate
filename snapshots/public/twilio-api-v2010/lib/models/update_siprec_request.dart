@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class SiprecEnumUpdateStatus {const SiprecEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SiprecEnumUpdateStatus {const SiprecEnumUpdateStatus._(this.value);
 
 factory SiprecEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'stopped' => stopped,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SiprecEnumUpdateStatus($value)'; } 
  }
-final class UpdateSiprecRequest {const UpdateSiprecRequest({required this.status});
+@immutable final class UpdateSiprecRequest {const UpdateSiprecRequest({required this.status});
 
 factory UpdateSiprecRequest.fromJson(Map<String, dynamic> json) { return UpdateSiprecRequest(
   status: SiprecEnumUpdateStatus.fromJson(json['Status'] as String),

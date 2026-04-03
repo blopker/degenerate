@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_dns_timeseries_group_by_dnssec_e2e_version_response_result_meta.dart';import 'radar_get_dns_timeseries_group_by_dnssec_e2e_version_response_result_serie0.dart';final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResult {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_timeseries_group_by_dnssec_e2e_version_response_result_meta.dart';import 'radar_get_dns_timeseries_group_by_dnssec_e2e_version_response_result_serie0.dart';@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResult {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResult(
   meta: RadarGetDnsTimeseriesGroupByDnssecE2eVersionResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

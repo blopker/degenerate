@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class AccountBacsDebitPaymentsSettings {const AccountBacsDebitPaymentsSettings({this.displayName, this.serviceUserNumber, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class AccountBacsDebitPaymentsSettings {const AccountBacsDebitPaymentsSettings({this.displayName, this.serviceUserNumber, });
 
 factory AccountBacsDebitPaymentsSettings.fromJson(Map<String, dynamic> json) { return AccountBacsDebitPaymentsSettings(
   displayName: json['display_name'] as String?,

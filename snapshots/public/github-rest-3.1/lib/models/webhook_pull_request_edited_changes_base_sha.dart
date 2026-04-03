@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WebhookPullRequestEditedChangesBaseSha {const WebhookPullRequestEditedChangesBaseSha({required this.from});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookPullRequestEditedChangesBaseSha {const WebhookPullRequestEditedChangesBaseSha({required this.from});
 
 factory WebhookPullRequestEditedChangesBaseSha.fromJson(Map<String, dynamic> json) { return WebhookPullRequestEditedChangesBaseSha(
   from: json['from'] as String,

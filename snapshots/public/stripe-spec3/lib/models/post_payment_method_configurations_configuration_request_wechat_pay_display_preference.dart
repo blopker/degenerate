@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreferencePreference._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreferencePreference._(this.value);
 
 factory PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreferencePreference.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreferencePreference($value)'; } 
  }
-final class PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreference({this.preference});
+@immutable final class PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreference({this.preference});
 
 factory PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreference(
   preference: json['preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestWechatPayDisplayPreferencePreference.fromJson(json['preference'] as String) : null,

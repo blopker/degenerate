@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_messages2.dart';import 'response_common41_result.dart';final class ResponseCommon41 {const ResponseCommon41({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'lists_messages2.dart';import 'response_common41_result.dart';@immutable final class ResponseCommon41 {const ResponseCommon41({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory ResponseCommon41.fromJson(Map<String, dynamic> json) { return ResponseCommon41(
   errors: (json['errors'] as List<dynamic>).map((e) => ListsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ListsMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: OneOf2.parse(json['result'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromB: (v) => (v as List<dynamic>).map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),),
+  result: OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),),
   success: json['success'] as bool,
 ); }
 

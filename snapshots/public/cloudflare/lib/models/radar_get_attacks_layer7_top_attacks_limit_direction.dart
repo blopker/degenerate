@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies whether the `limitPerLocation` applies to the source or target location.
-final class RadarGetAttacksLayer7TopAttacksLimitDirection {const RadarGetAttacksLayer7TopAttacksLimitDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the `limitPerLocation` applies to the source or target location.
+@immutable final class RadarGetAttacksLayer7TopAttacksLimitDirection {const RadarGetAttacksLayer7TopAttacksLimitDirection._(this.value);
 
 factory RadarGetAttacksLayer7TopAttacksLimitDirection.fromJson(String json) { return switch (json) {
   'ORIGIN' => origin,

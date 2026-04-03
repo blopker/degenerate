@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostIssuingCardsRequestShippingAddressValidationMode {const PostIssuingCardsRequestShippingAddressValidationMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostIssuingCardsRequestShippingAddressValidationMode {const PostIssuingCardsRequestShippingAddressValidationMode._(this.value);
 
 factory PostIssuingCardsRequestShippingAddressValidationMode.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingCardsRequestShippingAddressValidationMode($value)'; } 
  }
-final class PostIssuingCardsRequestShippingAddressValidation {const PostIssuingCardsRequestShippingAddressValidation({required this.mode});
+@immutable final class PostIssuingCardsRequestShippingAddressValidation {const PostIssuingCardsRequestShippingAddressValidation({required this.mode});
 
 factory PostIssuingCardsRequestShippingAddressValidation.fromJson(Map<String, dynamic> json) { return PostIssuingCardsRequestShippingAddressValidation(
   mode: PostIssuingCardsRequestShippingAddressValidationMode.fromJson(json['mode'] as String),

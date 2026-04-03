@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_and_custom_tool_call_output.dart';import 'function_tool_call_output_output.dart';/// The status of the item. One of `in_progress`, `completed`, or
 /// `incomplete`. Populated when items are returned via API.
 /// 
-final class FunctionToolCallOutputStatus {const FunctionToolCallOutputStatus._(this.value);
+@immutable final class FunctionToolCallOutputStatus {const FunctionToolCallOutputStatus._(this.value);
 
 factory FunctionToolCallOutputStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The output of a function tool call.
 /// 
-final class FunctionToolCallOutput {const FunctionToolCallOutput({this.id, required this.type, required this.callId, required this.output, this.status, });
+@immutable final class FunctionToolCallOutput {const FunctionToolCallOutput({required this.type, required this.callId, required this.output, this.id, this.status, });
 
 factory FunctionToolCallOutput.fromJson(Map<String, dynamic> json) { return FunctionToolCallOutput(
   id: json['id'] as String?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActivityListPublicEventsResponse503 {const ActivityListPublicEventsResponse503({this.code, this.message, this.documentationUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivityListPublicEventsResponse503 {const ActivityListPublicEventsResponse503({this.code, this.message, this.documentationUrl, });
 
 factory ActivityListPublicEventsResponse503.fromJson(Map<String, dynamic> json) { return ActivityListPublicEventsResponse503(
   code: json['code'] as String?,

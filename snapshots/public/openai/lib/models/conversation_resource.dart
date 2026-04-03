@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The object type, which is always `conversation`.
-final class ConversationResourceObject {const ConversationResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `conversation`.
+@immutable final class ConversationResourceObject {const ConversationResourceObject._(this.value);
 
 factory ConversationResourceObject.fromJson(String json) { return switch (json) {
   'conversation' => conversation,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ConversationResourceObject($value)'; } 
  }
-final class ConversationResource {const ConversationResource({required this.id, this.object = ConversationResourceObject.conversation, required this.metadata, required this.createdAt, });
+@immutable final class ConversationResource {const ConversationResource({required this.id, required this.metadata, required this.createdAt, this.object = ConversationResourceObject.conversation, });
 
 factory ConversationResource.fromJson(Map<String, dynamic> json) { return ConversationResource(
   id: json['id'] as String,

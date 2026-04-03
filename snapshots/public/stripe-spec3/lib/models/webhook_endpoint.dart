@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class WebhookEndpointObject {const WebhookEndpointObject._(this.value);
+@immutable final class WebhookEndpointObject {const WebhookEndpointObject._(this.value);
 
 factory WebhookEndpointObject.fromJson(String json) { return switch (json) {
   'webhook_endpoint' => webhookEndpoint,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Most users configure webhooks from [the dashboard](https://dashboard.stripe.com/webhooks), which provides a user interface for registering and testing your webhook endpoints.
 /// 
 /// Related guide: [Setting up webhooks](https://docs.stripe.com/webhooks/configure)
-final class WebhookEndpoint {const WebhookEndpoint({this.apiVersion, this.application, required this.created, this.description, required this.enabledEvents, required this.id, required this.livemode, required this.metadata, required this.object, this.secret, required this.status, required this.url, });
+@immutable final class WebhookEndpoint {const WebhookEndpoint({required this.created, required this.enabledEvents, required this.id, required this.livemode, required this.metadata, required this.object, required this.status, required this.url, this.apiVersion, this.application, this.description, this.secret, });
 
 factory WebhookEndpoint.fromJson(Map<String, dynamic> json) { return WebhookEndpoint(
   apiVersion: json['api_version'] as String?,

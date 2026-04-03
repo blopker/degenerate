@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CodespacesCreateOrUpdateRepoSecretRequest {const CodespacesCreateOrUpdateRepoSecretRequest({this.encryptedValue, this.keyId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesCreateOrUpdateRepoSecretRequest {const CodespacesCreateOrUpdateRepoSecretRequest({this.encryptedValue, this.keyId, });
 
 factory CodespacesCreateOrUpdateRepoSecretRequest.fromJson(Map<String, dynamic> json) { return CodespacesCreateOrUpdateRepoSecretRequest(
   encryptedValue: json['encrypted_value'] as String?,

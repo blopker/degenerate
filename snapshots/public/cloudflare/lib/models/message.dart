@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Represents an API notice or error detail.
-final class Message {const Message({this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents an API notice or error detail.
+@immutable final class Message {const Message({required this.message, this.code, });
 
 factory Message.fromJson(Map<String, dynamic> json) { return Message(
   code: json['code'] != null ? (json['code'] as num).toInt() : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_controller_device.dart';final class MconnControllerFetchDeviceResponse {const MconnControllerFetchDeviceResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_controller_device.dart';@immutable final class MconnControllerFetchDeviceResponse {const MconnControllerFetchDeviceResponse({this.result});
 
 factory MconnControllerFetchDeviceResponse.fromJson(Map<String, dynamic> json) { return MconnControllerFetchDeviceResponse(
   result: json['result'] != null ? MconnControllerDevice.fromJson(json['result'] as Map<String, dynamic>) : null,

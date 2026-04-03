@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_cursor.dart';final class BuildsBuildLogsResponse {const BuildsBuildLogsResponse({this.cursor, this.lines, this.truncated, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_cursor.dart';@immutable final class BuildsBuildLogsResponse {const BuildsBuildLogsResponse({this.cursor, this.lines, this.truncated, });
 
 factory BuildsBuildLogsResponse.fromJson(Map<String, dynamic> json) { return BuildsBuildLogsResponse(
   cursor: json['cursor'] != null ? BuildsCursor.fromJson(json['cursor'] as String) : null,

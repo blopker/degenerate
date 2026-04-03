@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_customer_connector.dart';final class MconnCustomerConnectorListResponse {const MconnCustomerConnectorListResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_customer_connector.dart';@immutable final class MconnCustomerConnectorListResponse {const MconnCustomerConnectorListResponse({this.result});
 
 factory MconnCustomerConnectorListResponse.fromJson(Map<String, dynamic> json) { return MconnCustomerConnectorListResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => MconnCustomerConnector.fromJson(e as Map<String, dynamic>)).toList(),

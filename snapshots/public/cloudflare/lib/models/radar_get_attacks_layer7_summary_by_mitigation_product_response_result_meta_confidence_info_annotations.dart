@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetAttacksLayer7SummaryByMitigationProductResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

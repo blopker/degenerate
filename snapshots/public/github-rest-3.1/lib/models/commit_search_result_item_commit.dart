@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'commit_search_result_item_commit_author.dart';import 'commit_search_result_item_commit_tree.dart';import 'git_user.dart';import 'verification.dart';final class CommitSearchResultItemCommit {const CommitSearchResultItemCommit({required this.author, required this.committer, required this.commentCount, required this.message, required this.tree, required this.url, this.verification, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'commit_search_result_item_commit_author.dart';import 'commit_search_result_item_commit_tree.dart';import 'git_user.dart';import 'verification.dart';@immutable final class CommitSearchResultItemCommit {const CommitSearchResultItemCommit({required this.author, required this.committer, required this.commentCount, required this.message, required this.tree, required this.url, this.verification, });
 
 factory CommitSearchResultItemCommit.fromJson(Map<String, dynamic> json) { return CommitSearchResultItemCommit(
   author: CommitSearchResultItemCommitAuthor.fromJson(json['author'] as Map<String, dynamic>),

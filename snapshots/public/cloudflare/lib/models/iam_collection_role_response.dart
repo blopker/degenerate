@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_role.dart';final class IamCollectionRoleResponse {const IamCollectionRoleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_role.dart';@immutable final class IamCollectionRoleResponse {const IamCollectionRoleResponse({this.result});
 
 factory IamCollectionRoleResponse.fromJson(Map<String, dynamic> json) { return IamCollectionRoleResponse(
   result: (json['result'] as List<dynamic>?)?.map((e) => IamRole.fromJson(e as Map<String, dynamic>)).toList(),

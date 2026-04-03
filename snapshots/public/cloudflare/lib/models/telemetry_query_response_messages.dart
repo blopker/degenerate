@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TelemetryQueryResponseMessagesMessage {const TelemetryQueryResponseMessagesMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryQueryResponseMessagesMessage {const TelemetryQueryResponseMessagesMessage._(this.value);
 
 factory TelemetryQueryResponseMessagesMessage.fromJson(String json) { return switch (json) {
   'Successful request' => successfulRequest,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TelemetryQueryResponseMessagesMessage($value)'; } 
  }
-final class TelemetryQueryResponseMessages {const TelemetryQueryResponseMessages({required this.message});
+@immutable final class TelemetryQueryResponseMessages {const TelemetryQueryResponseMessages({required this.message});
 
 factory TelemetryQueryResponseMessages.fromJson(Map<String, dynamic> json) { return TelemetryQueryResponseMessages(
   message: TelemetryQueryResponseMessagesMessage.fromJson(json['message'] as String),

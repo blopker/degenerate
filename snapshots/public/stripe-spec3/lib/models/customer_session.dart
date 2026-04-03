@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'customer_session_customer.dart';import 'customer_session_resource_components.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class CustomerSessionObject {const CustomerSessionObject._(this.value);
+@immutable final class CustomerSessionObject {const CustomerSessionObject._(this.value);
 
 factory CustomerSessionObject.fromJson(String json) { return switch (json) {
   'customer_session' => customerSession,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Related guides: [Customer Session with the Payment Element](/payments/accept-a-payment-deferred?platform=web&type=payment#save-payment-methods),
 /// [Customer Session with the Pricing Table](/payments/checkout/pricing-table#customer-session),
 /// [Customer Session with the Buy Button](/payment-links/buy-button#pass-an-existing-customer).
-final class CustomerSession {const CustomerSession({required this.clientSecret, this.components, required this.created, required this.customer, this.customerAccount, required this.expiresAt, required this.livemode, required this.object, });
+@immutable final class CustomerSession {const CustomerSession({required this.clientSecret, required this.created, required this.customer, required this.expiresAt, required this.livemode, required this.object, this.components, this.customerAccount, });
 
 factory CustomerSession.fromJson(Map<String, dynamic> json) { return CustomerSession(
   clientSecret: json['client_secret'] as String,

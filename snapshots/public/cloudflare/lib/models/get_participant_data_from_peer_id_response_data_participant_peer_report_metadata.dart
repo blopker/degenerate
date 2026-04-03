@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_browser_metadata.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_candidate_pairs.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_device_info.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_events.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_ip_information.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_pc_metadata.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata({this.audioDevicesUpdates, this.browserMetadata, this.candidatePairs, this.deviceInfo, this.events, this.ipInformation, this.pcMetadata, this.roomViewType, this.sdkName, this.sdkVersion, this.selectedDeviceUpdates, this.speakerDevicesUpdates, this.videoDevicesUpdates, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_browser_metadata.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_candidate_pairs.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_device_info.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_events.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_ip_information.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_pc_metadata.dart';@immutable final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata({this.audioDevicesUpdates, this.browserMetadata, this.candidatePairs, this.deviceInfo, this.events, this.ipInformation, this.pcMetadata, this.roomViewType, this.sdkName, this.sdkVersion, this.selectedDeviceUpdates, this.speakerDevicesUpdates, this.videoDevicesUpdates, });
 
 factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata(
-  audioDevicesUpdates: (json['audio_devices_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  audioDevicesUpdates: (json['audio_devices_updates'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
   browserMetadata: json['browser_metadata'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata.fromJson(json['browser_metadata'] as Map<String, dynamic>) : null,
   candidatePairs: json['candidate_pairs'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs.fromJson(json['candidate_pairs'] as Map<String, dynamic>) : null,
   deviceInfo: json['device_info'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataDeviceInfo.fromJson(json['device_info'] as Map<String, dynamic>) : null,
@@ -13,9 +13,9 @@ factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadata.fr
   roomViewType: json['room_view_type'] as String?,
   sdkName: json['sdk_name'] as String?,
   sdkVersion: json['sdk_version'] as String?,
-  selectedDeviceUpdates: (json['selected_device_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
-  speakerDevicesUpdates: (json['speaker_devices_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
-  videoDevicesUpdates: (json['video_devices_updates'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  selectedDeviceUpdates: (json['selected_device_updates'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
+  speakerDevicesUpdates: (json['speaker_devices_updates'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
+  videoDevicesUpdates: (json['video_devices_updates'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 final List<Map<String,dynamic>>? audioDevicesUpdates;

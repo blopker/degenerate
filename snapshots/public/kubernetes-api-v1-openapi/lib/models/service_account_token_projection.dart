@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// ServiceAccountTokenProjection represents a projected service account token volume. This projection can be used to insert a service account token into the pods runtime filesystem for use against APIs (Kubernetes API Server or otherwise).
-final class ServiceAccountTokenProjection {const ServiceAccountTokenProjection({this.audience, this.expirationSeconds, this.path = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// ServiceAccountTokenProjection represents a projected service account token volume. This projection can be used to insert a service account token into the pods runtime filesystem for use against APIs (Kubernetes API Server or otherwise).
+@immutable final class ServiceAccountTokenProjection {const ServiceAccountTokenProjection({this.audience, this.expirationSeconds, this.path = '', });
 
 factory ServiceAccountTokenProjection.fromJson(Map<String, dynamic> json) { return ServiceAccountTokenProjection(
   audience: json['audience'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'portal_customer_update.dart';import 'portal_invoice_list.dart';import 'portal_payment_method_update.dart';import 'portal_subscription_cancel.dart';import 'portal_subscription_update.dart';/// 
-final class PortalFeatures {const PortalFeatures({required this.customerUpdate, required this.invoiceHistory, required this.paymentMethodUpdate, required this.subscriptionCancel, required this.subscriptionUpdate, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'portal_customer_update.dart';import 'portal_invoice_list.dart';import 'portal_payment_method_update.dart';import 'portal_subscription_cancel.dart';import 'portal_subscription_update.dart';/// 
+@immutable final class PortalFeatures {const PortalFeatures({required this.customerUpdate, required this.invoiceHistory, required this.paymentMethodUpdate, required this.subscriptionCancel, required this.subscriptionUpdate, });
 
 factory PortalFeatures.fromJson(Map<String, dynamic> json) { return PortalFeatures(
   customerUpdate: PortalCustomerUpdate.fromJson(json['customer_update'] as Map<String, dynamic>),

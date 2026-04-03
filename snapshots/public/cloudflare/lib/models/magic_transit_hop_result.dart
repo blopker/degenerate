@@ -21,7 +21,7 @@ factory MagicTransitPacketsTtl.fromJson(num json) => MagicTransitPacketsTtl(json
 num toJson() => value;
 
 }
-final class MagicTransitHopResult {const MagicTransitHopResult({this.nodes, this.packetsLost, this.packetsSent, this.packetsTtl, });
+@immutable final class MagicTransitHopResult {const MagicTransitHopResult({this.nodes, this.packetsLost, this.packetsSent, this.packetsTtl, });
 
 factory MagicTransitHopResult.fromJson(Map<String, dynamic> json) { return MagicTransitHopResult(
   nodes: (json['nodes'] as List<dynamic>?)?.map((e) => MagicTransitNodeResult.fromJson(e as Map<String, dynamic>)).toList(),

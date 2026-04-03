@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Device details embedded inside of a registration.
-final class TeamsDevicesRegistrationDeviceDetails {const TeamsDevicesRegistrationDeviceDetails({this.clientVersion, required this.id, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Device details embedded inside of a registration.
+@immutable final class TeamsDevicesRegistrationDeviceDetails {const TeamsDevicesRegistrationDeviceDetails({required this.id, required this.name, this.clientVersion, });
 
 factory TeamsDevicesRegistrationDeviceDetails.fromJson(Map<String, dynamic> json) { return TeamsDevicesRegistrationDeviceDetails(
   clientVersion: json['client_version'] as String?,

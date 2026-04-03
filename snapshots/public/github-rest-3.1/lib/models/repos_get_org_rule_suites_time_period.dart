@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposGetOrgRuleSuitesTimePeriod {const ReposGetOrgRuleSuitesTimePeriod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposGetOrgRuleSuitesTimePeriod {const ReposGetOrgRuleSuitesTimePeriod._(this.value);
 
 factory ReposGetOrgRuleSuitesTimePeriod.fromJson(String json) { return switch (json) {
   'hour' => hour,

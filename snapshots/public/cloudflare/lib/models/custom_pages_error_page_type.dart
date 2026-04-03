@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Error Page Types
-final class CustomPagesErrorPageType {const CustomPagesErrorPageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Error Page Types
+@immutable final class CustomPagesErrorPageType {const CustomPagesErrorPageType._(this.value);
 
 factory CustomPagesErrorPageType.fromJson(String json) { return switch (json) {
   '1000_errors' => $1000Errors,

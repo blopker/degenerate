@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class Verification {const Verification({required this.verified, required this.reason, required this.payload, required this.signature, required this.verifiedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Verification {const Verification({required this.verified, required this.reason, required this.payload, required this.signature, required this.verifiedAt, });
 
 factory Verification.fromJson(Map<String, dynamic> json) { return Verification(
   verified: json['verified'] as bool,

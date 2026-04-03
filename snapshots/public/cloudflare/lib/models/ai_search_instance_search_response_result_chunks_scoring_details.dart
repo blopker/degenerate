@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchInstanceSearchResponseResultChunksScoringDetails {const AiSearchInstanceSearchResponseResultChunksScoringDetails({this.keywordRank, this.keywordScore, this.rerankingScore, this.vectorRank, this.vectorScore, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceSearchResponseResultChunksScoringDetails {const AiSearchInstanceSearchResponseResultChunksScoringDetails({this.keywordRank, this.keywordScore, this.rerankingScore, this.vectorRank, this.vectorScore, });
 
 factory AiSearchInstanceSearchResponseResultChunksScoringDetails.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchResponseResultChunksScoringDetails(
   keywordRank: json['keyword_rank'] != null ? (json['keyword_rank'] as num).toDouble() : null,

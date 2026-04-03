@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method to use for the health check.
-final class SmartshieldHttpConfigMethod {const SmartshieldHttpConfigMethod._(this.value);
+@immutable final class SmartshieldHttpConfigMethod {const SmartshieldHttpConfigMethod._(this.value);
 
 factory SmartshieldHttpConfigMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SmartshieldHttpConfigMethod($value)'; } 
  }
 /// Parameters specific to an HTTP or HTTPS health check.
-final class SmartshieldHttpConfig {const SmartshieldHttpConfig({this.allowInsecure = false, this.expectedBody, this.expectedCodes, this.followRedirects = false, this.header, this.method = SmartshieldHttpConfigMethod.$get, this.path = '/', this.port = 80, });
+@immutable final class SmartshieldHttpConfig {const SmartshieldHttpConfig({this.allowInsecure = false, this.expectedBody, this.expectedCodes, this.followRedirects = false, this.header, this.method = SmartshieldHttpConfigMethod.$get, this.path = '/', this.port = 80, });
 
 factory SmartshieldHttpConfig.fromJson(Map<String, dynamic> json) { return SmartshieldHttpConfig(
   allowInsecure: json.containsKey('allow_insecure') ? json['allow_insecure'] as bool : false,
@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'expected_body': ?expectedBody,
   'expected_codes': ?expectedCodes,
   'follow_redirects': followRedirects,
-  if (header != null) 'header': header?.map((k, v) => MapEntry(k, v)),
+  'header': ?header,
   'method': method.toJson(),
   'path': path,
   'port': port,

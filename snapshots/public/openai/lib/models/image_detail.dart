@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ImageDetail {const ImageDetail._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageDetail {const ImageDetail._(this.value);
 
 factory ImageDetail.fromJson(String json) { return switch (json) {
   'low' => low,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_key_name_bulk.dart';/// Whether to parse JSON values in the response.
-final class WorkersKvNamespaceGetMultipleKeyValuePairsRequestType {const WorkersKvNamespaceGetMultipleKeyValuePairsRequestType._(this.value);
+@immutable final class WorkersKvNamespaceGetMultipleKeyValuePairsRequestType {const WorkersKvNamespaceGetMultipleKeyValuePairsRequestType._(this.value);
 
 factory WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersKvNamespaceGetMultipleKeyValuePairsRequestType($value)'; } 
  }
-final class WorkersKvNamespaceGetMultipleKeyValuePairsRequest {const WorkersKvNamespaceGetMultipleKeyValuePairsRequest({required this.keys, this.type = WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.text, this.withMetadata = false, });
+@immutable final class WorkersKvNamespaceGetMultipleKeyValuePairsRequest {const WorkersKvNamespaceGetMultipleKeyValuePairsRequest({required this.keys, this.type = WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.text, this.withMetadata = false, });
 
 factory WorkersKvNamespaceGetMultipleKeyValuePairsRequest.fromJson(Map<String, dynamic> json) { return WorkersKvNamespaceGetMultipleKeyValuePairsRequest(
   keys: (json['keys'] as List<dynamic>).map((e) => WorkersKvKeyNameBulk.fromJson(e as String)).toList(),

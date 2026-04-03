@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Specifies the preset to use for the index.
-final class VectorizeIndexPreset {const VectorizeIndexPreset._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the preset to use for the index.
+@immutable final class VectorizeIndexPreset {const VectorizeIndexPreset._(this.value);
 
 factory VectorizeIndexPreset.fromJson(String json) { return switch (json) {
   '@cf/baai/bge-small-en-v1.5' => cfBaaiBgeSmallEnV15,
@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VectorizeIndexPreset($value)'; } 
  }
-final class VectorizeIndexPresetConfiguration {const VectorizeIndexPresetConfiguration({required this.preset});
+@immutable final class VectorizeIndexPresetConfiguration {const VectorizeIndexPresetConfiguration({required this.preset});
 
 factory VectorizeIndexPresetConfiguration.fromJson(Map<String, dynamic> json) { return VectorizeIndexPresetConfiguration(
   preset: VectorizeIndexPreset.fromJson(json['preset'] as String),

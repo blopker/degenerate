@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WafOverridesCreateAWafOverrideRequest {const WafOverridesCreateAWafOverrideRequest({required this.urls});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WafOverridesCreateAWafOverrideRequest {const WafOverridesCreateAWafOverrideRequest({required this.urls});
 
 factory WafOverridesCreateAWafOverrideRequest.fromJson(Map<String, dynamic> json) { return WafOverridesCreateAWafOverrideRequest(
   urls: (json['urls'] as List<dynamic>).map((e) => e as String).toList(),

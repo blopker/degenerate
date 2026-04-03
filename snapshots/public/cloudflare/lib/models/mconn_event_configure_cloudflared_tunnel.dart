@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Configured Cloudflared tunnel
-final class MconnEventConfigureCloudflaredTunnelK {const MconnEventConfigureCloudflaredTunnelK._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configured Cloudflared tunnel
+@immutable final class MconnEventConfigureCloudflaredTunnelK {const MconnEventConfigureCloudflaredTunnelK._(this.value);
 
 factory MconnEventConfigureCloudflaredTunnelK.fromJson(String json) { return switch (json) {
   'ConfigureCloudflaredTunnel' => configureCloudflaredTunnel,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MconnEventConfigureCloudflaredTunnelK($value)'; } 
  }
-final class MconnEventConfigureCloudflaredTunnel {const MconnEventConfigureCloudflaredTunnel({required this.k});
+@immutable final class MconnEventConfigureCloudflaredTunnel {const MconnEventConfigureCloudflaredTunnel({required this.k});
 
 factory MconnEventConfigureCloudflaredTunnel.fromJson(Map<String, dynamic> json) { return MconnEventConfigureCloudflaredTunnel(
   k: MconnEventConfigureCloudflaredTunnelK.fromJson(json['k'] as String),

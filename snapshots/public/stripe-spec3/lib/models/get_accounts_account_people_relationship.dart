@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class GetAccountsAccountPeopleRelationship {const GetAccountsAccountPeopleRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.representative, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountsAccountPeopleRelationship {const GetAccountsAccountPeopleRelationship({this.authorizer, this.director, this.executive, this.legalGuardian, this.owner, this.representative, });
 
 factory GetAccountsAccountPeopleRelationship.fromJson(Map<String, dynamic> json) { return GetAccountsAccountPeopleRelationship(
   authorizer: json['authorizer'] as bool?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_jsonl_run_data_source_source.dart';import 'eval_jsonl_file_content_source.dart';import 'eval_jsonl_file_id_source.dart';/// The type of data source. Always `jsonl`.
-final class CreateEvalJsonlRunDataSourceType {const CreateEvalJsonlRunDataSourceType._(this.value);
+@immutable final class CreateEvalJsonlRunDataSourceType {const CreateEvalJsonlRunDataSourceType._(this.value);
 
 factory CreateEvalJsonlRunDataSourceType.fromJson(String json) { return switch (json) {
   'jsonl' => jsonl,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A JsonlRunDataSource object with that specifies a JSONL file that matches the eval
 /// 
-final class CreateEvalJsonlRunDataSource {const CreateEvalJsonlRunDataSource({this.type = CreateEvalJsonlRunDataSourceType.jsonl, required this.source, });
+@immutable final class CreateEvalJsonlRunDataSource {const CreateEvalJsonlRunDataSource({required this.source, this.type = CreateEvalJsonlRunDataSourceType.jsonl, });
 
 factory CreateEvalJsonlRunDataSource.fromJson(Map<String, dynamic> json) { return CreateEvalJsonlRunDataSource(
   type: CreateEvalJsonlRunDataSourceType.fromJson(json['type'] as String),

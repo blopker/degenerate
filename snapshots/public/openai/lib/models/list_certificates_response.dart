@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'certificate.dart';final class ListCertificatesResponseObject {const ListCertificatesResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'certificate.dart';@immutable final class ListCertificatesResponseObject {const ListCertificatesResponseObject._(this.value);
 
 factory ListCertificatesResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ListCertificatesResponseObject($value)'; } 
  }
-final class ListCertificatesResponse {const ListCertificatesResponse({required this.data, this.firstId, this.lastId, required this.hasMore, required this.object, });
+@immutable final class ListCertificatesResponse {const ListCertificatesResponse({required this.data, required this.hasMore, required this.object, this.firstId, this.lastId, });
 
 factory ListCertificatesResponse.fromJson(Map<String, dynamic> json) { return ListCertificatesResponse(
   data: (json['data'] as List<dynamic>).map((e) => Certificate.fromJson(e as Map<String, dynamic>)).toList(),

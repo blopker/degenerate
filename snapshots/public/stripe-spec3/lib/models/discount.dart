@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'deleted_customer.dart';import 'discount_customer.dart';import 'discount_promotion_code.dart';import 'discount_source.dart';import 'promotion_code.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class DiscountObject {const DiscountObject._(this.value);
+@immutable final class DiscountObject {const DiscountObject._(this.value);
 
 factory DiscountObject.fromJson(String json) { return switch (json) {
   'discount' => discount,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 /// It contains information about when the discount began, when it will end, and what it is applied to.
 /// 
 /// Related guide: [Applying discounts to subscriptions](https://docs.stripe.com/billing/subscriptions/discounts)
-final class Discount {const Discount({this.checkoutSession, this.customer, this.customerAccount, this.end, required this.id, this.invoice, this.invoiceItem, required this.object, this.promotionCode, required this.source, required this.start, this.subscription, this.subscriptionItem, });
+@immutable final class Discount {const Discount({required this.id, required this.object, required this.source, required this.start, this.checkoutSession, this.customer, this.customerAccount, this.end, this.invoice, this.invoiceItem, this.promotionCode, this.subscription, this.subscriptionItem, });
 
 factory Discount.fromJson(Map<String, dynamic> json) { return Discount(
   checkoutSession: json['checkout_session'] as String?,

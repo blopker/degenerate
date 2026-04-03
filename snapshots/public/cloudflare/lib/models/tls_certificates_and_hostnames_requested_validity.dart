@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The number of days for which the certificate should be valid.
-final class TlsCertificatesAndHostnamesRequestedValidity {const TlsCertificatesAndHostnamesRequestedValidity._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The number of days for which the certificate should be valid.
+@immutable final class TlsCertificatesAndHostnamesRequestedValidity {const TlsCertificatesAndHostnamesRequestedValidity._(this.value);
 
 factory TlsCertificatesAndHostnamesRequestedValidity.fromJson(double json) { return switch (json) {
   7 => $7,

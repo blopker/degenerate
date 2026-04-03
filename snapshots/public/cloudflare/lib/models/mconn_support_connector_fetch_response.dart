@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mconn_support_connector.dart';final class MconnSupportConnectorFetchResponse {const MconnSupportConnectorFetchResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_support_connector.dart';@immutable final class MconnSupportConnectorFetchResponse {const MconnSupportConnectorFetchResponse({this.result});
 
 factory MconnSupportConnectorFetchResponse.fromJson(Map<String, dynamic> json) { return MconnSupportConnectorFetchResponse(
   result: json['result'] != null ? MconnSupportConnector.fromJson(json['result'] as Map<String, dynamic>) : null,

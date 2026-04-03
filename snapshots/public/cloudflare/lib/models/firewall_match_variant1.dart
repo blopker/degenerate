@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_match_variant1_headers.dart';import 'firewall_match_variant1_request.dart';import 'firewall_match_variant1_response.dart';final class FirewallMatchVariant1 {const FirewallMatchVariant1({this.headers, this.request, this.response, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_match_variant1_headers.dart';import 'firewall_match_variant1_request.dart';import 'firewall_match_variant1_response.dart';@immutable final class FirewallMatchVariant1 {const FirewallMatchVariant1({this.headers, this.request, this.response, });
 
 factory FirewallMatchVariant1.fromJson(Map<String, dynamic> json) { return FirewallMatchVariant1(
   headers: (json['headers'] as List<dynamic>?)?.map((e) => FirewallMatchVariant1Headers.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'wor_describe_workflow_instance_response_result_steps_step_attempts_error.dart';final class WorDescribeWorkflowInstanceResponseResultStepsStepAttempts {const WorDescribeWorkflowInstanceResponseResultStepsStepAttempts({required this.end, required this.error, required this.start, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_steps_step_attempts_error.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStepsStepAttempts {const WorDescribeWorkflowInstanceResponseResultStepsStepAttempts({required this.end, required this.error, required this.start, required this.success, });
 
 factory WorDescribeWorkflowInstanceResponseResultStepsStepAttempts.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultStepsStepAttempts(
   end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,

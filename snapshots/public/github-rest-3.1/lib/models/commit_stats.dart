@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CommitStats {const CommitStats({this.additions, this.deletions, this.total, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CommitStats {const CommitStats({this.additions, this.deletions, this.total, });
 
 factory CommitStats.fromJson(Map<String, dynamic> json) { return CommitStats(
   additions: json['additions'] != null ? (json['additions'] as num).toInt() : null,

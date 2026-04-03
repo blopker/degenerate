@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Filters the returned cookies that match the specified same_site attribute
-final class PageShieldListCookiesSameSite {const PageShieldListCookiesSameSite._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters the returned cookies that match the specified same_site attribute
+@immutable final class PageShieldListCookiesSameSite {const PageShieldListCookiesSameSite._(this.value);
 
 factory PageShieldListCookiesSameSite.fromJson(String json) { return switch (json) {
   'lax' => lax,

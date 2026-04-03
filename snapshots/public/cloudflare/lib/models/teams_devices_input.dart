@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'input_request.dart';import 'teams_devices_access_serial_number_list_input_request.dart';import 'teams_devices_antivirus_input_request.dart';import 'teams_devices_application_input_request.dart';import 'teams_devices_carbonblack_input_request.dart';import 'teams_devices_client_certificate_input_request.dart';import 'teams_devices_crowdstrike_input_request.dart';import 'teams_devices_custom_s2s_input_request.dart';import 'teams_devices_disk_encryption_input_request.dart';import 'teams_devices_domain_joined_input_request.dart';import 'teams_devices_file_input_request.dart';import 'teams_devices_firewall_input_request.dart';import 'teams_devices_intune_input_request.dart';import 'teams_devices_kolide_input_request.dart';import 'teams_devices_os_version_input_request.dart';import 'teams_devices_sentinelone_input_request.dart';import 'teams_devices_sentinelone_s2s_input_request.dart';import 'teams_devices_tanium_input_request.dart';import 'teams_devices_unique_client_id_input_request.dart';import 'teams_devices_workspace_one_input_request.dart';/// A value that is one of: `TeamsDevicesFileInputRequest`, `TeamsDevicesUniqueClientIdInputRequest`, `TeamsDevicesDomainJoinedInputRequest`, `TeamsDevicesOsVersionInputRequest`, `TeamsDevicesFirewallInputRequest`, `TeamsDevicesSentineloneInputRequest`, `TeamsDevicesCarbonblackInputRequest`, `TeamsDevicesAccessSerialNumberListInputRequest`, `TeamsDevicesDiskEncryptionInputRequest`, `TeamsDevicesApplicationInputRequest`, `TeamsDevicesClientCertificateInputRequest`, `InputRequest`, `TeamsDevicesAntivirusInputRequest`, `TeamsDevicesWorkspaceOneInputRequest`, `TeamsDevicesCrowdstrikeInputRequest`, `TeamsDevicesIntuneInputRequest`, `TeamsDevicesKolideInputRequest`, `TeamsDevicesTaniumInputRequest`, `TeamsDevicesSentineloneS2sInputRequest`, `TeamsDevicesCustomS2sInputRequest`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_request.dart';import 'teams_devices_access_serial_number_list_input_request.dart';import 'teams_devices_antivirus_input_request.dart';import 'teams_devices_application_input_request.dart';import 'teams_devices_carbonblack_input_request.dart';import 'teams_devices_client_certificate_input_request.dart';import 'teams_devices_crowdstrike_input_request.dart';import 'teams_devices_custom_s2s_input_request.dart';import 'teams_devices_disk_encryption_input_request.dart';import 'teams_devices_domain_joined_input_request.dart';import 'teams_devices_file_input_request.dart';import 'teams_devices_firewall_input_request.dart';import 'teams_devices_intune_input_request.dart';import 'teams_devices_kolide_input_request.dart';import 'teams_devices_os_version_input_request.dart';import 'teams_devices_sentinelone_input_request.dart';import 'teams_devices_sentinelone_s2s_input_request.dart';import 'teams_devices_tanium_input_request.dart';import 'teams_devices_unique_client_id_input_request.dart';import 'teams_devices_workspace_one_input_request.dart';/// A value that is one of: `TeamsDevicesFileInputRequest`, `TeamsDevicesUniqueClientIdInputRequest`, `TeamsDevicesDomainJoinedInputRequest`, `TeamsDevicesOsVersionInputRequest`, `TeamsDevicesFirewallInputRequest`, `TeamsDevicesSentineloneInputRequest`, `TeamsDevicesCarbonblackInputRequest`, `TeamsDevicesAccessSerialNumberListInputRequest`, `TeamsDevicesDiskEncryptionInputRequest`, `TeamsDevicesApplicationInputRequest`, `TeamsDevicesClientCertificateInputRequest`, `InputRequest`, `TeamsDevicesAntivirusInputRequest`, `TeamsDevicesWorkspaceOneInputRequest`, `TeamsDevicesCrowdstrikeInputRequest`, `TeamsDevicesIntuneInputRequest`, `TeamsDevicesKolideInputRequest`, `TeamsDevicesTaniumInputRequest`, `TeamsDevicesSentineloneS2sInputRequest`, `TeamsDevicesCustomS2sInputRequest`.
 sealed class TeamsDevicesInput {const TeamsDevicesInput();
 
 factory TeamsDevicesInput.fromJson(Map<String, dynamic> json) {   if (TeamsDevicesFileInputRequest.canParse(json)) {
@@ -69,7 +69,7 @@ factory TeamsDevicesInput.fromJson(Map<String, dynamic> json) {   if (TeamsDevic
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class TeamsDevicesInputTeamsDevicesFileInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesFileInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesFileInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesFileInputRequest(this._value);
 
 final TeamsDevicesFileInputRequest _value;
 
@@ -79,7 +79,7 @@ final TeamsDevicesFileInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesFileInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesUniqueClientIdInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesUniqueClientIdInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesUniqueClientIdInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesUniqueClientIdInputRequest(this._value);
 
 final TeamsDevicesUniqueClientIdInputRequest _value;
 
@@ -89,7 +89,7 @@ final TeamsDevicesUniqueClientIdInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesUniqueClientIdInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesDomainJoinedInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesDomainJoinedInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesDomainJoinedInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesDomainJoinedInputRequest(this._value);
 
 final TeamsDevicesDomainJoinedInputRequest _value;
 
@@ -99,7 +99,7 @@ final TeamsDevicesDomainJoinedInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesDomainJoinedInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesOsVersionInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesOsVersionInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesOsVersionInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesOsVersionInputRequest(this._value);
 
 final TeamsDevicesOsVersionInputRequest _value;
 
@@ -109,7 +109,7 @@ final TeamsDevicesOsVersionInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesOsVersionInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesFirewallInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesFirewallInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesFirewallInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesFirewallInputRequest(this._value);
 
 final TeamsDevicesFirewallInputRequest _value;
 
@@ -119,7 +119,7 @@ final TeamsDevicesFirewallInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesFirewallInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesSentineloneInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesSentineloneInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesSentineloneInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesSentineloneInputRequest(this._value);
 
 final TeamsDevicesSentineloneInputRequest _value;
 
@@ -129,7 +129,7 @@ final TeamsDevicesSentineloneInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesSentineloneInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesCarbonblackInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesCarbonblackInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesCarbonblackInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesCarbonblackInputRequest(this._value);
 
 final TeamsDevicesCarbonblackInputRequest _value;
 
@@ -139,7 +139,7 @@ final TeamsDevicesCarbonblackInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesCarbonblackInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesAccessSerialNumberListInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesAccessSerialNumberListInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesAccessSerialNumberListInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesAccessSerialNumberListInputRequest(this._value);
 
 final TeamsDevicesAccessSerialNumberListInputRequest _value;
 
@@ -149,7 +149,7 @@ final TeamsDevicesAccessSerialNumberListInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesAccessSerialNumberListInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesDiskEncryptionInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesDiskEncryptionInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesDiskEncryptionInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesDiskEncryptionInputRequest(this._value);
 
 final TeamsDevicesDiskEncryptionInputRequest _value;
 
@@ -159,7 +159,7 @@ final TeamsDevicesDiskEncryptionInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesDiskEncryptionInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesApplicationInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesApplicationInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesApplicationInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesApplicationInputRequest(this._value);
 
 final TeamsDevicesApplicationInputRequest _value;
 
@@ -169,7 +169,7 @@ final TeamsDevicesApplicationInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesApplicationInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesClientCertificateInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesClientCertificateInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesClientCertificateInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesClientCertificateInputRequest(this._value);
 
 final TeamsDevicesClientCertificateInputRequest _value;
 
@@ -179,7 +179,7 @@ final TeamsDevicesClientCertificateInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesClientCertificateInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputInputRequest extends TeamsDevicesInput {const TeamsDevicesInputInputRequest(this._value);
+@immutable final class TeamsDevicesInputInputRequest extends TeamsDevicesInput {const TeamsDevicesInputInputRequest(this._value);
 
 final InputRequest _value;
 
@@ -189,7 +189,7 @@ final InputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.inputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesAntivirusInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesAntivirusInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesAntivirusInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesAntivirusInputRequest(this._value);
 
 final TeamsDevicesAntivirusInputRequest _value;
 
@@ -199,7 +199,7 @@ final TeamsDevicesAntivirusInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesAntivirusInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesWorkspaceOneInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesWorkspaceOneInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesWorkspaceOneInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesWorkspaceOneInputRequest(this._value);
 
 final TeamsDevicesWorkspaceOneInputRequest _value;
 
@@ -209,7 +209,7 @@ final TeamsDevicesWorkspaceOneInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesWorkspaceOneInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesCrowdstrikeInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesCrowdstrikeInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesCrowdstrikeInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesCrowdstrikeInputRequest(this._value);
 
 final TeamsDevicesCrowdstrikeInputRequest _value;
 
@@ -219,7 +219,7 @@ final TeamsDevicesCrowdstrikeInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesCrowdstrikeInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesIntuneInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesIntuneInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesIntuneInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesIntuneInputRequest(this._value);
 
 final TeamsDevicesIntuneInputRequest _value;
 
@@ -229,7 +229,7 @@ final TeamsDevicesIntuneInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesIntuneInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesKolideInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesKolideInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesKolideInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesKolideInputRequest(this._value);
 
 final TeamsDevicesKolideInputRequest _value;
 
@@ -239,7 +239,7 @@ final TeamsDevicesKolideInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesKolideInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesTaniumInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesTaniumInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesTaniumInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesTaniumInputRequest(this._value);
 
 final TeamsDevicesTaniumInputRequest _value;
 
@@ -249,7 +249,7 @@ final TeamsDevicesTaniumInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesTaniumInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesSentineloneS2sInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesSentineloneS2sInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesSentineloneS2sInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesSentineloneS2sInputRequest(this._value);
 
 final TeamsDevicesSentineloneS2sInputRequest _value;
 
@@ -259,7 +259,7 @@ final TeamsDevicesSentineloneS2sInputRequest _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesSentineloneS2sInputRequest($_value)'; } 
  }
-final class TeamsDevicesInputTeamsDevicesCustomS2sInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesCustomS2sInputRequest(this._value);
+@immutable final class TeamsDevicesInputTeamsDevicesCustomS2sInputRequest extends TeamsDevicesInput {const TeamsDevicesInputTeamsDevicesCustomS2sInputRequest(this._value);
 
 final TeamsDevicesCustomS2sInputRequest _value;
 
@@ -270,7 +270,7 @@ final TeamsDevicesCustomS2sInputRequest _value;
 @override String toString() { return 'TeamsDevicesInput.teamsDevicesCustomS2sInputRequest($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
-final class TeamsDevicesInput$Unknown extends TeamsDevicesInput {const TeamsDevicesInput$Unknown(this._value);
+@immutable final class TeamsDevicesInput$Unknown extends TeamsDevicesInput {const TeamsDevicesInput$Unknown(this._value);
 
 final dynamic _value;
 

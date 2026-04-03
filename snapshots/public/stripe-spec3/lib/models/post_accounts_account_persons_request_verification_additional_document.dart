@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostAccountsAccountPersonsRequestVerificationAdditionalDocument {const PostAccountsAccountPersonsRequestVerificationAdditionalDocument({this.back, this.front, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAccountsAccountPersonsRequestVerificationAdditionalDocument {const PostAccountsAccountPersonsRequestVerificationAdditionalDocument({this.back, this.front, });
 
 factory PostAccountsAccountPersonsRequestVerificationAdditionalDocument.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsRequestVerificationAdditionalDocument(
   back: json['back'] as String?,

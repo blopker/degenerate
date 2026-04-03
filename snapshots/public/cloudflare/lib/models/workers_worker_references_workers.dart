@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersWorkerReferencesWorkers {const WorkersWorkerReferencesWorkers({required this.id, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersWorkerReferencesWorkers {const WorkersWorkerReferencesWorkers({required this.id, required this.name, });
 
 factory WorkersWorkerReferencesWorkers.fromJson(Map<String, dynamic> json) { return WorkersWorkerReferencesWorkers(
   id: json['id'] as String,

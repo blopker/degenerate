@@ -8,7 +8,7 @@ bool toJson() => value;
 
 }
 /// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
-final class TunnelCfdTunnel {const TunnelCfdTunnel({this.accountTag, this.configSrc, this.connections, this.connsActiveAt, this.connsInactiveAt, this.createdAt, this.deletedAt, this.id, this.metadata, this.name, this.remoteConfig, this.status, this.tunType, });
+@immutable final class TunnelCfdTunnel {const TunnelCfdTunnel({this.accountTag, this.configSrc, this.connections, this.connsActiveAt, this.connsInactiveAt, this.createdAt, this.deletedAt, this.id, this.metadata, this.name, this.remoteConfig, this.status, this.tunType, });
 
 factory TunnelCfdTunnel.fromJson(Map<String, dynamic> json) { return TunnelCfdTunnel(
   accountTag: json['account_tag'] != null ? TunnelAccountId.fromJson(json['account_tag'] as String) : null,
@@ -19,7 +19,7 @@ factory TunnelCfdTunnel.fromJson(Map<String, dynamic> json) { return TunnelCfdTu
   createdAt: json['created_at'] != null ? TunnelCreatedAt.fromJson(json['created_at'] as String) : null,
   deletedAt: json['deleted_at'] != null ? TunnelDeletedAt.fromJson(json['deleted_at'] as String) : null,
   id: json['id'] != null ? TunnelTunnelId.fromJson(json['id'] as String) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   name: json['name'] != null ? TunnelTunnelName.fromJson(json['name'] as String) : null,
   remoteConfig: json['remote_config'] != null ? TunnelRemoteConfig.fromJson(json['remote_config'] as bool) : null,
   status: json['status'] != null ? TunnelStatus.fromJson(json['status'] as String) : null,

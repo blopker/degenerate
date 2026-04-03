@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'waitingroom_preview_response_result.dart';final class WaitingroomPreviewResponse {const WaitingroomPreviewResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_preview_response_result.dart';@immutable final class WaitingroomPreviewResponse {const WaitingroomPreviewResponse({this.result});
 
 factory WaitingroomPreviewResponse.fromJson(Map<String, dynamic> json) { return WaitingroomPreviewResponse(
   result: json['result'] != null ? WaitingroomPreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

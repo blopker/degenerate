@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A tool available on an MCP server.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A tool available on an MCP server.
 /// 
-final class McpListToolsTool {const McpListToolsTool({required this.name, this.description, required this.inputSchema, this.annotations, });
+@immutable final class McpListToolsTool {const McpListToolsTool({required this.name, required this.inputSchema, this.description, this.annotations, });
 
 factory McpListToolsTool.fromJson(Map<String, dynamic> json) { return McpListToolsTool(
   name: json['name'] as String,
   description: json['description'] as String?,
-  inputSchema: (json['input_schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
-  annotations: (json['annotations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  inputSchema: json['input_schema'] as Map<String, dynamic>,
+  annotations: json['annotations'] as Map<String, dynamic>?,
 ); }
 
 /// The name of the tool.

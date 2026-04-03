@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_onramp_cloud_type.dart';import 'mcn_onramp_type.dart';import 'mcn_provider_id.dart';import 'mcn_resource_id.dart';final class McnCreateOnrampRequest {const McnCreateOnrampRequest({this.adoptedHubId, this.attachedHubs, this.attachedVpcs, this.cloudAsn, required this.cloudType, this.description, required this.dynamicRouting, this.hubProviderId, required this.installRoutesInCloud, required this.installRoutesInMagicWan, this.manageHubToHubAttachments, this.manageVpcToHubAttachments, required this.name, this.region, required this.type, this.vpc, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_onramp_cloud_type.dart';import 'mcn_onramp_type.dart';import 'mcn_provider_id.dart';import 'mcn_resource_id.dart';@immutable final class McnCreateOnrampRequest {const McnCreateOnrampRequest({required this.cloudType, required this.dynamicRouting, required this.installRoutesInCloud, required this.installRoutesInMagicWan, required this.name, required this.type, this.adoptedHubId, this.attachedHubs, this.attachedVpcs, this.cloudAsn, this.description, this.hubProviderId, this.manageHubToHubAttachments, this.manageVpcToHubAttachments, this.region, this.vpc, });
 
 factory McnCreateOnrampRequest.fromJson(Map<String, dynamic> json) { return McnCreateOnrampRequest(
   adoptedHubId: json['adopted_hub_id'] != null ? McnResourceId.fromJson(json['adopted_hub_id'] as String) : null,

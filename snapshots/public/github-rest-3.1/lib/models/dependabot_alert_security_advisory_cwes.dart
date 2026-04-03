@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// A CWE weakness assigned to the advisory.
-final class DependabotAlertSecurityAdvisoryCwes {const DependabotAlertSecurityAdvisoryCwes({required this.cweId, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A CWE weakness assigned to the advisory.
+@immutable final class DependabotAlertSecurityAdvisoryCwes {const DependabotAlertSecurityAdvisoryCwes({required this.cweId, required this.name, });
 
 factory DependabotAlertSecurityAdvisoryCwes.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisoryCwes(
   cweId: json['cwe_id'] as String,

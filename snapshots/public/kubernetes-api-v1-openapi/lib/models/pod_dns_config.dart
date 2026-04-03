@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pod_dns_config_option.dart';/// PodDNSConfig defines the DNS parameters of a pod in addition to those generated from DNSPolicy.
-final class PodDnsConfig {const PodDnsConfig({this.nameservers, this.options, this.searches, });
+@immutable final class PodDnsConfig {const PodDnsConfig({this.nameservers, this.options, this.searches, });
 
 factory PodDnsConfig.fromJson(Map<String, dynamic> json) { return PodDnsConfig(
   nameservers: (json['nameservers'] as List<dynamic>?)?.map((e) => e as String).toList(),

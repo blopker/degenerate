@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// You can use `run_url` to track the status of the run. This includes a property status and conclusion.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// You can use `run_url` to track the status of the run. This includes a property status and conclusion.
 /// You should not rely on this always being an actions workflow run object.
-final class CodeScanningDefaultSetupUpdateResponse {const CodeScanningDefaultSetupUpdateResponse({this.runId, this.runUrl, });
+@immutable final class CodeScanningDefaultSetupUpdateResponse {const CodeScanningDefaultSetupUpdateResponse({this.runId, this.runUrl, });
 
 factory CodeScanningDefaultSetupUpdateResponse.fromJson(Map<String, dynamic> json) { return CodeScanningDefaultSetupUpdateResponse(
   runId: json['run_id'] != null ? (json['run_id'] as num).toInt() : null,

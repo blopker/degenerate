@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReposUpdateReleaseAssetRequest {const ReposUpdateReleaseAssetRequest({this.name, this.label, this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposUpdateReleaseAssetRequest {const ReposUpdateReleaseAssetRequest({this.name, this.label, this.state, });
 
 factory ReposUpdateReleaseAssetRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateReleaseAssetRequest(
   name: json['name'] as String?,

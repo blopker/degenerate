@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Push protection setting to set for the pattern.
-final class SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettingsPushProtectionSetting {const SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettingsPushProtectionSetting._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Push protection setting to set for the pattern.
+@immutable final class SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettingsPushProtectionSetting {const SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettingsPushProtectionSetting._(this.value);
 
 factory SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettingsPushProtectionSetting.fromJson(String json) { return switch (json) {
   'not-set' => notSet,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettingsPushProtectionSetting($value)'; } 
  }
-final class SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettings {const SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettings({this.tokenType, this.pushProtectionSetting, });
+@immutable final class SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettings {const SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettings({this.tokenType, this.pushProtectionSetting, });
 
 factory SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettings.fromJson(Map<String, dynamic> json) { return SecretScanningUpdateOrgPatternConfigsRequestProviderPatternSettings(
   tokenType: json['token_type'] as String?,

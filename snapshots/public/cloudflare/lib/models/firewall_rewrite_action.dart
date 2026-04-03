@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The WAF rule action to apply.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The WAF rule action to apply.
 extension type FirewallWafRewriteAction(dynamic value) {
 factory FirewallWafRewriteAction.fromJson(dynamic json) => FirewallWafRewriteAction(json);
 
@@ -8,7 +8,7 @@ dynamic toJson() => value;
 
 }
 /// Specifies that, when a WAF rule matches, its configured action will be replaced by the action configured in this object.
-final class FirewallRewriteAction {const FirewallRewriteAction({this.block, this.challenge, this.$default, this.disable, this.simulate, });
+@immutable final class FirewallRewriteAction {const FirewallRewriteAction({this.block, this.challenge, this.$default, this.disable, this.simulate, });
 
 factory FirewallRewriteAction.fromJson(Map<String, dynamic> json) { return FirewallRewriteAction(
   block: json['block'] != null ? FirewallWafRewriteAction.fromJson(json['block'] as dynamic) : null,

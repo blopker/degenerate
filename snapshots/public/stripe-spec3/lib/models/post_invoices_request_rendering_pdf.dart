@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostInvoicesRequestRenderingPdfPageSize {const PostInvoicesRequestRenderingPdfPageSize._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostInvoicesRequestRenderingPdfPageSize {const PostInvoicesRequestRenderingPdfPageSize._(this.value);
 
 factory PostInvoicesRequestRenderingPdfPageSize.fromJson(String json) { return switch (json) {
   'a4' => a4,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesRequestRenderingPdfPageSize($value)'; } 
  }
-final class PostInvoicesRequestRenderingPdf {const PostInvoicesRequestRenderingPdf({this.pageSize});
+@immutable final class PostInvoicesRequestRenderingPdf {const PostInvoicesRequestRenderingPdf({this.pageSize});
 
 factory PostInvoicesRequestRenderingPdf.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestRenderingPdf(
   pageSize: json['page_size'] != null ? PostInvoicesRequestRenderingPdfPageSize.fromJson(json['page_size'] as String) : null,

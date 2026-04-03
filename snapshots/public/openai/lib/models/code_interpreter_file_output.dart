@@ -2,7 +2,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_interpreter_file_output_files.dart';/// The type of the code interpreter file output. Always `files`.
 /// 
-final class CodeInterpreterFileOutputType {const CodeInterpreterFileOutputType._(this.value);
+@immutable final class CodeInterpreterFileOutputType {const CodeInterpreterFileOutputType._(this.value);
 
 factory CodeInterpreterFileOutputType.fromJson(String json) { return switch (json) {
   'files' => files,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The output of a code interpreter tool call that is a file.
 /// 
-final class CodeInterpreterFileOutput {const CodeInterpreterFileOutput({required this.type, required this.files, });
+@immutable final class CodeInterpreterFileOutput {const CodeInterpreterFileOutput({required this.type, required this.files, });
 
 factory CodeInterpreterFileOutput.fromJson(Map<String, dynamic> json) { return CodeInterpreterFileOutput(
   type: CodeInterpreterFileOutputType.fromJson(json['type'] as String),

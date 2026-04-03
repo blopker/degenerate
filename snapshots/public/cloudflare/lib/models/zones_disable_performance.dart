@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Turn off
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn off
 /// [Rocket Loader](https://developers.cloudflare.com/speed/optimization/content/rocket-loader/), and
 /// [Polish](https://developers.cloudflare.com/images/polish/).
 /// 
-final class ZonesDisablePerformanceId {const ZonesDisablePerformanceId._(this.value);
+@immutable final class ZonesDisablePerformanceId {const ZonesDisablePerformanceId._(this.value);
 
 factory ZonesDisablePerformanceId.fromJson(String json) { return switch (json) {
   'disable_performance' => disablePerformance,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesDisablePerformanceId($value)'; } 
  }
-final class ZonesDisablePerformance {const ZonesDisablePerformance({this.id});
+@immutable final class ZonesDisablePerformance {const ZonesDisablePerformance({this.id});
 
 factory ZonesDisablePerformance.fromJson(Map<String, dynamic> json) { return ZonesDisablePerformance(
   id: json['id'] != null ? ZonesDisablePerformanceId.fromJson(json['id'] as String) : null,

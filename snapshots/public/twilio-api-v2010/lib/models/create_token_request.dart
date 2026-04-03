@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class CreateTokenRequest {const CreateTokenRequest({this.ttl});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateTokenRequest {const CreateTokenRequest({this.ttl});
 
 factory CreateTokenRequest.fromJson(Map<String, dynamic> json) { return CreateTokenRequest(
   ttl: json['Ttl'] != null ? (json['Ttl'] as num).toInt() : null,

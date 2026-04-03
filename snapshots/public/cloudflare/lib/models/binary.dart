@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class BinaryType {const BinaryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BinaryType {const BinaryType._(this.value);
 
 factory BinaryType.fromJson(String json) { return switch (json) {
   'binary' => binary,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BinaryType($value)'; } 
  }
-final class Binary {const Binary({required this.type});
+@immutable final class Binary {const Binary({required this.type});
 
 factory Binary.fromJson(Map<String, dynamic> json) { return Binary(
   type: BinaryType.fromJson(json['type'] as String),

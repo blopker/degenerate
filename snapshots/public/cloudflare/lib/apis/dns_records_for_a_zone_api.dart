@@ -13,7 +13,7 @@ final class DnsRecordsForAZoneApi with ApiExecutor {const DnsRecordsForAZoneApi(
 /// List, search, sort, and filter a zones' DNS records.
 ///
 /// `GET /zones/{zone_id}/dns_records`
-Future<ApiResult<List<Map<String, dynamic>>?, Never>> dnsRecordsForAZoneListDnsRecords({required DnsRecordsIdentifier zoneId, String? name, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, DnsRecordsType? type, String? content, String? contentExact, String? contentContains, String? contentStartswith, String? contentEndswith, DnsRecordsProxied? proxied, DnsRecordsMatch? match, String? comment, String? commentPresent, String? commentAbsent, String? commentExact, String? commentContains, String? commentStartswith, String? commentEndswith, String? tag, String? tagPresent, String? tagAbsent, String? tagExact, String? tagContains, String? tagStartswith, String? tagEndswith, DnsRecordsSearch? search, DnsRecordsTagMatch? tagMatch, DnsRecordsPage? page, DnsRecordsPerPage? perPage, DnsRecordsOrder? order, DnsRecordsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Map<String, dynamic>>?, Never>> dnsRecordsForAZoneListDnsRecords({required DnsRecordsIdentifier zoneId, String? contentEndswith, String? nameExact, String? nameContains, String? nameStartswith, String? nameEndswith, DnsRecordsType? type, String? content, String? contentExact, String? contentContains, String? contentStartswith, String? name, DnsRecordsProxied? proxied, DnsRecordsMatch? match, String? comment, String? commentPresent, String? commentAbsent, String? commentExact, String? commentContains, String? commentStartswith, String? commentEndswith, DnsRecordsDirection? direction, String? tagPresent, String? tagAbsent, String? tagExact, String? tagContains, String? tagStartswith, String? tagEndswith, DnsRecordsSearch? search, DnsRecordsTagMatch? tagMatch, DnsRecordsPage? page, DnsRecordsPerPage? perPage, DnsRecordsOrder? order, String? tag, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -130,7 +130,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList();
   },
 );
  } 
@@ -161,7 +161,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -181,7 +181,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -212,7 +212,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -243,7 +243,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v));
+    return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -372,7 +372,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList();
   },
 );
  } 

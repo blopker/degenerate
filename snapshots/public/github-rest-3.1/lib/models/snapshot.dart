@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'manifest.dart';import 'snapshot_detector.dart';import 'snapshot_job.dart';/// Create a new snapshot of a repository's dependencies.
-final class Snapshot {const Snapshot({required this.version, required this.job, required this.sha, required this.ref, required this.detector, this.metadata, this.manifests, required this.scanned, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'manifest.dart';import 'snapshot_detector.dart';import 'snapshot_job.dart';/// Create a new snapshot of a repository's dependencies.
+@immutable final class Snapshot {const Snapshot({required this.version, required this.job, required this.sha, required this.ref, required this.detector, required this.scanned, this.metadata, this.manifests, });
 
 factory Snapshot.fromJson(Map<String, dynamic> json) { return Snapshot(
   version: (json['version'] as num).toInt(),
@@ -9,7 +9,7 @@ factory Snapshot.fromJson(Map<String, dynamic> json) { return Snapshot(
   sha: json['sha'] as String,
   ref: json['ref'] as String,
   detector: SnapshotDetector.fromJson(json['detector'] as Map<String, dynamic>),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: json['metadata'] as Map<String, dynamic>?,
   manifests: (json['manifests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, Manifest.fromJson(v as Map<String, dynamic>))),
   scanned: DateTime.parse(json['scanned'] as String),
 ); }

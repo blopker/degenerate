@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'load_balancing_health_details_result_pop_health.dart';/// A list of regions from which to run health checks. Null means every Cloudflare data center.
-final class LoadBalancingHealthDetailsResult {const LoadBalancingHealthDetailsResult({this.poolId, this.popHealth, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_health_details_result_pop_health.dart';/// A list of regions from which to run health checks. Null means every Cloudflare data center.
+@immutable final class LoadBalancingHealthDetailsResult {const LoadBalancingHealthDetailsResult({this.poolId, this.popHealth, });
 
 factory LoadBalancingHealthDetailsResult.fromJson(Map<String, dynamic> json) { return LoadBalancingHealthDetailsResult(
   poolId: json['pool_id'] as String?,

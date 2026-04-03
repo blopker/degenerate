@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'port.dart';final class GetGetOpenPortsResponseResult {const GetGetOpenPortsResponseResult({required this.$1111});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'port.dart';@immutable final class GetGetOpenPortsResponseResult {const GetGetOpenPortsResponseResult({required this.$1111});
 
 factory GetGetOpenPortsResponseResult.fromJson(Map<String, dynamic> json) { return GetGetOpenPortsResponseResult(
   $1111: (json['1.1.1.1'] as List<dynamic>).map((e) => Port.fromJson(e as Map<String, dynamic>)).toList(),

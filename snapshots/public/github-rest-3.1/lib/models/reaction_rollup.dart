@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ReactionRollup {const ReactionRollup({required this.url, required this.totalCount, required this.plus1, required this.minus1, required this.laugh, required this.confused, required this.heart, required this.hooray, required this.eyes, required this.rocket, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReactionRollup {const ReactionRollup({required this.url, required this.totalCount, required this.plus1, required this.minus1, required this.laugh, required this.confused, required this.heart, required this.hooray, required this.eyes, required this.rocket, });
 
 factory ReactionRollup.fromJson(Map<String, dynamic> json) { return ReactionRollup(
   url: Uri.parse(json['url'] as String),

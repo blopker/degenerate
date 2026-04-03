@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TelemetryQueryResponse500ErrorsMessage {const TelemetryQueryResponse500ErrorsMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TelemetryQueryResponse500ErrorsMessage {const TelemetryQueryResponse500ErrorsMessage._(this.value);
 
 factory TelemetryQueryResponse500ErrorsMessage.fromJson(String json) { return switch (json) {
   'Internal error' => internalError,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TelemetryQueryResponse500ErrorsMessage($value)'; } 
  }
-final class TelemetryQueryResponse500Errors {const TelemetryQueryResponse500Errors({this.detail, required this.message, });
+@immutable final class TelemetryQueryResponse500Errors {const TelemetryQueryResponse500Errors({required this.message, this.detail, });
 
 factory TelemetryQueryResponse500Errors.fromJson(Map<String, dynamic> json) { return TelemetryQueryResponse500Errors(
   detail: json['detail'] as String?,

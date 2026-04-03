@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_name.dart';import 'stream_opacity.dart';import 'stream_padding.dart';import 'stream_position.dart';import 'stream_scale.dart';final class StreamWatermarkBasicUpload {const StreamWatermarkBasicUpload({required this.file, this.name, this.opacity, this.padding, this.position, this.scale, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_name.dart';import 'stream_opacity.dart';import 'stream_padding.dart';import 'stream_position.dart';import 'stream_scale.dart';@immutable final class StreamWatermarkBasicUpload {const StreamWatermarkBasicUpload({required this.file, this.name, this.opacity, this.padding, this.position, this.scale, });
 
 factory StreamWatermarkBasicUpload.fromJson(Map<String, dynamic> json) { return StreamWatermarkBasicUpload(
   file: json['file'] as String,

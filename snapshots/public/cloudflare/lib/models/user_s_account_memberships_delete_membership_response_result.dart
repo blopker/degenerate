@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_membership_components_schemas_identifier.dart';final class UserSAccountMembershipsDeleteMembershipResponseResult {const UserSAccountMembershipsDeleteMembershipResponseResult({this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_membership_components_schemas_identifier.dart';@immutable final class UserSAccountMembershipsDeleteMembershipResponseResult {const UserSAccountMembershipsDeleteMembershipResponseResult({this.id});
 
 factory UserSAccountMembershipsDeleteMembershipResponseResult.fromJson(Map<String, dynamic> json) { return UserSAccountMembershipsDeleteMembershipResponseResult(
   id: json['id'] != null ? IamMembershipComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,

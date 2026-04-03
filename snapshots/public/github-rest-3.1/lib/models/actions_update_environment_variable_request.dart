@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsUpdateEnvironmentVariableRequest {const ActionsUpdateEnvironmentVariableRequest({this.name, this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsUpdateEnvironmentVariableRequest {const ActionsUpdateEnvironmentVariableRequest({this.name, this.value, });
 
 factory ActionsUpdateEnvironmentVariableRequest.fromJson(Map<String, dynamic> json) { return ActionsUpdateEnvironmentVariableRequest(
   name: json['name'] as String?,

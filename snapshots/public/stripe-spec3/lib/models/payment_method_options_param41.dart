@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PaymentMethodOptionsParam41CaptureMethod {const PaymentMethodOptionsParam41CaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentMethodOptionsParam41CaptureMethod {const PaymentMethodOptionsParam41CaptureMethod._(this.value);
 
 factory PaymentMethodOptionsParam41CaptureMethod.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam41CaptureMethod($value)'; } 
  }
-final class PaymentMethodOptionsParam41 {const PaymentMethodOptionsParam41({this.captureMethod});
+@immutable final class PaymentMethodOptionsParam41 {const PaymentMethodOptionsParam41({this.captureMethod});
 
 factory PaymentMethodOptionsParam41.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam41(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParam41CaptureMethod.fromJson(json['capture_method'] as String) : null,

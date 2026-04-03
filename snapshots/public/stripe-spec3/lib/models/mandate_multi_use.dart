@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class MandateMultiUse {const MandateMultiUse();
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class MandateMultiUse {const MandateMultiUse();
 
-factory MandateMultiUse.fromJson(Map<String, dynamic> json) { return MandateMultiUse(
-
-); }
+factory MandateMultiUse.fromJson(Map<String, dynamic> _) { return const MandateMultiUse(); }
 
 Map<String, dynamic> toJson() { return {
 
 }; } 
 static bool canParse(Map<String, dynamic> json) { return true; } 
-MandateMultiUse copyWith() { return MandateMultiUse(
+MandateMultiUse copyWith() { return const MandateMultiUse(
 
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) || other is MandateMultiUse; } 

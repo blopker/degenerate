@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Referrer Traffic
-final class ReferrerTraffic {const ReferrerTraffic({required this.referrer, required this.count, required this.uniques, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Referrer Traffic
+@immutable final class ReferrerTraffic {const ReferrerTraffic({required this.referrer, required this.count, required this.uniques, });
 
 factory ReferrerTraffic.fromJson(Map<String, dynamic> json) { return ReferrerTraffic(
   referrer: json['referrer'] as String,

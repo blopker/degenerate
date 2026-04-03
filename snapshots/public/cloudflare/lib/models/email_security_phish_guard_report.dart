@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';import 'email_security_phish_guard_report_fields.dart';import 'email_security_phish_guard_report_tag.dart';final class EmailSecurityPhishGuardReport {const EmailSecurityPhishGuardReport({required this.content, required this.createdAt, required this.disposition, required this.fields, required this.id, required this.priority, this.tags, required this.title, required this.ts, required this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';import 'email_security_phish_guard_report_fields.dart';import 'email_security_phish_guard_report_tag.dart';@immutable final class EmailSecurityPhishGuardReport {const EmailSecurityPhishGuardReport({required this.content, required this.createdAt, required this.disposition, required this.fields, required this.id, required this.priority, required this.title, required this.ts, required this.updatedAt, this.tags, });
 
 factory EmailSecurityPhishGuardReport.fromJson(Map<String, dynamic> json) { return EmailSecurityPhishGuardReport(
   content: json['content'] as String,

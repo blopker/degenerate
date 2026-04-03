@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gelato_phone_report_error.dart';/// Status of this `phone` check.
-final class GelatoPhoneReportStatus {const GelatoPhoneReportStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_phone_report_error.dart';/// Status of this `phone` check.
+@immutable final class GelatoPhoneReportStatus {const GelatoPhoneReportStatus._(this.value);
 
 factory GelatoPhoneReportStatus.fromJson(String json) { return switch (json) {
   'unverified' => unverified,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoPhoneReportStatus($value)'; } 
  }
 /// Result from a phone check
-final class GelatoPhoneReport {const GelatoPhoneReport({this.error, this.phone, required this.status, });
+@immutable final class GelatoPhoneReport {const GelatoPhoneReport({required this.status, this.error, this.phone, });
 
 factory GelatoPhoneReport.fromJson(Map<String, dynamic> json) { return GelatoPhoneReport(
   error: json['error'] != null ? GelatoPhoneReportError.fromJson(json['error'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class IssueEventDismissedReview {const IssueEventDismissedReview({required this.state, required this.reviewId, required this.dismissalMessage, this.dismissalCommitId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssueEventDismissedReview {const IssueEventDismissedReview({required this.state, required this.reviewId, required this.dismissalMessage, this.dismissalCommitId, });
 
 factory IssueEventDismissedReview.fromJson(Map<String, dynamic> json) { return IssueEventDismissedReview(
   state: json['state'] as String,

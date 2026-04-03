@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Data source for annotations.
-final class RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -95,7 +95,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
  }
 /// Event type for annotations.
-final class RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
 
 factory RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -132,7 +132,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
-final class RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotations {const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotations {const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
 
 factory RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotations(
   dataSource: RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),

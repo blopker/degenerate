@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ValidateSqlRequest {const ValidateSqlRequest({required this.sql});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ValidateSqlRequest {const ValidateSqlRequest({required this.sql});
 
 factory ValidateSqlRequest.fromJson(Map<String, dynamic> json) { return ValidateSqlRequest(
   sql: json['sql'] as String,

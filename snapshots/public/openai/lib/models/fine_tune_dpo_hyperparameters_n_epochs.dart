@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class FineTuneDpoHyperparametersNEpochsVariant1 {const FineTuneDpoHyperparametersNEpochsVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FineTuneDpoHyperparametersNEpochsVariant1 {const FineTuneDpoHyperparametersNEpochsVariant1._(this.value);
 
 factory FineTuneDpoHyperparametersNEpochsVariant1.fromJson(String json) { return switch (json) {
   'auto' => auto,

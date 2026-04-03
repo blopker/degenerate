@@ -63,7 +63,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Addresses.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     'CustomerName=${Uri.encodeQueryComponent(body.customerName)}',
     'Street=${Uri.encodeQueryComponent(body.street)}',
     'City=${Uri.encodeQueryComponent(body.city)}',
@@ -118,7 +118,7 @@ final request = ApiRequest(
   method: 'POST',
   path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Addresses/${Uri.encodeComponent(sid)}.json',
   headers: headers,
-  body: body == null ? null : [
+  body: body == null ? null : <String>[
     if (body.friendlyName case final friendlyName$?)
       'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
     if (body.customerName case final customerName$?)

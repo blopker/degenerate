@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'account_enum_status.dart';/// The type of this account. Either `Trial` or `Full` if it's been upgraded
-final class AccountEnumType {const AccountEnumType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_enum_status.dart';/// The type of this account. Either `Trial` or `Full` if it's been upgraded
+@immutable final class AccountEnumType {const AccountEnumType._(this.value);
 
 factory AccountEnumType.fromJson(String json) { return switch (json) {
   'Trial' => trial,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountEnumType($value)'; } 
  }
-final class Account {const Account({this.authToken, this.dateCreated, this.dateUpdated, this.friendlyName, this.ownerAccountSid, this.sid, this.status, this.subresourceUris, this.type, this.uri, });
+@immutable final class Account {const Account({this.authToken, this.dateCreated, this.dateUpdated, this.friendlyName, this.ownerAccountSid, this.sid, this.status, this.subresourceUris, this.type, this.uri, });
 
 factory Account.fromJson(Map<String, dynamic> json) { return Account(
   authToken: json['auth_token'] as String?,
@@ -35,7 +35,7 @@ factory Account.fromJson(Map<String, dynamic> json) { return Account(
   ownerAccountSid: json['owner_account_sid'] as String?,
   sid: json['sid'] as String?,
   status: json['status'] != null ? AccountEnumStatus.fromJson(json['status'] as String) : null,
-  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
   type: json['type'] != null ? AccountEnumType.fromJson(json['type'] as String) : null,
   uri: json['uri'] as String?,
 ); }

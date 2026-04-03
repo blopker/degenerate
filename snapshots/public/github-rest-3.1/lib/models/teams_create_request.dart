@@ -8,7 +8,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of pri
 /// **For a parent or child team:**
 ///  * `closed` - visible to all members of this organization.
 /// Default for child team: `closed`
-final class TeamsCreateRequestPrivacy {const TeamsCreateRequestPrivacy._(this.value);
+@immutable final class TeamsCreateRequestPrivacy {const TeamsCreateRequestPrivacy._(this.value);
 
 factory TeamsCreateRequestPrivacy.fromJson(String json) { return switch (json) {
   'secret' => secret,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 ///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.
 ///  * `notifications_disabled` - no one receives notifications.
 /// Default: `notifications_enabled`
-final class TeamsCreateRequestNotificationSetting {const TeamsCreateRequestNotificationSetting._(this.value);
+@immutable final class TeamsCreateRequestNotificationSetting {const TeamsCreateRequestNotificationSetting._(this.value);
 
 factory TeamsCreateRequestNotificationSetting.fromJson(String json) { return switch (json) {
   'notifications_enabled' => notificationsEnabled,
@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamsCreateRequestNotificationSetting($value)'; } 
  }
 /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
-final class TeamsCreateRequestPermission {const TeamsCreateRequestPermission._(this.value);
+@immutable final class TeamsCreateRequestPermission {const TeamsCreateRequestPermission._(this.value);
 
 factory TeamsCreateRequestPermission.fromJson(String json) { return switch (json) {
   'pull' => pull,
@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsCreateRequestPermission($value)'; } 
  }
-final class TeamsCreateRequest {const TeamsCreateRequest({required this.name, this.description, this.maintainers, this.repoNames, this.privacy, this.notificationSetting, this.permission = TeamsCreateRequestPermission.pull, this.parentTeamId, });
+@immutable final class TeamsCreateRequest {const TeamsCreateRequest({required this.name, this.description, this.maintainers, this.repoNames, this.privacy, this.notificationSetting, this.permission = TeamsCreateRequestPermission.pull, this.parentTeamId, });
 
 factory TeamsCreateRequest.fromJson(Map<String, dynamic> json) { return TeamsCreateRequest(
   name: json['name'] as String,

@@ -44,7 +44,7 @@ Future<ApiResult<Response, Never>> getResponse({required String responseId, List
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson()));
 }
 }
 if (stream != null) {
@@ -137,7 +137,7 @@ if (after != null) {
 }
 if (include != null) {
 for (final item in include) {
-  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'include', value: item.toJson()));
 }
 }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PullsCreateRequest {const PullsCreateRequest({this.title, required this.head, this.headRepo, required this.base, this.body, this.maintainerCanModify, this.draft, this.issue, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsCreateRequest {const PullsCreateRequest({required this.head, required this.base, this.title, this.headRepo, this.body, this.maintainerCanModify, this.draft, this.issue, });
 
 factory PullsCreateRequest.fromJson(Map<String, dynamic> json) { return PullsCreateRequest(
   title: json['title'] as String?,

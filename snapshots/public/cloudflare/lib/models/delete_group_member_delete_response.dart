@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class DeleteGroupMemberDeleteResponse {const DeleteGroupMemberDeleteResponse({this.message, this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteGroupMemberDeleteResponse {const DeleteGroupMemberDeleteResponse({this.message, this.success, });
 
 factory DeleteGroupMemberDeleteResponse.fromJson(Map<String, dynamic> json) { return DeleteGroupMemberDeleteResponse(
   message: json['message'] as String?,

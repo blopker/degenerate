@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_invoices_create_preview_request_schedule_details_phases_automatic_tax_liability.dart';final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax({required this.enabled, this.liability, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_schedule_details_phases_automatic_tax_liability.dart';@immutable final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax({required this.enabled, this.liability, });
 
 factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAutomaticTax(
   enabled: json['enabled'] as bool,

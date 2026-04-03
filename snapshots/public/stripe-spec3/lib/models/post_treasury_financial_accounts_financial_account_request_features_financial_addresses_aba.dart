@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba {const PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba({required this.requested});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba {const PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba({required this.requested});
 
 factory PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesFinancialAddressesAba(
   requested: json['requested'] as bool,

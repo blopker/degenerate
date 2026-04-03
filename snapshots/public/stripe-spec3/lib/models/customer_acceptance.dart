@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'offline_acceptance.dart';import 'online_acceptance.dart';/// The mandate includes the type of customer acceptance information, such as: `online` or `offline`.
-final class CustomerAcceptanceType {const CustomerAcceptanceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'offline_acceptance.dart';import 'online_acceptance.dart';/// The mandate includes the type of customer acceptance information, such as: `online` or `offline`.
+@immutable final class CustomerAcceptanceType {const CustomerAcceptanceType._(this.value);
 
 factory CustomerAcceptanceType.fromJson(String json) { return switch (json) {
   'offline' => offline,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerAcceptanceType($value)'; } 
  }
 /// 
-final class CustomerAcceptance {const CustomerAcceptance({this.acceptedAt, this.offline, this.online, required this.type, });
+@immutable final class CustomerAcceptance {const CustomerAcceptance({required this.type, this.acceptedAt, this.offline, this.online, });
 
 factory CustomerAcceptance.fromJson(Map<String, dynamic> json) { return CustomerAcceptance(
   acceptedAt: json['accepted_at'] != null ? (json['accepted_at'] as num).toInt() : null,

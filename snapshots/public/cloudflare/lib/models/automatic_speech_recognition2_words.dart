@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AutomaticSpeechRecognition2Words {const AutomaticSpeechRecognition2Words({this.end, this.start, this.word, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutomaticSpeechRecognition2Words {const AutomaticSpeechRecognition2Words({this.end, this.start, this.word, });
 
 factory AutomaticSpeechRecognition2Words.fromJson(Map<String, dynamic> json) { return AutomaticSpeechRecognition2Words(
   end: json['end'] != null ? (json['end'] as num).toDouble() : null,

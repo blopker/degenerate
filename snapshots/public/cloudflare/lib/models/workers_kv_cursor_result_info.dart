@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Opaque token indicating the position from which to continue when requesting the next set of records if the amount of list results was limited by the limit parameter. A valid value for the cursor can be obtained from the cursors object in the result_info structure.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Opaque token indicating the position from which to continue when requesting the next set of records if the amount of list results was limited by the limit parameter. A valid value for the cursor can be obtained from the cursors object in the result_info structure.
 extension type const WorkersKvCursor(String value) {
 factory WorkersKvCursor.fromJson(String json) => WorkersKvCursor(json);
 
 String toJson() => value;
 
 }
-final class WorkersKvCursorResultInfo {const WorkersKvCursorResultInfo({this.count, this.cursor, });
+@immutable final class WorkersKvCursorResultInfo {const WorkersKvCursorResultInfo({this.count, this.cursor, });
 
 factory WorkersKvCursorResultInfo.fromJson(Map<String, dynamic> json) { return WorkersKvCursorResultInfo(
   count: json['count'] != null ? (json['count'] as num).toDouble() : null,

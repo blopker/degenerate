@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the zone setting.
-final class ZonesCacheLevelValue {const ZonesCacheLevelValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
+@immutable final class ZonesCacheLevelValue {const ZonesCacheLevelValue._(this.value);
 
 factory ZonesCacheLevelValue.fromJson(String json) { return switch (json) {
   'aggressive' => aggressive,

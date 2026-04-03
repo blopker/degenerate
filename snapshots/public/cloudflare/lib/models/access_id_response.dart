@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_id_response_result.dart';final class AccessIdResponse {const AccessIdResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_id_response_result.dart';@immutable final class AccessIdResponse {const AccessIdResponse({this.result});
 
 factory AccessIdResponse.fromJson(Map<String, dynamic> json) { return AccessIdResponse(
   result: json['result'] != null ? AccessIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,

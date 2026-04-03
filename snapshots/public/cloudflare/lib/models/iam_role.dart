@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'iam_permissions.dart';import 'iam_role_components_schemas_identifier.dart';final class IamRole {const IamRole({required this.description, required this.id, required this.name, required this.permissions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_permissions.dart';import 'iam_role_components_schemas_identifier.dart';@immutable final class IamRole {const IamRole({required this.description, required this.id, required this.name, required this.permissions, });
 
 factory IamRole.fromJson(Map<String, dynamic> json) { return IamRole(
   description: json['description'] as String,

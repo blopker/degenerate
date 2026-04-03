@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'post_quotes_request_subscription_data_billing_mode_flexible.dart';final class PostQuotesRequestSubscriptionDataBillingModeType {const PostQuotesRequestSubscriptionDataBillingModeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_request_subscription_data_billing_mode_flexible.dart';@immutable final class PostQuotesRequestSubscriptionDataBillingModeType {const PostQuotesRequestSubscriptionDataBillingModeType._(this.value);
 
 factory PostQuotesRequestSubscriptionDataBillingModeType.fromJson(String json) { return switch (json) {
   'classic' => classic,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostQuotesRequestSubscriptionDataBillingModeType($value)'; } 
  }
-final class PostQuotesRequestSubscriptionDataBillingMode {const PostQuotesRequestSubscriptionDataBillingMode({this.flexible, required this.type, });
+@immutable final class PostQuotesRequestSubscriptionDataBillingMode {const PostQuotesRequestSubscriptionDataBillingMode({required this.type, this.flexible, });
 
 factory PostQuotesRequestSubscriptionDataBillingMode.fromJson(Map<String, dynamic> json) { return PostQuotesRequestSubscriptionDataBillingMode(
   flexible: json['flexible'] != null ? PostQuotesRequestSubscriptionDataBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,

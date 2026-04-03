@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// * `ML` - Discovered operation was sourced using ML API Discovery * `SessionIdentifier` - Discovered operation was sourced using Session Identifier API Discovery * `LabelDiscovery` - Discovered operation was identified to have a specific label
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// * `ML` - Discovered operation was sourced using ML API Discovery * `SessionIdentifier` - Discovered operation was sourced using Session Identifier API Discovery * `LabelDiscovery` - Discovered operation was identified to have a specific label
 /// 
-final class DiscoveryOrigin {const DiscoveryOrigin._(this.value);
+@immutable final class DiscoveryOrigin {const DiscoveryOrigin._(this.value);
 
 factory DiscoveryOrigin.fromJson(String json) { return switch (json) {
   'ML' => ml,

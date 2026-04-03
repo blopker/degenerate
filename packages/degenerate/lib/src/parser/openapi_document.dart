@@ -4,8 +4,7 @@ import 'package:yaml/yaml.dart';
 
 /// Wraps a parsed OpenAPI spec providing typed accessors and ref resolution.
 class OpenApiDocument {
-  final Map<String, dynamic> root;
-
+  /// Creates a document from the parsed [root] map.
   OpenApiDocument(this.root);
 
   /// Parse an OpenAPI spec from a YAML string.
@@ -13,7 +12,7 @@ class OpenApiDocument {
     final yamlDoc = loadYaml(content);
     final map = _convertYamlNode(yamlDoc);
     if (map is! Map<String, dynamic>) {
-      throw FormatException('Expected a YAML mapping at the root');
+      throw const FormatException('Expected a YAML mapping at the root');
     }
     return OpenApiDocument(map);
   }
@@ -22,10 +21,13 @@ class OpenApiDocument {
   factory OpenApiDocument.parseJson(String content) {
     final decoded = json.decode(content);
     if (decoded is! Map<String, dynamic>) {
-      throw FormatException('Expected a JSON object at the root');
+      throw const FormatException('Expected a JSON object at the root');
     }
     return OpenApiDocument(decoded);
   }
+
+  /// The raw parsed spec as a mutable map.
+  final Map<String, dynamic> root;
 
   /// The `openapi` version string (e.g. "3.0.0").
   String get version => root['openapi'] as String? ?? '';
@@ -57,6 +59,7 @@ class OpenApiDocument {
     return s.cast<Map<String, dynamic>>();
   }
 
+  /// `components.securitySchemes` or empty map.
   Map<String, dynamic> get securitySchemes {
     final components = root['components'] as Map<String, dynamic>?;
     if (components == null) return <String, dynamic>{};
@@ -64,6 +67,7 @@ class OpenApiDocument {
     return schemes ?? <String, dynamic>{};
   }
 
+  /// Top-level `security` requirements or null.
   List<Map<String, dynamic>>? get security {
     final security = root['security'];
     if (security is! List) return null;
@@ -89,7 +93,8 @@ class OpenApiDocument {
       throw UnsupportedError(
         'External \$ref "$ref" is not supported. '
         'Only local refs starting with "#/" are supported. '
-        'Inline the referenced content or use a bundler to resolve external refs.',
+        'Inline the referenced content or use a bundler'
+        ' to resolve external refs.',
       );
     }
     final segments = ref.substring(2).split('/');

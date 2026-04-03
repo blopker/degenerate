@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters {const PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters {const PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters._(this.value);
 
 factory PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters($value)'; } 
  }
-final class PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove {const PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove._(this.value);
+@immutable final class PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove {const PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove._(this.value);
 
 factory PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodRemove($value)'; } 
  }
-final class PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave {const PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave._(this.value);
+@immutable final class PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave {const PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave._(this.value);
 
 factory PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -76,7 +76,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostCheckoutSessionsRequestSavedPaymentMethodOptionsPaymentMethodSave($value)'; } 
  }
 /// Controls saved payment method settings for the session. Only available in `payment` and `subscription` mode.
-final class PostCheckoutSessionsRequestSavedPaymentMethodOptions {const PostCheckoutSessionsRequestSavedPaymentMethodOptions({this.allowRedisplayFilters, this.paymentMethodRemove, this.paymentMethodSave, });
+@immutable final class PostCheckoutSessionsRequestSavedPaymentMethodOptions {const PostCheckoutSessionsRequestSavedPaymentMethodOptions({this.allowRedisplayFilters, this.paymentMethodRemove, this.paymentMethodSave, });
 
 factory PostCheckoutSessionsRequestSavedPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSavedPaymentMethodOptions(
   allowRedisplayFilters: (json['allow_redisplay_filters'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestSavedPaymentMethodOptionsAllowRedisplayFilters.fromJson(e as String)).toList(),

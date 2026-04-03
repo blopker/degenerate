@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `conversation.item.delete`.
-final class RealtimeClientEventConversationItemDeleteType {const RealtimeClientEventConversationItemDeleteType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.delete`.
+@immutable final class RealtimeClientEventConversationItemDeleteType {const RealtimeClientEventConversationItemDeleteType._(this.value);
 
 factory RealtimeClientEventConversationItemDeleteType.fromJson(String json) { return switch (json) {
   'conversation.item.delete' => conversationItemDelete,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 /// unless the item does not exist in the conversation history, in which case the
 /// server will respond with an error.
 /// 
-final class RealtimeClientEventConversationItemDelete {const RealtimeClientEventConversationItemDelete({this.eventId, required this.type, required this.itemId, });
+@immutable final class RealtimeClientEventConversationItemDelete {const RealtimeClientEventConversationItemDelete({required this.type, required this.itemId, this.eventId, });
 
 factory RealtimeClientEventConversationItemDelete.fromJson(Map<String, dynamic> json) { return RealtimeClientEventConversationItemDelete(
   eventId: json['event_id'] as String?,

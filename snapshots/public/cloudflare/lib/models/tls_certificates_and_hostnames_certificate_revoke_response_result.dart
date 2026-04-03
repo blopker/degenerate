@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_identifier.dart';/// When the certificate was revoked.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_identifier.dart';/// When the certificate was revoked.
 extension type TlsCertificatesAndHostnamesRevokedAt(DateTime value) {
 factory TlsCertificatesAndHostnamesRevokedAt.fromJson(String json) => TlsCertificatesAndHostnamesRevokedAt(DateTime.parse(json));
 
 String toJson() => value.toIso8601String();
 
 }
-final class TlsCertificatesAndHostnamesCertificateRevokeResponseResult {const TlsCertificatesAndHostnamesCertificateRevokeResponseResult({this.id, this.revokedAt, });
+@immutable final class TlsCertificatesAndHostnamesCertificateRevokeResponseResult {const TlsCertificatesAndHostnamesCertificateRevokeResponseResult({this.id, this.revokedAt, });
 
 factory TlsCertificatesAndHostnamesCertificateRevokeResponseResult.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificateRevokeResponseResult(
   id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,

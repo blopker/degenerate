@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'stream_creator.dart';final class StreamStorageUseResponseResult {const StreamStorageUseResponseResult({this.creator, this.totalStorageMinutes, this.totalStorageMinutesLimit, this.videoCount, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_creator.dart';@immutable final class StreamStorageUseResponseResult {const StreamStorageUseResponseResult({this.creator, this.totalStorageMinutes, this.totalStorageMinutesLimit, this.videoCount, });
 
 factory StreamStorageUseResponseResult.fromJson(Map<String, dynamic> json) { return StreamStorageUseResponseResult(
   creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,

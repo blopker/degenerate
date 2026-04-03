@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates_components_schemas_name2.dart';final class ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest {const ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest({this.associatedHostnames, required this.certificate, required this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates_components_schemas_name2.dart';@immutable final class ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest {const ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest({required this.certificate, required this.name, this.associatedHostnames, });
 
 factory ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest(
   associatedHostnames: (json['associated_hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),

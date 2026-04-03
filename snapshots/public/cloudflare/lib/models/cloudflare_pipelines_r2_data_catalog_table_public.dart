@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_r2_data_catalog_table_public_rolling_policy.dart';/// R2 Data Catalog Sink public configuration.
-final class CloudflarePipelinesR2DataCatalogTablePublic {const CloudflarePipelinesR2DataCatalogTablePublic({required this.accountId, required this.bucket, this.namespace, this.rollingPolicy, required this.tableName, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_r2_data_catalog_table_public_rolling_policy.dart';/// R2 Data Catalog Sink public configuration.
+@immutable final class CloudflarePipelinesR2DataCatalogTablePublic {const CloudflarePipelinesR2DataCatalogTablePublic({required this.accountId, required this.bucket, required this.tableName, this.namespace, this.rollingPolicy, });
 
 factory CloudflarePipelinesR2DataCatalogTablePublic.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2DataCatalogTablePublic(
   accountId: Uri.parse(json['account_id'] as String),

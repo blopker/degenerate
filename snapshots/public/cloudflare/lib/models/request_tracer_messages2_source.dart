@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RequestTracerMessages2Source {const RequestTracerMessages2Source({this.pointer});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RequestTracerMessages2Source {const RequestTracerMessages2Source({this.pointer});
 
 factory RequestTracerMessages2Source.fromJson(Map<String, dynamic> json) { return RequestTracerMessages2Source(
   pointer: json['pointer'] as String?,

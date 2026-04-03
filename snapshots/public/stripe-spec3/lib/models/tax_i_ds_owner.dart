@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'tax_i_ds_owner_account.dart';import 'tax_i_ds_owner_application.dart';import 'tax_i_ds_owner_customer.dart';/// Type of owner referenced.
-final class TaxIDsOwnerType {const TaxIDsOwnerType._(this.value);
+@immutable final class TaxIDsOwnerType {const TaxIDsOwnerType._(this.value);
 
 factory TaxIDsOwnerType.fromJson(String json) { return switch (json) {
   'account' => account,
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxIDsOwnerType($value)'; } 
  }
 /// 
-final class TaxIDsOwner {const TaxIDsOwner({this.account, this.application, this.customer, this.customerAccount, required this.type, });
+@immutable final class TaxIDsOwner {const TaxIDsOwner({required this.type, this.account, this.application, this.customer, this.customerAccount, });
 
 factory TaxIDsOwner.fromJson(Map<String, dynamic> json) { return TaxIDsOwner(
   account: json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,

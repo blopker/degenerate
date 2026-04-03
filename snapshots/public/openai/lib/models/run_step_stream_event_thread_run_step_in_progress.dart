@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'run_step_object.dart';final class RunStepStreamEventThreadRunStepInProgressEvent {const RunStepStreamEventThreadRunStepInProgressEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_object.dart';@immutable final class RunStepStreamEventThreadRunStepInProgressEvent {const RunStepStreamEventThreadRunStepInProgressEvent._(this.value);
 
 factory RunStepStreamEventThreadRunStepInProgressEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.in_progress' => threadRunStepInProgress,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunStepStreamEventThreadRunStepInProgressEvent($value)'; } 
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
-final class RunStepStreamEventThreadRunStepInProgress {const RunStepStreamEventThreadRunStepInProgress({required this.event, required this.data, });
+@immutable final class RunStepStreamEventThreadRunStepInProgress {const RunStepStreamEventThreadRunStepInProgress({required this.event, required this.data, });
 
 factory RunStepStreamEventThreadRunStepInProgress.fromJson(Map<String, dynamic> json) { return RunStepStreamEventThreadRunStepInProgress(
   event: RunStepStreamEventThreadRunStepInProgressEvent.fromJson(json['event'] as String),

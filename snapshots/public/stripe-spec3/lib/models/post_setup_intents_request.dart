@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_automatic_payment_methods.dart';import 'post_setup_intents_request_mandate_data.dart';import 'post_setup_intents_request_payment_method_data.dart';import 'post_setup_intents_request_payment_method_options.dart';import 'post_setup_intents_request_single_use.dart';import 'secret_key_param3.dart';final class PostSetupIntentsRequestExcludedPaymentMethodTypes {const PostSetupIntentsRequestExcludedPaymentMethodTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_automatic_payment_methods.dart';import 'post_setup_intents_request_mandate_data.dart';import 'post_setup_intents_request_payment_method_data.dart';import 'post_setup_intents_request_payment_method_options.dart';import 'post_setup_intents_request_single_use.dart';import 'secret_key_param3.dart';@immutable final class PostSetupIntentsRequestExcludedPaymentMethodTypes {const PostSetupIntentsRequestExcludedPaymentMethodTypes._(this.value);
 
 factory PostSetupIntentsRequestExcludedPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'acss_debit' => acssDebit,
@@ -165,7 +165,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestExcludedPaymentMethodTypes($value)'; } 
  }
-final class PostSetupIntentsRequestFlowDirections {const PostSetupIntentsRequestFlowDirections._(this.value);
+@immutable final class PostSetupIntentsRequestFlowDirections {const PostSetupIntentsRequestFlowDirections._(this.value);
 
 factory PostSetupIntentsRequestFlowDirections.fromJson(String json) { return switch (json) {
   'inbound' => inbound,
@@ -190,7 +190,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostSetupIntentsRequestFlowDirections($value)'; } 
  }
 /// Indicates how the payment method is intended to be used in the future. If not provided, this value defaults to `off_session`.
-final class PostSetupIntentsRequestUsage {const PostSetupIntentsRequestUsage._(this.value);
+@immutable final class PostSetupIntentsRequestUsage {const PostSetupIntentsRequestUsage._(this.value);
 
 factory PostSetupIntentsRequestUsage.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
@@ -214,7 +214,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestUsage($value)'; } 
  }
-final class PostSetupIntentsRequest {const PostSetupIntentsRequest({this.attachToSelf, this.automaticPaymentMethods, this.confirm, this.confirmationToken, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.flowDirections, this.mandateData, this.metadata, this.onBehalfOf, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.returnUrl, this.singleUse, this.usage, this.useStripeSdk, });
+@immutable final class PostSetupIntentsRequest {const PostSetupIntentsRequest({this.attachToSelf, this.automaticPaymentMethods, this.confirm, this.confirmationToken, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.flowDirections, this.mandateData, this.metadata, this.onBehalfOf, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.returnUrl, this.singleUse, this.usage, this.useStripeSdk, });
 
 factory PostSetupIntentsRequest.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequest(
   attachToSelf: json['attach_to_self'] as bool?,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class ActionsCreateOrUpdateRepoSecretRequest {const ActionsCreateOrUpdateRepoSecretRequest({required this.encryptedValue, required this.keyId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsCreateOrUpdateRepoSecretRequest {const ActionsCreateOrUpdateRepoSecretRequest({required this.encryptedValue, required this.keyId, });
 
 factory ActionsCreateOrUpdateRepoSecretRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateOrUpdateRepoSecretRequest(
   encryptedValue: json['encrypted_value'] as String,

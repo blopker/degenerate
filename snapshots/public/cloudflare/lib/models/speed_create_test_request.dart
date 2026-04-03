@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'observatory_region.dart';final class SpeedCreateTestRequest {const SpeedCreateTestRequest({this.region});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'observatory_region.dart';@immutable final class SpeedCreateTestRequest {const SpeedCreateTestRequest({this.region});
 
 factory SpeedCreateTestRequest.fromJson(Map<String, dynamic> json) { return SpeedCreateTestRequest(
   region: json['region'] != null ? ObservatoryRegion.fromJson(json['region'] as String) : null,

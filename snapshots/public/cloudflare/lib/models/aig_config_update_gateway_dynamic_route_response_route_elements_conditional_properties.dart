@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalProperties {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalProperties({this.conditions});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalProperties {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalProperties({this.conditions});
 
 factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalProperties.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsConditionalProperties(
-  conditions: (json['conditions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  conditions: json['conditions'] as Map<String, dynamic>?,
 ); }
 
 final Map<String,dynamic>? conditions;

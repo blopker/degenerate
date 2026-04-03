@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchFetchTokensResponse404Errors {const AiSearchFetchTokensResponse404Errors({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchFetchTokensResponse404Errors {const AiSearchFetchTokensResponse404Errors({required this.code, required this.message, });
 
 factory AiSearchFetchTokensResponse404Errors.fromJson(Map<String, dynamic> json) { return AiSearchFetchTokensResponse404Errors(
   code: (json['code'] as num).toDouble(),

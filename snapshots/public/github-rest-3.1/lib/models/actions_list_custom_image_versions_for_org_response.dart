@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner_custom_image_version.dart';final class ActionsListCustomImageVersionsForOrgResponse {const ActionsListCustomImageVersionsForOrgResponse({required this.totalCount, required this.imageVersions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner_custom_image_version.dart';@immutable final class ActionsListCustomImageVersionsForOrgResponse {const ActionsListCustomImageVersionsForOrgResponse({required this.totalCount, required this.imageVersions, });
 
 factory ActionsListCustomImageVersionsForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsListCustomImageVersionsForOrgResponse(
   totalCount: (json['total_count'] as num).toInt(),

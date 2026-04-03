@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AccessActiveSessionResponseResultIdp {const AccessActiveSessionResponseResultIdp({this.id, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessActiveSessionResponseResultIdp {const AccessActiveSessionResponseResultIdp({this.id, this.type, });
 
 factory AccessActiveSessionResponseResultIdp.fromJson(Map<String, dynamic> json) { return AccessActiveSessionResponseResultIdp(
   id: json['id'] as String?,

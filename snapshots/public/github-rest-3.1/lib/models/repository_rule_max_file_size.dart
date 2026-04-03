@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'repository_rule_max_file_size_parameters.dart';final class RepositoryRuleMaxFileSizeType {const RepositoryRuleMaxFileSizeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_max_file_size_parameters.dart';@immutable final class RepositoryRuleMaxFileSizeType {const RepositoryRuleMaxFileSizeType._(this.value);
 
 factory RepositoryRuleMaxFileSizeType.fromJson(String json) { return switch (json) {
   'max_file_size' => maxFileSize,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RepositoryRuleMaxFileSizeType($value)'; } 
  }
 /// Prevent commits with individual files that exceed the specified limit from being pushed to the commit graph.
-final class RepositoryRuleMaxFileSize {const RepositoryRuleMaxFileSize({required this.type, this.parameters, });
+@immutable final class RepositoryRuleMaxFileSize {const RepositoryRuleMaxFileSize({required this.type, this.parameters, });
 
 factory RepositoryRuleMaxFileSize.fromJson(Map<String, dynamic> json) { return RepositoryRuleMaxFileSize(
   type: RepositoryRuleMaxFileSizeType.fromJson(json['type'] as String),

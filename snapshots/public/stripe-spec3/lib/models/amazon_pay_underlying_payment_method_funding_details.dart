@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_details_passthrough_card.dart';/// funding type of the underlying payment method.
-final class AmazonPayUnderlyingPaymentMethodFundingDetailsType {const AmazonPayUnderlyingPaymentMethodFundingDetailsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_passthrough_card.dart';/// funding type of the underlying payment method.
+@immutable final class AmazonPayUnderlyingPaymentMethodFundingDetailsType {const AmazonPayUnderlyingPaymentMethodFundingDetailsType._(this.value);
 
 factory AmazonPayUnderlyingPaymentMethodFundingDetailsType.fromJson(String json) { return switch (json) {
   'card' => card,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AmazonPayUnderlyingPaymentMethodFundingDetailsType($value)'; } 
  }
 /// 
-final class AmazonPayUnderlyingPaymentMethodFundingDetails {const AmazonPayUnderlyingPaymentMethodFundingDetails({this.card, this.type, });
+@immutable final class AmazonPayUnderlyingPaymentMethodFundingDetails {const AmazonPayUnderlyingPaymentMethodFundingDetails({this.card, this.type, });
 
 factory AmazonPayUnderlyingPaymentMethodFundingDetails.fromJson(Map<String, dynamic> json) { return AmazonPayUnderlyingPaymentMethodFundingDetails(
   card: json['card'] != null ? PaymentMethodDetailsPassthroughCard.fromJson(json['card'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_bgp_top_ases_response_result.dart';final class RadarGetBgpTopAsesResponse {const RadarGetBgpTopAsesResponse({required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_top_ases_response_result.dart';@immutable final class RadarGetBgpTopAsesResponse {const RadarGetBgpTopAsesResponse({required this.result, required this.success, });
 
 factory RadarGetBgpTopAsesResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpTopAsesResponse(
   result: RadarGetBgpTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>),

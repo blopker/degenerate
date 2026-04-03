@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'personal_access_token_request_permissions_added.dart';import 'personal_access_token_request_permissions_result.dart';import 'personal_access_token_request_permissions_upgraded.dart';import 'personal_access_token_request_repositories.dart';import 'simple_user.dart';/// Type of repository selection requested.
-final class PersonalAccessTokenRequestRepositorySelection {const PersonalAccessTokenRequestRepositorySelection._(this.value);
+@immutable final class PersonalAccessTokenRequestRepositorySelection {const PersonalAccessTokenRequestRepositorySelection._(this.value);
 
 factory PersonalAccessTokenRequestRepositorySelection.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PersonalAccessTokenRequestRepositorySelection($value)'; } 
  }
 /// Details of a Personal Access Token Request.
-final class PersonalAccessTokenRequest {const PersonalAccessTokenRequest({required this.id, required this.owner, required this.permissionsAdded, required this.permissionsUpgraded, required this.permissionsResult, required this.repositorySelection, required this.repositoryCount, required this.repositories, required this.createdAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt, });
+@immutable final class PersonalAccessTokenRequest {const PersonalAccessTokenRequest({required this.id, required this.owner, required this.permissionsAdded, required this.permissionsUpgraded, required this.permissionsResult, required this.repositorySelection, required this.repositoryCount, required this.repositories, required this.createdAt, required this.tokenId, required this.tokenName, required this.tokenExpired, required this.tokenExpiresAt, required this.tokenLastUsedAt, });
 
 factory PersonalAccessTokenRequest.fromJson(Map<String, dynamic> json) { return PersonalAccessTokenRequest(
   id: (json['id'] as num).toInt(),

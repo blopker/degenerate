@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dls_messages2.dart';import 'response_collection11_result_info.dart';final class ResponseCollection11 {const ResponseCollection11({required this.errors, required this.messages, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dls_messages2.dart';import 'response_collection11_result_info.dart';@immutable final class ResponseCollection11 {const ResponseCollection11({required this.errors, required this.messages, required this.success, this.resultInfo, });
 
 factory ResponseCollection11.fromJson(Map<String, dynamic> json) { return ResponseCollection11(
   errors: (json['errors'] as List<dynamic>).map((e) => DlsMessages2.fromJson(e as Map<String, dynamic>)).toList(),

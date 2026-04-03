@@ -155,17 +155,17 @@ Future<ApiResult<List<SchemaValidationExtractOperationsFromSchemaResponseResult>
 final queryParametersList = <ApiQueryParameter>[];
 if (feature != null) {
 for (final item in feature) {
-  queryParametersList.add(ApiQueryParameter(name: 'feature', value: item.toJson(), allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'feature', value: item.toJson()));
 }
 }
 if (host != null) {
 for (final item in host) {
-  queryParametersList.add(ApiQueryParameter(name: 'host', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'host', value: item));
 }
 }
 if (method != null) {
 for (final item in method) {
-  queryParametersList.add(ApiQueryParameter(name: 'method', value: item, allowReserved: false));
+  queryParametersList.add(ApiQueryParameter(name: 'method', value: item));
 }
 }
 if (endpoint != null) {

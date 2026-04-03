@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tenant_tenant_metadata_dns_ns_pool.dart';final class TenantTenantMetadataDns {const TenantTenantMetadataDns({required this.nsPool});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tenant_tenant_metadata_dns_ns_pool.dart';@immutable final class TenantTenantMetadataDns {const TenantTenantMetadataDns({required this.nsPool});
 
 factory TenantTenantMetadataDns.fromJson(Map<String, dynamic> json) { return TenantTenantMetadataDns(
   nsPool: TenantTenantMetadataDnsNsPool.fromJson(json['ns_pool'] as Map<String, dynamic>),

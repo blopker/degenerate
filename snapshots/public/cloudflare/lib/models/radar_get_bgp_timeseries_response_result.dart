@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_bgp_timeseries_response_result_meta.dart';import 'radar_get_bgp_timeseries_response_result_serie0.dart';final class RadarGetBgpTimeseriesResponseResult {const RadarGetBgpTimeseriesResponseResult({required this.meta, required this.serie0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_timeseries_response_result_meta.dart';import 'radar_get_bgp_timeseries_response_result_serie0.dart';@immutable final class RadarGetBgpTimeseriesResponseResult {const RadarGetBgpTimeseriesResponseResult({required this.meta, required this.serie0, });
 
 factory RadarGetBgpTimeseriesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpTimeseriesResponseResult(
   meta: RadarGetBgpTimeseriesResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

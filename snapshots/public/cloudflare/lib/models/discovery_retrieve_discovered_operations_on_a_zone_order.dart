@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Field to order by
-final class DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder {const DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order by
+@immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder {const DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder._(this.value);
 
 factory DiscoveryRetrieveDiscoveredOperationsOnAZoneOrder.fromJson(String json) { return switch (json) {
   'host' => host,

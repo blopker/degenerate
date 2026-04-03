@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_milestone_edited_changes.dart';import 'webhooks_milestone.dart';final class WebhookMilestoneEditedAction {const WebhookMilestoneEditedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_milestone_edited_changes.dart';import 'webhooks_milestone.dart';@immutable final class WebhookMilestoneEditedAction {const WebhookMilestoneEditedAction._(this.value);
 
 factory WebhookMilestoneEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookMilestoneEditedAction($value)'; } 
  }
-final class WebhookMilestoneEdited {const WebhookMilestoneEdited({required this.action, required this.changes, this.enterprise, this.installation, required this.milestone, this.organization, required this.repository, required this.sender, });
+@immutable final class WebhookMilestoneEdited {const WebhookMilestoneEdited({required this.action, required this.changes, required this.milestone, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
 factory WebhookMilestoneEdited.fromJson(Map<String, dynamic> json) { return WebhookMilestoneEdited(
   action: WebhookMilestoneEditedAction.fromJson(json['action'] as String),

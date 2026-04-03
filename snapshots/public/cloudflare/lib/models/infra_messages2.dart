@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'infra_messages2_source.dart';final class InfraMessages2 {const InfraMessages2({required this.code, this.documentationUrl, required this.message, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_messages2_source.dart';@immutable final class InfraMessages2 {const InfraMessages2({required this.code, required this.message, this.documentationUrl, this.source, });
 
 factory InfraMessages2.fromJson(Map<String, dynamic> json) { return InfraMessages2(
   code: (json['code'] as num).toInt(),

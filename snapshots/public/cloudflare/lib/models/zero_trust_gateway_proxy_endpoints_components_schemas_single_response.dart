@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_proxy_endpoints.dart';final class ZeroTrustGatewayProxyEndpointsComponentsSchemasSingleResponse {const ZeroTrustGatewayProxyEndpointsComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_proxy_endpoints.dart';@immutable final class ZeroTrustGatewayProxyEndpointsComponentsSchemasSingleResponse {const ZeroTrustGatewayProxyEndpointsComponentsSchemasSingleResponse({this.result});
 
 factory ZeroTrustGatewayProxyEndpointsComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProxyEndpointsComponentsSchemasSingleResponse(
   result: json['result'] != null ? ZeroTrustGatewayProxyEndpoints.fromJson(json['result'] as Map<String, dynamic>) : null,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Information about the payment attempt failure.
-final class PostPaymentRecordsIdReportPaymentAttemptRequestFailed {const PostPaymentRecordsIdReportPaymentAttemptRequestFailed({required this.failedAt});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the payment attempt failure.
+@immutable final class PostPaymentRecordsIdReportPaymentAttemptRequestFailed {const PostPaymentRecordsIdReportPaymentAttemptRequestFailed({required this.failedAt});
 
 factory PostPaymentRecordsIdReportPaymentAttemptRequestFailed.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptRequestFailed(
   failedAt: (json['failed_at'] as num).toInt(),

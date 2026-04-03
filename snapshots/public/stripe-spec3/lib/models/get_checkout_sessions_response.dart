@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_session.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class GetCheckoutSessionsResponseObject {const GetCheckoutSessionsResponseObject._(this.value);
+@immutable final class GetCheckoutSessionsResponseObject {const GetCheckoutSessionsResponseObject._(this.value);
 
 factory GetCheckoutSessionsResponseObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GetCheckoutSessionsResponseObject($value)'; } 
  }
 /// 
-final class GetCheckoutSessionsResponse {const GetCheckoutSessionsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class GetCheckoutSessionsResponse {const GetCheckoutSessionsResponse({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory GetCheckoutSessionsResponse.fromJson(Map<String, dynamic> json) { return GetCheckoutSessionsResponse(
   data: (json['data'] as List<dynamic>).map((e) => CheckoutSession.fromJson(e as Map<String, dynamic>)).toList(),

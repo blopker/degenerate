@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'messages51_tool_choice_variant1_custom_custom.dart';final class Messages51ToolChoiceVariant1CustomType {const Messages51ToolChoiceVariant1CustomType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_tool_choice_variant1_custom_custom.dart';@immutable final class Messages51ToolChoiceVariant1CustomType {const Messages51ToolChoiceVariant1CustomType._(this.value);
 
 factory Messages51ToolChoiceVariant1CustomType.fromJson(String json) { return switch (json) {
   'custom' => custom,
@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Messages51ToolChoiceVariant1CustomType($value)'; } 
  }
 /// Force a specific custom tool.
-final class Messages51ToolChoiceVariant1Custom {const Messages51ToolChoiceVariant1Custom({required this.custom, required this.type, });
+@immutable final class Messages51ToolChoiceVariant1Custom {const Messages51ToolChoiceVariant1Custom({required this.custom, required this.type, });
 
 factory Messages51ToolChoiceVariant1Custom.fromJson(Map<String, dynamic> json) { return Messages51ToolChoiceVariant1Custom(
   custom: Messages51ToolChoiceVariant1CustomCustom.fromJson(json['custom'] as Map<String, dynamic>),

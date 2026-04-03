@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_groups_components_schemas_name.dart';import 'access_is_default.dart';import 'access_rule.dart';final class AccessGroupsUpdateAnAccessGroupRequest {const AccessGroupsUpdateAnAccessGroupRequest({this.exclude, required this.include, this.isDefault, required this.name, this.require, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_groups_components_schemas_name.dart';import 'access_is_default.dart';import 'access_rule.dart';@immutable final class AccessGroupsUpdateAnAccessGroupRequest {const AccessGroupsUpdateAnAccessGroupRequest({required this.include, required this.name, this.exclude, this.isDefault, this.require, });
 
 factory AccessGroupsUpdateAnAccessGroupRequest.fromJson(Map<String, dynamic> json) { return AccessGroupsUpdateAnAccessGroupRequest(
   exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),

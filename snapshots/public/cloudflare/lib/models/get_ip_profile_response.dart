@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_message.dart';import 'teams_devices_ip_profile.dart';final class GetIpProfileResponse {const GetIpProfileResponse({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_message.dart';import 'teams_devices_ip_profile.dart';@immutable final class GetIpProfileResponse {const GetIpProfileResponse({required this.errors, required this.messages, required this.result, required this.success, });
 
 factory GetIpProfileResponse.fromJson(Map<String, dynamic> json) { return GetIpProfileResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ResponseMessage.fromJson(e as Map<String, dynamic>)).toList(),

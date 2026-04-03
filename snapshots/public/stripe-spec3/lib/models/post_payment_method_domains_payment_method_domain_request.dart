@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentMethodDomainsPaymentMethodDomainRequest {const PostPaymentMethodDomainsPaymentMethodDomainRequest({this.enabled, this.expand, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentMethodDomainsPaymentMethodDomainRequest {const PostPaymentMethodDomainsPaymentMethodDomainRequest({this.enabled, this.expand, });
 
 factory PostPaymentMethodDomainsPaymentMethodDomainRequest.fromJson(Map<String, dynamic> json) { return PostPaymentMethodDomainsPaymentMethodDomainRequest(
   enabled: json['enabled'] as bool?,

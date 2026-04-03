@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';import 'enterprise.dart';import 'installation_account.dart';import 'simple_user.dart';/// Describe whether all repositories have been selected or there's a selection involved
-final class InstallationRepositorySelection {const InstallationRepositorySelection._(this.value);
+@immutable final class InstallationRepositorySelection {const InstallationRepositorySelection._(this.value);
 
 factory InstallationRepositorySelection.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InstallationRepositorySelection($value)'; } 
  }
 /// Installation
-final class Installation {const Installation({required this.id, required this.account, required this.repositorySelection, required this.accessTokensUrl, required this.repositoriesUrl, required this.htmlUrl, required this.appId, this.clientId, required this.targetId, required this.targetType, required this.permissions, required this.events, required this.createdAt, required this.updatedAt, required this.singleFileName, this.hasMultipleSingleFiles, this.singleFilePaths, required this.appSlug, required this.suspendedBy, required this.suspendedAt, this.contactEmail, });
+@immutable final class Installation {const Installation({required this.id, required this.account, required this.repositorySelection, required this.accessTokensUrl, required this.repositoriesUrl, required this.htmlUrl, required this.appId, required this.targetId, required this.targetType, required this.permissions, required this.events, required this.createdAt, required this.updatedAt, required this.singleFileName, required this.appSlug, required this.suspendedBy, required this.suspendedAt, this.clientId, this.hasMultipleSingleFiles, this.singleFilePaths, this.contactEmail, });
 
 factory Installation.fromJson(Map<String, dynamic> json) { return Installation(
   id: (json['id'] as num).toInt(),

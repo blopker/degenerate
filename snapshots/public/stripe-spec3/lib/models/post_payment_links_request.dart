@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_after_completion.dart';import 'post_payment_links_request_automatic_tax.dart';import 'post_payment_links_request_consent_collection.dart';import 'post_payment_links_request_custom_fields.dart';import 'post_payment_links_request_custom_text.dart';import 'post_payment_links_request_invoice_creation.dart';import 'post_payment_links_request_line_items.dart';import 'post_payment_links_request_name_collection.dart';import 'post_payment_links_request_optional_items.dart';import 'post_payment_links_request_payment_intent_data.dart';import 'post_payment_links_request_phone_number_collection.dart';import 'post_payment_links_request_restrictions.dart';import 'post_payment_links_request_shipping_address_collection.dart';import 'post_payment_links_request_shipping_options.dart';import 'post_payment_links_request_subscription_data.dart';import 'post_payment_links_request_tax_id_collection.dart';import 'post_payment_links_request_transfer_data.dart';final class PostPaymentLinksRequestPaymentMethodTypes {const PostPaymentLinksRequestPaymentMethodTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_after_completion.dart';import 'post_payment_links_request_automatic_tax.dart';import 'post_payment_links_request_consent_collection.dart';import 'post_payment_links_request_custom_fields.dart';import 'post_payment_links_request_custom_text.dart';import 'post_payment_links_request_invoice_creation.dart';import 'post_payment_links_request_line_items.dart';import 'post_payment_links_request_name_collection.dart';import 'post_payment_links_request_optional_items.dart';import 'post_payment_links_request_payment_intent_data.dart';import 'post_payment_links_request_phone_number_collection.dart';import 'post_payment_links_request_restrictions.dart';import 'post_payment_links_request_shipping_address_collection.dart';import 'post_payment_links_request_shipping_options.dart';import 'post_payment_links_request_subscription_data.dart';import 'post_payment_links_request_tax_id_collection.dart';import 'post_payment_links_request_transfer_data.dart';@immutable final class PostPaymentLinksRequestPaymentMethodTypes {const PostPaymentLinksRequestPaymentMethodTypes._(this.value);
 
 factory PostPaymentLinksRequestPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'affirm' => affirm,
@@ -136,7 +136,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentLinksRequestPaymentMethodTypes($value)'; } 
  }
 /// Configuration for collecting the customer's billing address. Defaults to `auto`.
-final class PostPaymentLinksRequestBillingAddressCollection {const PostPaymentLinksRequestBillingAddressCollection._(this.value);
+@immutable final class PostPaymentLinksRequestBillingAddressCollection {const PostPaymentLinksRequestBillingAddressCollection._(this.value);
 
 factory PostPaymentLinksRequestBillingAddressCollection.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -161,7 +161,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentLinksRequestBillingAddressCollection($value)'; } 
  }
 /// Configures whether [checkout sessions](https://docs.stripe.com/api/checkout/sessions) created by this payment link create a [Customer](https://docs.stripe.com/api/customers).
-final class PostPaymentLinksRequestCustomerCreation {const PostPaymentLinksRequestCustomerCreation._(this.value);
+@immutable final class PostPaymentLinksRequestCustomerCreation {const PostPaymentLinksRequestCustomerCreation._(this.value);
 
 factory PostPaymentLinksRequestCustomerCreation.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -190,7 +190,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Can only be set in `subscription` mode. Defaults to `always`.
 /// 
 /// If you'd like information on how to collect a payment method outside of Checkout, read the guide on [configuring subscriptions with a free trial](https://docs.stripe.com/payments/checkout/free-trials).
-final class PostPaymentLinksRequestPaymentMethodCollection {const PostPaymentLinksRequestPaymentMethodCollection._(this.value);
+@immutable final class PostPaymentLinksRequestPaymentMethodCollection {const PostPaymentLinksRequestPaymentMethodCollection._(this.value);
 
 factory PostPaymentLinksRequestPaymentMethodCollection.fromJson(String json) { return switch (json) {
   'always' => always,
@@ -215,7 +215,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PostPaymentLinksRequestPaymentMethodCollection($value)'; } 
  }
 /// Describes the type of transaction being performed in order to customize relevant text on the page, such as the submit button. Changing this value will also affect the hostname in the [url](https://docs.stripe.com/api/payment_links/payment_links/object#url) property (example: `donate.stripe.com`).
-final class PostPaymentLinksRequestSubmitType {const PostPaymentLinksRequestSubmitType._(this.value);
+@immutable final class PostPaymentLinksRequestSubmitType {const PostPaymentLinksRequestSubmitType._(this.value);
 
 factory PostPaymentLinksRequestSubmitType.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -248,7 +248,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksRequestSubmitType($value)'; } 
  }
-final class PostPaymentLinksRequest {const PostPaymentLinksRequest({this.afterCompletion, this.allowPromotionCodes, this.applicationFeeAmount, this.applicationFeePercent, this.automaticTax, this.billingAddressCollection, this.consentCollection, this.currency, this.customFields, this.customText, this.customerCreation, this.expand, this.inactiveMessage, this.invoiceCreation, required this.lineItems, this.metadata, this.nameCollection, this.onBehalfOf, this.optionalItems, this.paymentIntentData, this.paymentMethodCollection, this.paymentMethodTypes, this.phoneNumberCollection, this.restrictions, this.shippingAddressCollection, this.shippingOptions, this.submitType, this.subscriptionData, this.taxIdCollection, this.transferData, });
+@immutable final class PostPaymentLinksRequest {const PostPaymentLinksRequest({required this.lineItems, this.afterCompletion, this.allowPromotionCodes, this.applicationFeeAmount, this.applicationFeePercent, this.automaticTax, this.billingAddressCollection, this.consentCollection, this.currency, this.customFields, this.customText, this.customerCreation, this.expand, this.inactiveMessage, this.invoiceCreation, this.metadata, this.nameCollection, this.onBehalfOf, this.optionalItems, this.paymentIntentData, this.paymentMethodCollection, this.paymentMethodTypes, this.phoneNumberCollection, this.restrictions, this.shippingAddressCollection, this.shippingOptions, this.submitType, this.subscriptionData, this.taxIdCollection, this.transferData, });
 
 factory PostPaymentLinksRequest.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequest(
   afterCompletion: json['after_completion'] != null ? PostPaymentLinksRequestAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PushEvent {const PushEvent({required this.repositoryId, required this.pushId, required this.ref, required this.head, required this.before, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PushEvent {const PushEvent({required this.repositoryId, required this.pushId, required this.ref, required this.head, required this.before, });
 
 factory PushEvent.fromJson(Map<String, dynamic> json) { return PushEvent(
   repositoryId: (json['repository_id'] as num).toInt(),

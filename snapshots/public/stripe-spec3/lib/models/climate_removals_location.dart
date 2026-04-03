@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// 
-final class ClimateRemovalsLocation {const ClimateRemovalsLocation({this.city, required this.country, this.latitude, this.longitude, this.region, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+@immutable final class ClimateRemovalsLocation {const ClimateRemovalsLocation({required this.country, this.city, this.latitude, this.longitude, this.region, });
 
 factory ClimateRemovalsLocation.fromJson(Map<String, dynamic> json) { return ClimateRemovalsLocation(
   city: json['city'] as String?,

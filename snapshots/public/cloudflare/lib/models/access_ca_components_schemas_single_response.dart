@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_ca.dart';final class AccessCaComponentsSchemasSingleResponse {const AccessCaComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_ca.dart';@immutable final class AccessCaComponentsSchemasSingleResponse {const AccessCaComponentsSchemasSingleResponse({this.result});
 
 factory AccessCaComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AccessCaComponentsSchemasSingleResponse(
   result: json['result'] != null ? AccessCa.fromJson(json['result'] as Map<String, dynamic>) : null,

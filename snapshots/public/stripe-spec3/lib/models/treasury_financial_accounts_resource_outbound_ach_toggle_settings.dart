@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_accounts_resource_toggles_setting_status_details.dart';/// Whether the Feature is operational.
-final class TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus {const TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus._(this.value);
+@immutable final class TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus {const TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus._(this.value);
 
 factory TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourceOutboundAchToggleSettingsStatus($value)'; } 
  }
 /// Toggle settings for enabling/disabling an outbound ACH specific feature
-final class TreasuryFinancialAccountsResourceOutboundAchToggleSettings {const TreasuryFinancialAccountsResourceOutboundAchToggleSettings({required this.requested, required this.status, required this.statusDetails, });
+@immutable final class TreasuryFinancialAccountsResourceOutboundAchToggleSettings {const TreasuryFinancialAccountsResourceOutboundAchToggleSettings({required this.requested, required this.status, required this.statusDetails, });
 
 factory TreasuryFinancialAccountsResourceOutboundAchToggleSettings.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceOutboundAchToggleSettings(
   requested: json['requested'] as bool,

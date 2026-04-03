@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_provider_id.dart';final class McnDeletedProvider {const McnDeletedProvider({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_provider_id.dart';@immutable final class McnDeletedProvider {const McnDeletedProvider({required this.id});
 
 factory McnDeletedProvider.fromJson(Map<String, dynamic> json) { return McnDeletedProvider(
   id: McnProviderId.fromJson(json['id'] as String),

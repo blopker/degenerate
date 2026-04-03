@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The bucket jurisdiction.
-final class R2GetEventNotificationConfigCfR2Jurisdiction {const R2GetEventNotificationConfigCfR2Jurisdiction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The bucket jurisdiction.
+@immutable final class R2GetEventNotificationConfigCfR2Jurisdiction {const R2GetEventNotificationConfigCfR2Jurisdiction._(this.value);
 
 factory R2GetEventNotificationConfigCfR2Jurisdiction.fromJson(String json) { return switch (json) {
   'default' => $default,

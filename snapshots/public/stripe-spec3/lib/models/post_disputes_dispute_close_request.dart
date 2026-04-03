@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostDisputesDisputeCloseRequest {const PostDisputesDisputeCloseRequest({this.expand});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostDisputesDisputeCloseRequest {const PostDisputesDisputeCloseRequest({this.expand});
 
 factory PostDisputesDisputeCloseRequest.fromJson(Map<String, dynamic> json) { return PostDisputesDisputeCloseRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

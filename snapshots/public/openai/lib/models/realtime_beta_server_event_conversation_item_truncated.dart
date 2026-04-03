@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The event type, must be `conversation.item.truncated`.
-final class RealtimeBetaServerEventConversationItemTruncatedType {const RealtimeBetaServerEventConversationItemTruncatedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.truncated`.
+@immutable final class RealtimeBetaServerEventConversationItemTruncatedType {const RealtimeBetaServerEventConversationItemTruncatedType._(this.value);
 
 factory RealtimeBetaServerEventConversationItemTruncatedType.fromJson(String json) { return switch (json) {
   'conversation.item.truncated' => conversationItemTruncated,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 /// This action will truncate the audio and remove the server-side text transcript
 /// to ensure there is no text in the context that hasn't been heard by the user.
 /// 
-final class RealtimeBetaServerEventConversationItemTruncated {const RealtimeBetaServerEventConversationItemTruncated({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.audioEndMs, });
+@immutable final class RealtimeBetaServerEventConversationItemTruncated {const RealtimeBetaServerEventConversationItemTruncated({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.audioEndMs, });
 
 factory RealtimeBetaServerEventConversationItemTruncated.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventConversationItemTruncated(
   eventId: json['event_id'] as String,

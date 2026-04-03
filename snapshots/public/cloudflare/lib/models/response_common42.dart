@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_messages2.dart';final class ResponseCommon42 {const ResponseCommon42({required this.errors, required this.messages, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_messages2.dart';@immutable final class ResponseCommon42 {const ResponseCommon42({required this.errors, required this.messages, required this.success, });
 
 factory ResponseCommon42.fromJson(Map<String, dynamic> json) { return ResponseCommon42(
   errors: (json['errors'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailRoutingSummaryByArcResponseResultMetaUnits {const RadarGetEmailRoutingSummaryByArcResponseResultMetaUnits({required this.name, required this.value, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByArcResponseResultMetaUnits {const RadarGetEmailRoutingSummaryByArcResponseResultMetaUnits({required this.name, required this.value, });
 
 factory RadarGetEmailRoutingSummaryByArcResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingSummaryByArcResponseResultMetaUnits(
   name: json['name'] as String,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoiceitems_invoiceitem_request_discounts.dart';import 'post_invoiceitems_invoiceitem_request_discounts_variant1.dart';import 'post_invoiceitems_invoiceitem_request_metadata.dart';import 'post_invoiceitems_invoiceitem_request_period.dart';import 'post_invoiceitems_invoiceitem_request_price_data.dart';import 'post_invoiceitems_invoiceitem_request_pricing.dart';import 'post_invoiceitems_invoiceitem_request_tax_code.dart';import 'post_invoiceitems_invoiceitem_request_tax_rates.dart';/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
-final class PostInvoiceitemsInvoiceitemRequestTaxBehavior {const PostInvoiceitemsInvoiceitemRequestTaxBehavior._(this.value);
+@immutable final class PostInvoiceitemsInvoiceitemRequestTaxBehavior {const PostInvoiceitemsInvoiceitemRequestTaxBehavior._(this.value);
 
 factory PostInvoiceitemsInvoiceitemRequestTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoiceitemsInvoiceitemRequestTaxBehavior($value)'; } 
  }
-final class PostInvoiceitemsInvoiceitemRequest {const PostInvoiceitemsInvoiceitemRequest({this.amount, this.description, this.discountable, this.discounts, this.expand, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.taxBehavior, this.taxCode, this.taxRates, this.unitAmountDecimal, });
+@immutable final class PostInvoiceitemsInvoiceitemRequest {const PostInvoiceitemsInvoiceitemRequest({this.amount, this.description, this.discountable, this.discounts, this.expand, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.taxBehavior, this.taxCode, this.taxRates, this.unitAmountDecimal, });
 
 factory PostInvoiceitemsInvoiceitemRequest.fromJson(Map<String, dynamic> json) { return PostInvoiceitemsInvoiceitemRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,

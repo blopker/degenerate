@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_alert_classification.dart';import 'code_scanning_alert_environment.dart';import 'code_scanning_alert_instance_message.dart';import 'code_scanning_alert_location.dart';import 'code_scanning_alert_state.dart';import 'code_scanning_analysis_analysis_key.dart';import 'code_scanning_analysis_category.dart';import 'code_scanning_ref.dart';final class CodeScanningAlertInstance {const CodeScanningAlertInstance({this.ref, this.analysisKey, this.environment, this.category, this.state, this.commitSha, this.message, this.location, this.htmlUrl, this.classifications, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_alert_classification.dart';import 'code_scanning_alert_environment.dart';import 'code_scanning_alert_instance_message.dart';import 'code_scanning_alert_location.dart';import 'code_scanning_alert_state.dart';import 'code_scanning_analysis_analysis_key.dart';import 'code_scanning_analysis_category.dart';import 'code_scanning_ref.dart';@immutable final class CodeScanningAlertInstance {const CodeScanningAlertInstance({this.ref, this.analysisKey, this.environment, this.category, this.state, this.commitSha, this.message, this.location, this.htmlUrl, this.classifications, });
 
 factory CodeScanningAlertInstance.fromJson(Map<String, dynamic> json) { return CodeScanningAlertInstance(
   ref: json['ref'] != null ? CodeScanningRef.fromJson(json['ref'] as String) : null,

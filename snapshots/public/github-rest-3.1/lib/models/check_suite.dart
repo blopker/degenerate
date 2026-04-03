@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'minimal_repository.dart';import 'pull_request_minimal.dart';import 'simple_commit.dart';/// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
-final class CheckSuiteStatus {const CheckSuiteStatus._(this.value);
+@immutable final class CheckSuiteStatus {const CheckSuiteStatus._(this.value);
 
 factory CheckSuiteStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CheckSuiteStatus($value)'; } 
  }
-final class CheckSuiteConclusion {const CheckSuiteConclusion._(this.value);
+@immutable final class CheckSuiteConclusion {const CheckSuiteConclusion._(this.value);
 
 factory CheckSuiteConclusion.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -89,7 +89,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckSuiteConclusion($value)'; } 
  }
 /// A suite of checks performed on the code of a given code change
-final class CheckSuite {const CheckSuite({required this.id, required this.nodeId, required this.headBranch, required this.headSha, required this.status, required this.conclusion, required this.url, required this.before, required this.after, required this.pullRequests, required this.app, required this.repository, required this.createdAt, required this.updatedAt, required this.headCommit, required this.latestCheckRunsCount, required this.checkRunsUrl, this.rerequestable, this.runsRerequestable, });
+@immutable final class CheckSuite {const CheckSuite({required this.id, required this.nodeId, required this.headBranch, required this.headSha, required this.status, required this.conclusion, required this.url, required this.before, required this.after, required this.pullRequests, required this.app, required this.repository, required this.createdAt, required this.updatedAt, required this.headCommit, required this.latestCheckRunsCount, required this.checkRunsUrl, this.rerequestable, this.runsRerequestable, });
 
 factory CheckSuite.fromJson(Map<String, dynamic> json) { return CheckSuite(
   id: (json['id'] as num).toInt(),

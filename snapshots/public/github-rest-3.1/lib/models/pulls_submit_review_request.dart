@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
-final class PullsSubmitReviewRequestEvent {const PullsSubmitReviewRequestEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
+@immutable final class PullsSubmitReviewRequestEvent {const PullsSubmitReviewRequestEvent._(this.value);
 
 factory PullsSubmitReviewRequestEvent.fromJson(String json) { return switch (json) {
   'APPROVE' => approve,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PullsSubmitReviewRequestEvent($value)'; } 
  }
-final class PullsSubmitReviewRequest {const PullsSubmitReviewRequest({this.body, required this.event, });
+@immutable final class PullsSubmitReviewRequest {const PullsSubmitReviewRequest({required this.event, this.body, });
 
 factory PullsSubmitReviewRequest.fromJson(Map<String, dynamic> json) { return PullsSubmitReviewRequest(
   body: json['body'] as String?,

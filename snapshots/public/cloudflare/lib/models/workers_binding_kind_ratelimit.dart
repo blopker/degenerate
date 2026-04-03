@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'workers_binding_kind_ratelimit_simple.dart';import 'workers_binding_name.dart';final class WorkersBindingKindRatelimit {const WorkersBindingKindRatelimit({required this.name, required this.namespaceId, required this.simple, required this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_kind_ratelimit_simple.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindRatelimit {const WorkersBindingKindRatelimit({required this.name, required this.namespaceId, required this.simple, required this.type, });
 
 factory WorkersBindingKindRatelimit.fromJson(Map<String, dynamic> json) { return WorkersBindingKindRatelimit(
   name: WorkersBindingName.fromJson(json['name'] as String),

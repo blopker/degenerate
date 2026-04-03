@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_requirements_alternative.dart';import 'account_requirements_error.dart';/// If the account is disabled, this enum describes why. [Learn more about handling verification issues](https://docs.stripe.com/connect/handling-api-verification).
-final class AccountRequirementsDisabledReason {const AccountRequirementsDisabledReason._(this.value);
+@immutable final class AccountRequirementsDisabledReason {const AccountRequirementsDisabledReason._(this.value);
 
 factory AccountRequirementsDisabledReason.fromJson(String json) { return switch (json) {
   'action_required.requested_capabilities' => actionRequiredRequestedCapabilities,
@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountRequirementsDisabledReason($value)'; } 
  }
 /// 
-final class AccountRequirements {const AccountRequirements({this.alternatives, this.currentDeadline, this.currentlyDue, this.disabledReason, this.errors, this.eventuallyDue, this.pastDue, this.pendingVerification, });
+@immutable final class AccountRequirements {const AccountRequirements({this.alternatives, this.currentDeadline, this.currentlyDue, this.disabledReason, this.errors, this.eventuallyDue, this.pastDue, this.pendingVerification, });
 
 factory AccountRequirements.fromJson(Map<String, dynamic> json) { return AccountRequirements(
   alternatives: (json['alternatives'] as List<dynamic>?)?.map((e) => AccountRequirementsAlternative.fromJson(e as Map<String, dynamic>)).toList(),

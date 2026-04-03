@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'infra_ip_info_ipv4.dart';import 'infra_ip_info_ipv6.dart';/// The IPv4/IPv6 address that identifies where to reach a target
-final class InfraIpInfo {const InfraIpInfo({this.ipv4, this.ipv6, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_ip_info_ipv4.dart';import 'infra_ip_info_ipv6.dart';/// The IPv4/IPv6 address that identifies where to reach a target
+@immutable final class InfraIpInfo {const InfraIpInfo({this.ipv4, this.ipv6, });
 
 factory InfraIpInfo.fromJson(Map<String, dynamic> json) { return InfraIpInfo(
   ipv4: json['ipv4'] != null ? InfraIpInfoIpv4.fromJson(json['ipv4'] as Map<String, dynamic>) : null,

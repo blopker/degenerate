@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class RadarGetEmailSecuritySummaryByMaliciousTlsVersion {const RadarGetEmailSecuritySummaryByMaliciousTlsVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByMaliciousTlsVersion {const RadarGetEmailSecuritySummaryByMaliciousTlsVersion._(this.value);
 
 factory RadarGetEmailSecuritySummaryByMaliciousTlsVersion.fromJson(String json) { return switch (json) {
   'TLSv1_0' => tlSv10,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Compliance Status.
-final class TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Compliance Status.
+@immutable final class TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus._(this.value);
 
 factory TeamsDevicesIntuneInputRequestComplianceStatus.fromJson(String json) { return switch (json) {
   'compliant' => compliant,
@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsDevicesIntuneInputRequestComplianceStatus($value)'; } 
  }
-final class TeamsDevicesIntuneInputRequest {const TeamsDevicesIntuneInputRequest({required this.complianceStatus, required this.connectionId, });
+@immutable final class TeamsDevicesIntuneInputRequest {const TeamsDevicesIntuneInputRequest({required this.complianceStatus, required this.connectionId, });
 
 factory TeamsDevicesIntuneInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesIntuneInputRequest(
   complianceStatus: TeamsDevicesIntuneInputRequestComplianceStatus.fromJson(json['compliance_status'] as String),

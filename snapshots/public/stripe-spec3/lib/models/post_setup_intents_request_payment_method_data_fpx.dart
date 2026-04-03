@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSetupIntentsRequestPaymentMethodDataFpxBank {const PostSetupIntentsRequestPaymentMethodDataFpxBank._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSetupIntentsRequestPaymentMethodDataFpxBank {const PostSetupIntentsRequestPaymentMethodDataFpxBank._(this.value);
 
 factory PostSetupIntentsRequestPaymentMethodDataFpxBank.fromJson(String json) { return switch (json) {
   'affin_bank' => affinBank,
@@ -84,7 +84,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataFpxBank($value)'; } 
  }
-final class PostSetupIntentsRequestPaymentMethodDataFpx {const PostSetupIntentsRequestPaymentMethodDataFpx({required this.bank});
+@immutable final class PostSetupIntentsRequestPaymentMethodDataFpx {const PostSetupIntentsRequestPaymentMethodDataFpx({required this.bank});
 
 factory PostSetupIntentsRequestPaymentMethodDataFpx.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodDataFpx(
   bank: PostSetupIntentsRequestPaymentMethodDataFpxBank.fromJson(json['bank'] as String),

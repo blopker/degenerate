@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class GelatoReportDocumentOptionsAllowedTypes {const GelatoReportDocumentOptionsAllowedTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GelatoReportDocumentOptionsAllowedTypes {const GelatoReportDocumentOptionsAllowedTypes._(this.value);
 
 factory GelatoReportDocumentOptionsAllowedTypes.fromJson(String json) { return switch (json) {
   'driving_license' => drivingLicense,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoReportDocumentOptionsAllowedTypes($value)'; } 
  }
 /// 
-final class GelatoReportDocumentOptions {const GelatoReportDocumentOptions({this.allowedTypes, this.requireIdNumber, this.requireLiveCapture, this.requireMatchingSelfie, });
+@immutable final class GelatoReportDocumentOptions {const GelatoReportDocumentOptions({this.allowedTypes, this.requireIdNumber, this.requireLiveCapture, this.requireMatchingSelfie, });
 
 factory GelatoReportDocumentOptions.fromJson(Map<String, dynamic> json) { return GelatoReportDocumentOptions(
   allowedTypes: (json['allowed_types'] as List<dynamic>?)?.map((e) => GelatoReportDocumentOptionsAllowedTypes.fromJson(e as String)).toList(),

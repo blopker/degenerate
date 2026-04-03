@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages58_tools_variant1_parameters_properties_value.dart';/// Schema defining the parameters accepted by the tool.
-final class Messages58ToolsVariant1Parameters {const Messages58ToolsVariant1Parameters({required this.properties, this.$required, required this.type, });
+@immutable final class Messages58ToolsVariant1Parameters {const Messages58ToolsVariant1Parameters({required this.properties, required this.type, this.$required, });
 
 factory Messages58ToolsVariant1Parameters.fromJson(Map<String, dynamic> json) { return Messages58ToolsVariant1Parameters(
   properties: (json['properties'] as Map<String, dynamic>).map((k, v) => MapEntry(k, Messages58ToolsVariant1ParametersPropertiesValue.fromJson(v as Map<String, dynamic>))),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_components_schemas_certificate.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_issuer.dart';import 'tls_certificates_and_hostnames_schemas_expires_on.dart';import 'tls_certificates_and_hostnames_signature.dart';import 'tls_certificates_and_hostnames_uploaded_on.dart';/// Status of the zone's custom SSL.
-final class TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_components_schemas_certificate.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_issuer.dart';import 'tls_certificates_and_hostnames_schemas_expires_on.dart';import 'tls_certificates_and_hostnames_signature.dart';import 'tls_certificates_and_hostnames_uploaded_on.dart';/// Status of the zone's custom SSL.
+@immutable final class TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus._(this.value);
 
 factory TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -44,7 +44,7 @@ factory TlsCertificatesAndHostnamesSchemasUpdatedAt.fromJson(String json) => Tls
 String toJson() => value.toIso8601String();
 
 }
-final class TlsCertificatesAndHostnamesCustomTrustStore {const TlsCertificatesAndHostnamesCustomTrustStore({required this.certificate, required this.expiresOn, required this.id, required this.issuer, required this.signature, required this.status, required this.updatedAt, required this.uploadedOn, });
+@immutable final class TlsCertificatesAndHostnamesCustomTrustStore {const TlsCertificatesAndHostnamesCustomTrustStore({required this.certificate, required this.expiresOn, required this.id, required this.issuer, required this.signature, required this.status, required this.updatedAt, required this.uploadedOn, });
 
 factory TlsCertificatesAndHostnamesCustomTrustStore.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCustomTrustStore(
   certificate: TlsCertificatesAndHostnamesComponentsSchemasCertificate.fromJson(json['certificate'] as String),

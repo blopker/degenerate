@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';/// The address validation capabilities to use.
-final class IssuingCardShippingAddressValidationMode {const IssuingCardShippingAddressValidationMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// The address validation capabilities to use.
+@immutable final class IssuingCardShippingAddressValidationMode {const IssuingCardShippingAddressValidationMode._(this.value);
 
 factory IssuingCardShippingAddressValidationMode.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardShippingAddressValidationMode($value)'; } 
  }
 /// The validation result for the shipping address.
-final class IssuingCardShippingAddressValidationResult {const IssuingCardShippingAddressValidationResult._(this.value);
+@immutable final class IssuingCardShippingAddressValidationResult {const IssuingCardShippingAddressValidationResult._(this.value);
 
 factory IssuingCardShippingAddressValidationResult.fromJson(String json) { return switch (json) {
   'indeterminate' => indeterminate,
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardShippingAddressValidationResult($value)'; } 
  }
 /// 
-final class IssuingCardShippingAddressValidation {const IssuingCardShippingAddressValidation({required this.mode, this.normalizedAddress, this.result, });
+@immutable final class IssuingCardShippingAddressValidation {const IssuingCardShippingAddressValidation({required this.mode, this.normalizedAddress, this.result, });
 
 factory IssuingCardShippingAddressValidation.fromJson(Map<String, dynamic> json) { return IssuingCardShippingAddressValidation(
   mode: IssuingCardShippingAddressValidationMode.fromJson(json['mode'] as String),

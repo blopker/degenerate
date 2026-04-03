@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dlp_email_rule.dart';final class DlpEmailScannerGetRuleResponse {const DlpEmailScannerGetRuleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_email_rule.dart';@immutable final class DlpEmailScannerGetRuleResponse {const DlpEmailScannerGetRuleResponse({this.result});
 
 factory DlpEmailScannerGetRuleResponse.fromJson(Map<String, dynamic> json) { return DlpEmailScannerGetRuleResponse(
   result: json['result'] != null ? DlpEmailRule.fromJson(json['result'] as Map<String, dynamic>) : null,

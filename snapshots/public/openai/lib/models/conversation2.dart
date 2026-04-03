@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// The conversation that this response belonged to. Input items and output items from this response were automatically added to this conversation.
-final class Conversation2 {const Conversation2({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The conversation that this response belonged to. Input items and output items from this response were automatically added to this conversation.
+@immutable final class Conversation2 {const Conversation2({required this.id});
 
 factory Conversation2.fromJson(Map<String, dynamic> json) { return Conversation2(
   id: json['id'] as String,

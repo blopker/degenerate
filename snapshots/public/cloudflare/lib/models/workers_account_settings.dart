@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class WorkersAccountSettings {const WorkersAccountSettings({this.defaultUsageModel, this.greenCompute, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAccountSettings {const WorkersAccountSettings({this.defaultUsageModel, this.greenCompute, });
 
 factory WorkersAccountSettings.fromJson(Map<String, dynamic> json) { return WorkersAccountSettings(
   defaultUsageModel: json['default_usage_model'] as String?,

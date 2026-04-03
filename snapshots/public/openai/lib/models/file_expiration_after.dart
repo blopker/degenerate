@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`.
-final class FileExpirationAfterAnchor {const FileExpirationAfterAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`.
+@immutable final class FileExpirationAfterAnchor {const FileExpirationAfterAnchor._(this.value);
 
 factory FileExpirationAfterAnchor.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FileExpirationAfterAnchor($value)'; } 
  }
 /// The expiration policy for a file. By default, files with `purpose=batch` expire after 30 days and all other files are persisted until they are manually deleted.
-final class FileExpirationAfter {const FileExpirationAfter({required this.anchor, required this.seconds, });
+@immutable final class FileExpirationAfter {const FileExpirationAfter({required this.anchor, required this.seconds, });
 
 factory FileExpirationAfter.fromJson(Map<String, dynamic> json) { return FileExpirationAfter(
   anchor: FileExpirationAfterAnchor.fromJson(json['anchor'] as String),

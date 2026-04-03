@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesMessages2 {const TeamsDevicesMessages2({required this.code, required this.message, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesMessages2 {const TeamsDevicesMessages2({required this.code, required this.message, });
 
 factory TeamsDevicesMessages2.fromJson(Map<String, dynamic> json) { return TeamsDevicesMessages2(
   code: (json['code'] as num).toInt(),

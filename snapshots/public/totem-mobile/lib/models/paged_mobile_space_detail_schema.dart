@@ -3,6 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'mobile_space_detail_schema.dart';
 
+@immutable
 final class PagedMobileSpaceDetailSchema {
   const PagedMobileSpaceDetailSchema({
     required this.items,

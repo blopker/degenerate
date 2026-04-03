@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_external_accounts_data.dart';import 'bank_account.dart';import 'card.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
-final class AccountExternalAccountsObject {const AccountExternalAccountsObject._(this.value);
+@immutable final class AccountExternalAccountsObject {const AccountExternalAccountsObject._(this.value);
 
 factory AccountExternalAccountsObject.fromJson(String json) { return switch (json) {
   'list' => list,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountExternalAccountsObject($value)'; } 
  }
 /// External accounts (bank accounts and debit cards) currently attached to this account. External accounts are only returned for requests where `controller[is_controller]` is true.
-final class AccountExternalAccounts {const AccountExternalAccounts({required this.data, required this.hasMore, required this.object, required this.url, });
+@immutable final class AccountExternalAccounts {const AccountExternalAccounts({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory AccountExternalAccounts.fromJson(Map<String, dynamic> json) { return AccountExternalAccounts(
   data: (json['data'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>),)).toList(),

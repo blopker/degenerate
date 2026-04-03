@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import '../api_client.dart';
-import '../streamed_api_response.dart';
+import 'package:degenerate_runtime/src/api_client.dart';
+import 'package:degenerate_runtime/src/streamed_api_response.dart';
 
 /// A test [ApiClient] that records requests and returns canned responses.
 ///
@@ -18,6 +18,10 @@ import '../streamed_api_response.dart';
 /// expect(client.lastRequest!.path, equals('/users/123'));
 /// ```
 final class RecordingClient implements ApiClient {
+  /// Creates a recording client with an optional default response.
+  RecordingClient({ApiResponse? nextResponse, this.onRequest})
+    : nextResponse = nextResponse ?? ApiResponse(statusCode: 200, body: '');
+
   /// All requests sent through this client, in order.
   final List<ApiRequest> requests = [];
 
@@ -30,10 +34,6 @@ final class RecordingClient implements ApiClient {
   ///
   /// If set, takes precedence over [nextResponse].
   ApiResponse Function(ApiRequest request)? onRequest;
-
-  /// Creates a recording client with an optional default response.
-  RecordingClient({ApiResponse? nextResponse, this.onRequest})
-    : nextResponse = nextResponse ?? ApiResponse(statusCode: 200, body: '');
 
   /// The most recently sent request, or `null` if no requests have been sent.
   ApiRequest? get lastRequest => requests.isEmpty ? null : requests.last;
@@ -54,7 +54,7 @@ final class RecordingClient implements ApiClient {
   Future<StreamedApiResponse> sendStreaming(ApiRequest request) async {
     requests.add(request);
     return nextStreamedResponse ??
-        StreamedApiResponse(statusCode: 200, byteStream: const Stream.empty());
+        const StreamedApiResponse(statusCode: 200, byteStream: Stream.empty());
   }
 
   @override

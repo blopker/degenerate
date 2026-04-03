@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry {const PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry {const PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry._(this.value);
 
 factory PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry.fromJson(String json) { return switch (json) {
   'AT' => at,
@@ -36,7 +36,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry($value)'; } 
  }
-final class PostPaymentIntentsIntentRequestPaymentMethodDataSofort {const PostPaymentIntentsIntentRequestPaymentMethodDataSofort({required this.country});
+@immutable final class PostPaymentIntentsIntentRequestPaymentMethodDataSofort {const PostPaymentIntentsIntentRequestPaymentMethodDataSofort({required this.country});
 
 factory PostPaymentIntentsIntentRequestPaymentMethodDataSofort.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataSofort(
   country: PostPaymentIntentsIntentRequestPaymentMethodDataSofortCountry.fromJson(json['country'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Dimension to sort results by
-final class DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Dimension to sort results by
+@immutable final class DigitalExperienceMonitoringSortBy {const DigitalExperienceMonitoringSortBy._(this.value);
 
 factory DigitalExperienceMonitoringSortBy.fromJson(String json) { return switch (json) {
   'colo' => colo,

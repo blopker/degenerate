@@ -14,7 +14,7 @@ factory TlsCertificatesAndHostnamesComponentsSchemasExpiresOn.fromJson(String js
 String toJson() => value;
 
 }
-final class TlsCertificatesAndHostnamesCertificates {const TlsCertificatesAndHostnamesCertificates({this.certificate, required this.csr, this.expiresOn, required this.hostnames, this.id, required this.requestType, required this.requestedValidity, });
+@immutable final class TlsCertificatesAndHostnamesCertificates {const TlsCertificatesAndHostnamesCertificates({required this.csr, required this.hostnames, required this.requestType, required this.requestedValidity, this.certificate, this.expiresOn, this.id, });
 
 factory TlsCertificatesAndHostnamesCertificates.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCertificates(
   certificate: json['certificate'] != null ? TlsCertificatesAndHostnamesCertificatesComponentsSchemasCertificate.fromJson(json['certificate'] as String) : null,

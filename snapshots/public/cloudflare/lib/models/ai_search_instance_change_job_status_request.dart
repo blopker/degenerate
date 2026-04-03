@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class AiSearchInstanceChangeJobStatusRequestAction {const AiSearchInstanceChangeJobStatusRequestAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceChangeJobStatusRequestAction {const AiSearchInstanceChangeJobStatusRequestAction._(this.value);
 
 factory AiSearchInstanceChangeJobStatusRequestAction.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceChangeJobStatusRequestAction($value)'; } 
  }
-final class AiSearchInstanceChangeJobStatusRequest {const AiSearchInstanceChangeJobStatusRequest({required this.action});
+@immutable final class AiSearchInstanceChangeJobStatusRequest {const AiSearchInstanceChangeJobStatusRequest({required this.action});
 
 factory AiSearchInstanceChangeJobStatusRequest.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChangeJobStatusRequest(
   action: AiSearchInstanceChangeJobStatusRequestAction.fromJson(json['action'] as String),

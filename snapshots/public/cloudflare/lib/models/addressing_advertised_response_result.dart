@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_components_schemas_advertised.dart';import 'addressing_modified_at_nullable.dart';final class AddressingAdvertisedResponseResult {const AddressingAdvertisedResponseResult({this.advertised, this.advertisedModifiedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_components_schemas_advertised.dart';import 'addressing_modified_at_nullable.dart';@immutable final class AddressingAdvertisedResponseResult {const AddressingAdvertisedResponseResult({this.advertised, this.advertisedModifiedAt, });
 
 factory AddressingAdvertisedResponseResult.fromJson(Map<String, dynamic> json) { return AddressingAdvertisedResponseResult(
   advertised: json['advertised'] != null ? AddressingComponentsSchemasAdvertised.fromJson(json['advertised'] as bool) : null,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PutGroupUpdateResponse400Errors {const PutGroupUpdateResponse400Errors({required this.message});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PutGroupUpdateResponse400Errors {const PutGroupUpdateResponse400Errors({required this.message});
 
 factory PutGroupUpdateResponse400Errors.fromJson(Map<String, dynamic> json) { return PutGroupUpdateResponse400Errors(
   message: json['message'] as String,

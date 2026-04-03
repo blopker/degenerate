@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shield_uuid.dart';final class SchemaValidationDeletePerOperationSettingResponseResult {const SchemaValidationDeletePerOperationSettingResponseResult({this.operationId});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_uuid.dart';@immutable final class SchemaValidationDeletePerOperationSettingResponseResult {const SchemaValidationDeletePerOperationSettingResponseResult({this.operationId});
 
 factory SchemaValidationDeletePerOperationSettingResponseResult.fromJson(Map<String, dynamic> json) { return SchemaValidationDeletePerOperationSettingResponseResult(
   operationId: json['operation_id'] != null ? ShieldUuid.fromJson(json['operation_id'] as String) : null,

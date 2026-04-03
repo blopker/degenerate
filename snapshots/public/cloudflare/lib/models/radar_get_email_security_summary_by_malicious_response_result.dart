@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'radar_get_email_security_summary_by_malicious_response_result_meta.dart';import 'radar_get_email_security_summary_by_malicious_response_result_summary0.dart';final class RadarGetEmailSecuritySummaryByMaliciousResponseResult {const RadarGetEmailSecuritySummaryByMaliciousResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_summary_by_malicious_response_result_meta.dart';import 'radar_get_email_security_summary_by_malicious_response_result_summary0.dart';@immutable final class RadarGetEmailSecuritySummaryByMaliciousResponseResult {const RadarGetEmailSecuritySummaryByMaliciousResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetEmailSecuritySummaryByMaliciousResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryByMaliciousResponseResult(
   meta: RadarGetEmailSecuritySummaryByMaliciousResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),

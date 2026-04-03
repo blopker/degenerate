@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class AiSearchUpdateInstancesResponseResultEmbeddingModelVariant1 {const AiSearchUpdateInstancesResponseResultEmbeddingModelVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchUpdateInstancesResponseResultEmbeddingModelVariant1 {const AiSearchUpdateInstancesResponseResultEmbeddingModelVariant1._(this.value);
 
 factory AiSearchUpdateInstancesResponseResultEmbeddingModelVariant1.fromJson(String json) { return switch (json) {
   '@cf/qwen/qwen3-embedding-0.6b' => cfQwenQwen3Embedding06b,
@@ -39,7 +39,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesResponseResultEmbeddingModelVariant1($value)'; } 
  }
-final class AiSearchUpdateInstancesResponseResultEmbeddingModelVariant2 {const AiSearchUpdateInstancesResponseResultEmbeddingModelVariant2._(this.value);
+@immutable final class AiSearchUpdateInstancesResponseResultEmbeddingModelVariant2 {const AiSearchUpdateInstancesResponseResultEmbeddingModelVariant2._(this.value);
 
 factory AiSearchUpdateInstancesResponseResultEmbeddingModelVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,

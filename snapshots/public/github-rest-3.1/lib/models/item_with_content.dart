@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_content_type.dart';import 'simple_user.dart';/// An item belonging to a project
-final class ItemWithContent {const ItemWithContent({required this.id, this.nodeId, this.projectUrl, required this.contentType, this.content, this.creator, required this.createdAt, required this.updatedAt, required this.archivedAt, this.itemUrl, this.fields, });
+@immutable final class ItemWithContent {const ItemWithContent({required this.id, required this.contentType, required this.createdAt, required this.updatedAt, required this.archivedAt, this.nodeId, this.projectUrl, this.content, this.creator, this.itemUrl, this.fields, });
 
 factory ItemWithContent.fromJson(Map<String, dynamic> json) { return ItemWithContent(
   id: (json['id'] as num).toDouble(),
   nodeId: json['node_id'] as String?,
   projectUrl: json['project_url'] != null ? Uri.parse(json['project_url'] as String) : null,
   contentType: ItemContentType.fromJson(json['content_type'] as String),
-  content: (json['content'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  content: json['content'] as Map<String, dynamic>?,
   creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   archivedAt: json['archived_at'] != null ? DateTime.parse(json['archived_at'] as String) : null,
   itemUrl: json['item_url'] != null ? Uri.parse(json['item_url'] as String) : null,
-  fields: (json['fields'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  fields: (json['fields'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
 /// The unique identifier of the project item.

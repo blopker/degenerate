@@ -1,8 +1,8 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// When a binding has been deployed to a majority of Cloudflare datacenters, the binding will become active and can be used with its associated service.
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// When a binding has been deployed to a majority of Cloudflare datacenters, the binding will become active and can be used with its associated service.
 /// 
-final class AddressingProvisioningState {const AddressingProvisioningState._(this.value);
+@immutable final class AddressingProvisioningState {const AddressingProvisioningState._(this.value);
 
 factory AddressingProvisioningState.fromJson(String json) { return switch (json) {
   'provisioning' => provisioning,
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AddressingProvisioningState($value)'; } 
  }
 /// Status of a Service Binding's deployment to the Cloudflare network
-final class AddressingProvisioning {const AddressingProvisioning({this.state});
+@immutable final class AddressingProvisioning {const AddressingProvisioning({this.state});
 
 factory AddressingProvisioning.fromJson(Map<String, dynamic> json) { return AddressingProvisioning(
   state: json['state'] != null ? AddressingProvisioningState.fromJson(json['state'] as String) : null,

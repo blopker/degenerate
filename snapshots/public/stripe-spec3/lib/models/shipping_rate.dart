@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_rate_delivery_estimate.dart';import 'shipping_rate_fixed_amount.dart';import 'shipping_rate_tax_code.dart';import 'tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
-final class ShippingRateObject {const ShippingRateObject._(this.value);
+@immutable final class ShippingRateObject {const ShippingRateObject._(this.value);
 
 factory ShippingRateObject.fromJson(String json) { return switch (json) {
   'shipping_rate' => shippingRate,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ShippingRateObject($value)'; } 
  }
 /// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
-final class ShippingRateTaxBehavior {const ShippingRateTaxBehavior._(this.value);
+@immutable final class ShippingRateTaxBehavior {const ShippingRateTaxBehavior._(this.value);
 
 factory ShippingRateTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ShippingRateTaxBehavior($value)'; } 
  }
 /// The type of calculation to use on the shipping rate.
-final class ShippingRateType {const ShippingRateType._(this.value);
+@immutable final class ShippingRateType {const ShippingRateType._(this.value);
 
 factory ShippingRateType.fromJson(String json) { return switch (json) {
   'fixed_amount' => fixedAmount,
@@ -74,7 +74,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Shipping rates describe the price of shipping presented to your customers and
 /// applied to a purchase. For more information, see [Charge for shipping](https://docs.stripe.com/payments/during-payment/charge-shipping).
-final class ShippingRate {const ShippingRate({required this.active, required this.created, this.deliveryEstimate, this.displayName, this.fixedAmount, required this.id, required this.livemode, required this.metadata, required this.object, this.taxBehavior, this.taxCode, required this.type, });
+@immutable final class ShippingRate {const ShippingRate({required this.active, required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.type, this.deliveryEstimate, this.displayName, this.fixedAmount, this.taxBehavior, this.taxCode, });
 
 factory ShippingRate.fromJson(Map<String, dynamic> json) { return ShippingRate(
   active: json['active'] as bool,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsListMembersLegacyRole {const TeamsListMembersLegacyRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsListMembersLegacyRole {const TeamsListMembersLegacyRole._(this.value);
 
 factory TeamsListMembersLegacyRole.fromJson(String json) { return switch (json) {
   'member' => member,

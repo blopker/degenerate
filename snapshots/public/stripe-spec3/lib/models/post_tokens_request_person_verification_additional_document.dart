@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostTokensRequestPersonVerificationAdditionalDocument {const PostTokensRequestPersonVerificationAdditionalDocument({this.back, this.front, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostTokensRequestPersonVerificationAdditionalDocument {const PostTokensRequestPersonVerificationAdditionalDocument({this.back, this.front, });
 
 factory PostTokensRequestPersonVerificationAdditionalDocument.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonVerificationAdditionalDocument(
   back: json['back'] as String?,

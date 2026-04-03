@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Type discriminator that is always `file`.
-final class FileAnnotationSourceType {const FileAnnotationSourceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `file`.
+@immutable final class FileAnnotationSourceType {const FileAnnotationSourceType._(this.value);
 
 factory FileAnnotationSourceType.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FileAnnotationSourceType($value)'; } 
  }
 /// Attachment source referenced by an annotation.
-final class FileAnnotationSource {const FileAnnotationSource({this.type = FileAnnotationSourceType.file, required this.filename, });
+@immutable final class FileAnnotationSource {const FileAnnotationSource({required this.filename, this.type = FileAnnotationSourceType.file, });
 
 factory FileAnnotationSource.fromJson(Map<String, dynamic> json) { return FileAnnotationSource(
   type: FileAnnotationSourceType.fromJson(json['type'] as String),

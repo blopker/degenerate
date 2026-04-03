@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TeamsDevicesServiceMode {const TeamsDevicesServiceMode({this.mode, this.port, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesServiceMode {const TeamsDevicesServiceMode({this.mode, this.port, });
 
 factory TeamsDevicesServiceMode.fromJson(Map<String, dynamic> json) { return TeamsDevicesServiceMode(
   mode: json['mode'] as String?,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'git_create_tag_request_tagger.dart';/// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
-final class GitCreateTagRequestType {const GitCreateTagRequestType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'git_create_tag_request_tagger.dart';/// The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
+@immutable final class GitCreateTagRequestType {const GitCreateTagRequestType._(this.value);
 
 factory GitCreateTagRequestType.fromJson(String json) { return switch (json) {
   'commit' => commit,
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GitCreateTagRequestType($value)'; } 
  }
-final class GitCreateTagRequest {const GitCreateTagRequest({required this.tag, required this.message, required this.object, required this.type, this.tagger, });
+@immutable final class GitCreateTagRequest {const GitCreateTagRequest({required this.tag, required this.message, required this.object, required this.type, this.tagger, });
 
 factory GitCreateTagRequest.fromJson(Map<String, dynamic> json) { return GitCreateTagRequest(
   tag: json['tag'] as String,

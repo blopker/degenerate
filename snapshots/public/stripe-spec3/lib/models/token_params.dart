@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class TokenParams {const TokenParams({required this.token});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TokenParams {const TokenParams({required this.token});
 
 factory TokenParams.fromJson(Map<String, dynamic> json) { return TokenParams(
   token: json['token'] as String,

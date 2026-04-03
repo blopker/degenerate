@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-final class PostSourcesSourceRequestOwnerAddress {const PostSourcesSourceRequestOwnerAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostSourcesSourceRequestOwnerAddress {const PostSourcesSourceRequestOwnerAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
 
 factory PostSourcesSourceRequestOwnerAddress.fromJson(Map<String, dynamic> json) { return PostSourcesSourceRequestOwnerAddress(
   city: json['city'] as String?,

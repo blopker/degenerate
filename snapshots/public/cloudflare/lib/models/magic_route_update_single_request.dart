@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_description.dart';import 'magic_identifier.dart';import 'magic_nexthop.dart';import 'magic_prefix.dart';import 'magic_priority.dart';import 'magic_scope.dart';import 'magic_weight.dart';final class MagicRouteUpdateSingleRequest {const MagicRouteUpdateSingleRequest({this.description, required this.nexthop, required this.prefix, required this.priority, this.scope, this.weight, required this.id, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_description.dart';import 'magic_identifier.dart';import 'magic_nexthop.dart';import 'magic_prefix.dart';import 'magic_priority.dart';import 'magic_scope.dart';import 'magic_weight.dart';@immutable final class MagicRouteUpdateSingleRequest {const MagicRouteUpdateSingleRequest({required this.nexthop, required this.prefix, required this.priority, required this.id, this.description, this.scope, this.weight, });
 
 factory MagicRouteUpdateSingleRequest.fromJson(Map<String, dynamic> json) { return MagicRouteUpdateSingleRequest(
   description: json['description'] != null ? MagicDescription.fromJson(json['description'] as String) : null,
