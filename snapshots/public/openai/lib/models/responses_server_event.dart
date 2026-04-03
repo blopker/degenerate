@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_stream_event.dart';/// Server events emitted by the Responses WebSocket server.
+import 'response_stream_event.dart';/// Server events emitted by the Responses WebSocket server.
 /// 
 final class ResponsesServerEvent {const ResponsesServerEvent({this.responseStreamEvent});
 

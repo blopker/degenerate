@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'responses_client_event_response_create.dart';/// Client events accepted by the Responses WebSocket server.
+import 'responses_client_event_response_create.dart';/// Client events accepted by the Responses WebSocket server.
 /// 
 final class ResponsesClientEvent {const ResponsesClientEvent({this.responsesClientEventResponseCreate});
 

@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'expected_body': expectedBody,
   'expected_codes': ?expectedCodes,
   'follow_redirects': followRedirects,
-  if (header != null) 'header': header?.map((k, v) => MapEntry(k, v)),
+  'header': ?header,
   'method': method.toJson(),
   'path': path,
   'port': port,

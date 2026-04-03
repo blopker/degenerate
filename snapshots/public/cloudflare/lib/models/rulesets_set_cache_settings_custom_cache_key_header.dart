@@ -24,7 +24,7 @@ final List<String>? include;
 
 Map<String, dynamic> toJson() { return {
   'check_presence': ?checkPresence,
-  if (contains != null) 'contains': contains?.map((k, v) => MapEntry(k, v)),
+  'contains': ?contains,
   'exclude_origin': ?excludeOrigin,
   'include': ?include,
 }; } 

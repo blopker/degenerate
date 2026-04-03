@@ -15,7 +15,7 @@ final Map<String,List<Uint8List>> additionalProperties;
 
 Map<String, dynamic> toJson() { return {
   'metadata': metadata.toJson(),
-  ...additionalProperties.map((k, v) => MapEntry(k, v.map((e) => base64Encode(e)).toList())),
+  ...additionalProperties.map((k, v) => MapEntry(k, v.map(base64Encode).toList())),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata'); } 
 UpdateZoneSnippetRequest copyWith({UpdateZoneSnippetRequestMetadata? metadata, Map<String, List<Uint8List>>? additionalProperties, }) { return UpdateZoneSnippetRequest(

@@ -218,6 +218,18 @@ String? _simpleCastFromJson(
 bool _isIdentityMapValue(IrType type) =>
     type is IrPrimitive && type.kind == PrimitiveKind.dynamic_;
 
+/// If [expr] is a simple function call `funcName(accessor)`, returns the
+/// function name for use as a tearoff. Returns null otherwise.
+String? asTearoff(String expr, String accessor) {
+  // Match pattern: identifier(accessor) — no dots, no chaining.
+  if (!expr.endsWith('($accessor)')) return null;
+  final funcName = expr.substring(0, expr.length - accessor.length - 2);
+  if (funcName.isEmpty) return null;
+  // Must be a simple identifier (no dots, spaces, etc.)
+  if (!RegExp(r'^[a-zA-Z_]\w*$').hasMatch(funcName)) return null;
+  return funcName;
+}
+
 /// Core non-null fromJson expression for a given type.
 String _buildFromJsonNonNull(
   IrType type,
@@ -279,10 +291,16 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
   final q = nullable ? '?' : '';
   return switch (type) {
     IrPrimitive(:final kind) => primitiveToJsonExpr(kind, accessor, q: q),
-    IrList(:final items) =>
-      listItemNeedsToJson(items)
-          ? '$accessor$q.map((e) => ${buildToJsonCode(items, 'e', nullable: items.isNullable)}).toList()'
-          : accessor,
+    IrList(:final items) => () {
+      if (!listItemNeedsToJson(items)) return accessor;
+      final itemExpr = buildToJsonCode(items, 'e', nullable: items.isNullable);
+      // Use tearoff when the expression is a simple function call: func(e).
+      final tearoff = asTearoff(itemExpr, 'e');
+      if (tearoff != null) {
+        return '$accessor$q.map($tearoff).toList()';
+      }
+      return '$accessor$q.map((e) => $itemExpr).toList()';
+    }(),
     IrMap(:final values) => () {
       if (!mapValueNeedsToJson(values)) return accessor;
       final valueExpr = buildToJsonCode(values, 'v', nullable: values.isNullable);

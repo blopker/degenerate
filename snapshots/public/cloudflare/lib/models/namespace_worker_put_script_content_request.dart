@@ -14,7 +14,7 @@ final List<Uint8List>? files;
 final NamespaceWorkerPutScriptContentRequestMetadata metadata;
 
 Map<String, dynamic> toJson() { return {
-  if (files != null) 'files': files?.map((e) => base64Encode(e)).toList(),
+  if (files != null) 'files': files?.map(base64Encode).toList(),
   'metadata': metadata.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata'); } 

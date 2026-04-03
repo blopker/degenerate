@@ -111,7 +111,7 @@ final bool? resolveDnsThroughCloudflare;
 final ZeroTrustGatewayRuleSettingsUntrustedCert? untrustedCert;
 
 Map<String, dynamic> toJson() { return {
-  if (addHeaders != null) 'add_headers': addHeaders?.map((k, v) => MapEntry(k, v)),
+  'add_headers': ?addHeaders,
   'allow_child_bypass': ?allowChildBypass,
   if (auditSsh != null) 'audit_ssh': auditSsh?.toJson(),
   if (bisoAdminControls != null) 'biso_admin_controls': bisoAdminControls?.toJson(),

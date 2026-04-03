@@ -125,7 +125,7 @@ Map<String, dynamic> toJson() { return {
   if (aiBindings != null) 'ai_bindings': aiBindings?.map((k, v) => MapEntry(k, v?.toJson())),
   'always_use_latest_compatibility_date': alwaysUseLatestCompatibilityDate,
   if (analyticsEngineDatasets != null) 'analytics_engine_datasets': analyticsEngineDatasets?.map((k, v) => MapEntry(k, v?.toJson())),
-  if (browsers != null) 'browsers': browsers?.map((k, v) => MapEntry(k, v)),
+  'browsers': ?browsers,
   'build_image_major_version': buildImageMajorVersion,
   'compatibility_date': ?compatibilityDate,
   'compatibility_flags': ?compatibilityFlags,

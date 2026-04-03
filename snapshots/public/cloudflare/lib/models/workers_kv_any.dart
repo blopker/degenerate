@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';final class WorkersKvAny {const WorkersKvAny({this.string, this.$double, this.$int, this.$bool, this.mapStringDynamic, this.listWorkersKvAny, });
+final class WorkersKvAny {const WorkersKvAny({this.string, this.$double, this.$int, this.$bool, this.mapStringDynamic, this.listWorkersKvAny, });
 
 factory WorkersKvAny.fromJson(dynamic json) { return WorkersKvAny(
   string: json is String ? json : null,

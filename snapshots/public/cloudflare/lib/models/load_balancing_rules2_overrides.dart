@@ -52,13 +52,13 @@ final LoadBalancingTtl? ttl;
 
 Map<String, dynamic> toJson() { return {
   if (adaptiveRouting != null) 'adaptive_routing': adaptiveRouting?.toJson(),
-  if (countryPools != null) 'country_pools': countryPools?.map((k, v) => MapEntry(k, v)),
+  'country_pools': ?countryPools,
   'default_pools': ?defaultPools,
   if (fallbackPool != null) 'fallback_pool': fallbackPool?.toJson(),
   if (locationStrategy != null) 'location_strategy': locationStrategy?.toJson(),
-  if (popPools != null) 'pop_pools': popPools?.map((k, v) => MapEntry(k, v)),
+  'pop_pools': ?popPools,
   if (randomSteering != null) 'random_steering': randomSteering?.toJson(),
-  if (regionPools != null) 'region_pools': regionPools?.map((k, v) => MapEntry(k, v)),
+  'region_pools': ?regionPools,
   if (sessionAffinity != null) 'session_affinity': sessionAffinity?.toJson(),
   if (sessionAffinityAttributes != null) 'session_affinity_attributes': sessionAffinityAttributes?.toJson(),
   if (sessionAffinityTtl != null) 'session_affinity_ttl': sessionAffinityTtl?.toJson(),

@@ -9,7 +9,7 @@ factory WorkersAiPostToMarkdownRequest.fromJson(Map<String, dynamic> json) { ret
 final List<Uint8List> files;
 
 Map<String, dynamic> toJson() { return {
-  'files': files.map((e) => base64Encode(e)).toList(),
+  'files': files.map(base64Encode).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('files'); } 
 WorkersAiPostToMarkdownRequest copyWith({List<Uint8List>? files}) { return WorkersAiPostToMarkdownRequest(

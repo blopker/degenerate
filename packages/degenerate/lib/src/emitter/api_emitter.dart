@@ -1466,7 +1466,10 @@ class ApiEmitter {
         PrimitiveKind.bytes => accessor, // handled separately as file
       },
       IrEnum() => '$accessor.toJson()',
-      IrExtensionType() => '$accessor.toJson().toString()',
+      IrExtensionType(:final inner) =>
+        inner.kind == PrimitiveKind.string
+            ? '$accessor.toJson()'
+            : '$accessor.toJson().toString()',
       _ => '$accessor.toString()',
     };
   }

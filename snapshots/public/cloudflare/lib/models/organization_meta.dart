@@ -17,7 +17,7 @@ final Map<String,Map<String,dynamic>> additionalProperties;
 Map<String, dynamic> toJson() { return {
   if (flags != null) 'flags': flags?.toJson(),
   'managed_by': ?managedBy,
-  ...additionalProperties.map((k, v) => MapEntry(k, v)),
+  ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'flags', 'managed_by'}.contains(key)); } 
 OrganizationMeta copyWith({OrganizationFlags Function()? flags, String Function()? managedBy, Map<String, Map<String, dynamic>>? additionalProperties, }) { return OrganizationMeta(

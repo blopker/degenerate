@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_identity_provider.dart';final class AccessIdentityProvidersComponentsSchemasResponseCollectionResult {const AccessIdentityProvidersComponentsSchemasResponseCollectionResult({this.accessSchemasIdentityProvider});
+import 'access_schemas_identity_provider.dart';final class AccessIdentityProvidersComponentsSchemasResponseCollectionResult {const AccessIdentityProvidersComponentsSchemasResponseCollectionResult({this.accessSchemasIdentityProvider});
 
 factory AccessIdentityProvidersComponentsSchemasResponseCollectionResult.fromJson(Map<String, dynamic> json) { return AccessIdentityProvidersComponentsSchemasResponseCollectionResult(
   accessSchemasIdentityProvider: AccessSchemasIdentityProvider.canParse(json) ? AccessSchemasIdentityProvider.fromJson(json) : null,

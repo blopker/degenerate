@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_launcher_props.dart';import 'access_bookmark_props.dart';import 'access_feature_app_props.dart';import 'access_infra_props.dart';import 'access_mcp_portal_props.dart';import 'access_mcp_props.dart';import 'access_rdp_props.dart';import 'access_saas_props.dart';import 'access_self_hosted_props.dart';final class AccessAppRequest {const AccessAppRequest({this.accessSelfHostedProps, this.accessSaasProps, this.accessAppLauncherProps, this.accessFeatureAppProps, this.accessBookmarkProps, this.accessInfraProps, this.accessRdpProps, this.accessMcpProps, this.accessMcpPortalProps, });
+import 'access_app_launcher_props.dart';import 'access_bookmark_props.dart';import 'access_feature_app_props.dart';import 'access_infra_props.dart';import 'access_mcp_portal_props.dart';import 'access_mcp_props.dart';import 'access_rdp_props.dart';import 'access_saas_props.dart';import 'access_self_hosted_props.dart';final class AccessAppRequest {const AccessAppRequest({this.accessSelfHostedProps, this.accessSaasProps, this.accessAppLauncherProps, this.accessFeatureAppProps, this.accessBookmarkProps, this.accessInfraProps, this.accessRdpProps, this.accessMcpProps, this.accessMcpPortalProps, });
 
 factory AccessAppRequest.fromJson(Map<String, dynamic> json) { return AccessAppRequest(
   accessSelfHostedProps: AccessSelfHostedProps.canParse(json) ? AccessSelfHostedProps.fromJson(json) : null,

@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   if (expectedBody != null) 'expected_body': expectedBody?.toJson(),
   if (expectedCodes != null) 'expected_codes': expectedCodes?.toJson(),
   if (followRedirects != null) 'follow_redirects': followRedirects?.toJson(),
-  if (header != null) 'header': header?.map((k, v) => MapEntry(k, v)),
+  'header': ?header,
   if (interval != null) 'interval': interval?.toJson(),
   if (method != null) 'method': method?.toJson(),
   if (path != null) 'path': path?.toJson(),

@@ -25,6 +25,7 @@ linter:
     flutter_style_todos: false
     avoid_bool_literals_in_conditional_expressions: false
     avoid_js_rounded_ints: false
+    prefer_int_literals: false
 
 analyzer:
   exclude:

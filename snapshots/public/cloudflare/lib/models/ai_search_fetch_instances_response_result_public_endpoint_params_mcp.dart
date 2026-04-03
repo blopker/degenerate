@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchFetchInstancesResponseResultPublicEndpointParamsMcp {const AiSearchFetchInstancesResponseResultPublicEndpointParamsMcp({this.description = 'Finds exactly what you\'re looking for', this.disabled = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchFetchInstancesResponseResultPublicEndpointParamsMcp {const AiSearchFetchInstancesResponseResultPublicEndpointParamsMcp({this.description = "Finds exactly what you're looking for", this.disabled = false, });
 
 factory AiSearchFetchInstancesResponseResultPublicEndpointParamsMcp.fromJson(Map<String, dynamic> json) { return AiSearchFetchInstancesResponseResultPublicEndpointParamsMcp(
-  description: json.containsKey('description') ? json['description'] as String : 'Finds exactly what you\'re looking for',
+  description: json.containsKey('description') ? json['description'] as String : "Finds exactly what you're looking for",
   disabled: json.containsKey('disabled') ? json['disabled'] as bool : false,
 ); }
 

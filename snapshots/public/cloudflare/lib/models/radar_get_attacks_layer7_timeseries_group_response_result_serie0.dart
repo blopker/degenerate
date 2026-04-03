@@ -13,7 +13,7 @@ final Map<String,List<String>> additionalProperties;
 
 Map<String, dynamic> toJson() { return {
   'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
-  ...additionalProperties.map((k, v) => MapEntry(k, v)),
+  ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('timestamps'); } 
 RadarGetAttacksLayer7TimeseriesGroupResponseResultSerie0 copyWith({List<DateTime>? timestamps, Map<String, List<String>>? additionalProperties, }) { return RadarGetAttacksLayer7TimeseriesGroupResponseResultSerie0(

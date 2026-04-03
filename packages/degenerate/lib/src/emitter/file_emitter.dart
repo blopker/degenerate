@@ -319,12 +319,13 @@ class FileEmitter {
 
   /// Whether a type emits classes that have == and hashCode (needing
   /// @immutable).
+  /// Whether a type emits classes with @immutable (those with == and hashCode).
+  /// AnyOf classes don't override == or hashCode, so they don't need it.
   static bool _typeNeedsImmutable(IrType type) => switch (type) {
     IrObject() => true,
     IrEnum() => true,
     IrDiscriminatedUnion() => true,
     IrUntaggedUnion() => true,
-    IrAnyOf() => true,
     _ => false,
   };
 

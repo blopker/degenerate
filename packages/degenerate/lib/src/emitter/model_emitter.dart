@@ -236,7 +236,10 @@ class ModelEmitter {
     if (model.additionalProperties == null) return '';
     final valueType = model.additionalProperties!;
     if (mapValueNeedsToJson(valueType)) {
-      return '  ...$_overflowFieldName.map((k, v) => MapEntry(k, ${buildToJsonCode(valueType, 'v')})),\n';
+      final valueExpr = buildToJsonCode(valueType, 'v');
+      if (valueExpr != 'v') {
+        return '  ...$_overflowFieldName.map((k, v) => MapEntry(k, $valueExpr)),\n';
+      }
     }
     return '  ...$_overflowFieldName,\n';
   }
@@ -253,14 +256,23 @@ class ModelEmitter {
         _ => f.name,
       },
       IrEnum() => '${f.name}${_q}toJson()',
-      IrList(:final items) =>
-        listItemNeedsToJson(items)
-            ? '${f.name}${_q}map((e) => ${buildToJsonCode(items, 'e', nullable: items.isNullable)}).toList()'
-            : f.name,
-      IrMap(:final values) =>
-        mapValueNeedsToJson(values)
-            ? '${f.name}${_q}map((k, v) => MapEntry(k, ${buildToJsonCode(values, 'v', nullable: values.isNullable)}))'
-            : f.name,
+      IrList(:final items) => () {
+        if (!listItemNeedsToJson(items)) return f.name;
+        final itemExpr =
+            buildToJsonCode(items, 'e', nullable: items.isNullable);
+        final tearoff = asTearoff(itemExpr, 'e');
+        if (tearoff != null) {
+          return '${f.name}${_q}map($tearoff).toList()';
+        }
+        return '${f.name}${_q}map((e) => $itemExpr).toList()';
+      }(),
+      IrMap(:final values) => () {
+        if (!mapValueNeedsToJson(values)) return f.name;
+        final valueExpr =
+            buildToJsonCode(values, 'v', nullable: values.isNullable);
+        if (valueExpr == 'v') return f.name;
+        return '${f.name}${_q}map((k, v) => MapEntry(k, $valueExpr))';
+      }(),
       IrObject() => '${f.name}${_q}toJson()',
       IrTypeRef() => '${f.name}${_q}toJson()',
       IrDiscriminatedUnion() => '${f.name}${_q}toJson()',
@@ -503,7 +515,7 @@ class ModelEmitter {
       if (f.type is IrPrimitive) {
         final kind = (f.type as IrPrimitive).kind;
         if (kind == PrimitiveKind.string) {
-          return Code("'${escapeDartString(v)}'");
+          return Code(dartStringLiteral(v));
         }
         if (kind == PrimitiveKind.dynamic_) {
           return null;
