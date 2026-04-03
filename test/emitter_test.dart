@@ -2883,11 +2883,11 @@ void main() {
     });
 
     test('escapes dollar sign in query parameter key', () {
-      expect(source, contains(r"queryParameters['\$filter']"));
+      expect(source, contains(r"queryParameters[r'$filter']"));
     });
 
     test('escapes dollar sign in header parameter key', () {
-      expect(source, contains(r"headers['\$top']"));
+      expect(source, contains(r"headers[r'$top']"));
     });
 
     test('is valid Dart', () {

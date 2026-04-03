@@ -430,6 +430,24 @@ String escapeDartString(String value) {
       });
 }
 
+/// Produce a single-quoted Dart string literal for [value].
+///
+/// Uses a raw string (`r'...'`) when the value contains `$` but no characters
+/// that would need other escapes (single quotes, backslashes, control chars).
+/// Otherwise falls back to a regular escaped string.
+String dartStringLiteral(String value) {
+  if (value.contains(r'$') &&
+      !value.contains("'") &&
+      !value.contains(r'\') &&
+      !value.contains('\n') &&
+      !value.contains('\r') &&
+      !value.contains('\t') &&
+      !_unicodeControlChars.hasMatch(value)) {
+    return "r'$value'";
+  }
+  return "'${escapeDartString(value)}'";
+}
+
 /// Convert an enum string value to a valid Dart enum constant name.
 final _nonIdentChars = RegExp(r'[^a-zA-Z0-9_\-.\s/+]');
 // A leading +/- before a letter (not a digit) isn't handled by _splitWords

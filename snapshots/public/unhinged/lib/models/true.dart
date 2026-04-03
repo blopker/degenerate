@@ -170,8 +170,8 @@ final class True {
       proto: json['__proto__'] as String?,
       hasOwnProperty: json['hasOwnProperty'] as String?,
       type: json['type'] as String?,
-      $ref: json['\$ref'] as String?,
-      $id: json['\$id'] as String?,
+      $ref: json[r'$ref'] as String?,
+      $id: json[r'$id'] as String?,
       xExtensionLookalike: json['x-extension-lookalike'] as String?,
       additionalProperties: Map.fromEntries(
         json.entries
@@ -186,8 +186,8 @@ final class True {
                 '__proto__',
                 'hasOwnProperty',
                 'type',
-                '\$ref',
-                '\$id',
+                r'$ref',
+                r'$id',
                 'x-extension-lookalike',
               }.contains(e.key),
             )
@@ -240,8 +240,8 @@ final class True {
       '__proto__': ?proto,
       'hasOwnProperty': ?hasOwnProperty,
       'type': ?type,
-      '\$ref': ?$ref,
-      '\$id': ?$id,
+      r'$ref': ?$ref,
+      r'$id': ?$id,
       'x-extension-lookalike': ?xExtensionLookalike,
       ...additionalProperties.map((k, v) => MapEntry(k, v.toJson())),
     };

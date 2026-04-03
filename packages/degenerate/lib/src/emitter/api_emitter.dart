@@ -378,13 +378,13 @@ class ApiEmitter {
         'final cookies = <String, String>{...apiConfig.defaultCookies};',
       );
       for (final p in cookieParams) {
-        final sanitizedName = _sanitizeParameterName(p.name);
+        final sanitizedName = _paramNameLiteral(p.name);
         final cookieValue = _toStringExpr(p);
         if (p.isRequired) {
-          buf.writeln("cookies['$sanitizedName'] = $cookieValue;");
+          buf.writeln("cookies[$sanitizedName] = $cookieValue;");
         } else {
           buf.writeln('if (${p.dartName} != null) {');
-          buf.writeln("  cookies['$sanitizedName'] = $cookieValue;");
+          buf.writeln("  cookies[$sanitizedName] = $cookieValue;");
           buf.writeln('}');
         }
       }
@@ -406,13 +406,13 @@ class ApiEmitter {
       buf.writeln("headers['Content-Type'] = '$contentType';");
     }
     for (final p in headerParams) {
-      final sanitizedName = _sanitizeParameterName(p.name);
+      final sanitizedName = _paramNameLiteral(p.name);
       final headerValue = _toStringExpr(p);
       if (p.isRequired) {
-        buf.writeln("headers['$sanitizedName'] = $headerValue;");
+        buf.writeln("headers[$sanitizedName] = $headerValue;");
       } else {
         buf.writeln('if (${p.dartName} != null) {');
-        buf.writeln("  headers['$sanitizedName'] = $headerValue;");
+        buf.writeln("  headers[$sanitizedName] = $headerValue;");
         buf.writeln('}');
       }
     }
@@ -586,13 +586,13 @@ class ApiEmitter {
   }
 
   void _writeSimpleQueryMapEntry(StringBuffer buf, IrParameter p) {
-    final sanitizedName = _sanitizeParameterName(p.name);
+    final sanitizedName = _paramNameLiteral(p.name);
     final queryValue = _toStringExpr(p);
     if (p.isRequired && !p.type.isNullable) {
-      buf.writeln("queryParameters['$sanitizedName'] = $queryValue;");
+      buf.writeln("queryParameters[$sanitizedName] = $queryValue;");
     } else {
       buf.writeln('if (${p.dartName} != null) {');
-      buf.writeln("  queryParameters['$sanitizedName'] = $queryValue;");
+      buf.writeln("  queryParameters[$sanitizedName] = $queryValue;");
       buf.writeln('}');
     }
   }
@@ -602,9 +602,9 @@ class ApiEmitter {
     IrParameter p,
     String valueExpr,
   ) {
-    final sanitizedName = _sanitizeParameterName(p.name);
+    final sanitizedName = _paramNameLiteral(p.name);
     buf.writeln(
-      "queryParametersList.add(ApiQueryParameter(name: '$sanitizedName', value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''}));",
+      "queryParametersList.add(ApiQueryParameter(name: $sanitizedName, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''}));",
     );
   }
 
@@ -616,7 +616,7 @@ class ApiEmitter {
     String style,
     bool explode,
   ) {
-    final name = _sanitizeParameterName(p.name);
+    final nameLiteral = _paramNameLiteral(p.name);
     final itemExpr = _queryScalarExpr(items, 'item');
     if (style == 'form' && explode) {
       buf.writeln('for (final item in $accessor) {');
@@ -624,7 +624,7 @@ class ApiEmitter {
         buf.writeln('  if (item == null) continue;');
       }
       buf.writeln(
-        "  queryParametersList.add(ApiQueryParameter(name: '$name', value: $itemExpr${p.allowReserved ? ', allowReserved: true' : ''}));",
+        "  queryParametersList.add(ApiQueryParameter(name: $nameLiteral, value: $itemExpr${p.allowReserved ? ', allowReserved: true' : ''}));",
       );
       buf.writeln('}');
       return;
@@ -642,7 +642,7 @@ class ApiEmitter {
     if (p.allowReserved) {
       _writeSimpleQueryListEntry(buf, p, joined);
     } else {
-      buf.writeln("queryParameters['$name'] = $joined;");
+      buf.writeln("queryParameters[$nameLiteral] = $joined;");
     }
   }
 
@@ -657,7 +657,7 @@ class ApiEmitter {
     final name = _sanitizeParameterName(p.name);
     if (style == 'deepObject') {
       for (final field in fields) {
-        final key = '$name[${field.originalName}]';
+        final key = '$name[${escapeDartString(field.originalName)}]';
         if (!field.isRequired) {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
@@ -677,11 +677,12 @@ class ApiEmitter {
 
     if (style == 'form' && explode) {
       for (final field in fields) {
+        final fieldNameLiteral = dartStringLiteral(field.originalName);
         if (!field.isRequired) {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} case final $localVar?) { queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''})); }",
+            "if ($accessor.${field.name} case final $localVar?) { queryParametersList.add(ApiQueryParameter(name: $fieldNameLiteral, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''})); }",
           );
         } else {
           final valueExpr = _queryScalarExpr(
@@ -689,7 +690,7 @@ class ApiEmitter {
             '$accessor.${field.name}',
           );
           buf.writeln(
-            "queryParametersList.add(ApiQueryParameter(name: '${field.originalName}', value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''}));",
+            "queryParametersList.add(ApiQueryParameter(name: $fieldNameLiteral, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''}));",
           );
         }
       }
@@ -719,6 +720,7 @@ class ApiEmitter {
     bool explode,
   ) {
     final name = _sanitizeParameterName(p.name);
+    final nameLiteral = _paramNameLiteral(p.name);
     final valueExpr = _queryScalarExpr(values, 'entry.value');
     if (style == 'deepObject') {
       buf.writeln('for (final entry in $accessor.entries) {');
@@ -744,7 +746,7 @@ class ApiEmitter {
     if (p.allowReserved) {
       _writeSimpleQueryListEntry(buf, p, "${p.dartName}Parts.join(',')");
     } else {
-      buf.writeln("queryParameters['$name'] = ${p.dartName}Parts.join(',');");
+      buf.writeln("queryParameters[$nameLiteral] = ${p.dartName}Parts.join(',');");
     }
   }
 
@@ -778,8 +780,14 @@ class ApiEmitter {
   bool _queryExplode(IrParameter p, String style) =>
       p.explode ?? (style == 'form');
 
+  /// Escape a parameter name for use inside a Dart string literal.
   String _sanitizeParameterName(String value) =>
       escapeDartString(value.replaceAll('\n', '').replaceAll('\r', '').trim());
+
+  /// Returns a full Dart string literal (with quotes) for a parameter name,
+  /// using raw strings when possible to avoid unnecessary escapes.
+  String _paramNameLiteral(String value) =>
+      dartStringLiteral(value.replaceAll('\n', '').replaceAll('\r', '').trim());
 
   /// Returns the HTTP method string for an operation (e.g. 'GET', 'HAUNT').
   static String _httpMethodString(IrOperation op) =>
@@ -1028,13 +1036,13 @@ class ApiEmitter {
         'final cookies = <String, String>{...apiConfig.defaultCookies};',
       );
       for (final p in cookieParams) {
-        final sanitizedName = _sanitizeParameterName(p.name);
+        final sanitizedName = _paramNameLiteral(p.name);
         final cookieValue = _toStringExpr(p);
         if (p.isRequired) {
-          buf.writeln("cookies['$sanitizedName'] = $cookieValue;");
+          buf.writeln("cookies[$sanitizedName] = $cookieValue;");
         } else {
           buf.writeln('if (${p.dartName} != null) {');
-          buf.writeln("  cookies['$sanitizedName'] = $cookieValue;");
+          buf.writeln("  cookies[$sanitizedName] = $cookieValue;");
           buf.writeln('}');
         }
       }
@@ -1054,13 +1062,13 @@ class ApiEmitter {
       buf.writeln("headers['Content-Type'] = '$contentType';");
     }
     for (final p in headerParams) {
-      final sanitizedName = _sanitizeParameterName(p.name);
+      final sanitizedName = _paramNameLiteral(p.name);
       final headerValue = _toStringExpr(p);
       if (p.isRequired) {
-        buf.writeln("headers['$sanitizedName'] = $headerValue;");
+        buf.writeln("headers[$sanitizedName] = $headerValue;");
       } else {
         buf.writeln('if (${p.dartName} != null) {');
-        buf.writeln("  headers['$sanitizedName'] = $headerValue;");
+        buf.writeln("  headers[$sanitizedName] = $headerValue;");
         buf.writeln('}');
       }
     }

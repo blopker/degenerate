@@ -243,8 +243,8 @@ final class New {
       type: json['type'] != null
           ? NewType.fromJson(json['type'] as String)
           : null,
-      $ref: json['\$ref'] as String?,
-      $id: json['\$id'] as String?,
+      $ref: json[r'$ref'] as String?,
+      $id: json[r'$id'] as String?,
       xExtensionLookalike: json['x-extension-lookalike'] as String?,
       $class: json['class'] as String?,
       $import: (json['import'] as List<dynamic>?)
@@ -303,8 +303,8 @@ final class New {
       '__proto__': ?proto,
       'hasOwnProperty': ?hasOwnProperty,
       if (type != null) 'type': type?.toJson(),
-      '\$ref': ?$ref,
-      '\$id': ?$id,
+      r'$ref': ?$ref,
+      r'$id': ?$id,
       'x-extension-lookalike': ?xExtensionLookalike,
       'class': ?$class,
       if ($import != null) 'import': $import?.map((e) => e.toJson()).toList(),

@@ -4,9 +4,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_obse
 @immutable final class WorkersObservabilityTelemetryEvent {const WorkersObservabilityTelemetryEvent({required this.$metadata, required this.dataset, required this.source, required this.timestamp, this.$containers, this.$workers, });
 
 factory WorkersObservabilityTelemetryEvent.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent(
-  $containers: (json['\$containers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
-  $metadata: WorkersObservabilityTelemetryEvent$metadata.fromJson(json['\$metadata'] as Map<String, dynamic>),
-  $workers: json['\$workers'] != null ? OneOf2.parse(json['\$workers'], fromA: (v) => WorkersObservabilityTelemetryEvent$workersVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersObservabilityTelemetryEvent$workersVariant2.fromJson(v as Map<String, dynamic>),) : null,
+  $containers: (json[r'$containers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  $metadata: WorkersObservabilityTelemetryEvent$metadata.fromJson(json[r'$metadata'] as Map<String, dynamic>),
+  $workers: json[r'$workers'] != null ? OneOf2.parse(json[r'$workers'], fromA: (v) => WorkersObservabilityTelemetryEvent$workersVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersObservabilityTelemetryEvent$workersVariant2.fromJson(v as Map<String, dynamic>),) : null,
   dataset: json['dataset'] as String,
   source: OneOf2.parse(json['source'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),),
   timestamp: (json['timestamp'] as num).toInt(),
@@ -27,14 +27,14 @@ final WorkersObservabilityTelemetryEventSource source;
 final int timestamp;
 
 Map<String, dynamic> toJson() { return {
-  '\$containers': ?$containers,
-  '\$metadata': $metadata.toJson(),
-  if ($workers != null) '\$workers': $workers?.toJson(),
+  r'$containers': ?$containers,
+  r'$metadata': $metadata.toJson(),
+  if ($workers != null) r'$workers': $workers?.toJson(),
   'dataset': dataset,
   'source': source.toJson(),
   'timestamp': timestamp,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('\$metadata') &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey(r'$metadata') &&
       json.containsKey('dataset') && json['dataset'] is String &&
       json.containsKey('source') &&
       json.containsKey('timestamp') && json['timestamp'] is num; } 
