@@ -1,16 +1,14 @@
 import 'dart:io';
 
-import 'package:test/test.dart';
-
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
+import 'package:test/test.dart';
 
 /// Full pipeline helper: parse YAML → normalize → lower types → lower operations.
-({List<IrType> types, List<IrApi> apis, IrMapper irMapper})
-_lowerPetstore() {
+({List<IrType> types, List<IrApi> apis, IrMapper irMapper}) _lowerPetstore() {
   final yamlContent = File(
     'test/fixtures/public/petstore-v3.0-oai.yaml',
   ).readAsStringSync();
@@ -139,11 +137,13 @@ void main() {
     });
 
     group('primitive type mapping', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
 
       test('string → PrimitiveKind.string', () {
         final t = lowerer.lowerInlineSchema({'type': 'string'});
@@ -192,11 +192,13 @@ void main() {
     });
 
     group('nullability', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
 
       test('nullable: true sets isNullable on field type', () {
         final obj =
@@ -229,11 +231,13 @@ void main() {
     });
 
     group('special schema types', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
 
       test('string enum → IrEnum', () {
         final t = lowerer.lowerSchema('Status', {
@@ -299,7 +303,7 @@ void main() {
         );
       });
 
-      test('\$ref → IrTypeRef', () {
+      test(r'$ref → IrTypeRef', () {
         final t = lowerer.lowerInlineSchema({
           r'$ref': '#/components/schemas/Pet',
         });
@@ -408,17 +412,22 @@ void main() {
           },
         });
         final apis = OperationLowerer(
-          IrMapper(NormalizationContext(
-          nameMapping: {},
-          discriminatorProperties: {},
-          usedNames: {},
-        )),
+          IrMapper(
+            NormalizationContext(
+              nameMapping: {},
+              discriminatorProperties: {},
+              usedNames: {},
+            ),
+          ),
           doc: doc,
         ).lowerPaths(doc.paths);
 
         final param = apis.single.operations.single.parameters.single;
         expect(param.type, isA<IrPrimitive>());
-        expect((param.type as IrPrimitive).kind, equals(PrimitiveKind.dynamic_));
+        expect(
+          (param.type as IrPrimitive).kind,
+          equals(PrimitiveKind.dynamic_),
+        );
       });
     });
 
@@ -526,16 +535,23 @@ void main() {
       expect(param.name, 'filter');
       expect(param.isRequired, isTrue);
       // Should be an object type, not dynamic
-      expect(param.type, isNot(isA<IrPrimitive>().having(
-        (p) => p.kind, 'kind', PrimitiveKind.dynamic_,
-      )));
+      expect(
+        param.type,
+        isNot(
+          isA<IrPrimitive>().having(
+            (p) => p.kind,
+            'kind',
+            PrimitiveKind.dynamic_,
+          ),
+        ),
+      );
     });
   });
 
   // ─── External ref handling ─────────────────────────────────────
 
   group('OperationLowerer - external refs', () {
-    test('path-item with external \$ref throws UnsupportedError', () {
+    test(r'path-item with external $ref throws UnsupportedError', () {
       final doc = OpenApiDocument({
         'openapi': '3.1.0',
         'info': {'title': 'Test'},
@@ -544,11 +560,13 @@ void main() {
         },
       });
 
-      final tl = IrMapper(NormalizationContext(
+      final tl = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final opLowerer = OperationLowerer(tl, doc: doc);
 
       expect(
@@ -557,7 +575,7 @@ void main() {
       );
     });
 
-    test('operation with external \$ref throws UnsupportedError', () {
+    test(r'operation with external $ref throws UnsupportedError', () {
       final doc = OpenApiDocument({
         'openapi': '3.1.0',
         'info': {'title': 'Test'},
@@ -568,11 +586,13 @@ void main() {
         },
       });
 
-      final tl = IrMapper(NormalizationContext(
+      final tl = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final opLowerer = OperationLowerer(tl, doc: doc);
 
       expect(
@@ -581,7 +601,7 @@ void main() {
       );
     });
 
-    test('parameter with external \$ref throws UnsupportedError', () {
+    test(r'parameter with external $ref throws UnsupportedError', () {
       final doc = OpenApiDocument({
         'openapi': '3.1.0',
         'info': {'title': 'Test'},
@@ -600,11 +620,13 @@ void main() {
         },
       });
 
-      final tl = IrMapper(NormalizationContext(
+      final tl = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final opLowerer = OperationLowerer(tl, doc: doc);
 
       expect(
@@ -616,11 +638,13 @@ void main() {
 
   group('primitive-only union collapse', () {
     test('oneOf of only primitives collapses to dynamic', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final t = lowerer.lowerInlineSchema({
         'oneOf': [
           {'type': 'string'},
@@ -633,11 +657,13 @@ void main() {
     });
 
     test('anyOf of only primitives collapses to dynamic', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final t = lowerer.lowerInlineSchema({
         'anyOf': [
           {'type': 'string'},
@@ -649,11 +675,13 @@ void main() {
     });
 
     test('collapsed oneOf includes variant types in description', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final t = lowerer.lowerInlineSchema({
         'oneOf': [
           {'type': 'string'},
@@ -665,31 +693,38 @@ void main() {
       expect(t.description, contains('double'));
     });
 
-    test('collapsed anyOf preserves original description with variant types', () {
-      final lowerer = IrMapper(NormalizationContext(
-          nameMapping: {},
-          discriminatorProperties: {},
-          usedNames: {},
-        ));
-      final t = lowerer.lowerInlineSchema({
-        'anyOf': [
-          {'type': 'string'},
-          {'type': 'integer'},
-        ],
-        'description': 'A flexible value.',
-      });
-      expect(t, isA<IrPrimitive>());
-      expect(t.description, contains('A flexible value.'));
-      expect(t.description, contains('String'));
-      expect(t.description, contains('int'));
-    });
+    test(
+      'collapsed anyOf preserves original description with variant types',
+      () {
+        final lowerer = IrMapper(
+          NormalizationContext(
+            nameMapping: {},
+            discriminatorProperties: {},
+            usedNames: {},
+          ),
+        );
+        final t = lowerer.lowerInlineSchema({
+          'anyOf': [
+            {'type': 'string'},
+            {'type': 'integer'},
+          ],
+          'description': 'A flexible value.',
+        });
+        expect(t, isA<IrPrimitive>());
+        expect(t.description, contains('A flexible value.'));
+        expect(t.description, contains('String'));
+        expect(t.description, contains('int'));
+      },
+    );
 
     test('oneOf with objects does NOT collapse', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final t = lowerer.lowerSchema('MixedUnion', {
         'oneOf': [
           {'type': 'string'},
@@ -706,11 +741,13 @@ void main() {
     });
 
     test('oneOf with refs does NOT collapse', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final t = lowerer.lowerSchema('RefUnion', {
         'oneOf': [
           {'type': 'string'},
@@ -721,23 +758,27 @@ void main() {
     });
 
     test('field with primitive oneOf gets dynamic type', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
-      final t = lowerer.lowerSchema('FilterObj', {
-        'type': 'object',
-        'properties': {
-          'value': {
-            'oneOf': [
-              {'type': 'string'},
-              {'type': 'number'},
-              {'type': 'boolean'},
-            ],
-          },
-        },
-      }) as IrObject;
+        ),
+      );
+      final t =
+          lowerer.lowerSchema('FilterObj', {
+                'type': 'object',
+                'properties': {
+                  'value': {
+                    'oneOf': [
+                      {'type': 'string'},
+                      {'type': 'number'},
+                      {'type': 'boolean'},
+                    ],
+                  },
+                },
+              })
+              as IrObject;
       final field = t.fields.firstWhere((f) => f.name == 'value');
       expect(field.type, isA<IrPrimitive>());
       expect((field.type as IrPrimitive).kind, equals(PrimitiveKind.dynamic_));
@@ -746,11 +787,13 @@ void main() {
 
   group('inline schema naming', () {
     test('inline object with title uses title as name', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final t = lowerer.lowerInlineSchema({
         'type': 'object',
         'title': 'MyCustomWidget',
@@ -763,11 +806,13 @@ void main() {
     });
 
     test('oneOf inline variants use title when available', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       lowerer.lowerSchema('EventUnion', {
         'oneOf': [
           {
@@ -806,11 +851,13 @@ void main() {
     });
 
     test('oneOf inline variants use parent name as fallback', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       lowerer.lowerSchema('StreamEvent', {
         'oneOf': [
           {
@@ -850,11 +897,13 @@ void main() {
     });
 
     test('anyOf inline variants use title when available', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       lowerer.lowerSchema('Shape', {
         'anyOf': [
           {
@@ -882,11 +931,13 @@ void main() {
     });
 
     test('anyOf inline variants use parent name as fallback', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       lowerer.lowerSchema('InputData', {
         'anyOf': [
           {
@@ -914,11 +965,13 @@ void main() {
     });
 
     test('oneOf inline variants use single-value enum for naming', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       lowerer.lowerSchema('RunStreamEvent', {
         'oneOf': [
           {
@@ -960,11 +1013,13 @@ void main() {
     });
 
     test('discriminated union inline variants use title', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       lowerer.lowerSchema('Animal', {
         'oneOf': [
           {
@@ -1004,9 +1059,47 @@ void main() {
       );
     });
 
-    test('inferred discriminator mapping uses original schema names, not Dart names', () {
-      final ctx = SchemaNormalizer().normalize({
-        'Animal': {
+    test(
+      'inferred discriminator mapping uses original schema names, not Dart names',
+      () {
+        final ctx = SchemaNormalizer().normalize({
+          'Animal': {
+            'oneOf': [
+              {r'$ref': '#/components/schemas/Cat'},
+              {r'$ref': '#/components/schemas/__dog__'},
+            ],
+            'discriminator': {
+              'propertyName': 'type',
+            },
+          },
+          'Cat': {
+            'type': 'object',
+            'properties': {
+              'type': {'type': 'string'},
+              'purr': {'type': 'boolean'},
+            },
+          },
+          '__dog__': {
+            'type': 'object',
+            'properties': {
+              'type': {'type': 'string'},
+              'bark': {'type': 'boolean'},
+            },
+          },
+        });
+        final lowerer = IrMapper(ctx);
+        lowerer.lowerSchemas(
+          ctx.nameMapping.map(
+            (k, v) => MapEntry(k, {
+              'type': 'object',
+              'properties': {
+                'type': {'type': 'string'},
+              },
+            }),
+          ),
+        );
+        // Lower the union schema
+        lowerer.lowerSchema('Animal', {
           'oneOf': [
             {r'$ref': '#/components/schemas/Cat'},
             {r'$ref': '#/components/schemas/__dog__'},
@@ -1014,46 +1107,15 @@ void main() {
           'discriminator': {
             'propertyName': 'type',
           },
-        },
-        'Cat': {
-          'type': 'object',
-          'properties': {
-            'type': {'type': 'string'},
-            'purr': {'type': 'boolean'},
-          },
-        },
-        '__dog__': {
-          'type': 'object',
-          'properties': {
-            'type': {'type': 'string'},
-            'bark': {'type': 'boolean'},
-          },
-        },
-      });
-      final lowerer = IrMapper(ctx);
-      lowerer.lowerSchemas(ctx.nameMapping.map((k, v) => MapEntry(k, {
-        'type': 'object',
-        'properties': {
-          'type': {'type': 'string'},
-        },
-      })));
-      // Lower the union schema
-      lowerer.lowerSchema('Animal', {
-        'oneOf': [
-          {r'$ref': '#/components/schemas/Cat'},
-          {r'$ref': '#/components/schemas/__dog__'},
-        ],
-        'discriminator': {
-          'propertyName': 'type',
-        },
-      });
-      final union = lowerer.typeRegistry['Animal']! as IrDiscriminatedUnion;
-      // Mapping keys should be the original schema names (what appears in JSON),
-      // not the Dart type names.
-      expect(union.mapping.keys, contains('Cat'));
-      expect(union.mapping.keys, contains('__dog__'));
-      expect(union.mapping.keys, isNot(contains('Dog')));
-    });
+        });
+        final union = lowerer.typeRegistry['Animal']! as IrDiscriminatedUnion;
+        // Mapping keys should be the original schema names (what appears in JSON),
+        // not the Dart type names.
+        expect(union.mapping.keys, contains('Cat'));
+        expect(union.mapping.keys, contains('__dog__'));
+        expect(union.mapping.keys, isNot(contains('Dog')));
+      },
+    );
   });
 
   group('allOf with ref and extra properties', () {
@@ -1084,7 +1146,7 @@ void main() {
 
       final extended = mapper.typeRegistry['Extended'];
       expect(extended, isA<IrObject>());
-      final obj = extended as IrObject;
+      final obj = extended! as IrObject;
       final fieldNames = obj.fields.map((f) => f.name).toSet();
       expect(fieldNames, contains('id'));
       expect(fieldNames, contains('extra'));
@@ -1117,114 +1179,125 @@ void main() {
       mapper.lowerSchemas(schemas);
 
       final obj = mapper.typeRegistry['Extended']! as IrObject;
-      final requiredNames =
-          obj.fields.where((f) => f.isRequired).map((f) => f.name).toSet();
+      final requiredNames = obj.fields
+          .where((f) => f.isRequired)
+          .map((f) => f.name)
+          .toSet();
       expect(requiredNames, contains('id'));
       expect(requiredNames, contains('extra'));
     });
 
-    test('discriminator variant with allOf stays as IrTypeRef to preserve union wrapping', () {
-      final schemas = <String, dynamic>{
-        'Animal': {
-          'oneOf': [
-            {r'$ref': '#/components/schemas/Cat'},
-            {r'$ref': '#/components/schemas/Dog'},
-          ],
-          'discriminator': {
-            'propertyName': 'type',
-          },
-        },
-        'AnimalBase': {
-          'type': 'object',
-          'properties': {
-            'name': {'type': 'string'},
-          },
-        },
-        'Cat': {
-          'allOf': [
-            {
-              'type': 'object',
-              'properties': {
-                'type': {
-                  'type': 'string',
-                  'enum': ['cat'],
-                },
-              },
-              'required': ['type'],
+    test(
+      'discriminator variant with allOf stays as IrTypeRef to preserve union wrapping',
+      () {
+        final schemas = <String, dynamic>{
+          'Animal': {
+            'oneOf': [
+              {r'$ref': '#/components/schemas/Cat'},
+              {r'$ref': '#/components/schemas/Dog'},
+            ],
+            'discriminator': {
+              'propertyName': 'type',
             },
-            {r'$ref': '#/components/schemas/AnimalBase'},
-          ],
-        },
-        'Dog': {
-          'allOf': [
-            {
-              'type': 'object',
-              'properties': {
-                'type': {
-                  'type': 'string',
-                  'enum': ['dog'],
-                },
-              },
-              'required': ['type'],
+          },
+          'AnimalBase': {
+            'type': 'object',
+            'properties': {
+              'name': {'type': 'string'},
             },
-            {r'$ref': '#/components/schemas/AnimalBase'},
-          ],
-        },
-      };
-      final ctx = SchemaNormalizer().normalize(schemas);
-      final mapper = IrMapper(ctx);
-      mapper.lowerSchemas(schemas);
-
-      // Cat and Dog are discriminator variants — they stay as refs to base
-      // so the sealed union emitter can wrap them correctly.
-      final cat = mapper.typeRegistry['Cat'];
-      expect(cat, isA<IrTypeRef>());
-      final dog = mapper.typeRegistry['Dog'];
-      expect(dog, isA<IrTypeRef>());
-    });
-
-    test('multiple refs merged into IrObject', skip: 'Needs flattener-level ref resolution', () {
-      final schemas = <String, dynamic>{
-        'HasName': {
-          'type': 'object',
-          'properties': {
-            'name': {'type': 'string'},
           },
-          'required': ['name'],
-        },
-        'HasAge': {
-          'type': 'object',
-          'properties': {
-            'age': {'type': 'integer'},
+          'Cat': {
+            'allOf': [
+              {
+                'type': 'object',
+                'properties': {
+                  'type': {
+                    'type': 'string',
+                    'enum': ['cat'],
+                  },
+                },
+                'required': ['type'],
+              },
+              {r'$ref': '#/components/schemas/AnimalBase'},
+            ],
           },
-        },
-        'Person': {
-          'allOf': [
-            {r'$ref': '#/components/schemas/HasName'},
-            {r'$ref': '#/components/schemas/HasAge'},
-          ],
-        },
-      };
-      final ctx = SchemaNormalizer().normalize(schemas);
-      final mapper = IrMapper(ctx);
-      mapper.lowerSchemas(schemas);
+          'Dog': {
+            'allOf': [
+              {
+                'type': 'object',
+                'properties': {
+                  'type': {
+                    'type': 'string',
+                    'enum': ['dog'],
+                  },
+                },
+                'required': ['type'],
+              },
+              {r'$ref': '#/components/schemas/AnimalBase'},
+            ],
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
+        final mapper = IrMapper(ctx);
+        mapper.lowerSchemas(schemas);
 
-      final person = mapper.typeRegistry['Person'];
-      expect(person, isA<IrObject>());
-      final obj = person as IrObject;
-      final fieldNames = obj.fields.map((f) => f.name).toSet();
-      expect(fieldNames, contains('name'));
-      expect(fieldNames, contains('age'));
-    });
+        // Cat and Dog are discriminator variants — they stay as refs to base
+        // so the sealed union emitter can wrap them correctly.
+        final cat = mapper.typeRegistry['Cat'];
+        expect(cat, isA<IrTypeRef>());
+        final dog = mapper.typeRegistry['Dog'];
+        expect(dog, isA<IrTypeRef>());
+      },
+    );
+
+    test(
+      'multiple refs merged into IrObject',
+      skip: 'Needs flattener-level ref resolution',
+      () {
+        final schemas = <String, dynamic>{
+          'HasName': {
+            'type': 'object',
+            'properties': {
+              'name': {'type': 'string'},
+            },
+            'required': ['name'],
+          },
+          'HasAge': {
+            'type': 'object',
+            'properties': {
+              'age': {'type': 'integer'},
+            },
+          },
+          'Person': {
+            'allOf': [
+              {r'$ref': '#/components/schemas/HasName'},
+              {r'$ref': '#/components/schemas/HasAge'},
+            ],
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
+        final mapper = IrMapper(ctx);
+        mapper.lowerSchemas(schemas);
+
+        final person = mapper.typeRegistry['Person'];
+        expect(person, isA<IrObject>());
+        final obj = person! as IrObject;
+        final fieldNames = obj.fields.map((f) => f.name).toSet();
+        expect(fieldNames, contains('name'));
+        expect(fieldNames, contains('age'));
+      },
+    );
   });
 
   group('Vendor extensions (x- fields)', () {
     test('x- fields at schema level are ignored', () {
-      final tl = IrMapper(NormalizationContext(
+      final tl = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final types = tl.lowerSchemas({
         'Pet': {
           'type': 'object',
@@ -1292,11 +1365,13 @@ void main() {
         },
       });
 
-      final tl = IrMapper(NormalizationContext(
+      final tl = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final types = tl.lowerSchemas(doc.schemas);
       final opLowerer = OperationLowerer(tl, doc: doc);
       final apis = opLowerer.lowerPaths(doc.paths);
@@ -1326,7 +1401,10 @@ void main() {
           'x-logo': {'url': 'https://example.com/logo.png'},
         },
         'x-tagGroups': [
-          {'name': 'General', 'tags': ['pets']},
+          {
+            'name': 'General',
+            'tags': ['pets'],
+          },
         ],
         'paths': {
           '/pets': {
@@ -1341,11 +1419,13 @@ void main() {
         },
       });
 
-      final tl = IrMapper(NormalizationContext(
+      final tl = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final opLowerer = OperationLowerer(tl, doc: doc);
       final apis = opLowerer.lowerPaths(doc.paths);
 
@@ -1356,17 +1436,28 @@ void main() {
 
   group('single-value enum anyOf collapse', () {
     test('anyOf of single-value string enums collapses to one enum', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final types = lowerer.lowerSchemas({
         'SameSite': {
           'anyOf': [
-            {'type': 'string', 'enum': ['Strict']},
-            {'type': 'string', 'enum': ['Lax']},
-            {'type': 'string', 'enum': ['None']},
+            {
+              'type': 'string',
+              'enum': ['Strict'],
+            },
+            {
+              'type': 'string',
+              'enum': ['Lax'],
+            },
+            {
+              'type': 'string',
+              'enum': ['None'],
+            },
           ],
         },
       });
@@ -1380,17 +1471,28 @@ void main() {
     });
 
     test('oneOf of single-value string enums collapses to one enum', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final types = lowerer.lowerSchemas({
         'Priority': {
           'oneOf': [
-            {'type': 'string', 'enum': ['High']},
-            {'type': 'string', 'enum': ['Medium']},
-            {'type': 'string', 'enum': ['Low']},
+            {
+              'type': 'string',
+              'enum': ['High'],
+            },
+            {
+              'type': 'string',
+              'enum': ['Medium'],
+            },
+            {
+              'type': 'string',
+              'enum': ['Low'],
+            },
           ],
         },
       });
@@ -1404,20 +1506,31 @@ void main() {
     });
 
     test('inline anyOf of single-value enums collapses to enum', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final types = lowerer.lowerSchemas({
         'Cookie': {
           'type': 'object',
           'properties': {
             'sameSite': {
               'anyOf': [
-                {'type': 'string', 'enum': ['Strict']},
-                {'type': 'string', 'enum': ['Lax']},
-                {'type': 'string', 'enum': ['None']},
+                {
+                  'type': 'string',
+                  'enum': ['Strict'],
+                },
+                {
+                  'type': 'string',
+                  'enum': ['Lax'],
+                },
+                {
+                  'type': 'string',
+                  'enum': ['None'],
+                },
               ],
             },
           },
@@ -1431,15 +1544,20 @@ void main() {
     });
 
     test('mixed single-value enums and other types does NOT collapse', () {
-      final lowerer = IrMapper(NormalizationContext(
+      final lowerer = IrMapper(
+        NormalizationContext(
           nameMapping: {},
           discriminatorProperties: {},
           usedNames: {},
-        ));
+        ),
+      );
       final types = lowerer.lowerSchemas({
         'Mixed': {
           'anyOf': [
-            {'type': 'string', 'enum': ['Strict']},
+            {
+              'type': 'string',
+              'enum': ['Strict'],
+            },
             {'type': 'integer'},
           ],
         },
@@ -1454,10 +1572,17 @@ void main() {
   group('SchemaNormalizer', () {
     test('computes name mappings for all schemas', () {
       final schemas = <String, dynamic>{
-        'Pet': {'type': 'object', 'properties': {'name': {'type': 'string'}}},
+        'Pet': {
+          'type': 'object',
+          'properties': {
+            'name': {'type': 'string'},
+          },
+        },
         'pet-store': {
           'type': 'object',
-          'properties': {'id': {'type': 'integer'}},
+          'properties': {
+            'id': {'type': 'integer'},
+          },
         },
       };
       final ctx = SchemaNormalizer().normalize(schemas);
@@ -1503,36 +1628,49 @@ void main() {
       expect(ctx.discriminatorProperties['Square'], equals('type'));
     });
 
-    test('detects discriminator properties from oneOf refs (no explicit mapping)', () {
-      final schemas = <String, dynamic>{
-        'Animal': {
-          'oneOf': [
-            {r'$ref': '#/components/schemas/Cat'},
-            {r'$ref': '#/components/schemas/Dog'},
-          ],
-          'discriminator': {
-            'propertyName': 'species',
+    test(
+      'detects discriminator properties from oneOf refs (no explicit mapping)',
+      () {
+        final schemas = <String, dynamic>{
+          'Animal': {
+            'oneOf': [
+              {r'$ref': '#/components/schemas/Cat'},
+              {r'$ref': '#/components/schemas/Dog'},
+            ],
+            'discriminator': {
+              'propertyName': 'species',
+            },
           },
-        },
-        'Cat': {
-          'type': 'object',
-          'properties': {'species': {'type': 'string'}},
-        },
-        'Dog': {
-          'type': 'object',
-          'properties': {'species': {'type': 'string'}},
-        },
-      };
-      final ctx = SchemaNormalizer().normalize(schemas);
+          'Cat': {
+            'type': 'object',
+            'properties': {
+              'species': {'type': 'string'},
+            },
+          },
+          'Dog': {
+            'type': 'object',
+            'properties': {
+              'species': {'type': 'string'},
+            },
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
 
-      expect(ctx.discriminatorProperties['Cat'], equals('species'));
-      expect(ctx.discriminatorProperties['Dog'], equals('species'));
-    });
+        expect(ctx.discriminatorProperties['Cat'], equals('species'));
+        expect(ctx.discriminatorProperties['Dog'], equals('species'));
+      },
+    );
 
     test('deduplicates name collisions', () {
       final schemas = <String, dynamic>{
-        'Status': {'type': 'string', 'enum': ['active']},
-        'status': {'type': 'string', 'enum': ['pending']},
+        'Status': {
+          'type': 'string',
+          'enum': ['active'],
+        },
+        'status': {
+          'type': 'string',
+          'enum': ['pending'],
+        },
       };
       final ctx = SchemaNormalizer().normalize(schemas);
 
@@ -1544,7 +1682,12 @@ void main() {
 
     test('avoids dart:core type name collisions', () {
       final schemas = <String, dynamic>{
-        'Error': {'type': 'object', 'properties': {'msg': {'type': 'string'}}},
+        'Error': {
+          'type': 'object',
+          'properties': {
+            'msg': {'type': 'string'},
+          },
+        },
       };
       final ctx = SchemaNormalizer().normalize(schemas);
 
